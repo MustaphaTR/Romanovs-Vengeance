@@ -177,8 +177,10 @@ htk:
 	AutoTarget:
 	Armament@primary:
 		Weapon: FlakTrackGun
+		LocalOffset: 256,0,1536
 	Armament@secondary:
 		Weapon: FlakTrackAAGun
+		LocalOffset: 256,0,1536
 	Turreted:
 		TurnSpeed: 15
 		Offset: -280,-3,0
@@ -219,11 +221,11 @@ htnk:
 		TurnSpeed: 5
 	Armament@primary:
 		Weapon: 120mm
-		LocalOffset: 640,0,384
+		LocalOffset: 640,0,512
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 120mmE
-		LocalOffset: 640,0,384
+		LocalOffset: 640,0,512
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
@@ -252,7 +254,7 @@ apoc:
 		Name: Apocalypse Tank
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 90
 		Prerequisites: ~naweap, natech
 		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
 	Mobile:
@@ -307,7 +309,7 @@ ttnk:
 		Name: Tesla Tank
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 60
 		Prerequisites: ~naweap, naradr, ~vehicles.russia
 		Description: Russian special tank armed with dual small Tesla Coils.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
 	Mobile:
@@ -349,7 +351,7 @@ dtruck:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: naradr, ~vehicles.libya
 		Description: Demolition Truck, actively armed with nuclear explosives.
 	Valued:
@@ -380,3 +382,64 @@ dtruck:
 	Voiced:
 		VoiceSet: DemolitionTruckVoice
 	HitShape:
+
+v3:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 50
+		Prerequisites: ~naweap, naradr
+		Description: Long-range rocket artillery.
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: V3 Launcher
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	RevealsShroud:
+		Range: 7c0
+	Armament:
+		Weapon: V3Launcher
+	AttackFrontal:
+		Voice: Attack
+	MissileSpawnerMaster:
+		Actors: v3rocket
+		SpawnIsMissile: true
+		RespawnTicks: 400
+		LoadedCondition: loaded
+	Explodes:
+		Weapon: UnitExplode
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody@FULL:
+		RequiresCondition: loaded
+	WithVoxelBody@EMPTY:
+		Sequence: empty
+		RequiresCondition: !loaded
+	HitShape:
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+
+v3rocket:
+	Inherits: ^ShootableMissile
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: V3 Rocket
+	Health:
+		HP: 50
+	Armor:
+		Type: Rocket
+	ShootableBallisticMissile:
+		LaunchAngle: 196
+		Speed: 225
+	MissileSpawnerSlave:
+	SpawnedExplodes:
+		Weapon: V3Weapon
+		EmptyWeapon: V3Weapon

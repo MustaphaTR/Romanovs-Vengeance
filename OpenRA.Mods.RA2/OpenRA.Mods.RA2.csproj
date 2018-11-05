@@ -63,11 +63,17 @@
     <Compile Include="Traits\PeriodicExplosion.cs" />
     <Compile Include="Traits\Render\WithExitOverlay.cs" />
     <Compile Include="Traits\Render\WithMindControlArc.cs" />
-    <Compile Include="Traits\BaseSpawnerSlave.cs" />
-    <Compile Include="Traits\CarrierSlave.cs" />
-    <Compile Include="Traits\BaseSpawnMaster.cs" />
-    <Compile Include="Traits\CarrierMaster.cs" />
     <Compile Include="Activities\EnterCarrierMaster.cs" />
+    <Compile Include="Activities\ShootableBallisticMissileFly.cs" />
+    <Compile Include="Traits\BaseSpawnerSlave.cs" />
+    <Compile Include="Traits\BaseSpawnMaster.cs" />
+    <Compile Include="Traits\MissileSpawnerMaster.cs" />
+    <Compile Include="Traits\MissileSpawnerSlave.cs" />
+    <Compile Include="Traits\ShootableBallisticMissile.cs" />
+    <Compile Include="Traits\SpawnedExplodes.cs" />
+    <Compile Include="Traits\CarrierSlave.cs" />
+    <Compile Include="Traits\CarrierMaster.cs" />
+    <Compile Include="Orders\ShootableBallisticMissileMoveOrderTargeter.cs" />
   </ItemGroup>
   <Target Name="AfterBuild">
     <MakeDir Directories="$(SolutionDir)mods\ra2\"/>

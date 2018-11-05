@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 
@@ -62,13 +63,11 @@ namespace OpenRA.Mods.RA2.Traits
 			public new CarrierSlave SpawnerSlave;
 		}
 
-		readonly Dictionary<string, Stack<int>> spawnContainTokens = new Dictionary<string, Stack<int>>();
-
 		public new CarrierMasterInfo Info { get; private set; }
 
 		CarrierSlaveEntry[] slaveEntries;
 		ConditionManager conditionManager;
-
+		readonly Dictionary<string, Stack<int>> spawnContainTokens = new Dictionary<string, Stack<int>>();
 		Stack<int> loadedTokens = new Stack<int>();
 
 		int respawnTicks = 0;
@@ -82,6 +81,19 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			base.Created(self);
 			conditionManager = self.Trait<ConditionManager>();
+
+			if (conditionManager != null)
+			{
+				foreach (var entry in SlaveEntries)
+				{
+					string spawnContainCondition;
+					if (Info.SpawnContainConditions.TryGetValue(entry.Actor.Info.Name, out spawnContainCondition))
+						spawnContainTokens.GetOrAdd(entry.Actor.Info.Name).Push(conditionManager.GrantCondition(self, spawnContainCondition));
+
+					if (!string.IsNullOrEmpty(Info.LoadedCondition))
+						loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
+				}
+			}
 		}
 
 		public override BaseSpawnerSlaveEntry[] CreateSlaveEntries(BaseSpawnerMasterInfo info)
@@ -132,6 +144,13 @@ namespace OpenRA.Mods.RA2.Traits
 				conditionManager.GrantCondition(self, Info.LaunchingCondition); // TODO removed Info.LaunchingTicks
 
 			SpawnIntoWorld(self, carrierSlaveEntry.Actor, self.CenterPosition);
+
+			Stack<int> spawnContainToken;
+			if (spawnContainTokens.TryGetValue(a.Info.Name, out spawnContainToken) && spawnContainToken.Any())
+				conditionManager.RevokeCondition(self, spawnContainToken.Pop());
+
+			if (loadedTokens.Any())
+				conditionManager.RevokeCondition(self, loadedTokens.Pop());
 
 			// Queue attack order, too.
 			self.World.AddFrameEndTask(w =>
@@ -216,6 +235,21 @@ namespace OpenRA.Mods.RA2.Traits
 
 			if (conditionManager != null && !string.IsNullOrEmpty(Info.LoadedCondition))
 				loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
+		}
+
+		public override void Replenish(Actor self, BaseSpawnerSlaveEntry entry)
+		{
+			base.Replenish(self, entry);
+
+			string spawnContainCondition;
+			if (conditionManager != null)
+			{
+				if (Info.SpawnContainConditions.TryGetValue(entry.Actor.Info.Name, out spawnContainCondition))
+					spawnContainTokens.GetOrAdd(entry.Actor.Info.Name).Push(conditionManager.GrantCondition(self, spawnContainCondition));
+
+				if (!string.IsNullOrEmpty(Info.LoadedCondition))
+					loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
+			}
 		}
 
 		public void Tick(Actor self)

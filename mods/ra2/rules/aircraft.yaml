@@ -16,7 +16,7 @@ shad:
 		VoiceSet: NighthawkVoice
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: ~gaweap
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
@@ -76,7 +76,7 @@ zep:
 		Name: Kirov Airship
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: ~naweap, natech
 	Selectable:
 		Bounds: 100,60,0,-10
@@ -255,7 +255,7 @@ pdplanehusk:
 		Name: Cargo Plane
 	Aircraft:
 		TurnSpeed: 5
-		Speed: 100
+		Speed: 225
 	RenderVoxels:
 		Image: pdplane
  
@@ -309,4 +309,56 @@ hornethusk:
 		Speed: 180
 	RenderVoxels:
 		Image: hornet
+		NormalsPalette: ts-normals
+ 
+asw:
+	Inherits: ^Plane
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Osprey
+	Health:
+		HP: 30
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 2c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	Armament:
+		Weapon: HornetBomb
+		PauseOnCondition: !ammo
+	AttackPlane:
+		FacingTolerance: 20
+	Aircraft:
+		InitialFacing: 192
+		TurnSpeed: 8
+		Speed: 180
+		RepulsionSpeed: 40
+		VTOL: false
+		RearmBuildings: carrier
+	AmmoPool:
+		Ammo: 5
+		AmmoCondition: ammo
+	RejectsOrders:
+	SpawnActorOnDeath:
+		Actor: hornethusk
+	-Selectable:
+	-ActorLostNotification:
+	CarrierSlave:
+		LandingDistance: 8c0
+	HitShape:
+	Interactable:
+	RenderVoxels:
+		NormalsPalette: ts-normals
+
+aswhusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Osprey
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 180
+	RenderVoxels:
+		Image: osprey
 		NormalsPalette: ts-normals

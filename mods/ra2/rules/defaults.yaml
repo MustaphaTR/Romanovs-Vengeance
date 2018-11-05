@@ -898,6 +898,34 @@
 		RequiresCondition: cruising
 	ReturnOnIdle:
 	WithVoxelBody:
+ 
+^ShootableMissile:
+	Inherits@1: ^ExistsInWorld
+	Armor:
+		Type: Missile
+	ShootableBallisticMissile:
+		LaunchAngle: 128
+		Speed: 170
+		AirborneCondition: airborne
+	Targetable@GROUND:
+		TargetTypes: Ground, Repair, Vehicle
+		RequiresCondition: !airborne
+	Targetable@AIRBORNE:
+		TargetTypes: Air
+		RequiresCondition: airborne
+	HiddenUnderFog:
+		Type: GroundPosition
+	Tooltip:
+		GenericName: Missile
+	HitShape:
+	RejectsOrders:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 90
+		UseClassicPerspectiveFudge: false
+	RenderVoxels:
+	WithVoxelBody:
+	Interactable:
 
 ^Husk:
 	RenderVoxels:

@@ -277,3 +277,31 @@ Demolish:
 	Warhead@2Eff: CreateEffect
 		Explosions: large_twlt
 		ImpactSounds: expnew09.wav
+
+V3Weapon:
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 200
+		ValidTargets: Ground, Water
+		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
+			Light: 90
+			Medium: 70
+			Heavy: 70
+			Wood: 100
+			Steel: 100
+			Concrete: 50
+			Drone: 80
+			Rocket: 0
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Water
+
+DredWeapon:
+	Inherits: V3Weapon
+	Warhead@1Dam: SpreadDamage
+		Damage: 300

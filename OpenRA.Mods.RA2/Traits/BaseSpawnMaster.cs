@@ -158,7 +158,7 @@ namespace OpenRA.Mods.RA2.Traits
 		/// Replenish one slave entry.
 		/// </summary>
 		/// <returns>true when a new slave actor is created.</returns>
-		public void Replenish(Actor self, BaseSpawnerSlaveEntry entry)
+		public virtual void Replenish(Actor self, BaseSpawnerSlaveEntry entry)
 		{
 			if (entry.IsValid)
 				throw new InvalidOperationException("Replenish must not be run on a valid entry!");

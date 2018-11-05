@@ -136,12 +136,10 @@ HoverMissileE:
 		ValidTargets: Ground, Air
 
 SubTorpedo:
-	ReloadDelay: 75
+	ReloadDelay: 120
 	Range: 7c0
 	Report: vsubatta.wav
 	ValidTargets: Water, Underwater
-	Burst: 1
-	BurstDelays: 20
 	Projectile: Missile
 		Image: missile
 		Speed: 102
@@ -181,7 +179,7 @@ HornetBomb:
 	Inherits: ^Missile
 	ReloadDelay: 3
 	Range: 5c0
-	Report: vifvatta.wav
+	Report: vospatta.wav
 	ValidTargets: Ground, Water
 	Projectile: Missile
 		Speed: 256
@@ -217,3 +215,23 @@ HornetBomb:
 		ValidTargets: Water
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallCrater
+
+ASWBomb:
+	Inherits: HornetBomb
+	Range: 3c0
+	ValidTargets: Underwater
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+		Versus:
+			None: 25
+			Flak: 25
+			Plate: 25
+			Light: 75
+			Medium: 100
+			Heavy: 100
+			Wood: 65
+			Steel: 65
+			Concrete: 60
+			Drone: 25
+			Rocket: 100
+	-Warhead@4Smu: LeaveSmudge

@@ -153,6 +153,7 @@ e1:
 		DefaultAttackSequence: shoot
 		RequiresCondition: !editorhack
 	WithInfantryBody:
+		DefaultAttackSequence: shoot
 		RequiresCondition: undeployed
 	WithMakeAnimation:
 		Sequence: deploy
@@ -185,8 +186,6 @@ e1:
 		Reject: Move, EnterTransport, EnterTransports
 		RequiresCondition: deployed
 	-TakeCover: # TODO: needs to be conditional so we can disable when deployed
-	WithInfantryBody:
-		DefaultAttackSequence: shoot
 	Voiced:
 		VoiceSet: GIVoice
 	ProducibleWithLevel:

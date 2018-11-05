@@ -74,6 +74,23 @@ dest:
 		LocalOffset: 1024,0,768
 		FireDelay: 2
 		RequiresCondition: rank-elite
+	Armament:
+		Name: ASW
+		Weapon: ASWLauncher
+	CarrierMaster:
+		Actors: asw
+		RespawnTicks: 300
+		SpawnAllAtOnce: true
+		SpawnerArmamentName: ASW
+		LoadedCondition: loaded
+	Exit@0:
+		SpawnOffset: 0,0,256
+		Facing: 0
+	Turreted:
+		TurnSpeed: 255
+	AttackTurreted:
+		Armaments: ASW
+		Voice: Attack
 	AttackFrontal:
 		Voice: Attack
 	DetectCloaked:
@@ -83,7 +100,11 @@ dest:
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
-	WithVoxelBody:
+	WithVoxelBody@FULL:
+		RequiresCondition: loaded
+	WithVoxelBody@EMPTY:
+		Sequence: empty
+		RequiresCondition: !loaded
 	RenderSprites:
 	Voiced:
 		VoiceSet: AlliedNavalVoice
@@ -174,11 +195,7 @@ dlph:
 		UncloakOn: Damage
 		IsPlayerPalette: true
 	Targetable:
-		TargetTypes: Ground, Water
-		RequiresCondition: underwater
-	Targetable@underwater:
-		TargetTypes: Underwater
-		RequiresCondition: underwater
+		TargetTypes: Ground, Water, Underwater
 	DetectCloaked:
 		CloakTypes: Underwater
 		Range: 4c0
@@ -236,7 +253,6 @@ carrier:
 		TurnSpeed: 255
 	AttackTurreted:
 		Voice: Attack
-	AutoTarget:
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
@@ -247,7 +263,7 @@ carrier:
 	HitShape:
 	CarrierMaster:
 		Actors: hornet, hornet, hornet
-		RespawnTicks: 300
+		RespawnTicks: 600
 		SpawnAllAtOnce: true
 	Exit@0:
 		SpawnOffset: 0,0,0

@@ -61,17 +61,14 @@ sub:
 	-LeavesTrails:
 	RevealsShroud:
 		Range: 6c0
-	-Targetable:
 	Targetable:
-		TargetTypes: Ground, Water, Repair
-		RequiresCondition: underwater
+		TargetTypes: Ground, Water, Underwater, Repair
 	Cloak:
 		CloakTypes: Underwater
 		InitialDelay: 50
 		CloakDelay: 75
 		CloakSound: vnavupa.wav
 		UncloakSound: vnavupa.wav
-		CloakedCondition: underwater
 		UncloakOn: Damage
 		IsPlayerPalette: true
 		RequiresCondition: !uncloak-critical-damage
@@ -96,9 +93,6 @@ sub:
 	-MustBeDestroyed:
 	WithVoxelBody:
 	RenderSprites:
-	Targetable@underwater:
-		TargetTypes: Underwater, Repair
-		RequiresCondition: underwater
 	HitShape:
 
 hyd:
@@ -186,15 +180,10 @@ sqd:
 		CloakDelay: 75
 		CloakSound: vnavupa.wav
 		UncloakSound: vnavupa.wav
-		CloakedCondition: underwater
 		UncloakOn: Damage, Attack
 		IsPlayerPalette: true
 	Targetable:
-		TargetTypes: Ground, Water
-		RequiresCondition: underwater
-	Targetable@underwater:
-		TargetTypes: Underwater
-		RequiresCondition: underwater
+		TargetTypes: Ground, Water, Underwater
 	DetectCloaked:
 		CloakTypes: Underwater
 		Range: 5c0
@@ -216,3 +205,65 @@ sqd:
 		Voice: Attack
 		RepairBuildings: gayard, nayard
 	HitShape:
+
+dred:
+	Inherits: ^Ship
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Ship
+		BuildPaletteOrder: 60
+		Prerequisites: ~nayard, natech
+		Description: Long-range rocket artillery ship.
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Dreadnought
+	Health:
+		HP: 800
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 60
+		TurnSpeed: 1
+	RevealsShroud:
+		Range: 7c0
+	Turreted:
+		TurnSpeed: 255
+	Armament:
+		Weapon: DredLauncher
+	AttackTurreted:
+		Voice: Attack
+	MissileSpawnerMaster:
+		Actors: dmisl, dmisl
+		SpawnIsMissile: true
+		SpawnAllAtOnce: true
+		RespawnTicks: 80
+		LoadedCondition: loaded
+	Explodes:
+		Weapon: UnitExplode
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody@FULL:
+		RequiresCondition: loaded
+	WithVoxelBody@EMPTY:
+		Sequence: empty
+		RequiresCondition: !loaded
+	HitShape:
+
+dmisl:
+	Inherits: ^ShootableMissile
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Dreadnought Missile
+	Health:
+		HP: 50
+	Armor:
+		Type: Rocket
+	ShootableBallisticMissile:
+		LaunchAngle: 196
+		Speed: 300
+	MissileSpawnerSlave:
+	SpawnedExplodes:
+		Weapon: DredWeapon
+		EmptyWeapon: DredWeapon
