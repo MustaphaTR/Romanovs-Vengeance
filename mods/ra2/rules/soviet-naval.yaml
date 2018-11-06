@@ -244,7 +244,10 @@ dred:
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody@FULL:
-		RequiresCondition: loaded
+		RequiresCondition: loaded >= 2
+	WithVoxelBody@HALF:
+		Sequence: half
+		RequiresCondition: loaded == 1
 	WithVoxelBody@EMPTY:
 		Sequence: empty
 		RequiresCondition: !loaded
