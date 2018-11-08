@@ -351,6 +351,7 @@
 		Dimensions: 1,1
 		Footprint: x
 		BuildSounds: uplace.wav
+		RequiresBaseProvider: True
 		UndeploySounds: uselbuil.wav
 		TerrainTypes: Clear, Road, DirtRoad, Rough
 	FrozenUnderFog:
@@ -462,6 +463,14 @@
 	CaptureNotification:
 		Notification: TechBuildingCaptured
 		LoseNotification: TechBuildingLost
+	GivesBuildableArea:
+		RequiresCondition: techbuild
+	BaseProvider:
+		Range: 5c0
+		RequiresCondition: techbuild
+	GrantConditionOnPrerequisite@BUILD:
+		Condition: techbuild
+		Prerequisites: global-techbuildarea
 	EditorTilesetFilter:
 		Categories: Tech building
 
@@ -512,6 +521,7 @@
 	Building:
 		Dimensions: 1,1
 		Footprint: x
+		RequiresBaseProvider: True
 		BuildSounds: uplace.wav
 		TerrainTypes: Clear, Rough, Road, DirtRoad
 	BlocksProjectiles:

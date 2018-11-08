@@ -47,7 +47,7 @@ Player:
 	PlayerResources:
 	DeveloperMode:
 		CheckboxEnabled: true
-		CheckboxDisplayOrder: 5
+		CheckboxDisplayOrder: 8
 	GpsWatcher:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
@@ -56,8 +56,15 @@ Player:
 		Label: Redeployable MCVs
 		Description: Allow undeploying Construction Yard.
 		Enabled: True
-		DisplayOrder: 7
+		DisplayOrder: 5
 		Prerequisites: global-factundeploy
+	LobbyPrerequisiteCheckbox@GLOBALTECHAREA:
+		ID: techbuildarea
+		Label: Tech Build Area
+		Description: Allow building placement around tech structures.
+		Enabled: False
+		DisplayOrder: 9
+		Prerequisites: global-techbuildarea
 	FrozenActorLayer:
 	BaseAttackNotifier:
 		AllyNotification: OurAllyIsUnderAttack
