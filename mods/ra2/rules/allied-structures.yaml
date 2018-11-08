@@ -159,7 +159,7 @@ gapile:
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 	Power:
-		Amount: -10
+		Amount: -20
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate
 		Proxy: barracks.infiltrated
@@ -177,7 +177,7 @@ garefn:
 	Selectable:
 		Bounds: 176, 150, 0, -20
 	Valued:
-		Cost: 2000
+		Cost: 1500
 	Tooltip:
 		Name: Ore Refinery
 	ProvidesPrerequisite:
@@ -201,7 +201,7 @@ garefn:
 		DockAngle: 160
 		UseStorage: false
 	CustomSellValue:
-		Value: 300
+		Value: 500
 	InfiltrateForCash:
 		Types: SpyInfiltrate
 		Percentage: 50
@@ -230,7 +230,7 @@ gaairc:
 		Prerequisites: garefn, ~structures.allies, ~!structures.america
 		Description: Provides radar\nSupports 4 aircraft.
 	Valued:
-		Cost: 1000
+		Cost: 1500
 	Tooltip:
 		Name: Airforce Command Headquarters
 	ProvidesPrerequisite:
@@ -275,7 +275,7 @@ gaairc:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	Power:
-		Amount: -50
+		Amount: -75
 	Reservable:
 	Exit@1:
 		SpawnOffset: -350,350,0
@@ -332,7 +332,7 @@ gaweap:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 40
-		Prerequisites: garefn, gapile, ~structures.allies
+		Prerequisites: garefn, ~structures.allies
 		Description: Produces vehicles.
 	Selectable:
 		Bounds: 212, 158, -7, -28
@@ -382,7 +382,7 @@ gaweap:
 	WithExitOverlay@ramp:
 		Sequence: build-ramp
 	Power:
-		Amount: -25
+		Amount: -50
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate
 		Proxy: warfactory.infiltrated
@@ -524,7 +524,7 @@ gadept:
 	Selectable:
 		Bounds: 144, 88, -12, -16
 	Valued:
-		Cost: 800
+		Cost: 500
 	Tooltip:
 		Name: Service Depot
 	ProvidesPrerequisite@default:
@@ -582,7 +582,7 @@ gatech:
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 	Power:
-		Amount: -100
+		Amount: -150
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate
 		Proxy: allies.tech.infiltrated
@@ -594,8 +594,8 @@ gawall:
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 10
-		Prerequisites: barracks, ~structures.allies
-		Description: Light wall.\nCrushable by vehicles.
+		Prerequisites: ~structures.allies
+		Description: Light wall.
 	Tooltip:
 		Name: Allied Wall
 
@@ -920,6 +920,7 @@ gacsph:
 		SelectionCursor: chronosphere
 		TargetCursor: chronosphere
 		PauseOnCondition: lowpower
+		Range: 2
 
 atesla:
 	Inherits: ^SupportBuilding

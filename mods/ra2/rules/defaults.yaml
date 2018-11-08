@@ -168,55 +168,69 @@
 ^GainsExperience:
 	GainsExperience:
 		Conditions:
-			500: rank-veteran
-			1000: rank-elite
-	FirepowerMultiplier@VETERAN:
-		RequiresCondition: rank-veteran && !rank-elite
+			300: rank-veteran
+			600: rank-veteran
+			900: rank-veteran
+	GrantCondition@RANK-ELITE:
+		RequiresCondition: rank-veteran >= 3
+		Condition: rank-elite
+	DamageMultiplier@RANK-1:
+		RequiresCondition: rank-veteran == 1
+		Modifier: 90
+	DamageMultiplier@RANK-2:
+		RequiresCondition: rank-veteran == 2
+		Modifier: 80
+	DamageMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 70
+	FirepowerMultiplier@RANK-1:
+		RequiresCondition: rank-veteran == 1
 		Modifier: 110
-	FirepowerMultiplier@ELITE:
+	FirepowerMultiplier@RANK-2:
+		RequiresCondition: rank-veteran == 2
+		Modifier: 120
+	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
 		Modifier: 130
-	DamageMultiplier@VETERAN:
-		RequiresCondition: rank-veteran && !rank-elite
+	ReloadDelayMultiplier@RANK-1:
+		RequiresCondition: rank-veteran == 1
 		Modifier: 90
-	DamageMultiplier@ELITE:
+	ReloadDelayMultiplier@RANK-2:
+		RequiresCondition: rank-veteran == 2
+		Modifier: 80
+	ReloadDelayMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 75
-	SpeedMultiplier@VETERAN:
-		RequiresCondition: rank-veteran && !rank-elite
-		Modifier: 120
-	SpeedMultiplier@ELITE:
-		RequiresCondition: rank-elite
-		Modifier: 140
-	ReloadDelayMultiplier@VETERAN:
-		RequiresCondition: rank-veteran && !rank-elite
-		Modifier: 90
-	ReloadDelayMultiplier@ELITE:
-		RequiresCondition: rank-elite
-		Modifier: 75
+		Modifier: 70
 	SelfHealing@ELITE:
-		Step: 2
-		Delay: 100
+		PercentageStep: 5
+		Delay: 75
 		HealIfBelow: 100
 		DamageCooldown: 125
-		RequiresCondition: rank-veteran && !rank-elite
-	InaccuracyMultiplier@ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 50
-	WithDecoration@VETERAN:
+	WithDecoration@RANK-1:
 		Image: rank
-		Sequence: veteran
+		Sequence: rank-veteran-1
 		Palette: pips
 		ReferencePoint: Bottom, Right
-		RequiresCondition: rank-veteran && !rank-elite
+		RequiresCondition: rank-veteran == 1
+		ValidStances: Ally, Enemy, Neutral
 		ZOffset: 256
-	WithDecoration@ELITE:
+	WithDecoration@RANK-2:
 		Image: rank
-		Sequence: elite
+		Sequence: rank-veteran-2
+		Palette: pips
+		ReferencePoint: Bottom, Right
+		RequiresCondition: rank-veteran == 2
+		ZOffset: 256
+		ValidStances: Ally, Enemy, Neutral
+	WithDecoration@RANK-ELITE:
+		Image: rank
+		Sequence: rank-elite
 		Palette: pips
 		ReferencePoint: Bottom, Right
 		RequiresCondition: rank-elite
 		ZOffset: 256
+		ValidStances: Ally, Enemy, Neutral
 
 ^CrateStatModifiers:
 	FirepowerMultiplier@CRATES:

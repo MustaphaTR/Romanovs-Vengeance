@@ -174,7 +174,7 @@ nahand:
 		RequiresCondition: primary
 	ProductionBar:
 	Power:
-		Amount: -10
+		Amount: -20
 	ConditionManager:
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate
@@ -193,7 +193,7 @@ narefn:
 	Selectable:
 		Bounds: 170, 150, -6, -33
 	Valued:
-		Cost: 2000
+		Cost: 1500
 	Tooltip:
 		Name: Ore Refinery
 	ProvidesPrerequisite:
@@ -217,7 +217,7 @@ narefn:
 		DockAngle: 160
 		UseStorage: false
 	CustomSellValue:
-		Value: 300
+		Value: 500
 	InfiltrateForCash:
 		Types: SpyInfiltrate
 		Percentage: 50
@@ -246,7 +246,7 @@ naradr:
 		Prerequisites: power, narefn, ~structures.soviets
 		Description: Provides radar.
 	Valued:
-		Cost: 1000
+		Cost: 1500
 	Tooltip:
 		Name: Radar Tower
 	ProvidesPrerequisite:
@@ -276,7 +276,7 @@ naradr:
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
 	Power:
-		Amount: -50
+		Amount: -25
 
 naweap:
 	Inherits: ^Building
@@ -284,7 +284,7 @@ naweap:
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 40
-		Prerequisites: refinery, nahand, ~structures.soviets
+		Prerequisites: refinery, ~structures.soviets
 		Description: Produces vehicles.
 	Selectable:
 		Bounds: 196, 178, -6, -48
@@ -334,7 +334,7 @@ naweap:
 	WithIdleOverlay@bib:
 		Sequence: bib
 	Power:
-		Amount: -25
+		Amount: -50
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate
 		Proxy: warfactory.infiltrated
@@ -478,7 +478,7 @@ nadept:
 	Selectable:
 		Bounds: 156, 150, 0, -38
 	Valued:
-		Cost: 800
+		Cost: 500
 	Tooltip:
 		Name: Service Depot
 	ProvidesPrerequisite:
@@ -518,7 +518,7 @@ nanrct:
 		Prerequisites: natech, ~structures.soviets
 		Description: Provides power for other structures.
 	Valued:
-		Cost: 1000
+		Cost: 2000
 	Tooltip:
 		Name: Nuclear Reactor
 	ProvidesPrerequisite:
@@ -577,7 +577,7 @@ natech:
 	RevealsShroud:
 		Range: 6c0
 	Power:
-		Amount: -100
+		Amount: -150
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate
 		Proxy: soviets.tech.infiltrated
@@ -730,6 +730,7 @@ nairon:
 		DisplayRadarPing: True
 		Condition: invulnerability
 		PauseOnCondition: lowpower
+		Range: 2
 	SupportPowerChargeBar:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
@@ -793,8 +794,8 @@ nawall:
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 10
-		Prerequisites: barracks, ~structures.soviets
-		Description: Light wall.\nCrushable by vehicles.
+		Prerequisites: ~structures.soviets
+		Description: Light wall.
 	Tooltip:
 		Name: Soviet Wall
 
@@ -880,7 +881,7 @@ tesla:
 		RequiresCondition: charged
 	AttackTesla:
 		Voice: Attack
-		MaxCharges: 3
+		MaxCharges: 2
 		ReloadDelay: 120
 		ChargeAudio: tslachg2.aud
 		PauseOnCondition: lowpower
