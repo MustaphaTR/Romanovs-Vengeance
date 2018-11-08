@@ -1,0 +1,47 @@
+Player:
+	-ConquestVictoryConditions:
+
+World:
+	-CrateSpawner:
+	-SpawnMPUnits:
+	-MPStartLocations:
+	MusicPlaylist:
+		StartingMusic: grinder
+		LoopStartingMusic: true
+		DisableWorldSounds: true
+	ResourceType@Ore:
+		ValuePerUnit: 0
+	LuaScript:
+		Scripts: shellmap.lua
+	-StartGameNotification:
+
+^Fence:
+	-BlocksProjectiles:
+
+garefn:
+	-FreeActor:
+
+camsc12:
+	Targetable:
+		TargetTypes: Ground, Infantry
+	HitShape:
+		UseTargetableCellsOffsets: false
+		TargetableOffsets: 0,64,512
+	DamageMultiplier:
+		Modifier: 0
+
+camsc13:
+	DamageMultiplier:
+		Modifier: 0
+
+e1:
+	-AttackFrontal:
+	-WithInfantryBody:
+	ExternalCondition@DEPLOY:
+		Condition: deployed
+	ExternalCondition@VET:
+		Condition: rank-veteran
+
+pentgen:
+	ExternalCondition@VET:
+		Condition: rank-veteran
