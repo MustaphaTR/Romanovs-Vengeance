@@ -11,6 +11,7 @@ EngineerVoice:
 		iraq: iens
 		russia: iens
 	Voices:
+		#TODO: Split this off to separate voiceovers.
 		Select: sea, seb, sec, sed
 		Move: moa, mob, moc
 		Action: ata, atb, atc
@@ -192,7 +193,7 @@ SeaScorpionVoice:
 GIVoice:
 	DefaultVariant: .wav
 	Voices:
-		Select: igisea, igiseb, igisec, igised, igisee, igisef
+		Select: igisea, igiseb, igisec, igised, igisee, igisef, igiseg
 		Move: igimoa, igimob, igimoc, igimod, igimoe
 		Attack: igiata, igiatb, igiatc, igiatd, igiate, igiatf
 		Feedback: igifea, igifeb
@@ -292,7 +293,8 @@ SealVoice:
 		Select: iseasea, iseaseb, iseasec, iseased
 		Move: iseamoa, iseamob, iseamoc
 		Attack: iseaata, iseaatb, iseaatc
-		SpecialAttack: iseaexa, iseaexb
+		SpecialAttack: iseaexa, iseaexb, iseaexd
+		Feedback: iseafea
 		Die: iseadia, iseadib, iseadic
 		Zapped: igenzapa
 		Burned: ienadia #gotta put something as temp else game crashes
@@ -304,7 +306,7 @@ TanyaVoice:
 		Build: itanatb
 		Select: itansea, itanseb, itansec, itansed, itansee
 		Move: itanmoa, itanmob, itanmoc, itanmod, itanmoe, itanmof
-		Attack: itanata, itanatb, itanatc, itanatd
+		Attack: itanata, itanatb, itanatc, itanatd, itanate
 		Die: itandia, itandib, itandic
 		Zapped: igenzapa
 		Burned: ienadia #gotta put something as temp else game crashes
@@ -337,7 +339,7 @@ BlackEagleVoice:
 NighthawkVoice:
 	DefaultVariant: .wav
 	Voices:
-		Select: vblhsea, vblhseb, vblhsec, vblhsed
+		Select: vblhsea, vblhseb, vblhsec, vblhsed, vblhsee
 		Move: vblhmoa, vblhmob, vblhmoc, vblhmod
 		Attack: vblhata, vblhatb, vblhatc, vblhatd
 		Die: vblhdia, vblhdib, vblhdic
@@ -348,7 +350,7 @@ FlakTrooperVoice:
 		Select: iflasea, iflaseb, iflasec, iflased
 		Move: iflamoa, iflamob, iflamoc, iflamod
 		Attack: iflaata, iflaatb, iflaatc, iflaatd
-		Feedback: iflafea, iflafeb, iflafec, iflafed
+		Feedback: iflafea, iflafeb, iflafec, iflafed, iflafee
 		Die: ifladia, ifladib, ifladic, ifladid, ifladie
 		Zapped: igenzapa
 		Burned: ienadia #gotta put something as temp else game crashes
@@ -359,7 +361,7 @@ TeslaTrooperVoice:
 	Voices:
 		Select: itessea, itesseb, itessec, itessed, itessee
 		Move: itesmoa, itesmob, itesmoc, itesmod, itesmoe, itesmof
-		Attack: itesata, itesatb, itesatc, itesatd, itesate
+		Attack: itesata, itesatb, itesatc, itesatd, itesate, itesatf
 		Feedback: itesfea, itesfeb, itesfec
 		Die: itesdia, itesdib, itesdic, itesdid
 		Zapped: igenzapa
@@ -426,7 +428,7 @@ KirovVoice:
 		Select: vkirseb, vkirsec, vkirsed
 		Move: vkirmoa, vkirmob, vkirmoc
 		Attack: vkirata, vkiratb, vkiratc, vkiratd
-		Feedback: vkirfea, vkirfeb, vkirfec
+		Feedback: vkirfea
 		Die: vkirdia, vkirdib, vkirdic, vkirdid
 
 DemolitionTruckVoice:
