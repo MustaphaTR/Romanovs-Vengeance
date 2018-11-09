@@ -12,21 +12,45 @@ Packages:
 	.
 	$ra2: ra2
 	./mods/common: common
+	~ra2md.mix # put YR files first so stuff like Psycic Sensor and Cloning Vats won't get overridden with Yuri artwork.
 	~ra2.mix
+	~langmd.mix
 	~language.mix
 	~multi.mix
+	# ~audiomd.mix
 	~audio.mix
+	~cachemd.mix
 	~cache.mix
+	~cameomd.mix
 	~cameo.mix
+	~conquermd.mix: conquermd
 	~conquer.mix: conquer
+	~des.mix
+	~desert.mix
+	~genermd.mix
 	~generic.mix
+	~isodesmd.mix
+	~isodes.mix
+	~isogenmd.mix
 	~isogen.mix
+	~isolunmd.mix
+	~isolun.mix
+	~isosnomd.mix
 	~isosnow.mix
+	~isotemmd.mix
 	~isotemp.mix
+	~isoubnmd.mix
+	~isoubn.mix
+	~isourbmd.mix
 	~isourb.mix
+	~loadmd.mix
 	~load.mix
+	~localmd.mix
 	~local.mix
+	~lun.mix
+	~lunar.mix
 	~neutral.mix
+	~ntrlmd.mix
 	~sidec01.mix
 	~sidec02.mix
 	~sno.mix
@@ -34,6 +58,9 @@ Packages:
 	~tem.mix
 	~temperat.mix
 	~theme.mix
+	~thememd.mix
+	~ubn.mix
+	~urbann.mix
 	~urb.mix
 	~urban.mix
 	~audio.bag
@@ -170,6 +197,7 @@ TileSets:
 	ra2|tilesets/temperat.yaml
 	ra2|tilesets/snow.yaml
 	ra2|tilesets/urban.yaml
+	ra2|tilesets/desert.yaml
 
 MapGrid:
 	Type: RectangularIsometric
@@ -242,11 +270,13 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		TEMPERATE: .tem
 		SNOW: .sno
 		URBAN: .urb
+		DESERT: .des
 	TilesetCodes:
 		GENERIC: g
 		SNOW: a
 		TEMPERATE: t
 		URBAN: u
+		DESERT: d
 
 ModelSequenceFormat: VoxelModelSequence
 
