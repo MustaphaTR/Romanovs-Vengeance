@@ -3840,3 +3840,29 @@ camorr10.rubble:
 		Footprint: __ __
 	RenderSprites:
 		Image: camorr10
+
+cala01:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Building
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	SpawnActorOnDeath:
+		Actor: cala01.rubble
+
+cala01.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^3x3Shape
+	Building:
+		Dimensions: 3,3
+		Footprint: ___ ___ ___
+	RenderSprites:
+		Image: cala01
