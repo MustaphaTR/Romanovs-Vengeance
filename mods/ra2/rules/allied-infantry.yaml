@@ -145,7 +145,7 @@ e1:
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed
 		CanDeployOnRamps: True
-		Facing: 128
+		Facing: 92
 		RequiresCondition: !parachute
 	GrantCondition:
 		Condition: editorhack
@@ -161,7 +161,7 @@ e1:
 	Turreted:
 		RealignDelay: -1
 		TurnSpeed: 50
-		InitialFacing: 128
+		InitialFacing: 92
 	WithSpriteTurret@idle:
 		Sequence: deployed
 		RequiresCondition: deployed && !animate-turret
@@ -181,6 +181,105 @@ e1:
 	GrantConditionOnAttack:
 		Condition: animate-turret
 		RevokeDelay: 10
+		ArmamentNames: deployed
+	RejectsOrders@deployment:
+		Reject: Move, EnterTransport, EnterTransports
+		RequiresCondition: deployed
+	-TakeCover: # TODO: needs to be conditional so we can disable when deployed
+	Voiced:
+		VoiceSet: GIVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+ggi:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry
+		Prerequisites: ~gapile
+		BuildPaletteOrder: 40
+		Description: Anti-tank/anti-air infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings
+	Valued:
+		Cost: 400
+	DeliversCash:
+		Payload: 200
+		PlayerExperience: 20
+		Voice: Move
+	Tooltip:
+		Name: Guardian G.I.
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 45
+		RequiresCondition: !chronodisable && undeployed
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 6c0
+	Crushable:
+		RequiresCondition: undeployed
+	Armament@primary:
+		Weapon: M60
+		RequiresCondition: !rank-elite && !deployed
+	Armament@elite:
+		Weapon: M60E
+		RequiresCondition: rank-elite && !deployed
+	Armament@deployed:
+		Weapon: MissileLauncher
+		Name: deployed
+		LocalOffset: 480,63,992
+		RequiresCondition: !rank-elite && deployed
+	Armament@elite-deployed:
+		Weapon: MissileLauncherE
+		Name: deployed
+		LocalOffset: 480,64,992
+		RequiresCondition: rank-elite && deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		CanDeployOnRamps: True
+		Facing: 92
+		RequiresCondition: !parachute
+	GrantCondition:
+		Condition: editorhack
+	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
+		DefaultAttackSequence: shoot
+		RequiresCondition: !editorhack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: undeployed
+	WithMakeAnimation:
+		Sequence: deploy
+		BodyNames: dot
+	Turreted:
+		RealignDelay: -1
+		TurnSpeed: 50
+		InitialFacing: 92
+	WithSpriteTurret@idle:
+		Sequence: deployed
+		RequiresCondition: deployed && !animate-turret
+	WithSpriteTurret@animated:
+		RequiresCondition: deployed && animate-turret
+		Sequence: shoot-deployed
+	WithSpriteBody:
+		Sequence: dot
+		Name: dot
+	AttackFrontal:
+		Voice: Attack
+		RequiresCondition: undeployed
+	AttackTurreted@deployed:
+		Armaments: deployed
+		Voice: Attack
+		RequiresCondition: deployed
+	GrantConditionOnAttack:
+		Condition: animate-turret
+		RevokeDelay: 5
 		ArmamentNames: deployed
 	RejectsOrders@deployment:
 		Reject: Move, EnterTransport, EnterTransports

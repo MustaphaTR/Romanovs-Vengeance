@@ -128,14 +128,61 @@ HoverMissile:
 HoverMissileE:
 	Inherits: HoverMissile
 	Burst: 4
-	Report: vifvatta.wav
-	ValidTargets: Ground, Air
 	Warhead@1Dam: SpreadDamage
 		Damage: 80
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
+
+MissileLauncher:
+	Inherits: ^Missile
+	ReloadDelay: 40
+	Range: 8c0
+	Report: vifvatta.wav
+	ValidTargets: Ground, Air
+	Projectile: Missile
+		Speed: 384
+		Arm: 2
+		Inaccuracy: 128
+		HorizontalRateOfTurn: 8
+		RangeLimit: 10c204
+		ContrailColor: D8D8FF
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 40
 		ValidTargets: Ground, Air
+		Versus:
+			None: 20
+			Flak: 20
+			Plate: 20
+			Light: 100
+			Medium: 50
+			Heavy: 100
+			Wood: 10
+			Steel: 10
+			Concrete: 10
+			Drone: 80
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: small_grey_explosion
+		ImpactSounds: gexpifva.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+MissileLauncherE:
+	Inherits: MissileLauncher
+	ReloadDelay: 20
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav
 
 SubTorpedo:
 	ReloadDelay: 120
