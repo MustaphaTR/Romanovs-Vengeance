@@ -19,6 +19,12 @@
 		Tileset: DESERT
 		Filename: isodes.pal
 		ShadowIndex: 1
+	#VXL2SHP stuff - see OpenRA/OpenRA#15807 why isn't placed at bottom
+	PaletteFromFile@terrain-simpleterrain:
+		Name: terrain
+		Filename: isosimple.pal
+		Tileset: SIMPLETERRAIN
+		ShadowIndex: 1
 	PlayerColorPalette:
 		BasePalette: player
 		RemapIndex: 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
@@ -166,3 +172,14 @@
 	FlashPaletteEffect@NUKE:
 		Type: Nuke
 		Length: 90
+	#VXL2SHP stuff
+	PaletteFromFile@playersimple:
+		Name: player
+		Tileset: SIMPLETERRAIN
+		Filename: unittem.pal
+		ShadowIndex: 1
+	PaletteFromFile@simplecity:
+		Name: city
+		Tileset: SIMPLETERRAIN
+		Filename: citytem.pal
+		ShadowIndex: 1

@@ -1,0 +1,96 @@
+General:
+	Name: Simple Terrain
+	Id: SIMPLETERRAIN
+	Extensions: .simple, .shp
+	HeightDebugColors: FF000080, 00004480, 00008880, 0000CC80, 0000FF80, 4400CC80, 88008880, CC004480, FF110080, FF550080, FF990080, FFDD0080, DDFF0080, 99FF0080, 55FF0080, 11FF0080
+	EditorTemplateOrder: Lat Grass
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 745537
+		TargetTypes: Ground
+	TerrainType@Road:
+		Type: Road
+		Color: 745537
+		TargetTypes: Ground
+	TerrainType@Rail:
+		Type: Rail
+		Color: 745537
+		TargetTypes: Ground
+	TerrainType@Impassable:
+		Type: Impassable
+		Color: 745537
+		TargetTypes: Ground
+	TerrainType@Water:
+		Type: Water
+		Color: 745537
+		TargetTypes: Water
+		IsWater: True
+	TerrainType@DirtRoad:
+		Type: DirtRoad
+		Color: 745537
+		TargetTypes: Ground
+	TerrainType@Rough:
+		Type: Rough
+		Color: 745537
+		TargetTypes: Ground
+	TerrainType@Cliff:
+		Type: Cliff
+		Color: 745537
+		TargetTypes: Ground
+	TerrainType@Tiberium:
+		Type: Tiberium
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: A1E21C
+		TargetTypes: Ground
+	TerrainType@BlueTiberium:
+		Type: BlueTiberium
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 1C40F8
+		TargetTypes: Ground
+	TerrainType@Veins:
+		Type: Veins
+		Color: E26700
+		TargetTypes: Ground
+	TerrainType@Tree:
+		Type: Tree
+		TargetTypes: Ground
+		Color: 1C2024
+	TerrainType@Rock:
+		Type: Rock
+		TargetTypes: Ground
+		Color: 44443C
+	TerrainType@Ore:
+		Type: Ore
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 6B4423
+		TargetTypes: Ground
+	TerrainType@Gold:
+		Type: Gold
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: FFD700
+		TargetTypes: Ground
+	TerrainType@Gem:
+		Type: Gem
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: FF6FFF
+		TargetTypes: Ground
+	TerrainType@Crystal:
+		Type: Crystal
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 6F00FF
+		TargetTypes: Ground
+
+# Automatically generated. DO NOT EDIT!
+Templates:
+	Template@0:
+		Categories: Lat Grass
+		Id: 0
+		Images: tile.simple
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A2A850
+				RightColor: A3A750
