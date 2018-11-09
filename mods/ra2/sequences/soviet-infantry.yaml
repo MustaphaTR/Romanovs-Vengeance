@@ -57,10 +57,21 @@ flakt:
 shk:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
-	run:
+	run: shkfix
+		Start: 0
 		Tick: 120
 	paradrop:
 		Start: 292
+	charge: shkfix
+		Start: 48
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-charge: shkfix
+		Start: 96
+		Length: 6
+		Facings: 8
+		Tick: 80
 	icon: shkicon
 
 terror:

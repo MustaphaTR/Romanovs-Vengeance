@@ -133,6 +133,7 @@ shk:
 		Weapon: ElectricBoltE
 		RequiresCondition: rank-elite
 	Armament@charge:
+		Name: secondary
 		Weapon: AssaultBolt
 		LocalOffset: 320,128,1024
 		TargetStances: Ally
@@ -145,6 +146,8 @@ shk:
 		Delay: 70
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		AttackSequences:
+			secondary: charge
 	ProximityExternalCondition:
 		Condition: charged
 		Range: 1c256
