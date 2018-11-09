@@ -7,7 +7,7 @@ caoild:
 		Footprint: xx xx
 		Dimensions: 2, 2
 	BaseProvider:
-		Range: 4c0
+		Range: 6c0
 	EngineerRepairable:
 	CashTrickler:
 		Interval: 100
@@ -27,6 +27,31 @@ caoild:
 		Offset: 1000,0,0
 	GivesCashOnCapture:
 		Amount: 1000
+
+capowr:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 96, 104, -2, -26
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	BaseProvider:
+		Range: 6c0
+	EngineerRepairable:
+	Tooltip:
+		Name: Tech Power Plant
+	Health:
+		HP: 800
+	RevealsShroud:
+		Range: 4c0
+	Armor:
+		Type: Concrete
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 1000,0,0
+	Power:
+		Amount: 200
 
 caairp:
 	Inherits: ^TechBuilding
