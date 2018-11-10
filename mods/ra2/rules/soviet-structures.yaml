@@ -246,7 +246,7 @@ naradr:
 		Queue: Building
 		BuildPaletteOrder: 60
 		Prerequisites: power, narefn, ~structures.soviets
-		Description: Provides radar.
+		Description: Provides radar.\n  Special Ability: Spy Plane
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -270,6 +270,18 @@ naradr:
 		RequiresCondition: !lowpower
 	RevealsShroud:
 		Range: 10c0
+	AirstrikePower@spyplane:
+		OrderName: SovietSpyPlane
+		Icon: spyplane
+		ChargeInterval: 6000
+		Description: Spy Plane
+		LongDesc: Reveals an area of the map.
+		SelectTargetSpeechNotification: SelectTarget
+		# EndChargeSpeechNotification: SpyPlaneReady
+		CameraActor: camera.spyplane
+		CameraRemoveDelay: 150
+		UnitType: spyp
+		QuantizedFacings: 8
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: lowpower

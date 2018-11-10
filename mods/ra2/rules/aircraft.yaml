@@ -258,6 +258,43 @@ pdplanehusk:
 		Speed: 225
 	RenderVoxels:
 		Image: pdplane
+
+spyp:
+	Inherits: ^NeutralAircraft
+	Valued:
+		Cost: 2000
+	-Selectable:
+	Interactable:
+		Bounds: 100,80
+	RejectsOrders:
+	Tooltip:
+		Name: Spy Plane
+	Aircraft:
+		CruiseAltitude: 5600
+		TurnSpeed: 5
+		Speed: 225
+	AttackBomber:
+	Health:
+		HP: 400
+	Armor:
+		Types: light
+	RenderSprites:
+	WithVoxelBody:
+	WithVoxelWalkerBody:
+		TickRate: 1
+	SpawnActorOnDeath:
+		Actor: pdplanehusk
+	HitShape:
+
+spyphusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Spy Plane
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 225
+	RenderVoxels:
+		Image: spyp
  
 hornet:
 	Inherits: ^Plane
@@ -312,7 +349,7 @@ hornethusk:
 	RenderVoxels:
 		Image: hornet
 		NormalsPalette: ts-normals
- 
+
 asw:
 	Inherits: ^Plane
 	Valued:
