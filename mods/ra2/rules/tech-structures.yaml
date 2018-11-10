@@ -28,31 +28,6 @@ caoild:
 	GivesCashOnCapture:
 		Amount: 1000
 
-capowr:
-	Inherits: ^TechBuilding
-	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 96, 104, -2, -26
-	Building:
-		Footprint: xx xx
-		Dimensions: 2, 2
-	BaseProvider:
-		Range: 6c0
-	EngineerRepairable:
-	Tooltip:
-		Name: Tech Power Plant
-	Health:
-		HP: 800
-	RevealsShroud:
-		Range: 4c0
-	Armor:
-		Type: Concrete
-	WithIdleOverlay@flag:
-		Sequence: flag
-		Offset: 1000,0,0
-	Power:
-		Amount: 200
-
 caairp:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x2Shape
@@ -116,9 +91,8 @@ cahosp:
 		Range: 6c0
 	Armor:
 		Type: Concrete
-	RepairsUnits:
-		StartRepairingNotification:
-	RallyPoint:
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: cahosp
 	WithIdleOverlay:
 	WithIdleOverlay@flag:
 		Sequence: flag
@@ -176,3 +150,47 @@ caoutp:
 	Armament:
 		Weapon: RedEye2
 		LocalOffset: 500,0,900
+
+# Yuri's Revenge Tech Structures
+capowr:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 96, 104, -2, -26
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	BaseProvider:
+		Range: 6c0
+	EngineerRepairable:
+	Tooltip:
+		Name: Tech Power Plant
+	Health:
+		HP: 800
+	RevealsShroud:
+		Range: 4c0
+	Armor:
+		Type: Concrete
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 1000,0,0
+	Power:
+		Amount: 200
+
+camach:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x3Shape
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Tooltip:
+		Name: Tech Machine Shop
+	Health:
+		HP: 800
+	RevealsShroud:
+		Range: 6c0
+	Armor:
+		Type: Concrete
+	ProvidesPrerequisite@buildingname:
+	WithIdleOverlay@flag:
+		Sequence: flag

@@ -232,6 +232,42 @@
 		ZOffset: 256
 		ValidStances: Ally, Enemy, Neutral
 
+^HospitalHealing:
+	SelfHealing@HOSPITAL:
+		Step: 20
+		Delay: 50
+		HealIfBelow: 100
+		RequiresCondition: heal
+	WithDecoration@HOSPITAL:
+		Image: tech
+		Sequence: heal
+		Palette: pips
+		ReferencePoint: Top, Right
+		RequiresCondition: heal
+		ZOffset: 256
+		ValidStances: Ally
+	GrantConditionOnPrerequisite@HOSPITAL:
+		Condition: heal
+		Prerequisites: cahosp
+
+^MachineShopRepair:
+	SelfHealing@MACHINESHOP:
+		Step: 5
+		Delay: 75
+		HealIfBelow: 100
+		RequiresCondition: repair
+	WithDecoration@MACHINESHOP:
+		Image: tech
+		Sequence: repair
+		Palette: pips
+		ReferencePoint: Top, Right
+		RequiresCondition: repair
+		ZOffset: 256
+		ValidStances: Ally
+	GrantConditionOnPrerequisite@MACHINESHOP:
+		Condition: repair
+		Prerequisites: camach
+
 ^CrateStatModifiers:
 	FirepowerMultiplier@CRATES:
 		RequiresCondition: crate-firepower
@@ -570,6 +606,7 @@
 	Inherits@3: ^GainsExperience
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
+	Inherits@6: ^HospitalHealing
 	Health:
 	OwnerLostAction:
 		Action: Kill
@@ -787,6 +824,7 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
+	Inherits@6: ^MachineShopRepair
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
@@ -907,6 +945,7 @@
 ^Aircraft:
 	Inherits@1: ^NeutralAircraft
 	Inherits@2: ^GainsExperience
+	Inherits@3: ^MachineShopRepair
 	WithTextControlGroupDecoration:
 
 ^Plane:
@@ -996,6 +1035,7 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
+	Inherits@6: ^MachineShopRepair
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
