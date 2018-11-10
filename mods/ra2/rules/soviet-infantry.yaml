@@ -22,6 +22,7 @@ e2:
 		HP: 125
 	Passenger:
 		PipType: Green
+		CargoType: Garrisoner
 	RevealsShroud:
 		Range: 5c0
 	AttackFrontal:
@@ -30,6 +31,14 @@ e2:
 		Weapon: M1Carbine
 		RequiresCondition: !rank-elite
 	Armament@elite:
+		Weapon: M1CarbineE
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: M1Carbine
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
 		Weapon: M1CarbineE
 		RequiresCondition: rank-elite
 	WithInfantryBody:

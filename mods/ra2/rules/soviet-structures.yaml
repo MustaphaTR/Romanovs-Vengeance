@@ -675,7 +675,7 @@ napsis:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Support
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: natech, ~structures.soviets
 		Description: Detects enemy units and strikepoints
 	Valued:
@@ -710,7 +710,7 @@ nairon:
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Support
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: natech, ~structures.soviets
 		BuildLimit: 1
 		Description: Grants invulnerability to armored units.\nFries fleshy units.
@@ -755,7 +755,7 @@ namisl:
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Support
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: natech, ~structures.soviets
 		BuildLimit: 1
 		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb\nMaximum 1 can be built.
@@ -818,7 +818,7 @@ naflak:
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Buildable:
 		Queue: Support
-		BuildPaletteOrder: 30
+		BuildPaletteOrder: 40
 		Prerequisites: barracks, ~structures.soviets
 		Description: Automated anti-aircraft defense.
 	Valued:
@@ -866,7 +866,7 @@ tesla:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Support
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 50
 		Prerequisites: naradr, ~structures.soviets
 		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
@@ -922,7 +922,7 @@ nalasr:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Support
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 30
 		Prerequisites: barracks, ~structures.soviets
 		Description: Automated anti-infantry defense.
 	Valued:
@@ -958,3 +958,44 @@ nalasr:
 	AutoTarget:
 	RequiresBuildableArea:
 		Adjacent: 5
+
+# Yuri's Revenge Structures
+nabnkr:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Support
+		BuildPaletteOrder: 20
+		Prerequisites: ~structures.soviets
+		Description: Static defense with fireports for 5\ngarrisoned soldiers.
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Battle Bunker
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 94, 84, 0, 0
+	Health:
+		HP: 600
+	Armor:
+		Type: Steel
+	Cargo:
+		Types: Garrisoner
+		MaxWeight: 5
+		PipCount: 5
+		LoadedCondition: loaded
+	WithSpriteBody:
+		RequiresCondition: !loaded
+	WithSpriteBody@Garrisoned:
+		Name: Garrisoned
+		Sequence: garrisoned
+		RequiresCondition: loaded
+	AttackGarrisoned:
+		Armaments: garrisoned
+		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+	RevealsShroud:
+		Range: 6c0

@@ -127,6 +127,7 @@ e1:
 		RequiresCondition: !chronodisable && undeployed
 	Passenger:
 		PipType: Green
+		CargoType: Garrisoner
 	RevealsShroud:
 		Range: 5c0
 	Armament@primary:
@@ -143,6 +144,14 @@ e1:
 		Weapon: paraE
 		Name: deployed
 		RequiresCondition: rank-elite && deployed
+	Armament@garrisoned:
+		Weapon: para
+		Name: garrisoned
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Weapon: paraE
+		Name: garrisoned
+		RequiresCondition: rank-elite
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed
