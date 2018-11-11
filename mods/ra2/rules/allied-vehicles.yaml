@@ -219,6 +219,7 @@ fv:
 			e1: ifv-mg
 			e2: ifv-mg
 			engineer: ifv-repair
+			ggi: ifv-rocket
 			flakt: ifv-flak
 			shk: ifv-tesla
 			ivan: ifv-demo
@@ -232,17 +233,21 @@ fv:
 	Armament@primary:
 		Weapon: HoverMissile
 		LocalOffset: 128,-128,1024, 128,128,1024
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
 	Armament@elite:
 		Weapon: HoverMissileE
 		LocalOffset: 128,-128,1024, 128,128,1024
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
 	Armament@mg:
 		Weapon: CRM60
 		LocalOffset: 188,32,600
 		RequiresCondition: ifv-mg
 		MuzzleSequence: mgun_muz
 		MuzzleSplitFacings: 8
+	Armament@rocket:
+		Weapon: CRMissileLauncher
+		LocalOffset: 128,-128,1024, 128,128,1024
+		RequiresCondition: ifv-rocket
 	Armament@repair:
 		Weapon: RepairBullet
 		LocalOffset: 164,0,864
@@ -276,7 +281,7 @@ fv:
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono
 	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: stance-attackanything || assault-move && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono
+		RequiresCondition: (stance-attackanything || assault-move) && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono
 	AutoTargetPriority@DEFAULT_GROUND:
 		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-flak || ifv-tesla || ifv-chrono)
 		ValidTargets: Infantry, Vehicle, Water, Underwater, Defense
@@ -310,7 +315,7 @@ fv:
 		RequiresCondition: ifv-demo
 	WithVoxelTurret@default:
 		Sequence: turret-missile
-		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
+		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
 	WithVoxelTurret@mg:
 		Sequence: turret-mg
 		RequiresCondition: ifv-mg || ifv-sniper || ifv-flak || ifv-hero
@@ -319,7 +324,7 @@ fv:
 		RequiresCondition: ifv-repair
 	WithVoxelTurret@hitech:
 		Sequence: turret-hitech
-		RequiresCondition: ifv-tesla || ifv-deso || ifv-demo || ifv-chrono
+		RequiresCondition: ifv-rocket || ifv-tesla || ifv-deso || ifv-demo || ifv-chrono
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
 	ProducibleWithLevel:
