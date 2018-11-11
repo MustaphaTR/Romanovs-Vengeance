@@ -88,7 +88,7 @@ harv:
 	RevealsShroud:
 		Range: 4c0
 	Targetable:
-		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, ImmuneToRadiation
+		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, DroneInfection, ImmuneToRadiation
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect
@@ -110,7 +110,7 @@ dron:
 		Queue: Vehicle
 		BuildPaletteOrder: 60
 		Prerequisites: ~naweap
-		Description: \n  Immune to Radiation.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n  Immune to Radiation.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Mobile:
 		Speed: 150
 		TurnSpeed: 15
@@ -132,6 +132,11 @@ dron:
 		Weapon: DroneJump
 	AttackLeap:
 		Voice: Attack
+	Infector:
+		Types: DroneInfection
+		Damage: 50
+		DamageInterval: 60
+		SuppressionThreshold: 5
 	AttackMove:
 		Voice: Move
 	AutoTarget:

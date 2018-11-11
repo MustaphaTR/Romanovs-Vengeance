@@ -39,6 +39,12 @@ namespace OpenRA.Mods.RA2.Activities
 			if (info.WarpInSound != null)
 				Game.Sound.Play(SoundType.World, info.WarpInSound, self.CenterPosition);
 
+            var infectable = self.TraitOrDefault<Infectable>();
+            if (infectable != null)
+            {
+                infectable.RemoveInfector(self, false);
+            }
+
 			self.Trait<IPositionable>().SetPosition(self, destination);
 			self.Generation++;
 
