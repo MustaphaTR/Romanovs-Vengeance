@@ -173,6 +173,7 @@ RadBeamWeapon:
 	Range: 6c0
 	ReloadDelay: 100
 	Report: idesat1a.wav
+	InvalidTargets: Structure, Wall, ImmuneToRadiation
 	Projectile: LaserZap
 		Width: 20
 		Duration: 7
@@ -190,8 +191,9 @@ RadBeamWeapon:
 			Wood: 0
 			Steel: 0
 			Concrete: 0
-			Drone: 0 # This is actually 100, but drones are immune to Radiation
+			Drone: 100
 			Rocket: 100
+		InvalidTargets: Structure, Wall, ImmuneToRadiation
 		DamageTypes: RadiationDeath
 
 RadBeamWeaponE:

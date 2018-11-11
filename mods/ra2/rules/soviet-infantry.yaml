@@ -219,7 +219,7 @@ deso:
 		BuildAtProductionType: Infantry
 		BuildPaletteOrder: 170
 		Prerequisites: natech, ~infantry.iraq
-		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
+		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\nImmune to Radiation.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	Valued:
 		Cost: 800
 	DeliversCash:
@@ -249,6 +249,8 @@ deso:
 		Voice: Attack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, ImmuneToRadiation
 	Voiced:
 		VoiceSet: DesolatorVoice
 	ProducibleWithLevel:

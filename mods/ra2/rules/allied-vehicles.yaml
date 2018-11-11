@@ -46,7 +46,7 @@ cmin:
 		Queue: Vehicle
 		BuildPaletteOrder: 10
 		Prerequisites: ~gaweap, refinery
-		Description: Gathers Ore.\n  Unarmed\nSpecial ability: Can teleport to own refineries
+		Description: Gathers Ore.\n  Unarmed.\n  Immune to Radiation.\nSpecial ability: Can teleport to own refineries
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -76,6 +76,8 @@ cmin:
 		Locomotor: tracked
 	RevealsShroud:
 		Range: 4c0
+	Targetable:
+		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, ImmuneToRadiation
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect

@@ -47,7 +47,7 @@ harv:
 		Queue: Vehicle
 		BuildPaletteOrder: 10
 		Prerequisites: ~naweap, refinery
-		Description: Gathers Ore.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: Gathers Ore.\n  Immune to Radiation.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -87,6 +87,8 @@ harv:
 		Locomotor: tracked
 	RevealsShroud:
 		Range: 4c0
+	Targetable:
+		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, ImmuneToRadiation
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect
@@ -108,7 +110,7 @@ dron:
 		Queue: Vehicle
 		BuildPaletteOrder: 60
 		Prerequisites: ~naweap
-		Description: \n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: \n  Immune to Radiation.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Mobile:
 		Speed: 150
 		TurnSpeed: 15
@@ -136,6 +138,8 @@ dron:
 		InitialStance: AttackAnything
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Infantry
+	Targetable:
+		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, ImmuneToRadiation
 	Voiced:
 		VoiceSet: TerrorDroneVoice
 	HitShape:
