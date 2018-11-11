@@ -127,14 +127,14 @@ namespace OpenRA.Mods.RA2.Traits
                 }
 
                 if (e.Damage.DamageTypes.Overlaps(info.ClearerDamageTypes))
-                    RemoveInfector(self, true);
+                    RemoveInfector(self, true, e);
             }
         }
 
         void INotifyKilled.Killed(Actor self, AttackInfo e)
         {
             if (Infector != null)
-                RemoveInfector(self, killInfector);
+                RemoveInfector(self, killInfector, e);
         }
 
         void ITick.Tick(Actor self)
