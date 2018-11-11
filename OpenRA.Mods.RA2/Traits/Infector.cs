@@ -95,7 +95,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public string VoicePhraseForOrder(Actor self, Order order)
 		{
-			return order.OrderString == "C4" ? Info.Voice : null;
+			return order.OrderString == "Infect" ? Info.Voice : null;
 		}
 
 		class InfectionOrderTargeter : UnitOrderTargeter
