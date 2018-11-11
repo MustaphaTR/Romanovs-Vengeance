@@ -103,10 +103,13 @@ AWPE:
 
 20mm:
 	Inherits: ^MG
+	ReloadDelay: 30
 	Range: 5c0
 	MinRange: 0c001
 	Report: irocatta.wav
 	ValidTargets: Ground, Water, Air
+	Projectile: Bullet
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		ValidTargets: Ground, Water, Air
