@@ -1,8 +1,32 @@
 DogJaw:
 	ValidTargets: Infantry
+	ReloadDelay: 25
+	Range: 1c0
+	TargetActorCenter: true
+	Report: idogatta.wav, idogatca.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 1000
+		ValidTargets: Infantry
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 0
+			Medium: 0
+			Heavy: 0
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 0
+			Rocket: 0
+		DamageTypes: BulletDeath
+
+DroneJump:
+	ValidTargets: Infantry
 	ReloadDelay: 10
 	Range: 3c0
-	Report: idogatta.wav, idogatca.wav
+	Report: vteratta.wav
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
 		Damage: 100
@@ -20,10 +44,6 @@ DogJaw:
 			Drone: 0
 			Rocket: 0
 		DamageTypes: BulletDeath
-
-DroneJump:
-	Inherits: DogJaw
-	Report: vteratta.wav
 
 AlligatorBite:
 	ReloadDelay: 30
