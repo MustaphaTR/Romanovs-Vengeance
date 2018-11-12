@@ -33,6 +33,14 @@ e2:
 	Armament@elite:
 		Weapon: M1CarbineE
 		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: M1Carbine
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: M1CarbineE
+		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: M1Carbine
@@ -94,6 +102,26 @@ flakt:
 		Weapon: FlakGuyAAGunE
 		LocalOffset: 256,0,1024
 		RequiresCondition: rank-elite
+	Armament@primary-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyGun
+		LocalOffset: 256,0,1024
+		RequiresCondition: !rank-elite
+	Armament@secondary-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyAAGun
+		LocalOffset: 256,0,1024 
+		RequiresCondition: !rank-elite
+	Armament@primary-elite-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyGunE
+		LocalOffset: 256,0,1024
+		RequiresCondition: rank-elite
+	Armament@secondary-elite-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyAAGunE
+		LocalOffset: 256,0,1024
+		RequiresCondition: rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Voiced:
@@ -139,6 +167,14 @@ shk:
 		Weapon: ElectricBolt
 		RequiresCondition: !rank-elite
 	Armament@elite:
+		Weapon: ElectricBoltE
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: ElectricBolt
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
 		Weapon: ElectricBoltE
 		RequiresCondition: rank-elite
 	Armament@charge:
@@ -243,6 +279,14 @@ deso:
 		Weapon: RadBeamWeapon
 		RequiresCondition: !rank-elite
 	Armament@elite:
+		Weapon: RadBeamWeaponE
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: RadBeamWeapon
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
 		Weapon: RadBeamWeaponE
 		RequiresCondition: rank-elite
 	AttackFrontal:
@@ -401,6 +445,8 @@ yuri:
 	WithMindControlArc:
 		UsePlayerColor: true
 		Offset: 0,0,960
+	AttackMove:
+		Voice: Move
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: MindControl

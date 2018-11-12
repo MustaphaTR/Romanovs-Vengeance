@@ -20,7 +20,8 @@ amcv:
 	Mobile:
 		Speed: 60
 		TurnSpeed: 5
-		Locomotor: heavytracked
+		Locomotor: omnicrusher
+	-Crushable:
 	RevealsShroud:
 		Range: 4c0
 	MustBeDestroyed:
@@ -227,6 +228,7 @@ fv:
 			deso: ifv-deso
 			tany: ifv-hero
 			ghost: ifv-hero
+			ccomand: ifv-hero
 			snipe: ifv-sniper
 			spy: ifv-mg
 			cleg: ifv-chrono
@@ -425,6 +427,76 @@ mgtk:
 		EmptyWeapon: UnitExplodeSmall
 	RenderSprites:
 	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+
+# Yuri's Revenge Vehicles:
+bfrt:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 100
+		Prerequisites: gatech, ~gaweap
+		Description: Large vehicle with 5 fireports for infantry in to fire.\nCan crush enemy vehicles.
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Battle Fortress
+	Selectable:
+		Bounds: 72, 64, 0, -8
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 5
+		Speed: 60
+		Locomotor: omnicrusher
+		RequiresCondition: !notmobile && !chronodisable
+	-Crushable:
+	Passenger:
+		Weight: 6
+	RevealsShroud:
+		Range: 6c0
+	Armament:
+		Weapon: 20mmRapid
+	AttackFrontal:
+		Voice: Attack
+	Cargo:
+		Types: Infantry, Garrisoner
+		MaxWeight: 5
+		PipCount: 5
+		LoadingCondition: notmobile
+		PassengerConditions:
+			e1: loaded
+			e2: loaded
+			ggi: loaded
+			flakt: loaded
+			shk: loaded
+			deso: loaded
+			tany: loaded
+			ghost: loaded
+			ccomand: loaded
+			snipe: loaded
+			cleg: loaded
+	AttackGarrisoned:
+		Armaments: opentopped
+		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+		RequiresCondition: loaded
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	RenderSprites:
+	RenderVoxels:
+		Scale: 12
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: AlliedVehicleVoice

@@ -147,6 +147,14 @@ e1:
 		Weapon: paraE
 		Name: deployed
 		RequiresCondition: rank-elite && deployed
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: M60
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: M60E
+		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Weapon: para
 		Name: garrisoned
@@ -254,6 +262,16 @@ ggi:
 		Name: deployed
 		LocalOffset: 480,64,992
 		RequiresCondition: rank-elite && deployed
+	Armament@opentopped:
+		Weapon: MissileLauncher
+		Name: opentopped
+		LocalOffset: 480,63,992
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Weapon: MissileLauncherE
+		Name: opentopped
+		LocalOffset: 480,64,992
+		RequiresCondition: rank-elite
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed
@@ -334,6 +352,9 @@ snipe:
 	Armor:
 		Type: None
 	Armament@primary:
+		Weapon: awp
+	Armament@opentopped:
+		Name: opentopped
 		Weapon: awp
 	AttackFrontal:
 		Voice: Attack
@@ -434,6 +455,14 @@ ghost:
 	Armament@elite:
 		Weapon: MP5E
 		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: MP5
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: MP5E
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -511,6 +540,8 @@ ptroop:
 		MuzzleSequence: muzzle
 		LocalOffset: 0,0,960
 	-Armament@elite:
+	-Armament@opentopped:
+	-Armament@elite-opentopped:
 	Demolition:
 		Voice: Attack
 	WithMuzzleOverlay:
@@ -571,6 +602,14 @@ tany:
 		Weapon: DoublePistols
 		RequiresCondition: !rank-elite
 	Armament@elite:
+		Weapon: DoublePistolsE
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: DoublePistols
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
 		Weapon: DoublePistolsE
 		RequiresCondition: rank-elite
 	AttackFrontal:
@@ -722,6 +761,9 @@ cleg:
 	Voiced:
 		VoiceSet: ChronoLegionnaireVoice
 	Armament@Temporal:
+		Weapon: NeutronRifle
+	Armament@opentopped:
+		Name: opentopped
 		Weapon: NeutronRifle
 	AttackFrontal:
 		Voice: Attack
