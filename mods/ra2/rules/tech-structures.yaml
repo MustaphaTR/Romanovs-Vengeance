@@ -194,3 +194,62 @@ camach:
 	ProvidesPrerequisite@buildingname:
 	WithIdleOverlay@flag:
 		Sequence: flag
+
+caslab:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x3Shape
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Tooltip:
+		Name: Tech Secret Lab
+	Health:
+		HP: 1000
+	RevealsShroud:
+		Range: 6c0
+	SupportPowerChargeBar:
+	ParatroopersPower@paratroopers:
+		OrderName: AmericanParatroopers
+		Prerequisites: powers.america, !structures.america, radar
+		Icon: airborne
+		ChargeInterval: 9000
+		Description: American Paratroopers
+		LongDesc: A Cargo Plane drops eight GIs\nanywhere on the map.
+		DropItems: e1,e1,e1,e1,e1,e1,e1,e1
+		QuantizedFacings: 8
+		UnitType: pdplane
+		CameraActor: camera
+		ArrowSequence: arrow
+	GrantRandomCondition:
+		Conditions: america, korea, france, germany, england, iraq, libya, cuba, russia
+	ProvidesPrerequisite@America:
+		Prerequisite: powers.america
+		RequiresCondition: america
+	ProvidesPrerequisite@Korea:
+		Prerequisite: aircraft.korea
+		RequiresCondition: korea
+	ProvidesPrerequisite@France:
+		Prerequisite: structures.france
+		RequiresCondition: france
+	ProvidesPrerequisite@Germany:
+		Prerequisite: vehicles.germany
+		RequiresCondition: germany
+	ProvidesPrerequisite@England:
+		Prerequisite: infantry.england
+		RequiresCondition: england
+	ProvidesPrerequisite@Iraq:
+		Prerequisite: infantry.iraq
+		RequiresCondition: iraq
+	ProvidesPrerequisite@Libya:
+		Prerequisite: vehicles.libya
+		RequiresCondition: libya
+	ProvidesPrerequisite@Cuba:
+		Prerequisite: infantry.cuba
+		RequiresCondition: cuba
+	ProvidesPrerequisite@Russia:
+		Prerequisite: vehicles.russia
+		RequiresCondition: russia
+	Armor:
+		Type: Steel
+	WithIdleOverlay@flag:
+		Sequence: flag
