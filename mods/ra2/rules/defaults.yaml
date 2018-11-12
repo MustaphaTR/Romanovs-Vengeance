@@ -296,6 +296,13 @@
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
 
+^KilledByIronCurtain:
+	KillsSelf:
+		DamageTypes: FlameDeath
+		RequiresCondition: invulnerability
+	ExternalCondition@INVULNERABILITY:
+		Condition: invulnerability
+
 ^ChronoDisable:
 	TimedConditionBar@ChronoDisable:
 		Condition: chronodisable
@@ -609,6 +616,7 @@
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^HospitalHealing
+	Inherits@7: ^KilledByIronCurtain
 	Health:
 	OwnerLostAction:
 		Action: Kill
