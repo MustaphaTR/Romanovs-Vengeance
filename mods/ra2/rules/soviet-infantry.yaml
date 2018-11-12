@@ -334,6 +334,7 @@ civan:
 
 yuri:
 	Inherits: ^Infantry
+	Inherits@2: ^Parachutable
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
@@ -380,10 +381,10 @@ yuri:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2
-		RequiresCondition: !deployed && !deploying
+		RequiresCondition: !deployed && !deploying && !parachute
 	WithSpriteBody@DEPLOYED:
 		Sequence: deployed
-		RequiresCondition: deployed || deploying
+		RequiresCondition: (deployed || deploying) && !parachute
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	AttackFrontal:

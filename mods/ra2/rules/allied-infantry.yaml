@@ -168,7 +168,7 @@ e1:
 		RequiresCondition: !editorhack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: undeployed
+		RequiresCondition: undeployed && !parachute
 	WithMakeAnimation:
 		Sequence: deploy
 		BodyNames: dot
@@ -178,9 +178,9 @@ e1:
 		InitialFacing: 92
 	WithSpriteTurret@idle:
 		Sequence: deployed
-		RequiresCondition: deployed && !animate-turret
+		RequiresCondition: deployed && !animate-turret && !parachute
 	WithSpriteTurret@animated:
-		RequiresCondition: deployed && animate-turret
+		RequiresCondition: deployed && animate-turret && !parachute
 		Sequence: shoot-deployed
 	WithSpriteBody:
 		Sequence: dot
@@ -267,7 +267,7 @@ ggi:
 		RequiresCondition: !editorhack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: undeployed
+		RequiresCondition: undeployed && !parachute
 	WithMakeAnimation:
 		Sequence: deploy
 		BodyNames: dot
@@ -277,9 +277,9 @@ ggi:
 		InitialFacing: 92
 	WithSpriteTurret@idle:
 		Sequence: deployed
-		RequiresCondition: deployed && !animate-turret
+		RequiresCondition: deployed && !animate-turret && !parachute
 	WithSpriteTurret@animated:
-		RequiresCondition: deployed && animate-turret
+		RequiresCondition: deployed && animate-turret && !parachute
 		Sequence: shoot-deployed
 	WithSpriteBody:
 		Sequence: dot
