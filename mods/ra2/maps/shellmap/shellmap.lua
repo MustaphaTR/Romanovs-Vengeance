@@ -10,6 +10,9 @@
 TankGIs = { TankGI1, TankGI2, TankGI3 }
 VetGIs = { VetGI1, VetGI2 }
 
+DoggoPatrol1 = { Doggo1WP1.Location, Doggo1WP2.Location }
+DoggoPatrol2 = { Doggo2WP1.Location, Doggo2WP2.Location }
+
 DeployGIs = function()
 	local gis = allies.GetActorsByType("e1")
 	Utils.Do(gis, function(gi)
@@ -25,6 +28,24 @@ GiveVeterancy = function()
 	General.GrantCondition("rank-veteran")
 	General.GrantCondition("rank-veteran")
 	General.GrantCondition("rank-veteran")
+end
+
+PatrolA = function(units, waypoints, delay)
+	Utils.Do(units, function(unit)
+		unit.Move(waypoints[1])
+		Trigger.AfterDelay(delay, function()
+			PatrolB(units, waypoints, delay)
+		end)
+	end)
+end
+
+PatrolB = function(units, waypoints, delay)
+	Utils.Do(units, function(unit)
+		unit.Move(waypoints[2])
+		Trigger.AfterDelay(delay, function()
+			PatrolA(units, waypoints, delay)
+		end)
+	end)
 end
 
 ticks = 1250
@@ -58,4 +79,9 @@ WorldLoaded = function()
 	Trigger.AfterDelay(60, function()
 		Sniper3.Attack(RifleRange3)
 	end)
+
+	local dogs1 = Reinforcements.Reinforce(allies, { "dog", "dog" }, { DoggoPatrol1[1] })
+	local dogs2 = Reinforcements.Reinforce(allies, { "dog", "dog" }, { DoggoPatrol2[1] })
+	PatrolB(dogs1, DoggoPatrol1, DateTime.Seconds(7))
+	PatrolB(dogs2, DoggoPatrol2, DateTime.Seconds(7))
 end
