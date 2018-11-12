@@ -7,7 +7,8 @@
    information, see COPYING.
 ]]
 
-TankGIs = { TankGI1, TankGI2, TankGI3 }
+TankGIs = { TankGI1, TankGI2, TankGI3, TankGGI1 }
+WallGGIs = { WallGGI1, WallGGI2, WallGGI3, WallGGI4, WallGGI5 }
 VetGIs = { VetGI1, VetGI2 }
 
 DoggoPatrol1 = { Doggo1WP1.Location, Doggo1WP2.Location }
@@ -15,8 +16,12 @@ DoggoPatrol2 = { Doggo2WP1.Location, Doggo2WP2.Location }
 
 DeployGIs = function()
 	local gis = allies.GetActorsByType("e1")
+	local ggis = allies.GetActorsByType("ggi")
 	Utils.Do(gis, function(gi)
 		gi.GrantCondition("deployed")
+	end)
+	Utils.Do(ggis, function(ggi)
+		ggi.GrantCondition("deployed")
 	end)
 end
 
