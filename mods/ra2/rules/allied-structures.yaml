@@ -179,7 +179,7 @@ garefn:
 	Selectable:
 		Bounds: 176, 150, 0, -20
 	Valued:
-		Cost: 1500
+		Cost: 1400
 	Tooltip:
 		Name: Ore Refinery
 	ProvidesPrerequisite:
@@ -319,7 +319,7 @@ amradr:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
 		Icon: airborne
-		ChargeInterval: 9000
+		ChargeInterval: 6000
 		Description: American Paratroopers
 		LongDesc: A Cargo Plane drops eight GIs\nanywhere on the map.
 		DropItems: e1,e1,e1,e1,e1,e1,e1,e1
@@ -780,8 +780,8 @@ gaspysat:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support
-		BuildPaletteOrder: 80
+		Queue: Building
+		BuildPaletteOrder: 90
 		Prerequisites: gatech, ~structures.allies
 		Description: Reveals the entire battlefield.
 	Selectable:
@@ -910,7 +910,7 @@ gacsph:
 	ChronoshiftPower@chronoshift:
 		OrderName: Chronoshift
 		Icon: chrono
-		ChargeInterval: 7500
+		ChargeInterval: 6000
 		Description: Chronoshift
 		LongDesc: Teleports a group of units across\nthe map.
 		# Those sounds don't work: OpenRA/OpenRA#10540

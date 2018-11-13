@@ -50,7 +50,7 @@ harv:
 		Prerequisites: ~naweap, refinery
 		Description: Gathers Ore.\n  Immune to Radiation.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
-		Cost: 1000
+		Cost: 1100
 	Tooltip:
 		Name: War Miner
 	Selectable:
@@ -68,6 +68,12 @@ harv:
 		HP: 1000
 	Armor:
 		Type: Medium
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
 	Armament@primary:
 		Weapon: 20mmrapid
 		LocalOffset: 256,0,1024
@@ -275,6 +281,12 @@ apoc:
 		TurnSpeed: 5
 		Locomotor: omnicrusher
 	-Crushable:
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
 	Health:
 		HP: 800
 	Armor:

@@ -16,8 +16,8 @@ shad:
 		VoiceSet: NighthawkVoice
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 100
-		Prerequisites: ~gaweap
+		BuildPaletteOrder: 50
+		Prerequisites: ~gaweap, gaairc
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 1000
@@ -93,6 +93,12 @@ zep:
 		HP: 2000
 	Armor:
 		Type: Light
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
 	RevealsShroud:
 		Range: 8c0
 		Type: CenterPosition
@@ -193,6 +199,8 @@ orcahusk:
 
 beag:
 	Inherits: orca
+	Valued:
+		Cost: 1500
 	Tooltip:
 		Name: Black Eagle
 	Buildable:
