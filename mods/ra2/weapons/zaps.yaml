@@ -69,11 +69,10 @@ SonicZap:
 	Range: 6c0
 	Report: vdolatta.wav
 	ValidTargets: Water, Underwater
-	Burst: 2
 	Projectile: AreaBeam
-		Speed: 1c0
-		Duration: 10
-		DamageInterval: 5
+		Speed: 0c256
+		Duration: 5
+		DamageInterval: 1
 		Width: 0c512
 		Shape: Flat
 		ZOffset: 2047
@@ -89,7 +88,7 @@ SonicZap:
 		Versus:
 			Heavy: 80
 			Concrete: 60
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, RemovesSquid
 		ValidTargets: Water, Underwater
 	Warhead@2Dam: SpreadDamage
 		Range: 0, 32
@@ -100,7 +99,7 @@ SonicZap:
 		Versus:
 			Heavy: 80
 			Concrete: 60
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, RemovesSquid
 		ValidTargets: Water, Underwater
 
 PrismShot:

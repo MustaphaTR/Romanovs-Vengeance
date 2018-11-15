@@ -10,6 +10,7 @@
 #endregion
 
 using System.Collections.Generic;
+using System.Linq;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 using OpenRA.Primitives;
@@ -22,8 +23,11 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("If true and this actor has EjectOnDeath, no actor will be spawned.")]
 		public readonly bool PreventsEjectOnDeath = false;
 
-        [Desc("Damage types that remove the infector.")]
-        public readonly BitSet<DamageType> ClearerDamageTypes = default(BitSet<DamageType>);
+        [Desc("Damage types that removes the infector.")]
+        public readonly BitSet<DamageType> RemoveInfectorDamageTypes = default(BitSet<DamageType>);
+
+        [Desc("Damage types that kills the infector.")]
+        public readonly BitSet<DamageType> KillInfectorDamageTypes = default(BitSet<DamageType>);
 
         [GrantedConditionReference]
         [Desc("The condition to grant to self while infected by any actor.")]
@@ -98,7 +102,7 @@ namespace OpenRA.Mods.RA2.Traits
 
         public void RemoveInfector(Actor self, bool kill, AttackInfo e = null)
         {
-            if (Infector != null)
+            if (Infector != null && !Infector.IsDead)
             {
                 Infector.TraitOrDefault<IPositionable>().SetPosition(Infector, self.CenterPosition);
                 self.World.AddFrameEndTask(w =>
@@ -111,8 +115,10 @@ namespace OpenRA.Mods.RA2.Traits
                     RevokeCondition(self);
                     Infector = null;
                     InfectorTrait = null;
+                    killInfector = false;
                 });
             }
+
         }
 
         void INotifyDamage.Damaged(Actor self, AttackInfo e)
@@ -125,16 +131,24 @@ namespace OpenRA.Mods.RA2.Traits
                     if (threshold > 0 && e.Damage.Value > threshold)
                         killInfector = true;
                 }
+                else
+                {
+                    if (InfectorTrait.Info.KillState.Contains(e.DamageState))
+                    {
+                        self.World.AddFrameEndTask(w => health.Kill(self, Infector, InfectorTrait.Info.DamageTypes));
+                    }
+                }
 
-                if (e.Damage.DamageTypes.Overlaps(info.ClearerDamageTypes))
+                if (e.Damage.DamageTypes.Overlaps(info.KillInfectorDamageTypes))
                     RemoveInfector(self, true, e);
+                else if (e.Damage.DamageTypes.Overlaps(info.RemoveInfectorDamageTypes))
+                    RemoveInfector(self, false, e);
             }
         }
 
         void INotifyKilled.Killed(Actor self, AttackInfo e)
         {
-            if (Infector != null)
-                RemoveInfector(self, killInfector, e);
+            RemoveInfector(self, killInfector, e);
         }
 
         void ITick.Tick(Actor self)

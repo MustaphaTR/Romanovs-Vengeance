@@ -1,6 +1,7 @@
 sapc:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
+	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 10
@@ -20,9 +21,17 @@ sapc:
 		TurnSpeed: 5
 		Speed: 90
 		Locomotor: lcraft
-		RequiresCondition: !notmobile && !chronodisable
+		RequiresCondition: !notmobile && !chronodisable && !squid
 	RevealsShroud:
 		Range: 6c0
+	Targetable:
+		RequiresCondition: in_water
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle, Repair, DroneInfection, DetonateAttack
+		RequiresCondition: !in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	Cargo:
 		Types: Infantry, Garrisoner, Vehicle
 		MaxWeight: 12
@@ -44,6 +53,7 @@ sub:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 20
@@ -103,6 +113,7 @@ hyd:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 30
@@ -175,6 +186,12 @@ sqd:
 		Bounds: 80, 30
 	Voiced:
 		VoiceSet: GiantSquidVoice
+	Infector:
+		Types: SquidInfection
+		Damage: 15
+		DamageInterval: 20
+		KillState: Critical
+		Voice: Attack
 	Armament:
 		Weapon: SquidPunch
 	AttackFrontal:
@@ -217,6 +234,7 @@ sqd:
 dred:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
+	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 60

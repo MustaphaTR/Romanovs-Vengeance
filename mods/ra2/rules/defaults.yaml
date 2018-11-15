@@ -326,6 +326,20 @@
 		Palette: effect
 		RequiresCondition: controlled
 
+^SquidGrabbable:
+	WithFacingSpriteBody:
+		Sequence: squid
+		BodyName: squid
+		RequiresCondition: squid
+	Mobile:
+		RequiresCondition: !chronodisable && !squid
+	Infectable:
+		RemoveInfectorDamageTypes: RemovesSquid
+		InfectedByConditions:
+			sqd: squid
+	Targetable@SQUID:
+		TargetTypes: SquidInfection
+
 ^AutoTargetGround:
 	AutoTarget:
 		AttackAnythingCondition: stance-attackanything
@@ -864,7 +878,7 @@
 	Targetable:
 		TargetTypes: Ground, Vehicle, Repair, DroneInfection, DetonateAttack
 	Infectable:
-		ClearerDamageTypes: RemovesDrone
+		KillInfectorDamageTypes: KillsDrone
 	Repairable:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp

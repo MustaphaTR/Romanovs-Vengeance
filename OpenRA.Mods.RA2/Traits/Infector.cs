@@ -38,6 +38,9 @@ namespace OpenRA.Mods.RA2.Traits
             "Use -1 to never kill the actor.")]
         public readonly int SuppressionThreshold = -1;
 
+        [Desc("If the infected actor enters this damage state, kill the actor.")]
+        public readonly DamageState[] KillState = { };
+
         [Desc("Damage types for the infection damage.")]
         public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
 
