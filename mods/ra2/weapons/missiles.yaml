@@ -2,8 +2,27 @@ RedEye2:
 	Inherits: ^AAMissile
 	Projectile: Missile
 		TrailImage: smokey2
-		LockOnProbability: 80
+		LockOnProbability: 100
 		Speed: 448
+	ReloadDelay: 40
+	Range: 12c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c307
+		Falloff: 100, 0
+		Damage: 80
+		ValidTargets: Air
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 60
+			Heavy: 100
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 100
 
 MammothTusk:
 	Inherits: ^AAMissile
