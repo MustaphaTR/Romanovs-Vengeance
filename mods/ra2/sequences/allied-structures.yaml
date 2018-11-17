@@ -706,3 +706,34 @@ atesla:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN
 			DESERT: DESERT
+
+# Yuri's Revenge Structures
+garobo:
+	Defaults:
+		Offset: 0, -30
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			DESERT: GENERIC
+	idle: ggrobo
+		ShadowStart: 3
+		Tick: 180
+	damaged-idle: ggrobo
+		Start: 1
+		ShadowStart: 4
+		Tick: 180
+	idle-dish: ggrobo_a
+		Length: 20
+		Tick: 180
+	damaged-idle-dish: ggrobo_a
+		Start: 20
+		Length: 20
+		Tick: 180
+	make: gtrobomk
+		Length: 20
+		ShadowStart: 20
+		Tick: 90
+	icon: rbccicon
+		Offset: 0,0
+		UseTilesetCode: false

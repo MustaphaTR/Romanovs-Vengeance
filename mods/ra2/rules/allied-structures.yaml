@@ -1012,3 +1012,42 @@ repairpad:
 	Interactable:
 	Tooltip:
 		Name: Service Depot
+
+# Yuri's Revenge Structures
+garobo:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 60
+		Prerequisites: gaweap, ~structures.allies
+		Description: Allows production of Robot Tanks.\nRequired for Robot Tanks to function.
+	Selectable:
+		Bounds: 96, 98, -4, -30
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Robot Control Center
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 600
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@powered:
+		Prerequisite: powered_garobo
+		RequiresCondition: !lowpower
+	WithIdleOverlay@dish:
+		Sequence: idle-dish
+		PauseOnCondition: lowpower
+	Power:
+		Amount: -100
+	ProvidesRadar:
+		RequiresCondition: !lowpower
+	GrantConditionOnPowerState@LOWPOWER:
+		Condition: lowpower
+		ValidPowerStates: Low, Critical

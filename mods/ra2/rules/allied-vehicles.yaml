@@ -513,3 +513,56 @@ bfrt:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+
+robo:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Robot Tank
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 40
+		Prerequisites: ~gaweap, garobo
+		Description: Remote controlled vehicle.\nCan move over water.\nCannot be mind controlled.\nRequires a working Robot Control Center to operate.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
+	Mobile:
+		Speed: 150
+		TurnSpeed: 5
+		Locomotor: lcraft
+		RequiresCondition: !chronodisable && powered
+	Health:
+		HP: 180
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 5
+	Armament:
+		Weapon: robogun
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 640,0,512
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: !powered
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 52, 52, 0, -6
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	WithColoredOverlay:
+		Palette: disabled
+		RequiresCondition: !powered
+	GrantConditionOnPrerequisite:
+		Condition: powered
+		Prerequisites: powered_garobo
+	Voiced:
+		VoiceSet: RobotTankVoice
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	DeathSounds:
+	HitShape:
