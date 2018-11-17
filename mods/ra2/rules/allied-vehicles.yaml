@@ -557,9 +557,19 @@ robo:
 	WithColoredOverlay:
 		Palette: disabled
 		RequiresCondition: !powered
+	KillsSelf@LowPowerOnWater:
+		RequiresCondition: !powered && in_water
 	GrantConditionOnPrerequisite:
 		Condition: powered
 		Prerequisites: powered_garobo
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@WATER:
+		TargetTypes: Ground, Water, Vehicle, Repair, DetonateAttack
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	Voiced:
 		VoiceSet: RobotTankVoice
 	ProducibleWithLevel:
