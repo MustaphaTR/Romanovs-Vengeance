@@ -799,7 +799,11 @@ gaspysat:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 25c0
+		RequiresCondition: !lowpower
+	RevealsShroud@LowPower:
 		Range: 5c0
+		RequiresCondition: lowpower
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: lowpower

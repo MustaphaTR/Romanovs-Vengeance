@@ -694,10 +694,15 @@ napsis:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 10c0
+		Range: 15c0
+		RequiresCondition: !lowpower
+	RevealsShroud:
+		Range: 5c0
+		RequiresCondition: lowpower
 	RenderDetectionCircle:
 	DetectCloaked:
-		Range: 6c0
+		CloakTypes: Cloak, Underwater
+		Range: 25c0
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: lowpower
