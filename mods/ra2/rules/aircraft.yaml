@@ -40,7 +40,7 @@ shad:
 		AltitudeVelocity: 120
 		CruisingCondition: cruising
 	RenderSprites:
-	WithVoxelWalkerBody:
+	WithVoxelHelicopterBody:
 		TickRate: 1
 	Hovers@CRUISING:
 		RequiresCondition: cruising
@@ -479,8 +479,11 @@ schp:
 		AllowedTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		CanDeployOnRamps: true
 	RenderSprites:
-	WithVoxelWalkerBody:
+	WithVoxelHelicopterBody:
 		TickRate: 1
+		ShowShadow: false
+		RequiresCondition: airborne || !deployed
+	WithShadow:
 		RequiresCondition: airborne || !deployed
 	WithVoxelBody:
 		Sequence: deployed
