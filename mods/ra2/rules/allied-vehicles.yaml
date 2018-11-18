@@ -87,6 +87,7 @@ cmin:
 		Range: 4c0
 	Targetable:
 		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, DroneInfection, ImmuneToRadiation
+	-DamagedByTintedCells:
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect
@@ -569,10 +570,12 @@ robo:
 		Condition: powered
 		Prerequisites: powered_garobo
 	Targetable:
+		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, DroneInfection, ImmuneToRadiation
 		RequiresCondition: !in_water
 	Targetable@WATER:
-		TargetTypes: Ground, Water, Vehicle, Repair, DetonateAttack
+		TargetTypes: Ground, Water, Vehicle, Repair, DetonateAttack, ImmuneToRadiation
 		RequiresCondition: in_water
+	-DamagedByTintedCells:
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water
 		Condition: in_water

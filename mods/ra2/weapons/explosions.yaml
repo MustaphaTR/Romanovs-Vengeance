@@ -167,6 +167,10 @@ NukePayload:
 		Explosions: nuke_explosion
 		ImpactSounds: snukexpl.wav
 		ValidTargets: Ground, Water, Air
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 10c0
+		Falloff: 100, 100
+		Level: 500
 
 atomic:
 	Inherits: NukePayload
@@ -190,7 +194,7 @@ demobomb:
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 2c0
 		Damage: 1200 # 300
-		Falloff: 100, 70, 40,10, 0
+		Falloff: 100, 70, 40, 10, 0
 		Versus:
 			Light: 100
 			Medium: 50
@@ -203,6 +207,9 @@ demobomb:
 	Warhead@3Eff_impact: CreateEffect
 		Explosions: demotruck_explosion
 		ImpactSounds: vdemdiea.wav
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 8c0
+		Level: 100
 
 Demolish:
 	Warhead@1Dam: SpreadDamage

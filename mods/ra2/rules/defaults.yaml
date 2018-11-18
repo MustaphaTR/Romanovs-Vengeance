@@ -286,6 +286,12 @@
 	ExternalCondition@CRATE-SPEED:
 		Condition: crate-speed
 
+^DamagedByRadiation:
+	DamagedByTintedCells:
+		Damage: 1
+		DamageLevel: 5
+		DamageTypes: RadiationDeath
+
 ^IronCurtainable:
 	WithColoredOverlay@ironcurtain:
 		RequiresCondition: invulnerability
@@ -637,6 +643,7 @@
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^HospitalHealing
 	Inherits@7: ^KilledByIronCurtain
+	Inherits@8: ^DamagedByRadiation
 	Health:
 	OwnerLostAction:
 		Action: Kill
@@ -869,6 +876,7 @@
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^MachineShopRepair
+	Inherits@7: ^DamagedByRadiation
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
@@ -1085,6 +1093,7 @@
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^MachineShopRepair
+	Inherits@7: ^DamagedByRadiation
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
