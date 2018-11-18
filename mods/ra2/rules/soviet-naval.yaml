@@ -233,6 +233,7 @@ sqd:
 
 dred:
 	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
@@ -260,6 +261,8 @@ dred:
 		PauseOnCondition: moving
 	AttackTurreted:
 		Voice: Attack
+	AutoTarget:
+		InitialStance: ReturnFire
 	GrantConditionOnMovement:
 		Condition: moving
 	MissileSpawnerMaster:

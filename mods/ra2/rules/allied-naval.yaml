@@ -236,6 +236,7 @@ dlph:
 
 carrier:
 	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
@@ -265,6 +266,8 @@ carrier:
 		TurnSpeed: 255
 	AttackTurreted:
 		Voice: Attack
+	AutoTarget:
+		InitialStance: ReturnFire
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
