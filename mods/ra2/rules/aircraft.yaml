@@ -119,7 +119,8 @@ zep:
 	Explodes:
 		Weapon: UnitExplode
 		Chance: 75
-	AnnounceOnBuild:
+	VoiceAnnouncement:
+		Voice: Build
 	Voiced:
 		VoiceSet: KirovVoice
 	SpawnActorOnDeath:
@@ -158,7 +159,6 @@ orca:
 	Aircraft:
 		TurnSpeed: 3
 		Speed: 210
-		RearmBuildings: gaairc, amradr
 	Selectable:
 		Bounds: 30,24
 	Health:
@@ -171,7 +171,7 @@ orca:
 	Armament:
 		Weapon: Maverick
 		PauseOnCondition: !ammo
-	AttackPlane:
+	AttackAircraft:
 		FacingTolerance: 20
 		Voice: Attack
 	Voiced:
@@ -190,6 +190,8 @@ orca:
 	SpawnActorOnDeath:
 		Actor: orcahusk
 	HitShape:
+	Rearmable:
+		RearmActors: gaairc, amradr
 
 orcahusk:
 	Inherits: ^PlaneHusk
@@ -309,7 +311,7 @@ spyphusk:
 		Speed: 225
 	RenderVoxels:
 		Image: spyp
- 
+
 hornet:
 	Inherits: ^Plane
 	Valued:
@@ -327,7 +329,7 @@ hornet:
 	Armament:
 		Weapon: HornetBomb
 		PauseOnCondition: !ammo
-	AttackPlane:
+	AttackAircraft:
 		FacingTolerance: 20
 	Aircraft:
 		InitialFacing: 192
@@ -335,7 +337,6 @@ hornet:
 		Speed: 180
 		RepulsionSpeed: 40
 		VTOL: false
-		RearmBuildings: carrier
 	AmmoPool:
 		Ammo: 3
 		AmmoCondition: ammo
@@ -381,7 +382,7 @@ asw:
 	Armament:
 		Weapon: HornetBomb
 		PauseOnCondition: !ammo
-	AttackPlane:
+	AttackAircraft:
 		FacingTolerance: 20
 	Aircraft:
 		InitialFacing: 192
@@ -389,7 +390,6 @@ asw:
 		Speed: 180
 		RepulsionSpeed: 40
 		VTOL: false
-		RearmBuildings: carrier
 	AmmoPool:
 		Ammo: 5
 		AmmoCondition: ammo

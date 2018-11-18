@@ -56,7 +56,7 @@ namespace OpenRA.Mods.RA2.Traits
 			var target = Target.FromActor(Master);
 
             var aircraft = self.TraitOrDefault<Aircraft>();
-            if (self.TraitOrDefault<AttackPlane>() != null) // Let attack planes approach me first, before landing.
+            if (self.TraitOrDefault<AttackAircraft>() != null) // Let attack planes approach me first, before landing.
                 if (aircraft != null && aircraft.Info.VTOL == true)
 				    self.QueueActivity(new HeliFly(self, target, WDist.Zero, Info.LandingDistance));
                 else
@@ -77,10 +77,13 @@ namespace OpenRA.Mods.RA2.Traits
 			if (ammoPools.Length == 0)
 				return false;
 
-			return ammoPools.All(x => !x.AutoReloads && !x.HasAmmo());
-		}
+            return ammoPools.All(x => !x.HasAmmo());
+            // AutoReloads seems to be removed and i dunno how exactly to implement this check now.
+            // Doesn't seem like we actually need it for RA2.
+            // return ammoPools.All(x => !x.AutoReloads && !x.HasAmmo());
+        }
 
-		public virtual void OnBecomingIdle(Actor self)
+        public virtual void OnBecomingIdle(Actor self)
 		{
 			EnterSpawner(self);
 		}

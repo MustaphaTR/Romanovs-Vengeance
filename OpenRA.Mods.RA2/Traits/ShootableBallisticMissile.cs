@@ -219,7 +219,13 @@ namespace OpenRA.Mods.RA2.Traits
 			return new ShootableBallisticMissileFly(self, Target.FromPos(toPos));
 		}
 
-		public CPos NearestMoveableCell(CPos cell) { return cell; }
+        public int EstimatedMoveDuration(Actor self, WPos fromPos, WPos toPos)
+        {
+            var speed = MovementSpeed;
+            return speed > 0 ? (toPos - fromPos).Length / speed : 0;
+        }
+
+        public CPos NearestMoveableCell(CPos cell) { return cell; }
 
 		// Technically, ballstic movement always moves non-vertical moves = always false.
 		public bool IsMovingVertically { get { return false; } set { } }

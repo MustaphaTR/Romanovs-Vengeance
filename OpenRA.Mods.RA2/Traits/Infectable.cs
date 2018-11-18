@@ -20,9 +20,6 @@ namespace OpenRA.Mods.RA2.Traits
 	[Desc("Handle infection by infectior units.")]
 	public class InfectableInfo : ITraitInfo, Requires<HealthInfo>
 	{
-		[Desc("If true and this actor has EjectOnDeath, no actor will be spawned.")]
-		public readonly bool PreventsEjectOnDeath = false;
-
         [Desc("Damage types that removes the infector.")]
         public readonly BitSet<DamageType> RemoveInfectorDamageTypes = default(BitSet<DamageType>);
 
@@ -43,7 +40,7 @@ namespace OpenRA.Mods.RA2.Traits
         public object Create(ActorInitializer init) { return new Infectable(init.Self, this); }
 	}
 
-    public class Infectable : ITick, INotifyCreated, INotifyDamage, INotifyKilled, IPreventsEjectOnDeath
+    public class Infectable : ITick, INotifyCreated, INotifyDamage, INotifyKilled
     {
         readonly InfectableInfo info;
         readonly Health health;
@@ -68,11 +65,6 @@ namespace OpenRA.Mods.RA2.Traits
         void INotifyCreated.Created(Actor self)
         {
             conditionManager = self.TraitOrDefault<ConditionManager>();
-        }
-
-        public bool PreventsEjectOnDeath(Actor self)
-        {
-            return info.PreventsEjectOnDeath;
         }
 
         public void GrantCondition(Actor self)

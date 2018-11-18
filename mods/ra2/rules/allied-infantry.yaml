@@ -39,6 +39,7 @@ engineer:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: stand
+	CaptureManager:
 
 dog:
 	Inherits: ^Infantry
@@ -497,7 +498,7 @@ ccomand:
 	Mobile:
 		Locomotor: foot
 	Crushable:
-		CrushClasses:: vehicle
+		CrushClasses: vehicle
 	PortableChrono:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
@@ -623,7 +624,8 @@ tany:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-	AnnounceOnBuild:
+	VoiceAnnouncement:
+		Voice: Build
 	Voiced:
 		VoiceSet: TanyaVoice
 	ProducibleWithLevel:
@@ -678,8 +680,6 @@ jumpjet:
 		AltitudeVelocity: 83
 		Voice: Move
 		AirborneCondition: airborne
-		RepairBuildings:
-		RearmBuildings:
 		CanHover: True
 		IdealSeparation: 512
 		TakeOffOnResupply: true
@@ -759,7 +759,6 @@ cleg:
 	Passenger:
 		PipType: Red
 	Crushable:
-		CrushClasses:: vehicle
 	-TakeCover:
 	PortableChrono:
 		ChronoshiftSound: ichrmova.wav

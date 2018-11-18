@@ -112,9 +112,9 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-		Order IIssueDeployOrder.IssueDeployOrder(Actor self)
+		Order IIssueDeployOrder.IssueDeployOrder(Actor self, bool queued)
 		{
-			return new Order("GrantTimedConditionOnDeploy", self, false);
+			return new Order("GrantTimedConditionOnDeploy", self, queued);
 		}
 
 		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self)

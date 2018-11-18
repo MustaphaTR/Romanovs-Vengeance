@@ -167,6 +167,7 @@
 
 ^GainsExperience:
 	GainsExperience:
+		LevelUpNotification: LevelUp
 		Conditions:
 			300: rank-veteran
 			600: rank-veteran
@@ -415,6 +416,7 @@
 	GivesBuildableArea:
 		AreaTypes: building
 	Capturable:
+		Types: building
 	SoundOnDamageTransition:
 		DamagedSounds: gdamag1a.wav, gdamag1b.wav, gdamag1c.wav, gdamag1d.wav, gdamag1e.wav
 		DestroyedSounds: bgendiea.wav, bgendieb.wav, bgendiec.wav, bgendied.wav, bgendiee.wav, bgendief.wav
@@ -423,6 +425,7 @@
 		Type: Footprint
 		Weapon: BuildingExplode
 	RepairableBuilding:
+		RepairingNotification: Repairing
 	EngineerRepairable:
 	SpawnActorsOnSell@allies:
 		ActorTypes: e1, e1, e1
@@ -444,7 +447,7 @@
 	WithMakeAnimation:
 	HitShape:
 		UseTargetableCellsOffsets: true
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Building
 	RequiresBuildableArea:
 		AreaTypes: building
@@ -454,6 +457,7 @@
 		Sequence: repair
 		ReferencePoint: Center
 		Palette: mouse
+	CaptureManager:
 
 ^SupportBuilding:
 	Inherits: ^Building
@@ -482,7 +486,7 @@
 		Range: 4c0
 	Tooltip:
 		Name: Civilian Building
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Civilian building
 
 ^Rubble:
@@ -498,7 +502,7 @@
 	FrozenUnderFog:
 	HitShape:
 		UseTargetableCellsOffsets: true
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Building rubble
 	Interactable:
 
@@ -528,7 +532,7 @@
 	GrantConditionOnPrerequisite@BUILD:
 		Condition: techbuild
 		Prerequisites: global-techbuildarea
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Tech building
 
 ^Flag:
@@ -553,7 +557,7 @@
 	SoundOnDamageTransition:
 		DamagedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
 		DestroyedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Flag
 
 ^VoxelLighting:
@@ -604,7 +608,7 @@
 	Crushable:
 		CrushClasses: wall
 	HitShape:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Wall
 	RequiresBuildableArea:
 		AreaTypes: building
@@ -713,7 +717,7 @@
 		Voice: Move
 	Chronoshiftable:
 		ExplodeInstead: true
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Infantry
 	RenderSprites:
 		PlayerPalette: infantry
@@ -812,7 +816,7 @@
 		VoiceSet: CivilianAlliedMaleVoice
 	WithInfantryBody:
 		IdleSequences: idle1
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Civilian infantry
 
 ^Animal:
@@ -855,7 +859,7 @@
 		DeathTypes:
 			FlameDeath: 1
 	-Crushable:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Animal
 
 ^Vehicle:
@@ -916,7 +920,7 @@
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Vehicle
 
 ^CivVehicle:
@@ -943,7 +947,7 @@
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: CarVoice
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Civilian vehicle
 
 ^NeutralAircraft:
@@ -984,7 +988,7 @@
 	DeathSounds:
 	AppearsOnRadar:
 		UseLocation: true
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Aircraft
 
 ^Aircraft:
@@ -1006,7 +1010,7 @@
 		RequiresCondition: cruising
 	ReturnOnIdle:
 	WithVoxelBody:
- 
+
 ^ShootableMissile:
 	Inherits@1: ^ExistsInWorld
 	Armor:
@@ -1057,7 +1061,7 @@
 	FallsToEarth:
 		Velocity: 86
 	HitShape:
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Husk
 	Interactable:
 
@@ -1130,7 +1134,7 @@
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Naval
 
 ^OreDrill:
@@ -1155,7 +1159,7 @@
 		Palette: player
 	HitShape:
 		UseTargetableCellsOffsets: true
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Resource spawn
 	Interactable:
 
@@ -1181,7 +1185,7 @@
 	HitShape:
 	Armor:
 		Type: Wood
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Tree
 	Interactable:
 
@@ -1189,14 +1193,14 @@
 	Inherits: ^Tree
 	Tooltip:
 		Name: Street Sign
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 
 ^TrafficLight:
 	Inherits: ^Tree
 	Tooltip:
 		Name: Traffic Light
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 
 ^StreetLight:
@@ -1207,7 +1211,7 @@
 		Type: steel
 	Health:
 		HP: 50
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 
 ^TelephonePole:
@@ -1218,7 +1222,7 @@
 		HP: 20
 	Armor:
 		Type: Concrete
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Decoration
 
 ^Rock:
@@ -1237,7 +1241,7 @@
 		Palette: terrain
 	HitShape:
 		UseTargetableCellsOffsets: true
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: Rock
 	Interactable:
 
@@ -1255,6 +1259,6 @@
 	WithCrateBody:
 		LandSequence: land
 		WaterSequence: water
-	EditorTilesetFilter:
+	MapEditorData:
 		Categories: System
 	Interactable:

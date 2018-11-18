@@ -31,7 +31,7 @@ nacnst:
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
-		RequiresCondition: factundeploy
+		RequiresCondition: factundeploy && !build-incomplete
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
@@ -39,11 +39,16 @@ nacnst:
 		ProductionType: Building
 	ProductionBar@Support:
 		ProductionType: Support
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@top:
 		Sequence: idle-top
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
+		RequiresCondition: !build-incomplete
 	SpawnActorsOnSell@allies:
 		ActorTypes: e1, e1, e1, engineer
 		Factions: america, germany, england, france, korea
@@ -52,6 +57,7 @@ nacnst:
 		Factions: cuba, libya, iraq, russia
 	BaseProvider:
 		Range: 16c0
+		RequiresCondition: !build-incomplete
 
 napowr:
 	Inherits: ^Building
@@ -78,8 +84,11 @@ napowr:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 150
 	InfiltrateForPowerOutage:
@@ -160,10 +169,13 @@ nahand:
 	Exit@2_2:
 		SpawnOffset: 0,0,0
 		ExitCell: 2, 2
+	WithMakeAnimation:
+		Condition: build-incomplete
 	Production:
 		Produces: Infantry
 	PrimaryBuilding:
 		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
 	RallyPoint:
 		Offset: 3,3
 		Palette: mouse
@@ -175,6 +187,7 @@ nahand:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Infantry
 	Power:
 		Amount: -20
 	ConditionManager:
@@ -229,11 +242,16 @@ narefn:
 		Actor: harv
 		SpawnOffset: 3, 1
 		Facing: 160
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithDockedOverlay:
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: idle-bib
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@drill:
 		Sequence: idle-drill
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
 	Targetable:
@@ -283,9 +301,12 @@ naradr:
 		CameraRemoveDelay: 150
 		UnitType: spyp
 		QuantizedFacings: 8
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	InfiltrateForExploration:
@@ -333,6 +354,7 @@ naweap:
 		Produces: Vehicle
 	PrimaryBuilding:
 		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
 	WithTextDecoration@primary:
 		RequiresSelection: true
 		Text: PRIMARY
@@ -340,14 +362,21 @@ naweap:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Vehicle
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithExitOverlay@door:
 		Sequence: build-door
+		RequiresCondition: !build-incomplete
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
 	InfiltrateForSupportPower:
@@ -455,6 +484,7 @@ nayard:
 		Produces: Ship
 	PrimaryBuilding:
 		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
 	WithTextDecoration@primary:
 		RequiresSelection: true
 		Text: PRIMARY
@@ -466,18 +496,26 @@ nayard:
 		Palette: mouse
 		IsPlayerPalette: false
 	RepairsUnits:
+		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
+		ProductionType: Ship
 	Power:
 		Amount: -20
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
+		RequiresCondition: !build-incomplete
 	WithRepairOverlay:
 		Sequence: repair
+		RequiresCondition: !build-incomplete
 	WithProductionOverlay@lights:
 		Sequence: production-lights
+		RequiresCondition: !build-incomplete
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
 	RequiresBuildableArea:
@@ -515,13 +553,19 @@ nadept:
 	RepairsUnits:
 		HpPerStep: 20
 		Interval: 7
+		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
-	WithRepairAnimation:
+		RequiresCondition: !build-incomplete
+	WithResupplyAnimation:
 		Sequence: repair
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -25
 
@@ -550,8 +594,11 @@ nanrct:
 		Type: Concrete
 	RevealsShroud:
 		Range: 5c0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Explodes:
 		Type: CenterPosition
 		Weapon: NukePayload
@@ -662,6 +709,8 @@ naclon:
 	Exit@2_2:
 		SpawnOffset: 0,0,0
 		ExitCell: 2, 2
+	WithMakeAnimation:
+		Condition: build-incomplete
 	Production:
 		Produces:
 	RallyPoint:
@@ -703,9 +752,12 @@ napsis:
 	DetectCloaked:
 		CloakTypes: Cloak, Underwater
 		Range: 25c0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
 	GrantConditionOnPowerState@LOWPOWER:
@@ -814,7 +866,10 @@ namisl:
 		ArrowSequence: arrow
 		CameraRange: 10
 		PauseOnCondition: lowpower
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithNukeLaunchAnimation:
+		RequiresCondition: !build-incomplete
 
 nawall:
 	Inherits: ^Wall
@@ -853,15 +908,19 @@ naflak:
 		TurnSpeed: 10
 		InitialFacing: 224
 		Offset: 450,0,0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: FlakWeapon
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:
 	WithVoxelTurret:
+		RequiresCondition: !build-incomplete
 	WithRangeCircle:
 		Range: 12c0
 		Type: flakcannon
@@ -908,12 +967,15 @@ tesla:
 		Weapon: OPCoilBolt
 		LocalOffset: 0,0,3072
 		RequiresCondition: charged
+	WithMakeAnimation:
+		Condition: build-incomplete
 	AttackTesla:
 		Voice: Attack
 		MaxCharges: 1
 		ReloadDelay: 120
 		ChargeAudio: tslachg2.aud
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	AutoTarget:
 	GrantConditionOnPowerState@LOWPOWER:
 		RequiresCondition: !charged
@@ -926,7 +988,7 @@ tesla:
 		Amount: -75
 	WithIdleOverlay@powered:
 		Sequence: idle-powered
-		RequiresCondition: !lowpower
+		RequiresCondition: !lowpower && !build-incomplete
 	ExternalCondition@CHARGED:
 		Condition: charged
 
@@ -957,14 +1019,18 @@ nalasr:
 		TurnSpeed: 10
 		InitialFacing: 224
 		Offset: 320,0,0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
+		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: vulcan
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:
 	WithVoxelTurret:
+		RequiresCondition: !build-incomplete
 	WithRangeCircle:
 		Range: 6c0
 		Type: pillbox
@@ -1006,10 +1072,13 @@ nabnkr:
 	WithIdleOverlay@Garrisoned:
 		Sequence: garrisoned
 		RequiresCondition: loaded
+	WithMakeAnimation:
+		Condition: build-incomplete
 	AttackGarrisoned:
 		Armaments: garrisoned
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
+		RequiresCondition: !build-incomplete
 	RevealsShroud:
 		Range: 6c0

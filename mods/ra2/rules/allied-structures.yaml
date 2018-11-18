@@ -29,7 +29,7 @@ gacnst:
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
-		RequiresCondition: factundeploy
+		RequiresCondition: factundeploy && !build-incomplete
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
@@ -40,10 +40,14 @@ gacnst:
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@fans:
 		Sequence: idle-fans
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithBuildingPlacedOverlay:
+		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite:
 		Prerequisite: structures.allies
 	ProvidesPrerequisite@america:
@@ -62,6 +66,7 @@ gacnst:
 		Factions: cuba, libya, iraq, russia
 	BaseProvider:
 		Range: 16c0
+		PauseOnCondition: !build-incomplete
 
 gapowr:
 	Inherits: ^Building
@@ -88,8 +93,11 @@ gapowr:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 200
 	InfiltrateForPowerOutage:
@@ -151,6 +159,7 @@ gapile:
 		Produces: Infantry
 	PrimaryBuilding:
 		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
 	WithTextDecoration@primary:
 		RequiresSelection: true
 		Text: PRIMARY
@@ -158,8 +167,12 @@ gapile:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Infantry
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -20
 	InfiltrateForSupportPower:
@@ -213,11 +226,16 @@ garefn:
 		Actor: cmin
 		SpawnOffset: 3, 1
 		Facing: 160
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithDockedOverlay:
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: idle-bib
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@drill:
 		Sequence: idle-drill
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
 	Targetable:
@@ -262,18 +280,24 @@ gaairc:
 		RequiresCondition: !lowpower
 	RevealsShroud:
 		Range: 10c0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bottom:
 		Sequence: idle-bottom
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@mid:
 		Sequence: idle-mid
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 	Power:
@@ -294,8 +318,10 @@ gaairc:
 	Production:
 		Produces: Aircraft
 	ProductionBar:
+		ProductionType: Aircraft
 	PrimaryBuilding:
 		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
 	WithTextDecoration@primary:
 		RequiresSelection: true
 		Text: PRIMARY
@@ -366,6 +392,7 @@ gaweap:
 		Produces: Vehicle
 	PrimaryBuilding:
 		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
 	WithTextDecoration@primary:
 		RequiresSelection: true
 		Text: PRIMARY
@@ -373,16 +400,24 @@ gaweap:
 		ZOffset: 256
 		RequiresCondition: primary
 	ProductionBar:
+		ProductionType: Vehicle
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@fan:
 		Sequence: overlay-fan
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		RequiresCondition: !build-incomplete
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
+		RequiresCondition: !build-incomplete
 	WithExitOverlay@ramp:
 		Sequence: build-ramp
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
 	InfiltrateForSupportPower:
@@ -490,6 +525,7 @@ gayard:
 		Produces: Ship
 	PrimaryBuilding:
 		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
 	WithTextDecoration@primary:
 		RequiresSelection: true
 		Text: PRIMARY
@@ -501,16 +537,23 @@ gayard:
 		Palette: mouse
 		IsPlayerPalette: false
 	RepairsUnits:
+		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 	ProductionBar:
+		ProductionType: Ship
 	Power:
 		Amount: -20
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
+		RequiresCondition: !build-incomplete
 	WithRepairOverlay:
 		Sequence: repair
+		RequiresCondition: !build-incomplete
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
 	RequiresBuildableArea:
@@ -547,13 +590,19 @@ gadept:
 	RepairsUnits:
 		HpPerStep: 20
 		Interval: 7
+		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@side:
 		Sequence: idle-side
+		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
-	WithRepairAnimation:
+		RequiresCondition: !build-incomplete
+	WithResupplyAnimation:
 		Sequence: repair
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -25
 	ProvidesPrerequisite:
@@ -583,8 +632,11 @@ gatech:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -150
 	InfiltrateForSupportPower:
@@ -671,9 +723,12 @@ nasam:
 		TurnSpeed: 10
 		InitialFacing: 224
 		Offset: 550,0,0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: RedEye2
 		LocalOffset: 500,0,900
@@ -682,6 +737,7 @@ nasam:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 	WithVoxelTurret:
+		RequiresCondition: !build-incomplete
 	WithRangeCircle:
 		Range: 12c0
 		Type: patriot
@@ -722,9 +778,12 @@ gtgcan:
 		TurnSpeed: 3
 		InitialFacing: 224
 		Offset: 400,0,0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: GrandCannonWeapon
 		Recoil: 127
@@ -736,7 +795,9 @@ gtgcan:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 	WithVoxelTurret:
+		RequiresCondition: !build-incomplete
 	WithVoxelBarrel:
+		RequiresCondition: !build-incomplete
 	AutoTarget:
 	WithMuzzleOverlay:
 	WithRangeCircle:
@@ -772,8 +833,11 @@ gaorep:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -200
 
@@ -804,9 +868,12 @@ gaspysat:
 	RevealsShroud@LowPower:
 		Range: 5c0
 		RequiresCondition: lowpower
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
 	ProvidesRadar:
@@ -912,8 +979,11 @@ gacsph:
 		ValidStances: Neutral, Enemy
 	Power:
 		Amount: -200
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay:
 		Sequence: idle-dome
+		RequiresCondition: !build-incomplete
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -963,11 +1033,14 @@ atesla:
 	Armament:
 		Weapon: PrismShot
 		LocalOffset: 0,0,3072
+	WithMakeAnimation:
+		Condition: build-incomplete
 	AttackTesla:
 		Voice: Attack
 		ReloadDelay: 60
 		ChargeAudio: bpripow.wav
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -75
 	AutoTarget:
@@ -977,6 +1050,7 @@ atesla:
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	WithSpriteBody:
 		PauseOnCondition: lowpower
 	WithRangeCircle:
@@ -1041,9 +1115,12 @@ garobo:
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_garobo
 		RequiresCondition: !lowpower
+	WithMakeAnimation:
+		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: lowpower
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
 	ProvidesRadar:

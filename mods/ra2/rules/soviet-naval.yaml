@@ -83,7 +83,7 @@ sub:
 		UncloakSound: vnavupa.wav
 		UncloakOn: Damage
 		IsPlayerPalette: true
-		RequiresCondition: !uncloak-critical-damage
+		PauseOnCondition: uncloak-critical-damage
 	GrantConditionOnDamageState@UNCLOAK:
 		Condition: uncloak-critical-damage
 		ValidDamageStates: Critical

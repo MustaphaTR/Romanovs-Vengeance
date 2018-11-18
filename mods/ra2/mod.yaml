@@ -1,7 +1,7 @@
 Metadata:
 	Title: Red Alert 2
 	Description: The Soviet Union is back!\nThis time to conquer the United States...
-	Version: {DEV_VERSION}
+	Version: 6d50a31
 	Author: the RA2 mod team
 
 # TODO: Rename to AudioBag once BagFile is gone from OpenRA/OpenRA
@@ -12,6 +12,7 @@ Packages:
 	.
 	$ra2: ra2
 	./mods/common: common
+	./mods/as: as
 	~ra2md.mix # put YR files first so stuff like Psychic Sensor and Cloning Vats won't get overridden with Yuri artwork.
 	~ra2.mix
 	~langmd.mix
@@ -74,7 +75,7 @@ Packages:
 
 MapFolders:
 	ra2|maps: System
-	~^maps/ra2/{DEV_VERSION}: User
+	~^maps/ra2/6d50a31: User
 
 Rules:
 	ra2|rules/proxy-actors.yaml
@@ -133,6 +134,7 @@ Assemblies:
 	common|OpenRA.Mods.Common.dll
 	common|OpenRA.Mods.Cnc.dll
 	ra2|OpenRA.Mods.RA2.dll
+	as|OpenRA.Mods.AS.dll
 
 ChromeLayout:
 	ra2|chrome/assetbrowser.yaml
@@ -309,6 +311,9 @@ GameSpeeds:
 		Name: Fastest
 		Timestep: 20
 		OrderLatency: 6
+
+ColorValidator:
+	TeamColorPresets: dee308, ff1818, 2973e7, 39d629, ffa518, 31d6e7, 9429bd, ff9cef, 6f7104, 7f0c0c, 143973, 1c6b14, 7f520c, 186b73, 4a145e, 7f484e
 
 ModContent:
 	InstallPromptMessage: Red Alert 2 requires artwork and audio from the original game.
