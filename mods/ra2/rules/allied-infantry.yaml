@@ -102,10 +102,16 @@ dog:
 		DeathTypes:
 			ExplosionDeath: 1
 			BulletDeath: 2
+			FlameDeath: 1
 			RadiationDeath: 1
 			PsychicDeath: 1
 			ElectroDeath: 2
 	-WithDeathAnimation@effect:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, PsychicDeath, ElectroDeath, FlameDeath
+	-DeathSounds@zapped:
+	-DeathSounds@radiation:
+	-DeathSounds@psycrush:
 
 e1:
 	Inherits@1: ^Infantry
@@ -597,7 +603,7 @@ tany:
 	RevealsShroud:
 		Range: 6c0
 	Demolition:
-		Voice: Attack
+		Voice: Demolish
 	Armor:
 		Type: Flak
 	SelfHealing:
@@ -696,6 +702,11 @@ jumpjet:
 	-Targetable:
 	-WithDeathAnimation@normal:
 	-WithDeathAnimation@effect:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, PsychicDeath, ElectroDeath, FlameDeath
+	-DeathSounds@zapped:
+	-DeathSounds@radiation:
+	-DeathSounds@psycrush:
 	Targetable@airborne:
 		TargetTypes: Air, Disguise
 		RequiresCondition: airborne
