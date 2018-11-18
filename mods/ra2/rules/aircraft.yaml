@@ -10,8 +10,12 @@ shad:
 		HP: 175
 	Armor:
 		Type: Light
-	Armament:
+	Armament@primary:
 		Weapon: BlackHawkCannon
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: BlackHawkCannonE
+		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: NighthawkVoice
 	Buildable:
