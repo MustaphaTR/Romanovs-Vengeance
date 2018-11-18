@@ -303,3 +303,33 @@ robogunE:
 155mmE:
 	Inherits: 155mm
 	Burst: 2
+
+160mm:
+	Inherits: ^LargeBullet
+	ReloadDelay: 100
+	Range: 12c0
+	Report: vchoat2a.wav
+	Projectile: Bullet
+		Blockable: false
+		Speed: 682
+		LaunchAngle: 128
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c256
+		Falloff: 100, 75, 50, 25, 0
+		Damage: 90
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 60
+			Light: 80
+			Medium: 50
+			Heavy: 50
+			Wood: 100
+			Steel: 100
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+
+160mmE:
+	Inherits: 160mm
+	Burst: 2
