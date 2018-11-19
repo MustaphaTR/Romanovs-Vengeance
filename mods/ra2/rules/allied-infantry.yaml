@@ -27,6 +27,12 @@ engineer:
 	Captures:
 		Sabotage: false
 		CaptureTypes: building, husk
+	Armament:
+		Weapon: DefuseKit
+		Cursor: remove-bomb
+		OutsideRangeCursor: remove-bomb
+	AttackFrontal:
+		Voice: Action
 	RevealsShroud:
 		Range: 4c0
 	Voiced:
@@ -436,7 +442,7 @@ ghost:
 		BuildAtProductionType: Infantry
 		BuildPaletteOrder: 100
 		Prerequisites: ~gapile, radar
-		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Destroy Building with C4
+		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings and Ships
 	Valued:
 		Cost: 1000
 	DeliversCash:
@@ -454,8 +460,6 @@ ghost:
 		Locomotor: swimsuit
 	RevealsShroud:
 		Range: 8c0
-	Demolition:
-		Voice: SpecialAttack
 	Armor:
 		Type: Flak
 	Passenger:
@@ -474,6 +478,10 @@ ghost:
 		Name: opentopped
 		Weapon: MP5E
 		RequiresCondition: rank-elite
+	Armament@sapper:
+		Weapon: SealC4Attacher
+		Cursor: c4
+		OutsideRangeCursor: c4
 	AttackFrontal:
 		Voice: Attack
 	RenderSprites:
@@ -493,7 +501,7 @@ ccomand:
 	Buildable:
 		BuildPaletteOrder: 170
 		Prerequisites: ~gapile, ~allies.tech.infiltrated
-		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Destroy Building with C4
+		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings
 	Tooltip:
 		Name: Chrono Commando
 	Valued:
@@ -507,6 +515,9 @@ ccomand:
 		Locomotor: foot
 	Crushable:
 		CrushClasses: vehicle
+	-Armament@sapper:
+	Demolition:
+		Voice: SpecialAttack
 	PortableChrono:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
@@ -538,7 +549,7 @@ ptroop:
 	Buildable:
 		BuildPaletteOrder: 180
 		Prerequisites: ~gapile, ~soviets.tech.infiltrated
-		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Destroy Building with C4
+		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Can C4 Buildings
 	Valued:
 		Cost: 1000
 	DeliversCash:
@@ -586,7 +597,7 @@ tany:
 		BuildPaletteOrder: 140
 		Prerequisites: gatech, ~gapile
 		BuildLimit: 1
-		Description: Elite commando infantry, armed with \ndual pistols and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Destroy Building with C4\n\nMaximum 1 can be trained.
+		Description: Elite commando infantry, armed with \ndual pistols and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings and Vehicles.\n\nMaximum 1 can be trained.
 	Valued:
 		Cost: 1500
 	DeliversCash:
@@ -630,6 +641,10 @@ tany:
 		Name: opentopped
 		Weapon: DoublePistolsE
 		RequiresCondition: rank-elite
+	Armament@sapper:
+		Weapon: TanyaC4Attacher
+		Cursor: c4
+		OutsideRangeCursor: c4
 	AttackFrontal:
 		Voice: Attack
 	VoiceAnnouncement:

@@ -45,22 +45,10 @@ HornetExplode:
 		Damage: 2
 
 IvanBomber:
-	ReloadDelay: 50
-	Range: 1c849
-	Report: icraatta.wav
-	Projectile: Bullet
-		Speed: 425
-		Blockable: false
-	Warhead@0Eff: CreateEffect
-		Delay: 2
-		Explosions: bombcurs
-		ExplosionPalette: mouse
-		ValidTargets: Ground, Water, Air
 	Warhead@1Dam: SpreadDamage
-		Delay: 100
-		Spread: 213
+		Spread: 0c384
 		Damage: 400
-		Falloff: 1000, 368, 135, 50, 18, 7, 0
+		Falloff: 100, 75, 50, 25, 0
 		Versus:
 			None: 100
 			Flak: 100
@@ -75,7 +63,6 @@ IvanBomber:
 			Rocket: 100
 		DamageTypes: PsychicDeath, Prone100Percent
 	Warhead@2Eff: CreateEffect
-		Delay: 100
 		Explosions: ivan_explosion
 		ImpactSounds: gexpcraa.wav
 		ValidTargets: Ground, Water, Air
@@ -85,16 +72,51 @@ IvanBomberE:
 	Warhead@2Eff: CreateEffect
 		Explosions: ivan_explosionE
 
-IvanDeath:
+TanyaC4:
 	Inherits: IvanBomber
-	-Warhead@0Eff: CreateEffect
 	Warhead@1Dam: SpreadDamage
-		Delay: 0
+		Spread: 0c32
+		Damage: 100000
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 0
+		DamageTypes: PsychicDeath, Prone100Percent
 	Warhead@2Eff: CreateEffect
-		Delay: 0
+		Explosions: large_twlt
+		ImpactSounds: gexpapoa.wav
+
+SealC4:
+	Inherits: TanyaC4
+	Warhead@1Dam: SpreadDamage
+		Damage: 250
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 80
+			Steel: 80
+			Concrete: 40
+			Drone: 0
+			Rocket: 0
+		DamageTypes: PsychicDeath, Prone100Percent
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: gexpapoa.wav
 
 CRNuke:
-	Inherits: IvanDeath
+	Inherits: IvanBomber
 	Warhead@1Dam: SpreadDamage
 		Spread: 426
 		Damage: 200

@@ -292,6 +292,69 @@
 		DamageLevel: 5
 		DamageTypes: RadiationDeath
 
+^AcceptsIvanBomb:
+	DelayedWeaponAttachable@IVANBOMB:
+		Type: IvanBomb
+		ShowProgressBar: false
+		Condition: ivanbomb
+	Targetable@IVANBOMB:
+		TargetTypes: IvanBomb
+		RequiresCondition: !ivanbomb
+	Targetable@IVANBOMBCLEANER:
+		TargetTypes: IvanBombCleaner
+		RequiresCondition: ivanbomb
+	WithDecoration@IVANBOMB:
+		RequiresSelection: false
+		Image: dynamite
+		Sequence: idle
+		Palette: mouse
+		ReferencePoint: Center
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: ivanbomb
+
+^AcceptsSEALC4:
+	DelayedWeaponAttachable@SEALC4:
+		Type: SEALC4
+		ShowProgressBar: false
+		Condition: sealC4
+	Targetable@SEALC4:
+		TargetTypes: SEALC4
+		RequiresCondition: !sealC4
+	Targetable@SEALC4CLEANER:
+		TargetTypes: SEALC4Cleaner
+		RequiresCondition: sealC4
+	WithDecoration@SEALC4:
+		RequiresSelection: false
+		Image: c4
+		Sequence: idle
+		Palette: mouse
+		ReferencePoint: Center
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: sealC4
+
+^AcceptsTanyaC4:
+	DelayedWeaponAttachable@TANYAC4:
+		Type: TanyaC4
+		ShowProgressBar: false
+		Condition: tanyaC4
+	Targetable@TANYAC4:
+		TargetTypes: TanyaC4
+		RequiresCondition: !tanyaC4
+	Targetable@TANYAC4CLEANER:
+		TargetTypes: TanyaC4Cleaner
+		RequiresCondition: tanyaC4
+	WithDecoration@TANYAC4:
+		RequiresSelection: false
+		Image: c4
+		Sequence: idle
+		ReferencePoint: Center
+		ZOffset: 256
+		Palette: mouse
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: tanyaC4
+
 ^IronCurtainable:
 	WithColoredOverlay@ironcurtain:
 		RequiresCondition: invulnerability
@@ -401,6 +464,8 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^IronCurtainable
+	Inherits@4: ^AcceptsIvanBomb
+	Inherits@5: ^AcceptsSEALC4
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	OwnerLostAction:
@@ -644,6 +709,7 @@
 	Inherits@6: ^HospitalHealing
 	Inherits@7: ^KilledByIronCurtain
 	Inherits@8: ^DamagedByRadiation
+	Inherits@9: ^AcceptsIvanBomb
 	Health:
 	OwnerLostAction:
 		Action: Kill
@@ -877,6 +943,8 @@
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^MachineShopRepair
 	Inherits@7: ^DamagedByRadiation
+	Inherits@8: ^AcceptsIvanBomb
+	Inherits@9: ^AcceptsTanyaC4
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
@@ -1003,6 +1071,8 @@
 	Inherits@1: ^NeutralAircraft
 	Inherits@2: ^GainsExperience
 	Inherits@3: ^MachineShopRepair
+	Inherits@4: ^AcceptsIvanBomb
+	Inherits@5: ^AcceptsTanyaC4
 	WithTextControlGroupDecoration:
 
 ^Plane:
@@ -1094,6 +1164,8 @@
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^MachineShopRepair
 	Inherits@7: ^DamagedByRadiation
+	Inherits@8: ^AcceptsIvanBomb
+	Inherits@9: ^AcceptsTanyaC4
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
