@@ -274,44 +274,6 @@ pdplanehusk:
 	RenderVoxels:
 		Image: pdplane
 
-spyp:
-	Inherits: ^NeutralAircraft
-	Valued:
-		Cost: 2000
-	-Selectable:
-	Interactable:
-		Bounds: 100,80
-	RejectsOrders:
-	Tooltip:
-		Name: Spy Plane
-	Aircraft:
-		Repulsable: false
-		CruiseAltitude: 5600
-		TurnSpeed: 5
-		Speed: 225
-	AttackBomber:
-	Health:
-		HP: 400
-	Armor:
-		Type: light
-	RenderSprites:
-	WithVoxelBody:
-	WithVoxelWalkerBody:
-		TickRate: 1
-	SpawnActorOnDeath:
-		Actor: pdplanehusk
-	HitShape:
-
-spyphusk:
-	Inherits: ^PlaneHusk
-	Tooltip:
-		Name: Spy Plane
-	Aircraft:
-		TurnSpeed: 5
-		Speed: 225
-	RenderVoxels:
-		Image: spyp
-
 hornet:
 	Inherits: ^Plane
 	Valued:
@@ -425,6 +387,46 @@ aswhusk:
 		NormalsPalette: ts-normals
 
 # Yuri's Revenge Aircraft
+spyp:
+	Inherits: ^NeutralAircraft
+	Valued:
+		Cost: 2000
+	-Selectable:
+	Interactable:
+		Bounds: 100,80
+	RejectsOrders:
+	Tooltip:
+		Name: Spy Plane
+	Aircraft:
+		Repulsable: false
+		CruiseAltitude: 5600
+		TurnSpeed: 5
+		Speed: 225
+	Armament:
+		Weapon: SpyCameraWeapon
+	AttackBomber:
+	Health:
+		HP: 400
+	Armor:
+		Type: light
+	RenderSprites:
+	WithVoxelBody:
+	WithVoxelWalkerBody:
+		TickRate: 1
+	SpawnActorOnDeath:
+		Actor: pdplanehusk
+	HitShape:
+
+spyphusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Spy Plane
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 225
+	RenderVoxels:
+		Image: spyp
+
 schp:
 	Inherits: ^Aircraft
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
