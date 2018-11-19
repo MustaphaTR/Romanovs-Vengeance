@@ -65,12 +65,12 @@ Maverick:
 		Speed: 384
 		Arm: 2
 		HorizontalRateOfTurn: 8
-		RangeLimit: 7c204
+		RangeLimit: 8c204
 		ContrailColor: D8D8FF
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c410
 		Falloff: 100, 0
-		Damage: 200
+		Damage: 150
 		Versus:
 			Concrete: 75
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
@@ -85,7 +85,9 @@ Maverick:
 
 Maverick2:
 	Inherits: Maverick
-	Report: vblaatta.wav
+	Report: vbleatta.wav, vbleattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 200
 
 Medusa:
 	Inherits: ^AAMissile
