@@ -2,6 +2,9 @@ shad:
 	Inherits: ^Aircraft
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
 	Tooltip:
 		Name: Night Hawk
 	Selectable:
@@ -147,6 +150,9 @@ zephusk:
 
 orca:
 	Inherits: ^Plane
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -431,6 +437,9 @@ schp:
 	Inherits: ^Aircraft
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
 	Tooltip:
 		Name: Siege Chopper
 	Selectable:
