@@ -271,6 +271,8 @@ deso:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 150
+	Mobile:
+		RequiresCondition: !chronodisable && undeployed
 	RevealsShroud:
 		Range: 6c0
 	Armor:
@@ -301,10 +303,35 @@ deso:
 		Name: opentopped
 		Weapon: RadBeamWeaponE
 		RequiresCondition: rank-elite
+	PeriodicExplosion@deploy:
+		Weapon: RadEruptionWeapon
+		RequiresCondition: deployed
 	AttackFrontal:
 		Voice: Attack
+	GrantCondition:
+		Condition: editorhack
+	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
+		DefaultAttackSequence: shoot
+		RequiresCondition: !editorhack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		RequiresCondition: undeployed
+	WithInfantryBody@Deployed:
+		StandSequences: deployed
+		DefaultAttackSequence: deploy-shoot
+		RequiresCondition: deployed
+	WithSpriteBody:
+		Sequence: dot
+		Name: dot
+		RequiresCondition: !undeployed
+	WithMakeAnimation:
+		Sequence: deploy
+		BodyNames: dot
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		CanDeployOnRamps: True
+		Facing: 92
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, ImmuneToRadiation
 	Voiced:
@@ -313,6 +340,7 @@ deso:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	-TakeCover: # TODO: needs to be conditional so we can disable when deployed
 	-DamagedByTintedCells:
 
 ivan:

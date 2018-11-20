@@ -1,6 +1,7 @@
 smcv:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 40
@@ -98,7 +99,6 @@ harv:
 		Range: 4c0
 	Targetable:
 		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, DroneInfection, ImmuneToRadiation
-	-DamagedByTintedCells:
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect
@@ -156,7 +156,6 @@ dron:
 		ValidTargets: Infantry
 	Targetable:
 		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, ImmuneToRadiation
-	-DamagedByTintedCells:
 	Voiced:
 		VoiceSet: TerrorDroneVoice
 	HitShape:
@@ -165,6 +164,7 @@ htk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -221,6 +221,7 @@ htnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -275,6 +276,7 @@ apoc:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 1750
 	Tooltip:
@@ -342,6 +344,7 @@ ttnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -388,6 +391,7 @@ ttnk:
 dtruck:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 80
@@ -427,6 +431,7 @@ v3:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 70

@@ -1,6 +1,7 @@
 amcv:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 40
@@ -87,7 +88,6 @@ cmin:
 		Range: 4c0
 	Targetable:
 		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, DroneInfection, ImmuneToRadiation
-	-DamagedByTintedCells:
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect
@@ -102,6 +102,7 @@ mtnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 700
 	Tooltip:
@@ -155,6 +156,7 @@ tnkd:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -201,6 +203,7 @@ fv:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -349,6 +352,7 @@ sref:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 90
@@ -401,6 +405,7 @@ mgtk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 90
@@ -451,6 +456,7 @@ bfrt:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 100
@@ -575,7 +581,6 @@ robo:
 	Targetable@WATER:
 		TargetTypes: Ground, Water, Vehicle, Repair, DetonateAttack, ImmuneToRadiation
 		RequiresCondition: in_water
-	-DamagedByTintedCells:
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water
 		Condition: in_water

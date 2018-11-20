@@ -286,10 +286,22 @@
 	ExternalCondition@CRATE-SPEED:
 		Condition: crate-speed
 
-^DamagedByRadiation:
+^DamagedByRadiation100Percent:
 	DamagedByTintedCells:
 		Damage: 1
 		DamageLevel: 5
+		DamageTypes: RadiationDeath
+
+^DamagedByRadiation50Percent:
+	DamagedByTintedCells:
+		Damage: 1
+		DamageLevel: 10
+		DamageTypes: RadiationDeath
+
+^DamagedByRadiation10Percent:
+	DamagedByTintedCells:
+		Damage: 1
+		DamageLevel: 50
 		DamageTypes: RadiationDeath
 
 ^AcceptsIvanBomb:
@@ -710,7 +722,7 @@
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^HospitalHealing
 	Inherits@7: ^KilledByIronCurtain
-	Inherits@8: ^DamagedByRadiation
+	Inherits@8: ^DamagedByRadiation100Percent
 	Inherits@9: ^AcceptsIvanBomb
 	Health:
 	OwnerLostAction:
@@ -944,9 +956,8 @@
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^MachineShopRepair
-	Inherits@7: ^DamagedByRadiation
-	Inherits@8: ^AcceptsIvanBomb
-	Inherits@9: ^AcceptsTanyaC4
+	Inherits@7: ^AcceptsIvanBomb
+	Inherits@8: ^AcceptsTanyaC4
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
@@ -1165,9 +1176,8 @@
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^MachineShopRepair
-	Inherits@7: ^DamagedByRadiation
-	Inherits@8: ^AcceptsIvanBomb
-	Inherits@9: ^AcceptsTanyaC4
+	Inherits@7: ^AcceptsIvanBomb
+	Inherits@8: ^AcceptsTanyaC4
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
