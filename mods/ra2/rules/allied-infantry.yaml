@@ -236,6 +236,18 @@ ggi:
 	Inherits@2: ^Parachutable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move && undeployed
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: (stance-attackanything || assault-move) && undeployed
+	AutoTargetPriority@DEFAULT_ALL:
+		RequiresCondition: (!stance-attackanything && !assault-move) && deployed
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Defense
+		InvalidTargets: NoAutoTarget, WaterStructure
+	AutoTargetPriority@ATTACKANYTHING_ALL
+		RequiresCondition: (stance-attackanything || assault-move) && deployed
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Structure, Defense
+		InvalidTargets: NoAutoTarget
 	Buildable:
 		Queue: Infantry
 		Prerequisites: ~gapile
