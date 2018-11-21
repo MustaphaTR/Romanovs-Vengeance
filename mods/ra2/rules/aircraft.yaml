@@ -532,3 +532,72 @@ schphusk:
 		Image: schp
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
+
+# Custom Aircraft
+hind:
+	Inherits: ^Aircraft
+	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
+	Tooltip:
+		Name: Hind Carryall
+	Selectable:
+		Bounds: 70,60,0,-20
+	Health:
+		HP: 225
+	Armor:
+		Type: Light
+	Voiced:
+		VoiceSet: HindVoice
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 50
+		Prerequisites: ~naweap, radar
+		Description: Vehicle Transport Helicopter\n  Unarmed.
+		IconPalette: ts-chrome
+	Valued:
+		Cost: 1250
+	RevealsShroud:
+		Range: 6c0
+		Type: CenterPosition
+	Aircraft:
+		CruiseAltitude: 3072
+		LandWhenIdle: true
+		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
+		TurnSpeed: 10
+		Speed: 125
+		AltitudeVelocity: 160
+		CruisingCondition: cruising
+	RenderSprites:
+	RenderVoxels:
+		NormalsPalette: ts-normals
+		Scale: 13.5
+	WithVoxelHelicopterBody:
+		TickRate: 1
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+		OffsetModifier: -45
+	Carryall:
+		LocalOffset: 0,0,-512
+		Voice: Move
+	SpawnActorOnDeath:
+		Actor: hindhusk
+	HitShape:
+
+hindhusk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Hind Carryall
+	Aircraft:
+		TurnSpeed: 10
+		Speed: 140
+	FallsToEarth:
+		Explosion: UnitExplode
+	RevealsShroud:
+		Range: 7c0
+		Type: CenterPosition
+	RenderVoxels:
+		Image: hind
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
