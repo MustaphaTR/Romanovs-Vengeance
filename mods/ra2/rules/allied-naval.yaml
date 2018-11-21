@@ -9,7 +9,7 @@ lcrf:
 		Prerequisites: ~gayard
 		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n  Unarmed
 	Valued:
-		Cost: 900
+		Cost: 500
 	Tooltip:
 		Name: Amphibious Transport
 	Selectable:
@@ -63,7 +63,7 @@ dest:
 		Prerequisites: ~gayard
 		Description: Allied Main Battle Ship armed with cannons and\n an Osprey helicopter.\nCan detect submarines and sea animals.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft
 	Valued:
-		Cost: 1000
+		Cost: 800
 	Tooltip:
 		Name: Destroyer
 	Health:
@@ -128,7 +128,7 @@ aegis:
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@C4: ^AcceptsSEALC4
 	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship
@@ -136,7 +136,7 @@ aegis:
 		Prerequisites: radar, ~gayard
 		Description: Anti-Air naval unit.\n  Strong vs Aircraft\n  Grounds units, Ships
 	Valued:
-		Cost: 1200
+		Cost: 1000
 	Tooltip:
 		Name: Aegis Cruiser
 	Selectable:
@@ -144,7 +144,7 @@ aegis:
 	Health:
 		HP: 800
 	Armor:
-		Type: Light
+		Type: Heavy
 	Mobile:
 		TurnSpeed: 3
 		Speed: 60
@@ -177,7 +177,7 @@ dlph:
 		Prerequisites: gatech, ~gayard
 		Description: Trained dolphin\narmed with sonic beams.\n  Strong vs Ships
 	Valued:
-		Cost: 500
+		Cost: 400
 	Tooltip:
 		Name: Dolphin
 	Armor:
