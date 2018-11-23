@@ -286,6 +286,12 @@
 	ExternalCondition@CRATE-SPEED:
 		Condition: crate-speed
 
+^AffectedByIndustrialPlant:
+	ProductionCostMultiplier@INDUSTRAL_PLANT:
+		Multiplier: 75
+		Prerequisites: naindp
+		Queue: Ship, Vehicle
+
 ^DamagedByRadiation100Percent:
 	DamagedByTintedCells:
 		Damage: 1
@@ -958,6 +964,7 @@
 	Inherits@6: ^MachineShopRepair
 	Inherits@7: ^AcceptsIvanBomb
 	Inherits@8: ^AcceptsTanyaC4
+	Inherits@9: ^AffectedByIndustrialPlant
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
@@ -1087,6 +1094,7 @@
 	Inherits@3: ^MachineShopRepair
 	Inherits@4: ^AcceptsIvanBomb
 	Inherits@5: ^AcceptsTanyaC4
+	Inherits@6: ^AffectedByIndustrialPlant
 	WithTextControlGroupDecoration:
 
 ^Plane:
@@ -1179,6 +1187,7 @@
 	Inherits@6: ^MachineShopRepair
 	Inherits@7: ^AcceptsIvanBomb
 	Inherits@8: ^AcceptsTanyaC4
+	Inherits@9: ^AffectedByIndustrialPlant
 	OwnerLostAction:
 		Action: Kill
 	Mobile:

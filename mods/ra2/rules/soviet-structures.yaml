@@ -572,7 +572,7 @@ nanrct:
 	Inherits@shape: ^4x4Shape
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: natech, ~structures.soviets
 		Description: Provides power for other structures.
 	Valued:
@@ -618,7 +618,7 @@ natech:
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: naweap, naradr, ~structures.soviets
 		Description: Allows deployment of advanced units.
 	Valued:
@@ -650,10 +650,10 @@ naclon:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building
-		BuildPaletteOrder: 100
-		Prerequisites: natech, ~structures.soviets
+		BuildPaletteOrder: 110
+		Prerequisites: ~disabled # natech, ~structures.soviets
+		Description: Clones most trained infantry.\nMaximum 1 can be built.
 		BuildLimit: 1
-		Description: Clones most trained infantry.
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -770,7 +770,7 @@ nairon:
 		BuildPaletteOrder: 90
 		Prerequisites: natech, ~structures.soviets
 		BuildLimit: 1
-		Description: Grants invulnerability to armored units.\nFries fleshy units.
+		Description: Grants invulnerability to armored units.\nFries fleshy units.\nMaximum 1 can be built.
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -1080,3 +1080,39 @@ nabnkr:
 		RequiresCondition: !build-incomplete
 	RevealsShroud:
 		Range: 6c0
+
+naindp:
+	Inherits: ^Building
+	Inherits@shape: ^3x3Shape
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 100
+		Prerequisites: narefn, natech, ~structures.soviets
+		Description: Decreases vehicle costs by 25%.\nMaximum 1 can be built.
+		BuildLimit: 1
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Industrial Plant
+	ProvidesPrerequisite@default:
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	Selectable:
+		Bounds: 152, 164, 0, -50
+	WithMakeAnimation:
+		Condition: build-incomplete
+	WithIdleOverlay@pistons:
+		Sequence: idle-pistons
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		RequiresCondition: !build-incomplete
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	Power:
+		Amount: -200
