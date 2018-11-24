@@ -168,3 +168,29 @@ RadEruptionWeapon:
 		Falloff: 100, 100
 		Level: 500
 		MaxLevel: 500
+
+DamageSparkSpawner:
+	ReloadDelay: 384
+	Range: 1
+	Projectile: InstantExplode
+	Warhead@TargetValidation: SpreadDamage
+	Warhead@op: FireShrapnel
+		Weapon: DamageSpark
+		Amount: 6
+		AffectsParent: true
+
+^Spark:
+	Range: 1c512
+	MinRange: 640
+	ReloadDelay: 1
+	Projectile: BulletAS
+		Speed: 62
+		LaunchAngle: 165, 215
+		Image: particles
+		Sequences: damagespark
+	Warhead@1Dam: SpreadDamage
+
+DamageSpark:
+	Inherits: ^Spark
+	Projectile: BulletAS
+		Palette: effect
