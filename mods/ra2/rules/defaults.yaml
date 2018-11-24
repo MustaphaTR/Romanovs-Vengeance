@@ -972,7 +972,13 @@
 	Selectable:
 		Bounds: 32,32
 	Targetable:
-		TargetTypes: Ground, Vehicle, Repair, DroneInfection, DetonateAttack
+		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
+	Targetable@REPAIR:
+		RequiresCondition: damaged
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 	Infectable:
 		KillInfectorDamageTypes: KillsDrone
 	Repairable:
@@ -1047,9 +1053,6 @@
 	Inherits@1: ^ExistsInWorld
 	OwnerLostAction:
 		Action: Kill
-	Targetable@airborne:
-		TargetTypes: Air
-		RequiresCondition: airborne
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -1075,9 +1078,18 @@
 		LightPitch: 150
 		LightAmbientColor: -0.5,-0.5,-0.5
 		LightDiffuseColor: 1.4,1.4,1.4
-	Targetable@ground:
-		TargetTypes: Ground, Repair, Vehicle
+	Targetable@Airborne:
+		TargetTypes: Air
+		RequiresCondition: airborne
+	Targetable@Ground:
+		TargetTypes: Ground, Vehicle
 		RequiresCondition: !airborne
+	Targetable@REPAIR:
+		RequiresCondition: !airborne && damaged
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 	DeathSounds:
 	AppearsOnRadar:
 		UseLocation: true
@@ -1116,7 +1128,7 @@
 		Speed: 170
 		AirborneCondition: airborne
 	Targetable@GROUND:
-		TargetTypes: Ground, Repair, Vehicle
+		TargetTypes: Ground, Vehicle
 		RequiresCondition: !airborne
 	Targetable@AIRBORNE:
 		TargetTypes: Air
@@ -1201,7 +1213,13 @@
 	Selectable:
 		Bounds: 32,32
 	Targetable:
-		TargetTypes: Ground, Water, Ship, Repair
+		TargetTypes: Ground, Water, Ship
+	Targetable@REPAIR:
+		RequiresCondition: damaged
+		TargetTypes: Repair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 	Repairable:
 		Voice: Attack
 		RepairBuildings: gayard, nayard

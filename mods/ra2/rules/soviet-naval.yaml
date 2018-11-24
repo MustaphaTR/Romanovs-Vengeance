@@ -28,7 +28,7 @@ sapc:
 	Targetable:
 		RequiresCondition: in_water
 	Targetable@GROUND:
-		TargetTypes: Ground, Vehicle, Repair, DroneInfection, DetonateAttack
+		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
 		RequiresCondition: !in_water
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water
@@ -77,7 +77,7 @@ sub:
 	RevealsShroud:
 		Range: 6c0
 	Targetable:
-		TargetTypes: Ground, Water, Ship, Underwater, Repair
+		TargetTypes: Ground, Water, Ship, Underwater
 	Cloak:
 		CloakTypes: Underwater
 		InitialDelay: 50
