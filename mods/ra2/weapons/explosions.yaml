@@ -213,10 +213,12 @@ atomic:
 
 demobomb:
 	Inherits: NukePayload
+	ValidTargets: Ground, Water
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 2c0
 		Damage: 1200 # 300
 		Falloff: 100, 70, 40, 10, 0
+		ValidTargets: Ground, Water
 		Versus:
 			Light: 100
 			Medium: 50
