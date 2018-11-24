@@ -199,3 +199,13 @@ TeslaSpark:
 	Inherits: ^Spark
 	Projectile: BulletAS
 		Palette: highlight
+
+DisabledSparkSpawner:
+	ReloadDelay: 192
+	Range: 1
+	Projectile: InstantExplode
+	Warhead@TargetValidation: SpreadDamage
+	Warhead@op: FireShrapnel
+		Weapon: TeslaSpark
+		Amount: 9
+		AffectsParent: true

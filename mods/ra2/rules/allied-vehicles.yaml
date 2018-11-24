@@ -572,6 +572,10 @@ robo:
 		RequiresCondition: !powered
 	KillsSelf@LowPowerOnWater:
 		RequiresCondition: !powered && in_water
+	ExplodeWeapon@disabledsparks:
+		RequiresCondition: !powered
+		Weapon: DisabledSparkSpawner
+		LocalOffset: 0,0,384
 	GrantConditionOnPrerequisite:
 		Condition: powered
 		Prerequisites: powered_garobo
