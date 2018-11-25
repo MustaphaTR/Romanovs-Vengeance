@@ -511,7 +511,7 @@ ghost:
 ccomand:
 	Inherits: ghost
 	Buildable:
-		BuildPaletteOrder: 170
+		BuildPaletteOrder: 960
 		Prerequisites: ~gapile, ~allies.tech.infiltrated
 		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings
 	Tooltip:
@@ -559,7 +559,7 @@ ccomand:
 ptroop:
 	Inherits: ccomand
 	Buildable:
-		BuildPaletteOrder: 180
+		BuildPaletteOrder: 980
 		Prerequisites: ~gapile, ~soviets.tech.infiltrated
 		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Can C4 Buildings
 	Valued:
@@ -609,12 +609,12 @@ tany:
 		BuildPaletteOrder: 140
 		Prerequisites: gatech, ~gapile
 		BuildLimit: 1
-		Description: Elite commando infantry, armed with \ndual pistols and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings and Vehicles.\n\nMaximum 1 can be trained.
+		Description: Elite commando infantry, armed with \ndual pistols and C4.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can C4 Buildings and Vehicles.\n\nMaximum 1 can be trained.
 	Valued:
 		Cost: 1500
 	DeliversCash:
-		Payload: 500
-		PlayerExperience: 50
+		Payload: 750
+		PlayerExperience: 75
 		Voice: Move
 	Tooltip:
 		Name: Tanya
@@ -626,7 +626,7 @@ tany:
 		Speed: 75
 		Locomotor: swimsuit
 	RevealsShroud:
-		Range: 6c0
+		Range: 8c0
 	Demolition:
 		Voice: Demolish
 	Armor:
@@ -784,7 +784,7 @@ cleg:
 	Buildable:
 		Queue: Infantry
 		BuildAtProductionType: Infantry
-		BuildPaletteOrder: 150
+		BuildPaletteOrder: 160
 		Prerequisites: ~gapile, gatech
 		Description: High-tech soldier.\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
 	ProducibleWithLevel:

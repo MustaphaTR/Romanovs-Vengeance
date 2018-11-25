@@ -287,7 +287,7 @@ SealVoice:
 TanyaVoice:
 	Inherits: ^InfantryDeath
 	Voices:
-		Build: itapcrd
+		Build: itapcrd, itapcra, itapcrb, itapcrc, itapcrd
 		Select: itansea, itanseb, itansec, itansed, itansee, itapsea, itapseb, itapsec, itapsed, itapsee
 		Move: itanmoa, itanmob, itanmoc, itanmod, itanmoe, itanmof, itapmoa, itapmob, itapmoc, itapmod
 		Attack: itanata, itanatc, itanatd, itanate, itapata, itapatb, itapatd
@@ -369,6 +369,15 @@ TerroristVoice:
 		Attack: iterata, iteratb, iteratc, iteratd
 		Feedback: iterfea, iterfeb, iterfec
 		Die: iterdia, iterdib, iterdic
+
+BorisVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Build: iborcra, iborcrb, iborcrc, iborcrd, iborcre
+		Select: iborsea, iborseb, iborsec, iborsed, iborsee
+		Move: ibormoa, ibormob, ibormoc, ibormod, ibormoe
+		Attack: iborata, iboratb, iboratc, iboratd, iborate
+		Die: ibordia, ibordib, ibordic, ibordid, ibordie
 
 YuriVoice:
 	Inherits: ^InfantryDeath
@@ -516,3 +525,11 @@ CowVoice:
 		Move: gcowmova, gcowmovb
 		Feedback: gcowsela, gcowselb, gcowselc
 		Die: gcowdiea
+
+CamelVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: gcamsela, gcamselb, gcamselc
+		Move: gcammova, gcammovb
+		Feedback: gcamsela, gcamselb, gcamselc
+		Die: gcamdiea

@@ -68,7 +68,6 @@ UCpara:
 
 UCparaE:
 	Inherits: UCpara
-	ReloadDelay: 11
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 
@@ -84,13 +83,13 @@ MP5:
 			None: 200
 			Flak: 100
 			Plate: 100
-			Light: 0
-			Medium: 0
-			Heavy: 0
-			Wood: 0
-			Steel: 0
-			Concrete: 0
-			Drone: 0
+			Light: 1
+			Medium: 1
+			Heavy: 1
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 1
 			Rocket: 100
 		DamageTypes: BulletDeath
 	Warhead@2Eff: CreateEffect
@@ -102,6 +101,11 @@ MP5E:
 DoublePistols:
 	Inherits: MP5
 	Report: itanatta.wav, itanattb.wav
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			Light: 0
+			Medium: 0
+			Heavy: 0
 
 DoublePistolsE:
 	Inherits: DoublePistols
@@ -117,8 +121,6 @@ awp:
 	ReloadDelay: 100
 	Range: 14c0
 	Report: isniatta.wav
-	Projectile: BulletAS
-		Speed: 6c682
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
 		Damage: 125
@@ -179,3 +181,34 @@ BlackHawkCannonE:
 	Inherits: BlackHawkCannon
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
+
+# Yuri's Revenge Bullets:
+AKM:
+	Inherits: ^MG
+	ReloadDelay: 20
+	Range: 7c0
+	Report: iboratta.wav, iborattb.wav
+	InvalidTargets: Structure, Wall
+	Warhead@1Dam: SpreadDamage
+		Damage: 65
+		Versus:
+			None: 200
+			Flak: 200
+			Plate: 100
+			Light: 50
+			Medium: 50
+			Heavy: 50
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 100
+			Rocket: 100
+		DamageTypes: BulletDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+
+AKME:
+	Inherits: AKM
+	Range: 9c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 90
