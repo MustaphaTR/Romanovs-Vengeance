@@ -533,6 +533,47 @@ schphusk:
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 
+bpln:
+	Inherits: orca
+	Tooltip:
+		Name: MiG
+	-Buildable:
+	-RevealsShroud:
+	-Selectable:
+	-SelectionDecorations:
+	Interactable:
+	Aircraft:
+		Repulsable: false
+		Speed: 240
+	SpawnActorOnDeath:
+		Actor: bplnhusk
+	Armament:
+		Weapon: Maverick3
+	Health:
+		HP: 100
+	-AttackAircraft:
+	AttackBomber:
+	AmmoPool:
+		Ammo: 2
+		PipCount: 2
+	Voiced:
+		VoiceSet: MiGVoice
+	RenderSprites:
+		Image: bpln
+	RenderVoxels:
+		Image: bpln
+	HitShape:
+
+bplnhusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: MiG
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 240
+	RenderVoxels:
+		Image: bpln
+
 # Custom Aircraft
 hind:
 	Inherits: ^Aircraft
