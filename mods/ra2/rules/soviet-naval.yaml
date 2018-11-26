@@ -4,9 +4,8 @@ sapc:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Soviets
 		BuildPaletteOrder: 10
-		Prerequisites: ~nayard
 		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n  Unarmed
 	Valued:
 		Cost: 500
@@ -58,9 +57,8 @@ sub:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Soviets
 		BuildPaletteOrder: 20
-		Prerequisites: ~nayard
 		Description: Submerged anti-ship unit armed with\ntorpedoes.\nCan detect other submarines and Giant Squids.\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\nSpecial Ability: Submerge
 	Valued:
 		Cost: 800
@@ -120,9 +118,9 @@ hyd:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Soviets
 		BuildPaletteOrder: 30
-		Prerequisites: naradr, ~nayard
+		Prerequisites: naradr
 		Description: Anti-Air/Anti-Infantry naval unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles, Naval Units
 	Valued:
 		Cost: 700
@@ -163,9 +161,9 @@ sqd:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Soviets
 		BuildPaletteOrder: 40
-		Prerequisites: natech, ~nayard
+		Prerequisites: natech
 		Description: Ocean creature\npunches enemies in close combat.\n  Strong vs Ships
 	Valued:
 		Cost: 800
@@ -245,9 +243,9 @@ dred:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Soviets
 		BuildPaletteOrder: 60
-		Prerequisites: ~nayard, natech
+		Prerequisites: natech
 		Description: Long-range rocket artillery ship.
 	Valued:
 		Cost: 2000

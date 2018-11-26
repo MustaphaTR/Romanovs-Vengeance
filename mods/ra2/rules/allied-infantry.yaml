@@ -2,7 +2,7 @@ engineer:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry.Allies, Infantry.Soviets
 		Prerequisites: ~barracks
 		BuildPaletteOrder: 30
 		Description: Captures enemy structures.\n  Unarmed
@@ -50,7 +50,7 @@ engineer:
 dog:
 	Inherits: ^Infantry
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry.Allies, Infantry.Soviets
 		Prerequisites: ~barracks
 		BuildPaletteOrder: 40
 		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -125,8 +125,7 @@ e1:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry
-		Prerequisites: ~gapile
+		Queue: Infantry.Allies
 		BuildPaletteOrder: 10
 		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
@@ -249,8 +248,7 @@ ggi:
 		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	Buildable:
-		Queue: Infantry
-		Prerequisites: ~gapile
+		Queue: Infantry.Allies
 		BuildPaletteOrder: 40
 		Description: Anti-tank/anti-air infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings
 	Valued:
@@ -366,7 +364,7 @@ snipe:
 	Tooltip:
 		Name: Sniper
 	Buildable:
-		Queue: Infantry
+		Queue: Infantry.Allies
 		BuildPaletteOrder: 80
 		Prerequisites: radar, ~infantry.england
 		Description: Special anti-infantry unit.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -397,10 +395,9 @@ snipe:
 spy:
 	Inherits: ^Infantry
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Allies
 		BuildPaletteOrder: 130
-		Prerequisites: gatech, ~gapile
+		Prerequisites: gatech
 		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\n  Unarmed\nSpecial Ability: Disguises
 	Valued:
 		Cost: 1000
@@ -450,10 +447,9 @@ ghost:
 	Inherits@MC: ^MindControllable
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Allies
 		BuildPaletteOrder: 100
-		Prerequisites: ~gapile, radar
+		Prerequisites: radar
 		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings and Ships
 	Valued:
 		Cost: 1000
@@ -512,7 +508,7 @@ ccomand:
 	Inherits: ghost
 	Buildable:
 		BuildPaletteOrder: 960
-		Prerequisites: ~gapile, ~allies.tech.infiltrated
+		Prerequisites: ~allies.tech.infiltrated
 		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings
 	Tooltip:
 		Name: Chrono Commando
@@ -560,7 +556,7 @@ ptroop:
 	Inherits: ccomand
 	Buildable:
 		BuildPaletteOrder: 980
-		Prerequisites: ~gapile, ~soviets.tech.infiltrated
+		Prerequisites: ~soviets.tech.infiltrated
 		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Can C4 Buildings
 	Valued:
 		Cost: 1000
@@ -604,10 +600,9 @@ tany:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Allies
 		BuildPaletteOrder: 140
-		Prerequisites: gatech, ~gapile
+		Prerequisites: gatech
 		BuildLimit: 1
 		Description: Elite commando infantry, armed with \ndual pistols and C4.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can C4 Buildings and Vehicles.\n\nMaximum 1 can be trained.
 	Valued:
@@ -679,10 +674,9 @@ jumpjet:
 	HiddenUnderFog:
 		Type: CenterPosition
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: ~gapile, radar
+		Prerequisites: radar
 		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
 	Valued:
 		Cost: 600
@@ -782,10 +776,9 @@ cleg:
 	Tooltip:
 		Name: Chrono Legionnaire
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Allies
 		BuildPaletteOrder: 160
-		Prerequisites: ~gapile, gatech
+		Prerequisites: gatech
 		Description: High-tech soldier.\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated

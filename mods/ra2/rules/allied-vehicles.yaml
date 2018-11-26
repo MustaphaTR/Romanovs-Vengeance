@@ -3,9 +3,8 @@ amcv:
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 40
-		Prerequisites: ~gaweap
 		Description: Deploys into a Construction Yard.
 	Valued:
 		Cost: 3000
@@ -47,9 +46,9 @@ amcv:
 cmin:
 	Inherits: ^Vehicle
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 10
-		Prerequisites: ~gaweap, refinery
+		Prerequisites: refinery
 		Description: Gathers Ore.\n  Unarmed.\n  Immune to Radiation.\nSpecial ability: Can teleport to own refineries
 	Valued:
 		Cost: 1100
@@ -108,9 +107,8 @@ mtnk:
 	Tooltip:
 		Name: Grizzly Battle Tank
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 20
-		Prerequisites: ~gaweap
 		Description: Allied Main Battle Tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 105
@@ -162,7 +160,7 @@ tnkd:
 	Tooltip:
 		Name: Tank Destroyer
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 70
 		Prerequisites: ~vehicles.germany, radar
 		Description: Special anti-armor unit.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
@@ -209,9 +207,8 @@ fv:
 	Tooltip:
 		Name: Infantry Fighting Vehicle
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 30
-		Prerequisites: ~gaweap
 		Description: Multi-Purpose Vehicle.\nWithout passenger:\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\nSpecial Ability: Armament depends on passenger.
 	Mobile:
 		Speed: 150
@@ -355,9 +352,9 @@ sref:
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 70
-		Prerequisites: gatech, ~gaweap
+		Prerequisites: gatech
 		Description: Fires deadly beams of light.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1200
@@ -408,9 +405,9 @@ mgtk:
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 80
-		Prerequisites: gatech, ~gaweap
+		Prerequisites: gatech
 		Description: As tree disguised tank.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1000
@@ -459,9 +456,9 @@ bfrt:
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: gatech, ~gaweap
+		Prerequisites: gatech
 		Description: Large vehicle with 5 fireports for infantry in to fire.\nCan crush enemy vehicles.
 	Valued:
 		Cost: 2000
@@ -530,9 +527,9 @@ robo:
 	Tooltip:
 		Name: Robot Tank
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 50
-		Prerequisites: ~gaweap, garobo
+		Prerequisites: garobo
 		Description: Remote controlled vehicle.\nCan move over water.\nCannot be mind controlled.\nRequires a working Robot Control Center to operate.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 150

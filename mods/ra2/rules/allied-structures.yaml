@@ -2,7 +2,7 @@ gacnst:
 	Inherits: ^Building
 	Inherits@shape: ^4x4Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies, Building.Soviets
 		BuildPaletteOrder: 1000
 		Prerequisites: ~disabled
 		Description: Builds base structures.
@@ -20,7 +20,27 @@ gacnst:
 	Valued:
 		Cost: 3000
 	Production:
-		Produces: Building,Support
+		Produces: Building.Allies, Support.Allies
+	ProductionQueue@AlliedBuilding:
+		Type: Building.Allies
+		Group: Building
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@AlliedSupport:
+		Type: Support.Allies
+		Group: Support
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	Tooltip:
 		Name: Construction Yard
 	BaseBuilding:
@@ -34,9 +54,9 @@ gacnst:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
 	ProductionBar@Building:
-		ProductionType: Building
+		ProductionType: Building.Allies
 	ProductionBar@Support:
-		ProductionType: Support
+		ProductionType: Support.Allies
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -72,9 +92,8 @@ gapowr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 10
-		Prerequisites: ~structures.allies
 		Description: Provides power for other structures.
 	Selectable:
 		Bounds: 96, 98, -2, -24
@@ -114,9 +133,9 @@ gapile:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 20
-		Prerequisites: power, ~structures.allies
+		Prerequisites: power
 		Description: Trains infantry.
 	Selectable:
 		Bounds: 134, 132, 0, -28
@@ -156,18 +175,19 @@ gapile:
 		SpawnOffset: -170,810,0
 		ExitCell: 2, 2
 	Production:
-		Produces: Infantry
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithTextDecoration@primary:
-		RequiresSelection: true
-		Text: PRIMARY
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		Produces: Infantry.Allies
+	ProductionQueue:
+		Type: Infantry.Allies
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
-		ProductionType: Infantry
+		ProductionType: Infantry.Allies
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithIdleOverlay@flag:
@@ -185,9 +205,9 @@ garefn:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 30
-		Prerequisites: power, ~structures.allies
+		Prerequisites: power
 		Description: Processes ore into credits.
 	Selectable:
 		Bounds: 176, 150, 0, -20
@@ -245,9 +265,9 @@ gaairc:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: garefn, ~structures.allies, ~!structures.america
+		Prerequisites: garefn, ~!structures.america
 		Description: Provides radar\nSupports 4 aircraft.
 	Valued:
 		Cost: 1500
@@ -316,18 +336,19 @@ gaairc:
 		SpawnOffset: 200,-300,0
 		MoveIntoWorld: false
 	Production:
-		Produces: Aircraft
+		Produces: Aircraft.Allies
+	ProductionQueue:
+		Type: Aircraft.Allies
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
-		ProductionType: Aircraft
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithTextDecoration@primary:
-		RequiresSelection: true
-		Text: PRIMARY
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		ProductionType: Aircraft.Allies
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
 
@@ -358,9 +379,9 @@ gaweap:
 	Inherits: ^Building
 	Inherits@shape: ^5x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 40
-		Prerequisites: garefn, ~structures.allies
+		Prerequisites: garefn
 		Description: Produces vehicles.
 	Selectable:
 		Bounds: 212, 158, -7, -28
@@ -389,18 +410,19 @@ gaweap:
 		SpawnOffset: -384,-384,0
 		ExitCell: 4,1
 	Production:
-		Produces: Vehicle
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithTextDecoration@primary:
-		RequiresSelection: true
-		Text: PRIMARY
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		Produces: Vehicle.Allies
+	ProductionQueue:
+		Type: Vehicle.Allies
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
-		ProductionType: Vehicle
+		ProductionType: Vehicle.Allies
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithIdleOverlay@flag:
@@ -434,9 +456,9 @@ gayard:
 	Tooltip:
 		Name: Naval Yard
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 50
-		Prerequisites: power, refinery, ~structures.allies
+		Prerequisites: power, refinery
 		Description: Produces and repairs ships,\nsubmarines, transports, and other naval units.
 	Targetable:
 		TargetTypes: Ground, Water, C4
@@ -522,16 +544,19 @@ gayard:
 	Exit@5_5:
 		ExitCell: 5,5
 	Production:
-		Produces: Ship
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithTextDecoration@primary:
-		RequiresSelection: true
-		Text: PRIMARY
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		Produces: Ship.Allies
+	ProductionQueue:
+		Type: Ship.Allies
+		Group: Ship
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Ship.Allies
 	RallyPoint:
 		Offset: 5,1
 		Palette: mouse
@@ -539,8 +564,6 @@ gayard:
 	RepairsUnits:
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
-	ProductionBar:
-		ProductionType: Ship
 	Power:
 		Amount: -20
 	WithMakeAnimation:
@@ -563,9 +586,9 @@ gadept:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 70
-		Prerequisites: gaweap, ~structures.allies
+		Prerequisites: gaweap
 		Description: Repairs vehicles and removes Terror Drones (for a price).
 	Selectable:
 		Bounds: 144, 88, -12, -16
@@ -612,9 +635,9 @@ gatech:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 80
-		Prerequisites: radar, gaweap, ~structures.allies
+		Prerequisites: radar, gaweap
 		Description: Allows deployment of advanced units.
 	Selectable:
 		Bounds: 122, 216, 0, -81
@@ -648,9 +671,8 @@ gatech:
 gawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support
+		Queue: Support.Allies
 		BuildPaletteOrder: 10
-		Prerequisites: ~structures.allies
 		Description: Light wall.
 	Tooltip:
 		Name: Allied Wall
@@ -659,9 +681,9 @@ gapill:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Support
+		Queue: Support.Allies
 		BuildPaletteOrder: 30
-		Prerequisites: barracks, ~structures.allies
+		Prerequisites: barracks
 		Description: Automated anti-infantry defense.
 	Valued:
 		Cost: 500
@@ -700,9 +722,9 @@ nasam:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Buildable:
-		Queue: Support
+		Queue: Support.Allies
 		BuildPaletteOrder: 40
-		Prerequisites: barracks, ~structures.allies
+		Prerequisites: barracks
 		Description: Automated anti-aircraft defense.
 	Valued:
 		Cost: 1000
@@ -755,7 +777,7 @@ gtgcan:
 	Inherits@shape: ^2x2Shape
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Support
+		Queue: Support.Allies
 		BuildPaletteOrder: 60
 		Prerequisites: radar, ~structures.france
 		Description: Automated, long ranged anti-ground defense.
@@ -813,9 +835,9 @@ gaorep:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 100
-		Prerequisites: garefn, gatech, ~structures.allies
+		Prerequisites: garefn, gatech
 		Description: Refines income from ores and gems by 25%.\nMaximum 1 can be built.
 		BuildLimit: 1
 	Selectable:
@@ -847,9 +869,9 @@ gaspysat:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: gatech, ~structures.allies
+		Prerequisites: gatech
 		Description: Reveals the entire battlefield.
 	Selectable:
 		Bounds: 96, 98, -4, -30
@@ -891,9 +913,9 @@ gagap:
 	Tooltip:
 		Name: Gap Generator
 	Buildable:
-		Queue: Support
+		Queue: Support.Allies
 		BuildPaletteOrder: 70
-		Prerequisites: gatech, ~structures.allies
+		Prerequisites: gatech
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
 	Selectable:
 		Bounds: 50, 114, -16, -38
@@ -924,9 +946,9 @@ gaweat:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Buildable:
-		Queue: Support
+		Queue: Support.Allies
 		BuildPaletteOrder: 100
-		Prerequisites: gatech, ~structures.allies
+		Prerequisites: gatech
 		BuildLimit: 1
 		Description: Play God with deadly weather!
 	Selectable:
@@ -958,9 +980,9 @@ gacsph:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Buildable:
-		Queue: Support
+		Queue: Support.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: gatech, ~structures.allies
+		Prerequisites: gatech
 		Description: Allows teleporting units in a 3x3 array.
 		BuildLimit: 1
 	Selectable:
@@ -1014,9 +1036,9 @@ atesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Support
+		Queue: Support.Allies
 		BuildPaletteOrder: 50
-		Prerequisites: power, radar, ~structures.allies
+		Prerequisites: power, radar
 		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1100
@@ -1096,9 +1118,9 @@ garobo:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: gaweap, ~structures.allies
+		Prerequisites: gaweap
 		Description: Allows production of Robot Tanks.\nRequired for Robot Tanks to function.
 	Selectable:
 		Bounds: 96, 98, -4, -30

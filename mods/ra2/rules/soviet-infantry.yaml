@@ -4,8 +4,7 @@ e2:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry
-		Prerequisites: ~nahand
+		Queue: Infantry.Soviets
 		BuildPaletteOrder: 20
 		Description: Cheap rifle infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
@@ -64,8 +63,8 @@ flakt:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry
-		Prerequisites: naradr, ~nahand
+		Queue: Infantry.Soviets
+		Prerequisites: naradr
 		BuildPaletteOrder: 70
 		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles
 	Valued:
@@ -137,9 +136,7 @@ shk:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
-		Prerequisites: ~nahand
+		Queue: Infantry.Soviets
 		BuildPaletteOrder: 50
 		Description: Special armored unit using electricity.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft\nSpecial ability: Charge tesla coils
 	Valued:
@@ -210,8 +207,7 @@ terror:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Soviets
 		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~infantry.cuba
 		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n  Strong vs Ground units\n  Weak vs Aircraft
@@ -254,8 +250,7 @@ deso:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Soviets
 		BuildPaletteOrder: 170
 		Prerequisites: natech, ~infantry.iraq
 		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n  Immune to Radiation.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
@@ -347,10 +342,9 @@ ivan:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Soviets
 		BuildPaletteOrder: 110
-		Prerequisites: naradr, ~nahand
+		Prerequisites: naradr
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
 	Valued:
 		Cost: 600
@@ -422,10 +416,9 @@ yuri:
 	Inherits: ^Infantry
 	Inherits@2: ^Parachutable
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Soviets
 		BuildPaletteOrder: 180
-		Prerequisites: natech, ~nahand
+		Prerequisites: natech
 		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
 	Valued:
 		Cost: 1200
@@ -526,10 +519,9 @@ boris:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Infantry
-		BuildAtProductionType: Infantry
+		Queue: Infantry.Soviets
 		BuildPaletteOrder: 150
-		Prerequisites: natech, ~napile
+		Prerequisites: natech
 		BuildLimit: 1
 		Description: Elite commando infantry, armed with \nAKM rifle and signal flare.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can call airstrike against Buildings.\n\nMaximum 1 can be trained.
 	Valued:

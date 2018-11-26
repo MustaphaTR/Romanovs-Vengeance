@@ -4,9 +4,8 @@ lcrf:
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Allies
 		BuildPaletteOrder: 10
-		Prerequisites: ~gayard
 		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n  Unarmed
 	Valued:
 		Cost: 500
@@ -58,9 +57,8 @@ dest:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Allies
 		BuildPaletteOrder: 20
-		Prerequisites: ~gayard
 		Description: Allied Main Battle Ship armed with cannons and\n an Osprey helicopter.\nCan detect submarines and sea animals.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft
 	Valued:
 		Cost: 800
@@ -131,9 +129,9 @@ aegis:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Allies
 		BuildPaletteOrder: 30
-		Prerequisites: radar, ~gayard
+		Prerequisites: radar
 		Description: Anti-Air naval unit.\n  Strong vs Aircraft\n  Weak vs Grounds units, Ships
 	Valued:
 		Cost: 1000
@@ -172,9 +170,9 @@ dlph:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Allies
 		BuildPaletteOrder: 40
-		Prerequisites: gatech, ~gayard
+		Prerequisites: gatech
 		Description: Trained dolphin\narmed with sonic beams.\n  Strong vs Ships
 	Valued:
 		Cost: 400
@@ -248,9 +246,9 @@ carrier:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: gatech, ~gayard
+		Prerequisites: gatech
 		Description: Aircraft carrier ship.\n  Strong vs Tanks, Structures\n  Weak vs Infantry
 	Valued:
 		Cost: 2000

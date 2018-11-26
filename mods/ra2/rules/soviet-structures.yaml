@@ -2,7 +2,7 @@ nacnst:
 	Inherits: ^Building
 	Inherits@shape: ^4x4Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Allies, Building.Soviets
 		BuildPaletteOrder: 1000
 		Prerequisites: ~disabled
 		Description: Allows construction of base structures.
@@ -22,7 +22,27 @@ nacnst:
 	Valued:
 		Cost: 3000
 	Production:
-		Produces: Building, Support
+		Produces: Building.Soviets, Support.Soviets
+	ProductionQueue@SovietBuilding:
+		Type: Building.Soviets
+		Group: Building
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@SovietSupport:
+		Type: Support.Soviets
+		Group: Support
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	Tooltip:
 		Name: Construction Yard
 	BaseBuilding:
@@ -36,9 +56,9 @@ nacnst:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
 	ProductionBar@Building:
-		ProductionType: Building
+		ProductionType: Building.Soviets
 	ProductionBar@Support:
-		ProductionType: Support
+		ProductionType: Support.Soviets
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithIdleOverlay@top:
@@ -63,9 +83,8 @@ napowr:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 10
-		Prerequisites: ~structures.soviets
 		Description: Provides power for other structures.
 	Valued:
 		Cost: 600
@@ -105,9 +124,9 @@ nahand:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 20
-		Prerequisites: power, ~structures.soviets
+		Prerequisites: power
 		Description: Produces infantry.
 	Valued:
 		Cost: 500
@@ -172,22 +191,23 @@ nahand:
 	WithMakeAnimation:
 		Condition: build-incomplete
 	Production:
-		Produces: Infantry
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
+		Produces: Infantry.Soviets
+	ProductionQueue:
+		Type: Infantry.Soviets
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Infantry.Soviets
 	RallyPoint:
 		Offset: 3,3
 		Palette: mouse
 		IsPlayerPalette: false
-	WithTextDecoration@primary:
-		RequiresSelection: true
-		Text: PRIMARY
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
-	ProductionBar:
-		ProductionType: Infantry
 	Power:
 		Amount: -20
 	ConditionManager:
@@ -201,9 +221,9 @@ narefn:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 30
-		Prerequisites: power, ~structures.soviets
+		Prerequisites: power
 		Description: Processes ore into credits.
 	Selectable:
 		Bounds: 170, 150, -6, -33
@@ -261,9 +281,9 @@ naradr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 60
-		Prerequisites: power, narefn, ~structures.soviets
+		Prerequisites: power, narefn
 		Description: Provides radar.\n  Special Ability: Spy Plane
 	Valued:
 		Cost: 1500
@@ -316,9 +336,9 @@ naweap:
 	Inherits: ^Building
 	Inherits@shape: ^5x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 40
-		Prerequisites: refinery, ~structures.soviets
+		Prerequisites: refinery
 		Description: Produces vehicles.
 	Selectable:
 		Bounds: 196, 178, -6, -48
@@ -349,18 +369,19 @@ naweap:
 	Exit@1:
 		ExitCell: 5,1
 	Production:
-		Produces: Vehicle
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithTextDecoration@primary:
-		RequiresSelection: true
-		Text: PRIMARY
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		Produces: Vehicle.Soviets
+	ProductionQueue:
+		Type: Vehicle.Soviets
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
-		ProductionType: Vehicle
+		ProductionType: Vehicle.Soviets
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithExitOverlay@door:
@@ -391,9 +412,9 @@ nayard:
 	Tooltip:
 		Name: Naval Yard
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 50
-		Prerequisites: power, refinery, ~structures.soviets
+		Prerequisites: power, refinery
 		Description: Produces and repairs ships,\nsubmarines, transports, and other naval units.
 	Targetable:
 		TargetTypes: Ground, Water, C4
@@ -479,16 +500,19 @@ nayard:
 	Exit@5_5:
 		ExitCell: 5,5
 	Production:
-		Produces: Ship
-	PrimaryBuilding:
-		PrimaryCondition: primary
-		SelectionNotification: PrimaryBuildingSelected
-	WithTextDecoration@primary:
-		RequiresSelection: true
-		Text: PRIMARY
-		ReferencePoint: Top
-		ZOffset: 256
-		RequiresCondition: primary
+		Produces: Ship.Soviets
+	ProductionQueue:
+		Type: Ship.Soviets
+		Group: Ship
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Ship.Soviets
 	RallyPoint:
 		Offset: 5,1
 		Palette: mouse
@@ -496,8 +520,6 @@ nayard:
 	RepairsUnits:
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
-	ProductionBar:
-		ProductionType: Ship
 	Power:
 		Amount: -20
 	WithMakeAnimation:
@@ -523,9 +545,9 @@ nadept:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 70
-		Prerequisites: naweap, ~structures.soviets
+		Prerequisites: naweap
 		Description: Repairs vehicles and removes Terror Drones (for a price).
 	Selectable:
 		Bounds: 156, 150, 0, -38
@@ -571,9 +593,9 @@ nanrct:
 	Inherits: ^Building
 	Inherits@shape: ^4x4Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: natech, ~structures.soviets
+		Prerequisites: natech
 		Description: Provides power for other structures.
 	Valued:
 		Cost: 2000
@@ -617,9 +639,9 @@ natech:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: naweap, naradr, ~structures.soviets
+		Prerequisites: naweap, naradr
 		Description: Allows deployment of advanced units.
 	Valued:
 		Cost: 2000
@@ -649,9 +671,9 @@ naclon:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 110
-		Prerequisites: ~disabled # natech, ~structures.soviets
+		Prerequisites: ~disabled # natech
 		Description: Clones most trained infantry.\nMaximum 1 can be built.
 		BuildLimit: 1
 	Valued:
@@ -723,9 +745,9 @@ napsis:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support
+		Queue: Support.Soviets
 		BuildPaletteOrder: 70
-		Prerequisites: natech, ~structures.soviets
+		Prerequisites: natech
 		Description: Detects enemy units and strikepoints
 	Valued:
 		Cost: 1000
@@ -766,9 +788,9 @@ nairon:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Buildable:
-		Queue: Support
+		Queue: Support.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: natech, ~structures.soviets
+		Prerequisites: natech
 		BuildLimit: 1
 		Description: Grants invulnerability to armored units.\nFries fleshy units.\nMaximum 1 can be built.
 	Valued:
@@ -814,9 +836,9 @@ namisl:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Buildable:
-		Queue: Support
+		Queue: Support.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: natech, ~structures.soviets
+		Prerequisites: natech
 		BuildLimit: 1
 		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb\nMaximum 1 can be built.
 	Valued:
@@ -872,9 +894,8 @@ namisl:
 nawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support
+		Queue: Support.Soviets
 		BuildPaletteOrder: 10
-		Prerequisites: ~structures.soviets
 		Description: Light wall.
 	Tooltip:
 		Name: Soviet Wall
@@ -883,9 +904,9 @@ naflak:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Buildable:
-		Queue: Support
+		Queue: Support.Soviets
 		BuildPaletteOrder: 40
-		Prerequisites: barracks, ~structures.soviets
+		Prerequisites: barracks
 		Description: Automated anti-aircraft defense.
 	Valued:
 		Cost: 1000
@@ -935,9 +956,9 @@ tesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Support
+		Queue: Support.Soviets
 		BuildPaletteOrder: 50
-		Prerequisites: naradr, ~structures.soviets
+		Prerequisites: naradr
 		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1100
@@ -994,9 +1015,9 @@ nalasr:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Support
+		Queue: Support.Soviets
 		BuildPaletteOrder: 30
-		Prerequisites: barracks, ~structures.soviets
+		Prerequisites: barracks
 		Description: Automated anti-infantry defense.
 	Valued:
 		Cost: 500
@@ -1042,9 +1063,8 @@ nabnkr:
 	Inherits@shape: ^2x2Shape
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
-		Queue: Support
+		Queue: Support.Soviets
 		BuildPaletteOrder: 20
-		Prerequisites: ~structures.soviets
 		Description: Static defense with fireports for 5\ngarrisoned soldiers.
 	Valued:
 		Cost: 500
@@ -1085,9 +1105,9 @@ naindp:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: narefn, natech, ~structures.soviets
+		Prerequisites: narefn, natech
 		Description: Decreases vehicle costs by 25%.\nMaximum 1 can be built.
 		BuildLimit: 1
 	Valued:

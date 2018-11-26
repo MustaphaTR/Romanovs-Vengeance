@@ -22,9 +22,9 @@ shad:
 	Voiced:
 		VoiceSet: NighthawkVoice
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: ~gaweap, radar
+		Prerequisites: radar
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 1000
@@ -82,9 +82,9 @@ zep:
 	Tooltip:
 		Name: Kirov Airship
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Soviets
 		BuildPaletteOrder: 110
-		Prerequisites: ~naweap, natech
+		Prerequisites: natech
 	Selectable:
 		Bounds: 100,60,0,-10
 	Aircraft:
@@ -158,9 +158,8 @@ orca:
 	Tooltip:
 		Name: Harrier
 	Buildable:
-		Queue: Aircraft
+		Queue: Aircraft.Allies
 		BuildPaletteOrder: 10
-		Prerequisites: ~aircraft.allies
 		Description: Fast assault fighter\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	Aircraft:
 		TurnSpeed: 3
@@ -468,9 +467,9 @@ schp:
 	Voiced:
 		VoiceSet: SiegeChopperVoice
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: ~naweap, natech
+		Prerequisites: natech
 		Description: Helicopter capable of deploying into a long range artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 1400
@@ -592,9 +591,9 @@ hind:
 	Voiced:
 		VoiceSet: HindVoice
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Soviets
 		BuildPaletteOrder: 60
-		Prerequisites: ~naweap, radar
+		Prerequisites: radar
 		Description: Vehicle Transport Helicopter\n  Unarmed.
 		IconPalette: ts-chrome
 	Valued:
