@@ -82,6 +82,7 @@ nacnst:
 napowr:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
+	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 10
@@ -110,9 +111,6 @@ napowr:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 150
-	InfiltrateForPowerOutage:
-		Types: SpyInfiltrate
-	AffectedByPowerOutage:
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
@@ -280,6 +278,7 @@ narefn:
 naradr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 60
@@ -301,16 +300,14 @@ naradr:
 		HP: 1000
 	Armor:
 		Type: Wood
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	ProvidesRadar:
-		RequiresCondition: !lowpower
+		RequiresCondition: !disabled
 	RevealsShroud:
 		Range: 10c0
 	SupportPowerChargeBar:
 	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
+		PauseOnCondition: powerdown
 		Icon: spyplane
 		ChargeInterval: 3000
 		Description: Spy Plane
@@ -323,7 +320,7 @@ naradr:
 		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -592,6 +589,7 @@ nadept:
 nanrct:
 	Inherits: ^Building
 	Inherits@shape: ^4x4Shape
+	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 100
@@ -625,9 +623,6 @@ nanrct:
 		EmptyWeapon: NukePayload
 	Power:
 		Amount: 1000
-	InfiltrateForPowerOutage:
-		Types: SpyInfiltrate
-	AffectedByPowerOutage:
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
@@ -744,6 +739,7 @@ naclon:
 napsis:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 70
@@ -764,10 +760,10 @@ napsis:
 		Type: Wood
 	RevealsShroud:
 		Range: 15c0
-		RequiresCondition: !lowpower
+		RequiresCondition: !disabled
 	RevealsShroud:
 		Range: 5c0
-		RequiresCondition: lowpower
+		RequiresCondition: disabled
 	RenderDetectionCircle:
 	DetectCloaked:
 		CloakTypes: Cloak, Underwater
@@ -776,17 +772,15 @@ napsis:
 		Condition: build-incomplete
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 
 nairon:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 90
@@ -825,16 +819,14 @@ nairon:
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayRadarPing: True
 		Condition: invulnerability
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		Range: 2
 	SupportPowerChargeBar:
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 
 namisl:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 100
@@ -861,9 +853,6 @@ namisl:
 		ValidStances: Neutral, Enemy
 	Power:
 		Amount: -200
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	SupportPowerChargeBar:
 	NukePower:
 		Cursor: nuke
@@ -885,7 +874,7 @@ namisl:
 		FlashType: Nuke
 		ArrowSequence: arrow
 		CameraRange: 10
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithNukeLaunchAnimation:
@@ -903,6 +892,7 @@ nawall:
 naflak:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 40
@@ -931,7 +921,7 @@ naflak:
 		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: FlakWeapon
@@ -946,15 +936,13 @@ naflak:
 	AutoTarget:
 	Power:
 		Amount: -50
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	RequiresBuildableArea:
 		Adjacent: 4
 
 tesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 50
@@ -975,8 +963,9 @@ tesla:
 		Range: 8c0
 	Selectable:
 		Bounds: 44, 88, -2, -33
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, TeslaBoost
+	Targetable@TeslaBoost:
+		TargetTypes: TeslaBoost
+		RequiresCondition: !disabled
 	WithTeslaChargeOverlay:
 	Armament:
 		Weapon: CoilBolt
@@ -993,13 +982,11 @@ tesla:
 		MaxCharges: 1
 		ReloadDelay: 120
 		ChargeAudio: tslachg2.aud
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	AutoTarget:
 	GrantConditionOnPowerState@LOWPOWER:
 		RequiresCondition: !charged
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	WithRangeCircle:
 		Range: 8c0
 		Type: teslacoil
@@ -1007,7 +994,7 @@ tesla:
 		Amount: -75
 	WithIdleOverlay@powered:
 		Sequence: idle-powered
-		RequiresCondition: !lowpower && !build-incomplete
+		RequiresCondition: !disabled && !build-incomplete
 	ExternalCondition@CHARGED:
 		Condition: charged
 

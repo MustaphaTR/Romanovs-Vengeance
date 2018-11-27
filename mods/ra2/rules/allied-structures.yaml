@@ -57,14 +57,10 @@ gacnst:
 		ProductionType: Building.Allies
 	ProductionBar@Support:
 		ProductionType: Support.Allies
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithIdleOverlay@fans:
 		Sequence: idle-fans
-		PauseOnCondition: lowpower
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedOverlay:
 		RequiresCondition: !build-incomplete
@@ -91,6 +87,7 @@ gacnst:
 gapowr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 10
@@ -119,9 +116,6 @@ gapowr:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 200
-	InfiltrateForPowerOutage:
-		Types: SpyInfiltrate
-	AffectedByPowerOutage:
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
@@ -264,6 +258,7 @@ garefn:
 gaairc:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 60
@@ -293,26 +288,23 @@ gaairc:
 		HP: 600
 	Armor:
 		Type: Steel
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	ProvidesRadar:
-		RequiresCondition: !lowpower
+		RequiresCondition: !disabled
 	RevealsShroud:
 		Range: 10c0
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithIdleOverlay@top:
 		Sequence: idle-top
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bottom:
 		Sequence: idle-bottom
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@mid:
 		Sequence: idle-mid
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
@@ -337,6 +329,7 @@ gaairc:
 		MoveIntoWorld: false
 	Production:
 		Produces: Aircraft.Allies
+		PauseOnCondition: powerdown
 	ProductionQueue:
 		Type: Aircraft.Allies
 		Group: Aircraft
@@ -365,6 +358,7 @@ amradr:
 	SupportPowerChargeBar:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
+		PauseOnCondition: powerdown
 		Icon: airborne
 		ChargeInterval: 6000
 		Description: American Paratroopers
@@ -721,6 +715,7 @@ gapill:
 nasam:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 40
@@ -749,7 +744,7 @@ nasam:
 		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: RedEye2
@@ -766,9 +761,6 @@ nasam:
 	AutoTarget:
 	Power:
 		Amount: -50
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	RequiresBuildableArea:
 		Adjacent: 4
 
@@ -776,6 +768,7 @@ gtgcan:
 	Inherits: ^VoxelLighting
 	Inherits@shape: ^2x2Shape
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 60
@@ -804,7 +797,7 @@ gtgcan:
 		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: GrandCannonWeapon
@@ -827,9 +820,6 @@ gtgcan:
 		Type: grandcannon
 	Power:
 		Amount: -100
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 
 gaorep:
 	Inherits: ^Building
@@ -868,6 +858,7 @@ gaorep:
 gaspysat:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 90
@@ -888,26 +879,24 @@ gaspysat:
 		Type: Wood
 	RevealsShroud:
 		Range: 25c0
-		RequiresCondition: !lowpower
-	RevealsShroud@LowPower:
+		RequiresCondition: !disabled
+	RevealsShroud@DISABLED:
 		Range: 5c0
-		RequiresCondition: lowpower
+		RequiresCondition: disabled
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
 	ProvidesRadar:
-		RequiresCondition: !lowpower
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
+		RequiresCondition: !disabled
 
 gagap:
 	Inherits: ^SupportBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -922,9 +911,6 @@ gagap:
 	Building:
 		Footprint: _ x
 		Dimensions: 1,2
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	Health:
 		HP: 600
 	Armor:
@@ -933,7 +919,7 @@ gagap:
 		Range: 5c0
 	CreatesShroud:
 		Range: 10c0
-		RequiresCondition: !lowpower
+		RequiresCondition: !disabled
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure
 	RenderShroudCircle:
@@ -945,6 +931,7 @@ gagap:
 gaweat:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 100
@@ -971,14 +958,11 @@ gaweat:
 		ValidStances: Neutral, Enemy
 	Power:
 		Amount: -200
-	# Nothing to disable at the moment
-	#GrantConditionOnPowerState@LOWPOWER:
-	#	Condition: lowpower
-	#	ValidPowerStates: Low, Critical
 
 gacsph:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 90
@@ -1010,9 +994,6 @@ gacsph:
 	WithIdleOverlay:
 		Sequence: idle-dome
 		RequiresCondition: !build-incomplete
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	SupportPowerChargeBar:
 	ChronoshiftPower@chronoshift:
 		OrderName: Chronoshift
@@ -1029,12 +1010,13 @@ gacsph:
 		KillCargo: False
 		SelectionCursor: chronosphere
 		TargetCursor: chronosphere
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		Range: 2
 
 atesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 50
@@ -1065,20 +1047,17 @@ atesla:
 		Voice: Attack
 		ReloadDelay: 60
 		ChargeAudio: bpripow.wav
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -75
 	AutoTarget:
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	WithSpriteBody:
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 	WithRangeCircle:
 		Range: 8c0
 		Type: prismcannon
@@ -1117,6 +1096,7 @@ repairpad:
 garobo:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 60
@@ -1140,17 +1120,14 @@ garobo:
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_garobo
-		RequiresCondition: !lowpower
+		RequiresCondition: !disabled
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
 	ProvidesRadar:
-		RequiresCondition: !lowpower
-	GrantConditionOnPowerState@LOWPOWER:
-		Condition: lowpower
-		ValidPowerStates: Low, Critical
+		RequiresCondition: !disabled
