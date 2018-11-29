@@ -13,6 +13,7 @@ VetGIs = { VetGI1, VetGI2 }
 
 DoggoPatrol1 = { Doggo1WP1.Location, Doggo1WP2.Location }
 DoggoPatrol2 = { Doggo2WP1.Location, Doggo2WP2.Location }
+RobotPatrol1 = { Robot1WP1.Location, Robot1WP2.Location }
 
 DeployGIs = function()
 	local gis = allies.GetActorsByType("e1")
@@ -89,4 +90,7 @@ WorldLoaded = function()
 	PatrolA(dog2, DoggoPatrol1, DateTime.Seconds(7))
 	PatrolB(dog3, DoggoPatrol2, DateTime.Seconds(7))
 	PatrolA(dog4, DoggoPatrol2, DateTime.Seconds(7))
+
+	local robo1 = Actor.Create("robo", true, { Owner = allies, Location = RobotPatrol1[1], SubCell = 2 })
+	PatrolB(robo1, RobotPatrol1, DateTime.Seconds(5))
 end
