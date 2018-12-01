@@ -1448,6 +1448,7 @@
 ^Crate:
 	Inherits@1: ^SpriteActor
 	HiddenUnderFog:
+	ConditionManager:
 	Tooltip:
 		Name: Crate
 		GenericName: Crate
@@ -1459,6 +1460,27 @@
 	WithCrateBody:
 		LandSequence: land
 		WaterSequence: water
+		RequiresCondition: !parachute
+	WithSpriteBody@Parachute:
+		Sequence: paradrop
+		RequiresCondition: parachute
+	Parachutable:
+		FallRate: 26
+		KilledOnImpassableTerrain: true
+		GroundCorpseSequence:
+		GroundCorpsePalette:
+		WaterCorpseSequence:
+		WaterCorpsePalette:
+		ParachutingCondition: parachute
+	Passenger:
+	WithParachute:
+		RequiresCondition: parachute
+		Image: parach
+		OpeningSequence: open
+		Sequence: idle
+		ClosingSequence: close
+	ExternalCondition@PARACHUTE:
+		Condition: parachute
 	MapEditorData:
 		Categories: System
 	Interactable:
