@@ -490,8 +490,8 @@ bfrt:
 		PassengerConditions:
 			e1: loaded
 			e2: loaded
-			ggi: loaded
-			flakt: loaded
+			ggi: loaded-air
+			flakt: loaded-air
 			shk: loaded
 			deso: loaded
 			tany: loaded
@@ -500,12 +500,24 @@ bfrt:
 			ccomand: loaded
 			snipe: loaded
 			cleg: loaded
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move && !loaded-air
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: (stance-attackanything || assault-move) && !loaded-air
+	AutoTargetPriority@DEFAULT_AIR:
+		RequiresCondition: (!stance-attackanything && !assault-move) && loaded-air
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Defense, Air
+		InvalidTargets: NoAutoTarget, WaterStructure
+	AutoTargetPriority@ATTACKANYTHING_AIR:
+		RequiresCondition: (stance-attackanything || assault-move) && loaded-air
+		ValidTargets: Infantry, Vehicle, Water, Underwater, Structure, Defense, Air
+		InvalidTargets: NoAutoTarget
 	AttackGarrisoned:
 		Armaments: opentopped
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		RequiresCondition: loaded
+		RequiresCondition: loaded || loaded-air
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
