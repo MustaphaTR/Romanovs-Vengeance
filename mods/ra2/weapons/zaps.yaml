@@ -6,6 +6,10 @@ ElectricBoltE:
 	Range: 5c0
 	ReloadDelay: 40
 	Report: itesat2a.wav, itesat2b.wav
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragment
+		Amount: 3
+		AimChance: 100
 
 CRElectricBolt:
 	Inherits: ElectricBolt
@@ -67,6 +71,17 @@ TankBoltE:
 	BurstDelays: 10
 	Warhead@1Dam: SpreadDamage
 		Damage: 80
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragment
+		Amount: 3
+		AimChance: 100
+
+TeslaFragment:
+	Inherits: TankBolt
+	Range: 3c0
+	ValidTargets: Infantry, Vehicle, Ship, Structure, Wall
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
 
 SonicZap:
 	ReloadDelay: 180
@@ -155,6 +170,10 @@ Comet:
 			Drone: 200
 			Rocket: 100
 		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath
+	Warhead@2Shr: FireShrapnel
+		Weapon: CometFragment
+		Amount: 3
+		AimChance: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_clsn
 		ImpactSounds: gexp14a.wav
@@ -170,6 +189,14 @@ SuperComet:
 	Inherits: Comet
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
+
+CometFragment:
+	Inherits: Comet
+	Range: 3c0
+	ValidTargets: Infantry, Vehicle, Ship, Structure, Wall
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+	-Warhead@2Shr: FireShrapnel
 
 RadBeamWeapon:
 	ValidTargets: Ground
