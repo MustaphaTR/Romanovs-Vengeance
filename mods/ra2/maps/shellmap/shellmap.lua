@@ -15,6 +15,8 @@ DoggoPatrol1 = { Doggo1WP1.Location, Doggo1WP2.Location }
 DoggoPatrol2 = { Doggo2WP1.Location, Doggo2WP2.Location }
 RobotPatrol1 = { Robot1WP1.Location, Robot1WP2.Location }
 
+CargoPlaneWP = { CargoPlaneEntry.Location, CargoPlaneExit.Location }
+
 DeployGIs = function()
 	local gis = allies.GetActorsByType("e1")
 	local ggis = allies.GetActorsByType("ggi")
@@ -47,6 +49,16 @@ PatrolB = function(unit, waypoints, delay)
 	unit.Move(waypoints[2])
 	Trigger.AfterDelay(delay, function()
 		PatrolA(unit, waypoints, delay)
+	end)
+end
+
+SendCargoPlane = function(unit, waypoints, delay)
+	local actor = Actor.Create(unit, true, { Owner = allies, Location = waypoints[1] })
+	actor.Move(waypoints[2])
+	actor.Destroy()
+
+	Trigger.AfterDelay(delay, function()
+		SendCargoPlane(unit, waypoints, delay)
 	end)
 end
 
@@ -91,6 +103,10 @@ WorldLoaded = function()
 	PatrolB(dog3, DoggoPatrol2, DateTime.Seconds(7))
 	PatrolA(dog4, DoggoPatrol2, DateTime.Seconds(7))
 
-	local robo1 = Actor.Create("robo", true, { Owner = allies, Location = RobotPatrol1[1], SubCell = 2 })
+	local robo1 = Actor.Create("robo", true, { Owner = allies, Location = RobotPatrol1[1] })
 	PatrolB(robo1, RobotPatrol1, DateTime.Seconds(5))
+	
+	Trigger.AfterDelay(DateTime.Seconds(15), function()
+		SendCargoPlane("pdplane", CargoPlaneWP, DateTime.Seconds(90))
+	end)
 end
