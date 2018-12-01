@@ -26,6 +26,10 @@ namespace OpenRA.Mods.RA2.Traits
         [Desc("Damage types that kills the infector.")]
         public readonly BitSet<DamageType> KillInfectorDamageTypes = default(BitSet<DamageType>);
 
+        [Desc("Actor types that kills the infector." +
+            "Define service depots here, since Repairable don't deal DamageTypes.")]
+        public readonly HashSet<string> KillInfectorActorTypes = new HashSet<string> { };
+
         [GrantedConditionReference]
         [Desc("The condition to grant to self while infected by any actor.")]
         public readonly string InfectedCondition = null;
@@ -131,7 +135,8 @@ namespace OpenRA.Mods.RA2.Traits
                     }
                 }
 
-                if (e.Damage.DamageTypes.Overlaps(info.KillInfectorDamageTypes))
+                if (e.Damage.DamageTypes.Overlaps(info.KillInfectorDamageTypes) ||
+                    info.KillInfectorActorTypes.Contains(e.Attacker.Info.Name))
                     RemoveInfector(self, true, e);
                 else if (e.Damage.DamageTypes.Overlaps(info.RemoveInfectorDamageTypes))
                     RemoveInfector(self, false, e);
