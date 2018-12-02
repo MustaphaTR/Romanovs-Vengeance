@@ -327,6 +327,7 @@ deso:
 		UndeployedCondition: undeployed
 		CanDeployOnRamps: True
 		Facing: 92
+		PauseOnCondition: chronodisable
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, ImmuneToRadiation
 	Voiced:
@@ -445,7 +446,7 @@ yuri:
 	PeriodicExplosion:
 		Weapon: PsiWave
 		LocalOffset: 0,0,128
-		RequiresCondition: deployed
+		RequiresCondition: deployed && !chronodisable
 	GrantTimedConditionOnDeploy:
 		DeployedTicks: 50
 		CooldownTicks: 0
@@ -456,6 +457,7 @@ yuri:
 		UndeployAnimation: undeploy
 		ShowSelectionBar: false
 		Voice:
+		PauseOnCondition: chronodisable
 	TakeCover:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -463,6 +465,7 @@ yuri:
 		RequiresCondition: !deployed && !deploying && !parachute
 	WithSpriteBody@DEPLOYED:
 		Sequence: deployed
+		PauseOnCondition: chronodisable
 		RequiresCondition: (deployed || deploying) && !parachute
 	QuantizeFacingsFromSequence:
 		Sequence: stand

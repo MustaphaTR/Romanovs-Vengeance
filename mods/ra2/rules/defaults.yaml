@@ -391,11 +391,12 @@
 		Condition: invulnerability
 
 ^ChronoDisable:
+	WithColoredOverlay@ChronoDisable:
+		Palette: chronodisable
+		RequiresCondition: chronodisable
 	TimedConditionBar@ChronoDisable:
 		Condition: chronodisable
 		Color: FFFFFF
-	Mobile:
-		RequiresCondition: !chronodisable
 	ExternalCondition@CHRONODISABLE:
 		Condition: chronodisable
 
@@ -418,8 +419,6 @@
 		Sequence: squid
 		BodyName: squid
 		RequiresCondition: squid
-	Mobile:
-		RequiresCondition: !chronodisable && !squid
 	Infectable:
 		RemoveInfectorDamageTypes: RemovesSquid
 		InfectedByConditions:
@@ -555,7 +554,8 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^AcceptsIvanBomb
 	Inherits@5: ^AcceptsSEALC4
-	Inherits@6: ^BuildingParticles 
+	Inherits@6: ^BuildingParticles
+	Inherits@7: ^ChronoDisable
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	OwnerLostAction:
@@ -822,6 +822,7 @@
 		Speed: 60
 		Voice: Move
 		Locomotor: foot
+		RequiresCondition: !chronodisable
 	WithTextControlGroupDecoration:
 	SelectionDecorations:
 		Palette: pips
@@ -1048,6 +1049,7 @@
 		Voice: Move
 		TurnSpeed: 5
 		Locomotor: wheeled
+		RequiresCondition: !chronodisable
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -1291,6 +1293,7 @@
 		Voice: Move
 		Locomotor: naval
 		TurnSpeed: 5
+		RequiresCondition: !chronodisable && !squid
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha

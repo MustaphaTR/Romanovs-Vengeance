@@ -21,6 +21,7 @@ gacnst:
 		Cost: 3000
 	Production:
 		Produces: Building.Allies, Support.Allies
+		PauseOnCondition: chronodisable
 	ProductionQueue@AlliedBuilding:
 		Type: Building.Allies
 		Group: Building
@@ -49,6 +50,7 @@ gacnst:
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
+		PauseOnCondition: chronodisable
 		RequiresCondition: factundeploy && !build-incomplete
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
@@ -61,8 +63,10 @@ gacnst:
 		Condition: build-incomplete
 	WithIdleOverlay@fans:
 		Sequence: idle-fans
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedOverlay:
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite:
 		Prerequisite: structures.allies
@@ -82,7 +86,7 @@ gacnst:
 		Factions: cuba, libya, iraq, russia
 	BaseProvider:
 		Range: 16c0
-		PauseOnCondition: build-incomplete
+		PauseOnCondition: build-incomplete && chronodisable
 
 gapowr:
 	Inherits: ^Building
@@ -113,9 +117,11 @@ gapowr:
 		Condition: build-incomplete
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 200
+		RequiresCondition: !chronodisable
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
@@ -170,6 +176,7 @@ gapile:
 		ExitCell: 2, 2
 	Production:
 		Produces: Infantry.Allies
+		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Infantry.Allies
 		Group: Infantry
@@ -186,6 +193,7 @@ gapile:
 		Condition: build-incomplete
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -20
@@ -243,12 +251,15 @@ garefn:
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithDockedOverlay:
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: idle-bib
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@drill:
 		Sequence: idle-drill
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
@@ -296,19 +307,19 @@ gaairc:
 		Condition: build-incomplete
 	WithIdleOverlay@top:
 		Sequence: idle-top
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bottom:
 		Sequence: idle-bottom
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@mid:
 		Sequence: idle-mid
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: lowpower
+		PauseOnCondition: lowpower || chronodisable
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -329,7 +340,7 @@ gaairc:
 		MoveIntoWorld: false
 	Production:
 		Produces: Aircraft.Allies
-		PauseOnCondition: powerdown
+		PauseOnCondition: powerdown || chronodisable
 	ProductionQueue:
 		Type: Aircraft.Allies
 		Group: Aircraft
@@ -358,7 +369,7 @@ amradr:
 	SupportPowerChargeBar:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
-		PauseOnCondition: powerdown
+		PauseOnCondition: powerdown || chronodisable
 		Icon: airborne
 		ChargeInterval: 6000
 		Description: American Paratroopers
@@ -405,6 +416,7 @@ gaweap:
 		ExitCell: 4,1
 	Production:
 		Produces: Vehicle.Allies
+		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Vehicle.Allies
 		Group: Vehicle
@@ -421,18 +433,23 @@ gaweap:
 		Condition: build-incomplete
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@fan:
 		Sequence: overlay-fan
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithExitOverlay@ramp:
 		Sequence: build-ramp
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
@@ -539,6 +556,7 @@ gayard:
 		ExitCell: 5,5
 	Production:
 		Produces: Ship.Allies
+		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Ship.Allies
 		Group: Ship
@@ -564,12 +582,15 @@ gayard:
 		Condition: build-incomplete
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithRepairOverlay:
 		Sequence: repair
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
@@ -605,6 +626,7 @@ gadept:
 		Palette: mouse
 		IsPlayerPalette: false
 	RepairsUnits:
+		PauseOnCondition: chronodisable
 		HpPerStep: 20
 		Interval: 7
 		StartRepairingNotification: Repairing
@@ -613,12 +635,15 @@ gadept:
 		Condition: build-incomplete
 	WithIdleOverlay@side:
 		Sequence: idle-side
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithResupplyAnimation:
 		Sequence: repair
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -25
@@ -653,6 +678,7 @@ gatech:
 		Condition: build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -150
@@ -707,6 +733,7 @@ gapill:
 		MuzzleSplitFacings: 8
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable
 	Turreted:
 		TurnSpeed: 255
 	BodyOrientation:
@@ -750,7 +777,7 @@ nasam:
 		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: RedEye2
@@ -803,7 +830,7 @@ gtgcan:
 		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: GrandCannonWeapon
@@ -855,6 +882,7 @@ gaorep:
 		Condition: build-incomplete
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	ResourcePurifier:
 		Modifier: 25
@@ -893,7 +921,7 @@ gaspysat:
 		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
@@ -925,7 +953,7 @@ gagap:
 		Range: 5c0
 	CreatesShroud:
 		Range: 10c0
-		RequiresCondition: !disabled
+		RequiresCondition: !disabled && !chronodisable
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure
 	RenderShroudCircle:
@@ -974,7 +1002,7 @@ gaweat:
 		AirburstAltitude: 4c512
 		AllowMultiple: true
 		DisplayTimerStances: Ally, Neutral, Enemy
-		PauseOnCondition: lowpower
+		PauseOnCondition: disabled || chronodisable
 
 gacsph:
 	Inherits: ^Building
@@ -1010,6 +1038,7 @@ gacsph:
 		Condition: build-incomplete
 	WithIdleOverlay:
 		Sequence: idle-dome
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	SupportPowerChargeBar:
 	ChronoshiftPower@chronoshift:
@@ -1027,7 +1056,7 @@ gacsph:
 		KillCargo: False
 		SelectionCursor: chronosphere
 		TargetCursor: chronosphere
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		Range: 2
 
 atesla:
@@ -1064,17 +1093,17 @@ atesla:
 		Voice: Attack
 		ReloadDelay: 60
 		ChargeAudio: bpripow.wav
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -75
 	AutoTarget:
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	WithSpriteBody:
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 	WithRangeCircle:
 		Range: 8c0
 		Type: prismcannon
@@ -1137,12 +1166,12 @@ garobo:
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_garobo
-		RequiresCondition: !disabled
+		RequiresCondition: !disabled && !chronodisable
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50

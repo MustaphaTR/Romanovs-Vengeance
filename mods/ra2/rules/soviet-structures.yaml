@@ -23,6 +23,7 @@ nacnst:
 		Cost: 3000
 	Production:
 		Produces: Building.Soviets, Support.Soviets
+		PauseOnCondition: chronodisable
 	ProductionQueue@SovietBuilding:
 		Type: Building.Soviets
 		Group: Building
@@ -51,6 +52,7 @@ nacnst:
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
+		PauseOnCondition: chronodisable
 		RequiresCondition: factundeploy && !build-incomplete
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
@@ -77,7 +79,7 @@ nacnst:
 		Factions: cuba, libya, iraq, russia
 	BaseProvider:
 		Range: 16c0
-		PauseOnCondition: build-incomplete
+		PauseOnCondition: build-incomplete || chronodisable
 
 napowr:
 	Inherits: ^Building
@@ -108,9 +110,11 @@ napowr:
 		Condition: build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 150
+		RequiresCondition: !chronodisable
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
@@ -190,6 +194,7 @@ nahand:
 		Condition: build-incomplete
 	Production:
 		Produces: Infantry.Soviets
+		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Infantry.Soviets
 		Group: Infantry
@@ -263,12 +268,15 @@ narefn:
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithDockedOverlay:
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: idle-bib
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@drill:
 		Sequence: idle-drill
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
@@ -307,7 +315,7 @@ naradr:
 	SupportPowerChargeBar:
 	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
-		PauseOnCondition: powerdown
+		PauseOnCondition: powerdown || chronodisable
 		Icon: spyplane
 		ChargeInterval: 3000
 		Description: Spy Plane
@@ -320,7 +328,7 @@ naradr:
 		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -367,6 +375,7 @@ naweap:
 		ExitCell: 5,1
 	Production:
 		Produces: Vehicle.Soviets
+		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Vehicle.Soviets
 		Group: Vehicle
@@ -383,15 +392,19 @@ naweap:
 		Condition: build-incomplete
 	WithExitOverlay@door:
 		Sequence: build-door
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithExitOverlay@top-vehicles:
 		Sequence: build-top
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
@@ -498,6 +511,7 @@ nayard:
 		ExitCell: 5,5
 	Production:
 		Produces: Ship.Soviets
+		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Ship.Soviets
 		Group: Ship
@@ -523,12 +537,15 @@ nayard:
 		Condition: build-incomplete
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithRepairOverlay:
 		Sequence: repair
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithProductionOverlay@lights:
 		Sequence: production-lights
@@ -568,6 +585,7 @@ nadept:
 		Palette: mouse
 		IsPlayerPalette: false
 	RepairsUnits:
+		PauseOnCondition: chronodisable
 		HpPerStep: 20
 		Interval: 7
 		StartRepairingNotification: Repairing
@@ -576,12 +594,15 @@ nadept:
 		Condition: build-incomplete
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bib:
 		Sequence: bib
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithResupplyAnimation:
 		Sequence: repair
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -25
@@ -616,6 +637,7 @@ nanrct:
 		Condition: build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Explodes:
 		Type: CenterPosition
@@ -623,6 +645,7 @@ nanrct:
 		EmptyWeapon: NukePayload
 	Power:
 		Amount: 1000
+		RequiresCondition: !chronodisable
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
@@ -772,7 +795,7 @@ napsis:
 		Condition: build-incomplete
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
@@ -819,7 +842,7 @@ nairon:
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayRadarPing: True
 		Condition: invulnerability
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		Range: 2
 	SupportPowerChargeBar:
 
@@ -874,11 +897,11 @@ namisl:
 		FlashType: Nuke
 		ArrowSequence: arrow
 		CameraRange: 10
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithNukeLaunchAnimation:
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !chronodisable
 
 nawall:
 	Inherits: ^Wall
@@ -927,7 +950,7 @@ naflak:
 		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: FlakWeapon
@@ -988,7 +1011,7 @@ tesla:
 		MaxCharges: 1
 		ReloadDelay: 120
 		ChargeAudio: tslachg2.aud
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	AutoTarget:
 	GrantConditionOnPowerState@LOWPOWER:
@@ -1000,6 +1023,7 @@ tesla:
 		Amount: -75
 	WithIdleOverlay@powered:
 		Sequence: idle-powered
+		PauseOnCondition: chronodisable
 		RequiresCondition: !disabled && !build-incomplete
 	ExternalCondition@CHARGED:
 		Condition: charged
@@ -1035,6 +1059,7 @@ nalasr:
 		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: vulcan
@@ -1090,6 +1115,7 @@ nabnkr:
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	RevealsShroud:
 		Range: 6c0
@@ -1117,9 +1143,11 @@ naindp:
 		Condition: build-incomplete
 	WithIdleOverlay@pistons:
 		Sequence: idle-pistons
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Health:
 		HP: 1000
