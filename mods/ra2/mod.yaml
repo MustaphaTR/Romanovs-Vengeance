@@ -329,7 +329,15 @@ ModContent:
 		music: Base Game Music
 			TestFiles: ^Content/ra2/theme.mix
 			Sources: ra2, origin, tfd
+		explosion: Expansion Files
+			TestFiles: ^Content/ra2/ra2md.mix, ^Content/ra2/langmd.mix
+			Sources: origin-yr
+			Required: true
+		explosion-music: Expansion Music
+			TestFiles: ^Content/ra2/thememd.mix
+			Sources: origin-yr
 	Sources:
 		ra2|installer/ra2.yaml
 		ra2|installer/origin.yaml
+		ra2|installer/origin-yr.yaml
 		ra2|installer/firstdecade.yaml
