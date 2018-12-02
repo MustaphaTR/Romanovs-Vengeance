@@ -590,6 +590,8 @@ nadept:
 		Interval: 7
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
+	WithSpriteBody:
+		PauseOnCondition: chronodisable
 	WithMakeAnimation:
 		Condition: build-incomplete
 	WithIdleOverlay@normal:
@@ -749,6 +751,8 @@ naclon:
 		ExitCell: 2, 2
 	WithMakeAnimation:
 		Condition: build-incomplete
+	WithSpriteBody:
+		PauseOnCondition: chronodisable
 	Production:
 		Produces:
 	RallyPoint:
@@ -830,6 +834,8 @@ nairon:
 		ValidStances: Neutral, Enemy
 	Power:
 		Amount: -200
+	WithSpriteBody:
+		PauseOnCondition: chronodisable
 	GrantExternalConditionPower@IRONCURTAIN:
 		Icon: invuln
 		ChargeInterval: 6000
