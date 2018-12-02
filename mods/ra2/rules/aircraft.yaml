@@ -279,6 +279,34 @@ pdplanehusk:
 	RenderVoxels:
 		Image: pdplane
 
+pdplane.crate:
+	Inherits: ^NeutralAircraft
+	-Selectable:
+	-Targetable@Airborne:
+	-Targetable@Ground:
+	-Targetable@REPAIR:
+	-GrantConditionOnDamageState@DAMAGED:
+	Interactable:
+		Bounds: 100,80
+	RejectsOrders:
+	Tooltip:
+		Name: Cargo Plane
+	Aircraft:
+		Repulsable: false
+		CruiseAltitude: 5600
+		TurnSpeed: 5
+		Speed: 225
+	RenderSprites:
+	WithVoxelBody:
+	Cargo:
+		MaxWeight: 10
+	ParaDrop:
+		DropRange: 4c0
+		ChuteSound: sparadra.wav
+	HitShape:
+	RenderVoxels:
+		Image: pdplane
+
 hornet:
 	Inherits: ^Plane
 	Valued:
