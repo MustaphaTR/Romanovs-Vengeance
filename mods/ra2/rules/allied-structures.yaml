@@ -964,6 +964,17 @@ gaweat:
 		ValidStances: Neutral, Enemy
 	Power:
 		Amount: -200
+	DetonateWeaponPower@WeatherStorm:
+		Icon: bolticon
+		ChargeInterval: 15000
+		Description: Weather Storm
+		LongDesc: Applies heavy damage over a large area.
+		OrderName: WeatherStormInfoOrder
+		Weapon: WeatherStormInit
+		AirburstAltitude: 4c512
+		AllowMultiple: true
+		DisplayTimerStances: Ally, Neutral, Enemy
+		PauseOnCondition: lowpower
 
 gacsph:
 	Inherits: ^Building

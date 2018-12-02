@@ -169,6 +169,83 @@ RadEruptionWeapon:
 		Level: 500
 		MaxLevel: 500
 
+WeatherStormInit:
+	Projectile: InstantExplode
+	ReloadDelay: 1
+	Warhead@1: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Sequences: inviso
+		Palette: effect
+		Weapon: WeatherCloudDirectInit
+		Duration: 210
+	Warhead@2: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Sequences: inviso
+		Palette: effect
+		Weapon: WeatherCloudRandomInit
+		Duration: 210
+	Warhead@4: CreateEffect
+		ImpactSounds: sweaintr.wav
+		ValidTargets: Ground, Air, Water
+
+WeatherCloudDirectInit:
+	Projectile: InstantHit
+	ReloadDelay: 120
+	Warhead@barrage3: FireFragment
+		Weapon: WeatherCloud
+		ValidTargets: Air, Ground, Water
+
+WeatherCloudRandomInit:
+	Projectile: InstantHit
+	ReloadDelay: 8
+	Warhead@barrage3: FireShrapnel
+		Weapon: WeatherCloud
+		Amount: 3
+		AimChance: 50
+		ValidTargets: Air, Ground, Water
+
+WeatherCloud:
+	ReloadDelay: 120
+	Range: 10c0
+	Projectile: AthenaProjectile
+		Altitude: 5c768
+	Warhead@1: FireFragment
+		UseZOffsetAsAbsoluteHeight: true
+		Weapon: WeatherBolt
+		ValidTargets: Air, Ground, Water
+		Delay: 28
+	Warhead@TargetValidation: SpreadDamage
+	Warhead@4: CreateEffect
+		Explosions: weathercloud1, weathercloud2, weathercloud1f, weathercloud2f
+		ExplosionPalette: player
+		ValidTargets: Ground, Air, Water
+
+WeatherBolt:
+	Projectile: InstantHit
+	Range: 512
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Falloff: 100, 66, 33, 0
+		Damage: 240
+		DamageTypes: TriggerProne, ElectroDeath
+		Versus:
+			Wood: 85
+			Steel: 75
+			Concrete: 50
+	Warhead@4: CreateEffect
+		Explosions: weatherbolt1, weatherbolt2, weatherbolt3, weatherbolt1f, weatherbolt2f, weatherbolt3f
+		ImpactSounds: sweastra.wav, sweastrb.wav, sweastrc.wav, sweastrd.wav
+		ValidTargets: Ground, Air, Water
+	Warhead@5: CreateEffect
+		Explosions: weatherboltexplosion, weatherboltexplosionf
+		ValidTargets: Ground, Water
+	#Warhead@DebrisSpawn: FireShrapnel
+	#	Weapon: LargeDebris
+	#	Amount: 1
+	#	ValidTargets: Ground
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: LargeScorch
+
 DamageSparkSpawner:
 	ReloadDelay: 384
 	Range: 1

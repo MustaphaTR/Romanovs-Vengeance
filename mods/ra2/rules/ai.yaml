@@ -131,6 +131,27 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
+			WeatherStorm:
+				OrderName: WeatherStormInfoOrder
+				MinimumAttractiveness: 250
+				CoarseScanRadius: 8
+				FineScanRadius: 8
+				Consideration@1:
+					Against: Enemy
+					Types: Building
+					Attractiveness: 100
+					TargetMetric: Health
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Enemy
+					Types: Ground, Water
+					Attractiveness: 10
+					TargetMetric: Health
+					CheckRadius: 6c768
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -20
 	BotOrderManager:
 	GrantConditionOnBotOwner@test:
 		Condition: enable-test-ai
