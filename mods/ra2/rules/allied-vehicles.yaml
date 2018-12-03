@@ -409,7 +409,7 @@ mgtk:
 		Queue: Vehicle.Allies
 		BuildPaletteOrder: 80
 		Prerequisites: gatech
-		Description: As tree disguised tank.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Tank that can disguise as a tree while immobile.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -434,12 +434,12 @@ mgtk:
 		Weapon: MirageGunE
 		LocalOffset: 640,0,640
 		RequiresCondition: rank-elite
-	Cloak@cloakgenerator:
-		RequiresCondition: !lawea
-		InitialDelay: 15
-		CloakDelay: 15
+	Cloak:
+		RequiresCondition: !chronodisable
+		InitialDelay: 25
+		CloakDelay: 25
 		IsPlayerPalette: true
-		UncloakOn: Attack, Damage, move
+		UncloakOn: Attack, Damage, Move
 	AttackFrontal:
 		Voice: Attack
 	AutoTarget:
