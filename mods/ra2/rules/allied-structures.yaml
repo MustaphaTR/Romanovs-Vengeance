@@ -378,6 +378,8 @@ amradr:
 		ChargeInterval: 6000
 		Description: American Paratroopers
 		LongDesc: A Cargo Plane drops eight GIs\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
 		DropItems: e1,e1,e1,e1,e1,e1,e1,e1
 		QuantizedFacings: 8
 		UnitType: pdplane
@@ -1005,6 +1007,10 @@ gaweat:
 		Weapon: WeatherStormInit
 		AirburstAltitude: 4c512
 		AllowMultiple: true
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: LightningStormReady
+		LaunchSpeechNotification: LightningStormCreated
+		IncomingSpeechNotification: LightningStormCreated
 		DisplayTimerStances: Ally, Neutral, Enemy
 		PauseOnCondition: disabled || chronodisable
 
@@ -1051,6 +1057,10 @@ gacsph:
 		ChargeInterval: 6000
 		Description: Chronoshift
 		LongDesc: Teleports a group of units across\nthe map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ChronosphereReady
+		LaunchSpeechNotification: ChronosphereActivated
+		IncomingSpeechNotification: ChronosphereActivated
 		# Those sounds don't work: OpenRA/OpenRA#10540
 		# They also want to be played successive
 		#SelectTargetSound: schrlo1.wav, schrlo2a.wav schrlo2b.wav, schrlo2c.wav, schrlo3.wav

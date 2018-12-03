@@ -321,7 +321,7 @@ naradr:
 		Description: Spy Plane
 		LongDesc: Reveals an area of the map.
 		SelectTargetSpeechNotification: SelectTarget
-		# EndChargeSpeechNotification: SpyPlaneReady
+		EndChargeSpeechNotification: SpyPlaneReady
 		UnitType: spyp
 		QuantizedFacings: 8
 	WithMakeAnimation:
@@ -842,7 +842,10 @@ nairon:
 		Description: Invulnerability
 		LongDesc: Makes a group of units invulnerable\nfor 20 seconds.
 		Duration: 500
-		# TODO: This are actually no speech notifications
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: IronCurtainReady
+		LaunchSpeechNotification: IronCurtainActivated
+		IncomingSpeechNotification: IronCurtainActivated
 		EndChargeSound: siroread.wav
 		OnFireSound: siroon.wav
 		DisplayTimerStances: Ally, Neutral, Enemy
@@ -891,6 +894,10 @@ namisl:
 		LongDesc: Launches a devastating atomic bomb\nat a target location.
 		EndChargeSound: snukread.wav
 		LaunchSound: snuklaun.wav
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: NuclearMissileReady
+		LaunchSpeechNotification: NuclearMissileLaunched
+		IncomingSpeechNotification: NuclearMissileLaunched
 		MissileWeapon: atomic
 		MissilePalette: player
 		MissileDelay: 35
