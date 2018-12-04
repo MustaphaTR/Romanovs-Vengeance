@@ -76,7 +76,7 @@ nacnst:
 		Factions: america, germany, england, france, korea
 	SpawnActorsOnSell@soviets:
 		ActorTypes: e2, e2, e2, e2, engineer
-		Factions: cuba, libya, iraq, russia
+		Factions: cuba, libya, iraq, russia, vietnam
 	BaseProvider:
 		Range: 16c0
 		PauseOnCondition: build-incomplete || chronodisable
@@ -142,6 +142,9 @@ nahand:
 	ProvidesPrerequisite@iraq:
 		Prerequisite: infantry.iraq
 		Factions: iraq
+	ProvidesPrerequisite@vietnam:
+		Prerequisite: infantry.vietnam
+		Factions: vietnam
 	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xx xx
@@ -938,7 +941,7 @@ naflak:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 40
-		Prerequisites: radar
+		Prerequisites: naradr
 		Description: Automated anti-aircraft defense.
 	Valued:
 		Cost: 1000

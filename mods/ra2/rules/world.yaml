@@ -149,7 +149,7 @@
 	Faction@soviets:
 		Name: Soviets
 		InternalName: random-soviets
-		RandomFactionMembers: cuba, libya, iraq, russia
+		RandomFactionMembers: cuba, libya, iraq, russia, vietnam
 		Side: Randoms
 	Faction@1:
 		Name: America
@@ -157,45 +157,50 @@
 		Side: Allies
 		Description: America\nSpecial Ability: Paratroopers
 	Faction@2:
-		Name: Germany
-		InternalName: germany
-		Side: Allies
-		Description: Germany\nSpecial Vehicle: Tank Destroyer
-	Faction@3:
 		Name: England
 		InternalName: england
 		Side: Allies
 		Description: England\nSpecial Infantry: Sniper
-	Faction@4:
+	Faction@3:
 		Name: France
 		InternalName: france
 		Side: Allies
 		Description: France\nSpecial Building: Grand Cannon
+	Faction@4:
+		Name: Germany
+		InternalName: germany
+		Side: Allies
+		Description: Germany\nSpecial Vehicle: Tank Destroyer
 	Faction@5:
 		Name: Korea
 		InternalName: korea
 		Side: Allies
 		Description: Korea\nSpecial Aircraft: Black Eagle
 	Faction@6:
-		Name: Cuba
-		InternalName: cuba
-		Side: Soviets
-		Description: Cuba\nSpecial Infantry: Terrorist
-	Faction@7:
-		Name: Libya
-		InternalName: libya
-		Side: Soviets
-		Description: Libya\nSpecial Vehicle: Demolition Truck
-	Faction@8:
-		Name: Iraq
-		InternalName: iraq
-		Side: Soviets
-		Description: Iraq\nSpecial Infantry: Desolator
-	Faction@9:
 		Name: Russia
 		InternalName: russia
 		Side: Soviets
 		Description: Russia\nSpecial Vehicle: Tesla Tank
+	Faction@7:
+		Name: Iraq
+		InternalName: iraq
+		Side: Soviets
+		Description: Iraq\nSpecial Infantry: Desolator
+	Faction@8:
+		Name: Vietnam
+		InternalName: vietnam
+		Side: Soviets
+		Description: Vietnam\nSpecial Infantry: Flamethrower
+	Faction@9:
+		Name: Cuba
+		InternalName: cuba
+		Side: Soviets
+		Description: Cuba\nSpecial Infantry: Terrorist
+	Faction@10:
+		Name: Libya
+		InternalName: libya
+		Side: Soviets
+		Description: Libya\nSpecial Vehicle: Demolition Truck
 	ResourceType@Ore:
 		ResourceType: 1
 		Palette: resource
@@ -306,12 +311,12 @@ World:
 	MPStartUnits@smcv:
 		Class: none
 		ClassName: MCV Only
-		Factions: soviets, cuba, libya, iraq, russia
+		Factions: soviets, cuba, libya, iraq, russia, vietnam
 		BaseActor: smcv
 	MPStartUnits@lightsoviets:
 		Class: light
 		ClassName: Light Support
-		Factions: soviets, cuba, libya, iraq, russia
+		Factions: soviets, cuba, libya, iraq, russia, vietnam
 		BaseActor: smcv
 		SupportActors: dog,e2,e2,e2
 		InnerSupportRadius: 3
@@ -319,7 +324,7 @@ World:
 	MPStartUnits@mediumsoviets:
 		Class: medium
 		ClassName: Medium Support
-		Factions: soviets, cuba, libya, iraq, russia
+		Factions: soviets, cuba, libya, iraq, russia, vietnam
 		BaseActor: smcv
 		SupportActors: dog,e2,e2,e2,e2,htnk,engineer
 		InnerSupportRadius: 3
@@ -327,7 +332,7 @@ World:
 	MPStartUnits@heavysoviets:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: soviets, cuba, libya, iraq, russia
+		Factions: soviets, cuba, libya, iraq, russia, vietnam
 		BaseActor: smcv
 		SupportActors: dog,e2,e2,e2,e2,e2,htnk,htnk,htk,engineer
 		InnerSupportRadius: 3
