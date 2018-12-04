@@ -963,6 +963,12 @@ gagap:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure
 	RenderShroudCircle:
+	WithMakeAnimation:
+		Condition: build-incomplete
+	WithIdleOverlay@head:
+		Sequence: idle-head
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
 	MustBeDestroyed:
