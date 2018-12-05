@@ -168,3 +168,24 @@
 		Weapon: TeslaSpark
 		Amount: 6
 		AffectsParent: true
+
+^FireWeapon:
+	ReloadDelay: 65
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 150
+		Versus:
+			None: 90
+			Wood: 50
+			Light: 60
+			Heavy: 25
+			Concrete: 20
+		DamageTypes: Prone50Percent, TriggerProne, FlameDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Scorch
+		InvalidTargets: Structure, Wall
+	Warhead@3Eff: CreateEffect
+		Explosions: largefire
+		ImpactSounds: firebl3.aud
+		ImpactActors: false

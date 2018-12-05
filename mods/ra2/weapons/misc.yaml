@@ -1,3 +1,36 @@
+Flamer:
+	Inherits: ^FireWeapon
+	ReloadDelay: 50
+	Burst: 15
+	BurstDelays: 1
+	Projectile: Bullet
+		Speed: 170
+		Image: smallfire
+		LaunchAngle: 62
+		Inaccuracy: 853
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 10
+		Versus:
+			None: 150
+			Flak: 100
+			Plate: 100
+			Light: 50
+			Medium: 20
+			Heavy: 20
+			Wood: 90
+			Steel: 80
+			Concrete: 50
+			Drone: 80
+			Rocket: 100
+
+FlamerE:
+	Inherits: Flamer
+	ReloadDelay: 45
+	Burst: 20
+	Warhead@1Dam: SpreadDamage
+		Damage: 12
+
 BlimpBomb:
 	ReloadDelay: 45
 	Range: 1c20
