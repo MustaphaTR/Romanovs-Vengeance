@@ -237,6 +237,7 @@ fv:
 			flakt: ifv-flak
 			shk: ifv-tesla
 			ivan: ifv-demo
+			pyro: ifv-pyro
 			terror: ifv-demo
 			deso: ifv-deso
 			tany: ifv-hero
@@ -249,11 +250,11 @@ fv:
 	Armament@primary:
 		Weapon: HoverMissile
 		LocalOffset: 128,-128,1024, 128,128,1024
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
 	Armament@elite:
 		Weapon: HoverMissileE
 		LocalOffset: 128,-128,1024, 128,128,1024
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
 	Armament@mg:
 		Weapon: CRM60
 		LocalOffset: 188,32,600
@@ -286,6 +287,10 @@ fv:
 	Armament@desolator:
 		Weapon: CRRadBeamWeapon
 		RequiresCondition: ifv-deso
+	Armament@pyro:
+		Weapon: CRFlamer
+		LocalOffset: 200,0,800
+		RequiresCondition: ifv-pyro
 	Armament@flak:
 		Weapon: CRFlakGuyGun
 		RequiresCondition: ifv-flak
@@ -299,12 +304,12 @@ fv:
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: (stance-attackanything || assault-move) && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono
 	AutoTargetPriority@DEFAULT_GROUND:
-		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-flak || ifv-tesla || ifv-chrono)
-		ValidTargets: Infantry, Vehicle, Water, Underwater, Defense
+		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-flak || ifv-pyro || ifv-tesla || ifv-chrono)
+		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING_GROUND:
-		RequiresCondition: (stance-attackanything || assault-move) && (ifv-mg || ifv-flak || ifv-tesla || ifv-chrono)
-		ValidTargets: Infantry, Vehicle, Water, Underwater, Structure, Defense
+		RequiresCondition: (stance-attackanything || assault-move) && (ifv-mg || ifv-flak || ifv-pyro || ifv-tesla || ifv-chrono)
+		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@INFONLY:
 		RequiresCondition: ifv-sniper || ifv-hero
@@ -331,7 +336,7 @@ fv:
 		RequiresCondition: ifv-demo
 	WithVoxelTurret@default:
 		Sequence: turret-missile
-		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
+		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
 	WithVoxelTurret@mg:
 		Sequence: turret-mg
 		RequiresCondition: ifv-mg || ifv-sniper || ifv-flak || ifv-hero
@@ -340,7 +345,7 @@ fv:
 		RequiresCondition: ifv-repair
 	WithVoxelTurret@hitech:
 		Sequence: turret-hitech
-		RequiresCondition: ifv-rocket || ifv-tesla || ifv-deso || ifv-demo || ifv-chrono
+		RequiresCondition: ifv-rocket || ifv-tesla || ifv-deso || ifv-pyro || ifv-demo || ifv-chrono
 	Voiced:
 		VoiceSet: IFVVoice
 	ProducibleWithLevel:
@@ -513,11 +518,11 @@ bfrt:
 		RequiresCondition: (stance-attackanything || assault-move) && !loaded-air
 	AutoTargetPriority@DEFAULT_AIR:
 		RequiresCondition: (!stance-attackanything && !assault-move) && loaded-air
-		ValidTargets: Infantry, Vehicle, Water, Underwater, Defense, Air
+		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Defense, Air
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING_AIR:
 		RequiresCondition: (stance-attackanything || assault-move) && loaded-air
-		ValidTargets: Infantry, Vehicle, Water, Underwater, Structure, Defense, Air
+		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Structure, Defense, Air
 		InvalidTargets: NoAutoTarget
 	AttackGarrisoned:
 		Armaments: opentopped
