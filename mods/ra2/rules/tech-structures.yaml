@@ -46,7 +46,7 @@ caairp:
 		ResetOnOwnerChange: true
 	ProvidesPrerequisite@Soviets:
 		Prerequisite: techparadrops.soviets
-		Factions: cuba, libya, iraq, russia
+		Factions: cuba, libya, iraq, russia, vietnam
 		ResetOnOwnerChange: true
 	ParatroopersPower@Allies:
 		OrderName: AlliedParatroopers
@@ -227,7 +227,7 @@ caslab:
 		CameraActor: camera
 		ArrowSequence: arrow
 	GrantRandomCondition:
-		Conditions: america, korea, france, germany, england, iraq, libya, cuba, russia
+		Conditions: america, korea, france, germany, england, iraq, libya, cuba, russia, vietnam
 	ProvidesPrerequisite@America:
 		Prerequisite: powers.america
 		RequiresCondition: america
@@ -255,6 +255,9 @@ caslab:
 	ProvidesPrerequisite@Russia:
 		Prerequisite: vehicles.russia
 		RequiresCondition: russia
+	ProvidesPrerequisite@Vietnam:
+		Prerequisite: infantry.vietnam
+		RequiresCondition: vietnam
 	Armor:
 		Type: Wood
 	WithIdleOverlay@flag:
