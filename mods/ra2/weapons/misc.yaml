@@ -26,10 +26,13 @@ Flamer:
 
 FlamerE:
 	Inherits: Flamer
-	ReloadDelay: 45
 	Burst: 20
+	Projectile: Bullet
+		Image: smallfireblue
 	Warhead@1Dam: SpreadDamage
-		Damage: 12
+		Damage: 14
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblue
 
 CRFlamer:
 	Inherits: Flamer
