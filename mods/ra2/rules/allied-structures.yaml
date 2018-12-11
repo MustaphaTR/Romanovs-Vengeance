@@ -59,8 +59,6 @@ gacnst:
 		ProductionType: Building.Allies
 	ProductionBar@Support:
 		ProductionType: Support.Allies
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@fans:
 		Sequence: idle-fans
 		PauseOnCondition: chronodisable
@@ -113,8 +111,6 @@ gapowr:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
 		PauseOnCondition: chronodisable
@@ -189,8 +185,6 @@ gapile:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Allies
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
@@ -248,8 +242,6 @@ garefn:
 		Actor: cmin
 		SpawnOffset: 3, 1
 		Facing: 160
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithDockedOverlay:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
@@ -303,8 +295,6 @@ gaairc:
 		RequiresCondition: !disabled
 	RevealsShroud:
 		Range: 10c0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		PauseOnCondition: disabled || chronodisable
@@ -435,8 +425,6 @@ gaweap:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Allies
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
@@ -584,8 +572,6 @@ gayard:
 		FinishRepairingNotification: UnitRepaired
 	Power:
 		Amount: -20
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
 		PauseOnCondition: chronodisable
@@ -637,8 +623,6 @@ gadept:
 		Interval: 7
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@side:
 		Sequence: idle-side
 		PauseOnCondition: chronodisable
@@ -680,8 +664,6 @@ gatech:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -779,8 +761,6 @@ nasam:
 		TurnSpeed: 10
 		InitialFacing: 224
 		Offset: 550,0,0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: disabled || chronodisable
@@ -832,8 +812,6 @@ gtgcan:
 		TurnSpeed: 3
 		InitialFacing: 224
 		Offset: 400,0,0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: disabled || chronodisable
@@ -884,8 +862,6 @@ gaorep:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
 		PauseOnCondition: chronodisable
@@ -923,8 +899,6 @@ gaspysat:
 	RevealsShroud@DISABLED:
 		Range: 5c0
 		RequiresCondition: disabled
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable
@@ -963,8 +937,6 @@ gagap:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure
 	RenderShroudCircle:
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@head:
 		Sequence: idle-head
 		PauseOnCondition: disabled || chronodisable
@@ -1050,8 +1022,6 @@ gacsph:
 		ValidStances: Neutral, Enemy
 	Power:
 		Amount: -200
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay:
 		Sequence: idle-dome
 		PauseOnCondition: chronodisable
@@ -1107,8 +1077,6 @@ atesla:
 	Armament:
 		Weapon: PrismShot
 		LocalOffset: 0,0,3072
-	WithMakeAnimation:
-		Condition: build-incomplete
 	AttackTesla:
 		Voice: Attack
 		ReloadDelay: 60
@@ -1187,8 +1155,6 @@ garobo:
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_garobo
 		RequiresCondition: !disabled && !chronodisable
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable

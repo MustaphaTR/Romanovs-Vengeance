@@ -602,10 +602,12 @@
 		Types: Building
 	Sellable:
 		SellSounds: uselbuil.wav
+		RequiresCondition: !build-incomplete
 	Guardable:
 		Range: 3c0
 	Demolishable:
 	WithMakeAnimation:
+		Condition: build-incomplete
 	HitShape:
 		UseTargetableCellsOffsets: true
 	MapEditorData:

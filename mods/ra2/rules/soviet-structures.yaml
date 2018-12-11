@@ -61,8 +61,6 @@ nacnst:
 		ProductionType: Building.Soviets
 	ProductionBar@Support:
 		ProductionType: Support.Soviets
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		RequiresCondition: !build-incomplete
@@ -106,8 +104,6 @@ napowr:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -193,8 +189,6 @@ nahand:
 	Exit@2_2:
 		SpawnOffset: 0,0,0
 		ExitCell: 2, 2
-	WithMakeAnimation:
-		Condition: build-incomplete
 	Production:
 		Produces: Infantry.Soviets
 		PauseOnCondition: chronodisable
@@ -268,8 +262,6 @@ narefn:
 		Actor: harv
 		SpawnOffset: 3, 1
 		Facing: 160
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithDockedOverlay:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
@@ -327,8 +319,6 @@ naradr:
 		EndChargeSpeechNotification: SpyPlaneReady
 		UnitType: spyp
 		QuantizedFacings: 8
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable
@@ -391,8 +381,6 @@ naweap:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Soviets
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithExitOverlay@door:
 		Sequence: build-door
 		PauseOnCondition: chronodisable
@@ -536,8 +524,6 @@ nayard:
 		FinishRepairingNotification: UnitRepaired
 	Power:
 		Amount: -20
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@crane:
 		Sequence: idle-crane
 		PauseOnCondition: chronodisable
@@ -595,8 +581,6 @@ nadept:
 		FinishRepairingNotification: UnitRepaired
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
 		PauseOnCondition: chronodisable
@@ -638,8 +622,6 @@ nanrct:
 		Type: Concrete
 	RevealsShroud:
 		Range: 5c0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -752,8 +734,6 @@ naclon:
 	Exit@2_2:
 		SpawnOffset: 0,0,0
 		ExitCell: 2, 2
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	Production:
@@ -798,8 +778,6 @@ napsis:
 	DetectCloaked:
 		CloakTypes: Cloak, Underwater
 		Range: 25c0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: disabled || chronodisable
@@ -914,8 +892,6 @@ namisl:
 		ArrowSequence: arrow
 		CameraRange: 10
 		PauseOnCondition: disabled || chronodisable
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithNukeLaunchAnimation:
 		RequiresCondition: !build-incomplete && !chronodisable
 
@@ -962,8 +938,6 @@ naflak:
 		TurnSpeed: 10
 		InitialFacing: 224
 		Offset: 450,0,0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: disabled || chronodisable
@@ -1020,8 +994,6 @@ tesla:
 		Weapon: OPCoilBolt
 		LocalOffset: 0,0,3072
 		RequiresCondition: charged
-	WithMakeAnimation:
-		Condition: build-incomplete
 	AttackTesla:
 		Voice: Attack
 		MaxCharges: 1
@@ -1071,8 +1043,6 @@ nalasr:
 		TurnSpeed: 10
 		InitialFacing: 224
 		Offset: 320,0,0
-	WithMakeAnimation:
-		Condition: build-incomplete
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable
@@ -1124,8 +1094,6 @@ nabnkr:
 	WithIdleOverlay@Garrisoned:
 		Sequence: garrisoned
 		RequiresCondition: loaded
-	WithMakeAnimation:
-		Condition: build-incomplete
 	AttackGarrisoned:
 		Armaments: garrisoned
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
@@ -1155,8 +1123,6 @@ naindp:
 		Dimensions: 3,3
 	Selectable:
 		Bounds: 152, 164, 0, -50
-	WithMakeAnimation:
-		Condition: build-incomplete
 	WithIdleOverlay@pistons:
 		Sequence: idle-pistons
 		PauseOnCondition: chronodisable
