@@ -76,21 +76,21 @@
     <Compile Include="Warheads\LegacySpreadWarhead.cs" />
   </ItemGroup>
   <Target Name="AfterBuild">
-    <MakeDir Directories="$(SolutionDir)mods\ra2\"/>
+    <MakeDir Directories="$(SolutionDir)mods\rv\"/>
     <Copy
       SourceFiles="$(TargetPath)"
-      DestinationFolder="$(SolutionDir)mods\ra2\"/>
+      DestinationFolder="$(SolutionDir)mods\rv\"/>
     <!--
         csc generates .pdb symbol files (not `.dll.pdb`).
         mcs generates .dll.mdb symbol files.
     -->
     <Copy
       SourceFiles="$(TargetDir)$(TargetName).pdb"
-      DestinationFolder="$(SolutionDir)mods\ra2\"
+      DestinationFolder="$(SolutionDir)mods\rv\"
       Condition="Exists('$(TargetDir)$(TargetName).pdb')"/>
     <Copy
       SourceFiles="$(TargetPath).mdb"
-      DestinationFolder="$(SolutionDir)mods\ra2\"
+      DestinationFolder="$(SolutionDir)mods\rv\"
       Condition="Exists('$(TargetDir)$(TargetName).mdb')"/>
   </Target>
   <ItemGroup>

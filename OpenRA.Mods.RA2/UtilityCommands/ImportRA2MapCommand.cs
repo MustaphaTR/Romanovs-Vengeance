@@ -29,6 +29,7 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 
 		static readonly Dictionary<byte, string> OverlayToActor = new Dictionary<byte, string>()
 		{
+			{ 0x00, "gasand" },
 			{ 0x01, "gasand" },
 			{ 0x02, "gawall" },
 			{ 0x03, "gawall" },

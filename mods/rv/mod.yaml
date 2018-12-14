@@ -1,0 +1,346 @@
+Metadata:
+	Title: Red Alert 2: Romanov's Vengeance
+	Description: The Soviet Union is back!\nThis time to conquer the United States...
+	Version: 6150a86
+	Author: the RV mod team
+
+# TODO: Rename to AudioBag once BagFile is gone from OpenRA/OpenRA
+PackageFormats: Mix, AudioBagHack
+
+Packages:
+	~^Content/ra2
+	~^Content/ra2/taunts
+	.
+	$rv: rv
+	./mods/common: common
+	./mods/as: as
+	~ra2md.mix # put YR files first so stuff like Psychic Sensor and Cloning Vats won't get overridden with Yuri artwork.
+	~ra2.mix
+	~langmd.mix
+	~language.mix
+	~multi.mix
+	~audiomd.mix
+	~cachemd.mix
+	~cache.mix
+	~cameomd.mix
+	~cameo.mix
+	~conqmd.mix: conqmd
+	~conquer.mix: conquer
+	~des.mix
+	~desert.mix
+	~genermd.mix
+	~generic.mix
+	~isodesmd.mix
+	~isodes.mix
+	~isogenmd.mix
+	~isogen.mix
+	~isolunmd.mix
+	~isolun.mix
+	~isosnomd.mix
+	~isosnow.mix
+	~isotemmd.mix
+	~isotemp.mix
+	~isoubnmd.mix
+	~isoubn.mix
+	~isourbmd.mix
+	~isourb.mix
+	~loadmd.mix
+	~load.mix
+	~localmd.mix
+	~local.mix
+	~lun.mix
+	~lunar.mix
+	~neutral.mix
+	~ntrlmd.mix
+	~sidec01.mix
+	~sidec02.mix
+	~sno.mix
+	~snowmd.mix
+	~snow.mix
+	~tem.mix
+	~temperat.mix
+	~theme.mix
+	~thememd.mix
+	~ubn.mix
+	~urbann.mix
+	~urb.mix
+	~urban.mix
+	~audio.bag
+	rv|bits
+	rv|bits/audio
+	rv|bits/cameos
+	rv|bits/infantry
+	rv|bits/structures
+	rv|bits/vehicles
+	rv|bits/projectiles
+	rv|bits/animations
+	rv|uibits
+
+MapFolders:
+	rv|maps: System
+	~^maps/rv/6150a86: User
+
+Rules:
+	rv|rules/proxy-actors.yaml
+	rv|rules/misc.yaml
+	rv|rules/ai.yaml
+	rv|rules/player.yaml
+	rv|rules/world.yaml
+	rv|rules/palettes.yaml
+	rv|rules/defaults.yaml
+	rv|rules/allied-infantry.yaml
+	rv|rules/soviet-infantry.yaml
+	rv|rules/civilians.yaml
+	rv|rules/bridges.yaml
+	rv|rules/animals.yaml
+	rv|rules/allied-structures.yaml
+	rv|rules/soviet-structures.yaml
+	rv|rules/civilian-structures.yaml
+	rv|rules/tech-structures.yaml
+	rv|rules/allied-vehicles.yaml
+	rv|rules/soviet-vehicles.yaml
+	rv|rules/civilian-vehicles.yaml
+	rv|rules/allied-naval.yaml
+	rv|rules/soviet-naval.yaml
+	rv|rules/aircraft.yaml
+	rv|rules/civilian-props.yaml
+	rv|rules/trees.yaml
+	rv|rules/civilian-naval.yaml
+
+Sequences:
+	rv|sequences/aircraft.yaml
+	rv|sequences/allied-infantry.yaml
+	rv|sequences/allied-structures.yaml
+	rv|sequences/animals.yaml
+	rv|sequences/bridges.yaml
+	rv|sequences/civilians.yaml
+	rv|sequences/civilian-props.yaml
+	rv|sequences/civilian-structures.yaml
+	rv|sequences/defaults.yaml
+	rv|sequences/misc.yaml
+	rv|sequences/soviet-infantry.yaml
+	rv|sequences/soviet-structures.yaml
+	rv|sequences/tech-structures.yaml
+	rv|sequences/trees.yaml
+	rv|sequences/vehicles.yaml
+
+ModelSequences:
+	rv|sequences/voxels.yaml
+
+Cursors:
+	rv|cursors.yaml
+
+Chrome:
+	rv|chrome.yaml
+
+Assemblies:
+	common|OpenRA.Mods.Common.dll
+	common|OpenRA.Mods.Cnc.dll
+	rv|OpenRA.Mods.RA2.dll
+	as|OpenRA.Mods.AS.dll
+
+ChromeLayout:
+	rv|chrome/assetbrowser.yaml
+	rv|chrome/ingame-player.yaml
+	rv|chrome/ingame-observer.yaml
+	rv|chrome/ingame-observerstats.yaml
+	rv|chrome/ingame-infoobjectives.yaml
+	rv|chrome/mainmenu.yaml
+	common|chrome/ingame-infostats.yaml
+	common|chrome/musicplayer.yaml
+	common|chrome/tooltips.yaml
+	common|chrome/ingame.yaml
+	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-fmvplayer.yaml
+	common|chrome/ingame-menu.yaml
+	common|chrome/ingame-info.yaml
+	common|chrome/ingame-infoscripterror.yaml
+	common|chrome/ingame-infobriefing.yaml
+	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-perf.yaml
+	common|chrome/ingame-infochat.yaml
+	common|chrome/settings.yaml
+	common|chrome/credits.yaml
+	common|chrome/lobby.yaml
+	common|chrome/lobby-players.yaml
+	common|chrome/lobby-options.yaml
+	common|chrome/lobby-music.yaml
+	common|chrome/lobby-mappreview.yaml
+	common|chrome/lobby-servers.yaml
+	common|chrome/lobby-kickdialogs.yaml
+	common|chrome/multiplayer-browser.yaml
+	common|chrome/multiplayer-browserpanels.yaml
+	common|chrome/multiplayer-createserver.yaml
+	common|chrome/multiplayer-directconnect.yaml
+	common|chrome/map-chooser.yaml
+	common|chrome/connection.yaml
+	common|chrome/replaybrowser.yaml
+	common|chrome/missionbrowser.yaml
+	common|chrome/confirmation-dialogs.yaml
+	common|chrome/color-picker.yaml
+	common|chrome/dropdowns.yaml
+	common|chrome/editor.yaml
+	common|chrome/playerprofile.yaml
+
+Weapons:
+	rv|weapons/bullets.yaml
+	rv|weapons/defaults.yaml
+	rv|weapons/explosions.yaml
+	rv|weapons/flaks.yaml
+	rv|weapons/melee.yaml
+	rv|weapons/mgs.yaml
+	rv|weapons/misc.yaml
+	rv|weapons/missiles.yaml
+	rv|weapons/zaps.yaml
+
+Voices:
+	rv|audio/voices.yaml
+
+Notifications:
+	rv|audio/notifications.yaml
+	rv|audio/taunts.yaml
+
+TileSets:
+	rv|tilesets/temperat.yaml
+	rv|tilesets/snow.yaml
+	rv|tilesets/urban.yaml
+	rv|tilesets/desert.yaml
+	rv|tilesets/simpleterrain.yaml
+
+MapGrid:
+	Type: RectangularIsometric
+	TileSize: 60,30
+	SubCellsOffsets: 0,0,0, -256,128,0, 0,-128,0, 256,128,0
+	DefaultSubCell: 2
+	MaximumTerrainHeight: 16
+
+Music:
+	rv|audio/music.yaml
+
+Translations:
+	rv|languages/english.yaml
+
+Hotkeys:
+	common|hotkeys/game.yaml
+	common|hotkeys/observer.yaml
+	common|hotkeys/production-common.yaml
+	common|hotkeys/production-peractor.yaml
+	common|hotkeys/supportpowers.yaml
+	common|hotkeys/viewport.yaml
+	rv|hotkeys.yaml
+
+LoadScreen: LogoStripeLoadScreen
+	Image: rv|uibits/loadscreen.png
+	Text: Carving wooden nickels..., Preparing paratroopers..., Welcoming you to Texas..., Optimizing helium mix..., Receiving thoughts..., Igniting boosters...
+
+ServerTraits:
+	LobbyCommands
+	PlayerPinger
+	MasterServerPinger
+
+ChromeMetrics:
+	common|metrics.yaml
+	rv|metrics.yaml
+
+Fonts:
+	Regular:
+		Font: common|FreeSans.ttf
+		Size:14
+	Bold:
+		Font: common|FreeSansBold.ttf
+		Size:14
+	Title:
+		Font: common|FreeSansBold.ttf
+		Size:32
+	BigBold:
+		Font: common|FreeSansBold.ttf
+		Size:24
+	MediumBold:
+		Font: common|FreeSansBold.ttf
+		Size:18
+	Small:
+		Font: common|FreeSans.ttf
+		Size:12
+	Tiny:
+		Font: common|FreeSans.ttf
+		Size:10
+	TinyBold:
+		Font: common|FreeSansBold.ttf
+		Size:10
+
+# Our maps may not work on RA2 mod, but RA2's maps would work here.
+SupportsMapsFrom: rv, ra2
+
+SoundFormats: Aud, Wav
+
+SpriteFormats: ShpTS, TmpTS, ShpTD
+
+SpriteSequenceFormat: TilesetSpecificSpriteSequence
+	TilesetExtensions:
+		TEMPERATE: .tem
+		SNOW: .sno
+		URBAN: .urb
+		DESERT: .des
+		SIMPLETERRAIN: .tem
+	TilesetCodes:
+		GENERIC: g
+		SNOW: a
+		TEMPERATE: t
+		URBAN: u
+		DESERT: d
+		SIMPLETERRAIN: t
+
+ModelSequenceFormat: VoxelModelSequence
+
+GameSpeeds:
+	slowest:
+		Name: Slowest
+		Timestep: 80
+		OrderLatency: 2
+	slower:
+		Name: Slower
+		Timestep: 50
+		OrderLatency: 3
+	default:
+		Name: Normal
+		Timestep: 40
+		OrderLatency: 3
+	fast:
+		Name: Fast
+		Timestep: 35
+		OrderLatency: 4
+	faster:
+		Name: Faster
+		Timestep: 30
+		OrderLatency: 4
+	fastest:
+		Name: Fastest
+		Timestep: 20
+		OrderLatency: 6
+
+ColorValidator:
+	TeamColorPresets: dee308, ff1818, 2973e7, 39d629, ffa518, 31d6e7, 9429bd, ff9cef, 6f7104, 7f0c0c, 143973, 1c6b14, 7f520c, 186b73, 4a145e, 7f484e
+
+ModContent:
+	InstallPromptMessage: Red Alert 2 requires artwork and audio from the original game.
+	HeaderMessage: The original game content must be copied from an original game disc.
+	Packages:
+		base: Base Game Files
+			TestFiles: ^Content/ra2/ra2.mix, ^Content/ra2/language.mix
+			Sources: ra2, origin, tfd
+			Required: true
+		music: Base Game Music
+			TestFiles: ^Content/ra2/theme.mix
+			Sources: ra2, origin, tfd
+		explosion: Expansion Files
+			TestFiles: ^Content/ra2/ra2md.mix, ^Content/ra2/langmd.mix
+			Sources: origin-yr
+			Required: true
+		explosion-music: Expansion Music
+			TestFiles: ^Content/ra2/thememd.mix
+			Sources: origin-yr
+	Sources:
+		rv|installer/ra2.yaml
+		rv|installer/origin.yaml
+		rv|installer/origin-yr.yaml
+		rv|installer/firstdecade.yaml
