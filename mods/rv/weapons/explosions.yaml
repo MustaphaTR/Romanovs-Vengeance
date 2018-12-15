@@ -315,3 +315,16 @@ EMPulse:
 	Warhead@2Eff: CreateEffect
 		Explosions: empulse
 		ExplosionPalette: tseffect
+
+MineExplosion:
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 400
+		AffectsParent: true
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: mine1.aud, mineblo1.aud
+	Warhead@Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Structure, Wall, Trees

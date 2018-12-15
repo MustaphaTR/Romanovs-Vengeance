@@ -304,6 +304,9 @@ naradr:
 	ProvidesPrerequisite@vietnam:
 		Prerequisite: radar.vietnam
 		Factions: vietnam
+	ProvidesPrerequisite@cuba:
+		Prerequisite: radar.cuba
+		Factions: cuba
 	ProvidesPrerequisite@libya:
 		Prerequisite: radar.libya
 		Factions: libya
@@ -374,6 +377,18 @@ naradr:
 		SelectTargetSpeechNotification: SelectTarget
 		Weapon: BunkerSpawner
 		ActivationSequence:
+	AirstrikePower@clustermines:
+		OrderName: CubanClusterMines
+		PauseOnCondition: powerdown || chronodisable || emp
+		Prerequisites: radar.cuba, disabled
+		Icon: cluster
+		ChargeInterval: 4500
+		Description: Cluster Mines
+		LongDesc: A Cargo plane drops 13 mines\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitType: pdplane.cluster_mines
+		SquadSize: 1
+		QuantizedFacings: 8
 	AirstrikePower@parabombs:
 		OrderName: LibyanParabombs
 		PauseOnCondition: powerdown || chronodisable || emp
@@ -397,6 +412,42 @@ naradr:
 		Types: SpyInfiltrate
 	Power:
 		Amount: -25
+
+mine:
+	Inherits@1: ^SpriteActor
+	Interactable:
+		Bounds: 24,24
+	WithSpriteBody:
+	HiddenUnderFog:
+	Mine:
+		CrushClasses: mine
+		DetonateClasses: mine
+		BlockFriendly: false
+	Health:
+		HP: 100
+		NotifyAppliedDamage: false
+	Armor:
+		Type: Light
+	Cloak:
+		CloakSound:
+		UncloakSound:
+		Palette:
+		InitialDelay: 0
+	Tooltip:
+		Name: Mine
+	Targetable:
+		TargetTypes: Ground, Defense
+	Mobile:
+		Speed: 1
+		Locomotor: wheeled
+	RejectsOrders:
+	HitShape:
+	MapEditorData:
+		Categories: System
+	Explodes:
+		Weapon: MineExplosion
+	RenderSprites:
+		PlayerPalette: infantry
 
 naweap:
 	Inherits: ^Building

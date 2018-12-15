@@ -402,3 +402,32 @@ ParaBomb:
 		Explosions: large_watersplash
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
+
+ClusterMines:
+	ReloadDelay: 10
+	Range: 1c0
+	Report: vkiratta.wav
+	Projectile: Missile
+		RangeLimit: 0c32
+		TerrainHeightAware: true
+		Blockable: false
+	Warhead@1Clu: FireCluster
+		Weapon: SpawnMine
+		Dimensions: 5,5
+		Footprint: __x__ _xxx_ xxxxx _xxx_ __x__
+		ValidTargets: Ground, Water, Air
+
+SpawnMine:
+	Range: 5c0
+	Projectile: BulletAS
+		Image: mine
+		Sequences: projectile
+		Palette: player
+		IsPlayerPalette: true
+		Blockable: false
+		Speed: 384
+	Warhead@1Spa: SpawnActor
+		Actors: mine
+		Range: 0
+		ForceGround: true
+		ValidTargets: Ground, Water, Air

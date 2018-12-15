@@ -178,6 +178,15 @@ Player:
 					TargetMetric: Value
 					CheckRadius: 7c0
 			parabomb:
+				OrderName: CubanClusterMines
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy, Neutral, Ally
+					Types: Structure, Vehicle, Infantry
+					Attractiveness: -1
+					TargetMetric: Value
+					CheckRadius: 5c0
+			parabomb:
 				OrderName: LibyanParabombs
 				MinimumAttractiveness: 3000
 				Consideration@1:
