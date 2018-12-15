@@ -141,6 +141,9 @@ gapile:
 		Name: Barracks
 	ProvidesPrerequisite:
 		Prerequisite: barracks
+	ProvidesPrerequisite@america:
+		Prerequisite: infantry.america
+		Factions: america
 	ProvidesPrerequisite@england:
 		Prerequisite: infantry.england
 		Factions: england
@@ -380,7 +383,7 @@ gaairc:
 	DetonateWeaponPower@cruiserstrike:
 		OrderName: EnglishCruiserStrike
 		PauseOnCondition: powerdown || chronodisable || emp
-		Prerequisites: radar.england, disabled
+		Prerequisites: radar.england
 		Icon: cruiser
 		ChargeInterval: 6000
 		Description: Cruiser Strike
@@ -392,7 +395,7 @@ gaairc:
 	ParatroopersPower@paratanks:
 		OrderName: GermanTankDrop
 		PauseOnCondition: powerdown || chronodisable || emp
-		Prerequisites: radar.germany, disabled
+		Prerequisites: radar.germany
 		Icon: tankdrop
 		ChargeInterval: 9000
 		Description: Tank Drop
@@ -409,7 +412,7 @@ gaairc:
 	DetonateWeaponPower@emergencyrepair:
 		OrderName: FrenchRepair
 		PauseOnCondition: powerdown || chronodisable || emp
-		Prerequisites: radar.france, disabled
+		Prerequisites: radar.france
 		Icon: repair
 		ChargeInterval: 2250
 		Description: Emergency Repair
@@ -420,7 +423,7 @@ gaairc:
 	AirstrikePower@empulse:
 		OrderName: KoreanEMP
 		PauseOnCondition: powerdown || chronodisable || emp
-		Prerequisites: radar.korea, disabled
+		Prerequisites: radar.korea
 		Icon: empulse
 		ChargeInterval: 4500
 		Description: E. M. Pulse Strike

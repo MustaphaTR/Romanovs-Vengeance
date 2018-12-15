@@ -338,7 +338,7 @@ naradr:
 	ParatroopersPower@tesladrop:
 		OrderName: RussianTeslaDrop
 		PauseOnCondition: powerdown || chronodisable || emp
-		Prerequisites: radar.russia, disabled
+		Prerequisites: radar.russia
 		Icon: tesladrop
 		ChargeInterval: 9000
 		Description: Tesla Drop
@@ -354,7 +354,7 @@ naradr:
 		Cursor: nuke
 		OrderName: IraqiRadMissile
 		PauseOnCondition: powerdown || chronodisable || emp
-		Prerequisites: radar.iraq, disabled
+		Prerequisites: radar.iraq
 		Icon: radmissile
 		ChargeInterval: 4500
 		Description: Radiation Missile
@@ -369,7 +369,7 @@ naradr:
 	DetonateWeaponPower@instanbunker:
 		OrderName: VietnameseInstantBunker
 		PauseOnCondition: powerdown || chronodisable || emp
-		Prerequisites: radar.vietnam, disabled
+		Prerequisites: radar.vietnam
 		Icon: bunker
 		ChargeInterval: 2250
 		Description: Instant Bunker
@@ -380,7 +380,7 @@ naradr:
 	AirstrikePower@clustermines:
 		OrderName: CubanClusterMines
 		PauseOnCondition: powerdown || chronodisable || emp
-		Prerequisites: radar.cuba, disabled
+		Prerequisites: radar.cuba
 		Icon: cluster
 		ChargeInterval: 4500
 		Description: Cluster Mines
@@ -392,7 +392,7 @@ naradr:
 	AirstrikePower@parabombs:
 		OrderName: LibyanParabombs
 		PauseOnCondition: powerdown || chronodisable || emp
-		Prerequisites: radar.libya, disabled
+		Prerequisites: radar.libya
 		Icon: parabomb
 		ChargeInterval: 5250
 		Description: Parabombs
@@ -1192,7 +1192,8 @@ nabnkr:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 30
-		Description: Static defense with fireports for 5\ngarrisoned soldiers.
+		Prerequisites: ~disabled
+		Description: Static defense with fireports for 6\ngarrisoned soldiers.
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1208,8 +1209,8 @@ nabnkr:
 		Type: Steel
 	Cargo:
 		Types: Garrisoner
-		MaxWeight: 5
-		PipCount: 5
+		MaxWeight: 6
+		PipCount: 6
 		LoadedCondition: loaded
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
@@ -1219,7 +1220,7 @@ nabnkr:
 		RequiresCondition: loaded
 	AttackGarrisoned:
 		Armaments: garrisoned
-		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
+		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		PauseOnCondition: chronodisable
