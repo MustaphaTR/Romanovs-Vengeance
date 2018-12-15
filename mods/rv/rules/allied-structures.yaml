@@ -285,6 +285,9 @@ gaairc:
 	ProvidesPrerequisite@america:
 		Prerequisite: radar.america
 		Factions: america
+	ProvidesPrerequisite@england:
+		Prerequisite: radar.england
+		Factions: england
 	ProvidesPrerequisite@germany:
 		Prerequisite: radar.germany
 		Factions: germany
@@ -374,6 +377,18 @@ gaairc:
 		UnitType: pdplane
 		CameraActor: camera
 		ArrowSequence: arrow
+	DetonateWeaponPower@cruiserstrike:
+		OrderName: EnglishCruiserStrike
+		PauseOnCondition: powerdown || chronodisable || emp
+		Prerequisites: radar.england, disabled
+		Icon: cruiser
+		ChargeInterval: 6000
+		Description: Cruiser Strike
+		LongDesc: Cruisers from out of the map bombards\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapon: CrusierStrikeInit
+		AirburstAltitude: 10c0
+		ActivationSequence:
 	ParatroopersPower@paratanks:
 		OrderName: GermanTankDrop
 		PauseOnCondition: powerdown || chronodisable || emp

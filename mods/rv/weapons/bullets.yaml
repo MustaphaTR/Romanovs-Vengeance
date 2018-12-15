@@ -333,3 +333,61 @@ robogunE:
 160mmE:
 	Inherits: 160mm
 	Burst: 2
+
+CrusierStrikeInit:
+	Projectile: InstantExplode
+	ReloadDelay: 1
+	Warhead@1: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Sequences: inviso
+		Palette: effect
+		Weapon: CrusierStrikeRandomInit
+		Duration: 150
+		Delay: 25
+
+CrusierStrikeRandomInit:
+	Projectile: InstantHit
+	ReloadDelay: 8
+	Warhead@barrage3: FireShrapnel
+		Weapon: CrusierCloud
+		Amount: 2
+		AimChance: 50
+		ValidTargets: Air, Ground, Water
+
+CrusierCloud:
+	ReloadDelay: 120
+	Range: 7c0
+	Projectile: AthenaProjectile
+		Altitude: 10c0
+	Warhead@1: FireFragment
+		UseZOffsetAsAbsoluteHeight: true
+		Weapon: CrusierStrike
+		ValidTargets: Air, Ground, Water
+		Delay: 15
+	Warhead@TargetValidation: SpreadDamage
+
+CrusierStrike:
+	Inherits: ^LargeBullet
+	Range: 2c0
+	ReloadDelay: 10
+	Report: bgraatta.wav
+	Projectile: BulletAS
+		Image: 160mm
+		Speed: 768
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c256
+		Falloff: 100, 75, 50, 25, 0
+		Damage: 90
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 60
+			Light: 80
+			Medium: 50
+			Heavy: 50
+			Wood: 100
+			Steel: 100
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
