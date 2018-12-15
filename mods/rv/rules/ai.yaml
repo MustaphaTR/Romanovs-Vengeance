@@ -132,21 +132,6 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
-			radmissile:
-				OrderName: IraqiRadMissile
-				MinimumAttractiveness: 3000
-				Consideration@1:
-					Against: Enemy
-					Types: Infantry, Vehicle
-					Attractiveness: 1
-					TargetMetric: Value
-					CheckRadius: 5c0
-				Consideration@2:
-					Against: Ally
-					Types: Air, Ground, Water
-					Attractiveness: -10
-					TargetMetric: Value
-					CheckRadius: 7c0
 			tesladrop:
 				OrderName: RussianTeslaDrop
 				MinimumAttractiveness: 5
@@ -162,6 +147,21 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
+			radmissile:
+				OrderName: IraqiRadMissile
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 			parabomb:
 				OrderName: LibyanParabombs
 				MinimumAttractiveness: 3000

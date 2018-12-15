@@ -297,12 +297,15 @@ naradr:
 	ProvidesPrerequisite@russia:
 		Prerequisite: radar.russia
 		Factions: russia
-	ProvidesPrerequisite@vietnam:
-		Prerequisite: radar.vietnam
-		Factions: vietnam
 	ProvidesPrerequisite@iraq:
 		Prerequisite: radar.iraq
 		Factions: iraq
+	ProvidesPrerequisite@vietnam:
+		Prerequisite: radar.vietnam
+		Factions: vietnam
+	ProvidesPrerequisite@libya:
+		Prerequisite: radar.libya
+		Factions: libya
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -343,29 +346,6 @@ naradr:
 		UnitType: pdplane
 		CameraActor: camera
 		ArrowSequence: arrow
-	DetonateWeaponPower@instanbunker:
-		OrderName: VietnameseInstantBunker
-		PauseOnCondition: powerdown || chronodisable
-		Prerequisites: radar.vietnam, disabled
-		Icon: bunker
-		ChargeInterval: 2250
-		Description: Instant Bunker
-		LongDesc: Places a bunker anywhere on the map.
-		SelectTargetSpeechNotification: SelectTarget
-		Weapon: BunkerSpawner
-		ActivationSequence:
-	AirstrikePower@parabombs:
-		OrderName: LibyanParabombs
-		PauseOnCondition: powerdown || chronodisable
-		Icon: parabomb
-		ChargeInterval: 5250
-		Description: Parabombs
-		LongDesc: A squad of Cargo Planes drop parachuted\nbombs on your target.
-		SelectTargetSpeechNotification: SelectTarget
-		UnitType: pdplane.parabomb
-		SquadSize: 3
-		SquadOffset: -2048, 2048, 0
-		QuantizedFacings: 8
 	NukePower@radiationmissile:
 		Cursor: nuke
 		OrderName: IraqiRadMissile
@@ -382,6 +362,30 @@ naradr:
 		FlightVelocity: 2c512
 		FlightDelay: 80
 		ActivationSequence:
+	DetonateWeaponPower@instanbunker:
+		OrderName: VietnameseInstantBunker
+		PauseOnCondition: powerdown || chronodisable
+		Prerequisites: radar.vietnam, disabled
+		Icon: bunker
+		ChargeInterval: 2250
+		Description: Instant Bunker
+		LongDesc: Places a bunker anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapon: BunkerSpawner
+		ActivationSequence:
+	AirstrikePower@parabombs:
+		OrderName: LibyanParabombs
+		PauseOnCondition: powerdown || chronodisable
+		Prerequisites: radar.libya, disabled
+		Icon: parabomb
+		ChargeInterval: 5250
+		Description: Parabombs
+		LongDesc: A squad of Cargo Planes drop parachuted\nbombs on your target.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitType: pdplane.parabomb
+		SquadSize: 3
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable
