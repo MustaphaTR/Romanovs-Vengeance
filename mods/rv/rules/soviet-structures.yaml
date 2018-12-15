@@ -294,6 +294,9 @@ naradr:
 	ProvidesPrerequisite:
 		Prerequisite: radar
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@vietnam:
+		Prerequisite: radar.vietnam
+		Factions: vietnam
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -319,6 +322,17 @@ naradr:
 		EndChargeSpeechNotification: SpyPlaneReady
 		UnitType: spyp
 		QuantizedFacings: 8
+	DetonateWeaponPower@instanbunker:
+		OrderName: VietnameseInstantBunker
+		PauseOnCondition: powerdown || chronodisable
+		Prerequisites: radar.vietnam, disabled
+		Icon: bunker
+		ChargeInterval: 2250
+		Description: Instant Bunker
+		LongDesc: Places a bunker anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapon: BunkerSpawner
+		ActivationSequence:
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable

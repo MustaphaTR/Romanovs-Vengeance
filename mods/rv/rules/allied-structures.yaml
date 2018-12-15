@@ -278,12 +278,15 @@ gaairc:
 	ProvidesPrerequisite@harrier:
 		Prerequisite: aircraft.harrier
 		Factions: america, germany, england, france
-	ProvidesPrerequisite@america:
-		Prerequisite: aircraft.america
-		Factions: america
 	ProvidesPrerequisite@korea:
 		Prerequisite: aircraft.korea
 		Factions: korea
+	ProvidesPrerequisite@america:
+		Prerequisite: radar.america
+		Factions: america
+	ProvidesPrerequisite@germany:
+		Prerequisite: radar.germany
+		Factions: germany
 	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xxx xxx
@@ -352,7 +355,7 @@ gaairc:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
 		PauseOnCondition: powerdown || chronodisable
-		Prerequisites: aircraft.america
+		Prerequisites: radar.america
 		Icon: airborne
 		ChargeInterval: 6000
 		Description: Airborne
@@ -360,6 +363,23 @@ gaairc:
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ParatroopersReady
 		DropItems: e1,e1,e1,e1,e1,e1,e1,e1
+		QuantizedFacings: 8
+		UnitType: pdplane
+		CameraActor: camera
+		ArrowSequence: arrow
+	ParatroopersPower@paratanks:
+		OrderName: GermanTankDrop
+		PauseOnCondition: powerdown || chronodisable
+		Prerequisites: radar.germany, disabled
+		Icon: tankdrop
+		ChargeInterval: 9000
+		Description: Tank Drop
+		LongDesc: 3 Cargo Planes drops 3 Grizzly Tanks\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
+		DropItems: mtnk, mtnk, mtnk
+		SquadSize: 3
+		SquadOffset: -2048, 2048, 0
 		QuantizedFacings: 8
 		UnitType: pdplane
 		CameraActor: camera
