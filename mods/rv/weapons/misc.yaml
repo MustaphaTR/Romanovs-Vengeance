@@ -228,6 +228,20 @@ RadEruptionWeapon:
 		Falloff: 100, 100
 		Level: 500
 		MaxLevel: 500
+	Warhead@2RadiationUmbrella: FireRadius
+		Weapon: RadiationUmbrella
+		Amount: 6
+		AffectsParent: true
+
+RadiationUmbrella:
+	ReloadDelay: 1
+	Range: 8c0
+	Projectile: ArcLaserZap
+		Duration: 5
+		Width: 16
+		Color: 00FF00
+	ValidTargets: Ground, Air, Water
+	Warhead@TargetValidation: SpreadDamage
 
 WeatherStormInit:
 	Projectile: InstantExplode
