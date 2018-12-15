@@ -384,6 +384,17 @@ gaairc:
 		UnitType: pdplane
 		CameraActor: camera
 		ArrowSequence: arrow
+	DetonateWeaponPower@emergencyrepair:
+		OrderName: FrenchRepair
+		PauseOnCondition: powerdown || chronodisable
+		Prerequisites: radar.france, disabled
+		Icon: repair
+		ChargeInterval: 2250
+		Description: Emergency Repair
+		LongDesc: Repairs vehicles and structures in a large area.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapon: EmergencyRepair
+		ActivationSequence:
 	RallyPoint:
 		Offset: 2,3
 		Palette: mouse

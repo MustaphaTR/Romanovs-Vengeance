@@ -91,6 +91,25 @@ RepairBullet:
 		ValidTargets: Repair
 		DamageTypes: KillsDrone
 
+EmergencyRepair:
+	ReloadDelay: 80
+	Range: 1c819
+	ValidTargets: Repair
+	Projectile: BulletAS
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 8c0
+		Falloff: 100, 0
+		Damage: -400
+		ValidStates: Neutral, Ally
+		ValidTargets: Repair, Structure, Wall
+		DamageTypes: KillsDrone
+	Warhead@2Eff: CreateEffect
+		Explosions: wrench
+		Palette: mouse
+		ImpactSounds: vifvrepa.wav
+		ValidTargets: Ground, Water, Air
+
 MindControl:
 	ReloadDelay: 200
 	Range: 7c0
