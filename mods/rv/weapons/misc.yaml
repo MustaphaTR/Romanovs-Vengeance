@@ -3,9 +3,12 @@ Flamer:
 	ReloadDelay: 50
 	Burst: 15
 	BurstDelays: 1
-	Projectile: Bullet
+	Projectile: BulletAS
 		Speed: 170
-		Image: smallfire
+		Image: fireball
+		TrailImage: fireball
+		TrailSequences: trailer
+		TrailInternal: 1
 		LaunchAngle: 62
 		Inaccuracy: 853
 	Warhead@1Dam: SpreadDamage
@@ -27,8 +30,9 @@ Flamer:
 FlamerE:
 	Inherits: Flamer
 	Burst: 20
-	Projectile: Bullet
-		Image: smallfireblue
+	Projectile: BulletAS
+		Image: fireballblue
+		TrailImage: fireballblue
 	Warhead@1Dam: SpreadDamage
 		Damage: 14
 	Warhead@3Eff: CreateEffect
