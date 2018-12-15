@@ -300,6 +300,9 @@ naradr:
 	ProvidesPrerequisite@vietnam:
 		Prerequisite: radar.vietnam
 		Factions: vietnam
+	ProvidesPrerequisite@iraq:
+		Prerequisite: radar.iraq
+		Factions: iraq
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -350,6 +353,22 @@ naradr:
 		LongDesc: Places a bunker anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		Weapon: BunkerSpawner
+		ActivationSequence:
+	NukePower@radiationmissile:
+		Cursor: nuke
+		OrderName: IraqiRadMissile
+		PauseOnCondition: powerdown || chronodisable
+		Prerequisites: radar.iraq, disabled
+		Icon: radmissile
+		ChargeInterval: 4500
+		Description: Radiation Missile
+		LongDesc: Fires a missile that deals low damage\nand leaves radiation.
+		SelectTargetSpeechNotification: SelectTarget
+		MissileWeapon: RadiationMissile
+		MissilePalette: player
+		IsPlayerPalette: true
+		FlightVelocity: 2c512
+		FlightDelay: 80
 		ActivationSequence:
 	WithIdleOverlay@dish:
 		Sequence: idle-dish

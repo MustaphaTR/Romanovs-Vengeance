@@ -271,3 +271,29 @@ DredWeapon:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c426
 		Damage: 300
+
+RadiationMissile:
+	Warhead@1Dam: SpreadDamage
+		Spread: 2c512
+		Damage: 250
+		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
+			Light: 90
+			Medium: 70
+			Heavy: 70
+			Wood: 100
+			Steel: 100
+			Concrete: 50
+			Drone: 80
+			Rocket: 0
+		DamageTypes: Prone70Percent, TriggerProne, RadiationDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion
+		ImpactSounds: vdemdiea.wav
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 8c0
+		Falloff: 100, 100
+		Level: 1500
+		MaxLevel: 1500
