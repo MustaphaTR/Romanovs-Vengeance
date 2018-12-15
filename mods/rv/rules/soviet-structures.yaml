@@ -294,6 +294,9 @@ naradr:
 	ProvidesPrerequisite:
 		Prerequisite: radar
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@russia:
+		Prerequisite: radar.russia
+		Factions: russia
 	ProvidesPrerequisite@vietnam:
 		Prerequisite: radar.vietnam
 		Factions: vietnam
@@ -322,6 +325,21 @@ naradr:
 		EndChargeSpeechNotification: SpyPlaneReady
 		UnitType: spyp
 		QuantizedFacings: 8
+	ParatroopersPower@tesladrop:
+		OrderName: RussianTeslaDrop
+		PauseOnCondition: powerdown || chronodisable
+		Prerequisites: radar.russia, disabled
+		Icon: tesladrop
+		ChargeInterval: 9000
+		Description: Tesla Drop
+		LongDesc: A Cargo Plane drops a Tesla Tank\n and 3 Tesla Troopers anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
+		DropItems: shk, shk, shk, ttnk
+		QuantizedFacings: 8
+		UnitType: pdplane
+		CameraActor: camera
+		ArrowSequence: arrow
 	DetonateWeaponPower@instanbunker:
 		OrderName: VietnameseInstantBunker
 		PauseOnCondition: powerdown || chronodisable
