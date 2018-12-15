@@ -278,6 +278,9 @@ gaairc:
 	ProvidesPrerequisite@harrier:
 		Prerequisite: aircraft.harrier
 		Factions: america, germany, england, france
+	ProvidesPrerequisite@america:
+		Prerequisite: aircraft.america
+		Factions: america
 	ProvidesPrerequisite@korea:
 		Prerequisite: aircraft.korea
 		Factions: korea
@@ -345,28 +348,14 @@ gaairc:
 		ProductionType: Aircraft.Allies
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
-	RallyPoint:
-		Offset: 2,3
-		Palette: mouse
-		IsPlayerPalette: false
-
-amradr:
-	Inherits: gaairc
-	Tooltip:
-		Name: American Airforce Command Headquarters
-	Buildable:
-		Prerequisites: garefn, ~structures.america
-	WithSpriteBody:
-	QuantizeFacingsFromSequence:
-	RenderSprites:
-		Image: gaairc
 	SupportPowerChargeBar:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
 		PauseOnCondition: powerdown || chronodisable
+		Prerequisites: aircraft.america
 		Icon: airborne
 		ChargeInterval: 6000
-		Description: American Paratroopers
+		Description: Airborne
 		LongDesc: A Cargo Plane drops eight GIs\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ParatroopersReady
@@ -375,6 +364,10 @@ amradr:
 		UnitType: pdplane
 		CameraActor: camera
 		ArrowSequence: arrow
+	RallyPoint:
+		Offset: 2,3
+		Palette: mouse
+		IsPlayerPalette: false
 
 gaweap:
 	Inherits: ^Building

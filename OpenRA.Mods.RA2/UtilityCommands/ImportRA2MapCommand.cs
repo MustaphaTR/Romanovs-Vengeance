@@ -352,6 +352,11 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ "gatick", "ttnk" }
 		};
 
+		static readonly Dictionary<string, string> ReplaceActors = new Dictionary<string, string>()
+		{
+			{ "amradr", "gaairc" }
+		};
+
 		[Desc("FILENAME", "Convert a Red Alert 2 map to the OpenRA format.")]
 		void IUtilityCommand.Run(Utility utility, string[] args)
 		{
@@ -632,6 +637,11 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 				{
 					name = DeployableActors[name];
 					isDeployed = true;
+				}
+
+				if (ReplaceActors.ContainsKey(name))
+				{
+					name = ReplaceActors[name];
 				}
 
 				var health = short.Parse(entries[2]);
