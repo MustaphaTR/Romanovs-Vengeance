@@ -354,6 +354,18 @@ naradr:
 		SelectTargetSpeechNotification: SelectTarget
 		Weapon: BunkerSpawner
 		ActivationSequence:
+	AirstrikePower@parabombs:
+		OrderName: LibyanParabombs
+		PauseOnCondition: powerdown || chronodisable
+		Icon: parabomb
+		ChargeInterval: 5250
+		Description: Parabombs
+		LongDesc: A squad of Cargo Planes drop parachuted\nbombs on your target.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitType: pdplane.parabomb
+		SquadSize: 3
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
 	NukePower@radiationmissile:
 		Cursor: nuke
 		OrderName: IraqiRadMissile
