@@ -91,7 +91,8 @@ TanyaC4:
 			Rocket: 0
 		DamageTypes: PsychicDeath, Prone100Percent
 	Warhead@2Eff: CreateEffect
-		Explosions: large_twlt
+		Explosions: c4explosion
+		ExplosionPalette: tsanim
 		ImpactSounds: gexpapoa.wav
 
 SealC4:
@@ -99,21 +100,9 @@ SealC4:
 	Warhead@1Dam: SpreadDamage
 		Damage: 300
 		Versus:
-			None: 0
-			Flak: 0
-			Plate: 0
-			Light: 100
-			Medium: 100
-			Heavy: 100
 			Wood: 90
 			Steel: 90
 			Concrete: 45
-			Drone: 0
-			Rocket: 0
-		DamageTypes: PsychicDeath, Prone100Percent
-	Warhead@2Eff: CreateEffect
-		Explosions: large_twlt
-		ImpactSounds: gexpapoa.wav
 
 CRNuke:
 	Inherits: IvanBomber
