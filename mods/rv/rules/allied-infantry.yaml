@@ -270,6 +270,7 @@ ggi:
 		RequiresCondition: !chronodisable && undeployed
 	Passenger:
 		PipType: Green
+		CargoType: Garrisoner
 	RevealsShroud:
 		Range: 6c0
 	Crushable:
@@ -299,6 +300,14 @@ ggi:
 		Weapon: MissileLauncherE
 		Name: opentopped
 		LocalOffset: 480,64,992
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCMissileLauncher
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCMissileLauncherE
 		RequiresCondition: rank-elite
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
@@ -452,7 +461,7 @@ ghost:
 	Buildable:
 		Queue: Infantry.Allies
 		BuildPaletteOrder: 100
-		Prerequisites: radar
+		Prerequisites: radar, ~infantry.america
 		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings and Ships
 	Valued:
 		Cost: 1000

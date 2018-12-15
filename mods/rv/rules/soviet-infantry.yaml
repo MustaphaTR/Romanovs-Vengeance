@@ -159,6 +159,7 @@ shk:
 		CrushClasses: vehicle
 	Passenger:
 		PipType: Red
+		CargoType: Garrisoner
 	AttackFrontal:
 		Voice: Attack
 	Armament@primary:
@@ -176,6 +177,14 @@ shk:
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: ElectricBoltE
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCElectricBolt
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCElectricBoltE
 		RequiresCondition: rank-elite
 	Armament@charge:
 		Name: secondary
