@@ -36,7 +36,7 @@ smcv:
 		Facing: 96
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || emp
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
@@ -179,7 +179,7 @@ htk:
 		Speed: 120
 		TurnSpeed: 5
 		Locomotor: tracked
-		RequiresCondition: !notmobile && !chronodisable
+		RequiresCondition: !notmobile && !chronodisable && !emp
 	Health:
 		HP: 180
 	Armor:

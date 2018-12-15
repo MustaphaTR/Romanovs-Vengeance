@@ -1062,20 +1062,21 @@
 	Inherits@2: ^GainsExperience
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^ChronoDisable
-	Inherits@5: ^CrateStatModifiers
-	Inherits@6: ^MachineShopRepair
-	Inherits@7: ^AcceptsIvanBomb
-	Inherits@8: ^AcceptsTanyaC4
-	Inherits@9: ^AffectedByIndustrialPlant
-	Inherits@10: ^VehicleParticles
-	Inherits@11: ^ParachutableVehicle
+	Inherits@5: ^DisabledByEMP
+	Inherits@6: ^CrateStatModifiers
+	Inherits@7: ^MachineShopRepair
+	Inherits@8: ^AcceptsIvanBomb
+	Inherits@9: ^AcceptsTanyaC4
+	Inherits@10: ^AffectedByIndustrialPlant
+	Inherits@11: ^VehicleParticles
+	Inherits@12: ^ParachutableVehicle
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
 		Voice: Move
 		TurnSpeed: 5
 		Locomotor: wheeled
-		RequiresCondition: !chronodisable
+		RequiresCondition: !chronodisable && !emp
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -1099,6 +1100,11 @@
 	Repairable:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
 	Carryable:
 	Passenger:
 		Voice: Move
@@ -1306,19 +1312,20 @@
 	Inherits@2: ^GainsExperience
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^ChronoDisable
-	Inherits@5: ^CrateStatModifiers
-	Inherits@6: ^MachineShopRepair
-	Inherits@7: ^AcceptsIvanBomb
-	Inherits@8: ^AcceptsTanyaC4
-	Inherits@9: ^AffectedByIndustrialPlant
-	Inherits@10: ^VehicleParticles
+	Inherits@5: ^DisabledByEMP
+	Inherits@6: ^CrateStatModifiers
+	Inherits@7: ^MachineShopRepair
+	Inherits@8: ^AcceptsIvanBomb
+	Inherits@9: ^AcceptsTanyaC4
+	Inherits@10: ^AffectedByIndustrialPlant
+	Inherits@11: ^VehicleParticles
 	OwnerLostAction:
 		Action: Kill
 	Mobile:
 		Voice: Move
 		Locomotor: naval
 		TurnSpeed: 5
-		RequiresCondition: !chronodisable && !squid
+		RequiresCondition: !chronodisable && !emp && !squid
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha
@@ -1340,6 +1347,11 @@
 	Repairable:
 		Voice: Attack
 		RepairBuildings: gayard, nayard
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
 	HiddenUnderFog:
 	ActorLostNotification:
 	ProximityCaptor:
@@ -1565,3 +1577,18 @@
 		Types: SpyInfiltrate
 	Power:
 		RequiresCondition: !disabled
+
+^DisabledByEMP:
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
+		Condition: disabled
+	WithIdleOverlayAS@EMP:
+		Image: emp_fx01
+		Sequence: idle
+		Palette: tseffect
+		RequiresCondition: emp
+	TimedConditionBar@EMP:
+		Condition: emp
+		Color: 0088FF
+	ExternalCondition@emp:
+		Condition: emp

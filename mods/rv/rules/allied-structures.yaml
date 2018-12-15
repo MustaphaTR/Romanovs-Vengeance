@@ -262,6 +262,7 @@ gaairc:
 	Inherits: ^Building
 	Inherits@shape: ^3x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 60
@@ -290,6 +291,9 @@ gaairc:
 	ProvidesPrerequisite@france:
 		Prerequisite: radar.france
 		Factions: france
+	ProvidesPrerequisite@korea:
+		Prerequisite: radar.korea
+		Factions: korea
 	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xxx xxx
@@ -301,7 +305,7 @@ gaairc:
 	Armor:
 		Type: Steel
 	ProvidesRadar:
-		RequiresCondition: !disabled
+		RequiresCondition: !disabled && !chronodisable && !emp
 	RevealsShroud:
 		Range: 10c0
 	WithIdleOverlay@top:
@@ -339,7 +343,7 @@ gaairc:
 		MoveIntoWorld: false
 	Production:
 		Produces: Aircraft.Allies
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || emp
 	ProductionQueue:
 		Type: Aircraft.Allies
 		Group: Aircraft
@@ -357,7 +361,7 @@ gaairc:
 	SupportPowerChargeBar:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.america
 		Icon: airborne
 		ChargeInterval: 6000
@@ -372,7 +376,7 @@ gaairc:
 		ArrowSequence: arrow
 	ParatroopersPower@paratanks:
 		OrderName: GermanTankDrop
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.germany, disabled
 		Icon: tankdrop
 		ChargeInterval: 9000
@@ -389,7 +393,7 @@ gaairc:
 		ArrowSequence: arrow
 	DetonateWeaponPower@emergencyrepair:
 		OrderName: FrenchRepair
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.france, disabled
 		Icon: repair
 		ChargeInterval: 2250
@@ -398,6 +402,17 @@ gaairc:
 		SelectTargetSpeechNotification: SelectTarget
 		Weapon: EmergencyRepair
 		ActivationSequence:
+	AirstrikePower@empulse:
+		OrderName: KoreanEMP
+		PauseOnCondition: powerdown || chronodisable || emp
+		Prerequisites: radar.korea, disabled
+		Icon: empulse
+		ChargeInterval: 4500
+		Description: E. M. Pulse Strike
+		LongDesc: A Cargo Plane drops an Electromagnetic Pulse\nbomb anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitType: pdplane.emp
+		QuantizedFacings: 8
 	RallyPoint:
 		Offset: 2,3
 		Palette: mouse
@@ -764,6 +779,7 @@ nasam:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 40
@@ -815,6 +831,7 @@ gtgcan:
 	Inherits@shape: ^2x2Shape
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 60
@@ -902,6 +919,7 @@ gaspysat:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 90
@@ -938,6 +956,7 @@ gaspysat:
 gagap:
 	Inherits: ^SupportBuilding
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -977,6 +996,7 @@ gaweat:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 100
@@ -1023,6 +1043,7 @@ gacsph:
 	Inherits: ^Building
 	Inherits@shape: ^4x3Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 90
@@ -1080,6 +1101,7 @@ atesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 50
@@ -1158,6 +1180,7 @@ garobo:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 60

@@ -21,7 +21,7 @@ lcrf:
 		TurnSpeed: 5
 		Speed: 90
 		Locomotor: heavyamphibious
-		RequiresCondition: !notmobile && !chronodisable && !squid
+		RequiresCondition: !notmobile && !chronodisable && !emp && !squid
 	RevealsShroud:
 		Range: 6c0
 	Targetable:
@@ -32,6 +32,8 @@ lcrf:
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water
 		Condition: in_water
+	KillsSelf@LowPowerOnWater:
+		RequiresCondition: emp && in_water
 	Cargo:
 		Types: Infantry, Garrisoner, Vehicle
 		MaxWeight: 12

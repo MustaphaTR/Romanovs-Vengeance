@@ -36,7 +36,7 @@ amcv:
 		Facing: 96
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || emp
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
@@ -214,7 +214,7 @@ fv:
 	Mobile:
 		Speed: 150
 		TurnSpeed: 5
-		RequiresCondition: !notmobile && !chronodisable
+		RequiresCondition: !notmobile && !chronodisable && !emp
 	Health:
 		HP: 200
 	Armor:
@@ -440,7 +440,7 @@ mgtk:
 		LocalOffset: 640,0,640
 		RequiresCondition: rank-elite
 	Cloak:
-		RequiresCondition: !chronodisable
+		RequiresCondition: !chronodisable && !emp
 		InitialDelay: 25
 		CloakDelay: 25
 		IsPlayerPalette: true
@@ -486,7 +486,7 @@ bfrt:
 		TurnSpeed: 5
 		Speed: 60
 		Locomotor: omnicrusher
-		RequiresCondition: !notmobile && !chronodisable
+		RequiresCondition: !notmobile && !chronodisable && !emp
 	-Crushable:
 	RevealsShroud:
 		Range: 6c0
@@ -559,7 +559,7 @@ robo:
 		Speed: 150
 		TurnSpeed: 5
 		Locomotor: amphibious
-		RequiresCondition: !chronodisable && powered
+		RequiresCondition: !chronodisable && !emp && powered
 	Health:
 		HP: 180
 	Armor:
@@ -594,7 +594,7 @@ robo:
 		Palette: disabled
 		RequiresCondition: !powered
 	KillsSelf@LowPowerOnWater:
-		RequiresCondition: !powered && in_water
+		RequiresCondition: (!powered || emp) && in_water
 	ExplodeWeapon@disabledsparks:
 		RequiresCondition: !powered
 		Weapon: DisabledSparkSpawner

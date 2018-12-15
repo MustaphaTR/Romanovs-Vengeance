@@ -282,6 +282,7 @@ naradr:
 	Inherits: ^Building
 	Inherits@shape: ^2x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 60
@@ -316,13 +317,13 @@ naradr:
 	Armor:
 		Type: Wood
 	ProvidesRadar:
-		RequiresCondition: !disabled
+		RequiresCondition: !disabled && !chronodisable && !emp
 	RevealsShroud:
 		Range: 10c0
 	SupportPowerChargeBar:
 	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || emp
 		Icon: spyplane
 		ChargeInterval: 3000
 		Description: Spy Plane
@@ -333,7 +334,7 @@ naradr:
 		QuantizedFacings: 8
 	ParatroopersPower@tesladrop:
 		OrderName: RussianTeslaDrop
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.russia, disabled
 		Icon: tesladrop
 		ChargeInterval: 9000
@@ -349,7 +350,7 @@ naradr:
 	NukePower@radiationmissile:
 		Cursor: nuke
 		OrderName: IraqiRadMissile
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.iraq, disabled
 		Icon: radmissile
 		ChargeInterval: 4500
@@ -364,7 +365,7 @@ naradr:
 		ActivationSequence:
 	DetonateWeaponPower@instanbunker:
 		OrderName: VietnameseInstantBunker
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.vietnam, disabled
 		Icon: bunker
 		ChargeInterval: 2250
@@ -375,7 +376,7 @@ naradr:
 		ActivationSequence:
 	AirstrikePower@parabombs:
 		OrderName: LibyanParabombs
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.libya, disabled
 		Icon: parabomb
 		ChargeInterval: 5250
@@ -388,7 +389,7 @@ naradr:
 		QuantizedFacings: 8
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: disabled || chronodisable
+		PauseOnCondition: disabled || chronodisable || emp
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -856,6 +857,7 @@ nairon:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 90
@@ -907,6 +909,7 @@ namisl:
 	Inherits: ^Building
 	Inherits@shape: ^3x3Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 100
@@ -981,6 +984,7 @@ naflak:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 40
@@ -1029,6 +1033,7 @@ tesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 50
