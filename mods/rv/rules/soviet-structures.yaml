@@ -285,7 +285,7 @@ naradr:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: power, narefn
 		Description: Provides radar.\n  Special Ability: Spy Plane
 	Valued:
@@ -463,6 +463,8 @@ naweap:
 		Cost: 2000
 	Tooltip:
 		Name: War Factory
+	ProvidesPrerequisite@warfactory:
+		Prerequisite: warfactory
 	ProvidesPrerequisite@libya:
 		Prerequisite: vehicles.libya
 		Factions: libya
@@ -668,19 +670,19 @@ nadept:
 	Inherits@shape: ^4x3Shape
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 70
-		Prerequisites: naweap
-		Description: Repairs vehicles and removes Terror Drones (for a price).
+		BuildPaletteOrder: 60
+		Prerequisites: narefn
+		Description: Produces Soviet aircraft.\nRepairs vehicles and removes Terror Drones for a price.
 	Selectable:
 		Bounds: 156, 150, 0, -38
 	Valued:
-		Cost: 500
+		Cost: 800
 	Tooltip:
-		Name: Service Depot
+		Name: Airforce Service Center
 	ProvidesPrerequisite:
 		Prerequisite: repairpad
 	Building:
-		Footprint: x=== x=== x===
+		Footprint: x=== x=x= x===
 		Dimensions: 4,3
 	Health:
 		HP: 1200
@@ -690,6 +692,7 @@ nadept:
 		Range: 5c0
 	Reservable:
 	RallyPoint:
+		Offset: 4,1
 		Palette: mouse
 		IsPlayerPalette: false
 	RepairsUnits:
@@ -712,8 +715,27 @@ nadept:
 		Sequence: repair
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	Exit@1:
+		Facing: 160
+		SpawnOffset: 512,512,0
+		MoveIntoWorld: false
+	Production:
+		Produces: Aircraft.Soviets
+		PauseOnCondition: powerdown || chronodisable || emp
+	ProductionQueue:
+		Type: Aircraft.Soviets
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Aircraft.Soviets
 	Power:
-		Amount: -25
+		Amount: -50
 
 nanrct:
 	Inherits: ^Building
@@ -765,7 +787,7 @@ natech:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: naweap, naradr
+		Prerequisites: naradr
 		Description: Allows deployment of advanced units.
 	Valued:
 		Cost: 2000

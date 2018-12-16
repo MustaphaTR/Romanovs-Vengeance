@@ -22,9 +22,9 @@ shad:
 	Voiced:
 		VoiceSet: NighthawkVoice
 	Buildable:
-		Queue: Vehicle.Allies
-		BuildPaletteOrder: 60
-		Prerequisites: radar
+		Queue: Aircraft.Allies
+		BuildPaletteOrder: 10
+		Prerequisites: barracks
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 1000
@@ -42,6 +42,9 @@ shad:
 		Speed: 140
 		AltitudeVelocity: 120
 		CruisingCondition: cruising
+	Repairable:
+		Voice: Move
+		RepairBuildings: gadept, nadept, caoutp
 	RenderSprites:
 	WithVoxelHelicopterBody:
 		TickRate: 1
@@ -82,8 +85,8 @@ zep:
 	Tooltip:
 		Name: Kirov Airship
 	Buildable:
-		Queue: Vehicle.Soviets
-		BuildPaletteOrder: 110
+		Queue: Aircraft.Soviets
+		BuildPaletteOrder: 30
 		Prerequisites: natech
 	Selectable:
 		Bounds: 100,60,0,-10
@@ -159,7 +162,7 @@ orca:
 		Name: Harrier
 	Buildable:
 		Queue: Aircraft.Allies
-		BuildPaletteOrder: 10
+		BuildPaletteOrder: 20
 		Description: Fast assault fighter\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	Aircraft:
 		TurnSpeed: 3
@@ -181,6 +184,9 @@ orca:
 		Voice: Attack
 	Voiced:
 		VoiceSet: HarrierVoice
+	Repairable:
+		Voice: Move
+		RepairBuildings: gadept, nadept, caoutp
 	AmmoPool:
 		Ammo: 1
 		PipCount: 1
@@ -215,7 +221,7 @@ beag:
 	Tooltip:
 		Name: Black Eagle
 	Buildable:
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 30
 		Prerequisites: ~aircraft.korea
 	SpawnActorOnDeath:
 		Actor: beaghusk
@@ -519,8 +525,8 @@ schp:
 	Voiced:
 		VoiceSet: SiegeChopperVoice
 	Buildable:
-		Queue: Vehicle.Soviets
-		BuildPaletteOrder: 100
+		Queue: Aircraft.Soviets
+		BuildPaletteOrder: 20
 		Prerequisites: natech
 		Description: Helicopter capable of deploying into a long range artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	Valued:
@@ -549,6 +555,9 @@ schp:
 		CanDeployOnRamps: true
 		Facing: 160
 	RenderSprites:
+	Repairable:
+		Voice: Move
+		RepairBuildings: gadept, nadept, caoutp
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
@@ -643,9 +652,9 @@ hind:
 	Voiced:
 		VoiceSet: HindVoice
 	Buildable:
-		Queue: Vehicle.Soviets
-		BuildPaletteOrder: 60
-		Prerequisites: radar
+		Queue: Aircraft.Soviets
+		BuildPaletteOrder: 10
+		Prerequisites: warfactory
 		Description: Vehicle Transport Helicopter\n  Unarmed.
 		IconPalette: ts-chrome
 	Valued:
@@ -661,6 +670,9 @@ hind:
 		Speed: 125
 		AltitudeVelocity: 160
 		CruisingCondition: cruising
+	Repairable:
+		Voice: Move
+		RepairBuildings: gadept, nadept, caoutp
 	-DeathSounds:
 	RenderSprites:
 	RenderVoxels:

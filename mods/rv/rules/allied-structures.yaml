@@ -268,9 +268,9 @@ gaairc:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: power, garefn
-		Description: Provides radar\nSupports 4 aircraft.
+		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -336,16 +336,20 @@ gaairc:
 		Amount: -75
 	Reservable:
 	Exit@1:
-		SpawnOffset: -350,350,0
+		Facing: 224
+		SpawnOffset: 1024,512,0
 		MoveIntoWorld: false
 	Exit@2:
-		SpawnOffset: 600,220,0
+		Facing: 224
+		SpawnOffset: 512,1024,0
 		MoveIntoWorld: false
 	Exit@3:
-		SpawnOffset: 200,820,0
+		Facing: 224
+		SpawnOffset: -512,512,0
 		MoveIntoWorld: false
 	Exit@4:
-		SpawnOffset: 200,-300,0
+		Facing: 224
+		SpawnOffset: 512,-512,0
 		MoveIntoWorld: false
 	Production:
 		Produces: Aircraft.Allies
@@ -450,6 +454,8 @@ gaweap:
 		Cost: 2000
 	Tooltip:
 		Name: War Factory
+	ProvidesPrerequisite@warfactory:
+		Prerequisite: warfactory
 	ProvidesPrerequisite@germany:
 		Prerequisite: vehicles.germany
 		Factions: germany
@@ -654,18 +660,20 @@ gadept:
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 70
-		Prerequisites: gaweap
-		Description: Repairs vehicles and removes Terror Drones (for a price).
+		BuildPaletteOrder: 60
+		Prerequisites: garefn
+		Description: Repairs vehicles and removes Terror Drones for a price.
 	Selectable:
 		Bounds: 144, 88, -12, -16
 	Valued:
-		Cost: 500
+		Cost: 800
 	Tooltip:
 		Name: Service Depot
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite:
+		Prerequisite: repairpad
 	Building:
-		Footprint: x== x== x==
+		Footprint: x== xx= x==
 		Dimensions: 3,3
 	Health:
 		HP: 1200
@@ -675,6 +683,7 @@ gadept:
 		Range: 5c0
 	Reservable:
 	RallyPoint:
+		Offset: 3,1
 		Palette: mouse
 		IsPlayerPalette: false
 	RepairsUnits:
@@ -696,9 +705,7 @@ gadept:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
-		Amount: -25
-	ProvidesPrerequisite:
-		Prerequisite: repairpad
+		Amount: -15
 
 gatech:
 	Inherits: ^Building
@@ -706,7 +713,7 @@ gatech:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 80
-		Prerequisites: radar, gaweap
+		Prerequisites: gaairc
 		Description: Allows deployment of advanced units.
 	Selectable:
 		Bounds: 122, 216, 0, -81
@@ -1186,6 +1193,12 @@ radar:
 	Interactable:
 	Tooltip:
 		Name: Radar
+
+warfactory:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Vehicle Production
 
 repairpad:
 	AlwaysVisible:
