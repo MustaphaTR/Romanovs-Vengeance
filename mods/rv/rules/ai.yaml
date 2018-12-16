@@ -101,7 +101,14 @@ Player:
 			harv: 8
 			dron: 2
 		SquadSize: 5
-		SupportPowerDecisions:
+	GrantConditionOnBotOwner@test:
+		Condition: enable-test-ai
+		Bots: test
+	HarvesterBotModule:
+		RequiresCondition: enable-test-ai
+	SupportPowerBotModule@test:
+		RequiresCondition: enable-test-ai
+		Decisions:
 			airborne:
 				OrderName: AmericanParatroopers
 				MinimumAttractiveness: 5
@@ -237,9 +244,3 @@ Player:
 					Against: Ally
 					Types: Ground, Water
 					Attractiveness: -20
-	BotOrderManager:
-	GrantConditionOnBotOwner@test:
-		Condition: enable-test-ai
-		Bots: test
-	HarvesterBotModule:
-		RequiresCondition: enable-test-ai

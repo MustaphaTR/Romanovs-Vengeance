@@ -23,9 +23,8 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("This unit, when ordered to move, will fly in ballistic path then will detonate itself upon reaching target.")]
-	public class ShootableBallisticMissileInfo : ITraitInfo, IMoveInfo, IPositionableInfo, IFacingInfo,
-		UsesInit<LocationInit>, UsesInit<FacingInit>
-	{
+	public class ShootableBallisticMissileInfo : ITraitInfo, IMoveInfo, IPositionableInfo, IFacingInfo
+    {
 		[Desc("Projectile speed in WDist / tick, two values indicate variable velocity.")]
 		public readonly int Speed = 17;
 
@@ -57,7 +56,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		// set by spawned logic, not this.
 		public int GetInitialFacing() { return 0; }
-	}
+    }
 
 	public class ShootableBallisticMissile : ITick, ISync, IFacing, IMove, IPositionable,
 		INotifyCreated, INotifyAddedToWorld, INotifyRemovedFromWorld, INotifyActorDisposing, IOccupySpace

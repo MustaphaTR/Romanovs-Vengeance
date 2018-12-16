@@ -245,7 +245,7 @@ ggi:
 		RequiresCondition: (!stance-attackanything && !assault-move) && deployed
 		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
-	AutoTargetPriority@ATTACKANYTHING_ALL
+	AutoTargetPriority@ATTACKANYTHING_ALL:
 		RequiresCondition: (stance-attackanything || assault-move) && deployed
 		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget

@@ -53,14 +53,15 @@ namespace OpenRA.Mods.RA2.Traits
 			if (weapon == null)
 				return;
 
-			if (weapon.Report != null && weapon.Report.Any())
-				Game.Sound.Play(SoundType.World, weapon.Report.Random(e.Attacker.World.SharedRandom), self.CenterPosition);
+            var source = Info.DamageSource == DamageSource.Self ? self : e.Attacker;
+            if (weapon.Report != null && weapon.Report.Any())
+				Game.Sound.Play(SoundType.World, weapon.Report.Random(source.World.SharedRandom), self.CenterPosition);
 
 			if (Info.Type == ExplosionType.Footprint && buildingInfo != null)
 			{
 				var cells = buildingInfo.UnpathableTiles(self.Location);
 				foreach (var c in cells)
-					weapon.Impact(Target.FromPos(self.World.Map.CenterOfCell(c)), e.Attacker, Enumerable.Empty<int>());
+					weapon.Impact(Target.FromPos(self.World.Map.CenterOfCell(c)), source, Enumerable.Empty<int>());
 
 				return;
 			}
@@ -69,23 +70,33 @@ namespace OpenRA.Mods.RA2.Traits
 			weapon.Impact(Target.FromPos(self.CenterPosition), self.Trait<MissileSpawnerSlave>().Master, Enumerable.Empty<int>());
 		}
 
-		WeaponInfo ChooseWeaponForExplosion(Actor self)
-		{
-			var shouldExplode = self.TraitsImplementing<IExplodeModifier>().All(a => a.ShouldExplode(self));
-			var useFullExplosion = self.World.SharedRandom.Next(100) <= Info.LoadedChance;
-			return (shouldExplode && useFullExplosion) ? Info.WeaponInfo : Info.EmptyWeaponInfo;
-		}
+        WeaponInfo ChooseWeaponForExplosion(Actor self)
+        {
+            var armaments = self.TraitsImplementing<Armament>();
+            if (!armaments.Any())
+                return Info.WeaponInfo;
 
-		void INotifyDamage.Damaged(Actor self, AttackInfo e)
-		{
-			if (IsTraitDisabled || !self.IsInWorld)
-				return;
+            // TODO: EmptyWeapon should be removed in favour of conditions
+            var shouldExplode = !armaments.All(a => a.IsReloading);
+            var useFullExplosion = self.World.SharedRandom.Next(100) <= Info.LoadedChance;
+            return (shouldExplode && useFullExplosion) ? Info.WeaponInfo : Info.EmptyWeaponInfo;
+        }
 
-			if (Info.DamageThreshold == 0)
-				return;
+        void INotifyDamage.Damaged(Actor self, AttackInfo e)
+        {
+            if (IsTraitDisabled || !self.IsInWorld)
+                return;
 
-			if (health.HP * 100 < Info.DamageThreshold * health.MaxHP)
-				self.World.AddFrameEndTask(w => self.Kill(e.Attacker));
-		}
-	}
+            if (Info.DamageThreshold == 0)
+                return;
+
+            if (!Info.DeathTypes.IsEmpty && !e.Damage.DamageTypes.Overlaps(Info.DeathTypes))
+                return;
+
+            // Cast to long to avoid overflow when multiplying by the health
+            var source = Info.DamageSource == DamageSource.Self ? self : e.Attacker;
+            if (health.HP * 100L < Info.DamageThreshold * (long)health.MaxHP)
+                self.World.AddFrameEndTask(w => self.Kill(source));
+        }
+    }
 }
