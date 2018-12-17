@@ -525,19 +525,18 @@ ccomand:
 	Tooltip:
 		Name: Chrono Commando
 	Valued:
-		Cost: 2000
+		Cost: 1500
 	DeliversCash:
-		Payload: 1000
-		PlayerExperience: 100
+		Payload: 750
+		PlayerExperience: 75
 	Health:
 		HP: 100
 	Mobile:
 		Locomotor: foot
 	Crushable:
 		CrushClasses: vehicle
-	-Armament@sapper:
-	Demolition:
-		Voice: SpecialAttack
+	Armament@sapper:
+		Weapon: CommandoC4Attacher
 	PortableChrono:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
@@ -566,47 +565,23 @@ ccomand:
 		Image: ccomand
 
 ptroop:
-	Inherits: ccomand
+	Inherits: yuri
 	Buildable:
+		Queue: Infantry.Allies
 		BuildPaletteOrder: 980
 		Prerequisites: ~soviets.tech.infiltrated
 		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Can C4 Buildings
 	Valued:
-		Cost: 1000
+		Cost: 1500
 	DeliversCash:
-		Payload: 500
-		PlayerExperience: 50
+		Payload: 750
+		PlayerExperience: 75
 	Tooltip:
 		Name: Psi Commando
-	-PortableChrono:
-	Armament@primary:
-		Weapon: MindControl
-		MuzzleSequence: muzzle
-		LocalOffset: 0,0,960
-	-Armament@elite:
-	-Armament@opentopped:
-	-Armament@elite-opentopped:
-	Demolition:
-		Voice: Attack
-	WithMuzzleOverlay:
-	MindController:
-		ControllingCondition: controlling
-		Sounds: iyurat1a.wav
-	WithMindControlArc:
-		UsePlayerColor: true
-		Offset: 0,0,960
-	AttackMove:
-		-AssaultMoveScanCondition:
-	AutoTarget:
-		-AttackAnythingCondition:
-	AutoTargetPriority@DEFAULT:
-		ValidTargets: MindControl
-		RequiresCondition: !controlling
-	-AutoTargetPriority@ATTACKANYTHING:
-	Voiced:
-		VoiceSet: YuriVoice
-	RenderSprites:
-		Image: ptroop
+	Armament@sapper:
+		Weapon: CommandoC4Attacher
+		Cursor: c4
+		OutsideRangeCursor: c4
 
 tany:
 	Inherits: ^Infantry

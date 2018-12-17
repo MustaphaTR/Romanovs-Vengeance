@@ -198,6 +198,14 @@ SEALC4Attacher:
 		Type: SEALC4
 		TriggerTime: 50
 
+CommandoC4Attacher:
+	Inherits: IvanBombAttacher
+	ValidTargets: CommandoC4
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: SEALC4
+		Type: CommandoC4
+		TriggerTime: 50
+
 TanyaC4Attacher:
 	Inherits: IvanBombAttacher
 	ValidTargets: TanyaC4
@@ -210,7 +218,7 @@ DefuseKit:
 	ReloadDelay: 25
 	TargetTypes: IvanBombCleaner, SEALC4Cleaner, TanyaC4Cleaner
 	Warhead@1Det: DetachDelayedWeapon
-		Types: IvanBomb, SEALC4, TanyaC4
+		Types: IvanBomb, SEALC4, CommandoC4, TanyaC4
 	Warhead@2Dam: TargetDamage
 
 SpyCameraWeapon:

@@ -352,6 +352,27 @@
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: sealC4
 
+^AcceptsCommandoC4:
+	DelayedWeaponAttachable@COMMANDOC4:
+		Type: CommandoC4
+		ShowProgressBar: false
+		Condition: commandoC4
+	Targetable@COMMANDOC4:
+		TargetTypes: CommandoC4
+		RequiresCondition: !commandoC4
+	Targetable@COMMANDOC4CLEANER:
+		TargetTypes: CommandoC4Cleaner
+		RequiresCondition: commandoC4
+	WithDecoration@COMMANDOC4:
+		RequiresSelection: false
+		Image: c4
+		Sequence: idle
+		Palette: mouse
+		ReferencePoint: Center
+		ZOffset: 256
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: commandoC4
+
 ^AcceptsTanyaC4:
 	DelayedWeaponAttachable@TANYAC4:
 		Type: TanyaC4
@@ -555,8 +576,9 @@
 	Inherits@3: ^IronCurtainable
 	Inherits@4: ^AcceptsIvanBomb
 	Inherits@5: ^AcceptsSEALC4
-	Inherits@6: ^BuildingParticles
-	Inherits@7: ^ChronoDisable
+	Inherits@6: ^AcceptsCommandoC4
+	Inherits@7: ^BuildingParticles
+	Inherits@8: ^ChronoDisable
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	OwnerLostAction:
