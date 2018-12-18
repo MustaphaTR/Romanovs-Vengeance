@@ -162,6 +162,8 @@ vulcan:
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
+		Versus:
+			Steel: 25
 
 vulcan2:
 	Inherits: vulcan
@@ -181,6 +183,30 @@ BlackHawkCannonE:
 	Inherits: BlackHawkCannon
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
+        
+SiegeChopperCannon:
+	Inherits: ^MG
+	ReloadDelay: 40
+	Range: 6c0
+	Report: vblhatta.wav, vblhattb.wav
+	ValidTargets: Ground, Water, Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 70
+		Versus:
+			Light: 50
+			Medium: 10
+			Heavy: 10
+			Wood: 35
+			Steel: 25
+			Concrete: 10
+			Drone: 100
+			Rocket: 100
+		ValidTargets: Ground, Water, Air
+
+SiegeChopperCannonE:
+	Inherits: BlackHawkCannon
+	Warhead@1Dam: SpreadDamage
+		Damage: 100    
 
 # Yuri's Revenge Bullets:
 AKM:

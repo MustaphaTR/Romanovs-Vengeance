@@ -88,7 +88,7 @@ napowr:
 		BuildPaletteOrder: 10
 		Description: Provides power for other structures.
 	Valued:
-		Cost: 600
+		Cost: 300
 	Tooltip:
 		Name: Tesla Reactor
 	ProvidesPrerequisite:
@@ -336,11 +336,12 @@ naradr:
 		UnitType: spyp
 		QuantizedFacings: 8
 	ParatroopersPower@tesladrop:
+		Cost: 3000
 		OrderName: RussianTeslaDrop
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.russia
 		Icon: tesladrop
-		ChargeInterval: 9000
+		ChargeInterval: 6000
 		Description: Tesla Drop
 		LongDesc: A Cargo Plane drops a Tesla Tank\n and 3 Tesla Troopers anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
@@ -351,12 +352,13 @@ naradr:
 		CameraActor: camera
 		ArrowSequence: arrow
 	NukePower@radiationmissile:
+		Cost: 2500
 		Cursor: nuke
 		OrderName: IraqiRadMissile
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.iraq
 		Icon: radmissile
-		ChargeInterval: 4500
+		ChargeInterval: 7500
 		Description: Radiation Missile
 		LongDesc: Fires a missile that deals low damage\nand leaves radiation.
 		SelectTargetSpeechNotification: SelectTarget
@@ -367,6 +369,7 @@ naradr:
 		FlightDelay: 80
 		ActivationSequence:
 	DetonateWeaponPower@instanbunker:
+		Cost: 500
 		OrderName: VietnameseInstantBunker
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.vietnam
@@ -378,6 +381,7 @@ naradr:
 		Weapon: BunkerSpawner
 		ActivationSequence:
 	AirstrikePower@clustermines:
+		Cost: 1000
 		OrderName: CubanClusterMines
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.cuba
@@ -390,11 +394,12 @@ naradr:
 		SquadSize: 1
 		QuantizedFacings: 8
 	AirstrikePower@parabombs:
+		Cost: 2000
 		OrderName: LibyanParabombs
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.libya
 		Icon: parabomb
-		ChargeInterval: 5250
+		ChargeInterval: 6000
 		Description: Parabombs
 		LongDesc: A squad of Cargo Planes drop parachuted\nbombs on your target.
 		SelectTargetSpeechNotification: SelectTarget
@@ -676,7 +681,7 @@ nadept:
 	Selectable:
 		Bounds: 156, 150, 0, -38
 	Valued:
-		Cost: 800
+		Cost: 1000
 	Tooltip:
 		Name: Airforce Service Center
 	ProvidesPrerequisite:
@@ -735,7 +740,7 @@ nadept:
 	ProductionBar:
 		ProductionType: Aircraft.Soviets
 	Power:
-		Amount: -50
+		Amount: -25
 
 nanrct:
 	Inherits: ^Building
@@ -747,7 +752,7 @@ nanrct:
 		Prerequisites: natech
 		Description: Provides power for other structures.
 	Valued:
-		Cost: 2000
+		Cost: 1500
 	Tooltip:
 		Name: Nuclear Reactor
 	ProvidesPrerequisite:

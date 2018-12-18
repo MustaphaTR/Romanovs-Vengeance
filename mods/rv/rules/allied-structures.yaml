@@ -97,7 +97,7 @@ gapowr:
 	Selectable:
 		Bounds: 96, 98, -2, -24
 	Valued:
-		Cost: 800
+		Cost: 500
 	Tooltip:
 		Name: Power Plant
 	ProvidesPrerequisite:
@@ -106,7 +106,7 @@ gapowr:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 750
+		HP: 850
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -370,6 +370,7 @@ gaairc:
 		Types: SpyInfiltrate
 	SupportPowerChargeBar:
 	ParatroopersPower@paratroopers:
+		Cost: 2000
 		OrderName: AmericanParatroopers
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.america
@@ -385,6 +386,7 @@ gaairc:
 		CameraActor: camera
 		ArrowSequence: arrow
 	DetonateWeaponPower@cruiserstrike:
+		Cost: 1500
 		OrderName: EnglishCruiserStrike
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.england
@@ -397,11 +399,12 @@ gaairc:
 		AirburstAltitude: 10c0
 		ActivationSequence:
 	ParatroopersPower@paratanks:
+		Cost: 2500
 		OrderName: GermanTankDrop
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.germany
 		Icon: tankdrop
-		ChargeInterval: 9000
+		ChargeInterval: 6000
 		Description: Tank Drop
 		LongDesc: 3 Cargo Planes drops 3 Grizzly Tanks\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
@@ -414,22 +417,24 @@ gaairc:
 		CameraActor: camera
 		ArrowSequence: arrow
 	DetonateWeaponPower@emergencyrepair:
+		Cost: 1000
 		OrderName: FrenchRepair
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.france
 		Icon: repair
-		ChargeInterval: 2250
+		ChargeInterval: 3750
 		Description: Emergency Repair
 		LongDesc: Repairs vehicles and structures in a large area.
 		SelectTargetSpeechNotification: SelectTarget
 		Weapon: EmergencyRepair
 		ActivationSequence:
 	AirstrikePower@empulse:
+		Cost: 1500
 		OrderName: KoreanEMP
 		PauseOnCondition: powerdown || chronodisable || emp
 		Prerequisites: radar.korea
 		Icon: empulse
-		ChargeInterval: 4500
+		ChargeInterval: 7500
 		Description: E. M. Pulse Strike
 		LongDesc: A Cargo Plane drops an Electromagnetic Pulse\nbomb anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
@@ -863,7 +868,7 @@ gtgcan:
 		Prerequisites: radar, ~structures.france
 		Description: Automated, long ranged anti-ground defense.
 	Valued:
-		Cost: 2000
+		Cost: 2500
 	Tooltip:
 		Name: Grand Cannon
 	Building:
