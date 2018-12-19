@@ -276,6 +276,37 @@ robogunE:
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
+120mmxRad:
+	Inherits: 120mmx
+	Warhead@1Dam: SpreadDamage
+		Damage: 150
+		Versus:
+			None: 50
+			Flak: 50
+			Plate: 50
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion
+		ImpactSounds: vdemdiea.wav
+	Warhead@5Radiation: CreateTintedCells
+		Spread: 2c0
+		Falloff: 100, 100
+		Level: 100
+
+120mmxRadE:
+	Inherits: 120mmxRad
+	Burst: 4
+	BurstDelays: 5
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
 155mm:
 	Inherits: ^LargeBullet
 	ReloadDelay: 110

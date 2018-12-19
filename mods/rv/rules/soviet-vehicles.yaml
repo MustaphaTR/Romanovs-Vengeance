@@ -487,3 +487,81 @@ v3rocket:
 	SpawnedExplodes:
 		Weapon: V3Weapon
 		EmptyWeapon: V3Weapon
+
+# Custom Soviet Vehicles
+deva:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 2250
+	Tooltip:
+		Name: Devastator
+	Buildable:
+		Queue: Vehicle.Soviets
+		BuildPaletteOrder: 990
+		Prerequisites: natech, ~caslab
+		Description: Soviet Advanced Battle Tank with Double Barrel\narmed with nuclear warheads.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft\n\nCan be deployed to self-destruct and explode violently.
+	Mobile:
+		Speed: 60
+		TurnSpeed: 4
+		Locomotor: omnicrusher
+		RequiresCondition: !chronodisable && !emp && !overload
+	-Crushable:
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	Health:
+		HP: 1000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	Turreted:
+		TurnSpeed: 4
+	Armament@primary:
+		Weapon: 120mmxRad
+		LocalOffset: 640,100,512, 640,-100,512
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 120mmxRadE
+		LocalOffset: 640,100,512, 640,-100,512
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		RequiresCondition: !overload
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	RenderVoxels:
+		NormalsPalette: ts-normals
+	WithVoxelBody:
+	WithVoxelTurret:
+	Explodes:
+		Weapon: ApocExplode
+		EmptyWeapon: ApocExplode
+		RequiresCondition: !meltdown
+	Explodes@OVERLOAD:
+		Weapon: DevastatorExplosion
+		EmptyWeapon: DevastatorExplosion
+		RequiresCondition: meltdown
+	GrantConditionOnDeploy@REACTOR:
+		DeployedCondition: overload
+		PauseOnCondition: overload
+	WithColoredOverlay@OVERLOAD:
+		Palette: disabled
+		RequiresCondition: overload
+	KillsSelf@MELTDOWN:
+		Delay: 250
+		RequiresCondition: overload
+		GrantsCondition: meltdown
+	Voiced:
+		VoiceSet: ApocalypseVoice
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:

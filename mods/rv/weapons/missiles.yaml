@@ -55,6 +55,47 @@ MammothTusk:
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_bang
 
+APTusk:
+	Inherits: ^Missile
+	ReloadDelay: 60
+	Range: 6c0
+	Report: vapoat2a.wav, vapoar2b.wav, vapoat2c.wav
+	Projectile: Missile
+		Speed: 384
+		HorizontalRateOfTurn: 10
+		RangeLimit: 7c204
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+		Versus:
+			None: 20
+			Flak: 20
+			Plate: 20
+			Light: 100
+			Medium: 50
+			Heavy: 100
+			Wood: 70
+			Steel: 50
+			Concrete: 50
+			Drone: 80
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: small_grey_explosion
+		ImpactSounds: gexpifva.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+APTuskE:
+	Inherits: APTusk
+	ReloadDelay: 50
+	Range: 7c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 70
+
 Maverick:
 	Inherits: ^Missile
 	ReloadDelay: 10

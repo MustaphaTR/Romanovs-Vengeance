@@ -151,6 +151,16 @@ CRTerrorBomb:
 	Warhead@1Dam: SpreadDamage
 		Damage: 500 # 250
 
+DevastatorExplosion:
+	Inherits: TerrorBomb
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Damage: 1000 # 500
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 4c0
+		Falloff: 100, 100
+		Level: 250
+
 NukePayload:
 	ValidTargets: Ground, Water, Air
 	Warhead@1Dam_impact: SpreadDamage

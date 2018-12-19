@@ -623,3 +623,55 @@ robo:
 		Prerequisites: warfactory.infiltrated
 	DeathSounds:
 	HitShape:
+
+# Custom Allied Vehicles:
+ctnk:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Buildable:
+		Queue: Vehicle.Allies
+		BuildPaletteOrder: 990
+		Prerequisites: gatech, ~caslab
+		Description: Armed with anti-ground missiles.\nTeleports to areas within range.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft\n  Special ability: Can teleport
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Chrono Tank
+	Health:
+		HP: 500
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 90
+	RevealsShroud:
+		Range: 6c0
+	Armament@PRIMARY:
+		Weapon: APTusk
+		LocalOffset: -160,-276,232
+		LocalYaw: 60
+	Armament@SECONDARY:
+		Weapon: APTusk
+		LocalOffset: -160,276,232
+		LocalYaw: -60
+	AttackFrontal:
+		Voice: Attack
+	PortableChrono:
+		ChronoshiftSound: ichrmova.wav
+		DeployCursor: chronosphere
+		DeployBlockedCursor: chronosphere
+		Voice: Move
+		ChargeDelay: 300
+		HasDistanceLimit: false
+		TargetCursor: chronosphere
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	Selectable:
+		Bounds: 52, 52, 0, -6
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	HitShape:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
