@@ -1134,7 +1134,7 @@ tesla:
 		Bounds: 44, 88, -2, -33
 	Targetable@TeslaBoost:
 		TargetTypes: TeslaBoost
-		RequiresCondition: !disabled
+		RequiresCondition: !powerdown
 	WithTeslaChargeOverlay:
 	Armament:
 		Weapon: CoilBolt
@@ -1144,16 +1144,23 @@ tesla:
 		Weapon: OPCoilBolt
 		LocalOffset: 0,0,3072
 		RequiresCondition: charged
-	AttackTesla:
+	AttackTesla@1:
 		Voice: Attack
 		MaxCharges: 1
 		ReloadDelay: 120
 		ChargeAudio: tslachg2.aud
 		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && charged < 3
+	AttackTesla@2:
+		Voice: Attack
+		MaxCharges: 2
+		ReloadDelay: 120
+		ChargeAudio: tslachg2.aud
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete && charged >= 3
 	AutoTarget:
 	GrantConditionOnPowerState@LOWPOWER:
-		RequiresCondition: !charged
+		RequiresCondition: charged < 2
 	WithRangeCircle:
 		Range: 8c0
 		Type: teslacoil
