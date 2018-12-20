@@ -649,12 +649,20 @@ ctnk:
 		Range: 6c0
 	Armament@PRIMARY:
 		Weapon: APTusk
-		LocalOffset: -160,-276,232
-		LocalYaw: 60
+		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
+		RequiresCondition: !rank-elite
 	Armament@SECONDARY:
 		Weapon: APTusk
-		LocalOffset: -160,276,232
-		LocalYaw: -60
+		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
+		RequiresCondition: !rank-elite
+	Armament@PRIMARY_ELITE:
+		Weapon: APTuskE
+		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
+		RequiresCondition: rank-elite
+	Armament@SECONDARY_ELITE:
+		Weapon: APTuskE
+		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 	PortableChrono:
@@ -671,6 +679,7 @@ ctnk:
 		Bounds: 52, 52, 0, -6
 	RenderSprites:
 	RenderVoxels:
+		Scale: 8.5
 	WithVoxelBody:
 	HitShape:
 	Voiced:

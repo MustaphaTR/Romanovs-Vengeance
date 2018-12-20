@@ -57,19 +57,31 @@ MammothTusk:
 
 APTusk:
 	Inherits: ^Missile
-	ReloadDelay: 60
-	Range: 6c0
-	Report: vapoat2a.wav, vapoar2b.wav, vapoat2c.wav
-	Projectile: Missile
+	ReloadDelay: 90
+	Range: 8c0
+	MinRange: 2c0
+	Burst: 8
+	BurstDelays: 4
+	Report: rocket1.aud
+	ValidTargets: Ground, Water
+	TargetActorCenter: true
+	-Projectile:
+	Projectile: Bullet
+		Blockable: false
+		Image: DRAGON
+		Shadow: true
+		Inaccuracy: 853
+		LaunchAngle: 62
+		ContrailLength: 10
 		Speed: 384
-		HorizontalRateOfTurn: 10
-		RangeLimit: 7c204
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Spread: 683
+		Damage: 35
+		ValidTargets: Ground, Water
 		Versus:
-			None: 20
-			Flak: 20
-			Plate: 20
+			None: 25
+			Flak: 25
+			Plate: 25
 			Light: 100
 			Medium: 50
 			Heavy: 100
@@ -78,23 +90,21 @@ APTusk:
 			Concrete: 50
 			Drone: 80
 			Rocket: 100
-	Warhead@2Eff: CreateEffect
-		Explosions: small_grey_explosion
+	Warhead@3Eff: CreateEffect
+		Explosions: medium_bang
 		ImpactSounds: gexpifva.wav
 		ValidTargets: Ground, Air
 	Warhead@3EffWater: CreateEffect
 		Explosions: small_watersplash
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
-	Warhead@4Smu: LeaveSmudge
-		SmudgeType: SmallCrater
 
 APTuskE:
 	Inherits: APTusk
-	ReloadDelay: 50
-	Range: 7c0
+	ReloadDelay: 75
+	Range: 9c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 70
+		Damage: 50
 
 Maverick:
 	Inherits: ^Missile
