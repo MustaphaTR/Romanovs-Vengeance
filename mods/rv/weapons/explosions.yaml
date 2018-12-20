@@ -1,4 +1,4 @@
-BarrelExplode:
+LargeBarrelExplode:
 	ReloadDelay: 20
 	Range: 4c0
 	Report: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
@@ -23,8 +23,18 @@ BarrelExplode:
 		AffectsParent: true
 		DamageTypes: Prone70Percent, TriggerProne, FlameDeath
 	Warhead@2Eff: CreateEffect
-		Explosions: terrorist_explosion
+		Explosions: large_barrel_explosion
 		ValidTargets: Ground, Water, Air
+
+SmallBarrelExplode:
+	Inherits: LargeBarrelExplode
+	Warhead@2Eff: CreateEffect
+		Explosions: small_barrel_explosion
+
+DerrickExplode:
+	Inherits: LargeBarrelExplode
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt, large_bang, large_brnl, verylarge_clsn, large_tumu
 
 UnitExplode:
 	Warhead@1Eff: CreateEffect
