@@ -1,3 +1,31 @@
+BarrelExplode:
+	ReloadDelay: 20
+	Range: 4c0
+	Report: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
+	Projectile: BulletAS
+		Speed: 1c682
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 450 # 225
+		Falloff: 100, 73, 47, 20, 0
+		Versus:
+			None: 150
+			Flak: 100
+			Plate: 100
+			Light: 90
+			Medium: 50
+			Heavy: 50
+			Wood: 100
+			Steel: 150
+			Concrete: 30
+			Drone: 100
+			Rocket: 100
+		AffectsParent: true
+		DamageTypes: Prone70Percent, TriggerProne, FlameDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		ValidTargets: Ground, Water, Air
+
 UnitExplode:
 	Warhead@1Eff: CreateEffect
 		Explosions: large_twlt
@@ -200,7 +228,7 @@ atomic:
 		ImpactSounds: snukintr.wav
 		ValidTargets: Ground, Water, Air
 	Warhead@1Dam_impact: SpreadDamage
-		Damage: 3000 # 600
+		Damage: 2000 # 600
 		DamageTypes: RadiationDeath
 		Delay: 25
 	Warhead@2Res_impact: DestroyResource

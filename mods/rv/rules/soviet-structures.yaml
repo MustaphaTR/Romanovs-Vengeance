@@ -952,7 +952,7 @@ nairon:
 	Selectable:
 		Bounds: 136, 100, 0, -20
 	Health:
-		HP: 750
+		HP: 1500
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -1004,7 +1004,7 @@ namisl:
 	Selectable:
 		Bounds: 152, 104, 0, -50
 	Health:
-		HP: 1000
+		HP: 1500
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -1040,6 +1040,8 @@ namisl:
 		ArrowSequence: arrow
 		CameraRange: 10
 		PauseOnCondition: disabled || chronodisable
+		FlightDelay: 250
+		FlightVelocity: 1c0
 	WithNukeLaunchAnimation:
 		RequiresCondition: !build-incomplete && !chronodisable
 
