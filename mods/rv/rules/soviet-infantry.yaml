@@ -579,8 +579,18 @@ boris:
 		Name: opentopped
 		Weapon: AKME
 		RequiresCondition: rank-elite
-	#Armament@flare:
-	#	Weapon: Flare
+	Armament@flare:
+		Name: secondary
+		Weapon: Flare
+		LocalOffset: 320,128,768
+	AirstrikeMaster:
+		Actors: bpln, bpln
+		SquadSize: 2
+		RespawnTicks: 100
+		InstaRepair: true
+		SlaveDisposalOnKill: KillSlaves
+		SpawnAllAtOnce: true
+		SpawnerArmamentName: secondary
 	AttackFrontal:
 		Voice: Attack
 	VoiceAnnouncement:
@@ -593,6 +603,8 @@ boris:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		AttackSequences:
+			secondary: shoot-flare
 
 # Custom Revenge Infantry
 pyro:

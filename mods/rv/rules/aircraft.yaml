@@ -603,6 +603,8 @@ bpln:
 	-SelectionDecorations:
 	Interactable:
 	Aircraft:
+		CanHover: false
+		VTOL: false
 		Repulsable: false
 		Speed: 240
 	SpawnActorOnDeath:
@@ -611,11 +613,11 @@ bpln:
 		Weapon: Maverick3
 	Health:
 		HP: 100
-	-AttackAircraft:
-	AttackBomber:
 	AmmoPool:
 		Ammo: 2
 		PipCount: 2
+	AirstrikeSlave:
+		LandingDistance: 1c0
 	Voiced:
 		VoiceSet: MiGVoice
 	RenderSprites:
@@ -623,6 +625,8 @@ bpln:
 	RenderVoxels:
 		Image: bpln
 	HitShape:
+	Rearmable:
+		RearmActors: boris
 
 bplnhusk:
 	Inherits: ^PlaneHusk

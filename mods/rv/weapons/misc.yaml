@@ -177,6 +177,24 @@ DredLauncher:
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Ground, Water
 
+Flare:
+	ReloadDelay: 1
+	Range: 12c0
+	ValidTargets: Structure
+	TargetActorCenter: true
+	Projectile: LaserZap
+		Width: 36
+		Duration: 8
+		SecondaryBeamWidth: 144
+		SecondaryBeamColor: FF000030
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Structure
+	Warhead@2Con: GrantExternalCondition
+		ValidTargets: Structure
+		Range: 0c32
+		Duration: 8
+		Condition: flare
+
 IvanBombAttacher:
 	ValidTargets: IvanBomb
 	ReloadDelay: 50

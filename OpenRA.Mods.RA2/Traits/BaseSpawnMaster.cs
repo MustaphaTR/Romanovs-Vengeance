@@ -219,7 +219,7 @@ namespace OpenRA.Mods.RA2.Traits
 					slaveEntry.Actor.Dispose();
 		}
 
-		public void SpawnIntoWorld(Actor self, Actor slave, WPos centerPosition)
+		public virtual void SpawnIntoWorld(Actor self, Actor slave, WPos centerPosition)
 		{
 			var exit = ChooseExit(self);
 			SetSpawnedFacing(slave, self, exit);
