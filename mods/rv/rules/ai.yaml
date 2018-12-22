@@ -2,12 +2,6 @@ Player:
 	HackyAI@testai:
 		Name: Test AI
 		Type: test
-		MinimumExcessPower: 60
-		MaximumExcessPower: 160
-		ExcessPowerIncrement: 40
-		ExcessPowerIncreaseThreshold: 4
-		BuildingQueues: Building.Allies, Building.Soviets
-		DefenseQueues: Support.Allies, Support.Soviets
 		UnitQueues: Infantry.Allies, Infantry.Soviets, Vehicle.Allies, Vehicle.Soviets, Aircraft.Allies, Ship.Allies, Ship.Soviets
 		BuildingCommonNames:
 			ConstructionYard: gacnst, nacnst
@@ -19,54 +13,6 @@ Player:
 		UnitsCommonNames:
 			Mcv: amcv, smcv
 			ExcludeFromSquads: cmin, harv
-		BuildingLimits:
-			garefn: 4
-			narefn: 4
-			gapowr: 8
-			napowr: 8
-			nanrct: 1
-			gapile: 2
-			nahand: 2
-			gaweap: 2
-			naweap: 2
-			gadept: 1
-			nadept: 1
-			gaairc: 1
-			amradr: 1
-			naradr: 1
-			gatech: 1
-			natech: 1
-			gagap: 2
-		BuildingFractions:
-			garefn: 30%
-			narefn: 30%
-			gapowr: 35%
-			napowr: 25%
-			nanrct: 10%
-			gapile: 2%
-			nahand: 2%
-			gaweap: 1%
-			naweap: 1%
-			gaairc: 0.5%
-			amradr: 0.5%
-			naradr: 0.5%
-			gatech: 1%
-			natech: 1%
-			naclon: 1%
-			gaorep: 1%
-			naindp: 1%
-			gadept: 0.1%
-			nadept: 0.1%
-			gapill: 10%
-			nalasr: 10%
-			nasam: 4%
-			naflak: 4%
-			tesla: 4%
-			atesla: 4%
-			gtgcan: 1%
-			gagap: 0.5%
-			namisl: 1%
-			gaweat: 1%
 		UnitsToBuild:
 			e1: 90%
 			e2: 90%
@@ -104,8 +50,6 @@ Player:
 	GrantConditionOnBotOwner@test:
 		Condition: enable-test-ai
 		Bots: test
-	HarvesterBotModule:
-		RequiresCondition: enable-test-ai
 	SupportPowerBotModule@test:
 		RequiresCondition: enable-test-ai
 		Decisions:
@@ -244,3 +188,69 @@ Player:
 					Against: Ally
 					Types: Ground, Water
 					Attractiveness: -20
+	BaseBuilderBotModule@test:
+		RequiresCondition: enable-test-ai
+		BuildingQueues: Building.Allies, Building.Soviets
+		DefenseQueues: Support.Allies, Support.Soviets
+		MinimumExcessPower: 60
+		MaximumExcessPower: 160
+		ExcessPowerIncrement: 40
+		ExcessPowerIncreaseThreshold: 4
+		ConstructionYardTypes: gacnst, nacnst
+		RefineryTypes: garefn, narefn
+		PowerTypes: gapowr, napowr, nanrct
+		BarracksTypes: gapile, nahand
+		VehiclesFactoryTypes: gaweap, naweap
+		ProductionTypes: gapile, nahand, gaweap, naweap, gaairc, amradr
+		BuildingLimits:
+			garefn: 4
+			narefn: 4
+			gapowr: 8
+			napowr: 8
+			nanrct: 1
+			gapile: 2
+			nahand: 2
+			gaweap: 2
+			naweap: 2
+			gadept: 1
+			nadept: 1
+			gaairc: 1
+			amradr: 1
+			naradr: 1
+			gatech: 1
+			natech: 1
+			gagap: 2
+		BuildingFractions:
+			garefn: 30
+			narefn: 30
+			gapowr: 35
+			napowr: 25
+			nanrct: 10
+			gapile: 2
+			nahand: 2
+			gaweap: 1
+			naweap: 1
+			gaairc: 1
+			amradr: 1
+			naradr: 1
+			gatech: 1
+			natech: 1
+			naclon: 1
+			gaorep: 1
+			naindp: 1
+			gadept: 1
+			nadept: 1
+			gapill: 10
+			nalasr: 10
+			nasam: 4
+			naflak: 4
+			tesla: 4
+			atesla: 4
+			gtgcan: 1
+			gagap: 1
+			namisl: 1
+			gaweat: 1
+	HarvesterBotModule:
+		RequiresCondition: enable-test-ai
+	BuildingRepairBotModule:
+		RequiresCondition: enable-test-ai
