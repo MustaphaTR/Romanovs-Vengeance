@@ -1540,10 +1540,11 @@
 	WithCrateBody:
 		LandSequence: land
 		WaterSequence: water
-		RequiresCondition: !parachute
-	WithSpriteBody@Parachute:
-		Sequence: paradrop
+	WithSpriteBody@shadow:
 		RequiresCondition: parachute
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
 	Parachutable:
 		FallRate: 26
 		KilledOnImpassableTerrain: true
@@ -1559,8 +1560,6 @@
 		OpeningSequence: open
 		Sequence: idle
 		ClosingSequence: close
-	ExternalCondition@PARACHUTE:
-		Condition: parachute
 	MapEditorData:
 		Categories: System
 	Interactable:
