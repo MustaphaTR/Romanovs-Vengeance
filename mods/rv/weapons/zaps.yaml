@@ -8,7 +8,9 @@ ElectricBoltE:
 	Report: itesat2a.wav, itesat2b.wav
 	Warhead@2Shr: FireShrapnel
 		Weapon: TeslaFragment
-		Amount: 3
+		Amount: 2
+		AimChange: 100
+		AimTargetStances: Enemy, Neutral
 		ValidTargets: Infantry, Vehicle, Ship, Tree
 
 CRElectricBolt:
@@ -87,7 +89,9 @@ TankBoltE:
 		Damage: 80
 	Warhead@2Shr: FireShrapnel
 		Weapon: TeslaFragment
-		Amount: 3
+		Amount: 2
+		AimChange: 100
+		AimTargetStances: Enemy, Neutral
 		ValidTargets: Infantry, Vehicle, Ship, Tree
 
 TeslaFragment:
@@ -186,7 +190,9 @@ Comet:
 		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath
 	Warhead@2Shr: FireShrapnel
 		Weapon: CometFragment
-		Amount: 3
+		Amount: 5
+		AimChange: 100
+		AimTargetStances: Enemy, Neutral
 		ValidTargets: Infantry, Vehicle, Ship, Tree
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_clsn
@@ -203,6 +209,8 @@ SuperComet:
 	Inherits: Comet
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
+	Warhead@2Shr: FireShrapnel
+		Weapon: SuperCometFragment
 
 CometFragment:
 	Inherits: Comet
@@ -210,6 +218,12 @@ CometFragment:
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 	-Warhead@2Shr: FireShrapnel
+
+SuperCometFragment:
+	Inherits: CometFragment
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
 
 RadBeamWeapon:
 	ValidTargets: Ground
