@@ -9,7 +9,7 @@ ElectricBoltE:
 	Warhead@2Shr: FireShrapnel
 		Weapon: TeslaFragment
 		Amount: 3
-		AimChance: 100
+		ValidTargets: Infantry, Vehicle, Ship, Tree
 
 CRElectricBolt:
 	Inherits: ElectricBolt
@@ -88,7 +88,7 @@ TankBoltE:
 	Warhead@2Shr: FireShrapnel
 		Weapon: TeslaFragment
 		Amount: 3
-		AimChance: 100
+		ValidTargets: Infantry, Vehicle, Ship, Tree
 
 TeslaFragment:
 	Inherits: TankBolt
@@ -187,7 +187,7 @@ Comet:
 	Warhead@2Shr: FireShrapnel
 		Weapon: CometFragment
 		Amount: 3
-		AimChance: 100
+		ValidTargets: Infantry, Vehicle, Ship, Tree
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_clsn
 		ImpactSounds: gexp14a.wav
@@ -207,7 +207,6 @@ SuperComet:
 CometFragment:
 	Inherits: Comet
 	Range: 3c0
-	ValidTargets: Infantry, Vehicle, Ship, Structure, Wall
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 	-Warhead@2Shr: FireShrapnel
