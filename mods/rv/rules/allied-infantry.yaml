@@ -537,7 +537,7 @@ ccomand:
 		CrushClasses: vehicle
 	Armament@sapper:
 		Weapon: CommandoC4Attacher
-	PortableChrono:
+	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
 		DeployBlockedCursor: chronosphere
@@ -545,6 +545,8 @@ ccomand:
 		ChargeDelay: 300
 		HasDistanceLimit: false
 		TargetCursor: chronosphere
+		TeleportCondition: chronodisable
+		ConditionDuration: 300
 	WithInfantryBody:
 		-RequiresCondition:
 	WithDeathAnimation@normal:
@@ -787,7 +789,7 @@ cleg:
 		PipType: Red
 	Crushable:
 	-TakeCover:
-	PortableChrono:
+	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
 		DeployBlockedCursor: chronosphere
@@ -795,6 +797,8 @@ cleg:
 		ChargeDelay: 300
 		HasDistanceLimit: false
 		TargetCursor: chronosphere
+		TeleportCondition: chronodisable
+		ConditionDuration: 300
 	Voiced:
 		VoiceSet: ChronoLegionnaireVoice
 	Armament@Temporal:

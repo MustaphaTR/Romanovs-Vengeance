@@ -665,7 +665,8 @@ ctnk:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-	PortableChrono:
+		PauseOnCondition: chronodisable || emp
+	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
 		DeployBlockedCursor: chronosphere
@@ -673,6 +674,8 @@ ctnk:
 		ChargeDelay: 300
 		HasDistanceLimit: false
 		TargetCursor: chronosphere
+		TeleportCondition: chronodisable
+		ConditionDuration: 300
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	Selectable:
