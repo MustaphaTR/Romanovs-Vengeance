@@ -51,7 +51,7 @@ Player:
 	GrantConditionOnBotOwner@test:
 		Condition: enable-test-ai
 		Bots: test
-	SupportPowerBotModule@test:
+	SupportPowerBotASModule@test:
 		RequiresCondition: enable-test-ai
 		Decisions:
 			airborne:
@@ -90,6 +90,22 @@ Player:
 				Consideration@1:
 					Against: Enemy
 					Types: Structure, Vehicle
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			spyplane:
+				OrderName: SovietSpyPlane
+				MinimumAttractiveness: 5
+				IgnoreVisibility: true
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
