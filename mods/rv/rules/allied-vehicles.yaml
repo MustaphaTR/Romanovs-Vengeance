@@ -137,6 +137,7 @@ mtnk:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -185,6 +186,7 @@ tnkd:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -299,6 +301,7 @@ fv:
 		RequiresCondition: ifv-chrono
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono
 	AutoTargetPriority@ATTACKANYTHING:
@@ -391,6 +394,7 @@ sref:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	Explodes:
 		Weapon: UnitExplodeSmall
@@ -447,6 +451,7 @@ mgtk:
 		UncloakOn: Attack, Damage, Move
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 		AllowMovement: false
 	Explodes:
@@ -494,6 +499,7 @@ bfrt:
 		Weapon: 20mmRapid
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 5
@@ -529,6 +535,7 @@ bfrt:
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
+		PauseOnCondition: chronodisable || emp
 		RequiresCondition: loaded || loaded-air
 	Explodes:
 		Weapon: UnitExplode
@@ -582,7 +589,7 @@ robo:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: !powered
+		PauseOnCondition: !powered || chronodisable || emp
 	AutoTarget:
 	RenderSprites:
 	Selectable:

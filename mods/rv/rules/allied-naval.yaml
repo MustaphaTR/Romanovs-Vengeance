@@ -106,8 +106,10 @@ dest:
 	AttackTurreted:
 		Armaments: ASW
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	DetectCloaked:
 		CloakTypes: Underwater
 		Range: 8c0
@@ -156,6 +158,7 @@ aegis:
 		Weapon: Medusa
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	Explodes:
 		Weapon: UnitExplode
@@ -201,6 +204,7 @@ dlph:
 		Weapon: SonicZap
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	RevealsShroud:
 		Range: 4c0
@@ -276,6 +280,7 @@ carrier:
 		TurnSpeed: 255
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 		InitialStance: ReturnFire
 	Explodes:

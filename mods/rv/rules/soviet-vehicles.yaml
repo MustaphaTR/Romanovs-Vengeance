@@ -87,6 +87,7 @@ harv:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	Turreted:
 		TurnSpeed: 10
@@ -142,6 +143,7 @@ dron:
 		Weapon: DroneJump
 	AttackLeap:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	Infector:
 		Types: DroneInfection
 		Damage: 50
@@ -196,6 +198,7 @@ htk:
 		LoadingCondition: notmobile
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	Armament@primary:
 		Weapon: FlakTrackGun
@@ -255,6 +258,7 @@ htnk:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -320,6 +324,7 @@ apoc:
 		LocalOffset: 80,200,768, 80,-200,768
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -375,6 +380,7 @@ ttnk:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -418,6 +424,7 @@ dtruck:
 		EmptyWeapon: demobomb
 	AttackSuicides:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
@@ -453,6 +460,7 @@ v3:
 		Weapon: V3Launcher
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	MissileSpawnerMaster:
 		Actors: v3rocket
 		RespawnTicks: 400
@@ -533,7 +541,7 @@ deva:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-		RequiresCondition: !overload
+		RequiresCondition: !overload || chronodisable || emp
 	AutoTarget:
 	RenderSprites:
 	Selectable:
