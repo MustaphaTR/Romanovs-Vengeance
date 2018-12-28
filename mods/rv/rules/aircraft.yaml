@@ -165,7 +165,7 @@ orca:
 		BuildPaletteOrder: 20
 		Description: Fast assault fighter\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	Aircraft:
-		TurnSpeed: 3
+		TurnSpeed: 5
 		Speed: 210
 	Selectable:
 		Bounds: 30,24
@@ -217,7 +217,7 @@ orcahusk:
 beag:
 	Inherits: orca
 	Valued:
-		Cost: 1500
+		Cost: 2000
 	Tooltip:
 		Name: Black Eagle
 	Buildable:
@@ -227,6 +227,9 @@ beag:
 		Actor: beaghusk
 	Armament:
 		Weapon: Maverick2
+	AmmoPool:
+		Ammo: 2
+		PipCount: 2
 	Health:
 		HP: 200
 	Voiced:
@@ -704,7 +707,7 @@ hindhusk:
 	FallsToEarth:
 		Explosion: UnitExplode
 	RevealsShroud:
-		Range: 7c0
+		Range: 6c0
 		Type: CenterPosition
 	RenderVoxels:
 		Image: hind
