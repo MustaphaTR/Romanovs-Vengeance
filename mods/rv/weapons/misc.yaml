@@ -8,7 +8,7 @@ Flamer:
 		Image: fireball
 		TrailImage: fireball
 		TrailSequences: trailer
-		TrailInternal: 1
+		TrailInterval: 1
 		LaunchAngle: 62
 		Inaccuracy: 853
 	Warhead@1Dam: SpreadDamage
@@ -105,12 +105,12 @@ EmergencyRepair:
 		Spread: 8c0
 		Falloff: 100, 0
 		Damage: -400
-		ValidStates: Neutral, Ally
+		ValidStances: Neutral, Ally
 		ValidTargets: Repair, Structure, Wall
 		DamageTypes: KillsDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: wrench
-		Palette: mouse
+		ExplosionPalette: mouse
 		ImpactSounds: vifvrepa.wav
 		ValidTargets: Ground, Water, Air
 
@@ -234,7 +234,7 @@ TanyaC4Attacher:
 
 DefuseKit:
 	ReloadDelay: 25
-	TargetTypes: IvanBombCleaner, SEALC4Cleaner, TanyaC4Cleaner
+	ValidTargets: IvanBombCleaner, SEALC4Cleaner, TanyaC4Cleaner
 	Warhead@1Det: DetachDelayedWeapon
 		Types: IvanBomb, SEALC4, CommandoC4, TanyaC4
 	Warhead@2Dam: TargetDamage
@@ -452,10 +452,7 @@ ClusterMines:
 	ReloadDelay: 10
 	Range: 1c0
 	Report: vkiratta.wav
-	Projectile: Missile
-		RangeLimit: 0c32
-		TerrainHeightAware: true
-		Blockable: false
+	Projectile: InstantExplode
 	Warhead@1Clu: FireCluster
 		Weapon: SpawnMine
 		Dimensions: 5,5

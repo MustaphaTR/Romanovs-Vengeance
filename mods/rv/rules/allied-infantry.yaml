@@ -33,7 +33,7 @@ engineer:
 		OutsideRangeCursor: remove-bomb
 	AttackFrontal:
 		Voice: Action
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	RevealsShroud:
 		Range: 4c0
 	Voiced:
@@ -42,7 +42,7 @@ engineer:
 		Voice: Action
 	AttackMove:
 		Voice: Action
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
@@ -78,7 +78,7 @@ dog:
 		Weapon: DogJaw
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	AttackMove:
 		Voice: Move
 	AutoTarget:
@@ -215,12 +215,12 @@ e1:
 		RequiresCondition: !undeployed
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 		RequiresCondition: undeployed
 	AttackTurreted@deployed:
 		Armaments: deployed
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 		RequiresCondition: deployed
 	GrantConditionOnAttack:
 		Condition: animate-turret
@@ -348,12 +348,12 @@ ggi:
 		RequiresCondition: !undeployed
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 		RequiresCondition: undeployed
 	AttackTurreted@deployed:
 		Armaments: deployed
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 		RequiresCondition: deployed
 	GrantConditionOnAttack:
 		Condition: animate-turret
@@ -404,7 +404,7 @@ snipe:
 		Weapon: awp
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	Voiced:
 		VoiceSet: SniperVoice
 	ProducibleWithLevel:
@@ -512,7 +512,7 @@ ghost:
 		OutsideRangeCursor: c4
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	RenderSprites:
 		Image: seal
 	Voiced:
@@ -657,7 +657,7 @@ tany:
 		OutsideRangeCursor: c4
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	VoiceAnnouncement:
 		Voice: Build
 	Voiced:
@@ -704,7 +704,7 @@ jumpjet:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	Aircraft:
 		CruiseAltitude: 3072
 		LandWhenIdle: false
@@ -823,6 +823,6 @@ cleg:
 		Weapon: NeutronRifle
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	WithInfantryBody:
 		DefaultAttackSequence: shoot

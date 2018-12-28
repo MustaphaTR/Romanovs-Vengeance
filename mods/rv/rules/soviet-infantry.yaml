@@ -26,7 +26,7 @@ e2:
 		Range: 5c0
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	Armament@primary:
 		Weapon: M1Carbine
 		RequiresCondition: !rank-elite
@@ -86,7 +86,7 @@ flakt:
 		Range: 5c0
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	Armament@primary:
 		Weapon: FlakGuyGun
 		LocalOffset: 256,0,1024
@@ -164,7 +164,7 @@ shk:
 		CargoType: Garrisoner
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	Armament@primary:
 		Weapon: ElectricBolt
 		LocalOffset: 320,128,1024
@@ -248,7 +248,7 @@ terror:
 		EmptyWeapon: TerrorBomb
 	AttackSuicides:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		RequiresCondition: !chronodisable
 	AttackFrontal:
 		Voice: Attack
 	WithInfantryBody:
@@ -316,7 +316,7 @@ deso:
 		RequiresCondition: deployed
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
@@ -394,7 +394,7 @@ ivan:
 		Voice: Attack
 		Cursor: bomb
 		OutsideRangeCursor: bomb
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	TakeCover:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -491,7 +491,7 @@ yuri:
 		Sequence: stand
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	Armament:
 		Weapon: MindControl
 		MuzzleSequence: muzzle
@@ -606,7 +606,7 @@ boris:
 		SpawnerArmamentName: secondary
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	VoiceAnnouncement:
 		Voice: Build
 	Voiced:
@@ -664,7 +664,7 @@ pyro:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	Voiced:
 		VoiceSet: FlamethrowerVoice
 	ProducibleWithLevel:

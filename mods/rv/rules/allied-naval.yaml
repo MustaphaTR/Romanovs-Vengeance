@@ -173,6 +173,7 @@ dlph:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^GainsExperience
+	Inherits@4: ^ChronoDisable
 	Inherits@5: ^CrateStatModifiers
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -204,7 +205,7 @@ dlph:
 		Weapon: SonicZap
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	AutoTarget:
 	RevealsShroud:
 		Range: 4c0

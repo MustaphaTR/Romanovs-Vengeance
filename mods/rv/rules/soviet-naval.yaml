@@ -164,6 +164,7 @@ sqd:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^GainsExperience
+	Inherits@4: ^ChronoDisable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
@@ -206,7 +207,7 @@ sqd:
 		Weapon: SquidPunch
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 	AutoTarget:
 	RevealsShroud:
 		Range: 5c0
