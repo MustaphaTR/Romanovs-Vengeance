@@ -797,6 +797,9 @@ gapill:
 		PauseOnCondition: chronodisable
 	Turreted:
 		TurnSpeed: 255
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
 	BodyOrientation:
 		QuantizedFacings: 8
 	WithRangeCircle:
@@ -1168,6 +1171,10 @@ atesla:
 		ChargeAudio: bpripow.wav
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	DetectCloaked:
+		Range: 6c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
 	Power:
 		Amount: -75
 	AutoTarget:

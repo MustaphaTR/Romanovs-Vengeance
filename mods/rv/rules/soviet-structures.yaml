@@ -1164,6 +1164,10 @@ tesla:
 		ChargeAudio: btespow.wav
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	DetectCloaked:
+		Range: 6c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
 	AutoTarget:
 	GrantConditionOnPowerState@LOWPOWER:
 		RequiresCondition: charged
@@ -1213,6 +1217,9 @@ nalasr:
 		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: vulcan
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:
