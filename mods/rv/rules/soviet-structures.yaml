@@ -1144,28 +1144,29 @@ tesla:
 	Armament:
 		Weapon: CoilBolt
 		LocalOffset: 0,0,3072
-		RequiresCondition: !charged
-	Armament@charged:
+		RequiresCondition: (!lowpower && !charged) || (lowpower && charged == 1)
+	Armament@1:
 		Weapon: OPCoilBolt
 		LocalOffset: 0,0,3072
-		RequiresCondition: charged
-	AttackTesla@1:
+		RequiresCondition: (!lowpower && charged == 1) || (lowpower && charged == 2)
+	Armament@2:
+		Weapon: OPerCoilBolt
+		LocalOffset: 0,0,3072
+		RequiresCondition: (!lowpower && charged == 2) || (lowpower && charged >= 3)
+	Armament@3:
+		Weapon: OPestCoilBolt
+		LocalOffset: 0,0,3072
+		RequiresCondition: !lowpower && charged >= 3
+	AttackTesla:
 		Voice: Attack
 		MaxCharges: 1
 		ReloadDelay: 120
 		ChargeAudio: btespow.wav
 		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete && charged < 3
-	AttackTesla@2:
-		Voice: Attack
-		MaxCharges: 2
-		ReloadDelay: 120
-		ChargeAudio: btespow.wav
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete && charged >= 3
+		RequiresCondition: !build-incomplete
 	AutoTarget:
 	GrantConditionOnPowerState@LOWPOWER:
-		RequiresCondition: charged < 2
+		RequiresCondition: charged
 	WithRangeCircle:
 		Range: 8c0
 		Type: teslacoil

@@ -59,12 +59,24 @@ CoilBolt:
 
 OPCoilBolt:
 	Inherits: CoilBolt
-	Range: 9c0
+	Range: 8c512
 	Report: btesat2a.wav
 	Projectile: TeslaZap
 		Image: litningupg
 	Warhead@1Dam: SpreadDamage
+		Damage: 200
+
+OPerCoilBolt:
+	Inherits: OPCoilBolt
+	Range: 9c0
+	Warhead@1Dam: SpreadDamage
 		Damage: 250
+
+OPestCoilBolt:
+	Inherits: OPerCoilBolt
+	Range: 9c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 300
 
 TankBolt:
 	Inherits: ^TeslaZap
