@@ -268,18 +268,14 @@ dred:
 		TurnSpeed: 1
 	RevealsShroud:
 		Range: 7c0
-	Turreted:
-		TurnSpeed: 255
 	Armament:
 		Weapon: DredLauncher
-		PauseOnCondition: moving
-	AttackTurreted:
+	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 128
 		PauseOnCondition: chronodisable || emp
 	AutoTarget:
 		InitialStance: ReturnFire
-	GrantConditionOnMovement:
-		Condition: moving
 	MissileSpawnerMaster:
 		Actors: dmisl, dmisl
 		SpawnAllAtOnce: true
