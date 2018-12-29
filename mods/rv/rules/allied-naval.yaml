@@ -101,14 +101,13 @@ dest:
 	Exit@0:
 		SpawnOffset: 0,0,256
 		Facing: 0
-	Turreted:
-		TurnSpeed: 255
-	AttackTurreted:
-		Armaments: ASW
-		Voice: Attack
-		PauseOnCondition: chronodisable || emp
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp
+	AttackFrontal@ASW:
+		Armaments: ASW
+		Voice: Attack
+		FacingTolerance: 128
 		PauseOnCondition: chronodisable || emp
 	DetectCloaked:
 		CloakTypes: Underwater
