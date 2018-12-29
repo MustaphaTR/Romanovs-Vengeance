@@ -642,6 +642,18 @@ nayard:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Ship.Soviets
+	DetonateWeaponPower@navalmines:
+		Cost: 250
+		OrderName: SovietNavalMines
+		PauseOnCondition: chronodisable
+		Icon: navalmines
+		ChargeInterval: 1500
+		Description: Naval Mines
+		LongDesc: Places up to 5 naval mines anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapon: NavalMineSpawner
+		ActivationSequence:
+	SupportPowerChargeBar:
 	RallyPoint:
 		Offset: 5,1
 		Palette: mouse
@@ -670,6 +682,24 @@ nayard:
 	-SpawnActorsOnSell@soviets:
 	RequiresBuildableArea:
 		Adjacent: 13
+
+nmine:
+	Inherits: mine
+	Mine:
+		CrushClasses: nmine
+		DetonateClasses: nmine
+	Tooltip:
+		Name: Naval Mine
+	Targetable:
+		TargetTypes: Ground, Water, Defense
+	Mobile:
+		Locomotor: naval
+	Cloak:
+		CloakTypes: Cloak, NavalMine
+	Explodes:
+		Weapon: MineExplosion
+	RenderSprites:
+		PlayerPalette: player
 
 nadept:
 	Inherits: ^Building

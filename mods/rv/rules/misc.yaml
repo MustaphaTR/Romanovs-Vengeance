@@ -113,6 +113,15 @@ CAMERA:
 	MapEditorData:
 		Categories: System
 
+SONAR:
+	Inherits: CAMERA
+	EditorOnlyTooltip:
+		Name: (support power proxy camera)
+	-RevealsShroud:
+	DetectCloaked:
+		Range: 10c0
+		CloakTypes: Underwater, NavalMine
+
 FLAMEGUY:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
