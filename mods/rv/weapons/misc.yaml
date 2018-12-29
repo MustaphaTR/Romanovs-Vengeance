@@ -128,7 +128,7 @@ SuperMindControl:
 
 PsiWave:
 	ReloadDelay: 100
-	Range: 1c0
+	Range: 1c819
 	Report: iyurat2a.wav
 	Warhead@1Dam: SpreadDamage
 		Spread: 3c0
@@ -138,6 +138,13 @@ PsiWave:
 		DamageTypes: PsychicDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: psi_wave
+
+CRPsiWave:
+	Inherits: PsiWave
+	ReloadDelay: 20
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Damage: 200
 
 HornetLauncher:
 	ReloadDelay: 150

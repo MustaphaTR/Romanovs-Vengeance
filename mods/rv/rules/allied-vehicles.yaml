@@ -223,6 +223,14 @@ fv:
 		Type: Light
 	RevealsShroud:
 		Range: 8c0
+		RequiresCondition: !ifv-dog
+	RevealsShroud@DOG:
+		Range: 10c0
+		RequiresCondition: ifv-dog
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: ifv-dog
+	RenderDetectionCircle:
 	Turreted:
 		TurnSpeed: 5
 	Cargo:
@@ -235,10 +243,12 @@ fv:
 			e1: ifv-mg
 			e2: ifv-mg
 			engineer: ifv-repair
+			dog: ifv-dog
 			ggi: ifv-rocket
 			flakt: ifv-flak
 			shk: ifv-tesla
 			ivan: ifv-demo
+			civan: ifv-demo
 			pyro: ifv-pyro
 			terror: ifv-demo
 			deso: ifv-deso
@@ -249,14 +259,17 @@ fv:
 			snipe: ifv-sniper
 			spy: ifv-mg
 			cleg: ifv-chrono
+			yuri: ifv-yuri
+			ptroop: ifv-yuri
+			yuripr: ifv-yuri
 	Armament@primary:
 		Weapon: HoverMissile
 		LocalOffset: 128,-128,1024, 128,128,1024
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	Armament@elite:
 		Weapon: HoverMissileE
 		LocalOffset: 128,-128,1024, 128,128,1024
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair  && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	Armament@mg:
 		Weapon: CRM60
 		LocalOffset: 188,32,600
@@ -299,13 +312,16 @@ fv:
 	Armament@chrono:
 		Weapon: CRNeutronRifle
 		RequiresCondition: ifv-chrono
+	Armament@yuri:
+		Weapon: CRPsiWave
+		RequiresCondition: ifv-yuri
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
 	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono
+		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono && !ifv-yuri
 	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: (stance-attackanything || assault-move) && !ifv-mg && !ifv-repair && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono
+		RequiresCondition: (stance-attackanything || assault-move) && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono && !ifv-yuri
 	AutoTargetPriority@DEFAULT_GROUND:
 		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-flak || ifv-pyro || ifv-tesla || ifv-chrono)
 		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Defense
@@ -315,7 +331,7 @@ fv:
 		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@INFONLY:
-		RequiresCondition: ifv-sniper || ifv-hero
+		RequiresCondition: ifv-sniper || ifv-hero || ifv-yuri
 		ValidTargets: Infantry
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@REPAIR:
@@ -339,7 +355,7 @@ fv:
 		RequiresCondition: ifv-demo
 	WithVoxelTurret@default:
 		Sequence: turret-missile
-		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono
+		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	WithVoxelTurret@mg:
 		Sequence: turret-mg
 		RequiresCondition: ifv-mg || ifv-sniper || ifv-flak || ifv-hero
@@ -348,7 +364,7 @@ fv:
 		RequiresCondition: ifv-repair
 	WithVoxelTurret@hitech:
 		Sequence: turret-hitech
-		RequiresCondition: ifv-rocket || ifv-tesla || ifv-deso || ifv-pyro || ifv-demo || ifv-chrono
+		RequiresCondition: ifv-dog || ifv-rocket || ifv-tesla || ifv-deso || ifv-pyro || ifv-demo || ifv-chrono || ifv-yuri
 	Voiced:
 		VoiceSet: IFVVoice
 	ProducibleWithLevel:
