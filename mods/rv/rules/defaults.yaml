@@ -667,7 +667,7 @@
 	-ShakeOnDeath:
 	-GivesBuildableArea:
 	RevealOnFire:
-		Range: 1c0
+		Radius: 1c0
 		Duration: 50
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense
@@ -861,7 +861,10 @@
 	RevealsShroud:
 		Range: 4c0
 	RevealOnFire:
-		Range: 1c0
+		Radius: 1c0
+		Duration: 50
+	RevealOnDeath:
+		Radius: 2c0
 		Duration: 50
 	Mobile:
 		Speed: 60
@@ -1043,6 +1046,8 @@
 		Voice: Move
 	RevealsShroud:
 		Range: 2c0
+	RevealOnDeath:
+		Radius: 1c0
 	AttackFrontal:
 		Voice: Attack
 	ProximityCaptor:
@@ -1077,6 +1082,8 @@
 		TargetTypes: Ground, Infantry
 	RevealsShroud:
 		Range: 2c0
+	RevealOnDeath:
+		Radius: 1c0
 	Mobile:
 		Speed: 40
 	Selectable:
@@ -1126,7 +1133,9 @@
 	OwnerLostAction:
 		Action: Kill
 	RevealOnFire:
-		Range: 1c0
+		Radius: 1c0
+		Duration: 50
+	RevealOnDeath:
 		Duration: 50
 	Mobile:
 		Voice: Move
@@ -1379,7 +1388,9 @@
 	OwnerLostAction:
 		Action: Kill
 	RevealOnFire:
-		Range: 1c0
+		Radius: 1c0
+		Duration: 50
+	RevealOnDeath:
 		Duration: 50
 	Mobile:
 		Voice: Move
@@ -1406,7 +1417,7 @@
 		ValidDamageStates: Light, Medium, Heavy, Critical
 	RepairableNear:
 		Voice: Move
-		Range: 3c0
+		CloseEnough: 3c0
 		Buildings: gayard, nayard
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp

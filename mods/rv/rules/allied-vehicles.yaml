@@ -27,6 +27,8 @@ amcv:
 		Weight: 6
 	RevealsShroud:
 		Range: 4c0
+	RevealOnDeath:
+		Radius: 2c0
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	BaseBuilding:
@@ -87,6 +89,8 @@ cmin:
 		Locomotor: tracked
 	RevealsShroud:
 		Range: 4c0
+	RevealOnDeath:
+		Radius: 2c0
 	Targetable:
 		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, DroneInfection, ImmuneToRadiation
 	WithHarvestOverlay:
@@ -122,6 +126,8 @@ mtnk:
 		Type: Heavy
 	RevealsShroud:
 		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
 	Turreted:
 		TurnSpeed: 5
 	Armament@primary:
@@ -177,6 +183,8 @@ tnkd:
 		Type: Heavy
 	RevealsShroud:
 		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
 	Armament@primary:
 		Weapon: sabot
 		LocalOffset: 704,0,768
@@ -269,6 +277,13 @@ fv:
 		RequiresCondition: !ifv-dog
 	RevealsShroud@DOG:
 		Range: 10c0
+		RequiresCondition: ifv-dog
+	RevealOnDeath:
+		Radius: 4c0
+		RequiresCondition: !ifv-dog
+	RevealOnDeath@DOG:
+		Range: 5c0
+		Duration: 50
 		RequiresCondition: ifv-dog
 	DetectCloaked:
 		Range: 5c0
@@ -477,6 +492,8 @@ sref:
 		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
 	Turreted:
 		TurnSpeed: 10
 		Offset: -30,0,85
@@ -531,6 +548,8 @@ mgtk:
 		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 9c0
+	RevealOnDeath:
+		Radius: 4c512
 	Armament@primary:
 		Weapon: MirageGun
 		LocalOffset: 640,0,640
@@ -591,6 +610,8 @@ bfrt:
 	-Crushable:
 	RevealsShroud:
 		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
 	Armament:
 		Weapon: 20mmRapid
 	AttackFrontal:
@@ -670,6 +691,8 @@ robo:
 		Type: Heavy
 	RevealsShroud:
 		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
 	Turreted:
 		TurnSpeed: 5
 	Armament:
@@ -751,6 +774,8 @@ ctnk:
 		Speed: 90
 	RevealsShroud:
 		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
 	Armament@PRIMARY:
 		Weapon: APTusk
 		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768

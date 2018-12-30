@@ -24,6 +24,8 @@ sapc:
 		RequiresCondition: !notmobile && !chronodisable && !emp && !squid
 	RevealsShroud:
 		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
 	Targetable:
 		RequiresCondition: in_water
 	Targetable@GROUND:
@@ -80,6 +82,8 @@ sub:
 	-LeavesTrails:
 	RevealsShroud:
 		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
 	Targetable:
 		TargetTypes: Ground, Water, Ship, Underwater
 	Cloak:
@@ -144,6 +148,8 @@ hyd:
 		Speed: 120
 	RevealsShroud:
 		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
@@ -213,6 +219,9 @@ sqd:
 	AutoTarget:
 	RevealsShroud:
 		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
+		Duration: 50
 	Cloak:
 		CloakTypes: Underwater
 		InitialDelay: 50
@@ -242,7 +251,7 @@ sqd:
 		DefaultAttackSequence: punch
 	RepairableNear:
 		Voice: Move
-		Range: 3c0
+		CloseEnough: 3c0
 		Buildings: gayard, nayard
 	HitShape:
 
@@ -271,6 +280,8 @@ dred:
 		TurnSpeed: 1
 	RevealsShroud:
 		Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
 	Armament:
 		Weapon: DredLauncher
 	AttackFrontal:

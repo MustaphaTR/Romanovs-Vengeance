@@ -34,8 +34,6 @@ engineer:
 	AttackFrontal:
 		Voice: Action
 		PauseOnCondition: chronodisable
-	RevealsShroud:
-		Range: 4c0
 	Voiced:
 		VoiceSet: EngineerVoice
 	Guard:
@@ -74,6 +72,8 @@ dog:
 		PipType: Yellow
 	RevealsShroud:
 		Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
 	Armament:
 		Weapon: DogJaw
 	AttackFrontal:
@@ -151,6 +151,8 @@ e1:
 		CargoType: Garrisoner
 	RevealsShroud:
 		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
 	Armament@primary:
 		Weapon: M60
 		RequiresCondition: !rank-elite && !deployed
@@ -277,6 +279,8 @@ ggi:
 		CargoType: Garrisoner
 	RevealsShroud:
 		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
 	Crushable:
 		RequiresCondition: undeployed
 	Armament@primary:
@@ -394,6 +398,8 @@ snipe:
 		PipType: Red
 	RevealsShroud:
 		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
 	Armor:
 		Type: None
 	Armament@primary:
@@ -433,6 +439,8 @@ spy:
 		HP: 25
 	RevealsShroud:
 		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
 	Passenger:
 		PipType: Yellow
 	TakeCover:
@@ -487,6 +495,8 @@ ghost:
 		Locomotor: swimsuit
 	RevealsShroud:
 		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
 	Armor:
 		Type: Flak
 	Passenger:
@@ -622,6 +632,8 @@ tany:
 		Locomotor: swimsuit
 	RevealsShroud:
 		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
 	Demolition:
 		Voice: Demolish
 	Armor:
@@ -771,6 +783,9 @@ jumpjet.husk:
 	RevealsShroud:
 		Range: 8c0
 		Type: CenterPosition
+	RevealOnDeath:
+		Radius: 4c0
+		Duration: 50
 	WithShadow:
 
 cleg:
@@ -797,6 +812,8 @@ cleg:
 		HP: 125
 	RevealsShroud:
 		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
 	Passenger:
 		PipType: Red
 	Crushable:

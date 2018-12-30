@@ -24,6 +24,8 @@ lcrf:
 		RequiresCondition: !notmobile && !chronodisable && !emp && !squid
 	RevealsShroud:
 		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
 	Targetable:
 		RequiresCondition: in_water
 	Targetable@GROUND:
@@ -79,6 +81,8 @@ dest:
 		Speed: 90
 	RevealsShroud:
 		Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
 	Selectable:
 		Bounds: 80, 80, 0, -6
 	Armament@primary:
@@ -155,6 +159,8 @@ aegis:
 		Speed: 60
 	RevealsShroud:
 		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
 	Armament:
 		Weapon: Medusa
 	AttackFrontal:
@@ -210,6 +216,9 @@ dlph:
 	AutoTarget:
 	RevealsShroud:
 		Range: 4c0
+	RevealOnDeath:
+		Radius: 2c0
+		Duration: 50
 	Cloak:
 		CloakTypes: Underwater
 		InitialDelay: 50
@@ -245,7 +254,7 @@ dlph:
 		UseDeathTypeSuffix: false
 	RepairableNear:
 		Voice: Move
-		Range: 3c0
+		CloseEnough: 3c0
 		Buildings: gayard, nayard
 	HitShape:
 
@@ -269,9 +278,6 @@ carrier:
 		HP: 800
 	Armor:
 		Type: Heavy
-	RevealsShroud:
-		Range: 7c0
-		Type: CenterPosition
 	Selectable:
 		Bounds: 60,80,0,-6
 	Mobile:
@@ -279,6 +285,8 @@ carrier:
 		Speed: 60
 	RevealsShroud:
 		Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 128
