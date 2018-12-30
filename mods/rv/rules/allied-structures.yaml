@@ -947,6 +947,8 @@ gaorep:
 		Cost: 2500
 	Tooltip:
 		Name: Allied Ore Purifier
+	-Capturable:
+	-CaptureNotification:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -1030,6 +1032,10 @@ gagap:
 	CreatesShroud:
 		Range: 10c0
 		RequiresCondition: !disabled && !chronodisable
+	Capturable:
+		Types: building
+		RequiresCondition: !build-incomplete
+	CaptureNotification:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure
 	RenderShroudCircle:
