@@ -35,7 +35,8 @@ lcrf:
 	KillsSelf@LowPowerOnWater:
 		RequiresCondition: emp && in_water
 	Repairable:
-		RepairBuildings: gayard, nayard, gadept, nadept, caoutp
+		Voice: Move
+		RepairBuildings: gadept, nadept, caoutp
 	Cargo:
 		Types: Infantry, Garrisoner, Vehicle
 		MaxWeight: 12
@@ -241,9 +242,10 @@ dlph:
 		DefaultAttackSequence: shoot
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
-	Repairable:
-		Voice: Attack
-		RepairBuildings: gayard, nayard
+	RepairableNear:
+		Voice: Move
+		Range: 3c0
+		Buildings: gayard, nayard
 	HitShape:
 
 carrier:
