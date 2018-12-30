@@ -972,9 +972,8 @@ nairon:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: natech
-		BuildLimit: 1
-		Description: Grants invulnerability to armored units.\nFries fleshy units.\nMaximum 1 can be built.
+		Prerequisites: natech, !enoughiron
+		Description: Grants invulnerability to vehicles and structures.\nKills infantry.
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -1003,6 +1002,7 @@ nairon:
 		ChargeInterval: 6000
 		Description: Invulnerability
 		LongDesc: Makes a group of units invulnerable\nfor 20 seconds.
+		AllowMultiple: true
 		Duration: 500
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: IronCurtainReady
@@ -1016,6 +1016,9 @@ nairon:
 		PauseOnCondition: disabled || chronodisable
 		Range: 2
 	SupportPowerChargeBar:
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughiron
+		RequiresPrerequisites: global-swlimit
 
 namisl:
 	Inherits: ^Building
@@ -1025,9 +1028,8 @@ namisl:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: natech
-		BuildLimit: 1
-		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb\nMaximum 1 can be built.
+		Prerequisites: natech, !enoughnuke
+		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb
 	Valued:
 		Cost: 3500
 	Tooltip:
@@ -1055,6 +1057,7 @@ namisl:
 		ChargeInterval: 9000
 		Description: Atom Bomb
 		LongDesc: Launches a devastating atomic bomb\nat a target location.
+		AllowMultiple: true
 		EndChargeSound: snukread.wav
 		LaunchSound: snuklaun.wav
 		SelectTargetSpeechNotification: SelectTarget
@@ -1078,6 +1081,9 @@ namisl:
 		FlightVelocity: 1c0
 	WithNukeLaunchAnimation:
 		RequiresCondition: !build-incomplete && !chronodisable
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughnuke
+		RequiresPrerequisites: global-swlimit
 
 nawall:
 	Inherits: ^Wall

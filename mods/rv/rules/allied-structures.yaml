@@ -1056,8 +1056,7 @@ gaweat:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 100
-		Prerequisites: gatech
-		BuildLimit: 1
+		Prerequisites: gatech, !enoughweather
 		Description: Play God with deadly weather!
 	Selectable:
 		Bounds: 116, 106, -2, -26
@@ -1097,6 +1096,9 @@ gaweat:
 		IncomingSpeechNotification: LightningStormCreated
 		DisplayTimerStances: Ally, Neutral, Enemy
 		PauseOnCondition: disabled || chronodisable
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughweather
+		RequiresPrerequisites: global-swlimit
 
 gacsph:
 	Inherits: ^Building
@@ -1106,9 +1108,8 @@ gacsph:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: gatech
-		Description: Allows teleporting units in a 3x3 array.
-		BuildLimit: 1
+		Prerequisites: gatech, !enoughchrono
+		Description: Allows teleporting maximum of 13 vehicles.\nKills infantry.
 	Selectable:
 		Bounds: 176, 110, -5, -14
 	Valued:
@@ -1140,6 +1141,7 @@ gacsph:
 		ChargeInterval: 6000
 		Description: Chronoshift
 		LongDesc: Teleports a group of units across\nthe map.
+		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ChronosphereReady
 		LaunchSpeechNotification: ChronosphereActivated
@@ -1155,6 +1157,9 @@ gacsph:
 		TargetCursor: chronosphere
 		PauseOnCondition: disabled || chronodisable
 		Range: 2
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughchrono
+		RequiresPrerequisites: global-swlimit
 
 atesla:
 	Inherits: ^SupportBuilding

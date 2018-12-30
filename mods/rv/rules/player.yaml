@@ -23,14 +23,14 @@ Player:
 		SpeechNotification: LowPower
 	AllyRepair:
 	Taunts:
-		CheckboxDisplayOrder: 9
+		CheckboxDisplayOrder: 8
 	PlayerResources:
 		CashTickUpNotification: CashTickUp
 		CashTickDownNotification: CashTickDown
 		InsufficientFundsNotification: InsufficientFunds
 	DeveloperMode:
 		CheckboxEnabled: true
-		CheckboxDisplayOrder: 8
+		CheckboxDisplayOrder: 11
 	GpsWatcher:
 	Shroud:
 		FogCheckboxDisplayOrder: 3
@@ -41,12 +41,19 @@ Player:
 		Enabled: True
 		DisplayOrder: 5
 		Prerequisites: global-factundeploy
+	LobbyPrerequisiteCheckbox@GLOBALSWLIMIT:
+		ID: swlimit
+		Label: Limit Super Weapons
+		Description: Only 1 of each super weapon can be built by a player
+		Enabled: True
+		DisplayOrder: 9
+		Prerequisites: global-swlimit
 	LobbyPrerequisiteCheckbox@GLOBALTECHAREA:
 		ID: techbuildarea
 		Label: Tech Build Area
 		Description: Allow building placement around tech structures.
 		Enabled: True
-		DisplayOrder: 9
+		DisplayOrder: 10
 		Prerequisites: global-techbuildarea
 	FrozenActorLayer:
 	BaseAttackNotifier:
