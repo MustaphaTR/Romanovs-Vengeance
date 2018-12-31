@@ -1,0 +1,1972 @@
+General:
+	Name: LUNAR
+	Id: LUNAR
+	Extensions: .lun, .shp
+	HeightDebugColors:  00000080, 00004480, 00008880, 0000CC80, 0000FF80, 4400CC80, 88008880, CC004480, FF110080, FF550080, FF990080, FFDD0080, DDFF0080, 99FF0080, 55FF0080, 11FF0080
+	EditorTemplateOrder: Lat Moon Dirt, Blank, ZMM Ramps, Ramps, LAT Moon Dirt Dark, Moon Dirt Dark Individual, LAT Grass Rough, GrassRough Individual, Pavement Individual, LAT Moon Dirt Light, Moon Dirt Light Individual, Ramp edge fixup, LAT Pavement, Sand (beach), Sand (beach) Transitions, Craters, LunarLander, Lunar Crevas # Obsolete Height Pieces, Cliff Set, Shore Pieces, Cliff/Water pieces, DirtRoads Bendy, DirtRoads Junctions, DirtRoads Straight, Bridges, Paved Roads, Water, ZMM Cliff Set, DirtRoads Slopes, ZMM Dirt Road Slopes, Slope Set Pieces, ZSlope Set Pieces, New MM Height Pieces, Waterfalls, Farm Crops, Paved Road Ends, Pavement, Paved road bits, Ramp edge fixup - Marble Madness, Paved Road Slopes, Waterfalls-B, Waterfalls-C, Waterfalls-D, Newest MM Height, Tunnel Floor, Tunnel Side, Destroyable Cliffs, Water Caves, ZMM Bendy Dirt Roads, ZMM Dirt Road Junctions, ZMM Straight Dirt Roads, ZMM Shore Pieces, ZMM Waterfalls, ZMM Waterfalls-B, ZMM Waterfalls-C, ZMM Waterfalls-D, ZMM Water Caves, ZMMCliff/Water pieces, ZMM Water, DirtTunnel Floor, Water bridge, RA2 rubble farm, RA2 rubble mobile, RA2 rubble mexican, Wood Bridges, RA2 uss arizona
+	SheetSize: 4096
+	EnableDepth: true
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Ice:
+		Type: Ice
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Road:
+		Type: Road
+		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Bridge:
+		Type: Bridge
+		Color: 000000
+		TargetTypes: Ground
+	TerrainType@Rail:
+		Type: Rail
+		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Impassable:
+		Type: Impassable
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Water:
+		Type: Water
+		TargetTypes: Water
+		Color: 000000
+	TerrainType@DirtRoad:
+		Type: DirtRoad
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Rough:
+		Type: Rough
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Cliff:
+		Type: Cliff
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Ore:
+		Type: Ore
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 948060
+		TargetTypes: Ground
+	TerrainType@Gems:
+		Type: Gems
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 8470FF
+		TargetTypes: Ground
+
+Templates:
+	Template@0:
+		Categories: Lat Moon Dirt
+		Id: 0
+		Images: clear01.lun, clear01a.lun, clear01b.lun, clear01c.lun, clear01d.lun, clear01e.lun, clear01f.lun, clear01g.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A0A4AD
+				RightColor: A4A8B1
+	Template@1:
+		Categories: Blank
+		Id: 1
+		Images: blank01.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: D2D2DC
+				RightColor: D0D0DA
+	Template@2:
+		Categories: ZMM Ramps
+		Id: 2
+		Images: mslop01.lun, mslop01a.lun, mslop01b.lun, mslop01c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 935B98
+				RightColor: 935C99
+	Template@3:
+		Categories: ZMM Ramps
+		Id: 3
+		Images: mslop02.lun, mslop02a.lun, mslop02b.lun, mslop02c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 5F586E
+				RightColor: 5F576D
+	Template@4:
+		Categories: ZMM Ramps
+		Id: 4
+		Images: mslop03.lun, mslop03a.lun, mslop03b.lun, mslop03c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 3
+				LeftColor: 4D735A
+				RightColor: 526E60
+	Template@5:
+		Categories: ZMM Ramps
+		Id: 5
+		Images: mslop04.lun, mslop04a.lun, mslop04b.lun, mslop04c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 4
+				LeftColor: 837186
+				RightColor: 7B797E
+	Template@6:
+		Categories: ZMM Ramps
+		Id: 6
+		Images: mslop05.lun, mslop05a.lun, mslop05b.lun, mslop05c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 5
+				LeftColor: 2ED72E
+				RightColor: 2ED72E
+	Template@7:
+		Categories: ZMM Ramps
+		Id: 7
+		Images: mslop06.lun, mslop06a.lun, mslop06b.lun, mslop06c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 6
+				LeftColor: 615970
+				RightColor: 0DF90D
+	Template@8:
+		Categories: ZMM Ramps
+		Id: 8
+		Images: mslop07.lun, mslop07a.lun, mslop07b.lun, mslop07c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 7
+				LeftColor: 389F41
+				RightColor: 389F41
+	Template@9:
+		Categories: ZMM Ramps
+		Id: 9
+		Images: mslop08.lun, mslop08a.lun, mslop08b.lun, mslop08c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 8
+				LeftColor: 0DF90D
+				RightColor: 99589D
+	Template@10:
+		Categories: ZMM Ramps
+		Id: 10
+		Images: mslop09.lun, mslop09a.lun, mslop09b.lun, mslop09c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 9
+				LeftColor: 0FF70F
+				RightColor: 0FF70F
+	Template@11:
+		Categories: ZMM Ramps
+		Id: 11
+		Images: mslop10.lun, mslop10a.lun, mslop10b.lun, mslop10c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 10
+				LeftColor: 0DF90D
+				RightColor: 615970
+	Template@12:
+		Categories: ZMM Ramps
+		Id: 12
+		Images: mslop11.lun, mslop11a.lun, mslop11b.lun, mslop11c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 11
+				LeftColor: 389F41
+				RightColor: 389F41
+	Template@13:
+		Categories: ZMM Ramps
+		Id: 13
+		Images: mslop12.lun, mslop12a.lun, mslop12b.lun, mslop12c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 12
+				LeftColor: 99589D
+				RightColor: 0DF90D
+	Template@14:
+		Categories: ZMM Ramps
+		Id: 14
+		Images: mslop13.lun
+		Size: 1, 1
+		Tiles:
+	Template@15:
+		Categories: ZMM Ramps
+		Id: 15
+		Images: mslop14.lun, mslop14a.lun, mslop14b.lun, mslop14c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 14
+				LeftColor: 625B72
+				RightColor: 625B72
+	Template@16:
+		Categories: ZMM Ramps
+		Id: 16
+		Images: mslop15.lun, mslop15a.lun, mslop15b.lun, mslop15c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 15
+				LeftColor: 546D63
+				RightColor: 546D63
+	Template@17:
+		Categories: ZMM Ramps
+		Id: 17
+		Images: mslop16.lun, mslop16a.lun, mslop16b.lun, mslop16c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 16
+				LeftColor: 9D56A0
+				RightColor: 9D56A0
+	Template@18:
+		Categories: ZMM Ramps
+		Id: 18
+		Images: mslop17.lun, mslop17a.lun, mslop17b.lun, mslop17c.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 17
+				LeftColor: 615970
+				RightColor: 99589D
+	Template@19:
+		Categories: ZMM Ramps
+		Id: 19
+		Images: mslop18.lun, mslop18a.lun, mslop18b.lun, mslop18c.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 18
+				LeftColor: 99589D
+				RightColor: 615970
+	Template@20:
+		Categories: ZMM Ramps
+		Id: 20
+		Images: mslop19.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 19
+				LeftColor: 40734D
+				RightColor: 837476
+	Template@21:
+		Categories: ZMM Ramps
+		Id: 21
+		Images: mslop20.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 20
+				LeftColor: 59486F
+				RightColor: 5F876A
+	Template@29:
+		Categories: Ramps
+		Id: 29
+		Images: slope01.lun, slope01a.lun, slope01b.lun, slope01c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 848894
+				RightColor: 838793
+	Template@30:
+		Categories: Ramps
+		Id: 30
+		Images: slope02.lun, slope02a.lun, slope02b.lun, slope02c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 7B808C
+				RightColor: 787C88
+	Template@31:
+		Categories: Ramps
+		Id: 31
+		Images: slope03.lun, slope03a.lun, slope03b.lun, slope03c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 3
+				LeftColor: A2A6AE
+				RightColor: A2A6AE
+	Template@32:
+		Categories: Ramps
+		Id: 32
+		Images: slope04.lun, slope04a.lun, slope04b.lun, slope04c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 4
+				LeftColor: B2B5BD
+				RightColor: B8BAC1
+	Template@33:
+		Categories: Ramps
+		Id: 33
+		Images: slope05.lun, slope05a.lun, slope05b.lun, slope05c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 5
+				LeftColor: 848893
+				RightColor: 787D89
+	Template@34:
+		Categories: Ramps
+		Id: 34
+		Images: slope06.lun, slope06a.lun, slope06b.lun, slope06c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 6
+				LeftColor: 818591
+				RightColor: 9FA3AC
+	Template@35:
+		Categories: Ramps
+		Id: 35
+		Images: slope07.lun, slope07a.lun, slope07b.lun, slope07c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 7
+				LeftColor: B5B8BF
+				RightColor: A4A7B0
+	Template@36:
+		Categories: Ramps
+		Id: 36
+		Images: slope08.lun, slope08a.lun, slope08b.lun, slope08c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 8
+				LeftColor: A4A8B0
+				RightColor: A7AAB3
+	Template@37:
+		Categories: Ramps
+		Id: 37
+		Images: slope09.lun, slope09a.lun, slope09b.lun, slope09c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 9
+				LeftColor: A3A7AF
+				RightColor: A7ABB3
+	Template@38:
+		Categories: Ramps
+		Id: 38
+		Images: slope10.lun, slope10a.lun, slope10b.lun, slope10c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 10
+				LeftColor: 9CA0A9
+				RightColor: 7D818D
+	Template@39:
+		Categories: Ramps
+		Id: 39
+		Images: slope11.lun, slope11a.lun, slope11b.lun, slope11c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 11
+				LeftColor: A4A8B0
+				RightColor: B8BBC1
+	Template@40:
+		Categories: Ramps
+		Id: 40
+		Images: slope12.lun, slope12a.lun, slope12b.lun, slope12c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 12
+				LeftColor: A0A3AC
+				RightColor: A4A8B1
+	Template@41:
+		Categories: Ramps
+		Id: 41
+		Images: slope13.lun, slope13a.lun, slope13b.lun, slope13c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 13
+				LeftColor: 484C60
+				RightColor: 484C60
+	Template@42:
+		Categories: Ramps
+		Id: 42
+		Images: slope14.lun, slope14a.lun, slope14b.lun, slope14c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 14
+				LeftColor: 808490
+				RightColor: 7A7F8B
+	Template@43:
+		Categories: Ramps
+		Id: 43
+		Images: slope15.lun, slope15a.lun, slope15b.lun, slope15c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 15
+				LeftColor: A9ADB5
+				RightColor: A9ADB5
+	Template@44:
+		Categories: Ramps
+		Id: 44
+		Images: slope16.lun, slope16a.lun, slope16b.lun, slope16c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 16
+				LeftColor: A0A3AC
+				RightColor: A7AAB3
+	Template@45:
+		Categories: Ramps
+		Id: 45
+		Images: slope17.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 17
+				LeftColor: 818691
+				RightColor: A3A6AF
+	Template@46:
+		Categories: Ramps
+		Id: 46
+		Images: slope18.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 20
+				LeftColor: 9EA2AB
+				RightColor: 7D818D
+	Template@47:
+		Categories: Ramps
+		Id: 47
+		Images: slope19.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 17
+				LeftColor: 818691
+				RightColor: A3A6AF
+	Template@48:
+		Categories: Ramps
+		Id: 48
+		Images: slope20.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				RampType: 20
+				LeftColor: 9EA2AB
+				RightColor: 7D818D
+	Template@49:
+		Categories: LAT Moon Dirt Dark
+		Id: 49
+		Images: ruff01.lun, ruff01a.lun, ruff01b.lun, ruff01c.lun, ruff01d.lun, ruff01e.lun, ruff01f.lun, ruff01g.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 777B88
+				RightColor: 7B7F8B
+	Template@50:
+		Categories: Moon Dirt Dark Individual
+		Id: 50
+		Images: clat01.lun, clat01a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 878B96
+				RightColor: 838793
+	Template@51:
+		Categories: Moon Dirt Dark Individual
+		Id: 51
+		Images: clat02.lun, clat02a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 838793
+				RightColor: 9A9EA7
+	Template@52:
+		Categories: Moon Dirt Dark Individual
+		Id: 52
+		Images: clat03.lun, clat03a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 818591
+				RightColor: 8C909A
+	Template@53:
+		Categories: Moon Dirt Dark Individual
+		Id: 53
+		Images: clat04.lun, clat04a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 8A8E99
+				RightColor: A6AAB2
+	Template@54:
+		Categories: Moon Dirt Dark Individual
+		Id: 54
+		Images: clat05.lun, clat05a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 888C97
+				RightColor: 7C808C
+	Template@55:
+		Categories: Moon Dirt Dark Individual
+		Id: 55
+		Images: clat06.lun, clat06a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 828792
+				RightColor: 9397A1
+	Template@56:
+		Categories: Moon Dirt Dark Individual
+		Id: 56
+		Images: clat07.lun, clat07a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 7B808C
+				RightColor: 838793
+	Template@57:
+		Categories: Moon Dirt Dark Individual
+		Id: 57
+		Images: clat08.lun, clat08a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 828692
+				RightColor: A4A8B1
+	Template@58:
+		Categories: Moon Dirt Dark Individual
+		Id: 58
+		Images: clat09.lun, clat09a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9B9FA8
+				RightColor: 848893
+	Template@59:
+		Categories: Moon Dirt Dark Individual
+		Id: 59
+		Images: clat10.lun, clat10a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9DA1AA
+				RightColor: 9A9EA7
+	Template@60:
+		Categories: Moon Dirt Dark Individual
+		Id: 60
+		Images: clat11.lun, clat11a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 989CA5
+				RightColor: 8A8E99
+	Template@61:
+		Categories: Moon Dirt Dark Individual
+		Id: 61
+		Images: clat12.lun, clat12a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9296A0
+				RightColor: A5A9B1
+	Template@62:
+		Categories: Moon Dirt Dark Individual
+		Id: 62
+		Images: clat13.lun, clat13a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9EA2AB
+				RightColor: 838893
+	Template@63:
+		Categories: Moon Dirt Dark Individual
+		Id: 63
+		Images: clat14.lun, clat14a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 989CA6
+				RightColor: 9397A1
+	Template@64:
+		Categories: Moon Dirt Dark Individual
+		Id: 64
+		Images: clat15.lun, clat15a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 989CA6
+				RightColor: 838793
+	Template@65:
+		Categories: Moon Dirt Dark Individual
+		Id: 65
+		Images: clat16.lun, clat16a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 90949E
+				RightColor: 9A9EA8
+	Template@76:
+		Categories: LAT Grass Rough
+		Id: 76
+		Images: sandy01.lun, sandy01a.lun, sandy01b.lun, sandy01c.lun, sandy01d.lun, sandy01e.lun, sandy01f.lun, sandy01g.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 9F974B
+				RightColor: 9C9147
+	Template@77:
+		Categories: GrassRough Individual
+		Id: 77
+		Images: dlat01.lun, dlat01a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: A59849
+				RightColor: A09147
+	Template@78:
+		Categories: GrassRough Individual
+		Id: 78
+		Images: dlat02.lun, dlat02a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 9F994B
+				RightColor: A59846
+	Template@79:
+		Categories: GrassRough Individual
+		Id: 79
+		Images: dlat03.lun, dlat03a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: B49F4A
+				RightColor: A29647
+	Template@80:
+		Categories: GrassRough Individual
+		Id: 80
+		Images: dlat04.lun, dlat04a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: BCA14B
+				RightColor: A9A64F
+	Template@81:
+		Categories: GrassRough Individual
+		Id: 81
+		Images: dlat05.lun, dlat05a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: A4994C
+				RightColor: 9E8F49
+	Template@82:
+		Categories: GrassRough Individual
+		Id: 82
+		Images: dlat06.lun, dlat06a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: AF9F49
+				RightColor: AA9C4C
+	Template@83:
+		Categories: GrassRough Individual
+		Id: 83
+		Images: dlat07.lun, dlat07a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 908D46
+				RightColor: AD9A49
+	Template@84:
+		Categories: GrassRough Individual
+		Id: 84
+		Images: dlat08.lun, dlat08a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: B19C4C
+				RightColor: A59B4D
+	Template@85:
+		Categories: GrassRough Individual
+		Id: 85
+		Images: dlat09.lun, dlat09a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: AC9E4F
+				RightColor: A2944C
+	Template@86:
+		Categories: GrassRough Individual
+		Id: 86
+		Images: dlat10.lun, dlat10a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: B9A954
+				RightColor: AE9E4D
+	Template@87:
+		Categories: GrassRough Individual
+		Id: 87
+		Images: dlat11.lun, dlat11a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: A8A14E
+				RightColor: ADA14E
+	Template@88:
+		Categories: GrassRough Individual
+		Id: 88
+		Images: dlat12.lun, dlat12a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: A79A4C
+				RightColor: 9FA04E
+	Template@89:
+		Categories: GrassRough Individual
+		Id: 89
+		Images: dlat13.lun, dlat13a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: A3A050
+				RightColor: B5974A
+	Template@90:
+		Categories: GrassRough Individual
+		Id: 90
+		Images: dlat14.lun, dlat14a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: ADA350
+				RightColor: A49947
+	Template@91:
+		Categories: GrassRough Individual
+		Id: 91
+		Images: dlat15.lun, dlat15a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 9DA148
+				RightColor: A69A49
+	Template@92:
+		Categories: GrassRough Individual
+		Id: 92
+		Images: dlat16.lun, dlat16a.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: A69B4C
+				RightColor: 9F994B
+	Template@93:
+		Categories: Pavement Individual
+		Id: 93
+		Images: plat01.lun, plat01a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: AEAA92
+				RightColor: ABA78E
+	Template@94:
+		Categories: Pavement Individual
+		Id: 94
+		Images: plat02.lun, plat02a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: BBB4A8
+				RightColor: B8B59D
+	Template@95:
+		Categories: Pavement Individual
+		Id: 95
+		Images: plat03.lun, plat03a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: B7AE9D
+				RightColor: B4AE90
+	Template@96:
+		Categories: Pavement Individual
+		Id: 96
+		Images: plat04.lun, plat04a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: B2AA9E
+				RightColor: 9FA45F
+	Template@97:
+		Categories: Pavement Individual
+		Id: 97
+		Images: plat05.lun, plat05a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: ACA58C
+				RightColor: B5AC9D
+	Template@98:
+		Categories: Pavement Individual
+		Id: 98
+		Images: plat06.lun, plat06a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: ABA58A
+				RightColor: B7B096
+	Template@99:
+		Categories: Pavement Individual
+		Id: 99
+		Images: plat07.lun, plat07a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: A2A179
+				RightColor: ABA986
+	Template@100:
+		Categories: Pavement Individual
+		Id: 100
+		Images: plat08.lun, plat08a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: B4ADA2
+				RightColor: B1AD90
+	Template@101:
+		Categories: Pavement Individual
+		Id: 101
+		Images: plat09.lun, plat09a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: B9B49E
+				RightColor: B8B1A4
+	Template@102:
+		Categories: Pavement Individual
+		Id: 102
+		Images: plat10.lun, plat10a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: ACAA7B
+				RightColor: ACAB80
+	Template@103:
+		Categories: Pavement Individual
+		Id: 103
+		Images: plat11.lun, plat11a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: B6B19D
+				RightColor: B2AC98
+	Template@104:
+		Categories: Pavement Individual
+		Id: 104
+		Images: plat12.lun, plat12a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: B9B19C
+				RightColor: B1AC81
+	Template@105:
+		Categories: Pavement Individual
+		Id: 105
+		Images: plat13.lun, plat13a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: 9AA355
+				RightColor: B1AC9E
+	Template@106:
+		Categories: Pavement Individual
+		Id: 106
+		Images: plat14.lun, plat14a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: AAAA7C
+				RightColor: B8B395
+	Template@107:
+		Categories: Pavement Individual
+		Id: 107
+		Images: plat15.lun, plat15a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: A9AA76
+				RightColor: ADA88A
+	Template@108:
+		Categories: Pavement Individual
+		Id: 108
+		Images: plat16.lun, plat16a.lun
+		Size: 1, 1
+		Tiles:
+			0: Road
+				LeftColor: ADAC82
+				RightColor: B2B08A
+	Template@109:
+		Categories: LAT Moon Dirt Light
+		Id: 109
+		Images: green01.lun, green01a.lun, green01b.lun, green01c.lun, green01d.lun, green01e.lun, green01f.lun, green01g.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 989BA5
+				RightColor: A0A3AC
+	Template@110:
+		Categories: Moon Dirt Light Individual
+		Id: 110
+		Images: glat01.lun, glat01a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9296A0
+				RightColor: A2A5AE
+	Template@111:
+		Categories: Moon Dirt Light Individual
+		Id: 111
+		Images: glat02.lun, glat02a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9599A3
+				RightColor: 9599A3
+	Template@112:
+		Categories: Moon Dirt Light Individual
+		Id: 112
+		Images: glat03.lun, glat03a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9A9DA7
+				RightColor: A4A7B0
+	Template@113:
+		Categories: Moon Dirt Light Individual
+		Id: 113
+		Images: glat04.lun, glat04a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 90949E
+				RightColor: A3A7B0
+	Template@114:
+		Categories: Moon Dirt Light Individual
+		Id: 114
+		Images: glat05.lun, glat05a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A6A9B1
+				RightColor: A3A6AF
+	Template@115:
+		Categories: Moon Dirt Light Individual
+		Id: 115
+		Images: glat06.lun, glat06a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A1A5AD
+				RightColor: 90949E
+	Template@116:
+		Categories: Moon Dirt Light Individual
+		Id: 116
+		Images: glat07.lun, glat07a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A6A9B1
+				RightColor: A8ABB3
+	Template@117:
+		Categories: Moon Dirt Light Individual
+		Id: 117
+		Images: glat08.lun, glat08a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A4A7B0
+				RightColor: 9B9FA8
+	Template@118:
+		Categories: Moon Dirt Light Individual
+		Id: 118
+		Images: glat09.lun, glat09a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9599A3
+				RightColor: A2A5AE
+	Template@119:
+		Categories: Moon Dirt Light Individual
+		Id: 119
+		Images: glat10.lun, glat10a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9599A3
+				RightColor: 9195A0
+	Template@120:
+		Categories: Moon Dirt Light Individual
+		Id: 120
+		Images: glat11.lun, glat11a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 989CA5
+				RightColor: 9FA3AC
+	Template@121:
+		Categories: Moon Dirt Light Individual
+		Id: 121
+		Images: glat12.lun, glat12a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9397A1
+				RightColor: 999DA6
+	Template@122:
+		Categories: Moon Dirt Light Individual
+		Id: 122
+		Images: glat13.lun, glat13a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A3A7AF
+				RightColor: A1A4AD
+	Template@123:
+		Categories: Moon Dirt Light Individual
+		Id: 123
+		Images: glat14.lun, glat14a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A5A8B1
+				RightColor: 9396A1
+	Template@124:
+		Categories: Moon Dirt Light Individual
+		Id: 124
+		Images: glat15.lun, glat15a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A4A8B0
+				RightColor: A6A9B2
+	Template@125:
+		Categories: Moon Dirt Light Individual
+		Id: 125
+		Images: glat16.lun, glat16a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A0A3AC
+				RightColor: 9599A3
+	Template@126:
+		Categories: Ramp edge fixup
+		Id: 126
+		Images: rmpfx01.lun, rmpfx01a.lun, rmpfx01b.lun, rmpfx01c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 8C909B
+				RightColor: 838893
+	Template@127:
+		Categories: Ramp edge fixup
+		Id: 127
+		Images: rmpfx02.lun, rmpfx02a.lun, rmpfx02b.lun, rmpfx02c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 848894
+				RightColor: 8A8E99
+	Template@128:
+		Categories: Ramp edge fixup
+		Id: 128
+		Images: rmpfx03.lun, rmpfx03a.lun, rmpfx03b.lun, rmpfx03c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 1
+				LeftColor: 8C909B
+				RightColor: 8A8F99
+	Template@129:
+		Categories: Ramp edge fixup
+		Id: 129
+		Images: rmpfx04.lun, rmpfx04a.lun, rmpfx04b.lun, rmpfx04c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 7C808C
+				RightColor: 878B96
+	Template@130:
+		Categories: Ramp edge fixup
+		Id: 130
+		Images: rmpfx05.lun, rmpfx05a.lun, rmpfx05b.lun, rmpfx05c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 858995
+				RightColor: 787D89
+	Template@131:
+		Categories: Ramp edge fixup
+		Id: 131
+		Images: rmpfx06.lun, rmpfx06a.lun, rmpfx06b.lun, rmpfx06c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 2
+				LeftColor: 868A95
+				RightColor: 878B96
+	Template@132:
+		Categories: Ramp edge fixup
+		Id: 132
+		Images: rmpfx07.lun, rmpfx07a.lun, rmpfx07b.lun, rmpfx07c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 3
+				LeftColor: A2A6AE
+				RightColor: A3A6AF
+	Template@133:
+		Categories: Ramp edge fixup
+		Id: 133
+		Images: rmpfx08.lun, rmpfx08a.lun, rmpfx08b.lun, rmpfx08c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 3
+				LeftColor: A1A5AE
+				RightColor: A2A6AE
+	Template@134:
+		Categories: Ramp edge fixup
+		Id: 134
+		Images: rmpfx09.lun, rmpfx09a.lun, rmpfx09b.lun, rmpfx09c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 3
+				LeftColor: A1A5AE
+				RightColor: A3A6AF
+	Template@135:
+		Categories: Ramp edge fixup
+		Id: 135
+		Images: rmpfx10.lun, rmpfx10a.lun, rmpfx10b.lun, rmpfx10c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 4
+				LeftColor: BCBEC4
+				RightColor: C5C7CC
+	Template@136:
+		Categories: Ramp edge fixup
+		Id: 136
+		Images: rmpfx11.lun, rmpfx11a.lun, rmpfx11b.lun, rmpfx11c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 4
+				LeftColor: C1C3C9
+				RightColor: C3C4CA
+	Template@137:
+		Categories: Ramp edge fixup
+		Id: 137
+		Images: rmpfx12.lun, rmpfx12a.lun, rmpfx12b.lun, rmpfx12c.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				RampType: 4
+				LeftColor: BCBFC5
+				RightColor: C2C4CA
+	Template@150:
+		Categories: LAT Pavement
+		Id: 150
+		Images: pvclr01.lun, pvclr01a.lun, pvclr01b.lun, pvclr01c.lun, pvclr01d.lun, pvclr01e.lun, pvclr01f.lun, pvclr01g.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: B7B09F
+				RightColor: B2AA9B
+	Template@166:
+		Categories: Sand (beach)
+		Id: 166
+		Images: green01.lun, green01a.lun, green01b.lun, green01c.lun, green01d.lun, green01e.lun, green01f.lun, green01g.lun
+		Size: 1, 1
+		Tiles:
+			0: Rough
+				LeftColor: 989BA5
+				RightColor: A0A3AC
+	Template@167:
+		Categories: Sand (beach) Transitions
+		Id: 167
+		Images: glat01.lun, glat01a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9296A0
+				RightColor: A2A5AE
+	Template@168:
+		Categories: Sand (beach) Transitions
+		Id: 168
+		Images: glat02.lun, glat02a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9599A3
+				RightColor: 9599A3
+	Template@169:
+		Categories: Sand (beach) Transitions
+		Id: 169
+		Images: glat03.lun, glat03a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9A9DA7
+				RightColor: A4A7B0
+	Template@170:
+		Categories: Sand (beach) Transitions
+		Id: 170
+		Images: glat04.lun, glat04a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 90949E
+				RightColor: A3A7B0
+	Template@171:
+		Categories: Sand (beach) Transitions
+		Id: 171
+		Images: glat05.lun, glat05a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A6A9B1
+				RightColor: A3A6AF
+	Template@172:
+		Categories: Sand (beach) Transitions
+		Id: 172
+		Images: glat06.lun, glat06a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A1A5AD
+				RightColor: 90949E
+	Template@173:
+		Categories: Sand (beach) Transitions
+		Id: 173
+		Images: glat07.lun, glat07a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A6A9B1
+				RightColor: A8ABB3
+	Template@174:
+		Categories: Sand (beach) Transitions
+		Id: 174
+		Images: glat08.lun, glat08a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A4A7B0
+				RightColor: 9B9FA8
+	Template@175:
+		Categories: Sand (beach) Transitions
+		Id: 175
+		Images: glat09.lun, glat09a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9599A3
+				RightColor: A2A5AE
+	Template@176:
+		Categories: Sand (beach) Transitions
+		Id: 176
+		Images: glat10.lun, glat10a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9599A3
+				RightColor: 9195A0
+	Template@177:
+		Categories: Sand (beach) Transitions
+		Id: 177
+		Images: glat11.lun, glat11a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 989CA5
+				RightColor: 9FA3AC
+	Template@178:
+		Categories: Sand (beach) Transitions
+		Id: 178
+		Images: glat12.lun, glat12a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: 9397A1
+				RightColor: 999DA6
+	Template@179:
+		Categories: Sand (beach) Transitions
+		Id: 179
+		Images: glat13.lun, glat13a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A3A7AF
+				RightColor: A1A4AD
+	Template@180:
+		Categories: Sand (beach) Transitions
+		Id: 180
+		Images: glat14.lun, glat14a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A5A8B1
+				RightColor: 9396A1
+	Template@181:
+		Categories: Sand (beach) Transitions
+		Id: 181
+		Images: glat15.lun, glat15a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A4A8B0
+				RightColor: A6A9B2
+	Template@182:
+		Categories: Sand (beach) Transitions
+		Id: 182
+		Images: glat16.lun, glat16a.lun
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				LeftColor: A0A3AC
+				RightColor: 9599A3
+	Template@183:
+		Categories: Craters
+		Id: 183
+		Images: crtr01.lun
+		Size: 2, 2
+		Tiles:
+			0: Clear
+				LeftColor: 8F929D
+				RightColor: A3A6AE
+			1: Clear
+				LeftColor: A9ABB3
+				RightColor: A5A8B0
+			2: Clear
+				LeftColor: A6A9B1
+				RightColor: 989BA5
+			3: Clear
+				LeftColor: A0A3AC
+				RightColor: 9EA1AA
+	Template@184:
+		Categories: Craters
+		Id: 184
+		Images: crtr02.lun
+		Size: 2, 2
+		Tiles:
+			0: Clear
+				LeftColor: 858994
+				RightColor: 848793
+			1: Clear
+				LeftColor: 636877
+				RightColor: A0A3AC
+			2: Clear
+				LeftColor: A2A4AD
+				RightColor: 7E828E
+			3: Clear
+				LeftColor: 9396A0
+				RightColor: 878A96
+	Template@185:
+		Categories: Craters
+		Id: 185
+		Images: crtr03.lun
+		Size: 3, 3
+		Tiles:
+			0: Clear
+				LeftColor: 747885
+				RightColor: 8F929D
+			1: Clear
+				LeftColor: A7AAB2
+				RightColor: A3A6AE
+			2: Clear
+				LeftColor: 8E919C
+				RightColor: B1B3BB
+			3: Clear
+				LeftColor: 999DA6
+				RightColor: 888C97
+			4: Clear
+				LeftColor: 9295A0
+				RightColor: 9FA1AB
+			5: Clear
+				LeftColor: 9295A0
+				RightColor: A5A8B0
+			6: Clear
+				LeftColor: 8E919C
+				RightColor: 7A7E8B
+			7: Clear
+				LeftColor: A5A8B0
+				RightColor: 7D818D
+			8: Clear
+				LeftColor: A5A8B0
+				RightColor: A4A6AF
+	Template@186:
+		Categories: Craters
+		Id: 186
+		Images: crtr04.lun
+		Size: 3, 3
+		Tiles:
+			0: Clear
+				LeftColor: 8E919C
+				RightColor: 9B9EA8
+			1: Clear
+				LeftColor: 9497A1
+				RightColor: 979AA4
+			2: Clear
+				LeftColor: 979AA4
+				RightColor: A8ABB3
+			3: Clear
+				LeftColor: 979AA4
+				RightColor: 858894
+			4: Clear
+				LeftColor: 838793
+				RightColor: 6B6F7D
+			5: Clear
+				LeftColor: 9699A3
+				RightColor: 9FA2AB
+			6: Clear
+				LeftColor: A1A4AD
+				RightColor: 797D8A
+			7: Clear
+				LeftColor: 9EA1AA
+				RightColor: 8D919C
+			8: Clear
+				LeftColor: A1A4AD
+				RightColor: A5A8B0
+	Template@187:
+		Categories: Craters
+		Id: 187
+		Images: crtr05.lun
+		Size: 4, 4
+		Tiles:
+			0: Clear
+				LeftColor: 989BA5
+				RightColor: 92959F
+			1: Clear
+				LeftColor: 555A6A
+				RightColor: 747885
+			2: Clear
+				LeftColor: 626776
+				RightColor: 848793
+			3: Clear
+				LeftColor: 979AA4
+				RightColor: A8AAB3
+			4: Clear
+				LeftColor: 757A87
+				RightColor: 525767
+			5: Clear
+				LeftColor: 565C6C
+				RightColor: 606574
+			6: Clear
+				LeftColor: 595E6D
+				RightColor: 787C89
+			7: Clear
+				LeftColor: 9C9FA9
+				RightColor: 999CA6
+			8: Clear
+				LeftColor: 818591
+				RightColor: 575C6C
+			9: Clear
+				LeftColor: 8A8E99
+				RightColor: 858994
+			10: Clear
+				LeftColor: 7D818D
+				RightColor: 606574
+			11: Clear
+				LeftColor: ACAEB6
+				RightColor: A5A7B0
+			12: Clear
+				LeftColor: A6A8B1
+				RightColor: 8D919B
+			13: Clear
+				LeftColor: 7C808D
+				RightColor: 969AA3
+			14: Clear
+				LeftColor: A3A6AF
+				RightColor: A7AAB2
+			15: Clear
+				LeftColor: 9FA2AB
+				RightColor: A3A6AF
+	Template@188:
+		Categories: Craters
+		Id: 188
+		Images: crtr06.lun
+		Size: 4, 4
+		Tiles:
+			0: Clear
+				LeftColor: 989BA5
+				RightColor: A5A7B0
+			1: Clear
+				LeftColor: 787D89
+				RightColor: A4A7AF
+			2: Clear
+				LeftColor: A3A5AE
+				RightColor: A7A9B1
+			3: Clear
+				LeftColor: A4A6AF
+				RightColor: A9ABB3
+			4: Clear
+				LeftColor: 686D7B
+				RightColor: 565B6B
+			5: Clear
+				LeftColor: 828692
+				RightColor: 868A95
+			6: Clear
+				LeftColor: 9295A0
+				RightColor: A6A8B1
+			7: Clear
+				LeftColor: BBBDC3
+				RightColor: A5A8B0
+			8: Clear
+				LeftColor: 9FA2AB
+				RightColor: 6A6F7D
+			9: Clear
+				LeftColor: 737784
+				RightColor: 8F939D
+			10: Clear
+				LeftColor: 9396A1
+				RightColor: 8F929D
+			11: Clear
+				LeftColor: BBBDC3
+				RightColor: B9BBC2
+			12: Clear
+				LeftColor: A6A9B1
+				RightColor: A6A9B1
+			13: Clear
+				LeftColor: A0A3AC
+				RightColor: 9B9EA7
+			14: Clear
+				LeftColor: A4A7AF
+				RightColor: B1B3BA
+			15: Clear
+				LeftColor: A3A6AF
+				RightColor: A2A5AD
+	Template@189:
+		Categories: Craters
+		Id: 189
+		Images: crtr07.lun
+		Size: 5, 5
+		Tiles:
+			0: Clear
+				LeftColor: A5A7B0
+				RightColor: A4A7B0
+			1: Clear
+				LeftColor: 7F838F
+				RightColor: A2A5AD
+			2: Clear
+				LeftColor: 989BA5
+				RightColor: A4A6AF
+			3: Clear
+				LeftColor: 9C9FA8
+				RightColor: 9EA1AA
+			4: Clear
+				LeftColor: A3A5AE
+				RightColor: A8ABB3
+			5: Clear
+				LeftColor: A2A5AE
+				RightColor: A9ABB3
+			6: Clear
+				LeftColor: 6D727F
+				RightColor: 6C717F
+			7: Clear
+				LeftColor: 6D717F
+				RightColor: 626776
+			8: Clear
+				LeftColor: 7C808C
+				RightColor: 848893
+			9: Clear
+				LeftColor: 9A9DA6
+				RightColor: A5A7B0
+			10: Clear
+				LeftColor: A0A3AC
+				RightColor: 9FA2AB
+			11: Clear
+				LeftColor: 9C9FA8
+				RightColor: 989BA5
+			12: Clear
+				LeftColor: 7A7E8B
+				RightColor: 7E828E
+			13: Clear
+				LeftColor: 8E919C
+				RightColor: 797D8A
+			14: Clear
+				LeftColor: 7E828E
+				RightColor: A3A6AE
+			15: Clear
+				LeftColor: 9EA1AA
+				RightColor: 777B88
+			16: Clear
+				LeftColor: 747986
+				RightColor: 898D98
+			17: Clear
+				LeftColor: 545969
+				RightColor: A1A4AC
+			18: Clear
+				LeftColor: 888C97
+				RightColor: 9497A1
+			19: Clear
+				LeftColor: A5A7B0
+				RightColor: A1A4AD
+			20: Clear
+				LeftColor: A8ABB3
+				RightColor: A7AAB2
+			21: Clear
+				LeftColor: A3A6AF
+				RightColor: 9FA1AA
+			22: Clear
+				LeftColor: 9B9EA7
+				RightColor: 8C909A
+			23: Clear
+				LeftColor: 9A9EA7
+				RightColor: 9DA0A9
+			24: Clear
+				LeftColor: A6A9B1
+				RightColor: A9ABB3
+	Template@190:
+		Categories: Craters
+		Id: 190
+		Images: crtr08.lun
+		Size: 5, 5
+		Tiles:
+			0: Clear
+				LeftColor: 878B96
+				RightColor: 848793
+			1: Clear
+				LeftColor: 7E828E
+				RightColor: 9EA1AA
+			2: Clear
+				LeftColor: 9EA1AA
+				RightColor: A5A8B0
+			3: Clear
+				LeftColor: 9C9FA8
+				RightColor: A4A7AF
+			4: Clear
+				LeftColor: A7AAB2
+				RightColor: A8AAB3
+			5: Clear
+				LeftColor: A6A9B1
+				RightColor: 9B9EA8
+			6: Clear
+				LeftColor: B6B8BF
+				RightColor: 999CA6
+			7: Clear
+				LeftColor: 9699A2
+				RightColor: 9EA1AA
+			8: Clear
+				LeftColor: 7A7E8B
+				RightColor: A0A2AB
+			9: Clear
+				LeftColor: A8ABB3
+				RightColor: A6A9B1
+			10: Clear
+				LeftColor: A6A9B1
+				RightColor: A3A5AE
+			11: Clear
+				LeftColor: 898C97
+				RightColor: 90949E
+			12: Clear
+				LeftColor: 9EA1AA
+				RightColor: 8F939D
+			13: Clear
+				LeftColor: 6E7380
+				RightColor: 676B7A
+			14: Clear
+				LeftColor: 9DA0A9
+				RightColor: A4A7AF
+			15: Clear
+				LeftColor: 9699A3
+				RightColor: 7F828E
+			16: Clear
+				LeftColor: 585E6D
+				RightColor: 636877
+			17: Clear
+				LeftColor: 888C97
+				RightColor: 8E919C
+			18: Clear
+				LeftColor: 575C6C
+				RightColor: 696E7C
+			19: Clear
+				LeftColor: 9396A0
+				RightColor: A5A7B0
+			20: Clear
+				LeftColor: A9ACB4
+				RightColor: 8E929C
+			21: Clear
+				LeftColor: 8F929C
+				RightColor: 7B7F8C
+			22: Clear
+				LeftColor: 91949E
+				RightColor: 666B7A
+			23: Clear
+				LeftColor: 8A8D98
+				RightColor: 9295A0
+			24: Clear
+				LeftColor: 979AA4
+				RightColor: 9699A3
+	Template@191:
+		Categories: LunarLander
+		Id: 191
+		Images: eagle01.lun
+		Size: 4, 4
+		Tiles:
+			0: Cliff
+				LeftColor: A8AAB1
+				RightColor: A7A9B0
+			1: Cliff
+				LeftColor: A9A29F
+				RightColor: A3A6AE
+			2: Cliff
+				LeftColor: 9A9DA7
+				RightColor: A6A9B1
+			3: Cliff
+				LeftColor: ABAEB6
+				RightColor: A9ABB3
+			4: Cliff
+				LeftColor: 9EA1AA
+				RightColor: 9E9EA3
+			5: Cliff
+				LeftColor: 84766C
+				RightColor: 928274
+			6: Cliff
+				LeftColor: 5B473D
+				RightColor: 676C7A
+			7: Cliff
+				LeftColor: 838792
+				RightColor: AAACB4
+			8: Cliff
+				LeftColor: A6A8B1
+				RightColor: 91949E
+			9: Cliff
+				LeftColor: 9A9DA6
+				RightColor: 90837C
+			10: Cliff
+				LeftColor: 7B6E69
+				RightColor: 464752
+			11: Cliff
+				LeftColor: AFB1B7
+				RightColor: ADABAE
+			12: Cliff
+				LeftColor: A6A9B1
+				RightColor: A9ABB4
+			13: Cliff
+				LeftColor: A1A4AD
+				RightColor: 9C9FA9
+			14: Cliff
+				LeftColor: ABAEB6
+				RightColor: A7A5A7
+			15: Cliff
+				LeftColor: A4A7AF
+				RightColor: ABADB5
+	Template@192:
+		Categories: Lunar Crevas
+		Id: 192
+		Images: crevas01.lun
+		Size: 3, 2
+		Tiles:
+			0: Cliff
+				LeftColor: 7D818D
+				RightColor: 999CA5
+			1: Cliff
+				LeftColor: 6A6F7C
+				RightColor: 8A8E99
+			2: Cliff
+				LeftColor: 5A5F6F
+				RightColor: 9296A0
+			3: Cliff
+				LeftColor: A3A5AE
+				RightColor: 737784
+			4: Cliff
+				LeftColor: 4D5364
+				RightColor: 242B40
+			5: Cliff
+				LeftColor: 8A8E99
+				RightColor: 989BA5
+	Template@193:
+		Categories: Lunar Crevas
+		Id: 193
+		Images: crevas02.lun
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				LeftColor: 7A7E8A
+				RightColor: 999CA5
+			1: Cliff
+				LeftColor: 797D8A
+				RightColor: 9396A0
+			2: Cliff
+				LeftColor: 7C808C
+				RightColor: 666B79
+			3: Cliff
+				LeftColor: 252C41
+				RightColor: 717583
+			4: Cliff
+				LeftColor: 9DA0A9
+				RightColor: 6C717F
+			5: Cliff
+				LeftColor: 6D717F
+				RightColor: 9699A3
+	Template@194:
+		Categories: Lunar Crevas
+		Id: 194
+		Images: crevas03.lun
+		Size: 2, 4
+		Tiles:
+			0: Cliff
+				LeftColor: 90939E
+				RightColor: 9EA1AA
+			1: Cliff
+				LeftColor: 8D909B
+				RightColor: 979AA4
+			2: Cliff
+				LeftColor: 878A96
+				RightColor: 6B6F7D
+			3: Cliff
+				LeftColor: 4F5565
+				RightColor: 737785
+			4: Cliff
+				LeftColor: A3A5AE
+				RightColor: 818591
+			5: Cliff
+				LeftColor: 464B5D
+				RightColor: 777B88
+			6: Cliff
+				LeftColor: A1A4AD
+				RightColor: 7F828F
+			7: Cliff
+				LeftColor: 838692
+				RightColor: 656A78
+	Template@195:
+		Categories: Lunar Crevas
+		Id: 195
+		Images: crevas04.lun
+		Size: 4, 2
+		Tiles:
+			0: Cliff
+				LeftColor: 767A87
+				RightColor: 7E828F
+			1: Cliff
+				LeftColor: 6B707E
+				RightColor: 8A8D98
+			2: Cliff
+				LeftColor: 6C707E
+				RightColor: 7C808C
+			3: Cliff
+				LeftColor: 7C808D
+				RightColor: A0A2AB
+			4: Cliff
+				LeftColor: A2A4AD
+				RightColor: 7D808D
+			5: Cliff
+				LeftColor: 828692
+				RightColor: 626675
+			6: Cliff
+				LeftColor: 8A8D99
+				RightColor: 616675
+			7: Cliff
+				LeftColor: 9EA1AA
+				RightColor: 777B88
+	Template@196:
+		Categories: Lunar Crevas
+		Id: 196
+		Images: crevas05.lun
+		Size: 5, 2
+		Tiles:
+			0: Cliff
+				LeftColor: 8A8E99
+				RightColor: A1A3AC
+			1: Cliff
+				LeftColor: 696E7C
+				RightColor: A8ABB3
+			2: Cliff
+				LeftColor: 7D818D
+				RightColor: 8F939D
+			3: Cliff
+				LeftColor: 636877
+				RightColor: A1A4AD
+			4: Cliff
+				LeftColor: 7B7F8B
+				RightColor: 9B9DA7
+			5: Cliff
+				LeftColor: 91959F
+				RightColor: 636877
+			6: Cliff
+				LeftColor: 91949E
+				RightColor: 4D5364
+			7: Cliff
+				LeftColor: 696D7C
+				RightColor: 3B4154
+			8: Cliff
+				LeftColor: 8E929C
+				RightColor: 404658
+			9: Cliff
+				LeftColor: 757986
+				RightColor: A4A7AF
+	Template@197:
+		Categories: Lunar Crevas
+		Id: 197
+		Images: crevas06.lun
+		Size: 2, 5
+		Tiles:
+			0: Cliff
+				LeftColor: 838692
+				RightColor: 717583
+			1: Cliff
+				LeftColor: 6F7381
+				RightColor: 9A9DA7
+			2: Cliff
+				LeftColor: 666B79
+				RightColor: 626776
+			3: Cliff
+				LeftColor: 42485A
+				RightColor: 636877
+			4: Cliff
+				LeftColor: 888C97
+				RightColor: 737785
+			5: Cliff
+				LeftColor: 343B4E
+				RightColor: 888C97
+			6: Cliff
+				LeftColor: 8E919C
+				RightColor: 7A7E8B
+			7: Cliff
+				LeftColor: 22283E
+				RightColor: 4A5061
+			8: Cliff
+				LeftColor: 8C909B
+				RightColor: 454B5D
+			9: Cliff
+				LeftColor: 868A95
+				RightColor: 5E6372
