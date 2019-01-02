@@ -3,7 +3,11 @@ RedEye2:
 	Projectile: Missile
 		TrailImage: smokey2
 		LockOnProbability: 100
-		Speed: 448
+		Speed: 640
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 512
+		MinimumLaunchSpeed: 512
 	ReloadDelay: 40
 	Range: 12c0
 	Burst: 2
@@ -33,10 +37,13 @@ MammothTusk:
 	Burst: 2
 	Projectile: Missile
 		ContrailLength: 8
-		HorizontalRateOfTurn: 10
-		Speed: 384
-		RangeLimit: 9c614
+		Speed: 512
+		RangeLimit: 10c204
 		TrailImage: smokey2
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
@@ -75,7 +82,7 @@ APTusk:
 		LaunchAngle: 62
 		ContrailWidth: 24
 		ContrailLength: 10
-		Speed: 384
+		Speed: 512
 	Warhead@1Dam: SpreadDamage
 		Spread: 683
 		Damage: 35
@@ -116,11 +123,16 @@ Maverick:
 	Report: vintatta.wav
 	ValidTargets: Ground, Water
 	Projectile: Missile
-		Speed: 384
+		Speed: 512
 		Arm: 2
-		HorizontalRateOfTurn: 8
-		RangeLimit: 8c204
+		RangeLimit: 20c204
 		ContrailColor: D8D8FF
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
+		HorizontalRateOfTurn: 40
+		VerticalRateOfTurn: 40
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c410
 		Falloff: 100, 0
@@ -164,10 +176,14 @@ Medusa:
 	Burst: 3
 	BurstDelays: 13
 	Projectile: Missile
-		Speed: 448
+		Speed: 640
 		ContrailLength: 35
 		LockOnProbability: 85
-		RangeLimit: 14c409
+		RangeLimit: 15c409
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 512
+		MinimumLaunchSpeed: 512
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 
@@ -179,11 +195,14 @@ HoverMissile:
 	Report: vifvatta.wav
 	ValidTargets: Ground, Air
 	Projectile: Missile
-		Speed: 384
+		Speed: 512
 		Arm: 2
-		HorizontalRateOfTurn: 8
-		RangeLimit: 7c204
+		RangeLimit: 10c204
 		ContrailColor: D8D8FF
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
@@ -229,11 +248,14 @@ MissileLauncher:
 	Report: iggiat2a.wav, iggiat2b.wav
 	ValidTargets: Ground, Air
 	Projectile: Missile
-		Speed: 384
+		Speed: 512
 		Arm: 2
-		HorizontalRateOfTurn: 8
 		RangeLimit: 10c204
 		ContrailColor: D8D8FF
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
@@ -340,7 +362,7 @@ HornetBomb:
 	Report: vospatta.wav
 	ValidTargets: Ground, Water
 	Projectile: Missile
-		Speed: 256
+		Speed: 384
 		Arm: 2
 		HorizontalRateOfTurn: 8
 		RangeLimit: 7c204
