@@ -76,7 +76,7 @@ MP5:
 	ReloadDelay: 10
 	Range: 6c0
 	Report: iseaatta.wav, iseaattb.wav
-	ValidTargets: Infantry, SeaAnimal
+	InvalidTargets: Structure, Vehicle, Wall, Ship
 	Warhead@1Dam: SpreadDamage
 		Damage: 125
 		Versus:
@@ -101,11 +101,6 @@ MP5E:
 DoublePistols:
 	Inherits: MP5
 	Report: itanatta.wav, itanattb.wav
-	Warhead@1Dam: SpreadDamage
-		Versus:
-			Light: 0
-			Medium: 0
-			Heavy: 0
 
 DoublePistolsE:
 	Inherits: DoublePistols
@@ -117,7 +112,7 @@ CRMP5:
 
 awp:
 	Inherits: DoublePistols
-	ValidTargets: Infantry
+	InvalidTargets: Structure, Vehicle, Wall, Ship, SeaAnimal
 	ReloadDelay: 150
 	Range: 14c0
 	Report: isniatta.wav
