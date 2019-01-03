@@ -692,10 +692,13 @@ nmine:
 		Name: Naval Mine
 	Targetable:
 		TargetTypes: Ground, Water, Underwater, Defense
-	Mobile:
-		Locomotor: naval
+	-Mobile:
+	Building:
+		Footprint: x
+		Dimensions: 1,1
+		TerrainTypes: Water
 	Cloak:
-		CloakTypes: Cloak, NavalMine
+		CloakTypes: Cloak, Underwater
 	Explodes:
 		Weapon: MineExplosion
 	RenderSprites:
