@@ -444,6 +444,11 @@
 		Palette: effect
 		RequiresCondition: controlled
 
+^MindControllableDisabledWithIC:
+	Inherits: ^MindControllable
+	Targetable@MC:
+		RequiresCondition: !controlled && !invulnerability
+
 ^SquidGrabbable:
 	WithFacingSpriteBody:
 		Sequence: squid
