@@ -619,7 +619,7 @@
 		AreaTypes: building
 	Capturable:
 		Types: building
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !invulnerability
 	SoundOnDamageTransition:
 		DamagedSounds: gdamag1a.wav, gdamag1b.wav, gdamag1c.wav, gdamag1d.wav, gdamag1e.wav
 		DestroyedSounds: bgendiea.wav, bgendieb.wav, bgendiec.wav, bgendied.wav, bgendiee.wav, bgendief.wav
@@ -731,6 +731,8 @@
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	Capturable:
+		RequiresCondition: !invulnerability
 	CaptureNotification:
 		Notification: TechBuildingCaptured
 		LoseNotification: TechBuildingLost
