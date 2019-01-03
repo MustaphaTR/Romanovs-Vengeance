@@ -446,6 +446,8 @@
 
 ^MindControllableDisabledWithIC:
 	Inherits: ^MindControllable
+	MindControllable:
+		PauseOnCondition: invulnerability
 	Targetable@MC:
 		RequiresCondition: !controlled && !invulnerability
 
