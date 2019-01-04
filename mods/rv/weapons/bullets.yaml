@@ -19,8 +19,8 @@ GrandCannonWeapon:
 			Medium: 100
 			Heavy: 100
 			Wood: 50
-			Steel: 100
-			Concrete: 50
+			Steel: 50
+			Concrete: 45
 			Drone: 100
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
@@ -90,9 +90,9 @@ MirageGun:
 			Light: 100
 			Medium: 100
 			Heavy: 100
-			Wood: 30
-			Steel: 20
-			Concrete: 20
+			Wood: 65
+			Steel: 45
+			Concrete: 60
 			Drone: 100
 			Rocket: 100
 		DamageTypes: FlameDeath
@@ -119,8 +119,8 @@ MirageGunE:
 			Medium: 20
 			Heavy: 20
 			Wood: 20
-			Steel: 15
-			Concrete: 10
+			Steel: 10
+			Concrete: 15
 			Drone: 200
 
 20mmrapidE:
@@ -138,8 +138,8 @@ MirageGunE:
 			Medium: 40
 			Heavy: 40
 			Wood: 50
-			Steel: 40
-			Concrete: 25
+			Steel: 30
+			Concrete: 45
 			Drone: 80
 			Rocket: 100
 		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath
@@ -198,7 +198,7 @@ robogunE:
 120mm:
 	Inherits: ^LargeBullet
 	ReloadDelay: 65
-	Range: 5c768
+	Range: 5c0
 	Report: vrhiatta.wav, vrhiattb.wav, vrhiattc.wav, vrhiattd.wav
 	Projectile: BulletAS
 		Speed: 682
@@ -231,9 +231,6 @@ robogunE:
 			Flak: 100
 			Plate: 100
 			Light: 100
-			Wood: 50
-			Steel: 100
-			Concrete: 50
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
@@ -245,14 +242,23 @@ robogunE:
 	Inherits: 120mm
 	Report: vapoat1a.wav
 	Burst: 2
+	Range: 5c768
 	Projectile: BulletAS
 		Speed: 682
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 		Versus:
-			Wood: 100
-			Steel: 100
-			Concrete: 70
+			None: 25
+			Flak: 25
+			Plate: 25
+			Light: 75
+			Medium: 100
+			Heavy: 100
+			Wood: 65
+			Steel: 45
+			Concrete: 60
+			Drone: 60
+			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: apoc_explosion
 		ImpactSounds: gexpapoa.wav
@@ -268,6 +274,7 @@ robogunE:
 			None: 100
 			Flak: 100
 			Plate: 100
+			Light: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 	Warhead@3EffWater: CreateEffect
@@ -303,6 +310,7 @@ robogunE:
 			None: 100
 			Flak: 100
 			Plate: 100
+			Light: 100
 	Warhead@3EffWater: CreateEffect
 		Explosions: large_watersplash
 		ImpactSounds: gexpwala.wav
@@ -328,8 +336,8 @@ robogunE:
 			Medium: 60
 			Heavy: 60
 			Wood: 100
-			Steel: 80
-			Concrete: 60
+			Steel: 45
+			Concrete: 90
 			Drone: 100
 			Rocket: 100
 
@@ -358,8 +366,8 @@ robogunE:
 			Medium: 100
 			Heavy: 100
 			Wood: 100
-			Steel: 100
-			Concrete: 60
+			Steel: 60
+			Concrete: 90
 			Drone: 60
 			Rocket: 100
 
@@ -420,7 +428,7 @@ CrusierStrike:
 			Medium: 50
 			Heavy: 50
 			Wood: 100
-			Steel: 100
-			Concrete: 60
+			Steel: 60
+			Concrete: 90
 			Drone: 100
 			Rocket: 100
