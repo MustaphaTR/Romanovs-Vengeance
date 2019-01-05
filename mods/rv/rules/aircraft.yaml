@@ -582,7 +582,9 @@ schp:
 		TickRate: 1
 		ShowShadow: false
 		RequiresCondition: airborne || !deployed
-	WithShadow:
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
 		RequiresCondition: airborne || !deployed
 	WithVoxelBody:
 		Sequence: deployed
