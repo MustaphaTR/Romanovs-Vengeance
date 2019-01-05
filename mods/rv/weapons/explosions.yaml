@@ -88,6 +88,14 @@ HornetExplode:
 	Warhead@2Dam: SpreadDamage
 		Damage: 2
 
+InfantryExplode:
+	Inherits: UnitExplode
+	Warhead@1Eff: CreateEffect
+		Explosions: medium_bang
+		ImpactSounds: expnew13.wav
+		ValidTargets: Ground, Water, Air
+	-Warhead@DebrisSpawn:
+
 IvanBomber:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c384
