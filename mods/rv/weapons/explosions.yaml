@@ -41,6 +41,10 @@ UnitExplode:
 		Explosions: large_twlt
 		ImpactSounds: expnew09.wav
 		ValidTargets: Ground, Water, Air
+	Warhead@DebrisSpawn: FireShrapnel
+		Weapon: SmallDebris
+		Amount: 1,4
+		AffectsParent: true
 
 UnitExplodeSmall:
 	Inherits: UnitExplode
@@ -58,6 +62,8 @@ BuildingExplode:
 	Inherits: UnitExplodeSmall
 	Warhead@1Eff: CreateEffect
 		Explosions: large_twlt, large_bang, large_brnl, verylarge_clsn, large_tumu
+	Warhead@DebrisSpawn: FireShrapnel
+		Weapon: LargeDebris
 
 KirovExplode:
 	Inherits: UnitExplode
