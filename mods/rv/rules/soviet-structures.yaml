@@ -366,6 +366,8 @@ naradr:
 		MissileWeapon: RadiationMissile
 		MissilePalette: player
 		IsPlayerPalette: true
+		CameraRange: 8c0
+		CameraRemoveDelay: 75
 		FlightVelocity: 0c512
 		FlightDelay: 80
 		ActivationSequence:
@@ -408,6 +410,8 @@ naradr:
 		SquadSize: 3
 		SquadOffset: -2048, 2048, 0
 		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable || emp
@@ -425,6 +429,8 @@ mine:
 		Bounds: 24,24
 	WithSpriteBody:
 	HiddenUnderFog:
+	RevealsShroud:
+		Range: 1c0
 	Mine:
 		CrushClasses: mine
 		DetonateClasses: mine
