@@ -126,6 +126,8 @@ Player:
 			nukepower:
 				OrderName: NukePowerInfoOrder
 				MinimumAttractiveness: 3000
+				Types: Ground
+				IgnoreVisibility: true
 				Consideration@1:
 					Against: Enemy
 					Types: Structure
@@ -141,11 +143,11 @@ Player:
 			WeatherStorm:
 				OrderName: WeatherStormInfoOrder
 				MinimumAttractiveness: 250
-				CoarseScanRadius: 8
-				FineScanRadius: 8
+				Types: Ground
+				IgnoreVisibility: true
 				Consideration@1:
 					Against: Enemy
-					Types: Building
+					Types: Structure
 					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 7c0
