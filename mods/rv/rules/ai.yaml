@@ -146,9 +146,9 @@ Player:
 				Consideration@1:
 					Against: Enemy
 					Types: Building
-					Attractiveness: 100
-					TargetMetric: Health
-					CheckRadius: 5c0
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 7c0
 				Consideration@2:
 					Against: Enemy
 					Types: Ground, Water
@@ -225,6 +225,8 @@ Player:
 	SquadManagerBotModule@test:
 		RequiresCondition: enable-test-ai
 		SquadSize: 5
+		RushAttackScanRadius: 30
+		ProtectUnitScanRadius: 25
 		ExcludeFromSquadsTypes: cmin, harv, bpln, dog, amcv, smcv
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred
 		ConstructionYardTypes: gacnst, nacnst
