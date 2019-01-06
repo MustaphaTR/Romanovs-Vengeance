@@ -1,55 +1,7 @@
 Player:
-	HackyAI@testai:
+	ModularBot@testai:
 		Name: Test AI
 		Type: test
-		UnitQueues: Infantry.Allies, Infantry.Soviets, Vehicle.Allies, Vehicle.Soviets, Aircraft.Allies, Aircraft.Soviets, Ship.Allies, Ship.Soviets
-		BuildingCommonNames:
-			ConstructionYard: gacnst, nacnst
-			Refinery: garefn, narefn
-			Power: gapowr, napowr, nanrct
-			Barracks: gapile, nahand
-			VehiclesFactory: gaweap, naweap
-			Production: gapile, nahand, gaweap, naweap, gaairc #, nadept
-		UnitsCommonNames:
-			Mcv: amcv, smcv
-			ExcludeFromSquads: cmin, harv, bpln
-		UnitsToBuild:
-			e1: 90%
-			e2: 90%
-			dog: 1%
-			flakt: 10%
-			ggi: 10%
-			shk: 10%
-			ivan: 3%
-			ghost: 2%
-			jumpjet: 2%
-			snipe: 2%
-			pyro: 2%
-			deso: 1%
-			tany: 1%
-			boris: 1%
-			yuri: 0.5%
-			cmin: 10%
-			harv: 10%
-			htnk: 50%
-			htk: 20%
-			mtnk: 50%
-			fv: 20%
-			dron: 1%
-			v3: 5%
-			sref: 10%
-			mgtk: 10%
-			apoc: 10%
-			tnkd: 15%
-			ttnk: 15%
-		UnitLimits:
-			dog: 4
-			cmin: 8
-			harv: 8
-			dron: 2
-		SquadSize: 5
-		RushAttackScanRadius: 30
-		ProtectUnitScanRadius: 25
 	GrantConditionOnBotOwner@test:
 		Condition: enable-test-ai
 		Bots: test
@@ -174,8 +126,6 @@ Player:
 			nukepower:
 				OrderName: NukePowerInfoOrder
 				MinimumAttractiveness: 3000
-				Types: Ground
-				IgnoreVisibility: true
 				Consideration@1:
 					Against: Enemy
 					Types: Structure
@@ -191,14 +141,14 @@ Player:
 			WeatherStorm:
 				OrderName: WeatherStormInfoOrder
 				MinimumAttractiveness: 250
-				Types: Ground
-				IgnoreVisibility: true
+				CoarseScanRadius: 8
+				FineScanRadius: 8
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
-					Attractiveness: 1
-					TargetMetric: Value
-					CheckRadius: 7c0
+					Types: Building
+					Attractiveness: 100
+					TargetMetric: Health
+					CheckRadius: 5c0
 				Consideration@2:
 					Against: Enemy
 					Types: Ground, Water
@@ -272,3 +222,51 @@ Player:
 		RequiresCondition: enable-test-ai
 	BuildingRepairBotModule@test:
 		RequiresCondition: enable-test-ai
+	SquadManagerBotModule@test:
+		RequiresCondition: enable-test-ai
+		SquadSize: 5
+		ExcludeFromSquadsTypes: cmin, harv, bpln, dog, amcv, smcv
+		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred
+		ConstructionYardTypes: gacnst, nacnst
+	McvManagerBotModule@test:
+		RequiresCondition: enable-test-ai
+		McvTypes: amcv, smcv
+		ConstructionYardTypes: gacnst, nacnst
+		McvFactoryTypes: gaweap, naweap
+	UnitBuilderBotModule@test:
+		RequiresCondition: enable-test-ai
+		UnitQueues: Infantry.Allies, Infantry.Soviets, Vehicle.Allies, Vehicle.Soviets, Aircraft.Allies, Aircraft.Soviets, Ship.Allies, Ship.Soviets
+		UnitsToBuild:
+			e1: 180
+			e2: 180
+			dog: 2
+			flakt: 20
+			ggi: 20
+			shk: 20
+			ivan: 6
+			ghost: 4
+			jumpjet: 4
+			snipe: 4
+			pyro: 4
+			deso: 2
+			tany: 2
+			boris: 2
+			yuri: 1
+			cmin: 20
+			harv: 20
+			htnk: 100
+			htk: 40
+			mtnk: 100
+			fv: 40
+			dron: 2
+			v3: 10
+			sref: 20
+			mgtk: 20
+			apoc: 20
+			tnkd: 30
+			ttnk: 30
+		UnitLimits:
+			dog: 4
+			cmin: 8
+			harv: 8
+			dron: 2
