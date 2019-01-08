@@ -648,17 +648,18 @@ nayard:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Ship.Soviets
-	DetonateWeaponPower@navalmines:
+	AirstrikePower@navalmines:
 		Cost: 250
 		OrderName: SovietNavalMines
 		PauseOnCondition: chronodisable
 		Icon: navalmines
 		ChargeInterval: 1500
 		Description: Naval Mines
-		LongDesc: Places up to 5 naval mines anywhere on the map.
+		LongDesc: A Cargo plane drops 5 naval mines\n anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
-		Weapon: NavalMineSpawner
-		ActivationSequence:
+		UnitType: pdplane.naval_mines
+		SquadSize: 1
+		QuantizedFacings: 8
 	SupportPowerChargeBar:
 	RallyPoint:
 		Offset: 5,1

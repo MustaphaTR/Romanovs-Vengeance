@@ -419,11 +419,6 @@ BunkerSpawner:
 		Buildings: nabnkr
 		Sounds: uplace.wav
 
-NavalMineSpawner:
-	Warhead@1Spa: SpawnBuilding
-		Buildings: nmine, nmine, nmine, nmine, nmine
-		Sounds: gexpwasa.wav
-
 ParaBomb:
 	ReloadDelay: 11
 	Range: 4c0
@@ -464,6 +459,25 @@ ParaBomb:
 		Explosions: large_watersplash
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
+
+NavalMines:
+	ReloadDelay: 6
+	Range: 3c0
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -50
+		Acceleration: 0, 0, -10
+		Image: nmine
+		Sequences: projectile
+		Palette: player
+	Warhead@1Spa: SpawnBuilding
+		Buildings: nmine
+		Range: 1
+		ForceGround: true
+		ValidTargets: Ground, Water, Air
+	Warhead@2EffWater: CreateEffect
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Ground, Water, Air
 
 ClusterMines:
 	ReloadDelay: 10

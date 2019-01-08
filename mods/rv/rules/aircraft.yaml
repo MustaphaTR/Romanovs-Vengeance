@@ -341,6 +341,18 @@ pdplane.emp:
 	RenderVoxels:
 		Image: pdplane
 
+pdplane.naval_mines:
+	Inherits: pdplane
+	Armament:
+		Weapon: NavalMines
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 5
+		AmmoCondition: ammo
+	AttackBomber:
+	RenderVoxels:
+		Image: pdplane
+
 pdplane.cluster_mines:
 	Inherits: pdplane
 	Armament:
