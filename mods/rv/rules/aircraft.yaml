@@ -48,6 +48,10 @@ shad:
 	RenderSprites:
 	WithVoxelHelicopterBody:
 		TickRate: 1
+		ShowShadow: false
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
 	Hovers@CRUISING:
 		RequiresCondition: cruising
 		OffsetModifier: -45
@@ -75,8 +79,17 @@ shadhusk:
 	RevealOnDeath:
 		Radius: 3c512
 		Duration: 50
+	RenderSprites:
+		Image: shad
 	RenderVoxels:
 		Image: shad
+	-WithVoxelBody:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+		ShowShadow: false
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 
@@ -621,8 +634,17 @@ schphusk:
 	RevealOnDeath:
 		Radius: 3c512
 		Duration: 50
+	RenderSprites:
+		Image: schp
 	RenderVoxels:
 		Image: schp
+	-WithVoxelBody:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+		ShowShadow: false
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 
