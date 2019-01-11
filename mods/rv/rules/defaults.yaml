@@ -458,6 +458,7 @@
 		RequiresCondition: squid
 	Infectable:
 		RemoveInfectorDamageTypes: RemovesSquid
+		BeingInfectedCondition: beinginfected
 		InfectedByConditions:
 			sqd: squid
 	Targetable@SQUID:
@@ -1154,7 +1155,7 @@
 		Voice: Move
 		TurnSpeed: 5
 		Locomotor: wheeled
-		RequiresCondition: !chronodisable && !emp
+		RequiresCondition: !chronodisable && !emp && !beingterrordroned
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -1170,6 +1171,7 @@
 	Infectable:
 		KillInfectorDamageTypes: KillsDrone
 		KillInfectorActorTypes: gadept, nadept, caoutp
+		BeingInfectedCondition: beingterrordroned
 		InfectedCondition: terrordroned
 	ExplodeWeapon@dronesparks:
 		RequiresCondition: terrordroned
@@ -1412,7 +1414,7 @@
 		Voice: Move
 		Locomotor: naval
 		TurnSpeed: 5
-		RequiresCondition: !chronodisable && !emp && !squid
+		RequiresCondition: !chronodisable && !emp && !squid && !beinginfected
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha

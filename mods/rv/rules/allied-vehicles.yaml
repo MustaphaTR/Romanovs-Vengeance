@@ -273,7 +273,7 @@ fv:
 	Mobile:
 		Speed: 150
 		TurnSpeed: 5
-		RequiresCondition: !notmobile && !chronodisable && !emp
+		RequiresCondition: !notmobile && !chronodisable && !emp && !beingterrordroned
 	Health:
 		HP: 200
 	Armor:
@@ -637,7 +637,7 @@ bfrt:
 		TurnSpeed: 5
 		Speed: 60
 		Locomotor: omnicrusher
-		RequiresCondition: !notmobile && !chronodisable && !emp
+		RequiresCondition: !notmobile && !chronodisable && !emp && !beingterrordroned
 	-Crushable:
 	RevealsShroud:
 		Range: 6c0
@@ -717,7 +717,7 @@ robo:
 		Speed: 150
 		TurnSpeed: 5
 		Locomotor: amphibious
-		RequiresCondition: !chronodisable && !emp && powered
+		RequiresCondition: !chronodisable && !emp && !beingterrordroned && powered
 	Health:
 		HP: 180
 	Armor:

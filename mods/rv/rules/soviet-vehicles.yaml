@@ -192,7 +192,7 @@ htk:
 		Speed: 120
 		TurnSpeed: 5
 		Locomotor: tracked
-		RequiresCondition: !notmobile && !chronodisable && !emp
+		RequiresCondition: !notmobile && !chronodisable && !emp && !beingterrordroned
 	Health:
 		HP: 180
 	Armor:
@@ -551,7 +551,7 @@ deva:
 		Speed: 60
 		TurnSpeed: 4
 		Locomotor: omnicrusher
-		RequiresCondition: !chronodisable && !emp && !overload
+		RequiresCondition: !chronodisable && !emp && !beingterrordroned && !overload
 	-Crushable:
 	SelfHealing:
 		PercentageStep: 1
