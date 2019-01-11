@@ -749,11 +749,16 @@ hind:
 		RepairBuildings: gadept, nadept, caoutp
 	-DeathSounds:
 	RenderSprites:
+		Scale: 1.15
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 13.5
 	WithVoxelHelicopterBody:
 		TickRate: 1
+		ShowShadow: false
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
 	Hovers@CRUISING:
 		RequiresCondition: cruising
 		OffsetModifier: -45
@@ -779,9 +784,19 @@ hindhusk:
 	RevealOnDeath:
 		Radius: 3c0
 		Duration: 50
+	RenderSprites:
+		Image: hind
+		Scale: 1.15
 	RenderVoxels:
 		Image: hind
 		NormalsPalette: ts-normals
 		Scale: 13.5
+	-WithVoxelBody:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+		ShowShadow: false
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
