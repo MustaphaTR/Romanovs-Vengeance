@@ -643,8 +643,12 @@ bfrt:
 		Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
-	Armament:
-		Weapon: 20mmRapid
+	Armament@primary:
+		Weapon: 20mmrapid
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 20mmrapidE
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp

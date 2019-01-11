@@ -1,6 +1,9 @@
 M1Carbine:
 	Inherits: ^MG
 	ReloadDelay: 25
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Damage: 15
 	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
 
 M1CarbineE:
@@ -12,24 +15,29 @@ M1CarbineE:
 
 UCM1Carbine:
 	Inherits: M1Carbine
-	ReloadDelay: 19
+	ReloadDelay: 25
 	Range: 5c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 18
+		Damage: 20
 
 UCM1CarbineE:
 	Inherits: UCM1Carbine
-	ReloadDelay: 15
+	ReloadDelay: 20
 	Warhead@1Dam: SpreadDamage
-		Damage: 24
+		Damage: 25
 
 M60:
 	Inherits: ^MG
+	ReloadDelay: 20
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Damage: 15
 
 M60E:
 	Inherits: M60
+	ReloadDelay: 15
 	Warhead@1Dam: SpreadDamage
-		Damage: 25
+		Damage: 20
 
 CRM60:
 	Inherits: M60
@@ -49,27 +57,25 @@ para:
 		Versus:
 			Flak: 100
 			Light: 60
-			Medium: 40
-			Heavy: 40
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 
 paraE:
 	Inherits: para
 	Range: 6c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 25
+		Damage: 30
 
 UCpara:
 	Inherits: para
-	ReloadDelay: 11
+	ReloadDelay: 15
 	Range: 5c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 18
+		Damage: 30
 
 UCparaE:
 	Inherits: UCpara
 	Warhead@1Dam: SpreadDamage
-		Damage: 30
+		Damage: 35
 
 MP5:
 	Inherits: ^MG
@@ -97,6 +103,25 @@ MP5:
 
 MP5E:
 	Inherits: MP5
+	Range: 7c0
+
+20mmrapid:
+	Inherits: ^MG
+	ReloadDelay: 20
+	Range: 5c512
+	Report: vwaratta.wav, vwarattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+		Versus:
+			Medium: 20
+			Heavy: 20
+			Drone: 200
+
+20mmrapidE:
+	Inherits: 20mmrapid
+	ReloadDelay: 15
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
 
 DoublePistols:
 	Inherits: MP5
@@ -189,12 +214,6 @@ SiegeChopperCannon:
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 70
-		Versus:
-			Light: 50
-			Medium: 10
-			Heavy: 10
-			Drone: 100
-			Rocket: 100
 		ValidTargets: Ground, Water, Air
 
 SiegeChopperCannonE:
