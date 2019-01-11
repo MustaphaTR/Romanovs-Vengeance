@@ -8,7 +8,8 @@
  * information, see COPYING.
  */
 #endregion
- 
+
+using OpenRA.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.RA2.Traits;
 
@@ -42,7 +43,46 @@ namespace OpenRA.Mods.RA2.Activities
                 infectable.InfectorTrait = infector;
                 infectable.Ticks = infector.Info.DamageInterval;
                 infectable.GrantCondition(target);
+                infectable.RevokeCondition(target, true);
             });
-		}
-	}
+        }
+
+        protected override void OnLastRun(Actor self)
+        {
+            CancelInfection(self);
+            base.OnLastRun(self);
+        }
+
+        protected override void OnActorDispose(Actor self)
+        {
+            CancelInfection(self);
+            base.OnActorDispose(self);
+        }
+
+        void CancelInfection(Actor self)
+        {
+            if (!target.IsDead)
+            {
+                var infectable = target.Trait<Infectable>();
+                if (infectable.Infector != null)
+                    return;
+
+                infectable.RevokeCondition(target, true);
+            }
+        }
+
+        protected override bool TryStartEnter(Actor self)
+        {
+            var infectable = target.Trait<Infectable>();
+            if (infectable.Infector != null)
+                return false;
+
+            if (infectable.Infector != null)
+                return false;
+
+            infectable.GrantCondition(target, true);
+
+            return true;
+        }
+    }
 }

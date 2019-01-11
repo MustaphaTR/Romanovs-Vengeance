@@ -34,6 +34,10 @@ namespace OpenRA.Mods.RA2.Traits
         [Desc("The condition to grant to self while infected by any actor.")]
         public readonly string InfectedCondition = null;
 
+        [GrantedConditionReference]
+        [Desc("Condition granted when being infected by another actor.")]
+        public readonly string BeingInfectedCondition = null;
+
         [Desc("Conditions to grant when infected by specified actors.",
             "A dictionary of [actor id]: [condition].")]
         public readonly Dictionary<string, string> InfectedByConditions = new Dictionary<string, string>();
@@ -54,6 +58,7 @@ namespace OpenRA.Mods.RA2.Traits
         [Sync] public int Ticks;
 
         ConditionManager conditionManager;
+        int beingInfectedToken = ConditionManager.InvalidConditionToken;
         int infectedToken = ConditionManager.InvalidConditionToken;
         int infectedByToken = ConditionManager.InvalidConditionToken;
 
@@ -71,28 +76,44 @@ namespace OpenRA.Mods.RA2.Traits
             conditionManager = self.TraitOrDefault<ConditionManager>();
         }
 
-        public void GrantCondition(Actor self)
+        public void GrantCondition(Actor self, bool infecting = false)
         {
             if (conditionManager != null)
             {
-                if (infectedToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(info.InfectedCondition))
-                    infectedToken = conditionManager.GrantCondition(self, info.InfectedCondition);
+                if (infecting)
+                {
+                    if (beingInfectedToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(info.BeingInfectedCondition))
+                        beingInfectedToken = conditionManager.GrantCondition(self, info.BeingInfectedCondition);
+                }
+                else
+                {
+                    if (infectedToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(info.InfectedCondition))
+                        infectedToken = conditionManager.GrantCondition(self, info.InfectedCondition);
 
-                string infectedByCondition;
-                if (info.InfectedByConditions.TryGetValue(Infector.Info.Name, out infectedByCondition))
-                    infectedByToken = conditionManager.GrantCondition(self, infectedByCondition);
+                    string infectedByCondition;
+                    if (info.InfectedByConditions.TryGetValue(Infector.Info.Name, out infectedByCondition))
+                        infectedByToken = conditionManager.GrantCondition(self, infectedByCondition);
+                }
             }
         }
 
-        public void RevokeCondition(Actor self)
+        public void RevokeCondition(Actor self, bool infecting = false)
         {
             if (conditionManager != null)
             {
-                if (infectedToken != ConditionManager.InvalidConditionToken)
-                    infectedToken = conditionManager.RevokeCondition(self, infectedToken);
+                if (infecting)
+                {
+                    if (beingInfectedToken != ConditionManager.InvalidConditionToken)
+                        beingInfectedToken = conditionManager.RevokeCondition(self, beingInfectedToken);
+                }
+                else
+                {
+                    if (infectedToken != ConditionManager.InvalidConditionToken)
+                        infectedToken = conditionManager.RevokeCondition(self, infectedToken);
 
-                if (infectedByToken != ConditionManager.InvalidConditionToken)
-                    infectedByToken = conditionManager.RevokeCondition(self, infectedByToken);
+                    if (infectedByToken != ConditionManager.InvalidConditionToken)
+                        infectedByToken = conditionManager.RevokeCondition(self, infectedByToken);
+                }
             }
         }
 
