@@ -207,7 +207,7 @@ namespace OpenRA.Mods.RA2.Traits
 				{
 					foreach (var slaveEntry in SlaveEntries)
 						if (slaveEntry.IsValid)
-							slaveEntry.SpawnerSlave.OnMasterOwnerChanged(self, oldOwner, newOwner, Info.SlaveDisposalOnOwnerChange);
+							slaveEntry.SpawnerSlave.OnMasterOwnerChanged(slaveEntry.Actor, oldOwner, newOwner, Info.SlaveDisposalOnOwnerChange);
 				});
 		}
 
