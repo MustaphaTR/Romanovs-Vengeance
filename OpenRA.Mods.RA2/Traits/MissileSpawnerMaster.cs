@@ -80,12 +80,6 @@ namespace OpenRA.Mods.RA2.Traits
             }
         }
 
-		public override void OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
-		{
-			// Do nothing, because missiles can't be captured or mind controlled.
-			return;
-		}
-
 		void INotifyAttack.PreparingAttack(Actor self, Target target, Armament a, Barrel barrel) { }
 
 		// The rate of fire of the dummy weapon determines the launch cycle as each shot
