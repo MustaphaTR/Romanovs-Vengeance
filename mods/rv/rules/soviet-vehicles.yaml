@@ -216,9 +216,19 @@ htk:
 	Armament@primary:
 		Weapon: FlakTrackGun
 		LocalOffset: 256,0,1536
+		RequiresCondition: !rank-elite
 	Armament@secondary:
 		Weapon: FlakTrackAAGun
 		LocalOffset: 256,0,1536
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: FlakTrackGunE
+		LocalOffset: 256,0,1536
+		RequiresCondition: rank-elite
+	Armament@secondary-elite:
+		Weapon: FlakTrackAAGunE
+		LocalOffset: 256,0,1536
+		RequiresCondition: rank-elite
 	Turreted:
 		TurnSpeed: 15
 		Offset: -280,-3,0
