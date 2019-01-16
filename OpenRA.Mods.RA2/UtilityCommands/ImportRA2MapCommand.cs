@@ -354,7 +354,10 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 
 		static readonly Dictionary<string, string> ReplaceActors = new Dictionary<string, string>()
 		{
-			{ "amradr", "gaairc" }
+			{ "amradr", "gaairc" },
+			{ "sengineer", "engineer" },
+			{ "yengineer", "engineer" },
+			{ "adog", "dog" }
 		};
 
 		[Desc("FILENAME", "Convert a Red Alert 2 map to the OpenRA format.")]
