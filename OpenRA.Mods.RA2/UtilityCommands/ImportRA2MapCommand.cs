@@ -120,9 +120,9 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0xB2, null }, // veinholedummy
 			{ 0xB3, "crate" },
 
-            { 0xCB, "cafncb" }, // black fence
-            { 0xCC, "cafncw" }, // white fence
-            
+			{ 0xCB, "cafncb" }, // black fence
+			{ 0xCC, "cafncw" }, // white fence
+
 			{ 0xCD, "lobrdb_b" }, // lobrdb01
 			{ 0xCE, "lobrdb_b" }, // lobrdb02
 			{ 0xCF, "lobrdb_b" }, // lobrdb03
@@ -157,10 +157,10 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0xEB, "lobrdb_r_ne" }, // lobrdb3
 			{ 0xEC, "lobrdb_r_sw" }, // lobrdb4
 
-            { 0xF0, "cakrmw" }, // kremlin walls
-            { 0xF1, "cafncp" }, // prison camp fence
-            { 0xF2, "crate" } // water crate
-        };
+			{ 0xF0, "cakrmw" }, // kremlin walls
+			{ 0xF1, "cafncp" }, // prison camp fence
+			{ 0xF2, "crate" } // water crate
+		};
 
 		static readonly Dictionary<byte, Size> OverlayShapes = new Dictionary<byte, Size>()
 		{
@@ -197,39 +197,39 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x7C, new Size(3, 1) },
 			{ 0x7D, new Size(3, 1) },
 
-            { 0xCD, new Size(1, 3) },
-            { 0xCE, new Size(1, 3) },
-            { 0xCF, new Size(1, 3) },
-            { 0xD0, new Size(1, 3) },
-            { 0xD1, new Size(1, 3) },
-            { 0xD2, new Size(1, 3) },
-            { 0xD3, new Size(1, 3) },
-            { 0xD4, new Size(1, 3) },
-            { 0xD5, new Size(1, 3) },
-            { 0xD6, new Size(3, 1) },
-            { 0xD7, new Size(3, 1) },
-            { 0xD8, new Size(3, 1) },
-            { 0xD9, new Size(3, 1) },
-            { 0xDA, new Size(3, 1) },
-            { 0xDB, new Size(3, 1) },
-            { 0xDC, new Size(3, 1) },
-            { 0xDD, new Size(3, 1) },
-            { 0xDE, new Size(3, 1) },
-            { 0xDF, new Size(1, 3) },
-            { 0xE0, new Size(1, 3) },
-            { 0xE1, new Size(1, 3) },
-            { 0xE2, new Size(1, 3) },
-            { 0xE3, new Size(3, 1) },
-            { 0xE4, new Size(3, 1) },
-            { 0xE5, new Size(3, 1) },
-            { 0xE6, new Size(3, 1) },
-            { 0xE7, new Size(1, 3) },
-            { 0xE8, new Size(3, 1) },
-            { 0xE9, new Size(1, 3) },
-            { 0xEA, new Size(1, 3) },
-            { 0xEB, new Size(3, 1) },
-            { 0xEC, new Size(3, 1) },
-        };
+			{ 0xCD, new Size(1, 3) },
+			{ 0xCE, new Size(1, 3) },
+			{ 0xCF, new Size(1, 3) },
+			{ 0xD0, new Size(1, 3) },
+			{ 0xD1, new Size(1, 3) },
+			{ 0xD2, new Size(1, 3) },
+			{ 0xD3, new Size(1, 3) },
+			{ 0xD4, new Size(1, 3) },
+			{ 0xD5, new Size(1, 3) },
+			{ 0xD6, new Size(3, 1) },
+			{ 0xD7, new Size(3, 1) },
+			{ 0xD8, new Size(3, 1) },
+			{ 0xD9, new Size(3, 1) },
+			{ 0xDA, new Size(3, 1) },
+			{ 0xDB, new Size(3, 1) },
+			{ 0xDC, new Size(3, 1) },
+			{ 0xDD, new Size(3, 1) },
+			{ 0xDE, new Size(3, 1) },
+			{ 0xDF, new Size(1, 3) },
+			{ 0xE0, new Size(1, 3) },
+			{ 0xE1, new Size(1, 3) },
+			{ 0xE2, new Size(1, 3) },
+			{ 0xE3, new Size(3, 1) },
+			{ 0xE4, new Size(3, 1) },
+			{ 0xE5, new Size(3, 1) },
+			{ 0xE6, new Size(3, 1) },
+			{ 0xE7, new Size(1, 3) },
+			{ 0xE8, new Size(3, 1) },
+			{ 0xE9, new Size(1, 3) },
+			{ 0xEA, new Size(1, 3) },
+			{ 0xEB, new Size(3, 1) },
+			{ 0xEC, new Size(3, 1) },
+		};
 
 		static readonly Dictionary<byte, DamageState> OverlayToHealth = new Dictionary<byte, DamageState>()
 		{
@@ -274,18 +274,18 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x5A, DamageState.Critical },
 			{ 0x5B, DamageState.Critical },
 
-            { 0xD6, DamageState.Undamaged },
-            { 0xD7, DamageState.Undamaged },
-            { 0xD8, DamageState.Undamaged },
-            { 0xD9, DamageState.Undamaged },
+			{ 0xD6, DamageState.Undamaged },
+			{ 0xD7, DamageState.Undamaged },
+			{ 0xD8, DamageState.Undamaged },
+			{ 0xD9, DamageState.Undamaged },
 
-            { 0xDA, DamageState.Heavy },
-            { 0xDB, DamageState.Heavy },
+			{ 0xDA, DamageState.Heavy },
+			{ 0xDB, DamageState.Heavy },
 
-            { 0xDC, DamageState.Heavy },
+			{ 0xDC, DamageState.Heavy },
 
-            { 0xDD, DamageState.Critical },
-            { 0xDE, DamageState.Critical },
+			{ 0xDD, DamageState.Critical },
+			{ 0xDE, DamageState.Critical },
 
 			// Ramps
 			{ 0x5C, DamageState.Undamaged },
@@ -297,14 +297,14 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x62, DamageState.Undamaged },
 			{ 0x63, DamageState.Heavy },
 
-            { 0xDF, DamageState.Undamaged },
-            { 0xE0, DamageState.Heavy },
-            { 0xE1, DamageState.Undamaged },
-            { 0xE2, DamageState.Heavy },
-            { 0xE3, DamageState.Undamaged },
-            { 0xE4, DamageState.Heavy },
-            { 0xE5, DamageState.Undamaged },
-            { 0xE6, DamageState.Heavy },
+			{ 0xDF, DamageState.Undamaged },
+			{ 0xE0, DamageState.Heavy },
+			{ 0xE1, DamageState.Undamaged },
+			{ 0xE2, DamageState.Heavy },
+			{ 0xE3, DamageState.Undamaged },
+			{ 0xE4, DamageState.Heavy },
+			{ 0xE5, DamageState.Undamaged },
+			{ 0xE6, DamageState.Heavy },
 
 			// Ramp duplicates
 			{ 0x7A, DamageState.Undamaged },
@@ -312,18 +312,18 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x7C, DamageState.Undamaged },
 			{ 0x7D, DamageState.Undamaged },
 
-            { 0xE9, DamageState.Undamaged },
-            { 0xEA, DamageState.Undamaged },
-            { 0xEB, DamageState.Undamaged },
-            { 0xEC, DamageState.Undamaged },
+			{ 0xE9, DamageState.Undamaged },
+			{ 0xEA, DamageState.Undamaged },
+			{ 0xEB, DamageState.Undamaged },
+			{ 0xEC, DamageState.Undamaged },
 
 			// actually dead, placeholders for resurrection
 			{ 0x64, DamageState.Undamaged },
 			{ 0x65, DamageState.Undamaged },
 
-            { 0xE7, DamageState.Undamaged },
-            { 0xE8, DamageState.Undamaged },
-        };
+			{ 0xE7, DamageState.Undamaged },
+			{ 0xE8, DamageState.Undamaged },
+		};
 
 		static readonly Dictionary<byte, byte[]> ResourceFromOverlay = new Dictionary<byte, byte[]>()
 		{
