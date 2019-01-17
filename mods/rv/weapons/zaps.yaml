@@ -11,7 +11,7 @@ ElectricBoltE:
 		Amount: 2
 		AimChance: 100
 		AimTargetStances: Enemy, Neutral
-		ValidTargets: Infantry, Vehicle, Ship, Tree
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
 
 CRElectricBolt:
 	Inherits: ElectricBolt
@@ -104,12 +104,12 @@ TankBoltE:
 		Amount: 2
 		AimChance: 100
 		AimTargetStances: Enemy, Neutral
-		ValidTargets: Infantry, Vehicle, Ship, Tree
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
 
 TeslaFragment:
 	Inherits: TankBolt
 	Range: 3c0
-	ValidTargets: Infantry, Vehicle, Ship, Structure, Wall
+	ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Structure, Wall
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 
@@ -206,7 +206,7 @@ Comet:
 		Amount: 5
 		AimChance: 100
 		AimTargetStances: Enemy, Neutral
-		ValidTargets: Infantry, Vehicle, Ship, Tree
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_clsn
 		ImpactSounds: gexp14a.wav
