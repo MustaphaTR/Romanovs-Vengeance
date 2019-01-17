@@ -62,8 +62,21 @@ dog:
 		Payload: 100
 		PlayerExperience: 10
 		Voice: Move
-	Tooltip:
+	Tooltip@Default:
 		Name: Attack Dog
+		RequiresCondition: !allies && !soviet
+	Tooltip@Allies:
+		Name: German Shepherd
+		RequiresCondition: allies
+	Tooltip@Soviet:
+		Name: Siberian Huskie
+		RequiresCondition: soviet
+	GrantConditionOnFaction@Allies:
+		Condition: allies
+		Factions: america, germany, england, france, korea
+	GrantConditionOnFaction@Soviet:
+		Condition: soviet
+		Factions: cuba, libya, iraq, russia, vietnam
 	Selectable:
 		Bounds: 30, 24, 0, -5
 	Health:
