@@ -100,6 +100,7 @@ gapowr:
 		Cost: 500
 	Tooltip:
 		Name: Power Plant
+	ProvidesPrerequisite@default:
 	ProvidesPrerequisite:
 		Prerequisite: power
 	Building:
@@ -111,19 +112,48 @@ gapowr:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	Pluggable:
+		Offset: 1,1
+		Conditions:
+			powrup: powrup
+		Requirements:
+			powrup: !build-incomplete
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
 		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !powrup
+	WithIdleOverlay@glow-coolant:
+		Sequence: idle-glow-coolant
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && powrup
 	Power:
 		Amount: 150
 		RequiresCondition: !chronodisable
+	Power@plug:
+		Amount: 75
+		RequiresCondition: !chronodisable && powrup
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
 	PowerTooltip:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+
+gapowrup:
+	Inherits: ^BuildingPlug
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: Advanced Coolants
+	Buildable:
+		Queue: Support.Allies
+		BuildPaletteOrder: 60
+		Prerequisites: gapowr, gaairc
+		Description: Better coolants allow power plant to work more efficently\nproviding 75 more power.
+	Plug:
+		Type: powrup
+	Power:
+		Amount: 75
 
 gapile:
 	Inherits: ^Building
@@ -887,7 +917,7 @@ gtgcan:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Allies
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: radar, ~structures.france
 		Description: Automated, long ranged anti-ground defense.
 	Valued:
@@ -1019,7 +1049,7 @@ gagap:
 		Name: Gap Generator
 	Buildable:
 		Queue: Support.Allies
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		Prerequisites: gatech
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
 	Selectable:
