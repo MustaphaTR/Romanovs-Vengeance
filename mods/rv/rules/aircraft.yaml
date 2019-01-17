@@ -46,6 +46,8 @@ shad:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp
 	RenderSprites:
+	Targetable@MC:
+		RequiresCondition: !controlled && !airborne
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
@@ -175,6 +177,7 @@ zephusk:
 
 orca:
 	Inherits: ^Plane
+	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
@@ -213,6 +216,8 @@ orca:
 		RepairBuildings: gadept, nadept, caoutp
 	Rearmable:
 		RearmActors: gaairc
+	Targetable@MC:
+		RequiresCondition: !controlled && !airborne
 	AmmoPool:
 		Ammo: 1
 		PipCount: 1
@@ -612,6 +617,8 @@ schp:
 	Repairable:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp
+	Targetable@MC:
+		RequiresCondition: !controlled && !airborne
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
@@ -748,6 +755,8 @@ hind:
 	Repairable:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp
+	Targetable@MC:
+		RequiresCondition: !controlled && !airborne
 	-DeathSounds:
 	RenderSprites:
 		Scale: 1.15
