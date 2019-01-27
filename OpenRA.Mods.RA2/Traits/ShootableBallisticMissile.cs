@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.Common;
@@ -110,9 +111,7 @@ namespace OpenRA.Mods.RA2.Traits
 				OnAirborneAltitudeReached();
 		}
 
-		public virtual void Tick(Actor self)
-		{
-		}
+		public virtual void Tick(Actor self) { }
 
 		public int MovementSpeed
 		{
@@ -183,18 +182,21 @@ namespace OpenRA.Mods.RA2.Traits
 			return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
 		}
 
-		public Activity MoveWithinRange(Target target, WDist range)
-		{
+        public Activity MoveWithinRange(Target target, WDist range,
+            WPos? initialTargetPosition = null, Color? targetLineColor = null)
+        {
 			return new ShootableBallisticMissileFly(self, target);
 		}
 
-		public Activity MoveWithinRange(Target target, WDist minRange, WDist maxRange)
-		{
+        public Activity MoveWithinRange(Target target, WDist minRange, WDist maxRange,
+            WPos? initialTargetPosition = null, Color? targetLineColor = null)
+        {
 			return new ShootableBallisticMissileFly(self, target);
 		}
 
-		public Activity MoveFollow(Actor self, Target target, WDist minRange, WDist maxRange)
-		{
+        public Activity MoveFollow(Actor self, Target target, WDist minRange, WDist maxRange,
+            WPos? initialTargetPosition = null, Color? targetLineColor = null)
+        {
 			return null;
 		}
 
@@ -203,8 +205,9 @@ namespace OpenRA.Mods.RA2.Traits
 			return null;
 		}
 
-		public Activity MoveToTarget(Actor self, Target target)
-		{
+        public Activity MoveToTarget(Actor self, Target target,
+            WPos? initialTargetPosition = null, Color? targetLineColor = null)
+        {
 			return new ShootableBallisticMissileFly(self, target);
 		}
 
