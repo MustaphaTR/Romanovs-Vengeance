@@ -14,6 +14,8 @@ caoild:
 		Amount: 20
 	Tooltip:
 		Name: Tech Oil Derrick
+	TooltipDescription:
+		Description: Periodically provides cash.
 	Health:
 		HP: 500
 	RevealsShroud:
@@ -35,6 +37,8 @@ caairp:
 	Inherits@shape: ^3x3Shape
 	Tooltip:
 		Name: Tech Airport
+	TooltipDescription:
+		Description: Provides Paradrop support power.
 	Armor:
 		Type: Wood
 	Health:
@@ -95,6 +99,8 @@ cahosp:
 		Dimensions: 6, 4
 	Tooltip:
 		Name: Civilian Hospital
+	TooltipDescription:
+		Description: Allows infantry to self-heal.
 	Health:
 		HP: 400
 	RevealsShroud:
@@ -120,6 +126,8 @@ caoutp:
 	Inherits@shape: ^4x3Shape
 	Tooltip:
 		Name: Tech Outpost
+	TooltipDescription:
+		Description: Provides repairing ground for vehicles.\nArmed with missile launcher.
 	Armor:
 		Type: Wood
 	Health:
@@ -179,6 +187,8 @@ capowr:
 	EngineerRepairable:
 	Tooltip:
 		Name: Tech Power Plant
+	TooltipDescription:
+		Description: Provides 200 power.
 	Health:
 		HP: 400
 	RevealsShroud:
@@ -199,6 +209,8 @@ camach:
 		Dimensions: 3, 3
 	Tooltip:
 		Name: Tech Machine Shop
+	TooltipDescription:
+		Description: Allows vehicles to self-repair.
 	Health:
 		HP: 400
 	RevealsShroud:
@@ -217,8 +229,56 @@ caslab:
 		Dimensions: 3, 3
 	Tooltip:
 		Name: Tech Secret Lab
+	TooltipDescription:
+		Description: Allow construction of a new 3rd tier vehicle.
 	Health:
 		HP: 500
+	RevealsShroud:
+		Range: 4c0
+	Armor:
+		Type: Wood
+	WithIdleOverlay@flag:
+		Sequence: flag
+	ProvidesPrerequisite@buildingname:
+
+# Custom Tech Structures
+cadome:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Tooltip:
+		Name: Tech Radar Dome
+	TooltipDescription:
+		Description: Reveals a large area around it.
+	Health:
+		HP: 500
+	BaseProvider:
+		Range: 4c0
+	RevealsShroud:
+		Range: 14c0
+	Armor:
+		Type: Wood
+	WithIdleOverlay@flag:
+		Sequence: flag
+	RenderSprites:
+		PlayerPalette: dome
+
+caarmr:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x3Shape
+	Building:
+		Footprint: xx xx xx
+		Dimensions: 2, 3
+	Tooltip:
+		Name: Tech Armory
+	TooltipDescription:
+		Description: Increases the rate which units are promoted.
+	Health:
+		HP: 500
+	BaseProvider:
+		Range: 4c0
 	RevealsShroud:
 		Range: 4c0
 	Armor:
