@@ -1206,7 +1206,7 @@ atesla:
 		Queue: Support.Allies
 		BuildPaletteOrder: 50
 		Prerequisites: power, radar
-		Description: Advanced base defense.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -1248,6 +1248,23 @@ atesla:
 	WithRangeCircle:
 		Range: 8c0
 		Type: prismcannon
+	WithRangeCircle@prism_forwarding:
+		Range: 4c0
+		Type: prismcannon
+	ProximityExternalCondition@prism_forwarding:
+		Condition: prism_forwarding
+		Range: 4c0
+	ExternalCondition@prism_forwarding:
+		Condition: prism_forwarding
+	FirepowerMultiplier@1:
+		Modifier: 125
+		RequiresCondition: prism_forwarding == 1
+	FirepowerMultiplier@2:
+		Modifier: 150
+		RequiresCondition: prism_forwarding == 2
+	FirepowerMultiplier@3:
+		Modifier: 175
+		RequiresCondition: prism_forwarding >= 3
 
 power:
 	AlwaysVisible:
