@@ -128,14 +128,14 @@ function Check-Command
 		UtilityNotFound
 	}
 
-	if (Test-Path $styleCheckPath)
+	if (Test-Path $utilityPath)
 	{
 		echo "Checking for code style violations in OpenRA.Mods.$modID..."
-		Invoke-Expression "$styleCheckPath OpenRA.Mods.$modID"
+		Invoke-Expression "$utilityPath $modID  --check-code-style OpenRA.Mods.RA2"
 	}
 	else
 	{
-		echo "$styleCheckPath could not be found. Build the project first using the `"all`" command."
+		echo "$utilityPath could not be found. Build the project first using the `"all`" command."
 	}
 }
 
@@ -368,7 +368,6 @@ if ($command -eq "all" -or $command -eq "clean")
 }
 
 $utilityPath = $env:ENGINE_DIRECTORY + "/OpenRA.Utility.exe"
-$styleCheckPath = $env:ENGINE_DIRECTORY + "/OpenRA.StyleCheck.exe"
 
 $execute = $command
 if ($command.Length -gt 1)
