@@ -4555,6 +4555,81 @@ calond03.rubble:
 	RenderSprites:
 		Image: calond03
 
+calond04:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^6x4Shape
+	Tooltip:
+		Name: British Parlaiment
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 6,4
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
+	SpawnActorOnDeath:
+		Actor: calond04.rubble
+
+calond04.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^6x4Shape
+	Building:
+		Dimensions: 6,4
+		Footprint: ______ ______ ______ ______
+	RenderSprites:
+		Image: calond04
+
+calond05:
+	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Big Ben
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	SpawnActorOnDeath:
+		Actor: calond05.rubble
+
+calond05.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 1,1
+		Footprint: _
+	RenderSprites:
+		Image: calond05
+
+calond06:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Tower of London
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
+	SpawnActorOnDeath:
+		Actor: calond06.rubble
+
+calond06.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^4x4Shape
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: calond06
+
 casanf01:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x3Shape
