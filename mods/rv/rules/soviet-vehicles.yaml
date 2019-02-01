@@ -56,7 +56,7 @@ harv:
 		Prerequisites: refinery
 		Description: Gathers Ore.\n  Immune to Radiation.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
-		Cost: 1100
+		Cost: 1000
 	Tooltip:
 		Name: War Miner
 	Selectable:
@@ -71,7 +71,7 @@ harv:
 		HarvestVoice: Harvest
 		DeliverVoice: Move
 	Health:
-		HP: 1200
+		HP: 1000
 	Armor:
 		Type: Medium
 	SelfHealing:
@@ -357,6 +357,11 @@ apoc:
 	Armament@antiair:
 		Weapon: MammothTusk
 		LocalOffset: 80,200,768, 80,-200,768
+		RequiresCondition: !rank-elite
+	Armament@antiairelite:
+		Weapon: MammothTuskE
+		LocalOffset: 80,200,768, 80,-200,768
+		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp

@@ -63,6 +63,14 @@ MammothTusk:
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_bang
 
+MammothTuskE:
+	Inherits: MammothTusk
+	Burst: 4
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 70
+
 APTusk:
 	Inherits: ^Missile
 	ReloadDelay: 90
@@ -120,6 +128,8 @@ Maverick:
 	Inherits: ^Missile
 	ReloadDelay: 10
 	Range: 6c0
+	Burst: 2
+	BurstDelays: 50
 	Report: vintatta.wav
 	ValidTargets: Ground, Water
 	Projectile: Missile
@@ -136,8 +146,11 @@ Maverick:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c410
 		Falloff: 100, 0
-		Damage: 150
+		Damage: 100
 		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
 			Concrete: 75
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@2Eff: CreateEffect

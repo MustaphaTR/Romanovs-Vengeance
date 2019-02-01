@@ -149,11 +149,11 @@ gapowrup:
 		Queue: Support.Allies
 		BuildPaletteOrder: 60
 		Prerequisites: gapowr, gaairc
-		Description: Better coolants allow power plant to work more efficently\nproviding 75 more power.
+		Description: Better coolants allow power plant to work more efficently\nproviding 100 more power.
 	Plug:
 		Type: powrup
 	Power:
-		Amount: 75
+		Amount: 100
 
 gapile:
 	Inherits: ^Building
@@ -265,7 +265,7 @@ garefn:
 		DockAngle: 160
 		UseStorage: false
 	CustomSellValue:
-		Value: 300
+		Value: 400
 	InfiltrateForCash:
 		Types: SpyInfiltrate
 		Percentage: 50
@@ -290,6 +290,8 @@ garefn:
 		Amount: -50
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	-SpawnActorsOnSell@allies
+	-SpawnActorsOnSell@soviets
 
 gaairc:
 	Inherits: ^Building
@@ -1249,21 +1251,21 @@ atesla:
 		Range: 8c0
 		Type: prismcannon
 	WithRangeCircle@prism_forwarding:
-		Range: 4c0
+		Range: 8c0
 		Type: prismcannon
 	ProximityExternalCondition@prism_forwarding:
 		Condition: prism_forwarding
-		Range: 4c0
+		Range: 8c0
 	ExternalCondition@prism_forwarding:
 		Condition: prism_forwarding
 	FirepowerMultiplier@1:
-		Modifier: 125
+		Modifier: 200
 		RequiresCondition: prism_forwarding == 1
 	FirepowerMultiplier@2:
-		Modifier: 150
+		Modifier: 300
 		RequiresCondition: prism_forwarding == 2
 	FirepowerMultiplier@3:
-		Modifier: 175
+		Modifier: 400
 		RequiresCondition: prism_forwarding >= 3
 
 power:
