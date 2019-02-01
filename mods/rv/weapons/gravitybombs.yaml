@@ -1,0 +1,162 @@
+BlimpBomb:
+	ReloadDelay: 45
+	Range: 1c20
+	MinRange: 0c001
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -50
+		Acceleration: 0, 0, -10
+		Image: zbomb
+		Palette: player
+		IsPlayerPalette: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 400
+		Damage: 250
+		ValidTargets: Building, Ground, Water
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 70
+			Medium: 35
+			Heavy: 35
+			Wood: 85
+			Steel: 75
+			Concrete: 50
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexp14a.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+EMPulse:
+	ReloadDelay: 10
+	Range: 1c0
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -50
+		Acceleration: 0, 0, -10
+		Image: empbomb
+		Palette: player
+		IsPlayerPalette: true
+	Warhead@1Dis: GrantExternalCondition
+		Range: 8c0
+		Duration: 375
+		Condition: emp
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse
+		ExplosionPalette: tseffect
+
+EMPulseBEagle:
+	Inherits: EMPulse
+	Projectile: GravityBomb
+		Image: empbomb50p
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Falloff: 100, 70, 40, 0
+		Damage: 125
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Concrete: 75
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@1Dis: GrantExternalCondition
+		Range: 4c0
+		Duration: 300
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse50p
+
+ParaBomb:
+	ReloadDelay: 11
+	Range: 4c0
+	Projectile: ParaBomb
+		Image: parabomb
+		ParachuteSequence: parach
+		ParachuteOpeningSequence: open
+		ParachuteClosingSequence: close
+		Velocity: 0, 0, -128
+		Acceleration: 0, 0, 0
+		Palette: player
+		IsPlayerPalette: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 768
+		Damage: 150
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Light: 150
+			Medium: 150
+			Heavy: 150
+			Wood: 75
+			Steel: 200
+			Concrete: 65
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, TerrorDrone, Structure, Wall, Husk, Trees
+	Warhead@3Eff: CreateEffect
+		Explosions: parabomb
+		ExplosionPalette: tseffect
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Air
+	Warhead@2EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+
+NavalMines:
+	ReloadDelay: 6
+	Range: 3c0
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -50
+		Acceleration: 0, 0, -10
+		Image: nmine
+		Sequences: projectile
+		Palette: player
+	Warhead@1Spa: SpawnBuilding
+		Buildings: nmine
+		Range: 1
+		ForceGround: true
+		ValidTargets: Ground, Water, Air
+	Warhead@2EffWater: CreateEffect
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Ground, Water, Air
+
+ClusterMines:
+	ReloadDelay: 10
+	Range: 1c0
+	Report: vkiratta.wav
+	Projectile: InstantExplode
+	Warhead@1Clu: FireCluster
+		Weapon: SpawnMine
+		Dimensions: 5,5
+		Footprint: __x__ _xxx_ xxxxx _xxx_ __x__
+		ValidTargets: Ground, Water, Air
+
+SpawnMine:
+	Range: 5c0
+	Projectile: BulletAS
+		Image: mine
+		Sequences: projectile
+		Palette: player
+		IsPlayerPalette: true
+		Blockable: false
+		Speed: 384
+	Warhead@1Spa: SpawnActor
+		Actors: mine
+		Range: 0
+		ForceGround: true
+		ValidTargets: Ground, Water, Air

@@ -349,24 +349,6 @@ RadiationMissile:
 		Level: 1500
 		MaxLevel: 1500
 
-EMPulse:
-	ReloadDelay: 10
-	Range: 1c0
-	Report: vkiratta.wav
-	Projectile: GravityBomb
-		Velocity: 0, 0, -50
-		Acceleration: 0, 0, -10
-		Image: empbomb
-		Palette: player
-		IsPlayerPalette: true
-	Warhead@1Dis: GrantExternalCondition
-		Range: 8c0
-		Duration: 375
-		Condition: emp
-	Warhead@2Eff: CreateEffect
-		Explosions: empulse
-		ExplosionPalette: tseffect
-
 MineExplosion:
 	Warhead@1Dam: SpreadDamage
 		Spread: 256

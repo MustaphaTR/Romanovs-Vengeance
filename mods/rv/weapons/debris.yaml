@@ -1,0 +1,28 @@
+SmallDebris:
+	Inherits: ^Debris
+	Projectile: BulletAS
+		Sequences: small1, small2, small3, small4, small5, small6, small7, small8, small9
+
+LargeDebris:
+	Inherits: ^Debris
+	Projectile: BulletAS
+		Sequences: large1, large2, large3, large4, large5, large6, large7, large8, large9, large10
+	Warhead@2Eff: CreateEffect
+		Explosions: tiny_bang
+		ImpactSounds: gexp07a.wav
+		InvalidTargets: Water
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+
+FlyingBody:
+	Inherits: ^Debris
+	Projectile: BulletAS
+		Sequences: flyingbody
+
+RockDebris:
+	Inherits: ^Debris
+	Projectile: BulletAS
+		Sequences: rock1, rock2, rock3
