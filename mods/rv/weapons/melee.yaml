@@ -27,9 +27,10 @@ DroneJump:
 	ReloadDelay: 10
 	Range: 3c0
 	Report: vteratta.wav
-	Warhead@1Dam: SpreadDamage
-		Spread: 213
-		Damage: 100
+	TargetActorCenter: true
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		Damage: 1000
 		ValidTargets: Infantry
 		Versus:
 			None: 100
