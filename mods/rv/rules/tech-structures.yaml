@@ -242,43 +242,37 @@ caslab:
 	ProvidesPrerequisite@buildingname:
 
 # Custom Tech Structures
-cadome:
+cacomm:
 	Inherits: ^TechBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@shape: ^3x3Shape
 	Building:
-		Footprint: xx xx
-		Dimensions: 2, 2
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
 	Tooltip:
-		Name: Tech Radar Dome
+		Name: Tech Communications Center
 	TooltipDescription:
 		Description: Reveals a large area around it.
 	Health:
 		HP: 500
-	BaseProvider:
-		Range: 4c0
 	RevealsShroud:
 		Range: 14c0
 	Armor:
 		Type: Wood
 	WithIdleOverlay@flag:
 		Sequence: flag
-	RenderSprites:
-		PlayerPalette: dome
 
 caarmr:
 	Inherits: ^TechBuilding
-	Inherits@shape: ^2x3Shape
+	Inherits@shape: ^3x3Shape
 	Building:
-		Footprint: xx xx xx
-		Dimensions: 2, 3
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
 	Tooltip:
 		Name: Tech Armory
 	TooltipDescription:
 		Description: Increases the rate which units are promoted.
 	Health:
 		HP: 500
-	BaseProvider:
-		Range: 4c0
 	RevealsShroud:
 		Range: 4c0
 	Armor:
@@ -289,16 +283,16 @@ caarmr:
 
 carpad:
 	Inherits: ^TechBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@shape: ^1x3Shape
 	Building:
-		Footprint: =x= xxx =x=
-		Dimensions: 3, 3
+		Footprint: x x =
+		Dimensions: 1, 3
 	Tooltip:
 		Name: Tech Reinforcements Pad
 	TooltipDescription:
 		Description: Periodically provides an MBT.
 	Selectable:
-		Bounds: 96, 96, 0, -24
+		Bounds: 128, 96, 0, -24
 	Health:
 		HP: 500
 	BaseProvider:
@@ -307,28 +301,28 @@ carpad:
 		Range: 4c0
 	Armor:
 		Type: Wood
-	WithIdleOverlay@barrels:
-		Sequence: barrels
+	WithIdleOverlay@building:
+		Sequence: building
 	WithIdleOverlay@bib:
 		Sequence: bib
 	WithIdleOverlay@flag:
 		Sequence: flag
 	WithDeliveryAnimation:
 	RallyPoint:
-		Offset: 2,2
+		Offset: 0,3
 		Palette: mouse
 		IsPlayerPalette: false
 	Exit:
-		ExitCell: 1,1
+		Facing: 96
+		ExitCell: 0,1
 	GrantConditionOnCombatantOwner:
 		Condition: enabled
 	ProductionParadrop:
 		Produces: ReinforcementsPad
 		ActorType: pdplane.crate
-		ChuteSound: sparadra.wav
 	PeriodicProducer@Allies:
 		Actors: mtnk
-		ChargeDuration: 3000
+		ChargeDuration: 3750
 		Type: ReinforcementsPad
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
@@ -348,5 +342,3 @@ carpad:
 		Condition: soviets
 		Factions: cuba, libya, iraq, russia, vietnam
 		ResetOnOwnerChange: true
-	RenderSprites:
-		PlayerPalette: rpad
