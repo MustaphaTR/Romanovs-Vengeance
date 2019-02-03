@@ -146,3 +146,43 @@ FLAMEGUY:
 		DeathSequencePalette: flameguy
 		DeathPaletteIsPlayerPalette: false
 	HitShape:
+
+# Credits to ELoyros, taken from TD Aployton.
+OreShimmering:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	ConditionManager:
+	Interactable:
+	Armor:
+		Type: Wood
+	HiddenUnderFog:
+	Valued:
+		Cost: 1
+	Tooltip:
+		Name: Ore
+	BodyOrientation:
+		QuantizedFacings: 8
+	Health:
+		HP: 30
+	Wanders:
+		WanderMoveRadius: 2
+	AttackFrontal:
+	Crushable:
+		WarnProbability: 0
+		CrushClasses: OreShimmeringEffect
+		CrushedByFriendlies: True
+	HitShape:
+		Type: Circle
+			Radius: 1
+	-AppearsOnRadar:
+	WithSpriteBody:
+	DamagedByTerrain:
+		Damage: 1
+		DamageInterval: 10
+		DamageThreshold: 0
+		Terrain: Clear, Rough, Road, Beach, Ore, Gems
+	Mobile:
+		Speed: 99999
+		Locomotor: OreShimmeringEffect
+	RenderSprites:
+		Palette: effect
