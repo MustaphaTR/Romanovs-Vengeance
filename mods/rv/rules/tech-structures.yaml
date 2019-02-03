@@ -286,3 +286,67 @@ caarmr:
 	WithIdleOverlay@flag:
 		Sequence: flag
 	ProvidesPrerequisite@buildingname:
+
+carpad:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^3x3Shape
+	Building:
+		Footprint: =x= xxx =x=
+		Dimensions: 3, 3
+	Tooltip:
+		Name: Tech Reinforcements Pad
+	TooltipDescription:
+		Description: Periodically provides an IFV or Flak Track depending on faction.
+	Selectable:
+		Bounds: 96, 96, 0, -24
+	Health:
+		HP: 500
+	BaseProvider:
+		Range: 4c0
+	RevealsShroud:
+		Range: 4c0
+	Armor:
+		Type: Wood
+	WithIdleOverlay@barrels:
+		Sequence: barrels
+	WithIdleOverlay@bib:
+		Sequence: bib
+	WithIdleOverlay@flag:
+		Sequence: flag
+	WithDeliveryAnimation:
+	RallyPoint:
+		Offset: 2,2
+		Palette: mouse
+		IsPlayerPalette: false
+	Exit:
+		ExitCell: 1,1
+	GrantConditionOnCapture:
+		Condition: enabled
+	ProductionParadrop:
+		Produces: ReinforcementsPad
+		ActorType: pdplane.crate
+		ChuteSound: sparadra.wav
+	PeriodicProducer@Allies:
+		Actors: fv
+		ChargeDuration: 3000
+		Type: ReinforcementsPad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && allies
+	PeriodicProducer@Soviets:
+		Actors: htk
+		ChargeDuration: 3000
+		Type: ReinforcementsPad
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && soviets
+	GrantConditionOnFaction@Allies:
+		Condition: allies
+		Factions: america, germany, england, france, korea
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Soviets:
+		Condition: soviets
+		Factions: cuba, libya, iraq, russia, vietnam
+		ResetOnOwnerChange: true
+	RenderSprites:
+		PlayerPalette: rpad
