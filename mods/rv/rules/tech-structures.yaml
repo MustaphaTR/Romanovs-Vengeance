@@ -296,7 +296,7 @@ carpad:
 	Tooltip:
 		Name: Tech Reinforcements Pad
 	TooltipDescription:
-		Description: Periodically provides an IFV or Flak Track depending on faction.
+		Description: Periodically provides an MBT.
 	Selectable:
 		Bounds: 96, 96, 0, -24
 	Health:
@@ -327,15 +327,15 @@ carpad:
 		ActorType: pdplane.crate
 		ChuteSound: sparadra.wav
 	PeriodicProducer@Allies:
-		Actors: fv
-		ChargeDuration: 3000
+		Actors: mtnk
+		ChargeDuration: 3750
 		Type: ReinforcementsPad
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
 		RequiresCondition: enabled && allies
 	PeriodicProducer@Soviets:
-		Actors: htk
-		ChargeDuration: 3000
+		Actors: htnk
+		ChargeDuration: 3750
 		Type: ReinforcementsPad
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
