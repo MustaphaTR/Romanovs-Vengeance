@@ -574,11 +574,11 @@ schp:
 	Armament@deployed:
 		Weapon: 160mm
 		LocalOffset: 768,0,2048
-		RequiresCondition: !airborne && deployed && !rank-elite
+		RequiresCondition: !airborne && actually-deployed && !rank-elite
 	Armament@elite-deployed:
 		Weapon: 160mmE
 		LocalOffset: 768,0,2048
-		RequiresCondition: !airborne && deployed && rank-elite
+		RequiresCondition: !airborne && actually-deployed && rank-elite
 	Turreted:
 		TurnSpeed: 5
 	Voiced:
@@ -597,10 +597,10 @@ schp:
 		Type: CenterPosition
 	AttackAircraft:
 		Voice: Attack
-		RequiresCondition: airborne || !deployed
+		RequiresCondition: airborne || !actually-deployed
 	AttackTurreted:
 		Voice: DeployedAttack
-		RequiresCondition: !airborne && deployed
+		RequiresCondition: !airborne && actually-deployed
 	Aircraft:
 		CruiseAltitude: 3072
 		LandWhenIdle: false
@@ -611,9 +611,19 @@ schp:
 		CruisingCondition: cruising
 		LandOnCondition: deployed
 	GrantConditionOnDeploy:
+		Facing: 160
 		DeployedCondition: deployed
 		AllowedTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		CanDeployOnRamps: true
+	GrantConditionAfterDelay:
+		Delay: 75
+		ShowSelectionBar: false
+		Condition: actually-deployed
+		RequiresCondition: deployed && !airborne
+	WithIdleOverlay:
+		Sequence: deploy
+		PauseOnCondition: !deployed || airborne || actually-deployed
+		RequiresCondition: deployed && !airborne && !actually-deployed
 	RenderSprites:
 	Repairable:
 		Voice: Move
@@ -630,9 +640,9 @@ schp:
 		RequiresCondition: airborne || !deployed
 	WithVoxelBody:
 		Sequence: deployed
-		RequiresCondition: !airborne && deployed
+		RequiresCondition: !airborne && actually-deployed
 	WithVoxelTurret:
-		RequiresCondition: !airborne && deployed
+		RequiresCondition: !airborne && actually-deployed
 	Hovers@CRUISING:
 		RequiresCondition: cruising
 		OffsetModifier: -45
