@@ -472,9 +472,18 @@ dtruck:
 	Explodes:
 		Weapon: demobomb
 		EmptyWeapon: demobomb
-	AttackSuicides:
+	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 128
 		RequiresCondition: !chronodisable && !emp
+	Armament@PRIMARY:
+		Weapon: DemoTruckTargeting
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		DeployedCondition: triggered
+	KillsSelf:
+		RequiresCondition: triggered
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
