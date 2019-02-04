@@ -62,7 +62,7 @@ namespace OpenRA.Mods.RA2.Traits
                 else
                     self.QueueActivity(new Fly(self, target, WDist.Zero, Info.LandingDistance));
 
-            self.QueueActivity(new EnterCarrierMaster(self, Master, spawnerMaster, EnterBehaviour.Exit));
+            self.QueueActivity(new EnterCarrierMaster(self, target, spawnerMaster, EnterBehaviour.Exit));
         }
 
 		public override void LinkMaster(Actor self, Actor master, BaseSpawnerMaster spawnerMaster)

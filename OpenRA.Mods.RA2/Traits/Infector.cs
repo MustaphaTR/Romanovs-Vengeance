@@ -82,18 +82,11 @@ namespace OpenRA.Mods.RA2.Traits
 			if (order.OrderString != "Infect")
 				return;
 
-			var target = self.ResolveFrozenActorOrder(order, Color.Red);
-			if (target.Type != TargetType.Actor)
-				return;
-
-            if (target.Actor.TraitOrDefault<Infectable>() == null)
-                return;
-
             if (!order.Queued)
 				self.CancelActivity();
 
-			self.SetTargetLine(target, Color.Red);
-            self.QueueActivity(new Infect(self, target.Actor));
+			self.SetTargetLine(order.Target, Color.Red);
+            self.QueueActivity(new Infect(self, order.Target));
         }
 
 		public string VoicePhraseForOrder(Actor self, Order order)

@@ -9,9 +9,11 @@
  */
 #endregion
 
+using System.Drawing;
 using OpenRA.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.RA2.Traits;
+using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Activities
 {
@@ -19,13 +21,13 @@ namespace OpenRA.Mods.RA2.Activities
 	{
 		readonly Actor target;
 
-		public Infect(Actor self, Actor target)
-			: base(self, target, EnterBehaviour.Exit)
+		public Infect(Actor self, Target target)
+			: base(self, target, Color.Red)
 		{
-			this.target = target;
+			this.target = target.Actor;
 		}
 
-		protected override void OnInside(Actor self)
+		protected override void OnEnterComplete(Actor self, Actor targetActor)
 		{
 			self.World.AddFrameEndTask(w =>
 			{
@@ -71,7 +73,7 @@ namespace OpenRA.Mods.RA2.Activities
             }
         }
 
-        protected override bool TryStartEnter(Actor self)
+        protected override bool TryStartEnter(Actor self, Actor targetActor)
         {
             var infectable = target.Trait<Infectable>();
             if (infectable.Infector != null)

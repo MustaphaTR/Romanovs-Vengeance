@@ -24,35 +24,25 @@ namespace OpenRA.Mods.RA2.Activities
 		readonly Actor master; // remember the spawner.
 		readonly CarrierMaster spawnerMaster;
 
-		public EnterCarrierMaster(Actor self, Actor master, CarrierMaster spawnerMaster, EnterBehaviour enterBehaviour)
-			: base(self, master, enterBehaviour)
+		public EnterCarrierMaster(Actor self, Target master, CarrierMaster spawnerMaster, EnterBehaviour enterBehaviour)
+			: base(self, master, Color.Green)
 		{
-			this.master = master;
+			this.master = master.Actor;
 			this.spawnerMaster = spawnerMaster;
 		}
 
-		protected override bool CanReserve(Actor self)
-		{
+		protected override bool TryStartEnter(Actor self, Actor targetActor)
+        {
 			return true; // Slaves are always welcome.
 		}
 
-		protected override ReserveStatus Reserve(Actor self)
-		{
-			// TryReserveElseTryAlternateReserve calls Reserve and
-			// the default inplementation of Reserve() returns TooFar when
-			// the aircraft carrier is hovering over a building.
-			// Since spawners don't need reservation (and have no reservation trait),
-			// just return Ready so that spawner can enter no matter where the spawner is.
-			return ReserveStatus.Ready;
-		}
-
-		protected override void OnInside(Actor self)
-		{
+		protected override void OnEnterComplete(Actor self, Actor targetActor)
+        {
 			// Master got killed :(
 			if (master.IsDead)
 				return;
 
-			Done(self); // Stop slaves from exiting.
+            OnCancel(self); // Stop slaves from exiting.
 
 			// Load this thingy.
 			// Issue attack move to the rally point.
