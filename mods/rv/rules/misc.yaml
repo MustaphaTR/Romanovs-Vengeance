@@ -44,13 +44,33 @@ crate:
 	GiveMcvCrateAction@soviets:
 		SelectionShares: 0
 		NoBaseSelectionShares: 150
-		ValidFactions: cuba, libya, iraq, russia
+		ValidFactions: cuba, libya, iraq, russia, vietnam
 		Units: smcv
+		Sound: gcrafree.wav
 	GiveMcvCrateAction@allied:
 		SelectionShares: 0
 		NoBaseSelectionShares: 150
 		ValidFactions: america, germany, england, france, korea
 		Units: amcv
+		Sound: gcrafree.wav
+	GrantExternalConditionCrateAction@fpower:
+		SelectionShares: 10
+		Sequence: fpower
+		Notification: FirepowerUpgraded
+		Sound: gcrafire.wav
+		Condition: crate-firepower
+	GrantExternalConditionCrateAction@armor:
+		SelectionShares: 10
+		Sequence: armor
+		Sound: gcraarmo.wav
+		Notification: ArmorUpgraded
+		Condition: crate-armor
+	GrantExternalConditionCrateAction@speed:
+		SelectionShares: 10
+		Sequence: speed
+		Sound: gcraspee.wav
+		Notification: SpeedUpgraded
+		Condition: crate-armor
 
 amcv.colorpicker:
 	Inherits: amcv

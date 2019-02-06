@@ -269,17 +269,20 @@
 		RequiresCondition: crate-firepower
 		Modifier: 200
 	DamageMultiplier@CRATES:
-		RequiresCondition: crate-damage
-		Modifier: 50
+		RequiresCondition: crate-armor
+		Modifier: 75
 	SpeedMultiplier@CRATES:
 		RequiresCondition: crate-speed
-		Modifier: 170
+		Modifier: 120
 	ExternalCondition@CRATE-FIREPOWER:
 		Condition: crate-firepower
-	ExternalCondition@CRATE-DAMAGE:
-		Condition: crate-damage
+		TotalCap: 1
+	ExternalCondition@CRATE-ARMOR:
+		Condition: crate-armor
+		TotalCap: 1
 	ExternalCondition@CRATE-SPEED:
 		Condition: crate-speed
+		TotalCap: 1
 
 ^AffectedByIndustrialPlant:
 	ProductionCostMultiplier@INDUSTRAL_PLANT:
