@@ -165,50 +165,6 @@ Flare:
 		Duration: 8
 		Condition: flare
 
-IvanBombAttacher:
-	ValidTargets: IvanBomb
-	ReloadDelay: 50
-	TargetActorCenter: true
-	Range: 1c512
-	Projectile: InstantHit
-	Warhead@1Att: AttachDelayedWeapon
-		Weapon: IvanBomber
-		Type: IvanBomb
-		TriggerTime: 125
-		Range: 0c128
-	Warhead@2Dam: TargetDamage
-
-SEALC4Attacher:
-	Inherits: IvanBombAttacher
-	ValidTargets: SEALC4
-	Warhead@1Att: AttachDelayedWeapon
-		Weapon: SEALC4
-		Type: SEALC4
-		TriggerTime: 50
-
-CommandoC4Attacher:
-	Inherits: IvanBombAttacher
-	ValidTargets: CommandoC4
-	Warhead@1Att: AttachDelayedWeapon
-		Weapon: SEALC4
-		Type: CommandoC4
-		TriggerTime: 50
-
-TanyaC4Attacher:
-	Inherits: IvanBombAttacher
-	ValidTargets: TanyaC4
-	Warhead@1Att: AttachDelayedWeapon
-		Weapon: TanyaC4
-		Type: TanyaC4
-		TriggerTime: 50
-
-DefuseKit:
-	ReloadDelay: 25
-	ValidTargets: IvanBombCleaner, SEALC4Cleaner, TanyaC4Cleaner
-	Warhead@1Det: DetachDelayedWeapon
-		Types: IvanBomb, SEALC4, CommandoC4, TanyaC4
-	Warhead@2Dam: TargetDamage
-
 SpyCameraWeapon:
 	Range: 20c0
 	ReloadDelay: 25

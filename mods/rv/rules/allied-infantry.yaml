@@ -550,6 +550,12 @@ ghost:
 		Weapon: SealC4Attacher
 		Cursor: c4
 		OutsideRangeCursor: c4
+		RequiresCondition: !rank-elite
+	Armament@sapper-elite:
+		Weapon: SealC4AttacherE
+		Cursor: c4
+		OutsideRangeCursor: c4
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable
@@ -586,6 +592,8 @@ ccomand:
 		CrushClasses: vehicle
 	Armament@sapper:
 		Weapon: CommandoC4Attacher
+	Armament@sapper-elite:
+		Weapon: CommandoC4AttacherE
 	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
@@ -636,6 +644,13 @@ ptroop:
 		Weapon: CommandoC4Attacher
 		Cursor: c4
 		OutsideRangeCursor: c4
+		RequiresCondition: !rank-elite
+	Armament@sapper-elite:
+		Name: sapper
+		Weapon: CommandoC4AttacherE
+		Cursor: c4
+		OutsideRangeCursor: c4
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Armaments: primary, sapper
 

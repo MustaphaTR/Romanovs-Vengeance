@@ -121,6 +121,9 @@ IvanBomber:
 
 IvanBomberE:
 	Inherits: IvanBomber
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 750
 	Warhead@2Eff: CreateEffect
 		Explosions: ivan_explosionE
 
@@ -155,6 +158,11 @@ SealC4:
 			Wood: 90
 			Steel: 90
 			Concrete: 45
+
+SealC4E:
+	Inherits: SealC4
+	Warhead@1Dam: SpreadDamage
+		Damage: 1000
 
 CRNuke:
 	Inherits: IvanBomber
