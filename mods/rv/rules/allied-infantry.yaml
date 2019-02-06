@@ -49,6 +49,7 @@ engineer:
 
 dog:
 	Inherits: ^Infantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Infantry.Allies, Infantry.Soviets
 		Prerequisites: ~barracks
@@ -142,6 +143,7 @@ e1:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Allies
@@ -264,6 +266,7 @@ ggi:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && undeployed
@@ -403,6 +406,7 @@ ggi:
 snipe:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Valued:
 		Cost: 600
@@ -500,6 +504,7 @@ spy:
 ghost:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
@@ -657,6 +662,7 @@ ptroop:
 tany:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
 		Queue: Infantry.Allies
@@ -735,6 +741,7 @@ tany:
 jumpjet:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
 	HiddenUnderFog:
 		Type: CenterPosition
 	Buildable:
@@ -846,6 +853,7 @@ jumpjet.husk:
 
 cleg:
 	Inherits: ^Infantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Selectable:
 		Bounds: 20, 30, 0, -11
