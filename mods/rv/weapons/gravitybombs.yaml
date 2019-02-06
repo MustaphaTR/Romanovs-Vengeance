@@ -1,5 +1,5 @@
 BlimpBomb:
-	ReloadDelay: 45
+	ReloadDelay: 50
 	Range: 0c256
 	MinRange: 0c001
 	Report: vkiratta.wav
@@ -37,6 +37,15 @@ BlimpBomb:
 		ValidTargets: Water
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
+
+BlimpBombE:
+	Inherits: BlimpBomb
+	ReloadDelay: 45
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c576
+		Damage: 825 # 275
+	Warhead@2Eff: CreateEffect
+		Explosions: kirovtesla
 
 EMPulse:
 	ReloadDelay: 10
