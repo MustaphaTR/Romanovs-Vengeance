@@ -143,7 +143,7 @@ TeslaFragment:
 		Damage: 30
 
 SonicZap:
-	ReloadDelay: 180
+	ReloadDelay: 120
 	Range: 6c0
 	Report: vdolatta.wav
 	ValidTargets: Water, Underwater
@@ -160,7 +160,7 @@ SonicZap:
 	Warhead@1Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 100, 100
-		Damage: 4
+		Damage: 10
 		AffectsParent: false
 		ValidStances: Neutral, Enemy
 		Versus:
@@ -171,7 +171,7 @@ SonicZap:
 	Warhead@2Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 50, 50
-		Damage: 4
+		Damage: 10
 		AffectsParent: false
 		ValidStances: Ally
 		Versus:
@@ -180,6 +180,12 @@ SonicZap:
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, RemovesSquid
 		ValidTargets: Water, Underwater
 		InvalidTargets: ImmuneToAllySonic
+
+SonicZapE:
+	Inherits: SonicZap
+	ReloadDelay: 80
+	Warhead@1Dam: SpreadDamage
+		Damage: 15
 
 PrismShot:
 	ReloadDelay: 1
