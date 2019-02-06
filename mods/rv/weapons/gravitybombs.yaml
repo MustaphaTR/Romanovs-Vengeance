@@ -86,6 +86,13 @@ EMPulseBEagle:
 	Warhead@2Eff: CreateEffect
 		Explosions: empulse50p
 
+EMPulseBEagleE:
+	Inherits: EMPulseBEagle
+	Warhead@1Dam: SpreadDamage
+		Damage: 200
+	Warhead@1Dis: GrantExternalCondition
+		Duration: 250
+
 ParaBomb:
 	ReloadDelay: 11
 	Range: 4c0

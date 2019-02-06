@@ -210,6 +210,11 @@ orca:
 	Armament:
 		Weapon: Maverick
 		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: MaverickE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
 	AttackAircraft:
 		FacingTolerance: 20
 		Voice: Attack
@@ -267,6 +272,8 @@ beag:
 		Actor: beaghusk
 	Armament:
 		Weapon: EMPulseBEagle
+	Armament@Elite:
+		Weapon: EMPulseBEagleE
 	AmmoPool:
 		Ammo: 1
 		PipCount: 1
@@ -717,6 +724,8 @@ bpln:
 		Actor: bplnhusk
 	Armament:
 		Weapon: Maverick3
+	Armament@Elite:
+		Weapon: Maverick3E
 	Health:
 		HP: 100
 	AmmoPool:

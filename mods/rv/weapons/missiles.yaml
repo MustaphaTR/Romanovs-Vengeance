@@ -162,11 +162,23 @@ Maverick:
 		ImpactSounds: gexpwala.wav
 		ValidTargets: Water
 
+MaverickE:
+	Inherits: Maverick
+	Range: 9c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 200
+
 Maverick2:
 	Inherits: Maverick
 	Report: vbleatta.wav, vbleattb.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 200
+
+Maverick2E:
+	Inherits: Maverick2
+	Range: 9c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 400
 
 Maverick3:
 	Inherits: Maverick
@@ -181,6 +193,12 @@ Maverick3:
 		Explosions: ra1_atomic
 		ExplosionPalette: ra
 		ImpactSounds: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
+
+Maverick3E:
+	Inherits: Maverick3
+	Range: 9c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 1000
 
 Medusa:
 	Inherits: ^AAMissile
