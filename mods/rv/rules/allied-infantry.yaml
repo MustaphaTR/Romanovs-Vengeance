@@ -898,11 +898,20 @@ cleg:
 		ExplodeInstead: false
 	Voiced:
 		VoiceSet: ChronoLegionnaireVoice
-	Armament@Temporal:
+	Armament@primary:
 		Weapon: NeutronRifle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: NeutronRifleE
+		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: NeutronRifle
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: NeutronRifleE
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable

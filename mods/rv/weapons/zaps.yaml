@@ -315,8 +315,7 @@ NeutronRifle:
 	TargetActorCenter: true
 	Projectile: TeslaZap
 		Palette: highlight
-	Warhead@Damage: SpreadDamage
-		Spread: 64
+	Warhead@Damage: TargetDamage
 		Damage: 8
 	Warhead@Disable: GrantExternalCondition
 		Range: 64
@@ -325,6 +324,11 @@ NeutronRifle:
 	Warhead@Stars: CreateEffect
 		Explosions: chronosk
 		ValidTargets: Ground, Water
+
+NeutronRifleE:
+	Inherits: NeutronRifle
+	Warhead@Damage: TargetDamage
+		Damage: 16
 
 CRNeutronRifle:
 	Inherits: NeutronRifle
