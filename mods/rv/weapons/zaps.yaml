@@ -315,7 +315,8 @@ NeutronRifle:
 	TargetActorCenter: true
 	Projectile: TeslaZap
 		Palette: highlight
-	Warhead@Damage: TargetDamage
+	Warhead@Damage: SpreadDamage
+		Spread: 64
 		Damage: 8
 	Warhead@Disable: GrantExternalCondition
 		Range: 64
@@ -327,7 +328,7 @@ NeutronRifle:
 
 NeutronRifleE:
 	Inherits: NeutronRifle
-	Warhead@Damage: TargetDamage
+	Warhead@Damage: SpreadDamage
 		Damage: 16
 
 CRNeutronRifle:
