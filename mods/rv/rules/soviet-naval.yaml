@@ -104,6 +104,12 @@ sub:
 		Weapon: SubTorpedo
 		LocalOffset: 768,0,0
 		FireDelay: 2
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: SubTorpedoE
+		LocalOffset: 768,0,0
+		FireDelay: 2
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
