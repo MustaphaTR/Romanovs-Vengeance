@@ -326,7 +326,8 @@ pdplane:
 	Armor:
 		Type: Light
 	RenderSprites:
-	WithVoxelBody:
+	WithVoxelHelicopterBody:
+		TickRate: 1
 	Cargo:
 		MaxWeight: 10
 	ParaDrop:
@@ -335,6 +336,8 @@ pdplane:
 	SpawnActorOnDeath:
 		Actor: pdplanehusk
 	HitShape:
+	RenderVoxels:
+		Image: pdplane
 
 pdplanehusk:
 	Inherits: ^PlaneHusk
@@ -346,21 +349,29 @@ pdplanehusk:
 	RenderVoxels:
 		Image: pdplane
 
+alplane:
+	Inherits: pdplane
+	SpawnActorOnDeath:
+		Actor: alplanehusk
+	RenderVoxels:
+		Image: alplane
+
+alplanehusk:
+	Inherits: pdplanehusk
+	RenderVoxels:
+		Image: alplane
+
 pdplane.parabomb:
 	Inherits: pdplane
 	Armament:
 		Weapon: ParaBomb
 	AttackBomber:
-	RenderVoxels:
-		Image: pdplane
 
 pdplane.emp:
-	Inherits: pdplane
+	Inherits: alplane
 	Armament:
 		Weapon: EMPulse
 	AttackBomber:
-	RenderVoxels:
-		Image: pdplane
 
 pdplane.naval_mines:
 	Inherits: pdplane
@@ -371,16 +382,12 @@ pdplane.naval_mines:
 		Ammo: 5
 		AmmoCondition: ammo
 	AttackBomber:
-	RenderVoxels:
-		Image: pdplane
 
 pdplane.cluster_mines:
 	Inherits: pdplane
 	Armament:
 		Weapon: ClusterMines
 	AttackBomber:
-	RenderVoxels:
-		Image: pdplane
 
 pdplane.crate:
 	Inherits: ^NeutralAircraft
@@ -400,13 +407,24 @@ pdplane.crate:
 		TurnSpeed: 5
 		Speed: 225
 	RenderSprites:
-	WithVoxelBody:
+	WithVoxelHelicopterBody:
+		TickRate: 1
 	Cargo:
 		MaxWeight: 10
 	ParaDrop:
 		DropRange: 4c0
 		ChuteSound: sparadra.wav
 	HitShape:
+	RenderVoxels:
+		Image: civplane
+
+alplane.rpad:
+	Inherits: pdplane.crate
+	RenderVoxels:
+		Image: alplane
+
+svplane.rpad:
+	Inherits: pdplane.crate
 	RenderVoxels:
 		Image: pdplane
 

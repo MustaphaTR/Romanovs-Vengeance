@@ -67,7 +67,7 @@ caairp:
 		EndChargeSpeechNotification: ParatroopersReady
 		DropItems: e1,e1,e1,e1,e1,e1
 		QuantizedFacings: 8
-		UnitType: pdplane
+		UnitType: alplane
 		CameraActor: camera
 		Prerequisites: ~techparadrops.allies
 		ArrowSequence: arrow
@@ -322,20 +322,25 @@ carpad:
 		ExitCell: 0,1
 	GrantConditionOnCombatantOwner:
 		Condition: enabled
-	ProductionParadrop:
-		Produces: ReinforcementsPad
-		ActorType: pdplane.crate
+	ProductionParadrop@Allies:
+		Produces: ReinforcementsPad.Allies
+		ActorType: alplane.rpad
+		ChuteSound: sparadra.wav
+	ProductionParadrop@Soviets:
+		Produces: ReinforcementsPad.Soviets
+		ActorType: svplane.rpad
+		ChuteSound: sparadra.wav
 	PeriodicProducer@Allies:
 		Actors: mtnk
 		ChargeDuration: 3750
-		Type: ReinforcementsPad
+		Type: ReinforcementsPad.Allies
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
 		RequiresCondition: enabled && allies
 	PeriodicProducer@Soviets:
 		Actors: htnk
 		ChargeDuration: 3750
-		Type: ReinforcementsPad
+		Type: ReinforcementsPad.Soviets
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
 		RequiresCondition: enabled && soviets
