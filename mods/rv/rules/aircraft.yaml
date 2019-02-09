@@ -1,5 +1,5 @@
 shad:
-	Inherits: ^Aircraft
+	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
@@ -35,6 +35,7 @@ shad:
 	-AppearsOnRadar:
 	AttackAircraft:
 		Voice: Attack
+		PauseOnCondition: emp
 	Aircraft:
 		CruiseAltitude: 3072
 		LandWhenIdle: true
@@ -43,6 +44,7 @@ shad:
 		Speed: 140
 		AltitudeVelocity: 120
 		CruisingCondition: cruising
+		LandOnCondition: emp
 	Repairable:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp
@@ -585,7 +587,7 @@ spyphusk:
 		Explosion: UnitExplode
 
 schp:
-	Inherits: ^Aircraft
+	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
@@ -636,10 +638,10 @@ schp:
 		Type: CenterPosition
 	AttackAircraft:
 		Voice: Attack
-		PauseOnCondition: !airborne && actually-deployed
+		PauseOnCondition: (!airborne && actually-deployed) || emp
 	AttackTurreted:
 		Voice: DeployedAttack
-		PauseOnCondition: airborne || !actually-deployed
+		PauseOnCondition: airborne || !actually-deployed || emp
 	Aircraft:
 		CruiseAltitude: 3072
 		LandWhenIdle: false
@@ -648,13 +650,13 @@ schp:
 		Speed: 140
 		AltitudeVelocity: 120
 		CruisingCondition: cruising
-		LandOnCondition: deployed || (!airborne && !actually-undeployed)
+		LandOnCondition: deployed || (!airborne && !actually-undeployed) || emp
 	GrantConditionOnDeploy:
 		Facing: 160
 		DeployedCondition: deployed
 		AllowedTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		CanDeployOnRamps: true
-		PauseOnCondition: deployed && !actually-deployed
+		PauseOnCondition: (deployed && !actually-deployed) || emp
 	GrantConditionAfterDelay@deploy:
 		Delay: 37
 		ShowSelectionBar: false
@@ -781,7 +783,7 @@ bplnhusk:
 
 # Custom Aircraft
 hind:
-	Inherits: ^Aircraft
+	Inherits: ^Helicopter
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	DamagedByTintedCells:
@@ -815,6 +817,7 @@ hind:
 		Speed: 125
 		AltitudeVelocity: 160
 		CruisingCondition: cruising
+		LandOnCondition: emp
 	Repairable:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp

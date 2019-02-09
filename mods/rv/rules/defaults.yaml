@@ -1319,6 +1319,17 @@
 		RequiresCondition: cruising
 	WithVoxelBody:
 
+^Helicopter:
+	Inherits: ^Aircraft
+	Inherits@1: ^DisabledByEMP
+	Targetable@EMP:
+		RequiresCondition: !airborne
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
+
 ^ShootableMissile:
 	Inherits@1: ^ExistsInWorld
 	Armor:
@@ -1674,6 +1685,8 @@
 		Sequence: idle
 		Palette: tseffect
 		RequiresCondition: emp
+	Targetable@EMP:
+		TargetTypes: EMPulse
 	TimedConditionBar@EMP:
 		Condition: emp
 		Color: 0088FF
