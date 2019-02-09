@@ -586,12 +586,13 @@ boris:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
 		Queue: Infantry.Soviets
 		BuildPaletteOrder: 180
 		Prerequisites: natech
 		BuildLimit: 1
-		Description: Elite commando infantry, armed with \nAKM rifle and signal flare.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can call airstrike against Buildings.\n\nMaximum 1 can be trained.
+		Description: Elite commando infantry, armed with\nAKM rifle and signal flare.\nCan use a boat to move over water.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can call airstrike against Buildings.\n\nMaximum 1 can be trained.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -608,6 +609,7 @@ boris:
 		HP: 125
 	Mobile:
 		Speed: 75
+		Locomotor: swimsuit
 	RevealsShroud:
 		Range: 9c0
 	RevealOnDeath:
@@ -667,6 +669,11 @@ boris:
 		DefaultAttackSequence: shoot
 		AttackSequences:
 			secondary: shoot-flare
+	WithInfantryBody@Water:
+		-IdleSequences:
+		AttackSequences:
+			secondary: swim-shoot-flare
+	-TakeCover: # TODO: needs to be conditional so we can disable in water
 
 # Custom Revenge Infantry
 pyro:
