@@ -720,8 +720,7 @@ robo:
 	Buildable:
 		Queue: Vehicle.Allies
 		BuildPaletteOrder: 40
-		Prerequisites: garobo
-		Description: Remote controlled vehicle.\nCan move over water.\nCannot be mind controlled.\nRequires a working Robot Control Center to operate.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
+		Description: Remote controlled vehicle.\nCan move over water.\nCannot be mind controlled.\nRequires an Allied War Factory to operate.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -772,7 +771,7 @@ robo:
 		LocalOffset: 0,0,384
 	GrantConditionOnPrerequisite:
 		Condition: powered
-		Prerequisites: powered_garobo
+		Prerequisites: powered_gaweap
 	Targetable:
 		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, DroneInfection, ImmuneToRadiation
 		RequiresCondition: !in_water

@@ -489,7 +489,7 @@ gaweap:
 		Queue: Building.Allies
 		BuildPaletteOrder: 40
 		Prerequisites: garefn
-		Description: Produces vehicles.
+		Description: Produces vehicles.\nRequired for Robot Tanks to function.
 	Selectable:
 		Bounds: 212, 158, -7, -28
 	Valued:
@@ -502,6 +502,9 @@ gaweap:
 		Prerequisite: vehicles.germany
 		Factions: germany
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@powered:
+		Prerequisite: powered_gaweap
+		RequiresCondition: !chronodisable
 	Building:
 		Footprint: xxxx= xxxx= xxxx=
 		Dimensions: 5,3
@@ -1313,7 +1316,7 @@ garobo:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: gaweap
+		Prerequisites: ~disabled # gaweap
 		Description: Allows production of Robot Tanks.\nRequired for Robot Tanks to function.
 	Selectable:
 		Bounds: 96, 98, -4, -30
