@@ -19,22 +19,19 @@ namespace OpenRA.Mods.RA2.Activities
 {
 	class Infect : Enter
 	{
-		readonly Actor target;
+		readonly Target target;
 
 		public Infect(Actor self, Target target)
 			: base(self, target, Color.Red)
 		{
-			this.target = target.Actor;
+			this.target = target;
 		}
 
 		protected override void OnEnterComplete(Actor self, Actor targetActor)
 		{
 			self.World.AddFrameEndTask(w =>
 			{
-				if (target.IsDead)
-					return;
-
-                var infectable = target.Trait<Infectable>();
+                var infectable = targetActor.Trait<Infectable>();
                 if (infectable.Infector != null)
                     return;
 
@@ -44,8 +41,8 @@ namespace OpenRA.Mods.RA2.Activities
                 infectable.Infector = self;
                 infectable.InfectorTrait = infector;
                 infectable.Ticks = infector.Info.DamageInterval;
-                infectable.GrantCondition(target);
-                infectable.RevokeCondition(target, true);
+                infectable.GrantCondition(targetActor);
+                infectable.RevokeCondition(targetActor, true);
             });
         }
 
@@ -63,26 +60,32 @@ namespace OpenRA.Mods.RA2.Activities
 
         void CancelInfection(Actor self)
         {
-            if (!target.IsDead)
-            {
-                var infectable = target.Trait<Infectable>();
+            if (target.Type != TargetType.Actor)
+                return;
+
+            if (target.Actor.IsDead)
+                return;
+
+            var infectable = target.Actor.Trait<Infectable>();
                 if (infectable.Infector != null)
                     return;
 
-                infectable.RevokeCondition(target, true);
-            }
+           infectable.RevokeCondition(target.Actor, true);
         }
 
         protected override bool TryStartEnter(Actor self, Actor targetActor)
         {
-            var infectable = target.Trait<Infectable>();
+            if (targetActor.IsDead)
+                return false;
+
+            var infectable = targetActor.Trait<Infectable>();
             if (infectable.Infector != null)
                 return false;
 
             if (infectable.Infector != null)
                 return false;
 
-            infectable.GrantCondition(target, true);
+            infectable.GrantCondition(targetActor, true);
 
             return true;
         }
