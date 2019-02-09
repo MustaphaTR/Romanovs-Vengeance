@@ -56,6 +56,12 @@ RepairBullet:
 		ValidTargets: Repair
 		DamageTypes: KillsDrone
 
+MechRepair:
+	Inherits: RepairBullet
+	Report: fixit1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: -25
+
 EmergencyRepair:
 	ReloadDelay: 80
 	Range: 1c819
