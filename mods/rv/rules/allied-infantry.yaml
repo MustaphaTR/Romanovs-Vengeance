@@ -309,6 +309,9 @@ ggi:
 		Radius: 3c0
 	Crushable:
 		RequiresCondition: undeployed
+	Crushable@deployed:
+		CrushClasses: vehicle
+		RequiresCondition: !undeployed
 	Armament@primary:
 		Weapon: M60
 		RequiresCondition: !rank-elite && !deployed
