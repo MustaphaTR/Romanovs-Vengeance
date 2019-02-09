@@ -92,7 +92,7 @@ cmin:
 	RevealOnDeath:
 		Radius: 2c0
 	Targetable:
-		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, DroneInfection, ImmuneToRadiation
+		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect
@@ -773,10 +773,10 @@ robo:
 		Condition: powered
 		Prerequisites: powered_gaweap
 	Targetable:
-		TargetTypes: Ground, Vehicle, Repair, DetonateAttack, DroneInfection, ImmuneToRadiation
+		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 		RequiresCondition: !in_water
 	Targetable@WATER:
-		TargetTypes: Ground, Water, Vehicle, Repair, DetonateAttack, ImmuneToRadiation
+		TargetTypes: Ground, Water, Vehicle, DetonateAttack, ImmuneToRadiation
 		RequiresCondition: in_water
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water
