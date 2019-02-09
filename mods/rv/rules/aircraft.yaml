@@ -185,6 +185,7 @@ zephusk:
 
 orca:
 	Inherits: ^Plane
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -239,6 +240,8 @@ orca:
 		PipTypeEmpty: AmmoEmpty
 		AmmoCondition: ammo
 	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
 	RenderSprites:
 		Image: falc
 	RenderVoxels:
