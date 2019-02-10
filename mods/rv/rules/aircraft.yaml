@@ -50,7 +50,7 @@ shad:
 		RepairBuildings: gadept, nadept, caoutp
 	RenderSprites:
 	Targetable@MC:
-		RequiresCondition: !controlled && !airborne
+		RequiresCondition: !controlled && !permamc && !airborne
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
@@ -232,7 +232,7 @@ orca:
 	Rearmable:
 		RearmActors: gaairc
 	Targetable@MC:
-		RequiresCondition: !controlled && !airborne
+		RequiresCondition: !controlled && !permamc && !airborne
 	AmmoPool:
 		Ammo: 2
 		PipCount: 2
@@ -683,7 +683,7 @@ schp:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp
 	Targetable@MC:
-		RequiresCondition: !controlled && !airborne
+		RequiresCondition: !controlled && !permamc && !airborne
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
@@ -825,7 +825,7 @@ hind:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp
 	Targetable@MC:
-		RequiresCondition: !controlled && !airborne
+		RequiresCondition: !controlled && !permamc && !airborne
 	-DeathSounds:
 	RenderSprites:
 		Scale: 1.15
@@ -879,3 +879,89 @@ hindhusk:
 		ForceToGround: true
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
+
+fortress:
+	Inherits: ^Plane
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: B2 Spirit
+	Buildable:
+		Queue: Aircraft.Allies
+		BuildPaletteOrder: 40
+		Description: Carpet bomber plane.\nUndetectable by radar.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+		Prerequisites: gatech
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 165
+		CanHover: false
+		VTOL: false
+	Selectable:
+		Bounds: 30,24
+	Health:
+		HP: 175
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 9c0
+		Type: CenterPosition
+	Armament:
+		Weapon: SpiritBomb
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: SpiritBombE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	AttackAircraft:
+		FacingTolerance: 20
+		Voice: Attack
+	Voiced:
+		VoiceSet: HarrierVoice
+	Repairable:
+		Voice: Move
+		RepairBuildings: gadept, nadept, caoutp
+	Rearmable:
+		RearmActors: gaairc
+	Targetable@MC:
+		RequiresCondition: !controlled && !permamc && !airborne
+	AmmoPool:
+		Ammo: 5
+		PipCount: 5
+		PipType: Ammo
+		PipTypeEmpty: AmmoEmpty
+		AmmoCondition: ammo
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	RenderSprites:
+	RenderVoxels:
+		NormalsPalette: ts-normals
+	SpawnActorOnDeath:
+		Actor: fortresshusk
+	HitShape:
+
+fortresshusk:
+	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: B2 Spirit
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 165
+	RevealsShroud:
+		Range: 9c0
+		Type: CenterPosition
+	RevealOnDeath:
+		Radius: 4c0
+		Duration: 50
+	RenderVoxels:
+		Image: fortress
+		NormalsPalette: ts-normals

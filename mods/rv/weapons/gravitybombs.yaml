@@ -180,3 +180,50 @@ SpawnMine:
 		Range: 0
 		ForceGround: true
 		ValidTargets: Ground, Water, Air
+
+SpiritBomb:
+	ReloadDelay: 60
+	Burst: 5
+	BurstDelays: 6
+	Range: 2c512
+	TargetActorCenter: true
+	Projectile: GravityBomb
+		Velocity: 72, 0, -50
+		Acceleration: 0, 0, -10
+		Image: 120mm
+		Shadow: true
+		Palette: ra
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c384
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 75
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 70
+			Medium: 35
+			Heavy: 35
+			Wood: 85
+			Steel: 75
+			Concrete: 50
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone100Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexp14a.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Building, Wall
+
+SpiritBombE:
+	Inherits: SpiritBomb
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 100
