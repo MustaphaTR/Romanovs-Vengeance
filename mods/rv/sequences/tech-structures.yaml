@@ -96,6 +96,7 @@ caoutp:
 # Yuri's Revenge Tech Structures
 capowr:
 	Defaults:
+		Offset: 0, -30
 		UseTilesetCode: true
 		TilesetOverrides:
 			TEMPERATE: GENERIC
@@ -105,11 +106,9 @@ capowr:
 			LUNAR: GENERIC
 	idle:
 		ShadowStart: 4
-		Offset: 0, -30
 	damaged-idle:
 		Start: 1
 		ShadowStart: 5
-		Offset: 0, -30
 	flag: caoild_f
 		Length: 16
 		Offset: 48, -37
@@ -224,6 +223,40 @@ carpad:
 	flag: caoild_f
 		Length: 16
 		Offset: 58,-80
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+
+capsyb:
+	Defaults:
+		Offset: 0, -30
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ngpsyb
+		ShadowStart: 3
+	damaged-idle: ngpsyb
+		Start: 1
+		ShadowStart: 4
+	idle-spin: ngpsyb_a
+		Length: 15
+		ShadowStart: 30
+		Tick: 150
+	damaged-idle-spin: ngpsyb_a
+		Start: 15
+		Length: 15
+		ShadowStart: 45
+		Tick: 150
+	flag: caoild_f
+		Length: 16
+		Offset: 9, -30
 		TilesetOverrides:
 			TEMPERATE: TEMPERATE
 			URBAN: URBAN

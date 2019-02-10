@@ -350,3 +350,24 @@ DemoTruckTargeting:
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
 		ValidTargets: DetonateAttack
+
+PsychicControl:
+	Projectile: InstantExplode
+	ValidTargets: MindControl
+	Warhead@1Cap: CaptureActor
+		Delay: 55
+		CaptureTypes: permamc
+		Range: 1c512
+		PlayerExperience: 20
+	Warhead@2Con: GrantExternalCondition
+		Delay: 55
+		Range: 1c512
+		Condition: permamc
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: spsydom.wav
+		Explosions: yuriface
+		ValidTargets: Ground, Air, Water
+	Warhead@4Eff: CreateEffect
+		Delay: 40
+		Explosions: controlwave
+		ValidTargets: Ground, Air, Water

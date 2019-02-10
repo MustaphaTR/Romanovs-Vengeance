@@ -427,18 +427,24 @@
 		Offset: 0,0,960
 	Targetable@MC:
 		TargetTypes: MindControl
-		RequiresCondition: !controlled
+		RequiresCondition: !controlled && !permamc
 	WithIdleOverlay@mindcontrol:
 		Sequence: mindcontrol
 		Palette: effect
-		RequiresCondition: controlled
+		RequiresCondition: controlled || permamc
+	Capturable@PERMAMC:
+		Types: permamc
+		RepairCondition: !controlled && !permamc
+	CaptureManager:
+	ExternalCondition@PERMAMC:
+		Condition: permamc
 
 ^MindControllableDisabledWithIC:
 	Inherits: ^MindControllable
 	MindControllable:
 		PauseOnCondition: invulnerability
 	Targetable@MC:
-		RequiresCondition: !controlled && !invulnerability
+		RequiresCondition: !controlled && !permamc && !invulnerability
 
 ^SquidGrabbable:
 	WithFacingSpriteBody:

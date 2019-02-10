@@ -352,3 +352,39 @@ carpad:
 		Condition: soviets
 		Factions: cuba, libya, iraq, russia, vietnam
 		ResetOnOwnerChange: true
+
+capsyb:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Tech Psychic Beacon
+	TooltipDescription:
+		Description: Provides Psychic Conntrol support power.
+	Selectable:
+		Bounds: 96, 160, 0, -64
+	Armor:
+		Type: Wood
+	Health:
+		HP: 400
+	BaseProvider:
+		Range: 4c0
+	RevealsShroud:
+		Range: 4c0
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	DetonateWeaponPower:
+		OrderName: TechPsychicControl
+		PauseOnCondition: chronodisable || emp
+		Icon: control
+		ChargeInterval: 4500
+		Description: Psychic Control
+		LongDesc: Captures enemy units in a small area.\n\nCan be applied on ally units to\nmake them immune to mind control.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapon: PsychicControl
+		ActivationSequence:
+	SupportPowerChargeBar:
+	WithIdleOverlay@spin:
+		Sequence: idle-spin
+	WithIdleOverlay@flag:
+		Sequence: flag
