@@ -73,7 +73,7 @@ flakt:
 		Queue: Infantry.Soviets
 		Prerequisites: naradr
 		BuildPaletteOrder: 70
-		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles
+		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles\nCan garrison.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -90,6 +90,7 @@ flakt:
 		HP: 100
 	Passenger:
 		PipType: Green
+		CargoType: Garrisoner
 	RevealsShroud:
 		Range: 5c0
 	RevealOnDeath:
@@ -111,6 +112,26 @@ flakt:
 		RequiresCondition: rank-elite
 	Armament@secondary-elite:
 		Weapon: FlakGuyAAGunE
+		LocalOffset: 256,0,1024
+		RequiresCondition: rank-elite
+	Armament@primary-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlakGuyGun
+		LocalOffset: 256,0,1024
+		RequiresCondition: !rank-elite
+	Armament@secondary-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlakGuyAAGun
+		LocalOffset: 256,0,1024
+		RequiresCondition: !rank-elite
+	Armament@primary-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlakGuyGunE
+		LocalOffset: 256,0,1024
+		RequiresCondition: rank-elite
+	Armament@secondary-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlakGuyAAGunE
 		LocalOffset: 256,0,1024
 		RequiresCondition: rank-elite
 	Armament@primary-opentopped:
