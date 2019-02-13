@@ -184,8 +184,9 @@ SpawnMine:
 SpiritBomb:
 	ReloadDelay: 60
 	Burst: 5
-	BurstDelays: 6
+	BurstDelays: 3
 	Range: 2c512
+	Report: vkiratta.wav
 	TargetActorCenter: true
 	Projectile: GravityBomb
 		Velocity: 72, 0, -50
@@ -196,17 +197,17 @@ SpiritBomb:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c384
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 75
+		Damage: 100
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 70
-			Medium: 35
-			Heavy: 35
-			Wood: 85
-			Steel: 75
-			Concrete: 50
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 150
+			Steel: 150
+			Concrete: 90
 			Drone: 100
 			Rocket: 100
 		DamageTypes: Prone100Percent, TriggerProne, ExplosionDeath
@@ -226,4 +227,10 @@ SpiritBombE:
 	Inherits: SpiritBomb
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
-		Damage: 100
+		Damage: 150
+		Versus:
+			Concrete: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Air
