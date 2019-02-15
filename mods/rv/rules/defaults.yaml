@@ -710,15 +710,16 @@
 
 ^GarrisonableBuilding:
 	Inherits: ^CivBuilding
-	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@AUTOTARGET: ^AutoTargetAll
 	ChangeOwnerOnGarrisoner:
 		EnterSound: ugarris.wav
 		ExitSound: ugarris.wav
-		EnterNotification: BuildingCaptured
+		EnterNotification: StructureGarrisoned
+		ExitNotification: StructureAbandoned
 	Garrisonable:
 		Types: Garrisoner
-		MaxWeight: 6
-		PipCount: 6
+		MaxWeight: 10
+		PipCount: 10
 		EjectOnDeath: true
 		LoadedCondition: loaded
 	AttackGarrisonedRV:
@@ -728,7 +729,12 @@
 		PortCones: 88, 88, 88, 88, 88, 88
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-		
+	WithSpriteBody:
+		RequiresCondition: !loaded
+	WithSpriteBody@GARRISONED:
+		Sequence: garrisoned
+		RequiresCondition: loaded
+
 ^Rubble:
 	Inherits@1: ^SpriteActor
 	Inherits@shape: ^1x1Shape
