@@ -74,6 +74,46 @@ gacnst:
 	ProvidesPrerequisite@france:
 		Prerequisite: structures.france
 		Factions: france
+	GrantConditionOnFaction@America:
+		Condition: america
+		Factions: america
+	GrantConditionOnFaction@England:
+		Condition: england
+		Factions: england
+	GrantConditionOnFaction@France:
+		Condition: france
+		Factions: france
+	GrantConditionOnFaction@Germany:
+		Condition: germany
+		Factions: germany
+	GrantConditionOnFaction@Korea:
+		Condition: korea
+		Factions: korea
+	WithIdleOverlay@America:
+		Sequence: flag-usa
+		Palette: player
+		IsPlayerPalette: false
+		RequiresCondition: !build-incomplete && america
+	WithIdleOverlay@England:
+		Sequence: flag-uk
+		Palette: player
+		IsPlayerPalette: false
+		RequiresCondition: !build-incomplete && england
+	WithIdleOverlay@France:
+		Sequence: flag-france
+		Palette: player
+		IsPlayerPalette: false
+		RequiresCondition: !build-incomplete && france
+	WithIdleOverlay@Germany:
+		Sequence: flag-germany
+		Palette: player
+		IsPlayerPalette: false
+		RequiresCondition: !build-incomplete && germany
+	WithIdleOverlay@Korea:
+		Sequence: flag-korea
+		Palette: player
+		IsPlayerPalette: false
+		RequiresCondition: !build-incomplete && korea 
 	Power:
 		Amount: 0
 	SpawnActorsOnSell@allies:

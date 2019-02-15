@@ -69,6 +69,36 @@ nacnst:
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
+	GrantConditionOnFaction@Russia:
+		Condition: russia
+		Factions: russia
+	GrantConditionOnFaction@Iraq:
+		Condition: iraq
+		Factions: iraq
+	GrantConditionOnFaction@Vietnam:
+		Condition: vietnam
+		Factions: vietnam
+	GrantConditionOnFaction@Cuba:
+		Condition: cuba
+		Factions: cuba
+	GrantConditionOnFaction@libya:
+		Condition: libya
+		Factions: libya
+	WithIdleOverlay@Russia:
+		Sequence: flag-russia
+		RequiresCondition: !build-incomplete && russia
+	WithIdleOverlay@Iraq:
+		Sequence: flag-iraq
+		RequiresCondition: !build-incomplete && iraq 
+	WithIdleOverlay@Vietnam:
+		Sequence: flag-vietnam
+		RequiresCondition: !build-incomplete && vietnam
+	WithIdleOverlay@Cuba:
+		Sequence: flag-cuba
+		RequiresCondition: !build-incomplete && cuba
+	WithIdleOverlay@Libya:
+		Sequence: flag-libya
+		RequiresCondition: !build-incomplete && libya
 	SpawnActorsOnSell@allies:
 		ActorTypes: e1, e1, e1, engineer
 		Factions: america, germany, england, france, korea
