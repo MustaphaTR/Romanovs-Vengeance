@@ -225,15 +225,13 @@ fv:
 		Cost: 500
 	Tooltip:
 		Name: Infantry Fighting Vehicle
-		RequiresCondition: !dummy_tooltip_condition
-	GrantCondition:
-		Condition: dummy_tooltip_condition
-	Tooltip@rocket:
-		Name: Rocket IFV
-		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-dog && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
+		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	Tooltip@mg:
 		Name: Machine Gun IFV
 		RequiresCondition: ifv-mg
+	Tooltip@rocket:
+		Name: Rocket IFV
+		RequiresCondition: ifv-rocket
 	Tooltip@engineer:
 		Name: Repair IFV
 		RequiresCondition: ifv-repair
