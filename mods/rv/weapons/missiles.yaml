@@ -321,9 +321,9 @@ MissileLauncher:
 
 MissileLauncherE:
 	Inherits: MissileLauncher
-	ReloadDelay: 20
+	Burst: 2
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 30
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
@@ -336,17 +336,10 @@ CRMissileLauncher:
 
 UCMissileLauncher:
 	Inherits: MissileLauncher
-	ReloadDelay: 33
-	Range: 5c0
-	Warhead@1Dam: SpreadDamage
-		Damage: 48
 
 UCMissileLauncherE:
-	Inherits: MissileLauncherE
-	ReloadDelay: 17
-	Range: 5c0
-	Warhead@1Dam: SpreadDamage
-		Damage: 60
+	Inherits: UCMissileLauncher
+	Burst: 2
 
 SubTorpedo:
 	ReloadDelay: 120
