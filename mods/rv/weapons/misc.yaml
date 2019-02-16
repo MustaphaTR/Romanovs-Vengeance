@@ -231,6 +231,18 @@ WeatherStormInit:
 WeatherCloudDirectInit:
 	Projectile: InstantHit
 	ReloadDelay: 120
+	Warhead@Dam1: SpreadDamage
+		Spread: 3c0
+		Falloff: 100, 66, 33, 0
+		Damage: 180
+		AffectsParent: true
+		ValidTargets: Air
+		Delay: 28
+		DamageTypes: TriggerProne, ElectroDeath
+		Versus:
+			Wood: 85
+			Steel: 75
+			Concrete: 50
 	Warhead@barrage3: FireFragment
 		Weapon: WeatherCloud
 		ValidTargets: Air, Ground, Water
@@ -238,6 +250,18 @@ WeatherCloudDirectInit:
 WeatherCloudRandomInit:
 	Projectile: InstantHit
 	ReloadDelay: 8
+	Warhead@Dam1: SpreadDamage
+		Spread: 3c0
+		Falloff: 100, 66, 33, 0
+		Damage: 180
+		AffectsParent: true
+		ValidTargets: Air
+		Delay: 28
+		DamageTypes: TriggerProne, ElectroDeath
+		Versus:
+			Wood: 85
+			Steel: 75
+			Concrete: 50
 	Warhead@barrage3: FireShrapnel
 		Weapon: WeatherCloud
 		Amount: 3
