@@ -796,7 +796,7 @@ gadept:
 		Footprint: x== xx= x==
 		Dimensions: 3,3
 	Health:
-		HP: 1200
+		HP: 750
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -1094,7 +1094,7 @@ gaspysat:
 		Queue: Building.Allies
 		BuildPaletteOrder: 100
 		Prerequisites: gatech
-		Description: Provides Satellite Scan power, which reveals enemy units for a while.
+		Description: Provides Satellite Scan power, which reveals enemy units for a while./nProvides Radar.
 	Selectable:
 		Bounds: 96, 98, -4, -30
 	Valued:
@@ -1105,15 +1105,15 @@ gaspysat:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 1000
+		HP: 500
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 25c0
+		Range: 15c0
 		RequiresCondition: !disabled
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 25c0
+		Range: 15c0
 		RequiresCondition: !disabled
 	RevealsShroud@DISABLED:
 		Range: 5c0
@@ -1138,12 +1138,12 @@ gaspysat:
 	ProduceActorPower@SatelliteScan:
 		PauseOnCondition: disabled
 		Description: Satellite Scan
-		LongDesc: Reveals all enemy units for 1 minute.\nActivated automatically.
+		LongDesc: Reveals all enemy units for 30 seconds.\nActivated automatically.
 		Icon: satscan
 		Actors: camera.satscan
 		Type: SpySatellite
 		AutoFire: true
-		ChargeInterval: 7500
+		ChargeInterval: 4500
 		OrderName: SatelliteScanPowerInfoOrder
 
 gagap:
@@ -1151,7 +1151,7 @@ gagap:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Valued:
-		Cost: 1000
+		Cost: 500
 	Tooltip:
 		Name: Gap Generator
 	Buildable:
