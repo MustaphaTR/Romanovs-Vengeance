@@ -193,7 +193,7 @@ gapowrup:
 		Name: Advanced Coolants
 	Buildable:
 		Queue: Support.Allies
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 80
 		Prerequisites: gapowr, gaairc
 		Description: Better coolants allow power plant to work more efficently\nproviding 100 more power.
 	Plug:
@@ -883,13 +883,15 @@ gawall:
 		Types: gawall
 	WithWallSpriteBody:
 		Type: gawall
+	Replaceable:
+		Types: AlliedGate
 
 gapill:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Buildable:
 		Queue: Support.Allies
-		BuildPaletteOrder: 30
+		BuildPaletteOrder: 40
 		Prerequisites: barracks
 		Description: Automated anti-infantry defense.
 	Valued:
@@ -939,7 +941,7 @@ nasam:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Allies
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 50
 		Prerequisites: radar
 		Description: Automated anti-aircraft defense.
 	Valued:
@@ -1320,7 +1322,7 @@ atesla:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Allies
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 60
 		Prerequisites: power, radar
 		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
@@ -1460,3 +1462,32 @@ garobo:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
+
+# Custom Structures
+gagatea:
+	Inherits: ^Gate_A
+	Buildable:
+		Queue: Support.Allies
+		BuildPaletteOrder: 20
+	Tooltip:
+		Name: Allied Gate E-W
+	LineBuildNode:
+		Types: gawall
+	WithGateSpriteBody:
+		Type: gawall
+	Replacement:
+		ReplaceableTypes: AlliedGate
+
+gagateb:
+	Inherits: ^Gate_B
+	Buildable:
+		Queue: Support.Allies
+		BuildPaletteOrder: 30
+	Tooltip:
+		Name: Allied Gate N-S
+	LineBuildNode:
+		Types: gawall
+	WithGateSpriteBody:
+		Type: gawall
+	Replacement:
+		ReplaceableTypes: AlliedGate
