@@ -159,9 +159,17 @@ camera.satscan:
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 1500
+		GrantsCondition: killsself
 	GrantConditionOnPrerequisite@UPLINK:
 		Condition: uplinkavailable
 		Prerequisites: gaspysat
+	VoiceAnnouncement:
+		Voice: Build
+	VoiceAnnouncement@Die:
+		Voice: Die
+		RequiresCondition: killsself
+	Voiced:
+		VoiceSet: SatelliteScanVoice
 
 FLAMEGUY:
 	Inherits@1: ^ExistsInWorld
