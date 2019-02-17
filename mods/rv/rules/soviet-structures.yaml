@@ -19,6 +19,9 @@ nacnst:
 		Type: Concrete
 	RevealsShroud:
 		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
 	Valued:
 		Cost: 2000
 	Production:
@@ -134,6 +137,9 @@ napowr:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -182,6 +188,9 @@ nahand:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 6c0
 	Exit@n1_0:
 		SpawnOffset: 0,0,0
@@ -273,6 +282,9 @@ narefn:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
 	TiberianSunRefinery:
 		DockOffset: 3, 1
 		ShowTicks: True
@@ -354,6 +366,9 @@ naradr:
 	ProvidesRadar:
 		RequiresCondition: !disabled && !chronodisable && !emp
 	RevealsShroud:
+		Range: 10c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 10c0
 	SupportPowerChargeBar:
 	AirstrikePower@spyplane:
@@ -463,6 +478,9 @@ mine:
 	HiddenUnderFog:
 	RevealsShroud:
 		Range: 1c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 1c0
 	Mine:
 		CrushClasses: mine
 		DetonateClasses: mine
@@ -524,6 +542,9 @@ naweap:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 4c0
 	RallyPoint:
 		Offset: 6,1
@@ -596,6 +617,9 @@ nayard:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
+		Range: 10c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 10c0
 	# X -2 column
 	Exit@n2_n2:
@@ -768,6 +792,9 @@ nadept:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
 	Reservable:
 	RallyPoint:
 		Offset: 4,1
@@ -841,6 +868,9 @@ nanrct:
 		Type: Concrete
 	RevealsShroud:
 		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -883,6 +913,9 @@ natech:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
 	Power:
 		Amount: -100
 	InfiltrateForSupportPower:
@@ -914,6 +947,9 @@ naclon:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 5c0
 	Power:
 		Amount: -200
@@ -992,7 +1028,15 @@ napsis:
 	RevealsShroud:
 		Range: 15c0
 		RequiresCondition: !disabled
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 15c0
+		RequiresCondition: !disabled
 	RevealsShroud@DISABLED:
+		Range: 5c0
+		RequiresCondition: disabled
+	RevealsShroudToIntelligenceOwner@DISABLED:
+		Types: SatelliteScan
 		Range: 5c0
 		RequiresCondition: disabled
 	RenderDetectionCircle:
@@ -1034,6 +1078,9 @@ nairon:
 	RevealsShroud@ToEnemy:
 		Range: 2c0
 		ValidStances: Neutral, Enemy
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
 	Power:
 		Amount: -200
 	WithSpriteBody:
@@ -1091,6 +1138,9 @@ namisl:
 	RevealsShroud@ToEnemy:
 		Range: 2c0
 		ValidStances: Neutral, Enemy
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
 	Power:
 		Amount: -200
 	SupportPowerChargeBar:
@@ -1166,6 +1216,9 @@ naflak:
 		Type: Steel
 	RevealsShroud:
 		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 7c0
 	Selectable:
 		Bounds: 46, 62, 0, -20
 	Turreted:
@@ -1215,6 +1268,9 @@ tesla:
 	Armor:
 		Type: Steel
 	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 8c0
 	Selectable:
 		Bounds: 44, 88, -2, -33
@@ -1284,6 +1340,9 @@ nalasr:
 	Armor:
 		Type: Steel
 	RevealsShroud:
+		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 7c0
 	Selectable:
 		Bounds: 50, 30, 0, -12
@@ -1359,6 +1418,9 @@ nabnkr:
 		RequiresCondition: !build-incomplete
 	RevealsShroud:
 		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
 
 naindp:
 	Inherits: ^Building
@@ -1394,6 +1456,9 @@ naindp:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 6c0
 	Power:
 		Amount: -200

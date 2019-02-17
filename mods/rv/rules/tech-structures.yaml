@@ -12,18 +12,18 @@ caoild:
 	CashTrickler:
 		Interval: 100
 		Amount: 20
+		RequiresCondition: enabled
 	Tooltip:
 		Name: Tech Oil Derrick
 	TooltipDescription:
 		Description: Periodically provides cash.
 	Health:
 		HP: 500
-	RevealsShroud:
-		Range: 4c0
 	Armor:
 		Type: Wood
 	WithIdleOverlay@pump:
 		Sequence: idle-pump
+		PauseOnCondition: !enabled
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 1000,0,0
@@ -43,8 +43,6 @@ caairp:
 		Type: Wood
 	Health:
 		HP: 400
-	RevealsShroud:
-		Range: 4c0
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -57,6 +55,7 @@ caairp:
 		Factions: cuba, libya, iraq, russia, vietnam
 		ResetOnOwnerChange: true
 	ParatroopersPower@Allies:
+		RequiresCondition: enabled
 		OrderName: AlliedParatroopers
 		Icon: paradrop
 		ChargeInterval: 6000
@@ -72,6 +71,7 @@ caairp:
 		Prerequisites: ~techparadrops.allies
 		ArrowSequence: arrow
 	ParatroopersPower@Soviets:
+		RequiresCondition: enabled
 		OrderName: SovietParatroopers
 		Icon: paradrop
 		ChargeInterval: 6000
@@ -103,12 +103,11 @@ cahosp:
 		Description: Allows infantry to self-heal.
 	Health:
 		HP: 400
-	RevealsShroud:
-		Range: 4c0
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: cahosp
+		RequiresCondition: enabled
 	WithIdleOverlay:
 	WithIdleOverlay@flag:
 		Sequence: flag
@@ -187,8 +186,6 @@ capowr:
 		Dimensions: 2, 2
 	BaseProvider:
 		Range: 4c0
-	RevealsShroud:
-		Range: 4c0
 	EngineerRepairable:
 	Tooltip:
 		Name: Tech Power Plant
@@ -218,11 +215,10 @@ camach:
 		Description: Allows vehicles to self-repair.
 	Health:
 		HP: 400
-	RevealsShroud:
-		Range: 4c0
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
+		RequiresCondition: enabled
 	WithIdleOverlay@flag:
 		Sequence: flag
 
@@ -238,8 +234,6 @@ caslab:
 		Description: Allow construction of a new 3rd tier vehicle.
 	Health:
 		HP: 1250
-	RevealsShroud:
-		Range: 4c0
 	Armor:
 		Type: Wood
 	WithIdleOverlay@flag:
@@ -261,6 +255,8 @@ cacomm:
 		HP: 500
 	RevealsShroud:
 		Range: 14c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 14c0
 	Armor:
 		Type: Wood
 	WithIdleOverlay@flag:
@@ -278,8 +274,6 @@ caarmr:
 		Description: Increases the rate which units are promoted.
 	Health:
 		HP: 500
-	RevealsShroud:
-		Range: 4c0
 	Armor:
 		Type: Wood
 	WithIdleOverlay@flag:
@@ -302,8 +296,6 @@ carpad:
 		HP: 500
 	BaseProvider:
 		Range: 4c0
-	RevealsShroud:
-		Range: 4c0
 	Armor:
 		Type: Wood
 	WithIdleOverlay@building:
@@ -320,8 +312,6 @@ carpad:
 	Exit:
 		Facing: 96
 		ExitCell: 0,1
-	GrantConditionOnCombatantOwner:
-		Condition: enabled
 	ProductionParadrop@Allies:
 		Produces: ReinforcementsPad.Allies
 		ActorType: alplane.rpad
@@ -368,12 +358,11 @@ capsyb:
 		HP: 400
 	BaseProvider:
 		Range: 4c0
-	RevealsShroud:
-		Range: 4c0
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
 	DetonateWeaponPower:
+		RequiresCondition: enabled
 		OrderName: TechPsychicControl
 		PauseOnCondition: chronodisable || emp
 		Icon: control
@@ -386,5 +375,6 @@ capsyb:
 	SupportPowerChargeBar:
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
+		PauseOnCondition: !enabled
 	WithIdleOverlay@flag:
 		Sequence: flag

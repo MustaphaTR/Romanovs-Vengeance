@@ -27,6 +27,9 @@ amcv:
 		Weight: 6
 	RevealsShroud:
 		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
 	RevealOnDeath:
 		Radius: 2c0
 	MustBeDestroyed:
@@ -89,6 +92,9 @@ cmin:
 		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
 	RevealOnDeath:
 		Radius: 2c0
 	Targetable:
@@ -128,6 +134,9 @@ mtnk:
 	Armor:
 		Type: Heavy
 	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 8c0
 	RevealOnDeath:
 		Radius: 4c0
@@ -188,6 +197,9 @@ tnkd:
 	Armor:
 		Type: Heavy
 	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 8c0
 	RevealOnDeath:
 		Radius: 4c0
@@ -282,7 +294,15 @@ fv:
 	RevealsShroud:
 		Range: 8c0
 		RequiresCondition: !ifv-dog
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
+		RequiresCondition: !ifv-dog
 	RevealsShroud@DOG:
+		Range: 10c0
+		RequiresCondition: ifv-dog
+	RevealsShroudToIntelligenceOwner@DOG:
+		Types: SatelliteScan
 		Range: 10c0
 		RequiresCondition: ifv-dog
 	RevealOnDeath:
@@ -503,6 +523,9 @@ sref:
 		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
 	RevealOnDeath:
 		Radius: 4c0
 	Turreted:
@@ -581,6 +604,9 @@ mgtk:
 		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 9c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 9c0
 	RevealOnDeath:
 		Radius: 4c512
 	Armament@primary:
@@ -645,6 +671,9 @@ bfrt:
 		RequiresCondition: !notmobile && !chronodisable && !emp && !beingterrordroned
 	-Crushable:
 	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
@@ -735,6 +764,9 @@ robo:
 		Type: Heavy
 	RevealsShroud:
 		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
@@ -820,6 +852,9 @@ ctnk:
 	Mobile:
 		Speed: 90
 	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0

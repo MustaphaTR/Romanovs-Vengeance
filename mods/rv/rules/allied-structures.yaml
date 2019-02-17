@@ -17,6 +17,9 @@ gacnst:
 		Type: Concrete
 	RevealsShroud:
 		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
 	Valued:
 		Cost: 2000
 	Production:
@@ -152,6 +155,9 @@ gapowr:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
 	Pluggable:
 		Offset: 1,1
 		Conditions:
@@ -227,6 +233,9 @@ gapile:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
 	RallyPoint:
 		Offset: 2,3
 		Palette: mouse
@@ -295,6 +304,9 @@ garefn:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 6c0
 	TiberianSunRefinery:
 		DockOffset: 3,1
@@ -385,6 +397,9 @@ gaairc:
 	ProvidesRadar:
 		RequiresCondition: !disabled && !chronodisable && !emp
 	RevealsShroud:
+		Range: 10c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 10c0
 	WithIdleOverlay@top:
 		Sequence: idle-top
@@ -554,6 +569,9 @@ gaweap:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
 	RallyPoint:
 		Offset: 5,1
 		Palette: mouse
@@ -630,6 +648,9 @@ gayard:
 	Armor:
 		Type: Concrete
 	RevealsShroud:
+		Range: 10c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 10c0
 	# X -2 column
 	Exit@n2_n2:
@@ -780,6 +801,9 @@ gadept:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
 	Reservable:
 	RallyPoint:
 		Offset: 3,1
@@ -811,7 +835,7 @@ gatech:
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: gaairc
 		Description: Allows deployment of advanced units.
 	Selectable:
@@ -829,6 +853,9 @@ gatech:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 6c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
@@ -878,6 +905,9 @@ gapill:
 		Type: Steel
 	RevealsShroud:
 		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 7c0
 	Selectable:
 		Bounds: 50, 30, 0, -4
 	Armament:
@@ -924,6 +954,9 @@ nasam:
 	Armor:
 		Type: Steel
 	RevealsShroud:
+		Range: 9c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 9c0
 	Selectable:
 		Bounds: 46, 62, 0, -20
@@ -978,6 +1011,9 @@ gtgcan:
 		Type: Steel
 	RevealsShroud:
 		Range: 10c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 10c0
 	Selectable:
 		Bounds: 46, 62, 0, -20
 	Turreted:
@@ -1016,7 +1052,7 @@ gaorep:
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		Prerequisites: garefn, gatech
 		Description: Refines income from ores and gems by 25%.\nMaximum 1 can be built.\nCan not be captured.
 		BuildLimit: 1
@@ -1037,6 +1073,9 @@ gaorep:
 		Type: Wood
 	RevealsShroud:
 		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
 		PauseOnCondition: chronodisable
@@ -1053,7 +1092,7 @@ gaspysat:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: gatech
 		Description: Reveals the entire battlefield.
 	Selectable:
@@ -1072,7 +1111,15 @@ gaspysat:
 	RevealsShroud:
 		Range: 25c0
 		RequiresCondition: !disabled
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 25c0
+		RequiresCondition: !disabled
 	RevealsShroud@DISABLED:
+		Range: 5c0
+		RequiresCondition: disabled
+	RevealsShroudToIntelligenceOwner@DISABLED:
+		Types: SatelliteScan
 		Range: 5c0
 		RequiresCondition: disabled
 	WithIdleOverlay@dish:
@@ -1083,6 +1130,21 @@ gaspysat:
 		Amount: -100
 	ProvidesRadar:
 		RequiresCondition: !disabled
+	ProvidesPrerequisite@default:
+	Production:
+		Produces: SpySatellite
+	Exit:
+	SupportPowerChargeBar:
+	ProduceActorPower@SatelliteScan:
+		PauseOnCondition: disabled
+		Description: Satellite Scan
+		LongDesc: Reveals all enemy units for 1 minute.\nActivated automatically.
+		Icon: satscan
+		Actors: camera.satscan
+		Type: SpySatellite
+		AutoFire: true
+		ChargeInterval: 7500
+		OrderName: SatelliteScanPowerInfoOrder
 
 gagap:
 	Inherits: ^SupportBuilding
@@ -1107,6 +1169,9 @@ gagap:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 5c0
 	CreatesShroud:
 		Range: 10c0
@@ -1155,6 +1220,9 @@ gaweat:
 	RevealsShroud@ToEnemy:
 		Range: 2c0
 		ValidStances: Neutral, Enemy
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
 	Power:
 		Amount: -200
 	DetonateWeaponPower@WeatherStorm:
@@ -1209,6 +1277,9 @@ gacsph:
 	RevealsShroud@ToEnemy:
 		Range: 2c0
 		ValidStances: Neutral, Enemy
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
 	Power:
 		Amount: -200
 	WithIdleOverlay:
@@ -1266,6 +1337,9 @@ atesla:
 	Armor:
 		Type: Steel
 	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 8c0
 	WithTeslaChargeAnimation:
 	Armament:
@@ -1355,7 +1429,7 @@ garobo:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 80
 		Prerequisites: ~disabled # gaweap
 		Description: Allows production of Robot Tanks.\nRequired for Robot Tanks to function.
 	Selectable:
@@ -1372,6 +1446,9 @@ garobo:
 	Armor:
 		Type: Wood
 	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 6c0
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@powered:

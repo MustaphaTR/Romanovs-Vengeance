@@ -713,6 +713,10 @@
 ^GarrisonableBuilding:
 	Inherits: ^CivBuilding
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
+		RequiresCondition: loaded
 	ChangeOwnerOnGarrisoner:
 		EnterSound: ugarris.wav
 		ExitSound: ugarris.wav
@@ -772,6 +776,12 @@
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
+		RequiresCondition: enabled
+	GrantConditionOnCombatantOwner:
+		Condition: enabled
 	Capturable:
 		RequiresCondition: !invulnerability
 	CaptureNotification:
@@ -907,6 +917,9 @@
 	Armor:
 		Type: None
 	RevealsShroud:
+		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
 		Range: 4c0
 	RevealOnFire:
 		Radius: 1c0
