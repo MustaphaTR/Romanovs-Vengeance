@@ -477,22 +477,12 @@ namespace OpenRA.Mods.RA2.Traits
 
 		protected override void TraitDisabled(Actor self)
 		{
-			while (!IsEmpty(self) && CanUnload())
-			{
-				var garrisoner = Unload(self);
-				var cp = self.CenterPosition;
-				var inAir = self.World.Map.DistanceAboveTerrain(cp).Length != 0;
-				var positionable = garrisoner.Trait<IPositionable>();
-				positionable.SetPosition(garrisoner, self.Location);
+			if (!CanUnload())
+				return;
 
-				if (!inAir && positionable.CanEnterCell(self.Location, self, false))
-				{
-					self.World.AddFrameEndTask(w => w.Add(garrisoner));
-					var nbms = garrisoner.TraitsImplementing<INotifyBlockingMove>();
-					foreach (var nbm in nbms)
-						nbm.OnNotifyBlockingMove(garrisoner, garrisoner);
-				}
-			}
+			Unloading = true;
+			self.CancelActivity();
+			self.QueueActivity(new UnloadGarrison(self, true));
 		}
 	}
 
