@@ -23,7 +23,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("This actor can store Garrisoner actors.")]
-	public class GarrisonableInfo : ITraitInfo, Requires<IOccupySpaceInfo>
+	public class GarrisonableInfo : PausableConditionalTraitInfo, ITraitInfo, Requires<IOccupySpaceInfo>
 	{
 		[Desc("The maximum sum of Garrisoner.Weight that this actor can support.")]
 		public readonly int MaxWeight = 0;
@@ -74,14 +74,13 @@ namespace OpenRA.Mods.RA2.Traits
 		[GrantedConditionReference]
 		public IEnumerable<string> LinterGarrisonerConditions { get { return GarrisonerConditions.Values; } }
 
-		public object Create(ActorInitializer init) { return new Garrisonable(init, this); }
+		public override object Create(ActorInitializer init) { return new Garrisonable(init, this); }
 	}
 
-	public class Garrisonable : IPips, IIssueOrder, IResolveOrder, IOrderVoice, INotifyCreated, INotifyKilled,
+	public class Garrisonable : PausableConditionalTrait<GarrisonableInfo>, IPips, IIssueOrder, IResolveOrder, IOrderVoice, INotifyCreated, INotifyKilled,
 		INotifyOwnerChanged, INotifyAddedToWorld, ITick, INotifySold, INotifyActorDisposing, IIssueDeployOrder,
 		ITransformActorInitModifier
 	{
-		public readonly GarrisonableInfo Info;
 		readonly Actor self;
 		readonly Stack<Actor> garrisonable = new Stack<Actor>();
 		readonly HashSet<Actor> reserves = new HashSet<Actor>();
@@ -102,9 +101,9 @@ namespace OpenRA.Mods.RA2.Traits
 		public int GarrisonerCount { get { return garrisonable.Count; } }
 
 		public Garrisonable(ActorInitializer init, GarrisonableInfo info)
+			: base(info)
 		{
 			self = init.Self;
-			Info = info;
 			Unloading = false;
 			checkTerrainType = info.UnloadTerrainTypes.Count > 0;
 
@@ -474,6 +473,26 @@ namespace OpenRA.Mods.RA2.Traits
 		void ITransformActorInitModifier.ModifyTransformActorInit(Actor self, TypeDictionary init)
 		{
 			init.Add(new RuntimeGarrisonInit(Garrisoners.ToArray()));
+		}
+
+		protected override void TraitPaused(Actor self)
+		{
+			while (!IsEmpty(self) && CanUnload())
+			{
+				var garrisoner = Unload(self);
+				var cp = self.CenterPosition;
+				var inAir = self.World.Map.DistanceAboveTerrain(cp).Length != 0;
+				var positionable = garrisoner.Trait<IPositionable>();
+				positionable.SetPosition(garrisoner, self.Location);
+
+				if (!inAir && positionable.CanEnterCell(self.Location, self, false))
+				{
+					self.World.AddFrameEndTask(w => w.Add(garrisoner));
+					var nbms = garrisoner.TraitsImplementing<INotifyBlockingMove>();
+					foreach (var nbm in nbms)
+						nbm.OnNotifyBlockingMove(garrisoner, garrisoner);
+				}
+			}
 		}
 	}
 
