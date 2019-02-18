@@ -103,7 +103,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		bool CanEnter(Garrisonable garrison)
 		{
-			return garrison != null && garrison.HasSpace(Info.Weight) && !garrison.IsTraitPaused;
+			return garrison != null && garrison.HasSpace(Info.Weight) && !garrison.IsTraitPaused && !garrison.IsTraitDisabled;
 		}
 
 		bool CanEnter(Actor self, Actor target)
