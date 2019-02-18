@@ -475,7 +475,7 @@ namespace OpenRA.Mods.RA2.Traits
 			init.Add(new RuntimeGarrisonInit(Garrisoners.ToArray()));
 		}
 
-		protected override void TraitPaused(Actor self)
+		protected override void TraitDisabled(Actor self)
 		{
 			while (!IsEmpty(self) && CanUnload())
 			{
