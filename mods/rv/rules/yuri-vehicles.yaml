@@ -1,0 +1,51 @@
+pcv:
+	Inherits: ^Vehicle
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Buildable:
+		Queue: Vehicle.Yuri
+		BuildPaletteOrder: 50
+		Description: Deploys into a Construction Yard.
+		Prerequisites: yaradr
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Mobile Construction Vehicle
+	Selectable:
+		Priority: 4
+		Bounds: 64, 52, 0, -6
+	Health:
+		HP: 800
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 60
+		TurnSpeed: 5
+		Locomotor: heavytracked
+	-Crushable:
+	Passenger:
+		Weight: 6
+	RevealsShroud:
+		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
+	RevealOnDeath:
+		Radius: 2c0
+	MustBeDestroyed:
+		RequiredForShortGame: true
+	BaseBuilding:
+	Transforms:
+		Voice: Move
+		IntoActor: yacnst
+		Offset: -1,-1
+		Facing: 96
+		TransformSounds: uplace.wav
+		NoTransformNotification: BuildingCannotPlaceAudio
+		PauseOnCondition: chronodisable || emp
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: YuriConstructionVehicleVoice
+	HitShape:
