@@ -642,21 +642,21 @@ schp:
 		Type: Light
 	Armament@primary:
 		Weapon: SiegeChopperCannon
-		PauseOnCondition: !airborne && deployed
+		PauseOnCondition: !undeployed
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: SiegeChopperCannonE
-		PauseOnCondition: !airborne && deployed
+		PauseOnCondition: !undeployed
 		RequiresCondition: rank-elite
 	Armament@deployed:
 		Weapon: 160mm
 		LocalOffset: 768,0,2048
-		PauseOnCondition: airborne || !actually-deployed
+		PauseOnCondition: !deployed
 		RequiresCondition: !rank-elite
 	Armament@elite-deployed:
 		Weapon: 160mmE
 		LocalOffset: 768,0,2048
-		PauseOnCondition: airborne || !actually-deployed
+		PauseOnCondition: !deployed
 		RequiresCondition: rank-elite
 	Turreted:
 		TurnSpeed: 5
@@ -680,10 +680,10 @@ schp:
 		Type: GroundPosition
 	AttackAircraft:
 		Voice: Attack
-		PauseOnCondition: (!airborne && actually-deployed) || emp
+		PauseOnCondition: !undeployed || emp
 	AttackTurreted:
 		Voice: DeployedAttack
-		PauseOnCondition: airborne || !actually-deployed || emp
+		PauseOnCondition: !deployed || emp
 	Aircraft:
 		CruiseAltitude: 3072
 		LandWhenIdle: false
@@ -692,50 +692,45 @@ schp:
 		Speed: 140
 		AltitudeVelocity: 120
 		CruisingCondition: cruising
-		LandOnCondition: deployed || (!airborne && !actually-undeployed) || emp
-	GrantConditionOnDeploy:
+		LandOnCondition: deployed || emp
+	HeliGrantConditionOnDeploy:
 		Facing: 160
 		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		DeploySound: vchodepa.wav
+		UndeploySound: vchodepa.wav
 		AllowedTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		CanDeployOnRamps: true
-		PauseOnCondition: (deployed && !actually-deployed) || emp
-	GrantConditionAfterDelay@deploy:
-		Delay: 37
-		ShowSelectionBar: false
-		Condition: actually-deployed
-		RequiresCondition: deployed && !airborne
-	GrantConditionAfterDelay@undeploy:
-		Delay: 37
-		ShowSelectionBar: false
-		Condition: actually-undeployed
-		RequiresCondition: !deployed && !airborne
-	WithIdleOverlay@Deploy:
-		Sequence: deploy
-		PauseOnCondition: !deployed || airborne || actually-deployed
-		RequiresCondition: deployed && !airborne && !actually-deployed
-	WithIdleOverlay@Undeploy:
-		Sequence: undeploy
-		PauseOnCondition: deployed || airborne || actually-undeployed
-		RequiresCondition: !deployed && !airborne && !actually-undeployed
+		PauseOnCondition: emp
+	#WithSpriteBody@dot:
+	#	Sequence: dot
+	#	Name: dot
+	#	RequiresCondition: !undeployed
+	#WithMakeAnimation:
+	#	Sequence: deploy
+	#	BodyName: dot
 	RenderSprites:
 	Repairable:
 		Voice: Move
 		RepairBuildings: gadept, nadept, caoutp
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
+	RejectsOrders@deployment:
+		Reject: Move
+		RequiresCondition: deployed
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
-		RequiresCondition: airborne || (!deployed && actually-undeployed)
+		RequiresCondition: undeployed
 	WithFacingSpriteBody:
 		Sequence: shadow
 		ForceToGround: true
-		RequiresCondition: airborne || (!deployed && actually-undeployed)
+		RequiresCondition: undeployed
 	WithVoxelBody:
 		Sequence: deployed
-		RequiresCondition: !airborne && actually-deployed
+		RequiresCondition: deployed
 	WithVoxelTurret:
-		RequiresCondition: !airborne && actually-deployed
+		RequiresCondition: deployed
 	Hovers@CRUISING:
 		RequiresCondition: cruising
 		OffsetModifier: -45
