@@ -56,7 +56,7 @@ namespace OpenRA.Mods.RA2.Activities
 
 			// Make sure we can still enter the transport
 			// (but not before, because this may stop the actor in the middle of nowhere)
-			if (enterGarrison == null || !garrisoner.Reserve(self, enterGarrison) || enterGarrison.IsTraitDisabled || enterGarrison.IsTraitPaused)
+			if (enterGarrison == null || enterGarrison.IsTraitDisabled || enterGarrison.IsTraitPaused || !garrisoner.Reserve(self, enterGarrison))
 			{
 				Cancel(self, true);
 				return false;
