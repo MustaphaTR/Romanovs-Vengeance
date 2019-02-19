@@ -159,7 +159,8 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 
 			{ 0xF0, "cakrmw" }, // kremlin walls
 			{ 0xF1, "cafncp" }, // prison camp fence
-			{ 0xF2, "crate" } // water crate
+			{ 0xF2, "crate" }, // water crate
+			{ 0xF3, "yawall" } // citadel walls
 		};
 
 		static readonly Dictionary<byte, Size> OverlayShapes = new Dictionary<byte, Size>()
