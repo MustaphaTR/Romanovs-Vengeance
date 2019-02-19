@@ -31,7 +31,11 @@ shad:
 		Cost: 800
 	RevealsShroud:
 		Range: 8c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	-AppearsOnRadar:
 	AttackAircraft:
 		Voice: Attack
@@ -80,9 +84,13 @@ shadhusk:
 		Explosion: PlaneExplode
 	RevealsShroud:
 		Range: 8c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 3c512
+		Radius: 4c0
 		Duration: 50
 	RenderSprites:
 		Image: shad
@@ -136,7 +144,11 @@ zep:
 		HealIfBelow: 100
 	RevealsShroud:
 		Range: 9c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 9c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	Armament:
 		Weapon: BlimpBomb
 		RequiresCondition: !rank-elite
@@ -174,9 +186,13 @@ zephusk:
 		Spins: False # TODO: In the original they did spin, but that just looks weird.
 	RevealsShroud:
 		Range: 9c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 9c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 4c512
 		Duration: 50
 	RenderVoxels:
 		Image: zep
@@ -212,7 +228,11 @@ orca:
 		Type: Light
 	RevealsShroud:
 		Range: 10c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 10c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	Armament:
 		Weapon: Maverick
 		PauseOnCondition: !ammo
@@ -259,9 +279,13 @@ orcahusk:
 		Speed: 210
 	RevealsShroud:
 		Range: 10c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 10c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 5c0
 		Duration: 50
 	RenderVoxels:
 		Image: falc
@@ -280,7 +304,11 @@ beag:
 		Actor: beaghusk
 	RevealsShroud:
 		Range: 9c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 9c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	Armament:
 		Weapon: EMPulseBEagle
 	Armament@Elite:
@@ -307,9 +335,13 @@ beaghusk:
 		Speed: 210
 	RevealsShroud:
 		Range: 9c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 9c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 4c512
 		Duration: 50
 	RenderVoxels:
 		Image: beag
@@ -641,7 +673,11 @@ schp:
 		Cost: 1500
 	RevealsShroud:
 		Range: 8c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	AttackAircraft:
 		Voice: Attack
 		PauseOnCondition: (!airborne && actually-deployed) || emp
@@ -718,9 +754,13 @@ schphusk:
 		Explosion: PlaneExplode
 	RevealsShroud:
 		Range: 8c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 3c512
+		Radius: 4c0
 		Duration: 50
 	RenderSprites:
 		Image: schp
@@ -814,7 +854,11 @@ hind:
 		Cost: 800
 	RevealsShroud:
 		Range: 8c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	Aircraft:
 		CruiseAltitude: 3072
 		LandWhenIdle: true
@@ -862,9 +906,13 @@ hindhusk:
 		Explosion: PlaneExplode
 	RevealsShroud:
 		Range: 8c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 3c0
+		Radius: 4c0
 		Duration: 50
 	RenderSprites:
 		Image: hind
@@ -915,7 +963,11 @@ fortress:
 		Type: Light
 	RevealsShroud:
 		Range: 9c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 9c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	-AppearsOnRadar:
 	Armament:
 		Weapon: SpiritBomb
@@ -962,9 +1014,13 @@ fortresshusk:
 		Speed: 165
 	RevealsShroud:
 		Range: 9c0
-		Type: CenterPosition
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 9c0
+		Types: SatelliteScan
+		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 4c512
 		Duration: 50
 	RenderVoxels:
 		Image: fortress
