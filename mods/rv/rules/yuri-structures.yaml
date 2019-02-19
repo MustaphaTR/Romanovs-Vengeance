@@ -156,6 +156,43 @@ yaweap:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
+yatech:
+	Inherits: ^Building
+	Inherits@shape: ^3x3Shape
+	Buildable:
+		Queue: Building.Yuri
+		BuildPaletteOrder: 90
+		Prerequisites: radar
+		Description: Allows deployment of advanced units.
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Battle Lab
+	ProvidesPrerequisite@default:
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	Health:
+		HP: 500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	WithIdleOverlay@lift:
+		Sequence: idle-lift
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -100
+	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
+		Proxy: yuri.tech.infiltrated
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+
 yawall:
 	Inherits: ^Wall
 	Buildable:
