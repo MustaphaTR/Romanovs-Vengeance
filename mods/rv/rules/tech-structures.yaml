@@ -10,6 +10,7 @@ caoild:
 		Range: 4c0
 	EngineerRepairable:
 	CashTrickler:
+		InitialDelay: 100
 		Interval: 100
 		Amount: 20
 		RequiresCondition: enabled
@@ -27,8 +28,14 @@ caoild:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 1000,0,0
+	GrantConditionAfterDelay@Cash:
+		Delay: 1
+		ShowSelectionBar: false
+		Condition: cashgiven
+		RequiresCondition: enabled
 	GivesCashOnCapture:
 		Amount: 500
+		RequiresCondition: !cashgiven
 	Explodes:
 		Weapon: DerrickExplode
 
