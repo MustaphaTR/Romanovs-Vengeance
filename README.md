@@ -1,7 +1,8 @@
-# Red Alert 2 mod for OpenRA
+# Red Alert 2: Romanov's Vengeance
 
-[![Build Status](https://travis-ci.org/OpenRA/ra2.svg?branch=master)](https://travis-ci.org/OpenRA/ra2)
+Romanov's Vengeance is a 3rd party [OpenRA](http://www.openra.net) mod based on [Red Alert 2](http://www.github.com/OpenRA/ra2) mod.
 
-Consult the [wiki](https://github.com/OpenRA/ra2/wiki) for instructions on how to install and use this.
+Mod is still in early developement with missing features and several bugs.
 
-[![Bountysource](https://api.bountysource.com/badge/tracker?tracker_id=27677844)](https://www.bountysource.com/teams/openra/issues?tracker_ids=27677844)
+Considering that you found here, you can go ahead and download the mod to test. But please don't share links to here before we get to the open beta phase.
+Installing is done the same way like anyother [OpenRAModSDK](http://www.github.com/OpenRA/OpenRAModSDK) mod.
