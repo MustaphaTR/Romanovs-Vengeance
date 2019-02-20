@@ -49,6 +49,35 @@ yacnst:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yabrck:
+	Defaults:
+		Offset: 15,-37
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ygbrck
+		ShadowStart: 3
+	damaged-idle: ygbrck
+		Start: 1
+		ShadowStart: 4
+	idle-lights: ygbrck_a
+		Length: 8
+		ShadowStart: 16
+	damaged-idle-lights: ygbrck_a
+		Start: 8
+		Length: 8
+		ShadowStart: 24
+	make: ygbrckmk
+		Length: 25
+		ShadowStart: 25
+	icon: brckicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yaweap:
 	Defaults:
 		Offset: -30, -60
@@ -115,7 +144,7 @@ yaweap:
 
 yatech:
 	Defaults:
-		Offset: 0, -45
+		Offset: -15, -38
 		UseTilesetCode: true
 		TilesetOverrides:
 			TEMPERATE: GENERIC
