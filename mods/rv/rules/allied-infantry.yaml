@@ -3,7 +3,7 @@ engineer:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Allies, Infantry.Soviets, Infantry.Yuri
-		Prerequisites: ~barracks
+		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Captures enemy structures.\n  Unarmed
 	Valued:
@@ -52,7 +52,7 @@ dog:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Infantry.Allies, Infantry.Soviets
-		Prerequisites: ~barracks
+		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
 		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
@@ -149,6 +149,7 @@ e1:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Allies
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan deploy to gain more range and damage.\nCan garrison.
 	UpdatesPlayerStatistics:
@@ -290,6 +291,7 @@ ggi:
 		InvalidTargets: NoAutoTarget
 	Buildable:
 		Queue: Infantry.Allies
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 40
 		Description: Anti-tank/anti-air infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\nCan deploy to gain more range.\nCan garrison.
 	UpdatesPlayerStatistics:
@@ -436,7 +438,7 @@ snipe:
 	Buildable:
 		Queue: Infantry.Allies
 		BuildPaletteOrder: 80
-		Prerequisites: radar, ~infantry.england
+		Prerequisites: radar, ~infantry.england, ~techlevel.3
 		Description: Special anti-infantry unit.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -473,8 +475,8 @@ spy:
 	Inherits: ^Infantry
 	Buildable:
 		Queue: Infantry.Allies
-		BuildPaletteOrder: 50
-		Prerequisites: gaairc
+		BuildPaletteOrder: 60
+		Prerequisites: gaairc, ~techlevel.3
 		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\n  Unarmed\nSpecial Ability: Disguises
 	Valued:
 		Cost: 500
@@ -531,7 +533,7 @@ ghost:
 	Buildable:
 		Queue: Infantry.Allies
 		BuildPaletteOrder: 100
-		Prerequisites: radar, ~infantry.america
+		Prerequisites: radar, ~infantry.america, ~techlevel.3
 		Description: Elite commando infantry, armed with\na sub machine gun and C4 that damages Buildings and Ships.\nCan swim.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -603,7 +605,7 @@ ccomand:
 	Inherits: ghost
 	Buildable:
 		BuildPaletteOrder: 960
-		Prerequisites: ~allies.tech.infiltrated
+		Prerequisites: ~allies.tech.infiltrated, ~techlevel.4
 		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings
 	Tooltip:
 		Name: Chrono Commando
@@ -658,7 +660,7 @@ ptroop:
 	Buildable:
 		Queue: Infantry.Allies
 		BuildPaletteOrder: 980
-		Prerequisites: ~soviets.tech.infiltrated
+		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Can C4 Buildings
 	Valued:
 		Cost: 1500
@@ -690,7 +692,7 @@ tany:
 	Buildable:
 		Queue: Infantry.Allies
 		BuildPaletteOrder: 160
-		Prerequisites: gatech
+		Prerequisites: gatech, ~techlevel.4
 		BuildLimit: 1
 		Description: Elite commando infantry, armed with \ndual pistols and C4.\nCan swim.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can C4 Buildings and Vehicles.\n\nMaximum 1 can be trained.
 	UpdatesPlayerStatistics:
@@ -771,8 +773,8 @@ jumpjet:
 		Type: CenterPosition
 	Buildable:
 		Queue: Infantry.Allies
-		BuildPaletteOrder: 60
-		Prerequisites: radar
+		BuildPaletteOrder: 50
+		Prerequisites: gaairc, ~techlevel.2
 		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -894,7 +896,7 @@ cleg:
 	Buildable:
 		Queue: Infantry.Allies
 		BuildPaletteOrder: 140
-		Prerequisites: gatech
+		Prerequisites: gatech, ~techlevel.4
 		Description: High-tech soldier.\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true

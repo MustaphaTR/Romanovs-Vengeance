@@ -88,7 +88,7 @@ yabrck:
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 20
-		Prerequisites: power
+		Prerequisites: power, ~techlevel.1
 		Description: Produces infantry.
 	Valued:
 		Cost: 500
@@ -155,7 +155,7 @@ yaweap:
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 40
-		Prerequisites: refinery
+		Prerequisites: refinery, ~techlevel.1
 		Description: Produces vehicles.
 	Selectable:
 		Bounds: 196, 178, -6, -48
@@ -229,7 +229,7 @@ yatech:
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 90
-		Prerequisites: radar
+		Prerequisites: radar, ~techlevel.3
 		Description: Allows deployment of advanced units.
 	Valued:
 		Cost: 2000
@@ -264,6 +264,7 @@ yawall:
 	Inherits: ^Wall
 	Buildable:
 		Queue: Support.Yuri
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Heavy wall capable of blocking units and projectiles.
 	Tooltip:

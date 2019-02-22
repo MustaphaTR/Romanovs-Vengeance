@@ -5,6 +5,7 @@ sapc:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Soviets
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n  Unarmed
 	Valued:
@@ -72,6 +73,7 @@ sub:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Soviets
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Submerged anti-ship unit armed with\ntorpedoes.\nCan detect other submarines and Giant Squids.\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\nSpecial Ability: Submerge
 	UpdatesPlayerStatistics:
@@ -149,7 +151,7 @@ hyd:
 	Buildable:
 		Queue: Ship.Soviets
 		BuildPaletteOrder: 30
-		Prerequisites: naradr
+		Prerequisites: naradr, ~techlevel.2
 		Description: Anti-Air/Anti-Infantry naval unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles, Naval Units
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -204,7 +206,7 @@ sqd:
 	Buildable:
 		Queue: Ship.Soviets
 		BuildPaletteOrder: 40
-		Prerequisites: natech
+		Prerequisites: natech, ~techlevel.3
 		Description: Ocean creature\npunches enemies in close combat.\n  Strong vs Ships
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -297,7 +299,7 @@ dred:
 	Buildable:
 		Queue: Ship.Soviets
 		BuildPaletteOrder: 60
-		Prerequisites: natech
+		Prerequisites: natech, ~techlevel.4
 		Description: Long-range rocket artillery ship.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true

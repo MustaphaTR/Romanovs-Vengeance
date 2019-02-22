@@ -118,6 +118,7 @@ napowr:
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
 		Queue: Building.Soviets
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Provides power for other structures.
 	Valued:
@@ -160,7 +161,7 @@ nahand:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 20
-		Prerequisites: power
+		Prerequisites: power, ~techlevel.1
 		Description: Produces infantry.
 	Valued:
 		Cost: 500
@@ -262,7 +263,7 @@ narefn:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 30
-		Prerequisites: power
+		Prerequisites: power, ~techlevel.1
 		Description: Processes ore into credits.
 	Selectable:
 		Bounds: 170, 150, -6, -33
@@ -330,7 +331,7 @@ naradr:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 70
-		Prerequisites: power, narefn
+		Prerequisites: power, narefn, ~techlevel.2
 		Description: Provides radar.\n  Special Ability: Spy Plane
 	Valued:
 		Cost: 1500
@@ -517,7 +518,7 @@ naweap:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 40
-		Prerequisites: refinery
+		Prerequisites: refinery, ~techlevel.1
 		Description: Produces vehicles.
 	Selectable:
 		Bounds: 196, 178, -6, -48
@@ -601,7 +602,7 @@ nayard:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 50
-		Prerequisites: refinery
+		Prerequisites: refinery, ~techlevel.1
 		Description: Produces and repairs ships,\nsubmarines, transports, and other naval units.
 	Targetable:
 		TargetTypes: Ground, Water, C4
@@ -773,7 +774,7 @@ nadept:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 60
-		Prerequisites: narefn
+		Prerequisites: narefn, ~techlevel.1
 		Description: Produces Soviet aircraft.\nRepairs vehicles and removes Terror Drones for a price.
 	Selectable:
 		Bounds: 156, 150, 0, -38
@@ -849,7 +850,7 @@ nanrct:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: natech
+		Prerequisites: natech, ~techlevel.3
 		Description: Provides power for other structures.
 	Valued:
 		Cost: 1500
@@ -895,7 +896,7 @@ natech:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: naradr
+		Prerequisites: naradr, ~techlevel.3
 		Description: Allows deployment of advanced units.
 	Valued:
 		Cost: 2000
@@ -1010,7 +1011,7 @@ napsis:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 70
-		Prerequisites: natech
+		Prerequisites: natech, ~techlevel.4
 		Description: Detects enemy units and strikepoints
 	Valued:
 		Cost: 1000
@@ -1058,7 +1059,7 @@ nairon:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: natech, !enoughiron
+		Prerequisites: natech, !enoughiron, ~techlevel.5
 		Description: Grants invulnerability to vehicles and structures.\nKills infantry.
 	Valued:
 		Cost: 2500
@@ -1118,7 +1119,7 @@ namisl:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: natech, !enoughnuke
+		Prerequisites: natech, !enoughnuke, ~techlevel.5
 		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb
 	Valued:
 		Cost: 3500
@@ -1182,6 +1183,7 @@ nawall:
 	Inherits: ^Wall
 	Buildable:
 		Queue: Support.Soviets
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Light wall.
 	Tooltip:
@@ -1203,7 +1205,7 @@ naflak:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 50
-		Prerequisites: naradr
+		Prerequisites: naradr, ~techlevel.2
 		Description: Automated anti-aircraft defense.
 	Valued:
 		Cost: 900
@@ -1256,7 +1258,7 @@ tesla:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 60
-		Prerequisites: naradr
+		Prerequisites: naradr, ~techlevel.3
 		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1200
@@ -1328,7 +1330,7 @@ nalasr:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 40
-		Prerequisites: barracks
+		Prerequisites: barracks, ~techlevel.1
 		Description: Automated anti-infantry defense.
 	Valued:
 		Cost: 500
@@ -1430,7 +1432,7 @@ naindp:
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: narefn, natech
+		Prerequisites: narefn, natech, ~techlevel.4
 		Description: Decreases vehicle costs by 25%.\nMaximum 1 can be built.\nCan not be captured.
 		BuildLimit: 1
 	Valued:
@@ -1470,6 +1472,7 @@ nagatea:
 	Inherits: ^Gate_A
 	Buildable:
 		Queue: Support.Soviets
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 	Tooltip:
 		Name: Soviet Gate E-W
@@ -1484,6 +1487,7 @@ nagateb:
 	Inherits: ^Gate_B
 	Buildable:
 		Queue: Support.Soviets
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 	Tooltip:
 		Name: Soviet Gate N-S

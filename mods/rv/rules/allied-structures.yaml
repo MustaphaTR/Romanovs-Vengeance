@@ -135,6 +135,7 @@ gapowr:
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
 		Queue: Building.Allies
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Provides power for other structures.
 	Selectable:
@@ -194,7 +195,7 @@ gapowrup:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 80
-		Prerequisites: gapowr, gaairc
+		Prerequisites: gapowr, gaairc, ~techlevel.2
 		Description: Better coolants allow power plant to work more efficently\nproviding 100 more power.
 	Plug:
 		Type: powrup
@@ -207,7 +208,7 @@ gapile:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 20
-		Prerequisites: power
+		Prerequisites: power, ~techlevel.1
 		Description: Trains infantry.
 	Selectable:
 		Bounds: 134, 132, 0, -28
@@ -285,7 +286,7 @@ garefn:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 30
-		Prerequisites: power
+		Prerequisites: power, ~techlevel.1
 		Description: Processes ore into credits.
 	Selectable:
 		Bounds: 176, 150, 0, -20
@@ -353,7 +354,7 @@ gaairc:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 70
-		Prerequisites: power, garefn
+		Prerequisites: power, garefn, ~techlevel.2
 		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.
 	Valued:
 		Cost: 1500
@@ -543,7 +544,7 @@ gaweap:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 40
-		Prerequisites: garefn
+		Prerequisites: garefn, ~techlevel.1
 		Description: Produces vehicles.\nRequired for Robot Tanks to function.
 	Selectable:
 		Bounds: 212, 158, -7, -28
@@ -632,7 +633,7 @@ gayard:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 50
-		Prerequisites: refinery
+		Prerequisites: refinery, ~techlevel.1
 		Description: Produces and repairs ships,\nsubmarines, transports, and other naval units.
 	Targetable:
 		TargetTypes: Ground, Water, C4
@@ -781,7 +782,7 @@ gadept:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: garefn
+		Prerequisites: garefn, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.
 	Selectable:
 		Bounds: 144, 88, -12, -16
@@ -836,7 +837,7 @@ gatech:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: gaairc
+		Prerequisites: gaairc, ~techlevel.3
 		Description: Allows deployment of advanced units.
 	Selectable:
 		Bounds: 122, 216, 0, -81
@@ -873,6 +874,7 @@ gawall:
 	Inherits: ^Wall
 	Buildable:
 		Queue: Support.Allies
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Light wall.
 	Tooltip:
@@ -892,7 +894,7 @@ gapill:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 40
-		Prerequisites: barracks
+		Prerequisites: barracks, ~techlevel.1
 		Description: Automated anti-infantry defense.
 	Valued:
 		Cost: 500
@@ -942,7 +944,7 @@ nasam:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 50
-		Prerequisites: radar
+		Prerequisites: radar, ~techlevel.2
 		Description: Automated anti-aircraft defense.
 	Valued:
 		Cost: 700
@@ -998,7 +1000,7 @@ gtgcan:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 70
-		Prerequisites: radar, ~structures.france
+		Prerequisites: radar, ~structures.france, ~techlevel.3
 		Description: Automated, long ranged anti-ground defense.
 	Valued:
 		Cost: 2500
@@ -1055,7 +1057,7 @@ gaorep:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 110
-		Prerequisites: garefn, gatech
+		Prerequisites: garefn, gatech, ~techlevel.4
 		Description: Refines income from ores and gems by 25%.\nMaximum 1 can be built.\nCan not be captured.
 		BuildLimit: 1
 	Selectable:
@@ -1095,7 +1097,7 @@ gaspysat:
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 100
-		Prerequisites: gatech
+		Prerequisites: gatech, ~techlevel.4
 		Description: Provides Satellite Scan power, which reveals enemy units for a while./nProvides Radar.
 	Selectable:
 		Bounds: 96, 98, -4, -30
@@ -1159,7 +1161,7 @@ gagap:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 80
-		Prerequisites: gatech
+		Prerequisites: gatech, ~techlevel.3
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
 	Selectable:
 		Bounds: 50, 114, -16, -38
@@ -1202,7 +1204,7 @@ gaweat:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 100
-		Prerequisites: gatech, !enoughweather
+		Prerequisites: gatech, !enoughweather, ~techlevel.5
 		Description: Play God with deadly weather!
 	Selectable:
 		Bounds: 116, 106, -2, -26
@@ -1259,7 +1261,7 @@ gacsph:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: gatech, !enoughchrono
+		Prerequisites: gatech, !enoughchrono, ~techlevel.5
 		Description: Allows teleporting maximum of 13 vehicles.\nKills infantry.
 	Selectable:
 		Bounds: 176, 110, -5, -14
@@ -1323,7 +1325,7 @@ atesla:
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: power, radar
+		Prerequisites: power, radar, ~techlevel.3
 		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1200
@@ -1468,6 +1470,7 @@ gagatea:
 	Inherits: ^Gate_A
 	Buildable:
 		Queue: Support.Allies
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 	Tooltip:
 		Name: Allied Gate E-W
@@ -1482,6 +1485,7 @@ gagateb:
 	Inherits: ^Gate_B
 	Buildable:
 		Queue: Support.Allies
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 	Tooltip:
 		Name: Allied Gate N-S

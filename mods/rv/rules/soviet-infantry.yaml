@@ -6,6 +6,7 @@ e2:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Soviets
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Cheap rifle infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
 	UpdatesPlayerStatistics:
@@ -76,7 +77,7 @@ flakt:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Soviets
-		Prerequisites: naradr
+		Prerequisites: naradr, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles\nCan garrison.
 	UpdatesPlayerStatistics:
@@ -181,6 +182,7 @@ shk:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Soviets
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 50
 		Description: Special armored unit using electricity.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft\nCan garrison.\nSpecial ability: Charge tesla coils
 	UpdatesPlayerStatistics:
@@ -272,7 +274,7 @@ terror:
 	Buildable:
 		Queue: Infantry.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: naradr, ~infantry.cuba
+		Prerequisites: naradr, ~infantry.cuba, ~techlevel.3
 		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n  Strong vs Ground units\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -330,7 +332,7 @@ deso:
 	Buildable:
 		Queue: Infantry.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: naradr, ~infantry.iraq
+		Prerequisites: naradr, ~infantry.iraq, ~techlevel.3
 		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n  Immune to Radiation.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -432,7 +434,7 @@ ivan:
 	Buildable:
 		Queue: Infantry.Soviets
 		BuildPaletteOrder: 110
-		Prerequisites: naradr
+		Prerequisites: naradr, ~techlevel.2
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -485,7 +487,7 @@ civan:
 	Inherits: ivan
 	Buildable:
 		BuildPaletteOrder: 970
-		Prerequisites: ~nahand, ~allies.tech.infiltrated
+		Prerequisites: ~nahand, ~allies.tech.infiltrated, ~techlevel.4
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows. Can teleport on anywhere on the map.
 	Tooltip:
 		Name: Chrono Ivan
@@ -519,7 +521,7 @@ yuri:
 	Buildable:
 		Queue: Infantry.Soviets
 		BuildPaletteOrder: 150
-		Prerequisites: natech
+		Prerequisites: natech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -602,7 +604,7 @@ yuripr:
 	Buildable:
 		BuildLimit: 1
 		BuildPaletteOrder: 990
-		Prerequisites: ~nahand, ~soviets.tech.infiltrated
+		Prerequisites: ~nahand, ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units from a great range.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\nMaximum 1 can be trained.
 	Tooltip:
 		Name: Yuri Prime
@@ -637,7 +639,7 @@ boris:
 	Buildable:
 		Queue: Infantry.Soviets
 		BuildPaletteOrder: 180
-		Prerequisites: natech
+		Prerequisites: natech, ~techlevel.4
 		BuildLimit: 1
 		Description: Elite commando infantry, armed with\nAKM rifle and signal flare.\nCan use a boat to move over water.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can call airstrike against Buildings.\n\nMaximum 1 can be trained.
 	UpdatesPlayerStatistics:
@@ -734,7 +736,7 @@ pyro:
 	Buildable:
 		Queue: Infantry.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: radar, ~infantry.vietnam
+		Prerequisites: radar, ~infantry.vietnam, ~techlevel.3
 		Description: Advanced anti-infantry and anti-structure infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -792,7 +794,7 @@ mech:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Soviets
-		Prerequisites: repairpad
+		Prerequisites: repairpad, ~techlevel.2
 		BuildPaletteOrder: 50
 		Description: Repairs vehicles.\n  Unarmed
 	Valued:

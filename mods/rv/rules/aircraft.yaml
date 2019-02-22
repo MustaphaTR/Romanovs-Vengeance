@@ -25,7 +25,7 @@ shad:
 	Buildable:
 		Queue: Aircraft.Allies
 		BuildPaletteOrder: 10
-		Prerequisites: barracks
+		Prerequisites: barracks, ~techlevel.2
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 800
@@ -117,7 +117,7 @@ zep:
 	Buildable:
 		Queue: Aircraft.Soviets
 		BuildPaletteOrder: 30
-		Prerequisites: natech
+		Prerequisites: natech, ~techlevel.4
 		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -214,6 +214,7 @@ orca:
 		Name: Harrier
 	Buildable:
 		Queue: Aircraft.Allies
+		Prerequisites: ~techlevel.2
 		BuildPaletteOrder: 20
 		Description: Fast assault fighter\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	UpdatesPlayerStatistics:
@@ -299,7 +300,7 @@ beag:
 		Name: Black Eagle
 	Buildable:
 		BuildPaletteOrder: 30
-		Prerequisites: ~aircraft.korea
+		Prerequisites: ~aircraft.korea, ~techlevel.3
 		Description: Aircraft armed with EMP bomb\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	SpawnActorOnDeath:
 		Actor: beaghusk
@@ -481,7 +482,7 @@ hornet:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 2c0
+		Range: 4c0
 		Type: GroundPosition
 		RevealGeneratedShroud: False
 	Armament:
@@ -538,7 +539,7 @@ asw:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 2c0
+		Range: 4c0
 		Type: GroundPosition
 		RevealGeneratedShroud: False
 	Armament:
@@ -666,7 +667,7 @@ schp:
 	Buildable:
 		Queue: Aircraft.Soviets
 		BuildPaletteOrder: 20
-		Prerequisites: naradr
+		Prerequisites: naradr, ~techlevel.2
 		Description: Helicopter capable of deploying into a long range artillery.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -841,7 +842,7 @@ hind:
 	Buildable:
 		Queue: Aircraft.Soviets
 		BuildPaletteOrder: 10
-		Prerequisites: warfactory
+		Prerequisites: warfactory, ~techlevel.2
 		Description: Vehicle Transport Helicopter\n  Unarmed.
 		IconPalette: ts-chrome
 	Valued:
@@ -941,7 +942,7 @@ fortress:
 		Queue: Aircraft.Allies
 		BuildPaletteOrder: 40
 		Description: Carpet bomber plane.\nUndetectable by radar.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
-		Prerequisites: gatech
+		Prerequisites: gatech, ~techlevel.4
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Aircraft:
