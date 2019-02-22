@@ -11,9 +11,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using OpenRA.Mods.RA2.Activities;
+using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Mods.RA2.Activities;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
@@ -43,7 +45,13 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Cursor to display when unable to (un)deploy the actor.")]
 		public readonly string DeployBlockedCursor = "deploy-blocked";
 
-		[Desc("Facing that the actor must face before deploying. Set to -1 to deploy regardless of facing.")]
+        [SequenceReference, Desc("Animation to play for deploying.")]
+        public readonly string DeployAnimation = null;
+
+        [Desc("Apply (un)deploy animations to sprite bodies with these names.")]
+        public readonly string[] BodyNames = { "body" };
+
+        [Desc("Facing that the actor must face before deploying. Set to -1 to deploy regardless of facing.")]
 		public readonly int Facing = -1;
 
 		[Desc("Sound to play when deploying.")]
@@ -52,8 +60,8 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Sound to play when undeploying.")]
 		public readonly string UndeploySound = null;
 
-		[Desc("Skip make/deploy animation?")]
-		public readonly bool SkipMakeAnimation = false;
+        [Desc("Should the aircraft automatically take off after undeploying?")]
+        public readonly bool TakeOffOnUndeploy = true;
 
 		public override object Create(ActorInitializer init) { return new HeliGrantConditionOnDeploy(init, this); }
 	}
@@ -67,8 +75,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		DeployState deployState;
 		ConditionManager conditionManager;
-		INotifyDeployTriggered[] notify;
-		int deployedToken = ConditionManager.InvalidConditionToken;
+        WithSpriteBody[] wsbs;
+        int deployedToken = ConditionManager.InvalidConditionToken;
 		int undeployedToken = ConditionManager.InvalidConditionToken;
 
 		public DeployState DeployState { get { return deployState; } }
@@ -86,9 +94,9 @@ namespace OpenRA.Mods.RA2.Traits
 		void INotifyCreated.Created(Actor self)
 		{
 			conditionManager = self.TraitOrDefault<ConditionManager>();
-			notify = self.TraitsImplementing<INotifyDeployTriggered>().ToArray();
+            wsbs = self.TraitsImplementing<WithSpriteBody>().Where(w => Info.BodyNames.Contains(w.Info.Name)).ToArray();
 
-			switch (deployState)
+            switch (deployState)
 			{
 				case DeployState.Undeployed:
 					OnUndeployCompleted();
@@ -227,14 +235,18 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!init)
 				OnDeployStarted();
 
-			// If there is no animation to play just grant the condition that is used while deployed.
-			// Alternatively, play the deploy animation and then grant the condition.
-			if (!notify.Any())
-				OnDeployCompleted();
-			else
-				foreach (var n in notify)
-					n.Deploy(self, Info.SkipMakeAnimation);
-		}
+            var wsb = wsbs.FirstEnabledTraitOrDefault();
+
+            // If there is no animation to play just grant the upgrades that are used while deployed.
+            // Alternatively, play the deploy animation and then grant the upgrades.
+            if (string.IsNullOrEmpty(Info.DeployAnimation) || wsb == null)
+            {
+                Game.Debug("wsb is null.");
+                OnDeployCompleted();
+            }
+            else
+                wsb.PlayCustomAnimation(self, Info.DeployAnimation, OnDeployCompleted);
+        }
 
 		/// <summary>Play undeploy sound and animation and after that revoke the condition.</summary>
 		public void Undeploy() { Undeploy(false); }
@@ -247,17 +259,16 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!string.IsNullOrEmpty(Info.UndeploySound))
 				Game.Sound.Play(SoundType.World, Info.UndeploySound, self.CenterPosition);
 
-			if (!init)
+            var wsb = wsbs.FirstEnabledTraitOrDefault();
+
+            if (!init)
 				OnUndeployStarted();
 
-			// If there is no animation to play just grant the condition that is used while undeployed.
-			// Alternatively, play the undeploy animation and then grant the condition.
-			if (!notify.Any())
-				OnUndeployCompleted();
-			else
-				foreach (var n in notify)
-					n.Undeploy(self, Info.SkipMakeAnimation);
-		}
+            if (string.IsNullOrEmpty(Info.DeployAnimation) || wsb == null)
+                OnUndeployCompleted();
+            else
+                wsb.PlayCustomAnimationBackwards(self, Info.DeployAnimation, OnUndeployCompleted);
+        }
 
 		void OnDeployStarted()
 		{
@@ -288,7 +299,10 @@ namespace OpenRA.Mods.RA2.Traits
 			if (conditionManager != null && !string.IsNullOrEmpty(Info.UndeployedCondition) && undeployedToken == ConditionManager.InvalidConditionToken)
 				undeployedToken = conditionManager.GrantCondition(self, Info.UndeployedCondition);
 
-			deployState = DeployState.Undeployed;
+            if (Info.TakeOffOnUndeploy)
+                self.QueueActivity(new HeliFly(self, Target.FromCell(self.World, self.Location)));
+
+            deployState = DeployState.Undeployed;
 		}
 	}
 }

@@ -40,7 +40,7 @@ namespace OpenRA.Mods.RA2.Activities
                 var cells = w.Map.AllCells.Where(c => aircraft.CanLand(c)).Select(c => w.Map.CenterOfCell(c));
                 var cell = w.Map.CellContaining(WorldUtils.PositionClosestTo(cells, self.CenterPosition));
 
-                QueueChild(ActivityUtils.SequenceActivities(new HeliFly(self, Target.FromCell(w, cell))));
+                QueueChild(new HeliFly(self, Target.FromCell(w, cell)));
             }
 
             // Turn to the required facing.

@@ -696,6 +696,8 @@ schp:
 		LandOnCondition: deployed || emp
 	HeliGrantConditionOnDeploy:
 		Facing: 160
+		BodyNames: dot
+		DeployAnimation: deploy
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed
 		DeploySound: vchodepa.wav
@@ -703,13 +705,9 @@ schp:
 		AllowedTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		CanDeployOnRamps: true
 		PauseOnCondition: emp
-	#WithSpriteBody@dot:
-	#	Sequence: dot
-	#	Name: dot
-	#	RequiresCondition: !undeployed
-	#WithMakeAnimation:
-	#	Sequence: deploy
-	#	BodyName: dot
+	WithSpriteBody@dot:
+		Sequence: dot
+		Name: dot
 	RenderSprites:
 	Repairable:
 		Voice: Move
