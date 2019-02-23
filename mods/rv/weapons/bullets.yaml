@@ -19,8 +19,8 @@ GrandCannonWeapon:
 			Medium: 100
 			Heavy: 100
 			Wood: 50
-			Steel: 85
-			Concrete: 35
+			Steel: 75
+			Concrete: 45
 			Drone: 100
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
@@ -40,14 +40,10 @@ sabot:
 		Versus:
 			None: 10
 			Flak: 10
-			Plate: 10
-			Light: 100
-			Medium: 100
-			Heavy: 100
+			Plate: 5
 			Wood: 40
 			Steel: 60
 			Concrete: 35
-			Drone: 60
 			Rocket: 100
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 
@@ -63,8 +59,7 @@ sabotE:
 		Versus:
 			None: 20
 			Flak: 20
-			Plate: 20
-			Medium: 100
+			Plate: 15
 			Drone: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
@@ -101,6 +96,8 @@ MirageGunE:
 	Range: 9c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
+		Versus:
+			Plate: 100
 
 105mm:
 	Inherits: ^LargeBullet
