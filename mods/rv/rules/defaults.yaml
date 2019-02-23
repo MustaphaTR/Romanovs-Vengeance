@@ -456,6 +456,10 @@
 		BeingInfectedCondition: beinginfected
 		InfectedByConditions:
 			sqd: squid
+	RevealsShroud@DRONE:
+		Range: 2c0
+		ValidStances: Enemy, Neutral
+		RequiresCondition: squid
 	Targetable@SQUID:
 		TargetTypes: SquidInfection
 
@@ -1285,6 +1289,10 @@
 		KillInfectorActorTypes: gadept, nadept, caoutp
 		BeingInfectedCondition: beingterrordroned
 		InfectedCondition: terrordroned
+	RevealsShroud@DRONE:
+		Range: 2c0
+		ValidStances: Enemy, Neutral
+		RequiresCondition: terrordroned
 	ExplodeWeapon@dronesparks:
 		RequiresCondition: terrordroned
 		Weapon: DroneSparkSpawner
