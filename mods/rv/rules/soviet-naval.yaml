@@ -1,67 +1,9 @@
 sapc:
-	Inherits: ^Ship
-	Inherits@MC: ^MindControllableDisabledWithIC
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
-	Inherits@SQUID: ^SquidGrabbable
+	Inherits: ^AmphibiousTransport
 	Buildable:
 		Queue: Ship.Soviets
-		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 10
-		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n  Unarmed
-	Valued:
-		Cost: 500
-	Tooltip:
-		Name: Amphibious Transport
-	Selectable:
-		Bounds: 60, 80, 0, -6
-	Health:
-		HP: 300
-	Armor:
-		Type: Light
-	Mobile:
-		TurnSpeed: 5
-		Speed: 90
-		Locomotor: heavyamphibious
-		RequiresCondition: !notmobile && !chronodisable && !emp && !squid && !beinginfected
-	Hovers:
-		RequiresCondition: !chronodisable && !emp && !squid
-	RevealsShroud:
-		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
-	RevealOnDeath:
-		Radius: 3c0
-	Targetable:
-		RequiresCondition: in_water
-	Targetable@GROUND:
-		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
-		RequiresCondition: !in_water
-	GrantConditionOnTerrain@Water:
-		TerrainTypes: Water
-		Condition: in_water
-	KillsSelf@LowPowerOnWater:
-		RequiresCondition: emp && in_water
-	Repairable:
-		Voice: Move
-		RepairBuildings: gadept, nadept, caoutp
-	Cargo:
-		Types: Infantry, Garrisoner, Vehicle
-		MaxWeight: 12
-		PipCount: 12
-		PassengerFacing: 96
-		UnloadTerrainTypes: Clear, Rough, Rail, Road, DirtRoad, Beach, Ore, Gems
-		UnloadVoice: Move
-		EjectOnDeath: true
-		LoadingCondition: notmobile
-	Explodes:
-		Weapon: UnitExplode
-		EmptyWeapon: UnitExplode
-	WithVoxelBody:
-	RenderSprites:
 	Voiced:
 		VoiceSet: SovietAmphibiousTransportVoice
-	HitShape:
 
 sub:
 	Inherits: ^Ship

@@ -142,6 +142,60 @@ yaweap:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yayard:
+	Defaults:
+		Offset: 0, -45
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: yayard
+		ShadowStart: 3
+	damaged-idle: yayard
+		Start: 2
+		ShadowStart: 4
+	idle-crane: yayard_a
+		Length: 15
+		ShadowStart: 32
+		Tick: 200
+	damaged-idle-crane: yayard_a
+		Start: 16
+		Length: 15
+		ShadowStart: 48
+		Tick: 200
+	idle-waves: ngyard_c
+		Length: 15
+		ShadowStart: 30
+		Tick: 200
+	damaged-idle-waves: yayard_c
+		Start: 16
+		Length: 15
+		ShadowStart: 32
+		Tick: 200
+	production-lights: yayard_d
+		Length: 15
+		ZOffset: 256
+	damaged-production-lights: yayard_d
+		Start: 15
+		Length: 15
+		ZOffset: 256
+	make: yayardmk
+		Length: 24
+		ShadowStart: 25
+	repair: yayard_s
+		Length: 15
+		ShadowStart: 32
+	damaged-repair: yayard_s
+		Start: 16
+		Length: 15
+		ShadowStart: 48
+	icon: yyrdicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yatech:
 	Defaults:
 		Offset: -15, -38
