@@ -1,63 +1,17 @@
 gacnst:
-	Inherits: ^Building
-	Inherits@shape: ^4x4Shape
-	Buildable:
-		Queue: Building.Allies, Building.Soviets, Building.Yuri
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description: Builds base structures.
-	Building:
-		Footprint: xxxx xxxx xxxx xxxx
-		Dimensions: 4,4
+	Inherits: ^ConstructionYard
 	Selectable:
 		Bounds: 220, 155, 0, -20
-	Health:
-		HP: 800
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 4c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 4c0
 	Valued:
 		Cost: 2000
 	Production:
 		Produces: Building.Allies, Support.Allies
-		PauseOnCondition: chronodisable
-	ProductionQueue@AlliedBuilding:
+	ProductionQueue@Building:
 		Type: Building.Allies
-		Group: Building
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@AlliedSupport:
+	ProductionQueue@Support:
 		Type: Support.Allies
-		Group: Support
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	Tooltip:
-		Name: Construction Yard
-	BaseBuilding:
 	Transforms:
 		IntoActor: amcv
-		Offset: 1,1
-		Facing: 96
-		DeployCursor: undeploy
-		PauseOnCondition: chronodisable
-		RequiresCondition: factundeploy && !build-incomplete
-	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
-		Condition: factundeploy
-		Prerequisites: global-factundeploy
 	ProductionBar@Building:
 		ProductionType: Building.Allies
 	ProductionBar@Support:
@@ -116,18 +70,7 @@ gacnst:
 		Sequence: flag-korea
 		Palette: player
 		IsPlayerPalette: false
-		RequiresCondition: !build-incomplete && korea 
-	Power:
-		Amount: 0
-	SpawnActorsOnSell@allies:
-		ActorTypes: e1, e1, e1, engineer
-		Factions: america, germany, england, france, korea
-	SpawnActorsOnSell@soviets:
-		ActorTypes: e2, e2, e2, e2, engineer
-		Factions: cuba, libya, iraq, russia, vietnam
-	BaseProvider:
-		Range: 16c0
-		PauseOnCondition: build-incomplete && chronodisable
+		RequiresCondition: !build-incomplete && korea
 
 gapowr:
 	Inherits: ^Building

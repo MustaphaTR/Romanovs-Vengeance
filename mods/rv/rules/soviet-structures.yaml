@@ -1,65 +1,15 @@
 nacnst:
-	Inherits: ^Building
-	Inherits@shape: ^4x4Shape
-	Buildable:
-		Queue: Building.Allies, Building.Soviets, Building.Yuri
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description: Allows construction of base structures.
-	Building:
-		Footprint: xxxx xxxx xxxx xxxx
-		Dimensions: 4,4
-	Selectable:
-		Bounds: 220, 180, 0, -35
+	Inherits: ^ConstructionYard
 	ProvidesPrerequisite@soviets:
 		Prerequisite: structures.soviets
-	Health:
-		HP: 800
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 4c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 4c0
-	Valued:
-		Cost: 2000
 	Production:
 		Produces: Building.Soviets, Support.Soviets
-		PauseOnCondition: chronodisable
-	ProductionQueue@SovietBuilding:
+	ProductionQueue@Building:
 		Type: Building.Soviets
-		Group: Building
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@SovietSupport:
+	ProductionQueue@Support:
 		Type: Support.Soviets
-		Group: Support
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	Tooltip:
-		Name: Construction Yard
-	BaseBuilding:
 	Transforms:
 		IntoActor: smcv
-		Offset: 1,1
-		Facing: 96
-		DeployCursor: undeploy
-		PauseOnCondition: chronodisable
-		RequiresCondition: factundeploy && !build-incomplete
-	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
-		Condition: factundeploy
-		Prerequisites: global-factundeploy
 	ProductionBar@Building:
 		ProductionType: Building.Soviets
 	ProductionBar@Support:
@@ -102,15 +52,6 @@ nacnst:
 	WithIdleOverlay@Libya:
 		Sequence: flag-libya
 		RequiresCondition: !build-incomplete && libya
-	SpawnActorsOnSell@allies:
-		ActorTypes: e1, e1, e1, engineer
-		Factions: america, germany, england, france, korea
-	SpawnActorsOnSell@soviets:
-		ActorTypes: e2, e2, e2, e2, engineer
-		Factions: cuba, libya, iraq, russia, vietnam
-	BaseProvider:
-		Range: 16c0
-		PauseOnCondition: build-incomplete || chronodisable
 
 napowr:
 	Inherits: ^Building

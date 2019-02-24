@@ -1,65 +1,15 @@
 yacnst:
-	Inherits: ^Building
-	Inherits@shape: ^4x4Shape
-	Buildable:
-		Queue: Building.Allies, Building.Soviets, Building.Yuri
-		BuildPaletteOrder: 1000
-		Prerequisites: ~disabled
-		Description: Allows construction of base structures.
-	Building:
-		Footprint: xxxx xxxx xxxx xxxx
-		Dimensions: 4,4
-	Selectable:
-		Bounds: 220, 180, 0, -35
+	Inherits: ^ConstructionYard
 	ProvidesPrerequisite@yuri:
 		Prerequisite: structures.yuri
-	Health:
-		HP: 800
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 4c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 4c0
-	Valued:
-		Cost: 2000
 	Production:
 		Produces: Building.Yuri, Support.Yuri
-		PauseOnCondition: chronodisable
-	ProductionQueue@YuriBuilding:
+	ProductionQueue@Building:
 		Type: Building.Yuri
-		Group: Building
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@YuriSupport:
+	ProductionQueue@Support:
 		Type: Support.Yuri
-		Group: Support
-		LowPowerModifier: 200
-		ReadyAudio: ConstructionComplete
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	Tooltip:
-		Name: Construction Yard
-	BaseBuilding:
 	Transforms:
 		IntoActor: pcv
-		Offset: 1,1
-		Facing: 96
-		DeployCursor: undeploy
-		PauseOnCondition: chronodisable
-		RequiresCondition: factundeploy && !build-incomplete
-	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
-		Condition: factundeploy
-		Prerequisites: global-factundeploy
 	ProductionBar@Building:
 		ProductionType: Building.Yuri
 	ProductionBar@Support:
@@ -72,15 +22,6 @@ yacnst:
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
-	SpawnActorsOnSell@allies:
-		ActorTypes: e1, e1, e1, engineer
-		Factions: america, germany, england, france, korea
-	SpawnActorsOnSell@soviets:
-		ActorTypes: e2, e2, e2, e2, engineer
-		Factions: cuba, libya, iraq, russia, vietnam
-	BaseProvider:
-		Range: 16c0
-		PauseOnCondition: build-incomplete || chronodisable
 
 yabrck:
 	Inherits: ^Building
