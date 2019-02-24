@@ -454,84 +454,25 @@ mine:
 		PlayerPalette: infantry
 
 naweap:
-	Inherits: ^Building
-	Inherits@shape: ^5x3Shape
+	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 40
-		Prerequisites: refinery, ~techlevel.1
-		Description: Produces vehicles.
-	Selectable:
-		Bounds: 196, 178, -6, -48
-	Valued:
-		Cost: 2000
-	Tooltip:
-		Name: War Factory
-	ProvidesPrerequisite@warfactory:
-		Prerequisite: warfactory
 	ProvidesPrerequisite@libya:
 		Prerequisite: vehicles.libya
 		Factions: libya
 	ProvidesPrerequisite@russia:
 		Prerequisite: vehicles.russia
 		Factions: russia
-	ProvidesPrerequisite@default:
-	Building:
-		Footprint: xxxx= xxxx= xxxx=
-		Dimensions: 5,3
-	Health:
-		HP: 1000
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 4c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 4c0
-	RallyPoint:
-		Offset: 6,1
-		Palette: mouse
-		IsPlayerPalette: false
-	Exit@1:
-		ExitCell: 5,1
 	Production:
 		Produces: Vehicle.Soviets
-		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Vehicle.Soviets
-		Group: Vehicle
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Soviets
-	WithExitOverlay@door:
-		Sequence: build-door
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	WithExitOverlay@top-vehicles:
-		Sequence: build-top
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@bib:
-		Sequence: bib
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	Power:
-		Amount: -50
-	InfiltrateForSupportPower:
-		Types: SpyInfiltrate
-		Proxy: warfactory.infiltrated
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 nayard:
 	Inherits: ^Shipyard

@@ -482,60 +482,21 @@ gaairc:
 		IsPlayerPalette: false
 
 gaweap:
-	Inherits: ^Building
-	Inherits@shape: ^5x3Shape
+	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 40
-		Prerequisites: garefn, ~techlevel.1
-		Description: Produces vehicles.\nRequired for Robot Tanks to function.
 	Selectable:
 		Bounds: 212, 158, -7, -28
-	Valued:
-		Cost: 2000
-	Tooltip:
-		Name: War Factory
-	ProvidesPrerequisite@warfactory:
-		Prerequisite: warfactory
 	ProvidesPrerequisite@germany:
 		Prerequisite: vehicles.germany
 		Factions: germany
-	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_gaweap
 		RequiresCondition: !chronodisable
-	Building:
-		Footprint: xxxx= xxxx= xxxx=
-		Dimensions: 5,3
-	Health:
-		HP: 1000
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 4c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 4c0
-	RallyPoint:
-		Offset: 5,1
-		Palette: mouse
-		IsPlayerPalette: false
-	Exit@1:
-		SpawnOffset: -384,-384,0
-		ExitCell: 4,1
 	Production:
 		Produces: Vehicle.Allies
-		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Vehicle.Allies
-		Group: Vehicle
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Allies
 	WithIdleOverlay@flag:
@@ -546,25 +507,6 @@ gaweap:
 		Sequence: overlay-fan
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@bib:
-		Sequence: bib
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	WithExitOverlay@top-vehicles:
-		Sequence: build-top
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	WithExitOverlay@ramp:
-		Sequence: build-ramp
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	Power:
-		Amount: -50
-	InfiltrateForSupportPower:
-		Types: SpyInfiltrate
-		Proxy: warfactory.infiltrated
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 gayard:
 	Inherits: ^Shipyard
