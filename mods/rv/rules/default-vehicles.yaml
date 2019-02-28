@@ -47,3 +47,41 @@
 	RenderVoxels:
 	WithVoxelBody:
 	HitShape:
+
+^MainBattleTank:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Buildable:
+		Queue: Vehicle
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 20
+		Description: Main Battle Tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+	Mobile:
+		TurnSpeed: 5
+		Locomotor: heavytracked
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Turreted:
+		TurnSpeed: 4
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp
+	AutoTarget:
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	WithVoxelBarrel:
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:

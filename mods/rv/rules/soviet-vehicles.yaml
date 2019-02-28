@@ -231,39 +231,18 @@ htk:
 	HitShape:
 
 htnk:
-	Inherits: ^Vehicle
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@MC: ^MindControllableDisabledWithIC
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits: ^MainBattleTank
 	Valued:
 		Cost: 900
 	Tooltip:
 		Name: Rhino Heavy Tank
 	Buildable:
 		Queue: Vehicle.Soviets
-		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 20
 		Description: Soviet Main Battle Tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
 	Mobile:
 		Speed: 90
-		TurnSpeed: 5
-		Locomotor: heavytracked
 	Health:
 		HP: 400
-	Armor:
-		Type: Heavy
-	RevealsShroud:
-		Range: 8c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 8c0
-	RevealOnDeath:
-		Radius: 4c0
-	Turreted:
-		TurnSpeed: 4
 	Armament@primary:
 		Weapon: 120mm
 		Recoil: 87
@@ -276,23 +255,12 @@ htnk:
 		RecoilRecovery: 12
 		LocalOffset: 640,0,512
 		RequiresCondition: rank-elite
-	AttackTurreted:
-		Voice: Attack
-		PauseOnCondition: chronodisable || emp
-	AutoTarget:
-	RenderSprites:
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	RenderVoxels:
 		NormalsPalette: ts-normals
-	WithVoxelBody:
-	WithVoxelTurret:
-	WithVoxelBarrel:
 	Voiced:
 		VoiceSet: SovietVehicleVoice
-	ProducibleWithLevel:
-		Prerequisites: warfactory.infiltrated
-	HitShape:
 
 apoc:
 	Inherits: ^Vehicle

@@ -6,3 +6,34 @@ pcv:
 		IntoActor: yacnst
 	Voiced:
 		VoiceSet: YuriConstructionVehicleVoice
+
+ltnk:
+	Inherits: ^MainBattleTank
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Lasher Light Tank
+	Buildable:
+		Queue: Vehicle.Yuri
+		Description: Yuri Main Battle Tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
+	Mobile:
+		Speed: 105
+	Health:
+		HP: 300
+	Armament@primary:
+		Weapon: ATGUN
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 640,0,512
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: ATGUNE
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 640,0,512
+		RequiresCondition: rank-elite
+	-WithVoxelBarrel:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	Voiced:
+		VoiceSet: LasherTankVoice

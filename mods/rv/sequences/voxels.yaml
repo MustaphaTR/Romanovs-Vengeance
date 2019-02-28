@@ -127,10 +127,10 @@ lcrf: #Allied transport
 limo:
 	idle:
 
-ltnk: #Light tank,Beta unit. Appears only in one mission as a prop
-	idle:
-	turret: ltnktur
-	barrel: ltnkbarl
+oltnk: #Light tank,Beta unit. Appears only in one mission as a prop
+	idle: local|ltnk
+	turret: local|ltnktur
+	barrel: local|ltnkbarl
 
 apoc: #Aplocalypse Tank
 	idle: mtnk
@@ -293,6 +293,10 @@ pcv:
 
 yhvr:
 	idle:
+
+ltnk:
+	idle: localmd|ltnk
+	turret: localmd|ltnktur
 
 # Custom Voxels
 hind:
