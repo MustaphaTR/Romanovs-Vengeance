@@ -23,6 +23,75 @@ yacnst:
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
 
+yapowr:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Buildable:
+		Queue: Building.Yuri
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 10
+		Description: Provides power for other structures./nCan be occupied with up to 5 infantry for 50 more power each.
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Bio Reactor
+	ProvidesPrerequisite:
+		Prerequisite: power
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
+	WithSpriteBody:
+		PauseOnCondition: chronodisable
+		RequiresCondition: !loaded
+	WithSpriteBody@loaded:
+		Sequence: loaded
+		PauseOnCondition: chronodisable
+		RequiresCondition: loaded
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Power@0:
+		Amount: 150
+		RequiresCondition: !chronodisable
+	Power@1:
+		Amount: 50
+		RequiresCondition: !chronodisable && loaded >= 1
+	Power@2:
+		Amount: 50
+		RequiresCondition: !chronodisable && loaded >= 2
+	Power@3:
+		Amount: 50
+		RequiresCondition: !chronodisable && loaded >= 3
+	Power@4:
+		Amount: 50
+		RequiresCondition: !chronodisable && loaded >= 4
+	Power@5:
+		Amount: 50
+		RequiresCondition: !chronodisable && loaded >= 5
+	Cargo:
+		Types: Infantry, Garrisoner
+		MaxWeight: 5
+		PipCount: 5
+		EjectOnDeath: true
+		LoadedCondition: loaded
+	ScalePowerWithHealth:
+	SoundOnDamageTransition:
+		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
+	PowerTooltip:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+
 yabrck:
 	Inherits: ^Building
 	Inherits@shape: ^2x3Shape
