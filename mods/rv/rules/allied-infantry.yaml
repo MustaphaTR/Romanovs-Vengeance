@@ -786,8 +786,6 @@ jumpjet:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 125
-	-TimedConditionBar@ChronoDisable:
-	-ExternalCondition@CHRONODISABLE:
 	-Mobile:
 	RevealsShroud:
 		Range: 8c0
@@ -897,7 +895,7 @@ cleg:
 		Queue: Infantry.Allies
 		BuildPaletteOrder: 140
 		Prerequisites: gatech, ~techlevel.4
-		Description: High-tech soldier.\n Strong vs Infantry, Vehicles\n Weak vs Aircraft
+		Description: High-tech soldier capable of erasing enemy units.\n Strong vs Infantry, Vehicles, Structures\n Weak vs Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	ProducibleWithLevel:
@@ -936,10 +934,15 @@ cleg:
 		VoiceSet: ChronoLegionnaireVoice
 	Armament@primary:
 		Weapon: NeutronRifle
+		LocalOffset: 512,0,384
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: NeutronRifleE
+		LocalOffset: 512,0,384
 		RequiresCondition: rank-elite
+	Armament@sound:
+		Weapon: NeutronRifleSound
+		LocalOffset: 512,0,384
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: NeutronRifle
@@ -948,6 +951,9 @@ cleg:
 		Name: opentopped
 		Weapon: NeutronRifleE
 		RequiresCondition: rank-elite
+	Armament@sound-opentopped:
+		Name: opentopped
+		Weapon: NeutronRifleSound
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable

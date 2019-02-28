@@ -410,14 +410,18 @@
 		Condition: invulnerability
 
 ^ChronoDisable:
+	AffectedByTemporal:
+		Condition: chronodisable
+		EraseDamageMultiplier: 500
+		EraseSounds: ichrkill.wav
+		SelectionBarColor: FFFFFF
+	Targetable:
+		RequiresCondition: !chronodisable
+	Targetable@ChronoDisable:
+		TargetTypes: ChronoDisable
 	WithColoredOverlay@ChronoDisable:
 		Palette: chronodisable
 		RequiresCondition: chronodisable
-	TimedConditionBar@ChronoDisable:
-		Condition: chronodisable
-		Color: FFFFFF
-	ExternalCondition@CHRONODISABLE:
-		Condition: chronodisable
 
 ^MindControllable:
 	MindControllable:
@@ -732,6 +736,7 @@
 		PipCount: 10
 		EjectOnDeath: true
 		LoadedCondition: loaded
+		PauseOnCondition: chronodisable
 		RequiresCondition: !dmg_crit
 	AttackGarrisonedRV:
 		Armaments: garrisoned

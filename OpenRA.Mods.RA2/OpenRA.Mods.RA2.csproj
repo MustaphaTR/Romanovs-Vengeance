@@ -70,6 +70,7 @@
     <Compile Include="Traits\ChangeOwner.cs" />
     <Compile Include="Traits\ChangeOwnerOnGarrisoner.cs" />
     <Compile Include="Traits\ChronoResourceDelivery.cs" />
+    <Compile Include="Traits\AffectedByTemporal.cs" />
     <Compile Include="Traits\Conditions\GrantConditionAfterDelay.cs" />
     <Compile Include="Traits\Conditions\GrantConditionOnCombatantOwner.cs" />
     <Compile Include="Traits\Conditions\GrantConditionOnCapture.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Traits\CarrierMaster.cs" />
     <Compile Include="Orders\ShootableBallisticMissileMoveOrderTargeter.cs" />
     <Compile Include="UtilityCommands\ImportRA2MapCommand.cs" />
+    <Compile Include="Warheads\TemporalDamageWarhead.cs" />
     <Compile Include="Warheads\LegacySpreadWarhead.cs" />
   </ItemGroup>
   <Target Name="AfterBuild">
@@ -117,6 +119,10 @@
     <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">
       <Project>{0DFB103F-2962-400F-8C6D-E2C28CCBA633}</Project>
       <Name>OpenRA.Game</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\engine\OpenRA.Mods.AS\OpenRA.Mods.AS.csproj">
+      <Project>{6deee499-98e5-4977-aaae-ceae165f17cf}</Project>
+      <Name>OpenRA.Mods.AS</Name>
     </ProjectReference>
     <ProjectReference Include="..\engine\OpenRA.Mods.Cnc\OpenRA.Mods.Cnc.csproj">
       <Project>{2881135D-4D62-493E-8F83-5EEE92CCC6BE}</Project>
