@@ -1,54 +1,12 @@
 smcv:
-	Inherits: ^Vehicle
-	Inherits@MC: ^MindControllableDisabledWithIC
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits: ^ConstructionVehicle
 	Buildable:
 		Queue: Vehicle.Soviets
-		BuildPaletteOrder: 50
-		Description: Deploys into a Construction Yard.
 		Prerequisites: naradr, ~techlevel.2
-	Valued:
-		Cost: 2000
-	Tooltip:
-		Name: Mobile Construction Vehicle
-	Selectable:
-		Priority: 4
-		Bounds: 64, 52, 0, -6
-	Health:
-		HP: 800
-	Armor:
-		Type: Heavy
-	Mobile:
-		Speed: 60
-		TurnSpeed: 5
-		Locomotor: heavytracked
-	-Crushable:
-	Passenger:
-		Weight: 6
-	RevealsShroud:
-		Range: 4c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 4c0
-	RevealOnDeath:
-		Radius: 2c0
-	MustBeDestroyed:
-		RequiredForShortGame: true
-	BaseBuilding:
 	Transforms:
-		Voice: Move
 		IntoActor: nacnst
-		Offset: -1,-1
-		Facing: 96
-		TransformSounds: uplace.wav
-		NoTransformNotification: BuildingCannotPlaceAudio
-		PauseOnCondition: chronodisable || emp || terrordroned
-	RenderSprites:
-	RenderVoxels:
-	WithVoxelBody:
 	Voiced:
 		VoiceSet: SovietConstructionVehicleVoice
-	HitShape:
 
 harv:
 	Inherits: ^Vehicle
@@ -187,6 +145,13 @@ dron:
 	-WithDecoration@TANYAC4:
 	Voiced:
 		VoiceSet: TerrorDroneVoice
+    AmbientSound@Walk:
+        SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav, vterlo3.wav
+        Delay: 7
+        Interval: 7
+        RequiresCondition: walking
+    GrantConditionOnMovement:
+        Condition: walking
 	HitShape:
 
 htk:
