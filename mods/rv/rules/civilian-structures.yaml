@@ -5036,6 +5036,31 @@ casydn02.rubble:
 	RenderSprites:
 		Image: casydn02
 
+casydn03:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^6x4Shape
+	Tooltip:
+		Name: Sydney Opera House
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 6,4
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
+	SpawnActorOnDeath:
+		Actor: casydn03.rubble
+
+casydn03.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 6,4
+		Footprint: ______ ______ ______ ______
+	RenderSprites:
+		Image: casydn03
+
 calunr01:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x2Shape
@@ -5061,3 +5086,55 @@ calunr02:
 		Range: 8c0
 	Health:
 		HP: 100
+
+caseat01:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Seattle Space Needle
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 10c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: caseat01.rubble
+
+caseat01.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: caseat01
+
+caseat02:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: MassiveSoft Campus
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	WithIdleOverlay@globe:
+		Sequence: idle-globe
+	SpawnActorOnDeath:
+		Actor: caseat02.rubble
+
+caseat02.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: caseat02
