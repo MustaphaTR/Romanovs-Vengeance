@@ -283,3 +283,47 @@
 	-SpawnActorsOnSell@soviets:
 	RequiresBuildableArea:
 		Adjacent: 13
+
+^ServiceDepot:
+	Inherits: ^Building
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 70
+		Prerequisites: refinery, ~techlevel.1
+		Description: Repairs vehicles and removes Terror Drones for a price.
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Service Depot
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite:
+		Prerequisite: repairpad
+	Health:
+		HP: 750
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
+	Reservable:
+	RallyPoint:
+		Palette: mouse
+		IsPlayerPalette: false
+	RepairsUnits:
+		PauseOnCondition: chronodisable
+		HpPerStep: 20
+		Interval: 7
+		StartRepairingNotification: Repairing
+		FinishRepairingNotification: UnitRepaired
+	WithIdleOverlay@bib:
+		Sequence: bib
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithResupplyAnimation:
+		Sequence: repair
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -15

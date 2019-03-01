@@ -296,7 +296,7 @@ gaairc:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 60
 		Prerequisites: power, garefn, ~techlevel.2
 		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.
 	Valued:
@@ -535,59 +535,22 @@ gayard:
 	-WithProductionOverlay@lights:
 
 gadept:
-	Inherits: ^Building
+	Inherits: ^ServiceDepot
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 60
 		Prerequisites: garefn, ~techlevel.1
-		Description: Repairs vehicles and removes Terror Drones for a price.
 	Selectable:
 		Bounds: 144, 88, -12, -16
-	Valued:
-		Cost: 800
-	Tooltip:
-		Name: Service Depot
-	ProvidesPrerequisite@default:
-	ProvidesPrerequisite:
-		Prerequisite: repairpad
 	Building:
 		Footprint: x== xx= x==
 		Dimensions: 3,3
-	Health:
-		HP: 750
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 5c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 5c0
-	Reservable:
 	RallyPoint:
 		Offset: 3,1
-		Palette: mouse
-		IsPlayerPalette: false
-	RepairsUnits:
-		PauseOnCondition: chronodisable
-		HpPerStep: 20
-		Interval: 7
-		StartRepairingNotification: Repairing
-		FinishRepairingNotification: UnitRepaired
 	WithIdleOverlay@side:
 		Sequence: idle-side
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@bib:
-		Sequence: bib
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	WithResupplyAnimation:
-		Sequence: repair
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	Power:
-		Amount: -15
 
 gatech:
 	Inherits: ^Building

@@ -271,7 +271,7 @@ naradr:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 60
 		Prerequisites: power, narefn, ~techlevel.2
 		Description: Provides radar.\n  Special Ability: Spy Plane
 	Valued:
@@ -520,61 +520,56 @@ nmine:
 		PlayerPalette: player
 
 nadept:
-	Inherits: ^Building
+	Inherits: ^ServiceDepot
 	Inherits@shape: ^4x3Shape
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 60
-		Prerequisites: narefn, ~techlevel.1
-		Description: Produces Soviet aircraft.\nRepairs vehicles and removes Terror Drones for a price.
+		Prerequisites: naweap, ~techlevel.1
 	Selectable:
 		Bounds: 156, 150, 0, -38
-	Valued:
-		Cost: 1000
-	Tooltip:
-		Name: Airforce Service Center
-	ProvidesPrerequisite:
-		Prerequisite: repairpad
 	Building:
 		Footprint: x=== x=x= x===
 		Dimensions: 4,3
-	Health:
-		HP: 750
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 5c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 5c0
-	Reservable:
 	RallyPoint:
 		Offset: 4,1
-		Palette: mouse
-		IsPlayerPalette: false
-	RepairsUnits:
-		PauseOnCondition: chronodisable
-		HpPerStep: 20
-		Interval: 7
-		StartRepairingNotification: Repairing
-		FinishRepairingNotification: UnitRepaired
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@bib:
-		Sequence: bib
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	WithResupplyAnimation:
-		Sequence: repair
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+
+naheli:
+	Inherits: ^Building
+	Inherits@shape: ^3x3Shape
+	Buildable:
+		Queue: Building.Soviets
+		BuildPaletteOrder: 100
+		Prerequisites: naradr, ~techlevel.2
+		Description: Produces Soviet aircraft.
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Helipad
+	Building:
+		Footprint: XxX xxx XxX
+		Dimensions: 3,3
+	Health:
+		HP: 500
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
+	Armor:
+		Type: Wood
+	Reservable:
+	RallyPoint:
+		Offset: 3,1
+		Palette: mouse
+		IsPlayerPalette: false
 	Exit@1:
 		Facing: 160
-		SpawnOffset: 512,512,0
 		MoveIntoWorld: false
 	Production:
 		Produces: Aircraft.Soviets
@@ -600,7 +595,7 @@ nanrct:
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		Prerequisites: natech, ~techlevel.3
 		Description: Provides power for other structures.
 	Valued:
@@ -681,7 +676,7 @@ naclon:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 120
 		Prerequisites: ~disabled # natech
 		Description: Clones most trained infantry.\nMaximum 1 can be built.
 		BuildLimit: 1
@@ -1182,7 +1177,7 @@ naindp:
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 120
 		Prerequisites: narefn, natech, ~techlevel.4
 		Description: Decreases vehicle costs by 25%.\nMaximum 1 can be built.\nCan not be captured.
 		BuildLimit: 1
