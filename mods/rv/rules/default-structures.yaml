@@ -1,5 +1,5 @@
 ^ConstructionYard:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^4x4Shape
 	Buildable:
 		Queue: Building.Allies, Building.Soviets, Building.Yuri
@@ -73,7 +73,7 @@
 		PauseOnCondition: build-incomplete || chronodisable
 
 ^WarFactory:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^5x3Shape
 	Buildable:
 		Queue: Building
@@ -143,7 +143,7 @@
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 ^Shipyard:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^4x4Shape
 	Valued:
 		Cost: 1000
@@ -285,7 +285,7 @@
 		Adjacent: 13
 
 ^ServiceDepot:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 70

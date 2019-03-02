@@ -24,7 +24,7 @@ yacnst:
 		RequiresCondition: !build-incomplete
 
 yapowr:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
@@ -93,7 +93,7 @@ yapowr:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 yabrck:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x3Shape
 	Buildable:
 		Queue: Building.Yuri
@@ -188,7 +188,7 @@ yayard:
 		ProductionType: Ship.Yuri
 
 yatech:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Yuri

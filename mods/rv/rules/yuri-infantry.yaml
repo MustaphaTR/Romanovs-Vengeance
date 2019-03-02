@@ -1,0 +1,31 @@
+yurix:
+	Inherits: yuripr
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: yatech, ~techlevel.4
+		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nMaximum 1 can be trained.
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+	Selectable:
+		Bounds: 20, 60, 0, -26
+	Health:
+		HP: 150
+	RevealsShroud:
+		Range: 9c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 9c0
+	RevealOnDeath:
+		Radius: 4c512
+	Armament:
+		Weapon: SuperMindControlX
+		LocalOffset: 0,0,1024
+	VoiceAnnouncement:
+		Voice: Build
+	Voiced:
+		VoiceSet: YuriPrimeVoice
+	WithMindControlArc:
+		Offset: 0,0,1024

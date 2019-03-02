@@ -73,7 +73,7 @@ gacnst:
 		RequiresCondition: !build-incomplete && korea
 
 gapowr:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
@@ -146,7 +146,7 @@ gapowrup:
 		Amount: 100
 
 gapile:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
@@ -224,7 +224,7 @@ gapile:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 garefn:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^4x3Shape
 	Buildable:
 		Queue: Building.Allies
@@ -290,7 +290,7 @@ garefn:
 	-SpawnActorsOnSell@soviets:
 
 gaairc:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -553,7 +553,7 @@ gadept:
 		RequiresCondition: !build-incomplete
 
 gatech:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
@@ -773,7 +773,7 @@ gtgcan:
 		Amount: -100
 
 gaorep:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Allies
@@ -811,7 +811,7 @@ gaorep:
 		Amount: -200
 
 gaspysat:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -918,7 +918,7 @@ gagap:
 		RequiredForShortGame: false
 
 gaweat:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x3Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -975,7 +975,7 @@ gaweat:
 		RequiresPrerequisites: global-swlimit
 
 gacsph:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^4x3Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -1148,7 +1148,7 @@ repairpad:
 
 # Yuri's Revenge Structures
 garobo:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP

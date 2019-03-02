@@ -54,7 +54,7 @@ nacnst:
 		RequiresCondition: !build-incomplete && libya
 
 napowr:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x2Shape
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
@@ -97,7 +97,7 @@ napowr:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 nahand:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -199,7 +199,7 @@ nahand:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 narefn:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^4x3Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -265,7 +265,7 @@ narefn:
 	-SpawnActorsOnSell@allies:
 
 naradr:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -540,7 +540,7 @@ nadept:
 		RequiresCondition: !build-incomplete
 
 naheli:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -591,7 +591,7 @@ naheli:
 		Amount: -50
 
 nanrct:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^4x4Shape
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
@@ -638,7 +638,7 @@ nanrct:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 natech:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -673,7 +673,7 @@ natech:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 naclon:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -752,7 +752,7 @@ naclon:
 	AcceptsDeliveredCash:
 
 napsis:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^2x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
@@ -799,7 +799,7 @@ napsis:
 		Amount: -100
 
 nairon:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x3Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -859,7 +859,7 @@ nairon:
 		RequiresPrerequisites: global-swlimit
 
 namisl:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x3Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -1174,7 +1174,7 @@ nabnkr:
 		Range: 6c0
 
 naindp:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets

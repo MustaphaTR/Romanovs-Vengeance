@@ -450,6 +450,11 @@
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !invulnerability
 
+^MindControllableBuilding:
+	Inherits: ^MindControllableDisabledWithIC
+	Targetable@MC:
+		TargetTypes: MindControlBuilding
+
 ^SquidGrabbable:
 	WithFacingSpriteBody:
 		Sequence: squid
@@ -622,8 +627,6 @@
 		UndeploySounds: uselbuil.wav
 		TerrainTypes: Clear, Road, DirtRoad, Rough
 	FrozenUnderFog:
-	GivesBuildableArea:
-		AreaTypes: building
 	Capturable:
 		Types: building
 		RequiresCondition: !build-incomplete && !invulnerability
@@ -649,30 +652,36 @@
 	ShakeOnDeath:
 	ProximityCaptor:
 		Types: Building
-	Sellable:
-		SellSounds: uselbuil.wav
-		RequiresCondition: !build-incomplete && !chronodisable
 	Guardable:
 		Range: 3c0
 	Demolishable:
-	WithMakeAnimation:
-		Condition: build-incomplete
 	HitShape:
 		UseTargetableCellsOffsets: true
 	MapEditorData:
 		Categories: Building
-	RequiresBuildableArea:
-		AreaTypes: building
-		Adjacent: 3
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
 		ReferencePoint: Center
 		Palette: mouse
 	CaptureManager:
+	
+^BaseBuilding:
+	Inherits: ^Building
+	Inherits@1: ^MindControllableBuilding
+	WithMakeAnimation:
+		Condition: build-incomplete
+	Sellable:
+		SellSounds: uselbuil.wav
+		RequiresCondition: !build-incomplete && !chronodisable
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 3
+	GivesBuildableArea:
+		AreaTypes: building
 
 ^SupportBuilding:
-	Inherits: ^Building
+	Inherits: ^BaseBuilding
 	-Capturable:
 	-CaptureNotification:
 	-MustBeDestroyed:
@@ -697,14 +706,11 @@
 ^CivBuilding:
 	Inherits: ^Building
 	-OwnerLostAction:
-	-GivesBuildableArea:
 	-Capturable:
 	-MustBeDestroyed:
 	-GivesExperience:
 	-CaptureNotification:
-	-Sellable:
 	-UpdatesPlayerStatistics:
-	-WithMakeAnimation:
 	-RepairableBuilding:
 	-WithBuildingRepairDecoration:
 	Health:
@@ -775,9 +781,7 @@
 	Inherits: ^Building
 	-MustBeDestroyed:
 	-GivesExperience:
-	-Sellable:
 	-UpdatesPlayerStatistics:
-	-WithMakeAnimation:
 	OwnerLostAction:
 		Action: ChangeOwner
 	Health:
@@ -798,6 +802,7 @@
 		Notification: TechBuildingCaptured
 		LoseNotification: TechBuildingLost
 	GivesBuildableArea:
+		AreaTypes: building
 		RequiresCondition: techbuild
 	BaseProvider:
 		Range: 5c0
@@ -910,7 +915,6 @@
 
 ^Gate:
 	Inherits: ^Building
-	Inherits@1: ^ChronoDisable
 	Huntable:
 	Valued:
 		Cost: 75
@@ -921,9 +925,7 @@
 	LineBuildNode:
 		Types: wall, gate
 	-Capturable:
-	-GivesBuildableArea:
 	-MustBeDestroyed:
-	-WithMakeAnimation:
 	-WithSpriteBody:
 	WithGateSpriteBody:
 		OpenSequence: open
