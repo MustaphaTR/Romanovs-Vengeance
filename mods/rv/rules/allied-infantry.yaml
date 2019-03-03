@@ -927,7 +927,7 @@ cleg:
 		ChargeDelay: 300
 		HasDistanceLimit: false
 		TargetCursor: chronosphere
-		TeleportCondition: chronodisable
+		TeleportCondition: chronoed
 		ConditionDuration: 300
 	Chronoshiftable:
 		ExplodeInstead: false
@@ -960,3 +960,5 @@ cleg:
 		PauseOnCondition: chronodisable
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	GrantCondition@ChronoDisable:
+		RequiresCondition: affectedbytemporal || chronoed
