@@ -1105,7 +1105,7 @@
 	WithInfantryBody:
 		RequiresCondition: !parachute
 	Targetable:
-		RequiresCondition: !parachute
+		RequiresCondition: !parachute && !affectedbytemporal
 	Targetable@airborne:
 		TargetTypes: Air
 		RequiresCondition: parachute
@@ -1132,7 +1132,7 @@
 		Sequence: idle
 		ClosingSequence: close
 	Targetable:
-		RequiresCondition: !parachute
+		RequiresCondition: !parachute && !affectedbytemporal
 	Targetable@airborne:
 		TargetTypes: Air
 		RequiresCondition: parachute
