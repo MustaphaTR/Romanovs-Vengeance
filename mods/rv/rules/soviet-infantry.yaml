@@ -508,8 +508,10 @@ civan:
 		ChargeDelay: 300
 		HasDistanceLimit: false
 		TargetCursor: chronosphere
-		TeleportCondition: chronodisable
+		TeleportCondition: chronoed
 		ConditionDuration: 300
+	GrantCondition@ChronoDisable:
+		RequiresCondition: affectedbytemporal || chronoed
 	Chronoshiftable:
 		ExplodeInstead: false
 	-Explodes:
