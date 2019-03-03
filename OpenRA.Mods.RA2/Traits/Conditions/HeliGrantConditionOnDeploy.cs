@@ -39,6 +39,9 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Can this actor deploy on slopes?")]
 		public readonly bool CanDeployOnRamps = false;
 
+		[Desc("Does this actor need to synchronize it's deployment with other actors?")]
+		public readonly bool SynchronizeDeployment = false;
+
 		[Desc("Cursor to display when able to (un)deploy the actor.")]
 		public readonly string DeployCursor = "deploy";
 
@@ -135,17 +138,52 @@ namespace OpenRA.Mods.RA2.Traits
 		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
 		{
 			if (order.OrderID == "HeliGrantConditionOnDeploy")
-				return new Order(order.OrderID, self, queued);
+			{
+				var gcodorder = new Order(order.OrderID, self, queued);
+
+				if (Info.SynchronizeDeployment)
+				{
+					var actors = self.World.Selection.Actors.Select(x => x.ActorID.ToString());
+					gcodorder.TargetString = string.Join(",", actors);
+				}
+
+				return gcodorder;
+			}
 
 			return null;
 		}
 
 		Order IIssueDeployOrder.IssueDeployOrder(Actor self, bool queued)
 		{
-			return new Order("HeliGrantConditionOnDeploy", self, queued);
+			var gcodorder = new Order("HeliGrantConditionOnDeploy", self, queued);
+			if (Info.SynchronizeDeployment)
+			{
+				var actors = self.World.Selection.Actors.Select(x => x.ActorID.ToString());
+				gcodorder.TargetString = string.Join(",", actors);
+			}
+
+			return gcodorder;
 		}
 
 		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self) { return !IsTraitPaused && !IsTraitDisabled; }
+
+		bool IsGroupDeployNeeded(Actor self, string actorString)
+		{
+			if (string.IsNullOrEmpty(actorString))
+				return false;
+
+			var actorIDs = actorString.Split(',').Select(x => { uint result; uint.TryParse(x, out result); return result; });
+			var actors = self.World.Actors.Where(x => x.IsInWorld && !x.IsDead && actorIDs.Contains(x.ActorID));
+
+			foreach (var a in actors)
+			{
+				var gcod = a.TraitOrDefault<HeliGrantConditionOnDeploy>();
+				if (gcod != null && gcod.DeployState != DeployState.Deployed)
+					return true;
+			}
+
+			return false;
+		}
 
 		public void ResolveOrder(Actor self, Order order)
 		{
@@ -153,6 +191,9 @@ namespace OpenRA.Mods.RA2.Traits
 				return;
 
 			if (order.OrderString != "HeliGrantConditionOnDeploy" || deployState == DeployState.Deploying || deployState == DeployState.Undeploying)
+				return;
+
+			if (Info.SynchronizeDeployment && deployState == DeployState.Deployed && IsGroupDeployNeeded(self, order.TargetString))
 				return;
 
 			if (!order.Queued)
