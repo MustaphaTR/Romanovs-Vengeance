@@ -410,24 +410,34 @@ nadept:
 naheli:
 	Inherits@MC: ^MindControllable
 	Defaults:
-		Offset: 0, -45
+		Offset: 0, -30
 		UseTilesetCode: true
 		TilesetOverrides:
+			SNOW: GENERIC
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
 			NEWURBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
 	idle: ngheli
-		ShadowStart: 2
-		ZOffset: -2c512
 	damaged-idle: ngheli
 		Start: 1
-		ShadowStart: 3
-		ZOffset: -2c512
+	idle-dish: ngheli_a
+		Length: 16
+		ShadowStart: 16
+		Tick: 150
+	damaged-idle-dish: ngheli_ad
+		Length: 16
+		ShadowStart: 16
+		Tick: 150
+	idle-lights: ngheli_b
+		Length: 3
+		Tick: 150
+	damaged-idle-lights: ngheli_bd
+		Length: 3
+		Tick: 150
 	make: nghelimk
-		Length: 13
-		ZOffset: -2c512
+		Length: 19
 		TilesetOverrides:
 			SNOW: GENERIC
 	icon: nhelicon

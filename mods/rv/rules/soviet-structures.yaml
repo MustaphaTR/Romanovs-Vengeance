@@ -571,6 +571,7 @@ naheli:
 		IsPlayerPalette: false
 	Exit@1:
 		Facing: 160
+		SpawnOffset: -384,128,0
 		MoveIntoWorld: false
 	Production:
 		Produces: Aircraft.Soviets
@@ -589,6 +590,14 @@ naheli:
 		ProductionType: Aircraft.Soviets
 	Power:
 		Amount: -50
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@dish:
+		Sequence: idle-dish
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
 
 nanrct:
 	Inherits: ^BaseBuilding
