@@ -424,7 +424,7 @@ deso:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	-TakeCover: # TODO: needs to be conditional so we can disable when deployed
+	-TakeCover:
 	-DamagedByTintedCells:
 
 ivan:
@@ -727,7 +727,8 @@ boris:
 		-IdleSequences:
 		AttackSequences:
 			secondary: swim-shoot-flare
-	-TakeCover: # TODO: needs to be conditional so we can disable in water
+	TakeCover:
+		RequiresCondition: !swimming
 
 # Custom Revenge Infantry
 pyro:

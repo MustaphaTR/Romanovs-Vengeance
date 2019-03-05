@@ -599,7 +599,8 @@ ghost:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-	-TakeCover: # TODO: needs to be conditional so we can disable in water
+	TakeCover:
+		RequiresCondition: !swimming
 
 ccomand:
 	Inherits: ghost
@@ -765,7 +766,8 @@ tany:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-	-TakeCover: # TODO: needs to be conditional so we can disable in water
+	TakeCover:
+		RequiresCondition: !swimming
 
 jumpjet:
 	Inherits: ^Infantry
