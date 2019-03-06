@@ -460,8 +460,8 @@
 
 ^SquidGrabbable:
 	WithFacingSpriteBody:
+		Name: squid
 		Sequence: squid
-		BodyName: squid
 		RequiresCondition: squid
 	Infectable:
 		RemoveInfectorDamageTypes: RemovesSquid
@@ -760,6 +760,7 @@
 	WithSpriteBody:
 		RequiresCondition: !loaded
 	WithSpriteBody@GARRISONED:
+		Name: garrisoned
 		Sequence: garrisoned
 		RequiresCondition: loaded
 
@@ -1794,8 +1795,6 @@
 	PowerMultiplier@POWERDOWN:
 		RequiresCondition: powerdown
 		Modifier: 0
-	RepairableBuilding:
-		RepairCondition: repairing
 
 ^DisabledByPowerOutage:
 	WithColoredOverlay@IDISABLE:

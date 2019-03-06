@@ -169,6 +169,7 @@ e1:
 	Mobile:
 		RequiresCondition: !chronodisable && undeployed
 	Garrisoner:
+		Voice: Move
 		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
@@ -311,6 +312,7 @@ ggi:
 	Mobile:
 		RequiresCondition: !chronodisable && undeployed
 	Garrisoner:
+		Voice: Move
 		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
@@ -645,16 +647,12 @@ ccomand:
 		-RequiresCondition:
 	WithDeathAnimation@effect:
 		-RequiresCondition:
+	TakeCover:
+		-RequiresCondition:
 	-GrantConditionOnTerrain@Water:
 	-WithInfantryBody@Water:
 	-WithDeathAnimation@Water:
 	-Targetable@WaterBorne:
-	TakeCover:
-		DamageModifiers:
-			Prone50Percent: 50
-			Prone70Percent: 70
-			Prone100Percent: 100
-		DamageTriggers: TriggerProne
 	RenderSprites:
 		Image: ccomand
 

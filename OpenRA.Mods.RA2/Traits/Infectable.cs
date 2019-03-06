@@ -48,7 +48,7 @@ namespace OpenRA.Mods.RA2.Traits
         public object Create(ActorInitializer init) { return new Infectable(init.Self, this); }
 	}
 
-    public class Infectable : ITick, INotifyCreated, INotifyDamage, INotifyKilled
+    public class Infectable : ISync, ITick, INotifyCreated, INotifyDamage, INotifyKilled
     {
         readonly InfectableInfo info;
         readonly Health health;
