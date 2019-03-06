@@ -98,8 +98,6 @@ namespace OpenRA.Mods.RA2.Traits
 
             Game.Sound.Play(SoundType.World, Info.MarkSound);
 
-            var aircraftInRange = new Dictionary<Actor, bool>();
-            
             self.World.AddFrameEndTask(w =>
             {
                 for (var i = -Info.SquadSize / 2; i <= Info.SquadSize / 2; i++)
