@@ -35,7 +35,6 @@ namespace OpenRA.Mods.RA2.Traits
         public AirstrikeSlaveInfo Info { get; private set; }
         private WPos finishEdge;
         private WVec spawnOffset;
-        private WPos targetPos;
         readonly AmmoPool[] ammoPools;
 
         AirstrikeMaster spawnerMaster;
@@ -46,11 +45,10 @@ namespace OpenRA.Mods.RA2.Traits
             ammoPools = init.Self.TraitsImplementing<AmmoPool>().ToArray();
         }
 
-        public void SetSpawnInfo(WPos finishEdge, WVec spawnOffset, WPos targetPos)
+        public void SetSpawnInfo(WPos finishEdge, WVec spawnOffset)
         {
             this.finishEdge = finishEdge;
             this.spawnOffset = spawnOffset;
-            this.targetPos = targetPos;
         }
 
         public override void Attack(Actor self, Target target)

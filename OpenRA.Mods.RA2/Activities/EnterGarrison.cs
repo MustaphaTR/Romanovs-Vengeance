@@ -33,7 +33,6 @@ namespace OpenRA.Mods.RA2.Activities
 		Activity moveActivity;
 
 		// EnterGarrison Properties
-		Target garrisonableBuilding;
 		Actor enterActor;
 		Garrisonable enterGarrison;
 
@@ -41,11 +40,10 @@ namespace OpenRA.Mods.RA2.Activities
 		{
 			// Base - Enter Properties
 			move = self.Trait<IMove>();
-			this.target = garrisonableBuilding;
+			target = garrisonableBuilding;
 
 			// EnterGarrison Properties
-			this.targetLineColor = null;
-			this.garrisonableBuilding = garrisonableBuilding;
+			targetLineColor = null;
 			garrisoner = self.TraitsImplementing<Garrisoner>().Single();
 		}
 
