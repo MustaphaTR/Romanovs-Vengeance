@@ -67,7 +67,6 @@ namespace OpenRA.Mods.RA2.Traits
 		private WPos startEdge;
 		private WPos finishEdge;
 		private WVec spawnOffset;
-		private WPos targetPos;
 		private int attackFacing;
 		class AirstrikeSlaveEntry : BaseSpawnerSlaveEntry
 		{
@@ -218,7 +217,6 @@ namespace OpenRA.Mods.RA2.Traits
 				this.spawnOffset = spawnOffset;
 				this.startEdge = startEdge;
 				this.finishEdge = finishEdge;
-				targetPos = target;
 
 				w.AddFrameEndTask(_ =>
 				{
