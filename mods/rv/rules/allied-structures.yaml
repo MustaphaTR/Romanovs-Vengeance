@@ -408,16 +408,15 @@ gaairc:
 		Icon: airborne
 		ChargeInterval: 6000
 		Description: Airborne
-		LongDesc: A Cargo Plane drops eight GIs\nanywhere on the map.
+		LongDesc: A Cargo Plane drops five GIs and three Guardian GIs\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ParatroopersReady
-		DropItems: e1,e1,e1,e1,e1,e1,e1,e1
+		DropItems: e1,e1,e1,e1,e1,ggi,ggi,ggi
 		QuantizedFacings: 8
 		UnitType: alplane
 		CameraActor: camera
 		ArrowSequence: arrow
 	DetonateWeaponPower@cruiserstrike:
-		Cost: 1000
 		OrderName: EnglishCruiserStrike
 		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites: radar.england
@@ -432,7 +431,7 @@ gaairc:
 		AirburstAltitude: 10c0
 		ActivationSequence:
 	ParatroopersPower@paratanks:
-		Cost: 2000
+		Cost: 1500
 		OrderName: GermanTankDrop
 		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites: radar.germany
@@ -450,7 +449,6 @@ gaairc:
 		CameraActor: camera
 		ArrowSequence: arrow
 	DetonateWeaponPower@emergencyrepair:
-		Cost: 1000
 		OrderName: FrenchRepair
 		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites: radar.france
@@ -463,7 +461,6 @@ gaairc:
 		Weapon: EmergencyRepair
 		ActivationSequence:
 	AirstrikePower@empulse:
-		Cost: 1000
 		OrderName: KoreanEMP
 		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites: radar.korea
