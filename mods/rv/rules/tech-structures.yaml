@@ -269,11 +269,11 @@ cacomm:
 		RequiresCondition: emp
 	RevealsShroudToIntelligenceOwner:
 		Range: 14c0
-		RequiresCondition: !emp
+		RequiresCondition: !emp && enabled
 	RevealsShroudToIntelligenceOwner@DISABLED:
 		Range: 4c0
 		Types: SatelliteScan
-		RequiresCondition: emp
+		RequiresCondition: emp && enabled
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp
 	Armor:
