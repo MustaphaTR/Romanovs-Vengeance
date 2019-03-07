@@ -251,6 +251,7 @@ caslab:
 cacomm:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x3Shape
+	Inherits@EMPULSE: ^DisabledByEMP
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
@@ -262,8 +263,19 @@ cacomm:
 		HP: 500
 	RevealsShroud:
 		Range: 14c0
+		RequiresCondition: !emp
+	RevealsShroud@DISABLED:
+		Range: 4c0
+		RequiresCondition: emp
 	RevealsShroudToIntelligenceOwner:
 		Range: 14c0
+		RequiresCondition: !emp
+	RevealsShroudToIntelligenceOwner@DISABLED:
+		Range: 4c0
+		Types: SatelliteScan
+		RequiresCondition: emp
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp
 	Armor:
 		Type: Wood
 	WithIdleOverlay@flag:
@@ -353,6 +365,7 @@ carpad:
 capsyb:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
+	Inherits@EMPULSE: ^DisabledByEMP
 	Tooltip:
 		Name: Tech Psychic Beacon
 	TooltipDescription:
@@ -380,8 +393,10 @@ capsyb:
 		Weapon: PsychicControl
 		ActivationSequence:
 	SupportPowerChargeBar:
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
-		PauseOnCondition: !enabled
+		PauseOnCondition: !enabled || emp
 	WithIdleOverlay@flag:
 		Sequence: flag

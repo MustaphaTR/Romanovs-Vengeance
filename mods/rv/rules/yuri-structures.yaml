@@ -50,10 +50,13 @@ yapowr:
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
 		Range: 4c0
+	WithMakeAnimation:
+		BodyNames: body, loaded
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !loaded
 	WithSpriteBody@loaded:
+		Name: loaded
 		Sequence: loaded
 		PauseOnCondition: chronodisable
 		RequiresCondition: loaded

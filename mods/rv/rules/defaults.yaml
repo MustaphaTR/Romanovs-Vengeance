@@ -441,7 +441,7 @@
 		RequiresCondition: controlled || permamc
 	Capturable@PERMAMC:
 		Types: permamc
-		RepairCondition: !controlled && !permamc
+		RequiresCondition: !controlled && !permamc
 	CaptureManager:
 	ExternalCondition@PERMAMC:
 		Condition: permamc
@@ -1809,6 +1809,9 @@
 		RequiresCondition: !disabled
 
 ^DisabledByEMP:
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp
 		Condition: disabled

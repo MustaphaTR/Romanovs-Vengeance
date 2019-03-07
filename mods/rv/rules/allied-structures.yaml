@@ -21,8 +21,7 @@ gacnst:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedOverlay:
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !chronodisable
 	ProvidesPrerequisite:
 		Prerequisite: structures.allies
 	ProvidesPrerequisite@america:
