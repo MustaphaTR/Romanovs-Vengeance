@@ -125,11 +125,10 @@
 	WithExitOverlay@front:
 		Sequence: build-front
 		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !chronodisable
 	WithExitOverlay@top:
 		Sequence: build-top
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !chronodisable
 	WithIdleOverlay@bib:
 		Sequence: bib
 		PauseOnCondition: chronodisable
@@ -323,7 +322,6 @@
 		RequiresCondition: !build-incomplete
 	WithResupplyAnimation:
 		Sequence: repair
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !chronodisable
 	Power:
 		Amount: -15
