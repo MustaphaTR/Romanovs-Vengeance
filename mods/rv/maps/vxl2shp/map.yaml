@@ -168,26 +168,8 @@ Actors:
 		Location: 54,61
 		Owner: Neutral
 
-Rules:
-	Player:
-		Shroud:
-			FogCheckboxEnabled: false
-			FogCheckboxLocked: true
-			ExploredMapCheckboxEnabled: true
-			ExploredMapCheckboxLocked: true
-	debugvxl:
-		Inherits: ^CivVehicle
-		Tooltip:
-			Name: Dummy Voxel
-		WithVoxelBody:
-			ShowShadow: false
-		RenderVoxels:
-			Palette: shadow
-			NormalsPalette: ts-normals
-Sequences:
-	debugvxl:
-		Inherits@MC: ^MindControllable
-		icon: xxicon
-ModelSequences:
-	debugvxl:
-		idle: hornet
+Rules: rules.yaml
+
+Sequences: sequences.yaml
+
+ModelSequences: model-sequences.yaml
