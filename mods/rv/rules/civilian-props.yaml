@@ -507,26 +507,9 @@ cakrmw:
 		Type: cakrmw
 
 gagate_a:
-	Inherits: ^Building
-	Inherits@shape: ^3x1Shape
-	Valued:
-		Cost: 250
-	Health:
-		HP: 100
-	Armor:
-		Type: Wood
-	-Building:
-	-Capturable:
-	-MustBeDestroyed:
-	-WithSpriteBody:
-	WithGateSpriteBody:
+	Inherits: ^Gate_A
 	Tooltip:
 		Name: Guard Border Crossing
-	Building:
-		Dimensions: 3,1
-		Footprint: xxx
-		TerrainTypes: Clear, Rough, Road, DirtRoad
-	Gate:
 
 # Yuri's Revenge Props
 cabarr01:
@@ -598,3 +581,19 @@ caurb03:
 		HP: 5
 	MapEditorData:
 		Categories: Decoration
+
+# Custom Props:
+cagatene:
+	Inherits: ^Gate_B
+	Tooltip:
+		Name: Guard Border Crossing
+
+cagatenw:
+	Inherits: ^Gate_A
+	Tooltip:
+		Name: Guard Border Crossing
+
+cagatesw:
+	Inherits: ^Gate_B
+	Tooltip:
+		Name: Guard Border Crossing
