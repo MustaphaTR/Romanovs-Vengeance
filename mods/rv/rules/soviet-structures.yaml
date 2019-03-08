@@ -325,6 +325,10 @@ naradr:
 		EndChargeSpeechNotification: SpyPlaneReady
 		UnitType: spyp
 		QuantizedFacings: 8
+		DisplayBeacon: True
+		BeaconPoster: spypicon
+		ArrowSequence: arrow
+		ClockSequence: clock
 	ParatroopersPower@tesladrop:
 		Cost: 2000
 		OrderName: RussianTeslaDrop
@@ -340,7 +344,10 @@ naradr:
 		QuantizedFacings: 8
 		UnitType: pdplane
 		CameraActor: camera
+		DisplayBeacon: True
+		BeaconPoster: tesdicon
 		ArrowSequence: arrow
+		ClockSequence: clock
 	NukePower@radiationmissile:
 		Cursor: nuke
 		OrderName: IraqiRadMissile
@@ -358,6 +365,10 @@ naradr:
 		CameraRemoveDelay: 75
 		FlightVelocity: 0c512
 		FlightDelay: 80
+		DisplayBeacon: True
+		BeaconPoster: radmicon
+		ArrowSequence: arrow
+		ClockSequence: clock
 	DetonateWeaponPower@instanbunker:
 		Cost: 500
 		OrderName: VietnameseInstantBunker
@@ -382,6 +393,10 @@ naradr:
 		UnitType: pdplane.cluster_mines
 		SquadSize: 1
 		QuantizedFacings: 8
+		DisplayBeacon: True
+		BeaconPoster: mineicon
+		ArrowSequence: arrow
+		ClockSequence: clock
 	AirstrikePower@parabombs:
 		OrderName: LibyanParabombs
 		PauseOnCondition: disabled || chronodisable || emp
@@ -397,6 +412,10 @@ naradr:
 		QuantizedFacings: 8
 		CameraActor: CAMERA
 		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPoster: parbicon
+		ArrowSequence: arrow
+		ClockSequence: clock
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable || emp
@@ -492,6 +511,10 @@ nayard:
 		UnitType: pdplane.naval_mines
 		SquadSize: 1
 		QuantizedFacings: 8
+		DisplayBeacon: True
+		BeaconPoster: empuicon
+		ArrowSequence: arrow
+		ClockSequence: clock
 	SupportPowerChargeBar:
 
 nmine:
@@ -919,8 +942,10 @@ namisl:
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True
 		DisplayRadarPing: True
+		BeaconPoster: nukeicon
 		FlashType: Nuke
 		ArrowSequence: arrow
+		ClockSequence: clock
 		CameraRange: 10c0
 		CameraRemoveDelay: 75
 		PauseOnCondition: disabled || chronodisable
