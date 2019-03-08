@@ -107,6 +107,6 @@ WorldLoaded = function()
 	PatrolB(robo1, RobotPatrol1, DateTime.Seconds(5))
 	
 	Trigger.AfterDelay(DateTime.Seconds(15), function()
-		SendCargoPlane("pdplane", CargoPlaneWP, DateTime.Seconds(90))
+		SendCargoPlane("alplane", CargoPlaneWP, DateTime.Seconds(90))
 	end)
 end
