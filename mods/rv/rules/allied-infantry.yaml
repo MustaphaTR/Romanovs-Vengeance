@@ -460,9 +460,18 @@ snipe:
 		Type: None
 	Armament@primary:
 		Weapon: awp
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: AWPE
+		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: awp
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: AWPE
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable
