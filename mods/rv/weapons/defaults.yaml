@@ -2,6 +2,7 @@
 	ReloadDelay: 25
 	Range: 5c0
 	Report: vflaat1a.wav, vflaat1b.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree
 	Projectile: BulletAS
 		Image: 120mm
 		Palette: ra
@@ -34,6 +35,7 @@
 ^AAFlak:
 	Inherits: ^Flak
 	Report: vflaat2a.wav, vflaat2b.wav, vflaat2c.wav, vflaat2d.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree
 	-Projectile: BulletAS
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
@@ -135,6 +137,7 @@
 	ReloadDelay: 20
 	Range: 4c0
 	Report: igiat1a.wav, igiat1b.wav, igiat1c.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree
 	Projectile: InstantHit
 		Blockable: true
 	Warhead@1Dam: SpreadDamage
@@ -162,6 +165,7 @@
 	ReloadDelay: 60
 	Report: itesatta.wav
 	Projectile: TeslaZap
+	InvalidTargets: Wall
 	Warhead@1Dam: SpreadDamage
 		Spread: 120
 		Damage: 50
@@ -189,6 +193,7 @@
 ^FireWeapon:
 	ReloadDelay: 65
 	Range: 5c0
+	InvalidTargets: Wall
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
 		Damage: 150

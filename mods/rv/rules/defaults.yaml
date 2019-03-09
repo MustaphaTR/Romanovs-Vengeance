@@ -872,7 +872,7 @@
 	LineBuildNode:
 		Types: wall
 	Targetable:
-		TargetTypes: Ground, Wall, C4, DetonateAttack, NoAutoTarget
+		TargetTypes: Ground, Wall, DetonateAttack, NoAutoTarget
 	WithWallSpriteBody:
 		Type: wall
 	Sellable:
@@ -907,6 +907,8 @@
 		NodeTypes: fence
 	LineBuildNode:
 		Types: fence
+	Targetable:
+		TargetTypes: Ground, Fence, DetonateAttack, NoAutoTarget
 	WithWallSpriteBody:
 		Type: fence
 	Crushable:
@@ -1668,7 +1670,7 @@
 	RenderSprites:
 		Palette: terrain
 	Targetable:
-		TargetTypes: Ground, Wall, Tree, DetonateAttack
+		TargetTypes: Ground, Tree, DetonateAttack
 	Health:
 		HP: 200
 	HitShape:
