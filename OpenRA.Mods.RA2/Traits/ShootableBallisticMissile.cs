@@ -9,9 +9,7 @@
  */
 #endregion
 
-using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.Common;
@@ -278,11 +276,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public void ResolveOrder(Actor self, Order order)
 		{
 			if (order.OrderString == "Move")
-			{
-				var cell = self.World.Map.Clamp(order.TargetLocation);
-				var target = Target.FromCell(self.World, cell);
-				self.QueueActivity(order.Queued, new ShootableBallisticMissileFly(self, target));
-			}
+				self.QueueActivity(order.Queued, new ShootableBallisticMissileFly(self, order.Target));
 		}
 
 		#endregion

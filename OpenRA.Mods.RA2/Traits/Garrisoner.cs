@@ -11,10 +11,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.RA2.Activities;
 using OpenRA.Mods.RA2.Orders;
+using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
