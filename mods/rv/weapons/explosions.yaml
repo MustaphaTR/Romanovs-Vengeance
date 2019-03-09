@@ -39,7 +39,7 @@ DerrickExplode:
 UnitExplode:
 	Warhead@1Eff: CreateEffect
 		Explosions: large_twlt
-		ImpactSounds: expnew09.wav
+		ImpactSounds: gexp15a.wav
 		ValidTargets: Ground, Water, Air
 	Warhead@DebrisSpawn: FireShrapnel
 		Weapon: SmallDebris
@@ -50,7 +50,7 @@ UnitExplodeSmall:
 	Inherits: UnitExplode
 	Warhead@1Eff: CreateEffect
 		Explosions: medium_brnl
-		ImpactSounds: expnew13.wav
+		ImpactSounds: gexp06a.wav, gexp07a.wav
 		ValidTargets: Ground, Water, Air
 
 V3AmmunitionExplode:
@@ -75,6 +75,8 @@ KirovExplode:
 
 ApocExplode:
 	Inherits: KirovExplode
+	Warhead@1Eff: CreateEffect
+		ImpactSounds: gexpapoa.wav, gexpapob.wav, gexpapoc.wav
 	Warhead@2Dam: SpreadDamage
 		Damage: 40
 
@@ -92,7 +94,7 @@ InfantryExplode:
 	Inherits: UnitExplode
 	Warhead@1Eff: CreateEffect
 		Explosions: medium_bang
-		ImpactSounds: expnew13.wav
+		ImpactSounds: igenexpa.wav
 		ValidTargets: Ground, Water, Air
 	-Warhead@DebrisSpawn: FireShrapnel
 
