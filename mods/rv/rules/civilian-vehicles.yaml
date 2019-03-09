@@ -3,7 +3,7 @@ bus:
 	Tooltip:
 		Name: School Bus
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Garrisoner
 		MaxWeight: 20
 		PipCount: 5
 		UnloadVoice: Move
@@ -11,12 +11,14 @@ bus:
 limo:
 	Inherits: ^CivVehicle
 	Tooltip:
-		Name: Presidential Limousine
+		Name: Limousine
 	Cargo:
-		Types: Infantry
+		Types: Infantry, Garrisoner
 		MaxWeight: 20
 		PipCount: 5
 		UnloadVoice: Move
+	RenderVoxels:
+		NormalsPalette: ts-normals
 
 pick:
 	Inherits: ^CivVehicle
