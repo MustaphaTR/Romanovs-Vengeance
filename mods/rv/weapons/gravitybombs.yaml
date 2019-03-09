@@ -69,8 +69,13 @@ EMPulse:
 
 EMPulseBEagle:
 	Inherits: EMPulse
-	Projectile: GravityBomb
+	-Projectile: GravityBomb
+	Projectile: BulletAS
+		Speed: 256
+		Blockable: false
 		Image: empbomb50p
+		Palette: player
+		IsPlayerPalette: true
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Falloff: 100, 70, 40, 0
