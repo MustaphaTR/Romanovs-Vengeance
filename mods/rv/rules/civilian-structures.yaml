@@ -5138,3 +5138,78 @@ caseat02.rubble:
 		Footprint: ____ ____ ____ ____
 	RenderSprites:
 		Image: caseat02
+
+catran01:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Crypt
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: catran01.rubble
+
+catran01.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: catran01
+
+catran02:
+	Inherits: ^GarrisonableBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Crypt
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: catran02.rubble
+
+catran02.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: catran02
+
+catran03:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Yuri's Fortress
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: catran03.rubble
+
+catran03.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: catran03
