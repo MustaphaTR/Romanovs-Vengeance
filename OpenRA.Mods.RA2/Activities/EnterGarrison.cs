@@ -103,7 +103,7 @@ namespace OpenRA.Mods.RA2.Activities
 			useLastVisibleTarget = targetIsHiddenActor || !target.IsValidFor(self);
 
 			// Cancel immediately if the target died while we were entering it
-			if (!IsCanceled && useLastVisibleTarget && lastState == EnterState.Entering)
+			if (!IsCanceling && useLastVisibleTarget && lastState == EnterState.Entering)
 				Cancel(self, true);
 
 			// Update target lines if required
@@ -127,7 +127,7 @@ namespace OpenRA.Mods.RA2.Activities
 					{
 						// NOTE: We can safely cancel in this case because we know the
 						// actor has finished any in-progress move activities
-						if (IsCanceled)
+						if (IsCanceling)
 							return NextActivity;
 
 						// Lost track of the target
@@ -160,7 +160,7 @@ namespace OpenRA.Mods.RA2.Activities
 
 						// Subclasses can cancel the activity during TryStartEnter
 						// Return immediately to avoid an extra tick's delay
-						if (IsCanceled)
+						if (IsCanceling)
 							return NextActivity;
 
 						lastState = EnterState.Waiting;
@@ -175,7 +175,7 @@ namespace OpenRA.Mods.RA2.Activities
 						// Check that we reached the requested position
 						var targetPos = target.Positions.PositionClosestTo(self.CenterPosition);
 
-						if (!IsCanceled && self.CenterPosition == targetPos && target.Type == TargetType.Actor)
+						if (!IsCanceling && self.CenterPosition == targetPos && target.Type == TargetType.Actor)
 							OnEnterComplete(self, target.Actor);
 						else
 						{ // Need to move again as we have re-aquired a target
@@ -196,14 +196,14 @@ namespace OpenRA.Mods.RA2.Activities
 			return this;
 		}
 
-		public override bool Cancel(Actor self, bool keepQueue = false)
+		public override void Cancel(Actor self, bool keepQueue = false)
 		{
 			OnCancel(self);
 
-			if (!IsCanceled && moveActivity != null && !moveActivity.Cancel(self))
-				return false;
+			if (!IsCanceling && moveActivity != null)
+                moveActivity.Cancel(self);
 
-			return base.Cancel(self, keepQueue);
+			base.Cancel(self, keepQueue);
 		}
 	}
 }

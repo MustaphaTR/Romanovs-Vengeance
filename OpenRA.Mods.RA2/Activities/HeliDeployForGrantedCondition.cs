@@ -40,14 +40,14 @@ namespace OpenRA.Mods.RA2.Activities
                 var cells = w.Map.AllCells.Where(c => aircraft.CanLand(c)).Select(c => w.Map.CenterOfCell(c));
                 var cell = w.Map.CellContaining(WorldUtils.PositionClosestTo(cells, self.CenterPosition));
 
-                QueueChild(new HeliFly(self, Target.FromCell(w, cell)));
+                QueueChild(self, new HeliFly(self, Target.FromCell(w, cell)));
             }
 
             // Turn to the required facing.
             if (deploy.Info.Facing != -1 && canTurn)
-				QueueChild(new Turn(self, deploy.Info.Facing));
+				QueueChild(self, new Turn(self, deploy.Info.Facing));
 
-            QueueChild(new HeliLand(self, true));
+            QueueChild(self, new HeliLand(self, true));
         }
 
 		public override Activity Tick(Actor self)
@@ -60,7 +60,7 @@ namespace OpenRA.Mods.RA2.Activities
 			}
 
 			// Without this, turn for facing deploy angle will be canceled and immediately deploy!
-			if (IsCanceled)
+			if (IsCanceling)
 				return NextActivity;
 
 			if (IsInterruptible)

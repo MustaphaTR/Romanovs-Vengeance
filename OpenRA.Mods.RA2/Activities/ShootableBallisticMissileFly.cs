@@ -69,7 +69,7 @@ namespace OpenRA.Mods.RA2.Activities
 			// Destruct so that Explodes will be called
 			if (d.HorizontalLengthSquared < move.HorizontalLengthSquared)
 			{
-				Queue(new CallFunc(() => self.Kill(self)));
+				Queue(self, new CallFunc(() => self.Kill(self)));
 				return NextActivity;
 			}
 

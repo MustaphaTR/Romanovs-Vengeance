@@ -59,7 +59,7 @@ namespace OpenRA.Mods.RA2.Activities
 		public override Activity Tick(Actor self)
 		{
 			garrison.Unloading = false;
-			if (IsCanceled || garrison.IsEmpty(self))
+			if (IsCanceling || garrison.IsEmpty(self))
 				return NextActivity;
 
 			foreach (var inu in notifiers)
@@ -73,7 +73,7 @@ namespace OpenRA.Mods.RA2.Activities
 			{
 				self.NotifyBlocker(BlockedExitCells(actor));
 
-				return ActivityUtils.SequenceActivities(new Wait(10), this);
+				return ActivityUtils.SequenceActivities(self, new Wait(10), this);
 			}
 
 			garrison.Unload(self);
