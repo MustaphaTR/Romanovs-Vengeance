@@ -13,10 +13,10 @@ else
 	OUTPUTDIR=$2
 fi
 
-command -v python >/dev/null 2>&1 || { echo >&2 "The Red Alert 2 mod requires python."; exit 1; }
-command -v make >/dev/null 2>&1 || { echo >&2 "The Red Alert 2 mod requires make."; exit 1; }
-command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The Red Alert 2 mod requires curl or wget."; exit 1; }
-command -v makensis >/dev/null 2>&1 || { echo >&2 "The Red Alert 2 mod requires makensis."; exit 1; }
+command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires make."; exit 1; }
+command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires curl or wget."; exit 1; }
+command -v makensis >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires makensis."; exit 1; }
 
 PACKAGING_DIR=$(python -c "import os; print(os.path.dirname(os.path.realpath('$0')))")
 

@@ -142,6 +142,9 @@ install -m 0755 openra-mod.temp "${BUILTDIR}/usr/bin/openra-${MOD_ID}"
 sed "s/{MODID}/${MOD_ID}/g" include/mod-server.in  > openra-mod-server.temp
 install -m 0755 openra-mod-server.temp "${BUILTDIR}/usr/bin/openra-${MOD_ID}-server"
 
+sed "s/{MODID}/${MOD_ID}/g" include/mod-utility.in  > openra-mod-utility.temp
+install -m 0755 openra-mod-utility.temp "${BUILTDIR}/usr/bin/openra-${MOD_ID}-utility"
+
 install -m 0755 include/gtk-dialog.py "${BUILTDIR}/usr/bin/gtk-dialog.py"
 
 # travis-ci doesn't support mounting FUSE filesystems so extract and run the contents manually
@@ -149,4 +152,4 @@ install -m 0755 include/gtk-dialog.py "${BUILTDIR}/usr/bin/gtk-dialog.py"
 ARCH=x86_64 ./squashfs-root/AppRun "${BUILTDIR}" "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}.AppImage"
 
 # Clean up
-rm -rf openra-mod.temp openra-mod-server.temp temp.desktop temp.xml AppRun.temp libSDL2.so libopenal.so liblua.so appimagetool-x86_64.AppImage squashfs-root "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" "${BUILTDIR}"
+rm -rf openra-mod.temp openra-mod-server.temp openra-mod-utility.temp temp.desktop temp.xml AppRun.temp libSDL2.so libopenal.so liblua.so appimagetool-x86_64.AppImage squashfs-root "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" "${BUILTDIR}"
