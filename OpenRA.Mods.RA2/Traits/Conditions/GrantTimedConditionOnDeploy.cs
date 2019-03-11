@@ -21,8 +21,8 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
-    public class GrantTimedConditionOnDeployInfo : PausableConditionalTraitInfo
-    {
+	public class GrantTimedConditionOnDeployInfo : PausableConditionalTraitInfo
+	{
 		[GrantedConditionReference]
 		[Desc("The condition granted during deploying.")]
 		public readonly string DeployingCondition = null;
@@ -49,10 +49,10 @@ namespace OpenRA.Mods.RA2.Traits
 		[SequenceReference, Desc("Animation to play for undeploying.")]
 		public readonly string UndeployAnimation = null;
 
-        [Desc("Apply (un)deploy animations to sprite bodies with these names.")]
-        public readonly string[] BodyNames = { "body" };
+		[Desc("Apply (un)deploy animations to sprite bodies with these names.")]
+		public readonly string[] BodyNames = { "body" };
 
-        [Desc("Facing that the actor must face before deploying. Set to -1 to deploy regardless of facing.")]
+		[Desc("Facing that the actor must face before deploying. Set to -1 to deploy regardless of facing.")]
 		public readonly int Facing = -1;
 
 		[Desc("Sound to play when deploying.")]
@@ -74,32 +74,32 @@ namespace OpenRA.Mods.RA2.Traits
 
 	public enum TimedDeployState { Charging, Ready, Active, Deploying, Undeploying }
 
-    public class GrantTimedConditionOnDeploy : PausableConditionalTrait<GrantTimedConditionOnDeployInfo>,
-        IResolveOrder, IIssueOrder, INotifyCreated, ISelectionBar, IOrderVoice, ISync, ITick, IIssueDeployOrder
-    {
-        readonly Actor self;
+	public class GrantTimedConditionOnDeploy : PausableConditionalTrait<GrantTimedConditionOnDeployInfo>,
+		IResolveOrder, IIssueOrder, INotifyCreated, ISelectionBar, IOrderVoice, ISync, ITick, IIssueDeployOrder
+	{
+		readonly Actor self;
 		readonly bool canTurn;
 		int deployedToken = ConditionManager.InvalidConditionToken;
 		int deployingToken = ConditionManager.InvalidConditionToken;
 
-        WithSpriteBody[] wsbs;
-        ConditionManager manager;
+		WithSpriteBody[] wsbs;
+		ConditionManager manager;
 		[Sync] int ticks;
 		TimedDeployState deployState;
 
 		public GrantTimedConditionOnDeploy(ActorInitializer init, GrantTimedConditionOnDeployInfo info)
-            : base(info)
-        {
+			: base(info)
+		{
 			self = init.Self;
 			canTurn = self.Info.HasTraitInfo<IFacingInfo>();
 		}
 
 		void INotifyCreated.Created(Actor self)
-        {
-            manager = self.Trait<ConditionManager>();
-            wsbs = self.TraitsImplementing<WithSpriteBody>().Where(w => Info.BodyNames.Contains(w.Info.Name)).ToArray();
+		{
+			manager = self.Trait<ConditionManager>();
+			wsbs = self.TraitsImplementing<WithSpriteBody>().Where(w => Info.BodyNames.Contains(w.Info.Name)).ToArray();
 
-            if (Info.StartsFullyCharged)
+			if (Info.StartsFullyCharged)
 			{
 				ticks = Info.DeployedTicks;
 				deployState = TimedDeployState.Ready;
@@ -118,14 +118,14 @@ namespace OpenRA.Mods.RA2.Traits
 
 		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self) { return !IsTraitPaused && !IsTraitDisabled; }
 
-        IEnumerable<IOrderTargeter> IIssueOrder.Orders
-        {
-            get
-            {
-                if (!IsTraitDisabled)
-                    yield return new DeployOrderTargeter("GrantTimedConditionOnDeploy", 5,
-				        () => IsCursorBlocked() ? Info.DeployBlockedCursor : Info.DeployCursor);
-            }
+		IEnumerable<IOrderTargeter> IIssueOrder.Orders
+		{
+			get
+			{
+				if (!IsTraitDisabled)
+					yield return new DeployOrderTargeter("GrantTimedConditionOnDeploy", 5,
+						() => IsCursorBlocked() ? Info.DeployBlockedCursor : Info.DeployCursor);
+			}
 		}
 
 		Order IIssueOrder.IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
@@ -229,11 +229,11 @@ namespace OpenRA.Mods.RA2.Traits
 		}
 
 		void ITick.Tick(Actor self)
-        {
-            if (IsTraitPaused || IsTraitDisabled)
-                return;
+		{
+			if (IsTraitPaused || IsTraitDisabled)
+				return;
 
-            if (deployState == TimedDeployState.Ready || deployState == TimedDeployState.Deploying)
+			if (deployState == TimedDeployState.Ready || deployState == TimedDeployState.Deploying || deployState == TimedDeployState.Undeploying)
 				return;
 
 			if (--ticks < 0)
@@ -251,9 +251,9 @@ namespace OpenRA.Mods.RA2.Traits
 		}
 
 		float ISelectionBar.GetValue()
-        {
-            if (IsTraitDisabled || !Info.ShowSelectionBar || deployState == TimedDeployState.Undeploying)
-                return 0f;
+		{
+			if (IsTraitDisabled || !Info.ShowSelectionBar || deployState == TimedDeployState.Undeploying)
+				return 0f;
 
 			if (deployState == TimedDeployState.Deploying || deployState == TimedDeployState.Ready)
 				return 1f;
@@ -263,8 +263,8 @@ namespace OpenRA.Mods.RA2.Traits
 				: (float)ticks / Info.DeployedTicks;
 		}
 
-        bool ISelectionBar.DisplayWhenEmpty { get { return !IsTraitDisabled && Info.ShowSelectionBar; } }
+		bool ISelectionBar.DisplayWhenEmpty { get { return !IsTraitDisabled && Info.ShowSelectionBar; } }
 
-        Color ISelectionBar.GetColor() { return deployState == TimedDeployState.Charging ? Info.ChargingColor : Info.DischargingColor; }
+		Color ISelectionBar.GetColor() { return deployState == TimedDeployState.Charging ? Info.ChargingColor : Info.DischargingColor; }
 	}
 }
