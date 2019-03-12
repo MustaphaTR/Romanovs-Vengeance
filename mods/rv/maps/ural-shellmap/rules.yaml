@@ -1,0 +1,59 @@
+Player:
+	-ConquestVictoryConditions:
+
+World:
+	-CrateSpawner:
+	-SpawnMPUnits:
+	-MPStartLocations:
+	MusicPlaylist:
+		StartingMusic: grinder
+		DisableWorldSounds: true
+	ResourceType@Ore:
+		ValuePerUnit: 0
+	LuaScript:
+		Scripts: shellmap.lua
+	-StartGameNotification:
+	GlobalLightingPaletteEffect:
+		Ambient: 0.46
+		Red: 0.62
+		Green: 0.62
+
+crate:
+	Crate:
+		Lifetime: 0
+
+svplane:
+	Aircraft:
+		VTOL: false
+		CanHover: false
+
+narefn:
+	-FreeActor:
+
+caoild:
+	-CashTrickler:
+
+camsc13:
+	DamageMultiplier:
+		Modifier: 0
+
+schp:
+	-WithVoxelHelicopterBody:
+	-WithFacingSpriteBody:
+	-Aircraft:
+	-AttackAircraft:
+	-HeliGrantConditionOnDeploy:
+	Mobile:
+		Locomotor: tracked
+	ExternalCondition@DEPLOY:
+		Condition: deployed
+
+ivan:
+	ExternalCondition@VET:
+		Condition: rank-veteran
+
+vladimir:
+	Inherits@EXPERIENCE: ^GainsExperience
+	-Wanders:
+	ExternalCondition@VET:
+		Condition: rank-veteran

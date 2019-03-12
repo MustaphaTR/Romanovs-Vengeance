@@ -9,7 +9,8 @@
 
 TankGIs = { TankGI1, TankGI2, TankGI3, TankGGI1 }
 WallGGIs = { WallGGI1, WallGGI2, WallGGI3, WallGGI4, WallGGI5 }
-VetGIs = { VetGI1, VetGI2 }
+VeteranUnits = { VetGI1, VetGI2 }
+EliteUnits = { General }
 
 DoggoPatrol1 = { Doggo1WP1.Location, Doggo1WP2.Location }
 DoggoPatrol2 = { Doggo2WP1.Location, Doggo2WP2.Location }
@@ -29,13 +30,15 @@ DeployGIs = function()
 end
 
 GiveVeterancy = function()
-	Utils.Do(VetGIs, function(VetGI)
-		VetGI.GrantCondition("rank-veteran")
+	Utils.Do(VeteranUnits, function(VeteranUnit)
+		VeteranUnit.GrantCondition("rank-veteran")
 	end)
-	
-	General.GrantCondition("rank-veteran")
-	General.GrantCondition("rank-veteran")
-	General.GrantCondition("rank-veteran")
+
+	Utils.Do(EliteUnits, function(EliteUnit)
+		EliteUnit.GrantCondition("rank-veteran")
+		EliteUnit.GrantCondition("rank-veteran")
+		EliteUnit.GrantCondition("rank-veteran")
+	end)
 end
 
 PatrolA = function(unit, waypoints, delay)
@@ -76,7 +79,7 @@ WorldLoaded = function()
 	allies = Player.GetPlayer("Allies")
 	soviets = Player.GetPlayer("Soviets")
 	viewportOrigin = Camera.Position
-	
+
 	DeployGIs();
 	GiveVeterancy();
 
@@ -105,7 +108,7 @@ WorldLoaded = function()
 
 	local robo1 = Actor.Create("robo", true, { Owner = allies, Location = RobotPatrol1[1] })
 	PatrolB(robo1, RobotPatrol1, DateTime.Seconds(5))
-	
+
 	Trigger.AfterDelay(DateTime.Seconds(15), function()
 		SendCargoPlane("alplane", CargoPlaneWP, DateTime.Seconds(90))
 	end)
