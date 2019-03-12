@@ -10,6 +10,8 @@ World:
 		DisableWorldSounds: true
 	ResourceType@Ore:
 		ValuePerUnit: 0
+	ResourceType@Gems:
+		ValuePerUnit: 0
 	LuaScript:
 		Scripts: shellmap.lua
 	-StartGameNotification:
@@ -22,7 +24,7 @@ crate:
 	Crate:
 		Lifetime: 0
 
-svplane:
+pdplane:
 	Aircraft:
 		VTOL: false
 		CanHover: false
@@ -45,6 +47,16 @@ schp:
 	-HeliGrantConditionOnDeploy:
 	Mobile:
 		Locomotor: tracked
+		Voice: Move
+	GrantCondition@1:
+		Condition: airborne
+		RequiresCondition: !deployed
+	GrantCondition@2:
+		Condition: crusing
+		RequiresCondition: !deployed
+	GrantCondition@3:
+		Condition: undeployed
+		RequiresCondition: !deployed
 	ExternalCondition@DEPLOY:
 		Condition: deployed
 
