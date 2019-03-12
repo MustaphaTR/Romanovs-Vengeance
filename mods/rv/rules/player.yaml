@@ -37,7 +37,7 @@ Player:
 	LobbyPrerequisiteCheckbox@GLOBALFACTUNDEPLOY:
 		ID: factundeploy
 		Label: Redeployable MCVs
-		Description: Allow undeploying Construction Yard.
+		Description: Allow undeploying Construction Yard
 		Enabled: True
 		DisplayOrder: 5
 		Prerequisites: global-factundeploy
@@ -51,10 +51,17 @@ Player:
 	LobbyPrerequisiteCheckbox@GLOBALTECHAREA:
 		ID: techbuildarea
 		Label: Tech Build Area
-		Description: Allow building placement around tech structures.
+		Description: Allow building placement around tech structures
 		Enabled: True
 		DisplayOrder: 10
 		Prerequisites: global-techbuildarea
+	LobbyPrerequisiteCheckbox@INSTANTCAPTURE:
+		ID: instantcapture
+		Label: Instant Capture
+		Description: Engineers can enter a building without waiting to capture
+		Enabled: True
+		DisplayOrder: 12
+		Prerequisites: global-instantcapture
 	FrozenActorLayer:
 	BaseAttackNotifier:
 		AllyNotification: OurAllyIsUnderAttack

@@ -24,8 +24,16 @@ engineer:
 	EngineerRepair:
 	RepairsBridges:
 		RepairNotification: BridgeRepaired
-	Captures:
+	Captures@INSTANT:
 		CaptureTypes: building, husk
+		RequiresCondition: instantcapture
+	Captures@TIMED:
+		CaptureDelay: 125
+		CaptureTypes: building, husk
+		RequiresCondition: !instantcapture
+	GrantConditionOnPrerequisite:
+		Condition: instantcapture
+		Prerequisites: global-instantcapture
 	Armament:
 		Weapon: DefuseKit
 		Cursor: remove-bomb

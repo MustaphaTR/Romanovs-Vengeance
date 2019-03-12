@@ -632,6 +632,8 @@
 	Capturable:
 		Types: building
 		RequiresCondition: !build-incomplete && !invulnerability
+	CapturableProgressBar:
+	CapturableProgressBlink:
 	SoundOnDamageTransition:
 		DamagedSounds: gdamag1a.wav, gdamag1b.wav, gdamag1c.wav, gdamag1d.wav, gdamag1e.wav
 		DestroyedSounds: bgendiea.wav, bgendieb.wav, bgendiec.wav, bgendied.wav, bgendiee.wav, bgendief.wav
@@ -685,6 +687,8 @@
 ^SupportBuilding:
 	Inherits: ^BaseBuilding
 	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
 	-CaptureNotification:
 	-MustBeDestroyed:
 	-ShakeOnDeath:
@@ -709,6 +713,8 @@
 	Inherits: ^Building
 	-OwnerLostAction:
 	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
 	-MustBeDestroyed:
 	-GivesExperience:
 	-CaptureNotification:
@@ -929,6 +935,8 @@
 	LineBuildNode:
 		Types: wall, gate
 	-Capturable:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
 	-MustBeDestroyed:
 	-WithSpriteBody:
 	WithGateSpriteBody:
