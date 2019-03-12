@@ -348,7 +348,7 @@ fv:
 		RequiresCondition: ifv-yuri
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable || emp || parachute
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-sniper && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono && !ifv-yuri
 	AutoTargetPriority@ATTACKANYTHING:
@@ -477,7 +477,7 @@ sref:
 	AttackTurreted:
 		Voice: Attack
 		TargetFrozenActors: True
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable || emp || parachute
 	AutoTarget:
 	Explodes:
 		Weapon: UnitExplodeSmall
@@ -724,7 +724,7 @@ robo:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: !powered || chronodisable || emp
+		PauseOnCondition: !powered || chronodisable || emp || parachute
 	AutoTarget:
 	RenderSprites:
 	Selectable:
