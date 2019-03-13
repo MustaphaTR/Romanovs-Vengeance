@@ -722,7 +722,7 @@
 	-RepairableBuilding:
 	-WithBuildingRepairDecoration:
 	Health:
-		HP: 900
+		HP: 700
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -735,9 +735,11 @@
 ^GarrisonableBuilding:
 	Inherits: ^CivBuilding
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	RevealsShroud:
+		Range: 8c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 4c0
+		Range: 8c0
 		RequiresCondition: loaded
 	ChangeOwnerOnGarrisoner:
 		EnterSound: ugarris.wav
