@@ -31,19 +31,18 @@ namespace OpenRA.Mods.RA2.Activities
 		{
 			var image = info.Image ?? self.Info.Name;
 
+			var localPlayer = self.World.LocalPlayer;
+			var shroud = localPlayer != null ? localPlayer.PlayerActor.TraitOrDefault<Shroud>() : null;
 			var sourcepos = self.CenterPosition;
-
 			if (info.WarpInSequence != null)
 				self.World.AddFrameEndTask(w => w.Add(new SpriteEffect(sourcepos, w, image, info.WarpInSequence, info.Palette)));
 
-			if (info.WarpInSound != null)
-				Game.Sound.Play(SoundType.World, info.WarpInSound, self.CenterPosition);
+			if (info.WarpInSound != null && (!info.RequireVisibilyForSound || shroud == null || shroud.IsVisible(sourcepos)))
+				Game.Sound.Play(SoundType.World, info.WarpInSound, sourcepos, info.SoundVolume);
 
-            var infectable = self.TraitOrDefault<Infectable>();
-            if (infectable != null)
-            {
-                infectable.RemoveInfector(self, false);
-            }
+			var infectable = self.TraitOrDefault<Infectable>();
+			if (infectable != null)
+				infectable.RemoveInfector(self, false);
 
 			self.Trait<IPositionable>().SetPosition(self, destination);
 			self.Generation++;
@@ -53,8 +52,8 @@ namespace OpenRA.Mods.RA2.Activities
 			if (info.WarpOutSequence != null)
 				self.World.AddFrameEndTask(w => w.Add(new SpriteEffect(destinationpos, w, image, info.WarpOutSequence, info.Palette)));
 
-			if (info.WarpOutSound != null)
-				Game.Sound.Play(SoundType.World, info.WarpOutSound, self.CenterPosition);
+			if (info.WarpOutSound != null && (!info.RequireVisibilyForSound || shroud == null || shroud.IsVisible(destinationpos)))
+				Game.Sound.Play(SoundType.World, info.WarpOutSound, destinationpos, info.SoundVolume);
 
 			return NextActivity;
 		}
