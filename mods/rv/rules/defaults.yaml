@@ -457,6 +457,11 @@
 	Inherits: ^MindControllableDisabledWithIC
 	Targetable@MC:
 		TargetTypes: MindControlBuilding
+		RequiresCondition: !controlled
+	WithIdleOverlay@mindcontrol:
+		RequiresCondition: controlled
+	-Capturable@PERMAMC:
+	-ExternalCondition@PERMAMC:
 
 ^SquidGrabbable:
 	WithFacingSpriteBody:
