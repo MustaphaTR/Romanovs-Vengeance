@@ -16,10 +16,27 @@ shad:
 		Type: Light
 	Armament@primary:
 		Weapon: BlackHawkCannon
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@primary-aa:
+		Weapon: BlackHawkCannonAA
+		PauseOnCondition: !ammo
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: BlackHawkCannonE
+		PauseOnCondition: !ammo
 		RequiresCondition: rank-elite
+	Armament@elite-aa:
+		Weapon: BlackHawkCannonAAE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 40
+		Count: 1
 	Voiced:
 		VoiceSet: NighthawkVoice
 	Buildable:
@@ -651,19 +668,29 @@ schp:
 		Type: Light
 	Armament@primary:
 		Weapon: SiegeChopperCannon
-		PauseOnCondition: !undeployed
+		PauseOnCondition: !undeployed || !ammo
+		RequiresCondition: !rank-elite
+	Armament@primary-aa:
+		Weapon: SiegeChopperCannonAA
+		PauseOnCondition: !undeployed || !ammo
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: SiegeChopperCannonE
-		PauseOnCondition: !undeployed
+		PauseOnCondition: !undeployed || !ammo
+		RequiresCondition: rank-elite
+	Armament@elite-aa:
+		Weapon: SiegeChopperCannonAAE
+		PauseOnCondition: !undeployed || !ammo
 		RequiresCondition: rank-elite
 	Armament@deployed:
 		Weapon: 160mm
+		Name: deployed
 		LocalOffset: 768,0,2048
 		PauseOnCondition: !deployed
 		RequiresCondition: !rank-elite
 	Armament@elite-deployed:
 		Weapon: 160mmE
+		Name: deployed
 		LocalOffset: 768,0,2048
 		PauseOnCondition: !deployed
 		RequiresCondition: rank-elite
@@ -687,10 +714,18 @@ schp:
 		Range: 8c0
 		Types: SatelliteScan
 		Type: GroundPosition
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 40
+		Count: 1
 	AttackAircraft:
 		Voice: Attack
 		PauseOnCondition: !undeployed || emp
 	AttackTurreted:
+		Armaments: deployed
 		Voice: DeployedAttack
 		PauseOnCondition: !deployed || emp
 	Aircraft:

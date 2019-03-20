@@ -154,12 +154,12 @@ AWPE:
 	Range: 5c0
 	MinRange: 0c001
 	Report: irocatta.wav
-	ValidTargets: Ground, Water, Air
+	ValidTargets: Ground, Water
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
-		ValidTargets: Ground, Water, Air
+		ValidTargets: Ground, Water
 		Versus:
 			Flak: 100
 			Light: 50
@@ -171,6 +171,16 @@ AWPE:
 
 20mme:
 	Inherits: 20mm
+	Burst: 2
+
+20mmAA:
+	Inherits: 20mm
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+20mmAAE:
+	Inherits: 20mmAA
 	Burst: 2
 
 vulcan:
@@ -190,15 +200,26 @@ BlackHawkCannon:
 	ReloadDelay: 40
 	Range: 6c0
 	Report: vblhatta.wav, vblhattb.wav
-	ValidTargets: Ground, Water, Air
+	ValidTargets: Ground, Water
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 35
-		ValidTargets: Ground, Water, Air
+		ValidTargets: Ground, Water
 
 BlackHawkCannonE:
 	Inherits: BlackHawkCannon
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
+
+BlackHawkCannonAA:
+	Inherits: BlackHawkCannon
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+BlackHawkCannonAAE:
+	Inherits: BlackHawkCannonAA
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 
@@ -207,7 +228,7 @@ SiegeChopperCannon:
 	ReloadDelay: 40
 	Range: 6c0
 	Report: vblhatta.wav, vblhattb.wav
-	ValidTargets: Ground, Water, Air
+	ValidTargets: Ground, Water
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
@@ -216,10 +237,21 @@ SiegeChopperCannon:
 			Wood: 15
 			Steel: 5
 			Concrete: 10
-		ValidTargets: Ground, Water, Air
+		ValidTargets: Ground, Water
 
 SiegeChopperCannonE:
 	Inherits: BlackHawkCannon
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+
+SiegeChopperCannonAA:
+	Inherits: SiegeChopperCannon
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+SiegeChopperCannonAAE:
+	Inherits: SiegeChopperCannonAA
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 

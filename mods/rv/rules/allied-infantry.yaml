@@ -824,13 +824,30 @@ jumpjet:
 		Type: Light
 	Armament@primary:
 		Weapon: 20mm
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@primary-aa:
+		Weapon: 20mmAA
+		PauseOnCondition: !ammo
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 20mmE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	Armament@elite-aa:
+		Weapon: 20mmAAE
+		PauseOnCondition: !ammo
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 30
+		Count: 1
 	Aircraft:
 		CruiseAltitude: 3072
 		LandWhenIdle: false
