@@ -38,28 +38,33 @@ e2:
 		Radius: 2c512
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	Armament@primary:
 		Weapon: M1Carbine
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: M1CarbineE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: M1Carbine
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: M1CarbineE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCM1Carbine
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCM1CarbineE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -110,62 +115,73 @@ flakt:
 		Radius: 2c512
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	Armament@primary:
 		Weapon: FlakGuyGun
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@secondary:
 		Weapon: FlakGuyAAGun
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@primary-elite:
 		Weapon: FlakGuyGunE
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@secondary-elite:
 		Weapon: FlakGuyAAGunE
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@primary-garrisoned:
 		Name: garrisoned
 		Weapon: UCFlakGuyGun
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@secondary-garrisoned:
 		Name: garrisoned
 		Weapon: UCFlakGuyAAGun
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@primary-elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCFlakGuyGunE
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@secondary-elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCFlakGuyAAGunE
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@primary-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyGun
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@secondary-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyAAGun
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@primary-elite-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyGunE
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@secondary-elite-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyAAGunE
 		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -220,30 +236,35 @@ shk:
 		CargoType: Garrisoner
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	Armament@primary:
 		Weapon: ElectricBolt
 		LocalOffset: 320,128,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: ElectricBoltE
 		LocalOffset: 320,128,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: ElectricBolt
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: ElectricBoltE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCElectricBolt
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCElectricBoltE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@charge:
 		Name: secondary
@@ -253,6 +274,7 @@ shk:
 		ForceTargetStances: None
 		Cursor: ability
 		OutsideRangeCursor: ability
+		PauseOnCondition: chronodisable
 	AmmoPool:
 		PipCount: 0
 	ReloadAmmoPool:
@@ -311,9 +333,9 @@ terror:
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 128
-		RequiresCondition: !chronodisable
 	Armament@PRIMARY:
 		Weapon: DemoTruckTargeting
+		PauseOnCondition: chronodisable
 	GrantConditionOnAttack:
 		Condition: triggered
 	GrantConditionOnDeploy:
@@ -374,25 +396,29 @@ deso:
 	Armament@primary:
 		Weapon: RadBeamWeapon
 		LocalOffset: 320,-128,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: RadBeamWeaponE
 		LocalOffset: 320,-128,1024
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: RadBeamWeapon
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: RadBeamWeaponE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	PeriodicExplosion@deploy:
 		Weapon: RadEruptionWeapon
+		PauseOnCondition: chronodisable
 		RequiresCondition: deployed
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
@@ -470,15 +496,16 @@ ivan:
 		EmptyWeapon: IvanBomber
 	Armament@primary:
 		Weapon: IvanBombAttacher
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: IvanBombAttacherE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		Cursor: bomb
 		OutsideRangeCursor: bomb
-		PauseOnCondition: chronodisable
 	TakeCover:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
@@ -584,12 +611,11 @@ yuri:
 		Sequence: stand
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	Armament:
 		Weapon: MindControl
 		MuzzleSequence: muzzle
 		LocalOffset: 0,0,960
-		PauseOnCondition: deployed
+		PauseOnCondition: deployed || chronodisable
 	WithMuzzleOverlay:
 	MindController:
 		ControllingCondition: controlling

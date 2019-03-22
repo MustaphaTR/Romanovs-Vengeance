@@ -44,9 +44,9 @@ engineer:
 		Weapon: DefuseKit
 		Cursor: remove-bomb
 		OutsideRangeCursor: remove-bomb
+		PauseOnCondition: chronodisable
 	AttackFrontal:
 		Voice: Action
-		PauseOnCondition: chronodisable
 	Voiced:
 		VoiceSet: EngineerVoice
 	Guard:
@@ -106,9 +106,9 @@ dog:
 		Radius: 3c512
 	Armament:
 		Weapon: DogJaw
+		PauseOnCondition: chronodisable
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	AttackMove:
 		Voice: Move
 	AutoTarget:
@@ -195,33 +195,41 @@ e1:
 		Radius: 2c512
 	Armament@primary:
 		Weapon: M60
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite && !deployed
 	Armament@elite:
 		Weapon: M60E
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite && !deployed
 	Armament@deployed:
 		Weapon: para
 		Name: deployed
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
 		Weapon: paraE
 		Name: deployed
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite && deployed
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: M60
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: M60E
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Weapon: UCpara
 		Name: garrisoned
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Weapon: UCparaE
 		Name: garrisoned
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
@@ -260,12 +268,10 @@ e1:
 		RequiresCondition: !undeployed
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 		RequiresCondition: undeployed
 	AttackTurreted@deployed:
 		Armaments: deployed
 		Voice: Attack
-		PauseOnCondition: chronodisable
 		RequiresCondition: deployed
 	GrantConditionOnAttack:
 		Condition: animate-turret
@@ -345,37 +351,45 @@ ggi:
 		RequiresCondition: !undeployed
 	Armament@primary:
 		Weapon: M60
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite && !deployed
 	Armament@elite:
 		Weapon: M60E
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite && !deployed
 	Armament@deployed:
 		Weapon: MissileLauncher
 		Name: deployed
 		LocalOffset: 480,63,992
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
 		Weapon: MissileLauncherE
 		Name: deployed
 		LocalOffset: 480,64,992
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite && deployed
 	Armament@opentopped:
 		Weapon: MissileLauncher
 		Name: opentopped
 		LocalOffset: 480,63,992
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Weapon: MissileLauncherE
 		Name: opentopped
 		LocalOffset: 480,64,992
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncher
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncherE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
@@ -414,12 +428,10 @@ ggi:
 		RequiresCondition: !undeployed
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 		RequiresCondition: undeployed
 	AttackTurreted@deployed:
 		Armaments: deployed
 		Voice: Attack
-		PauseOnCondition: chronodisable
 		RequiresCondition: deployed
 	GrantConditionOnAttack:
 		Condition: animate-turret
@@ -476,21 +488,24 @@ snipe:
 		Type: None
 	Armament@primary:
 		Weapon: awp
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: AWPE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: awp
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: AWPE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	Voiced:
 		VoiceSet: SniperVoice
 	ProducibleWithLevel:
@@ -591,27 +606,33 @@ ghost:
 		PipType: Red
 	Armament@primary:
 		Weapon: MP5
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: MP5E
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: MP5
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: MP5E
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@sapper:
 		Weapon: SealC4Attacher
 		Cursor: c4
 		OutsideRangeCursor: c4
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@sapper-elite:
 		Weapon: SealC4AttacherE
 		Cursor: c4
 		OutsideRangeCursor: c4
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
@@ -700,12 +721,14 @@ ptroop:
 		Weapon: CommandoC4Attacher
 		Cursor: c4
 		OutsideRangeCursor: c4
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@sapper-elite:
 		Name: sapper
 		Weapon: CommandoC4AttacherE
 		Cursor: c4
 		OutsideRangeCursor: c4
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Armaments: primary, sapper
@@ -760,25 +783,29 @@ tany:
 		PipType: Red
 	Armament@primary:
 		Weapon: DoublePistols
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: DoublePistolsE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: DoublePistols
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: DoublePistolsE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@sapper:
 		Weapon: TanyaC4Attacher
 		Cursor: c4
 		OutsideRangeCursor: c4
+		PauseOnCondition: chronodisable
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	VoiceAnnouncement:
 		Voice: Build
 	Voiced:
@@ -824,23 +851,22 @@ jumpjet:
 		Type: Light
 	Armament@primary:
 		Weapon: 20mm
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || chronodisable
 		RequiresCondition: !rank-elite
 	Armament@primary-aa:
 		Weapon: 20mmAA
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 20mmE
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || chronodisable
 		RequiresCondition: rank-elite
 	Armament@elite-aa:
 		Weapon: 20mmAAE
-		PauseOnCondition: !ammo
+		PauseOnCondition: !ammo || chronodisable
 		RequiresCondition: rank-elite
 	AttackAircraft:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0
@@ -980,28 +1006,33 @@ cleg:
 	Armament@primary:
 		Weapon: NeutronRifle
 		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: NeutronRifleE
 		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@sound:
 		Weapon: NeutronRifleSound
 		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: NeutronRifle
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: NeutronRifleE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@sound-opentopped:
 		Name: opentopped
 		Weapon: NeutronRifleSound
+		PauseOnCondition: chronodisable
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	GrantCondition@ChronoDisable:
