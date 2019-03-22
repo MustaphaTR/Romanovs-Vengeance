@@ -1,6 +1,6 @@
 shad:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -651,10 +651,22 @@ spyphusk:
 
 schp:
 	Inherits: ^Helicopter
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	AutoTargetPriority@DEFAULT:
+		RequiresCondition: !stance-attackanything && !assault-move && !deployed
+	AutoTargetPriority@ATTACKANYTHING:
+		RequiresCondition: (stance-attackanything || assault-move) && !deployed
+	AutoTargetPriority@DEFAULT_GROUND:
+		RequiresCondition: !stance-attackanything && !assault-move && deployed
+		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Defense
+		InvalidTargets: NoAutoTarget, WaterStructure
+	AutoTargetPriority@ATTACKANYTHING_GROUND:
+		RequiresCondition: (stance-attackanything || assault-move) && deployed
+		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Structure, Defense
+		InvalidTargets: NoAutoTarget
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Tooltip:
