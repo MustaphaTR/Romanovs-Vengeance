@@ -415,8 +415,7 @@ deso:
 		RequiresCondition: rank-elite
 	PeriodicExplosion@deploy:
 		Weapon: RadEruptionWeapon
-		PauseOnCondition: chronodisable
-		RequiresCondition: deployed
+		RequiresCondition: deployed && !chronodisable
 	AttackFrontal:
 		Voice: Attack
 	GrantCondition:
