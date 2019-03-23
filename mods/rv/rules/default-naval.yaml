@@ -13,7 +13,7 @@
 	Tooltip:
 		Name: Amphibious Transport
 	Selectable:
-		Bounds: 60, 80, 0, -6
+		Bounds: 60, 80, 0, -16
 	Health:
 		HP: 300
 	Armor:
@@ -24,7 +24,10 @@
 		Locomotor: heavyamphibious
 		RequiresCondition: !notmobile && !chronodisable && !emp && !squid && !beinginfected
 	Hovers:
-		RequiresCondition: !chronodisable && !emp && !squid
+		Ticks: 10
+		OffsetModifier: 64
+		PauseOnCondition: chronodisable
+		RequiresCondition: !emp && !squid
 	Guard:
 		Voice: Move
 	RevealsShroud:
