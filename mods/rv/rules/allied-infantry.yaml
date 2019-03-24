@@ -361,36 +361,77 @@ ggi:
 		Weapon: MissileLauncher
 		Name: deployed
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
 		Weapon: MissileLauncherE
 		Name: deployed
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite && deployed
+	Armament@deployed-aa:
+		Weapon: MissileLauncherAA
+		Name: deployed
+		LocalOffset: 480,63,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite && deployed
+	Armament@elite-deployed-aa:
+		Weapon: MissileLauncherAAE
+		Name: deployed
+		LocalOffset: 480,64,992
+		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: rank-elite && deployed
 	Armament@opentopped:
 		Weapon: MissileLauncher
 		Name: opentopped
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Weapon: MissileLauncherE
 		Name: opentopped
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite
+	Armament@opentopped-aa:
+		Weapon: MissileLauncherAA
+		Name: opentopped
+		LocalOffset: 480,63,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped-aa:
+		Weapon: MissileLauncherAAE
+		Name: opentopped
+		LocalOffset: 480,64,992
+		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncher
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncherE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: rank-elite
+	Armament@garrisoned-aa:
+		Name: garrisoned
+		Weapon: UCMissileLauncherAA
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned-aa:
+		Name: garrisoned
+		Weapon: UCMissileLauncherAAE
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 40
+		Count: 1
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed

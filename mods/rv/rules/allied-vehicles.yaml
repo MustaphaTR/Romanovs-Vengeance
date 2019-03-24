@@ -250,6 +250,13 @@ fv:
 	RenderDetectionCircle:
 	Turreted:
 		TurnSpeed: 5
+	AmmoPool:
+		Ammo: 2
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 50
+		Count: 2
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 1
@@ -284,10 +291,22 @@ fv:
 	Armament@primary:
 		Weapon: HoverMissile
 		LocalOffset: 128,-128,1024, 128,128,1024
+		PauseOnCondition: !ammo
 		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	Armament@elite:
 		Weapon: HoverMissileE
 		LocalOffset: 128,-128,1024, 128,128,1024
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair  && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
+	Armament@primary-aa:
+		Weapon: HoverMissileAA
+		LocalOffset: 128,-128,1024, 128,128,1024
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
+	Armament@elite-aa:
+		Weapon: HoverMissileAAE
+		LocalOffset: 128,-128,1024, 128,128,1024
+		PauseOnCondition: !ammo
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair  && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	Armament@mg:
 		Weapon: CRM60
@@ -297,6 +316,10 @@ fv:
 		MuzzleSplitFacings: 8
 	Armament@rocket:
 		Weapon: CRMissileLauncher
+		LocalOffset: 128,-128,1408, 128,128,1408
+		RequiresCondition: ifv-rocket
+	Armament@rocket-aa:
+		Weapon: CRMissileLauncherAA
 		LocalOffset: 128,-128,1408, 128,128,1408
 		RequiresCondition: ifv-rocket
 	Armament@repair:

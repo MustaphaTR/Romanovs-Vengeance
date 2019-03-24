@@ -227,7 +227,7 @@ HoverMissile:
 	Burst: 2
 	Range: 6c0
 	Report: vifvatta.wav
-	ValidTargets: Ground, Air
+	ValidTargets: Ground
 	Projectile: Missile
 		Speed: 512
 		Arm: 2
@@ -241,7 +241,7 @@ HoverMissile:
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
 		Damage: 25
-		ValidTargets: Ground, Air
+		ValidTargets: Ground
 		Versus:
 			None: 80
 			Flak: 70
@@ -275,12 +275,24 @@ HoverMissileE:
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
 
+HoverMissileAA:
+	Inherits: HoverMissile
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+HoverMissileAAE:
+	Inherits: HoverMissileE
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
 MissileLauncher:
 	Inherits: ^Missile
 	ReloadDelay: 40
 	Range: 6c0
 	Report: iggiat2a.wav, iggiat2b.wav
-	ValidTargets: Ground, Air
+	ValidTargets: Ground
 	Projectile: Missile
 		Speed: 512
 		Arm: 2
@@ -294,7 +306,7 @@ MissileLauncher:
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
 		Damage: 40
-		ValidTargets: Ground, Air
+		ValidTargets: Ground
 		Versus:
 			None: 15
 			Flak: 15
@@ -328,8 +340,26 @@ MissileLauncherE:
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
 
+MissileLauncherAA:
+	Inherits: MissileLauncher
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+MissileLauncherAAE:
+	Inherits: MissileLauncherE
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
 CRMissileLauncher:
 	Inherits: MissileLauncher
+	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+
+CRMissileLauncherAA:
+	Inherits: MissileLauncherAA
 	Burst: 2
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
@@ -340,6 +370,14 @@ UCMissileLauncher:
 
 UCMissileLauncherE:
 	Inherits: MissileLauncherE
+	Range: 6c0
+
+UCMissileLauncherAA:
+	Inherits: MissileLauncherAA
+	Range: 6c0
+
+UCMissileLauncherAAE:
+	Inherits: MissileLauncherAAE
 	Range: 6c0
 
 SubTorpedo:
