@@ -73,8 +73,9 @@ gacnst:
 
 gapowr:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Allies
 		Prerequisites: ~techlevel.1
@@ -146,6 +147,7 @@ gapowrup:
 
 gapile:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
@@ -224,6 +226,7 @@ gapile:
 
 garefn:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^4x3Shape
 	Buildable:
 		Queue: Building.Allies
@@ -290,9 +293,10 @@ garefn:
 
 gaairc:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^3x2Shape
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 60
@@ -560,6 +564,7 @@ gadept:
 
 gatech:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
@@ -618,6 +623,7 @@ gawall:
 gapill:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 40
@@ -666,8 +672,9 @@ gapill:
 nasam:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 50
@@ -720,10 +727,11 @@ nasam:
 
 gtgcan:
 	Inherits: ^VoxelLighting
-	Inherits@shape: ^2x2Shape
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 70
@@ -780,6 +788,7 @@ gtgcan:
 
 gaorep:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Allies
@@ -820,9 +829,10 @@ gaorep:
 
 gaspysat:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^2x2Shape
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 100
@@ -881,8 +891,9 @@ gaspysat:
 
 gagap:
 	Inherits: ^SupportBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -927,9 +938,10 @@ gagap:
 
 gaweat:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^3x3Shape
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 100
@@ -984,9 +996,10 @@ gaweat:
 
 gacsph:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^4x3Shape
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^4x3Shape
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 90
@@ -1049,8 +1062,9 @@ gacsph:
 atesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 60
@@ -1157,9 +1171,10 @@ repairpad:
 # Yuri's Revenge Structures
 garobo:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^2x2Shape
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 80

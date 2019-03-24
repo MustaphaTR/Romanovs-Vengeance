@@ -25,8 +25,9 @@ yacnst:
 
 yapowr:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Yuri
 		Prerequisites: ~techlevel.1
@@ -99,6 +100,7 @@ yapowr:
 
 yabrck:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x3Shape
 	Buildable:
 		Queue: Building.Yuri
@@ -194,6 +196,7 @@ yayard:
 
 yatech:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Yuri

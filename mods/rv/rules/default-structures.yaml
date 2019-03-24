@@ -74,6 +74,7 @@
 
 ^WarFactory:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^5x3Shape
 	Buildable:
 		Queue: Building
@@ -142,6 +143,7 @@
 
 ^Shipyard:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^4x4Shape
 	Valued:
 		Cost: 1000
@@ -284,6 +286,7 @@
 
 ^ServiceDepot:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 70

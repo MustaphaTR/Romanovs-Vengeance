@@ -55,8 +55,9 @@ nacnst:
 
 napowr:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^3x2Shape
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Soviets
 		Prerequisites: ~techlevel.1
@@ -98,6 +99,7 @@ napowr:
 
 nahand:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -200,6 +202,7 @@ nahand:
 
 narefn:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^4x3Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -266,9 +269,10 @@ narefn:
 
 naradr:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^2x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 60
@@ -560,6 +564,7 @@ nadept:
 
 naheli:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -621,8 +626,9 @@ naheli:
 
 nanrct:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^4x4Shape
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits@shape: ^4x4Shape
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 110
@@ -668,6 +674,7 @@ nanrct:
 
 natech:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -703,6 +710,7 @@ natech:
 
 naclon:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -784,8 +792,9 @@ naclon:
 
 napsis:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^2x2Shape
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 70
@@ -831,9 +840,10 @@ napsis:
 
 nairon:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^3x3Shape
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 90
@@ -891,9 +901,10 @@ nairon:
 
 namisl:
 	Inherits: ^BaseBuilding
-	Inherits@shape: ^3x3Shape
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 100
@@ -980,8 +991,9 @@ nawall:
 naflak:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 50
@@ -1033,8 +1045,9 @@ naflak:
 tesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 60
@@ -1107,6 +1120,7 @@ tesla:
 nalasr:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 40
@@ -1159,8 +1173,9 @@ nalasr:
 # Yuri's Revenge Structures
 nabnkr:
 	Inherits: ^SupportBuilding
-	Inherits@shape: ^2x2Shape
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 40
@@ -1208,6 +1223,7 @@ nabnkr:
 
 naindp:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
