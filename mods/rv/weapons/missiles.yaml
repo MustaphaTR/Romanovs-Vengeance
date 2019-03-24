@@ -269,20 +269,20 @@ HoverMissile:
 HoverMissileE:
 	Inherits: HoverMissile
 	Burst: 4
-	Warhead@1Dam: SpreadDamage
-		Damage: 80
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
 
 HoverMissileAA:
 	Inherits: HoverMissile
+	Range: 8c0
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
 HoverMissileAAE:
 	Inherits: HoverMissileE
+	Range: 8c0
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
@@ -334,20 +334,20 @@ MissileLauncher:
 MissileLauncherE:
 	Inherits: MissileLauncher
 	Burst: 2
-	Warhead@1Dam: SpreadDamage
-		Damage: 30
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
 
 MissileLauncherAA:
 	Inherits: MissileLauncher
+	Range: 8c0
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
 MissileLauncherAAE:
 	Inherits: MissileLauncherE
+	Range: 8c0
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
