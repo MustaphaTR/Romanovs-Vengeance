@@ -263,7 +263,7 @@ garefn:
 		DockAngle: 160
 		UseStorage: false
 	CustomSellValue:
-		Value: 300
+		Value: 400
 	InfiltrateForCash:
 		Types: SpyInfiltrate
 		Percentage: 50
@@ -288,8 +288,10 @@ garefn:
 		Amount: -50
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
-	-SpawnActorsOnSell@allies:
-	-SpawnActorsOnSell@soviets:
+	SpawnActorsOnSell@allies:
+		ActorTypes: e1
+	SpawnActorsOnSell@soviets:
+		ActorTypes: e2
 
 gaairc:
 	Inherits: ^BaseBuilding

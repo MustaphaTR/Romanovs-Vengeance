@@ -83,7 +83,12 @@ ApocExplode:
 PlaneExplode:
 	Inherits: KirovExplode
 	Warhead@2Dam: SpreadDamage
-		Damage: 20
+		Damage: 100
+
+B2Explode:
+	Inherits: PlaneExplode
+	Warhead@2Dam: SpreadDamage
+		Damage: 200
 
 HornetExplode:
 	Inherits: KirovExplode
@@ -240,7 +245,7 @@ NukePayload:
 			Heavy: 100
 			Wood: 60
 			Steel: 100
-			Concrete: 60 # 8
+			Concrete: 30 # 8
 			Drone: 100
 			Rocket: 100
 		AffectsParent: true
