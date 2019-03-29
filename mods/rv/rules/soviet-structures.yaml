@@ -902,40 +902,15 @@ nairon:
 		RequiresPrerequisites: global-swlimit
 
 namisl:
-	Inherits: ^BaseBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
-	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits: ^PrimarySuperWeapon
 	Buildable:
 		Queue: Support.Soviets
-		BuildPaletteOrder: 100
 		Prerequisites: natech, !enoughnuke, ~techlevel.5
 		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb
-	Valued:
-		Cost: 2500
 	Tooltip:
 		Name: Nuclear Missile Silo
-	Building:
-		Footprint: xxx xxx xxx
-		Dimensions: 3, 3
 	Selectable:
 		Bounds: 152, 104, 0, -50
-	Health:
-		HP: 1000
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 4c0
-	RevealsShroud@ToEnemy:
-		Range: 2c0
-		ValidStances: Neutral, Enemy
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 4c0
-	Power:
-		Amount: -200
-	SupportPowerChargeBar:
 	NukePower:
 		Cursor: nuke
 		Icon: abomb
@@ -970,7 +945,6 @@ namisl:
 		RequiresCondition: !build-incomplete && !chronodisable
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughnuke
-		RequiresPrerequisites: global-swlimit
 
 nawall:
 	Inherits: ^Wall

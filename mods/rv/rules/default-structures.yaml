@@ -327,3 +327,35 @@
 		RequiresCondition: !build-incomplete && !chronodisable
 	Power:
 		Amount: -15
+
+^PrimarySuperWeapon:
+	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^3x3Shape
+	Buildable:
+		Queue: Support
+		BuildPaletteOrder: 100
+	Valued:
+		Cost: 2500
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3, 3
+	Health:
+		HP: 1000
+	Armor:
+		Type: Concrete
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroud@ToEnemy:
+		Range: 2c0
+		ValidStances: Neutral, Enemy
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
+	Power:
+		Amount: -200
+	SupportPowerChargeBar:
+	ProvidesPrerequisite@swlimit:
+		RequiresPrerequisites: global-swlimit
