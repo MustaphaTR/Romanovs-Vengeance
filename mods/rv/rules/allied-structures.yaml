@@ -102,12 +102,30 @@ gapowr:
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
 		Range: 4c0
-	Pluggable:
+	Pluggable@1:
+		Offset: 0,0
+		Conditions:
+			powrup: powrup
+		Requirements:
+			powrup: !build-incomplete && !powrup
+	Pluggable@2:
+		Offset: 0,1
+		Conditions:
+			powrup: powrup
+		Requirements:
+			powrup: !build-incomplete && !powrup
+	Pluggable@3:
+		Offset: 1,0
+		Conditions:
+			powrup: powrup
+		Requirements:
+			powrup: !build-incomplete && !powrup
+	Pluggable@4:
 		Offset: 1,1
 		Conditions:
 			powrup: powrup
 		Requirements:
-			powrup: !build-incomplete
+			powrup: !build-incomplete && !powrup
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
 		PauseOnCondition: chronodisable
