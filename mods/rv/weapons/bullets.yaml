@@ -379,3 +379,50 @@ CrusierStrike:
 			Concrete: 90
 			Drone: 100
 			Rocket: 100
+
+Grenade:
+	Inherits: ^LargeBullet
+	ReloadDelay: 60
+	Range: 4c512
+	Report: grenade1.aud
+	Projectile: BulletAS
+		Speed: 256
+		Blockable: true
+		Shadow: true
+		LaunchAngle: 60
+		Inaccuracy: 0
+		Image: GRENADE
+		Palette: effect
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Damage: 40
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 60
+			Medium: 40
+			Heavy: 30
+			Concrete: 50
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath
+
+GrenadeE:
+	Inherits: Grenade
+	Range: 5c512
+	ReloadDelay: 40
+	Projectile: BulletAS
+		Speed: 384
+
+CRGrenade:
+	Inherits: Grenade
+	Range: 5c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+
+UCGrenade:
+	Inherits: Grenade
+	Range: 6c0
+
+UCGrenadeE
+	Inherits: GrenadeE
+	Range: 6c0

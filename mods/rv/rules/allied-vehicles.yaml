@@ -175,6 +175,9 @@ fv:
 	Tooltip@rocket:
 		Name: Rocket IFV
 		RequiresCondition: ifv-rocket
+	Tooltip@gren:
+		Name: Grenade IFV
+		RequiresCondition: ifv-gren
 	Tooltip@engineer:
 		Name: Repair IFV
 		RequiresCondition: ifv-repair
@@ -267,6 +270,7 @@ fv:
 		PassengerConditions:
 			e1: ifv-mg
 			e2: ifv-mg
+			gren: ifv-gren
 			engineer: ifv-repair
 			dog: ifv-dog
 			ggi: ifv-rocket
@@ -292,28 +296,32 @@ fv:
 		Weapon: HoverMissile
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-gren && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	Armament@elite:
 		Weapon: HoverMissileE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair  && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-gren && !ifv-repair  && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	Armament@primary-aa:
 		Weapon: HoverMissileAA
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-gren && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	Armament@elite-aa:
 		Weapon: HoverMissileAAE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-repair  && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-gren && !ifv-repair  && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	Armament@mg:
 		Weapon: CRM60
 		LocalOffset: 188,32,600
 		RequiresCondition: ifv-mg
 		MuzzleSequence: mgun_muz
 		MuzzleSplitFacings: 8
+	Armament@gren:
+		Weapon: CRGrenade
+		LocalOffset: 200,0,800
+		RequiresCondition: ifv-gren
 	Armament@rocket:
 		Weapon: CRMissileLauncher
 		LocalOffset: 128,-128,1408, 128,128,1408
@@ -374,15 +382,15 @@ fv:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || parachute
 	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-sniper && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono && !ifv-yuri
+		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-gren && !ifv-repair && !ifv-dog && !ifv-sniper && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono && !ifv-yuri
 	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: (stance-attackanything || assault-move) && !ifv-mg && !ifv-repair && !ifv-dog && !ifv-sniper && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono && !ifv-yuri
+		RequiresCondition: (stance-attackanything || assault-move) && !ifv-mg && !ifv-gren && !ifv-repair && !ifv-dog && !ifv-sniper && !ifv-tesla && !ifv-deso && !ifv-hero && !ifv-demo && !ifv-chrono && !ifv-yuri
 	AutoTargetPriority@DEFAULT_GROUND:
-		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-pyro || ifv-tesla || ifv-chrono)
+		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-gren || ifv-pyro || ifv-tesla || ifv-chrono)
 		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING_GROUND:
-		RequiresCondition: (stance-attackanything || assault-move) && (ifv-mg || ifv-pyro || ifv-tesla || ifv-chrono)
+		RequiresCondition: (stance-attackanything || assault-move) && (ifv-mg || ifv-gren || ifv-pyro || ifv-tesla || ifv-chrono)
 		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@INFONLY:
@@ -395,7 +403,7 @@ fv:
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@NOBUILDING:
 		RequiresCondition: ifv-deso
-		ValidTargets: Infantry, Vehicle
+		ValidTargets: Infantry, Vehicle, Ship
 		InvalidTargets: NoAutoTarget
 	Selectable:
 		Bounds: 64, 52, 0, -6
@@ -410,7 +418,7 @@ fv:
 		RequiresCondition: ifv-demo
 	WithVoxelTurret@default:
 		Sequence: turret-missile
-		RequiresCondition: !ifv-mg && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
+		RequiresCondition: !ifv-mg && !ifv-gren && !ifv-repair && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-hero && !ifv-chrono && !ifv-yuri
 	WithVoxelTurret@mg:
 		Sequence: turret-mg
 		RequiresCondition: ifv-mg
@@ -425,7 +433,7 @@ fv:
 		RequiresCondition: ifv-sniper
 	WithVoxelTurret@hero:
 		Sequence: turret-hero
-		RequiresCondition: ifv-hero
+		RequiresCondition: ifv-hero || ifv-gren # TODO Find a better turret for Grenade IFV
 	WithVoxelTurret@tesla:
 		Sequence: turret-tesla
 		RequiresCondition: ifv-tesla
