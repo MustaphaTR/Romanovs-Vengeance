@@ -249,3 +249,58 @@ yawall:
 		Type: yawall
 	Replaceable:
 		Types: YuriGate
+
+yacomd:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^4x4Shape
+	Tooltip:
+		Name: Yuri's Command Center
+	Armor:
+		Type: Concrete
+	RevealsShroud:
+		Range: 8c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 4,4
+		Footprint: xxxx xxxx xxxx xxxx
+	SpawnActorOnDeath:
+		Actor: yacomd.rubble
+
+yacomd.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 4,4
+		Footprint: ____ ____ ____ ____
+	RenderSprites:
+		Image: yacomd
+
+yapppt:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Psychic Dominator
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 1000
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+
+yarock:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^3x3Shape
+	Tooltip:
+		Name: Rocket Launch Pad
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	Health:
+		HP: 700
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
