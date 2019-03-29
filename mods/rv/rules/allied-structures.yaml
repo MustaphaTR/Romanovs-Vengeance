@@ -990,44 +990,23 @@ gaweat:
 		Prerequisite: enoughweather
 
 gacsph:
-	Inherits: ^BaseBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^SecondarySuperWeapon
 	Inherits@shape: ^4x3Shape
 	Buildable:
 		Queue: Support.Allies
-		BuildPaletteOrder: 90
 		Prerequisites: gatech, !enoughchrono, ~techlevel.5
 		Description: Allows teleporting maximum of 13 vehicles.\nKills infantry.
 	Selectable:
 		Bounds: 176, 110, -5, -14
-	Valued:
-		Cost: 2000
 	Tooltip:
 		Name: Chronosphere
 	Building:
 		Footprint: xxx xxx xxx xxx
 		Dimensions: 4,3
-	Health:
-		HP: 1000
-	Armor:
-		Type: Concrete
-	RevealsShroud:
-		Range: 5c0
-	RevealsShroud@ToEnemy:
-		Range: 2c0
-		ValidStances: Neutral, Enemy
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 5c0
-	Power:
-		Amount: -200
 	WithIdleOverlay:
 		Sequence: idle-dome
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	SupportPowerChargeBar:
 	ChronoshiftPower@chronoshift:
 		OrderName: Chronoshift
 		Icon: chrono
@@ -1052,7 +1031,6 @@ gacsph:
 		Range: 2
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughchrono
-		RequiresPrerequisites: global-swlimit
 
 atesla:
 	Inherits: ^SupportBuilding
