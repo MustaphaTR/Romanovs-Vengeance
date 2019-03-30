@@ -83,7 +83,6 @@ Section "Game" GAME
 	File "${SRCDIR}\AUTHORS"
 	File "${SRCDIR}\COPYING"
 	File "${SRCDIR}\${MOD_ID}.ico"
-	File "${SRCDIR}\SharpFont.dll"
 	File "${SRCDIR}\SDL2-CS.dll"
 	File "${SRCDIR}\OpenAL-CS.dll"
 	File "${SRCDIR}\global mix database.dat"

@@ -96,7 +96,7 @@ check-variables:
 
 engine: check-variables check-sdk-scripts
 	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
-	@cd $(ENGINE_DIRECTORY) && make core
+	@cd $(ENGINE_DIRECTORY) && make dependencies && make core
 
 utility: engine
 	@test -f "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" || (printf "OpenRA.Utility.exe not found!\n"; exit 1)
