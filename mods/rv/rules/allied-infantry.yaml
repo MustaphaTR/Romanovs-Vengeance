@@ -44,6 +44,8 @@ engineer:
 		Weapon: DefuseKit
 		Cursor: remove-bomb
 		OutsideRangeCursor: remove-bomb
+		TargetStances: Ally
+		ForceTargetStances: None
 		PauseOnCondition: chronodisable
 	AttackFrontal:
 		Voice: Action
@@ -56,7 +58,7 @@ engineer:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
-		DefaultAttackSequence: stand
+		DefaultAttackSequence: shoot
 	CaptureManager:
 
 dog:
@@ -558,7 +560,7 @@ spy:
 	Inherits: ^Infantry
 	Buildable:
 		Queue: Infantry.Allies
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\n  Unarmed\nSpecial Ability: Disguises
 	Valued:
@@ -868,7 +870,7 @@ jumpjet:
 		Type: CenterPosition
 	Buildable:
 		Queue: Infantry.Allies
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.2
 		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
 	UpdatesPlayerStatistics:
@@ -1078,3 +1080,61 @@ cleg:
 		DefaultAttackSequence: shoot
 	GrantCondition@ChronoDisable:
 		RequiresCondition: affectedbytemporal || chronoed
+
+# Custom Allied Infantry:
+
+medi:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Allies
+		Prerequisites: #disabled, ~techlevel.1
+		BuildPaletteOrder: 50
+		Description: Heals infantry.\n  Unarmed
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 25
+		Voice: Action
+	Tooltip:
+		Name: Medic
+	Selectable:
+		Priority: 5
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 75
+	Passenger:
+		PipType: Blue
+		Voice: Action
+	Mobile:
+		Voice: Action
+	RevealsShroud:
+		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 4c0
+	RevealOnDeath:
+		Radius: 2c0
+	Armament:
+		Weapon: Heal
+		Cursor: heal
+		OutsideRangeCursor: heal
+		TargetStances: Ally
+		ForceTargetStances: None
+		PauseOnCondition: chronodisable
+	AttackFrontal:
+		Voice: Action
+	Voiced:
+		VoiceSet: MedicVoice
+	Guard:
+		Voice: Action
+	AttackMove:
+		Voice: Action
+	AutoTarget:
+		ScanRadius: 5
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Repair
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: shoot

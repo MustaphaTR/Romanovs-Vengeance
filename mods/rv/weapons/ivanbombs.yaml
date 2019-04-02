@@ -4,6 +4,7 @@ IvanBombAttacher:
 	TargetActorCenter: true
 	Range: 1c512
 	Projectile: InstantHit
+	Report: icraatta.wav
 	Warhead@1Att: AttachDelayedWeapon
 		Weapon: IvanBomber
 		Type: IvanBomb
@@ -51,7 +52,11 @@ TanyaC4Attacher:
 		TriggerTime: 50
 
 DefuseKit:
-	ReloadDelay: 25
+	ReloadDelay: 50
+	TargetActorCenter: true
+	Range: 1c512
+	Report: gdefuse.wav
+	Projectile: InstantHit
 	ValidTargets: IvanBombCleaner, SEALC4Cleaner, TanyaC4Cleaner
 	Warhead@1Det: DetachDelayedWeapon
 		Types: IvanBomb, SEALC4, CommandoC4, TanyaC4

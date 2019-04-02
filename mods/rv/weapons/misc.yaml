@@ -43,13 +43,23 @@ CRFlamer:
 	ReloadDelay: 40
 	Burst: 18
 
+Heal:
+	ReloadDelay: 80
+	Range: 1c819
+	Report: gcraheal.wav
+	ValidTargets: Heal
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -50
+		ValidTargets: Heal
+
 RepairBullet:
 	ReloadDelay: 80
 	Range: 1c819
 	Report: vifvrepa.wav
 	ValidTargets: Repair
-	Projectile: BulletAS
-		Speed: 1c682
+	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
 		Damage: -50
@@ -67,8 +77,7 @@ EmergencyRepair:
 	ReloadDelay: 80
 	Range: 1c819
 	ValidTargets: Repair
-	Projectile: BulletAS
-		Speed: 1c682
+	Projectile: InstantExplode
 	Warhead@1Dam: SpreadDamage
 		Spread: 8c0
 		Falloff: 100, 0
