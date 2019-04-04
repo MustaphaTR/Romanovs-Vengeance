@@ -103,23 +103,9 @@ MP5E:
 	Inherits: MP5
 	Range: 7c0
 
-20mmrapid:
-	Inherits: ^MG
+CRMP5:
+	Inherits: MP5
 	ReloadDelay: 20
-	Range: 5c512
-	Report: vwaratta.wav, vwarattb.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 30
-		Versus:
-			Medium: 20
-			Heavy: 20
-			Drone: 200
-
-20mmrapidE:
-	Inherits: 20mmrapid
-	ReloadDelay: 15
-	Warhead@1Dam: SpreadDamage
-		Damage: 50
 
 DoublePistols:
 	Inherits: MP5
@@ -129,7 +115,7 @@ DoublePistolsE:
 	Inherits: DoublePistols
 	Range: 8c0
 
-CRMP5:
+CRDoublePistols:
 	Inherits: DoublePistols
 	ReloadDelay: 20
 
@@ -184,6 +170,24 @@ AWPE:
 20mmAAE:
 	Inherits: 20mmAA
 	Burst: 2
+
+20mmrapid:
+	Inherits: ^MG
+	ReloadDelay: 20
+	Range: 5c512
+	Report: vwaratta.wav, vwarattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+		Versus:
+			Medium: 20
+			Heavy: 20
+			Drone: 200
+
+20mmrapidE:
+	Inherits: 20mmrapid
+	ReloadDelay: 15
+	Warhead@1Dam: SpreadDamage
+		Damage: 50
 
 vulcan:
 	Inherits: ^MG
@@ -290,3 +294,7 @@ AKME:
 	Range: 9c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
+
+CRAKM:
+	Inherits: AKM
+	ReloadDelay: 30
