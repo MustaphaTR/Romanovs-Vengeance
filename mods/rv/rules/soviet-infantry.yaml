@@ -198,6 +198,19 @@ shk:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	AutoTargetPriority@DEFAULT:
+		InvalidTargets: NoAutoTarget, WaterStructure, TeslaBoost
+	AutoTargetPriority@ATTACKANYTHING:
+		InvalidTargets: NoAutoTarget, TeslaBoost
+	AutoTargetPriority@TESLANORMAL:
+		RequiresCondition: !assault-move && !attack-move
+		ValidTargets: TeslaBoost
+	AutoTargetPriority@TESLAAMOVE:
+		RequiresCondition: assault-move || attack-move
+		ValidTargets: TeslaBoost
+		ValidStances: Enemy
+	AttackMove:
+		AttackMoveScanCondition: attack-move
 	Buildable:
 		Queue: Infantry.Soviets
 		Prerequisites: ~techlevel.1

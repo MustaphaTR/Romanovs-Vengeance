@@ -227,24 +227,10 @@ namespace OpenRA.Mods.RA2.Traits
 
         public CPos NearestMoveableCell(CPos cell) { return cell; }
 
-		// Technically, ballstic movement always moves non-vertical moves = always false.
-		public bool IsMovingVertically { get { return false; } set { } }
+        // Actors with ShootableBallisticMissile always move
+        public MovementType CurrentMovementTypes { get { return MovementType.Horizontal | MovementType.Vertical; } set { } }
 
-		// And ballistic missiles can't stop moving.
-		public bool IsMoving
-		{
-			get
-			{
-				return true;
-			}
-
-			set
-			{
-				System.Diagnostics.Debug.Assert(false, "You can't set IsMoving property for shootable ballistic missiles.");
-			}
-		}
-
-		public bool CanEnterTargetNow(Actor self, Target target)
+        public bool CanEnterTargetNow(Actor self, Target target)
 		{
 			// you can never control ballistic missiles anyway
 			return false;
