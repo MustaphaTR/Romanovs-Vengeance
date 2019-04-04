@@ -91,6 +91,17 @@ EmergencyRepair:
 		ImpactSounds: vifvrepa.wav
 		ValidTargets: Ground, Water, Air
 
+AmbulanceHeal:
+	ReloadDelay: 25
+	ValidTargets: Heal
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 5c0
+		Falloff: 100, 0
+		Damage: -20
+		ValidStances: Neutral, Ally
+		ValidTargets: Heal
+
 MindControl:
 	ReloadDelay: 200
 	Range: 7c0
