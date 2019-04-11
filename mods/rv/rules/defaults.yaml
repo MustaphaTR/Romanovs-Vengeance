@@ -1474,12 +1474,15 @@
 
 ^Aircraft:
 	Inherits@1: ^NeutralAircraft
+	Inherits@2: ^ChronoDisable
 	Inherits@3: ^MachineShopRepair
 	Inherits@4: ^AcceptsIvanBomb
 	Inherits@5: ^AcceptsTanyaC4
 	Inherits@6: ^AffectedByIndustrialPlant
 	Inherits@7: ^UnitParticles
 	WithTextControlGroupDecoration:
+	Targetable@ChronoDisable:
+		RequiresCondition: !airborne
 
 ^Plane:
 	Inherits: ^Aircraft
