@@ -77,12 +77,13 @@ MechRepair:
 EmergencyRepair:
 	ReloadDelay: 80
 	Range: 1c819
-	ValidTargets: Repair
+	ValidTargets: Repair, Structure, Wall
 	Projectile: InstantExplode
 	Warhead@1Dam: SpreadDamage
 		Spread: 8c0
 		Falloff: 100, 0
 		Damage: -400
+		AffectsParent: true
 		ValidStances: Neutral, Ally
 		ValidTargets: Repair, Structure, Wall
 		DamageTypes: KillsDrone
