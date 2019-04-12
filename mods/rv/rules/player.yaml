@@ -62,6 +62,18 @@ Player:
 		Enabled: False
 		DisplayOrder: 12
 		Prerequisites: global-instantcapture
+	LobbyPrerequisiteCheckbox@FREERADAR:
+		ID: freeradar
+		Label: Free Radar
+		Description: Radar is active without Radar Tower or AFCHQ
+		Enabled: False
+		DisplayOrder: 13
+		Prerequisites: global-freeradar
+	ProvidesRadar:
+		RequiresCondition: freeradar
+	GrantConditionOnPrerequisite@FREERADAR:
+		Condition: freeradar
+		Prerequisites: global-freeradar
 	FrozenActorLayer:
 	BaseAttackNotifier:
 		AllyNotification: OurAllyIsUnderAttack
