@@ -1,0 +1,93 @@
+^default.commanders_power:
+	Interactable:
+	AlwaysVisible:
+	Buildable:
+		BuildDurationModifier: 100
+		Queue: Power.Allies, Power.Soviets
+		BuildLimit: 1
+	RenderSprites:
+	ProvidesPrerequisite@powername:
+
+commanders_power.medic:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Medic
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 0
+		Prerequisites: prerequisite.has_points
+		Description: Enables training of Medic from Barracks.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.medic
+	RenderSprites:
+		Image: medi
+
+commanders_power.grenadier:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Grenadier
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 0
+		Prerequisites: prerequisite.has_points
+		Description: Enables training of Grenadier from Barracks.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.grenadier
+	RenderSprites:
+		Image: gren
+
+hack.has_points:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@has_points:
+		Prerequisite: prerequisite.has_points
+
+hack.rank_3:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@rank_3:
+		Prerequisite: prerequisite.3_stars
+
+hack.rank_5:
+	AlwaysVisible:
+	Interactable:
+	ProvidesPrerequisite@rank_5:
+		Prerequisite: prerequisite.5_stars
+
+prerequisite.has_points:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: 1 Commander's Points
+	Buildable:
+		Description: 1 Commander's Points
+
+prerequisite.3_stars:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Major or Higher Rank
+	Buildable:
+		Description: Major or Higher Rank
+
+prerequisite.5_stars:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: General Rank
+	Buildable:
+		Description: General Rank
+
+^default.commanders_power_prerequisite:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Commander's Power
+	Buildable:
+		Description: Commander's Power
+
+prerequisite.medic:
+	Inherits: ^default.commanders_power_prerequisite
+
+prerequisite.grenadier:
+	Inherits: ^default.commanders_power_prerequisite
