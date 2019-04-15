@@ -8,6 +8,16 @@ EditorPlayer:
 Player:
 	Inherits: ^BasePlayer
 	TechTree:
+	ClassicProductionQueue@Allies:
+		Type: Power.Allies
+		Group: Power
+		Factions: america, france, england, germany, korea
+	ClassicProductionQueue@Soviets:
+		Type: Power.Soviets
+		Group: Power
+		Factions: russia, iraq, vietnam, cuba, libya
+	Production:
+		Produces: Power.Allies, Power.Soviets
 	PlaceBuilding:
 		Palette: effect75alpha
 		NewOptionsNotification: NewOptions
