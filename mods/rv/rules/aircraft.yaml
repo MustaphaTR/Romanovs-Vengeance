@@ -293,6 +293,8 @@ orca:
 	SpawnActorOnDeath:
 		Actor: orcahusk
 	HitShape:
+	ProducibleWithLevel:
+		Prerequisites: vetorca
 
 orcahusk:
 	Inherits: ^PlaneHusk
@@ -351,6 +353,7 @@ beag:
 	RenderVoxels:
 		Image: beag
 	HitShape:
+	-ProducibleWithLevel:
 
 beaghusk:
 	Inherits: ^PlaneHusk
@@ -841,6 +844,7 @@ bpln:
 	-Selectable:
 	-SelectionDecorations:
 	-Targetable@Airborne:
+	-ProducibleWithLevel:
 	RejectsOrders:
 	Interactable:
 	Aircraft:
