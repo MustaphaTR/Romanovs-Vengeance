@@ -89,7 +89,10 @@ napowr:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 150
-		RequiresCondition: !chronodisable
+		RequiresCondition: !chronodisable && !forceshieldnopower
+	GrantConditionOnPrerequisite@forceshield:
+		Condition: forceshieldnopower
+		Prerequisites: forceshield
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
@@ -673,7 +676,10 @@ nanrct:
 		EmptyWeapon: NukePayload
 	Power:
 		Amount: 1000
-		RequiresCondition: !chronodisable
+		RequiresCondition: !chronodisable && !forceshieldnopower
+	GrantConditionOnPrerequisite@forceshield:
+		Condition: forceshieldnopower
+		Prerequisites: forceshield
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav

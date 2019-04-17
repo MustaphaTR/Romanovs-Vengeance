@@ -411,6 +411,22 @@
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
 
+^ForceShieldable:
+	WithColoredOverlay@forceshield:
+		Palette: force
+		RequiresCondition: forceshield
+	DamageMultiplier@forceshield:
+		RequiresCondition: forceshield
+		Modifier: 0
+	TimedConditionBar:
+		Color: 0000FF
+		Condition: forceshield
+	ExternalCondition@FORCESHIELD:
+		Condition: forceshield
+	ProvidesPrerequisite@FORCESHIELD:
+		Prerequisite: forceshield
+		RequiresCondition: forceshield
+
 ^ChronoDisable:
 	AffectedByTemporal:
 		Condition: affectedbytemporal
@@ -612,11 +628,12 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@3: ^IronCurtainable
-	Inherits@4: ^AcceptsIvanBomb
-	Inherits@5: ^AcceptsSEALC4
-	Inherits@6: ^AcceptsCommandoC4
-	Inherits@7: ^BuildingParticles
-	Inherits@8: ^ChronoDisable
+	Inherits@4: ^ForceShieldable
+	Inherits@5: ^AcceptsIvanBomb
+	Inherits@6: ^AcceptsSEALC4
+	Inherits@7: ^AcceptsCommandoC4
+	Inherits@8: ^BuildingParticles
+	Inherits@9: ^ChronoDisable
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	OwnerLostAction:
