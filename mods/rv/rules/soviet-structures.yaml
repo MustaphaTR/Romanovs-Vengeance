@@ -812,7 +812,7 @@ napsis:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Support.Soviets
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		Prerequisites: natech, ~techlevel.4
 		Description: Detects enemy units and strikepoints
 	Valued:
@@ -939,7 +939,7 @@ nawall:
 		Queue: Support.Soviets
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Light wall.
+		Description: Heavy wall capable of blocking units and projectiles.
 	Tooltip:
 		Name: Soviet Wall
 	LineBuild:
@@ -959,7 +959,7 @@ naflak:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 60
 		Prerequisites: naradr, ~techlevel.2
 		Description: Automated anti-aircraft defense.
 	Valued:
@@ -1013,7 +1013,7 @@ tesla:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: naradr, ~techlevel.3
 		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
@@ -1086,7 +1086,7 @@ nalasr:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 50
 		Prerequisites: barracks, ~techlevel.1
 		Description: Automated anti-infantry defense.
 	Valued:
@@ -1258,3 +1258,94 @@ nagateb:
 		Type: nawall
 	Replacement:
 		ReplaceableTypes: SovietGate
+
+napost:
+	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Buildable:
+		Queue: Support.Soviets
+		BuildPaletteOrder: 40
+		Prerequisites: power, ~prerequisite.tesla_fence, ~techlevel.1
+		Description: Stops infantry and blocks enemy fire.
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Tesla Fence Post
+	Health:
+		HP: 300
+	Armor:
+		Type: Concrete
+	LineBuild:
+		Range: 8
+		NodeTypes: teslafencenode
+		SegmentType: nafnce
+		SegmentsRequireNode: true
+	Selectable:
+		Bounds: 42, 44, 0, -12
+	LineBuildNode:
+		Types: teslafencenode
+	Power:
+		Amount: -25
+	RevealsShroud:
+		Range: 4c0
+	WithIdleOverlay@LIGHTS:
+		Sequence: lights
+		PauseOnCondition: disabled || chronodisable || emp
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@CHAINOFLIGHTS:
+		Sequence: chainoflights
+		PauseOnCondition: disabled || chronodisable || emp
+		RequiresCondition: !build-incomplete
+	LineBuildSegmentExternalCondition:
+		RequiresCondition: !build-incomplete && !disabled && !emp
+		Condition: active-posts
+
+nafnce:
+	Inherits: ^Wall
+	Tooltip:
+		Name: Tesla Fence
+	LineBuild:
+		NodeTypes: teslafence
+	LineBuildNode:
+		Types: teslafence
+	-Crushable:
+	-Sellable:
+	-Targetable:
+	-Building:
+	EnergyWall:
+		ActiveCondition: active-posts == 2
+		Weapon: TeslaFence
+	GrantConditionOnLineBuildDirection@X:
+		Direction: X
+		Condition: teslafence-direction-x
+	GrantConditionOnLineBuildDirection@Y:
+		Direction: Y
+		Condition: teslafence-direction-y
+	-WithWallSpriteBody:
+	ExternalCondition@ACTIVE:
+		Condition: active-posts
+	WithWallSpriteBody@XENABLED:
+		RequiresCondition: teslafence-direction-x && active-posts == 2
+		Type: teslafence
+		Sequence: enabled-x
+		Name: x-enabled
+	WithWallSpriteBody@YENABLED:
+		RequiresCondition: teslafence-direction-y && active-posts == 2
+		Type: teslafence
+		Sequence: enabled-y
+		Name: y-enabled
+	WithSpriteBody@XDISABLED:
+		RequiresCondition: teslafence-direction-x && active-posts < 2
+		Sequence: disabled-x
+		Name: x-disabled
+	WithSpriteBody@YDISABLED:
+		RequiresCondition: teslafence-direction-y && active-posts < 2
+		Sequence: disabled-y
+		Name: y-disabled
+	BlocksProjectiles:
+		RequiresCondition: active-posts == 2
+	DamageMultiplier: # Prevent all normal damage, but still allows direct kills from the post
+		Modifier: 0
+	Interactable:
+		Bounds: 48, 24
