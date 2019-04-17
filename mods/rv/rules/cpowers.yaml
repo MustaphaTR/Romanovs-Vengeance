@@ -43,10 +43,22 @@ commanders_power.ifv_training:
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 20
-		Prerequisites: prerequisite.has_points
+		Prerequisites: ~disabled # prerequisite.has_points
 		Description: Makes IFVs train as veteran.
 	ProvidesPrerequisite@powername:
 		Prerequisite: vetifv
+
+commanders_power.harrier_training:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Harrier Training
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 20
+		Prerequisites: prerequisite.has_points
+		Description: Makes Harriers train as veteran.
+	ProvidesPrerequisite@powername:
+		Prerequisite: vetorca
 
 commanders_power.inf_training:
 	Inherits: ^default.commanders_power
