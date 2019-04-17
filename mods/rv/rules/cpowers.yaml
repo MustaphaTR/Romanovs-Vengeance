@@ -36,13 +36,27 @@ commanders_power.grenadier:
 	RenderSprites:
 		Image: gren
 
+commanders_power.tesla_fence:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Tesla Fence
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 20
+		Prerequisites: prerequisite.has_points
+		Description: Enables construction of Tesla Fence from Construction Yard.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.tesla_fence
+	RenderSprites:
+		Image: napost
+
 commanders_power.ifv_training:
 	Inherits: ^default.commanders_power
 	Tooltip:
 		Name: IFV Training
 	Buildable:
 		Queue: Power.Allies
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 30
 		Prerequisites: ~disabled # prerequisite.has_points
 		Description: Makes IFVs train as veteran.
 	ProvidesPrerequisite@powername:
@@ -54,7 +68,7 @@ commanders_power.harrier_training:
 		Name: Harrier Training
 	Buildable:
 		Queue: Power.Allies
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
 		Description: Makes Harriers train as veteran.
 	ProvidesPrerequisite@powername:
@@ -66,7 +80,7 @@ commanders_power.inf_training:
 		Name: Infantry Training
 	Buildable:
 		Queue: Power.Soviets
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
 		Description: Makes Conscripts and Flak Troopers train as veteran.
 	ProvidesPrerequisite@powername:
@@ -126,4 +140,7 @@ prerequisite.medic:
 	Inherits: ^default.commanders_power_prerequisite
 
 prerequisite.grenadier:
+	Inherits: ^default.commanders_power_prerequisite
+
+prerequisite.tesla_fence:
 	Inherits: ^default.commanders_power_prerequisite
