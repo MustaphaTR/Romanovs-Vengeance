@@ -136,10 +136,13 @@ gapowr:
 		RequiresCondition: !build-incomplete && powrup
 	Power:
 		Amount: 150
-		RequiresCondition: !chronodisable
+		RequiresCondition: !chronodisable && !forceshieldnopower
 	Power@plug:
 		Amount: 75
-		RequiresCondition: !chronodisable && powrup
+		RequiresCondition: !chronodisable && !forceshieldnopower && powrup
+	GrantConditionOnPrerequisite@forceshield:
+		Condition: forceshieldnopower
+		Prerequisites: forceshield
 	ScalePowerWithHealth:
 	SoundOnDamageTransition:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
@@ -482,7 +485,7 @@ gaairc:
 	DetonateWeaponPower@emergencyrepair:
 		OrderName: FrenchRepair
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.france
+		Prerequisites: disabled # radar.france
 		Icon: repair
 		Cursor: repair
 		ChargeInterval: 3750
@@ -491,6 +494,22 @@ gaairc:
 		SelectTargetSpeechNotification: SelectTarget
 		Weapon: EmergencyRepair
 		ActivationSequence:
+	GrantExternalConditionPower@FORCESHIELD:
+		OrderName: FrenchForceShield
+		PauseOnCondition: disabled || chronodisable || emp
+		Prerequisites: radar.france
+		Icon: force
+		Cursor: force-shield
+		ChargeInterval: 4500
+		Description: Force Shield
+		LongDesc: Makes a group of buildings invulnerable for 30 seconds,\nbut makes you go low power during that time.
+		Duration: 750
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ForceShieldReady
+		LaunchSpeechNotification: ForceShieldActivated
+		IncomingSpeechNotification: ForceShieldActivated
+		Condition: forceshield
+		Range: 3
 	AirstrikePower@empulse:
 		OrderName: KoreanEMP
 		PauseOnCondition: disabled || chronodisable || emp
