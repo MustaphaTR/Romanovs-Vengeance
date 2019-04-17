@@ -14,7 +14,7 @@ commanders_power.medic:
 		Name: Medic
 	Buildable:
 		Queue: Power.Allies
-		BuildPaletteOrder: 0
+		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
 		Description: Enables training of Medic from Barracks.
 	ProvidesPrerequisite@powername:
@@ -28,13 +28,37 @@ commanders_power.grenadier:
 		Name: Grenadier
 	Buildable:
 		Queue: Power.Soviets
-		BuildPaletteOrder: 0
+		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
 		Description: Enables training of Grenadier from Barracks.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.grenadier
 	RenderSprites:
 		Image: gren
+
+commanders_power.ifv_training:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: IFV Training
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 20
+		Prerequisites: prerequisite.has_points
+		Description: Makes IFVs train as veteran.
+	ProvidesPrerequisite@powername:
+		Prerequisite: vetifv
+
+commanders_power.inf_training:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Infantry Training
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 20
+		Prerequisites: prerequisite.has_points
+		Description: Makes Conscripts and Flak Troopers train as veteran.
+	ProvidesPrerequisite@powername:
+		Prerequisite: vete2flakt
 
 hack.has_points:
 	AlwaysVisible:
