@@ -349,3 +349,11 @@ NeutronRifleSound:
 CRNeutronRifleSound:
 	Inherits: NeutronRifleSound
 	Range: 6c0
+
+TeslaFence:
+	TargetActorCenter: true
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		DebugOverlayColor: FF0000
+		Damage: 100000
+		DamageTypes: ElectroDeath
