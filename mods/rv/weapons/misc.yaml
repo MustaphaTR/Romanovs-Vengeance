@@ -422,3 +422,47 @@ PsychicControl:
 		Delay: 40
 		Explosions: controlwave
 		ValidTargets: Ground, Air, Water
+
+PsychicJab:
+	Inherits: ^MG
+	ReloadDelay: 15
+	Range: 4c512
+	Report: iiniatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 80
+			Light: 50
+			Medium: 25
+			Heavy: 25
+			Wood: 75
+			Steel: 50
+			Concrete: 25
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, FlameDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: largefire
+
+PsychicJabE:
+	Inherits: PsychicJab
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+	Warhead@2Eff: CreateEffect
+		Explosions: largefireblue
+
+UCPsychicJab:
+	Inherits: PsychicJab
+	Range: 6c0
+
+UCPsychicJabE:
+	Inherits: PsychicJabE
+
+CRPsychicJab:
+	Inherits: PsychicJab
+	Range: 6c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 25

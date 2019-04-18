@@ -1,3 +1,70 @@
+init:
+	Inherits: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 20
+		Description: Basic Yuri Infantry.\n Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Initiate
+	DeliversCash:
+		Payload: 100
+		PlayerExperience: 5
+		Voice: Move
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Green
+		CargoType: Garrisoner
+	RevealsShroud:
+		Range: 5c0
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: PsychicJab
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: PsychicJabE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: PsychicJab
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: PsychicJabE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCPsychicJab
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCPsychicJabE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: InitiateVoice
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
 yurix:
 	Inherits: yuripr
 	Buildable:
