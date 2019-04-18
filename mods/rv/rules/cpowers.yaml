@@ -36,6 +36,20 @@ commanders_power.grenadier:
 	RenderSprites:
 		Image: gren
 
+commanders_power.airpad:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Airpad
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 20
+		Prerequisites: prerequisite.has_points
+		Description: Enables construction of Airfields from Construction Yard.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.airpad
+	RenderSprites:
+		Image: gaapad
+
 commanders_power.tesla_fence:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -140,6 +154,9 @@ prerequisite.medic:
 	Inherits: ^default.commanders_power_prerequisite
 
 prerequisite.grenadier:
+	Inherits: ^default.commanders_power_prerequisite
+
+prerequisite.airpad:
 	Inherits: ^default.commanders_power_prerequisite
 
 prerequisite.tesla_fence:
