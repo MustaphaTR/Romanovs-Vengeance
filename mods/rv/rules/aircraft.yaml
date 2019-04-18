@@ -42,7 +42,7 @@ shad:
 	Buildable:
 		Queue: Aircraft.Allies
 		BuildPaletteOrder: 10
-		Prerequisites: barracks, ~techlevel.2
+		Prerequisites: barracks, ~gaairc, ~techlevel.2
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 800
@@ -234,7 +234,7 @@ orca:
 		Name: Harrier
 	Buildable:
 		Queue: Aircraft.Allies
-		Prerequisites: ~techlevel.2
+		Prerequisites: ~gaairc, ~techlevel.2
 		BuildPaletteOrder: 20
 		Description: Fast assault fighter\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	UpdatesPlayerStatistics:
@@ -274,7 +274,7 @@ orca:
 		Voice: Move
 		RepairActors: gadept, nadept, caoutp
 	Rearmable:
-		RearmActors: gaairc
+		RearmActors: gaairc, gaapad
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
 	AmmoPool:
@@ -1009,7 +1009,7 @@ fortress:
 		Queue: Aircraft.Allies
 		BuildPaletteOrder: 40
 		Description: Carpet bomber plane.\nUndetectable by radar.\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft
-		Prerequisites: gatech, ~techlevel.4
+		Prerequisites: ~gaairc, gatech, ~techlevel.4
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Aircraft:
@@ -1048,7 +1048,7 @@ fortress:
 		Voice: Move
 		RepairActors: gadept, nadept, caoutp
 	Rearmable:
-		RearmActors: gaairc
+		RearmActors: gaairc, gaapad
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
 	AmmoPool:

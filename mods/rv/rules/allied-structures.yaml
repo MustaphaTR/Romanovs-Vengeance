@@ -530,7 +530,7 @@ gaairc:
 		TargetPlaceholderCursorAnimation: swtarget
 		DirectionArrowAnimation: swdirection
 	RallyPoint:
-		Offset: 2,3
+		Offset: 1,2
 		Palette: mouse
 		IsPlayerPalette: false
 
@@ -835,7 +835,7 @@ gaorep:
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 120
 		Prerequisites: garefn, gatech, ~techlevel.4
 		Description: Refines income from ores and gems by 25%.\nMaximum 1 can be built.\nCan not be captured.
 		BuildLimit: 1
@@ -878,7 +878,7 @@ gaspysat:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		Prerequisites: gatech, ~techlevel.4
 		Description: Provides Satellite Scan power, which reveals enemy units for a while.\nProvides Radar.
 	Selectable:
@@ -1206,6 +1206,58 @@ garobo:
 		Amount: -50
 
 # Custom Structures
+gaapad:
+	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Building.Allies
+		BuildPaletteOrder: 100
+		Prerequisites: gaairc, ~prerequisite.airpad, ~techlevel.2
+		Description: Rearms up to 3 aircraft.
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Airpad
+	ProvidesPrerequisite@default:
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 128, 96, 0, -16
+	Health:
+		HP: 800
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
+	WithIdleOverlay@bottom:
+		Sequence: idle-bottom
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@dish:
+		Sequence: idle-dish
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -50
+	Reservable:
+	Exit@1:
+		Facing: 224
+		SpawnOffset: -512,0,0
+		MoveIntoWorld: false
+	Exit@2:
+		Facing: 224
+		SpawnOffset: 512,0,0
+		MoveIntoWorld: false
+	Exit@3:
+		Facing: 224
+		SpawnOffset: 0,512,0
+		MoveIntoWorld: false
+
 gagatea:
 	Inherits: ^Gate_A
 	Buildable:
