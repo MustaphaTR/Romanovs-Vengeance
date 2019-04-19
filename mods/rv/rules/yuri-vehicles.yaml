@@ -37,3 +37,66 @@ ltnk:
 		Bounds: 64, 52, 0, -6
 	Voiced:
 		VoiceSet: LasherTankVoice
+
+mind:
+	Inherits: ^Vehicle
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: Master Mind
+	Buildable:
+		Queue: Vehicle.Yuri
+		BuildPaletteOrder: 70
+		Prerequisites: yatech
+		Description: Heavy vehicle capable of mind controlling 3 enemy units.\nCan crush enemy vehicles.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
+	Mobile:
+		Speed: 60
+		TurnSpeed: 5
+		Locomotor: omnicrusher
+	-Crushable:
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	Health:
+		HP: 500
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 9c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 9c0
+	RevealOnDeath:
+		Radius: 4c512
+	Armament:
+		Weapon: MindControl
+		LocalOffset: 0,0,960
+	MindController:
+		ControllingCondition: controlling
+		Sounds: iyurat1a.wav
+		Capacity: 3
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	AttackFrontal:
+		FacingTolerance: 128
+		Voice: Attack
+		PauseOnCondition: emp || chronodisable
+	AttackMove:
+		Voice: Move
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: MindControl
+		RequiresCondition: !controlling
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	RenderVoxels:
+		Scale: 12
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: MasterMindVoice
+	HitShape:
