@@ -70,6 +70,18 @@ gacnst:
 		Palette: player
 		IsPlayerPalette: false
 		RequiresCondition: !build-incomplete && korea
+	SpawnActorPower@SCOUT_DRONE:
+		OrderName: AlliedScoutDrone
+		PauseOnCondition: chronodisable
+		Actor: sdrn
+		Prerequisites: commanders_power.scout_drone
+		LifeTime: -1
+		ChargeInterval: 3000
+		Icon: sdrn
+		Cursor: spyplane
+		Description: Scout Drone
+		LongDesc: Spawns a Scout Drone anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
 
 gapowr:
 	Inherits: ^BaseBuilding

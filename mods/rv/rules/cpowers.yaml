@@ -100,6 +100,30 @@ commanders_power.inf_training:
 	ProvidesPrerequisite@powername:
 		Prerequisite: vete2flakt
 
+commanders_power.scout_drone:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Scout Drone
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 40
+		Prerequisites: prerequisite.has_points
+		Description: Enables Scout Drone power from Construction Yard.
+	RenderSprites:
+		Image: sdrn
+
+commanders_power.spy_plane:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Spy Plane
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 40
+		Prerequisites: prerequisite.has_points
+		Description: Enables Spy Plane power from Construction Yard.
+	RenderSprites:
+		Image: spyp
+
 hack.has_points:
 	AlwaysVisible:
 	Interactable:
