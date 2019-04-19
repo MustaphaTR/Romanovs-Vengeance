@@ -52,6 +52,25 @@ nacnst:
 	WithIdleOverlay@Libya:
 		Sequence: flag-libya
 		RequiresCondition: !build-incomplete && libya
+	AirstrikePower@spyplane:
+		OrderName: SovietSpyPlane
+		PauseOnCondition: chronodisable
+		Prerequisites: commanders_power.spy_plane
+		Icon: spyplane
+		Cursor: spyplane
+		ChargeInterval: 3000
+		Description: Spy Plane
+		LongDesc: Reveals an area of the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: SpyPlaneReady
+		UnitType: spyp
+		QuantizedFacings: 8
+		DisplayBeacon: True
+		BeaconPoster: spypicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: spyptarget
+		DirectionArrowAnimation: swdirection
 
 napowr:
 	Inherits: ^BaseBuilding
@@ -322,24 +341,6 @@ naradr:
 		Types: SatelliteScan
 		Range: 10c0
 	SupportPowerChargeBar:
-	AirstrikePower@spyplane:
-		OrderName: SovietSpyPlane
-		PauseOnCondition: powerdown || chronodisable || emp
-		Icon: spyplane
-		Cursor: spyplane
-		ChargeInterval: 3000
-		Description: Spy Plane
-		LongDesc: Reveals an area of the map.
-		SelectTargetSpeechNotification: SelectTarget
-		EndChargeSpeechNotification: SpyPlaneReady
-		UnitType: spyp
-		QuantizedFacings: 8
-		DisplayBeacon: True
-		BeaconPoster: spypicon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		TargetPlaceholderCursorAnimation: spyptarget
-		DirectionArrowAnimation: swdirection
 	ParatroopersPower@tesladrop:
 		OrderName: RussianTeslaDrop
 		PauseOnCondition: disabled || chronodisable || emp

@@ -1089,3 +1089,43 @@ fortresshusk:
 	RenderVoxels:
 		Image: fortress
 		NormalsPalette: ts-normals
+
+sdrn:
+	Inherits: ^NeutralAircraft
+	Valued:
+		Cost: 250
+	-Selectable:
+	Interactable:
+		Bounds: 64,64
+	RejectsOrders:
+	Tooltip:
+		Name: Scout Drone
+	Aircraft:
+		Repulsable: false
+		CruiseAltitude: 3072
+		TurnSpeed: 7
+		Speed: 128
+		MaximumPitch: 96
+	RevealsShroud:
+		Range: 7c0
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 7c0
+		Types: SatelliteScan
+		Type: GroundPosition
+	RevealOnDeath:
+		Radius: 3c512
+		Duration: 50
+	DetectCloaked:
+		Range: 6c0
+	RenderDetectionCircle:
+	AutoTakesOff:
+	Health:
+		HP: 100
+	Armor:
+		Type: Light
+	RenderSprites:
+	WithVoxelBody:
+	Explodes:
+		Weapon: UnitExplode
+	HitShape:
