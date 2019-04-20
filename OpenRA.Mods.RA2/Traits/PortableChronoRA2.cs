@@ -206,7 +206,7 @@ namespace OpenRA.Mods.RA2.Traits
 		}
 	}
 
-	class PortableChronoOrderGenerator : IOrderGenerator
+	class PortableChronoOrderGenerator : OrderGenerator
 	{
 		readonly Actor self;
 		readonly PortableChronoRA2Info info;
@@ -217,7 +217,7 @@ namespace OpenRA.Mods.RA2.Traits
 			this.info = info;
 		}
 
-		public IEnumerable<Order> Order(World world, CPos cell, int2 worldPixel, MouseInput mi)
+        protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (mi.Button == Game.Settings.Game.MouseButtonPreference.Cancel)
 			{
@@ -233,18 +233,18 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-		public void Tick(World world)
+        protected override void Tick(World world)
 		{
 			if (!self.IsInWorld || self.IsDead)
 				world.CancelInputMode();
 		}
 
-		public IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
+        protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
 		{
 			yield break;
 		}
 
-		public IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
+        protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
 		{
 			if (!self.IsInWorld || self.Owner != self.World.LocalPlayer)
 				yield break;
@@ -260,7 +260,7 @@ namespace OpenRA.Mods.RA2.Traits
 				Color.FromArgb(96, Color.Black));
 		}
 
-		public string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+        protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (self.IsInWorld && self.Location != cell
 				&& self.Trait<PortableChronoRA2>().CanTeleport && self.Owner.Shroud.IsExplored(cell))
