@@ -87,6 +87,25 @@ gacnst:
 		LongDescs:
 			1: Spawns a Scout Drone anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+	DetonateWeaponPower@cruiserstrike:
+		OrderName: AlliedCruiserStrike
+		PauseOnCondition: chronodisable
+		Prerequisites:
+			1: commanders_power.cruiser_strike
+		Icons:
+			1: cruiser
+		ChargeInterval: 6000
+		CameraRange: 10c0
+		CameraRemoveDelay: 300
+		Descriptions:
+			1: Cruiser Strike
+		LongDescs:
+			1: Cruisers from out of the map bombards\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: CrusierStrikeInit
+		AirburstAltitude: 10c0
+		ActivationSequence:
 
 gapowr:
 	Inherits: ^BaseBuilding
@@ -472,25 +491,33 @@ gaairc:
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
 		DirectionArrowAnimation: swdirection
-	DetonateWeaponPower@cruiserstrike:
-		OrderName: EnglishCruiserStrike
+	AirstrikePower@leafletdrop:
+		OrderName: BritishLeafletDrop
 		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites:
 			1: radar.england
 		Icons:
-			1: cruiser
-		ChargeInterval: 6000
-		CameraRange: 10c0
-		CameraRemoveDelay: 300
+			1: leaflet
+		ChargeInterval: 7500
 		Descriptions:
-			1: Cruiser Strike
+			1: Leaflet Drop
 		LongDescs:
-			1: Cruisers from out of the map bombards\nanywhere on the map.
+			1: A Cargo Plane drops leaflets\nanywhere on the map.\nLeaflets slow enemy infantry\nand vehicle movement and\nfire speed.
 		SelectTargetSpeechNotification: SelectTarget
-		Weapons:
-			1: CrusierStrikeInit
-		AirburstAltitude: 10c0
-		ActivationSequence:
+		UnitTypes:
+			1: pdplane.leaflet
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: leaficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: swtarget
+		DirectionArrowAnimation: swdirection
 	DetonateWeaponPower@chronogrizzly:
 		OrderName: GermanChronoGrizzly
 		PauseOnCondition: disabled || chronodisable || emp

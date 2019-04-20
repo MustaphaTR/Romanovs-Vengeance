@@ -291,6 +291,24 @@
 		Multiplier: 75
 		Prerequisites: naindp
 
+^AffectedByLeaflets:
+	ReloadDelayMultiplier@LEAFLET:
+		Modifier: 300
+		RequiresCondition: leaflet
+	SpeedMultiplier@LEAFLET:
+		Modifier: 50
+		RequiresCondition: leaflet
+	WithDecoration@LEAFLET:
+		Image: leaflet
+		Sequence: icon
+		Palette: ra
+		ReferencePoint: Top, Left
+		RequiresCondition: leaflet
+		ZOffset: 256
+		ValidStances: Ally, Enemy, Neutral
+	ExternalCondition@LEAFLET
+		Condition: leaflet
+
 ^DamagedByRadiation100Percent:
 	DamagedByTintedCells:
 		Damage: 1
@@ -1041,6 +1059,7 @@
 	Inherits@7: ^KilledByIronCurtain
 	Inherits@8: ^DamagedByRadiation100Percent
 	Inherits@9: ^AcceptsIvanBomb
+	Inherits@10: ^AffectedByLeaflets
 	Health:
 	OwnerLostAction:
 		Action: Kill
@@ -1333,6 +1352,7 @@
 	Inherits@10: ^AffectedByIndustrialPlant
 	Inherits@11: ^VehicleParticles
 	Inherits@12: ^ParachutableVehicle
+	Inherits@13: ^AffectedByLeaflets
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath
@@ -1608,6 +1628,7 @@
 	Inherits@9: ^AcceptsTanyaC4
 	Inherits@10: ^AffectedByIndustrialPlant
 	Inherits@11: ^VehicleParticles
+	Inherits@12: ^AffectedByLeaflets
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath

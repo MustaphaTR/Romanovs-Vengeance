@@ -239,3 +239,46 @@ SpiritBombE:
 		Explosions: terrorist_explosion
 		ImpactSounds: gexpapoa.wav
 		ValidTargets: Ground, Air
+
+LeafletDrop:
+	ReloadDelay: 50
+	Range: 0c256
+	Report: sleafdro.wav
+	Projectile: InstantExplode
+	Warhead@2Clu: FireCluster
+		Weapon: Leaflet
+		Dimensions: 7,7
+		Footprint: __xxx__ _xxxxx_ _xxxxx_ xxxxxxx _xxxxx_ _xxxxx_ __xxx__
+		ValidTargets: Ground, Water, Air
+	Warhead@2Clu: FireCluster
+		Weapon: Leaflet
+		Dimensions: 7,7
+		Footprint: __xxx__ _xxxxx_ _xxxxx_ xxxxxxx _xxxxx_ _xxxxx_ __xxx__
+		ValidTargets: Ground, Water, Air
+		Delay: 2
+	Warhead@3Clu: FireCluster
+		Weapon: Leaflet
+		Dimensions: 7,7
+		Footprint: __xxx__ _xxxxx_ _xxxxx_ xxxxxxx _xxxxx_ _xxxxx_ __xxx__
+		ValidTargets: Ground, Water, Air
+		Delay: 4
+	Warhead@4Clu: FireCluster
+		Weapon: Leaflet
+		Dimensions: 7,7
+		Footprint: __xxx__ _xxxxx_ _xxxxx_ xxxxxxx _xxxxx_ _xxxxx_ __xxx__
+		ValidTargets: Ground, Water, Air
+		Delay: 6
+
+Leaflet:
+	Range: 5c0
+	Projectile: BulletAS
+		Image: leaflet
+		Blockable: false
+		Speed: 128
+		Inaccuracy: 512
+		Palette: ra
+	Warhead@1Con: GrantExternalCondition
+		Condition: leaflet
+		Duration: 750
+		Spread: 1c0
+		ValidStances: Neutral, Enemy
