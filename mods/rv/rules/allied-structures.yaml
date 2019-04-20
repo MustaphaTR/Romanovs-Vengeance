@@ -491,11 +491,27 @@ gaairc:
 			1: CrusierStrikeInit
 		AirburstAltitude: 10c0
 		ActivationSequence:
+	DetonateWeaponPower@chronogrizzly:
+		OrderName: GermanChronoGrizzly
+		PauseOnCondition: disabled || chronodisable || emp
+		Prerequisites:
+			1: radar.germany
+		Icons:
+			1: chrono
+		ChargeInterval: 6000
+		Descriptions:
+			1: Chrono Grizzly
+		LongDescs:
+			1: Chronoshifts 3 Grizzly Tanks\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: GrizzlySpawner
+		ActivationSequence:
 	ParatroopersPower@paratanks:
 		OrderName: GermanTankDrop
 		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites:
-			1: radar.germany
+			1: disabled
 		Icons:
 			1: tankdrop
 		ChargeInterval: 6000
@@ -521,7 +537,7 @@ gaairc:
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
 		DirectionArrowAnimation: swdirection
-	GrantExternalConditionPower@FORCESHIELD:
+	GrantExternalConditionPower@forceshield:
 		OrderName: FrenchForceShield
 		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites:
@@ -530,7 +546,7 @@ gaairc:
 			1: force
 		Cursor: force-shield
 		ChargeInterval: 4500
-		Description:
+		Descriptions:
 			1: Force Shield
 		LongDescs:
 			1: Makes a group of buildings invulnerable for 30 seconds,\nbut makes you go low power during that time.
@@ -540,6 +556,7 @@ gaairc:
 			1: forceshield
 		Ranges:
 			1: 3
+		OnFireSound: sforceon.wav
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ForceShieldReady
 		LaunchSpeechNotification: ForceShieldActivated
@@ -552,7 +569,8 @@ gaairc:
 		Icons:
 			1: empulse
 		ChargeInterval: 7500
-		Description: E. M. Pulse Strike
+		Descriptions:
+			1: E. M. Pulse Strike
 		LongDescs:
 			1: A Cargo Plane drops an Electromagnetic Pulse\nbomb anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget

@@ -412,6 +412,16 @@ AmbushSpawner:
 		Actors: e2,e2,e2,e2,e2,e2,e2,flakt,flakt
 		Sounds: sambusha.aud
 
+GrizzlySpawner:
+	Warhead@1Spa: SpawnActor
+		Actors: mtnk,mtnk,mtnk
+		Delay: 15
+		Range: 3
+	Warhead@2Eff: CreateEffect
+		Explosions: chronofd
+		ImpactSounds: schrmov.wav
+		ValidTargets: Ground, Water, Air
+
 DemoTruckTargeting:
 	ValidTargets: DetonateAttack
 	Range: 2c0
