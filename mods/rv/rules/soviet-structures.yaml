@@ -55,18 +55,26 @@ nacnst:
 	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
 		PauseOnCondition: chronodisable
-		Prerequisites: commanders_power.spy_plane
-		Icon: spyplane
+		Prerequisites:
+			1: commanders_power.spy_plane
+		Icons:
+			1:: spyplane
 		Cursor: spyplane
 		ChargeInterval: 3000
-		Description: Spy Plane
-		LongDesc: Reveals an area of the map.
+		Descriptions:
+			1: Spy Plane
+		LongDescs:
+			1: Reveals an area of the map.
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: SpyPlaneReady
-		UnitType: spyp
+		UnitTypes:
+			1: spyp
+		SquadSizes:
+			1: 1
 		QuantizedFacings: 8
 		DisplayBeacon: True
-		BeaconPoster: spypicon
+		BeaconPosters:
+			1: spypicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: spyptarget
@@ -344,32 +352,45 @@ naradr:
 	ParatroopersPower@tesladrop:
 		OrderName: RussianTeslaDrop
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.russia
-		Icon: tesladrop
+		Prerequisites:
+			1: radar.russia
+		Icons:
+			1: tesladrop
 		ChargeInterval: 6000
-		Description: Tesla Drop
-		LongDesc: A Cargo Plane drops a Tesla Tank\n and 3 Tesla Troopers anywhere on the map.
+		Descriptions:
+			1: Tesla Drop
+		LongDescs:
+			1: A Cargo Plane drops a Tesla Tank\n and 3 Tesla Troopers anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ParatroopersReady
-		DropItems: shk, shk, shk, ttnk
+		DropItems:
+			1: shk, shk, shk, ttnk
+		SquadSizes:
+			1: 1
 		QuantizedFacings: 8
-		UnitType: pdplane
+		UnitTypes:
+			1: pdplane
 		CameraActor: camera
 		DisplayBeacon: True
-		BeaconPoster: tesdicon
+		BeaconPosters:
+			1: tesdicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
 		DirectionArrowAnimation: swdirection
 	NukePower@radiationmissile:
-		Cursor: nuke
 		OrderName: IraqiRadMissile
+		Cursor: nuke
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.iraq
-		Icon: radmissile
+		Prerequisites:
+			1: radar.iraq
+		Icons:
+			1: radmissile
 		ChargeInterval: 7500
-		Description: Radiation Missile
-		LongDesc: Fires a missile that deals low damage\nand leaves radiation.
+		Descriptions:
+			1: Radiation Missile
+		LongDescs:
+			1: Fires a missile that deals low damage\nand leaves radiation.
 		SelectTargetSpeechNotification: SelectTarget
 		MissileWeapon: RadiationMissile
 		MissilePalette: player
@@ -379,34 +400,47 @@ naradr:
 		FlightVelocity: 0c512
 		FlightDelay: 80
 		DisplayBeacon: True
-		BeaconPoster: radmicon
+		BeaconPosters:
+			1: radmicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 	DetonateWeaponPower@instanbunker:
 		OrderName: VietnameseInstantBunker
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.vietnam
-		Icon: bunker
+		Prerequisites:
+			1: radar.vietnam
+		Icons:
+			1: bunker
 		ChargeInterval: 4500
-		Description: Instant Bunker
-		LongDesc: Places a bunker anywhere on the map.
+		Descriptions:
+			1: Instant Bunker
+		LongDescs:
+			1: Places a bunker anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
-		Weapon: BunkerSpawner
+		Weapons:
+			1: BunkerSpawner
 		ActivationSequence:
 	AirstrikePower@clustermines:
 		OrderName: CubanClusterMines
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.cuba
-		Icon: cluster
+		Prerequisites:
+			1: radar.cuba
+		Icons:
+			1: cluster
 		ChargeInterval: 4500
-		Description: Cluster Mines
-		LongDesc: A Cargo plane drops 13 mines\nanywhere on the map.
+		Descriptions:
+			1: Cluster Mines
+		LongDescs:
+			1: A Cargo plane drops 13 mines\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
-		UnitType: pdplane.cluster_mines
-		SquadSize: 1
+		UnitTypes:
+			1: pdplane.cluster_mines
+		SquadSizes:
+			1: 1
 		QuantizedFacings: 8
 		DisplayBeacon: True
-		BeaconPoster: mineicon
+		BeaconPosters:
+			1: mineicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
@@ -414,20 +448,27 @@ naradr:
 	AirstrikePower@parabombs:
 		OrderName: LibyanParabombs
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.libya
-		Icon: parabomb
+		Prerequisites
+			1: radar.libya
+		Icons:
+			1: parabomb
 		ChargeInterval: 6000
-		Description: Parabombs
-		LongDesc: A squad of Cargo Planes drop parachuted\nbombs on your target.
+		Descriptions:
+			1: Parabombs
+		LongDescs:
+			1: A squad of Cargo Planes drop parachuted\nbombs on your target.
 		SelectTargetSpeechNotification: SelectTarget
-		UnitType: pdplane.parabomb
-		SquadSize: 3
+		UnitTypes:
+			1: pdplane.parabomb
+		SquadSizes:
+			1: 3
 		SquadOffset: -2048, 2048, 0
 		QuantizedFacings: 8
 		CameraActor: CAMERA
 		CameraRemoveDelay: 100
 		DisplayBeacon: True
-		BeaconPoster: parbicon
+		BeaconPosters:
+			1: parbicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
@@ -518,16 +559,22 @@ nayard:
 	AirstrikePower@navalmines:
 		OrderName: SovietNavalMines
 		PauseOnCondition: chronodisable
-		Icon: navalmines
+		Icons:
+			1: navalmines
 		ChargeInterval: 3000
-		Description: Naval Mines
-		LongDesc: A Cargo plane drops 5 naval mines\n anywhere on the map.
+		Descriptions:
+			1: Naval Mines
+		LongDescs:
+			1: A Cargo plane drops 5 naval mines\n anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
-		UnitType: pdplane.naval_mines
-		SquadSize: 1
+		UnitTypes:
+			1: pdplane.naval_mines
+		SquadSizes:
+			1: 1
 		QuantizedFacings: 8
 		DisplayBeacon: True
-		BeaconPoster: nmineicon
+		BeaconPosters:
+			1: nmineicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
@@ -867,13 +914,21 @@ nairon:
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	GrantExternalConditionPower@IRONCURTAIN:
-		Icon: invuln
+		Icons:
+			1: invuln
 		Cursor: iron-curtain
 		ChargeInterval: 6000
-		Description: Invulnerability
-		LongDesc: Makes a group of units invulnerable\nfor 20 seconds.
+		Descriptions:
+			1: Invulnerability
+		LongDescs:
+			1: Makes a group of units invulnerable\nfor 20 seconds.
 		AllowMultiple: true
-		Duration: 500
+		Durations:
+			1: 500
+		Conditions:
+			1: invulnerability
+		Ranges:
+			1: 2
 		ValidStances: Ally, Neutral, Enemy
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: IronCurtainReady
@@ -883,9 +938,7 @@ nairon:
 		OnFireSound: siroon.wav
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayRadarPing: True
-		Condition: invulnerability
 		PauseOnCondition: disabled || chronodisable
-		Range: 2
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughiron
 
@@ -901,10 +954,13 @@ namisl:
 		Bounds: 152, 104, 0, -50
 	NukePower:
 		Cursor: nuke
-		Icon: abomb
+		Icons:
+			1: abomb
 		ChargeInterval: 9000
-		Description: Nuclear Missile
-		LongDesc: Launches a devastating nuclear missile\nat a target location.
+		Descriptions:
+			1: Nuclear Missile
+		LongDescs:
+			1: Launches a devastating nuclear missile\nat a target location.
 		AllowMultiple: true
 		EndChargeSound: snukread.wav
 		LaunchSound: snuklaun.wav
@@ -920,7 +976,8 @@ namisl:
 		DisplayTimerStances: Ally, Neutral, Enemy
 		DisplayBeacon: True
 		DisplayRadarPing: True
-		BeaconPoster: nukeicon
+		BeaconPosters:
+			1: nukeicon
 		FlashType: Nuke
 		ArrowSequence: arrow
 		ClockSequence: clock

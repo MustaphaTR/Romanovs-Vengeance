@@ -73,14 +73,19 @@ gacnst:
 	SpawnActorPower@SCOUT_DRONE:
 		OrderName: AlliedScoutDrone
 		PauseOnCondition: chronodisable
-		Actor: sdrn
-		Prerequisites: commanders_power.scout_drone
+		Actors:
+			1: sdrn
+		Prerequisites:
+			1: commanders_power.scout_drone
 		LifeTime: -1
 		ChargeInterval: 3000
-		Icon: sdrn
+		Icons:
+			1: sdrn
 		Cursor: spyplane
-		Description: Scout Drone
-		LongDesc: Spawns a Scout Drone anywhere on the map.
+		Descriptions:
+			1: Scout Drone
+		LongDescs:
+			1: Spawns a Scout Drone anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 
 gapowr:
@@ -441,19 +446,28 @@ gaairc:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.america
-		Icon: airborne
+		Prerequisites:
+			1: radar.america
+		Icons:
+			1: airborne
 		ChargeInterval: 6000
-		Description: Airborne
-		LongDesc: A Cargo Plane drops five GIs and three Guardian GIs\nanywhere on the map.
+		Descriptions:
+			1: Airborne
+		LongDescs:
+			1: A Cargo Plane drops five GIs and three Guardian GIs\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ParatroopersReady
-		DropItems: e1,e1,e1,e1,e1,ggi,ggi,ggi
+		DropItems:
+			1: e1,e1,e1,e1,e1,ggi,ggi,ggi
+		SquadSizes:
+			1: 1
 		QuantizedFacings: 8
-		UnitType: alplane
+		UnitTypes:
+			1: alplane
 		CameraActor: camera
 		DisplayBeacon: True
-		BeaconPoster: aparicon
+		BeaconPosters:
+			1: aparicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
@@ -461,82 +475,97 @@ gaairc:
 	DetonateWeaponPower@cruiserstrike:
 		OrderName: EnglishCruiserStrike
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.england
-		Icon: cruiser
+		Prerequisites:
+			1: radar.england
+		Icons:
+			1: cruiser
 		ChargeInterval: 6000
 		CameraRange: 10c0
 		CameraRemoveDelay: 300
-		Description: Cruiser Strike
-		LongDesc: Cruisers from out of the map bombards\nanywhere on the map.
+		Descriptions:
+			1: Cruiser Strike
+		LongDescs:
+			1: Cruisers from out of the map bombards\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
-		Weapon: CrusierStrikeInit
+		Weapons:
+			1: CrusierStrikeInit
 		AirburstAltitude: 10c0
 		ActivationSequence:
 	ParatroopersPower@paratanks:
 		OrderName: GermanTankDrop
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.germany
-		Icon: tankdrop
+		Prerequisites:
+			1: radar.germany
+		Icons:
+			1: tankdrop
 		ChargeInterval: 6000
-		Description: Tank Drop
-		LongDesc: 3 Cargo Planes drops 3 Grizzly Tanks\nanywhere on the map.
+		Descriptions:
+			1: Tank Drop
+		LongDescs:
+			1: 3 Cargo Planes drops 3 Grizzly Tanks\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ParatroopersReady
-		DropItems: mtnk, mtnk, mtnk
-		SquadSize: 3
+		DropItems:
+			1: mtnk, mtnk, mtnk
+		SquadSizes:
+			1: 3
 		SquadOffset: -2048, 2048, 0
 		QuantizedFacings: 8
-		UnitType: alplane
+		UnitTypes:
+			1: alplane
 		CameraActor: camera
 		DisplayBeacon: True
-		BeaconPoster: tdrpicon
+		BeaconPosters:
+			1: tdrpicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
 		DirectionArrowAnimation: swdirection
-	DetonateWeaponPower@emergencyrepair:
-		OrderName: FrenchRepair
-		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: disabled # radar.france
-		Icon: repair
-		Cursor: repair
-		ChargeInterval: 3750
-		Description: Emergency Repair
-		LongDesc: Repairs vehicles and structures in a large area.
-		SelectTargetSpeechNotification: SelectTarget
-		Weapon: EmergencyRepair
-		ActivationSequence:
 	GrantExternalConditionPower@FORCESHIELD:
 		OrderName: FrenchForceShield
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.france
-		Icon: force
+		Prerequisites:
+			1: radar.france
+		Icons:
+			1: force
 		Cursor: force-shield
 		ChargeInterval: 4500
-		Description: Force Shield
-		LongDesc: Makes a group of buildings invulnerable for 30 seconds,\nbut makes you go low power during that time.
-		Duration: 750
+		Description:
+			1: Force Shield
+		LongDescs:
+			1: Makes a group of buildings invulnerable for 30 seconds,\nbut makes you go low power during that time.
+		Durations:
+			1: 750
+		Conditions:
+			1: forceshield
+		Ranges:
+			1: 3
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ForceShieldReady
 		LaunchSpeechNotification: ForceShieldActivated
 		IncomingSpeechNotification: ForceShieldActivated
-		Condition: forceshield
-		Range: 3
 	AirstrikePower@empulse:
 		OrderName: KoreanEMP
 		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites: radar.korea
-		Icon: empulse
+		Prerequisites:
+			1: radar.korea
+		Icons:
+			1: empulse
 		ChargeInterval: 7500
 		Description: E. M. Pulse Strike
-		LongDesc: A Cargo Plane drops an Electromagnetic Pulse\nbomb anywhere on the map.
+		LongDescs:
+			1: A Cargo Plane drops an Electromagnetic Pulse\nbomb anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
-		UnitType: pdplane.emp
+		UnitTypes:
+			1: pdplane.emp
+		SquadSizes:
+			1: 1
 		QuantizedFacings: 8
 		CameraActor: CAMERA
 		CameraRemoveDelay: 100
 		DisplayBeacon: True
-		BeaconPoster: empuicon
+		BeaconPosters:
+			1: empuicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
@@ -584,13 +613,17 @@ gayard:
 	ProductionBar:
 		ProductionType: Ship.Allies
 	SpawnActorPower@sonar:
-		Icon: sonar
+		Icons:
+			1: sonar
 		Cursor: reveal
-		Description: Sonar Pulse
-		LongDesc: Reveals all submarines and naval mines in the\nvicinity for a short time.
+		Descriptions:
+			1: Sonar Pulse
+		LongDescs:
+			1: Reveals all submarines and naval mines in the\nvicinity for a short time.
 		ChargeInterval: 1000
 		SelectTargetSpeechNotification: SelectTarget
-		Actor: sonar
+		Actors:
+			1: sonar
 		LifeTime: 375
 		DeploySound: sonpulse.aud
 		EffectImage: moveflsh
@@ -935,9 +968,12 @@ gaspysat:
 	SupportPowerChargeBar:
 	ProduceActorPower@SatelliteScan:
 		PauseOnCondition: disabled
-		Description: Satellite Scan
-		LongDesc: Reveals all enemy units for 30 seconds.\nActivated automatically.
-		Icon: satscan
+		Descriptions:
+			1: Satellite Scan
+		LongDescs:
+			1: Reveals all enemy units for 30 seconds.\nActivated automatically.
+		Icons:
+			1: satscan
 		Actors: camera.satscan
 		Type: SpySatellite
 		AutoFire: true
@@ -1002,13 +1038,17 @@ gaweat:
 	Tooltip:
 		Name: Weather Controller
 	DetonateWeaponPower@WeatherStorm:
-		Icon: bolticon
+		OrderName: WeatherStormInfoOrder
+		Icons:
+			1: bolticon
 		Cursor: weatherstorm
 		ChargeInterval: 9000
-		Description: Lightning Storm
-		LongDesc: Applies heavy damage over a large area.
-		OrderName: WeatherStormInfoOrder
-		Weapon: WeatherStormInit
+		Descriptions:
+			1: Lightning Storm
+		LongDescs:
+			1: Applies heavy damage over a large area.
+		Weapons:
+			1: WeatherStormInit
 		AirburstAltitude: 4c512
 		AllowMultiple: true
 		CameraRange: 10c0
@@ -1044,10 +1084,15 @@ gacsph:
 		RequiresCondition: !build-incomplete
 	ChronoshiftPower@chronoshift:
 		OrderName: Chronoshift
-		Icon: chrono
+		Icons:
+			1: chrono
 		ChargeInterval: 6000
-		Description: Chronoshift
-		LongDesc: Teleports a group of units across\nthe map.
+		Descriptions:
+			1: Chronoshift
+		LongDescs:
+			1: Teleports a group of units across\nthe map.
+		Ranges:
+			1: 2
 		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ChronosphereReady
@@ -1063,7 +1108,6 @@ gacsph:
 		SelectionCursor: chronosphere
 		TargetCursor: chronosphere
 		PauseOnCondition: disabled || chronodisable
-		Range: 2
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughchrono
 

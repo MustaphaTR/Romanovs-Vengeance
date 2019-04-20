@@ -64,20 +64,29 @@ caairp:
 	ParatroopersPower@Allies:
 		RequiresCondition: enabled
 		OrderName: AlliedParatroopers
-		Icon: paradrop
+		Icons:
+			1: paradrop
 		ChargeInterval: 6000
-		Description: Allied Paratroopers
-		LongDesc: A Cargo Plane drops six GIs\nanywhere on the map.
+		Descriptions:
+			1: Allied Paratroopers
+		LongDescs:
+			1: A Cargo Plane drops six GIs\nanywhere on the map.
 		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ParatroopersReady
-		DropItems: e1,e1,e1,e1,e1,e1
+		DropItems:
+			1: e1,e1,e1,e1,e1,e1
 		QuantizedFacings: 8
-		UnitType: alplane
+		UnitTypes:
+			1: alplane
+		SquadSizes:
+			1: 1
 		CameraActor: camera
-		Prerequisites: ~techparadrops.allies
+		Prerequisites:
+			1: techparadrops.allies
 		DisplayBeacon: True
-		BeaconPoster: paraicon
+		BeaconPosters:
+			1: paraicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
@@ -85,20 +94,29 @@ caairp:
 	ParatroopersPower@Soviets:
 		RequiresCondition: enabled
 		OrderName: SovietParatroopers
-		Icon: paradrop
+		Icons:
+			1: paradrop
 		ChargeInterval: 6000
-		Description: Soviet Paratroopers
-		LongDesc: A Cargo Plane drops nine conscripts\nanywhere on the map.
+		Descriptions:
+			1: Soviet Paratroopers
+		LongDescs:
+			1: A Cargo Plane drops nine conscripts\nanywhere on the map.
 		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: ParatroopersReady
-		DropItems: e2,e2,e2,e2,e2,e2,e2,e2,e2
+		DropItems:
+			1: e2,e2,e2,e2,e2,e2,e2,e2,e2
 		QuantizedFacings: 8
-		UnitType: pdplane
+		UnitTypes:
+			1: pdplane
+		SquadSizes:
+			1: 1
 		CameraActor: camera
-		Prerequisites: ~techparadrops.soviets
+		Prerequisitess:
+			1: techparadrops.soviets
 		DisplayBeacon: True
-		BeaconPoster: paraicon
+		BeaconPosters:
+			1: paraicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
@@ -397,12 +415,16 @@ capsyb:
 		RequiresCondition: enabled
 		OrderName: TechPsychicControl
 		PauseOnCondition: chronodisable || emp
-		Icon: control
+		Icons:
+			1: control
 		ChargeInterval: 4500
-		Description: Psychic Control
-		LongDesc: Captures enemy units in a small area.\n\nCan be applied on ally units to\nmake them immune to mind control.
+		Descriptions:
+			1: Psychic Control
+		LongDescs:
+			1: Captures enemy units in a small area.\n\nCan be applied on ally units to\nmake them immune to mind control.
 		SelectTargetSpeechNotification: SelectTarget
-		Weapon: PsychicControl
+		Weapons:
+			1: PsychicControl
 		ActivationSequence:
 	SupportPowerChargeBar:
 	GrantCondition@IDISABLE:
