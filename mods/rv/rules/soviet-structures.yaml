@@ -79,6 +79,48 @@ nacnst:
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: spyptarget
 		DirectionArrowAnimation: swdirection
+	AirstrikePower@parabombs:
+		OrderName: SovietParabombs
+		PauseOnCondition: disabled || chronodisable || emp
+		Prerequisites
+			1: commanders_power.parabombs.1
+			2: commanders_power.parabombs.2
+			3: commanders_power.parabombs.3
+		Icons:
+			1: parabomb1
+			2: parabomb2
+			3: parabomb3
+		ChargeInterval: 6000
+		Descriptions:
+			1: Parabombs
+			2: Parabombs
+			3: Parabombs
+		LongDescs:
+			1: A Cargo Plane drop parachuted\nbombs on your target.
+			2: 2 Cargo Planes drop parachuted\nbombs on your target.
+			3: 3 Cargo Planes drop parachuted\nbombs on your target.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitTypes:
+			1: pdplane.parabomb
+			2: pdplane.parabomb
+			3: pdplane.parabomb
+		SquadSizes:
+			1: 1
+			2: 2
+			3: 3
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: parb1icon
+			2: parb2icon
+			3: parb3icon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: swtarget
+		DirectionArrowAnimation: swdirection
 
 napowr:
 	Inherits: ^BaseBuilding
@@ -420,6 +462,22 @@ naradr:
 		Weapons:
 			1: BunkerSpawner
 		ActivationSequence:
+	DetonateWeaponPower@ambush:
+		OrderName: LibyanAmbush
+		PauseOnCondition: disabled || chronodisable || emp
+		Prerequisites:
+			1: radar.libya
+		Icons:
+			1: ambush
+		ChargeInterval: 5250
+		Descriptions:
+			1: Ambush
+		LongDescs:
+			1: Spawns 6 Conscripts and 2 Flak Troopers\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: AmbushSpawner
+		ActivationSequence:
 	AirstrikePower@clustermines:
 		OrderName: CubanClusterMines
 		PauseOnCondition: disabled || chronodisable || emp
@@ -441,34 +499,6 @@ naradr:
 		DisplayBeacon: True
 		BeaconPosters:
 			1: mineicon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		TargetPlaceholderCursorAnimation: swtarget
-		DirectionArrowAnimation: swdirection
-	AirstrikePower@parabombs:
-		OrderName: LibyanParabombs
-		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites
-			1: radar.libya
-		Icons:
-			1: parabomb
-		ChargeInterval: 6000
-		Descriptions:
-			1: Parabombs
-		LongDescs:
-			1: A squad of Cargo Planes drop parachuted\nbombs on your target.
-		SelectTargetSpeechNotification: SelectTarget
-		UnitTypes:
-			1: pdplane.parabomb
-		SquadSizes:
-			1: 3
-		SquadOffset: -2048, 2048, 0
-		QuantizedFacings: 8
-		CameraActor: CAMERA
-		CameraRemoveDelay: 100
-		DisplayBeacon: True
-		BeaconPosters:
-			1: parbicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
