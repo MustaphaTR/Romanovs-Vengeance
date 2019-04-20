@@ -968,6 +968,8 @@ gaspysat:
 	SupportPowerChargeBar:
 	ProduceActorPower@SatelliteScan:
 		PauseOnCondition: disabled
+		Prerequisites:
+			1: gaspysat
 		Descriptions:
 			1: Satellite Scan
 		LongDescs:
@@ -1039,6 +1041,8 @@ gaweat:
 		Name: Weather Controller
 	DetonateWeaponPower@WeatherStorm:
 		OrderName: WeatherStormInfoOrder
+		Prerequisites:
+			1: gaweat
 		Icons:
 			1: bolticon
 		Cursor: weatherstorm
@@ -1084,6 +1088,8 @@ gacsph:
 		RequiresCondition: !build-incomplete
 	ChronoshiftPower@chronoshift:
 		OrderName: Chronoshift
+		Prerequisites:
+			1: gacsph
 		Icons:
 			1: chrono
 		ChargeInterval: 6000
