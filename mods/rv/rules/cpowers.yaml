@@ -124,6 +124,36 @@ commanders_power.spy_plane:
 	RenderSprites:
 		Image: spyp
 
+commanders_power.emergency_repair.1:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Emergency Repair - Level 1
+	Buildable:
+		Queue: Power.Allies, Power.Soviets
+		BuildPaletteOrder: 50
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Emergency Repair power from Construction Yard.
+
+commanders_power.emergency_repair.2:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Emergency Repair - Level 2
+	Buildable:
+		Queue: Power.Allies, Power.Soviets
+		BuildPaletteOrder: 50
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.1
+		Description: Upgrades Emergency Repair power to Level 2.
+
+commanders_power.emergency_repair.3:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Emergency Repair - Level 3
+	Buildable:
+		Queue: Power.Allies, Power.Soviets
+		BuildPaletteOrder: 50
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.2
+		Description: Upgrades Emergency Repair power to Level 3.
+
 hack.has_points:
 	AlwaysVisible:
 	Interactable:
