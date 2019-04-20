@@ -8,6 +8,22 @@ Player:
 	SupportPowerBotASModule@test:
 		RequiresCondition: enable-test-ai
 		Decisions:
+			scoutdrone:
+				OrderName: AlliedScoutDrone
+				MinimumAttractiveness: 5
+				IgnoreVisibility: true
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
 			airborne:
 				OrderName: AmericanParatroopers
 				MinimumAttractiveness: 5
@@ -69,22 +85,21 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
-			scoutdrone:
-				OrderName: AlliedScoutDrone
-				MinimumAttractiveness: 5
-				IgnoreVisibility: true
+			parabomb:
+				OrderName: SovietParabombs
+				MinimumAttractiveness: 3000
 				Consideration@1:
 					Against: Enemy
 					Types: Structure
 					Attractiveness: 1
-					TargetMetric: None
-					CheckRadius: 8c0
+					TargetMetric: Value
+					CheckRadius: 5c0
 				Consideration@2:
-					Against: Enemy
-					Types: Water
-					Attractiveness: -5
-					TargetMetric: None
-					CheckRadius: 8c0
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 			tesladrop:
 				OrderName: RussianTeslaDrop
 				MinimumAttractiveness: 5
@@ -115,7 +130,7 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
-			parabomb:
+			clustermines:
 				OrderName: CubanClusterMines
 				MinimumAttractiveness: 3000
 				Consideration@1:
@@ -124,21 +139,21 @@ Player:
 					Attractiveness: -1
 					TargetMetric: Value
 					CheckRadius: 5c0
-			parabomb:
-				OrderName: LibyanParabombs
-				MinimumAttractiveness: 3000
+			tesladrop:
+				OrderName: LibyanAmbush
+				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
 					Types: Structure
 					Attractiveness: 1
-					TargetMetric: Value
-					CheckRadius: 5c0
+					TargetMetric: None
+					CheckRadius: 8c0
 				Consideration@2:
-					Against: Ally
-					Types: Air, Ground, Water
-					Attractiveness: -10
-					TargetMetric: Value
-					CheckRadius: 7c0
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
 			nukepower:
 				OrderName: NukePowerInfoOrder
 				MinimumAttractiveness: 3000
@@ -156,7 +171,7 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
-			WeatherStorm:
+			weatherstorm:
 				OrderName: WeatherStormInfoOrder
 				MinimumAttractiveness: 250
 				Types: Ground
