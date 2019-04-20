@@ -184,6 +184,16 @@ commanders_power.parabombs.3:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.2
 		Description: Upgrades Parabombs power to Level 3.
 
+commanders_power.cruiser_strike:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Cruiser Strike
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 150
+		Prerequisites: prerequisite.has_points, prerequisite.5_stars
+		Description: Enables Crusiser Strike power from Construction Yard.
+
 hack.has_points:
 	AlwaysVisible:
 	Interactable:
