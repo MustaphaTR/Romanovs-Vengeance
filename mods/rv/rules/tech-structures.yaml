@@ -112,7 +112,7 @@ caairp:
 		SquadSizes:
 			1: 1
 		CameraActor: camera
-		Prerequisitess:
+		Prerequisites:
 			1: techparadrops.soviets
 		DisplayBeacon: True
 		BeaconPosters:
@@ -415,6 +415,8 @@ capsyb:
 		RequiresCondition: enabled
 		OrderName: TechPsychicControl
 		PauseOnCondition: chronodisable || emp
+		Prerequisites:
+			1: capsyb
 		Icons:
 			1: control
 		ChargeInterval: 4500
@@ -434,3 +436,4 @@ capsyb:
 		PauseOnCondition: !enabled || emp
 	WithIdleOverlay@flag:
 		Sequence: flag
+	ProvidesPrerequisite@buildingname:
