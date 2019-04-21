@@ -100,6 +100,30 @@ commanders_power.inf_training:
 	ProvidesPrerequisite@powername:
 		Prerequisite: vete2flakt
 
+commanders_power.intel_drop:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Intel Drop
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 40
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Intel Drop power.
+	RenderSprites:
+		Image: spy
+
+commanders_power.drone_drop:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Drone Drop
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 40
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Drone Drop power.
+	RenderSprites:
+		Image: dron
+
 commanders_power.scout_drone:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -353,6 +377,64 @@ prerequisite.tesla_fence:
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: spyptarget
 		DirectionArrowAnimation: swdirection
+	ParatroopersPower@inteldrop:
+		OrderName: AlliedIntelDrop
+		Prerequisites:
+			1: commanders_power.intel_drop
+		Icons:
+			1: intel
+		ChargeInterval: 6000
+		Descriptions:
+			1: Intel Drop
+		LongDescs:
+			1: An F-22 Raptor paradrops a spy/nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
+		DropItems:
+			1: spy
+		SquadSizes:
+			1: 1
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		UnitTypes:
+			1: f22drop
+		CameraActor: camera
+		DisplayBeacon: True
+		BeaconPosters:
+			1: spyicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: swtarget
+		DirectionArrowAnimation: swdirection
+	ParatroopersPower@dronedrop:
+		OrderName: SovietDroneDrop
+		Prerequisites:
+			1: commanders_power.drone_drop
+		Icons:
+			1: drondrop
+		ChargeInterval: 6000
+		Descriptions:
+			1: Drone Drop
+		LongDescs:
+			1: A MiG paradrops a Terror Drone/nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
+		DropItems:
+			1: dron
+		SquadSizes:
+			1: 1
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		UnitTypes:
+			1: bplndrop
+		CameraActor: camera
+		DisplayBeacon: True
+		BeaconPosters:
+			1: dronicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: swtarget
+		DirectionArrowAnimation: swdirection
 	SpawnActorPower@sonar:
 		Icons:
 			1: sonar
@@ -383,7 +465,7 @@ prerequisite.tesla_fence:
 		Descriptions:
 			1: Naval Mines
 		LongDescs:
-			1: A Cargo plane drops 5 naval mines\n anywhere on the map.
+			1: A Cargo plane drops 5 naval mines\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		UnitTypes:
 			1: pdplane.naval_mines

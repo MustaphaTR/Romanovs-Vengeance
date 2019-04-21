@@ -558,6 +558,7 @@ snipe:
 
 spy:
 	Inherits: ^Infantry
+	Inherits@2: ^Parachutable
 	Buildable:
 		Queue: Infantry.Allies
 		BuildPaletteOrder: 70
@@ -593,6 +594,7 @@ spy:
 	WithDisguisingInfantryBody:
 		IdleSequences: idle1,idle2
 		StandSequences: stand
+		RequiresCondition: !parachute
 	WithDecoration@disguise:
 		Image: pips
 		Sequence: pip-disguise
@@ -1082,7 +1084,6 @@ cleg:
 		RequiresCondition: affectedbytemporal || chronoed
 
 # Custom Allied Infantry:
-
 medi:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable

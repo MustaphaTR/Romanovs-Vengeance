@@ -420,6 +420,23 @@ pdplanehusk:
 	RenderVoxels:
 		Image: pdplane
 
+bplndrop:
+	Inherits: pdplane
+	Tooltip:
+		Name: MiG
+	-Targetable@Airborne:
+	Aircraft:
+		CanHover: false
+		VTOL: false
+		Repulsable: false
+		Speed: 525
+	ParaDrop:
+		DropRange: 3c0
+	SpawnActorOnDeath:
+		Actor: bplnhusk
+	RenderVoxels:
+		Image: bpln
+
 alplane:
 	Inherits: pdplane
 	SpawnActorOnDeath:
@@ -457,6 +474,21 @@ a10husk:
 		Name: A-10 Thunderbolt
 	RenderVoxels:
 		Image: a10
+
+f22drop:
+	Inherits: alplane
+	Tooltip:
+		Name: F-22 Raptor
+	-Targetable@Airborne:
+	Aircraft:
+		CanHover: false
+		VTOL: false
+		Repulsable: false
+		Speed: 525
+	ParaDrop:
+		DropRange: 3c0
+	RenderVoxels:
+		Image: f22
 
 pdplane.emp:
 	Inherits: alplane
