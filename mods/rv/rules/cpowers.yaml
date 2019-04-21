@@ -108,7 +108,7 @@ commanders_power.scout_drone:
 		Queue: Power.Allies
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points
-		Description: Enables Scout Drone power from Construction Yard.
+		Description: Enables Scout Drone power.
 	RenderSprites:
 		Image: sdrn
 
@@ -120,7 +120,7 @@ commanders_power.spy_plane:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points
-		Description: Enables Spy Plane power from Construction Yard.
+		Description: Enables Spy Plane power.
 	RenderSprites:
 		Image: spyp
 
@@ -132,7 +132,7 @@ commanders_power.emergency_repair.1:
 		Queue: Power.Allies, Power.Soviets
 		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Emergency Repair power from Construction Yard.
+		Description: Enables Emergency Repair.
 
 commanders_power.emergency_repair.2:
 	Inherits: ^default.commanders_power
@@ -162,7 +162,7 @@ commanders_power.a10_strike.1:
 		Queue: Power.Allies
 		BuildPaletteOrder: 80
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables A-10 Strike power from Construction Yard.
+		Description: Enables A-10 Strike power.
 
 commanders_power.a10_strike.2:
 	Inherits: ^default.commanders_power
@@ -192,7 +192,7 @@ commanders_power.parabombs.1:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 80
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Parabombs power from Construction Yard.
+		Description: Enables Parabombs power from.
 
 commanders_power.parabombs.2:
 	Inherits: ^default.commanders_power
@@ -222,7 +222,7 @@ commanders_power.cruiser_strike:
 		Queue: Power.Allies
 		BuildPaletteOrder: 150
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
-		Description: Enables Crusiser Strike power from Construction Yard.
+		Description: Enables Crusiser Strike power.
 
 hack.has_points:
 	AlwaysVisible:
@@ -285,3 +285,185 @@ prerequisite.airpad:
 
 prerequisite.tesla_fence:
 	Inherits: ^default.commanders_power_prerequisite
+
+^CommandersPowers:
+	SpawnActorPower@SCOUT_DRONE:
+		OrderName: AlliedScoutDrone
+		PauseOnCondition: chronodisable
+		Actors:
+			1: sdrn
+		Prerequisites:
+			1: commanders_power.scout_drone
+		LifeTime: -1
+		ChargeInterval: 3000
+		Icons:
+			1: sdrn
+		Cursor: spyplane
+		StartFullyCharged: true
+		Descriptions:
+			1: Scout Drone
+		LongDescs:
+			1: Spawns a Scout Drone anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+	AirstrikePower@spyplane:
+		OrderName: SovietSpyPlane
+		PauseOnCondition: chronodisable
+		Prerequisites:
+			1: commanders_power.spy_plane
+		Icons:
+			1: spyplane
+		Cursor: spyplane
+		ChargeInterval: 3000
+		StartFullyCharged: true
+		Descriptions:
+			1: Spy Plane
+		LongDescs:
+			1: Reveals an area of the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: SpyPlaneReady
+		UnitTypes:
+			1: spyp
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		DisplayBeacon: True
+		BeaconPosters:
+			1: spypicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: spyptarget
+		DirectionArrowAnimation: swdirection
+	DetonateWeaponPower@emergencyrepair:
+		OrderName: EmergencyRepair
+		PauseOnCondition: disabled || chronodisable || emp
+		Prerequisites:
+			1: commanders_power.emergency_repair.1
+			2: commanders_power.emergency_repair.2
+			3: commanders_power.emergency_repair.3
+		Icons:
+			1: repair1
+			2: repair2
+			3: repair3
+		Cursor: repair
+		ChargeInterval: 3750
+		StartFullyCharged: true
+		Descriptions:
+			1: Emergency Repair
+			2: Emergency Repair
+			3: Emergency Repair
+		LongDescs:
+			1: Repairs 40% health of vehicles and structures in 6 cell range.
+			2: Repairs 70% health of vehicles and structures in 8 cell range.
+			3: Fully repairs vehicles and structures in 10 cell range.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: EmergencyRepair1
+			2: EmergencyRepair2
+			3: EmergencyRepair3
+		ActivationSequence:
+	AirstrikePower@a10strike:
+		OrderName: AlliedA10Strike
+		PauseOnCondition: disabled || chronodisable || emp
+		Prerequisites
+			1: commanders_power.a10_strike.1
+			2: commanders_power.a10_strike.2
+			3: commanders_power.a10_strike.3
+		Icons:
+			1: a101
+			2: a102
+			3: a103
+		ChargeInterval: 6000
+		StartFullyCharged: true
+		Descriptions:
+			1: A-10 Strike
+			2: A-10 Strike
+			3: A-10 Strike
+		LongDescs:
+			1: 1 A-10 Thunderbolt strikes anywhere on the map.
+			2: 2 A-10 Thunderbolts strike anywhere on the map.
+			3: 3 A-10 Thunderbolts strike anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitTypes:
+			1: a10
+			2: a10
+			3: a10
+		SquadSizes:
+			1: 1
+			2: 2
+			3: 3
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: a101icon
+			2: a102icon
+			3: a103icon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: swtarget
+		DirectionArrowAnimation: swdirection
+	AirstrikePower@parabombs:
+		OrderName: SovietParabombs
+		PauseOnCondition: disabled || chronodisable || emp
+		Prerequisites
+			1: commanders_power.parabombs.1
+			2: commanders_power.parabombs.2
+			3: commanders_power.parabombs.3
+		Icons:
+			1: parabomb1
+			2: parabomb2
+			3: parabomb3
+		ChargeInterval: 6000
+		StartFullyCharged: true
+		Descriptions:
+			1: Parabombs
+			2: Parabombs
+			3: Parabombs
+		LongDescs:
+			1: A Cargo Plane drop parachuted\nbombs on your target.
+			2: 2 Cargo Planes drop parachuted\nbombs on your target.
+			3: 3 Cargo Planes drop parachuted\nbombs on your target.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitTypes:
+			1: pdplane.parabomb
+			2: pdplane.parabomb
+			3: pdplane.parabomb
+		SquadSizes:
+			1: 1
+			2: 2
+			3: 3
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: parb1icon
+			2: parb2icon
+			3: parb3icon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: swtarget
+		DirectionArrowAnimation: swdirection
+	DetonateWeaponPower@cruiserstrike:
+		OrderName: AlliedCruiserStrike
+		PauseOnCondition: chronodisable
+		Prerequisites:
+			1: commanders_power.cruiser_strike
+		Icons:
+			1: cruiser
+		ChargeInterval: 6000
+		CameraRange: 10c0
+		CameraRemoveDelay: 300
+		StartFullyCharged: true
+		Descriptions:
+			1: Cruiser Strike
+		LongDescs:
+			1: Cruisers from out of the map bombards\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: CrusierStrikeInit
+		AirburstAltitude: 10c0
+		ActivationSequence:

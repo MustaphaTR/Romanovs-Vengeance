@@ -73,33 +73,6 @@
 		PauseOnCondition: build-incomplete || chronodisable
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability
-	DetonateWeaponPower@emergencyrepair:
-		OrderName: EmergencyRepair
-		PauseOnCondition: disabled || chronodisable || emp
-		Prerequisites:
-			1: commanders_power.emergency_repair.1
-			2: commanders_power.emergency_repair.2
-			3: commanders_power.emergency_repair.3
-		Icons:
-			1: repair1
-			2: repair2
-			3: repair3
-		Cursor: repair
-		ChargeInterval: 3750
-		Descriptions:
-			1: Emergency Repair
-			2: Emergency Repair
-			3: Emergency Repair
-		LongDescs:
-			1: Repairs 40% health of vehicles and structures in 6 cell range.
-			2: Repairs 70% health of vehicles and structures in 8 cell range.
-			3: Fully repairs vehicles and structures in 10 cell range.
-		SelectTargetSpeechNotification: SelectTarget
-		Weapons:
-			1: EmergencyRepair1
-			2: EmergencyRepair2
-			3: EmergencyRepair3
-		ActivationSequence:
 
 ^WarFactory:
 	Inherits: ^BaseBuilding
