@@ -489,3 +489,38 @@ ASWBomb:
 		Explosions: small_grey_explosion
 		ExplosionPalette: effect
 	-Warhead@4Smu: LeaveSmudge
+
+A10Missile:
+	Inherits: ^Missile
+	ReloadDelay: 12
+	Range: 8c768
+	Report: vmigatta.wav
+	Projectile: Missile
+		Speed: 256
+		Inaccuracy: 128
+		CruiseAltitude: 2c0
+		RangeLimit: 11c410
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c256
+		Damage: 100
+		Versus:
+			None: 90
+			Flak: 90
+			Plate: 70
+			Light: 90
+			Medium: 70
+			Heavy: 70
+			Wood: 75
+			Steel: 50
+			Concrete: 65
+			Drone: 60
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: verylarge_clsn
+		ImpactSounds: gexp14a.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: huge_watersplash
+		ImpactSounds: gexpwala.wav
+		ValidTargets: Water

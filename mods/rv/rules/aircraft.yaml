@@ -438,6 +438,26 @@ pdplane.parabomb:
 		Weapon: ParaBomb
 	AttackBomber:
 
+a10:
+	Inherits: alplane
+	Tooltip:
+		Name: A-10 Thunderbolt
+	Armament:
+		Weapon: A10Missile
+		LocalOffset: 0,512,0, 0,-512,0
+	AttackBomber:
+	SpawnActorOnDeath:
+		Actor: a10husk
+	RenderVoxels:
+		Image: a10
+
+a10husk:
+	Inherits: pdplanehusk
+	Tooltip:
+		Name: A-10 Thunderbolt
+	RenderVoxels:
+		Image: a10
+
 pdplane.emp:
 	Inherits: alplane
 	Armament:
