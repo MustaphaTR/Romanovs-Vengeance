@@ -106,7 +106,7 @@ commanders_power.scout_drone:
 		Name: Scout Drone
 	Buildable:
 		Queue: Power.Allies
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points
 		Description: Enables Scout Drone power.
 	RenderSprites:
@@ -118,11 +118,31 @@ commanders_power.spy_plane:
 		Name: Spy Plane
 	Buildable:
 		Queue: Power.Soviets
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points
 		Description: Enables Spy Plane power.
 	RenderSprites:
 		Image: spyp
+
+commanders_power.sonar_pulse:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Scout Drone
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 60
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Sonar Pulse power.
+
+commanders_power.naval_mines:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Naval Mines
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 60
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Naval Mines power.
 
 commanders_power.emergency_repair.1:
 	Inherits: ^default.commanders_power
@@ -130,7 +150,7 @@ commanders_power.emergency_repair.1:
 		Name: Emergency Repair - Level 1
 	Buildable:
 		Queue: Power.Allies, Power.Soviets
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 70
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Emergency Repair.
 
@@ -140,7 +160,7 @@ commanders_power.emergency_repair.2:
 		Name: Emergency Repair - Level 2
 	Buildable:
 		Queue: Power.Allies, Power.Soviets
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 80
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.1
 		Description: Upgrades Emergency Repair power to Level 2.
 
@@ -150,7 +170,7 @@ commanders_power.emergency_repair.3:
 		Name: Emergency Repair - Level 3
 	Buildable:
 		Queue: Power.Allies, Power.Soviets
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 90
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.2
 		Description: Upgrades Emergency Repair power to Level 3.
 
@@ -160,7 +180,7 @@ commanders_power.a10_strike.1:
 		Name: A-10 Strike - Level 1
 	Buildable:
 		Queue: Power.Allies
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables A-10 Strike power.
 
@@ -170,7 +190,7 @@ commanders_power.a10_strike.2:
 		Name: A-10 Strike - Level 2
 	Buildable:
 		Queue: Power.Allies
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.a10_strike.1
 		Description: Upgrades A-10 Strike power to Level 2.
 
@@ -180,7 +200,7 @@ commanders_power.a10_strike.3:
 		Name: A-10 Strike - Level 3
 	Buildable:
 		Queue: Power.Allies
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.a10_strike.2
 		Description: Upgrades A-10 Strike power to Level 3.
 
@@ -190,7 +210,7 @@ commanders_power.parabombs.1:
 		Name: Parabombs - Level 1
 	Buildable:
 		Queue: Power.Soviets
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Parabombs power from.
 
@@ -200,7 +220,7 @@ commanders_power.parabombs.2:
 		Name: Parabombs - Level 2
 	Buildable:
 		Queue: Power.Soviets
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.1
 		Description: Upgrades Parabombs power to Level 2.
 
@@ -210,7 +230,7 @@ commanders_power.parabombs.3:
 		Name: Parabombs - Level 3
 	Buildable:
 		Queue: Power.Soviets
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.2
 		Description: Upgrades Parabombs power to Level 3.
 
@@ -220,7 +240,7 @@ commanders_power.cruiser_strike:
 		Name: Cruiser Strike
 	Buildable:
 		Queue: Power.Allies
-		BuildPaletteOrder: 150
+		BuildPaletteOrder: 170
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Crusiser Strike power.
 
@@ -332,6 +352,50 @@ prerequisite.tesla_fence:
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: spyptarget
+		DirectionArrowAnimation: swdirection
+	SpawnActorPower@sonar:
+		Icons:
+			1: sonar
+		Cursor: reveal
+		Prerequisites:
+			1: commanders_power.sonar_pulse
+		StartFullyCharged: true
+		Descriptions:
+			1: Sonar Pulse
+		LongDescs:
+			1: Reveals all submarines and naval mines in a\nlarge area for a short time.
+		ChargeInterval: 1000
+		SelectTargetSpeechNotification: SelectTarget
+		Actors:
+			1: sonar
+		LifeTime: 375
+		DeploySound: sonpulse.aud
+		EffectImage: moveflsh
+		EffectPalette: moveflash
+	AirstrikePower@navalmines:
+		OrderName: SovietNavalMines
+		Icons:
+			1: navalmines
+		Prerequisites:
+			1: commanders_power.naval_mines
+		ChargeInterval: 3000
+		StartFullyCharged: true
+		Descriptions:
+			1: Naval Mines
+		LongDescs:
+			1: A Cargo plane drops 5 naval mines\n anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitTypes:
+			1: pdplane.naval_mines
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		DisplayBeacon: True
+		BeaconPosters:
+			1: nmineicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: swtarget
 		DirectionArrowAnimation: swdirection
 	DetonateWeaponPower@emergencyrepair:
 		OrderName: EmergencyRepair
