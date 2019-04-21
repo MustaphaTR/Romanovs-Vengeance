@@ -154,6 +154,36 @@ commanders_power.emergency_repair.3:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.2
 		Description: Upgrades Emergency Repair power to Level 3.
 
+commanders_power.a10_strike.1:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: A-10 Strike - Level 1
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 80
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables A-10 Strike power from Construction Yard.
+
+commanders_power.a10_strike.2:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: A-10 Strike - Level 2
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 90
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.a10_strike.1
+		Description: Upgrades A-10 Strike power to Level 2.
+
+commanders_power.a10_strike.3:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: A-10 Strike - Level 3
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 100
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.a10_strike.2
+		Description: Upgrades A-10 Strike power to Level 3.
+
 commanders_power.parabombs.1:
 	Inherits: ^default.commanders_power
 	Tooltip:

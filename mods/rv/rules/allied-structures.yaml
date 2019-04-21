@@ -87,6 +87,48 @@ gacnst:
 		LongDescs:
 			1: Spawns a Scout Drone anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+	AirstrikePower@a10strike:
+		OrderName: AlliedA10Strike
+		PauseOnCondition: disabled || chronodisable || emp
+		Prerequisites
+			1: commanders_power.a10_strike.1
+			2: commanders_power.a10_strike.2
+			3: commanders_power.a10_strike.3
+		Icons:
+			1: a101
+			2: a102
+			3: a103
+		ChargeInterval: 6000
+		Descriptions:
+			1: A-10 Strike
+			2: A-10 Strike
+			3: A-10 Strike
+		LongDescs:
+			1: 1 A-10 Thunderbolt strikes anywhere on the map.
+			2: 2 A-10 Thunderbolts strike anywhere on the map.
+			3: 3 A-10 Thunderbolts strike anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitTypes:
+			1: a10
+			2: a10
+			3: a10
+		SquadSizes:
+			1: 1
+			2: 2
+			3: 3
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: a101icon
+			2: a102icon
+			3: a103icon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		TargetPlaceholderCursorAnimation: swtarget
+		DirectionArrowAnimation: swdirection
 	DetonateWeaponPower@cruiserstrike:
 		OrderName: AlliedCruiserStrike
 		PauseOnCondition: chronodisable
