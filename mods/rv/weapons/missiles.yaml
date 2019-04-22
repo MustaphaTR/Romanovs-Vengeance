@@ -524,3 +524,71 @@ A10Missile:
 		Explosions: huge_watersplash
 		ImpactSounds: gexpwala.wav
 		ValidTargets: Water
+
+V3StormInit:
+	Projectile: InstantExplode
+	ReloadDelay: 1
+	Warhead@1: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Sequences: inviso
+		Palette: effect
+		Weapon: V3StormRandomInit
+		Duration: 150
+		Delay: 25
+
+V3StormRandomInit:
+	ReloadDelay: 10
+	Projectile: InstantHit
+	Warhead@barrage3: FireShrapnel
+		Weapon: V3StormCloud
+		Amount: 1
+		AimChance: 50
+		ValidTargets: Air, Ground, Water
+
+V3StormCloud:
+	ReloadDelay: 120
+	Range: 7c0
+	Projectile: AthenaProjectile
+		Altitude: 25c0
+	Warhead@1: FireFragment
+		UseZOffsetAsAbsoluteHeight: true
+		Weapon: V3StormStrike
+		ValidTargets: Air, Ground, Water
+		Delay: 15
+	Warhead@TargetValidation: SpreadDamage
+
+V3StormStrike:
+	Inherits: ^LargeBullet
+	Range: 2c0
+	ReloadDelay: 10
+	Report: vv3latta.wav, vv3lattb.wav
+	Projectile: BulletAS
+		Image: radiationmissile
+		Sequences: down
+		Palette: player
+		IsPlayerPalette: true
+		Shadow: false
+		Speed: 640
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c448
+		Falloff: 100, 75, 50, 25, 0
+		Damage: 150
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 80
+			Light: 100
+			Medium: 70
+			Heavy: 70
+			Wood: 100
+			Steel: 100
+			Concrete: 90
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: gexpapoa.wav
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwala.wav

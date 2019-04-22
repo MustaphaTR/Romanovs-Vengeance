@@ -322,39 +322,39 @@ ATGUNE:
 			Plate: 100
 			Light: 100
 
-CrusierStrikeInit:
+CruiserStrikeInit:
 	Projectile: InstantExplode
 	ReloadDelay: 1
 	Warhead@1: SpawnSmokeParticle
 		ValidTargets: Ground, Air, Water
 		Sequences: inviso
 		Palette: effect
-		Weapon: CrusierStrikeRandomInit
+		Weapon: CruiserStrikeRandomInit
 		Duration: 150
 		Delay: 25
 
-CrusierStrikeRandomInit:
+CruiserStrikeRandomInit:
 	Projectile: InstantHit
 	ReloadDelay: 8
 	Warhead@barrage3: FireShrapnel
-		Weapon: CrusierCloud
+		Weapon: CruiserCloud
 		Amount: 2
 		AimChance: 50
 		ValidTargets: Air, Ground, Water
 
-CrusierCloud:
+CruiserCloud:
 	ReloadDelay: 120
 	Range: 7c0
 	Projectile: AthenaProjectile
-		Altitude: 10c0
+		Altitude: 25c0
 	Warhead@1: FireFragment
 		UseZOffsetAsAbsoluteHeight: true
-		Weapon: CrusierStrike
+		Weapon: CruiserStrike
 		ValidTargets: Air, Ground, Water
 		Delay: 15
 	Warhead@TargetValidation: SpreadDamage
 
-CrusierStrike:
+CruiserStrike:
 	Inherits: ^LargeBullet
 	Range: 2c0
 	ReloadDelay: 10
