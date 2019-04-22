@@ -268,6 +268,16 @@ commanders_power.cruiser_strike:
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Crusiser Strike power.
 
+commanders_power.v3_storm:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: V3 Storm
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 170
+		Prerequisites: prerequisite.has_points, prerequisite.5_stars
+		Description: Enables V3 Storm power.
+
 hack.has_points:
 	AlwaysVisible:
 	Interactable:
@@ -602,7 +612,7 @@ prerequisite.tesla_fence:
 			1: cruiser
 		ChargeInterval: 6000
 		CameraRange: 10c0
-		CameraRemoveDelay: 300
+		CameraRemoveDelay: 400
 		StartFullyCharged: true
 		Descriptions:
 			1: Cruiser Strike
@@ -610,6 +620,26 @@ prerequisite.tesla_fence:
 			1: Cruisers from out of the map bombards\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		Weapons:
-			1: CrusierStrikeInit
-		AirburstAltitude: 10c0
+			1: CruiserStrikeInit
+		AirburstAltitude: 25c0
+		ActivationSequence:
+	DetonateWeaponPower@v3storm:
+		OrderName: SovietV3Storm
+		PauseOnCondition: chronodisable
+		Prerequisites:
+			1: commanders_power.v3_storm
+		Icons:
+			1: v3storm
+		ChargeInterval: 6000
+		CameraRange: 10c0
+		CameraRemoveDelay: 400
+		StartFullyCharged: true
+		Descriptions:
+			1: V3 Storm
+		LongDescs:
+			1: V3 Launchers from out of the map bombards\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: V3StormInit
+		AirburstAltitude: 25c0
 		ActivationSequence:
