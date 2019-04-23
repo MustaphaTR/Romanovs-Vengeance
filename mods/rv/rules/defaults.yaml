@@ -306,8 +306,40 @@
 		RequiresCondition: leaflet
 		ZOffset: 256
 		ValidStances: Ally, Enemy, Neutral
-	ExternalCondition@LEAFLET
+	ExternalCondition@LEAFLET:
 		Condition: leaflet
+
+^AffectedByPropaganda:
+	FirepowerMultiplier@PROPAGANDA1:
+		Modifier: 125
+		RequiresCondition: propaganda1
+	FirepowerMultiplier@PROPAGANDA2:
+		Modifier: 150
+		RequiresCondition: propaganda2
+	FirepowerMultiplier@PROPAGANDA3:
+		Modifier: 175
+		RequiresCondition: propaganda3
+	ReloadDelayMultiplier@PROPAGANDA1:
+		Modifier: 80
+		RequiresCondition: propaganda1
+	ReloadDelayMultiplier@PROPAGANDA2:
+		Modifier: 67
+		RequiresCondition: propaganda2
+	ReloadDelayMultiplier@PROPAGANDA3:
+		Modifier: 57
+		RequiresCondition: propaganda3
+	SpeedMultiplier@PROPAGANDA:
+		Modifier: 80
+		RequiresCondition: propaganda1 || propaganda2 || propaganda3
+	WithColoredOverlay@PROPAGANDA:
+		Palette: propaganda
+		RequiresCondition: propaganda1 || propaganda2 || propaganda3
+	ExternalCondition@PROPAGANDA1:
+		Condition: propaganda1
+	ExternalCondition@PROPAGANDA2:
+		Condition: propaganda2
+	ExternalCondition@PROPAGANDA3:
+		Condition: propaganda3
 
 ^DamagedByRadiation100Percent:
 	DamagedByTintedCells:
@@ -1060,6 +1092,7 @@
 	Inherits@8: ^DamagedByRadiation100Percent
 	Inherits@9: ^AcceptsIvanBomb
 	Inherits@10: ^AffectedByLeaflets
+	Inherits@11: ^AffectedByPropaganda
 	Health:
 	OwnerLostAction:
 		Action: Kill
@@ -1353,6 +1386,7 @@
 	Inherits@11: ^VehicleParticles
 	Inherits@12: ^ParachutableVehicle
 	Inherits@13: ^AffectedByLeaflets
+	Inherits@14: ^AffectedByPropaganda
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath
@@ -1629,6 +1663,7 @@
 	Inherits@10: ^AffectedByIndustrialPlant
 	Inherits@11: ^VehicleParticles
 	Inherits@12: ^AffectedByLeaflets
+	Inherits@13: ^AffectedByPropaganda
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath
