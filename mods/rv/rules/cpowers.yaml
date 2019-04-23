@@ -258,13 +258,43 @@ commanders_power.parabombs.3:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.2
 		Description: Upgrades Parabombs power to Level 3.
 
+commanders_power.propaganda.1:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Propaganda - Level 1
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 130
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Propaganda power from.
+
+commanders_power.propaganda.2:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Propaganda - Level 2
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 140
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.propaganda.1
+		Description: Upgrades Propaganda power to Level 2.
+
+commanders_power.propaganda.3:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Propaganda - Level 3
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 150
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.propaganda.2
+		Description: Upgrades Propaganda power to Level 3.
+
 commanders_power.cruiser_strike:
 	Inherits: ^default.commanders_power
 	Tooltip:
 		Name: Cruiser Strike
 	Buildable:
 		Queue: Power.Allies
-		BuildPaletteOrder: 170
+		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Crusiser Strike power.
 
@@ -274,7 +304,7 @@ commanders_power.v3_storm:
 		Name: V3 Storm
 	Buildable:
 		Queue: Power.Soviets
-		BuildPaletteOrder: 170
+		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables V3 Storm power.
 
@@ -603,6 +633,40 @@ prerequisite.tesla_fence:
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
 		DirectionArrowAnimation: swdirection
+	GrantExternalConditionPower@propaganda:
+		OrderName: SovietPropaganda
+		PauseOnCondition: disabled || chronodisable || emp
+		Prerequisites:
+			1: commanders_power.propaganda.1
+			2: commanders_power.propaganda.2
+			3: commanders_power.propaganda.3
+		Icons:
+			1: propaganda1
+			2: propaganda2
+			3: propaganda3
+		ChargeInterval: 4500
+		Descriptions:
+			1: Propaganda
+			2: Propaganda
+			3: Propaganda
+		LongDescs:
+			1: Makes a group of units fire faster and deal more damage by 25%\nbut slows them down by 20%.\nEffect lasts for 20 seconds.
+			2: Makes a group of units fire faster and deal more damage by 50%\nbut slows them down by 20%.\nEffect lasts for 20 seconds.
+			3: Makes a group of units fire faster and deal more damage by 75%\nbut slows them down by 20%.\nEffect lasts for 20 seconds.
+		Durations:
+			1: 500
+			2: 500
+			3: 500
+		Conditions:
+			1: propaganda1
+			2: propaganda2
+			3: propaganda3
+		Ranges:
+			1: 2
+			2: 2
+			3: 2
+		OnFireSound: sfrenzya.wav
+		SelectTargetSpeechNotification: SelectTarget
 	DetonateWeaponPower@cruiserstrike:
 		OrderName: AlliedCruiserStrike
 		PauseOnCondition: chronodisable
