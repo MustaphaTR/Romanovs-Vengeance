@@ -41,7 +41,7 @@ namespace OpenRA.Mods.RA2.Activities
 			if (master.IsDead)
 				return;
 
-            OnCancel(self); // Stop slaves from exiting.
+            Cancel(self); // Stop slaves from exiting.
 
 			// Load this thingy.
 			// Issue attack move to the rally point.
