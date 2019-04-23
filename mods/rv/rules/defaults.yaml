@@ -341,6 +341,35 @@
 	ExternalCondition@PROPAGANDA3:
 		Condition: propaganda3
 
+^AffectedByChronoBoost:
+	ReloadDelayMultiplier@BOOST1:
+		Modifier: 80
+		RequiresCondition: boost1
+	ReloadDelayMultiplier@BOOST2:
+		Modifier: 67
+		RequiresCondition: boost2
+	ReloadDelayMultiplier@BOOST3:
+		Modifier: 57
+		RequiresCondition: boost3
+	SpeedMultiplier@BOOST1:
+		Modifier: 125
+		RequiresCondition: boost1
+	SpeedMultiplier@BOOST2:
+		Modifier: 150
+		RequiresCondition: boost2
+	SpeedMultiplier@BOOST3:
+		Modifier: 175
+		RequiresCondition: boost3
+	WithColoredOverlay@BOOST:
+		Palette: boost
+		RequiresCondition: boost1 || boost2 || boost3
+	ExternalCondition@BOOST1:
+		Condition: boost1
+	ExternalCondition@BOOST2:
+		Condition: boost2
+	ExternalCondition@BOOST3:
+		Condition: boost3
+
 ^DamagedByRadiation100Percent:
 	DamagedByTintedCells:
 		Damage: 1
@@ -1093,6 +1122,7 @@
 	Inherits@9: ^AcceptsIvanBomb
 	Inherits@10: ^AffectedByLeaflets
 	Inherits@11: ^AffectedByPropaganda
+	Inherits@12: ^AffectedByChronoBoost
 	Health:
 	OwnerLostAction:
 		Action: Kill
@@ -1387,6 +1417,7 @@
 	Inherits@12: ^ParachutableVehicle
 	Inherits@13: ^AffectedByLeaflets
 	Inherits@14: ^AffectedByPropaganda
+	Inherits@13: ^AffectedByChronoBoost
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath
@@ -1664,6 +1695,7 @@
 	Inherits@11: ^VehicleParticles
 	Inherits@12: ^AffectedByLeaflets
 	Inherits@13: ^AffectedByPropaganda
+	Inherits@14: ^AffectedByChronoBoost
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath

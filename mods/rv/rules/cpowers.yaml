@@ -236,7 +236,7 @@ commanders_power.parabombs.1:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Parabombs power from.
+		Description: Enables Parabombs power.
 
 commanders_power.parabombs.2:
 	Inherits: ^default.commanders_power
@@ -258,6 +258,36 @@ commanders_power.parabombs.3:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.2
 		Description: Upgrades Parabombs power to Level 3.
 
+commanders_power.chrono_boost.1:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Chrono Boost - Level 1
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 130
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Chrono Boost power.
+
+commanders_power.chrono_boost.2:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Chrono Boost - Level 2
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 140
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.chrono_boost.1
+		Description: Upgrades Chrono Boost power to Level 2.
+
+commanders_power.chrono_boost.3:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Chrono Boost - Level 3
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 150
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.chrono_boost.2
+		Description: Upgrades Chrono Boost power to Level 3.
+
 commanders_power.propaganda.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -266,7 +296,7 @@ commanders_power.propaganda.1:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 130
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Propaganda power from.
+		Description: Enables Propaganda power.
 
 commanders_power.propaganda.2:
 	Inherits: ^default.commanders_power
@@ -592,7 +622,6 @@ prerequisite.tesla_fence:
 		DirectionArrowAnimation: swdirection
 	AirstrikePower@parabombs:
 		OrderName: SovietParabombs
-		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites
 			1: commanders_power.parabombs.1
 			2: commanders_power.parabombs.2
@@ -633,9 +662,41 @@ prerequisite.tesla_fence:
 		ClockSequence: clock
 		TargetPlaceholderCursorAnimation: swtarget
 		DirectionArrowAnimation: swdirection
+	GrantExternalConditionPower@chrono_boost:
+		OrderName: AlliedChronoBoost
+		Prerequisites:
+			1: commanders_power.chrono_boost.1
+			2: commanders_power.chrono_boost.2
+			3: commanders_power.chrono_boost.3
+		Icons:
+			1: boost1
+			2: boost2
+			3: boost3
+		ChargeInterval: 3750
+		Descriptions:
+			1: chrono_boost
+			2: chrono_boost
+			3: chrono_boost
+		LongDescs:
+			1: Makes a group of units move and fire faster by 25%\nEffect lasts for 20 seconds.
+			2: Makes a group of units move and fire faster by 50%\nEffect lasts for 20 seconds.
+			3: Makes a group of units move and fire faster by 75%\nEffect lasts for 20 seconds.
+		Durations:
+			1: 500
+			2: 500
+			3: 500
+		Conditions:
+			1: boost1
+			2: boost2
+			3: boost3
+		Ranges:
+			1: 2
+			2: 2
+			3: 2
+		OnFireSound: gcraspee.wav
+		SelectTargetSpeechNotification: SelectTarget
 	GrantExternalConditionPower@propaganda:
 		OrderName: SovietPropaganda
-		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites:
 			1: commanders_power.propaganda.1
 			2: commanders_power.propaganda.2
@@ -644,7 +705,7 @@ prerequisite.tesla_fence:
 			1: propaganda1
 			2: propaganda2
 			3: propaganda3
-		ChargeInterval: 4500
+		ChargeInterval: 3750
 		Descriptions:
 			1: Propaganda
 			2: Propaganda
