@@ -145,6 +145,21 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
+			dronedrop:
+				OrderName: SovietDroneDrop
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
 			parabomb:
 				OrderName: SovietParabombs
 				MinimumAttractiveness: 3000
@@ -330,7 +345,7 @@ Player:
 		McvFactoryTypes: gaweap, naweap
 	UnitBuilderBotModule@test:
 		RequiresCondition: enable-test-ai
-		UnitQueues: Infantry.Allies, Infantry.Soviets, Vehicle.Allies, Vehicle.Soviets, Aircraft.Allies, Aircraft.Soviets, Ship.Allies, Ship.Soviets
+		UnitQueues: Infantry.Allies, Infantry.Soviets, Vehicle.Allies, Vehicle.Soviets, Aircraft.Allies, Aircraft.Soviets, Ship.Allies, Ship.Soviets, Powers.Allies, Powers.Soviets
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -338,6 +353,7 @@ Player:
 			flakt: 20
 			ggi: 20
 			shk: 20
+			gren: 20
 			ivan: 6
 			ghost: 4
 			jumpjet: 4
@@ -360,6 +376,19 @@ Player:
 			apoc: 20
 			tnkd: 30
 			ttnk: 30
+			commanders_power.grenadier: 1
+			commanders_power.inf_training: 1
+			commanders_power.drone_drop: 1
+			commanders_power.spy_plane: 1
+			commanders_power.scout_drone: 1
+			commanders_power.a10_strike.1: 1
+			commanders_power.a10_strike.2: 1
+			commanders_power.a10_strike.3: 1
+			commanders_power.parabombs.1: 1
+			commanders_power.parabombs.2: 1
+			commanders_power.parabombs.3: 1
+			commanders_power.cruiser_strike: 1
+			commanders_power.v3_strorm: 1
 		UnitLimits:
 			dog: 4
 			cmin: 8
