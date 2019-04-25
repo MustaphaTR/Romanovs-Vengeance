@@ -315,7 +315,7 @@ naradr:
 	Armor:
 		Type: Wood
 	ProvidesRadar:
-		RequiresCondition: !disabled && !chronodisable && !emp
+		RequiresCondition: !disabled && !chronodisable
 	RevealsShroud:
 		Range: 10c0
 	RevealsShroudToIntelligenceOwner:
@@ -324,7 +324,7 @@ naradr:
 	SupportPowerChargeBar:
 	ParatroopersPower@tesladrop:
 		OrderName: RussianTeslaDrop
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.russia
 		Icons:
@@ -357,7 +357,7 @@ naradr:
 	NukePower@radiationmissile:
 		OrderName: IraqiRadMissile
 		Cursor: nuke
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.iraq
 		Icons:
@@ -382,7 +382,7 @@ naradr:
 		ClockSequence: clock
 	DetonateWeaponPower@instanbunker:
 		OrderName: VietnameseInstantBunker
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.vietnam
 		Icons:
@@ -398,7 +398,7 @@ naradr:
 		ActivationSequence:
 	DetonateWeaponPower@ambush:
 		OrderName: LibyanAmbush
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.libya
 		Icons:
@@ -414,7 +414,7 @@ naradr:
 		ActivationSequence:
 	AirstrikePower@clustermines:
 		OrderName: CubanClusterMines
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.cuba
 		Icons:
@@ -442,7 +442,7 @@ naradr:
 		DirectionArrowPalette: mouse
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -803,6 +803,7 @@ naclon:
 napsis:
 	Inherits: ^BaseBuilding
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
@@ -963,8 +964,8 @@ nawall:
 naflak:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets
@@ -1017,8 +1018,8 @@ naflak:
 tesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets
@@ -1270,8 +1271,8 @@ nagateb:
 
 napost:
 	Inherits: ^BaseBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 40
@@ -1300,14 +1301,14 @@ napost:
 		Range: 4c0
 	WithIdleOverlay@LIGHTS:
 		Sequence: lights
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@CHAINOFLIGHTS:
 		Sequence: chainoflights
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	LineBuildSegmentExternalCondition:
-		RequiresCondition: !build-incomplete && !disabled && !emp
+		RequiresCondition: !build-incomplete && !disabled
 		Condition: active-posts
 
 nafnce:

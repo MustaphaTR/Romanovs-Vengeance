@@ -316,8 +316,8 @@ garefn:
 
 gaairc:
 	Inherits: ^BaseBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x2Shape
 	Buildable:
@@ -365,7 +365,7 @@ gaairc:
 	Armor:
 		Type: Wood
 	ProvidesRadar:
-		RequiresCondition: !disabled && !chronodisable && !emp
+		RequiresCondition: !disabled && !chronodisable
 	RevealsShroud:
 		Range: 10c0
 	RevealsShroudToIntelligenceOwner:
@@ -385,7 +385,7 @@ gaairc:
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@dish:
 		Sequence: idle-dish
-		PauseOnCondition: lowpower || chronodisable
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
@@ -410,7 +410,7 @@ gaairc:
 		MoveIntoWorld: false
 	Production:
 		Produces: Aircraft.Allies
-		PauseOnCondition: powerdown || chronodisable || emp
+		PauseOnCondition: powerdown || chronodisable
 	ProductionQueue:
 		Type: Aircraft.Allies
 		Group: Aircraft
@@ -428,7 +428,7 @@ gaairc:
 	SupportPowerChargeBar:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.america
 		Icons:
@@ -460,7 +460,7 @@ gaairc:
 		DirectionArrowPalette: mouse
 	AirstrikePower@leafletdrop:
 		OrderName: BritishLeafletDrop
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.england
 		Icons:
@@ -490,7 +490,7 @@ gaairc:
 		DirectionArrowPalette: mouse
 	DetonateWeaponPower@chronogrizzly:
 		OrderName: GermanChronoGrizzly
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.germany
 		Icons:
@@ -506,7 +506,7 @@ gaairc:
 		ActivationSequence:
 	ParatroopersPower@paratanks:
 		OrderName: GermanTankDrop
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: disabled
 		Icons:
@@ -539,7 +539,7 @@ gaairc:
 		DirectionArrowPalette: mouse
 	GrantExternalConditionPower@forceshield:
 		OrderName: FrenchForceShield
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.france
 		Icons:
@@ -563,7 +563,7 @@ gaairc:
 		IncomingSpeechNotification: ForceShieldActivated
 	AirstrikePower@empulse:
 		OrderName: KoreanEMP
-		PauseOnCondition: disabled || chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.korea
 		Icons:
@@ -764,8 +764,8 @@ gapill:
 nasam:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies
@@ -820,8 +820,8 @@ nasam:
 gtgcan:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
@@ -921,8 +921,8 @@ gaorep:
 
 gaspysat:
 	Inherits: ^BaseBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
@@ -988,8 +988,8 @@ gaspysat:
 
 gagap:
 	Inherits: ^SupportBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Valued:
 		Cost: 500
@@ -1124,8 +1124,8 @@ gacsph:
 atesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies
@@ -1233,8 +1233,8 @@ repairpad:
 # Yuri's Revenge Structures
 garobo:
 	Inherits: ^BaseBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
