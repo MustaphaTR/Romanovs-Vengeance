@@ -456,6 +456,7 @@ dtruck:
 	GrantConditionOnAttack:
 		Condition: triggered
 	GrantConditionOnDeploy:
+		Voice: Attack
 		DeployedCondition: triggered
 		PauseOnCondition: chronodisable || emp
 	KillsSelf:
@@ -611,8 +612,9 @@ deva:
 		EmptyWeapon: DevastatorExplosion
 		RequiresCondition: meltdown
 	GrantConditionOnDeploy@REACTOR:
+		Voice: Attack
 		DeployedCondition: overload
-		PauseOnCondition: overload
+		PauseOnCondition: overload || chronodisable || emp
 		CanDeployOnRamps: true
 	WithColoredOverlay@OVERLOAD:
 		Palette: disabled
