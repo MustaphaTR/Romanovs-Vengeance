@@ -462,10 +462,18 @@ a10:
 		Name: A-10 Thunderbolt
 	Armament:
 		Weapon: A10Missile
-		LocalOffset: 0,512,0, 0,-512,0
+		LocalOffset: 0,-512,0
+		PauseOnCondition: !ammo
+	Armament@2:
+		Weapon: A10Missile
+		LocalOffset: 0,512,0
+		PauseOnCondition: !ammo
 	AttackBomber:
 	SpawnActorOnDeath:
 		Actor: a10husk
+	AmmoPool:
+		Ammo: 6
+		AmmoCondition: ammo
 	RenderVoxels:
 		Image: a10
 
