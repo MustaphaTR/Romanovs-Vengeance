@@ -274,29 +274,32 @@ Player:
 		MinimumExcessPower: 60
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
-		ExcessPowerIncreaseThreshold: 4
+		ExcessPowerIncreaseThreshold: 3
 		ConstructionYardTypes: gacnst, nacnst
 		RefineryTypes: garefn, narefn
 		PowerTypes: gapowr, napowr, nanrct
 		BarracksTypes: gapile, nahand
 		VehiclesFactoryTypes: gaweap, naweap
-		ProductionTypes: gapile, nahand, gaweap, naweap, gaairc #, nadept
+		ProductionTypes: gapile, nahand, gaweap, naweap, gaairc #, naheli
 		BuildingLimits:
 			garefn: 4
 			narefn: 4
 			gapowr: 8
 			napowr: 8
 			nanrct: 1
-			gapile: 2
-			nahand: 2
-			gaweap: 2
-			naweap: 2
+			gapile: 3
+			nahand: 3
+			gaweap: 4
+			naweap: 4
 			# gadept: 1
 			# nadept: 1
 			gaairc: 1
+			# naheli: 1
 			naradr: 1
 			gatech: 1
 			natech: 1
+			gaspysat: 1
+			napsis: 1
 			gagap: 2
 		BuildingFractions:
 			garefn: 60
@@ -304,16 +307,19 @@ Player:
 			gapowr: 70
 			napowr: 50
 			nanrct: 20
-			gapile: 4
-			nahand: 4
-			gaweap: 2
-			naweap: 2
-			gaairc: 1
-			naradr: 1
-			gatech: 2
-			natech: 2
-			gaorep: 1
-			naindp: 1
+			gapile: 40
+			nahand: 40
+			gaweap: 20
+			naweap: 20
+			gaairc: 10
+			# naheli: 10
+			naradr: 10
+			gatech: 20
+			natech: 20
+			gaorep: 10
+			naindp: 10
+			gaspysat: 1
+			napsis: 1
 			# gadept: 1
 			# nadept: 1
 			gapill: 20
@@ -376,7 +382,11 @@ Player:
 			apoc: 20
 			tnkd: 30
 			ttnk: 30
+            orca: 5
+            beag: 2
+            fortress: 2
 			commanders_power.grenadier: 1
+			commanders_power.harrier_training: 1
 			commanders_power.inf_training: 1
 			commanders_power.drone_drop: 1
 			commanders_power.spy_plane: 1
@@ -394,3 +404,6 @@ Player:
 			cmin: 8
 			harv: 8
 			dron: 2
+            orca: 3
+            beag: 1
+            fortress: 2
