@@ -38,6 +38,7 @@ e2:
 		Radius: 2c512
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 	Armament@primary:
 		Weapon: M1Carbine
 		PauseOnCondition: chronodisable
@@ -115,6 +116,7 @@ flakt:
 		Radius: 3c0
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 	Armament@primary:
 		Weapon: FlakGuyGun
 		LocalOffset: 256,0,1024
@@ -254,6 +256,7 @@ shk:
 		CargoType: Garrisoner
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 	Armament@primary:
 		Weapon: ElectricBolt
 		LocalOffset: 320,128,1024
@@ -435,6 +438,7 @@ deso:
 		RequiresCondition: deployed && !chronodisable
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
@@ -520,6 +524,7 @@ ivan:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 		Cursor: bomb
 		OutsideRangeCursor: bomb
 	TakeCover:
@@ -627,6 +632,7 @@ yuri:
 		Sequence: stand
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 	Armament:
 		Weapon: MindControl
 		MuzzleSequence: muzzle
@@ -754,6 +760,7 @@ boris:
 		SpawnerArmamentName: secondary
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 		TargetFrozenActors: True
 		PauseOnCondition: chronodisable
 	VoiceAnnouncement:
@@ -826,6 +833,7 @@ pyro:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 		PauseOnCondition: chronodisable
 	Voiced:
 		VoiceSet: ConscriptVoice
@@ -869,6 +877,7 @@ mech:
 		ForceTargetStances: None
 	AttackFrontal:
 		Voice: Action
+		FacingTolerance: 2
 		PauseOnCondition: chronodisable
 	Voiced:
 		VoiceSet: EngineerVoice
@@ -909,7 +918,7 @@ gren:
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
-		HP: 125
+		HP: 85
 	Mobile:
 		Speed: 55
 	Passenger:
@@ -922,6 +931,7 @@ gren:
 		Radius: 2c512
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 	Armament@primary:
 		Weapon: Grenade
 		FireDelay: 5

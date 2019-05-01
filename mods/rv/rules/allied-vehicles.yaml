@@ -145,6 +145,7 @@ tnkd:
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
+		FacingTolerance: 2
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -165,7 +166,7 @@ fv:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
-		Cost: 600
+		Cost: 700
 	Tooltip:
 		Name: Infantry Fighting Vehicle
 		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-yuri
@@ -630,6 +631,7 @@ mgtk:
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
+		FacingTolerance: 2
 	AutoTarget:
 		AllowMovement: false
 	Explodes:
@@ -690,6 +692,7 @@ bfrt:
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
+		FacingTolerance: 2
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 5
@@ -887,6 +890,7 @@ ctnk:
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
+		FacingTolerance: 2
 	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere

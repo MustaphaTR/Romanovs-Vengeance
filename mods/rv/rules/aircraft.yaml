@@ -42,7 +42,7 @@ shad:
 	Buildable:
 		Queue: Aircraft.Allies
 		BuildPaletteOrder: 10
-		Prerequisites: barracks, ~gaairc, ~techlevel.2
+		Prerequisites: ~gaairc, ~techlevel.2
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 800
@@ -56,6 +56,7 @@ shad:
 	-AppearsOnRadar:
 	AttackAircraft:
 		Voice: Attack
+		FacingTolerance: 2
 		PauseOnCondition: emp || chronodisable
 	Aircraft:
 		CruiseAltitude: 3072
@@ -808,6 +809,7 @@ schp:
 		Count: 1
 	AttackAircraft:
 		Voice: Attack
+		FacingTolerance: 2
 		PauseOnCondition: !undeployed || emp || chronodisable
 	AttackTurreted:
 		Armaments: deployed
@@ -975,11 +977,11 @@ hind:
 	Buildable:
 		Queue: Aircraft.Soviets
 		BuildPaletteOrder: 10
-		Prerequisites: warfactory, ~techlevel.2
+		Prerequisites: ~techlevel.2
 		Description: Vehicle Transport Helicopter\n  Unarmed.
 		IconPalette: ts-chrome
 	Valued:
-		Cost: 800
+		Cost: 1000
 	Guard:
 		Voice: Move
 	RevealsShroud:

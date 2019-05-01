@@ -548,7 +548,6 @@ deva:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -557,7 +556,7 @@ deva:
 		Queue: Vehicle.Soviets
 		BuildPaletteOrder: 990
 		Prerequisites: natech, ~caslab, ~techlevel.4
-		Description: Soviet Advanced Battle Tank with Double Barrel\narmed with nuclear warheads.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft\n\nCan be deployed to self-destruct and explode violently.
+		Description: Soviet Advanced Battle Tank with Double Barrel\narmed with nuclear warheads.\n  Immune to Radiation.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft\n\nCan be deployed to self-destruct and explode violently.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -583,6 +582,8 @@ deva:
 		Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
+	Targetable:
+		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 	Turreted:
 		TurnSpeed: 4
 	Armament@primary:
@@ -596,6 +597,7 @@ deva:
 	AttackFrontal:
 		Voice: Attack
 		RequiresCondition: !overload || chronodisable || emp
+		FacingTolerance: 2
 	AutoTarget:
 	RenderSprites:
 	Selectable:
