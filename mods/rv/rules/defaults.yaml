@@ -1583,9 +1583,15 @@
 	Inherits@5: ^AcceptsTanyaC4
 	Inherits@6: ^AffectedByIndustrialPlant
 	Inherits@7: ^UnitParticles
+	Inherits@8: ^IronCurtainable
+	Inherits@9: ^AffectedByChronoBoost
+	Inherits@10: ^AffectedByPropaganda
 	WithTextControlGroupDecoration:
 	Targetable@ChronoDisable:
 		RequiresCondition: !airborne
+	Chronoshiftable:
+		ChronoshiftSound: schrmov.wav
+		ReturnToOrigin: false
 
 ^Plane:
 	Inherits: ^Aircraft
