@@ -113,13 +113,19 @@ ReducePoints = function(player)
 end
 
 TickGeneralsPowers = function()
+	localPlayerIsNull = true;
 	for _,player in pairs(players) do
 		if player.IsLocalPlayer then
+			localPlayerIsNull = false;
 			if Levels[player.InternalName] < 4 then
 				UserInterface.SetMissionText("Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "", player.Color)
 			else 
 				UserInterface.SetMissionText("Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "", player.Color)
 			end
+		end
+
+		if localPlayerIsNull then
+			UserInterface.SetMissionText("", player.Color)
 		end
 
 		if Points[player.InternalName] > 0 and not PointActorExists[player.InternalName] then
