@@ -709,6 +709,7 @@
 	Inherits@9: ^ChronoDisable
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
+	AppearsOnMapPreview:
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath
@@ -971,6 +972,7 @@
 	Inherits@2: ^SpriteActor
 	Inherits@shape: ^1x1Shape
 	ConditionManager:
+	AppearsOnMapPreview:
 	OwnerLostAction:
 		Action: ChangeOwner
 	FrozenUnderFog:
@@ -1036,6 +1038,7 @@
 
 ^Gate:
 	Inherits: ^Building
+	AppearsOnMapPreview:
 	Huntable:
 	Valued:
 		Cost: 75
@@ -1784,6 +1787,8 @@
 	AppearsOnRadar:
 	RadarColorFromTerrain:
 		Terrain: Ore
+	AppearsOnMapPreview:
+		Terrain: Ore
 	BodyOrientation:
 	FrozenUnderFog:
 	SeedsResource:
@@ -1810,6 +1815,9 @@
 		Footprint: x
 		Dimensions: 1, 1
 	AppearsOnRadar:
+		Terrain: Tree
+	AppearsOnMapPreview:
+		Terrain: Tree
 	BodyOrientation:
 	Tooltip:
 		Name: Tree
@@ -1829,39 +1837,35 @@
 
 ^StreetSign:
 	Inherits: ^Tree
+	AppearsOnRadar:
+		-Terrain:
+	AppearsOnMapPreview:
+		-Terrain:
 	Tooltip:
 		Name: Street Sign
-	MapEditorData:
-		Categories: Decoration
 
 ^TrafficLight:
-	Inherits: ^Tree
+	Inherits: ^StreetSign
 	Tooltip:
 		Name: Traffic Light
-	MapEditorData:
-		Categories: Decoration
 
 ^StreetLight:
-	Inherits: ^Tree
+	Inherits: ^StreetSign
 	Tooltip:
 		Name: Street Light
 	Armor:
 		Type: steel
 	Health:
 		HP: 50
-	MapEditorData:
-		Categories: Decoration
 
 ^TelephonePole:
-	Inherits: ^Tree
+	Inherits: ^StreetSign
 	Tooltip:
 		Name: Utility Pole
 	Health:
 		HP: 20
 	Armor:
 		Type: Concrete
-	MapEditorData:
-		Categories: Decoration
 
 ^Rock:
 	Inherits@1: ^SpriteActor
@@ -1871,6 +1875,9 @@
 		Footprint: x
 		Dimensions: 1, 1
 	AppearsOnRadar:
+		Terrain: Rock
+	AppearsOnMapPreview:
+		Terrain: Rock
 	BodyOrientation:
 	Tooltip:
 		Name: Rock
