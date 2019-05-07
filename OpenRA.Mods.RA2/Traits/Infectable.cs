@@ -11,6 +11,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Traits;
 using OpenRA.Primitives;
@@ -55,6 +56,7 @@ namespace OpenRA.Mods.RA2.Traits
 
         public Actor Infector;
         public Infector InfectorTrait;
+        public int[] FirepowerMultipliers = new int[] { };
         [Sync] public int Ticks;
 
         ConditionManager conditionManager;
@@ -132,10 +134,10 @@ namespace OpenRA.Mods.RA2.Traits
                     RevokeCondition(self);
                     Infector = null;
                     InfectorTrait = null;
+                    FirepowerMultipliers = new int[] { };
                     killInfector = false;
                 });
             }
-
         }
 
         void INotifyDamage.Damaged(Actor self, AttackInfo e)
@@ -175,7 +177,8 @@ namespace OpenRA.Mods.RA2.Traits
             {
                 if (--Ticks < 0)
                 {
-                    health.InflictDamage(self, Infector, new Damage(InfectorTrait.Info.Damage, InfectorTrait.Info.DamageTypes), false);
+                    var damage = Util.ApplyPercentageModifiers(InfectorTrait.Info.Damage, FirepowerMultipliers);
+                    health.InflictDamage(self, Infector, new Damage(damage, InfectorTrait.Info.DamageTypes), false);
 
                     Ticks = InfectorTrait.Info.DamageInterval;
                 }

@@ -9,7 +9,9 @@
  */
 #endregion
 
+using System.Linq;
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.RA2.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -39,6 +41,8 @@ namespace OpenRA.Mods.RA2.Activities
                 var infector = self.Trait<Infector>();
                 infectable.Infector = self;
                 infectable.InfectorTrait = infector;
+                infectable.FirepowerMultipliers = self.TraitsImplementing<IFirepowerModifier>()
+                    .Select(a => a.GetFirepowerModifier()).ToArray();
                 infectable.Ticks = infector.Info.DamageInterval;
                 infectable.GrantCondition(targetActor);
                 infectable.RevokeCondition(targetActor, true);
