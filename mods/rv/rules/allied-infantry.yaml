@@ -214,11 +214,13 @@ e1:
 	Armament@deployed:
 		Weapon: para
 		Name: deployed
+		Turret: deploy
 		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
 		Weapon: paraE
 		Name: deployed
+		Turret: deploy
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite && deployed
 	Armament@opentopped:
@@ -263,15 +265,18 @@ e1:
 		Sequence: deploy
 		BodyNames: dot
 	Turreted:
+		Turret: deploy
 		RealignDelay: -1
-		TurnSpeed: 50
+		TurnSpeed: 255
 		InitialFacing: 92
 	WithSpriteTurret@idle:
+		Turret: deploy
 		Sequence: deployed
 		RequiresCondition: deployed && !animate-turret && !parachute
 	WithSpriteTurret@animated:
-		RequiresCondition: deployed && animate-turret && !parachute
+		Turret: deploy
 		Sequence: shoot-deployed
+		RequiresCondition: deployed && animate-turret && !parachute
 	WithSpriteBody:
 		Sequence: dot
 		Name: dot
@@ -282,6 +287,7 @@ e1:
 		RequiresCondition: undeployed
 	AttackTurreted@deployed:
 		Armaments: deployed
+		Turrets: deploy
 		Voice: Attack
 		RequiresCondition: deployed
 	GrantConditionOnAttack:
@@ -291,7 +297,8 @@ e1:
 	RejectsOrders@deployment:
 		Reject: Move, EnterTransport, EnterTransports
 		RequiresCondition: deployed
-	-TakeCover: # TODO: needs to be conditional so we can disable when deployed
+	TakeCover:
+		RequiresCondition: undeployed
 	Voiced:
 		VoiceSet: GIVoice
 	ProducibleWithLevel:
@@ -371,24 +378,28 @@ ggi:
 	Armament@deployed:
 		Weapon: MissileLauncher
 		Name: deployed
+		Turret: deploy
 		LocalOffset: 480,63,992
 		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
 		Weapon: MissileLauncherE
 		Name: deployed
+		Turret: deploy
 		LocalOffset: 480,64,992
 		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: rank-elite && deployed
 	Armament@deployed-aa:
 		Weapon: MissileLauncherAA
 		Name: deployed
+		Turret: deploy
 		LocalOffset: 480,63,992
 		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed-aa:
 		Weapon: MissileLauncherAAE
 		Name: deployed
+		Turret: deploy
 		LocalOffset: 480,64,992
 		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: rank-elite && deployed
@@ -465,15 +476,18 @@ ggi:
 		Sequence: deploy
 		BodyNames: dot
 	Turreted:
+		Turret: deploy
 		RealignDelay: -1
-		TurnSpeed: 50
+		TurnSpeed: 255
 		InitialFacing: 92
 	WithSpriteTurret@idle:
+		Turret: deploy
 		Sequence: deployed
 		RequiresCondition: deployed && !animate-turret && !parachute
 	WithSpriteTurret@animated:
-		RequiresCondition: deployed && animate-turret && !parachute
+		Turret: deploy
 		Sequence: shoot-deployed
+		RequiresCondition: deployed && animate-turret && !parachute
 	WithSpriteBody:
 		Sequence: dot
 		Name: dot
@@ -484,6 +498,7 @@ ggi:
 		RequiresCondition: undeployed
 	AttackTurreted@deployed:
 		Armaments: deployed
+		Turrets: deploy
 		Voice: Attack
 		RequiresCondition: deployed
 	GrantConditionOnAttack:
@@ -493,7 +508,8 @@ ggi:
 	RejectsOrders@deployment:
 		Reject: Move, EnterTransport, EnterTransports
 		RequiresCondition: deployed
-	-TakeCover: # TODO: needs to be conditional so we can disable when deployed
+	TakeCover:
+		RequiresCondition: undeployed
 	Voiced:
 		VoiceSet: GGIVoice
 	ProducibleWithLevel:
