@@ -18,7 +18,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("When returning to a refinery to deliver resources, this actor will teleport if possible.")]
-	public class ChronoResourceDeliveryInfo : ITraitInfo, Requires<HarvesterInfo>
+	public class ChronoResourceDeliveryInfo : ConditionalTraitInfo, Requires<HarvesterInfo>
 	{
 		[Desc("The number of ticks between each check to see if we can teleport to the refinery.")]
 		public readonly int CheckTeleportDelay = 10;
@@ -47,30 +47,26 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Volume the WarpInSound and WarpOutSound played at.")]
 		public readonly float SoundVolume = 1;
 
-		public virtual object Create(ActorInitializer init) { return new ChronoResourceDelivery(init.Self, this); }
+		public override object Create(ActorInitializer init) { return new ChronoResourceDelivery(init.Self, this); }
 	}
 
-	public class ChronoResourceDelivery : INotifyHarvesterAction, ITick
+	public class ChronoResourceDelivery : ConditionalTrait<ChronoResourceDeliveryInfo>, INotifyHarvesterAction, ITick
 	{
-		readonly ChronoResourceDeliveryInfo info;
-
 		CPos? destination = null;
 		Activity nextActivity = null;
 		int ticksTillCheck = 0;
 
 		public ChronoResourceDelivery(Actor self, ChronoResourceDeliveryInfo info)
-		{
-			this.info = info;
-		}
+            : base(info) { }
 
 		public void Tick(Actor self)
 		{
-			if (destination == null)
+			if (IsTraitDisabled || destination == null)
 				return;
 
 			if (ticksTillCheck <= 0)
 			{
-				ticksTillCheck = info.CheckTeleportDelay;
+				ticksTillCheck = Info.CheckTeleportDelay;
 
 				TeleportIfPossible(self);
 			}
@@ -116,7 +112,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (pos.CanEnterCell(destination.Value))
 			{
 				self.CancelActivity();
-				self.QueueActivity(new ChronoResourceTeleport(destination.Value, info));
+				self.QueueActivity(new ChronoResourceTeleport(destination.Value, Info));
 				self.QueueActivity(nextActivity);
 				Reset();
 			}
