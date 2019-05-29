@@ -109,7 +109,6 @@ namespace OpenRA.Mods.RA2.Traits
 						continue;
 
 					// Includes the 90 degree rotation between body and world coordinates
-
 					var slave = w.CreateActor(attacker, new TypeDictionary()
 					{
 						new CenterPositionInit(startEdge + spawnOffset),

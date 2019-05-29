@@ -50,11 +50,11 @@ namespace OpenRA.Mods.RA2.Traits
 	{
 		public new MissileSpawnerMasterInfo Info { get; private set; }
 
-        ConditionManager conditionManager;
-        readonly Dictionary<string, Stack<int>> spawnContainTokens = new Dictionary<string, Stack<int>>();
-        Stack<int> loadedTokens = new Stack<int>();
+		ConditionManager conditionManager;
+		readonly Dictionary<string, Stack<int>> spawnContainTokens = new Dictionary<string, Stack<int>>();
+		Stack<int> loadedTokens = new Stack<int>();
 
-        int respawnTicks = 0;
+		int respawnTicks = 0;
 
 		public MissileSpawnerMaster(ActorInitializer init, MissileSpawnerMasterInfo info) : base(init, info)
 		{
@@ -66,19 +66,19 @@ namespace OpenRA.Mods.RA2.Traits
 			base.Created(self);
 			conditionManager = self.Trait<ConditionManager>();
 
-            if (conditionManager != null)
-            {
-                foreach (var entry in SlaveEntries)
-                {
-                    string spawnContainCondition;
-                    if (Info.SpawnContainConditions.TryGetValue(entry.Actor.Info.Name, out spawnContainCondition))
-                        spawnContainTokens.GetOrAdd(entry.Actor.Info.Name).Push(conditionManager.GrantCondition(self, spawnContainCondition));
+			if (conditionManager != null)
+			{
+				foreach (var entry in SlaveEntries)
+				{
+					string spawnContainCondition;
+					if (Info.SpawnContainConditions.TryGetValue(entry.Actor.Info.Name, out spawnContainCondition))
+						spawnContainTokens.GetOrAdd(entry.Actor.Info.Name).Push(conditionManager.GrantCondition(self, spawnContainCondition));
 
-                    if (!string.IsNullOrEmpty(Info.LoadedCondition))
-                        loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
-                }
-            }
-        }
+					if (!string.IsNullOrEmpty(Info.LoadedCondition))
+						loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
+				}
+			}
+		}
 
 		void INotifyAttack.PreparingAttack(Actor self, Target target, Armament a, Barrel barrel) { }
 
@@ -111,15 +111,15 @@ namespace OpenRA.Mods.RA2.Traits
 
 			SpawnIntoWorld(self, se.Actor, self.CenterPosition);
 
-            Stack<int> spawnContainToken;
-            if (spawnContainTokens.TryGetValue(a.Info.Name, out spawnContainToken) && spawnContainToken.Any())
-                conditionManager.RevokeCondition(self, spawnContainToken.Pop());
+			Stack<int> spawnContainToken;
+			if (spawnContainTokens.TryGetValue(a.Info.Name, out spawnContainToken) && spawnContainToken.Any())
+				conditionManager.RevokeCondition(self, spawnContainToken.Pop());
 
-            if (loadedTokens.Any())
-                conditionManager.RevokeCondition(self, loadedTokens.Pop());
+			if (loadedTokens.Any())
+				conditionManager.RevokeCondition(self, loadedTokens.Pop());
 
-            // Queue attack order, too.
-            self.World.AddFrameEndTask(w =>
+			// Queue attack order, too.
+			self.World.AddFrameEndTask(w =>
 			{
 				se.Actor.QueueActivity(new ShootableBallisticMissileFly(se.Actor, sbm.Target, sbm));
 
@@ -160,22 +160,22 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-        public override void Replenish(Actor self, BaseSpawnerSlaveEntry entry)
-        {
-            base.Replenish(self, entry);
+		public override void Replenish(Actor self, BaseSpawnerSlaveEntry entry)
+		{
+			base.Replenish(self, entry);
 
-            string spawnContainCondition;
-            if (conditionManager != null)
-            {
-                if (Info.SpawnContainConditions.TryGetValue(entry.Actor.Info.Name, out spawnContainCondition))
-                    spawnContainTokens.GetOrAdd(entry.Actor.Info.Name).Push(conditionManager.GrantCondition(self, spawnContainCondition));
+			string spawnContainCondition;
+			if (conditionManager != null)
+			{
+				if (Info.SpawnContainConditions.TryGetValue(entry.Actor.Info.Name, out spawnContainCondition))
+					spawnContainTokens.GetOrAdd(entry.Actor.Info.Name).Push(conditionManager.GrantCondition(self, spawnContainCondition));
 
-                if (!string.IsNullOrEmpty(Info.LoadedCondition))
-                    loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
-            }
-        }
+				if (!string.IsNullOrEmpty(Info.LoadedCondition))
+					loadedTokens.Push(conditionManager.GrantCondition(self, Info.LoadedCondition));
+			}
+		}
 
-        public void Tick(Actor self)
+		public void Tick(Actor self)
 		{
 			if (respawnTicks > 0)
 			{

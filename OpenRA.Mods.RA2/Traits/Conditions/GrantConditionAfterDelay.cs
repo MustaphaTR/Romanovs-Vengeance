@@ -37,7 +37,9 @@ namespace OpenRA.Mods.RA2.Traits
 		readonly GrantConditionAfterDelayInfo info;
 		ConditionManager manager;
 		int token = ConditionManager.InvalidConditionToken;
-		[Sync] public int Ticks { get; private set; }
+
+		[Sync]
+		public int Ticks { get; private set; }
 
 		public GrantConditionAfterDelay(GrantConditionAfterDelayInfo info)
 			: base(info)

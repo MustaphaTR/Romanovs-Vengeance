@@ -53,7 +53,8 @@ namespace OpenRA.Mods.RA2.Traits
 		[GrantedConditionReference]
 		public IEnumerable<string> LinterGarrisonConditions { get { return GarrisonConditions.Values; } }
 
-		[VoiceReference] public readonly string Voice = "Action";
+		[VoiceReference]
+		public readonly string Voice = "Action";
 
 		public object Create(ActorInitializer init) { return new Garrisoner(this); }
 	}

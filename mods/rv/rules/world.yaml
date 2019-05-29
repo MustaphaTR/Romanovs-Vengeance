@@ -282,7 +282,7 @@ World:
 	MapOptions:
 		ShortGameCheckboxDisplayOrder: 2
 		TechLevelDropdownDisplayOrder: 2
-		GameSpeedDropdownDisplayOrder: 3
+		GameSpeedDropdownDisplayOrder: 5
 	CreateMPPlayers:
 	MPStartUnits@amcv:
 		Class: none
@@ -389,6 +389,7 @@ World:
 	MPStartLocations:
 		SeparateTeamSpawnsCheckboxDisplayOrder: 6
 	SpawnMPUnits:
+		DropdownDisplayOrder: 3
 	PathFinder:
 	ValidateOrder:
 	DebugPauseState:
@@ -414,6 +415,16 @@ World:
 		Default: normal
 		Description: Commander's Points you get when you rank up, per rank.
 		DisplayOrder: 4
+	TimeLimitManager:
+		TimeLimitDisplayOrder: 1
+		TimeLimitWarnings:
+			1: OneMinuteRemaining
+			2: TwoMinutesRemaining
+			3: ThreeMinutesRemaining
+			4: FourMinutesRemaining
+			5: FiveMinutesRemaining
+			10: TenMinutesRemaining
+			20: TwentyMinutesRemaining
 	TintedCellsLayer@RADIATION:
 		Darkest: 32
 		Brightest: 96

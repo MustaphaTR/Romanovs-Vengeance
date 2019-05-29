@@ -55,15 +55,15 @@ namespace OpenRA.Mods.RA2.Traits
 
 			var target = Target.FromActor(Master);
 
-            var aircraft = self.TraitOrDefault<Aircraft>();
-            if (self.TraitOrDefault<AttackAircraft>() != null) // Let attack planes approach me first, before landing.
-                if (aircraft != null && aircraft.Info.VTOL == true)
-				    self.QueueActivity(new HeliFly(self, target, WDist.Zero, Info.LandingDistance));
-                else
-                    self.QueueActivity(new Fly(self, target, WDist.Zero, Info.LandingDistance));
+			var aircraft = self.TraitOrDefault<Aircraft>();
+			if (self.TraitOrDefault<AttackAircraft>() != null) // Let attack planes approach me first, before landing.
+				if (aircraft != null && aircraft.Info.VTOL == true)
+					self.QueueActivity(new HeliFly(self, target, WDist.Zero, Info.LandingDistance));
+				else
+					self.QueueActivity(new Fly(self, target, WDist.Zero, Info.LandingDistance));
 
-            self.QueueActivity(new EnterCarrierMaster(self, target, spawnerMaster, EnterBehaviour.Exit));
-        }
+			self.QueueActivity(new EnterCarrierMaster(self, target, spawnerMaster, EnterBehaviour.Exit));
+		}
 
 		public override void LinkMaster(Actor self, Actor master, BaseSpawnerMaster spawnerMaster)
 		{
@@ -77,13 +77,14 @@ namespace OpenRA.Mods.RA2.Traits
 			if (ammoPools.Length == 0)
 				return false;
 
-            return ammoPools.All(x => !x.HasAmmo());
-            // AutoReloads seems to be removed and i dunno how exactly to implement this check now.
-            // Doesn't seem like we actually need it for RA2.
-            // return ammoPools.All(x => !x.AutoReloads && !x.HasAmmo());
-        }
+			return ammoPools.All(x => !x.HasAmmo());
+			/* AutoReloads seems to be removed and i dunno how exactly to implement this check now.
+			 * Doesn't seem like we actually need it for RA2.
+			 * return ammoPools.All(x => !x.AutoReloads && !x.HasAmmo());
+			 */
+		}
 
-        public virtual void OnBecomingIdle(Actor self)
+		public virtual void OnBecomingIdle(Actor self)
 		{
 			EnterSpawner(self);
 		}

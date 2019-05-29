@@ -18,7 +18,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Activities
 {
 	class EnterAirstrikeMaster : Activity
-    {
+	{
 		readonly Actor master; // remember the spawner.
 		readonly AirstrikeMaster spawnerMaster;
 
@@ -38,10 +38,10 @@ namespace OpenRA.Mods.RA2.Activities
 			// Issue attack move to the rally point.
 			self.World.AddFrameEndTask(w =>
 			{
-                if (self.IsDead || master.IsDead)
-                    return;
+				if (self.IsDead || master.IsDead)
+					return;
 
-                spawnerMaster.PickupSlave(master, self);
+				spawnerMaster.PickupSlave(master, self);
 				w.Remove(self);
 
 				// Insta repair.
@@ -51,14 +51,15 @@ namespace OpenRA.Mods.RA2.Activities
 					self.InflictDamage(self, new Damage(-health.MaxHP));
 				}
 
-                // Insta re-arm. (Delayed launching is handled at spawner.)
-                var ammoPools = self.TraitsImplementing<AmmoPool>().ToArray();
+				// Insta re-arm. (Delayed launching is handled at spawner.)
+				var ammoPools = self.TraitsImplementing<AmmoPool>().ToArray();
 				if (ammoPools != null)
 					foreach (var pool in ammoPools)
-						while (pool.GiveAmmo(self, 1)); // fill 'er up.
+						while (!pool.FullAmmo())
+							pool.GiveAmmo(self, 1);
 			});
 
-            return NextActivity;
-        }
+			return NextActivity;
+		}
 	}
 }

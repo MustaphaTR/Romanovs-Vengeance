@@ -1,129 +1,48 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <ProjectGuid>{7E1263D2-BA04-48D0-85DB-26C68B782608}</ProjectGuid>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <OutputType>Library</OutputType>
-    <RootNamespace>OpenRA.Mods.RA2</RootNamespace>
-    <AssemblyName>OpenRA.Mods.RA2</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFramework>net461</TargetFramework>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <LangVersion>5</LangVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>../mods/rv</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <CodeAnalysisRuleSet>../engine/OpenRA.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugSymbols>True</DebugSymbols>
-    <DebugType>Full</DebugType>
-    <Optimize>False</Optimize>
-    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+  <ItemGroup>
+    <!-- Work around an issue where Rider does not detect files in the project root using the default glob -->
+    <Compile Include="**/*.cs" Exclude="$(DefaultItemExcludes)" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <OutputPath>bin\Debug\</OutputPath>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="AfterBuild" command="cp ${TargetFile} .." workingdir="${ProjectDir}" />
-        <Command type="AfterBuild" command="cp ${TargetFile}.mdb .." workingdir="${ProjectDir}" />
-      </CustomCommands>
-    </CustomCommands>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DebugSymbols>False</DebugSymbols>
-    <DebugType>None</DebugType>
-    <Optimize>True</Optimize>
-    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
-    <DefineConstants>TRACE</DefineConstants>
-    <OutputPath>bin\Release\</OutputPath>
-    <CustomCommands>
-      <CustomCommands>
-        <Command type="AfterBuild" command="cp ${TargetFile} .." workingdir="${ProjectDir}" />
-        <Command type="AfterBuild" command="cp ${TargetFile}.mdb .." workingdir="${ProjectDir}" />
-      </CustomCommands>
-    </CustomCommands>
+    <Optimize>false</Optimize>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Eluant">
-      <HintPath>..\engine\Eluant.dll</HintPath>
+      <HintPath>../engine/thirdparty/download/Eluant.dll</HintPath>
+      <Private>False</Private>
     </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
+    <ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj">
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="../engine/OpenRA.Mods.AS/OpenRA.Mods.AS.csproj">
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="../engine/OpenRA.Mods.Cnc/OpenRA.Mods.Cnc.csproj">
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
+    </ProjectReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
+    <AdditionalFiles Include="../engine/stylecop.json" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <ItemGroup>
-    <Compile Include="Activities\ChronoResourceTeleport.cs" />
-    <Compile Include="Activities\EnterAirstrikeMaster.cs" />
-    <Compile Include="Activities\EnterGarrison.cs" />
-    <Compile Include="Activities\HeliDeployForGrantedCondition.cs" />
-    <Compile Include="Activities\HeliUndeployForGrantedCondition.cs" />
-    <Compile Include="Activities\Infect.cs" />
-    <Compile Include="Activities\TeleportRA2.cs" />
-    <Compile Include="Activities\UnloadGarrison.cs" />
-    <Compile Include="FileSystem\BagFileHack.cs" />
-    <Compile Include="Orders\EnterGarrisonOrderTargeter.cs" />
-    <Compile Include="TraitsInterfaces.cs" />
-    <Compile Include="Traits\AirstrikeMaster.cs" />
-    <Compile Include="Traits\AirstrikeSlave.cs" />
-    <Compile Include="Traits\Air\AutoTakesOff.cs" />
-    <Compile Include="Traits\AttackGarrisonedRV.cs" />
-    <Compile Include="Traits\ChangeOwner.cs" />
-    <Compile Include="Traits\ChangeOwnerOnGarrisoner.cs" />
-    <Compile Include="Traits\ChronoResourceDelivery.cs" />
-    <Compile Include="Traits\AffectedByTemporal.cs" />
-    <Compile Include="Traits\Conditions\GrantConditionAfterDelay.cs" />
-    <Compile Include="Traits\Conditions\GrantConditionOnCombatantOwner.cs" />
-    <Compile Include="Traits\Conditions\GrantConditionOnCapture.cs" />
-    <Compile Include="Traits\Conditions\GrantTimedConditionOnDeploy.cs" />
-    <Compile Include="Traits\Conditions\HeliGrantConditionOnDeploy.cs" />
-    <Compile Include="Traits\Garrisonable.cs" />
-    <Compile Include="Traits\Garrisoner.cs" />
-    <Compile Include="Traits\Infectable.cs" />
-    <Compile Include="Traits\Infector.cs" />
-    <Compile Include="Traits\PeriodicExplosion.cs" />
-    <Compile Include="Activities\EnterCarrierMaster.cs" />
-    <Compile Include="Activities\ShootableBallisticMissileFly.cs" />
-    <Compile Include="Traits\BaseSpawnerSlave.cs" />
-    <Compile Include="Traits\BaseSpawnMaster.cs" />
-    <Compile Include="Traits\MissileSpawnerMaster.cs" />
-    <Compile Include="Traits\MissileSpawnerSlave.cs" />
-    <Compile Include="Traits\PortableChronoRA2.cs" />
-    <Compile Include="Traits\ShootableBallisticMissile.cs" />
-    <Compile Include="Traits\SpawnedExplodes.cs" />
-    <Compile Include="Traits\CarrierSlave.cs" />
-    <Compile Include="Traits\CarrierMaster.cs" />
-    <Compile Include="Orders\ShootableBallisticMissileMoveOrderTargeter.cs" />
-    <Compile Include="UtilityCommands\ImportRA2MapCommand.cs" />
-    <Compile Include="Warheads\TemporalDamageWarhead.cs" />
-    <Compile Include="Warheads\LegacySpreadWarhead.cs" />
-  </ItemGroup>
-  <Target Name="AfterBuild">
-    <MakeDir Directories="$(SolutionDir)mods\rv\" />
-    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SolutionDir)mods\rv\" />
-    <!--
-        csc generates .pdb symbol files (not `.dll.pdb`).
-        mcs generates .dll.mdb symbol files.
-    -->
-    <Copy SourceFiles="$(TargetDir)$(TargetName).pdb" DestinationFolder="$(SolutionDir)mods\rv\" Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
-    <Copy SourceFiles="$(TargetPath).mdb" DestinationFolder="$(SolutionDir)mods\rv\" Condition="Exists('$(TargetDir)$(TargetName).mdb')" />
+  <Target Name="DisableAnalyzers" BeforeTargets="CoreCompile" Condition="'$(Configuration)'=='Release'">
+    <!-- Disable code style analysis on Release builds to improve compile-time performance -->
+    <ItemGroup Condition="'$(Configuration)'=='Release'">
+      <Analyzer Remove="@(Analyzer)" />
+    </ItemGroup>
   </Target>
-  <ItemGroup>
-    <ProjectReference Include="..\engine\OpenRA.Game\OpenRA.Game.csproj">
-      <Project>{0DFB103F-2962-400F-8C6D-E2C28CCBA633}</Project>
-      <Name>OpenRA.Game</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\engine\OpenRA.Mods.AS\OpenRA.Mods.AS.csproj">
-      <Project>{6deee499-98e5-4977-aaae-ceae165f17cf}</Project>
-      <Name>OpenRA.Mods.AS</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\engine\OpenRA.Mods.Cnc\OpenRA.Mods.Cnc.csproj">
-      <Project>{2881135D-4D62-493E-8F83-5EEE92CCC6BE}</Project>
-      <Name>OpenRA.Mods.Cnc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\engine\OpenRA.Mods.Common\OpenRA.Mods.Common.csproj">
-      <Project>{FE6C8CC0-2F07-442A-B29F-17617B3B7FC6}</Project>
-      <Name>OpenRA.Mods.Common</Name>
-    </ProjectReference>
-  </ItemGroup>
 </Project>

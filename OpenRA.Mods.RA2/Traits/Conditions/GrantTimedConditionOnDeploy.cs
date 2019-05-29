@@ -27,7 +27,8 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("The condition granted during deploying.")]
 		public readonly string DeployingCondition = null;
 
-		[GrantedConditionReference, FieldLoader.Require]
+		[FieldLoader.Require]
+		[GrantedConditionReference]
 		[Desc("The condition granted after deploying.")]
 		public readonly string DeployedCondition = null;
 
@@ -43,10 +44,12 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Cursor to display when unable to (un)deploy the actor.")]
 		public readonly string DeployBlockedCursor = "deploy-blocked";
 
-		[SequenceReference, Desc("Animation to play for deploying.")]
+		[SequenceReference]
+		[Desc("Animation to play for deploying.")]
 		public readonly string DeployAnimation = null;
 
-		[SequenceReference, Desc("Animation to play for undeploying.")]
+		[SequenceReference]
+		[Desc("Animation to play for undeploying.")]
 		public readonly string UndeployAnimation = null;
 
 		[Desc("Apply (un)deploy animations to sprite bodies with these names.")]
@@ -63,7 +66,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public readonly bool StartsFullyCharged = false;
 
-		[VoiceReference] public readonly string Voice = "Action";
+		[VoiceReference]
+		public readonly string Voice = "Action";
 
 		public readonly bool ShowSelectionBar = true;
 		public readonly Color ChargingColor = Color.DarkRed;
@@ -84,8 +88,10 @@ namespace OpenRA.Mods.RA2.Traits
 
 		WithSpriteBody[] wsbs;
 		ConditionManager manager;
-		[Sync] int ticks;
 		TimedDeployState deployState;
+
+		[Sync]
+		int ticks;
 
 		public GrantTimedConditionOnDeploy(ActorInitializer init, GrantTimedConditionOnDeployInfo info)
 			: base(info)

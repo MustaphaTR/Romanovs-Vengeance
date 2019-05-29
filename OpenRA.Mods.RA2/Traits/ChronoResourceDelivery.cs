@@ -26,14 +26,17 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Image used for the teleport effects. Defaults to the actor's type.")]
 		public readonly string Image = null;
 
+		[SequenceReference("Image")]
 		[Desc("Sequence used for the effect played where the harvester jumped from.")]
-		[SequenceReference("Image")] public readonly string WarpInSequence = null;
+		public readonly string WarpInSequence = null;
 
+		[SequenceReference("Image")]
 		[Desc("Sequence used for the effect played where the harvester jumped to.")]
-		[SequenceReference("Image")] public readonly string WarpOutSequence = null;
+		public readonly string WarpOutSequence = null;
 
+		[PaletteReference]
 		[Desc("Palette to render the warp in/out sprites in.")]
-		[PaletteReference] public readonly string Palette = "effect";
+		public readonly string Palette = "effect";
 
 		[Desc("Sound played where the harvester jumped from.")]
 		public readonly string WarpInSound = null;
@@ -57,7 +60,7 @@ namespace OpenRA.Mods.RA2.Traits
 		int ticksTillCheck = 0;
 
 		public ChronoResourceDelivery(Actor self, ChronoResourceDeliveryInfo info)
-            : base(info) { }
+			: base(info) { }
 
 		public void Tick(Actor self)
 		{

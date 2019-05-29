@@ -16,99 +16,101 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
-    [Desc("This actor can be affected by temporal warheads.")]
-    public class AffectedByTemporalInfo : ITraitInfo
-    {
-        [GrantedConditionReference]
-        [Desc("The condition type to grant when the actor is affected.")]
-        public readonly string Condition = null;
+	[Desc("This actor can be affected by temporal warheads.")]
+	public class AffectedByTemporalInfo : ITraitInfo
+	{
+		[GrantedConditionReference]
+		[Desc("The condition type to grant when the actor is affected.")]
+		public readonly string Condition = null;
 
-        [Desc("Amount of ticks required to pass without being damaged to revoke the affect of the temporal weapon.")]
-        public readonly int RevokeDelay = 1;
+		[Desc("Amount of ticks required to pass without being damaged to revoke the affect of the temporal weapon.")]
+		public readonly int RevokeDelay = 1;
 
-        [Desc("Amount of damage required to be taked for the unit to be killed.",
-            "Use -1 to be calculated from the actor health.")]
-        public readonly int EraseDamage = -1;
+		[Desc("Amount of damage required to be taked for the unit to be killed.",
+			"Use -1 to be calculated from the actor health.")]
+		public readonly int EraseDamage = -1;
 
-        [Desc("List of sound which one randomly played after erasing is done.")]
-        public readonly string[] EraseSounds = { };
+		[Desc("List of sound which one randomly played after erasing is done.")]
+		public readonly string[] EraseSounds = { };
 
-        [Desc("If erase delay is calculated from cost, multipile the cost with this to get the time.")]
-        public readonly int EraseDamageMultiplier = 100;
+		[Desc("If erase delay is calculated from cost, multipile the cost with this to get the time.")]
+		public readonly int EraseDamageMultiplier = 100;
 
-        public readonly bool ShowSelectionBar = true;
-        public readonly Color SelectionBarColor = Color.Magenta;
+		public readonly bool ShowSelectionBar = true;
+		public readonly Color SelectionBarColor = Color.Magenta;
 
-        public object Create(ActorInitializer init) { return new AffectedByTemporal(init, this); }
-    }
+		public object Create(ActorInitializer init) { return new AffectedByTemporal(init, this); }
+	}
 
-    public class AffectedByTemporal : INotifyCreated, ISync, ITick, ISelectionBar
-    {
-        Actor self;
-        AffectedByTemporalInfo info;
-        ConditionManager conditionManager;
+	public class AffectedByTemporal : INotifyCreated, ISync, ITick, ISelectionBar
+	{
+		Actor self;
+		AffectedByTemporalInfo info;
+		ConditionManager conditionManager;
 
-        int token = ConditionManager.InvalidConditionToken;
-        int requiredDamage;
-        int recievedDamage;
-        [Sync] int tick;
+		int token = ConditionManager.InvalidConditionToken;
+		int requiredDamage;
+		int recievedDamage;
 
-        public AffectedByTemporal(ActorInitializer init, AffectedByTemporalInfo info)
-        {
-            this.info = info;
-            self = init.Self;
-            var health = self.Info.TraitInfoOrDefault<IHealthInfo>();
-            requiredDamage = info.EraseDamage >= 0 || health == null ? info.EraseDamage : health.MaxHP * info.EraseDamageMultiplier / 100;
-        }
+		[Sync]
+		int tick;
 
-        void INotifyCreated.Created(Actor self)
-        {
-            conditionManager = self.TraitOrDefault<ConditionManager>();
-        }
+		public AffectedByTemporal(ActorInitializer init, AffectedByTemporalInfo info)
+		{
+			this.info = info;
+			self = init.Self;
+			var health = self.Info.TraitInfoOrDefault<IHealthInfo>();
+			requiredDamage = info.EraseDamage >= 0 || health == null ? info.EraseDamage : health.MaxHP * info.EraseDamageMultiplier / 100;
+		}
 
-        public void AddDamage(int damage, Actor damager)
-        {
-            recievedDamage = recievedDamage + damage;
-            tick = info.RevokeDelay;
+		void INotifyCreated.Created(Actor self)
+		{
+			conditionManager = self.TraitOrDefault<ConditionManager>();
+		}
 
-            if (recievedDamage >= requiredDamage)
-            {
-                self.Dispose();
+		public void AddDamage(int damage, Actor damager)
+		{
+			recievedDamage = recievedDamage + damage;
+			tick = info.RevokeDelay;
 
-                if (info.EraseSounds.Any())
-                {
-                    var sound = info.EraseSounds.Random(self.World.LocalRandom);
-                    Game.Sound.Play(SoundType.World, sound, self.CenterPosition);
-                }
-            }
+			if (recievedDamage >= requiredDamage)
+			{
+				self.Dispose();
 
-            if (conditionManager != null &&
-                !string.IsNullOrEmpty(info.Condition) &&
-                token == ConditionManager.InvalidConditionToken)
-                token = conditionManager.GrantCondition(self, info.Condition);
-        }
+				if (info.EraseSounds.Any())
+				{
+					var sound = info.EraseSounds.Random(self.World.LocalRandom);
+					Game.Sound.Play(SoundType.World, sound, self.CenterPosition);
+				}
+			}
 
-        void ITick.Tick(Actor self)
-        {
-            if (--tick < 0)
-            {
-                recievedDamage = 0;
+			if (conditionManager != null &&
+				!string.IsNullOrEmpty(info.Condition) &&
+				token == ConditionManager.InvalidConditionToken)
+				token = conditionManager.GrantCondition(self, info.Condition);
+		}
 
-                if (conditionManager != null && token != ConditionManager.InvalidConditionToken)
-                    token = conditionManager.RevokeCondition(self, token);
-            }
-        }
+		void ITick.Tick(Actor self)
+		{
+			if (--tick < 0)
+			{
+				recievedDamage = 0;
 
-        float ISelectionBar.GetValue()
-        {
-            if (!info.ShowSelectionBar)
-                return 0;
+				if (conditionManager != null && token != ConditionManager.InvalidConditionToken)
+					token = conditionManager.RevokeCondition(self, token);
+			}
+		}
 
-            return (float)recievedDamage / requiredDamage;
-        }
+		float ISelectionBar.GetValue()
+		{
+			if (!info.ShowSelectionBar)
+				return 0;
 
-        bool ISelectionBar.DisplayWhenEmpty { get { return false; } }
+			return (float)recievedDamage / requiredDamage;
+		}
 
-        Color ISelectionBar.GetColor() { return info.SelectionBarColor; }
-    }
+		bool ISelectionBar.DisplayWhenEmpty { get { return false; } }
+
+		Color ISelectionBar.GetColor() { return info.SelectionBarColor; }
+	}
 }

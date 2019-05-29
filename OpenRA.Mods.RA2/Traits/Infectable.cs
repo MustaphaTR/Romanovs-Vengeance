@@ -13,176 +13,178 @@ using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Traits;
 using OpenRA.Primitives;
+using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("Handle infection by infectior units.")]
 	public class InfectableInfo : ITraitInfo, Requires<HealthInfo>
 	{
-        [Desc("Damage types that removes the infector.")]
-        public readonly BitSet<DamageType> RemoveInfectorDamageTypes = default(BitSet<DamageType>);
+		[Desc("Damage types that removes the infector.")]
+		public readonly BitSet<DamageType> RemoveInfectorDamageTypes = default(BitSet<DamageType>);
 
-        [Desc("Damage types that kills the infector.")]
-        public readonly BitSet<DamageType> KillInfectorDamageTypes = default(BitSet<DamageType>);
+		[Desc("Damage types that kills the infector.")]
+		public readonly BitSet<DamageType> KillInfectorDamageTypes = default(BitSet<DamageType>);
 
-        [Desc("Actor types that kills the infector." +
-            "Define service depots here, since Repairable don't deal DamageTypes.")]
-        public readonly HashSet<string> KillInfectorActorTypes = new HashSet<string> { };
+		[Desc("Actor types that kills the infector." +
+			"Define service depots here, since Repairable don't deal DamageTypes.")]
+		public readonly HashSet<string> KillInfectorActorTypes = new HashSet<string> { };
 
-        [GrantedConditionReference]
-        [Desc("The condition to grant to self while infected by any actor.")]
-        public readonly string InfectedCondition = null;
+		[GrantedConditionReference]
+		[Desc("The condition to grant to self while infected by any actor.")]
+		public readonly string InfectedCondition = null;
 
-        [GrantedConditionReference]
-        [Desc("Condition granted when being infected by another actor.")]
-        public readonly string BeingInfectedCondition = null;
+		[GrantedConditionReference]
+		[Desc("Condition granted when being infected by another actor.")]
+		public readonly string BeingInfectedCondition = null;
 
-        [Desc("Conditions to grant when infected by specified actors.",
-            "A dictionary of [actor id]: [condition].")]
-        public readonly Dictionary<string, string> InfectedByConditions = new Dictionary<string, string>();
+		[Desc("Conditions to grant when infected by specified actors.",
+			"A dictionary of [actor id]: [condition].")]
+		public readonly Dictionary<string, string> InfectedByConditions = new Dictionary<string, string>();
 
-        [GrantedConditionReference]
-        public IEnumerable<string> LinterConditions { get { return InfectedByConditions.Values; } }
+		[GrantedConditionReference]
+		public IEnumerable<string> LinterConditions { get { return InfectedByConditions.Values; } }
 
-        public object Create(ActorInitializer init) { return new Infectable(init.Self, this); }
+		public object Create(ActorInitializer init) { return new Infectable(init.Self, this); }
 	}
 
-    public class Infectable : ISync, ITick, INotifyCreated, INotifyDamage, INotifyKilled
-    {
-        readonly InfectableInfo info;
-        readonly Health health;
+	public class Infectable : ISync, ITick, INotifyCreated, INotifyDamage, INotifyKilled
+	{
+		readonly InfectableInfo info;
+		readonly Health health;
 
-        public Actor Infector;
-        public Infector InfectorTrait;
-        public int[] FirepowerMultipliers = new int[] { };
-        [Sync] public int Ticks;
+		public Actor Infector;
+		public Infector InfectorTrait;
+		public int[] FirepowerMultipliers = new int[] { };
 
-        ConditionManager conditionManager;
-        int beingInfectedToken = ConditionManager.InvalidConditionToken;
-        int infectedToken = ConditionManager.InvalidConditionToken;
-        int infectedByToken = ConditionManager.InvalidConditionToken;
+		[Sync]
+		public int Ticks;
 
-        bool killInfector = false;
+		ConditionManager conditionManager;
+		int beingInfectedToken = ConditionManager.InvalidConditionToken;
+		int infectedToken = ConditionManager.InvalidConditionToken;
+		int infectedByToken = ConditionManager.InvalidConditionToken;
 
-        public Infectable(Actor self, InfectableInfo info)
-        {
-            this.info = info;
+		bool killInfector = false;
 
-            health = self.Trait<Health>();
-        }
+		public Infectable(Actor self, InfectableInfo info)
+		{
+			this.info = info;
 
-        void INotifyCreated.Created(Actor self)
-        {
-            conditionManager = self.TraitOrDefault<ConditionManager>();
-        }
+			health = self.Trait<Health>();
+		}
 
-        public void GrantCondition(Actor self, bool infecting = false)
-        {
-            if (conditionManager != null)
-            {
-                if (infecting)
-                {
-                    if (beingInfectedToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(info.BeingInfectedCondition))
-                        beingInfectedToken = conditionManager.GrantCondition(self, info.BeingInfectedCondition);
-                }
-                else
-                {
-                    if (infectedToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(info.InfectedCondition))
-                        infectedToken = conditionManager.GrantCondition(self, info.InfectedCondition);
+		void INotifyCreated.Created(Actor self)
+		{
+			conditionManager = self.TraitOrDefault<ConditionManager>();
+		}
 
-                    string infectedByCondition;
-                    if (info.InfectedByConditions.TryGetValue(Infector.Info.Name, out infectedByCondition))
-                        infectedByToken = conditionManager.GrantCondition(self, infectedByCondition);
-                }
-            }
-        }
+		public void GrantCondition(Actor self, bool infecting = false)
+		{
+			if (conditionManager != null)
+			{
+				if (infecting)
+				{
+					if (beingInfectedToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(info.BeingInfectedCondition))
+						beingInfectedToken = conditionManager.GrantCondition(self, info.BeingInfectedCondition);
+				}
+				else
+				{
+					if (infectedToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(info.InfectedCondition))
+						infectedToken = conditionManager.GrantCondition(self, info.InfectedCondition);
 
-        public void RevokeCondition(Actor self, bool infecting = false)
-        {
-            if (conditionManager != null)
-            {
-                if (infecting)
-                {
-                    if (beingInfectedToken != ConditionManager.InvalidConditionToken)
-                        beingInfectedToken = conditionManager.RevokeCondition(self, beingInfectedToken);
-                }
-                else
-                {
-                    if (infectedToken != ConditionManager.InvalidConditionToken)
-                        infectedToken = conditionManager.RevokeCondition(self, infectedToken);
+					string infectedByCondition;
+					if (info.InfectedByConditions.TryGetValue(Infector.Info.Name, out infectedByCondition))
+						infectedByToken = conditionManager.GrantCondition(self, infectedByCondition);
+				}
+			}
+		}
 
-                    if (infectedByToken != ConditionManager.InvalidConditionToken)
-                        infectedByToken = conditionManager.RevokeCondition(self, infectedByToken);
-                }
-            }
-        }
+		public void RevokeCondition(Actor self, bool infecting = false)
+		{
+			if (conditionManager != null)
+			{
+				if (infecting)
+				{
+					if (beingInfectedToken != ConditionManager.InvalidConditionToken)
+						beingInfectedToken = conditionManager.RevokeCondition(self, beingInfectedToken);
+				}
+				else
+				{
+					if (infectedToken != ConditionManager.InvalidConditionToken)
+						infectedToken = conditionManager.RevokeCondition(self, infectedToken);
 
-        public void RemoveInfector(Actor self, bool kill, AttackInfo e = null)
-        {
-            if (Infector != null && !Infector.IsDead)
-            {
-                Infector.TraitOrDefault<IPositionable>().SetPosition(Infector, self.CenterPosition);
-                self.World.AddFrameEndTask(w =>
-                {
-                    w.Add(Infector);
+					if (infectedByToken != ConditionManager.InvalidConditionToken)
+						infectedByToken = conditionManager.RevokeCondition(self, infectedByToken);
+				}
+			}
+		}
 
-                    if (kill)
-                        Infector.Kill(e.Attacker, e.Damage.DamageTypes);
+		public void RemoveInfector(Actor self, bool kill, AttackInfo e = null)
+		{
+			if (Infector != null && !Infector.IsDead)
+			{
+				Infector.TraitOrDefault<IPositionable>().SetPosition(Infector, self.CenterPosition);
+				self.World.AddFrameEndTask(w =>
+				{
+					w.Add(Infector);
 
-                    RevokeCondition(self);
-                    Infector = null;
-                    InfectorTrait = null;
-                    FirepowerMultipliers = new int[] { };
-                    killInfector = false;
-                });
-            }
-        }
+					if (kill)
+						Infector.Kill(e.Attacker, e.Damage.DamageTypes);
 
-        void INotifyDamage.Damaged(Actor self, AttackInfo e)
-        {
-            if (Infector != null)
-            {
-                if (e.Attacker != Infector)
-                {
-                    var threshold = InfectorTrait.Info.SuppressionThreshold;
-                    if (threshold > 0 && e.Damage.Value > threshold)
-                        killInfector = true;
-                }
-                else
-                {
-                    if (InfectorTrait.Info.KillState.Contains(e.DamageState))
-                    {
-                        self.World.AddFrameEndTask(w => health.Kill(self, Infector, InfectorTrait.Info.DamageTypes));
-                    }
-                }
+					RevokeCondition(self);
+					Infector = null;
+					InfectorTrait = null;
+					FirepowerMultipliers = new int[] { };
+					killInfector = false;
+				});
+			}
+		}
 
-                if (e.Damage.DamageTypes.Overlaps(info.KillInfectorDamageTypes) ||
-                    info.KillInfectorActorTypes.Contains(e.Attacker.Info.Name))
-                    RemoveInfector(self, true, e);
-                else if (e.Damage.DamageTypes.Overlaps(info.RemoveInfectorDamageTypes))
-                    RemoveInfector(self, false, e);
-            }
-        }
+		void INotifyDamage.Damaged(Actor self, AttackInfo e)
+		{
+			if (Infector != null)
+			{
+				if (e.Attacker != Infector)
+				{
+					var threshold = InfectorTrait.Info.SuppressionThreshold;
+					if (threshold > 0 && e.Damage.Value > threshold)
+						killInfector = true;
+				}
+				else
+				{
+					if (InfectorTrait.Info.KillState.Contains(e.DamageState))
+					{
+						self.World.AddFrameEndTask(w => health.Kill(self, Infector, InfectorTrait.Info.DamageTypes));
+					}
+				}
 
-        void INotifyKilled.Killed(Actor self, AttackInfo e)
-        {
-            RemoveInfector(self, killInfector, e);
-        }
+				if (e.Damage.DamageTypes.Overlaps(info.KillInfectorDamageTypes) ||
+					info.KillInfectorActorTypes.Contains(e.Attacker.Info.Name))
+					RemoveInfector(self, true, e);
+				else if (e.Damage.DamageTypes.Overlaps(info.RemoveInfectorDamageTypes))
+					RemoveInfector(self, false, e);
+			}
+		}
 
-        void ITick.Tick(Actor self)
-        {
-            if (Infector != null)
-            {
-                if (--Ticks < 0)
-                {
-                    var damage = Util.ApplyPercentageModifiers(InfectorTrait.Info.Damage, FirepowerMultipliers);
-                    health.InflictDamage(self, Infector, new Damage(damage, InfectorTrait.Info.DamageTypes), false);
+		void INotifyKilled.Killed(Actor self, AttackInfo e)
+		{
+			RemoveInfector(self, killInfector, e);
+		}
 
-                    Ticks = InfectorTrait.Info.DamageInterval;
-                }
-            }
-        }
+		void ITick.Tick(Actor self)
+		{
+			if (Infector != null)
+			{
+				if (--Ticks < 0)
+				{
+					var damage = Util.ApplyPercentageModifiers(InfectorTrait.Info.Damage, FirepowerMultipliers);
+					health.InflictDamage(self, Infector, new Damage(damage, InfectorTrait.Info.DamageTypes), false);
+
+					Ticks = InfectorTrait.Info.DamageInterval;
+				}
+			}
+		}
 	}
 }

@@ -13,9 +13,9 @@ using System;
 using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.Cnc.Traits;
-using OpenRA.Mods.RA2.Traits;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Traits.Render;
+using OpenRA.Mods.RA2.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
@@ -99,13 +99,13 @@ namespace OpenRA.Mods.RA2.Activities
 
 			// Consume teleport charges if this wasn't triggered via chronosphere
 			if (teleporter == self && pc != null)
-            {
+			{
 				pc.ResetChargeTime();
-                pc.GrantCondition(self);
-            }
+				pc.GrantCondition(self);
+			}
 
-            // Trigger screen desaturate effect
-            if (screenFlash)
+			// Trigger screen desaturate effect
+			if (screenFlash)
 				foreach (var a in self.World.ActorsWithTrait<ChronoshiftPaletteEffect>())
 					a.Trait.Enable();
 

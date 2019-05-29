@@ -20,35 +20,35 @@ namespace OpenRA.Mods.RA2.Activities
 {
 	public class HeliDeployForGrantedCondition : Activity
 	{
-        readonly World w;
-        readonly Aircraft aircraft;
+		readonly World w;
+		readonly Aircraft aircraft;
 		readonly HeliGrantConditionOnDeploy deploy;
 		readonly bool canTurn;
 
 		public HeliDeployForGrantedCondition(Actor self, HeliGrantConditionOnDeploy deploy)
 		{
-            w = self.World;
-            this.deploy = deploy;
-            aircraft = self.Trait<Aircraft>();
+			w = self.World;
+			this.deploy = deploy;
+			aircraft = self.Trait<Aircraft>();
 			canTurn = self.Info.HasTraitInfo<IFacingInfo>();
 		}
 
 		protected override void OnFirstRun(Actor self)
 		{
-            if (!aircraft.CanLand(w.Map.CellContaining(self.CenterPosition)))
-            {
-                var cells = w.Map.AllCells.Where(c => aircraft.CanLand(c)).Select(c => w.Map.CenterOfCell(c));
-                var cell = w.Map.CellContaining(WorldUtils.PositionClosestTo(cells, self.CenterPosition));
+			if (!aircraft.CanLand(w.Map.CellContaining(self.CenterPosition)))
+			{
+				var cells = w.Map.AllCells.Where(c => aircraft.CanLand(c)).Select(c => w.Map.CenterOfCell(c));
+				var cell = w.Map.CellContaining(WorldUtils.PositionClosestTo(cells, self.CenterPosition));
 
-                QueueChild(self, new HeliFly(self, Target.FromCell(w, cell)));
-            }
+				QueueChild(self, new HeliFly(self, Target.FromCell(w, cell)));
+			}
 
-            // Turn to the required facing.
-            if (deploy.Info.Facing != -1 && canTurn)
+			// Turn to the required facing.
+			if (deploy.Info.Facing != -1 && canTurn)
 				QueueChild(self, new Turn(self, deploy.Info.Facing));
 
-            QueueChild(self, new HeliLand(self, true));
-        }
+			QueueChild(self, new Land(self));
+		}
 
 		public override Activity Tick(Actor self)
 		{

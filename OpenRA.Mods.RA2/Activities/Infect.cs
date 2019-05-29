@@ -32,65 +32,65 @@ namespace OpenRA.Mods.RA2.Activities
 		{
 			self.World.AddFrameEndTask(w =>
 			{
-                var infectable = targetActor.Trait<Infectable>();
-                if (infectable.Infector != null)
-                    return;
+				var infectable = targetActor.Trait<Infectable>();
+				if (infectable.Infector != null)
+					return;
 
-                w.Remove(self);
+				w.Remove(self);
 
-                var infector = self.Trait<Infector>();
-                infectable.Infector = self;
-                infectable.InfectorTrait = infector;
-                infectable.FirepowerMultipliers = self.TraitsImplementing<IFirepowerModifier>()
-                    .Select(a => a.GetFirepowerModifier()).ToArray();
-                infectable.Ticks = infector.Info.DamageInterval;
-                infectable.GrantCondition(targetActor);
-                infectable.RevokeCondition(targetActor, true);
-            });
-        }
+				var infector = self.Trait<Infector>();
+				infectable.Infector = self;
+				infectable.InfectorTrait = infector;
+				infectable.FirepowerMultipliers = self.TraitsImplementing<IFirepowerModifier>()
+					.Select(a => a.GetFirepowerModifier()).ToArray();
+				infectable.Ticks = infector.Info.DamageInterval;
+				infectable.GrantCondition(targetActor);
+				infectable.RevokeCondition(targetActor, true);
+			});
+		}
 
-        protected override void OnLastRun(Actor self)
-        {
-            CancelInfection(self);
-            base.OnLastRun(self);
-        }
+		protected override void OnLastRun(Actor self)
+		{
+			CancelInfection(self);
+			base.OnLastRun(self);
+		}
 
-        protected override void OnActorDispose(Actor self)
-        {
-            CancelInfection(self);
-            base.OnActorDispose(self);
-        }
+		protected override void OnActorDispose(Actor self)
+		{
+			CancelInfection(self);
+			base.OnActorDispose(self);
+		}
 
-        void CancelInfection(Actor self)
-        {
-            if (target.Type != TargetType.Actor)
-                return;
+		void CancelInfection(Actor self)
+		{
+			if (target.Type != TargetType.Actor)
+				return;
 
-            if (target.Actor.IsDead)
-                return;
+			if (target.Actor.IsDead)
+				return;
 
-            var infectable = target.Actor.Trait<Infectable>();
-                if (infectable.Infector != null)
-                    return;
+			var infectable = target.Actor.Trait<Infectable>();
+			if (infectable.Infector != null)
+				return;
 
-           infectable.RevokeCondition(target.Actor, true);
-        }
+			infectable.RevokeCondition(target.Actor, true);
+		}
 
-        protected override bool TryStartEnter(Actor self, Actor targetActor)
-        {
-            if (targetActor.IsDead)
-                return false;
+		protected override bool TryStartEnter(Actor self, Actor targetActor)
+		{
+			if (targetActor.IsDead)
+				return false;
 
-            var infectable = targetActor.Trait<Infectable>();
-            if (infectable.Infector != null)
-                return false;
+			var infectable = targetActor.Trait<Infectable>();
+			if (infectable.Infector != null)
+				return false;
 
-            if (infectable.Infector != null)
-                return false;
+			if (infectable.Infector != null)
+				return false;
 
-            infectable.GrantCondition(targetActor, true);
+			infectable.GrantCondition(targetActor, true);
 
-            return true;
-        }
-    }
+			return true;
+		}
+	}
 }

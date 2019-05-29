@@ -52,45 +52,50 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Flash the screen on teleporting.")]
 		public readonly bool FlashScreen = false;
 
-        [GrantedConditionReference]
-        [Desc("The condition to grant after teleporting.")]
-        public readonly string TeleportCondition = null;
+		[GrantedConditionReference]
+		[Desc("The condition to grant after teleporting.")]
+		public readonly string TeleportCondition = null;
 
-        [Desc("How long to apply the condition for.")]
-        public readonly int ConditionDuration = 0;
+		[Desc("How long to apply the condition for.")]
+		public readonly int ConditionDuration = 0;
 
-        [VoiceReference] public readonly string Voice = "Action";
+		[VoiceReference]
+		public readonly string Voice = "Action";
 
 		public object Create(ActorInitializer init) { return new PortableChronoRA2(this); }
 	}
 
 	class PortableChronoRA2 : INotifyCreated, IIssueOrder, IResolveOrder, ITick, ISelectionBar, IOrderVoice, ISync
 	{
-		[Sync] int chargeTick = 0;
-        [Sync] int conditionTicks = 0;
-        public readonly PortableChronoRA2Info Info;
+		[Sync]
+		int chargeTick = 0;
 
-        ConditionManager conditionManager;
-        int token = ConditionManager.InvalidConditionToken;
+		[Sync]
+		int conditionTicks = 0;
 
-        public PortableChronoRA2(PortableChronoRA2Info info)
+		public readonly PortableChronoRA2Info Info;
+
+		ConditionManager conditionManager;
+		int token = ConditionManager.InvalidConditionToken;
+
+		public PortableChronoRA2(PortableChronoRA2Info info)
 		{
 			Info = info;
 		}
 
-        void INotifyCreated.Created(Actor self)
-        {
-            conditionManager = self.TraitOrDefault<ConditionManager>();
-        }
+		void INotifyCreated.Created(Actor self)
+		{
+			conditionManager = self.TraitOrDefault<ConditionManager>();
+		}
 
-        void ITick.Tick(Actor self)
+		void ITick.Tick(Actor self)
 		{
 			if (chargeTick > 0)
 				chargeTick--;
 
-            if (--conditionTicks < 0 && conditionManager != null && token != ConditionManager.InvalidConditionToken)
-                token = conditionManager.RevokeCondition(self, token);
-        }
+			if (--conditionTicks < 0 && conditionManager != null && token != ConditionManager.InvalidConditionToken)
+				token = conditionManager.RevokeCondition(self, token);
+		}
 
 		public IEnumerable<IOrderTargeter> Orders
 		{
@@ -129,30 +134,30 @@ namespace OpenRA.Mods.RA2.Traits
 
 				var cell = self.World.Map.CellContaining(order.Target.CenterPosition);
 				self.QueueActivity(new TeleportRA2(self, cell, maxDistance, Info.KillCargo, Info.FlashScreen, Info.ChronoshiftSound));
-            }
-        }
+			}
+		}
 
 		string IOrderVoice.VoicePhraseForOrder(Actor self, Order order)
 		{
 			return order.OrderString == "PortableChronoTeleport" && CanTeleport ? Info.Voice : null;
 		}
 
-        public void GrantCondition(Actor self)
-        {
-            if (conditionManager == null)
-                return;
+		public void GrantCondition(Actor self)
+		{
+			if (conditionManager == null)
+				return;
 
-            if (string.IsNullOrEmpty(Info.TeleportCondition))
-                return;
+			if (string.IsNullOrEmpty(Info.TeleportCondition))
+				return;
 
-            if (token == ConditionManager.InvalidConditionToken)
-            {
-                token = conditionManager.GrantCondition(self, Info.TeleportCondition);
-                conditionTicks = Info.ConditionDuration;
-            }
-        }
+			if (token == ConditionManager.InvalidConditionToken)
+			{
+				token = conditionManager.GrantCondition(self, Info.TeleportCondition);
+				conditionTicks = Info.ConditionDuration;
+			}
+		}
 
-        public void ResetChargeTime()
+		public void ResetChargeTime()
 		{
 			chargeTick = Info.ChargeDelay;
 		}
@@ -217,7 +222,7 @@ namespace OpenRA.Mods.RA2.Traits
 			this.info = info;
 		}
 
-        protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override IEnumerable<Order> OrderInner(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (mi.Button == Game.Settings.Game.MouseButtonPreference.Cancel)
 			{
@@ -233,18 +238,18 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-        protected override void Tick(World world)
+		protected override void Tick(World world)
 		{
 			if (!self.IsInWorld || self.IsDead)
 				world.CancelInputMode();
 		}
 
-        protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
+		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
 		{
 			yield break;
 		}
 
-        protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
+		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
 		{
 			if (!self.IsInWorld || self.Owner != self.World.LocalPlayer)
 				yield break;
@@ -260,7 +265,7 @@ namespace OpenRA.Mods.RA2.Traits
 				Color.FromArgb(96, Color.Black));
 		}
 
-        protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
+		protected override string GetCursor(World world, CPos cell, int2 worldPixel, MouseInput mi)
 		{
 			if (self.IsInWorld && self.Location != cell
 				&& self.Trait<PortableChronoRA2>().CanTeleport && self.Owner.Shroud.IsExplored(cell))

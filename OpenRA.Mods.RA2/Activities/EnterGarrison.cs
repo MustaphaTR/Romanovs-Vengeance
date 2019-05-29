@@ -201,7 +201,7 @@ namespace OpenRA.Mods.RA2.Activities
 			OnCancel(self);
 
 			if (!IsCanceling && moveActivity != null)
-                moveActivity.Cancel(self);
+				moveActivity.Cancel(self);
 
 			base.Cancel(self, keepQueue);
 		}

@@ -45,7 +45,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public FirePort[] Ports { get; private set; }
 
-		[PaletteReference] public readonly string MuzzlePalette = "effect";
+		[PaletteReference]
+		public readonly string MuzzlePalette = "effect";
 
 		public override object Create(ActorInitializer init) { return new AttackGarrisonedRV(init.Self, this); }
 		public override void RulesetLoaded(Ruleset rules, ActorInfo ai)

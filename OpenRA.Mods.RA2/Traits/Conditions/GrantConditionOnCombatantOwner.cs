@@ -8,7 +8,7 @@
  * information, see COPYING.
  */
 #endregion
- 
+
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -41,9 +41,9 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			manager = self.Trait<ConditionManager>();
 
-            if (!self.Owner.NonCombatant)
-                GrantCondition(self, info.Condition);
-        }
+			if (!self.Owner.NonCombatant)
+				GrantCondition(self, info.Condition);
+		}
 
 		void GrantCondition(Actor self, string cond)
 		{
@@ -56,20 +56,20 @@ namespace OpenRA.Mods.RA2.Traits
 			token = manager.GrantCondition(self, cond);
 		}
 
-        void RevokeCondition(Actor self)
-        {
-            if (manager == null)
-                return;
+		void RevokeCondition(Actor self)
+		{
+			if (manager == null)
+				return;
 
-            token = manager.RevokeCondition(self, token);
-        }
+			token = manager.RevokeCondition(self, token);
+		}
 
-        void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
-        {
-            if (!newOwner.NonCombatant && token == ConditionManager.InvalidConditionToken)
-                GrantCondition(self, info.Condition);
-            else if (newOwner.NonCombatant && token != ConditionManager.InvalidConditionToken)
-                RevokeCondition(self);
+		void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
+		{
+			if (!newOwner.NonCombatant && token == ConditionManager.InvalidConditionToken)
+				GrantCondition(self, info.Condition);
+			else if (newOwner.NonCombatant && token != ConditionManager.InvalidConditionToken)
+				RevokeCondition(self);
 		}
 	}
 }

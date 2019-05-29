@@ -31,17 +31,17 @@ namespace OpenRA.Mods.RA2.Activities
 		}
 
 		protected override bool TryStartEnter(Actor self, Actor targetActor)
-        {
+		{
 			return true; // Slaves are always welcome.
 		}
 
 		protected override void OnEnterComplete(Actor self, Actor targetActor)
-        {
+		{
 			// Master got killed :(
 			if (master.IsDead)
 				return;
 
-            Cancel(self); // Stop slaves from exiting.
+			Cancel(self); // Stop slaves from exiting.
 
 			// Load this thingy.
 			// Issue attack move to the rally point.
@@ -50,7 +50,7 @@ namespace OpenRA.Mods.RA2.Activities
 				if (self.IsDead || master.IsDead)
 					return;
 
-                spawnerMaster.PickupSlave(master, self);
+				spawnerMaster.PickupSlave(master, self);
 				w.Remove(self);
 
 				// Insta repair.
@@ -60,11 +60,12 @@ namespace OpenRA.Mods.RA2.Activities
 					self.InflictDamage(self, new Damage(-health.MaxHP));
 				}
 
-                // Insta re-arm. (Delayed launching is handled at spawner.)
-                var ammoPools = self.TraitsImplementing<AmmoPool>().ToArray();
+				// Insta re-arm. (Delayed launching is handled at spawner.)
+				var ammoPools = self.TraitsImplementing<AmmoPool>().ToArray();
 				if (ammoPools != null)
 					foreach (var pool in ammoPools)
-						while (pool.GiveAmmo(self, 1)); // fill 'er up.
+						while (!pool.FullAmmo())
+							pool.GiveAmmo(self, 1);
 			});
 		}
 	}

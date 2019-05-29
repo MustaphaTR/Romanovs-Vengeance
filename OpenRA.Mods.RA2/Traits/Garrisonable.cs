@@ -46,8 +46,9 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Terrain types that this actor is allowed to eject actors onto. Leave empty for all terrain types.")]
 		public readonly HashSet<string> UnloadTerrainTypes = new HashSet<string>();
 
+		[VoiceReference]
 		[Desc("Voice to play when ordered to unload the garrisoners.")]
-		[VoiceReference] public readonly string UnloadVoice = "Action";
+		public readonly string UnloadVoice = "Action";
 
 		[Desc("Which direction the garrisoner will face (relative to the transport) when unloading.")]
 		public readonly int GarrisonerFacing = 128;

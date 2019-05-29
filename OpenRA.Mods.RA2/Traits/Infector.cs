@@ -10,44 +10,45 @@
 #endregion
 
 using System.Collections.Generic;
-using OpenRA.Mods.RA2.Activities;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.RA2.Activities;
 using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
 	public class InfectorInfo : ITraitInfo
-    {
-        [FieldLoader.Require]
-        public readonly BitSet<TargetableType> Types;
+	{
+		[FieldLoader.Require]
+		public readonly BitSet<TargetableType> Types;
 
-        [FieldLoader.Require]
-        [Desc("How much damage to deal.")]
-        public readonly int Damage;
+		[FieldLoader.Require]
+		[Desc("How much damage to deal.")]
+		public readonly int Damage;
 
-        [FieldLoader.Require]
-        [Desc("How often to deal the damage.")]
+		[FieldLoader.Require]
+		[Desc("How often to deal the damage.")]
 		public readonly int DamageInterval;
-        
-        [Desc("If more than this outside damage is dealt to infected unit while this actor is in, it is killed when infected unit dies.",
-            "Use -1 to never kill the actor.")]
-        public readonly int SuppressionThreshold = -1;
 
-        [Desc("If the infected actor enters this damage state, kill the actor.")]
-        public readonly DamageState[] KillState = { };
+		[Desc("If more than this outside damage is dealt to infected unit while this actor is in, it is killed when infected unit dies.",
+			"Use -1 to never kill the actor.")]
+		public readonly int SuppressionThreshold = -1;
 
-        [Desc("Damage types for the infection damage.")]
-        public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
+		[Desc("If the infected actor enters this damage state, kill the actor.")]
+		public readonly DamageState[] KillState = { };
 
+		[Desc("Damage types for the infection damage.")]
+		public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
+
+		[VoiceReference]
 		[Desc("Voice string when ordered to infect an actor.")]
-		[VoiceReference] public readonly string Voice = "Action";
+		public readonly string Voice = "Action";
 
-        public readonly Stance TargetStances = Stance.Enemy | Stance.Neutral;
-        public readonly Stance ForceTargetStances = Stance.Enemy | Stance.Neutral | Stance.Ally;
+		public readonly Stance TargetStances = Stance.Enemy | Stance.Neutral;
+		public readonly Stance ForceTargetStances = Stance.Enemy | Stance.Neutral | Stance.Ally;
 
-        public readonly string Cursor = "attack";
+		public readonly string Cursor = "attack";
 
 		public object Create(ActorInitializer init) { return new Infector(this); }
 	}
@@ -79,12 +80,12 @@ namespace OpenRA.Mods.RA2.Traits
 			if (order.OrderString != "Infect")
 				return;
 
-            if (!order.Queued)
+			if (!order.Queued)
 				self.CancelActivity();
 
 			self.SetTargetLine(order.Target, Color.Red);
-            self.QueueActivity(new Infect(self, order.Target));
-        }
+			self.QueueActivity(new Infect(self, order.Target));
+		}
 
 		public string VoicePhraseForOrder(Actor self, Order order)
 		{
@@ -92,40 +93,40 @@ namespace OpenRA.Mods.RA2.Traits
 		}
 
 		class InfectionOrderTargeter : UnitOrderTargeter
-        {
-            readonly InfectorInfo info;
+		{
+			readonly InfectorInfo info;
 
-            public InfectionOrderTargeter(InfectorInfo info)
-                : base("Infect", 7, info.Cursor, true, true)
-            {
-                this.info = info;
-            }
+			public InfectionOrderTargeter(InfectorInfo info)
+				: base("Infect", 7, info.Cursor, true, true)
+			{
+				this.info = info;
+			}
 
-            public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
+			public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 			{
 				// Obey force moving onto bridges
 				if (modifiers.HasModifier(TargetModifiers.ForceMove))
 					return false;
 
-                var stance = self.Owner.Stances[target.Owner];
-                if (!info.TargetStances.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
-                    return false;
-                if (!info.ForceTargetStances.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
-                    return false;
+				var stance = self.Owner.Stances[target.Owner];
+				if (!info.TargetStances.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
+					return false;
+				if (!info.ForceTargetStances.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
+					return false;
 
-                return info.Types.Overlaps(target.GetAllTargetTypes());
-            }
+				return info.Types.Overlaps(target.GetAllTargetTypes());
+			}
 
 			public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
-            {
-                var stance = self.Owner.Stances[target.Owner];
-                if (!info.TargetStances.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
-                    return false;
-                if (!info.ForceTargetStances.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
-                    return false;
+			{
+				var stance = self.Owner.Stances[target.Owner];
+				if (!info.TargetStances.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
+					return false;
+				if (!info.ForceTargetStances.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
+					return false;
 
-                return info.Types.Overlaps(target.Info.GetAllTargetTypes());
-            }
+				return info.Types.Overlaps(target.Info.GetAllTargetTypes());
+			}
 		}
 	}
 }

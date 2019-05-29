@@ -21,19 +21,26 @@
 #   make check-packaging-scripts
 
 .PHONY: utility stylecheck build clean engine version check check-scripts check-sdk-scripts check-packaging-scripts check-variables
-.DEFAULT_GOAL := build
+.DEFAULT_GOAL := all
 
 VERSION = $(shell git name-rev --name-only --tags --no-undefined HEAD 2>/dev/null || echo git-`git rev-parse --short HEAD`)
 MOD_ID = $(shell cat user.config mod.config 2> /dev/null | awk -F= '/MOD_ID/ { print $$2; exit }')
 ENGINE_DIRECTORY = $(shell cat user.config mod.config 2> /dev/null | awk -F= '/ENGINE_DIRECTORY/ { print $$2; exit }')
 MOD_SEARCH_PATHS = "$(shell python -c "import os; print(os.path.realpath('.'))")/mods,./mods"
 
-MANIFEST_PATH = "mods/$(MOD_ID)/mod.yaml"
+WHITELISTED_OPENRA_ASSEMBLIES = "$(shell cat user.config mod.config 2> /dev/null | awk -F= '/WHITELISTED_OPENRA_ASSEMBLIES/ { print $$2; exit }')"
+WHITELISTED_THIRDPARTY_ASSEMBLIES = "$(shell cat user.config mod.config 2> /dev/null | awk -F= '/WHITELISTED_THIRDPARTY_ASSEMBLIES/ { print $$2; exit }')"
+WHITELISTED_CORE_ASSEMBLIES = "$(shell cat user.config mod.config 2> /dev/null | awk -F= '/WHITELISTED_CORE_ASSEMBLIES/ { print $$2; exit }')"
+WHITELISTED_MOD_ASSEMBLIES = "$(shell cat user.config mod.config 2> /dev/null | awk -F= '/WHITELISTED_MOD_ASSEMBLIES/ { print $$2; exit }')"
 
-HAS_MSBUILD = $(shell command -v msbuild 2> /dev/null)
+MANIFEST_PATH = "mods/$(MOD_ID)/mod.yaml"
 HAS_LUAC = $(shell command -v luac 2> /dev/null)
 LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua')
-PROJECT_DIRS = $(shell dirname $$(find . -iname "*.csproj" -not -path "$(ENGINE_DIRECTORY)/*"))
+
+MSBUILD = msbuild -verbosity:m -nologo
+
+# Enable 32 bit builds while generating the windows installer
+WIN32 = false
 
 check-sdk-scripts:
 	@awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format: file must be saved using unix-style (CR, not CRLF) line endings.\n"; exit 1)
@@ -94,29 +101,32 @@ check-variables:
 		exit 1; \
 	fi
 
+engine-dependencies: check-variables check-sdk-scripts
+	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
+	@cd $(ENGINE_DIRECTORY) && make dependencies WIN32=$(WIN32)
+
 engine: check-variables check-sdk-scripts
 	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
-	@cd $(ENGINE_DIRECTORY) && make dependencies && make core
+	@cd $(ENGINE_DIRECTORY) && make core WIN32=$(WIN32)
 
-utility: engine
+utility: engine-dependencies engine
 	@test -f "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" || (printf "OpenRA.Utility.exe not found!\n"; exit 1)
 
-stylecheck: engine
-	@test -f "$(ENGINE_DIRECTORY)/OpenRA.StyleCheck.exe" || (cd $(ENGINE_DIRECTORY) && make stylecheck)
-
-build: engine
-ifeq ("$(HAS_MSBUILD)","")
-	@find . -maxdepth 1 -name '*.sln' -exec xbuild /nologo /verbosity:quiet /p:TreatWarningsAsErrors=true \;
+core:
+	@command -v $(MSBUILD) >/dev/null || (echo "OpenRA requires the '$(MSBUILD)' tool provided by Mono >= 5.4."; exit 1)
+	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:restore \;
+ifeq ($(WIN32), $(filter $(WIN32),true yes y on 1))
+	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:build -p:Configuration="Release-x86" \;
 else
-	@find . -maxdepth 1 -name '*.sln' -exec msbuild /t:Rebuild /nr:false \;
+	@$(MSBUILD) -t:build -p:Configuration=Release
+	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:build -p:Configuration=Release \;
 endif
+
+all: engine-dependencies engine core
 
 clean: engine
-ifeq ("$(HAS_MSBUILD)","")
-	@find . -maxdepth 1 -name '*.sln' -exec xbuild /nologo /verbosity:quiet /p:TreatWarningsAsErrors=true /t:Clean \;
-else
-	@find . -maxdepth 1 -name '*.sln' -exec msbuild /t:Clean /nr:false \;
-endif
+	@command -v $(MSBUILD) >/dev/null || (echo "OpenRA requires the '$(MSBUILD)' tool provided by Mono >= 5.4."; exit 1)
+	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:clean \;
 	@cd $(ENGINE_DIRECTORY) && make clean
 	@printf "The engine has been cleaned.\n"
 
@@ -136,13 +146,13 @@ ifneq ("$(LUA_FILES)","")
 	@luac -p $(LUA_FILES)
 endif
 
-check: utility stylecheck
+check: utility
+	@echo "Compiling in debug mode..."
+	@$(MSBUILD) -t:build -p:Configuration=Debug
+	@echo "Checking runtime assemblies..."
+	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-runtime-assemblies $(WHITELISTED_OPENRA_ASSEMBLIES) $(WHITELISTED_THIRDPARTY_ASSEMBLIES) $(WHITELISTED_CORE_ASSEMBLIES) $(WHITELISTED_MOD_ASSEMBLIES)
 	@echo "Checking for explicit interface violations..."
 	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-explicit-interfaces
-	@for i in $(PROJECT_DIRS) ; do \
-		echo "Checking for code style violations in $${i}...";\
-		mono --debug "$(ENGINE_DIRECTORY)/OpenRA.StyleCheck.exe" $${i};\
-	done
 
 test: utility
 	@echo "Testing $(MOD_ID) mod MiniYAML..."

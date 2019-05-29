@@ -5,28 +5,19 @@
 ###############################################################
 function All-Command
 {
-	If (!(Test-Path "*.sln"))
+	if ((CheckForDotnet) -eq 1)
 	{
 		return
 	}
 
-	$msBuild = FindMSBuild
-	$msBuildArguments = "/t:Rebuild /nr:false"
-	if ($msBuild -eq $null)
+	dotnet build /p:Configuration=Release /nologo
+	if ($lastexitcode -ne 0)
 	{
-		echo "Unable to locate an appropriate version of MSBuild."
+		Write-Host "Build failed. If just the development tools failed to build, try installing Visual Studio. You may also still be able to run the game." -ForegroundColor Red
 	}
 	else
 	{
-		$proc = Start-Process $msBuild $msBuildArguments -NoNewWindow -PassThru -Wait
-		if ($proc.ExitCode -ne 0)
-		{
-			echo "Build failed. If just the development tools failed to build, try installing Visual Studio. You may also still be able to run the game."
-		}
-		else
-		{
-			echo "Build succeeded."
-		}
+		Write-Host "Build succeeded." -ForegroundColor Green
 	}
 }
 
@@ -37,25 +28,35 @@ function Clean-Command
 		return
 	}
 
-	$msBuild = FindMSBuild
-	$msBuildArguments = "/t:Clean /nr:false"
-	if ($msBuild -eq $null)
+	if ((CheckForDotnet) -eq 1)
 	{
-		echo "Unable to locate an appropriate version of MSBuild."
+		return
 	}
-	else
+
+	dotnet clean /nologo
+	rm *.dll
+	rm mods/*/*.dll
+	rm *.dll.config
+	rm *.pdb
+	rm mods/*/*.pdb
+	rm *.exe
+	rm ./*/bin -r
+	rm ./*/obj -r
+
+	rm $env:ENGINE_DIRECTORY/*.dll
+	rm $env:ENGINE_DIRECTORY/mods/*/*.dll
+	rm env:ENGINE_DIRECTORY/*.config
+	rm env:ENGINE_DIRECTORY/*.pdb
+	rm mods/*/*.pdb
+	rm env:ENGINE_DIRECTORY/*.exe
+	rm env:ENGINE_DIRECTORY/*/bin -r
+	rm env:ENGINE_DIRECTORY/*/obj -r
+	if (Test-Path env:ENGINE_DIRECTORY/thirdparty/download/)
 	{
-		$proc = Start-Process $msBuild $msBuildArguments -NoNewWindow -PassThru -Wait
-		rm *.dll
-		rm *.dll.config
-		rm mods/*/*.dll
-		rm *.pdb
-		rm mods/*/*.pdb
-		rm *.exe
-		rm ./*/bin -r
-		rm ./*/obj -r
-		echo "Clean complete."
+		rmdir env:ENGINE_DIRECTORY/thirdparty/download -Recurse -Force
 	}
+
+	Write-Host "Clean complete." -ForegroundColor Green
 }
 
 function Version-Command
@@ -77,12 +78,12 @@ function Version-Command
 		}
 		else
 		{
-			echo "Not a git repository. The version will remain unchanged."
+			Write-Host "Not a git repository. The version will remain unchanged." -ForegroundColor Red
 		}
 	}
 	else
 	{
-		echo "Unable to locate Git. The version will remain unchanged."
+		Write-Host "Unable to locate Git. The version will remain unchanged." -ForegroundColor Red
 	}
 
 	if ($version -ne $null)
@@ -99,43 +100,34 @@ function Version-Command
 		$replacement = (gc $mod) -Replace ".*: User", ("{0}/{1}: User" -f $prefix, $version)
 		sc $mod $replacement
 
-		echo ("Version strings set to '{0}'." -f $version)
+		Write-Host ("Version strings set to '{0}'." -f $version)
 	}
 }
 
 function Test-Command
 {
-	if (Test-Path $utilityPath)
+	if ((CheckForUtility) -eq 1)
 	{
-		echo "Testing $modID mod MiniYAML"
-		Invoke-Expression "$utilityPath $modID --check-yaml"
+		return
 	}
-	else
-	{
-		UtilityNotFound
-	}
+
+	Write-Host "Testing $modID mod MiniYAML..." -ForegroundColor Cyan
+	Invoke-Expression "$utilityPath $modID --check-yaml"
 }
 
 function Check-Command
 {
-	if (Test-Path $utilityPath)
+	Write-Host "Compiling in debug configuration..." -ForegroundColor Cyan
+	dotnet build /p:Configuration=Debug /nologo
+	if ($lastexitcode -ne 0)
 	{
-		echo "Checking for explicit interface violations..."
-		Invoke-Expression "$utilityPath $modID --check-explicit-interfaces"
-	}
-	else
-	{
-		UtilityNotFound
+		Write-Host "Build failed." -ForegroundColor Red
 	}
 
-	if (Test-Path $styleCheckPath)
+	if ((CheckForUtility) -eq 0)
 	{
-		echo "Checking for code style violations in OpenRA.Mods.$modID..."
-		Invoke-Expression "$styleCheckPath OpenRA.Mods.$modID"
-	}
-	else
-	{
-		echo "$styleCheckPath could not be found. Build the project first using the `"all`" command."
+		Write-Host "Checking for explicit interface violations..." -ForegroundColor Cyan
+		Invoke-Expression "$utilityPath $modID --check-explicit-interfaces"
 	}
 }
 
@@ -143,54 +135,53 @@ function Check-Scripts-Command
 {
 	if ((Get-Command "luac.exe" -ErrorAction SilentlyContinue) -ne $null)
 	{
-		echo "Testing Lua scripts..."
+		Write-Host "Testing Lua scripts..." -ForegroundColor Cyan
 		foreach ($script in ls "mods/*/maps/*/*.lua")
 		{
 			luac -p $script
 		}
-		echo "Check completed!"
+		Write-Host "Check completed!" -ForegroundColor Green
 	}
 	else
 	{
-		echo "luac.exe could not be found. Please install Lua."
+		Write-Host "luac.exe could not be found. Please install Lua." -ForegroundColor Red
 	}
 }
 
 function Docs-Command
 {
-	if (Test-Path $utilityPath)
+	if ((CheckForUtility) -eq 1)
 	{
-		Invoke-Expression "$utilityPath $modID --docs | Out-File -Encoding 'UTF8' DOCUMENTATION.md"
-		Invoke-Expression "$utilityPath $modID --lua-docs | Out-File -Encoding 'UTF8' Lua-API.md"
-		echo "Docs generated."
+		return
 	}
-	else
-	{
-		UtilityNotFound
-	}
+
+	./make.ps1 version
+	Invoke-Expression "$utilityPath $modID --docs | Out-File -Encoding 'UTF8' DOCUMENTATION.md"
+	Invoke-Expression "$utilityPath $modID --weapon-docs | Out-File -Encoding "UTF8" WEAPONS.md"
+	Invoke-Expression "$utilityPath $modID --lua-docs | Out-File -Encoding 'UTF8' Lua-API.md"
+	echo "Docs generated." -ForegroundColor Green
 }
 
-function FindMSBuild
+function CheckForUtility
 {
-	$key = "HKLM:\SOFTWARE\Microsoft\MSBuild\ToolsVersions\4.0"
-	$property = Get-ItemProperty $key -ErrorAction SilentlyContinue
-	if ($property -eq $null -or $property.MSBuildToolsPath -eq $null)
+	if (Test-Path OpenRA.Utility.exe)
 	{
-		return $null
+		return 0
 	}
 
-	$path = Join-Path $property.MSBuildToolsPath -ChildPath "MSBuild.exe"
-	if (Test-Path $path)
-	{
-		return $path
-	}
-
-	return $null
+	Write-Host "OpenRA.Utility.exe could not be found. Build the project first using the `"all`" command." -ForegroundColor Red
+	return 1
 }
 
-function UtilityNotFound
+function CheckForDotnet
 {
-	echo "$utilityPath could not be found. Build the project first using the `"all`" command."
+	if ((Get-Command "dotnet" -ErrorAction SilentlyContinue) -eq $null) 
+	{
+		Write-Host "The 'dotnet' tool is required to compile OpenRA. Please install the .NET Core SDK or Visual Studio and try again. https://dotnet.microsoft.com/download" -ForegroundColor Red
+		return 1
+	}
+
+	return 0
 }
 
 function WaitForInput
