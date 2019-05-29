@@ -403,7 +403,6 @@ prerequisite.tesla_fence:
 ^CommandersPowers:
 	SpawnActorPower@SCOUT_DRONE:
 		OrderName: AlliedScoutDrone
-		PauseOnCondition: chronodisable
 		Actors:
 			1: sdrn
 		Prerequisites:
@@ -421,7 +420,6 @@ prerequisite.tesla_fence:
 		SelectTargetSpeechNotification: SelectTarget
 	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
-		PauseOnCondition: chronodisable
 		Prerequisites:
 			1: commanders_power.spy_plane
 		Icons:
@@ -565,7 +563,6 @@ prerequisite.tesla_fence:
 		DirectionArrowPalette: mouse
 	DetonateWeaponPower@emergencyrepair:
 		OrderName: EmergencyRepair
-		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites:
 			1: commanders_power.emergency_repair.1
 			2: commanders_power.emergency_repair.2
@@ -593,7 +590,6 @@ prerequisite.tesla_fence:
 		ActivationSequence:
 	AirstrikePower@a10strike:
 		OrderName: AlliedA10Strike
-		PauseOnCondition: disabled || chronodisable || emp
 		Prerequisites
 			1: commanders_power.a10_strike.1
 			2: commanders_power.a10_strike.2
@@ -752,7 +748,6 @@ prerequisite.tesla_fence:
 		SelectTargetSpeechNotification: SelectTarget
 	DetonateWeaponPower@cruiserstrike:
 		OrderName: AlliedCruiserStrike
-		PauseOnCondition: chronodisable
 		Prerequisites:
 			1: commanders_power.cruiser_strike
 		Icons:
@@ -772,7 +767,6 @@ prerequisite.tesla_fence:
 		ActivationSequence:
 	DetonateWeaponPower@v3storm:
 		OrderName: SovietV3Storm
-		PauseOnCondition: chronodisable
 		Prerequisites:
 			1: commanders_power.v3_storm
 		Icons:

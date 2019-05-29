@@ -661,7 +661,7 @@
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
-		AssaultMoveScanCondition: assault-move
+		AssaultMoveCondition: assault-move
 		Voice: Attack
 
 ^AutoTargetAir:
@@ -694,7 +694,7 @@
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: stance-attackanything || assault-move
 	AttackMove:
-		AssaultMoveScanCondition: assault-move
+		AssaultMoveCondition: assault-move
 		Voice: Attack
 
 ^Building:
@@ -798,6 +798,7 @@
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
 	-CaptureNotification:
+	-GrantConditionOnPrerequisite@INSTANTCAPTURE:
 	-MustBeDestroyed:
 	-ShakeOnDeath:
 	-GivesBuildableArea:
