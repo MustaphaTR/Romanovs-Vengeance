@@ -735,6 +735,7 @@
 	Capturable:
 		Types: building
 		RequiresCondition: !build-incomplete && !invulnerability
+	CaptureNotification:
 	CapturableProgressBar:
 		RequiresCondition: !instantcapture
 	CapturableProgressBlink:
@@ -761,7 +762,6 @@
 		Factions: cuba, libya, iraq, russia, vietnam
 	MustBeDestroyed:
 		RequiredForShortGame: true
-	CaptureNotification:
 	ShakeOnDeath:
 	ProximityCaptor:
 		Types: Building
@@ -795,9 +795,9 @@
 ^SupportBuilding:
 	Inherits: ^BaseBuilding
 	-Capturable:
+	-CaptureNotification:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
-	-CaptureNotification:
 	-GrantConditionOnPrerequisite@INSTANTCAPTURE:
 	-MustBeDestroyed:
 	-ShakeOnDeath:
@@ -822,11 +822,12 @@
 	Inherits: ^Building
 	-OwnerLostAction:
 	-Capturable:
+	-CaptureNotification:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
+	-GrantConditionOnPrerequisite@INSTANTCAPTURE:
 	-MustBeDestroyed:
 	-GivesExperience:
-	-CaptureNotification:
 	-UpdatesPlayerStatistics:
 	-RepairableBuilding:
 	-WithBuildingRepairDecoration:
@@ -1050,8 +1051,10 @@
 	LineBuildNode:
 		Types: wall, gate
 	-Capturable:
+	-CaptureNotification:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
+	-GrantConditionOnPrerequisite@INSTANTCAPTURE:
 	-MustBeDestroyed:
 	-WithSpriteBody:
 	WithGateSpriteBody:
