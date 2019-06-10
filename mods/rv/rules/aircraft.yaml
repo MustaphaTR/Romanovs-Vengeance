@@ -773,14 +773,12 @@ schp:
 		Weapon: 160mm
 		Name: deployed
 		LocalOffset: 768,0,2048
-		PauseOnCondition: !deployed
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
 		Weapon: 160mmE
 		Name: deployed
 		LocalOffset: 768,0,2048
-		PauseOnCondition: !deployed
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && deployed
 	Turreted:
 		TurnSpeed: 5
 	Voiced:
@@ -808,14 +806,10 @@ schp:
 	ReloadAmmoPool:
 		Delay: 40
 		Count: 1
-	AttackAircraft:
-		Voice: Attack
-		FacingTolerance: 2
-		PauseOnCondition: !undeployed || emp || chronodisable
 	AttackTurreted:
-		Armaments: deployed
+		Armaments: primary, deployed
 		Voice: DeployedAttack
-		PauseOnCondition: !deployed || emp || chronodisable
+		PauseOnCondition: (!deployed && !undeployed) || emp || chronodisable
 	Aircraft:
 		LandWhenIdle: false
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
