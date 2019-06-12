@@ -88,6 +88,9 @@ gapowr:
 	Tooltip:
 		Name: Power Plant
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@no-plug:
+		Prerequisite: gapowr.pluggable
+		RequiresCondition: !powrup
 	ProvidesPrerequisite:
 		Prerequisite: power
 	Building:

@@ -332,6 +332,14 @@ Player:
 			gagap: 1
 			namisl: 2
 			gaweat: 2
+	PlugSpawnerBotModule@test:
+		RequiresCondition: enable-test-ai && powerplug
+		Plug: gapowrup
+		Pluggables: gapowr
+		Interval: 750
+	GrantConditionOnPrerequisite@powerplug:
+		Condition: powerplug
+		Prerequisites: gapowr.pluggable, gaairc, ~techlevel.2
 	HarvesterBotModule@test:
 		RequiresCondition: enable-test-ai
 	BuildingRepairBotModule@test:
