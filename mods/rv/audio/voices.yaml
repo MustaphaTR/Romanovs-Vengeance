@@ -142,6 +142,16 @@ ApocalypseVoice:
 		Move: vapomoa, vapomob, vapomoc, vapomod, vapomoe
 		Attack: vapoata, vapoatb, vapoatc, vapoatd, vapoate, vapoatf
 
+SlaveMinerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vslasea $vslaseb $vslasec $vslased $vslasee $vslasef $vslaseg
+		Move: vslamoa $vslamoc $vslamoe $vslamof
+		Attack: vslaata $vslaatb $vslaatc $vslaate
+		Harvest: vslahaa $vslahab $vslahac $vslahad $vslamod
+		Deploy: vslahae
+		Undeploy: vslamob
+
 LasherTankVoice:
 	DefaultVariant: .wav
 	Voices:
@@ -149,19 +159,33 @@ LasherTankVoice:
 		Move: vlasmoa, vlasmoc, vlasmof, vlasatd
 		Attack: vlasata, vlasatc, vlasate, vlasatf, vlasatg
 
+GatlingTankVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vgatsea, vgatseb, vgatsec, vgatsed, vgatsee
+		Move: vgatmoa, vgatmob, vgatmoc, vgatmod, vgatmoe
+		Attack: vgatata, vgatatb, vgatatc, vgatatd, vgatate, vgatatf
+
 YuriConstructionVehicleVoice:
 	DefaultVariant: .wav
 	Voices:
 		Select: vmcysea, vmcyseb, vmcysec, vmcysed, vmcysee
 		Move: vmcymoa, vmcymob, vmcymoc, vmcymod, vmcymoe
-     
+
+MagnetronVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vmagsea, vmagseb, vmagsec, vmagsed, vmagsee
+		Move: vmagmoa, vmagmob, vmagmoc, vmagmod, vmagmoe
+		Attack: vmagata, vmagatb, vmagatc, vmagatd, vmagate, vmagatf
+
 MasterMindVoice:
 	DefaultVariant: .wav
 	Voices:
 		Select: vmassea ,vmasseb ,vmassec ,vmassed ,vmassee ,vmassef
 		Move: vmasmoa ,vmasmob ,vmasmoc ,vmasmod ,vmasmoe
 		Attack: vmasata ,vmasatb ,vmasatc ,vmasatd ,vmasate ,vmasatf
-  
+
 AlliedNavalVoice:
 	DefaultVariant: .wav
 	Voices:
@@ -221,6 +245,14 @@ YuriAmphibiousTransportVoice:
 	Voices:
 		Select: vhoysea, vhoyseb, vhoysec, vhoysed, vhoysee
 		Move: vhoymoa, vhoymob, vhoymoc, vhoymod, vhoymoe
+
+BoomerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: vboosea, vbooseb, vboosec, vboosed, vboosee
+		Move: vboomoa, vboomob, vboomoc, vboomod, vboomoe
+		Attack: vbooa2a, vbooa2b, vbooa2c, vbooa2d, vbooa2e, vbooa2f
+		AttackLand: vbooa1a, vbooa1b, vbooa1c, vbooa1d, vbooa1e, vbooa1f
 
 GIVoice:
 	Inherits: ^InfantryDeath
@@ -397,6 +429,18 @@ CrazyIvanVoice:
 		Attack: icraata, icraatb, icraatc, icraatd, icraate
 		Die: icradia, icradib
 
+CosmonautVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: ilassea, ilasseb, ilassec, ilassed, ilassee
+		Move: ilasmoa, ilasmob, ilasmoc, ilasmod, ilasmoe
+		Attack: ilasata, ilasatb, ilasatc, ilasatd, ilasate
+		Feedback: ilasfea, ilasfeb, ilasfec, ilasfed
+		Die: ilasdia, ilasdib, ilasdic, ilasdid, ilasdie
+		Zapped: igenzapa
+		Burned: ienadia #gotta put something as temp else game crashes
+		Melted: igenmela, igenmelb, igenmelc
+
 DesolatorVoice:
 	Inherits: ^InfantryDeath
 	Voices:
@@ -440,13 +484,53 @@ YuriVoice:
 		Attack: iyurata, iyuratb, iyuratc, iyuratd, iyurate
 		Die: iyurdia, iyurdib, iyurdic
 
+SlaveVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: isl1sea, isl1seb, isl1sec, isl1sed, isl1see, isl1sef
+		Move: isl1moa, isl1mob, isl1moc, isl1mod, isl1moe
+		Attack: isl1ata, isl1atb, isl1atc, isl1atd, isl1ate
+		Die: isl1haa, isl1hab, isl1hac, isl1had, isl1hae 
+
+FreedSlaveVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: isl2sea, isl2seb, isl2sec, isl2sed, isl2see
+		Move: isl2moa, isl2mob, isl2moc, isl2mod, isl2moe
+		Attack: isl2ata, isl2atb, isl2atc, isl2atd, isl2ate
+		Die: isl2dia, isl2dib, isl2dic, isl2did, isl2die
+
 InitiateVoice:
 	Inherits: ^InfantryDeath
 	Voices:
 		Select: iinisea, iiniseb, iinisec, iinisee
-		Move: iinimoa, iinimoc, $iinimod, iinimoe
+		Move: iinimoa, iinimoc, iinimod, iinimoe
 		Attack: iiniata, iiniatb, iiniatc, iiniatd, iiniate, iiniatf
 		Die: iinidia, iinidib, iinidic, iinidid, iinidie
+
+BruteVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: ibrusea, ibruseb, ibrusec, ibrused, ibrusee
+		Move: ibrumoa, ibrumob, ibrumoc, ibrumod, ibrumoe
+		Attack: ibruata, ibruatb, ibruatc, ibruatd, ibruate
+		Die: ibrudia, ibrudib, ibrudic, ibrudid, ibrudie
+
+VirusVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: ivirsea, ivirseb, ivirsec, ivirsed, ivirsee
+		Move: ivirmoa, ivirmob, ivirmoc, ivirmod, ivirmoe
+		Attack: ivirata, iviratb, iviratc, iviratd, iviratf, iviratg
+		Die: ivirdia, ivirdib, ivirdic, ivirdid, ivirdie
+
+PsiCorpsCloneVoice:
+	Inherits: ^InfantryDeath
+	Voices:
+		Select: iclosea, icloseb, iclosec, iclosed, iclosee
+		Move: iclomoa, iclomob, iclomoc, iclomod, iclomoe
+		Attack: icloata, icloatb, icloatc, icloatd, icloate
+		Die: iclodib, iclodic, iclodid, iclodie
 
 YuriPrimeVoice:
 	Inherits: ^InfantryDeath
@@ -496,6 +580,15 @@ KirovVoice:
 		Attack: vkirata, vkiratb, vkiratc, vkiratd
 		Feedback: vkirfea
 		Die: vkirdia, vkirdib, vkirdic, vkirdid
+
+FloatingDiscVoice:
+	DefaultVariant: .wav
+	Voices:
+		Build: vflomoe
+		Select: vflosea, vfloseb, vflosec, vflosed
+		Move: vflomob, vflomoc, vflomod
+		Attack: vfloata, vfloatb, vfloatc, vfloatd, vfloate
+		Die: vflodiea
 
 DemolitionTruckVoice:
 	DefaultVariant: .wav
