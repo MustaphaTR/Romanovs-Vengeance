@@ -403,6 +403,7 @@ prerequisite.tesla_fence:
 ^CommandersPowers:
 	SpawnActorPower@SCOUT_DRONE:
 		OrderName: AlliedScoutDrone
+		RequiresCondition: !lost
 		Actors:
 			1: sdrn
 		Prerequisites:
@@ -420,6 +421,7 @@ prerequisite.tesla_fence:
 		SelectTargetSpeechNotification: SelectTarget
 	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.spy_plane
 		Icons:
@@ -450,6 +452,7 @@ prerequisite.tesla_fence:
 		DirectionArrowPalette: mouse
 	ParatroopersPower@inteldrop:
 		OrderName: AlliedIntelDrop
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.intel_drop
 		Icons:
@@ -483,6 +486,7 @@ prerequisite.tesla_fence:
 		DirectionArrowPalette: mouse
 	ParatroopersPower@dronedrop:
 		OrderName: SovietDroneDrop
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.drone_drop
 		Icons:
@@ -515,6 +519,7 @@ prerequisite.tesla_fence:
 		TargetPlaceholderCursorPalette: mouse
 		DirectionArrowPalette: mouse
 	SpawnActorPower@sonar:
+		RequiresCondition: !lost
 		Icons:
 			1: sonar
 		Cursor: reveal
@@ -535,6 +540,7 @@ prerequisite.tesla_fence:
 		EffectPalette: moveflash
 	AirstrikePower@navalmines:
 		OrderName: SovietNavalMines
+		RequiresCondition: !lost
 		Icons:
 			1: navalmines
 		Prerequisites:
@@ -563,6 +569,7 @@ prerequisite.tesla_fence:
 		DirectionArrowPalette: mouse
 	DetonateWeaponPower@emergencyrepair:
 		OrderName: EmergencyRepair
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.emergency_repair.1
 			2: commanders_power.emergency_repair.2
@@ -590,6 +597,7 @@ prerequisite.tesla_fence:
 		ActivationSequence:
 	AirstrikePower@a10strike:
 		OrderName: AlliedA10Strike
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.a10_strike.1
 			2: commanders_power.a10_strike.2
@@ -635,6 +643,7 @@ prerequisite.tesla_fence:
 		DirectionArrowPalette: mouse
 	AirstrikePower@parabombs:
 		OrderName: SovietParabombs
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.parabombs.1
 			2: commanders_power.parabombs.2
@@ -680,6 +689,7 @@ prerequisite.tesla_fence:
 		DirectionArrowPalette: mouse
 	GrantExternalConditionPower@chrono_boost:
 		OrderName: AlliedChronoBoost
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.chrono_boost.1
 			2: commanders_power.chrono_boost.2
@@ -714,6 +724,7 @@ prerequisite.tesla_fence:
 		SelectTargetSpeechNotification: SelectTarget
 	GrantExternalConditionPower@propaganda:
 		OrderName: SovietPropaganda
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.propaganda.1
 			2: commanders_power.propaganda.2
@@ -748,6 +759,7 @@ prerequisite.tesla_fence:
 		SelectTargetSpeechNotification: SelectTarget
 	DetonateWeaponPower@cruiserstrike:
 		OrderName: AlliedCruiserStrike
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.cruiser_strike
 		Icons:
@@ -768,6 +780,7 @@ prerequisite.tesla_fence:
 		ActivationSequence:
 	DetonateWeaponPower@v3storm:
 		OrderName: SovietV3Storm
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.v3_storm
 		Icons:
@@ -786,3 +799,5 @@ prerequisite.tesla_fence:
 			1: V3StormInit
 		AirburstAltitude: 25c0
 		ActivationSequence:
+	GrantConditionOnOwnerLost:
+		Condition: lost
