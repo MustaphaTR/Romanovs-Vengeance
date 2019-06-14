@@ -50,14 +50,14 @@ dest:
 		LocalOffset: 1024,0,768
 		FireDelay: 2
 		RequiresCondition: rank-elite
-	Armament:
-		Name: ASW
+	Armament@asw:
+		Name: asw
 		Weapon: ASWLauncher
 	CarrierMaster:
 		Actors: asw
 		RespawnTicks: 300
 		SpawnAllAtOnce: true
-		SpawnerArmamentName: ASW
+		SpawnerArmamentName: asw
 		LoadedCondition: loaded
 	Exit@0:
 		SpawnOffset: 0,0,256
@@ -65,11 +65,7 @@ dest:
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
-		PauseOnCondition: chronodisable || emp
-	AttackFrontal@ASW:
-		Armaments: ASW
-		Voice: Attack
-		FacingTolerance: 128
+		Armaments: primary, asw
 		PauseOnCondition: chronodisable || emp
 	DetectCloaked:
 		CloakTypes: Underwater
