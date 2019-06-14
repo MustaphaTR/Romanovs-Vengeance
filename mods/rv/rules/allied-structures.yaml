@@ -141,7 +141,7 @@ gapowr:
 		Amount: 150
 		RequiresCondition: !chronodisable && !forceshieldnopower
 	Power@plug:
-		Amount: 75
+		Amount: 150
 		RequiresCondition: !chronodisable && !forceshieldnopower && powrup
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
@@ -156,18 +156,18 @@ gapowr:
 gapowrup:
 	Inherits: ^BuildingPlug
 	Valued:
-		Cost: 250
+		Cost: 200
 	Tooltip:
 		Name: Advanced Coolants
 	Buildable:
 		Queue: Support.Allies
 		BuildPaletteOrder: 80
 		Prerequisites: gapowr, gaairc, ~techlevel.2
-		Description: Better coolants allow power plant to work more efficently\nproviding 100 more power.
+		Description: Better coolants allow power plant to work more efficently\nproviding 150 more power.
 	Plug:
 		Type: powrup
 	Power:
-		Amount: 100
+		Amount: 150
 
 gapile:
 	Inherits: ^BaseBuilding
