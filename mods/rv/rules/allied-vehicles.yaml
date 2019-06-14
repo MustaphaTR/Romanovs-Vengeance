@@ -722,12 +722,12 @@ bfrt:
 	AutoTargetPriority@ATTACKANYTHING:
 		RequiresCondition: (stance-attackanything || assault-move) && !loaded-air
 	AutoTargetPriority@DEFAULT_AIR:
-		RequiresCondition: (!stance-attackanything && !assault-move) && loaded-air
-		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Defense, Air
+		RequiresCondition: !stance-attackanything && !assault-move && loaded-air
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING_AIR:
 		RequiresCondition: (stance-attackanything || assault-move) && loaded-air
-		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Structure, Defense, Air
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	AttackGarrisoned:
 		Voice: Attack
