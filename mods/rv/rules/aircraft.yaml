@@ -40,7 +40,7 @@ shad:
 	Voiced:
 		VoiceSet: NighthawkVoice
 	Buildable:
-		Queue: Aircraft.Allies
+		Queue: Aircraft.Allies, Aircraft.Korea
 		BuildPaletteOrder: 10
 		Prerequisites: ~gaairc, ~techlevel.2
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -234,7 +234,7 @@ orca:
 	Tooltip:
 		Name: Harrier
 	Buildable:
-		Queue: Aircraft.Allies
+		Queue: Aircraft.Allies, Aircraft.Korea
 		Prerequisites: ~gaairc, ~techlevel.2
 		BuildPaletteOrder: 20
 		Description: Fast assault fighter\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
@@ -326,8 +326,9 @@ beag:
 	Tooltip:
 		Name: Black Eagle
 	Buildable:
+		Queue: Aircraft.Korea
 		BuildPaletteOrder: 30
-		Prerequisites: ~aircraft.korea, ~techlevel.3
+		Prerequisites: ~techlevel.3
 		Description: Aircraft armed with EMP bomb\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	SpawnActorOnDeath:
 		Actor: beaghusk
@@ -1072,7 +1073,7 @@ fortress:
 	Tooltip:
 		Name: B2 Spirit
 	Buildable:
-		Queue: Aircraft.Allies
+		Queue: Aircraft.Allies, Aircraft.Korea
 		BuildPaletteOrder: 40
 		Description: Carpet bomber plane.\nUndetectable by radar.\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft
 		Prerequisites: ~gaairc, gatech, ~techlevel.4

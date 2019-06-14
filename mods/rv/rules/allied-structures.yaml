@@ -5,31 +5,37 @@ gacnst:
 	Valued:
 		Cost: 2000
 	Production:
-		Produces: Building.Allies, Support.Allies
+		Produces: Building.Allies, Support.Allies, Support.France
 	ProductionQueue@Building:
 		Type: Building.Allies
 	ProductionQueue@Support:
 		Type: Support.Allies
-	Transforms:
-		IntoActor: amcv
+		Factions: america, germany, england, korea, cuba, libya, iraq, russia, vietnam
+	ProductionQueue@SupportFrance:
+		Type: Support.France
+		Factions: france
+		Group: Support
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar@Building:
 		ProductionType: Building.Allies
 	ProductionBar@Support:
 		ProductionType: Support.Allies
+	ProductionBar@SupportFrance:
+		ProductionType: Support.France
+	Transforms:
+		IntoActor: amcv
 	WithIdleOverlay@fans:
 		Sequence: idle-fans
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedOverlay:
 		RequiresCondition: !build-incomplete && !chronodisable
-	ProvidesPrerequisite:
-		Prerequisite: structures.allies
-	ProvidesPrerequisite@america:
-		Prerequisite: structures.america
-		Factions: america
-	ProvidesPrerequisite@france:
-		Prerequisite: structures.france
-		Factions: france
 	GrantConditionOnFaction@America:
 		Condition: america
 		Factions: america
@@ -160,7 +166,7 @@ gapowrup:
 	Tooltip:
 		Name: Advanced Coolants
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 80
 		Prerequisites: gapowr, gaairc, ~techlevel.2
 		Description: Better coolants allow power plant to work more efficently\nproviding 150 more power.
@@ -176,12 +182,6 @@ gapile:
 		Queue: Building.Allies
 	Selectable:
 		Bounds: 134, 132, 0, -28
-	ProvidesPrerequisite@america:
-		Prerequisite: infantry.america
-		Factions: america
-	ProvidesPrerequisite@england:
-		Prerequisite: infantry.england
-		Factions: england
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -200,11 +200,38 @@ gapile:
 		SpawnOffset: -170,810,0
 		ExitCell: 2, 2
 	Production:
-		Produces: Infantry.Allies
+		Produces: Infantry.Allies, Infantry.USA, Infantry.UK
 	ProductionQueue:
 		Type: Infantry.Allies
+		Factions: germany, france, korea, cuba, libya, iraq, russia, vietnam
+	ProductionQueue@USA:
+		Type: Infantry.USA
+		Factions: america
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@UK:
+		Type: Infantry.UK
+		Factions: england
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Allies
+	ProductionBar@USA:
+		ProductionType: Infantry.USA
+	ProductionBar@UK:
+		ProductionType: Infantry.UK
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
@@ -296,14 +323,6 @@ gaairc:
 		Name: Airforce Command Headquarters
 	ProvidesPrerequisite:
 		Prerequisite: radar
-	ProvidesPrerequisite@allies:
-		Prerequisite: aircraft.allies
-	ProvidesPrerequisite@harrier:
-		Prerequisite: aircraft.harrier
-		Factions: america, germany, england, france
-	ProvidesPrerequisite@beagle:
-		Prerequisite: aircraft.korea
-		Factions: korea
 	ProvidesPrerequisite@america:
 		Prerequisite: radar.america
 		Factions: america
@@ -374,10 +393,22 @@ gaairc:
 		SpawnOffset: 512,-512,0
 		MoveIntoWorld: false
 	Production:
-		Produces: Aircraft.Allies
+		Produces: Aircraft.Allies, Aircraft.Korea
 		PauseOnCondition: powerdown || chronodisable
 	ProductionQueue:
 		Type: Aircraft.Allies
+		Factions: america, germany, england, france, cuba, libya, iraq, russia, vietnam
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Korea:
+		Type: Aircraft.Korea
+		Factions: korea
 		Group: Aircraft
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
@@ -388,6 +419,8 @@ gaairc:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Aircraft.Allies
+	ProductionBar@Korea:
+		ProductionType: Aircraft.Korea
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
 	SupportPowerChargeBar:
@@ -569,18 +602,29 @@ gaweap:
 		Queue: Building.Allies
 	Selectable:
 		Bounds: 212, 158, -7, -28
-	ProvidesPrerequisite@germany:
-		Prerequisite: vehicles.germany
-		Factions: germany
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_gaweap
 		RequiresCondition: !chronodisable
 	Production:
-		Produces: Vehicle.Allies
+		Produces: Vehicle.Allies, Vehicle.Germany
 	ProductionQueue:
 		Type: Vehicle.Allies
+		Factions: america, england, france, korea, cuba, libya, iraq, russia, vietnam
+	ProductionQueue@Germany:
+		Type: Vehicle.Germany
+		Factions: germany
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Allies
+	ProductionBar@Germany:
+		ProductionType: Vehicle.Germany
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
@@ -663,7 +707,7 @@ gatech:
 gawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Heavy wall capable of blocking units and projectiles.
@@ -683,7 +727,7 @@ gapill:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 40
 		Prerequisites: barracks, ~techlevel.1
 		Description: Automated anti-infantry defense.
@@ -735,7 +779,7 @@ nasam:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 50
 		Prerequisites: gaairc, ~techlevel.2
 		Description: Automated anti-aircraft defense.
@@ -792,9 +836,9 @@ gtgcan:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.France
 		BuildPaletteOrder: 70
-		Prerequisites: gaairc, ~structures.france, ~techlevel.3
+		Prerequisites: gaairc, ~techlevel.3
 		Description: Automated, long ranged anti-ground defense.
 	Valued:
 		Cost: 2500
@@ -964,7 +1008,7 @@ gagap:
 	Tooltip:
 		Name: Gap Generator
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 80
 		Prerequisites: gatech, ~techlevel.3
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
@@ -1004,7 +1048,7 @@ gagap:
 gaweat:
 	Inherits: ^PrimarySuperWeapon
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		Prerequisites: gatech, !enoughweather, ~techlevel.5
 		Description: Play God with deadly weather!
 	Selectable:
@@ -1045,7 +1089,7 @@ gacsph:
 	Inherits: ^SecondarySuperWeapon
 	Inherits@shape: ^4x3Shape
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		Prerequisites: gatech, !enoughchrono, ~techlevel.5
 		Description: Allows teleporting maximum of 13 vehicles.\nKills infantry.
 	Selectable:
@@ -1099,7 +1143,7 @@ atesla:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
@@ -1302,7 +1346,7 @@ gaapad:
 gagatea:
 	Inherits: ^Gate_A
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 	Tooltip:
@@ -1317,7 +1361,7 @@ gagatea:
 gagateb:
 	Inherits: ^Gate_B
 	Buildable:
-		Queue: Support.Allies
+		Queue: Support.Allies, Support.France
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 	Tooltip:

@@ -1,7 +1,7 @@
 smcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 		Prerequisites: repairpad, ~techlevel.2
 	Transforms:
 		IntoActor: nacnst
@@ -13,7 +13,7 @@ harv:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~techlevel.1
 		Description: Gathers Ore.\n  Immune to Radiation.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -89,7 +89,7 @@ dron:
 	Tooltip:
 		Name: Terror Drone
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 		Prerequisites: ~techlevel.2
 		BuildPaletteOrder: 40
 		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n  Immune to Radiation.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
@@ -171,7 +171,7 @@ htk:
 	Selectable:
 		Bounds: 50, 40, 0, -6
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Infantry Transport and Anti-Air/Anti-Infantry vehicle.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles
@@ -246,7 +246,7 @@ htnk:
 	Tooltip:
 		Name: Rhino Heavy Tank
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 		Description: Soviet Main Battle Tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 90
@@ -282,7 +282,7 @@ apoc:
 	Tooltip:
 		Name: Apocalypse Tank
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 		BuildPaletteOrder: 90
 		Prerequisites: natech, ~techlevel.3
 		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\nCan crush enemy vehicles.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
@@ -366,9 +366,9 @@ ttnk:
 	Tooltip:
 		Name: Tesla Tank
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.USSR
 		BuildPaletteOrder: 80
-		Prerequisites: naradr, ~vehicles.russia, ~techlevel.3
+		Prerequisites: naradr, ~techlevel.3
 		Description: Russian special tank armed with dual small Tesla Coils.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -417,9 +417,9 @@ dtruck:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.Libya
 		BuildPaletteOrder: 80
-		Prerequisites: naradr, ~vehicles.libya, ~techlevel.3
+		Prerequisites: naradr, ~techlevel.3
 		Description: Demolition Truck, actively armed with nuclear explosives.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -477,7 +477,7 @@ v3:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 		BuildPaletteOrder: 70
 		Prerequisites: ~naweap, naradr, ~techlevel.2
 		Description: Long-range rocket artillery.
@@ -553,7 +553,7 @@ deva:
 	Tooltip:
 		Name: Devastator
 	Buildable:
-		Queue: Vehicle.Soviets
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 		BuildPaletteOrder: 990
 		Prerequisites: natech, ~caslab, ~techlevel.4
 		Description: Soviet Advanced Battle Tank with Double Barrel\narmed with nuclear warheads.\n  Immune to Radiation.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft\n\nCan be deployed to self-destruct and explode violently.

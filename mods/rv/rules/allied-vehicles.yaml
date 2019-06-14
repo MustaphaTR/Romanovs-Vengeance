@@ -1,7 +1,7 @@
 amcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Allies, Vehicle.Germany
 		Prerequisites: repairpad, ~techlevel.2
 	Selectable:
 		Bounds: 68, 56, 0, -7
@@ -13,7 +13,7 @@ amcv:
 cmin:
 	Inherits: ^Vehicle
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Allies, Vehicle.Germany
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~techlevel.1
 		Description: Gathers Ore.\n  Unarmed.\n  Immune to Radiation.\nSpecial ability: Can teleport to own refineries
@@ -80,7 +80,7 @@ mtnk:
 	Tooltip:
 		Name: Grizzly Battle Tank
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Allies, Vehicle.Germany
 		Description: Allied Main Battle Tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 105
@@ -114,9 +114,9 @@ tnkd:
 	Tooltip:
 		Name: Tank Destroyer
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Germany
 		BuildPaletteOrder: 70
-		Prerequisites: ~vehicles.germany, gaairc, ~techlevel.3
+		Prerequisites: gaairc, ~techlevel.3
 		Description: Special anti-armor unit.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -226,7 +226,7 @@ fv:
 		Name: Psi IFV
 		RequiresCondition: ifv-yuri
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Allies, Vehicle.Germany
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Multi-Purpose Vehicle.\nWithout passenger:\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\nSpecial Ability: Armament depends on passenger.
@@ -506,7 +506,7 @@ sref:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Allies, Vehicle.Germany
 		BuildPaletteOrder: 70
 		Prerequisites: gatech, ~techlevel.3
 		Description: Fires deadly beams of light.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
@@ -588,7 +588,7 @@ mgtk:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Allies, Vehicle.Germany
 		BuildPaletteOrder: 80
 		Prerequisites: gatech, ~techlevel.3
 		Description: Tank cloaks itself while immobile.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
@@ -655,7 +655,7 @@ bfrt:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Allies, Vehicle.Germany
 		BuildPaletteOrder: 90
 		Prerequisites: gatech, ~techlevel.4
 		Description: Large vehicle with 5 fireports for infantry in to fire.\nCan crush enemy vehicles.
@@ -759,7 +759,7 @@ robo:
 	Tooltip:
 		Name: Robot Tank
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Allies, Vehicle.Germany
 		Prerequisites: ~techlevel.2
 		BuildPaletteOrder: 40
 		Description: Remote controlled vehicle.\nCan move over water.\nCannot be mind controlled.\nRequires an Allied War Factory to operate.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
@@ -852,7 +852,7 @@ ctnk:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Allies
+		Queue: Vehicle.Allies, Vehicle.Germany
 		BuildPaletteOrder: 990
 		Prerequisites: gatech, ~caslab, ~techlevel.4
 		Description: Armed with anti-ground missiles.\nTeleports to areas within range.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft\n  Special ability: Can teleport

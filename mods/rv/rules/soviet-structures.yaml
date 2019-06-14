@@ -8,12 +8,12 @@ nacnst:
 		Type: Building.Soviets
 	ProductionQueue@Support:
 		Type: Support.Soviets
-	Transforms:
-		IntoActor: smcv
 	ProductionBar@Building:
 		ProductionType: Building.Soviets
 	ProductionBar@Support:
 		ProductionType: Support.Soviets
+	Transforms:
+		IntoActor: smcv
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		RequiresCondition: !build-incomplete
@@ -105,15 +105,6 @@ nahand:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
-	ProvidesPrerequisite@cuba:
-		Prerequisite: infantry.cuba
-		Factions: cuba
-	ProvidesPrerequisite@iraq:
-		Prerequisite: infantry.iraq
-		Factions: iraq
-	ProvidesPrerequisite@vietnam:
-		Prerequisite: infantry.vietnam
-		Factions: vietnam
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -156,11 +147,51 @@ nahand:
 		SpawnOffset: 0,0,0
 		ExitCell: 2, 2
 	Production:
-		Produces: Infantry.Soviets
+		Produces: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam
 	ProductionQueue:
 		Type: Infantry.Soviets
+		Factions: america, germany, england, france, korea, libya, russia
+	ProductionQueue@Cuba:
+		Type: Infantry.Cuba
+		Factions: cuba
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Iraq:
+		Type: Infantry.Iraq
+		Factions: iraq
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Vietnam:
+		Type: Infantry.Vietnam
+		Factions: vietnam
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Soviets
+	ProductionBar@Cuba:
+		ProductionType: Infantry.Cuba
+	ProductionBar@Iraq:
+		ProductionType: Infantry.Iraq
+	ProductionBar@Vietnam:
+		ProductionType: Infantry.Vietnam
 	RallyPoint:
 		Offset: 3,3
 
@@ -458,18 +489,39 @@ naweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Soviets
-	ProvidesPrerequisite@libya:
-		Prerequisite: vehicles.libya
-		Factions: libya
-	ProvidesPrerequisite@russia:
-		Prerequisite: vehicles.russia
-		Factions: russia
 	Production:
-		Produces: Vehicle.Soviets
+		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 	ProductionQueue:
 		Type: Vehicle.Soviets
+		Factions: america, germany, england, france, korea, cuba, iraq, vietnam
+	ProductionQueue@USSR:
+		Type: Vehicle.USSR
+		Factions: russia
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Libya:
+		Type: Vehicle.Libya
+		Factions: libya
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Soviets
+	ProductionBar@USSR:
+		ProductionType: Vehicle.USSR
+	ProductionBar@Libya:
+		ProductionType: Vehicle.Libya
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
