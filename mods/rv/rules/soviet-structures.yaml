@@ -101,20 +101,10 @@ napowr:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 nahand:
-	Inherits: ^BaseBuilding
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^Barracks
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 20
-		Prerequisites: power, ~techlevel.1
-		Description: Produces infantry.
-	Valued:
-		Cost: 500
-	Tooltip:
-		Name: Barracks
-	ProvidesPrerequisite:
-		Prerequisite: barracks
 	ProvidesPrerequisite@cuba:
 		Prerequisite: infantry.cuba
 		Factions: cuba
@@ -124,21 +114,11 @@ nahand:
 	ProvidesPrerequisite@vietnam:
 		Prerequisite: infantry.vietnam
 		Factions: vietnam
-	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Selectable:
 		Bounds: 94, 168, 0, -58
-	Health:
-		HP: 500
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
 	Exit@n1_0:
 		SpawnOffset: 0,0,0
 		ExitCell: -1, 0
@@ -177,31 +157,12 @@ nahand:
 		ExitCell: 2, 2
 	Production:
 		Produces: Infantry.Soviets
-		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Infantry.Soviets
-		Group: Infantry
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Soviets
 	RallyPoint:
 		Offset: 3,3
-		Palette: mouse
-		IsPlayerPalette: false
-	Power:
-		Amount: -35
-	ConditionManager:
-	InfiltrateForSupportPower:
-		Types: SpyInfiltrate
-		Proxy: barracks.infiltrated
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 narefn:
 	Inherits: ^BaseBuilding

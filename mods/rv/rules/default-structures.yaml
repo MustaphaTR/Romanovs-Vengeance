@@ -75,6 +75,56 @@
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability
 
+^Barracks:
+	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 20
+		Prerequisites: power, ~techlevel.1
+		Description: Trains infantry.
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Barracks
+	ProvidesPrerequisite:
+		Prerequisite: barracks
+	ProvidesPrerequisite@default:
+	Health:
+		HP: 500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	RallyPoint:
+		Palette: mouse
+		IsPlayerPalette: false
+	Production:
+		Produces: Infantry
+		PauseOnCondition: chronodisable
+	ProductionQueue:
+		Type: Infantry
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Infantry
+	Power:
+		Amount: -35
+	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
+		Proxy: barracks.infiltrated
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+
 ^WarFactory:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding

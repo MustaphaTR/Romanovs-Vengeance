@@ -102,33 +102,13 @@ yapowr:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 yabrck:
-	Inherits: ^BaseBuilding
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^Barracks
 	Inherits@shape: ^2x3Shape
 	Buildable:
 		Queue: Building.Yuri
-		BuildPaletteOrder: 20
-		Prerequisites: power, ~techlevel.1
-		Description: Produces infantry.
-	Valued:
-		Cost: 500
-	Tooltip:
-		Name: Barracks
-	ProvidesPrerequisite:
-		Prerequisite: barracks
-	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
-	Health:
-		HP: 500
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
 	Exit@0_n1:
 		SpawnOffset: 170,-810,0
 		ExitCell: 0, -1
@@ -143,31 +123,12 @@ yabrck:
 		ExitCell: 2, 2
 	Production:
 		Produces: Infantry.Yuri
-		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Infantry.Yuri
-		Group: Infantry
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Yuri
 	RallyPoint:
 		Offset: 2,1
-		Palette: mouse
-		IsPlayerPalette: false
-	Power:
-		Amount: -35
-	ConditionManager:
-	InfiltrateForSupportPower:
-		Types: SpyInfiltrate
-		Proxy: barracks.infiltrated
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 yaweap:
 	Inherits: ^WarFactory

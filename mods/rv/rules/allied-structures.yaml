@@ -170,45 +170,23 @@ gapowrup:
 		Amount: 150
 
 gapile:
-	Inherits: ^BaseBuilding
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^Barracks
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 20
-		Prerequisites: power, ~techlevel.1
-		Description: Trains infantry.
 	Selectable:
 		Bounds: 134, 132, 0, -28
-	Valued:
-		Cost: 500
-	Tooltip:
-		Name: Barracks
-	ProvidesPrerequisite:
-		Prerequisite: barracks
 	ProvidesPrerequisite@america:
 		Prerequisite: infantry.america
 		Factions: america
 	ProvidesPrerequisite@england:
 		Prerequisite: infantry.england
 		Factions: england
-	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Health:
-		HP: 500
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
 	RallyPoint:
 		Offset: 2,3
-		Palette: mouse
-		IsPlayerPalette: false
 	Exit@0_n1:
 		SpawnOffset: 170,-810,0
 		ExitCell: 0, -1
@@ -223,30 +201,14 @@ gapile:
 		ExitCell: 2, 2
 	Production:
 		Produces: Infantry.Allies
-		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Infantry.Allies
-		Group: Infantry
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Allies
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	Power:
-		Amount: -35
-	InfiltrateForSupportPower:
-		Types: SpyInfiltrate
-		Proxy: barracks.infiltrated
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
 garefn:
 	Inherits: ^BaseBuilding
