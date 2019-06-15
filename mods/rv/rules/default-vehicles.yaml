@@ -3,18 +3,20 @@
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 50
 		Description: Deploys into a Construction Yard.
-		Prerequisites: repairpad, ~techlevel.2
+		BuildDuration: 3750
+		BuildDurationModifier: 40
+		Prerequisites: ~techlevel.2
 	Valued:
-		Cost: 2000
+		Cost: 3500
 	Tooltip:
 		Name: Mobile Construction Vehicle
 	Selectable:
 		Priority: 4
 		Bounds: 64, 52, 0, -6
 	Health:
-		HP: 1200
+		HP: 1600
 	Armor:
 		Type: Heavy
 	Mobile:
@@ -56,18 +58,18 @@
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 60
 		Description: Deploys into an Expansion Node.
-		Prerequisites: ~techlevel.2
+		Prerequisites: repairpad, ~techlevel.2
 	Valued:
-		Cost: 1200
+		Cost: 1500
 	Tooltip:
 		Name: Mobile Expansion Vehicle
 	Selectable:
 		Priority: 4
 		Bounds: 64, 52, 0, -6
 	Health:
-		HP: 1000
+		HP: 800
 	Armor:
 		Type: Light
 	Mobile:

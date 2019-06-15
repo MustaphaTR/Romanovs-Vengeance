@@ -6,6 +6,8 @@
 		BuildPaletteOrder: 1000
 		Prerequisites: ~disabled
 		Description: Allows construction of base structures.
+		BuildDuration: 3750
+		BuildDurationModifier: 40
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4,4
@@ -13,7 +15,7 @@
 	Selectable:
 		Bounds: 220, 180, 0, -35
 	Health:
-		HP: 1200
+		HP: 1600
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -22,7 +24,7 @@
 		Types: SatelliteScan
 		Range: 6c0
 	Valued:
-		Cost: 2000
+		Cost: 3500
 	Production:
 		Produces: Building, Support
 		PauseOnCondition: chronodisable
@@ -70,7 +72,7 @@
 		ActorTypes: e2, e2, e2, e2, engineer
 		Factions: cuba, libya, iraq, russia, vietnam
 	BaseProvider:
-		Range: 16c0
+		Range: 14c0
 		PauseOnCondition: build-incomplete || chronodisable
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability
@@ -82,16 +84,16 @@
 		Footprint: xx xx
 		Dimensions: 2,2
 	Health:
-		HP: 1200
+		HP: 800
 	Armor:
-		Type: Steel
+		Type: Wood
 	RevealsShroud:
 		Range: 8c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
 		Range: 8c0
 	Valued:
-		Cost: 1200
+		Cost: 1500
 	Tooltip:
 		Name: Expansion Node
 	BaseBuilding:
@@ -105,7 +107,7 @@
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
 	BaseProvider:
-		Range: 8c0
+		Range: 10c0
 		PauseOnCondition: build-incomplete || chronodisable
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability
