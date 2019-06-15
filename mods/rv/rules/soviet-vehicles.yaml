@@ -2,7 +2,6 @@ smcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
-		Prerequisites: repairpad, ~techlevel.2
 	Transforms:
 		IntoActor: nacnst
 	Voiced:
@@ -630,3 +629,20 @@ deva:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+
+exps:
+	Inherits: ^ExpansionVehicle
+	Buildable:
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
+	Selectable:
+		Bounds: 68, 56, 0, -7
+	Transforms:
+		IntoActor: naexpn
+	Voiced:
+		VoiceSet: SovietConstructionVehicleVoice
+	Hovers:
+		InitialHeight: 128
+	RenderSprites:
+		Image: expn
+	RenderVoxels:
+		Image: expn

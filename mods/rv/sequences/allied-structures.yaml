@@ -957,3 +957,35 @@ gagateb:
 	icon: gatbicon
 		Offset: 0, 0
 		UseTilesetCode: false
+
+gaexpn:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -30
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ggexpn_a
+		ShadowStart: 52
+	damaged-idle: ggexpn_a
+		Start: 26
+		ShadowStart: 78
+	crane-overlay: ggexpn_a
+		Length: 26
+		ShadowStart: 52
+		Tick: 150
+	damaged-crane-overlay: ggexpn_a
+		Start: 26
+		Length: 26
+		ShadowStart: 78
+		Tick: 150
+	make: ggexpnmk
+		Length: 13
+		ShadowStart: 13
+	icon: expnicon
+		Offset: 0,0
+		UseTilesetCode: false

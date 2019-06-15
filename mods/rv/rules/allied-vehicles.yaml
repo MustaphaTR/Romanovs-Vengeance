@@ -2,7 +2,6 @@ amcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
-		Prerequisites: repairpad, ~techlevel.2
 	Selectable:
 		Bounds: 68, 56, 0, -7
 	Transforms:
@@ -918,3 +917,16 @@ ctnk:
 	HitShape:
 	Voiced:
 		VoiceSet: ChronoTankVoice
+
+expn:
+	Inherits: ^ExpansionVehicle
+	Buildable:
+		Queue: Vehicle.Allies, Vehicle.Germany
+	Selectable:
+		Bounds: 68, 56, 0, -7
+	Transforms:
+		IntoActor: gaexpn
+	Voiced:
+		VoiceSet: AlliedConstructionVehicleVoice
+	Hovers:
+		InitialHeight: 128

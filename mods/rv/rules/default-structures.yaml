@@ -75,6 +75,41 @@
 	TransferTimedExternalConditionOnTransform:
 		Condition: invulnerability
 
+^ExpansionNode:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 1200
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Expansion Node
+	BaseBuilding:
+	Transforms:
+		IntoActor: expn
+		Facing: 96
+		DeployCursor: undeploy
+		PauseOnCondition: chronodisable
+		RequiresCondition: factundeploy && !build-incomplete
+	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+		Condition: factundeploy
+		Prerequisites: global-factundeploy
+	BaseProvider:
+		Range: 8c0
+		PauseOnCondition: build-incomplete || chronodisable
+	TransferTimedExternalConditionOnTransform:
+		Condition: invulnerability
+
 ^Barracks:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
