@@ -287,6 +287,40 @@ HoverMissileAAE:
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
+OutpostMissile:
+	Inherits: HoverMissile
+	ReloadDelay: 50
+	Burst: 4
+	Range: 8c0
+	Report: vifvatta.wav
+	ValidTargets: Ground, Air
+	Projectile: Missile
+		Speed: 512
+		Arm: 2
+		RangeLimit: 14c512
+		ContrailColor: D8D8FF
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 30
+		ValidTargets: Ground, Air
+		Versus:
+			None: 80
+			Flak: 80
+			Plate: 70
+			Light: 70
+			Medium: 50
+			Heavy: 50
+			Wood: 75
+			Steel: 40
+			Concrete: 65
+			Drone: 20
+			Rocket: 100     
+
 MissileLauncher:
 	Inherits: ^Missile
 	ReloadDelay: 40
