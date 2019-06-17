@@ -57,6 +57,34 @@
 	Inherits@1: ^BasicInfantry
 	Inherits@2: ^ProneInfantry
 
+^CivInfantry:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	-idle2:
+	die1:
+		Start: 71
+	die2:
+		Start: 71
+	-standup:
+	-liedown:
+	prone-stand:
+		Frames: 182, 188, 194, 200, 206, 212, 218, 224
+	prone-run:
+		Start: 182
+	shoot:
+		Start: 86
+		Length: 6
+		Facings: 8
+	cheer:
+		Start: 230
+		Length: 8
+	panic-stand:
+		Facings: 8
+	panic-run:
+		Start: 134
+		Length: 6
+		Facings: 8
+
 ^ArmedInfantry:
 	Inherits: ^Infantry
 	shoot:
