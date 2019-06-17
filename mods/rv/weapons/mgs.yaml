@@ -76,8 +76,9 @@ MP5:
 	ReloadDelay: 10
 	Range: 4c0
 	Report: iseaatta.wav, iseaattb.wav
-	InvalidTargets: Structure, Vehicle, Wall, Ship
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
 		Damage: 125
 		Versus:
 			None: 200
@@ -119,11 +120,12 @@ CRDoublePistols:
 
 awp:
 	Inherits: DoublePistols
-	InvalidTargets: Structure, Vehicle, Wall, Ship, SeaAnimal
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship, SeaAnimal
 	ReloadDelay: 150
 	Range: 14c0
 	Report: isniatta.wav
 	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship, SeaAnimal
 		Spread: 42
 		Damage: 200
 		DamageTypes: BulletDeath
@@ -268,8 +270,9 @@ AKM:
 	ReloadDelay: 20
 	Range: 7c0
 	Report: iboratta.wav, iborattb.wav
-	InvalidTargets: Structure, Wall
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure
 	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure
 		Damage: 65
 		Versus:
 			None: 200
