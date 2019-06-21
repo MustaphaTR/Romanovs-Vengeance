@@ -143,10 +143,10 @@ gapowr:
 		RequiresCondition: !build-incomplete && powrup
 	Power:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage
 	Power@plug:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && powrup
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && powrup
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield

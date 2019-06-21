@@ -69,22 +69,22 @@ yapowr:
 		RequiresCondition: !build-incomplete
 	Power@0:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage
 	Power@1:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && loaded >= 1
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 1
 	Power@2:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && loaded >= 2
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 2
 	Power@3:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && loaded >= 3
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 3
 	Power@4:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && loaded >= 4
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 4
 	Power@5:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && loaded >= 5
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 5
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield

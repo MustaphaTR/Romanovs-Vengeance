@@ -89,7 +89,7 @@ napowr:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield
@@ -685,7 +685,7 @@ nanrct:
 		EmptyWeapon: NukePayload
 	Power:
 		Amount: 1000
-		RequiresCondition: !chronodisable && !forceshieldnopower
+		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield
