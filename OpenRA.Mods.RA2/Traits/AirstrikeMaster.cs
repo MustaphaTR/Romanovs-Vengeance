@@ -86,7 +86,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		int respawnTicks = 0;
 
-		public AirstrikeMaster(ActorInitializer init, AirstrikeMasterInfo info) : base(init, info)
+		public AirstrikeMaster(ActorInitializer init, AirstrikeMasterInfo info)
+            : base(init, info)
 		{
 			Info = info;
 		}

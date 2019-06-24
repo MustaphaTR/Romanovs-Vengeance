@@ -91,7 +91,8 @@ namespace OpenRA.Mods.RA2.Traits
 		ExitInfo[] exits;
 		RallyPoint rallyPoint;
 
-		public BaseSpawnerMaster(ActorInitializer init, BaseSpawnerMasterInfo info) : base(info)
+		public BaseSpawnerMaster(ActorInitializer init, BaseSpawnerMasterInfo info)
+            : base(info)
 		{
 			self = init.Self;
 

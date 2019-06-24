@@ -342,7 +342,7 @@ namespace OpenRA.Mods.RA2.Traits
 				undeployedToken = conditionManager.GrantCondition(self, Info.UndeployedCondition);
 
 			if (Info.TakeOffOnUndeploy)
-				self.QueueActivity(new HeliFly(self, Target.FromCell(self.World, self.Location)));
+				self.QueueActivity(new Fly(self, Target.FromCell(self.World, self.Location)));
 
 			deployState = DeployState.Undeployed;
 		}

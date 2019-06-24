@@ -56,7 +56,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		int respawnTicks = 0;
 
-		public MissileSpawnerMaster(ActorInitializer init, MissileSpawnerMasterInfo info) : base(init, info)
+		public MissileSpawnerMaster(ActorInitializer init, MissileSpawnerMasterInfo info)
+            : base(init, info)
 		{
 			Info = info;
 		}

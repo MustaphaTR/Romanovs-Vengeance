@@ -72,7 +72,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		int respawnTicks = 0;
 
-		public CarrierMaster(ActorInitializer init, CarrierMasterInfo info) : base(init, info)
+		public CarrierMaster(ActorInitializer init, CarrierMasterInfo info)
+            : base(init, info)
 		{
 			Info = info;
 		}

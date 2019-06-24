@@ -34,7 +34,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		CarrierMaster spawnerMaster;
 
-		public CarrierSlave(ActorInitializer init, CarrierSlaveInfo info) : base(init, info)
+		public CarrierSlave(ActorInitializer init, CarrierSlaveInfo info)
+            : base(init, info)
 		{
 			Info = info;
 			ammoPools = init.Self.TraitsImplementing<AmmoPool>().ToArray();
@@ -57,9 +58,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 			var aircraft = self.TraitOrDefault<Aircraft>();
 			if (self.TraitOrDefault<AttackAircraft>() != null) // Let attack planes approach me first, before landing.
-				if (aircraft != null && aircraft.Info.VTOL == true)
-					self.QueueActivity(new HeliFly(self, target, WDist.Zero, Info.LandingDistance));
-				else
+				if (aircraft != null)
 					self.QueueActivity(new Fly(self, target, WDist.Zero, Info.LandingDistance));
 
 			self.QueueActivity(new EnterCarrierMaster(self, target, spawnerMaster, EnterBehaviour.Exit));
