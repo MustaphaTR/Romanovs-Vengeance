@@ -32,8 +32,8 @@ namespace OpenRA.Mods.RA2.Activities
 		{
 			self.World.AddFrameEndTask(w =>
 			{
-				var infectable = targetActor.Trait<Infectable>();
-				if (infectable.Infector != null)
+				var infectable = targetActor.TraitOrDefault<Infectable>();
+				if (infectable == null || infectable.Infector != null)
 					return;
 
 				w.Remove(self);
@@ -69,8 +69,8 @@ namespace OpenRA.Mods.RA2.Activities
 			if (target.Actor.IsDead)
 				return;
 
-			var infectable = target.Actor.Trait<Infectable>();
-			if (infectable.Infector != null)
+			var infectable = target.Actor.TraitOrDefault<Infectable>();
+			if (infectable == null || infectable.Infector != null)
 				return;
 
 			infectable.RevokeCondition(target.Actor, true);
@@ -81,11 +81,8 @@ namespace OpenRA.Mods.RA2.Activities
 			if (targetActor.IsDead)
 				return false;
 
-			var infectable = targetActor.Trait<Infectable>();
-			if (infectable.Infector != null)
-				return false;
-
-			if (infectable.Infector != null)
+			var infectable = targetActor.TraitOrDefault<Infectable>();
+			if (infectable == null || infectable.Infector != null)
 				return false;
 
 			infectable.GrantCondition(targetActor, true);
