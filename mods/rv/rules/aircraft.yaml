@@ -845,9 +845,9 @@ schp:
 		RequiresCondition: !controlled && !permamc && !airborne
 	RejectsOrders@deployment:
 		Reject: Move
-		RequiresCondition: deployed && !airborne
+		RequiresCondition: !undeployed && !airborne
 	RejectsOrders@wierdtakeoff:
-		RequiresCondition: deployed && airborne
+		RequiresCondition: !undeployed && airborne
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
