@@ -812,7 +812,7 @@ schp:
 	AttackTurreted:
 		Armaments: primary, deployed
 		Voice: DeployedAttack
-		PauseOnCondition: (!deployed && !undeployed) || emp || chronodisable
+		PauseOnCondition: (!deployed && !undeployed) || (undeployed && !cruising) || emp || chronodisable
 	Aircraft:
 		LandWhenIdle: false
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
