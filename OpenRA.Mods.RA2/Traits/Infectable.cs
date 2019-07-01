@@ -12,6 +12,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Mods.Common;
+using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -132,6 +133,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 					if (kill)
 						Infector.Kill(e.Attacker, e.Damage.DamageTypes);
+					else
+						Infector.QueueActivity(false, new Move(Infector, self.Location));
 
 					RevokeCondition(self);
 					Infector = null;
