@@ -457,6 +457,10 @@ pdplane.parabomb:
 	Inherits: pdplane
 	Armament:
 		Weapon: ParaBomb
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 4
+		AmmoCondition: ammo
 	AttackBomber:
 
 a10:
@@ -506,12 +510,20 @@ pdplane.emp:
 	Inherits: alplane
 	Armament:
 		Weapon: EMPulse
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 1
+		AmmoCondition: ammo
 	AttackBomber:
 
 pdplane.leaflet:
 	Inherits: alplane
 	Armament:
 		Weapon: LeafletDrop
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 1
+		AmmoCondition: ammo
 	AttackBomber:
 
 pdplane.naval_mines:
@@ -528,6 +540,10 @@ pdplane.cluster_mines:
 	Inherits: pdplane
 	Armament:
 		Weapon: ClusterMines
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 1
+		AmmoCondition: ammo
 	AttackBomber:
 
 pdplane.crate:
