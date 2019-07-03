@@ -91,10 +91,14 @@ namespace OpenRA.Mods.RA2.Traits
 		ExitInfo[] exits;
 		RallyPoint rallyPoint;
 
+		public IReloadModifier[] ReloadModifiers;
+
 		public BaseSpawnerMaster(ActorInitializer init, BaseSpawnerMasterInfo info)
-            : base(info)
+			: base(info)
 		{
 			self = init.Self;
+
+			ReloadModifiers = init.Self.TraitsImplementing<IReloadModifier>().ToArray();
 
 			// Initialize slave entries (doesn't instantiate the slaves yet)
 			SlaveEntries = CreateSlaveEntries(info);

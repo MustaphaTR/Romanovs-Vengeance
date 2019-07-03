@@ -11,6 +11,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
@@ -246,8 +247,8 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			// Set clock so that regen happens.
 			if (respawnTicks <= 0) // Don't interrupt an already running timer!
-				respawnTicks = Info.RespawnTicks;
-		}
+                respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, ReloadModifiers.Select(rm => rm.GetReloadModifier()));
+        }
 
 		AirstrikeSlaveEntry GetLaunchable()
 		{
@@ -316,8 +317,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 					// If there's something left to spawn, restart the timer.
 					if (SelectEntryToSpawn(slaveEntries) != null)
-						respawnTicks = Info.RespawnTicks;
-				}
+                        respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, ReloadModifiers.Select(rm => rm.GetReloadModifier()));
+                }
 			}
 
 			// Rearm
