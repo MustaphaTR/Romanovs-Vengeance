@@ -57,7 +57,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public int GetInitialFacing() { return 0; }
 	}
 
-	public class ShootableBallisticMissile : ITick, ISync, IFacing, IMove, IPositionable,
+	public class ShootableBallisticMissile : ITick, ISync, IFacing, IMove, IPositionable, IFirepowerModifier,
 		INotifyCreated, INotifyAddedToWorld, INotifyRemovedFromWorld, INotifyActorDisposing, IOccupySpace
 	{
 		static readonly Pair<CPos, SubCell>[] NoCells = { };
@@ -68,6 +68,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		ConditionManager conditionManager;
 		IEnumerable<int> speedModifiers;
+
+		public int FirepowerModifiers;
 
 		[Sync]
 		public int Facing { get; set; }
@@ -308,6 +310,11 @@ namespace OpenRA.Mods.RA2.Traits
 		Pair<CPos, SubCell>[] IOccupySpace.OccupiedCells()
 		{
 			return NoCells;
+		}
+
+		int IFirepowerModifier.GetFirepowerModifier()
+		{
+			return FirepowerModifiers;
 		}
 	}
 }

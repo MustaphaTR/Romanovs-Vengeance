@@ -24,13 +24,15 @@ namespace OpenRA.Mods.RA2.Traits
 
 	public class SpawnedExplodes : ConditionalTrait<SpawnedExplodesInfo>, INotifyKilled, INotifyDamage, INotifyCreated
 	{
-		readonly Health health;
+		readonly IHealth health;
+		IFirepowerModifier[] firepowerModifiers;
 		BuildingInfo buildingInfo;
 
 		public SpawnedExplodes(SpawnedExplodesInfo info, Actor self)
 			: base(info)
 		{
-			health = self.Trait<Health>();
+			health = self.Trait<IHealth>();
+			firepowerModifiers = self.TraitsImplementing<IFirepowerModifier>().ToArray();
 		}
 
 		void INotifyCreated.Created(Actor self)
@@ -61,13 +63,13 @@ namespace OpenRA.Mods.RA2.Traits
 			{
 				var cells = buildingInfo.UnpathableTiles(self.Location);
 				foreach (var c in cells)
-					weapon.Impact(Target.FromPos(self.World.Map.CenterOfCell(c)), source, Enumerable.Empty<int>());
+					weapon.Impact(Target.FromPos(self.World.Map.CenterOfCell(c)), source, firepowerModifiers.Select(fm => fm.GetFirepowerModifier()));
 
 				return;
 			}
 
 			// Use .FromPos since this actor is killed. Cannot use Target.FromActor
-			weapon.Impact(Target.FromPos(self.CenterPosition), self.Trait<MissileSpawnerSlave>().Master, Enumerable.Empty<int>());
+			weapon.Impact(Target.FromPos(self.CenterPosition), self.Trait<MissileSpawnerSlave>().Master, firepowerModifiers.Select(fm => fm.GetFirepowerModifier()));
 		}
 
 		WeaponInfo ChooseWeaponForExplosion(Actor self)

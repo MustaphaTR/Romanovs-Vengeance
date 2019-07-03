@@ -11,6 +11,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.RA2.Activities;
 using OpenRA.Traits;
@@ -53,13 +54,16 @@ namespace OpenRA.Mods.RA2.Traits
 		ConditionManager conditionManager;
 		readonly Dictionary<string, Stack<int>> spawnContainTokens = new Dictionary<string, Stack<int>>();
 		Stack<int> loadedTokens = new Stack<int>();
+		IFirepowerModifier[] firepowerModifiers;
 
 		int respawnTicks = 0;
 
 		public MissileSpawnerMaster(ActorInitializer init, MissileSpawnerMasterInfo info)
-            : base(init, info)
+			: base(init, info)
 		{
 			Info = info;
+
+			firepowerModifiers = init.Self.TraitsImplementing<IFirepowerModifier>().ToArray();
 		}
 
 		protected override void Created(Actor self)
@@ -109,6 +113,7 @@ namespace OpenRA.Mods.RA2.Traits
 			// Program the trajectory.
 			var sbm = se.Actor.Trait<ShootableBallisticMissile>();
 			sbm.Target = Target.FromPos(target.CenterPosition);
+			sbm.FirepowerModifiers = Util.ApplyPercentageModifiers(100, firepowerModifiers.Select(fm => fm.GetFirepowerModifier()));
 
 			SpawnIntoWorld(self, se.Actor, self.CenterPosition);
 
