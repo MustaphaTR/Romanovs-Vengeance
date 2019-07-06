@@ -18,7 +18,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
-	public class InfectorInfo : ITraitInfo
+	public class InfectorInfo : ConditionalTraitInfo
 	{
 		[FieldLoader.Require]
 		public readonly BitSet<TargetableType> Types;
@@ -50,21 +50,23 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public readonly string Cursor = "attack";
 
-		public object Create(ActorInitializer init) { return new Infector(this); }
+		public override object Create(ActorInitializer init) { return new Infector(this); }
 	}
 
-	public class Infector : IIssueOrder, IResolveOrder, IOrderVoice
+	public class Infector : ConditionalTrait<InfectorInfo>, IIssueOrder, IResolveOrder, IOrderVoice
 	{
-		public readonly InfectorInfo Info;
-
 		public Infector(InfectorInfo info)
-		{
-			Info = info;
-		}
+            : base(info) { }
 
 		public IEnumerable<IOrderTargeter> Orders
 		{
-			get { yield return new InfectionOrderTargeter(Info); }
+			get
+            {
+                if (IsTraitDisabled)
+                    yield break;
+
+                yield return new InfectionOrderTargeter(Info);
+            }
 		}
 
 		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
@@ -77,14 +79,14 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public void ResolveOrder(Actor self, Order order)
 		{
-			if (order.OrderString != "Infect")
+			if (order.OrderString != "Infect" || IsTraitDisabled)
 				return;
 
 			if (!order.Queued)
 				self.CancelActivity();
 
 			self.SetTargetLine(order.Target, Color.Red);
-			self.QueueActivity(new Infect(self, order.Target));
+			self.QueueActivity(new Infect(self, order.Target, this));
 		}
 
 		public string VoicePhraseForOrder(Actor self, Order order)

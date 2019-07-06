@@ -20,25 +20,29 @@ namespace OpenRA.Mods.RA2.Activities
 {
 	class Infect : Enter
 	{
+		readonly Infector infector;
 		readonly Target target;
 
-		public Infect(Actor self, Target target)
+		public Infect(Actor self, Target target, Infector infector)
 			: base(self, target, Color.Red)
 		{
 			this.target = target;
+			this.infector = infector;
 		}
 
 		protected override void OnEnterComplete(Actor self, Actor targetActor)
 		{
 			self.World.AddFrameEndTask(w =>
 			{
+				if (infector.IsTraitDisabled)
+					return;
+
 				var infectable = targetActor.TraitOrDefault<Infectable>();
 				if (infectable == null || infectable.Infector != null)
 					return;
 
 				w.Remove(self);
 
-				var infector = self.Trait<Infector>();
 				infectable.Infector = self;
 				infectable.InfectorTrait = infector;
 				infectable.FirepowerMultipliers = self.TraitsImplementing<IFirepowerModifier>()
@@ -78,6 +82,9 @@ namespace OpenRA.Mods.RA2.Activities
 
 		protected override bool TryStartEnter(Actor self, Actor targetActor)
 		{
+			if (infector.IsTraitDisabled)
+				return false;
+
 			if (targetActor.IsDead)
 				return false;
 

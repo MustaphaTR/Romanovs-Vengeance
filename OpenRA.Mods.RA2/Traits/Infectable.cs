@@ -134,7 +134,7 @@ namespace OpenRA.Mods.RA2.Traits
 					if (kill)
 						Infector.Kill(e.Attacker, e.Damage.DamageTypes);
 					else
-						Infector.QueueActivity(false, new Move(Infector, self.Location));
+                        Infector.QueueActivity(false, new Move(Infector, self.Location));
 
 					RevokeCondition(self);
 					Infector = null;

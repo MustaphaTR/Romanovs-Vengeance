@@ -184,6 +184,14 @@ sqd:
 		DamageInterval: 20
 		KillState: Critical
 		Voice: Attack
+		RequiresCondition: !rank-elite
+	Infector@Elite:
+		Types: SquidInfection
+		Damage: 15
+		DamageInterval: 20
+		KillState: Critical, Heavy
+		Voice: Attack
+		RequiresCondition: rank-elite
 	Armament:
 		Weapon: SquidPunch
 	AttackFrontal:
