@@ -214,6 +214,59 @@ yawall:
 	Replaceable:
 		Types: YuriGate
 
+yapsyt:
+	Inherits: ^SupportBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
+	Buildable:
+		Queue: Support.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: yatech
+		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.
+	Selectable:
+		Bounds: 69, 150, 0, -74
+	Health:
+		HP: 450
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Psychic Tower
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Turreted:
+		TurnSpeed: 255
+	WithIdleOverlay@top:
+		Sequence: idle-top
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -100
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure
+	Armament:
+		Weapon: TowerMindControl
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,960
+	WithMuzzleOverlay:
+	MindController:
+		Capacity: 3
+		ControllingCondition: controlling
+		Sounds: iyurat1a.wav
+		RequiresCondition: !disabled && !chronodisable
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		Types: MindControl
+		RequiresCondition: controlling >= 3
+
 yacomd:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
