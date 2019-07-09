@@ -53,7 +53,7 @@ namespace OpenRA.Mods.RA2.Activities
 				IsInterruptible = false;
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
 			var pc = self.TraitOrDefault<PortableChronoRA2>();
 			if (teleporter == self && pc != null && !pc.CanTeleport)
@@ -61,7 +61,7 @@ namespace OpenRA.Mods.RA2.Activities
 				if (killOnFailure)
 					self.Kill(teleporter, killDamageTypes);
 
-				return NextActivity;
+				return true;
 			}
 
 			var bestCell = ChooseBestDestinationCell(self, destination);
@@ -70,7 +70,7 @@ namespace OpenRA.Mods.RA2.Activities
 				if (killOnFailure)
 					self.Kill(teleporter, killDamageTypes);
 
-				return NextActivity;
+				return true;
 			}
 
 			destination = bestCell.Value;
@@ -116,7 +116,7 @@ namespace OpenRA.Mods.RA2.Activities
 					building.PlayCustomAnimation(teleporter, "active");
 			}
 
-			return NextActivity;
+			return true;
 		}
 
 		CPos? ChooseBestDestinationCell(Actor self, CPos destination)

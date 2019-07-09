@@ -1555,9 +1555,9 @@
 	Selectable:
 	Aircraft:
 		Voice: Move
+		MaximumPitch: 128
 		AirborneCondition: airborne
-		CanHover: True
-		VTOL: true
+		FlightDynamics: VTOL, MoveIntoShroud, TakeOffOnCreation, TakeOffOnResupply
 	HiddenUnderFog:
 		Type: CenterPosition
 	ActorLostNotification:
@@ -1617,7 +1617,6 @@
 		CruiseAltitude: 5c852
 		CruisingCondition: cruising
 		AltitudeVelocity: 120
-		MaximumPitch: 128
 		LandWhenIdle: false
 		TakeOffOnCreation: true
 	Hovers@CRUISING:
@@ -1630,6 +1629,7 @@
 	Inherits@2: ^CrateStatModifiers
 	Aircraft:
 		CruiseAltitude: 3c852
+		FlightDynamics: VTOL, Slide, Hover, MoveIntoShroud, TakeOffOnCreation, TakeOffOnResupply, TurnToDock
 	Targetable@EMP:
 		RequiresCondition: !airborne
 	GrantCondition@IDISABLE:
@@ -1703,8 +1703,7 @@
 ^HelicopterHusk:
 	Inherits: ^Husk
 	Aircraft:
-		CanHover: true
-		VTOL: true
+		FlightDynamics: VTOL, Slide, Hover, MoveIntoShroud, TakeOffOnCreation, TakeOffOnResupply, TurnToDock
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld

@@ -28,11 +28,11 @@ namespace OpenRA.Mods.RA2.Activities
 			this.spawnerMaster = spawnerMaster;
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
 			// Master got killed :(
 			if (master.IsDead)
-				return NextActivity;
+				return true;
 
 			// Load this thingy.
 			// Issue attack move to the rally point.
@@ -59,7 +59,7 @@ namespace OpenRA.Mods.RA2.Activities
 							pool.GiveAmmo(self, 1);
 			});
 
-			return NextActivity;
+			return true;
 		}
 	}
 }

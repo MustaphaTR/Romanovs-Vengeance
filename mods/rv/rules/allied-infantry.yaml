@@ -960,12 +960,11 @@ jumpjet:
 		TurnSpeed: 255
 		Speed: 140
 		AltitudeVelocity: 83
+		MaximumPitch: 128
 		Voice: Move
 		AirborneCondition: airborne
-		CanHover: True
 		IdealSeparation: 512
-		TakeOffOnResupply: true
-		VTOL: true
+		FlightDynamics: VTOL, Slide, Hover, MoveIntoShroud, TakeOffOnCreation, TakeOffOnResupply, TurnToDock
 	WithInfantryBody:
 		StandSequences: fly
 		MoveSequence: fly

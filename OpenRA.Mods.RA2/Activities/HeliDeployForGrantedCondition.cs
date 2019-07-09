@@ -40,45 +40,38 @@ namespace OpenRA.Mods.RA2.Activities
 				var cells = w.Map.AllCells.Where(c => aircraft.CanLand(c)).Select(c => w.Map.CenterOfCell(c));
 				var cell = w.Map.CellContaining(WorldUtils.PositionClosestTo(cells, self.CenterPosition));
 
-				QueueChild(self, new Fly(self, Target.FromCell(w, cell)));
+				QueueChild(new Fly(self, Target.FromCell(w, cell)));
 			}
 
 			// Turn to the required facing.
 			if (deploy.Info.Facing != -1 && canTurn)
-				QueueChild(self, new Turn(self, deploy.Info.Facing));
+				QueueChild(new Turn(self, deploy.Info.Facing));
 
-			QueueChild(self, new Land(self));
+			QueueChild(new Land(self));
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
-			// Do turn first, if needed.
-			if (ChildActivity != null)
-			{
-				ChildActivity = ActivityUtils.RunActivity(self, ChildActivity);
-				return this;
-			}
-
 			// Without this, turn for facing deploy angle will be canceled and immediately deploy!
 			if (IsCanceling)
-				return NextActivity;
+				return true;
 
 			if (IsInterruptible)
 			{
 				IsInterruptible = false; // must DEPLOY from now.
 				deploy.Deploy();
-				return this;
+				return false;
 			}
 
 			// Wait for deployment
 			if (deploy.DeployState == DeployState.Deploying)
-				return this;
+				return false;
 
 			// Failed or success, we are going to NextActivity.
 			// Deploy() at the first run would have put DeployState == Deploying so
 			// if we are back to DeployState.Undeployed, it means deploy failure.
 			// Parent activity will see the status and will take appropriate action.
-			return NextActivity;
+			return true;
 		}
 	}
 }

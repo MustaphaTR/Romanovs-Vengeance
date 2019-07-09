@@ -24,16 +24,16 @@ namespace OpenRA.Mods.RA2.Activities
 			this.deploy = deploy;
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
 			IsInterruptible = false; // must DEPLOY from now.
 			deploy.Undeploy();
 
 			// Wait for deployment
 			if (deploy.DeployState == DeployState.Undeploying)
-				return this;
+				return false;
 
-			return NextActivity;
+			return true;
 		}
 	}
 }

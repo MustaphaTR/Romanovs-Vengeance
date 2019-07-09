@@ -56,11 +56,11 @@ namespace OpenRA.Mods.RA2.Activities
 				.Where(c => pos.CanEnterCell(c, null, true) != pos.CanEnterCell(c, null, false));
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
 			garrison.Unloading = false;
 			if (IsCanceling || garrison.IsEmpty(self))
-				return NextActivity;
+				return true;
 
 			foreach (var inu in notifiers)
 				inu.Unloading(self);
@@ -73,7 +73,8 @@ namespace OpenRA.Mods.RA2.Activities
 			{
 				self.NotifyBlocker(BlockedExitCells(actor));
 
-				return ActivityUtils.SequenceActivities(self, new Wait(10), this);
+				Queue(new Wait(10));
+				return false;
 			}
 
 			garrison.Unload(self);
@@ -93,10 +94,10 @@ namespace OpenRA.Mods.RA2.Activities
 			});
 
 			if (!unloadAll || garrison.IsEmpty(self))
-				return NextActivity;
+				return true;
 
 			garrison.Unloading = true;
-			return this;
+			return false;
 		}
 	}
 }

@@ -149,9 +149,7 @@ zep:
 		Voice: Move
 		AltitudeVelocity: 120
 		AirborneCondition: airborne
-		CanHover: True
-		TakeOffOnResupply: true
-		VTOL: true
+		FlightDynamics: VTOL, Slide, Hover, MoveIntoShroud, TakeOffOnCreation, TakeOffOnResupply, TurnToDock
 	Health:
 		HP: 2000
 	Armor:
@@ -245,8 +243,6 @@ orca:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 210
-		CanHover: false
-		VTOL: false
 	Selectable:
 		Bounds: 30,24
 	Health:
@@ -430,8 +426,6 @@ bplndrop:
 		Name: MiG
 	-Targetable@Airborne:
 	Aircraft:
-		CanHover: false
-		VTOL: false
 		Repulsable: false
 		Speed: 525
 	ParaDrop:
@@ -497,8 +491,6 @@ f22drop:
 		Name: F-22 Raptor
 	-Targetable@Airborne:
 	Aircraft:
-		CanHover: false
-		VTOL: false
 		Repulsable: false
 		Speed: 525
 	ParaDrop:
@@ -611,9 +603,7 @@ hornet:
 		InitialFacing: 192
 		TurnSpeed: 8
 		Speed: 180
-		RepulsionSpeed: 40
-		CanHover: false
-		VTOL: false
+		Repulsable: false
 	AmmoPool:
 		Ammo: 3
 		AmmoCondition: ammo
@@ -670,8 +660,6 @@ asw:
 		TurnSpeed: 8
 		Speed: 180
 		RepulsionSpeed: 40
-		CanHover: false
-		VTOL: false
 	AmmoPool:
 		Ammo: 5
 		AmmoCondition: ammo

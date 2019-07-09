@@ -59,7 +59,7 @@ namespace OpenRA.Mods.RA2.Activities
 			sbm.Facing = GetEffectiveFacing();
 		}
 
-		public override Activity Tick(Actor self)
+		public override bool Tick(Actor self)
 		{
 			var d = targetPos - self.CenterPosition;
 
@@ -69,13 +69,13 @@ namespace OpenRA.Mods.RA2.Activities
 			// Destruct so that Explodes will be called
 			if (d.HorizontalLengthSquared < move.HorizontalLengthSquared)
 			{
-				Queue(self, new CallFunc(() => self.Kill(self)));
-				return NextActivity;
+				Queue(new CallFunc(() => self.Kill(self)));
+				return true;
 			}
 
 			FlyToward(self, sbm);
 			ticks++;
-			return this;
+			return false;
 		}
 
 		public override IEnumerable<Target> GetTargets(Actor self)

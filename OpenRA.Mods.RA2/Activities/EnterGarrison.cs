@@ -85,8 +85,8 @@ namespace OpenRA.Mods.RA2.Activities
 			});
 		}
 
-		/// Base Enter Methods Below
-		public override Activity Tick(Actor self)
+		// Base Enter Methods Below
+		public override bool Tick(Actor self)
 		{
 			// Update our view of the target
 			bool targetIsHiddenActor;
@@ -116,7 +116,7 @@ namespace OpenRA.Mods.RA2.Activities
 			{
 				moveActivity = ActivityUtils.RunActivity(self, moveActivity);
 				if (moveActivity != null)
-					return this;
+					return false;
 			}
 
 			// Note that lastState refers to what we have just *finished* doing
@@ -128,11 +128,11 @@ namespace OpenRA.Mods.RA2.Activities
 						// NOTE: We can safely cancel in this case because we know the
 						// actor has finished any in-progress move activities
 						if (IsCanceling)
-							return NextActivity;
+							return true;
 
 						// Lost track of the target
 						if (useLastVisibleTarget && lastVisibleTarget.Type == TargetType.Invalid)
-							return NextActivity;
+							return true;
 
 						// We are not next to the target - lets fix that
 						if (target.Type != TargetType.Invalid && !move.CanEnterTargetNow(self, target))
@@ -148,20 +148,20 @@ namespace OpenRA.Mods.RA2.Activities
 						// We are next to where we thought the target should be, but it isn't here
 						// There's not much more we can do here
 						if (useLastVisibleTarget || target.Type != TargetType.Actor)
-							return NextActivity;
+							return true;
 
 						// Are we ready to move into the target?
 						if (TryStartEnter(self, target.Actor))
 						{
 							lastState = EnterState.Entering;
 							moveActivity = ActivityUtils.RunActivity(self, move.MoveIntoTarget(self, target));
-							return this;
+							return false;
 						}
 
 						// Subclasses can cancel the activity during TryStartEnter
 						// Return immediately to avoid an extra tick's delay
 						if (IsCanceling)
-							return NextActivity;
+							return true;
 
 						lastState = EnterState.Waiting;
 						break;
@@ -190,10 +190,10 @@ namespace OpenRA.Mods.RA2.Activities
 					}
 
 				case EnterState.Exiting:
-					return NextActivity;
+					return true;
 			}
 
-			return this;
+			return false;
 		}
 
 		public override void Cancel(Actor self, bool keepQueue = false)
