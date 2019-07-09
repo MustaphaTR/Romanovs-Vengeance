@@ -697,6 +697,14 @@
 		AssaultMoveCondition: assault-move
 		Voice: Attack
 
+^FlatSelectionMode:
+	Selectable:
+		PriorityModifiers: Ctrl
+
+^LowPrioritySelectionMode:
+	Selectable:
+		PriorityModifiers: Ctrl, Alt
+
 ^Building:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
@@ -1138,6 +1146,7 @@
 	Inherits@10: ^AffectedByLeaflets
 	Inherits@11: ^AffectedByPropaganda
 	Inherits@12: ^AffectedByChronoBoost
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
 		Action: Kill
@@ -1433,6 +1442,7 @@
 	Inherits@13: ^AffectedByLeaflets
 	Inherits@14: ^AffectedByPropaganda
 	Inherits@15: ^AffectedByChronoBoost
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath
@@ -1547,6 +1557,7 @@
 
 ^NeutralAircraft:
 	Inherits@1: ^ExistsInWorld
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath
@@ -1718,6 +1729,7 @@
 	Inherits@12: ^AffectedByLeaflets
 	Inherits@13: ^AffectedByPropaganda
 	Inherits@14: ^AffectedByChronoBoost
+	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath

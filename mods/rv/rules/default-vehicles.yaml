@@ -1,6 +1,7 @@
 ^ConstructionVehicle:
 	Inherits: ^Vehicle
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 50
@@ -56,6 +57,7 @@
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 60
