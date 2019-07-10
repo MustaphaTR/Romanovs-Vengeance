@@ -566,42 +566,45 @@ A10Missile:
 V3StormInit:
 	Projectile: InstantExplode
 	ReloadDelay: 1
+	Warhead@1Eff: CreateEffect
+		ImpactSounds: sv3sweaa.wav
+		ValidTargets: Ground, Water, Air
 	Warhead@1Clu: FireCluster
 		Weapon: V3StormCloud
 		Dimensions: 7,7
 		Footprint: ______x __x____ _______ _______ _______ ____x__ _______
 		ValidTargets: Ground, Water, Air
-		Delay: 25
+		Delay: 75
 	Warhead@2Clu: FireCluster
 		Weapon: V3StormCloud
 		Dimensions: 7,7
 		Footprint: _______ _______ _____x_ _______ _x_____ _______ ______x
 		ValidTargets: Ground, Water, Air
-		Delay: 50
+		Delay: 100
 	Warhead@3Clu: FireCluster
 		Weapon: V3StormCloud
 		Dimensions: 7,7
 		Footprint: _______ _______ _______ ___x___ _______ _______ _______
 		ValidTargets: Ground, Water, Air
-		Delay: 63
+		Delay: 113
 	Warhead@4Clu: FireCluster
 		Weapon: V3StormCloud
 		Dimensions: 7,7
 		Footprint: _______ _______ _x_____ _______ _____x_ _______ x______
 		ValidTargets: Ground, Water, Air
-		Delay: 75
+		Delay: 125
 	Warhead@5Clu: FireCluster
 		Weapon: V3StormCloud
 		Dimensions: 7,7
 		Footprint: x______ ____x__ _______ _______ _______ __x____ _______
 		ValidTargets: Ground, Water, Air
-		Delay: 100
+		Delay: 150
 	Warhead@6Clu: FireCluster
 		Weapon: V3StormCloud
 		Dimensions: 7,7
 		Footprint: _______ _______ _______ ___x___ _______ _______ _______
 		ValidTargets: Ground, Water, Air
-		Delay: 113
+		Delay: 163
 
 V3StormCloud:
 	ReloadDelay: 120
