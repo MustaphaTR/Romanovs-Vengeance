@@ -32,7 +32,7 @@ Player:
 		SpeechNotification: LowPower
 	AllyRepair:
 	Taunts:
-		CheckboxDisplayOrder: 8
+		CheckboxVisible: false
 	PlayerResources:
 		CashTickUpNotification: CashTickUp
 		CashTickDownNotification: CashTickDown
@@ -49,6 +49,13 @@ Player:
 		Enabled: True
 		DisplayOrder: 5
 		Prerequisites: global-factundeploy
+	LobbyPrerequisiteCheckbox@FREEMINIMAP:
+		ID: freeradar
+		Label: Free Minimap
+		Description: Minimap is active without Radar Tower or AFCHQ
+		Enabled: False
+		DisplayOrder: 8
+		Prerequisites: global-freeminimap
 	LobbyPrerequisiteCheckbox@GLOBALSWLIMIT:
 		ID: swlimit
 		Label: Limit Super Weapons
@@ -70,13 +77,6 @@ Player:
 		Enabled: False
 		DisplayOrder: 12
 		Prerequisites: global-instantcapture
-	LobbyPrerequisiteCheckbox@FREEMINIMAP:
-		ID: freeradar
-		Label: Free Minimap
-		Description: Minimap is active without Radar Tower or AFCHQ
-		Enabled: False
-		DisplayOrder: 13
-		Prerequisites: global-freeminimap
 	ProvidesRadar:
 		RequiresCondition: freeminimap
 	GrantConditionOnPrerequisite@FREEMINIMAP:
