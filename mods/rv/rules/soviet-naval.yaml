@@ -274,6 +274,11 @@ dred:
 		Radius: 3c512
 	Armament:
 		Weapon: DredLauncher
+	FirepowerMultiplier@RANK-1:
+		RequiresCondition: rank-veteran >= 1 && !rank-elite
+	FirepowerMultiplier@RANK-ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 215
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 128
