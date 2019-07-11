@@ -72,6 +72,7 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x48, "palet03" },
 			{ 0x49, "palet04" },
 
+			// Wooden Bridges
 			{ 0x4A, "lobrdg_b" }, // lobrdg01
 			{ 0x4B, "lobrdg_b" }, // lobrdg02
 			{ 0x4C, "lobrdg_b" }, // lobrdg03
@@ -101,11 +102,13 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x64, "lobrdg_b_d" }, // lobrdg27
 			{ 0x65, "lobrdg_a_d" }, // lobrdg28
 
+			// Wooden Ramps
 			{ 0x7A, "lobrdg_r_se" }, // lobrdg1
 			{ 0x7B, "lobrdg_r_nw" }, // lobrdg2
 			{ 0x7C, "lobrdg_r_ne" }, // lobrdg3
 			{ 0x7D, "lobrdg_r_sw" }, // lobrdg4
 
+			// Other
 			{ 0xA7, "veinhole" },
 			{ 0xA8, "srock01" },
 			{ 0xA9, "srock02" },
@@ -120,9 +123,11 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0xB2, null }, // veinholedummy
 			{ 0xB3, "crate" },
 
+			// Fences
 			{ 0xCB, "cafncb" }, // black fence
 			{ 0xCC, "cafncw" }, // white fence
 
+			// Concrete Bridges
 			{ 0xCD, "lobrdb_b" }, // lobrdb01
 			{ 0xCE, "lobrdb_b" }, // lobrdb02
 			{ 0xCF, "lobrdb_b" }, // lobrdb03
@@ -152,11 +157,13 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0xE7, "lobrdb_b_d" }, // lobrdb27
 			{ 0xE8, "lobrdb_a_d" }, // lobrdb28
 
+			// Concrete Ramps
 			{ 0xE9, "lobrdb_r_se" }, // lobrdb1
 			{ 0xEA, "lobrdb_r_nw" }, // lobrdb2
 			{ 0xEB, "lobrdb_r_ne" }, // lobrdb3
 			{ 0xEC, "lobrdb_r_sw" }, // lobrdb4
 
+			// Other
 			{ 0xF0, "cakrmw" }, // kremlin walls
 			{ 0xF1, "cafncp" }, // prison camp fence
 			{ 0xF2, "crate" }, // water crate
@@ -197,7 +204,6 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x7B, new Size(1, 3) },
 			{ 0x7C, new Size(3, 1) },
 			{ 0x7D, new Size(3, 1) },
-
 			{ 0xCD, new Size(1, 3) },
 			{ 0xCE, new Size(1, 3) },
 			{ 0xCF, new Size(1, 3) },
@@ -234,61 +240,51 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 
 		static readonly Dictionary<byte, DamageState> OverlayToHealth = new Dictionary<byte, DamageState>()
 		{
-			// 1,3 bridge tiles
+			// 1,3 wooden bridge tiles
 			{ 0x4A, DamageState.Undamaged },
 			{ 0x4B, DamageState.Undamaged },
 			{ 0x4C, DamageState.Undamaged },
 			{ 0x4D, DamageState.Undamaged },
-
 			{ 0x4E, DamageState.Heavy },
 			{ 0x4F, DamageState.Heavy },
-
 			{ 0x50, DamageState.Heavy },
-
 			{ 0x51, DamageState.Critical },
 			{ 0x52, DamageState.Critical },
 
+			// 1,3 concrete bridge tiles
 			{ 0xCD, DamageState.Undamaged },
 			{ 0xCE, DamageState.Undamaged },
 			{ 0xCF, DamageState.Undamaged },
 			{ 0xD0, DamageState.Undamaged },
-
 			{ 0xD1, DamageState.Heavy },
 			{ 0xD2, DamageState.Heavy },
-
 			{ 0xD3, DamageState.Heavy },
-
 			{ 0xD4, DamageState.Critical },
 			{ 0xD5, DamageState.Critical },
 
-			// 3,1 bridge tiles
+			// 3,1 wooden bridge tiles
 			{ 0x53, DamageState.Undamaged },
 			{ 0x54, DamageState.Undamaged },
 			{ 0x55, DamageState.Undamaged },
 			{ 0x56, DamageState.Undamaged },
-
 			{ 0x57, DamageState.Heavy },
 			{ 0x58, DamageState.Heavy },
-
 			{ 0x59, DamageState.Heavy },
-
 			{ 0x5A, DamageState.Critical },
 			{ 0x5B, DamageState.Critical },
 
+			// 3,1 concrete bridge tiles
 			{ 0xD6, DamageState.Undamaged },
 			{ 0xD7, DamageState.Undamaged },
 			{ 0xD8, DamageState.Undamaged },
 			{ 0xD9, DamageState.Undamaged },
-
 			{ 0xDA, DamageState.Heavy },
 			{ 0xDB, DamageState.Heavy },
-
 			{ 0xDC, DamageState.Heavy },
-
 			{ 0xDD, DamageState.Critical },
 			{ 0xDE, DamageState.Critical },
 
-			// Ramps
+			// Wooden Ramps
 			{ 0x5C, DamageState.Undamaged },
 			{ 0x5D, DamageState.Heavy },
 			{ 0x5E, DamageState.Undamaged },
@@ -298,6 +294,7 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0x62, DamageState.Undamaged },
 			{ 0x63, DamageState.Heavy },
 
+			// Concrete Ramps
 			{ 0xDF, DamageState.Undamaged },
 			{ 0xE0, DamageState.Heavy },
 			{ 0xE1, DamageState.Undamaged },
@@ -307,21 +304,23 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ 0xE5, DamageState.Undamaged },
 			{ 0xE6, DamageState.Heavy },
 
-			// Ramp duplicates
+			// Wooden ramp duplicates
 			{ 0x7A, DamageState.Undamaged },
 			{ 0x7B, DamageState.Undamaged },
 			{ 0x7C, DamageState.Undamaged },
 			{ 0x7D, DamageState.Undamaged },
 
+			// Concrete ramp duplicates
 			{ 0xE9, DamageState.Undamaged },
 			{ 0xEA, DamageState.Undamaged },
 			{ 0xEB, DamageState.Undamaged },
 			{ 0xEC, DamageState.Undamaged },
 
-			// actually dead, placeholders for resurrection
+			// Wooden dead bridge placeholders
 			{ 0x64, DamageState.Undamaged },
 			{ 0x65, DamageState.Undamaged },
 
+			// Concrete dead bridge placeholders
 			{ 0xE7, DamageState.Undamaged },
 			{ 0xE8, DamageState.Undamaged },
 		};
