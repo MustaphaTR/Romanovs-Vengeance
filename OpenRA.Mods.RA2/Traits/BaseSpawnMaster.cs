@@ -98,8 +98,6 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			self = init.Self;
 
-			ReloadModifiers = init.Self.TraitsImplementing<IReloadModifier>().ToArray();
-
 			// Initialize slave entries (doesn't instantiate the slaves yet)
 			SlaveEntries = CreateSlaveEntries(info);
 
@@ -124,6 +122,7 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			base.Created(self);
 
+			ReloadModifiers = self.TraitsImplementing<IReloadModifier>().ToArray();
 			facing = self.TraitOrDefault<IFacing>();
 			exits = self.Info.TraitInfos<ExitInfo>().ToArray();
 			rallyPoint = self.TraitOrDefault<RallyPoint>();
