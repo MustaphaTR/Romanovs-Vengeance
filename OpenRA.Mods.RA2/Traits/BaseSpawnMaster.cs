@@ -137,7 +137,6 @@ namespace OpenRA.Mods.RA2.Traits
 		/// Replenish destoyed slaves or create new ones from nothing.
 		/// Follows policy defined by Info.OneShotSpawn.
 		/// </summary>
-		/// <returns>true when a new slave actor is created.</returns>
 		public void Replenish(Actor self, BaseSpawnerSlaveEntry[] slaveEntries)
 		{
 			if (Info.SpawnAllAtOnce)
@@ -161,7 +160,6 @@ namespace OpenRA.Mods.RA2.Traits
 		/// <summary>
 		/// Replenish one slave entry.
 		/// </summary>
-		/// <returns>true when a new slave actor is created.</returns>
 		public virtual void Replenish(Actor self, BaseSpawnerSlaveEntry entry)
 		{
 			if (entry.IsValid)
