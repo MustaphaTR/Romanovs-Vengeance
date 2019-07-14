@@ -7,6 +7,7 @@
    information, see COPYING.
 ]]
 
+Seconds = 0
 CPModifier = Map.LobbyOption("cpmodifier")
 
 if CPModifier == "one" then
@@ -89,6 +90,22 @@ Levels =
 	Multi11 = 0
 }
 
+TextColors =
+{
+	Multi0 = HSLColor.White,
+	Multi1 = HSLColor.White,
+	Multi2 = HSLColor.White,
+	Multi3 = HSLColor.White,
+	Multi4 = HSLColor.White,
+	Multi5 = HSLColor.White,
+	Multi6 = HSLColor.White,
+	Multi7 = HSLColor.White,
+	Multi8 = HSLColor.White,
+	Multi9 = HSLColor.White,
+	Multi10 = HSLColor.White,
+	Multi11 = HSLColor.White
+}
+
 Ranks =
 {
 	america = { "Lieutenant", "Captain", "Major", "Colonel", "General" },
@@ -118,9 +135,9 @@ TickGeneralsPowers = function()
 		if player.IsLocalPlayer then
 			localPlayerIsNull = false;
 			if Levels[player.InternalName] < 4 then
-				UserInterface.SetMissionText("Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "", player.Color)
+				UserInterface.SetMissionText("Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "", TextColors[player.InternalName])
 			else 
-				UserInterface.SetMissionText("Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "", player.Color)
+				UserInterface.SetMissionText("Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "", TextColors[player.InternalName])
 			end
 		end
 
@@ -172,6 +189,22 @@ TickGeneralsPowers = function()
 	end
 end
 
+Second = function()
+	Trigger.AfterDelay(DateTime.Seconds(1), function()
+		Seconds = Seconds + 1
+
+		for _,player in pairs(players) do
+			if Points[player.InternalName] > 0 and Seconds % 2 == 0 then
+				TextColors[player.InternalName] = HSLColor.White
+			else
+				TextColors[player.InternalName] = player.Color
+			end
+		end
+
+		Second()
+	end)
+end
+
 Tick = function()
 	if GPModifier ~= "disabled" then
 		TickGeneralsPowers()
@@ -199,5 +232,7 @@ WorldLoaded = function()
 		for _,player in pairs(players) do
 			ReducePoints(player)
 		end
+
+		Second()
 	end
 end
