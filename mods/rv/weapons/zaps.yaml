@@ -17,6 +17,8 @@ ElectricBolt:
 			Concrete: 40
 			Drone: 200
 			Rocket: 100
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallScorch
 
 ElectricBoltE:
 	Inherits: ElectricBolt
@@ -76,6 +78,8 @@ CoilBolt:
 			Wood: 100
 			Steel: 100
 			Concrete: 90
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallScorch
 
 OPCoilBolt:
 	Inherits: CoilBolt
@@ -112,6 +116,8 @@ TankBolt:
 			Flak: 250
 			Plate: 250
 			Heavy: 75
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallScorch
 
 TankBoltE:
 	Inherits: TankBolt
@@ -202,6 +208,8 @@ PrismShot:
 			Drone: 200
 			Rocket: 100
 		DamageTypes: ElectroDeath, TriggerProne
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallScorch
 
 Comet:
 	ValidTargets: Ground, Water
@@ -243,7 +251,7 @@ Comet:
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
 	Warhead@4Smu: LeaveSmudge
-		SmudgeType: SmallCrater, SmallScorch
+		SmudgeType: SmallScorch
 
 SuperComet:
 	Inherits: Comet

@@ -25,16 +25,22 @@ LargeBarrelExplode:
 	Warhead@2Eff: CreateEffect
 		Explosions: large_barrel_explosion
 		ValidTargets: Ground, Water, Air
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 SmallBarrelExplode:
 	Inherits: LargeBarrelExplode
 	Warhead@2Eff: CreateEffect
 		Explosions: small_barrel_explosion
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 DerrickExplode:
 	Inherits: LargeBarrelExplode
 	Warhead@2Eff: CreateEffect
 		Explosions: large_twlt, large_bang, large_brnl, verylarge_clsn, large_tumu
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 UnitExplode:
 	Warhead@1Eff: CreateEffect
@@ -52,11 +58,15 @@ UnitExplodeSmall:
 		Explosions: medium_brnl
 		ImpactSounds: gexp06a.wav, gexp07a.wav
 		ValidTargets: Ground, Water, Air
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 V3AmmunitionExplode:
 	Inherits: UnitExplodeSmall
 	Warhead@1Eff: CreateEffect
 		Explosions: terrorist_explosion
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 BuildingExplode:
 	Inherits: UnitExplodeSmall
@@ -64,6 +74,8 @@ BuildingExplode:
 		Explosions: large_twlt, large_bang, large_brnl, verylarge_clsn, large_tumu
 	Warhead@DebrisSpawn: FireShrapnel
 		Weapon: LargeDebris
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 KirovExplode:
 	Inherits: UnitExplode
@@ -72,6 +84,8 @@ KirovExplode:
 		Damage: 750 # 250
 		Falloff: 100, 83, 67, 50, 0
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater
 
 ApocExplode:
 	Inherits: KirovExplode
@@ -125,6 +139,8 @@ IvanBomber:
 		Explosions: ivan_explosion
 		ImpactSounds: gexpcraa.wav
 		ValidTargets: Ground, Water, Air
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 IvanBomberE:
 	Inherits: IvanBomber
@@ -213,6 +229,8 @@ TerrorBomb:
 		Explosions: terrorist_explosion
 		ImpactSounds: gexpapoa.wav
 		ValidTargets: Ground, Water, Air
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 CRTerrorBomb:
 	Inherits: TerrorBomb
@@ -228,6 +246,8 @@ DevastatorExplosion:
 		Spread: 4c0
 		Falloff: 100, 100
 		Level: 250
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 NukePayload:
 	ValidTargets: Ground, Water
@@ -260,6 +280,8 @@ NukePayload:
 		Spread: 10c0
 		Falloff: 100, 100
 		Level: 500
+	Warhead@5Smu: LeaveSmudge
+		SmudgeType: LargeCrater, LargeScorch
 
 atomic:
 	Inherits: NukePayload
@@ -303,6 +325,8 @@ demobomb:
 	Warhead@4Radiation: CreateTintedCells
 		Spread: 6c0
 		Level: 100
+	Warhead@5Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 Demolish:
 	Warhead@1Dam: SpreadDamage
@@ -333,6 +357,8 @@ V3Weapon:
 		Explosions: large_twlt
 		ImpactSounds: gexpapoa.wav
 		ValidTargets: Ground, Water, Air
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 DredWeapon:
 	Inherits: V3Weapon
@@ -365,6 +391,8 @@ RadiationMissile:
 		Falloff: 100, 100
 		Level: 1500
 		MaxLevel: 1500
+	Warhead@5Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 MineExplosion:
 	Warhead@1Dam: SpreadDamage
@@ -378,5 +406,5 @@ MineExplosion:
 		ExplosionPalette: tseffect
 		ImpactSounds: mine1.aud, mineblo1.aud
 	Warhead@Smu: LeaveSmudge
-		SmudgeType: Crater
+		SmudgeType: MediumCrater, MediumScorch
 		InvalidTargets: Structure, Wall, Trees

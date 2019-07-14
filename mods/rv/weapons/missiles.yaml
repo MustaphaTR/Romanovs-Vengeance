@@ -116,6 +116,8 @@ APTusk:
 		Explosions: small_watersplash
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 APTuskE:
 	Inherits: APTusk
@@ -161,6 +163,8 @@ Maverick:
 		Explosions: huge_watersplash
 		ImpactSounds: gexpwala.wav
 		ValidTargets: Water
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 MaverickE:
 	Inherits: Maverick
@@ -320,6 +324,8 @@ OutpostMissile:
 			Concrete: 65
 			Drone: 20
 			Rocket: 100
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 MissileLauncher:
 	Inherits: ^Missile
@@ -562,6 +568,9 @@ A10Missile:
 		Explosions: huge_watersplash
 		ImpactSounds: gexpwala.wav
 		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Building, Wall
 
 V3StormInit:
 	Projectile: InstantExplode
@@ -650,8 +659,11 @@ V3StormStrike:
 			Drone: 100
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
-		Explosions: large_twlt
+		Explosions: terrorist_explosion
 		ImpactSounds: gexpapoa.wav
 	Warhead@3EffWater: CreateEffect
 		Explosions: large_watersplash
 		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Building, Wall

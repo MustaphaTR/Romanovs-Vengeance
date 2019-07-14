@@ -25,6 +25,8 @@ GrandCannonWeapon:
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_explosion
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 sabot:
 	Inherits: ^LargeBullet
@@ -46,6 +48,8 @@ sabot:
 			Concrete: 35
 			Rocket: 100
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 sabotE:
 	Inherits: sabot
@@ -67,6 +71,8 @@ sabotE:
 	Warhead@3EffWater: CreateEffect
 		Explosions: large_watersplash
 		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 MirageGun:
 	Inherits: ^LargeBullet
@@ -93,6 +99,8 @@ MirageGun:
 		ImpactSounds:
 		ValidTargets: Ground, Water, Air
 	-Warhead@3EffWater:
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 MirageGunE:
 	Inherits: MirageGun
@@ -111,6 +119,8 @@ MirageGunE:
 		Speed: 682
 	Warhead@1Dam: SpreadDamage
 		Damage: 65
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 105mmE:
 	Inherits: 105mm
@@ -132,6 +142,8 @@ MirageGunE:
 	Warhead@3EffWater: CreateEffect
 		Explosions: large_watersplash
 		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 robogun:
 	Inherits: 105mm
@@ -162,6 +174,8 @@ ATGUNE:
 		Speed: 682
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 120mmE:
 	Inherits: 120mm
@@ -183,6 +197,8 @@ ATGUNE:
 	Warhead@3EffWater: CreateEffect
 		Explosions: large_watersplash
 		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 120mmx:
 	Inherits: 120mm
@@ -197,6 +213,8 @@ ATGUNE:
 	Warhead@2Eff: CreateEffect
 		Explosions: apoc_explosion
 		ImpactSounds: gexpapoa.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 120mmxE:
 	Inherits: 120mmx
@@ -280,6 +298,8 @@ ATGUNE:
 			Concrete: 60
 			Drone: 100
 			Rocket: 100
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 155mmE:
 	Inherits: 155mm
@@ -292,6 +312,8 @@ ATGUNE:
 			Flak: 100
 			Plate: 100
 			Light: 100
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 160mm:
 	Inherits: ^LargeBullet
@@ -310,6 +332,8 @@ ATGUNE:
 			Wood: 100
 			Steel: 85
 			Concrete: 90
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 160mmE:
 	Inherits: 160mm
@@ -324,6 +348,8 @@ ATGUNE:
 			Flak: 100
 			Plate: 100
 			Light: 100
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 CruiserStrikeInit:
 	Projectile: InstantExplode
@@ -395,6 +421,10 @@ CruiserStrike:
 		Image: 160mm
 		Speed: 768
 		Blockable: false
+		ContrailLength: 14
+		ContrailWidth: 24
+		Shadow: true
+		Palette: ra
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Falloff: 100, 75, 50, 25, 0
@@ -411,6 +441,12 @@ CruiserStrike:
 			Concrete: 50
 			Drone: 100
 			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: gexpapoa.wav
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Building, Wall
 
 Grenade:
 	Inherits: ^LargeBullet
@@ -441,6 +477,8 @@ Grenade:
 			Drone: 100
 			Rocket: 100
 		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallCrater
 
 GrenadeE:
 	Inherits: Grenade
