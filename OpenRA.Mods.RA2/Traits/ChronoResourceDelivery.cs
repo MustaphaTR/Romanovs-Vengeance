@@ -10,6 +10,7 @@
 #endregion
 
 using System;
+using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.RA2.Activities;
@@ -56,7 +57,7 @@ namespace OpenRA.Mods.RA2.Traits
 	public class ChronoResourceDelivery : ConditionalTrait<ChronoResourceDeliveryInfo>, INotifyHarvesterAction, ITick
 	{
 		CPos? destination = null;
-		Activity nextActivity = null;
+		CPos harvestedField;
 		int ticksTillCheck = 0;
 
 		public ChronoResourceDelivery(Actor self, ChronoResourceDeliveryInfo info)
@@ -89,8 +90,9 @@ namespace OpenRA.Mods.RA2.Traits
 			if (destination != null && destination.Value != targetCell)
 				ticksTillCheck = 0;
 
+			harvestedField = self.World.Map.CellContaining(self.CenterPosition);
+
 			destination = targetCell;
-			nextActivity = next;
 		}
 
 		public void MovementCancelled(Actor self)
@@ -114,10 +116,8 @@ namespace OpenRA.Mods.RA2.Traits
 			var pos = self.Trait<IPositionable>();
 			if (pos.CanEnterCell(destination.Value))
 			{
-				self.CancelActivity();
-				self.QueueActivity(new ChronoResourceTeleport(destination.Value, Info));
-				self.QueueActivity(nextActivity);
-				Reset();
+                self.QueueActivity(false, new ChronoResourceTeleport(destination.Value, Info, harvestedField));
+                Reset();
 			}
 		}
 
@@ -125,7 +125,6 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			ticksTillCheck = 0;
 			destination = null;
-			nextActivity = null;
 		}
 	}
 }

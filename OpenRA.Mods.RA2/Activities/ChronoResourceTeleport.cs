@@ -10,6 +10,7 @@
 #endregion
 
 using OpenRA.Activities;
+using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.RA2.Traits;
 using OpenRA.Traits;
@@ -20,11 +21,13 @@ namespace OpenRA.Mods.RA2.Activities
 	{
 		readonly CPos destination;
 		readonly ChronoResourceDeliveryInfo info;
+		readonly CPos harvestedField;
 
-		public ChronoResourceTeleport(CPos destination, ChronoResourceDeliveryInfo info)
-		{
+		public ChronoResourceTeleport(CPos destination, ChronoResourceDeliveryInfo info, CPos harvestedField)
+        {
 			this.destination = destination;
 			this.info = info;
+			this.harvestedField = harvestedField;
 		}
 
 		public override bool Tick(Actor self)
@@ -54,6 +57,8 @@ namespace OpenRA.Mods.RA2.Activities
 
 			if (info.WarpOutSound != null && (!info.RequireVisibilyForSound || shroud == null || shroud.IsVisible(destinationpos)))
 				Game.Sound.Play(SoundType.World, info.WarpOutSound, destinationpos, info.SoundVolume);
+
+			self.QueueActivity(new FindAndDeliverResources(self, harvestedField));
 
 			return true;
 		}
