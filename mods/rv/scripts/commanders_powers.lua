@@ -117,7 +117,8 @@ Ranks =
 	iraq = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	vietnam = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	cuba = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
-	libya = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" }
+	libya = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
+	psicorps = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "Master" }
 }
 RankXPs = { 0, 800, 1500, 2500, 5000 }
 

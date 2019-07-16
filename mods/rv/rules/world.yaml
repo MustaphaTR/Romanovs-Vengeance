@@ -202,6 +202,12 @@
 		InternalName: libya
 		Side: Soviets
 		Description: Libya\nSpecial Vehicle: Demolition Truck\nSpecial Ability: Ambush
+	Faction@11:
+		Name: Psi-Corps
+		InternalName: psicorps
+		Side: Psi-Corps
+		Description: Psi-Corps\nSpecial Vehicle: \nSpecial Ability: 
+		Selectable: false
 	ResourceType@Ore:
 		ResourceType: 1
 		Palette: resource
@@ -374,6 +380,52 @@ World:
 		BaseActor: smcv
 		BaseActorFacing: 160
 		SupportActors: dog,e2,e2,e2,e2,e2,htnk,htnk,htk,engineer
+		SupportActorsFacing: 160
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@pcv:
+		Class: none
+		ClassName: MCV Only
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 160
+	MPStartUnits@pcvdog:
+		Class: mcvdog
+		ClassName: MCV and Dog
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 160
+		SupportActors: dog
+		SupportActorsFacing: 160
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@lightpsicorps:
+		Class: light
+		ClassName: Light Support
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 160
+		SupportActors: dog,init,init,init
+		SupportActorsFacing: 160
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@mediumpsicorps:
+		Class: medium
+		ClassName: Medium Support
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 160
+		SupportActors: dog,init,init,init,init,ltnk,engineer
+		SupportActorsFacing: 160
+		InnerSupportRadius: 4
+		OuterSupportRadius: 5
+	MPStartUnits@heavypsicorps:
+		Class: heavy
+		ClassName: Heavy Support
+		Factions: psicorps
+		BaseActor: pcv
+		BaseActorFacing: 160
+		SupportActors: dog,init,init,init,init,init,ltnk,ltnk,htk,engineer
 		SupportActorsFacing: 160
 		InnerSupportRadius: 4
 		OuterSupportRadius: 5
