@@ -9,6 +9,7 @@ pcv:
 
 smin:
 	Inherits: ^Vehicle
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
 		Queue: Vehicle.Yuri
 		BuildPaletteOrder: 10
@@ -18,6 +19,7 @@ smin:
 	Tooltip:
 		Name: Slave Miner
 	Selectable:
+		Priority: 7
 		Bounds: 64, 52, 0, -6
 	Transforms:
 		Facing: 224
