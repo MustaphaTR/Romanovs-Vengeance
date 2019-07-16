@@ -364,3 +364,30 @@ TeslaFence:
 		DebugOverlayColor: FF0000
 		Damage: 100000
 		DamageTypes: ElectroDeath
+
+MagneShake:
+	ReloadDelay: 110
+	Range: 10c0
+	Report: vmagat2a.wav
+	ValidTargets: Ground, Structure
+	Projectile: AreaBeam
+		Speed: 0c512
+		Duration: 111
+		DamageInterval: 109
+		Width: 384
+		Shape: Flat
+		ZOffset: 2047
+		BeyondTargetRange: 0c256
+		TrackTarget: true
+		Color: FF50F545
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 100, 100
+		Damage: 80
+		AffectsParent: false
+		ValidTargets: Structure
+
+MagneShakeE:
+	Inherits: MagneShake
+	Warhead@1Dam: SpreadDamage
+		Damage: 90

@@ -96,6 +96,60 @@ ltnk:
 	Voiced:
 		VoiceSet: LasherTankVoice
 
+tele:
+	Inherits: ^Vehicle
+	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Magnetron
+	Buildable:
+		Queue: Vehicle.Yuri
+		BuildPaletteOrder: 20
+		Prerequisites: yapsis
+		Description: Long range magnetic field generator.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
+	Mobile:
+		Speed: 75
+		TurnSpeed: 5
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Turreted:
+		TurnSpeed: 5
+		Offset: -640,0,0
+	Armament@primary:
+		Weapon: MagneShake
+		LocalOffset: 512,0,1024
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: MagneShakeE
+		LocalOffset: 512,0,1024
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	Voiced:
+		VoiceSet: MagnetronVoice
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+
 mind:
 	Inherits: ^Vehicle
 	Valued:
