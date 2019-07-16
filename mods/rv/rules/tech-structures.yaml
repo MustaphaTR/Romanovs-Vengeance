@@ -59,6 +59,10 @@ caairp:
 		Prerequisite: techparadrops.soviets
 		Factions: cuba, libya, iraq, russia, vietnam
 		ResetOnOwnerChange: true
+	ProvidesPrerequisite@PsiCorps:
+		Prerequisite: techparadrops.psicorps
+		Factions: psicorps
+		ResetOnOwnerChange: true
 	ParatroopersPower@Allies:
 		RequiresCondition: enabled
 		OrderName: AlliedParatroopers
@@ -113,6 +117,37 @@ caairp:
 		CameraActor: camera
 		Prerequisites:
 			1: techparadrops.soviets
+		DisplayBeacon: True
+		BeaconPosters:
+			1: paraicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	ParatroopersPower@PsiCorps:
+		RequiresCondition: enabled
+		OrderName: PsiCorpsParatroopers
+		Icons:
+			1: paradrop
+		ChargeInterval: 4500
+		Descriptions:
+			1: Psi-Corps Paratroopers
+		LongDescs:
+			1: 2 Cargo Planes drop 7 Initiates\nanywhere on the map.
+		AllowMultiple: true
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
+		DropItems:
+			1: init,init,init,init,init,init,init
+		QuantizedFacings: 8
+		UnitTypes:
+			1: svplane
+		SquadSizes:
+			1: 2
+		CameraActor: camera
+		Prerequisites:
+			1: techparadrops.psicorps
 		DisplayBeacon: True
 		BeaconPosters:
 			1: paraicon
@@ -373,6 +408,10 @@ carpad:
 		Produces: ReinforcementsPad.Soviets
 		ActorType: svplane.rpad
 		ChuteSound: sparadra.wav
+	ProductionParadrop@PsiCorps:
+		Produces: ReinforcementsPad.Yuri
+		ActorType: svplane.rpad
+		ChuteSound: sparadra.wav
 	PeriodicProducer@Allies:
 		Actors: mtnk
 		ChargeDuration: 3750
@@ -387,6 +426,13 @@ carpad:
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
 		RequiresCondition: enabled && soviets
+	PeriodicProducer@PsiCorps:
+		Actors: ltnk
+		ChargeDuration: 3750
+		Type: ReinforcementsPad.Yuri
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		RequiresCondition: enabled && psicorps
 	GrantConditionOnFaction@Allies:
 		Condition: allies
 		Factions: america, germany, england, france, korea
@@ -394,6 +440,10 @@ carpad:
 	GrantConditionOnFaction@Soviets:
 		Condition: soviets
 		Factions: cuba, libya, iraq, russia, vietnam
+		ResetOnOwnerChange: true
+	GrantConditionOnFaction@PsiCorps:
+		Condition: psicorps
+		Factions: psicorps
 		ResetOnOwnerChange: true
 
 capsyb:
