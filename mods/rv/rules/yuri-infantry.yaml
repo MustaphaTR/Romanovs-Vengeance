@@ -1,3 +1,46 @@
+slav:
+	Inherits: ^Infantry
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 10
+		Prerequisites: yarefn, ~techlevel.1
+		Description: Gathers Ore.
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Slave
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Harvester:
+		DeliveryBuildings: yarefn
+		Capacity: 4
+		PipCount: 4
+		MaxUnloadQueue: 9
+		BaleUnloadDelay: 1
+		Resources: Ore, Gems
+		SearchFromProcRadius: 30
+		SearchFromOrderRadius: 11
+		HarvestVoice: Move
+		DeliverVoice: Move
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 45
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	WithSpriteBody:
+	WithDockingAnimation:
+		DockSequence: idle
+		DockLoopSequence: idle
+	Armament@primary:
+		Weapon: Shovel
+	Voiced:
+		VoiceSet: SlaveVoice
+	AttackFrontal:
+		Voice: Attack
+
 init:
 	Inherits: ^Infantry
 	Inherits@2: ^Parachutable

@@ -7,6 +7,57 @@ pcv:
 	Voiced:
 		VoiceSet: YuriConstructionVehicleVoice
 
+smin:
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Yuri
+		BuildPaletteOrder: 10
+		Description: Gathers and processes ore.
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Slave Miner
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	Transforms:
+		Facing: 224
+		IntoActor: yarefn
+		TransformSounds: uplace.wav
+		NoTransformNotification: BuildingCannotPlaceAudio
+		Voice: Deploy
+	Health:
+		HP: 2000
+	Armor:
+		Type: Medium
+	Mobile:
+		Speed: 45
+		TurnSpeed: 5
+	Turreted:
+		TurnSpeed: 5
+	Armament@primary:
+		Weapon: 20mmrapid
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 20mmrapidE
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+	RevealsShroud:
+		Range: 4c0
+	ProvidesPrerequisite@yarefn:
+		Prerequisite: yarefn
+	ProvidesPrerequisite@refinery:
+		Prerequisite: refinery
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	Voiced:
+		VoiceSet: SlaveMinerVoice
+	HitShape:
+
 ltnk:
 	Inherits: ^MainBattleTank
 	Valued:

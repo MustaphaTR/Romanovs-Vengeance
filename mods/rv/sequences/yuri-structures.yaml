@@ -123,6 +123,43 @@ yabrck:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yarefn:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: yarefn
+		ShadowStart: 3
+	damaged-idle: yarefn
+		Start: 1
+		ShadowStart: 4
+	make: yarefnmk
+		Length: 17
+		ShadowStart: 17
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle-processing: yarefn_a
+		Length: 2
+		ShadowStart: 2
+		Tick: 150
+	damaged-idle-processing: yarefn_a
+		Length: 2
+		ShadowStart: 2
+		Tick: 150
+	icon: sminicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yaweap:
 	Inherits@MC: ^MindControllable
 	Defaults:

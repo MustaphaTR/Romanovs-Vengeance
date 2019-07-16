@@ -130,6 +130,82 @@ yabrck:
 	RallyPoint:
 		Offset: 2,1
 
+yarefn:
+	Inherits: ^BaseBuilding
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Building.Yuri
+		BuildPaletteOrder: 30
+		Prerequisites: power
+		Description: Gathers and processes ore.
+	Selectable:
+		Bounds: 70, 50, 0, -20
+	Valued
+		Cost: 1500
+	Tooltip
+		Name: Slave Miner
+	Health:
+		HP: 2000
+	Armor:
+		Type: Medium
+	RevealsShroud:
+		Range: 6c0
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@refinery:
+		Prerequisite: refinery
+	Building:
+		Footprint: xx x=
+		Dimensions: 2,2
+	Refinery:
+		DockOffset: 1,1
+		ShowTicks: True
+		TickLifetime: 30
+		TickVelocity: 1
+		TickRate: 10
+		DockAngle: 160
+		UseStorage: false
+	-GivesBuildableArea:
+	Transforms:
+		Facing: 224
+		IntoActor: smin
+		DeployCursor: undeploy
+		Voice: Undeploy
+	InfiltrateForCash:
+		Percentage: 50
+		Notification: CreditsStolen
+		Minimum: 500
+	WithIdleOverlay@processing:
+		Sequence: idle-processing
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Turreted:
+		TurnSpeed: 5
+	Armament@primary:
+		Weapon: 20mmrapid
+		LocalOffset: 640,0,384
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 20mmrapidE
+		LocalOffset: 640,0,384
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	RenderVoxels:
+		Image: smin
+		Scale: 11.7
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	WithVoxelTurret:
+		RequiresCondition: !build-incomplete
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	Voiced:
+		VoiceSet: SlaveMinerVoice
+
 yaweap:
 	Inherits: ^WarFactory
 	Buildable:
@@ -167,7 +243,7 @@ yapsis:
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 60
-		Prerequisites: power, refinery, ~techlevel.2
+		Prerequisites: power, yarefn, ~techlevel.2
 		Description: Provides radar\nDetects enemy units and strikepoints
 	Valued:
 		Cost: 1000
@@ -182,6 +258,7 @@ yapsis:
 		HP: 750
 	Armor:
 		Type: Wood
+	ProvidesPrerequisite@default:
 	ProvidesRadar:
 		RequiresCondition: !disabled && !chronodisable
 	RevealsShroud:
@@ -216,7 +293,7 @@ yatech:
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 90
-		Prerequisites: radar, ~techlevel.3
+		Prerequisites: yapsis, ~techlevel.3
 		Description: Allows deployment of advanced units.
 	Valued:
 		Cost: 2000

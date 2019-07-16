@@ -74,3 +74,27 @@ SquidPunch:
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 		ValidTargets: Water, Underwater
+
+Shovel:
+	Inherits: AlligatorBite
+	ReloadDelay: 30
+	Range: 1c512
+	Report: isl1atta.wav
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 80
+			Light: 50
+			Medium: 25
+			Heavy: 25
+			Wood: 75
+			Steel: 50
+			Concrete: 25
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
+	Warhead@3Eff: CreateEffect
+		Explosions: piffpiff
