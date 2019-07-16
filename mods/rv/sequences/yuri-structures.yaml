@@ -243,6 +243,41 @@ yayard:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yapsis:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 1, -30
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ygpsis
+		ShadowStart: 3
+	damaged-idle: ygpsis
+		Start: 1
+		ShadowStart: 4
+	critical-idle: ygpsis
+		Start: 2
+		ShadowStart: 5
+	idle-spin: ygpsis_a
+		Length: 40
+		Tick: 150
+		ShadowStart: 80
+	damaged-idle-spin: ygpsis_a
+		Start: 39
+		Length: 40
+		Tick: 150
+		ShadowStart: 120
+	make: ytpsismk
+		Length: 24
+		ShadowStart: 24
+	icon: cameomd|psisicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yatech:
 	Inherits@MC: ^MindControllable
 	Defaults:

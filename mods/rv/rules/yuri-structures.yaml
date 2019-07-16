@@ -158,6 +158,57 @@ yayard:
 	ProductionBar:
 		ProductionType: Ship.Yuri
 
+yapsis:
+	Inherits: ^BaseBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Building.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: power, refinery, ~techlevel.2
+		Description: Provides radar\nDetects enemy units and strikepoints
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Psychic Radar
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 82, 150, -1, -55
+	Health:
+		HP: 750
+	Armor:
+		Type: Wood
+	ProvidesRadar:
+		RequiresCondition: !disabled && !chronodisable
+	RevealsShroud:
+		Range: 15c0
+		RequiresCondition: !disabled
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 15c0
+		RequiresCondition: !disabled
+	RevealsShroud@DISABLED:
+		Range: 5c0
+		RequiresCondition: disabled
+	RevealsShroudToIntelligenceOwner@DISABLED:
+		Types: SatelliteScan
+		Range: 5c0
+		RequiresCondition: disabled
+	RenderDetectionCircle:
+	DetectCloaked:
+		CloakTypes: Cloak, Underwater
+		Range: 25c0
+	WithIdleOverlay@spin:
+		Sequence: idle-spin
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -50
+
 yatech:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
