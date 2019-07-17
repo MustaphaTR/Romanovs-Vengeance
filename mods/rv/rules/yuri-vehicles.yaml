@@ -96,18 +96,111 @@ ltnk:
 	Voiced:
 		VoiceSet: LasherTankVoice
 
+ytnk:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Gatling Tank
+	Buildable:
+		Queue: Vehicle.Yuri
+		BuildPaletteOrder: 30
+		Description: Anti-infantry and anti-air vehicle.\nFires faster as it continues to fire.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicle
+	Mobile:
+		Speed: 90
+		TurnSpeed: 5
+	Health:
+		HP: 210
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Turreted:
+		TurnSpeed: 5
+	Armament@ag-0:
+		Weapon: AGGatling
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: !gatling
+		MuzzleSequence: muzzle
+	Armament@ag-1:
+		Weapon: AGGatling2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling == 1
+		MuzzleSequence: muzzle-1
+	Armament@ag-2:
+		Weapon: AGGatling3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling >= 2
+		MuzzleSequence: muzzle-2
+	Armament@aa-0:
+		Weapon: AAGatling
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: !gatling
+		MuzzleSequence: muzzle
+	Armament@aa-1:
+		Weapon: AAGatling2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling == 1
+		MuzzleSequence: muzzle-1
+	Armament@aa-2:
+		Weapon: AAGatling3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling >= 2
+		MuzzleSequence: muzzle-2
+	GrantConditionOnAttack:
+		Condition: gatling
+		RequiredShotsPerInstance: 16
+		MaximumInstances: 2
+		RevokeDelay: 25
+		RevokeAll: true
+		IsCyclic: false
+	#	RequiresCondition: !rank-elite
+	# GrantConditionOnAttack@elite:
+	#	Condition: gatling
+	#	RequiredShotsPerInstance: 8
+	#	MaximumInstances: 2
+	#	RevokeDelay: 25
+	#	RevokeAll: true
+	#	IsCyclic: false
+	#	RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 52, 40, 0, -6
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	WithMuzzleOverlay:
+	Voiced:
+		VoiceSet: GatlingTankVoice
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+
 tele:
 	Inherits: ^Vehicle
-	Inherits@MC: ^MindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 1000
 	Tooltip:
 		Name: Magnetron
 	Buildable:
 		Queue: Vehicle.Yuri
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 60
 		Prerequisites: yapsis
 		Description: Long range magnetic field generator.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
 	Mobile:
@@ -152,6 +245,7 @@ tele:
 
 mind:
 	Inherits: ^Vehicle
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 1750
 	Tooltip:

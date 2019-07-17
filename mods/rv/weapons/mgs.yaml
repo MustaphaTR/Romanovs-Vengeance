@@ -307,3 +307,67 @@ AKME:
 CRAKM:
 	Inherits: AKM
 	ReloadDelay: 30
+
+^Gatling:
+	Inherits: ^MG
+	ReloadDelay: 10
+	Range: 7c0
+	Brust: 2
+	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav # vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
+	Projectile: Bullet
+		Speed: 100c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+		ValidTargets: Ground, Water, Air
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 80
+			Light: 50
+			Medium: 25
+			Heavy: 25
+			Wood: 75
+			Steel: 50
+			Concrete: 25
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiff
+
+AGGatling:
+	Inherits: ^Gatling
+	ReloadDelay: 16
+	Range: 5c0
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
+		ValidTargets: Ground, Water
+
+AAGatling:
+	Inherits: ^Gatling
+	ReloadDelay: 16
+	Range: 8c0
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
+		ValidTargets: Air
+
+AGGatling2:
+	Inherits: AGGatling
+	ReloadDelay: 8
+	Report: vblhatta.wav, vblhattb.wav # vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+
+AAGatling2:
+	Inherits: AAGatling
+	ReloadDelay: 8
+	Report: vblhatta.wav, vblhattb.wav # vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+
+AGGatling3:
+	Inherits: AGGatling
+	ReloadDelay: 4
+	Report: iboratta.wav, iborattb.wav # vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+
+AAGatling3:
+	Inherits: AAGatling
+	ReloadDelay: 4
+	Report: iboratta.wav, iborattb.wav # vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
