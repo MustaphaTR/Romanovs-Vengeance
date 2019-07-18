@@ -448,6 +448,18 @@ alplanehusk:
 	RenderVoxels:
 		Image: alplane
 
+pcplane:
+	Inherits: pdplane
+	SpawnActorOnDeath:
+		Actor: pcplanehusk
+	RenderVoxels:
+		Image: pcplane
+
+pcplanehusk:
+	Inherits: pdplanehusk
+	RenderVoxels:
+		Image: pcplane
+
 pdplane.parabomb:
 	Inherits: pdplane
 	Armament:
@@ -578,6 +590,11 @@ svplane.rpad:
 	Inherits: pdplane.crate
 	RenderVoxels:
 		Image: pdplane
+
+pcplane.rpad:
+	Inherits: pdplane.crate
+	RenderVoxels:
+		Image: pcplane
 
 hornet:
 	Inherits: ^Plane
