@@ -100,6 +100,18 @@ commanders_power.inf_training:
 	ProvidesPrerequisite@powername:
 		Prerequisite: vete2flakt
 
+commanders_power.gatling_training:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Gatling Training
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 30
+		Prerequisites: prerequisite.has_points
+		Description: Makes Gatling Tanks and Gatling Troopers train as veteran.
+	ProvidesPrerequisite@powername:
+		Prerequisite: vetytnk
+
 commanders_power.intel_drop:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -147,6 +159,16 @@ commanders_power.spy_plane:
 		Description: Enables Spy Plane power.
 	RenderSprites:
 		Image: spyp
+
+commanders_power.psychic_reveal:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Psychic Reveal
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 50
+		Prerequisites: prerequisite.has_points
+		Description: Enables Psychic Reveal power.
 
 commanders_power.sonar_pulse:
 	Inherits: ^default.commanders_power
@@ -448,6 +470,27 @@ prerequisite.tesla_fence:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
+	DetonateWeaponPower@PSYCHIC_REVEAL:
+		OrderName: PsiPsychicReveal
+		RequiresCondition: !lost
+		Prerequisites:
+			1: commanders_power.psychic_reveal
+		Icons:
+			1: psireveal
+		Cursor: reveal
+		ChargeInterval: 2250
+		StartFullyCharged: true
+		Descriptions:
+			1: Psychic Reveal
+		LongDescs:
+			1: Reveals an area of 8 cell radius circle for 15 seconds.
+		SelectTargetSpeechNotification: SelectTarget
+		# LaunchSound: spsyreve.wav
+		Weapons:
+			1: PsychicReveal
+		ActivationSequence:
+		TargetCircleRanges:
+			1: 8c0
 	ParatroopersPower@inteldrop:
 		OrderName: AlliedIntelDrop
 		RequiresCondition: !lost
