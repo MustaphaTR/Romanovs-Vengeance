@@ -329,6 +329,88 @@ yatech:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
+yaclon:
+	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Building.Yuri
+		BuildPaletteOrder: 120
+		Prerequisites: yatech
+		Description: Clones most trained infantry.\nMaximum 1 can be built.
+		BuildLimit: 1
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Cloning Vats
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	Selectable:
+		Bounds: 108, 134, 0, -48
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	Power:
+		Amount: -200
+	-Capturable:
+	-CaptureNotification:
+	-CapturableProgressBar:
+	-CapturableProgressBlink:
+	-GrantConditionOnPrerequisite@INSTANTCAPTURE:
+	Exit@n1_0:
+		SpawnOffset: 0,0,0
+		ExitCell: -1, 0
+	Exit@0_n1:
+		SpawnOffset: 0,0,0
+		ExitCell: 0, -1
+	Exit@n1_n1:
+		SpawnOffset: 280,-280,0
+		ExitCell: -1, -1
+	Exit@1_n1:
+		SpawnOffset: 0,0,0
+		ExitCell: 1, -1
+	Exit@n1_1:
+		SpawnOffset: -410,-140,0
+		ExitCell: -1, 1
+	Exit@2_0:
+		SpawnOffset: 410,140,0
+		ExitCell: 2, 0
+	Exit@2_n1:
+		SpawnOffset: 0,0,0
+		ExitCell: 2, -1
+	Exit@2_1:
+		SpawnOffset: 0,0,0
+		ExitCell: 2, 1
+	Exit@0_2:
+		SpawnOffset: -280,280,0
+		ExitCell: 0, 2
+	Exit@n1_2:
+		SpawnOffset: 0,0,0
+		ExitCell: -1, 2
+	Exit@1_2:
+		SpawnOffset: 0,0,0
+		ExitCell: 1, 2
+	Exit@2_2:
+		SpawnOffset: 0,0,0
+		ExitCell: 2, 2
+	WithSpriteBody:
+		PauseOnCondition: chronodisable
+	Production:
+		Produces: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Iraq, Infantry.Vietnam, Infantry.Cuba, Infantry.Yuri
+	RallyPoint:
+		Offset: 3,3
+		Palette: mouse
+		IsPlayerPalette: false
+	ClonesProducedUnits:
+		CloneableTypes: Infantry
+
 yawall:
 	Inherits: ^Wall
 	Buildable:

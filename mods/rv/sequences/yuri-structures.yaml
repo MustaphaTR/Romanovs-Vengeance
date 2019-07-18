@@ -345,6 +345,32 @@ yatech:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yaclon:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -30
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ygclon_a
+		Length: 11
+		ShadowStart: 22
+		Tick: 180
+	damaged-idle: ygclon_a
+		Start: 11
+		Length: 11
+		ShadowStart: 33
+	make: ytclonmk
+		Length: 25
+		ShadowStart: 25
+	icon: cameomd|clonicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yawall:
 	Defaults:
 		Offset: 0, -15
