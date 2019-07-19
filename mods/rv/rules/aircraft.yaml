@@ -1195,7 +1195,8 @@ sdrn:
 		Repulsable: false
 		TurnSpeed: 7
 		Speed: 128
-		MaximumPitch: 96
+		MaximumPitch: 255
+		FlightDynamics: MoveIntoShroud, TakeOffOnCreation, TakeOffOnResupply
 	RevealsShroud:
 		Range: 7c0
 		Type: GroundPosition
@@ -1216,6 +1217,11 @@ sdrn:
 		Type: Light
 	RenderSprites:
 	WithVoxelBody:
+		RequiresCondition: visible
+	GrantConditionAfterDelay:
+		Delay: 1
+		Condition: visible
+		ShowSelectionBar: false
 	Explodes:
 		Weapon: UnitExplode
 	HitShape:

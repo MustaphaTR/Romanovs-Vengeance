@@ -27,7 +27,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void INotifyAddedToWorld.AddedToWorld(Actor self)
 		{
-			self.QueueActivity(new FlyCircle(self));
+			self.QueueActivity(new TakeOff(self));
 		}
 	}
 }
