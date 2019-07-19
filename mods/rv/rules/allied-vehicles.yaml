@@ -652,7 +652,7 @@ mgtk:
 bfrt:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@EXPERIENCE: ^GainsExperience
+	# Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
@@ -685,16 +685,16 @@ bfrt:
 		Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
-	Armament@primary:
-		Weapon: 20mmrapid
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: 20mmrapidE
-		RequiresCondition: rank-elite
-	AttackFrontal:
-		Voice: Attack
-		FacingTolerance: 2
-		PauseOnCondition: chronodisable || emp
+	# Armament@primary:
+	#	Weapon: 20mmrapid
+	#	RequiresCondition: !rank-elite
+	# Armament@elite:
+	#	Weapon: 20mmrapidE
+	#	RequiresCondition: rank-elite
+	# AttackFrontal:
+	#	Voice: Attack
+	#	FacingTolerance: 2
+	#	PauseOnCondition: chronodisable || emp
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 5
@@ -747,8 +747,8 @@ bfrt:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: BattleFortressVoice
-	ProducibleWithLevel:
-		Prerequisites: warfactory.infiltrated
+	# ProducibleWithLevel:
+	#	Prerequisites: warfactory.infiltrated
 	HitShape:
 
 robo:
