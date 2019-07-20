@@ -1715,7 +1715,9 @@
 ^HelicopterHusk:
 	Inherits: ^Husk
 	Aircraft:
-		FlightDynamics: VTOL, Slide, Hover, MoveIntoShroud, TakeOffOnCreation, TakeOffOnResupply, TurnToDock
+		VTOL: true
+		CanSlide: true
+		CanHover: true
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld
