@@ -84,6 +84,11 @@ init:
 		CargoType: Garrisoner
 	RevealsShroud:
 		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -119,6 +124,76 @@ init:
 		VoiceSet: InitiateVoice
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+
+brute:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 40
+		Description: Powerful soldiers.\n Strong vs Infantry, Vehicle\n Weak vs Aircraft
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Brute
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 10
+		Voice: Move
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 200
+	Armor:
+		Type: Plate
+	Crushable:
+		CrushClasses: vehicle
+	-TakeCover:
+	Mobile:
+		Speed: 90
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
+	AttackFrontal:
+		Voice: Attack
+	AutoTarget:
+		ScanRadius: 5
+	Armament@primary:
+		Weapon: Punch
+		FireDelay: 5
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: PunchE
+		FireDelay: 5
+		RequiresCondition: rank-elite
+	Armament@second:
+		Weapon: Smash
+		FireDelay: 8
+		Name: secondary
+		RequiresCondition: !rank-elite
+	Armament@second-elite:
+		Weapon: SmashE
+		FireDelay: 8
+		Name: secondary
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: BruteVoice
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		AttackSequences:
+			secondary: smash
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
 
 yuripsi:
 	Inherits: yuri

@@ -98,3 +98,55 @@ Shovel:
 		Explosions: piffpiff
 	Warhead@3Eff: CreateEffect
 		Explosions: piffpiff
+
+Punch:
+	ReloadDelay: 60
+	Range: 1c496
+	ValidTargets: Infantry, TerrorDrone, Structure, Bridge, Wall, Fence, Tree
+	Projectile: InstantHit
+	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+		ValidTargets: Infantry, TerrorDrone, Structure, Bridge, Wall, Fence, Tree
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 0
+			Medium: 20
+			Heavy: 0
+			Wood: 30
+			Steel: 30
+			Concrete: 20
+			Drone: 200
+			Rocket: 100
+		DamageTypes: BruteDeath
+
+PunchE:
+	Inherits: Punch
+
+Smash:
+	ReloadDelay: 60
+	Range: 1c496
+	ValidTargets: Vehicle
+	Projectile: InstantHit
+	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 100
+		ValidTargets: Vehicle
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 100
+			Medium: 20
+			Heavy: 100
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 0
+			Rocket: 0
+		DamageTypes: BruteDeath
+
+SmashE:
+	Inherits: Smash
