@@ -50,7 +50,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public object Create(ActorInitializer init) { return new Infectable(init.Self, this); }
 	}
 
-	public class Infectable : ISync, ITick, INotifyCreated, INotifyDamage, INotifyKilled
+	public class Infectable : ISync, ITick, INotifyCreated, INotifyDamage, INotifyKilled, IRemoveInfector
 	{
 		readonly InfectableInfo info;
 		readonly Health health;
@@ -134,7 +134,7 @@ namespace OpenRA.Mods.RA2.Traits
 					if (kill)
 						Infector.Kill(e.Attacker, e.Damage.DamageTypes);
 					else
-                        Infector.QueueActivity(false, new Move(Infector, self.Location));
+						Infector.QueueActivity(false, new Move(Infector, self.Location));
 
 					RevokeCondition(self);
 					Infector = null;
