@@ -150,7 +150,8 @@ zep:
 		Repulsable: false
 		AltitudeVelocity: 200
 		AirborneCondition: airborne
-		FlightDynamics: VTOL, Slide, Hover, MoveIntoShroud, TakeOffOnCreation, TakeOffOnResupply, TurnToDock
+		CanSlide: true
+		CanHover: true
 	Health:
 		HP: 2000
 	Armor:
@@ -836,6 +837,7 @@ schp:
 		Voice: DeployedAttack
 		PauseOnCondition: (!deployed && !undeployed) || (undeployed && !cruising) || emp || chronodisable
 	Aircraft:
+		CanForceLand: false
 		LandWhenIdle: false
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
@@ -1196,7 +1198,7 @@ sdrn:
 		TurnSpeed: 7
 		Speed: 128
 		MaximumPitch: 255
-		FlightDynamics: MoveIntoShroud, TakeOffOnCreation, TakeOffOnResupply
+		VTOL: false
 	RevealsShroud:
 		Range: 7c0
 		Type: GroundPosition
