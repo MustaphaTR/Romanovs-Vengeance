@@ -39,6 +39,12 @@ shad:
 		Count: 1
 	Voiced:
 		VoiceSet: NighthawkVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	Buildable:
 		Queue: Aircraft.Allies, Aircraft.Korea
 		BuildPaletteOrder: 10
@@ -190,7 +196,10 @@ zep:
 	AutoTarget:
 		ScanRadius: 5
 		InitialStance: ReturnFire
+	ExternalCondition@PRODUCED:
+		Condition: produced
 	VoiceAnnouncement:
+		RequiresCondition: produced
 		Voice: Build
 	Voiced:
 		VoiceSet: KirovVoice
@@ -271,6 +280,12 @@ orca:
 		Voice: Attack
 	Voiced:
 		VoiceSet: HarrierVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, caoutp
@@ -350,6 +365,12 @@ beag:
 		HP: 200
 	Voiced:
 		VoiceSet: BlackEagleVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	RenderSprites:
 		Image: beag
 	RenderVoxels:
@@ -809,6 +830,12 @@ schp:
 		TurnSpeed: 5
 	Voiced:
 		VoiceSet: SiegeChopperVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	Buildable:
 		Queue: Aircraft.Soviets
 		BuildPaletteOrder: 20
@@ -939,6 +966,7 @@ bpln:
 	-SelectionDecorations:
 	-Targetable@Airborne:
 	-ProducibleWithLevel:
+	-VoiceAnnouncement:
 	RejectsOrders:
 	Interactable:
 	Aircraft:
@@ -998,6 +1026,12 @@ hind:
 		Type: Light
 	Voiced:
 		VoiceSet: HindVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	Buildable:
 		Queue: Aircraft.Soviets
 		BuildPaletteOrder: 10
@@ -1136,6 +1170,12 @@ fortress:
 		Voice: Attack
 	Voiced:
 		VoiceSet: HarrierVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, caoutp

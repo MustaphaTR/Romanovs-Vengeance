@@ -53,6 +53,12 @@
 	RenderVoxels:
 	WithVoxelBody:
 	HitShape:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
@@ -103,6 +109,12 @@
 	RenderVoxels:
 	WithVoxelBody:
 	HitShape:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 
 ^MainBattleTank:
 	Inherits: ^Vehicle
@@ -141,3 +153,9 @@
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None

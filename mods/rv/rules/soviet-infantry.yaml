@@ -764,7 +764,10 @@ boris:
 		FacingTolerance: 2
 		TargetFrozenActors: True
 		PauseOnCondition: chronodisable
+	ExternalCondition@PRODUCED:
+		Condition: produced
 	VoiceAnnouncement:
+		RequiresCondition: produced
 		Voice: Build
 	Voiced:
 		VoiceSet: BorisVoice

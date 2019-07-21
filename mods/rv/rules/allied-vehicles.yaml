@@ -73,6 +73,12 @@ cmin:
 	WithVoxelUnloadBody:
 	Voiced:
 		VoiceSet: ChronoMinerVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	HitShape:
 
 mtnk:
@@ -158,6 +164,12 @@ tnkd:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: TankDestroyerVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -497,6 +509,12 @@ fv:
 		RequiresCondition: ifv-medic
 	Voiced:
 		VoiceSet: IFVVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: vetifv
 	HitShape:
@@ -579,6 +597,12 @@ sref:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: PrismTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -645,6 +669,12 @@ mgtk:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: MirageTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -748,6 +778,12 @@ bfrt:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: BattleFortressVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -842,6 +878,12 @@ robo:
 		MovingInterval: 6
 	Voiced:
 		VoiceSet: RobotTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	DeathSounds:
@@ -922,6 +964,12 @@ ctnk:
 	HitShape:
 	Voiced:
 		VoiceSet: ChronoTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 
 expn:
 	Inherits: ^ExpansionVehicle

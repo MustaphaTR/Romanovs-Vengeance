@@ -80,6 +80,12 @@ harv:
 	WithVoxelUnloadBody:
 	Voiced:
 		VoiceSet: WarMinerVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	HitShape:
 
 dron:
@@ -149,6 +155,12 @@ dron:
 	-WithDecoration@TANYAC4:
 	Voiced:
 		VoiceSet: TerrorDroneVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	AmbientSound@Walk:
 		SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav, vterlo3.wav
 		Delay: 7
@@ -235,6 +247,12 @@ htk:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: FlakTrackVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -270,6 +288,12 @@ htnk:
 		NormalsPalette: ts-normals
 	Voiced:
 		VoiceSet: SovietVehicleVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 
 apoc:
 	Inherits: ^Vehicle
@@ -351,6 +375,12 @@ apoc:
 		EmptyWeapon: ApocExplode
 	Voiced:
 		VoiceSet: ApocalypseVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -408,6 +438,12 @@ ttnk:
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: TeslaTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
@@ -464,7 +500,10 @@ dtruck:
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
+	ExternalCondition@PRODUCED:
+		Condition: produced
 	VoiceAnnouncement:
+		RequiresCondition: produced
 		Voice: Build
 	Voiced:
 		VoiceSet: DemolitionTruckVoice
@@ -528,6 +567,12 @@ v3:
 	HitShape:
 	Voiced:
 		VoiceSet: V3LauncherVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 
 v3rocket:
 	Inherits: ^ShootableMissile
@@ -636,6 +681,12 @@ deva:
 		GrantsCondition: meltdown
 	Voiced:
 		VoiceSet: DevastatorVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:

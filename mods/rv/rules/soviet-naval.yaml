@@ -79,6 +79,12 @@ sub:
 	RenderSprites:
 	Voiced:
 		VoiceSet: TyphoonVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	HitShape:
 
 hyd:
@@ -133,6 +139,12 @@ hyd:
 	RenderSprites:
 	Voiced:
 		VoiceSet: SeaScorpionVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	HitShape:
 
 sqd:
@@ -178,6 +190,12 @@ sqd:
 		Bounds: 80, 30
 	Voiced:
 		VoiceSet: GiantSquidVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 	Infector:
 		Types: SquidInfection
 		Damage: 15
@@ -302,6 +320,14 @@ dred:
 		Sequence: empty
 		RequiresCondition: !loaded
 	HitShape:
+	Voiced:
+		VoiceSet: SovietNavalVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
 
 dmisl:
 	Inherits: ^ShootableMissile
