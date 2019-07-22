@@ -164,6 +164,73 @@
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
 
+^Refinery:
+	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^4x3Shape
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 30
+		Prerequisites: power, ~techlevel.1
+		Description: Processes ore into credits.
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Ore Refinery
+	ProvidesPrerequisite:
+		Prerequisite: refinery
+	ProvidesPrerequisite@default:
+	Building:
+		Footprint: xxx= xxx= xxx=
+		Dimensions: 4,3
+	Health:
+		HP: 1000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	TiberianSunRefinery:
+		DockOffset: 3,1
+		ShowTicks: True
+		TickLifetime: 30
+		TickVelocity: 1
+		TickRate: 10
+		DockAngle: 160
+		UseStorage: false
+	CustomSellValue:
+		Value: 400
+	InfiltrateForCash:
+		Types: SpyInfiltrate
+		Percentage: 50
+		Notification: CreditsStolen
+		Minimum: 500
+	FreeActor:
+		Actor: cmin
+		SpawnOffset: 3, 1
+		Facing: 160
+	WithDockedOverlay:
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@bib:
+		Sequence: idle-bib
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@drill:
+		Sequence: idle-drill
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -50
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+	SpawnActorsOnSell@allies:
+		ActorTypes: e1
+	SpawnActorsOnSell@soviets:
+		ActorTypes: e2
+
 ^WarFactory:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
