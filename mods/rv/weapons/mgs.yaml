@@ -371,3 +371,19 @@ AAGatling3:
 	Inherits: AAGatling
 	ReloadDelay: 4
 	Report: iboratta.wav, iborattb.wav # vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+
+Virusgun:
+	Inherits: awp
+	ReloadDelay: 100
+	Range: 10c0
+	Report: iviratta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 125
+		DamageTypes: VirusDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+
+VirusgunE:
+	Inherits: Virusgun
+	ReloadDelay: 80
+	Range: 16c0

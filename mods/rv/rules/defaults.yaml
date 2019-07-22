@@ -1200,6 +1200,7 @@
 			RadiationDeath: 4
 			PsychicDeath: 5
 			ElectroDeath: 6
+			VirusDeath: 7
 			BruteDeath: 8
 	SpawnActorOnDeath@flames:
 		Actor: FLAMEGUY
@@ -1410,17 +1411,18 @@
 		Voice: Die
 	-GivesExperience:
 	-TakeCover:
-	WithDeathAnimation@effect:
-		DeathSequencePalette: player
-		DeathPaletteIsPlayerPalette: true
+	WithDeathAnimation@normal:
 		DeathTypes:
-			PsychicDeath: 1
-			RadiationDeath: 1
-			ElectroDeath: 2
-	-SpawnActorOnDeath@flames:
-	WithDeathAnimation@flames:
-		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
 			FlameDeath: 1
+			RadiationDeath: 1
+			PsychicDeath: 1
+			ElectroDeath: 2
+			VirusDeath: 2
+			BruteDeath: 1
+	-WithDeathAnimation@effect:
+	-SpawnActorOnDeath@flames:
 	Crushable:
 	MapEditorData:
 		Categories: Animal

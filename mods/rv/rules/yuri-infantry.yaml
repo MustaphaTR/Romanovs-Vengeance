@@ -60,16 +60,16 @@ init:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Yuri
-		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Basic Yuri Infantry.\n Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
+		Prerequisites: ~techlevel.1
+		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
 	Valued:
 		Cost: 200
 	Tooltip:
 		Name: Initiate
 	DeliversCash:
 		Payload: 100
-		PlayerExperience: 5
+		PlayerExperience: 10
 		Voice: Move
 	Selectable:
 		Bounds: 20, 30, 0, -11
@@ -135,14 +135,15 @@ brute:
 	Buildable:
 		Queue: Infantry.Yuri
 		BuildPaletteOrder: 40
-		Description: Powerful soldiers.\n Strong vs Infantry, Vehicle\n Weak vs Aircraft
+		Prerequisites: ~techlevel.1
+		Description: Powerful soldiers.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 500
 	Tooltip:
 		Name: Brute
 	DeliversCash:
 		Payload: 250
-		PlayerExperience: 10
+		PlayerExperience: 25
 		Voice: Move
 	Selectable:
 		Bounds: 20, 30, 0, -11
@@ -207,11 +208,56 @@ yuripsi:
 		Payload: 400
 		PlayerExperience: 40
 
+virus:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: yapsis, ~techlevel.2
+		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Virus
+	DeliversCash:
+		Payload: 350
+		PlayerExperience: 35
+		Voice: Move
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 60
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Virusgun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: VirusgunE
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: VirusVoice
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
 yurix:
 	Inherits: yuripr
 	Buildable:
 		Queue: Infantry.Yuri
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: yatech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nMaximum 1 can be trained.
 	Valued:
