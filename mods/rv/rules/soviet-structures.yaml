@@ -203,6 +203,8 @@ narefn:
 		Bounds: 170, 150, -6, -33
 	FreeActor:
 		Actor: harv
+	PlaceBuildingVariants:
+		Actors: narefb
 
 naradr:
 	Inherits: ^BaseBuilding
@@ -1332,3 +1334,10 @@ naexpn:
 		IntoActor: exps
 	RenderSprites:
 		Image: gaexpn
+
+narefb:
+	Inherits: ^RefineryB
+	Selectable:
+		Bounds: 170, 150, -6, -33
+	FreeActor:
+		Actor: harv

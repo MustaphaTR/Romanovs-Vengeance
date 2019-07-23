@@ -172,7 +172,7 @@
 		Queue: Building
 		BuildPaletteOrder: 30
 		Prerequisites: power, ~techlevel.1
-		Description: Processes ore into credits.
+		Description: Processes ore into credits.\nCan be rotated.
 	Valued:
 		Cost: 1400
 	Tooltip:
@@ -209,7 +209,7 @@
 		Minimum: 500
 	FreeActor:
 		Actor: cmin
-		SpawnOffset: 3, 1
+		SpawnOffset: 3,1
 		Facing: 160
 	WithDockedOverlay:
 		PauseOnCondition: chronodisable
@@ -230,6 +230,20 @@
 		ActorTypes: e1
 	SpawnActorsOnSell@soviets:
 		ActorTypes: e2
+
+^RefineryB:
+	Inherits: ^Refinery
+	-Buildable:
+	Building:
+		Footprint: =xxx =xxx =xxx
+	TiberianSunRefinery:
+		DockOffset: 0,1
+		DockAngle: 32
+	FreeActor:
+		SpawnOffset: 0,1
+		Facing: 32
+	-WithDockedOverlay:
+	-WithIdleOverlay@drill:
 
 ^WarFactory:
 	Inherits: ^BaseBuilding
