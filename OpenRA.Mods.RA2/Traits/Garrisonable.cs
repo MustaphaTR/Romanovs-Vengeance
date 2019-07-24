@@ -18,6 +18,7 @@ using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.RA2.Activities;
 using OpenRA.Primitives;
+using OpenRA.Support;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
@@ -313,6 +314,29 @@ namespace OpenRA.Mods.RA2.Traits
 
 			foreach (var t in garrisoner.TraitsImplementing<Turreted>())
 				t.TurretFacing = facing.Value.Facing + Info.GarrisonerFacing;
+		}
+
+		public int DamageVersus(Actor victim, Dictionary<string, int> versus)
+		{
+			// If no Versus values are defined, DamageVersus would return 100 anyway, so we might as well do that early.
+			if (versus.Count == 0)
+				return 100;
+
+			var armor = victim.TraitsImplementing<Armor>()
+				.Where(a => !a.IsTraitDisabled && a.Info.Type != null && versus.ContainsKey(a.Info.Type))
+				.Select(a => versus[a.Info.Type]);
+
+			return Util.ApplyPercentageModifiers(100, armor);
+		}
+
+		public void DamagePassengers(int damage, Actor attacker, int amount, Dictionary<string, int> versus, BitSet<DamageType> damageTypes, IEnumerable<int> damageModifiers)
+		{
+			var passengersToDamage = amount > 0 && amount < garrisonable.Count() ? garrisonable.Shuffle(self.World.SharedRandom).Take(amount) : garrisonable;
+			foreach (var passenger in passengersToDamage)
+			{
+				var d = Util.ApplyPercentageModifiers(damage, damageModifiers.Append(DamageVersus(passenger, versus)));
+				passenger.InflictDamage(attacker, new Damage(d, damageTypes));
+			}
 		}
 
 		public IEnumerable<PipType> GetPips(Actor self)

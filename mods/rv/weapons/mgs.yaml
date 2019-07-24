@@ -128,7 +128,7 @@ CRDoublePistols:
 
 awp:
 	Inherits: DoublePistols
-	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship, SeaAnimal
+	InvalidTargets: Bridge, Wall, Fence, Tree, NonGarrisonableStructure, Vehicle, Ship, SeaAnimal
 	ReloadDelay: 150
 	Range: 14c0
 	Report: isniatta.wav
@@ -139,6 +139,24 @@ awp:
 		DamageTypes: BulletDeath
 		Versus:
 			Drone: 100
+	Warhead@1Gar: DamageGarrisoner
+		ValidTargets: GarrisonedStructure
+		Spread: 42
+		Damage: 200
+		Amount: 1
+		DamageTypes: BulletDeath
+		Versus:
+			None: 200
+			Flak: 100
+			Plate: 100
+			Light: 1
+			Medium: 1
+			Heavy: 1
+			Wood: 1
+			Steel: 1
+			Concrete: 1
+			Drone: 100
+			Rocket: 100
 
 AWPE:
 	Inherits: awp
@@ -378,6 +396,9 @@ Virusgun:
 	Range: 10c0
 	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
+		Damage: 125
+		DamageTypes: VirusDeath
+	Warhead@1Gar: DamageGarrisoner
 		Damage: 125
 		DamageTypes: VirusDeath
 	Warhead@2Eff: CreateEffect

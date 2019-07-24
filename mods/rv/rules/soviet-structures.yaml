@@ -98,7 +98,7 @@ napowr:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
 	PowerTooltip:
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 
 nahand:
 	Inherits: ^Barracks
@@ -379,7 +379,7 @@ naradr:
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
 	Power:
@@ -413,7 +413,7 @@ mine:
 	Tooltip:
 		Name: Mine
 	Targetable:
-		TargetTypes: Ground, Structure, Defense
+		TargetTypes: Ground, Structure, Defense, NonGarrisonableStructure
 	Mobile:
 		Speed: 1
 		Locomotor: wheeled
@@ -491,7 +491,7 @@ nmine:
 	RevealsShroudToIntelligenceOwner:
 		Range: 3c0
 	Targetable:
-		TargetTypes: Ground, Water, Underwater, Structure, Defense
+		TargetTypes: Ground, Water, Underwater, Structure, Defense, NonGarrisonableStructure
 	-Mobile:
 	Building:
 		Footprint: x
@@ -637,7 +637,7 @@ nanrct:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
 	PowerTooltip:
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 
 natech:
 	Inherits: ^BaseBuilding
@@ -673,7 +673,7 @@ natech:
 		Types: SpyInfiltrate
 		Proxy: soviets.tech.infiltrated
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 
 naclon:
 	Inherits: ^BaseBuilding
@@ -1113,7 +1113,7 @@ nabnkr:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 40
 		Prerequisites: ~disabled
-		Description: Static defense with fireports for 6\ngarrisoned soldiers.
+		Description: Static defense with fireports for 6 garrisoned soldiers.\nInfantry inside cannot be killed by garrison killers.
 	Valued:
 		Cost: 500
 	Tooltip:

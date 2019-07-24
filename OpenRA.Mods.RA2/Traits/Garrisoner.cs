@@ -194,7 +194,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 			// Something killed us, but it wasn't our transport blowing up. Remove us from the cargo.
 			if (!Transport.IsDead)
-				Transport.Trait<Garrisonable>().Unload(Transport, self);
+				self.World.AddFrameEndTask(w => Transport.Trait<Garrisonable>().Unload(Transport, self));
 		}
 	}
 }

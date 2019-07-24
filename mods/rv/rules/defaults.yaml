@@ -726,7 +726,7 @@
 	Selectable:
 		Priority: 3
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	WithColoredOverlay@FLARE:
 		Palette: flare
 		RequiresCondition: flare
@@ -820,7 +820,7 @@
 		Radius: 1c0
 		Duration: 50
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense
+		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, NonGarrisonableStructure
 
 ^BuildingPlug:
 	Interactable:
@@ -888,8 +888,10 @@
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
 		PauseOnCondition: chronodisable
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure
 	Targetable@GARRISONED:
-		TargetTypes: Defense
+		TargetTypes: Defense, GarrisonedStructure
 		RequiresCondition: loaded
 	WithSpriteBody:
 		RequiresCondition: !loaded

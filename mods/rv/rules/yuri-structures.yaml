@@ -99,7 +99,7 @@ yapowr:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
 	PowerTooltip:
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 
 yabrck:
 	Inherits: ^Barracks
@@ -207,7 +207,7 @@ yarefn:
 	WithVoxelTurret:
 		RequiresCondition: !build-incomplete
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Voiced:
 		VoiceSet: SlaveMinerVoice
 
@@ -327,7 +327,7 @@ yatech:
 		Types: SpyInfiltrate
 		Proxy: yuri.tech.infiltrated
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 
 yaclon:
 	Inherits: ^BaseBuilding
@@ -463,7 +463,7 @@ yapsyt:
 	Power:
 		Amount: -100
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	Armament:
 		Weapon: TowerMindControl
 		MuzzleSequence: muzzle

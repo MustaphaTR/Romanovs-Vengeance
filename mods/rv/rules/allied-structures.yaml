@@ -155,7 +155,7 @@ gapowr:
 		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
 	PowerTooltip:
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 
 gapowrup:
 	Inherits: ^BuildingPlug
@@ -312,7 +312,7 @@ gaairc:
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Power:
 		Amount: -75
 	Reservable:
@@ -636,7 +636,7 @@ gatech:
 		Types: SpyInfiltrate
 		Proxy: allies.tech.infiltrated
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, SpyInfiltrate
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 
 gawall:
 	Inherits: ^Wall
@@ -966,7 +966,7 @@ gagap:
 		RequiresCondition: !build-incomplete
 	CaptureNotification:
 	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	RenderShroudCircle:
 	WithIdleOverlay@head:
 		Sequence: idle-head
