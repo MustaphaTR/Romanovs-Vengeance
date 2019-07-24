@@ -59,7 +59,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public object Create(ActorInitializer init) { return new Garrisoner(this); }
 	}
 
-	public class Garrisoner : INotifyCreated, IIssueOrder, IResolveOrder, IOrderVoice, INotifyRemovedFromWorld, INotifyEnteredGarrison, INotifyExitedGarrison
+	public class Garrisoner : INotifyCreated, IIssueOrder, IResolveOrder, IOrderVoice, INotifyRemovedFromWorld, INotifyEnteredGarrison, INotifyExitedGarrison, INotifyKilled
 	{
 		public readonly GarrisonerInfo Info;
 		public Actor Transport;
@@ -185,6 +185,16 @@ namespace OpenRA.Mods.RA2.Traits
 				return;
 			ReservedGarrison.UnreserveSpace(self);
 			ReservedGarrison = null;
+		}
+
+		void INotifyKilled.Killed(Actor self, AttackInfo e)
+		{
+			if (Transport == null)
+				return;
+
+			// Something killed us, but it wasn't our transport blowing up. Remove us from the cargo.
+			if (!Transport.IsDead)
+				Transport.Trait<Garrisonable>().Unload(Transport, self);
 		}
 	}
 }

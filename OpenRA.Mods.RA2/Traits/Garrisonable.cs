@@ -83,7 +83,7 @@ namespace OpenRA.Mods.RA2.Traits
 		ITransformActorInitModifier
 	{
 		readonly Actor self;
-		readonly Stack<Actor> garrisonable = new Stack<Actor>();
+		readonly List<Actor> garrisonable = new List<Actor>();
 		readonly HashSet<Actor> reserves = new HashSet<Actor>();
 		readonly Dictionary<string, Stack<int>> garrisonerTokens = new Dictionary<string, Stack<int>>();
 		readonly Lazy<IFacing> facing;
@@ -110,7 +110,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 			if (init.Contains<RuntimeGarrisonInit>())
 			{
-				garrisonable = new Stack<Actor>(init.Get<RuntimeGarrisonInit, Actor[]>());
+				garrisonable = new List<Actor>(init.Get<RuntimeCargoInit, Actor[]>());
 				totalWeight = garrisonable.Sum(c => GetWeight(c));
 			}
 			else if (init.Contains<GarrisonInit>())
@@ -120,7 +120,7 @@ namespace OpenRA.Mods.RA2.Traits
 					var unit = self.World.CreateActor(false, u.ToLowerInvariant(),
 						new TypeDictionary { new OwnerInit(self.Owner) });
 
-					garrisonable.Push(unit);
+					garrisonable.Add(unit);
 				}
 
 				totalWeight = garrisonable.Sum(c => GetWeight(c));
@@ -132,7 +132,7 @@ namespace OpenRA.Mods.RA2.Traits
 					var unit = self.World.CreateActor(false, u.ToLowerInvariant(),
 						new TypeDictionary { new OwnerInit(self.Owner) });
 
-					garrisonable.Push(unit);
+					garrisonable.Add(unit);
 				}
 
 				totalWeight = garrisonable.Sum(c => GetWeight(c));
@@ -271,33 +271,35 @@ namespace OpenRA.Mods.RA2.Traits
 		public bool HasSpace(int weight) { return totalWeight + reservedWeight + weight <= Info.MaxWeight; }
 		public bool IsEmpty(Actor self) { return garrisonable.Count == 0; }
 
-		public Actor Peek(Actor self) { return garrisonable.Peek(); }
+		public Actor Peek(Actor self) { return garrisonable.Last(); }
 
-		public Actor Unload(Actor self)
+		public Actor Unload(Actor self, Actor passenger = null)
 		{
-			var a = garrisonable.Pop();
+			passenger = passenger ?? garrisonable.Last();
+			if (!garrisonable.Remove(passenger))
+				throw new ArgumentException("Attempted to ungarrison an actor that is not a garrisoner.");
 
-			totalWeight -= GetWeight(a);
+			totalWeight -= GetWeight(passenger);
 
-			SetGarrisonerFacing(a);
+			SetGarrisonerFacing(passenger);
 
 			foreach (var npe in self.TraitsImplementing<INotifyGarrisonerExited>())
-				npe.OnGarrisonerExited(self, a);
+				npe.OnGarrisonerExited(self, passenger);
 
-			foreach (var nec in a.TraitsImplementing<INotifyExitedGarrison>())
-				nec.OnExitedGarrison(a, self);
+			foreach (var nec in passenger.TraitsImplementing<INotifyExitedGarrison>())
+				nec.OnExitedGarrison(passenger, self);
 
-			var p = a.Trait<Garrisoner>();
+			var p = passenger.Trait<Garrisoner>();
 			p.Transport = null;
 
 			Stack<int> garrisonerToken;
-			if (garrisonerTokens.TryGetValue(a.Info.Name, out garrisonerToken) && garrisonerToken.Any())
+			if (garrisonerTokens.TryGetValue(passenger.Info.Name, out garrisonerToken) && garrisonerToken.Any())
 				conditionManager.RevokeCondition(self, garrisonerToken.Pop());
 
 			if (loadedTokens.Any())
 				conditionManager.RevokeCondition(self, loadedTokens.Pop());
 
-			return a;
+			return passenger;
 		}
 
 		void SetGarrisonerFacing(Actor garrisoner)
@@ -339,7 +341,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public void Load(Actor self, Actor a)
 		{
-			garrisonable.Push(a);
+			garrisonable.Add(a);
 			var w = GetWeight(a);
 			totalWeight += w;
 			if (reserves.Contains(a))
