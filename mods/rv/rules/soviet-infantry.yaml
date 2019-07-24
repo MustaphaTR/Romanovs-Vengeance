@@ -795,7 +795,7 @@ pyro:
 	Buildable:
 		Queue: Infantry.Soviets
 		BuildPaletteOrder: 100
-		Prerequisites: naradr, ~techlevel.3
+		Prerequisites: naradr, ~techlevel.2
 		Description: Advanced anti-infantry and anti-structure infantry.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -855,7 +855,7 @@ mech:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
-		Prerequisites: repairpad, ~techlevel.2
+		Prerequisites: ~prerequisite.mechanic, repairpad, ~techlevel.2
 		BuildPaletteOrder: 60
 		Description: Repairs vehicles.\n  Unarmed
 	Valued:
@@ -898,82 +898,3 @@ mech:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-
-gren:
-	Inherits@1: ^Infantry
-	Inherits@2: ^Parachutable
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@MC: ^MindControllable
-	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
-		Prerequisites: ~prerequisite.grenadier, ~techlevel.1
-		BuildPaletteOrder: 50
-		Description: Infantry armed with grenades.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 160
-	DeliversCash:
-		Payload: 50
-		PlayerExperience: 5
-		Voice: Move
-	Tooltip:
-		Name: Grenadier
-	Selectable:
-		Bounds: 20, 30, 0, -11
-	Health:
-		HP: 85
-	Mobile:
-		Speed: 55
-	Passenger:
-		PipType: Green
-	RevealsShroud:
-		Range: 5c0
-	RevealsShroudToIntelligenceOwner:
-		Range: 5c0
-	RevealOnDeath:
-		Radius: 2c512
-	AttackFrontal:
-		Voice: Attack
-		FacingTolerance: 2
-	Armament@primary:
-		Weapon: Grenade
-		FireDelay: 5
-		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: GrenadeE
-		FireDelay: 5
-		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
-	Armament@opentopped:
-		Name: opentopped
-		Weapon: Grenade
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
-	Armament@elite-opentopped:
-		Name: opentopped
-		Weapon: GrenadeE
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
-	Armament@garrisoned:
-		Name: garrisoned
-		Weapon: UCGrenade
-		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
-	Armament@elite-garrisoned:
-		Name: garrisoned
-		Weapon: UCGrenadeE
-		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
-	WithInfantryBody:
-		DefaultAttackSequence: shoot
-	Voiced:
-		VoiceSet: ConscriptVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	QuantizeFacingsFromSequence:
-		Sequence: stand

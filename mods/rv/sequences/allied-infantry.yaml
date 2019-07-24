@@ -14,22 +14,6 @@ engineer:
 		Start: 244
 	icon: engnicon
 
-medi:
-	Inherits: ^Infantry
-	Inherits@MC: ^MindControllable
-	shoot:
-		Start: 164
-		Length: 6
-		Facings: 8
-		Tick: 80
-	liedown:
-		Start: 260
-	standup:
-		Start: 276
-	paradrop:
-		Start: 244
-	icon: mediicon
-
 adog:
 	Inherits: ^BasicInfantry
 	cheer:
@@ -96,37 +80,6 @@ e1:
 	cheer:
 		Start: 364
 	icon: giicon
-
-ggi:
-	Inherits: ^ArmedInfantry
-	Inherits@MC: ^MindControllable
-	dot: dot
-		ZOffset: -9999
-	liedown:
-		Start: 164
-	standup:
-		Start: 182
-	shoot:
-		Start: 204
-	prone-shoot:
-		Start: 252
-	run:
-		Tick: 120
-	deployed:
-		Start: 315
-		Facings: 8
-	deploy:
-		Start: 300
-		Length: 15
-	shoot-deployed:
-		Start: 323
-		Length: 6
-		Facings: 8
-	paradrop:
-		Start: 371
-	cheer:
-		Start: 196
-	icon: gdgiicon
 
 snipe:
 	Inherits: ^ArmedInfantry
@@ -361,3 +314,95 @@ cleg:
 	cheer:
 		Start: 165
 	icon: clegicon
+
+# Yuri's Revenge Allied Infantry
+ggi:
+	Inherits: ^ArmedInfantry
+	Inherits@MC: ^MindControllable
+	dot: dot
+		ZOffset: -9999
+	liedown:
+		Start: 164
+	standup:
+		Start: 182
+	shoot:
+		Start: 204
+	prone-shoot:
+		Start: 252
+	run:
+		Tick: 120
+	deployed:
+		Start: 315
+		Facings: 8
+	deploy:
+		Start: 300
+		Length: 15
+	shoot-deployed:
+		Start: 323
+		Length: 6
+		Facings: 8
+	paradrop:
+		Start: 371
+	cheer:
+		Start: 196
+	icon: gdgiicon
+
+# Custom Allied Infantry
+medi:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	shoot:
+		Start: 164
+		Length: 6
+		Facings: 8
+		Tick: 80
+	liedown:
+		Start: 260
+	standup:
+		Start: 276
+	paradrop:
+		Start: 244
+	icon: mediicon
+
+gren:
+	Inherits: ^ArmedInfantry
+	Inherits@MC: ^MindControllable
+	run:
+		Length: 8
+		Tick: 120
+	idle1:
+		Start: 376
+		Length: 40
+		Tick: 25
+	idle2:
+		Start: 416
+		Length: 25
+	die1:
+		Start: 441
+		Length: 50
+		Tick: 20
+	die2:
+		Start: 491
+		Length: 50
+		Tick: 20
+	shoot:
+		Start: 72
+		Length: 12
+	liedown:
+		Start: 360
+	standup:
+		Start: 344
+	prone-stand:
+		Frames: 168, 178, 188, 198, 208, 218, 228, 238
+	prone-run:
+		Start: 168
+		Length: 10
+	prone-shoot:
+		Start: 248
+		Length: 12
+	cheer:
+		Start: 416
+		Length: 25
+	paradrop:
+		Start: 541
+	icon: grenicon

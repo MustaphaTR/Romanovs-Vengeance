@@ -22,19 +22,19 @@ commanders_power.medic:
 	RenderSprites:
 		Image: medi
 
-commanders_power.grenadier:
+commanders_power.mechanic:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Grenadier
+		Name: Mechanic
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
-		Description: Enables training of Grenadier from Barracks.
+		Description: Enables training of Mechanic from Barracks.
 	ProvidesPrerequisite@powername:
-		Prerequisite: prerequisite.grenadier
+		Prerequisite: prerequisite.mechanic
 	RenderSprites:
-		Image: gren
+		Image: mech
 
 commanders_power.airpad:
 	Inherits: ^default.commanders_power
