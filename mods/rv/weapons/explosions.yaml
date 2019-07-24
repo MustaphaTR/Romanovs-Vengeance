@@ -94,6 +94,16 @@ ApocExplode:
 	Warhead@2Dam: SpreadDamage
 		Damage: 40
 
+FlameTankExplode:
+	Inherits: KirovExplode
+	Warhead@1Eff: CreateEffect
+		ImpactSounds: gexpapoa.wav, gexpapob.wav, gexpapoc.wav
+	Warhead@2Dam: SpreadDamage
+		Damage: 200
+		Spread: 0c768
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumScorch
+
 PlaneExplode:
 	Inherits: KirovExplode
 	Warhead@2Dam: SpreadDamage

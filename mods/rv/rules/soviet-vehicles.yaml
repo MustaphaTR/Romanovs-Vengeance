@@ -715,7 +715,7 @@ ftnk:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
-		Cost: 1300
+		Cost: 1200
 	Tooltip:
 		Name: Flame Tank
 	Buildable:
@@ -726,11 +726,11 @@ ftnk:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
-		Speed: 60
+		Speed: 75
 		TurnSpeed: 4
 		Locomotor: heavytracked
 	Health:
-		HP: 350
+		HP: 400
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -770,4 +770,7 @@ ftnk:
 		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
+	Explodes:
+		Weapon: FlameTankExplode
+		EmptyWeapon: FlameTankExplode
 	HitShape:

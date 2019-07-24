@@ -19,11 +19,11 @@ Flamer:
 			None: 150
 			Flak: 150
 			Plate: 100
-			Light: 50
+			Light: 70
 			Medium: 15
 			Heavy: 15
 			Wood: 70
-			Steel: 25
+			Steel: 35
 			Concrete: 60
 			Drone: 100
 			Rocket: 100
@@ -37,11 +37,11 @@ Flamer:
 			None: 150
 			Flak: 150
 			Plate: 100
-			Light: 50
+			Light: 70
 			Medium: 15
 			Heavy: 15
 			Wood: 70
-			Steel: 25
+			Steel: 35
 			Concrete: 60
 			Drone: 100
 			Rocket: 100
@@ -68,14 +68,18 @@ CRFlamer:
 
 TankFlamer:
 	Inherits: Flamer
-	Range: 3c0
-	Burst: 15
+	ReloadDelay: 40
+	Range: 5c0
+	Burst: 20
 	Projectile: BulletAS
 		LaunchAngle: 0
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 10
 
 TankFlamerE:
 	Inherits: TankFlamer
-	Burst: 30
+	Burst: 40
 	Projectile: BulletAS
 		Image: fireballblue
 		TrailImage: fireballblue
