@@ -27,6 +27,24 @@ Flamer:
 			Concrete: 60
 			Drone: 100
 			Rocket: 100
+	Warhead@1Gar: DamageGarrisoner
+		ValidTargets: GarrisonedStructure
+		Spread: 341
+		Damage: 10
+		Amount: 1
+		DamageTypes: FireDeath
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 100
+			Light: 50
+			Medium: 15
+			Heavy: 15
+			Wood: 70
+			Steel: 25
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallScorch
 
@@ -38,6 +56,8 @@ FlamerE:
 		TrailImage: fireballblue
 	Warhead@1Dam: SpreadDamage
 		Damage: 14
+	Warhead@1Gar: DamageGarrisoner
+		Damage: 14
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
@@ -45,6 +65,26 @@ CRFlamer:
 	Inherits: Flamer
 	ReloadDelay: 40
 	Burst: 15
+
+TankFlamer:
+	Inherits: Flamer
+	Range: 3c0
+	Burst: 15
+	Projectile: BulletAS
+		LaunchAngle: 0
+
+TankFlamerE:
+	Inherits: TankFlamer
+	Burst: 30
+	Projectile: BulletAS
+		Image: fireballblue
+		TrailImage: fireballblue
+	Warhead@1Dam: SpreadDamage
+		Damage: 14
+	Warhead@1Gar: DamageGarrisoner
+		Damage: 14
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblue
 
 Heal:
 	ReloadDelay: 80

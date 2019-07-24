@@ -5,7 +5,7 @@ e2:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Cheap rifle infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
@@ -83,7 +83,7 @@ flakt:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: naradr, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles\nCan garrison.
@@ -219,7 +219,7 @@ shk:
 	AttackMove:
 		AttackMoveCondition: attack-move
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Special armored unit using electricity.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft\nCan garrison.\nSpecial ability: Charge tesla coils
@@ -482,7 +482,7 @@ ivan:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 110
 		Prerequisites: naradr, ~techlevel.2
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
@@ -573,7 +573,7 @@ yuri:
 	Inherits@2: ^Parachutable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 150
 		Prerequisites: natech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
@@ -691,7 +691,7 @@ boris:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 180
 		Prerequisites: natech, ~techlevel.4
 		BuildLimit: 1
@@ -793,10 +793,10 @@ pyro:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Vietnam
+		Queue: Infantry.Soviets
 		BuildPaletteOrder: 100
 		Prerequisites: naradr, ~techlevel.3
-		Description: Advanced anti-infantry and anti-structure infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		Description: Advanced anti-infantry and anti-structure infantry.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -854,7 +854,7 @@ mech:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: repairpad, ~techlevel.2
 		BuildPaletteOrder: 60
 		Description: Repairs vehicles.\n  Unarmed
@@ -906,7 +906,7 @@ gren:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: ~prerequisite.grenadier, ~techlevel.1
 		BuildPaletteOrder: 50
 		Description: Infantry armed with grenades.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
