@@ -104,6 +104,8 @@ yapowr:
 yabrck:
 	Inherits: ^Barracks
 	Inherits@shape: ^2x3Shape
+	Selectable:
+		Bounds: 120, 132, -16, -40
 	Buildable:
 		Queue: Building.Yuri
 	Building:
@@ -111,13 +113,13 @@ yabrck:
 		Dimensions: 2,3
 	Exit@0_n1:
 		SpawnOffset: 170,-810,0
-		ExitCell: 0, -1
+		ExitCell: -1, 0
 	Exit@0_2:
 		SpawnOffset: -900,220,0
-		ExitCell: 0, 2
+		ExitCell: 2, 0
 	Exit@2_n1:
 		SpawnOffset: 900,-220,0
-		ExitCell: 2, -1
+		ExitCell: -1, 2
 	Exit@2_2:
 		SpawnOffset: -170,810,0
 		ExitCell: 2, 2
@@ -129,6 +131,8 @@ yabrck:
 		ProductionType: Infantry.Yuri
 	RallyPoint:
 		Offset: 2,1
+	PlaceBuildingVariants:
+		Actors: yabrcb
 
 yarefn:
 	Inherits: ^BaseBuilding
@@ -546,6 +550,25 @@ yaexpn:
 		IntoActor: expy
 	RenderSprites:
 		Image: gaexpn
+
+yabrcb:
+	Inherits: yabrck
+	Inherits@shape: ^3x2Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Selectable:
+		Bounds: 120, 132, 16, -40
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	RallyPoint:
+		Offset: 1,2
+	Exit@0_n1:
+		ExitCell: 0, -1
+	Exit@0_2:
+		ExitCell: 0, 2
+	Exit@2_n1:
+		ExitCell: 2, -1
 
 yaweab:
 	Inherits: yaweap

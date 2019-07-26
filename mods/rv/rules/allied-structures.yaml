@@ -234,6 +234,8 @@ gapile:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	PlaceBuildingVariants:
+		Actors: gapilb
 
 garefn:
 	Inherits: ^Refinery
@@ -1311,6 +1313,23 @@ gagateb:
 
 gaexpn:
 	Inherits: ^ExpansionNode
+
+gapilb:
+	Inherits: gapile
+	Inherits@shape: ^2x3Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xx xx xx
+		Dimensions: 2,3
+	RallyPoint:
+		Offset: 3,2
+	Exit@0_n1:
+		ExitCell: -1, 0
+	Exit@0_2:
+		ExitCell: 2, 0
+	Exit@2_n1:
+		ExitCell: -1, 2
 
 garefb:
 	Inherits: ^RefineryB
