@@ -467,6 +467,8 @@ naweap:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	PlaceBuildingVariants:
+		Actors: naweab
 
 nayard:
 	Inherits: ^Shipyard
@@ -1355,3 +1357,16 @@ narefd:
 		Bounds: 170, 150, -6, -33
 	FreeActor:
 		Actor: harv
+
+naweab:
+	Inherits: naweap
+	Inherits@shape: ^3x5Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx xxx xxx xxx ===
+		Dimensions: 3,5
+	RallyPoint:
+		Offset: 1,6
+	Exit@1:
+		ExitCell: 1,4

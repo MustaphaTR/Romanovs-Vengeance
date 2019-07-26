@@ -225,6 +225,8 @@ yaweap:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	PlaceBuildingVariants:
+		Actors: yaweab
 
 yayard:
 	Inherits: ^Shipyard
@@ -544,3 +546,16 @@ yaexpn:
 		IntoActor: expy
 	RenderSprites:
 		Image: gaexpn
+
+yaweab:
+	Inherits: yaweap
+	Inherits@shape: ^3x5Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx xxx xxx xxx ===
+		Dimensions: 3,5
+	RallyPoint:
+		Offset: 1,6
+	Exit@1:
+		ExitCell: 1,4
