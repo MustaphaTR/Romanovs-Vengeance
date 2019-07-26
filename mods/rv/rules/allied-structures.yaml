@@ -244,7 +244,7 @@ garefn:
 	FreeActor:
 		Actor: cmin
 	PlaceBuildingVariants:
-		Actors: garefb
+		Actors: garefb, garefc, garefd
 
 gaairc:
 	Inherits: ^BaseBuilding
@@ -1317,6 +1317,21 @@ gaexpn:
 
 garefb:
 	Inherits: ^RefineryB
+	Selectable:
+		Bounds: 176, 150, 0, -20
+	FreeActor:
+		Actor: cmin
+	-WithDockedOverlay: # This causes a crash for some reason.
+
+garefc:
+	Inherits: ^RefineryC
+	Selectable:
+		Bounds: 176, 150, 0, -20
+	FreeActor:
+		Actor: cmin
+
+garefd:
+	Inherits: ^RefineryD
 	Selectable:
 		Bounds: 176, 150, 0, -20
 	FreeActor:

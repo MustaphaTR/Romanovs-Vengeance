@@ -971,8 +971,16 @@ nafnce:
 		Length: 16
 
 narefb:
+	Inherits: narefn
+	Defaults:
+		FlipX: true
+		Offset: 13,-53
+	icon:
+		FlipX: false
+
+narefc:
 	Inherits@MC: ^MindControllable
-	Defaults: ngrefb
+	Defaults: ngrefc
 		Offset: 3, 32
 	idle:
 		Start: 31
@@ -997,3 +1005,10 @@ narefb:
 	icon: nreficon
 		Offset: 0, 0
 		UseTilesetCode: false
+
+narefd:
+	Inherits: narefc
+	Defaults:
+		FlipX: true
+	icon:
+		FlipX: false

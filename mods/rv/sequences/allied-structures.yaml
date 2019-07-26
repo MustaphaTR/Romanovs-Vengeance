@@ -991,8 +991,16 @@ gaexpn:
 		UseTilesetCode: false
 
 garefb:
+	Inherits: garefn
+	Defaults:
+		FlipX: true
+		Offset: 12,-52
+	icon:
+		FlipX: false
+
+garefc:
 	Inherits@MC: ^MindControllable
-	Defaults: ggrefb
+	Defaults: ggrefc
 		Offset: 3, 32
 	idle:
 		Start: 33
@@ -1017,3 +1025,10 @@ garefb:
 	icon: reficon
 		Offset: 0, 0
 		UseTilesetCode: false
+
+garefd:
+	Inherits: garefc
+	Defaults:
+		FlipX: true
+	icon:
+		FlipX: false

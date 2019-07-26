@@ -233,6 +233,20 @@
 
 ^RefineryB:
 	Inherits: ^Refinery
+	Inherits@shape: ^3x4Shape
+	-Buildable:
+	Building:
+		Footprint: xxx xxx xxx ===
+		Dimensions: 3,4
+	TiberianSunRefinery:
+		DockOffset: 1,3
+		DockAngle: 96
+	FreeActor:
+		SpawnOffset: 1,3
+		Facing: 96
+
+^RefineryC:
+	Inherits: ^Refinery
 	-Buildable:
 	Building:
 		Footprint: =xxx =xxx =xxx
@@ -242,6 +256,22 @@
 	FreeActor:
 		SpawnOffset: 0,1
 		Facing: 32
+	-WithDockedOverlay:
+	-WithIdleOverlay@drill:
+
+^RefineryD:
+	Inherits: ^Refinery
+	Inherits@shape: ^3x4Shape
+	-Buildable:
+	Building:
+		Footprint: === xxx xxx xxx
+		Dimensions: 3,4
+	TiberianSunRefinery:
+		DockOffset: 1,0
+		DockAngle: 224
+	FreeActor:
+		SpawnOffset: 1,0
+		Facing: 224
 	-WithDockedOverlay:
 	-WithIdleOverlay@drill:
 
