@@ -610,16 +610,17 @@ gatech:
 		Queue: Building.Allies
 		BuildPaletteOrder: 90
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Allows deployment of advanced units.
+		Description: Allows deployment of advanced units.\nCan be rotated.
 	Selectable:
 		Bounds: 122, 216, 0, -81
 	Valued:
 		Cost: 2000
 	Tooltip:
 		Name: Battle Lab
-	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@gatech:
+		Prerequisite: gatech
 	Building:
-		Footprint: xx xx xx
+		Footprint: xxx xxx
 		Dimensions: 3,2
 	Health:
 		HP: 500
@@ -641,6 +642,8 @@ gatech:
 		Proxy: allies.tech.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	PlaceBuildingVariants:
+		Actors: gatecb
 
 gawall:
 	Inherits: ^Wall
@@ -1365,3 +1368,12 @@ gaweab:
 		Offset: 1,6
 	Exit@1:
 		ExitCell: 1,4
+
+gatecb:
+	Inherits: gatech
+	Inherits@shape: ^2x3Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xx xx xx
+		Dimensions: 2,3
