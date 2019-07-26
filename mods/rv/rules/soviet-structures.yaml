@@ -62,7 +62,7 @@ napowr:
 		Queue: Building.Soviets
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Provides power for other structures.
+		Description: Provides power for other structures.\nCan be rotated.
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -99,6 +99,8 @@ napowr:
 	PowerTooltip:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	PlaceBuildingVariants:
+		Actors: napowb
 
 nahand:
 	Inherits: ^Barracks
@@ -1332,6 +1334,15 @@ naexpn:
 		IntoActor: exps
 	RenderSprites:
 		Image: gaexpn
+
+napowb:
+	Inherits: napowr
+	Inherits@shape: ^2x3Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xx xx xx
+		Dimensions: 2,3
 
 narefb:
 	Inherits: ^RefineryB
