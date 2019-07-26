@@ -1287,7 +1287,7 @@ gagatea:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 	Tooltip:
-		Name: Allied Gate E-W
+		Name: Allied Gate
 	LineBuildNode:
 		Types: gawall
 	WithGateSpriteBody:
@@ -1299,20 +1299,15 @@ gagatea:
 
 gagateb:
 	Inherits: ^Gate_B
-	Buildable:
-		Queue: Support.Allies, Support.France
-		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 30
+	-Buildable:
 	Tooltip:
-		Name: Allied Gate N-S
+		Name: Allied Gate
 	LineBuildNode:
 		Types: gawall
 	WithGateSpriteBody:
 		Type: gawall
 	Replacement:
 		ReplaceableTypes: AlliedGate
-	PlaceBuildingVariants:
-		Actors: gagatea
 
 gaexpn:
 	Inherits: ^ExpansionNode

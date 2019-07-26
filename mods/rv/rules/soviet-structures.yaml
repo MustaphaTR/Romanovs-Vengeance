@@ -1209,7 +1209,7 @@ nagatea:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 	Tooltip:
-		Name: Soviet Gate E-W
+		Name: Soviet Gate
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
@@ -1221,20 +1221,15 @@ nagatea:
 
 nagateb:
 	Inherits: ^Gate_B
-	Buildable:
-		Queue: Support.Soviets
-		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 30
+	-Buildable:
 	Tooltip:
-		Name: Soviet Gate N-S
+		Name: Soviet Gate
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
 		Type: nawall
 	Replacement:
 		ReplaceableTypes: SovietGate
-	PlaceBuildingVariants:
-		Actors: nagatea
 
 napost:
 	Inherits: ^BaseBuilding
