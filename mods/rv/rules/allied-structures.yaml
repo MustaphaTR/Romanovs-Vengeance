@@ -538,6 +538,8 @@ gaweap:
 		Queue: Building.Allies
 	Selectable:
 		Bounds: 212, 158, -7, -28
+	ProvidesPrerequisite@gaweap:
+		Prerequisite: gaweap
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_gaweap
 		RequiresCondition: !chronodisable
@@ -1032,7 +1034,7 @@ gacsph:
 	Buildable:
 		Queue: Support.Allies, Support.France
 		Prerequisites: gatech, !enoughchrono, ~techlevel.5
-		Description: Allows teleporting maximum of 13 vehicles.\nKills infantry.
+		Description: Allows teleporting maximum of 13 vehicles.\nKills infantry.\nCan be rotated.
 	Selectable:
 		Bounds: 176, 110, -5, -14
 	Tooltip:
@@ -1076,6 +1078,8 @@ gacsph:
 		PauseOnCondition: disabled || chronodisable
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughchrono
+	PlaceBuildingVariants:
+		Actors: gacspb
 
 atesla:
 	Inherits: ^SupportBuilding
@@ -1377,3 +1381,16 @@ gatecb:
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
+
+gacspb:
+	Inherits: gacsph
+	Inherits@shape: ^3x4Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx xxx xxx xxx
+		Dimensions: 3,4
+	ChronoshiftPower@chronoshift:
+		OrderName: ChronoshiftB
+		Prerequisites:
+			1: gacspb
