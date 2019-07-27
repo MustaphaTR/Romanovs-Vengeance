@@ -313,6 +313,18 @@ CRRadBeamWeapon:
 	Warhead@1Dam: SpreadDamage
 		Damage: 175
 
+UCRadBeamWeapon:
+	Inherits: RadBeamWeapon
+	Range: 6c0
+	Projectile: RadBeam
+		Blockable: false
+
+UCRadBeamWeaponE:
+	Inherits: RadBeamWeaponE
+	Range: 6c0
+	Projectile: RadBeam
+		Blockable: false
+
 NeutronRifle:
 	ReloadDelay: 1
 	Range: 5c0
@@ -356,6 +368,24 @@ NeutronRifleSound:
 CRNeutronRifleSound:
 	Inherits: NeutronRifleSound
 	Range: 6c0
+
+UCNeutronRifle:
+	Inherits: NeutronRifle
+	Range: 6c0
+	Projectile: TeslaZap
+		Blockable: false
+
+UCNeutronRifleE:
+	Inherits: NeutronRifleE
+	Range: 6c0
+	Projectile: TeslaZap
+		Blockable: false
+       
+UCNeutronRifleSound:
+	Inherits: NeutronRifleSound
+	Range: 6c0
+	Projectile: TeslaZap
+		Blockable: false
 
 TeslaFence:
 	TargetActorCenter: true

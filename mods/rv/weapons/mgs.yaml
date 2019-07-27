@@ -107,11 +107,24 @@ MP5:
 MP5E:
 	Inherits: MP5
 	Range: 5c0
+	ReloadDelay: 8
 
 CRMP5:
 	Inherits: MP5
 	ReloadDelay: 20
 	Range: 5c0
+
+UCMP5:
+	Inherits: MP5
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCMP5E:
+	Inherits: MP5E
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
 
 DoublePistols:
 	Inherits: MP5
@@ -121,10 +134,23 @@ DoublePistols:
 DoublePistolsE:
 	Inherits: DoublePistols
 	Range: 8c0
+	ReloadDelay: 8
 
 CRDoublePistols:
 	Inherits: DoublePistols
 	ReloadDelay: 20
+    
+UCDoublePistols:
+	Inherits: DoublePistols
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCDoublePistolsE:
+	Inherits: DoublePistolsE
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
 
 awp:
 	Inherits: DoublePistols
@@ -161,6 +187,18 @@ awp:
 AWPE:
 	Inherits: awp
 	ReloadDelay: 100
+
+UCawp:
+	Inherits: awp
+	Range: 14c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCAWPE:
+	Inherits: AWPE
+	Range: 14c0
+	Projectile: InstantHit
+		Blockable: false
 
 20mm:
 	Inherits: ^MG
@@ -325,6 +363,18 @@ AKME:
 CRAKM:
 	Inherits: AKM
 	ReloadDelay: 30
+
+UCAKM:
+	Inherits: AKM
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCAKME:
+	Inherits: AKME
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
 
 ^Gatling:
 	Inherits: ^MG

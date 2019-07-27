@@ -8,7 +8,7 @@ e2:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Cheap rifle infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
+		Description: Cheap rifle infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -86,7 +86,7 @@ flakt:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: naradr, ~techlevel.2
 		BuildPaletteOrder: 70
-		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles\nCan garrison.
+		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -222,7 +222,7 @@ shk:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Special armored unit using electricity.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft\nCan garrison.\nSpecial ability: Charge tesla coils
+		Description: Special armored unit using electricity.\n  Strong vs Infantry, Tanks\n  Weak vs Aircraft.\nSpecial ability: Charge tesla coils
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -333,6 +333,10 @@ terror:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 75
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 90
 	RevealsShroud:
@@ -393,6 +397,10 @@ deso:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 150
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
 	Mobile:
 		RequiresCondition: !chronodisable && undeployed
 	RevealsShroud:
@@ -431,6 +439,16 @@ deso:
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: RadBeamWeaponE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCRadBeamWeapon
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCRadBeamWeaponE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	PeriodicExplosion@deploy:
@@ -502,6 +520,10 @@ ivan:
 		VoiceSet: CrazyIvanVoice
 	Health:
 		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	RevealsShroud:
 		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
@@ -552,6 +574,10 @@ civan:
 		PlayerExperience: 50
 	Health:
 		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
@@ -593,6 +619,10 @@ yuri:
 		VoiceSet: YuriVoice
 	Health:
 		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	Mobile:
 		RequiresCondition: !deployed && !deploying && !chronodisable
 	RevealsShroud:
@@ -639,6 +669,10 @@ yuri:
 		MuzzleSequence: muzzle
 		LocalOffset: 0,0,960
 		PauseOnCondition: deployed || chronodisable
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCMindControl
+		PauseOnCondition: chronodisable
 	WithMuzzleOverlay:
 	MindController:
 		ControllingCondition: controlling
@@ -710,6 +744,10 @@ boris:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 75
 		Locomotor: swimsuit
@@ -751,6 +789,22 @@ boris:
 		LocalOffset: 320,128,768
 		Cursor: airstrike
 		OutsideRangeCursor: airstrike
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCAKM
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCAKME
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@flare-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlare
+		Cursor: airstrike
+		OutsideRangeCursor: airstrike
+		PauseOnCondition: chronodisable
 	AirstrikeMaster:
 		Actors: bpln, bpln
 		SquadSize: 2
@@ -811,6 +865,10 @@ pyro:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
 	RevealsShroud:
 		Range: 5c0
 	RevealsShroudToIntelligenceOwner:
@@ -834,6 +892,16 @@ pyro:
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: FlamerE
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCFlamer
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlamerE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
@@ -859,7 +927,7 @@ mech:
 		BuildPaletteOrder: 60
 		Description: Repairs vehicles.\n  Unarmed
 	Valued:
-		Cost: 400
+		Cost: 600
 	DeliversCash:
 		Payload: 200
 		PlayerExperience: 20
@@ -869,9 +937,13 @@ mech:
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
-		HP: 100
+		HP: 50
+	Garrisoner:
+		Voice: Move
+		PipType: Yellow
+		GarrisonType: Garrisoner
 	Mobile:
-		Speed: 55
+		Speed: 90
 	Passenger:
 		PipType: Blue
 	Armament:

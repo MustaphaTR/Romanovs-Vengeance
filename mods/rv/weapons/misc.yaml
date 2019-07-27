@@ -66,6 +66,18 @@ CRFlamer:
 	ReloadDelay: 40
 	Burst: 15
 
+UCFlamer:
+	Inherits: Flamer
+	Range: 6c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCFlamerE:
+	Inherits: FlamerE
+	Range: 6c0
+	Projectile: BulletAS
+		Blockable: false
+    
 TankFlamer:
 	Inherits: Flamer
 	ReloadDelay: 40
@@ -168,6 +180,12 @@ MindControl:
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
 		Damage: 0
+        
+UCMindControl:
+	Inherits: MindControl
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
 
 SuperMindControl:
 	Inherits: MindControl
@@ -258,6 +276,11 @@ Flare:
 		Range: 0c32
 		Duration: 8
 		Condition: flare
+
+UCFlare:
+	Inherits: Flare
+	Projectile: LaserZap
+		Blockable: false
 
 SpyCameraWeapon:
 	Range: 20c0

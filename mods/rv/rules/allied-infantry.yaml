@@ -20,6 +20,10 @@ engineer:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 75
+	Garrisoner:
+		Voice: Move
+		PipType: Yellow
+		GarrisonType: Garrisoner
 	Passenger:
 		PipType: Blue
 	RevealsShroud:
@@ -176,7 +180,7 @@ e1:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan deploy to gain more range and damage.\nCan garrison.
+		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan deploy to gain more range and damage.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -550,6 +554,10 @@ snipe:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
 	Passenger:
 		PipType: Red
 	RevealsShroud:
@@ -576,6 +584,16 @@ snipe:
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: AWPE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCawp
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCAWPE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	AttackFrontal:
@@ -609,6 +627,10 @@ spy:
 		Bounds: 24, 28, -1, -8
 	Health:
 		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	RevealsShroud:
 		Range: 5c0
 	RevealsShroudToIntelligenceOwner:
@@ -668,6 +690,10 @@ ghost:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 75
 		Locomotor: swimsuit
@@ -711,6 +737,16 @@ ghost:
 		OutsideRangeCursor: c4
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCMP5
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCMP5E
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -744,6 +780,10 @@ ccomand:
 		PlayerExperience: 75
 	Health:
 		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	Mobile:
 		Locomotor: foot
 	Crushable:
@@ -795,6 +835,10 @@ ptroop:
 		PlayerExperience: 75
 	Tooltip:
 		Name: Psi Commando
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	Armament@sapper:
 		Name: sapper
 		Weapon: CommandoC4Attacher
@@ -837,6 +881,10 @@ tany:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 75
 		Locomotor: swimsuit
@@ -883,6 +931,16 @@ tany:
 		Cursor: c4
 		OutsideRangeCursor: c4
 		PauseOnCondition: chronodisable
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCDoublePistols
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCDoublePistolsE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -1065,6 +1123,10 @@ cleg:
 		Voice: Move
 	Health:
 		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	RevealsShroud:
 		Range: 8c0
 	RevealsShroudToIntelligenceOwner:
@@ -1117,6 +1179,20 @@ cleg:
 		Name: opentopped
 		Weapon: NeutronRifleSound
 		PauseOnCondition: chronodisable
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCNeutronRifle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCNeutronRifleE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@sound-garrisoned:
+		Name: garrisoned
+		Weapon: UCNeutronRifleSound
+		PauseOnCondition: chronodisable
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -1146,6 +1222,10 @@ medi:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 75
+	Garrisoner:
+		Voice: Move
+		PipType:Yellow
+		GarrisonType: Garrisoner
 	Passenger:
 		PipType: Blue
 		Voice: Action
@@ -1207,6 +1287,10 @@ gren:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 75
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 55
 	Passenger:
