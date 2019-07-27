@@ -280,7 +280,8 @@ gaairc:
 	ProvidesPrerequisite@korea:
 		Prerequisite: radar.korea
 		Factions: korea
-	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@gaairc:
+		Prerequisite: gaairc
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -531,6 +532,8 @@ gaairc:
 		Offset: 1,2
 		Palette: mouse
 		IsPlayerPalette: false
+	PlaceBuildingVariants:
+		Actors: gaairb
 
 gaweap:
 	Inherits: ^WarFactory
@@ -1345,6 +1348,8 @@ garefb:
 	FreeActor:
 		Actor: cmin
 	-WithDockedOverlay: # This causes a crash for some reason.
+	ProvidesPrerequisite@garefn:
+		Prerequisite: garefn
 
 garefc:
 	Inherits: ^RefineryC
@@ -1352,6 +1357,8 @@ garefc:
 		Bounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
+	ProvidesPrerequisite@garefn:
+		Prerequisite: garefn
 
 garefd:
 	Inherits: ^RefineryD
@@ -1359,6 +1366,8 @@ garefd:
 		Bounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
+	ProvidesPrerequisite@garefn:
+		Prerequisite: garefn
 
 gaweab:
 	Inherits: gaweap
@@ -1372,6 +1381,25 @@ gaweab:
 		Offset: 1,6
 	Exit@1:
 		ExitCell: 1,4
+
+gaairb:
+	Inherits: gaairc
+	Inherits@shape: ^2x3Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xx xx xx
+		Dimensions: 2,3
+	RallyPoint:
+		Offset: 2,1
+	Exit@1:
+		SpawnOffset: -1024,512,0
+	Exit@2:
+		SpawnOffset: -512,1024,0
+	Exit@3:
+		SpawnOffset: 512,512,0
+	Exit@4:
+		SpawnOffset: -512,-512,0
 
 gatecb:
 	Inherits: gatech
