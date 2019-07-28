@@ -1,0 +1,315 @@
+slav:
+	Inherits: ^Infantry
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 10
+		Prerequisites: yarefn, ~techlevel.1
+		Description: Gathers Ore.
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Slave
+	DeliversCash:
+		Payload: 25
+		PlayerExperience: 2
+		Voice: Move
+	Selectable:
+		Priority: 7
+		Bounds: 20, 30, 0, -11
+	Harvester:
+		DeliveryBuildings: yarefn
+		Capacity: 4
+		PipCount: 4
+		MaxUnloadQueue: 9
+		BaleUnloadDelay: 1
+		Resources: Ore, Gems
+		SearchFromProcRadius: 30
+		SearchFromOrderRadius: 11
+		HarvestVoice: Move
+		DeliverVoice: Move
+	Health:
+		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	Mobile:
+		Speed: 45
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
+	WithSpriteBody:
+	WithDockingAnimation:
+		DockSequence: idle
+		DockLoopSequence: idle
+	Armament@primary:
+		Weapon: Shovel
+	Voiced:
+		VoiceSet: SlaveVoice
+	AttackFrontal:
+		Voice: Attack
+
+init:
+	Inherits: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 20
+		Prerequisites: ~techlevel.1
+		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: Initiate
+	DeliversCash:
+		Payload: 100
+		PlayerExperience: 10
+		Voice: Move
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Green
+		CargoType: Garrisoner
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: PsychicJab
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: PsychicJabE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: PsychicJab
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: PsychicJabE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCPsychicJab
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCPsychicJabE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: InitiateVoice
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+
+brute:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 40
+		Prerequisites: ~techlevel.1
+		Description: Powerful soldiers.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Brute
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 25
+		Voice: Move
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 200
+	Garrisoner:
+		Voice: Move
+		PipType: Blue
+		GarrisonType: Garrisoner
+	Armor:
+		Type: Plate
+	Crushable:
+		CrushClasses: vehicle
+	-TakeCover:
+	Mobile:
+		Speed: 90
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
+	AttackFrontal:
+		Voice: Attack
+	AutoTarget:
+		ScanRadius: 5
+	Armament@primary:
+		Weapon: Punch
+		FireDelay: 5
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: PunchE
+		FireDelay: 5
+		RequiresCondition: rank-elite
+	Armament@second:
+		Weapon: Smash
+		FireDelay: 8
+		Name: secondary
+		RequiresCondition: !rank-elite
+	Armament@second-elite:
+		Weapon: SmashE
+		FireDelay: 8
+		Name: secondary
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: BruteVoice
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		AttackSequences:
+			secondary: smash
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+
+yuripsi:
+	Inherits: yuri
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 50
+		Prerequisites: yapsis, ~techlevel.2
+	Valued:
+		Cost: 800
+	DeliversCash:
+		Payload: 400
+		PlayerExperience: 40
+
+virus:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: yapsis, ~techlevel.2
+		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+	Valued:
+		Cost: 900
+	Tooltip:
+		Name: Virus
+	DeliversCash:
+		Payload: 350
+		PlayerExperience: 35
+		Voice: Move
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	Mobile:
+		Speed: 60
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
+	AttackFrontal:
+		Voice: Attack
+	Armament@primary:
+		Weapon: Virusgun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: VirusgunE
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCVirusgun
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCVirusgunE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: VirusVoice
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
+yurix:
+	Inherits: yuripr
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 70
+		Prerequisites: yatech, ~techlevel.4
+		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nMaximum 1 can be trained.
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+	Selectable:
+		Bounds: 20, 60, 0, -26
+	Health:
+		HP: 150
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	RevealsShroud:
+		Range: 9c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 9c0
+	RevealOnDeath:
+		Radius: 4c512
+	Armament:
+		Weapon: SuperMindControlX
+		LocalOffset: 0,0,1024
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	Voiced:
+		VoiceSet: YuriPrimeVoice
+	WithMindControlArc:
+		Offset: 0,0,1024

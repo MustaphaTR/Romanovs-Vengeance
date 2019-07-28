@@ -1,0 +1,581 @@
+Flamer:
+	Inherits: ^FireWeapon
+	ReloadDelay: 50
+	Range: 5c0
+	Burst: 10
+	BurstDelays: 1
+	Projectile: BulletAS
+		Speed: 170
+		Image: fireball
+		TrailImage: fireball
+		TrailSequences: trailer
+		TrailInterval: 1
+		LaunchAngle: 62
+		Inaccuracy: 853
+	Warhead@1Dam: SpreadDamage
+		Spread: 341
+		Damage: 10
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 100
+			Light: 70
+			Medium: 15
+			Heavy: 15
+			Wood: 70
+			Steel: 35
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+	Warhead@1Gar: DamageGarrisoner
+		ValidTargets: GarrisonedStructure
+		Spread: 341
+		Damage: 10
+		Amount: 3
+		DamageTypes: FlameDeath
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 100
+			Light: 70
+			Medium: 15
+			Heavy: 15
+			Wood: 70
+			Steel: 35
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallScorch
+
+FlamerE:
+	Inherits: Flamer
+	Burst: 20
+	Projectile: BulletAS
+		Image: fireballblue
+		TrailImage: fireballblue
+	Warhead@1Dam: SpreadDamage
+		Damage: 14
+	Warhead@1Gar: DamageGarrisoner
+		Damage: 14
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblue
+
+CRFlamer:
+	Inherits: Flamer
+	ReloadDelay: 40
+	Burst: 15
+
+UCFlamer:
+	Inherits: Flamer
+	Range: 6c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCFlamerE:
+	Inherits: FlamerE
+	Range: 6c0
+	Projectile: BulletAS
+		Blockable: false
+    
+TankFlamer:
+	Inherits: Flamer
+	ReloadDelay: 40
+	Range: 5c0
+	Burst: 20
+	Projectile: BulletAS
+		LaunchAngle: 0
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 10
+
+TankFlamerE:
+	Inherits: TankFlamer
+	Burst: 40
+	Projectile: BulletAS
+		Image: fireballblue
+		TrailImage: fireballblue
+	Warhead@1Dam: SpreadDamage
+		Damage: 14
+	Warhead@1Gar: DamageGarrisoner
+		Damage: 14
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblue
+
+Heal:
+	ReloadDelay: 80
+	Range: 1c819
+	Report: gcraheal.wav
+	ValidTargets: Heal
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -50
+		ValidTargets: Heal
+
+RepairBullet:
+	ReloadDelay: 80
+	Range: 1c819
+	Report: vifvrepa.wav
+	ValidTargets: Repair
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -50
+		ValidTargets: Repair
+		DamageTypes: KillsDrone
+
+MechRepair:
+	Inherits: RepairBullet
+	Range: 2c0
+	Report: fixit1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: -40
+
+EmergencyRepair1:
+	ReloadDelay: 80
+	Range: 1c819
+	ValidTargets: Repair, Structure, Wall
+	Projectile: InstantExplode
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 6c0
+		Damage: -40
+		AffectsParent: true
+		ValidStances: Neutral, Ally
+		ValidTargets: Repair, Structure, Wall
+		DamageTypes: KillsDrone
+	Warhead@2Eff: CreateEffect
+		Explosions: wrench
+		ExplosionPalette: mouse
+		ImpactSounds: vifvrepa.wav
+		ValidTargets: Ground, Water, Air
+
+EmergencyRepair2:
+	Inherits: EmergencyRepair1
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 8c0
+		Damage: -70
+
+EmergencyRepair3:
+	Inherits: EmergencyRepair1
+	Warhead@1Dam: HealthPercentageDamage
+		Spread: 10c0
+		Damage: -100
+
+AmbulanceHeal:
+	ReloadDelay: 25
+	ValidTargets: Heal
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 5c0
+		Falloff: 100, 0
+		Damage: -20
+		ValidStances: Neutral, Ally
+		ValidTargets: Heal
+
+MindControl:
+	ReloadDelay: 200
+	Range: 7c0
+	ValidTargets: MindControl
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		Damage: 0
+        
+UCMindControl:
+	Inherits: MindControl
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+SuperMindControl:
+	Inherits: MindControl
+	Range: 30c0
+
+SuperMindControlX:
+	Inherits: MindControl
+	ValidTargets: MindControl, MindControlBuilding
+
+TowerMindControl:
+	Inherits: MindControl
+	ReloadDelay: 100
+
+PsiWave:
+	ReloadDelay: 100
+	Range: 1c819
+	Report: iyurat2a.wav
+	ValidTargets: Infantry
+	Warhead@1Dam: SpreadDamage
+		Spread: 3c0
+		Falloff: 100, 100
+		Damage: 250
+		ValidTargets: Infantry
+		DamageTypes: PsychicDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: psi_wave
+		ValidTargets: Ground, Water, Air
+
+CRPsiWave:
+	Inherits: PsiWave
+	ReloadDelay: 20
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Damage: 200
+
+HornetLauncher:
+	ReloadDelay: 150
+	Burst: 3
+	BurstDelays: 25
+	Range: 25c0
+	ValidTargets: Ground, Water
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Ground, Water
+
+ASWLauncher:
+	ReloadDelay: 150
+	Range: 8c0
+	ValidTargets: Underwater
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Underwater
+
+V3Launcher:
+	ReloadDelay: 150
+	Range: 18c0
+	MinRange: 5c0
+	ValidTargets: Ground, Water
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Ground, Water
+
+DredLauncher:
+	ReloadDelay: 50
+	Burst: 2
+	BurstDelays: 10
+	Range: 25c0
+	MinRange: 8c0
+	ValidTargets: Ground, Water
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Ground, Water
+
+Flare:
+	ReloadDelay: 1
+	Range: 12c0
+	ValidTargets: Structure
+	TargetActorCenter: true
+	Projectile: LaserZap
+		Width: 36
+		Duration: 8
+		SecondaryBeamWidth: 144
+		SecondaryBeamColor: FF000030
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Structure
+	Warhead@2Con: GrantExternalCondition
+		ValidTargets: Structure
+		Range: 0c32
+		Duration: 8
+		Condition: flare
+
+UCFlare:
+	Inherits: Flare
+	Projectile: LaserZap
+		Blockable: false
+
+SpyCameraWeapon:
+	Range: 20c0
+	ReloadDelay: 25
+	Projectile: GravityBomb
+		Velocity: 0,0,-10c0
+	Report: vspysnap.wav
+	Warhead@1Rev: RevealShroud
+		Duration: 250
+		Radius: 6c0
+		RevealGeneratedShroud: true
+
+PsychicReveal:
+	ReloadDelay: 25
+	Projectile: InstantExplode
+	Warhead@1Rev: RevealShroud
+		Duration: 375
+		Radius: 8c0
+		RevealGeneratedShroud: true
+
+RadEruptionWeapon:
+	ReloadDelay: 300
+	Report: idesat2a.wav
+	Warhead@1Radiation: CreateTintedCells
+		Spread: 6c0
+		Falloff: 100, 100
+		Level: 500
+		MaxLevel: 500
+	Warhead@2RadiationUmbrella: FireRadius
+		Weapon: RadiationUmbrella
+		Amount: 6
+		AffectsParent: true
+
+RadiationUmbrella:
+	ReloadDelay: 1
+	Range: 6c0
+	Projectile: ArcLaserZap
+		Duration: 5
+		Width: 16
+		Color: 00FF00
+	ValidTargets: Ground, Air, Water
+	Warhead@TargetValidation: SpreadDamage
+
+WeatherStormInit:
+	Projectile: InstantExplode
+	ReloadDelay: 1
+	Warhead@1: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Sequences: inviso
+		Palette: effect
+		Weapon: WeatherCloudDirectInit
+		Duration: 210
+		Delay: 50
+	Warhead@2: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Delay: 50
+		Sequences: inviso
+		Palette: effect
+		Weapon: WeatherCloudRandomInit
+		Duration: 210
+	Warhead@4: CreateEffect
+		Delay: 50
+		ImpactSounds: sweaintr.wav
+		ValidTargets: Ground, Air, Water
+
+WeatherCloudDirectInit:
+	Projectile: InstantHit
+	ReloadDelay: 120
+	Warhead@Dam1: SpreadDamage
+		Spread: 3c0
+		Falloff: 100, 66, 33, 0
+		Damage: 180
+		AffectsParent: true
+		ValidTargets: Air
+		Delay: 28
+		DamageTypes: TriggerProne, ElectroDeath
+		Versus:
+			Wood: 85
+			Steel: 75
+			Concrete: 15
+	Warhead@barrage3: FireFragment
+		Weapon: WeatherCloud
+		ValidTargets: Air, Ground, Water
+
+WeatherCloudRandomInit:
+	Projectile: InstantHit
+	ReloadDelay: 8
+	Warhead@Dam1: SpreadDamage
+		Spread: 3c0
+		Falloff: 100, 66, 33, 0
+		Damage: 180
+		AffectsParent: true
+		ValidTargets: Air
+		Delay: 28
+		DamageTypes: TriggerProne, ElectroDeath
+		Versus:
+			Wood: 85
+			Steel: 75
+			Concrete: 15
+	Warhead@barrage3: FireShrapnel
+		Weapon: WeatherCloud
+		Amount: 3
+		AimChance: 50
+		ValidTargets: Air, Ground, Water
+
+WeatherCloud:
+	ReloadDelay: 120
+	Range: 10c0
+	Projectile: AthenaProjectile
+		Altitude: 5c768
+	Warhead@1: FireFragment
+		UseZOffsetAsAbsoluteHeight: true
+		Weapon: WeatherBolt
+		ValidTargets: Air, Ground, Water
+		Delay: 28
+	Warhead@TargetValidation: SpreadDamage
+	Warhead@4: CreateEffect
+		Explosions: weathercloud1, weathercloud2, weathercloud1f, weathercloud2f
+		ExplosionPalette: player
+		ValidTargets: Ground, Air, Water
+
+WeatherBolt:
+	Projectile: InstantHit
+	Range: 512
+	Warhead@1Dam: SpreadDamage
+		Spread: 256
+		Falloff: 100, 66, 33, 0
+		Damage: 180
+		AffectsParent: true
+		ValidTargets: Ground, Air, Water
+		DamageTypes: TriggerProne, ElectroDeath
+		Versus:
+			Wood: 85
+			Steel: 75
+			Concrete: 15
+	Warhead@4: CreateEffect
+		Explosions: weatherbolt1, weatherbolt2, weatherbolt3, weatherbolt1f, weatherbolt2f, weatherbolt3f
+		ImpactSounds: sweastra.wav, sweastrb.wav, sweastrc.wav, sweastrd.wav
+		ValidTargets: Ground, Air, Water
+	Warhead@5: CreateEffect
+		Explosions: weatherboltexplosion, weatherboltexplosionf
+		ValidTargets: Ground, Water
+	# should be set up to only activate when nothing was hit
+	#Warhead@DebrisSpawn: FireShrapnel
+	#	Weapon: RockDebris
+	#	Amount: 0, 1
+	#	ValidTargets: Ground
+	Warhead@6Smu: LeaveSmudge
+		SmudgeType: LargeScorch
+
+DamageSparkSpawner:
+	ReloadDelay: 384
+	Range: 1
+	Projectile: InstantExplode
+	Warhead@TargetValidation: SpreadDamage
+	Warhead@op: FireShrapnel
+		Weapon: DamageSpark
+		Amount: 6
+		AffectsParent: true
+
+^Spark:
+	Range: 1c512
+	MinRange: 640
+	ReloadDelay: 1
+	Projectile: BulletAS
+		Speed: 62
+		LaunchAngle: 165, 215
+		Image: particles
+		Sequences: damagespark
+	Warhead@1Dam: SpreadDamage
+
+DamageSpark:
+	Inherits: ^Spark
+	Projectile: BulletAS
+		Palette: effect
+
+TeslaSpark:
+	Inherits: ^Spark
+	Projectile: BulletAS
+		Palette: highlight
+
+DisabledSparkSpawner:
+	ReloadDelay: 192
+	Range: 1
+	Projectile: InstantExplode
+	Warhead@TargetValidation: SpreadDamage
+	Warhead@op: FireShrapnel
+		Weapon: TeslaSpark
+		Amount: 9
+		AffectsParent: true
+
+DroneSparkSpawner:
+	ReloadDelay: 60
+	Range: 1
+	Projectile: InstantExplode
+	Warhead@TargetValidation: SpreadDamage
+	Warhead@op: FireShrapnel
+		Weapon: DamageSpark
+		Amount: 18
+		AffectsParent: true
+
+BunkerSpawner:
+	Warhead@1Spa: SpawnBuilding
+		Buildings: nabnkr
+		Sounds: uplace.wav
+
+AmbushSpawner:
+	Warhead@1Spa: SpawnActor
+		Actors: e2,e2,e2,e2,e2,e2,e2,flakt,flakt
+		Sounds: sambusha.aud
+
+GrizzlySpawner:
+	Warhead@1Spa: SpawnActor
+		Actors: mtnk,mtnk,mtnk
+		Delay: 15
+		Range: 3
+	Warhead@2Eff: CreateEffect
+		Explosions: chronofd
+		ImpactSounds: schrmov.wav
+		ValidTargets: Ground, Water, Air
+
+DemoTruckTargeting:
+	ValidTargets: DetonateAttack
+	Range: 2c0
+	Projectile: InstantHit
+	Warhead@1Dam: TargetDamage
+		ValidTargets: DetonateAttack
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+PsychicControl:
+	Projectile: InstantExplode
+	ValidTargets: MindControl
+	Warhead@1Cap: CaptureActor
+		Delay: 55
+		CaptureTypes: permamc
+		Range: 1c512
+		PlayerExperience: 20
+	Warhead@2Con: GrantExternalCondition
+		Delay: 55
+		Range: 1c512
+		Condition: permamc
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: spsydom.wav
+		Explosions: yuriface
+		ValidTargets: Ground, Air, Water
+	Warhead@4Eff: CreateEffect
+		Delay: 40
+		Explosions: controlwave
+		ValidTargets: Ground, Air, Water
+
+PsychicJab:
+	Inherits: ^MG
+	ReloadDelay: 15
+	Range: 4c512
+	Report: iiniatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
+		Versus:
+			None: 100
+			Flak: 80
+			Plate: 80
+			Light: 50
+			Medium: 25
+			Heavy: 25
+			Wood: 75
+			Steel: 50
+			Concrete: 25
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, FlameDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: largefire
+
+PsychicJabE:
+	Inherits: PsychicJab
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+	Warhead@2Eff: CreateEffect
+		Explosions: largefireblue
+
+UCPsychicJab:
+	Inherits: PsychicJab
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCPsychicJabE:
+	Inherits: PsychicJabE
+	Projectile: InstantHit
+		Blockable: false
+
+CRPsychicJab:
+	Inherits: PsychicJab
+	Range: 6c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 25
