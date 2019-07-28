@@ -1,0 +1,976 @@
+e2:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 10
+		Description: Cheap rifle infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft.
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 100
+	DeliversCash:
+		Payload: 50
+		PlayerExperience: 5
+		Voice: Move
+	Tooltip:
+		Name: Conscript
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Green
+		CargoType: Garrisoner
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: M1Carbine
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: M1CarbineE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: M1Carbine
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: M1CarbineE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCM1Carbine
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCM1CarbineE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: ConscriptVoice
+	ProducibleWithLevel:
+		Prerequisites: vete2flakt
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+flakt:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Prerequisites: naradr, ~techlevel.2
+		BuildPaletteOrder: 70
+		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles.
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 300
+	DeliversCash:
+		Payload: 150
+		PlayerExperience: 15
+		Voice: Move
+	Tooltip:
+		Name: Flak Trooper
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Green
+		CargoType: Garrisoner
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: FlakGuyGun
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@secondary:
+		Weapon: FlakGuyAAGun
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: FlakGuyGunE
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@secondary-elite:
+		Weapon: FlakGuyAAGunE
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@primary-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlakGuyGun
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@secondary-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlakGuyAAGun
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@primary-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlakGuyGunE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@secondary-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlakGuyAAGunE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@primary-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyGun
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@secondary-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyAAGun
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@primary-elite-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyGunE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@secondary-elite-opentopped:
+		Name: opentopped
+		Weapon: FlakGuyAAGunE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	WithMuzzleOverlay:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: FlakTrooperVoice
+	ProducibleWithLevel:
+		Prerequisites: vete2flakt
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+shk:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	AutoTargetPriority@DEFAULT:
+		InvalidTargets: NoAutoTarget, WaterStructure, TeslaBoost
+	AutoTargetPriority@ATTACKANYTHING:
+		InvalidTargets: NoAutoTarget, TeslaBoost
+	AutoTargetPriority@TESLANORMAL:
+		RequiresCondition: !assault-move && !attack-move
+		ValidTargets: TeslaBoost
+	AutoTargetPriority@TESLAAMOVE:
+		RequiresCondition: assault-move || attack-move
+		ValidTargets: TeslaBoost
+		ValidStances: Enemy
+	AttackMove:
+		AttackMoveCondition: attack-move
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 20
+		Description: Special armored unit using electricity.\n  Strong vs Infantry, Tanks\n  Weak vs Aircraft.\nSpecial ability: Charge tesla coils
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 25
+		Voice: Move
+	Tooltip:
+		Name: Tesla Trooper
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 130
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
+	Armor:
+		Type: Plate
+	Crushable:
+		CrushClasses: vehicle
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Red
+		CargoType: Garrisoner
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: ElectricBolt
+		LocalOffset: 320,128,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: ElectricBoltE
+		LocalOffset: 320,128,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: ElectricBolt
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: ElectricBoltE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCElectricBolt
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCElectricBoltE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@charge:
+		Name: secondary
+		Weapon: AssaultBolt
+		LocalOffset: 320,128,1024
+		TargetStances: Ally
+		ForceTargetStances: None
+		Cursor: ability
+		OutsideRangeCursor: ability
+		PauseOnCondition: chronodisable
+	AmmoPool:
+		PipCount: 0
+	ReloadAmmoPool:
+		Delay: 70
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		AttackSequences:
+			secondary: charge
+	Voiced:
+		VoiceSet: TeslaTrooperVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+terror:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Cuba
+		BuildPaletteOrder: 90
+		Prerequisites: naradr, ~techlevel.3
+		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n  Strong vs Ground units\n  Weak vs Aircraft
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 200
+	DeliversCash:
+		Payload: 100
+		PlayerExperience: 10
+		Voice: Move
+	Tooltip:
+		Name: Terrorist
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 75
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
+	Mobile:
+		Speed: 90
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armor:
+		Type: Flak
+	Passenger:
+		PipType: Red
+	Explodes:
+		Weapon: TerrorBomb
+		EmptyWeapon: TerrorBomb
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 128
+	Armament@PRIMARY:
+		Weapon: DemoTruckTargeting
+		PauseOnCondition: chronodisable
+	GrantConditionOnAttack:
+		Condition: triggered
+	GrantConditionOnDeploy:
+		Voice: Attack
+		DeployedCondition: triggered
+		PauseOnCondition: chronodisable
+	KillsSelf:
+		RequiresCondition: triggered || invulnerability
+	WithInfantryBody:
+	Voiced:
+		VoiceSet: TerroristVoice
+	-TakeCover:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+deso:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Iraq
+		BuildPaletteOrder: 100
+		Prerequisites: naradr, ~techlevel.3
+		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n  Immune to Radiation.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 800
+	DeliversCash:
+		Payload: 300
+		PlayerExperience: 30
+		Voice: Move
+	Tooltip:
+		Name: Desolator
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 150
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
+	Mobile:
+		RequiresCondition: !chronodisable && undeployed
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armor:
+		Type: Plate
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	Crushable:
+		CrushClasses: vehicle
+	Passenger:
+		PipType: Red
+	Armament@primary:
+		Weapon: RadBeamWeapon
+		LocalOffset: 320,-128,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: RadBeamWeaponE
+		LocalOffset: 320,-128,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: RadBeamWeapon
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: RadBeamWeaponE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCRadBeamWeapon
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCRadBeamWeaponE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	PeriodicExplosion@deploy:
+		Weapon: RadEruptionWeapon
+		RequiresCondition: deployed && !chronodisable
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	GrantCondition:
+		Condition: editorhack
+	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
+		DefaultAttackSequence: shoot
+		RequiresCondition: !editorhack
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		RequiresCondition: undeployed
+	WithInfantryBody@Deployed:
+		StandSequences: deployed
+		DefaultAttackSequence: deploy-shoot
+		RequiresCondition: deployed
+	WithSpriteBody:
+		Sequence: dot
+		Name: dot
+		RequiresCondition: !undeployed
+	WithMakeAnimation:
+		Sequence: deploy
+		BodyNames: dot
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		UndeployedCondition: undeployed
+		CanDeployOnRamps: True
+		SmartDeploy: True
+		Facing: 92
+		Voice: Deploy
+		PauseOnCondition: chronodisable
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, ImmuneToRadiation
+	Voiced:
+		VoiceSet: DesolatorVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	-TakeCover:
+	-DamagedByTintedCells:
+
+ivan:
+	Inherits: ^Infantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		BuildPaletteOrder: 110
+		Prerequisites: naradr, ~techlevel.2
+		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 300
+		PlayerExperience: 30
+		Voice: Move
+	Tooltip:
+		Name: Crazy Ivan
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Voiced:
+		VoiceSet: CrazyIvanVoice
+	Health:
+		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armor:
+		Type: None
+	Passenger:
+		PipType: Red
+	Explodes:
+		Weapon: IvanBomber
+		EmptyWeapon: IvanBomber
+	Armament@primary:
+		Weapon: IvanBombAttacher
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: IvanBombAttacherE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		Cursor: bomb
+		OutsideRangeCursor: bomb
+	TakeCover:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+civan:
+	Inherits: ivan
+	Buildable:
+		BuildPaletteOrder: 970
+		Prerequisites: ~nahand, ~allies.tech.infiltrated, ~techlevel.4
+		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows. Can teleport on anywhere on the map.
+	Tooltip:
+		Name: Chrono Ivan
+	Valued:
+		Cost: 1000
+	Crushable:
+		CrushClasses: vehicle
+	DeliversCash:
+		Payload: 500
+		PlayerExperience: 50
+	Health:
+		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	PortableChronoRA2:
+		ChronoshiftSound: ichrmova.wav
+		DeployCursor: chronosphere
+		DeployBlockedCursor: chronosphere
+		Voice: Move
+		ChargeDelay: 150
+		HasDistanceLimit: false
+		TargetCursor: chronosphere
+		TeleportCondition: chronoed
+		ConditionDuration: 150
+	GrantCondition@ChronoDisable:
+		RequiresCondition: affectedbytemporal || chronoed
+	Chronoshiftable:
+		ExplodeInstead: false
+	-Explodes:
+
+yuri:
+	Inherits: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		BuildPaletteOrder: 150
+		Prerequisites: natech, ~techlevel.4
+		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1200
+	DeliversCash:
+		Payload: 600
+		PlayerExperience: 60
+		Voice: Move
+	Tooltip:
+		Name: Yuri Clone
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Voiced:
+		VoiceSet: YuriVoice
+	Health:
+		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	Mobile:
+		RequiresCondition: !deployed && !deploying && !chronodisable
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Armor:
+		Type: None
+	Passenger:
+		PipType: Red
+	PeriodicExplosion:
+		Weapon: PsiWave
+		LocalOffset: 0,0,128
+		RequiresCondition: deployed && !chronodisable
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 50
+		CooldownTicks: 0
+		Facing: 96
+		DeployedCondition: deployed
+		DeployingCondition: deploying
+		DeployAnimation: deploy
+		UndeployAnimation: undeploy
+		ShowSelectionBar: false
+		Voice:
+		PauseOnCondition: chronodisable
+	TakeCover:
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1,idle2
+		RequiresCondition: !deployed && !deploying && !parachute
+	WithSpriteBody@DEPLOYED:
+		Sequence: deployed
+		PauseOnCondition: chronodisable
+		RequiresCondition: (deployed || deploying) && !parachute
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament:
+		Weapon: MindControl
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,960
+		PauseOnCondition: deployed || chronodisable
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCMindControl
+		PauseOnCondition: chronodisable
+	WithMuzzleOverlay:
+	MindController:
+		ControllingCondition: controlling
+		Sounds: iyurat1a.wav
+	WithMindControlArc:
+		UsePlayerColor: true
+		Offset: 0,0,960
+	AttackMove:
+		Voice: Move
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: MindControl
+		RequiresCondition: !controlling
+
+yuripr:
+	Inherits: yuri
+	Buildable:
+		BuildLimit: 1
+		BuildPaletteOrder: 990
+		Prerequisites: ~nahand, ~soviets.tech.infiltrated, ~techlevel.4
+		Description: Psychic infantry. Can mind control enemy units from a great range.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\nMaximum 1 can be trained.
+	Tooltip:
+		Name: Yuri Prime
+	Valued:
+		Cost: 2000
+	DeliversCash:
+		Payload: 1000
+		PlayerExperience: 100
+	Health:
+		HP: 200
+	Armor:
+		Type: Flak
+	Crushable:
+		CrushClasses: vehicle
+	Mobile:
+		Speed: 90
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Armament:
+		Weapon: SuperMindControl
+
+# Yuri's Revenge Infantry
+boris:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@SWIMSUIT: ^WithSwimSuit
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		BuildPaletteOrder: 180
+		Prerequisites: natech, ~techlevel.4
+		BuildLimit: 1
+		Description: Elite commando infantry, armed with\nAKM rifle and signal flare.\nCan use a boat to move over water.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can call airstrike against Buildings.\n\nMaximum 1 can be trained.
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+		Voice: Move
+	Tooltip:
+		Name: Boris Bukov
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
+	Mobile:
+		Speed: 75
+		Locomotor: swimsuit
+	RevealsShroud:
+		Range: 9c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 9c0
+	RevealOnDeath:
+		Radius: 4c512
+	Armor:
+		Type: Flak
+	Crushable:
+		CrushClasses: vehicle
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	Passenger:
+		PipType: Red
+	Armament@primary:
+		Weapon: AKM
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: AKME
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: AKM
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: AKME
+		RequiresCondition: rank-elite
+	Armament@flare:
+		Name: secondary
+		Weapon: Flare
+		LocalOffset: 320,128,768
+		Cursor: airstrike
+		OutsideRangeCursor: airstrike
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCAKM
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCAKME
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@flare-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlare
+		Cursor: airstrike
+		OutsideRangeCursor: airstrike
+		PauseOnCondition: chronodisable
+	AirstrikeMaster:
+		Actors: bpln, bpln
+		SquadSize: 2
+		RespawnTicks: 100
+		InstaRepair: true
+		SlaveDisposalOnKill: KillSlaves
+		SpawnAllAtOnce: true
+		SpawnerArmamentName: secondary
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		TargetFrozenActors: True
+		PauseOnCondition: chronodisable
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	Voiced:
+		VoiceSet: BorisVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		AttackSequences:
+			secondary: shoot-flare
+	WithInfantryBody@Water:
+		-IdleSequences:
+		AttackSequences:
+			secondary: swim-shoot-flare
+	TakeCover:
+		RequiresCondition: !swimming
+
+# Custom Revenge Infantry
+pyro:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Soviets
+		BuildPaletteOrder: 100
+		Prerequisites: naradr, ~techlevel.2
+		Description: Advanced anti-infantry and anti-structure infantry.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 300
+	DeliversCash:
+		Payload: 300
+		PlayerExperience: 30
+		Voice: Move
+	Tooltip:
+		Name: Flamethrower
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Red
+		GarrisonType: Garrisoner
+	RevealsShroud:
+		Range: 5c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
+	Armor:
+		Type: None
+	Armament@primary:
+		Weapon: Flamer
+		LocalOffset: 512,0,768
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: FlamerE
+		LocalOffset: 512,0,768
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: Flamer
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: FlamerE
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCFlamer
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlamerE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		PauseOnCondition: chronodisable
+	Voiced:
+		VoiceSet: FlamethrowerVoice
+		Volume: 6
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		IdleSequences: idle1,idle2,idle3,idle4
+		DefaultAttackSequence: shoot
+
+mech:
+	Inherits: ^Infantry
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Prerequisites: ~prerequisite.mechanic, repairpad, ~techlevel.2
+		BuildPaletteOrder: 60
+		Description: Repairs vehicles.\n  Unarmed
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 200
+		PlayerExperience: 20
+		Voice: Move
+	Tooltip:
+		Name: Mechanic
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 50
+	Garrisoner:
+		Voice: Move
+		PipType: Yellow
+		GarrisonType: Garrisoner
+	Mobile:
+		Speed: 90
+	Passenger:
+		PipType: Blue
+	Armament:
+		Weapon: MechRepair
+		Cursor: goldwrench
+		OutsideRangeCursor: goldwrench
+		TargetStances: Ally
+		ForceTargetStances: None
+	AttackFrontal:
+		Voice: Action
+		FacingTolerance: 2
+		PauseOnCondition: chronodisable
+	CaptureManager:
+	Captures:
+		CaptureTypes: vehicle
+		PlayerExperience: 50
+	Voiced:
+		VoiceSet: EngineerVoice
+	Guard:
+		Voice: Action
+	AttackMove:
+		Voice: Action
+	AutoTarget:
+		ScanRadius: 5
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Repair
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
