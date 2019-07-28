@@ -30,6 +30,10 @@ slav:
 		DeliverVoice: Move
 	Health:
 		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 45
 	Passenger:
@@ -149,6 +153,10 @@ brute:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 200
+	Garrisoner:
+		Voice: Move
+		PipType: Blue
+		GarrisonType: Garrisoner
 	Armor:
 		Type: Plate
 	Crushable:
@@ -219,7 +227,7 @@ virus:
 		Prerequisites: yapsis, ~techlevel.2
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
-		Cost: 700
+		Cost: 900
 	Tooltip:
 		Name: Virus
 	DeliversCash:
@@ -230,6 +238,10 @@ virus:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 100
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 60
 	Passenger:
@@ -247,6 +259,16 @@ virus:
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: VirusgunE
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCVirusgun
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCVirusgunE
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: VirusVoice
@@ -269,6 +291,10 @@ yurix:
 		Bounds: 20, 60, 0, -26
 	Health:
 		HP: 150
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
 	RevealsShroud:
 		Range: 9c0
 	RevealsShroudToIntelligenceOwner:
