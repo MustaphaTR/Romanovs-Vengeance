@@ -517,8 +517,11 @@ nadept:
 	Buildable:
 		Queue: Building.Soviets
 		Prerequisites: naweap, ~techlevel.1
+		Description: Repairs vehicles and removes Terror Drones for a price.\nCan be rotated.
 	Selectable:
 		Bounds: 156, 150, 0, -38
+	ProvidesPrerequisite@default:
+		Prerequisite: nadept
 	Building:
 		Footprint: x=== x=x= x===
 		Dimensions: 4,3
@@ -530,6 +533,8 @@ nadept:
 		Sequence: idle-normal
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	PlaceBuildingVariants:
+		Actors: nadepb
 
 naheli:
 	Inherits: ^BaseBuilding
@@ -1385,3 +1390,14 @@ naweab:
 		Offset: 1,6
 	Exit@1:
 		ExitCell: 1,4
+
+nadepb:
+	Inherits: nadept
+	Inherits@shape: ^3x4Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx === =x= ===
+		Dimensions: 3,4
+	RallyPoint:
+		Offset: 1,4
