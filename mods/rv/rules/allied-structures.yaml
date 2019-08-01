@@ -1,7 +1,8 @@
 gacnst:
 	Inherits: ^ConstructionYard
 	Selectable:
-		Bounds: 220, 155, 0, -20
+		Bounds: 160, 95, 0, -20
+		DecorationBounds: 220, 155, 0, -20
 	Production:
 		Produces: Building.Allies, Support.Allies, Support.France
 	ProductionQueue@Building:
@@ -86,7 +87,8 @@ gapowr:
 		BuildPaletteOrder: 10
 		Description: Provides power for other structures.
 	Selectable:
-		Bounds: 96, 98, -2, -24
+		Bounds: 56, 58, -2, -14
+		DecorationBounds: 96, 98, -2, -24
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -179,7 +181,8 @@ gapile:
 	Buildable:
 		Queue: Building.Allies
 	Selectable:
-		Bounds: 134, 132, 0, -28
+		Bounds: 84, 72, 0, -8
+		DecorationBounds: 134, 132, 0, -28
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -242,7 +245,8 @@ garefn:
 	Buildable:
 		Queue: Building.Allies
 	Selectable:
-		Bounds: 176, 150, 0, -20
+		Bounds: 126, 70, 0, -5
+		DecorationBounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
 	PlaceBuildingVariants:
@@ -286,7 +290,8 @@ gaairc:
 		Footprint: xxx xxx
 		Dimensions: 3,2
 	Selectable:
-		Bounds: 142, 150, -3, -42
+		Bounds: 92, 70, -3, -05
+		DecorationBounds: 142, 150, -3, -42
 	Health:
 		HP: 1000
 	Armor:
@@ -540,7 +545,8 @@ gaweap:
 	Buildable:
 		Queue: Building.Allies
 	Selectable:
-		Bounds: 212, 158, -7, -28
+		Bounds: 152, 88, -15, -08
+		DecorationBounds: 212, 158, -7, -28
 	ProvidesPrerequisite@gaweap:
 		Prerequisite: gaweap
 	ProvidesPrerequisite@powered:
@@ -581,6 +587,9 @@ gayard:
 	Inherits: ^Shipyard
 	Buildable:
 		Queue: Building.Allies
+	Selectable:
+		Bounds: 92, 100, -3, -22
+		DecorationBounds: 152, 190, 10, -50
 	Production:
 		Produces: Ship.Allies
 	ProductionQueue:
@@ -596,7 +605,8 @@ gadept:
 		Queue: Building.Allies
 		Prerequisites: gaweap, ~techlevel.1
 	Selectable:
-		Bounds: 144, 88, -12, -16
+		Bounds: 104, 48, -12, -6
+		DecorationBounds: 144, 88, -12, -16
 	Building:
 		Footprint: x== xx= x==
 		Dimensions: 3,3
@@ -617,7 +627,8 @@ gatech:
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Allows deployment of advanced units.\nCan be rotated.
 	Selectable:
-		Bounds: 122, 216, 0, -81
+		Bounds: 72, 76, 0, -10
+		DecorationBounds: 122, 216, 0, -81
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -747,7 +758,8 @@ nasam:
 		Types: SatelliteScan
 		Range: 8c0
 	Selectable:
-		Bounds: 46, 62, 0, -20
+		Bounds: 46, 52, 0, -10
+		DecorationBounds: 46, 62, 0, -20
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
@@ -804,7 +816,8 @@ gtgcan:
 		Types: SatelliteScan
 		Range: 10c0
 	Selectable:
-		Bounds: 46, 62, 0, -20
+		Bounds: 56, 48, -2, -10
+		DecorationBounds: 106, 78, -2, -19
 	Turreted:
 		TurnSpeed: 3
 		InitialFacing: 224
@@ -847,7 +860,8 @@ gaorep:
 		Description: Refines income from ores and gems by 25%.\nMaximum 1 can be built.\nCan not be captured.
 		BuildLimit: 1
 	Selectable:
-		Bounds: 134, 102, -10, -21
+		Bounds: 84, 52, -10, -11
+		DecorationBounds: 134, 102, -10, -21
 	Valued:
 		Cost: 2500
 	Tooltip:
@@ -890,7 +904,8 @@ gaspysat:
 		Prerequisites: gatech, ~techlevel.4
 		Description: Provides Satellite Scan power, which reveals enemy units for a while.\nProvides Radar.
 	Selectable:
-		Bounds: 96, 98, -4, -30
+		Bounds: 56, 48, -4, -10
+		DecorationBounds: 96, 98, -4, -30
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -960,7 +975,8 @@ gagap:
 		Prerequisites: gatech, ~techlevel.3
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
 	Selectable:
-		Bounds: 50, 114, -1, -45
+		Bounds: 50, 44, -1, -05
+		DecorationBounds: 50, 114, -1, -45
 	Health:
 		HP: 600
 	Armor:
@@ -996,7 +1012,8 @@ gaweat:
 		Prerequisites: gatech, !enoughweather, ~techlevel.5
 		Description: Play God with deadly weather!
 	Selectable:
-		Bounds: 116, 106, -2, -26
+		Bounds: 66, 46, -2, -06
+		DecorationBounds: 116, 106, -2, -26
 	Tooltip:
 		Name: Weather Controller
 	DetonateWeaponPower@WeatherStorm:
@@ -1039,7 +1056,8 @@ gacsph:
 		Prerequisites: gatech, !enoughchrono, ~techlevel.5
 		Description: Allows teleporting maximum of 13 vehicles.\nKills infantry.\nCan be rotated.
 	Selectable:
-		Bounds: 176, 110, -5, -14
+		Bounds: 116, 60, -5, -4
+		DecorationBounds: 176, 110, -5, -14
 	Tooltip:
 		Name: Chronosphere
 	Building:
@@ -1103,7 +1121,8 @@ atesla:
 		Footprint: x
 		Dimensions: 1, 1
 	Selectable:
-		Bounds: 44, 102, 0, -40
+		Bounds: 44, 42, 0, -10
+		DecorationBounds: 44, 102, 0, -40
 	Health:
 		HP: 600
 	Armor:
@@ -1207,7 +1226,8 @@ garobo:
 		Prerequisites: ~disabled # gaweap
 		Description: Allows production of Robot Tanks.\nRequired for Robot Tanks to function.
 	Selectable:
-		Bounds: 96, 98, -4, -30
+		Bounds: 66, 58, 4, 0
+		DecorationBounds: 96, 108, 10, -25
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -1254,7 +1274,8 @@ gaapad:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 128, 96, 0, -16
+		Bounds: 78, 46, 0, -06
+		DecorationBounds: 128, 96, 0, -16
 	Health:
 		HP: 800
 	Armor:
@@ -1300,6 +1321,9 @@ gagatea:
 		BuildPaletteOrder: 20
 	Tooltip:
 		Name: Allied Gate
+	Selectable:
+		Bounds: 68, 36, 0, -6
+		DecorationBounds: 118, 56, 0, -10
 	LineBuildNode:
 		Types: gawall
 	WithGateSpriteBody:
@@ -1314,6 +1338,9 @@ gagateb:
 	-Buildable:
 	Tooltip:
 		Name: Allied Gate
+	Selectable:
+		Bounds: 68, 36, 0, -6
+		DecorationBounds: 118, 56, 0, -10
 	LineBuildNode:
 		Types: gawall
 	WithGateSpriteBody:
@@ -1323,6 +1350,9 @@ gagateb:
 
 gaexpn:
 	Inherits: ^ExpansionNode
+	Selectable:
+		Bounds: 56, 40, -2, -4
+		DecorationBounds: 86, 78, -2, -15
 
 gapilb:
 	Inherits: gapile
@@ -1344,7 +1374,8 @@ gapilb:
 garefb:
 	Inherits: ^RefineryB
 	Selectable:
-		Bounds: 176, 150, 0, -20
+		Bounds: 126, 70, 0, -5
+		DecorationBounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
 	-WithDockedOverlay: # This causes a crash for some reason.
@@ -1354,7 +1385,8 @@ garefb:
 garefc:
 	Inherits: ^RefineryC
 	Selectable:
-		Bounds: 176, 150, 0, -20
+		Bounds: 126, 70, 0, -5
+		DecorationBounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
 	ProvidesPrerequisite@garefn:
@@ -1363,7 +1395,8 @@ garefc:
 garefd:
 	Inherits: ^RefineryD
 	Selectable:
-		Bounds: 176, 150, 0, -20
+		Bounds: 126, 70, 0, -5
+		DecorationBounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
 	ProvidesPrerequisite@garefn:
@@ -1372,6 +1405,9 @@ garefd:
 gaweab:
 	Inherits: gaweap
 	Inherits@shape: ^3x5Shape
+	Selectable:
+		Bounds: 152, 88, 10, -8
+		DecorationBounds: 212, 158, 0, -28
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:

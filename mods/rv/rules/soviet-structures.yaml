@@ -1,5 +1,8 @@
 nacnst:
 	Inherits: ^ConstructionYard
+	Selectable:
+		Bounds: 160, 95, 0, -20
+		DecorationBounds: 220, 175, 0, -35
 	ProvidesPrerequisite@soviets:
 		Prerequisite: structures.soviets
 	Production:
@@ -40,6 +43,7 @@ nacnst:
 	WithIdleOverlay@Russia:
 		Sequence: flag-russia
 		RequiresCondition: !build-incomplete && russia
+		Offset: 0,0,200
 	WithIdleOverlay@Iraq:
 		Sequence: flag-iraq
 		RequiresCondition: !build-incomplete && iraq
@@ -73,7 +77,8 @@ napowr:
 		Footprint: xxx xxx
 		Dimensions: 3,2
 	Selectable:
-		Bounds: 126, 94, 2, -16
+		Bounds: 84, 65, 0, -15
+		DecorationBounds: 126, 94, 2, -16
 	Health:
 		HP: 500
 	Armor:
@@ -112,7 +117,8 @@ nahand:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 94, 168, 0, -58
+		Bounds: 56, 50, -2, -20
+		DecorationBounds: 94, 168, 0, -58
 	Exit@n1_0:
 		SpawnOffset: 0,0,0
 		ExitCell: -1, 0
@@ -190,7 +196,8 @@ narefn:
 	Buildable:
 		Queue: Building.Soviets
 	Selectable:
-		Bounds: 170, 150, -6, -33
+		Bounds: 126, 70, -10, -20
+		DecorationBounds: 170, 150, -6, -33
 	FreeActor:
 		Actor: harv
 	PlaceBuildingVariants:
@@ -233,7 +240,8 @@ naradr:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 95, 130, 0, -40
+		Bounds: 56, 58, -2, -14
+		DecorationBounds: 95, 130, 0, -40
 	Health:
 		HP: 1000
 	Armor:
@@ -420,6 +428,9 @@ naweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Soviets
+	Selectable:
+		Bounds: 152, 88, -15, -8
+		DecorationBounds: 212, 175, -15, -45
 	ProvidesPrerequisite@naweap:
 		Prerequisite: naweap
 	Production:
@@ -479,6 +490,9 @@ nayard:
 	Inherits: ^Shipyard
 	Buildable:
 		Queue: Building.Soviets
+	Selectable:
+		Bounds: 92, 100, -3, -22
+		DecorationBounds: 170, 200, 0, -55
 	Production:
 		Produces: Ship.Soviets
 	ProductionQueue:
@@ -519,7 +533,8 @@ nadept:
 		Prerequisites: naweap, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.\nCan be rotated.
 	Selectable:
-		Bounds: 156, 150, 0, -38
+		Bounds: 104, 55, -12, -15
+		DecorationBounds: 156, 150, 0, -38
 	ProvidesPrerequisite@default:
 		Prerequisite: nadept
 	Building:
@@ -545,6 +560,9 @@ naheli:
 		BuildPaletteOrder: 100
 		Prerequisites: refinery, ~techlevel.2
 		Description: Produces Soviet aircraft.
+	Selectable:
+		Bounds: 104, 48, 2, -6
+		DecorationBounds: 144, 135, 0, -35
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -620,7 +638,8 @@ nanrct:
 		Footprint: xxxx xxxx xxxx _xx_
 		Dimensions: 4,4
 	Selectable:
-		Bounds: 167, 130, 9, -31
+		Bounds: 117, 70, 9, -11
+		DecorationBounds: 167, 130, 9, -31
 	Health:
 		HP: 1000
 	Armor:
@@ -669,7 +688,8 @@ natech:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
 	Selectable:
-		Bounds: 152, 164, 0, -50
+		Bounds: 102, 80, 0, -10
+		DecorationBounds: 152, 164, 0, -50
 	Health:
 		HP: 500
 	Armor:
@@ -705,7 +725,8 @@ naclon:
 		Footprint: xx xx
 		Dimensions: 2, 2
 	Selectable:
-		Bounds: 108, 134, 0, -48
+		Bounds: 56, 58, -2, -14
+		DecorationBounds: 108, 134, 0, -48
 	Health:
 		HP: 1000
 	Armor:
@@ -789,7 +810,8 @@ napsis:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 82, 150, -1, -55
+		Bounds: 56, 50, -2, -10
+		DecorationBounds: 82, 150, -1, -55
 	Health:
 		HP: 500
 	Armor:
@@ -828,7 +850,8 @@ nairon:
 	Tooltip:
 		Name: Iron Curtain Device
 	Selectable:
-		Bounds: 136, 100, 0, -20
+		Bounds: 84, 52, -10, -11
+		DecorationBounds: 136, 100, 0, -20
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	GrantExternalConditionPower@IRONCURTAIN:
@@ -871,7 +894,8 @@ namisl:
 	Tooltip:
 		Name: Nuclear Missile Silo
 	Selectable:
-		Bounds: 152, 104, 0, -50
+		Bounds: 84, 52, 0, -5
+		DecorationBounds: 152, 130, 0, -25
 	NukePower:
 		Prerequisites:
 			1: namisl
@@ -1015,7 +1039,8 @@ tesla:
 		Types: SatelliteScan
 		Range: 8c0
 	Selectable:
-		Bounds: 44, 88, -2, -33
+		Bounds: 44, 40, -2, -13
+		DecorationBounds: 44, 88, -2, -33
 	Targetable@TeslaBoost:
 		TargetTypes: TeslaBoost
 		RequiresCondition: !powerdown
@@ -1134,7 +1159,8 @@ nabnkr:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 94, 94, 0, -10
+		Bounds: 64, 50, 0, -5
+		DecorationBounds: 94, 94, 0, -10
 	Health:
 		HP: 600
 	Armor:
@@ -1190,7 +1216,8 @@ naindp:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
 	Selectable:
-		Bounds: 152, 164, 0, -50
+		Bounds: 102, 90, 0, -20
+		DecorationBounds: 160, 190, 0, -60
 	WithIdleOverlay@pistons:
 		Sequence: idle-pistons
 		PauseOnCondition: chronodisable
@@ -1220,6 +1247,9 @@ nagatea:
 		BuildPaletteOrder: 20
 	Tooltip:
 		Name: Soviet Gate
+	Selectable:
+		Bounds: 68, 36, 0, 2
+		DecorationBounds: 118, 56, 0, -3
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
@@ -1234,6 +1264,9 @@ nagateb:
 	-Buildable:
 	Tooltip:
 		Name: Soviet Gate
+	Selectable:
+		Bounds: 68, 36, 0, 2
+		DecorationBounds: 118, 56, 0, -3
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
@@ -1264,7 +1297,8 @@ napost:
 		SegmentType: nafnce
 		SegmentsRequireNode: true
 	Selectable:
-		Bounds: 42, 44, 0, -12
+		Bounds: 42, 24, 0, -5
+		DecorationBounds: 42, 44, 0, -12
 	LineBuildNode:
 		Types: teslafencenode
 	Power:
@@ -1339,6 +1373,9 @@ naexpn:
 	Inherits: ^ExpansionNode
 	Transforms:
 		IntoActor: exps
+	Selectable:
+		Bounds: 56, 40, -2, -4
+		DecorationBounds: 86, 78, -2, -15
 	RenderSprites:
 		Image: gaexpn
 
@@ -1354,7 +1391,8 @@ napowb:
 narefb:
 	Inherits: ^RefineryB
 	Selectable:
-		Bounds: 170, 150, -6, -33
+		Bounds: 126, 70, 10, -20
+		DecorationBounds: 170, 150, 6, -33
 	FreeActor:
 		Actor: harv
 	ProvidesPrerequisite@narefn:
@@ -1363,7 +1401,8 @@ narefb:
 narefc:
 	Inherits: ^RefineryC
 	Selectable:
-		Bounds: 170, 150, -6, -33
+		Bounds: 126, 70, 10, -10
+		DecorationBounds: 170, 150, -6, -33
 	FreeActor:
 		Actor: harv
 	ProvidesPrerequisite@narefn:
@@ -1372,7 +1411,8 @@ narefc:
 narefd:
 	Inherits: ^RefineryD
 	Selectable:
-		Bounds: 170, 150, -6, -33
+		Bounds: 126, 70, -10, -10
+		DecorationBounds: 170, 150, 6, -33
 	FreeActor:
 		Actor: harv
 	ProvidesPrerequisite@narefn:
@@ -1381,6 +1421,8 @@ narefd:
 naweab:
 	Inherits: naweap
 	Inherits@shape: ^3x5Shape
+		Bounds: 152, 88, 0, -8
+		DecorationBounds: 212, 175, -15, -45
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -1394,6 +1436,9 @@ naweab:
 nadepb:
 	Inherits: nadept
 	Inherits@shape: ^3x4Shape
+	Selectable:
+		Bounds: 104, 55, 12, -15
+		DecorationBounds: 156, 150, 0, -38
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
