@@ -1348,6 +1348,16 @@ gagateb:
 	Replacement:
 		ReplaceableTypes: AlliedGate
 
+gasilo:
+	Inherits: ^Silo
+	Buildable:
+		Queue: Support.Allies
+	Selectable:
+		Bounds: 80,48,-5,0
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights
+
 gaexpn:
 	Inherits: ^ExpansionNode
 	Selectable:

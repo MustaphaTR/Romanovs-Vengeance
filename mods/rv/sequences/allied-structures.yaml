@@ -958,6 +958,38 @@ gagateb:
 		Offset: 0, 0
 		UseTilesetCode: false
 
+gasilo:
+	Inherits@MC: ^MindControllable
+	Defaults: ggsilo
+		Offset: 0, -30
+	idle: ggsilo_a
+	damaged-idle: ggsilo_a
+		Start: 4
+	stages: ggsilo_a
+		Length: 4
+	damaged-stages: ggsilo_a
+		Start: 4
+		Length: 4
+	idle-underlay:
+		ShadowStart: 3
+		ZOffset: -512
+	damaged-idle-underlay:
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -512
+	idle-lights: ggsilo_b
+		Length: 16
+		Tick: 120
+	damaged-idle-lights: ggsilo_b
+		Start: 16
+		Length: 16
+		Tick: 120
+	make: ggsilomk
+		Length: 18
+		ShadowStart: 20
+	icon: gsilicon
+		Offset: 0, 0
+
 gaexpn:
 	Inherits@MC: ^MindControllable
 	Defaults:

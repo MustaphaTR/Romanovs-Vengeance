@@ -970,6 +970,31 @@ nafnce:
 		Frames: 7,5,7,5,6,4,6,4,7,5,7,5,6,4,6,4
 		Length: 16
 
+nasilo:
+	Inherits@MC: ^MindControllable
+	Defaults: ngsilo
+		Offset: 0, -30
+	idle: ngsilo_a
+	damaged-idle: ngsilo_a
+		Start: 4
+	stages: ngsilo_a
+		Length: 4
+	damaged-stages: ngsilo_a
+		Start: 4
+		Length: 4
+	idle-underlay:
+		ShadowStart: 3
+		ZOffset: -512
+	damaged-idle-underlay:
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -512
+	make: ggsilomk
+		Length: 18
+		ShadowStart: 20
+	icon: nsilicon
+		Offset: 0, 0
+
 napowb:
 	Inherits: napowr
 	Defaults:

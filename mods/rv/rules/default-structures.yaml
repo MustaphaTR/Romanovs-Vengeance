@@ -279,6 +279,44 @@
 	-WithDockedOverlay:
 	-WithIdleOverlay@drill:
 
+^Silo:
+	Inherits: ^BaseBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Support
+		BuildPaletteOrder: 30
+		Prerequisites: refinery, ~techlevel.1
+		Description: Stores excess Ore.
+	Valued:
+		Cost: 150
+	Tooltip:
+		Name: Ore Silo
+	Building:
+		Footprint: xx xx
+		Dimensions: 2, 2
+	-GivesBuildableArea:
+	Health:
+		HP: 300
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
+	WithResourceLevelOverlay@FILLSTAGE:
+		RequiresCondition: !build-incomplete
+		Sequence: stages
+	WithSpriteBody:
+		Sequence: idle-underlay
+	StoresResources:
+		PipColor: Yellow
+		PipCount: 5
+		Capacity: 2000
+	Power:
+		Amount: -10
+	SelectionDecorations:
+
 ^WarFactory:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding

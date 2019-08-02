@@ -497,6 +497,31 @@ yarock:
 		UseTilesetCode: false
 
 # Custom Yuri Structures
+yasilo:
+	Inherits@MC: ^MindControllable
+	Defaults: ygsilo
+		Offset: 0, -30
+	idle: ygsilo_a
+	damaged-idle: ygsilo_a
+		Start: 4
+	stages: ygsilo_a
+		Length: 4
+	damaged-stages: ygsilo_a
+		Start: 4
+		Length: 4
+	idle-underlay:
+		ShadowStart: 3
+		ZOffset: -512
+	damaged-idle-underlay:
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -512
+	make: ggsilomk
+		Length: 18
+		ShadowStart: 20
+	icon: xxicon
+		Offset: 0, 0
+
 yabrcb:
 	Inherits: yabrck
 	Defaults:

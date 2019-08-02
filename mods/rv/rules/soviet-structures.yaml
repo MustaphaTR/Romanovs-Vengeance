@@ -1370,6 +1370,12 @@ nafnce:
 	Interactable:
 		Bounds: 48, 24
 
+nasilo:
+	Inherits: ^Silo
+	Buildable:
+		Queue: Support.Soviets
+	-WithMakeAnimation:
+
 naexpn:
 	Inherits: ^ExpansionNode
 	Transforms:
@@ -1422,6 +1428,7 @@ narefd:
 naweab:
 	Inherits: naweap
 	Inherits@shape: ^3x5Shape
+	Selectable:
 		Bounds: 152, 88, 0, -8
 		DecorationBounds: 212, 175, -15, -45
 	-Buildable:
