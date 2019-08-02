@@ -249,10 +249,10 @@ shk:
 		CrushClasses: vehicle
 	Garrisoner:
 		Voice: Move
-		PipType: Red
+		PipType: Blue
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Red
+		PipType: Blue
 		CargoType: Garrisoner
 	AttackFrontal:
 		Voice: Attack
@@ -335,7 +335,7 @@ terror:
 		HP: 75
 	Garrisoner:
 		Voice: Move
-		PipType: Red
+		PipType: Gray
 		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 90
@@ -348,7 +348,7 @@ terror:
 	Armor:
 		Type: Flak
 	Passenger:
-		PipType: Red
+		PipType: Gray
 	Explodes:
 		Weapon: TerrorBomb
 		EmptyWeapon: TerrorBomb
@@ -399,7 +399,7 @@ deso:
 		HP: 150
 	Garrisoner:
 		Voice: Move
-		PipType: Red
+		PipType: Gray
 		GarrisonType: Garrisoner
 	Mobile:
 		RequiresCondition: !chronodisable && undeployed
@@ -420,7 +420,7 @@ deso:
 	Crushable:
 		CrushClasses: vehicle
 	Passenger:
-		PipType: Red
+		PipType: Gray
 	Armament@primary:
 		Weapon: RadBeamWeapon
 		LocalOffset: 320,-128,1024
@@ -533,7 +533,7 @@ ivan:
 	Armor:
 		Type: None
 	Passenger:
-		PipType: Red
+		PipType: Green
 	Explodes:
 		Weapon: IvanBomber
 		EmptyWeapon: IvanBomber
@@ -576,8 +576,10 @@ civan:
 		HP: 100
 	Garrisoner:
 		Voice: Move
-		PipType: Green
+		PipType: Gray
 		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Gray
 	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
@@ -634,7 +636,7 @@ yuri:
 	Armor:
 		Type: None
 	Passenger:
-		PipType: Red
+		PipType: Green
 	PeriodicExplosion:
 		Weapon: PsiWave
 		LocalOffset: 0,0,128
@@ -703,6 +705,12 @@ yuripr:
 		PlayerExperience: 100
 	Health:
 		HP: 200
+	Garrisoner:
+		Voice: Move
+		PipType: Gray
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Gray
 	Armor:
 		Type: Flak
 	Crushable:
@@ -867,8 +875,10 @@ pyro:
 		HP: 100
 	Garrisoner:
 		Voice: Move
-		PipType: Red
+		PipType: Green
 		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Green
 	RevealsShroud:
 		Range: 5c0
 	RevealsShroudToIntelligenceOwner:
@@ -945,7 +955,7 @@ mech:
 	Mobile:
 		Speed: 90
 	Passenger:
-		PipType: Blue
+		PipType: Yellow
 	Armament:
 		Weapon: MechRepair
 		Cursor: goldwrench
