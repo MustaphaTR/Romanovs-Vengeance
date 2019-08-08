@@ -2,7 +2,8 @@ caoild:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 96, 104, -2, -26
+		Bounds: 90, 50, 0, -15
+		DecorationBounds: 96, 104, -2, -26
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
@@ -40,6 +41,9 @@ caoild:
 caairp:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x3Shape
+	Selectable:
+		Bounds: 100, 70, 8, -15
+		DecorationBounds: 165, 160, 8, -40
 	Tooltip:
 		Name: Tech Airport
 	TooltipDescription:
@@ -164,6 +168,9 @@ caairp:
 cahosp:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^6x4Shape
+	Selectable:
+		Bounds: 140, 100, 11, -15
+		DecorationBounds: 250, 200, 11, -42
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx xxxx xxxx
 		Dimensions: 6, 4
@@ -194,7 +201,8 @@ caoutp:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^4x3Shape
 	Selectable:
-		Bounds: 178, 180, 0, -38
+		Bounds: 100, 70, -20, -15
+		DecorationBounds: 180, 170, 0, -45
 	Tooltip:
 		Name: Tech Outpost
 	TooltipDescription:
@@ -260,7 +268,8 @@ capowr:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
 	Selectable:
-		Bounds: 96, 104, -2, -26
+		Bounds: 90, 50, 0, -15
+		DecorationBounds: 100, 115, -2, -32
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
@@ -284,6 +293,9 @@ capowr:
 camach:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x3Shape
+	Selectable:
+		Bounds: 100, 70, -5, -15
+		DecorationBounds: 160, 140, -5, -30
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
@@ -303,6 +315,9 @@ camach:
 caslab:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x3Shape
+	Selectable:
+		Bounds: 80, 60, -5, -15
+		DecorationBounds: 130, 160, -5, -50
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
@@ -322,6 +337,9 @@ caslab:
 cacomm:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x3Shape
+	Selectable:
+		Bounds: 100, 70, 0, -15
+		DecorationBounds: 180, 160, 0, -40
 	Inherits@EMPULSE: ^DisabledByEMP
 	Building:
 		Footprint: xxx xxx xxx
@@ -355,6 +373,9 @@ cacomm:
 caarmr:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^3x3Shape
+	Selectable:
+		Bounds: 100, 70, 0, -15
+		DecorationBounds: 180, 160, 0, -35
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
@@ -373,6 +394,9 @@ caarmr:
 carpad:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^1x3Shape
+	Selectable:
+		Bounds: 90, 50, 0, -15
+		DecorationBounds: 105, 140, -2, -40
 	Building:
 		Footprint: x x =
 		Dimensions: 1, 3
@@ -380,8 +404,6 @@ carpad:
 		Name: Tech Reinforcement Pad
 	TooltipDescription:
 		Description: Periodically provides an MBT.
-	Selectable:
-		Bounds: 128, 96, 0, -24
 	Health:
 		HP: 750
 	Armor:
@@ -449,13 +471,14 @@ carpad:
 capsyb:
 	Inherits: ^TechBuilding
 	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 80, 50, 0, -15
+		DecorationBounds: 96, 160, 0, -64
 	Inherits@EMPULSE: ^DisabledByEMP
 	Tooltip:
 		Name: Tech Psychic Beacon
 	TooltipDescription:
 		Description: Provides Psychic Control support power.
-	Selectable:
-		Bounds: 96, 160, 0, -64
 	Armor:
 		Type: Wood
 	Health:
