@@ -396,6 +396,58 @@ yawall:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yaggun:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -15
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: yaggun
+		ShadowStart: 3
+	damaged-idle: yaggun
+		Start: 1
+		ShadowStart: 4
+	muzzle:
+		Offset: 0,0
+		Combine:
+			mgun-n:
+				Length: 3
+			mgun-nw:
+				Length: 3
+			mgun-w:
+				Length: 3
+			mgun-sw:
+				Length: 3
+			mgun-s:
+				Length: 3
+			mgun-se:
+				Length: 3
+			mgun-e:
+				Length: 3
+			mgun-ne:
+				Length: 3
+		Facings: 8
+		Length: 3
+	muzzle-1: gunfire
+		Length: *
+		Offset: 0,0
+		UseTilesetCode: false
+	muzzle-2: vtmuzzle
+		Length: *
+		Offset: 0,0
+		UseTilesetCode: false
+	make: yaggunmk
+		Length: 13
+		ShadowStart: 13
+	icon: ggunicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yapsyt:
 	Defaults:
 		Offset: 0, -15

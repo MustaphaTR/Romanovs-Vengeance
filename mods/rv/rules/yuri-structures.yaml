@@ -442,6 +442,95 @@ yawall:
 	Replaceable:
 		Types: YuriGate
 
+yaggun:
+	Inherits: ^VoxelLighting
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Yuri
+		BuildPaletteOrder: 30
+		Prerequisites: yabrck
+		Description: Automated anti-infantry and anti-air defense.
+	Health:
+		HP: 800
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
+	Selectable:
+		Bounds: 53, 56, 0, -25
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Gatling Cannon
+	Turreted:
+		TurnSpeed: 10
+		InitialFacing: 224
+		PreviewFacing: 224
+		Offset: -512,0,480
+	AttackTurreted:
+		Voice: Attack
+	Armament@ag-0:
+		Weapon: AGGatling
+		LocalOffset: 768,240,1024, 768,-240,1024
+		RequiresCondition: !gatling
+		MuzzleSequence: muzzle
+	Armament@ag-1:
+		Weapon: AGGatling2
+		LocalOffset: 768,240,1024, 768,-240,1024
+		RequiresCondition: gatling == 1
+		MuzzleSequence: muzzle-1
+	Armament@ag-2:
+		Weapon: AGGatling3
+		LocalOffset: 768,240,1024, 768,-240,1024
+		RequiresCondition: gatling >= 2
+		MuzzleSequence: muzzle-2
+	Armament@aa-0:
+		Weapon: AAGattCann
+		LocalOffset: 768,240,1024, 768,-240,1024
+		RequiresCondition: !gatling
+		MuzzleSequence: muzzle
+	Armament@aa-1:
+		Weapon: AAGattCann2
+		LocalOffset: 768,240,1024, 768,-240,1024
+		RequiresCondition: gatling == 1
+		MuzzleSequence: muzzle-1
+	Armament@aa-2:
+		Weapon: AAGattCann3
+		LocalOffset: 640,240,1024, 640,-240,1024
+		RequiresCondition: gatling >= 2
+		MuzzleSequence: muzzle-2
+	GrantConditionOnAttack:
+		Condition: gatling
+		RequiredShotsPerInstance: 16
+		MaximumInstances: 2
+		RevokeDelay: 25
+		RevokeAll: true
+		IsCyclic: false
+		RevokeOnNewTarget: true
+	BodyOrientation:
+		QuantizedFacings: 16
+	RenderVoxels:
+		Scale: 18
+	WithMuzzleOverlay:
+	WithVoxelTurret:
+		RequiresCondition: !build-incomplete
+	WithRangeCircle:
+		Range: 5c0
+		Type: pillbox
+	WithRangeCircle@AA:
+		Range: 12c0
+		Type: aa
+	AutoTarget:
+	Power:
+		Amount: -50
+
 yapsyt:
 	Inherits: ^SupportBuilding
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
@@ -468,7 +557,7 @@ yapsyt:
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 225
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		PauseOnCondition: disabled || chronodisable
