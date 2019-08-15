@@ -32,7 +32,7 @@ GrandCannonWeapon:
 sabot:
 	Inherits: ^LargeBullet
 	ValidTargets: Ground, Water
-	Range: 6c0
+	Range: 7c0
 	ReloadDelay: 70
 	Report: vtadatta.wav, vtadattb.wav, vtadattc.wav
 	Projectile: BulletAS
@@ -114,7 +114,7 @@ MirageGunE:
 105mm:
 	Inherits: ^LargeBullet
 	ReloadDelay: 60
-	Range: 5c0
+	Range: 6c0
 	Report: vgriatta.wav, vgriattb.wav, vgriattc.wav
 	Projectile: BulletAS
 		Speed: 682
@@ -148,29 +148,33 @@ MirageGunE:
 
 robogun:
 	Inherits: 105mm
+	Range: 5c0
 	Report: vrobatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 
 robogunE:
 	Inherits: 105mmE
+	Range: 5c0
 	Report: vrobatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
 
 ATGUN:
 	Inherits: 105mm
-	ReloadDelay: 55
+	Range: 6c0
+	ReloadDelay: 60
 	Report: vlasatta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 55
+		Damage: 65
 
 ATGUNE:
 	Inherits: 105mmE
-	ReloadDelay: 70
+	Range: 6c0
+	ReloadDelay: 75
 	Report: vlasatta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 45
+		Damage: 55
 		Versus:
 			None: 100
 			Flak: 100
@@ -180,7 +184,7 @@ ATGUNE:
 120mm:
 	Inherits: ^LargeBullet
 	ReloadDelay: 65
-	Range: 5c0
+	Range: 6c0
 	Report: vrhiatta.wav, vrhiattb.wav, vrhiattc.wav, vrhiattd.wav
 	Projectile: BulletAS
 		Speed: 682
@@ -217,7 +221,7 @@ ATGUNE:
 	ReloadDelay: 65
 	Report: vapoat1a.wav
 	Burst: 2
-	Range: 5c0
+	Range: 6c0
 	Projectile: BulletAS
 		Speed: 682
 	Warhead@1Dam: SpreadDamage
@@ -253,7 +257,7 @@ ATGUNE:
 120mmxRad:
 	Inherits: 120mmx
 	ReloadDelay: 65
-	Range: 4c768
+	Range: 5c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
 		Versus:
