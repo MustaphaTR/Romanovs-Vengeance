@@ -614,7 +614,7 @@ deva:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
-		Speed: 60
+		Speed: 90
 		TurnSpeed: 4
 		Locomotor: omnicrusher
 		RequiresCondition: !chronodisable && !emp && !beingterrordroned && !overload
@@ -660,12 +660,12 @@ deva:
 	WithVoxelBody:
 	WithVoxelTurret:
 	Explodes:
-		Weapon: ApocExplode
-		EmptyWeapon: ApocExplode
-		RequiresCondition: !meltdown
-	Explodes@OVERLOAD:
 		Weapon: DevastatorExplosion
 		EmptyWeapon: DevastatorExplosion
+		RequiresCondition: !meltdown
+	Explodes@OVERLOAD:
+		Weapon: demobomb
+		EmptyWeapon: demobomb
 		RequiresCondition: meltdown
 	GrantConditionOnDeploy@REACTOR:
 		Voice: Attack

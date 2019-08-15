@@ -160,11 +160,22 @@ robogunE:
 
 ATGUN:
 	Inherits: 105mm
+	ReloadDelay: 55
 	Report: vlasatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 55
 
 ATGUNE:
 	Inherits: 105mmE
+	ReloadDelay: 70
 	Report: vlasatta.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 45
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
 
 120mm:
 	Inherits: ^LargeBullet
