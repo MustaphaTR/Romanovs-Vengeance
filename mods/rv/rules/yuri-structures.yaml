@@ -448,8 +448,8 @@ yaggun:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Yuri
-		BuildPaletteOrder: 30
-		Prerequisites: yabrck
+		BuildPaletteOrder: 40
+		Prerequisites: yabrck, ~techlevel.1
 		Description: Automated anti-infantry and anti-air defense.
 	Health:
 		HP: 800
@@ -640,6 +640,41 @@ yarock:
 		Footprint: xxx xxx xxx
 
 # Custom Structures
+yagatea:
+	Inherits: ^Gate_A
+	Buildable:
+		Queue: Support.Yuri
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 20
+	Tooltip:
+		Name: Psi-Corps Gate
+	Selectable:
+		Bounds: 68, 36, 0, 2
+		DecorationBounds: 118, 56, 0, -3
+	LineBuildNode:
+		Types: yawall
+	WithGateSpriteBody:
+		Type: yawall
+	Replacement:
+		ReplaceableTypes: YuriGate
+	PlaceBuildingVariants:
+		Actors: yagateb
+
+yagateb:
+	Inherits: ^Gate_B
+	-Buildable:
+	Tooltip:
+		Name: Psi-Corps Gate
+	Selectable:
+		Bounds: 68, 36, 0, 2
+		DecorationBounds: 118, 56, 0, -3
+	LineBuildNode:
+		Types: yawall
+	WithGateSpriteBody:
+		Type: yawall
+	Replacement:
+		ReplaceableTypes: YuriGate
+
 yasilo:
 	Inherits: ^Silo
 	Buildable:
