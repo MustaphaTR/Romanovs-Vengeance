@@ -372,30 +372,31 @@ UCNeutronRifle:
 UCNeutronRifleE:
 	Inherits: NeutronRifleE
 	Range: 6c0
-       
+
 UCNeutronRifleSound:
 	Inherits: NeutronRifleSound
 	Range: 6c0
 
 CurtainRifle:
-	ReloadDelay: 1
+	ReloadDelay: 75
 	Range: 5c0
+	Report: siroon.wav
 	TargetActorCenter: true
 	ValidTargets: IronCurtainable
-	InvalidTargets: Structure, Air
+	InvalidTargets: Air
 	Projectile: TeslaZap
 		Palette: ra
 	Warhead@Condition: GrantExternalCondition
 		Condition: invulnerability
 		Range: 0c512
-		Duration: 25
-		ValidStates: Ally
-		ValidTargets: Vehicle
-		InvalidTargets: Structure, Air
+		Duration: 75
+		ValidTargets: Vehicle, Structure
+		InvalidTargets: Air
 	Warhead@Damage: SpreadDamage
-		Damage: 5
+		Spread: 0c768
+		Damage: 100
 		ValidTargets: Infantry
-		InvalidTargets: Structure, Air
+		InvalidTargets: Vehicle, Structure, Air
 		DamageTypes: FlameDeath
 	Warhead@Stars: CreateEffect
 		Explosions: iron_fx
@@ -403,28 +404,19 @@ CurtainRifle:
 
 CurtainRifleE:
 	Inherits: CurtainRifle
-	Warhead@Damage: Temporal
-		Damage: 7
+	Warhead@Damage: SpreadDamage
+		Damage: 125
 
 CRCurtainRifle:
 	Inherits: CurtainRifle
-	-Warhead@Condition:
+	ReloadDelay: 50
+	Warhead@Condition: GrantExternalCondition
+		Range: 2c512
+		Duration: 55
 	Warhead@Damage: SpreadDamage
 		Spread: 2c512
 		Damage: 1
 	-Warhead@Stars:
-
-CurtainRifleSound:
-	ReloadDelay: 120
-	Range: 5c0
-	Report: siroon.wav
-	TargetActorCenter: true
-	ValidTargets: IronCurtainable
-	InvalidTargets: Structure, Air
-	Projectile: InstantHit
-	Warhead@Target: TargetDamage
-		ValidTargets: IronCurtainable
-		InvalidTargets: Structure, Air
 
 UCCurtainRifle:
 	Inherits: CurtainRifle
@@ -432,10 +424,6 @@ UCCurtainRifle:
 
 UCCurtainRifleE:
 	Inherits: CurtainRifleE
-	Range: 6c0
-       
-UCCurtainRifleSound:
-	Inherits: CurtainRifleSound
 	Range: 6c0
 
 TeslaFence:

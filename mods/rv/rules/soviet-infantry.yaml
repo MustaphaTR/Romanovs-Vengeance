@@ -1005,8 +1005,12 @@ itrp:
 		Payload: 750
 		PlayerExperience: 75
 		Voice: Move
+	Mobile:
+		Speed: 50
 	Health:
-		HP: 125
+		HP: 200
+	Armor:
+		Type: Plate
 	Garrisoner:
 		Voice: Move
 		PipType: Green
@@ -1020,9 +1024,10 @@ itrp:
 	Passenger:
 		PipType: Green
 	Crushable:
+		CrushClasses: vehicle
 	-TakeCover:
 	Voiced:
-		VoiceSet: ConscriptVoice
+		VoiceSet: IronTrooperVoice
 	Armament@primary:
 		Weapon: CurtainRifle
 		LocalOffset: 512,0,384
@@ -1033,10 +1038,6 @@ itrp:
 		LocalOffset: 512,0,384
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
-	Armament@sound:
-		Weapon: CurtainRifleSound
-		LocalOffset: 512,0,384
-		PauseOnCondition: chronodisable
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: CurtainRifle
@@ -1047,10 +1048,6 @@ itrp:
 		Weapon: CurtainRifleE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
-	Armament@sound-opentopped:
-		Name: opentopped
-		Weapon: CurtainRifleSound
-		PauseOnCondition: chronodisable
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCCurtainRifle
@@ -1061,10 +1058,6 @@ itrp:
 		Weapon: UCCurtainRifleE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
-	Armament@sound-garrisoned:
-		Name: garrisoned
-		Weapon: UCCurtainRifleSound
-		PauseOnCondition: chronodisable
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Infantry
