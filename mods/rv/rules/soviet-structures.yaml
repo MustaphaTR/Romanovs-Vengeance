@@ -799,8 +799,8 @@ napsis:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 80
-		Prerequisites: natech, ~techlevel.4
-		Description: Detects enemy units and strikepoints
+		Prerequisites: ~disabled # natech, ~techlevel.4
+		Description: Detects enemy units and strikepoints.
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -1384,6 +1384,53 @@ nasilo:
 		-RequiresCondition:
 	Sellable:
 		-RequiresCondition:
+
+naprop:
+	Inherits: ^SupportBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Soviets
+		BuildPaletteOrder: 80
+		Prerequisites: natech, ~techlevel.4
+		Description: Buffs fire speed of nearby units and heals them.
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: Propaganda Tower
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Health:
+		HP: 600
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 7c0
+	Selectable:
+		Bounds: 44, 40, -2, -13
+		DecorationBounds: 44, 88, -2, -33
+	-WithMakeAnimation:
+	Sellable:
+		-RequiresCondition:
+	ProximityExternalCondition@propaganda_tower:
+		Condition: propaganda_tower
+		Range: 5c0
+		RequiresCondition: !disabled
+	WithRangeCircle:
+		Range: 5c0
+		Type: propaganda
+		RequiresCondition: !disabled
+	Power:
+		Amount: -75
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
+		PauseOnCondition: chronodisable
+		# RequiresCondition: !build-incomplete
 
 naexpn:
 	Inherits: ^ExpansionNode

@@ -340,6 +340,21 @@
 		Condition: propaganda2
 	ExternalCondition@PROPAGANDA3:
 		Condition: propaganda3
+	ReloadDelayMultiplier@PROPAGANDA_TOWER:
+		RequiresCondition: propaganda_tower
+		Modifier: 75
+	WithColoredOverlay@PROPAGANDA_TOWER:
+		Palette: propaganda_tower
+		RequiresCondition: propaganda_tower
+	SelfHealing@PROPAGANDA_TOWER:
+		Step: 0
+		PercentageStep: 2
+		Delay: 40
+		HealIfBelow: 100
+		DamageCooldown: 0
+		RequiresCondition: propaganda_tower
+	ExternalCondition@PROPAGANDA_TOWER:
+		Condition: propaganda_tower
 
 ^AffectedByChronoBoost:
 	ReloadDelayMultiplier@BOOST:

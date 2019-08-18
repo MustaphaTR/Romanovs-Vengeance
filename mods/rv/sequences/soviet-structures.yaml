@@ -995,6 +995,35 @@ nasilo:
 	icon: nsilicon
 		Offset: 0, 0
 
+naprop:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -15
+		UseTilesetCode: true
+		TilesetOverrides:
+			SNOW: GENERIC
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ngprop
+		Length: 1
+		ShadowStart: 3
+	damaged-idle: ngprop
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	idle-flag: ngprop_a
+		Length: 9
+		ShadowStart: 9
+	#make: nttslamk
+	#	Length: 25
+	#	ShadowStart: 25
+	icon: propicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 napowb:
 	Inherits: napowr
 	Defaults:

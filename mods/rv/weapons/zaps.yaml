@@ -389,6 +389,7 @@ CurtainRifle:
 		Condition: invulnerability
 		Range: 0c512
 		Duration: 25
+		ValidStates: Ally
 		ValidTargets: Vehicle
 		InvalidTargets: Structure, Air
 	Warhead@Damage: SpreadDamage
@@ -407,9 +408,7 @@ CurtainRifleE:
 
 CRCurtainRifle:
 	Inherits: CurtainRifle
-	Warhead@Condition: GrantExternalCondition
-		Range: 2c512
-		Duration: 2
+	-Warhead@Condition:
 	Warhead@Damage: SpreadDamage
 		Spread: 2c512
 		Damage: 1
