@@ -600,7 +600,7 @@ yuri:
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 150
-		Prerequisites: natech, ~techlevel.4
+		Prerequisites: ~disabled # natech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -979,5 +979,97 @@ mech:
 		ValidTargets: Repair
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
+itrp:
+	Inherits: ^Infantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Tooltip:
+		Name: Iron Trooper
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		BuildPaletteOrder: 140
+		Prerequisites: natech, ~techlevel.4
+		Description: High-tech soldier capable of making friendly vehicles invulnerabile and\ndamage enemy infantry.\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+		Voice: Move
+	Health:
+		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Passenger:
+		PipType: Green
+	Crushable:
+	-TakeCover:
+	Voiced:
+		VoiceSet: ConscriptVoice
+	Armament@primary:
+		Weapon: CurtainRifle
+		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: CurtainRifleE
+		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@sound:
+		Weapon: CurtainRifleSound
+		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: CurtainRifle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: CurtainRifleE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@sound-opentopped:
+		Name: opentopped
+		Weapon: CurtainRifleSound
+		PauseOnCondition: chronodisable
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCCurtainRifle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCCurtainRifleE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@sound-garrisoned:
+		Name: garrisoned
+		Weapon: UCCurtainRifleSound
+		PauseOnCondition: chronodisable
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Infantry
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
 	WithInfantryBody:
 		DefaultAttackSequence: shoot

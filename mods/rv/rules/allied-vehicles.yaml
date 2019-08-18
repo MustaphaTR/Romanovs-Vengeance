@@ -184,7 +184,7 @@ fv:
 		Cost: 700
 	Tooltip:
 		Name: Infantry Fighting Vehicle
-		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-yuri
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri
 	Tooltip@mg:
 		Name: Machine Gun IFV
 		RequiresCondition: ifv-mg
@@ -239,6 +239,13 @@ fv:
 	Tooltip@yuri:
 		Name: Psi IFV
 		RequiresCondition: ifv-yuri
+	Tooltip@iron:
+		Name: Iron Curtain IFV
+		RequiresCondition: ifv-iron
+	WithColoredOverlay@ironcurtain:
+		RequiresCondition: invulnerability && !ifv-iron
+	DamageMultiplier@ironcurtain:
+		RequiresCondition: invulnerability && !ifv-iron
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
 		Prerequisites: ~techlevel.1
@@ -279,12 +286,18 @@ fv:
 		Range: 5c0
 		RequiresCondition: ifv-dog
 	RenderDetectionCircle:
-	PeriodicExplosion:
+	PeriodicExplosion@medi:
 		Weapon: AmbulanceHeal
 		RequiresCondition: ifv-medic && !chronodisable
+	PeriodicExplosion@iron:
+		Weapon: CRCurtainRifle
+		RequiresCondition: ifv-iron && !chronodisable
 	WithRangeCircle@medi:
 		Range: 5c0
 		RequiresCondition: ifv-medic
+	WithRangeCircle@iron:
+		Range: 2c512
+		RequiresCondition: ifv-iron
 	Turreted:
 		TurnSpeed: 5
 	AmmoPool:
@@ -325,7 +338,9 @@ fv:
 			mech: ifv-repair
 			spy: ifv-dog
 			cleg: ifv-chrono
+			itrp: ifv-iron
 			yuri: ifv-yuri
+			yuripsi: ifv-yuri
 			ptroop: ifv-yuri
 			yuripr: ifv-yuri
 			yurix: ifv-yuri
@@ -333,22 +348,22 @@ fv:
 		Weapon: HoverMissile
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-yuri
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri
 	Armament@elite:
 		Weapon: HoverMissileE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-yuri
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri
 	Armament@primary-aa:
 		Weapon: HoverMissileAA
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-yuri
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri
 	Armament@elite-aa:
 		Weapon: HoverMissileAAE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-yuri
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-pyro && !ifv-flak && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri
 	Armament@mg:
 		Weapon: CRM60
 		LocalOffset: 188,32,600
@@ -467,7 +482,7 @@ fv:
 		RequiresCondition: ifv-demo
 	WithVoxelTurret@default:
 		Sequence: turret-missile
-		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-yuri
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-flak && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri
 	WithVoxelTurret@mg:
 		Sequence: turret-mg
 		RequiresCondition: ifv-mg
@@ -503,7 +518,7 @@ fv:
 		RequiresCondition: ifv-yuri
 	WithVoxelTurret@hitech:
 		Sequence: turret-hitech
-		RequiresCondition: ifv-init || ifv-dog || ifv-chrono
+		RequiresCondition: ifv-init || ifv-dog || ifv-chrono || ifv-iron # TODO Find a better turret for Iron Curtain IFV
 	WithVoxelTurret@ambu:
 		Sequence: turret-medic
 		RequiresCondition: ifv-medic

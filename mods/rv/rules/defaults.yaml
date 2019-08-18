@@ -472,12 +472,16 @@
 	DamageMultiplier@ironcurtain:
 		RequiresCondition: invulnerability
 		Modifier: 0
+	Targetable@ironcurtain:
+		TargetTypes: IronCurtainable
 	TimedConditionBar:
 		Condition: invulnerability
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
 
 ^KilledByIronCurtain:
+	Targetable@ironcurtain:
+		TargetTypes: IronCurtainable
 	KillsSelf:
 		DamageTypes: FlameDeath
 		RequiresCondition: invulnerability
