@@ -134,7 +134,6 @@ brute:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Yuri
 		BuildPaletteOrder: 40
@@ -203,18 +202,6 @@ brute:
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
 
-yuripsi:
-	Inherits: yuri
-	Buildable:
-		Queue: Infantry.Yuri
-		BuildPaletteOrder: 50
-		Prerequisites: yapsis, ~techlevel.2
-	Valued:
-		Cost: 800
-	DeliversCash:
-		Payload: 400
-		PlayerExperience: 40
-
 virus:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -222,7 +209,7 @@ virus:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Yuri
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 50
 		Prerequisites: yapsis, ~techlevel.2
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
@@ -273,6 +260,18 @@ virus:
 		VoiceSet: VirusVoice
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+
+yuripsi:
+	Inherits: yuri
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: yatech, ~techlevel.4
+	Valued:
+		Cost: 1000
+	DeliversCash:
+		Payload: 400
+		PlayerExperience: 40
 
 yurix:
 	Inherits: yuripr
