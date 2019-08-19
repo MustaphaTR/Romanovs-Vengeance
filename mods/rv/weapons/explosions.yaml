@@ -127,6 +127,18 @@ InfantryExplode:
 		ValidTargets: Ground, Water, Air
 	-Warhead@DebrisSpawn:
 
+MinerExplode:
+	Inherits: UnitExplodeSmall
+	Warhead@2Res: CreateResource
+		AddsResourceType: Ore
+		Size: 1,1
+
+RefineryExplode:
+	Inherits: BuildingExplode
+	Warhead@2Res: CreateResource
+		AddsResourceType: Ore
+		Size: 1,1
+
 IvanBomber:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c384

@@ -33,6 +33,12 @@ cmin:
 		SearchFromOrderRadius: 12
 		HarvestVoice: Harvest
 		DeliverVoice: Deliver
+		EmptyCondition: no-ore
+	Explodes:
+		RequiresCondition: no-ore
+	Explodes@Ore:
+		Weapon: MinerExplode
+		RequiresCondition: !no-ore
 	ChronoResourceDelivery:
 		WarpInSequence: warpout
 		WarpInSound: vchrtele.wav

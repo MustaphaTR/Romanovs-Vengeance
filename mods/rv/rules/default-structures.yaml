@@ -234,6 +234,14 @@
 		PipColor: Yellow
 		PipCount: 10
 		Capacity: 1000
+	Explodes:
+		RequiresCondition: !spawn-ore
+	Explodes@Ore:
+		Type: Footprint
+		Weapon: RefineryExplode
+		RequiresCondition: spawn-ore
+	GrantConditionOnPlayerResources:
+		Condition: spawn-ore
 
 ^RefineryB:
 	Inherits: ^Refinery
@@ -316,6 +324,14 @@
 	Power:
 		Amount: -10
 	SelectionDecorations:
+	Explodes:
+		RequiresCondition: !spawn-ore
+	Explodes@Ore:
+		Type: Footprint
+		Weapon: RefineryExplode
+		RequiresCondition: spawn-ore
+	GrantConditionOnPlayerResources:
+		Condition: spawn-ore
 
 ^WarFactory:
 	Inherits: ^BaseBuilding
