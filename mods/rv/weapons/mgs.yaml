@@ -155,15 +155,18 @@ UCDoublePistolsE:
 awp:
 	Inherits: DoublePistols
 	InvalidTargets: Bridge, Wall, Fence, Tree, NonGarrisonableStructure, Vehicle, Ship, SeaAnimal
-	ReloadDelay: 150
+	ReloadDelay: 100
 	Range: 14c0
 	Report: isniatta.wav
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship, SeaAnimal
 		Spread: 42
-		Damage: 200
+		Damage: 80
 		DamageTypes: BulletDeath
 		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
 			Drone: 100
 	Warhead@1Gar: DamageGarrisoner
 		ValidTargets: GarrisonedStructure
@@ -186,7 +189,7 @@ awp:
 
 AWPE:
 	Inherits: awp
-	ReloadDelay: 100
+	ReloadDelay: 80
 
 UCawp:
 	Inherits: awp
@@ -388,17 +391,8 @@ UCAKME:
 		Damage: 30
 		ValidTargets: Ground, Water, Air
 		Versus:
-			None: 100
-			Flak: 80
-			Plate: 80
-			Light: 50
 			Medium: 25
 			Heavy: 25
-			Wood: 75
-			Steel: 50
-			Concrete: 25
-			Drone: 100
-			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiff
 
@@ -465,17 +459,21 @@ Virusgun:
 	Range: 10c0
 	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 125
+		Damage: 80
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
 		DamageTypes: VirusDeath
 	Warhead@1Gar: DamageGarrisoner
-		Damage: 125
+		Damage: 200
 		DamageTypes: VirusDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 
 VirusgunE:
 	Inherits: Virusgun
-	ReloadDelay: 75
+	ReloadDelay: 80
 	Range: 10c0
     
 UCVirusgun:
