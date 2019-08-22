@@ -668,10 +668,23 @@ yuri:
 		MuzzleSequence: muzzle
 		LocalOffset: 0,0,960
 		PauseOnCondition: deployed || chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: MindControlE
+		MuzzleSequence: muzzle
+		LocalOffset: 0,0,960
+		PauseOnCondition: deployed || chronodisable
+		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMindControl
 		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCMindControl
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
 	WithMuzzleOverlay:
 	MindController:
 		ControllingCondition: controlling
@@ -722,6 +735,12 @@ yuripr:
 		Radius: 4c0
 	Armament:
 		Weapon: SuperMindControl
+	Armament@elite:
+		Weapon: SuperMindControlE
+	Armament@garrisoned:
+		Weapon: SuperMindControl
+	Armament@elite-garrisoned:
+		Weapon: SuperMindControlE
 
 # Yuri's Revenge Infantry
 boris:

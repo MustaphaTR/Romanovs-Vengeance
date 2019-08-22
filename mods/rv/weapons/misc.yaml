@@ -180,19 +180,33 @@ MindControl:
 	Projectile: InstantHit
 	Warhead@1Dam: TargetDamage
 		Damage: 0
-        
+
+MindControlE:
+	Inherits: MindControl
+	Range: 9c0
+
 UCMindControl:
 	Inherits: MindControl
 	Range: 7c0
-	Projectile: InstantHit
-		Blockable: false
+
+UCMindControlE:
+	Inherits: MindControl
+	Range: 9c0
 
 SuperMindControl:
 	Inherits: MindControl
 	Range: 30c0
 
+SuperMindControlE:
+	Inherits: MindControl
+	Range: 35c0
+
 SuperMindControlX:
 	Inherits: MindControl
+	ValidTargets: MindControl, MindControlBuilding
+
+SuperMindControlXE:
+	Inherits: MindControlE
 	ValidTargets: MindControl, MindControlBuilding
 
 TowerMindControl:
@@ -220,6 +234,11 @@ CRPsiWave:
 	Projectile: InstantExplode
 	Warhead@1Dam: SpreadDamage
 		Damage: 200
+
+SuperPsiWave:
+	Inherits: PsiWave
+	Warhead@1Dam: SpreadDamage
+		Spread: 5c0
 
 HornetLauncher:
 	ReloadDelay: 150
