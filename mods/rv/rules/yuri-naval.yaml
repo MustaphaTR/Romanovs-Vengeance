@@ -4,3 +4,85 @@ yhvr:
 		Queue: Ship.Yuri
 	Voiced:
 		VoiceSet: YuriAmphibiousTransportVoice
+
+bsub:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@C4: ^AcceptsSEALC4
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@SQUID: ^SquidGrabbable
+	Buildable:
+		Queue: Ship.Yuri
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 20
+		Description: Submerged anti-ship and anti-structure armed with\ndouble torpedo and missile launchers.\nCan detect other submarines and Giant Squids.\n  Strong vs Ships, Buildings\n  Weak vs Ground units, Aircraft\nSpecial Ability: Submerge
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Boomer Submarine
+	Health:
+		HP: 1200
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 3
+		Speed: 60
+	-LeavesTrails:
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Targetable:
+		TargetTypes: Ground, Water, Ship, Underwater
+	Cloak:
+		CloakTypes: Underwater
+		InitialDelay: 50
+		CloakDelay: 75
+		CloakSound: vnavupa.wav
+		UncloakSound: vnavupa.wav
+		UncloakOn: Damage
+		IsPlayerPalette: true
+		PauseOnCondition: uncloak-critical-damage
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: uncloak-critical-damage
+		ValidDamageStates: Critical
+	Armament:
+		Weapon: BoomerTorpedo
+		LocalOffset: 768,0,0
+		FireDelay: 2
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: BoomerTorpedoE
+		LocalOffset: 768,0,0
+		FireDelay: 2
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		PauseOnCondition: chronodisable || emp
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 4c0
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	-MustBeDestroyed:
+	WithVoxelBody:
+	RenderSprites:
+	Voiced:
+		VoiceSet: BoomerVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	HitShape:

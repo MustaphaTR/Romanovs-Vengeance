@@ -469,6 +469,21 @@ SubTorpedoE:
 	Inherits: SubTorpedo
 	Burst: 2
 
+BoomerTorpedo:
+	Inherits: SubTorpedo
+	Report: vbooat2a.wav
+	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+
+BoomerTorpedoE:
+	Inherits: BoomerTorpedo
+	Burst: 4
+
 HornetBomb:
 	Inherits: ^Missile
 	ReloadDelay: 3
