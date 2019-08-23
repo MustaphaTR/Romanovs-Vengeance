@@ -63,9 +63,13 @@ bsub:
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: rank-elite
+	Armament@missile:
+		Name: missile
+		Weapon: CruiseLauncher
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		Armaments: primary, missile
 		PauseOnCondition: chronodisable || emp
 	DetectCloaked:
 		CloakTypes: Underwater
@@ -73,7 +77,11 @@ bsub:
 	RenderDetectionCircle:
 	Explodes:
 		Weapon: UnitExplode
-		EmptyWeapon: UnitExplode
+	MissileSpawnerMaster:
+		Actors: cmisl, cmisl
+		SpawnAllAtOnce: true
+		RespawnTicks: 120
+		SpawnerArmamentName: missile
 	-MustBeDestroyed:
 	WithVoxelBody:
 	RenderSprites:
@@ -86,3 +94,27 @@ bsub:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+
+cmisl:
+	Inherits: ^ShootableMissile
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: Cruise Missile
+	Health:
+		HP: 50
+	Armor:
+		Type: Rocket
+	ShootableBallisticMissile:
+		LaunchAngle: 192
+		Speed: 255
+	LeavesTrails:
+		Image: smokey2
+		MovingInterval: 2
+		Type: CenterPosition
+	MissileSpawnerSlave:
+	SpawnedExplodes:
+		Weapon: CruiseWeapon
+		EmptyWeapon: CruiseWeapon
+	RenderVoxels:
+		Image: bsubmisl
