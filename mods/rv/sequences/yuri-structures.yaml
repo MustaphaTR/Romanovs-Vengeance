@@ -280,6 +280,70 @@ yayard:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yadome:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -30
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ygdome
+		ShadowStart: 3
+	damaged-idle: ygdome
+		Start: 1
+		ShadowStart: 4
+	critical-idle: ygdome
+		Start: 2
+		ShadowStart: 5
+	idle-light: ygdome_a
+		Length: 6
+		ShadowStart: 6
+		Tick: 150
+	idle-panels: ygdome_b
+		Length: 6
+		ShadowStart: 6
+		Tick: 150
+	make: ytdomemk
+		Length: 13
+		ShadowStart: 13
+	icon: ydomicon
+		Offset: 0,0
+		UseTilesetCode: false
+
+yatech:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: -15, -38
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ygtech
+		ShadowStart: 3
+	damaged-idle: ygtech
+		Start: 1
+		ShadowStart: 4
+	idle-lift: ygtech_a
+		Length: 32
+		ShadowStart: 64
+	damaged-idle-lift: ygtech_a
+		Start: 32
+		Length: 32
+		ShadowStart: 96
+	make: ygtechmk
+		Length: 25
+		ShadowStart: 25
+	icon: ytchicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yapsis:
 	Inherits@MC: ^MindControllable
 	Defaults:
@@ -311,37 +375,7 @@ yapsis:
 	make: ytpsismk
 		Length: 24
 		ShadowStart: 24
-	icon: cameomd|psisicon
-		Offset: 0,0
-		UseTilesetCode: false
-
-yatech:
-	Inherits@MC: ^MindControllable
-	Defaults:
-		Offset: -15, -38
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-	idle: ygtech
-		ShadowStart: 3
-	damaged-idle: ygtech
-		Start: 1
-		ShadowStart: 4
-	idle-lift: ygtech_a
-		Length: 32
-		ShadowStart: 64
-	damaged-idle-lift: ygtech_a
-		Start: 32
-		Length: 32
-		ShadowStart: 96
-	make: ygtechmk
-		Length: 25
-		ShadowStart: 25
-	icon: ytchicon
+	icon: psisicon
 		Offset: 0,0
 		UseTilesetCode: false
 

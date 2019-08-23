@@ -247,7 +247,7 @@ yayard:
 	ProductionBar:
 		ProductionType: Ship.Yuri
 
-yapsis:
+yadome:
 	Inherits: ^BaseBuilding
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -257,47 +257,44 @@ yapsis:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 60
 		Prerequisites: power, yarefn, ~techlevel.2
-		Description: Provides radar\nDetects enemy units and strikepoints
+		Description: Provides radar
 	Valued:
-		Cost: 1000
+		Cost: 1500
 	Tooltip:
-		Name: Psychic Radar
+		Name: Radar Dome
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
 	Selectable:
-		Bounds: 82, 150, -1, -55
+		Bounds: 128, 140, 0, -40
 	Health:
-		HP: 750
+		HP: 1000
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite:
+		Prerequisite: radar
 	ProvidesRadar:
 		RequiresCondition: !disabled && !chronodisable
 	RevealsShroud:
-		Range: 15c0
-		RequiresCondition: !disabled
+		Range: 10c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 15c0
-		RequiresCondition: !disabled
-	RevealsShroud@DISABLED:
-		Range: 5c0
-		RequiresCondition: disabled
-	RevealsShroudToIntelligenceOwner@DISABLED:
-		Types: SatelliteScan
-		Range: 5c0
-		RequiresCondition: disabled
-	RenderDetectionCircle:
-	DetectCloaked:
-		CloakTypes: Cloak, Underwater
-		Range: 25c0
-	WithIdleOverlay@spin:
-		Sequence: idle-spin
+		Range: 10c0
+	WithIdleOverlay@light:
+		Sequence: idle-light
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@panels:
+		Sequence: idle-panels
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	InfiltrateForExploration:
+		Types: SpyInfiltrate
 	Power:
-		Amount: -50
+		Amount: -75
 
 yatech:
 	Inherits: ^BaseBuilding
@@ -306,7 +303,7 @@ yatech:
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 90
-		Prerequisites: yapsis, ~techlevel.3
+		Prerequisites: yadome, ~techlevel.3
 		Description: Allows deployment of advanced units.\nCan be rotated.
 	Selectable:
 		Bounds: 122, 216, 0, -81
@@ -341,6 +338,55 @@ yatech:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	PlaceBuildingVariants:
 		Actors: yatecb
+
+yapsis:
+	Inherits: ^BaseBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Building.Yuri
+		BuildPaletteOrder: 100
+		Prerequisites: yatech, ~techlevel.4
+		Description: Detects enemy units and strikepoints
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Psychic Sensor
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 82, 150, -1, -55
+	Health:
+		HP: 500
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 15c0
+		RequiresCondition: !disabled
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 15c0
+		RequiresCondition: !disabled
+	RevealsShroud@DISABLED:
+		Range: 5c0
+		RequiresCondition: disabled
+	RevealsShroudToIntelligenceOwner@DISABLED:
+		Types: SatelliteScan
+		Range: 5c0
+		RequiresCondition: disabled
+	RenderDetectionCircle:
+	DetectCloaked:
+		CloakTypes: Cloak, Underwater
+		Range: 25c0
+	WithIdleOverlay@spin:
+		Sequence: idle-spin
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	Power:
+		Amount: -100
 
 yaclon:
 	Inherits: ^BaseBuilding
