@@ -493,6 +493,60 @@ yapsyt:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yappet:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -45
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	make: yappetmk
+		Length: 24
+		ShadowStart: 24
+	idle: yappet_e
+		Length: 1
+		ShadowStart: 2
+		Tick: 150
+	damaged-idle: yappet_e
+		Start: 1
+		Length: 1
+		ShadowStart: 3
+		Tick: 150
+	charged: yappet_f
+		Length: 19
+		ShadowStart: 38
+		Tick: 150
+	damaged-charged: yappet_f
+		Start: 19
+		Length: 19
+		ShadowStart: 57
+		Tick: 150
+	active: yappet_g
+		Length: 8
+		ShadowStart: 16
+		Tick: 150
+	damaged-active: yappet_g
+		Start: 8
+		Length: 8
+		ShadowStart: 24
+		Tick: 150
+	deactive: yappet_h
+		Length: 19
+		ShadowStart: 38
+		Tick: 150
+	damaged-deactive: yappet_h
+		Start: 19
+		Length: 19
+		ShadowStart: 57
+		Tick: 150
+	icon: pupticon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yacomd:
 	Defaults:
 		Offset: 0,-60

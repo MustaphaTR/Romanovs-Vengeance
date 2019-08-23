@@ -532,7 +532,6 @@ DemoTruckTargeting:
 
 PsychicControl:
 	Projectile: InstantExplode
-	ValidTargets: MindControl
 	Warhead@1Cap: CaptureActor
 		Delay: 55
 		CaptureTypes: permamc
@@ -550,6 +549,29 @@ PsychicControl:
 		Delay: 40
 		Explosions: controlwave
 		ValidTargets: Ground, Air, Water
+
+PsychicDomination:
+	Inherits: PsychicControl
+	Warhead@5Dam: SpreadDamage
+		Spread: 1c410
+		Damage: 1000 # 200
+		Falloff: 100, 80, 60, 40, 20, 0
+		ValidTargets: Ground, Water
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Light: 0
+			Medium: 0
+			Heavy: 0
+			Wood: 100
+			Steel: 100
+			Concrete: 20 # 6
+			Drone: 0
+			Rocket: 0
+		AffectsParent: true
+		DamageTypes: PsychicDeath
+		Delay: 55
 
 PsychicJab:
 	Inherits: ^MG

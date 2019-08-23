@@ -584,6 +584,35 @@ yapsyt:
 		ValidTargets: MindControl
 		RequiresCondition: controlling >= 3
 
+yappet:
+	Inherits: ^PrimarySuperWeapon
+	Buildable:
+		Queue: Support.Yuri
+		Prerequisites: yatech, !enoughdominator, ~techlevel.5
+		Description: Release powerful energy that damages structures and mind controls units.\nRequires power to operate.\n  Special Ability: Psychic Domination
+	Selectable:
+		Bounds: 131, 152, 0, -40
+	Tooltip:
+		Name: Psychic Dominator
+	DetonateWeaponPower:
+		OrderName: YuriPsychicDomination
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: yappet
+		Icons:
+			1: domination
+		ChargeInterval: 4500
+		Descriptions:
+			1: Psychic Domination
+		LongDescs:
+			1: Release powerful energy that damages structures and mind controls units.\n\nCan be applied on ally units to\nmake them immune to mind control.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: PsychicDomination
+		ActivationSequence:
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughdominator
+
 yacomd:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
