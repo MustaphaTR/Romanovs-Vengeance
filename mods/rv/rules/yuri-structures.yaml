@@ -247,6 +247,30 @@ yayard:
 	ProductionBar:
 		ProductionType: Ship.Yuri
 
+yadept:
+	Inherits: ^ServiceDepot
+	Inherits@shape: ^4x3Shape
+	Buildable:
+		Queue: Building.Yuri
+		Prerequisites: yaweap, ~techlevel.1
+		Description: Repairs vehicles and removes Terror Drones for a price.\nCan be rotated.
+	Selectable:
+		Bounds: 104, 55, -12, -15
+		DecorationBounds: 156, 150, 0, -38
+	ProvidesPrerequisite@default:
+		Prerequisite: yadept
+	Building:
+		Footprint: x=== x=x= x===
+		Dimensions: 4,3
+	RallyPoint:
+		Offset: 4,1
+	WithIdleOverlay@normal:
+		Sequence: idle-normal
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	PlaceBuildingVariants:
+		Actors: yadepb
+
 yadome:
 	Inherits: ^BaseBuilding
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
@@ -802,6 +826,20 @@ yaweab:
 		Offset: 1,6
 	Exit@1:
 		ExitCell: 1,4
+
+yadepb:
+	Inherits: yadept
+	Inherits@shape: ^3x4Shape
+	Selectable:
+		Bounds: 104, 55, 12, -15
+		DecorationBounds: 156, 150, 0, -38
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx === =x= ===
+		Dimensions: 3,4
+	RallyPoint:
+		Offset: 1,4
 
 yatecb:
 	Inherits: yatech

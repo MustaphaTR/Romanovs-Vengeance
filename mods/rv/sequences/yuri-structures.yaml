@@ -280,6 +280,49 @@ yayard:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yadept:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: -15, -53
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ygdept_b
+		ShadowStart: 3
+	damaged-idle: ygdept_b
+		Start: 2
+		ShadowStart: 4
+	idle-normal: ygdept
+		ShadowStart: 3
+	damaged-idle-normal: ygdept
+		Start: 2
+		ShadowStart: 4
+	bib: ygdeptbb
+		ShadowStart: 3
+		ZOffset: -512
+	damaged-bib: ygdeptbb
+		Start: 1
+		ShadowStart: 2
+	make: ytdeptmk
+		Length: 24
+		ShadowStart: 24
+	repair: ygdept_c
+		Length: 32
+		ShadowStart: 46
+		Tick: 120
+	damaged-repair: ygdept_c
+		Start: 23
+		Length: 23
+		ShadowStart: 69
+		Tick: 120
+	icon: yfixicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yadome:
 	Inherits@MC: ^MindControllable
 	Defaults:
@@ -725,6 +768,14 @@ yaweab:
 	Defaults:
 		FlipX: true
 		Offset: 30,-60
+	icon:
+		FlipX: false
+
+yadepb:
+	Inherits: yadept
+	Defaults:
+		FlipX: true
+		Offset: 15,-53
 	icon:
 		FlipX: false
 
