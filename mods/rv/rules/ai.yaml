@@ -267,50 +267,102 @@ Player:
 					Against: Ally
 					Types: Ground, Water
 					Attractiveness: -20
+			psipsychicreveal:
+				OrderName: psipsychicreveal
+				MinimumAttractiveness: 5
+				IgnoreVisibility: true
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			psipsychicdomination:
+				OrderName: PsiPsychicDomination
+				MinimumAttractiveness: 250
+				Types: Ground
+				IgnoreVisibility: true
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 7c0
+				Consideration@2:
+					Against: Enemy
+					Types: Ground, Water
+					Attractiveness: 10
+					TargetMetric: Health
+					CheckRadius: 6c768
+				Consideration@3:
+					Against: Ally
+					Types: Ground, Water
+					Attractiveness: -20
 	BaseBuilderBotModule@test:
 		RequiresCondition: enable-test-ai
-		BuildingQueues: Building.Allies, Building.Soviets
-		DefenseQueues: Support.Allies, Support.France, Support.Soviets
+		BuildingQueues: Building.Allies, Building.Soviets, Building.Yuri
+		DefenseQueues: Support.Allies, Support.France, Support.Soviets, Support.Yuri
 		MinimumExcessPower: 60
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 3
-		ConstructionYardTypes: gacnst, nacnst
-		RefineryTypes: garefn, narefn
-		PowerTypes: gapowr, napowr, nanrct
-		BarracksTypes: gapile, nahand
-		VehiclesFactoryTypes: gaweap, naweap
-		ProductionTypes: gapile, nahand, gaweap, naweap, gaairc #, naheli
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		RefineryTypes: garefn, narefn, yarefn
+		PowerTypes: gapowr, napowr, nanrct, yapowr
+		BarracksTypes: gapile, nahand, yabrck
+		VehiclesFactoryTypes: gaweap, naweap, yaweap
+		ProductionTypes: gapile, nahand, yabrck, gaweap, naweap, yaweap, gaairc #, naheli
 		BuildingLimits:
 			garefn: 4
 			narefn: 4
+			yarefn: 4
 			gapowr: 8
 			napowr: 8
 			nanrct: 1
+			yapowr: 8
 			gapile: 2
 			nahand: 2
+			yabrck: 2
 			gaweap: 3
 			naweap: 3
+			yaweap: 3
 			# gadept: 1
 			# nadept: 1
+			# yadept: 1
 			gaairc: 1
 			# naheli: 1
 			naradr: 1
+			yadome: 1
 			gatech: 1
 			natech: 1
+			yatech: 1
 			gaspysat: 1
-			napsis: 1
+			yapsis: 1
+			naprop: 1
 			gagap: 1
+			gaweat: 2
+			namisl: 2
+			yappet: 2
 		BuildingFractions:
 			garefn: 60
 			narefn: 60
+			yarefn: 60
 			gapowr: 70
 			napowr: 50
 			nanrct: 20
+			yapowr: 70
 			gapile: 40
 			nahand: 40
+			yabrck: 40
 			gaweap: 20
 			naweap: 20
+			yaweap: 20
 			# gadept: 1
 			# nadept: 1
 			gaairc: 10
@@ -318,20 +370,26 @@ Player:
 			naradr: 10
 			gatech: 20
 			natech: 20
+			yatech: 20
 			gaorep: 10
 			naindp: 10
+			yaclon: 10
 			gaspysat: 1
-			napsis: 1
+			yapsis: 1
 			gapill: 20
 			nalasr: 20
+			yaggun: 28
 			nasam: 8
 			naflak: 8
 			tesla: 8
 			atesla: 8
+			yapsyt: 8
 			gtgcan: 2
 			gagap: 1
-			namisl: 2
+			naprop: 1
 			gaweat: 2
+			namisl: 2
+			yappet: 2
 	PlugSpawnerBotModule@test:
 		RequiresCondition: enable-test-ai && powerplug
 		Plug: gapowrup
@@ -349,24 +407,26 @@ Player:
 		SquadSize: 5
 		RushAttackScanRadius: 30
 		ProtectUnitScanRadius: 25
-		ExcludeFromSquadsTypes: cmin, harv, bpln, dog, amcv, smcv
-		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred
-		ConstructionYardTypes: gacnst, nacnst
+		ExcludeFromSquadsTypes: cmin, harv, slav, bpln, dog, amcv, smcv, ymcv
+		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, bsub
+		ConstructionYardTypes: gacnst, nacnst, yacnst
 	McvManagerBotModule@test:
 		RequiresCondition: enable-test-ai
-		McvTypes: amcv, smcv
-		ConstructionYardTypes: gacnst, nacnst
-		McvFactoryTypes: gaweap, naweap
+		McvTypes: amcv, smcv, pcv
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		McvFactoryTypes: gaweap, naweap, yaweap
 	UnitBuilderBotModule@test:
 		RequiresCondition: enable-test-ai
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Soviets, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Vietnam, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Ship.Allies, Ship.Soviets, Power.Allies, Power.Soviets
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Vietnam, Vehicle.Yuri, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Yuri, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
 		UnitsToBuild:
 			e1: 180
 			e2: 180
+			init: 180
 			dog: 2
 			flakt: 20
 			ggi: 20
 			shk: 20
+			brute: 20
 			gren: 7
 			ivan: 5
 			ghost: 4
@@ -377,13 +437,18 @@ Player:
 			tany: 2
 			boris: 2
 			yuri: 1
+			yuripsi: 1
 			cmin: 20
 			harv: 20
+			slav: 40
 			htnk: 100
-			htk: 40
 			mtnk: 100
+			ltnk: 100
+			htk: 40
 			fv: 40
+			ytnk: 40
 			dron: 2
+			robo: 2
 			v3: 10
 			sref: 20
 			mgtk: 20
@@ -391,6 +456,8 @@ Player:
 			tnkd: 30
 			ttnk: 30
 			ftnk: 20
+			tele: 10
+			mind: 10
 			orca: 5
 			beag: 2
 			fortress: 2
@@ -407,11 +474,15 @@ Player:
 			commanders_power.parabombs.3: 1
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
+			commanders_power.gatling_training: 1
+			commanders_power.psychic_reveal: 1
 		UnitLimits:
 			dog: 4
 			cmin: 8
 			harv: 8
+			slav: 20
 			dron: 1
+			robo: 1
 			orca: 3
 			beag: 1
 			fortress: 2
