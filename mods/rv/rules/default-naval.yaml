@@ -22,13 +22,13 @@
 		TurnSpeed: 5
 		Speed: 90
 		Locomotor: heavyamphibious
-		RequiresCondition: !notmobile && !chronodisable && !emp && !squid && !beinginfected
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
 	Hovers:
 		Ticks: 10
 		BobDistance: -64
 		InitialHeight: 384
 		# PauseOnCondition: chronodisable
-		RequiresCondition: !emp && !squid
+		RequiresCondition: !emp && !magnefreeze && !squid
 	Guard:
 		Voice: Move
 	RevealsShroud:
@@ -47,10 +47,10 @@
 		TerrainTypes: Water
 		Condition: in_water
 	KillsSelf@LowPowerOnWater:
-		RequiresCondition: emp && in_water
+		RequiresCondition: (emp || magnefreeze) && in_water
 	Repairable:
 		Voice: Move
-		RepairActors: gadept, nadept, caoutp
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	Cargo:
 		Types: Infantry, Garrisoner, Vehicle
 		MaxWeight: 12

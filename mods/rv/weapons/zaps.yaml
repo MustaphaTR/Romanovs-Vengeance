@@ -451,7 +451,7 @@ MagneShake:
 	ReloadDelay: 110
 	Range: 10c0
 	Report: vmagat2a.wav
-	ValidTargets: Ground, Structure
+	ValidTargets: Ground, MagneFreezable, Structure
 	Projectile: AreaBeam
 		Speed: 0c512
 		Duration: 111
@@ -468,8 +468,31 @@ MagneShake:
 		Damage: 80
 		AffectsParent: false
 		ValidTargets: Structure
+	Warhead@2Dam: TargetDamage
+		Damage: 0
+		ValidTargets: Ground, MagneFreezable, Structure
 
 MagneShakeE:
 	Inherits: MagneShake
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
+
+MagneFreeze:
+	ReloadDelay: 110
+	Range: 10c0
+	Report: vmagat1a.wav
+	ValidTargets: Ground, MagneFreezable, Structure
+	Projectile: AreaBeam
+		Speed: 0c512
+		Duration: 111
+		DamageInterval: 1
+		Width: 384
+		Shape: Flat
+		ZOffset: 2047
+		BeyondTargetRange: 0c256
+		TrackTarget: true
+		Color: FF50F500
+	Warhead@1Con: GrantExternalCondition
+		Condition: magnefreeze
+		Duration: 2
+		Range: 0c128

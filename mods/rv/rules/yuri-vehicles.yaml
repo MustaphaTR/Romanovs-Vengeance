@@ -222,7 +222,7 @@ tele:
 		Queue: Vehicle.Yuri
 		BuildPaletteOrder: 70
 		Prerequisites: yatech
-		Description: Long range magnetic field generator.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
+		Description: Long range magnetic field generator.\nFreezes vehicles and damages structures.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 75
 		TurnSpeed: 5
@@ -248,6 +248,9 @@ tele:
 		Weapon: MagneShakeE
 		LocalOffset: 512,0,1024
 		RequiresCondition: rank-elite
+	Armament@secondary:
+		Weapon: MagneFreeze
+		LocalOffset: 512,0,1024
 	AttackTurreted:
 		Voice: Attack
 	AutoTarget:

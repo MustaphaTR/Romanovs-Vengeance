@@ -111,7 +111,7 @@ dron:
 	Mobile:
 		Speed: 150
 		TurnSpeed: 15
-		RequiresCondition: !attack-cooldown && !chronodisable && !emp
+		RequiresCondition: !attack-cooldown && !chronodisable && !emp && !magnefreeze
 	Health:
 		HP: 100
 	Armor:
@@ -200,7 +200,7 @@ htk:
 		Speed: 120
 		TurnSpeed: 5
 		Locomotor: tracked
-		RequiresCondition: !notmobile && !chronodisable && !emp && !beingterrordroned
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned
 	Health:
 		HP: 250
 	Armor:
@@ -623,7 +623,7 @@ deva:
 		Speed: 90
 		TurnSpeed: 4
 		Locomotor: omnicrusher
-		RequiresCondition: !chronodisable && !emp && !beingterrordroned && !overload
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !overload
 	-Crushable:
 	SelfHealing:
 		PercentageStep: 1

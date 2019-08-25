@@ -1472,6 +1472,7 @@
 	Inherits@13: ^AffectedByLeaflets
 	Inherits@14: ^AffectedByPropaganda
 	Inherits@15: ^AffectedByChronoBoost
+	Inherits@16: ^DisabledByMagnetron
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -1485,7 +1486,7 @@
 		Voice: Move
 		TurnSpeed: 5
 		Locomotor: wheeled
-		RequiresCondition: !chronodisable && !emp && !beingterrordroned
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -1767,6 +1768,7 @@
 	Inherits@12: ^AffectedByLeaflets
 	Inherits@13: ^AffectedByPropaganda
 	Inherits@14: ^AffectedByChronoBoost
+	Inherits@15: ^DisabledByMagnetron
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -1780,7 +1782,7 @@
 		Voice: Move
 		Locomotor: naval
 		TurnSpeed: 5
-		RequiresCondition: !chronodisable && !emp && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha
@@ -2054,3 +2056,12 @@
 		Color: 0088FF
 	ExternalCondition@emp:
 		Condition: emp
+
+^DisabledByMagnetron:
+	WithColoredOverlay@MagneFreeze:
+		RequiresCondition: magnefreeze
+		Palette: magnefreeze
+	Targetable@MagneFreeze:
+		TargetTypes: MagneFreezable
+	ExternalCondition@MagneFreeze:
+		Condition: magnefreeze
