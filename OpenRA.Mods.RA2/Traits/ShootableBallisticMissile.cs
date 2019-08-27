@@ -176,13 +176,13 @@ namespace OpenRA.Mods.RA2.Traits
 
 		#region Implement IMove
 
-		public Activity MoveTo(CPos cell, int nearEnough)
-		{
+		public Activity MoveTo(CPos cell, int nearEnough, Color? targetLineColor = null)
+        {
 			return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
 		}
 
-		public Activity MoveTo(CPos cell, Actor ignoredActor)
-		{
+		public Activity MoveTo(CPos cell, Actor ignoredActor, Color? targetLineColor = null)
+        {
 			return new ShootableBallisticMissileFly(self, Target.FromCell(self.World, cell));
 		}
 
@@ -204,7 +204,7 @@ namespace OpenRA.Mods.RA2.Traits
 			return null;
 		}
 
-		public Activity MoveIntoWorld(Actor self, CPos cell, SubCell subCell = SubCell.Any)
+		public Activity MoveIntoWorld(Actor self, int delay = 0)
 		{
 			return null;
 		}

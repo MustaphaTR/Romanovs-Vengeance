@@ -164,8 +164,8 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!order.Queued)
 				self.CancelActivity();
 
-			self.SetTargetLine(order.Target, Color.Green);
 			self.QueueActivity(new EnterGarrison(self, order.Target));
+			self.ShowTargetLines();
 		}
 
 		public bool Reserve(Actor self, Garrisonable garrison)

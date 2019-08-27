@@ -128,6 +128,9 @@ function Check-Command
 	{
 		Write-Host "Checking for explicit interface violations..." -ForegroundColor Cyan
 		Invoke-Expression "$utilityPath $modID --check-explicit-interfaces"
+
+		Write-Host "Checking for incorrect conditional trait interface overrides..." -ForegroundColor Cyan
+		Invoke-Expression "$utilityPath $modID --check-conditional-trait-interface-overrides"
 	}
 }
 

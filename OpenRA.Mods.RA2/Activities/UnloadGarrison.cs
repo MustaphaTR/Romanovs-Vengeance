@@ -79,19 +79,19 @@ namespace OpenRA.Mods.RA2.Activities
 
 			garrison.Unload(self);
 			self.World.AddFrameEndTask(w =>
-			{
-				if (actor.Disposed)
-					return;
+            {
+                if (actor.Disposed)
+                    return;
 
-				var move = actor.Trait<IMove>();
-				var pos = actor.Trait<IPositionable>();
+                var move = actor.Trait<IMove>();
+                var pos = actor.Trait<IPositionable>();
 
-				actor.CancelActivity();
-				pos.SetVisualPosition(actor, spawn);
-				actor.QueueActivity(move.MoveIntoWorld(actor, exitSubCell.Value.First, exitSubCell.Value.Second));
-				actor.SetTargetLine(Target.FromCell(w, exitSubCell.Value.First, exitSubCell.Value.Second), Color.Green, false);
-				w.Add(actor);
-			});
+                pos.SetPosition(self, exitSubCell.Value.First, exitSubCell.Value.Second);
+                pos.SetVisualPosition(actor, spawn);
+
+                actor.CancelActivity();
+                w.Add(actor);
+            });
 
 			if (!unloadAll || garrison.IsEmpty(self))
 				return true;

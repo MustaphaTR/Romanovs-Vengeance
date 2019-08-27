@@ -237,7 +237,7 @@ namespace OpenRA.Mods.RA2.Traits
 				var location = self.World.Map.CellContaining(centerPosition + spawnOffset);
 
 				var mv = slave.Trait<IMove>();
-				slave.QueueActivity(mv.MoveIntoWorld(slave, location));
+				slave.QueueActivity(mv.MoveIntoWorld(slave));
 
 				// Move to rally point if any.
 				if (rallyPoint != null)

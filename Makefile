@@ -35,7 +35,7 @@ WHITELISTED_MOD_ASSEMBLIES = "$(shell cat user.config mod.config 2> /dev/null | 
 
 MANIFEST_PATH = "mods/$(MOD_ID)/mod.yaml"
 HAS_LUAC = $(shell command -v luac 2> /dev/null)
-LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua')
+LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua' 2> /dev/null)
 
 MSBUILD = msbuild -verbosity:m -nologo
 
@@ -153,6 +153,8 @@ check: utility
 	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-runtime-assemblies $(WHITELISTED_OPENRA_ASSEMBLIES) $(WHITELISTED_THIRDPARTY_ASSEMBLIES) $(WHITELISTED_CORE_ASSEMBLIES) $(WHITELISTED_MOD_ASSEMBLIES)
 	@echo "Checking for explicit interface violations..."
 	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-explicit-interfaces
+	@echo "Checking for incorrect conditional trait interface overrides..."
+	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-conditional-trait-interface-overrides
 
 test: utility
 	@echo "Testing $(MOD_ID) mod MiniYAML..."

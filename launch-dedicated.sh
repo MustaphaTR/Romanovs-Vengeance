@@ -5,8 +5,8 @@
 #  Read the file to see which settings you can override
 
 set -e
-command -v python >/dev/null 2>&1 || { echo >&2 "This script requires python."; exit 1; }
-command -v mono >/dev/null 2>&1 || { echo >&2 "This script requires mono."; exit 1; }
+command -v python >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires python."; exit 1; }
+command -v mono >/dev/null 2>&1 || { echo >&2 "The OpenRA mod template requires mono."; exit 1; }
 
 require_variables() {
 	missing=""

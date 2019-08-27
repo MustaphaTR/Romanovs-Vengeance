@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.Common;
@@ -21,7 +22,7 @@ namespace OpenRA.Mods.RA2.Activities
 {
 	class EnterGarrison : Activity
 	{
-		enum EnterState { Approaching, Waiting, Entering, Exiting }
+		enum EnterState { Approaching, Waiting, Entering, Exiting, Finished }
 		readonly IMove move;
 		readonly Color? targetLineColor;
 		readonly Garrisoner garrisoner;
@@ -106,10 +107,6 @@ namespace OpenRA.Mods.RA2.Activities
 			if (!IsCanceling && useLastVisibleTarget && lastState == EnterState.Entering)
 				Cancel(self, true);
 
-			// Update target lines if required
-			if (useLastVisibleTarget != oldUseLastVisibleTarget && targetLineColor.HasValue)
-				self.SetTargetLine(useLastVisibleTarget ? lastVisibleTarget : target, targetLineColor.Value, false);
-
 			// We need to wait for movement to finish before transitioning to
 			// the next state or next activity
 			if (moveActivity != null)
@@ -185,15 +182,24 @@ namespace OpenRA.Mods.RA2.Activities
 						}
 
 						lastState = EnterState.Exiting;
-						moveActivity = ActivityUtils.RunActivity(self, move.MoveIntoWorld(self, self.Location));
 						break;
 					}
 
 				case EnterState.Exiting:
-					return true;
+					{
+						QueueChild(move.MoveIntoWorld(self));
+						lastState = EnterState.Finished;
+						return false;
+					}
 			}
 
-			return false;
+			return true;
+		}
+
+		public override IEnumerable<TargetLineNode> TargetLineNodes(Actor self)
+		{
+			if (targetLineColor != null)
+				yield return new TargetLineNode(useLastVisibleTarget ? lastVisibleTarget : target, targetLineColor.Value);
 		}
 
 		public override void Cancel(Actor self, bool keepQueue = false)

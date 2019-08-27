@@ -88,7 +88,7 @@ namespace OpenRA.Mods.RA2.Traits
 		int respawnTicks = 0;
 
 		public AirstrikeMaster(ActorInitializer init, AirstrikeMasterInfo info)
-            : base(init, info)
+			: base(init, info)
 		{
 			Info = info;
 		}
@@ -247,8 +247,8 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			// Set clock so that regen happens.
 			if (respawnTicks <= 0) // Don't interrupt an already running timer!
-                respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, ReloadModifiers.Select(rm => rm.GetReloadModifier()));
-        }
+				respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, ReloadModifiers.Select(rm => rm.GetReloadModifier()));
+		}
 
 		AirstrikeSlaveEntry GetLaunchable()
 		{
@@ -289,7 +289,7 @@ namespace OpenRA.Mods.RA2.Traits
 				}
 
 			if (slaveEntry == null)
-				throw new InvalidOperationException("An actor that isn't my slave entered me?");
+				throw new InvalidOperationException("An actor ({0} {1}) that isn't my slave entered me?".F(a.Info.Name, a.ActorID));
 
 			slaveEntry.IsLaunched = false;
 
@@ -317,8 +317,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 					// If there's something left to spawn, restart the timer.
 					if (SelectEntryToSpawn(slaveEntries) != null)
-                        respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, ReloadModifiers.Select(rm => rm.GetReloadModifier()));
-                }
+						respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, ReloadModifiers.Select(rm => rm.GetReloadModifier()));
+				}
 			}
 
 			// Rearm

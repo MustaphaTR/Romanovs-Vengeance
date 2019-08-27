@@ -56,17 +56,17 @@ namespace OpenRA.Mods.RA2.Traits
 	public class Infector : ConditionalTrait<InfectorInfo>, IIssueOrder, IResolveOrder, IOrderVoice
 	{
 		public Infector(InfectorInfo info)
-            : base(info) { }
+			: base(info) { }
 
 		public IEnumerable<IOrderTargeter> Orders
 		{
 			get
-            {
-                if (IsTraitDisabled)
-                    yield break;
+			{
+				if (IsTraitDisabled)
+					yield break;
 
-                yield return new InfectionOrderTargeter(Info);
-            }
+				yield return new InfectionOrderTargeter(Info);
+			}
 		}
 
 		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
@@ -85,8 +85,8 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!order.Queued)
 				self.CancelActivity();
 
-			self.SetTargetLine(order.Target, Color.Red);
 			self.QueueActivity(new Infect(self, order.Target, this));
+			self.ShowTargetLines();
 		}
 
 		public string VoicePhraseForOrder(Actor self, Order order)

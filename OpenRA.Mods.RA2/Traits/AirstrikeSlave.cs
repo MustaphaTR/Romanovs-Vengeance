@@ -40,7 +40,7 @@ namespace OpenRA.Mods.RA2.Traits
 		AirstrikeMaster spawnerMaster;
 
 		public AirstrikeSlave(ActorInitializer init, AirstrikeSlaveInfo info)
-            : base(init, info)
+			: base(init, info)
 		{
 			Info = info;
 			ammoPools = init.Self.TraitsImplementing<AmmoPool>().ToArray();
