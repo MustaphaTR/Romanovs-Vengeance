@@ -452,6 +452,7 @@ MagneShake:
 	Range: 10c0
 	Report: vmagat2a.wav
 	ValidTargets: Ground, MagneFreezable, Structure
+	InvalidTargets: Infantry
 	Projectile: AreaBeam
 		Speed: 0c512
 		Duration: 111
@@ -471,6 +472,7 @@ MagneShake:
 	Warhead@2Dam: TargetDamage
 		Damage: 0
 		ValidTargets: Ground, MagneFreezable, Structure
+		InvalidTargets: Infantry
 
 MagneShakeE:
 	Inherits: MagneShake
@@ -482,6 +484,7 @@ MagneFreeze:
 	Range: 10c0
 	Report: vmagat1a.wav
 	ValidTargets: Ground, MagneFreezable, Structure
+	InvalidTargets: Infantry
 	Projectile: AreaBeam
 		Speed: 0c512
 		Duration: 111
@@ -496,3 +499,4 @@ MagneFreeze:
 		Condition: magnefreeze
 		Duration: 2
 		Range: 0c128
+		ValidStances: Neutral, Enemy

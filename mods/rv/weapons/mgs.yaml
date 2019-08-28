@@ -414,6 +414,15 @@ AAGatling:
 		Damage: 25
 		ValidTargets: Air
 
+AGGattCann:
+	Inherits: ^Gatling
+	ReloadDelay: 16
+	Range: 6c0
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+		ValidTargets: Ground, Water
+
 AAGattCann:
 	Inherits: ^Gatling
 	ReloadDelay: 16
@@ -433,6 +442,11 @@ AAGatling2:
 	ReloadDelay: 8
 	Report: vblhatta.wav, vblhattb.wav # vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 
+AGGattCann2:
+	Inherits: AGGattCann
+	ReloadDelay: 8
+	Report: vblhatta.wav, vblhattb.wav # vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+
 AAGattCann2:
 	Inherits: AAGattCann
 	ReloadDelay: 8
@@ -445,6 +459,11 @@ AGGatling3:
 
 AAGatling3:
 	Inherits: AAGatling
+	ReloadDelay: 4
+	Report: iboratta.wav, iborattb.wav # vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+
+AGGattCann3:
+	Inherits: AGGattCann
 	ReloadDelay: 4
 	Report: iboratta.wav, iborattb.wav # vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 

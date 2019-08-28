@@ -548,17 +548,17 @@ yaggun:
 	AttackTurreted:
 		Voice: Attack
 	Armament@ag-0:
-		Weapon: AGGatling
+		Weapon: AGGattCann
 		LocalOffset: 768,240,1024, 768,-240,1024
 		RequiresCondition: !gatling
 		MuzzleSequence: muzzle
 	Armament@ag-1:
-		Weapon: AGGatling2
+		Weapon: AGGattCann2
 		LocalOffset: 768,240,1024, 768,-240,1024
 		RequiresCondition: gatling == 1
 		MuzzleSequence: muzzle-1
 	Armament@ag-2:
-		Weapon: AGGatling3
+		Weapon: AGGattCann3
 		LocalOffset: 768,240,1024, 768,-240,1024
 		RequiresCondition: gatling >= 2
 		MuzzleSequence: muzzle-2
@@ -582,9 +582,9 @@ yaggun:
 		RequiredShotsPerInstance: 16
 		MaximumInstances: 2
 		RevokeDelay: 25
-		RevokeAll: true
+		RevokeAll: false
 		IsCyclic: false
-		RevokeOnNewTarget: true
+		RevokeOnNewTarget: false
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:
@@ -672,7 +672,7 @@ yappet:
 			1: yappet
 		Icons:
 			1: domination
-		ChargeInterval: 4500
+		ChargeInterval: 9000
 		Descriptions:
 			1: Psychic Domination
 		LongDescs:

@@ -573,39 +573,30 @@ PsychicDomination:
 			Heavy: 0
 			Wood: 100
 			Steel: 100
-			Concrete: 20 # 6
+			Concrete: 40 # 12
 			Drone: 0
 			Rocket: 0
 		AffectsParent: true
 		DamageTypes: PsychicDeath
-		Delay: 55
+		Delay: 40
 
 PsychicJab:
 	Inherits: ^MG
 	ReloadDelay: 15
-	Range: 4c512
+	Range: 4c0
 	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		Versus:
-			None: 100
-			Flak: 80
-			Plate: 80
-			Light: 50
-			Medium: 25
-			Heavy: 25
-			Wood: 75
-			Steel: 50
-			Concrete: 25
-			Drone: 100
-			Rocket: 100
+			Wood: 35
+			Concrete: 30
 		DamageTypes: Prone50Percent, TriggerProne, FlameDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: largefire
 
 PsychicJabE:
 	Inherits: PsychicJab
-	Range: 6c0
+	Range: 5c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 	Warhead@2Eff: CreateEffect
@@ -619,11 +610,12 @@ UCPsychicJab:
 
 UCPsychicJabE:
 	Inherits: PsychicJabE
+	Range: 6c0
 	Projectile: InstantHit
 		Blockable: false
 
 CRPsychicJab:
 	Inherits: PsychicJab
-	Range: 6c512
+	Range: 6c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
