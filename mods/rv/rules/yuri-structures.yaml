@@ -142,8 +142,9 @@ yarefn:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 30
 		Prerequisites: power
-		Description: Gathers and processes ore.
+		Description: Gathers and processes ore.\nComes with 2 slaves.
 	Selectable:
+		Class: yarefn
 		Bounds: 70, 50, 0, -20
 	Valued
 		Cost: 1500
@@ -160,7 +161,8 @@ yarefn:
 		Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
-	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@yarefn:
+		Prerequisite: yarefn
 	ProvidesPrerequisite@refinery:
 		Prerequisite: refinery
 	Building:
@@ -202,6 +204,8 @@ yarefn:
 		Voice: Attack
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	RenderSprites:
+		Image: yarefn
 	RenderVoxels:
 		Image: smin
 		Scale: 11.7
@@ -213,8 +217,22 @@ yarefn:
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	FreeActor@1:
+		Actor: slav
+		SpawnOffset: 1,1
+		Facing: 128
+	FreeActor@2:
+		Actor: slav
+		SpawnOffset: 1,1
+		Facing: 128
 	Voiced:
 		VoiceSet: SlaveMinerVoice
+
+yarefn.noslave:
+	Inherits: yarefn
+	-Buildable:
+	-FreeActor@1:
+	-FreeActor@2:
 
 yaweap:
 	Inherits: ^WarFactory
