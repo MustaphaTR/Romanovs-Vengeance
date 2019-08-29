@@ -500,3 +500,21 @@ MagneFreeze:
 		Duration: 2
 		Range: 0c128
 		ValidStances: Neutral, Enemy
+
+DiskLaser:
+	Inherits: Comet
+	ReloadDelay: 80
+	Range: 7c0
+	Report: vfloatta.wav
+	Projectile: LaserZap
+		Width: 50
+		Duration: 15
+		Color: aa7990
+		UsePlayerColor: false
+	Warhead@1Dam: SpreadDamage
+		Damage: 90
+		DamageTypes: RadiationDeath
+	-Warhead@2Shr:
+	-Warhead@2Eff:
+	-Warhead@3EffWater:
+	-Warhead@4Smu:

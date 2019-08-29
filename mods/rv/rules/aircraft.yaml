@@ -66,7 +66,6 @@ shad:
 		AttackType: Hover
 		PauseOnCondition: emp || chronodisable
 	Aircraft:
-		LandWhenIdle: true
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
 		TurnSpeed: 10
@@ -868,7 +867,6 @@ schp:
 		PauseOnCondition: (!deployed && !undeployed) || (undeployed && !cruising) || emp || chronodisable
 	Aircraft:
 		CanForceLand: false
-		LandWhenIdle: false
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
 		TurnSpeed: 10
@@ -1013,6 +1011,89 @@ bplnhusk:
 	FallsToEarth:
 		Explosion: UnitExplode
 
+disk:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: Floating Disc
+	Buildable:
+		Queue: Aircraft.Yuri
+		BuildPaletteOrder: 30
+		Prerequisites: yatech
+		Description: Floating Disk armed with lasers.\n Strong vs Infantry, Aircraft\n Weak vs Vehicles
+	Aircraft:
+		TurnSpeed: 255
+		Speed: 200
+		AltitudeVelocity: 200
+	Selectable:
+		Bounds: 78, 43, 0, -15
+	Health:
+		HP: 600
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+		Type: CenterPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Types: SatelliteScan
+		Type: GroundPosition
+	Armament@primary:
+		Weapon: DiskLaser
+	#Armament@second:
+	#	Weapon: DiskDrain
+	AttackAircraft:
+		Voice: Attack
+		AttackType: Hover
+		FacingTolerance: 128
+	Voiced:
+		VoiceSet: FloatingDiskVoice
+	AutoTarget:
+	Turreted:
+		TurnSpeed: 255
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	HitShape:
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+
+diskhusk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Floating Disk
+	Aircraft:
+		TurnSpeed: 10
+		Speed: 200
+	FallsToEarth:
+		Explosion: PlaneExplode
+	RevealsShroud:
+		Range: 8c0
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Types: SatelliteScan
+		Type: GroundPosition
+	RevealOnDeath:
+		Radius: 4c0
+		Duration: 50
+	RenderVoxels:
+		Image: disk
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+
 # Custom Aircraft
 hind:
 	Inherits: ^Helicopter
@@ -1054,7 +1135,6 @@ hind:
 		Types: SatelliteScan
 		Type: GroundPosition
 	Aircraft:
-		LandWhenIdle: true
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
 		TurnSpeed: 10

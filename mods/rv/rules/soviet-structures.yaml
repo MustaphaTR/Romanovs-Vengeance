@@ -588,7 +588,6 @@ naheli:
 		Facing: 160
 		ExitCell: 1,1
 		SpawnOffset: -384,128,0
-		MoveIntoWorld: true
 	GrantExternalConditionToProduced:
 		Condition: produced
 	Production:
@@ -1381,9 +1380,9 @@ nasilo:
 	WithResourceLevelOverlay@FILLSTAGE:
 		-RequiresCondition:
 	Capturable:
-		-RequiresCondition:
+		RequiresCondition: !invulnerability
 	Sellable:
-		-RequiresCondition:
+		RequiresCondition: !chronodisable
 
 naprop:
 	Inherits: ^SupportBuilding
@@ -1416,7 +1415,7 @@ naprop:
 		DecorationBounds: 44, 88, -2, -33
 	-WithMakeAnimation:
 	Sellable:
-		-RequiresCondition:
+		RequiresCondition: !chronodisable
 	ProximityExternalCondition@propaganda_tower:
 		Condition: propaganda_tower
 		Range: 6c0
