@@ -573,6 +573,22 @@
 	-Capturable@PERMAMC:
 	-ExternalCondition@PERMAMC:
 
+^Berserkable:
+	Berserkable@CHAOS:
+		RequiresCondition: chaos
+	RejectsOrders@CHAOS:
+		RequiresCondition: chaos
+	WithColoredOverlay@CHAOS:
+		Palette: chaos
+		RequiresCondition: chaos
+	TimedConditionBar@CHAOS:
+		Color: 880088
+		Condition: chaos
+	Targetable@CHAOS:
+		TargetTypes: ChaosGasable
+	ExternalCondition@CHAOS:
+		Condition: chaos
+
 ^SquidGrabbable:
 	WithFacingSpriteBody:
 		Name: squid
@@ -1366,6 +1382,7 @@
 ^CivilianInfantry:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Selectable:
 		Bounds: 20, 30, 0, -11
@@ -1564,6 +1581,7 @@
 
 ^CivVehicle:
 	Inherits: ^Vehicle
+	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	OwnerLostAction:
 		Action: ChangeOwner

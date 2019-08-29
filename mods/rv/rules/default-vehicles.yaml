@@ -1,5 +1,6 @@
 ^ConstructionVehicle:
 	Inherits: ^Vehicle
+	Inherits@CHAOS: ^Berserkable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
@@ -62,6 +63,7 @@
 
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
+	Inherits@CHAOS: ^Berserkable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
@@ -119,6 +121,7 @@
 ^MainBattleTank:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent

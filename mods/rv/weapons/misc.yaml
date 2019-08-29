@@ -619,3 +619,22 @@ CRPsychicJab:
 	Range: 6c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
+
+ChaosAttack:
+	Range: 3c0
+	ReloadDelay: 30
+	Report: vchaatta.wav
+	ValidTargets: ChaosGasable
+	Projectile: InstantExplode
+	Warhead@1Con: GrantExternalCondition
+		ValidTargets: ChaosGasable
+		# ValidStances: Enemy, Neutral
+		Condition: chaos
+		Range: 3c0
+		Duration: 200
+	Warhead@2Dam: TargetDamage
+		Damage: 0
+		ValidTargets: ChaosGasable
+		# ValidStances: Enemy, Neutral
+	Warhead@3Eff: CreateEffect
+		Explosions: chaosgas

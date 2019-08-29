@@ -111,6 +111,7 @@ ltnk:
 ytnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -208,9 +209,56 @@ ytnk:
 		Prerequisites: vetytnk
 	HitShape:
 
+caos:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: Chaos Drone
+	Buildable:
+		Queue: Vehicle.Yuri
+		BuildPaletteOrder: 40
+		Prerequisites: ~techlevel.2
+		Description: Drone capable of releasing gas that causes enemy units to fire random units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+	Mobile:
+		Speed: 120
+		TurnSpeed: 10
+	Health:
+		HP: 200
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armament@primary:
+		Weapon: ChaosAttack
+		LocalOffset: 0,0,64
+	AttackFrontal:
+		Voice: Attack
+	RenderSprites:
+	Selectable:
+		Bounds: 52, 48, 0, -4
+	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: ChaosDroneVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	HitShape:
+
 tele:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
