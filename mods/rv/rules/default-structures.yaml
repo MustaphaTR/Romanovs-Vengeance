@@ -58,6 +58,21 @@
 		DeployCursor: undeploy
 		PauseOnCondition: chronodisable
 		RequiresCondition: factundeploy && !build-incomplete
+	TransformsIntoMobile:
+		RequiresCondition: factundeploy && !build-incomplete
+		Locomotor: tracked
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoRepairable:
+		RequiresCondition: factundeploy && !build-incomplete
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoPassenger:
+		RequiresCondition: factundeploy && !build-incomplete
+		CargoType: Vehicle
+		Voice: Move
+		RequiresForceMove: true
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
@@ -103,6 +118,21 @@
 		DeployCursor: undeploy
 		PauseOnCondition: chronodisable
 		RequiresCondition: factundeploy && !build-incomplete
+	TransformsIntoMobile:
+		RequiresCondition: factundeploy && !build-incomplete
+		Locomotor: tracked
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoRepairable:
+		RequiresCondition: factundeploy && !build-incomplete
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoPassenger:
+		RequiresCondition: factundeploy && !build-incomplete
+		CargoType: Vehicle
+		Voice: Move
+		RequiresForceMove: true
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
