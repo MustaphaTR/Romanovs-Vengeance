@@ -668,6 +668,54 @@ yaggun:
 	Power:
 		Amount: -50
 
+natbnk:
+	Inherits: ^SupportBuilding
+	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Support.Yuri
+		BuildPaletteOrder: 50
+		Prerequisites: yaweap, ~techlevel.1
+		Description: Static defense with fireports for a vehicle to garrison.
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: Tank Bunker
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Selectable:
+		Bounds: 64, 50, 0, -5
+		DecorationBounds: 94, 94, 0, -10
+	Health:
+		HP: 1000
+	Armor:
+		Type: Steel
+	Cargo:
+		Types: GarrisonerVehicle
+		MaxWeight: 3
+		PipCount: 3
+		EjectOnDeath: true
+		LoadedCondition: loaded
+	-SpawnActorsOnSell@allies:
+	-SpawnActorsOnSell@soviets:
+	WithSpriteBody:
+	WithIdleOverlay@Garrisoned:
+		Sequence: idle-garrisoned
+		RequiresCondition: loaded
+	AttackGarrisoned:
+		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
+		PortYaws: 0, 176, 341, 512, 682, 853
+		PortCones: 88, 88, 88, 88, 88, 88
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+
 yapsyt:
 	Inherits: ^SupportBuilding
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown

@@ -209,13 +209,14 @@ e1:
 	Health:
 		HP: 125
 	Mobile:
-		RequiresCondition: !chronodisable && undeployed
+		RequireForceMoveCondition: !undeployed
 	Garrisoner:
 		Voice: Move
 		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
 		PipType: Green
+		RequireForceMoveCondition: !undeployed
 	RevealsShroud:
 		Range: 5c0
 	RevealsShroudToIntelligenceOwner:
@@ -269,6 +270,7 @@ e1:
 		SmartDeploy: True
 		Facing: 92
 		Voice: Deploy
+		UndeployOnMove: true
 		DeploySounds: igidepa.wav
 		UndeploySounds: igidepb.wav
 		PauseOnCondition: chronodisable
@@ -310,6 +312,7 @@ e1:
 		Turrets: deploy
 		Voice: Attack
 		RequiresCondition: deployed
+		OutsideRangeRequiresForceFire: True
 	GrantConditionOnAttack:
 		Condition: animate-turret
 		RevokeDelay: 10
@@ -369,13 +372,14 @@ ggi:
 	Health:
 		HP: 100
 	Mobile:
-		RequiresCondition: !chronodisable && undeployed
+		RequireForceMoveCondition: !undeployed
 	Garrisoner:
 		Voice: Move
 		PipType: Blue
 		GarrisonType: Garrisoner
 	Passenger:
 		PipType: Blue
+		RequireForceMoveCondition: !undeployed
 	RevealsShroud:
 		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
@@ -481,6 +485,7 @@ ggi:
 		SmartDeploy: True
 		Facing: 92
 		Voice: Deploy
+		UndeployOnMove: true
 		DeploySounds: iggidepa.wav
 		UndeploySounds: iggidepa.wav
 		PauseOnCondition: chronodisable
@@ -522,6 +527,7 @@ ggi:
 		Turrets: deploy
 		Voice: Attack
 		RequiresCondition: deployed
+		OutsideRangeRequiresForceFire: True
 	GrantConditionOnAttack:
 		Condition: animate-turret
 		RevokeDelay: 5

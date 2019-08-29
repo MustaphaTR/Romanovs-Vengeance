@@ -525,6 +525,46 @@ yaggun:
 		Offset: 0,0
 		UseTilesetCode: false
 
+natbnk:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -30
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: natbnkbb
+		Length: 1
+		ShadowStart: 3
+	damaged-idle: natbnkbb
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+	idle-garrisoned: natbnk_b
+		Start: 9
+		Length: 1
+		ShadowStart: 19
+	damaged-idle-garrisoned: natbnk_b
+		Start: 19
+		Length: 1
+		ShadowStart: 29
+	build: natbnk_b
+		Length: 10
+		ShadowStart: 20
+	damaged-build: natbnk_b
+		Start: 10
+		Length: 10
+		ShadowStart: 30
+	make: natbnkmk
+		Length: 10
+		ShadowStart: 10
+	icon: tbnkicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yapsyt:
 	Defaults:
 		Offset: 0, -15
@@ -542,23 +582,23 @@ yapsyt:
 		Start: 1
 		Length: 1
 		ShadowStart: 4
-    idle-top: ygpsyt_a
-        Length: 26
-        ShadowStart: 52
+	idle-top: ygpsyt_a
+		Length: 26
+		ShadowStart: 52
 		UseTilesetCode: false
-    damaged-idle-top: ygpsyt_a
-        Start: 26
-        Length: 26
-        ShadowStart: 78
+	damaged-idle-top: ygpsyt_a
+		Start: 26
+		Length: 26
+		ShadowStart: 78
 		UseTilesetCode: false
-    idle-full: ygpsyt_b
-        Length: 26
-        ShadowStart: 52
+	idle-full: ygpsyt_b
+		Length: 26
+		ShadowStart: 52
 		UseTilesetCode: false
-    damaged-idle-full: ygpsyt_b
-        Start: 26
-        Length: 26
-        ShadowStart: 78
+	damaged-idle-full: ygpsyt_b
+		Start: 26
+		Length: 26
+		ShadowStart: 78
 		UseTilesetCode: false
 	muzzle: yuricntl
 		Length: *
