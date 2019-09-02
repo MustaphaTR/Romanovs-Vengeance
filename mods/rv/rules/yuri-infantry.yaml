@@ -204,6 +204,98 @@ brute:
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
 
+gtrp:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri
+		Prerequisites: yadome, ~techlevel.2
+		BuildPaletteOrder: 60
+		Description: Infantry armed with a heavy gatling cannon.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles.
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 300
+	DeliversCash:
+		Payload: 150
+		PlayerExperience: 15
+		Voice: Move
+	Tooltip:
+		Name: Gatling Trooper
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@ag-0:
+		Weapon: AGGattTrop
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: !gatling
+	Armament@ag-1:
+		Weapon: AGGattTrop2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling == 1
+	Armament@ag-2:
+		Weapon: AGGattTrop3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling >= 2
+	Armament@aa-0:
+		Weapon: AAGattTrop
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: !gatling
+	Armament@aa-1:
+		Weapon: AAGattTrop2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling == 1
+	Armament@aa-2:
+		Weapon: AAGattTrop3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling >= 2
+	GrantConditionOnAttack:
+		Condition: gatling
+		RequiredShotsPerInstance: 16
+		MaximumInstances: 2
+		RevokeDelay: 25
+		RevokeAll: false
+		IsCyclic: false
+		RevokeOnNewTarget: false
+	#	RequiresCondition: !rank-elite
+	# GrantConditionOnAttack@elite:
+	#	Condition: gatling
+	#	RequiredShotsPerInstance: 8
+	#	MaximumInstances: 2
+	#	RevokeDelay: 25
+	#	RevokeAll: true
+	#	IsCyclic: false
+	#	RevokeOnNewTarget: true
+	#	RequiresCondition: rank-elite
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: InitiateVoice
+	ProducibleWithLevel:
+		Prerequisites: vetytnk
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
 virus:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -212,7 +304,7 @@ virus:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Yuri
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: yadome, ~techlevel.2
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
@@ -268,7 +360,7 @@ yuripsi:
 	Inherits: yuri
 	Buildable:
 		Queue: Infantry.Yuri
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		Prerequisites: yatech, ~techlevel.4
 	Valued:
 		Cost: 1000
@@ -280,7 +372,7 @@ yurix:
 	Inherits: yuripr
 	Buildable:
 		Queue: Infantry.Yuri
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: yatech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nMaximum 1 can be trained.
 	Valued:

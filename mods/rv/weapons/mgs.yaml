@@ -381,7 +381,7 @@ UCAKME:
 
 ^Gatling:
 	Inherits: ^MG
-	ReloadDelay: 10
+	ReloadDelay: 16
 	Range: 7c0
 	Burst: 2
 	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav # vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
@@ -398,7 +398,6 @@ UCAKME:
 
 AGGatling:
 	Inherits: ^Gatling
-	ReloadDelay: 16
 	Range: 5c0
 	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
@@ -407,7 +406,6 @@ AGGatling:
 
 AAGatling:
 	Inherits: ^Gatling
-	ReloadDelay: 16
 	Range: 8c0
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
@@ -416,7 +414,6 @@ AAGatling:
 
 AGGattCann:
 	Inherits: ^Gatling
-	ReloadDelay: 16
 	Range: 6c0
 	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
@@ -425,11 +422,28 @@ AGGattCann:
 
 AAGattCann:
 	Inherits: ^Gatling
-	ReloadDelay: 16
 	Range: 12c0
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
+		ValidTargets: Air
+
+AGGattTrop:
+	Inherits: ^Gatling
+	Range: 5c0
+	Burst: 1
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
+		ValidTargets: Ground, Water
+
+AAGattTrop:
+	Inherits: ^Gatling
+	Range: 8c0
+	Burst: 1
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 20
 		ValidTargets: Air
 
 AGGatling2:
@@ -452,6 +466,16 @@ AAGattCann2:
 	ReloadDelay: 8
 	Report: vblhatta.wav, vblhattb.wav # vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 
+AGGattTrop2:
+	Inherits: AGGattTrop
+	ReloadDelay: 8
+	Report: vblhatta.wav, vblhattb.wav # vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+
+AAGattTrop2:
+	Inherits: AAGattTrop
+	ReloadDelay: 8
+	Report: vblhatta.wav, vblhattb.wav # vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
+
 AGGatling3:
 	Inherits: AGGatling
 	ReloadDelay: 4
@@ -469,6 +493,16 @@ AGGattCann3:
 
 AAGattCann3:
 	Inherits: AAGattCann
+	ReloadDelay: 4
+	Report: iboratta.wav, iborattb.wav # vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+
+AGGattTrop3:
+	Inherits: AGGattTrop
+	ReloadDelay: 4
+	Report: iboratta.wav, iborattb.wav # vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+
+AAGattTrop3:
+	Inherits: AAGattTrop
 	ReloadDelay: 4
 	Report: iboratta.wav, iborattb.wav # vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 
