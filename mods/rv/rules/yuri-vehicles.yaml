@@ -392,6 +392,73 @@ mind:
 		ValidStances: None
 	HitShape:
 
+yhtnk:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 1050
+	Tooltip:
+		Name: Heavy Tank
+	Buildable:
+		Queue: Vehicle.Yuri
+		BuildPaletteOrder: 90
+		Description: Heavily armored battle tank.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
+	Mobile:
+		Speed: 60
+		TurnSpeed: 5
+	Health:
+		HP: 600
+	Armor:
+		Type: Heavy
+	Passenger:
+		CargoType: GarrisonerVehicle
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Turreted:
+		TurnSpeed: 5
+	Armament@primary:
+		Weapon: 135mm
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 640,0,512
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 135mmE
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 640,0,512
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 52, 40, 0, -6
+	RenderVoxels:
+	WithVoxelWalkerBody:
+		TickRate: 1
+	WithVoxelTurret:
+	Voiced:
+		VoiceSet: LasherTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+
 expy:
 	Inherits: ^ExpansionVehicle
 	Buildable:
