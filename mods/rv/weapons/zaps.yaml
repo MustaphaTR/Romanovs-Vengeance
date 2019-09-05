@@ -517,4 +517,45 @@ DiskLaser:
 	-Warhead@2Shr:
 	-Warhead@2Eff:
 	-Warhead@3EffWater:
-	-Warhead@4Smu:
+
+DoomLaser:
+	Inherits: Comet
+	ReloadDelay: 100
+	Range: 6c0
+	Report: vfloatta.wav
+	Projectile: LaserZap
+		Duration: 15
+		Width: 100
+		ZOffset: 2047
+		Color: FF000080
+		SecondaryBeam: true
+		SecondaryBeamWidth: 25
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: FFFFFF
+		UsePlayerColor: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c045
+		Damage: 120
+		Versus:
+			None: 40
+			Flak: 40
+			Plate: 30
+			Light: 100
+			Medium: 100
+			Heavy: 75
+			Wood: 55
+			Steel: 50
+			Concrete: 50
+			Drone: 100
+			Rocket: 100
+		DamageTypes: RadiationDeath
+	-Warhead@2Shr:
+	-Warhead@2Eff:
+	-Warhead@3EffWater:
+
+DoomLaserE:
+	Inherits: DoomLaser
+	Range: 7c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 150
+

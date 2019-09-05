@@ -116,7 +116,7 @@ ytnk:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
-		Cost: 600
+		Cost: 700
 	Tooltip:
 		Name: Gatling Tank
 	Buildable:
@@ -215,7 +215,7 @@ caos:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
-		Cost: 800
+		Cost: 500
 	Tooltip:
 		Name: Chaos Drone
 	Buildable:
@@ -224,7 +224,7 @@ caos:
 		Prerequisites: ~techlevel.2
 		Description: Drone capable of releasing gas that causes enemy units to fire random units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Mobile:
-		Speed: 120
+		Speed: 135
 		TurnSpeed: 10
 	Health:
 		HP: 200
@@ -377,12 +377,12 @@ mind:
 	Inherits: ^Vehicle
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
-		Cost: 1750
+		Cost: 2000
 	Tooltip:
 		Name: Master Mind
 	Buildable:
 		Queue: Vehicle.Yuri
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: yatech
 		Description: Heavy vehicle capable of mind controlling 3 enemy units.\nCan crush enemy vehicles.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
 	Mobile:
@@ -451,20 +451,22 @@ yhtnk:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
-		Cost: 1050
+		Cost: 1400
 	Tooltip:
-		Name: Heavy Tank
+		Name: Lazarus Tank
 	Buildable:
 		Queue: Vehicle.Yuri
-		BuildPaletteOrder: 100
-		Description: Heavily armored battle tank.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
+		BuildPaletteOrder: 90
+		Prerequisites: yatech
+		Description: Fast invisible tank designed for ambushes.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
 	Mobile:
-		Speed: 60
-		TurnSpeed: 5
+		Speed: 135
+		TurnSpeed: 10
+		Locomotor: heavytracked
 	Health:
-		HP: 600
+		HP: 200
 	Armor:
-		Type: Heavy
+		Type: Light
 	Passenger:
 		CargoType: GarrisonerVehicle
 	RevealsShroud:
@@ -475,22 +477,25 @@ yhtnk:
 	RevealOnDeath:
 		Radius: 4c0
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 9
+	Cloak:
+		RequiresCondition: !chronodisable && !emp
+		InitialDelay: 25
+		CloakDelay: 100
+		IsPlayerPalette: true
+		UncloakOn: Attack, Damage
 	Armament@primary:
-		Weapon: 135mm
-		Recoil: 87
-		RecoilRecovery: 12
-		LocalOffset: 640,0,512
+		Weapon: DoomLaser
+		LocalOffset: 1024,0,1024
 		RequiresCondition: !rank-elite
 	Armament@elite:
-		Weapon: 135mmE
-		Recoil: 87
-		RecoilRecovery: 12
-		LocalOffset: 640,0,512
+		Weapon: DoomLaserE
+		LocalOffset: 1024,0,1024
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
 	AutoTarget:
+		InitialStance: ReturnFire
 	RenderSprites:
 	Selectable:
 		Bounds: 52, 40, 0, -6
