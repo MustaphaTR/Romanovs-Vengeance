@@ -8,6 +8,9 @@ GrandCannonWeapon:
 		Image: 160mm
 		Blockable: false
 		Speed: 682
+		ContrailLength: 10
+		ContrailColor: FFFFFF
+		ContrailWidth: 0c30
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
 		Spread: 0c512
@@ -375,31 +378,36 @@ CycleMortar:
 	Report: vrobatta.wav
 	Projectile: BulletAS
 		Blockable: false
-		Speed: 384
+		Speed: 192
 		LaunchAngle: 244
+		ContrailLength: 10
+		ContrailColor: FFFFFF
+		ContrailWidth: 0c21
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c196
+		Spread: 0c256
 		Falloff: 100, 75, 50, 25, 0
 		Damage: 50
 		Versus:
+			None: 150
+			Flak: 125
+			Plate: 100
+			Light: 75
+			Medium: 20
+			Heavy: 20
 			Wood: 100
-			Steel: 85
+			Steel: 65
 			Concrete: 90
+			Drone: 100
+			Rocket: 100
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallCrater
 
 CycleMortarE:
 	Inherits: CycleMortar
-	ReloadDelay: 90
 	Burst: 2
 	Warhead@1Dam: SpreadDamage
 		Falloff: 100, 75, 50, 25, 0
-		Damage: 45
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
-			Light: 100
+		Spread: 0c384
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
