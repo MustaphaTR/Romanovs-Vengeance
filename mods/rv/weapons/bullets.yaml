@@ -367,6 +367,42 @@ ATGUNE:
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
+CycleMortar:
+	Inherits: ^LargeBullet
+	ReloadDelay: 75
+	MinRange: 1c816
+	Range: 8c512
+	Report: vrobatta.wav
+	Projectile: BulletAS
+		Blockable: false
+		Speed: 384
+		LaunchAngle: 244
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c196
+		Falloff: 100, 75, 50, 25, 0
+		Damage: 50
+		Versus:
+			Wood: 100
+			Steel: 85
+			Concrete: 90
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+CycleMortarE:
+	Inherits: CycleMortar
+	ReloadDelay: 90
+	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Falloff: 100, 75, 50, 25, 0
+		Damage: 45
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
 CruiserStrikeInit:
 	Projectile: InstantExplode
 	ReloadDelay: 1

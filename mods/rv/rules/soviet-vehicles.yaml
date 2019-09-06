@@ -317,7 +317,7 @@ apoc:
 		Name: Apocalypse Tank
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Vietnam
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: natech, ~techlevel.3
 		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\nCan crush enemy vehicles.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
 	UpdatesPlayerStatistics:
@@ -409,7 +409,7 @@ ttnk:
 		Name: Tesla Tank
 	Buildable:
 		Queue: Vehicle.USSR
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~techlevel.3
 		Description: Russian special tank armed with dual small Tesla Coils.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
@@ -468,7 +468,7 @@ dtruck:
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Libya
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~techlevel.3
 		Description: Demolition Truck, actively armed with nuclear explosives.
 	UpdatesPlayerStatistics:
@@ -531,7 +531,7 @@ v3:
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Vietnam
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		Prerequisites: naradr, ~techlevel.2
 		Description: Long-range rocket artillery.
 	UpdatesPlayerStatistics:
@@ -611,6 +611,67 @@ v3rocket:
 		EmptyWeapon: V3Weapon
 
 # Custom Soviet Vehicles
+tric:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 550
+	Tooltip:
+		Name: Mortar Tricycle
+	Selectable:
+		Bounds: 40, 40, 0, -10
+	Buildable:
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Vietnam
+		Prerequisites: naradr, ~techlevel.2
+		BuildPaletteOrder: 70
+		Description: Fast medium range unit.\n  Strong vs Structures, Slow Vehicles\n  Weak vs Aircraft, Fast Vehicles
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 120
+		TurnSpeed: 10
+	Health:
+		HP: 175
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp
+	Armament@primary:
+		Weapon: CycleMortar
+		LocalOffset: 128,128,768
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: CycleMortarE
+		LocalOffset: 128,128,768
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: FlakTrackVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+
 deva:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -735,7 +796,7 @@ ftnk:
 		Name: Flame Tank
 	Buildable:
 		Queue: Vehicle.Vietnam
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~techlevel.3
 		Description: Vietnamese special tank armed with dual flamethrowers.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
