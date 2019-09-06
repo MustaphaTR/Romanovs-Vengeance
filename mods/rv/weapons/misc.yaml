@@ -102,36 +102,6 @@ TankFlamerE:
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
-Heal:
-	ReloadDelay: 80
-	Range: 1c819
-	Report: gcraheal.wav
-	ValidTargets: Heal
-	Projectile: InstantHit
-	Warhead@1Dam: SpreadDamage
-		Spread: 213
-		Damage: -50
-		ValidTargets: Heal
-
-RepairBullet:
-	ReloadDelay: 80
-	Range: 1c819
-	Report: vifvrepa.wav
-	ValidTargets: Repair
-	Projectile: InstantHit
-	Warhead@1Dam: SpreadDamage
-		Spread: 213
-		Damage: -50
-		ValidTargets: Repair
-		DamageTypes: KillsDrone
-
-MechRepair:
-	Inherits: RepairBullet
-	Range: 2c0
-	Report: fixit1.aud
-	Warhead@1Dam: SpreadDamage
-		Damage: -40
-
 EmergencyRepair1:
 	ReloadDelay: 80
 	Range: 1c819

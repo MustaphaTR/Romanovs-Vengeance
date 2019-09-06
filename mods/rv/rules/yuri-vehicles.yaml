@@ -515,6 +515,73 @@ yhtnk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 
+grtk:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Valued:
+		Cost: 1750
+	Tooltip:
+		Name: Grinder Tank
+	Buildable:
+		Queue: Vehicle.Yuri
+		BuildPaletteOrder: 990
+		Prerequisites: yatech, ~caslab, ~techlevel.4
+		Description: Melee vehicle with high damage against all ground units.\n  Strong vs Buildings, Vehicles, Infantry\n  Weak vs Aircraft
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 105
+		Locomotor: heavytracked
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	Health:
+		HP: 500
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armament@primary:
+		Weapon: TankGrind
+		LocalOffset: 1024,0,128
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: TankGrindE
+		LocalOffset: 1024,0,128
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp
+		FacingTolerance: 2
+	AutoTarget:
+		ScanRadius: 5
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: LasherTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+
 expy:
 	Inherits: ^ExpansionVehicle
 	Buildable:

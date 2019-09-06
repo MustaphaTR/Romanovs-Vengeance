@@ -103,8 +103,8 @@ Punch:
 	ReloadDelay: 60
 	Range: 1c496
 	ValidTargets: Infantry, TerrorDrone, Structure, Bridge, Wall, Fence, Tree
-	Projectile: InstantHit
 	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
+	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 		ValidTargets: Infantry, TerrorDrone, Structure, Bridge, Wall, Fence, Tree
@@ -131,8 +131,8 @@ Smash:
 	ReloadDelay: 60
 	Range: 1c496
 	ValidTargets: Vehicle
-	Projectile: InstantHit
 	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
+	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 		ValidTargets: Vehicle
@@ -154,3 +154,61 @@ SmashE:
 	Inherits: Smash
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
+
+Heal:
+	ReloadDelay: 80
+	Range: 1c819
+	Report: gcraheal.wav
+	ValidTargets: Heal
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -50
+		ValidTargets: Heal
+
+RepairBullet:
+	ReloadDelay: 80
+	Range: 1c819
+	Report: vifvrepa.wav
+	ValidTargets: Repair
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: -50
+		ValidTargets: Repair
+		DamageTypes: KillsDrone
+
+MechRepair:
+	Inherits: RepairBullet
+	Range: 2c0
+	Report: fixit1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: -40
+
+TankGrind:
+	ReloadDelay: 25
+	Range: 1c819
+	Report: bgrinda.wav
+	ValidTargets: Ground
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 150
+		ValidTargets: Ground
+		Versus:
+			None: 150
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 90
+			Heavy: 80
+			Wood: 100
+			Steel: 90
+			Concrete: 80
+			Drone: 100
+			Rocket: 0
+		DamageTypes: BulletDeath
+
+TankGrindE:
+	Inherits: TankGrind
+	ReloadDelay: 15

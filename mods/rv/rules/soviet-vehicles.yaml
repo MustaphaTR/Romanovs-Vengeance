@@ -664,7 +664,8 @@ deva:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-		RequiresCondition: !overload || chronodisable || emp
+		RequiresCondition: !overload
+		PauseOnCondition: chronodisable || emp
 		FacingTolerance: 2
 	AutoTarget:
 	RenderSprites:
