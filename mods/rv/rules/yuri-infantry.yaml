@@ -1,5 +1,9 @@
 slav:
 	Inherits: ^Infantry
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllable
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
 		Queue: Infantry.Yuri
@@ -7,7 +11,7 @@ slav:
 		Prerequisites: yarefn, ~techlevel.1
 		Description: Gathers Ore and Gems.
 	Valued:
-		Cost: 50
+		Cost: 100
 	Tooltip:
 		Name: Slave
 	DeliversCash:
@@ -51,6 +55,12 @@ slav:
 		DockLoopSequence: idle
 	Armament@primary:
 		Weapon: Shovel
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: ShovelE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: SlaveVoice
 	-TakeCover:
@@ -138,6 +148,7 @@ brute:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
 	Buildable:
 		Queue: Infantry.Yuri
 		BuildPaletteOrder: 20

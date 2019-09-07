@@ -84,20 +84,26 @@ Shovel:
 		ValidTargets: Ground
 		Versus:
 			None: 100
-			Flak: 80
+			Flak: 100
 			Plate: 80
 			Light: 50
-			Medium: 25
-			Heavy: 25
-			Wood: 75
-			Steel: 50
-			Concrete: 25
+			Medium: 10
+			Heavy: 10
+			Wood: 55
+			Steel: 10
+			Concrete: 45
 			Drone: 100
 			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiff
 	Warhead@3Eff: CreateEffect
 		Explosions: piffpiff
+
+ShovelE:
+	Inherits: Shovel
+	ReloadDelay: 15
+	Warhead@1Dam: SpreadDamage
+		Damage: 35
 
 Punch:
 	ReloadDelay: 60

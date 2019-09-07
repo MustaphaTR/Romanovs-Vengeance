@@ -1024,6 +1024,7 @@ disk:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@EXPERIENCE: ^GainsExperience
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
@@ -1054,6 +1055,10 @@ disk:
 		Type: GroundPosition
 	Armament@primary:
 		Weapon: DiskLaser
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: DiskLaserE
+		RequiresCondition: rank-elite
 	#Armament@second:
 	#	Weapon: DiskDrain
 	AttackAircraft:
@@ -1078,6 +1083,8 @@ disk:
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+	SpawnActorOnDeath:
+		Actor: diskhusk
 
 diskhusk:
 	Inherits: ^HelicopterHusk
