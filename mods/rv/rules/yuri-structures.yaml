@@ -182,6 +182,22 @@ yarefn:
 		IntoActor: smin
 		DeployCursor: undeploy
 		Voice: Undeploy
+		RequiresCondition: !build-incomplete
+	TransformsIntoMobile:
+		RequiresCondition: !build-incomplete
+		Locomotor: tracked
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoRepairable:
+		RequiresCondition: !build-incomplete
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+		Voice: Move
+		RequiresForceMove: true
+	TransformsIntoPassenger:
+		RequiresCondition: !build-incomplete
+		CargoType: Vehicle
+		Voice: Move
+		RequiresForceMove: true
 	InfiltrateForCash:
 		Percentage: 50
 		Notification: CreditsStolen
