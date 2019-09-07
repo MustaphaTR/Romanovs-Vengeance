@@ -600,6 +600,8 @@ yawall:
 yaggun:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Yuri
@@ -631,6 +633,8 @@ yaggun:
 		Offset: -512,0,480
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
 	Armament@ag-0:
 		Weapon: AGGattCann
 		LocalOffset: 768,240,1024, 768,-240,1024
