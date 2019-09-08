@@ -1022,7 +1022,7 @@ itrp:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 140
 		Prerequisites: natech, ~techlevel.4
-		Description: High-tech soldier capable of making friendly vehicles invulnerabile and\ndamage enemy infantry.\n Strong vs Infantry\n Weak vs Vehicles, Aircraft
+		Description: High-tech soldier capable of making friendly vehicles invulnerabile and\ndamage enemy infantry.\n Strong vs Infantry\n Weak vs Vehicles, Aircraft\n\nCannot be eaten by Attack Dogs.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	ProducibleWithLevel:
@@ -1119,5 +1119,7 @@ itrp:
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
 	WithInfantryBody:
 		DefaultAttackSequence: shoot

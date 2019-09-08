@@ -153,7 +153,7 @@ brute:
 		Queue: Infantry.Yuri
 		BuildPaletteOrder: 20
 		Prerequisites: ~techlevel.1
-		Description: Powerful soldiers.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Powerful soldiers.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nCannot be eaten by Attack Dogs.
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -209,6 +209,8 @@ brute:
 		FireDelay: 8
 		Name: secondary
 		RequiresCondition: rank-elite
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
 	Voiced:
 		VoiceSet: BruteVoice
 	WithInfantryBody:
@@ -388,7 +390,7 @@ yurix:
 		Queue: Infantry.Yuri
 		BuildPaletteOrder: 90
 		Prerequisites: yatech, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nMaximum 1 can be trained.
+		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nCannot be eaten by Attack Dogs.\n\nMaximum 1 can be trained.
 	Valued:
 		Cost: 1500
 	DeliversCash:
@@ -429,5 +431,7 @@ yurix:
 		Voice: Build
 	Voiced:
 		VoiceSet: YuriPrimeVoice
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
 	WithMindControlArc:
 		Offset: 0,0,1024
