@@ -222,7 +222,7 @@ caos:
 		Queue: Vehicle.Yuri
 		BuildPaletteOrder: 40
 		Prerequisites: ~techlevel.2
-		Description: Drone capable of releasing gas that causes enemy units to fire random units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Drone capable of releasing gas that causes enemy units to fire random units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nCan be deployed to release gas continuously.
 	Mobile:
 		Speed: 135
 		TurnSpeed: 10
@@ -240,8 +240,22 @@ caos:
 	Armament@primary:
 		Weapon: ChaosAttack
 		LocalOffset: 0,0,64
+	PeriodicExplosion:
+		Weapon: ChaosAttack
+		LocalOffset: 0,0,64
+		ResetReloadWhenEnabled: false
+		RequiresCondition: deployed && !chronodisable && !emp
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || deployed
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		CanDeployOnRamps: True
+		SmartDeploy: True
+		Voice: Attack
+		UndeployOnMove: true
+		PauseOnCondition: chronodisable || emp
+		RequiresCondition: !parachute
 	RenderSprites:
 	Selectable:
 		Bounds: 52, 48, 0, -4
