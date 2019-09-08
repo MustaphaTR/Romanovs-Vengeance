@@ -220,3 +220,34 @@ FLAMEGUY:
 		DeathSequencePalette: flameguy
 		DeathPaletteIsPlayerPalette: false
 	HitShape:
+
+txgasg:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	-AppearsOnRadar:
+	HiddenUnderFog:
+	Aircraft:
+		CruiseAltitude: 1
+		TurnSpeed: 255
+		Repulsable: false
+		AltitudeVelocity: 400
+		Speed: 15
+		MoveIntoShroud: true
+	Health:
+		HP: 10
+	SelfHealing:
+		Step: -1
+		Delay: 25
+		HealIfBelow: 200
+	RejectsOrders:
+	RenderSprites:
+		Palette: effect
+	WithSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 32
+	Wanders:
+		MinMoveDelay: 15
+		MaxMoveDelay: 35
+	PeriodicExplosion:
+		Weapon: CloudDamage
+	HitShape:

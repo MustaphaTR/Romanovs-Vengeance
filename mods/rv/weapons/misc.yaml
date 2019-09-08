@@ -608,3 +608,23 @@ ChaosAttack:
 		ValidStances: Enemy, Neutral
 	Warhead@3Eff: CreateEffect
 		Explosions: chaosgas
+
+CloudDamage:
+	ReloadDelay: 5
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 196
+		Damage: 5
+		DamageTypes: VirusDeath
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 50
+			Medium: 50
+			Heavy: 50
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 0
