@@ -237,6 +237,8 @@ gapile:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	ProvidesPrerequisite@gapile:
+		Prerequisite: gapile
 	PlaceBuildingVariants:
 		Actors: gapilb
 
@@ -682,7 +684,7 @@ gapill:
 	Buildable:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 40
-		Prerequisites: barracks, ~techlevel.1
+		Prerequisites: gapile, ~techlevel.1
 		Description: Automated anti-infantry defense.
 	Valued:
 		Cost: 500

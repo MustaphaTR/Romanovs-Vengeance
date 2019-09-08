@@ -189,6 +189,8 @@ nahand:
 		ProductionType: Infantry.Iraq
 	RallyPoint:
 		Offset: 3,3
+	ProvidesPrerequisite@nahand:
+		Prerequisite: nahand
 
 narefn:
 	Inherits: ^Refinery
@@ -1092,7 +1094,7 @@ nalasr:
 	Buildable:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 50
-		Prerequisites: barracks, ~techlevel.1
+		Prerequisites: nahand, ~techlevel.1
 		Description: Automated anti-infantry defense.
 	Valued:
 		Cost: 500
