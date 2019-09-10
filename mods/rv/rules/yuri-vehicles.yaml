@@ -28,6 +28,10 @@ smin:
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
 		Voice: Deploy
+	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
+		Condition: invulnerability
+	TransferTimedExternalConditionOnTransform@INVISIBILITY:
+		Condition: invisibility
 	Health:
 		HP: 1500
 	Armor:
@@ -261,6 +265,8 @@ caos:
 		UndeployOnMove: true
 		PauseOnCondition: chronodisable || emp
 		RequiresCondition: !parachute
+	Cloak@lazarus:
+		RequiresCondition: invisibility && !chronodisable && !emp && !deployed
 	RenderSprites:
 	Selectable:
 		Bounds: 52, 48, 0, -4
@@ -503,6 +509,8 @@ yhtnk:
 		CloakDelay: 100
 		IsPlayerPalette: true
 		UncloakOn: Attack, Damage
+	-Cloak@lazarus:
+	-ExternalCondition@INVISIBILITY:
 	Armament@primary:
 		Weapon: DoomLaser
 		LocalOffset: 1024,0,1024

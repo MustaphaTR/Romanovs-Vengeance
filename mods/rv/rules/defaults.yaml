@@ -497,11 +497,28 @@
 ^KilledByIronCurtain:
 	Targetable@ironcurtain:
 		TargetTypes: IronCurtainable
-	KillsSelf:
+	KillsSelf@ironcurtain:
 		DamageTypes: FlameDeath
 		RequiresCondition: invulnerability
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
+
+^LazarusShieldable:
+	Cloak@lazarus:
+		RequiresCondition: invisibility && !chronodisable && !emp
+		InitialDelay: 25
+		CloakDelay: 100
+		IsPlayerPalette: true
+		UncloakOn: Attack, Damage
+	ExternalCondition@INVISIBILITY:
+		Condition: invisibility
+
+^KilledByLazarusShield:
+	KillsSelf@lazarus:
+		DamageTypes: RadiationDeath
+		RequiresCondition: invisibility
+	ExternalCondition@INVISIBILITY:
+		Condition: invisibility
 
 ^ForceShieldable:
 	WithColoredOverlay@forceshield:
@@ -1184,11 +1201,12 @@
 	Inherits@5: ^CrateStatModifiers
 	Inherits@6: ^HospitalHealing
 	Inherits@7: ^KilledByIronCurtain
-	Inherits@8: ^DamagedByRadiation100Percent
-	Inherits@9: ^AcceptsIvanBomb
-	Inherits@10: ^AffectedByLeaflets
-	Inherits@11: ^AffectedByPropaganda
-	Inherits@12: ^AffectedByChronoBoost
+	Inherits@8: ^KilledByLazarusShield
+	Inherits@9: ^DamagedByRadiation100Percent
+	Inherits@10: ^AcceptsIvanBomb
+	Inherits@11: ^AffectedByLeaflets
+	Inherits@12: ^AffectedByPropaganda
+	Inherits@13: ^AffectedByChronoBoost
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
@@ -1488,7 +1506,8 @@
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
-	Inherits@3: ^IronCurtainable
+	Inherits@2: ^IronCurtainable
+	Inherits@3: ^LazarusShieldable
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^DisabledByEMP
 	Inherits@6: ^CrateStatModifiers
@@ -1679,8 +1698,9 @@
 	Inherits@6: ^AffectedByIndustrialPlant
 	Inherits@7: ^UnitParticles
 	Inherits@8: ^IronCurtainable
-	Inherits@9: ^AffectedByChronoBoost
-	Inherits@10: ^AffectedByPropaganda
+	Inherits@9: ^LazarusShieldable
+	Inherits@10: ^AffectedByChronoBoost
+	Inherits@11: ^AffectedByPropaganda
 	WithTextControlGroupDecoration:
 	Targetable@ChronoDisable:
 		RequiresCondition: !airborne
@@ -1785,7 +1805,8 @@
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld
-	Inherits@3: ^IronCurtainable
+	Inherits@2: ^IronCurtainable
+	Inherits@3: ^LazarusShieldable
 	Inherits@4: ^ChronoDisable
 	Inherits@5: ^DisabledByEMP
 	Inherits@6: ^CrateStatModifiers

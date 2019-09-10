@@ -610,6 +610,70 @@ yapsyt:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yagntc:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -45
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	make: yagntcmk
+		Length: 25
+		ShadowStart: 25
+	idle: yagntc
+		Length: 1
+		ShadowStart: 3
+		Tick: 150
+	damaged-idle: yagntc
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+		Tick: 150
+	idle-top: yagntc_e
+		Length: 1
+		ShadowStart: 2
+		Tick: 150
+	damaged-idle-top: yagntc_e
+		Start: 1
+		Length: 1
+		ShadowStart: 3
+		Tick: 150
+	charged: yagntc_f
+		Length: 15
+		ShadowStart: 62
+		Tick: 50
+	damaged-charged: yagntc_f
+		Start: 31
+		Length: 15
+		ShadowStart: 93
+		Tick: 50
+	active: yagntc_f
+		Start: 15
+		Length: 15
+		ShadowStart: 78
+		Tick: 50
+	damaged-active: yagntc_f
+		Start: 46
+		Length: 15
+		ShadowStart: 109
+		Tick: 50
+	deactive: yagntc_h
+		Length: 31
+		ShadowStart: 63
+		Tick: 50
+	damaged-deactive: yagntc_h
+		Start: 31
+		Length: 31
+		ShadowStart: 93
+		Tick: 50
+	icon: gtncicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yappet:
 	Inherits@MC: ^MindControllable
 	Defaults:

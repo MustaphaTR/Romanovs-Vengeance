@@ -200,6 +200,12 @@ yarefn:
 		CargoType: Vehicle
 		Voice: Move
 		RequiresForceMove: true
+	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
+		Condition: invulnerability
+	TransferTimedExternalConditionOnTransform@INVISIBILITY:
+		Condition: invisibility
+	ExternalCondition@INVISIBILITY:
+		Condition: invisibility
 	InfiltrateForCash:
 		Percentage: 50
 		Notification: CreditsStolen
@@ -808,6 +814,51 @@ yapsyt:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: MindControl
 		RequiresCondition: controlling >= 3
+
+yagntc:
+	Inherits: ^SecondarySuperWeapon
+	Buildable:
+		Queue: Support.Yuri
+		Prerequisites: yatech, !enoughlazarus, ~techlevel.5
+		Description: Makes units invisible.
+	Selectable:
+		Bounds: 160, 142, 0, -34
+	Tooltip:
+		Name: Lazarus Shield Generator
+	GrantExternalConditionPower@LAZARUSSHIELD:
+		Icons:
+			1: invis
+		Prerequisites:
+			1: yagntc
+		# Cursor: iron-curtain
+		ChargeInterval: 6000
+		Descriptions:
+			1: Invisibility
+		LongDescs:
+			1: Makes a group of units invisibile\nunless they are firing.\n\nKills infantry.
+		AllowMultiple: true
+		Durations:
+			1: -1
+		Conditions:
+			1: invisibility
+		Ranges:
+			1: 2
+		ValidStances: Ally, Neutral, Enemy
+		SelectTargetSpeechNotification: SelectTarget
+		# EndChargeSpeechNotification: IronCurtainReady
+		# LaunchSpeechNotification: IronCurtainActivated
+		# IncomingSpeechNotification: IronCurtainActivated
+		EndChargeSound: sgenopen.wav
+		OnFireSound: slazarus.wav
+		DisplayTimerStances: Ally, Neutral, Enemy
+		DisplayRadarPing: True
+		PauseOnCondition: disabled || chronodisable
+	WithIdleOverlay@top:
+		Sequence: idle-top
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	ProvidesPrerequisite@swlimit:
+		Prerequisite: enoughlazarus
 
 yappet:
 	Inherits: ^PrimarySuperWeapon

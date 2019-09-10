@@ -89,8 +89,12 @@
 	BaseProvider:
 		Range: 14c0
 		PauseOnCondition: build-incomplete || chronodisable
-	TransferTimedExternalConditionOnTransform:
+	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
+	TransferTimedExternalConditionOnTransform@INVISIBILITY:
+		Condition: invisibility
+	ExternalCondition@INVISIBILITY:
+		Condition: invisibility
 
 ^ExpansionNode:
 	Inherits: ^BaseBuilding
@@ -139,8 +143,12 @@
 	BaseProvider:
 		Range: 10c0
 		PauseOnCondition: build-incomplete || chronodisable
-	TransferTimedExternalConditionOnTransform:
+	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
+	TransferTimedExternalConditionOnTransform@INVISIBILITY:
+		Condition: invisibility
+	ExternalCondition@INVISIBILITY:
+		Condition: invisibility
 
 ^Barracks:
 	Inherits: ^BaseBuilding
