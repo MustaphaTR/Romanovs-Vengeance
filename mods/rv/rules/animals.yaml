@@ -57,12 +57,11 @@ josh:
 	SpawnActorOnDeath@flames:
 		Actor: FLAMEGUY
 		DeathType: FlameDeath
-	SpawnActorOnDeath@gas-1:
-		Actor: TXGASG
-		DeathType: VirusDeath
-	SpawnActorOnDeath@gas-2:
-		Actor: TXGASG
-		DeathType: VirusDeath
-	SpawnActorOnDeath@gas-3:
-		Actor: TXGASG
-		DeathType: VirusDeath
+	SpawnSmokeParticleOnDeath@virus:
+		Amount: 3
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 250
+		DeathTypes: VirusDeath

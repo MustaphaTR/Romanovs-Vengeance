@@ -1248,15 +1248,14 @@
 	SpawnActorOnDeath@flames:
 		Actor: FLAMEGUY
 		DeathType: FlameDeath
-	SpawnActorOnDeath@gas-1:
-		Actor: TXGASG
-		DeathType: VirusDeath
-	SpawnActorOnDeath@gas-2:
-		Actor: TXGASG
-		DeathType: VirusDeath
-	SpawnActorOnDeath@gas-3:
-		Actor: TXGASG
-		DeathType: VirusDeath
+	SpawnSmokeParticleOnDeath@virus:
+		Amount: 3
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 250
+		DeathTypes: VirusDeath
 	TakeCover:
 		DamageModifiers:
 			Prone50Percent: 50
@@ -1479,9 +1478,7 @@
 			BruteDeath: 1
 	-WithDeathAnimation@effect:
 	-SpawnActorOnDeath@flames:
-	-SpawnActorOnDeath@gas-1:
-	-SpawnActorOnDeath@gas-2:
-	-SpawnActorOnDeath@gas-3:
+	-SpawnSmokeParticleOnDeath@virus:
 	Crushable:
 	MapEditorData:
 		Categories: Animal
