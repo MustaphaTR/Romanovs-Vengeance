@@ -682,3 +682,63 @@ V3StormStrike:
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 		InvalidTargets: Vehicle, Building, Wall
+
+MosquitoMissile:
+	Inherits: ^Missile
+	ReloadDelay: 50
+	Burst: 2
+	BurstDelays: 10
+	Range: 5c0
+	Report: vospatta.wav
+	ValidTargets: Ground
+	Projectile: Missile
+		Speed: 384
+		Arm: 2
+		RangeLimit: 10c0
+		ContrailColor: A8FFA8
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 10
+		ValidTargets: Ground
+		Versus:
+			None: 60
+			Flak: 60
+			Plate: 50
+			Light: 70
+			Medium: 35
+			Heavy: 35
+			Wood: 75
+			Steel: 40
+			Concrete: 65
+			Drone: 20
+			Rocket: 100
+		DamageTypes: Prone70Percent, TriggerProne, VirusDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: small_grey_explosion
+		ImpactSounds: gexpifva.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+	Warhead@53Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 250
+
+MosquitoMissileE:
+	Inherits: MosquitoMissile
+	Burst: 4
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav
