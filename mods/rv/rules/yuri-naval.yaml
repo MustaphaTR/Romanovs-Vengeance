@@ -16,8 +16,8 @@ bsub:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Yuri
-		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 20
+		Prerequisites: yatech, ~techlevel.3
+		BuildPaletteOrder: 50
 		Description: Submerged anti-ship and anti-structure armed with\ndouble torpedo and missile launchers.\nCan detect other submarines and Giant Squids.\n  Strong vs Ships, Buildings\n  Weak vs Ground units, Aircraft\nSpecial Ability: Submerge
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -119,3 +119,128 @@ cmisl:
 		EmptyWeapon: CruiseWeapon
 	RenderVoxels:
 		Image: bsubmisl
+
+# Custom Yuri Vessels
+gatsub:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@C4: ^AcceptsSEALC4
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@SQUID: ^SquidGrabbable
+	Buildable:
+		Queue: Ship.Yuri
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 20
+		Description: Submerged anti-air unit armed with\ngatling cannon.\nCan detect other submarines and sea animals.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\nSpecial Ability: Submerge
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 750
+	Tooltip:
+		Name: Gatling Sub
+	Health:
+		HP: 500
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 4
+		Speed: 75
+	-LeavesTrails:
+	RevealsShroud:
+		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
+	Targetable:
+		TargetTypes: Ground, Water, Ship, Underwater
+	Cloak:
+		CloakTypes: Underwater
+		InitialDelay: 50
+		CloakDelay: 75
+		CloakSound: vnavupa.wav
+		UncloakSound: vnavupa.wav
+		UncloakOn: Attack, Damage
+		IsPlayerPalette: true
+		PauseOnCondition: uncloak-critical-damage
+	GrantConditionOnDamageState@UNCLOAK:
+		Condition: uncloak-critical-damage
+		ValidDamageStates: Critical
+	Turreted:
+		Offset: -256,0,0
+		TurnSpeed: 5
+	Armament@ag-0:
+		Weapon: AGGatling
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: !gatling
+		MuzzleSequence: muzzle
+	Armament@ag-1:
+		Weapon: AGGatling2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling == 1
+		MuzzleSequence: muzzle-1
+	Armament@ag-2:
+		Weapon: AGGatling3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling >= 2
+		MuzzleSequence: muzzle-2
+	Armament@aa-0:
+		Weapon: AAGatling
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: !gatling
+		MuzzleSequence: muzzle
+	Armament@aa-1:
+		Weapon: AAGatling2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling == 1
+		MuzzleSequence: muzzle-1
+	Armament@aa-2:
+		Weapon: AAGatling3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling >= 2
+		MuzzleSequence: muzzle-2
+	GrantConditionOnAttack:
+		Condition: gatling
+		RequiredShotsPerInstance: 16
+		MaximumInstances: 2
+		RevokeDelay: 25
+		RevokeAll: false
+		IsCyclic: false
+		RevokeOnNewTarget: false
+	#	RequiresCondition: !rank-elite
+	# GrantConditionOnAttack@elite:
+	#	Condition: gatling
+	#	RequiredShotsPerInstance: 8
+	#	MaximumInstances: 2
+	#	RevokeDelay: 25
+	#	RevokeAll: true
+	#	IsCyclic: false
+	#	RevokeOnNewTarget: true
+	#	RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 4c0
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	-MustBeDestroyed:
+	WithMuzzleOverlay:
+	WithVoxelBody:
+	WithVoxelTurret:
+	RenderSprites:
+	Voiced:
+		VoiceSet: TyphoonVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	HitShape:
