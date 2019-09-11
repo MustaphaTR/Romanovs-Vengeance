@@ -610,6 +610,32 @@ yapsyt:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yasgen:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -15
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ygsgen_a
+		Length: 20
+		ShadowStart: 20
+		Tick: 150
+	damaged-idle: ygsgen_ad
+		Length: 20
+		ShadowStart: 20
+		Tick: 150
+	make: ygsgenmk
+		Length: 20
+		ShadowStart: 20
+	icon: sgenicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yagntc:
 	Inherits@MC: ^MindControllable
 	Defaults:

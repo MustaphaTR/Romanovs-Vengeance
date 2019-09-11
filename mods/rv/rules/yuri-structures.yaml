@@ -815,6 +815,53 @@ yapsyt:
 		ValidTargets: MindControl
 		RequiresCondition: controlling >= 3
 
+yasgen:
+	Inherits: ^SupportBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@MC: ^MindControllableBuilding
+	Valued:
+		Cost: 1250
+	Tooltip:
+		Name: Stealth Generator
+	Buildable:
+		Queue: Support.Yuri
+		BuildPaletteOrder: 80
+		Prerequisites: yatech, ~techlevel.3
+		Description: Makes nearby units invisibile while not firing.\nRequires power to operate.
+	Selectable:
+		Bounds: 50, 44, -1, -5
+		DecorationBounds: 50, 84, -1, -30
+	Health:
+		HP: 600
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	Capturable:
+		Types: building
+		RequiresCondition: !build-incomplete
+	CaptureNotification:
+	ProximityExternalCondition@INVISIBILITY:
+		Condition: invisibility
+		Range: 6c0
+		RequiresCondition: !disabled
+	WithRangeCircle:
+		Range: 6c0
+		Type: invisibility
+		RequiresCondition: !disabled
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
+	WithSpriteBody:
+		PauseOnCondition: disabled || chronodisable
+	Power:
+		Amount: -100
+	MustBeDestroyed:
+		RequiredForShortGame: false
+
 yagntc:
 	Inherits: ^SecondarySuperWeapon
 	Buildable:
