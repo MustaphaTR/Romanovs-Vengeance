@@ -251,6 +251,18 @@ yarefn:
 		Facing: 128
 	Voiced:
 		VoiceSet: SlaveMinerVoice
+	StoresResources:
+		PipColor: Yellow
+		PipCount: 10
+		Capacity: 1000
+	Explodes:
+		RequiresCondition: !spawn-ore
+	Explodes@Ore:
+		Type: Footprint
+		Weapon: RefineryExplode
+		RequiresCondition: spawn-ore
+	GrantConditionOnPlayerResources:
+		Condition: spawn-ore
 
 yarefn.noslave:
 	Inherits: yarefn

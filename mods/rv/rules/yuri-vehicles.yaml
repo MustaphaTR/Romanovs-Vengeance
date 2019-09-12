@@ -77,6 +77,18 @@ smin:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	StoresResources:
+		PipColor: Yellow
+		PipCount: 10
+		Capacity: 1000
+	Explodes:
+		RequiresCondition: !spawn-ore
+	Explodes@Ore:
+		Type: Footprint
+		Weapon: RefineryExplode
+		RequiresCondition: spawn-ore
+	GrantConditionOnPlayerResources:
+		Condition: spawn-ore
 
 ltnk:
 	Inherits: ^MainBattleTank
