@@ -326,6 +326,48 @@ yadept:
 	PlaceBuildingVariants:
 		Actors: yadepb
 
+yagrnd:
+	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^3x3Shape
+	Buildable:
+		Queue: Building.Yuri
+		BuildPaletteOrder: 110
+		Prerequisites: yaweap, ~prerequisite.grinder, ~techlevel.1
+		Description: Converts Infantry and Vehicles back to credits.
+	Selectable:
+		Bounds: 154, 127, 0, -22
+	Health:
+		HP: 900
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 8c0
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Grinder
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@repairpad:
+		Prerequisite: repairpad
+	AcceptsDeliveredCash:
+	# WithIdleOverlay@normal:
+	#	Sequence: idle-normal
+	#	PauseOnCondition: chronodisable
+	#	RequiresCondition: !build-incomplete
+	WithAcceptDeliveredCashAnimation:
+		Sequence: grind
+	Power:
+		Amount: -50
+
 yadome:
 	Inherits: ^BaseBuilding
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
@@ -492,7 +534,7 @@ yapsis:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Yuri
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 120
 		Prerequisites: yatech, ~techlevel.4
 		Description: Detects enemy units and strikepoints
 	Valued:
@@ -539,8 +581,8 @@ yaclon:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Yuri
-		BuildPaletteOrder: 120
-		Prerequisites: yatech
+		BuildPaletteOrder: 130
+		Prerequisites: yatech, ~techlevel.4
 		Description: Clones most trained infantry.\nMaximum 1 can be built.
 		BuildLimit: 1
 	Valued:

@@ -323,6 +323,47 @@ yadept:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yagrnd:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -31
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: yagrnd_c
+		Length: 1
+		ShadowStart: 2
+		Tick: 180
+	damaged-idle: yagrnd_c
+		Start: 1
+		Length: 1
+		ShadowStart: 3
+	# idle-normal: yagrnd_a
+	#	length: 10
+	#	ShadowStart: 11
+	#	Tick: 180
+	# damaged-idle-normal: yagrnd_a
+	#	length: 10
+	#	ShadowStart: 11
+	#	Tick: 180
+	make: yagrndmk
+		Length: 30
+		ShadowStart: 30
+	grind: yagrnd_b
+		Length: 48
+		ShadowStart: 96
+	damaged-grind: yagrnd_b
+		Start: 48
+		Length: 48
+		ShadowStart: 144
+	icon: grndicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yadome:
 	Inherits@MC: ^MindControllable
 	Defaults:

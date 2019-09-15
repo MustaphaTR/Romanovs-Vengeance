@@ -64,6 +64,20 @@ commanders_power.tesla_fence:
 	RenderSprites:
 		Image: napost
 
+commanders_power.grinder:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Grinder
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 20
+		Prerequisites: prerequisite.has_points
+		Description: Enables construction of Grinder from Construction Yard.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.grinder
+	RenderSprites:
+		Image: yagrnd
+
 commanders_power.ifv_training:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -418,6 +432,9 @@ prerequisite.airpad:
 	Inherits: ^default.commanders_power_prerequisite
 
 prerequisite.tesla_fence:
+	Inherits: ^default.commanders_power_prerequisite
+
+prerequisite.grinder:
 	Inherits: ^default.commanders_power_prerequisite
 
 ^CommandersPowers:
