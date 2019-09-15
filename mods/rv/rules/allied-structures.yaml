@@ -78,6 +78,7 @@ gacnst:
 
 gapowr:
 	Inherits: ^BaseBuilding
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Inherits@shape: ^2x2Shape
@@ -145,10 +146,12 @@ gapowr:
 		RequiresCondition: !build-incomplete && powrup
 	Power:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
 	Power@plug:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && powrup
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && powrup
+	GrantCondition@IDISABLE:
+		RequiresCondition: power-outage || diskdrain
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield
@@ -731,6 +734,7 @@ gapill:
 nasam:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
@@ -776,6 +780,8 @@ nasam:
 		NormalsPalette: ts-normals
 	WithVoxelTurret:
 		RequiresCondition: !build-incomplete
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 12c0
 		Type: aa
@@ -788,6 +794,7 @@ nasam:
 gtgcan:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
@@ -839,6 +846,8 @@ gtgcan:
 		RequiresCondition: !build-incomplete
 	WithVoxelBarrel:
 		RequiresCondition: !build-incomplete
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	AutoTarget:
 	WithMuzzleOverlay:
 	WithRangeCircle:
@@ -960,8 +969,9 @@ gaspysat:
 
 gagap:
 	Inherits: ^SupportBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Valued:
 		Cost: 500
@@ -998,6 +1008,8 @@ gagap:
 		Sequence: idle-head
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	Power:
 		Amount: -100
 	MustBeDestroyed:
@@ -1103,6 +1115,7 @@ gacsph:
 atesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
@@ -1174,6 +1187,8 @@ atesla:
 	FirepowerMultiplier@3:
 		Modifier: 400
 		RequiresCondition: prism_forwarding >= 3
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 
 power:
 	AlwaysVisible:

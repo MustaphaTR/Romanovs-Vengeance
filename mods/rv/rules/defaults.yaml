@@ -2121,3 +2121,12 @@
 		TargetTypes: MagneFreezable
 	ExternalCondition@MagneFreeze:
 		Condition: magnefreeze
+
+^DiskDrainable:
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
+	ExternalCondition@DISKDRAIN:
+		Condition: diskdrain
+	Targetable@DISKDRAIN:
+		TargetTypes: DiskDrain

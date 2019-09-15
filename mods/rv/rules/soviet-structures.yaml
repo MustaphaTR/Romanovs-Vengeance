@@ -58,6 +58,7 @@ nacnst:
 
 napowr:
 	Inherits: ^BaseBuilding
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Inherits@shape: ^3x2Shape
@@ -93,7 +94,9 @@ napowr:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
+	GrantCondition@IDISABLE:
+		RequiresCondition: power-outage || diskdrain
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield
@@ -620,6 +623,7 @@ naheli:
 
 nanrct:
 	Inherits: ^BaseBuilding
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Inherits@shape: ^4x4Shape
@@ -659,7 +663,9 @@ nanrct:
 		EmptyWeapon: NukePayload
 	Power:
 		Amount: 1000
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
+	GrantCondition@IDISABLE:
+		RequiresCondition: power-outage || diskdrain
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield
@@ -960,6 +966,7 @@ nawall:
 naflak:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
@@ -1002,6 +1009,8 @@ naflak:
 	RenderVoxels:
 	WithVoxelTurret:
 		RequiresCondition: !build-incomplete
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 12c0
 		Type: aa
@@ -1014,6 +1023,7 @@ naflak:
 tesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
@@ -1075,6 +1085,8 @@ tesla:
 	AutoTarget:
 	GrantConditionOnPowerState@LOWPOWER:
 		RequiresCondition: !charged
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 8c0
 		Type: teslacoil
@@ -1388,8 +1400,9 @@ nasilo:
 
 naprop:
 	Inherits: ^SupportBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets
@@ -1426,6 +1439,8 @@ naprop:
 		Range: 6c0
 		Type: propaganda
 		RequiresCondition: !disabled
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	Power:
 		Amount: -50
 	WithIdleOverlay@flag:

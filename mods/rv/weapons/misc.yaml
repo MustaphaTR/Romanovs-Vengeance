@@ -631,3 +631,20 @@ CloudDamage:
 			Concrete: 0
 			Drone: 100
 			Rocket: 0
+
+DiskDrain:
+	ReloadDelay: 5
+	Range: 0c256
+	MinRange: 0c1
+	TargetActorCenter: true
+	ValidTargets: DiskDrain
+	ValidStances: Neutral, Enemy
+	Projectile: InstantHit
+	Warhead@1Dam: GrantExternalCondition
+		Condition: diskdrain
+		Duration: 6
+		Range: 0c256
+		ValidStances: Neutral, Enemy
+	Warhead@2Dam: TargetDamage
+		ValidTargets: DiskDrain
+		ValidStances: Neutral, Enemy

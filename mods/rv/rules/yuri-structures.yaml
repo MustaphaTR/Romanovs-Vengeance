@@ -25,6 +25,7 @@ yacnst:
 
 yapowr:
 	Inherits: ^BaseBuilding
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Inherits@shape: ^2x2Shape
@@ -69,22 +70,24 @@ yapowr:
 		RequiresCondition: !build-incomplete
 	Power@0:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
 	Power@1:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 1
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 1
 	Power@2:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 2
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 2
 	Power@3:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 3
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 3
 	Power@4:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 4
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 4
 	Power@5:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !power-outage && loaded >= 5
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 5
+	GrantCondition@IDISABLE:
+		RequiresCondition: power-outage || diskdrain
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield
@@ -678,6 +681,7 @@ yawall:
 yaggun:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
@@ -758,6 +762,8 @@ yaggun:
 	WithMuzzleOverlay:
 	WithVoxelTurret:
 		RequiresCondition: !build-incomplete
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 5c0
 		Type: pillbox
@@ -818,8 +824,9 @@ natbnk:
 
 yapsyt:
 	Inherits: ^SupportBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
 		Queue: Support.Yuri
 		BuildPaletteOrder: 60
@@ -868,11 +875,14 @@ yapsyt:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: MindControl
 		RequiresCondition: controlling >= 3
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 
 yasgen:
 	Inherits: ^SupportBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Valued:
 		Cost: 1250
@@ -911,6 +921,8 @@ yasgen:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	WithSpriteBody:
 		PauseOnCondition: disabled || chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	Power:
 		Amount: -100
 	MustBeDestroyed:
