@@ -476,37 +476,37 @@ fv:
 		Name: gatling
 		Weapon: AGGatling
 		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: !gatling
+		RequiresCondition: ifv-gatling && !gatling
 		MuzzleSequence: muzzle
 	Armament@gatling-ag-1:
 		Name: gatling
 		Weapon: AGGatling2
 		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: gatling == 1
+		RequiresCondition: ifv-gatling && gatling == 1
 		MuzzleSequence: muzzle-1
 	Armament@gatling-ag-2:
 		Name: gatling
 		Weapon: AGGatling3
 		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: gatling >= 2
+		RequiresCondition: ifv-gatling && gatling >= 2
 		MuzzleSequence: muzzle-2
 	Armament@gatling-aa-0:
 		Name: gatling
 		Weapon: AAGatling
 		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: !gatling
+		RequiresCondition: ifv-gatling && !gatling
 		MuzzleSequence: muzzle
 	Armament@gatling-aa-1:
 		Name: gatling
 		Weapon: AAGatling2
 		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: gatling == 1
+		RequiresCondition: ifv-gatling && gatling == 1
 		MuzzleSequence: muzzle-1
 	Armament@gatling-aa-2:
 		Name: gatling
 		Weapon: AAGatling3
 		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: gatling >= 2
+		RequiresCondition: ifv-gatling && gatling >= 2
 		MuzzleSequence: muzzle-2
 	Armament@chrono:
 		Weapon: CRNeutronRifle
