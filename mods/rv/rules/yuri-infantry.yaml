@@ -32,6 +32,7 @@ slav:
 		SearchFromOrderRadius: 11
 		HarvestVoice: Move
 		DeliverVoice: Move
+		EmptyCondition: no-ore
 	Health:
 		HP: 100
 	Garrisoner:
@@ -66,6 +67,13 @@ slav:
 	-TakeCover:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		RequiresCondition: no-ore
+	WithInfantryBody@full:
+		IdleSequences: idle1,idle2
+		StandSequences: stand
+		MoveSequence: full-run
+		DefaultAttackSequence: shoot
+		RequiresCondition: !no-ore
 	AttackFrontal:
 		Voice: Attack
 
