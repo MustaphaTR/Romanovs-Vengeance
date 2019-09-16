@@ -1035,7 +1035,7 @@ disk:
 		Queue: Aircraft.Yuri
 		BuildPaletteOrder: 30
 		Prerequisites: yatech, ~techlevel.3
-		Description: Floating Disc armed with lasers.\nCan disable power plants and powered defences.\n Strong vs Infantry, Aircraft\n Weak vs Vehicles
+		Description: Floating Disc armed with lasers.\nCan disable power plants and powered defences.\nCan steal resources from enemy refineries.\n Strong vs Infantry, Aircraft\n Weak vs Vehicles
 	Aircraft:
 		TurnSpeed: 255
 		Speed: 180
@@ -1059,8 +1059,11 @@ disk:
 	Armament@elite:
 		Weapon: DiskLaserE
 		RequiresCondition: rank-elite
-	Armament@second:
+	Armament@drain:
 		Weapon: DiskDrain
+		MuzzleSequence: muzzle
+	Armament@steal:
+		Weapon: DiskSteal
 		MuzzleSequence: muzzle
 	AttackAircraft:
 		Voice: Attack

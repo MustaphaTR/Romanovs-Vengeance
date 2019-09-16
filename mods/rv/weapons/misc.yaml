@@ -648,3 +648,19 @@ DiskDrain:
 	Warhead@2Dam: TargetDamage
 		ValidTargets: DiskDrain
 		ValidStances: Neutral, Enemy
+
+DiskSteal:
+	ReloadDelay: 5
+	Range: 0c256
+	MinRange: 0c1
+	TargetActorCenter: true
+	ValidTargets: DiskSteal
+	ValidStances: Neutral, Enemy
+	Projectile: InstantHit
+	Warhead@1Ste: StealResource
+		Cash: 10
+		ValidTargets: DiskSteal
+		ValidStances: Neutral, Enemy
+	Warhead@2Dam: TargetDamage
+		ValidTargets: DiskSteal
+		ValidStances: Neutral, Enemy
