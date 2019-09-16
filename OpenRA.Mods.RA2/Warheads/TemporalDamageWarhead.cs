@@ -18,7 +18,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Warheads
 {
-    [Desc("Deals temportal damage to the actors with AffectedByTemporal trait.")]
+    [Desc("Deals temporal damage to the actors with AffectedByTemporal trait.")]
     public class TemporalWarhead : TargetDamageWarhead
     {
         protected override void InflictDamage(Actor victim, Actor firedBy, HitShapeInfo hitshapeInfo, IEnumerable<int> damageModifiers)
