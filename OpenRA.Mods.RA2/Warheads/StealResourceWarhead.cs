@@ -11,15 +11,15 @@
 
 using System;
 using System.Collections.Generic;
+using OpenRA.Mods.AS.Warheads;
 using OpenRA.Mods.Common.Effects;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Mods.Common.Warheads;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Warheads
 {
 	[Desc("Steals cash from the target actor's owner.")]
-	public class StealResourceWarhead : Warhead
+	public class StealResourceWarhead : WarheadAS
 	{
 		[Desc("Amount of resources to steal from the affected player.")]
 		public readonly int Cash = 10;
