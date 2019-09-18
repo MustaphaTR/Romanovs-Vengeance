@@ -527,6 +527,34 @@ a10husk:
 	RenderVoxels:
 		Image: a10
 
+txbmb:
+	Inherits: pcplane
+	Tooltip:
+		Name: Toxin Bomber
+	Armament:
+		Weapon: ToxinBomb
+		LocalOffset: 0,-512,0
+		PauseOnCondition: !ammo
+	Armament@2:
+		Weapon: ToxinBomb
+		LocalOffset: 0,512,0
+		PauseOnCondition: !ammo
+	AttackBomber:
+	SpawnActorOnDeath:
+		Actor: txbmbhusk
+	AmmoPool:
+		Ammo: 6
+		AmmoCondition: ammo
+	RenderVoxels:
+		Image: txbmb
+
+txbmbhusk:
+	Inherits: pdplanehusk
+	Tooltip:
+		Name: Toxin Bomber
+	RenderVoxels:
+		Image: txbmb
+
 f22drop:
 	Inherits: alplane
 	Tooltip:

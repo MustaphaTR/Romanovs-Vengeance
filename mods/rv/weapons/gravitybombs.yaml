@@ -137,10 +137,97 @@ ParaBomb:
 		ExplosionPalette: tseffect
 		ImpactSounds: gexpapoa.wav
 		ValidTargets: Ground, Air
-	Warhead@2EffWater: CreateEffect
+	Warhead@3EffWater: CreateEffect
 		Explosions: large_watersplash
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
+
+ToxinBomb:
+	ReloadDelay: 10
+	Range: 4c0
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -50
+		Acceleration: 0, 0, -10
+		Image: 160mm
+		Shadow: true
+		Palette: ra
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Damage: 150
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 40
+			Steel: 100
+			Concrete: 40
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, VirusDeath
+	Warhead@2Shr: FireShrapnel
+		Weapon: ToxinSplash
+		AffectsParent: true
+		Amount: 3
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, TerrorDrone, Structure, Wall, Husk, Trees
+	Warhead@4Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Air
+	Warhead@4EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+
+ToxinSplash:
+	Range: 1c512
+	MinRange: 0c640
+	ReloadDelay: 1
+	Projectile: BulletAS
+		Speed: 32
+		LaunchAngle: 165, 215
+		Image: 120mm
+		Shadow: true
+		Palette: ra
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 25
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 40
+			Steel: 100
+			Concrete: 40
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, VirusDeath
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, TerrorDrone, Structure, Wall, Husk, Trees
+	Warhead@3Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 250
 
 NavalMines:
 	ReloadDelay: 6
