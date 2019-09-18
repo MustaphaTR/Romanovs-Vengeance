@@ -430,16 +430,6 @@ WeatherBolt:
 	Warhead@6Smu: LeaveSmudge
 		SmudgeType: LargeScorch
 
-DamageSparkSpawner:
-	ReloadDelay: 384
-	Range: 1
-	Projectile: InstantExplode
-	Warhead@TargetValidation: SpreadDamage
-	Warhead@op: FireShrapnel
-		Weapon: DamageSpark
-		Amount: 6
-		AffectsParent: true
-
 ^Spark:
 	Range: 1c512
 	MinRange: 640
@@ -461,25 +451,32 @@ TeslaSpark:
 	Projectile: BulletAS
 		Palette: highlight
 
-DisabledSparkSpawner:
-	ReloadDelay: 192
-	Range: 1
-	Projectile: InstantExplode
-	Warhead@TargetValidation: SpreadDamage
-	Warhead@op: FireShrapnel
-		Weapon: TeslaSpark
-		Amount: 9
-		AffectsParent: true
-
-DroneSparkSpawner:
-	ReloadDelay: 60
+^SparkSpawner:
 	Range: 1
 	Projectile: InstantExplode
 	Warhead@TargetValidation: SpreadDamage
 	Warhead@op: FireShrapnel
 		Weapon: DamageSpark
-		Amount: 18
 		AffectsParent: true
+
+DamageSparkSpawner:
+	Inherits: ^SparkSpawner
+	ReloadDelay: 384
+	Warhead@op: FireShrapnel
+		Amount: 6
+
+DisabledSparkSpawner:
+	Inherits: ^SparkSpawner
+	ReloadDelay: 192
+	Warhead@op: FireShrapnel
+		Weapon: TeslaSpark
+		Amount: 9
+
+DroneSparkSpawner:
+	Inherits: ^SparkSpawner
+	ReloadDelay: 60
+	Warhead@op: FireShrapnel
+		Amount: 18
 
 BunkerSpawner:
 	Warhead@1Spa: SpawnBuilding
