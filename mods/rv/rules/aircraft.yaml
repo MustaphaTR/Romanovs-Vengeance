@@ -99,6 +99,8 @@ shad:
 	SpawnActorOnDeath:
 		Actor: shadhusk
 	HitShape:
+	ProducibleWithLevel:
+		Prerequisites: vetair
 
 shadhusk:
 	Inherits: ^HelicopterHusk
@@ -316,7 +318,7 @@ orca:
 		Actor: orcahusk
 	HitShape:
 	ProducibleWithLevel:
-		Prerequisites: vetorca
+		Prerequisites: vetair
 
 orcahusk:
 	Inherits: ^PlaneHusk
@@ -382,7 +384,6 @@ beag:
 	RenderVoxels:
 		Image: beag
 	HitShape:
-	-ProducibleWithLevel:
 
 beaghusk:
 	Inherits: ^PlaneHusk
@@ -1340,6 +1341,8 @@ fortress:
 	SpawnActorOnDeath:
 		Actor: fortresshusk
 	HitShape:
+	ProducibleWithLevel:
+		Prerequisites: vetair
 
 fortresshusk:
 	Inherits: ^PlaneHusk
