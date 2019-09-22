@@ -61,23 +61,28 @@ yapowr:
 			NEWURBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
-	idle: yapowr_a
-		Length: 8
-		ShadowStart: 16
+	idle: yapowr
+		Length: 1
+		ShadowStart: 3
 		Tick: 150
-	damaged-idle: yapowr_a
+	damaged-idle: yapowr
+		Start: 1
+		Length: 1
+		ShadowStart: 4
+		Tick: 150
+	empty: yapowr_a
+		Length: 8
+		Tick: 150
+	damaged-empty: yapowr_a
 		Start: 8
 		Length: 8
-		ShadowStart: 24
 		Tick: 150
 	loaded: yapowr_b
 		Length: 8
-		ShadowStart: 16
 		Tick: 150
 	damaged-loaded: yapowr_b
 		Start: 8
 		Length: 8
-		ShadowStart: 24
 		Tick: 150
 	idle-lights: yapowr_c
 		Length: 5
@@ -334,22 +339,15 @@ yagrnd:
 			NEWURBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
-	idle: yagrnd_c
-		Length: 1
-		ShadowStart: 2
-		Tick: 180
-	damaged-idle: yagrnd_c
-		Start: 1
-		Length: 1
-		ShadowStart: 3
-	# idle-normal: yagrnd_a
-	#	length: 10
-	#	ShadowStart: 11
-	#	Tick: 180
-	# damaged-idle-normal: yagrnd_a
-	#	length: 10
-	#	ShadowStart: 11
-	#	Tick: 180
+	idle: yagrnd_a
+		Length: 3
+		ShadowStart: 6
+		Tick: 80
+	damaged-idle: yagrnd_a
+		Start: 3
+		Length: 3
+		ShadowStart: 9
+		Tick: 80
 	make: yagrndmk
 		Length: 30
 		ShadowStart: 30

@@ -54,16 +54,14 @@ yapowr:
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
 		Range: 4c0
-	WithMakeAnimation:
-		BodyNames: body, loaded
-	WithSpriteBody:
+	WithIdleOverlay@empty:
+		Sequence: empty
 		PauseOnCondition: chronodisable
-		RequiresCondition: !loaded
-	WithSpriteBody@loaded:
-		Name: loaded
+		RequiresCondition: !loaded && !build-incomplete
+	WithIdleOverlay@loaded:
 		Sequence: loaded
 		PauseOnCondition: chronodisable
-		RequiresCondition: loaded
+		RequiresCondition: loaded && !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -363,10 +361,6 @@ yagrnd:
 	ProvidesPrerequisite@repairpad:
 		Prerequisite: repairpad
 	AcceptsDeliveredCash:
-	# WithIdleOverlay@normal:
-	#	Sequence: idle-normal
-	#	PauseOnCondition: chronodisable
-	#	RequiresCondition: !build-incomplete
 	WithAcceptDeliveredCashAnimation:
 		Sequence: grind
 	WithAcceptDeliveredCashSound:
