@@ -906,8 +906,8 @@ yasgen:
 		Types: building
 		RequiresCondition: !build-incomplete
 	CaptureNotification:
-	ProximityExternalCondition@INVISIBILITY:
-		Condition: invisibility
+	ProximityExternalCondition@INVISIBILITY-GENERATOR:
+		Condition: invisibility-generator
 		Range: 9c0
 		RequiresCondition: !disabled
 	WithRangeCircle:
@@ -924,6 +924,8 @@ yasgen:
 		Amount: -100
 	MustBeDestroyed:
 		RequiredForShortGame: false
+	-Cloak@stealth-generator:
+	-ExternalCondition@INVISIBILITY-GENERATOR:
 
 yagntc:
 	Inherits: ^SecondarySuperWeapon

@@ -505,7 +505,7 @@
 
 ^LazarusShieldable:
 	Cloak@lazarus:
-		RequiresCondition: invisibility && !chronodisable && !emp
+		RequiresCondition: invisibility && !chronodisable
 		InitialDelay: 25
 		CloakDelay: 100
 		IsPlayerPalette: true
@@ -519,6 +519,16 @@
 		RequiresCondition: invisibility
 	ExternalCondition@INVISIBILITY:
 		Condition: invisibility
+
+^AffectedByStealthGenerator:
+	Cloak@stealth-generator:
+		RequiresCondition: invisibility-generator && !chronodisable
+		InitialDelay: 25
+		CloakDelay: 100
+		IsPlayerPalette: true
+		UncloakOn: Attack, Damage
+	ExternalCondition@INVISIBILITY-GENERATOR:
+		Condition: invisibility-generator
 
 ^ForceShieldable:
 	WithColoredOverlay@forceshield:
@@ -770,6 +780,7 @@
 	Inherits@7: ^AcceptsCommandoC4
 	Inherits@8: ^BuildingParticles
 	Inherits@9: ^ChronoDisable
+	Inherits@10: ^AffectedByStealthGenerator
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	AppearsOnMapPreview:
@@ -1210,6 +1221,7 @@
 	Inherits@11: ^AffectedByLeaflets
 	Inherits@12: ^AffectedByPropaganda
 	Inherits@13: ^AffectedByChronoBoost
+	Inherits@14: ^AffectedByStealthGenerator
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
@@ -1527,6 +1539,7 @@
 	Inherits@14: ^AffectedByPropaganda
 	Inherits@15: ^AffectedByChronoBoost
 	Inherits@16: ^DisabledByMagnetron
+	Inherits@17: ^AffectedByStealthGenerator
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -1825,6 +1838,7 @@
 	Inherits@13: ^AffectedByPropaganda
 	Inherits@14: ^AffectedByChronoBoost
 	Inherits@15: ^DisabledByMagnetron
+	Inherits@16: ^AffectedByStealthGenerator
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
