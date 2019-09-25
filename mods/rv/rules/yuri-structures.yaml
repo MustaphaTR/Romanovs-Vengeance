@@ -882,14 +882,14 @@ yasgen:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Valued:
-		Cost: 1250
+		Cost: 1000
 	Tooltip:
 		Name: Stealth Generator
 	Buildable:
 		Queue: Support.Yuri
 		BuildPaletteOrder: 80
 		Prerequisites: yatech, ~techlevel.3
-		Description: Makes nearby units invisibile while not firing.\nRequires power to operate.
+		Description: Makes nearby units and structures invisibile while not firing.\nRequires power to operate.
 	Selectable:
 		Bounds: 50, 44, -1, -5
 		DecorationBounds: 50, 84, -1, -30
@@ -908,10 +908,10 @@ yasgen:
 	CaptureNotification:
 	ProximityExternalCondition@INVISIBILITY:
 		Condition: invisibility
-		Range: 6c0
+		Range: 9c0
 		RequiresCondition: !disabled
 	WithRangeCircle:
-		Range: 6c0
+		Range: 9c0
 		Type: invisibility
 		RequiresCondition: !disabled
 	Targetable:
