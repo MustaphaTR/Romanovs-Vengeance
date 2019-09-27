@@ -1084,16 +1084,36 @@ disk:
 		Type: GroundPosition
 	Armament@primary:
 		Weapon: DiskLaser
+		PauseOnCondition: !ammo
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: DiskLaserE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	Armament@primary-aa:
+		Weapon: DiskLaserAA
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@elite-aa:
+		Weapon: DiskLaserAAE
+		PauseOnCondition: !ammo
 		RequiresCondition: rank-elite
 	Armament@drain:
+		Name: secondary
 		Weapon: DiskDrain
 		MuzzleSequence: muzzle
 	Armament@steal:
+		Name: secondary
 		Weapon: DiskSteal
 		MuzzleSequence: muzzle
+	AmmoPool:
+		Armaments: primary
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 80
+		Count: 1
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover

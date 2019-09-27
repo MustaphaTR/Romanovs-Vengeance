@@ -524,6 +524,22 @@ DiskLaserE:
 	Burst: 2
 	ReloadDelay: 95
 
+DiskLaserAA:
+	Inherits: DiskLaser
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+DiskLaserAAE:
+	Inherits: DiskLaserAA
+	Burst: 2
+	ReloadDelay: 95
+
+DiskLaserE:
+	Inherits: DiskLaser
+	Burst: 2
+	ReloadDelay: 95
+
 DoomLaser:
 	Inherits: Comet
 	ReloadDelay: 100
