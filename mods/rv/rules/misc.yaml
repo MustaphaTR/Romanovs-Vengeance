@@ -172,9 +172,11 @@ camera.satscan:
 		Queue: SpySatellite
 	Tooltip:
 		Name: Satellite Scan
-	GivesIntelligence:
-		Types: SatelliteScan
-		RequiresCondition: uplinkavailable
+	#GivesIntelligence:
+	#	Types: SatelliteScan
+	#	RequiresCondition: uplinkavailable
+	RevealsMap:
+		RevealGeneratedShroud: false
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 750
