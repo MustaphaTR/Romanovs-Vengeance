@@ -470,11 +470,11 @@ carpad:
 
 capsyb:
 	Inherits: ^TechBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@shape: ^2x2Shape
 	Selectable:
 		Bounds: 80, 50, 0, -15
 		DecorationBounds: 96, 160, 0, -64
-	Inherits@EMPULSE: ^DisabledByEMP
 	Tooltip:
 		Name: Tech Psychic Beacon
 	TooltipDescription:
@@ -490,6 +490,9 @@ capsyb:
 		RequiresCondition: enabled
 		OrderName: TechPsychicControl
 		PauseOnCondition: chronodisable || emp
+		CameraRange: 4c0
+		CameraRemoveDelay: 100
+		SpawnCameraAtGround: true
 		Prerequisites:
 			1: capsyb
 		Icons:
