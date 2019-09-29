@@ -544,8 +544,12 @@ fv:
 		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@INFONLY:
-		RequiresCondition: ifv-sniper || ifv-virus || ifv-seal || ifv-tanya || ifv-yuri
+		RequiresCondition: ifv-seal || ifv-tanya || ifv-yuri
 		ValidTargets: Infantry
+		InvalidTargets: NoAutoTarget
+	AutoTargetPriority@GARRISONCLEANER:
+		RequiresCondition: ifv-sniper || ifv-virus
+		ValidTargets: Infantry, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@REPAIR:
 		RequiresCondition: ifv-repair
