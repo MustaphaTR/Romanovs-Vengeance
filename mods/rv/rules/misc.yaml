@@ -177,6 +177,7 @@ camera.satscan:
 	#	RequiresCondition: uplinkavailable
 	RevealsMap:
 		RevealGeneratedShroud: false
+		RequiresCondition: uplinkavailable
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 750
@@ -228,6 +229,7 @@ txgasg:
 	Inherits@2: ^SpriteActor
 	-AppearsOnRadar:
 	HiddenUnderFog:
+		VisibilityType: CenterPosition
 	Aircraft:
 		CruiseAltitude: 1
 		TurnSpeed: 255
