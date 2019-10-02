@@ -1,5 +1,6 @@
 ^ConstructionYard:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^4x4Shape
 	Buildable:
 		Queue: Building.Allies, Building.Soviets, Building.Yuri
@@ -56,20 +57,20 @@
 		Offset: 1,1
 		Facing: 96
 		DeployCursor: undeploy
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || controlled
 		RequiresCondition: factundeploy && !build-incomplete
 	TransformsIntoMobile:
-		RequiresCondition: factundeploy && !build-incomplete
+		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
 		Locomotor: tracked
 		Voice: Move
 		RequiresForceMove: true
 	TransformsIntoRepairable:
-		RequiresCondition: factundeploy && !build-incomplete
+		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 		Voice: Move
 		RequiresForceMove: true
 	TransformsIntoPassenger:
-		RequiresCondition: factundeploy && !build-incomplete
+		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
 		CargoType: Vehicle
 		Voice: Move
 		RequiresForceMove: true
@@ -98,6 +99,7 @@
 
 ^ExpansionNode:
 	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Building:
 		Footprint: xx xx
@@ -120,20 +122,20 @@
 		IntoActor: expn
 		Facing: 96
 		DeployCursor: undeploy
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || controlled
 		RequiresCondition: factundeploy && !build-incomplete
 	TransformsIntoMobile:
-		RequiresCondition: factundeploy && !build-incomplete
+		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
 		Locomotor: tracked
 		Voice: Move
 		RequiresForceMove: true
 	TransformsIntoRepairable:
-		RequiresCondition: factundeploy && !build-incomplete
+		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 		Voice: Move
 		RequiresForceMove: true
 	TransformsIntoPassenger:
-		RequiresCondition: factundeploy && !build-incomplete
+		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
 		CargoType: Vehicle
 		Voice: Move
 		RequiresForceMove: true

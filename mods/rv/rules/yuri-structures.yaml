@@ -186,19 +186,20 @@ yarefn:
 		IntoActor: smin
 		DeployCursor: undeploy
 		Voice: Undeploy
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	TransformsIntoMobile:
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !chronodisable
 		Locomotor: tracked
 		Voice: Move
 		RequiresForceMove: true
 	TransformsIntoRepairable:
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !chronodisable
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 		Voice: Move
 		RequiresForceMove: true
 	TransformsIntoPassenger:
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !chronodisable
 		CargoType: Vehicle
 		Voice: Move
 		RequiresForceMove: true

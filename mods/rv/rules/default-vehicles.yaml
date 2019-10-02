@@ -1,6 +1,7 @@
 ^ConstructionVehicle:
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
@@ -51,7 +52,7 @@
 		Facing: 96
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		PauseOnCondition: chronodisable || emp || terrordroned
+		PauseOnCondition: chronodisable || emp || terrordroned || controlled
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
 	TransferTimedExternalConditionOnTransform@INVISIBILITY:
@@ -70,6 +71,7 @@
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
@@ -116,7 +118,7 @@
 		Facing: 96
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		PauseOnCondition: chronodisable || emp || terrordroned
+		PauseOnCondition: chronodisable || emp || terrordroned || controlled
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
 	TransferTimedExternalConditionOnTransform@INVISIBILITY:
