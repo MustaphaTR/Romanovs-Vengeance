@@ -67,7 +67,7 @@ namespace OpenRA.Mods.RA2.Traits
 		int infectedToken = ConditionManager.InvalidConditionToken;
 		int infectedByToken = ConditionManager.InvalidConditionToken;
 
-		bool killInfector = false;
+		int dealthDamage = 0;
 
 		public Infectable(Actor self, InfectableInfo info)
 		{
@@ -140,7 +140,7 @@ namespace OpenRA.Mods.RA2.Traits
 					Infector = null;
 					InfectorTrait = null;
 					FirepowerMultipliers = new int[] { };
-					killInfector = false;
+					dealthDamage = 0;
 				});
 			}
 		}
@@ -151,9 +151,9 @@ namespace OpenRA.Mods.RA2.Traits
 			{
 				if (e.Attacker != Infector)
 				{
-					var threshold = InfectorTrait.Info.SuppressionThreshold;
-					if (threshold > 0 && e.Damage.Value > threshold)
-						killInfector = true;
+					var damageThreshold = InfectorTrait.Info.SuppressionDamageThreshold;
+					if (damageThreshold > 0 && e.Damage.Value > damageThreshold)
+						dealthDamage++;
 				}
 				else
 				{
@@ -173,7 +173,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void INotifyKilled.Killed(Actor self, AttackInfo e)
 		{
-			RemoveInfector(self, killInfector, e);
+			var kill = dealthDamage >= InfectorTrait.Info.SuppressionAmountThreshold;
+			RemoveInfector(self, kill, e);
 		}
 
 		void ITick.Tick(Actor self)

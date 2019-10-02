@@ -33,7 +33,11 @@ namespace OpenRA.Mods.RA2.Traits
 
 		[Desc("If more than this outside damage is dealt to infected unit while this actor is in, it is killed when infected unit dies.",
 			"Use -1 to never kill the actor.")]
-		public readonly int SuppressionThreshold = -1;
+		public readonly int SuppressionDamageThreshold = -1;
+
+		[Desc("If more than this many times outside damage with enough is dealt SuppressionDamageThreshold to infected unit while this actor is in, it is killed when infected unit dies.",
+			"Use -1 to never kill the actor.")]
+		public readonly int SuppressionAmountThreshold = 1;
 
 		[Desc("If the infected actor enters this damage state, kill the actor.")]
 		public readonly DamageState[] KillState = { };
