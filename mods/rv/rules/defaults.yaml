@@ -563,6 +563,11 @@
 		Condition: chronodisable
 		RequiresCondition: affectedbytemporal
 
+^ChronoDisableDisabledWithIC:
+	Inherits: ^ChronoDisable
+	AffectedByTemporal:
+		RequiresCondition: !invulnerability
+
 ^MindControllable:
 	MindControllable:
 		Condition: controlled
@@ -779,7 +784,7 @@
 	Inherits@6: ^AcceptsSEALC4
 	Inherits@7: ^AcceptsCommandoC4
 	Inherits@8: ^BuildingParticles
-	Inherits@9: ^ChronoDisable
+	Inherits@9: ^ChronoDisableDisabledWithIC
 	Inherits@10: ^AffectedByStealthGenerator
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
@@ -1526,7 +1531,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable
 	Inherits@3: ^LazarusShieldable
-	Inherits@4: ^ChronoDisable
+	Inherits@4: ^ChronoDisableDisabledWithIC
 	Inherits@5: ^DisabledByEMP
 	Inherits@6: ^CrateStatModifiers
 	Inherits@7: ^MachineShopRepair
@@ -1710,7 +1715,7 @@
 
 ^Aircraft:
 	Inherits@1: ^NeutralAircraft
-	Inherits@2: ^ChronoDisable
+	Inherits@2: ^ChronoDisableDisabledWithIC
 	Inherits@3: ^MachineShopRepair
 	Inherits@4: ^AcceptsIvanBomb
 	Inherits@5: ^AcceptsTanyaC4
@@ -1826,7 +1831,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^IronCurtainable
 	Inherits@3: ^LazarusShieldable
-	Inherits@4: ^ChronoDisable
+	Inherits@4: ^ChronoDisableDisabledWithIC
 	Inherits@5: ^DisabledByEMP
 	Inherits@6: ^CrateStatModifiers
 	Inherits@7: ^MachineShopRepair

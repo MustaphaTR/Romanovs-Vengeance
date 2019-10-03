@@ -17,7 +17,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("This actor can be affected by temporal warheads.")]
-	public class AffectedByTemporalInfo : ITraitInfo
+	public class AffectedByTemporalInfo : ConditionalTraitInfo
 	{
 		[GrantedConditionReference]
 		[Desc("The condition type to grant when the actor is affected.")]
@@ -39,13 +39,12 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly bool ShowSelectionBar = true;
 		public readonly Color SelectionBarColor = Color.Magenta;
 
-		public object Create(ActorInitializer init) { return new AffectedByTemporal(init, this); }
+		public override object Create(ActorInitializer init) { return new AffectedByTemporal(init, this); }
 	}
 
-	public class AffectedByTemporal : INotifyCreated, ISync, ITick, ISelectionBar
+	public class AffectedByTemporal : ConditionalTrait<AffectedByTemporalInfo>, INotifyCreated, ISync, ITick, ISelectionBar
 	{
 		Actor self;
-		AffectedByTemporalInfo info;
 		ConditionManager conditionManager;
 
 		int token = ConditionManager.InvalidConditionToken;
@@ -56,8 +55,8 @@ namespace OpenRA.Mods.RA2.Traits
 		int tick;
 
 		public AffectedByTemporal(ActorInitializer init, AffectedByTemporalInfo info)
+			: base(info)
 		{
-			this.info = info;
 			self = init.Self;
 			var health = self.Info.TraitInfoOrDefault<IHealthInfo>();
 			requiredDamage = info.EraseDamage >= 0 || health == null ? info.EraseDamage : health.MaxHP * info.EraseDamageMultiplier / 100;
@@ -70,24 +69,27 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public void AddDamage(int damage, Actor damager)
 		{
+			if (IsTraitDisabled)
+				return;
+
 			recievedDamage = recievedDamage + damage;
-			tick = info.RevokeDelay;
+			tick = Info.RevokeDelay;
 
 			if (recievedDamage >= requiredDamage)
 			{
 				self.Dispose();
 
-				if (info.EraseSounds.Any())
+				if (Info.EraseSounds.Any())
 				{
-					var sound = info.EraseSounds.Random(self.World.LocalRandom);
+					var sound = Info.EraseSounds.Random(self.World.LocalRandom);
 					Game.Sound.Play(SoundType.World, sound, self.CenterPosition);
 				}
 			}
 
 			if (conditionManager != null &&
-				!string.IsNullOrEmpty(info.Condition) &&
+				!string.IsNullOrEmpty(Info.Condition) &&
 				token == ConditionManager.InvalidConditionToken)
-				token = conditionManager.GrantCondition(self, info.Condition);
+				token = conditionManager.GrantCondition(self, Info.Condition);
 		}
 
 		void ITick.Tick(Actor self)
@@ -103,7 +105,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		float ISelectionBar.GetValue()
 		{
-			if (!info.ShowSelectionBar)
+			if (!Info.ShowSelectionBar)
 				return 0;
 
 			return (float)recievedDamage / requiredDamage;
@@ -111,6 +113,14 @@ namespace OpenRA.Mods.RA2.Traits
 
 		bool ISelectionBar.DisplayWhenEmpty { get { return false; } }
 
-		Color ISelectionBar.GetColor() { return info.SelectionBarColor; }
+		Color ISelectionBar.GetColor() { return Info.SelectionBarColor; }
+
+		protected override void TraitDisabled(Actor self)
+		{
+			recievedDamage = 0;
+
+			if (conditionManager != null && token != ConditionManager.InvalidConditionToken)
+				token = conditionManager.RevokeCondition(self, token);
+		}
 	}
 }
