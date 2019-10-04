@@ -172,9 +172,12 @@ namespace OpenRA.Mods.RA2.Traits
 		}
 
 		void INotifyKilled.Killed(Actor self, AttackInfo e)
-		{
-			var kill = dealthDamage >= InfectorTrait.Info.SuppressionAmountThreshold;
-			RemoveInfector(self, kill, e);
+        {
+            if (InfectorTrait != null)
+            {
+                var kill = dealthDamage >= InfectorTrait.Info.SuppressionAmountThreshold;
+                RemoveInfector(self, kill, e);
+            }
 		}
 
 		void ITick.Tick(Actor self)
