@@ -145,7 +145,7 @@ yarefn:
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 30
-		Prerequisites: power
+		Prerequisites: ~disabled # power
 		Description: Gathers and processes ore.\nComes with 2 slaves.
 	Selectable:
 		Class: yarefn
@@ -167,6 +167,8 @@ yarefn:
 		Radius: 3c0
 	ProvidesPrerequisite@yarefn:
 		Prerequisite: yarefn
+	ProvidesPrerequisite@psirefn:
+		Prerequisite: psirefn
 	ProvidesPrerequisite@refinery:
 		Prerequisite: refinery
 	Building:
@@ -273,6 +275,21 @@ yarefn.noslave:
 	-FreeActor@1:
 	-FreeActor@2:
 
+yarfn2:
+	Inherits: ^Refinery
+	Buildable:
+		Queue: Building.Yuri
+	ProvidesPrerequisite@psirefn:
+		Prerequisite: psirefn
+	Selectable:
+		Bounds: 126, 70, -10, -20
+		DecorationBounds: 170, 150, -6, -33
+	FreeActor:
+		Actor: gmin
+	-WithDockedOverlay:
+	PlaceBuildingVariants:
+		Actors: yarfnb, yarfnc, yarfnd
+
 yaweap:
 	Inherits: ^WarFactory
 	Buildable:
@@ -378,7 +395,7 @@ yadome:
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 60
-		Prerequisites: power, yarefn, ~techlevel.2
+		Prerequisites: power, psirefn, ~techlevel.2
 		Description: Provides radar
 	Valued:
 		Cost: 1500
@@ -1135,6 +1152,43 @@ yabrcb:
 	Exit@2_n1:
 		ExitCell: 2, -1
 
+yarfnb:
+	Inherits: ^RefineryB
+	Selectable:
+		Bounds: 126, 70, 10, -20
+		DecorationBounds: 170, 150, 6, -33
+	FreeActor:
+		Actor: gmin
+	ProvidesPrerequisite@yarfn2:
+		Prerequisite: yarfn2
+	ProvidesPrerequisite@psirefn:
+		Prerequisite: psirefn
+	-WithDockedOverlay:
+
+yarfnc:
+	Inherits: ^RefineryC
+	Selectable:
+		Bounds: 126, 70, 10, -10
+		DecorationBounds: 170, 150, -6, -33
+	FreeActor:
+		Actor: gmin
+	ProvidesPrerequisite@yarfn2:
+		Prerequisite: yarfn2
+	ProvidesPrerequisite@psirefn:
+		Prerequisite: psirefn
+
+yarfnd:
+	Inherits: ^RefineryD
+	Selectable:
+		Bounds: 126, 70, -10, -10
+		DecorationBounds: 170, 150, 6, -33
+	FreeActor:
+		Actor: gmin
+	ProvidesPrerequisite@yarfn2:
+		Prerequisite: yarfn2
+	ProvidesPrerequisite@psirefn:
+		Prerequisite: psirefn
+
 yaweab:
 	Inherits: yaweap
 	Inherits@shape: ^3x5Shape
@@ -1170,3 +1224,9 @@ yatecb:
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
+
+psirefn:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Ore Refinery

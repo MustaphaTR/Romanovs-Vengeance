@@ -165,6 +165,46 @@ yarefn:
 		Offset: 0,0
 		UseTilesetCode: false
 
+yarfn2:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: -13, -53
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: ygrfn2
+		ShadowStart: 3
+	damaged-idle: ygrfn2
+		Start: 1
+		ShadowStart: 4
+	idle-drill: ygrfn2_a
+		Length: 12
+		ShadowStart: 24
+		Tick: 120
+	damaged-idle-drill: ygrfn2_a
+		Start: 12
+		Length: 12
+		ShadowStart: 32
+		Tick: 120
+	make: ygrfn2mk
+		Length: 21
+		ShadowStart: 21
+		UseTilesetCode: false
+	idle-bib: ygrfn2bb
+		ShadowStart: 3
+		ZOffset: -512
+	damaged-idle-bib: ygrfn2bb
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -512
+	icon: yrf2icon
+		Offset: 0,0
+		UseTilesetCode: false
+
 yaweap:
 	Inherits@MC: ^MindControllable
 	Defaults:
@@ -930,6 +970,49 @@ yabrcb:
 	Defaults:
 		FlipX: true
 		Offset: -15,-37
+	icon:
+		FlipX: false
+
+yarfnb:
+	Inherits: yarfn2
+	Defaults:
+		FlipX: true
+		Offset: 13, -53
+	icon:
+		FlipX: false
+
+yarfnc:
+	Inherits@MC: ^MindControllable
+	Defaults: ygrfnc
+		Offset: 3, 32
+	idle:
+		Start: 31
+		ShadowStart: 66
+	damaged-idle:
+		Start: 33
+		ShadowStart: 69
+	make:
+		Length: 29
+		ShadowStart: 35
+	idle-bib:
+		Start: 32
+		ShadowStart: 67
+		Length: 1
+		ZOffset: -9999
+		ZRamp: 1
+	damaged-idle-bib:
+		Start: 34
+		ShadowStart: 69
+		ZOffset: -9999
+		ZRamp: 1
+	icon: yrf2icon
+		Offset: 0, 0
+		UseTilesetCode: false
+
+yarfnd:
+	Inherits: yarfnc
+	Defaults:
+		FlipX: true
 	icon:
 		FlipX: false
 

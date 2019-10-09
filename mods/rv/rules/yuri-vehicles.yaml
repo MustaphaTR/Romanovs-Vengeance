@@ -15,6 +15,7 @@ smin:
 		Queue: Vehicle.Yuri
 		BuildPaletteOrder: 10
 		Description: Gathers and processes ore.
+		Prerequisites: ~disabled
 	Valued:
 		Cost: 1400
 	DeliversCash:
@@ -68,6 +69,8 @@ smin:
 		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 	ProvidesPrerequisite@yarefn:
 		Prerequisite: yarefn
+	ProvidesPrerequisite@psirefn:
+		Prerequisite: psirefn
 	ProvidesPrerequisite@refinery:
 		Prerequisite: refinery
 	RenderSprites:
@@ -95,6 +98,87 @@ smin:
 		RequiresCondition: spawn-ore
 	GrantConditionOnPlayerResources:
 		Condition: spawn-ore
+
+gmin:
+	Inherits: ^Vehicle
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Buildable:
+		Queue: Vehicle.Yuri
+		BuildPaletteOrder: 10
+		Prerequisites: refinery, ~techlevel.1
+		Description: Gathers Ore and Gems.\n  Unarmed.\n  Immune to Radiation.\nSpecial ability: Invisiblity
+	Valued:
+		Cost: 1000
+	DeliversCash:
+		Payload: 500
+		PlayerExperience: 50
+		Voice: Move
+	Tooltip:
+		Name: Stealth Miner
+	Selectable:
+		Priority: 7
+		Bounds: 64, 52, 0, -6
+	Harvester:
+		DeliveryBuildings: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd
+		Capacity: 30
+		Resources: Ore, Gems
+		BaleUnloadDelay: 2
+		HarvestVoice: Harvest
+		DeliverVoice: Move
+		EmptyCondition: no-ore
+	Explodes:
+		RequiresCondition: no-ore
+	Explodes@Ore:
+		Weapon: MinerExplode
+		RequiresCondition: !no-ore
+	Health:
+		HP: 800
+	Armor:
+		Type: Medium
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	Mobile:
+		Speed: 60
+		TurnSpeed: 8
+		Locomotor: heavytracked
+	Guard:
+		Voice: Move
+	RevealsShroud:
+		Range: 4c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 4c0
+	RevealOnDeath:
+		Radius: 2c0
+	Cloak:
+		RequiresCondition: !chronodisable && !emp
+		InitialDelay: 25
+		CloakDelay: 100
+		IsPlayerPalette: true
+		UncloakOn: Attack, Damage, Dock
+	-Cloak@lazarus:
+	-ExternalCondition@INVISIBILITY:
+	Targetable:
+		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
+	WithHarvestOverlay:
+		LocalOffset: 121,0,0
+		Palette: effect
+	RenderSprites: # TODO: WithHarvestOverlay relies on this, but it should actually be removed
+	RenderVoxels:
+	WithVoxelUnloadBody:
+	Voiced:
+		VoiceSet: SlaveMinerVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	HitShape:
 
 ltnk:
 	Inherits: ^MainBattleTank
