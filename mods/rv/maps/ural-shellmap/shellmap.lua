@@ -11,7 +11,7 @@ VeteranUnits = { Ivan }
 EliteUnits = { Vladimir }
 
 V3Path = { RoadBWP1.Location, RoadBWP2.Location, RoadBWP3.Location, RoadBWP4.Location, RoadBWP5.Location, RoadBWP6.Location, RoadBWP7.Location, RoadBWP8.Location, RoadBWP9.Location, RoadAWP7.Location, RoadAWP6.Location, RoadAWP5.Location, RoadAWP4.Location, RoadAWP3.Location, RoadAWP2.Location, RoadAWP1.Location }
-FlakPath = { RoadAWP1.Location, RoadAWP2.Location, RoadAWP3.Location, RoadAWP4.Location, RoadAWP5.Location, RoadAWP6.Location, RoadAWP7.Location, RoadAWP8.Location, RoadAWP9.Location, RoadAWP10.Location, RoadAWP11.Location, RoadAWP12.Location, RoadAWP13.Location, RoadAWP14.Location, RoadAWP15.Location, RoadAWP16.Location, RoadAWP17.Location, RoadAWP18.Location, RoadAWP19.Location, RoadAWP20.Location}
+FlakPath = { RoadAWP1.Location, RoadAWP2.Location, RoadAWP3.Location, RoadAWP4.Location, RoadAWP5.Location, RoadAWP6.Location, RoadAWP7.Location, RoadAWP8.Location, RoadAWP9.Location, RoadAWP10.Location, RoadAWP11.Location, RoadAWP12.Location, RoadAWP13.Location, RoadAWP14.Location, RoadAWP15.Location, RoadAWP16.Location, RoadAWP17.Location, RoadAWP18.Location, RoadAWP19.Location, RoadAWP20.Location, RoadAWP21.Location }
 
 DoggoPatrolPath = { DoggoPatrolA.Location, DoggoPatrolB.Location, DoggoPatrolC.Location, DoggoPatrolD.Location }
 FlakPatrolPath = { FlakPatrolA.Location, FlakPatrolB.Location }
