@@ -588,16 +588,15 @@ mind:
 	WithMindControlArc:
 		UsePlayerColor: true
 		Offset: 0,0,960
-	AttackFrontal:
-		FacingTolerance: 128
+	Turreted:
+		TurnSpeed: 255
+	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: emp || chronodisable
 	AttackMove:
 		Voice: Move
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: MindControl
-		RequiresCondition: !controlling
 	RenderSprites:
 	Selectable:
 		Bounds: 64, 52, 0, -6
