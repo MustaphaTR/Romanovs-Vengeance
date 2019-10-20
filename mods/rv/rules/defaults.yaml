@@ -855,6 +855,18 @@
 	Demolishable:
 	HitShape:
 		UseTargetableCellsOffsets: true
+	Tooltip:
+		Name: Structure
+		GenericName: Structure
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Structure
+		GenericName: Structure
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Building
 	WithBuildingRepairDecoration:
@@ -927,6 +939,8 @@
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
+		Name: Civilian Building
+	Tooltip@NoRow:
 		Name: Civilian Building
 	MapEditorData:
 		Categories: Civilian building
@@ -1035,6 +1049,8 @@
 		Dimensions: 1, 1
 	Tooltip:
 		Name: Flag
+	Tooltip@NoRow:
+		Name: Flag
 	Health:
 		HP: 20
 	Armor:
@@ -1101,6 +1117,18 @@
 	Crushable:
 		CrushClasses: wall
 	HitShape:
+	Tooltip:
+		Name: Wall
+		GenericName: Wall
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Wall
+		GenericName: Wall
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Wall
 	RequiresBuildableArea:
@@ -1129,6 +1157,12 @@
 	SoundOnDamageTransition:
 		DamagedSounds: gblacrua.wav, gblacrub.wav
 		DestroyedSounds: gblacrua.wav, gblacrub.wav
+	Tooltip:
+		Name: Fence
+		GenericName: Fence
+	Tooltip@NoRow:
+		Name: Fence
+		GenericName: Fence
 
 ^Gate:
 	Inherits: ^Building
@@ -1151,7 +1185,6 @@
 	-WithSpriteBody:
 	WithGateSpriteBody:
 		OpenSequence: open
-	Tooltip:
 	Buildable:
 		Description: Automated barrier that opens for allied units.\nCan be rotated.
 	HitShape:
@@ -1172,6 +1205,12 @@
 	RequiresBuildableArea:
 		AreaTypes: building
 		Adjacent: 6
+	Tooltip:
+		Name: Gate
+		GenericName: Gate
+	Tooltip@NoRow:
+		Name: Gate
+		GenericName: Gate
 
 ^Gate_A:
 	Inherits: ^Gate
@@ -1339,6 +1378,18 @@
 	Chronoshiftable:
 		ExplodeInstead: true
 		ReturnToOrigin: false
+	Tooltip:
+		Name: Soldier
+		GenericName: Soldier
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Soldier
+		GenericName: Soldier
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Infantry
 	EdibleByLeap:
@@ -1447,6 +1498,9 @@
 		PlayerExperience: 2
 		Voice: Move
 	Tooltip:
+		Name: Civilian
+		GenericName: Civilian
+	Tooltip@NoRow:
 		Name: Civilian
 		GenericName: Civilian
 	Health:
@@ -1633,6 +1687,18 @@
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
+	Tooltip:
+		Name: Vehicle
+		GenericName: Vehicle
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Vehicle
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Vehicle
 
@@ -1643,8 +1709,6 @@
 	OwnerLostAction:
 		Action: ChangeOwner
 	RenderSprites:
-	Tooltip:
-		GenericName: Civilian Vehicle
 	Valued:
 		Cost: 800
 	Mobile:
@@ -1712,6 +1776,18 @@
 	DeathSounds:
 	AppearsOnRadar:
 		UseLocation: true
+	Tooltip:
+		Name: Aircraft
+		GenericName: Aircraft
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Aircraft
+		GenericName: Aircraft
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Aircraft
 
@@ -1777,7 +1853,17 @@
 	HiddenUnderFog:
 		Type: GroundPosition
 	Tooltip:
+		Name: Missile
 		GenericName: Missile
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Missile
+		GenericName: Missile
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	HitShape:
 	RejectsOrders:
 	BodyOrientation:
@@ -1803,13 +1889,23 @@
 	HiddenUnderFog:
 		Type: CenterPosition
 	ScriptTriggers:
-	Tooltip:
-		GenericName: Destroyed Aircraft
 	Health:
 		HP: 1
 	FallsToEarth:
 		Velocity: 86
 	HitShape:
+	Tooltip:
+		Name: Aircraft
+		GenericName: Aircraft
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Aircraft
+		GenericName: Aircraft
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Husk
 	Interactable:
@@ -1898,8 +1994,6 @@
 		QuantizedFacings: 0
 		CameraPitch: 90
 		UseClassicPerspectiveFudge: false
-	Tooltip:
-		GenericName: Ship
 	Explodes:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
@@ -1915,6 +2009,18 @@
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
+	Tooltip:
+		Name: Ship
+		GenericName: Ship
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Ship
+		GenericName: Ship
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Naval
 

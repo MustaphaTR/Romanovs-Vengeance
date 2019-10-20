@@ -24,7 +24,11 @@ sub:
 	Valued:
 		Cost: 800
 	Tooltip:
-		Name: Typhoon Attack Sub
+		Name: Typhoon Attack Submarine
+		GenericName: Submarine
+	Tooltip@NoRow:
+		Name: Typhoon Attack Submarine
+		GenericName: Submarine
 	Health:
 		HP: 600
 	Armor:
@@ -108,6 +112,8 @@ hyd:
 		Cost: 700
 	Tooltip:
 		Name: Sea Scorpion
+	Tooltip@NoRow:
+		Name: Sea Scorpion
 	Selectable:
 		Bounds: 50, 30, 0, -6
 	Health:
@@ -171,6 +177,16 @@ sqd:
 		Cost: 800
 	Tooltip:
 		Name: Giant Squid
+		GenericName: Squid
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Giant Squid
+		GenericName: Squid
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	Armor:
 		Type: Light
 	Health:
@@ -279,6 +295,8 @@ dred:
 		Cost: 2000
 	Tooltip:
 		Name: Dreadnought
+	Tooltip@NoRow:
+		Name: Dreadnought
 	Health:
 		HP: 800
 	Armor:
@@ -337,6 +355,8 @@ dmisl:
 	Valued:
 		Cost: 50
 	Tooltip:
+		Name: Dreadnought Missile
+	Tooltip@NoRow:
 		Name: Dreadnought Missile
 	Health:
 		HP: 50

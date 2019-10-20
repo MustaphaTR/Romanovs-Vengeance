@@ -25,6 +25,8 @@ cmin:
 		Voice: Move
 	Tooltip:
 		Name: Chrono Miner
+	Tooltip@NoRow:
+		Name: Chrono Miner
 	Selectable:
 		Priority: 7
 		Bounds: 64, 52, 0, -6
@@ -99,6 +101,8 @@ mtnk:
 		Voice: Move
 	Tooltip:
 		Name: Grizzly Battle Tank
+	Tooltip@NoRow:
+		Name: Grizzly Battle Tank
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
 		Description: Allied Main Battle Tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
@@ -137,6 +141,8 @@ tnkd:
 		PlayerExperience: 45
 		Voice: Move
 	Tooltip:
+		Name: Tank Destroyer
+	Tooltip@NoRow:
 		Name: Tank Destroyer
 	Buildable:
 		Queue: Vehicle.Germany
@@ -206,70 +212,199 @@ fv:
 		Voice: Move
 	Tooltip:
 		Name: Infantry Fighting Vehicle
-		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && showownername
+	Tooltip@NoRow:
+		Name: Infantry Fighting Vehicle
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !showownername
 	Tooltip@mg:
 		Name: Machine Gun IFV
-		RequiresCondition: ifv-mg
+		GenericName: Vehicle
+		RequiresCondition: ifv-mg && showownername
+	Tooltip@mg-norow:
+		Name: Machine Gun IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-mg && !showownername
 	Tooltip@init:
 		Name: Ignitor IFV
-		RequiresCondition: ifv-init
+		GenericName: Vehicle
+		RequiresCondition: ifv-init && showownername
+	Tooltip@init-norow:
+		Name: Ignitor IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-init && !showownername
 	Tooltip@rocket:
 		Name: Rocket IFV
-		RequiresCondition: ifv-rocket
+		GenericName: Vehicle
+		RequiresCondition: ifv-rocket && showownername
+	Tooltip@rocket-norow:
+		Name: Rocket IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-rocket && !showownername
 	Tooltip@gren:
 		Name: Grenade IFV
-		RequiresCondition: ifv-gren
+		GenericName: Vehicle
+		RequiresCondition: ifv-gren && showownername
+	Tooltip@gren-norow:
+		Name: Grenade IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-gren && !showownername
 	Tooltip@engineer:
 		Name: Repair IFV
-		RequiresCondition: ifv-repair
+		GenericName: Vehicle
+		RequiresCondition: ifv-repair && showownername
+	Tooltip@engineer-norow:
+		Name: Repair IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-repair && !showownername
 	Tooltip@medic:
 		Name: Ambulance IFV
-		RequiresCondition: ifv-medic
+		GenericName: Vehicle
+		RequiresCondition: ifv-medic && showownername
+	Tooltip@medic-norow:
+		Name: Ambulance IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-medic && !showownername
 	Tooltip@dog:
 		Name: Detector IFV
-		RequiresCondition: ifv-dog
+		GenericName: Vehicle
+		RequiresCondition: ifv-dog && showownername
+	Tooltip@dog-norow:
+		Name: Detector IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-dog && !showownername
 	Tooltip@sniper:
 		Name: Sniper IFV
-		RequiresCondition: ifv-sniper
+		GenericName: Vehicle
+		RequiresCondition: ifv-sniper && showownername
+	Tooltip@sniper-norow:
+		Name: Sniper IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-sniper && !showownername
 	Tooltip@virus:
 		Name: Virus IFV
-		RequiresCondition: ifv-virus
+		GenericName: Vehicle
+		RequiresCondition: ifv-virus && showownername
+	Tooltip@virus-norow:
+		Name: Virus IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-virus && !showownername
 	Tooltip@pyro:
 		Name: Flamethrower IFV
-		RequiresCondition: ifv-pyro
+		GenericName: Vehicle
+		RequiresCondition: ifv-pyro && showownername
+	Tooltip@pyro-norow:
+		Name: Flamethrower IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-pyro && !showownername
 	Tooltip@flak:
 		Name: Flak IFV
-		RequiresCondition: ifv-flak
+		GenericName: Vehicle
+		RequiresCondition: ifv-flak && showownername
+	Tooltip@flak-norow:
+		Name: Flak IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-flak && !showownername
 	Tooltip@gatling:
 		Name: Gatling IFV
-		RequiresCondition: ifv-gatling
+		GenericName: Vehicle
+		RequiresCondition: ifv-gatling && showownername
+	Tooltip@gatling-norow:
+		Name: Gatling IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-gatling && !showownername
 	Tooltip@tesla:
 		Name: Tesla IFV
-		RequiresCondition: ifv-tesla
+		GenericName: Vehicle
+		RequiresCondition: ifv-tesla && showownername
+	Tooltip@tesla-norow:
+		Name: Tesla IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-tesla && !showownername
 	Tooltip@desolator:
 		Name: Desolator IFV
-		RequiresCondition: ifv-deso
+		GenericName: Vehicle
+		RequiresCondition: ifv-deso && showownername
+	Tooltip@desolator-norow:
+		Name: Desolator IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-deso && !showownername
 	Tooltip@demo:
 		Name: Demolition IFV
-		RequiresCondition: ifv-demo
+		GenericName: Vehicle
+		RequiresCondition: ifv-demo && showownername
+	Tooltip@demo-norow:
+		Name: Demolition IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-demo && !showownername
 	Tooltip@seal:
 		Name: Sub-Machine Gun IFV
-		RequiresCondition: ifv-seal
+		GenericName: Vehicle
+		RequiresCondition: ifv-seal && showownername
+	Tooltip@seal-norow:
+		Name: Sub-Machine Gun IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-seal && !showownername
 	Tooltip@tanya:
 		Name: Tanya IFV
-		RequiresCondition: ifv-tanya
+		GenericName: Vehicle
+		RequiresCondition: ifv-tanya && showownername
+	Tooltip@tanya-norow:
+		Name: Tanya IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-tanya && !showownername
 	Tooltip@boris:
 		Name: Boris IFV
-		RequiresCondition: ifv-boris
+		GenericName: Vehicle
+		RequiresCondition: ifv-boris && showownername
+	Tooltip@boris-norow:
+		Name: Boris IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-boris && !showownername
 	Tooltip@chrono:
 		Name: Chrono IFV
-		RequiresCondition: ifv-chrono
+		GenericName: Vehicle
+		RequiresCondition: ifv-chrono && showownername
+	Tooltip@chrono-norow:
+		Name: Chrono IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-chrono && !showownername
 	Tooltip@yuri:
 		Name: Psi IFV
-		RequiresCondition: ifv-yuri
+		GenericName: Vehicle
+		RequiresCondition: ifv-yuri && showownername
+	Tooltip@yuri-norow:
+		Name: Psi IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-yuri && !showownername
 	Tooltip@iron:
 		Name: Iron Curtain IFV
-		RequiresCondition: ifv-iron
+		GenericName: Vehicle
+		RequiresCondition: ifv-iron && showownername
+	Tooltip@iron-norow:
+		Name: Iron Curtain IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-iron && !showownername
 	WithColoredOverlay@ironcurtain:
 		RequiresCondition: invulnerability && !ifv-iron
 	DamageMultiplier@ironcurtain:
@@ -652,6 +787,8 @@ sref:
 		Voice: Move
 	Tooltip:
 		Name: Prism Tank
+	Tooltip@NoRow:
+		Name: Prism Tank
 	Selectable:
 		Bounds: 64, 52, 0, -10
 	Health:
@@ -747,6 +884,8 @@ mgtk:
 		Voice: Move
 	Tooltip:
 		Name: Mirage Tank
+	Tooltip@NoRow:
+		Name: Mirage Tank
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	Health:
@@ -824,6 +963,8 @@ bfrt:
 		PlayerExperience: 70
 		Voice: Move
 	Tooltip:
+		Name: Battle Fortress
+	Tooltip@NoRow:
 		Name: Battle Fortress
 	Selectable:
 		Bounds: 72, 64, 0, -8
@@ -927,6 +1068,8 @@ robo:
 		PlayerExperience: 30
 		Voice: Move
 	Tooltip:
+		Name: Robot Tank
+	Tooltip@NoRow:
 		Name: Robot Tank
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
@@ -1043,6 +1186,8 @@ ctnk:
 		PlayerExperience: 110
 		Voice: Move
 	Tooltip:
+		Name: Chrono Dragon
+	Tooltip@NoRow:
 		Name: Chrono Dragon
 	Health:
 		HP: 200

@@ -25,6 +25,8 @@ dest:
 		Cost: 800
 	Tooltip:
 		Name: Destroyer
+	Tooltip@NoRow:
+		Name: Destroyer
 	Health:
 		HP: 600
 	Armor:
@@ -111,6 +113,8 @@ aegis:
 		Cost: 1000
 	Tooltip:
 		Name: Aegis Cruiser
+	Tooltip@NoRow:
+		Name: Aegis Cruiser
 	Selectable:
 		Bounds: 60, 80, 0, -6
 	Health:
@@ -172,6 +176,16 @@ dlph:
 		Cost: 400
 	Tooltip:
 		Name: Dolphin
+		GenericName: Dolphin
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Dolphin
+		GenericName: Dolphin
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	Armor:
 		Type: Light
 	Health:
@@ -266,6 +280,8 @@ carrier:
 	Valued:
 		Cost: 2000
 	Tooltip:
+		Name: Aircraft Carrier
+	Tooltip@NoRow:
 		Name: Aircraft Carrier
 	Health:
 		HP: 800

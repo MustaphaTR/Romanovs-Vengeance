@@ -40,6 +40,8 @@ yapowr:
 		Cost: 500
 	Tooltip:
 		Name: Bio Reactor
+	Tooltip@NoRow:
+		Name: Bio Reactor
 	ProvidesPrerequisite:
 		Prerequisite: power
 	Building:
@@ -313,6 +315,8 @@ yayard:
 	Inherits: ^Shipyard
 	Tooltip:
 		Name: Submarine Pen
+	Tooltip@NoRow:
+		Name: Submarine Pen
 	Buildable:
 		Queue: Building.Yuri
 	Production:
@@ -367,6 +371,8 @@ yagrnd:
 		Cost: 600
 	Tooltip:
 		Name: Grinder
+	Tooltip@NoRow:
+		Name: Grinder
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -400,6 +406,8 @@ yadome:
 	Valued:
 		Cost: 1500
 	Tooltip:
+		Name: Radar Dome
+	Tooltip@NoRow:
 		Name: Radar Dome
 	Building:
 		Footprint: xx xx
@@ -450,6 +458,8 @@ yadisk:
 	Valued:
 		Cost: 1000
 	Tooltip:
+		Name: Disc Pad
+	Tooltip@NoRow:
 		Name: Disc Pad
 	ProvidesPrerequisite@default:
 	Building:
@@ -515,6 +525,8 @@ yatech:
 		Cost: 2000
 	Tooltip:
 		Name: Battle Lab
+	Tooltip@NoRow:
+		Name: Battle Lab
 	ProvidesPrerequisite@yatech:
 		Prerequisite: yatech
 	Building:
@@ -557,6 +569,8 @@ yapsis:
 	Valued:
 		Cost: 1000
 	Tooltip:
+		Name: Psychic Sensor
+	Tooltip@NoRow:
 		Name: Psychic Sensor
 	Building:
 		Footprint: xx xx
@@ -605,6 +619,8 @@ yaclon:
 	Valued:
 		Cost: 2000
 	Tooltip:
+		Name: Cloning Vats
+	Tooltip@NoRow:
 		Name: Cloning Vats
 	Building:
 		Footprint: xx xx
@@ -683,6 +699,8 @@ yawall:
 		Description: Heavy wall capable of blocking units and projectiles.
 	Tooltip:
 		Name: Citadel Wall
+	Tooltip@NoRow:
+		Name: Citadel Wall
 	LineBuild:
 		NodeTypes: yawall
 	LineBuildNode:
@@ -721,6 +739,8 @@ yaggun:
 	Valued:
 		Cost: 1000
 	Tooltip:
+		Name: Gatling Cannon
+	Tooltip@NoRow:
 		Name: Gatling Cannon
 	Turreted:
 		TurnSpeed: 10
@@ -802,6 +822,8 @@ natbnk:
 		Cost: 400
 	Tooltip:
 		Name: Tank Bunker
+	Tooltip@NoRow:
+		Name: Tank Bunker
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -858,6 +880,8 @@ yapsyt:
 		Cost: 1500
 	Tooltip:
 		Name: Psychic Tower
+	Tooltip@NoRow:
+		Name: Psychic Tower
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: disabled || chronodisable
@@ -901,6 +925,8 @@ yasgen:
 	Valued:
 		Cost: 1000
 	Tooltip:
+		Name: Stealth Generator
+	Tooltip@NoRow:
 		Name: Stealth Generator
 	Buildable:
 		Queue: Support.Yuri
@@ -954,6 +980,8 @@ yagntc:
 		Bounds: 160, 142, 0, -34
 	Tooltip:
 		Name: Lazarus Shield Generator
+	Tooltip@NoRow:
+		Name: Lazarus Shield Generator
 	GrantExternalConditionPower@LAZARUSSHIELD:
 		Icons:
 			1: invis
@@ -999,6 +1027,8 @@ yappet:
 		Bounds: 131, 152, 0, -40
 	Tooltip:
 		Name: Psychic Dominator
+	Tooltip@NoRow:
+		Name: Psychic Dominator
 	DetonateWeaponPower:
 		OrderName: PsiPsychicDomination
 		PauseOnCondition: disabled || chronodisable
@@ -1028,6 +1058,8 @@ yacomd:
 	Inherits@shape: ^4x4Shape
 	Tooltip:
 		Name: Yuri's Command Center
+	Tooltip@NoRow:
+		Name: Yuri's Command Center
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -1053,6 +1085,8 @@ yapppt:
 	Inherits@shape: ^3x3Shape
 	Tooltip:
 		Name: Psychic Dominator
+	Tooltip@NoRow:
+		Name: Psychic Dominator
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -1067,6 +1101,8 @@ yarock:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x3Shape
 	Tooltip:
+		Name: Rocket Launch Pad
+	Tooltip@NoRow:
 		Name: Rocket Launch Pad
 	Armor:
 		Type: Wood
@@ -1087,6 +1123,8 @@ yagatea:
 		BuildPaletteOrder: 20
 	Tooltip:
 		Name: Psi-Corps Gate
+	Tooltip@NoRow:
+		Name: Psi-Corps Gate
 	Selectable:
 		Bounds: 68, 36, 0, 2
 		DecorationBounds: 118, 56, 0, -3
@@ -1103,6 +1141,8 @@ yagateb:
 	Inherits: ^Gate_B
 	-Buildable:
 	Tooltip:
+		Name: Psi-Corps Gate
+	Tooltip@NoRow:
 		Name: Psi-Corps Gate
 	Selectable:
 		Bounds: 68, 36, 0, 2

@@ -71,6 +71,8 @@ napowr:
 		Cost: 500
 	Tooltip:
 		Name: Tesla Reactor
+	Tooltip@NoRow:
+		Name: Tesla Reactor
 	ProvidesPrerequisite:
 		Prerequisite: power
 	Building:
@@ -221,6 +223,8 @@ naradr:
 	Valued:
 		Cost: 1500
 	Tooltip:
+		Name: Radar Tower
+	Tooltip@NoRow:
 		Name: Radar Tower
 	ProvidesPrerequisite:
 		Prerequisite: radar
@@ -414,6 +418,16 @@ mine:
 		InitialDelay: 0
 	Tooltip:
 		Name: Mine
+		GenericName: Mine
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Mine
+		GenericName: Mine
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
 	Targetable:
 		TargetTypes: Ground, Structure, Defense, NonGarrisonableStructure
 	Mobile:
@@ -511,6 +525,8 @@ nmine:
 		DetonateClasses: nmine
 	Tooltip:
 		Name: Naval Mine
+	Tooltip@NoRow:
+		Name: Naval Mine
 	RevealsShroud:
 		Range: 3c0
 	RevealsShroudToIntelligenceOwner:
@@ -570,6 +586,8 @@ naheli:
 	Valued:
 		Cost: 1000
 	Tooltip:
+		Name: Helipad
+	Tooltip@NoRow:
 		Name: Helipad
 	ProvidesPrerequisite@default:
 	Building:
@@ -636,6 +654,8 @@ nanrct:
 		Cost: 1500
 	Tooltip:
 		Name: Nuclear Reactor
+	Tooltip@NoRow:
+		Name: Nuclear Reactor
 	ProvidesPrerequisite:
 		Prerequisite: power
 	Building:
@@ -689,6 +709,8 @@ natech:
 		Cost: 2000
 	Tooltip:
 		Name: Battle Lab
+	Tooltip@NoRow:
+		Name: Battle Lab
 	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xxx xxx xxx
@@ -726,6 +748,8 @@ naclon:
 	Valued:
 		Cost: 2000
 	Tooltip:
+		Name: Cloning Vats
+	Tooltip@NoRow:
 		Name: Cloning Vats
 	Building:
 		Footprint: xx xx
@@ -812,6 +836,8 @@ napsis:
 		Cost: 1000
 	Tooltip:
 		Name: Psychic Sensor
+	Tooltip@NoRow:
+		Name: Psychic Sensor
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -854,6 +880,8 @@ nairon:
 		Prerequisites: natech, !enoughiron, ~techlevel.5
 		Description: Grants invulnerability to vehicles and structures.\nKills infantry.
 	Tooltip:
+		Name: Iron Curtain Device
+	Tooltip@NoRow:
 		Name: Iron Curtain Device
 	Selectable:
 		Bounds: 84, 52, -10, -11
@@ -898,6 +926,8 @@ namisl:
 		Prerequisites: natech, !enoughnuke, ~techlevel.5
 		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb
 	Tooltip:
+		Name: Nuclear Missile Silo
+	Tooltip@NoRow:
 		Name: Nuclear Missile Silo
 	Selectable:
 		Bounds: 84, 52, 0, -5
@@ -954,6 +984,8 @@ nawall:
 		Description: Heavy wall capable of blocking units and projectiles.
 	Tooltip:
 		Name: Soviet Wall
+	Tooltip@NoRow:
+		Name: Soviet Wall
 	LineBuild:
 		NodeTypes: nawall
 	LineBuildNode:
@@ -978,6 +1010,8 @@ naflak:
 	Valued:
 		Cost: 900
 	Tooltip:
+		Name: Flak Cannon
+	Tooltip@NoRow:
 		Name: Flak Cannon
 	Building:
 		Footprint: x
@@ -1035,6 +1069,8 @@ tesla:
 	Valued:
 		Cost: 1200
 	Tooltip:
+		Name: Tesla Coil
+	Tooltip@NoRow:
 		Name: Tesla Coil
 	Building:
 		Footprint: x
@@ -1112,6 +1148,8 @@ nalasr:
 		Cost: 500
 	Tooltip:
 		Name: Sentry Gun
+	Tooltip@NoRow:
+		Name: Sentry Gun
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1167,6 +1205,8 @@ nabnkr:
 		Cost: 500
 	Tooltip:
 		Name: Battle Bunker
+	Tooltip@NoRow:
+		Name: Battle Bunker
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1218,6 +1258,8 @@ naindp:
 		Cost: 2000
 	Tooltip:
 		Name: Industrial Plant
+	Tooltip@NoRow:
+		Name: Industrial Plant
 	-Capturable:
 	-CaptureNotification:
 	-CapturableProgressBar:
@@ -1259,6 +1301,8 @@ nagatea:
 		BuildPaletteOrder: 20
 	Tooltip:
 		Name: Soviet Gate
+	Tooltip@NoRow:
+		Name: Soviet Gate
 	Selectable:
 		Bounds: 68, 36, 0, 2
 		DecorationBounds: 118, 56, 0, -3
@@ -1275,6 +1319,8 @@ nagateb:
 	Inherits: ^Gate_B
 	-Buildable:
 	Tooltip:
+		Name: Soviet Gate
+	Tooltip@NoRow:
 		Name: Soviet Gate
 	Selectable:
 		Bounds: 68, 36, 0, 2
@@ -1298,6 +1344,8 @@ napost:
 	Valued:
 		Cost: 150
 	Tooltip:
+		Name: Tesla Fence Post
+	Tooltip@NoRow:
 		Name: Tesla Fence Post
 	Health:
 		HP: 500
@@ -1334,6 +1382,8 @@ napost:
 nafnce:
 	Inherits: ^Wall
 	Tooltip:
+		Name: Tesla Fence
+	Tooltip@NoRow:
 		Name: Tesla Fence
 	LineBuild:
 		NodeTypes: teslafence
@@ -1412,6 +1462,8 @@ naprop:
 	Valued:
 		Cost: 500
 	Tooltip:
+		Name: Propaganda Tower
+	Tooltip@NoRow:
 		Name: Propaganda Tower
 	Building:
 		Footprint: x

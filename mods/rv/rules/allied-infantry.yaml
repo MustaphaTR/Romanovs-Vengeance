@@ -16,6 +16,8 @@ engineer:
 		Voice: Move
 	Tooltip:
 		Name: Engineer
+	Tooltip@NoRow:
+		Name: Engineer
 	Selectable:
 		Priority: 8
 		Bounds: 20, 30, 0, -11
@@ -100,15 +102,32 @@ dog:
 		Payload: 100
 		PlayerExperience: 10
 		Voice: Move
-	Tooltip@Default:
+	Tooltip:
 		Name: Attack Dog
-		RequiresCondition: !allies && !soviet
+		GenericName: Dog
+		RequiresCondition: !allies && !soviet && showownername
+	Tooltip@NoRow:
+		Name: Attack Dog
+		GenericName: Dog
+		RequiresCondition: !allies && !soviet && !showownername
 	Tooltip@Allies:
 		Name: German Shepherd
-		RequiresCondition: allies
+		GenericName: Dog
+		RequiresCondition: allies && showownername
+	Tooltip@Allies-NoRow:
+		Name: German Shepherd
+		GenericName: Dog
+		ShowOwnerRow: false
+		RequiresCondition: allies && !showownername
 	Tooltip@Soviet:
 		Name: Siberian Huskie
-		RequiresCondition: soviet
+		GenericName: Dog
+		RequiresCondition: soviet && showownername
+	Tooltip@Soviet-NoRow:
+		Name: Siberian Huskie
+		GenericName: Dog
+		ShowOwnerRow: false
+		RequiresCondition: soviet && !showownername
 	GrantConditionOnFaction@Allies:
 		Condition: allies
 		Factions: america, germany, england, france, korea
@@ -206,6 +225,8 @@ e1:
 		PlayerExperience: 7
 		Voice: Move
 	Tooltip:
+		Name: G.I.
+	Tooltip@NoRow:
 		Name: G.I.
 	Selectable:
 		Bounds: 20, 30, 0, -11
@@ -369,6 +390,8 @@ ggi:
 		PlayerExperience: 15
 		Voice: Move
 	Tooltip:
+		Name: Guardian G.I.
+	Tooltip@NoRow:
 		Name: Guardian G.I.
 	Selectable:
 		Bounds: 20, 30, 0, -11
@@ -565,6 +588,8 @@ snipe:
 		Voice: Move
 	Tooltip:
 		Name: Sniper
+	Tooltip@NoRow:
+		Name: Sniper
 	Buildable:
 		Queue: Infantry.UK
 		BuildPaletteOrder: 80
@@ -642,9 +667,17 @@ spy:
 		Payload: 250
 		PlayerExperience: 25
 		Voice: Move
+	-Tooltip:
+	-Tooltip@NoRow:
 	DisguiseTooltip:
 		Name: Spy
 		GenericName: Soldier
+		RequiresCondition: showownername
+	DisguiseTooltip@NoRow:
+		Name: Spy
+		GenericName: Soldier
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
 	Selectable:
 		Bounds: 24, 28, -1, -8
 	Health:
@@ -708,6 +741,8 @@ ghost:
 		PlayerExperience: 50
 		Voice: Move
 	Tooltip:
+		Name: Navy SEAL
+	Tooltip@NoRow:
 		Name: Navy SEAL
 	Selectable:
 		Bounds: 20, 30, 0, -11
@@ -796,6 +831,8 @@ ccomand:
 		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings
 	Tooltip:
 		Name: Chrono Commando
+	Tooltip@NoRow:
+		Name: Chrono Commando
 	Valued:
 		Cost: 1500
 	DeliversCash:
@@ -860,6 +897,8 @@ ptroop:
 		PlayerExperience: 75
 	Tooltip:
 		Name: Psi Commando
+	Tooltip@NoRow:
+		Name: Psi Commando
 	Garrisoner:
 		Voice: Move
 		PipType: Gray
@@ -903,6 +942,8 @@ tany:
 		PlayerExperience: 75
 		Voice: Move
 	Tooltip:
+		Name: Tanya Adams
+	Tooltip@NoRow:
 		Name: Tanya Adams
 	Selectable:
 		Bounds: 20, 30, 0, -11
@@ -1005,6 +1046,8 @@ jumpjet:
 		Cost: 600
 	Tooltip:
 		Name: Rocketeer
+	Tooltip@NoRow:
+		Name: Rocketeer
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
@@ -1105,6 +1148,8 @@ jumpjet.husk:
 	-WithVoxelBody:
 	Tooltip:
 		Name: Rocketeer
+	Tooltip@NoRow:
+		Name: Rocketeer
 	Aircraft:
 		TurnSpeed: 10
 		Speed: 140
@@ -1134,6 +1179,8 @@ cleg:
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Tooltip:
+		Name: Chrono Legionnaire
+	Tooltip@NoRow:
 		Name: Chrono Legionnaire
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
@@ -1248,6 +1295,8 @@ medi:
 		Voice: Action
 	Tooltip:
 		Name: Medic
+	Tooltip@NoRow:
+		Name: Medic
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
@@ -1313,6 +1362,8 @@ gren:
 		PlayerExperience: 10
 		Voice: Move
 	Tooltip:
+		Name: Grenadier
+	Tooltip@NoRow:
 		Name: Grenadier
 	Selectable:
 		Bounds: 20, 30, 0, -11

@@ -9,6 +9,8 @@ shad:
 		RequiresCondition: !airborne
 	Tooltip:
 		Name: Night Hawk
+	Tooltip@NoRow:
+		Name: Night Hawk
 	Selectable:
 		Bounds: 70,60,0,-20
 	Health:
@@ -106,6 +108,8 @@ shadhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
 		Name: Night Hawk
+	Tooltip@NoRow:
+		Name: Night Hawk
 	Aircraft:
 		TurnSpeed: 10
 		Speed: 180
@@ -142,6 +146,8 @@ zep:
 	Valued:
 		Cost: 2000
 	Tooltip:
+		Name: Kirov Airship
+	Tooltip@NoRow:
 		Name: Kirov Airship
 	Buildable:
 		Queue: Aircraft.Soviets
@@ -215,6 +221,8 @@ zephusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
 		Name: Kirov Airship
+	Tooltip@NoRow:
+		Name: Kirov Airship
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 25
@@ -248,6 +256,8 @@ orca:
 	Valued:
 		Cost: 1200
 	Tooltip:
+		Name: Harrier
+	Tooltip@NoRow:
 		Name: Harrier
 	Buildable:
 		Queue: Aircraft.Allies, Aircraft.Korea
@@ -326,6 +336,8 @@ orcahusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
 		Name: Harrier
+	Tooltip@NoRow:
+		Name: Harrier
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
@@ -349,6 +361,8 @@ beag:
 	Valued:
 		Cost: 1500
 	Tooltip:
+		Name: Black Eagle
+	Tooltip@NoRow:
 		Name: Black Eagle
 	Buildable:
 		Queue: Aircraft.Korea
@@ -391,6 +405,8 @@ beaghusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
 		Name: Black Eagle
+	Tooltip@NoRow:
+		Name: Black Eagle
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
@@ -419,6 +435,8 @@ pdplane:
 	RejectsOrders:
 	Tooltip:
 		Name: Cargo Plane
+	Tooltip@NoRow:
+		Name: Cargo Plane
 	Aircraft:
 		CruiseAltitude: 5c852
 		Repulsable: false
@@ -446,6 +464,8 @@ pdplanehusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
 		Name: Cargo Plane
+	Tooltip@NoRow:
+		Name: Cargo Plane
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 225
@@ -455,6 +475,8 @@ pdplanehusk:
 bplndrop:
 	Inherits: pdplane
 	Tooltip:
+		Name: MiG
+	Tooltip@NoRow:
 		Name: MiG
 	-Targetable@Airborne:
 	Aircraft:
@@ -506,6 +528,8 @@ a10:
 	Inherits: alplane
 	Tooltip:
 		Name: A-10 Thunderbolt
+	Tooltip@NoRow:
+		Name: A-10 Thunderbolt
 	Armament:
 		Weapon: A10Missile
 		LocalOffset: 0,-512,0
@@ -527,12 +551,16 @@ a10husk:
 	Inherits: pdplanehusk
 	Tooltip:
 		Name: A-10 Thunderbolt
+	Tooltip@NoRow:
+		Name: A-10 Thunderbolt
 	RenderVoxels:
 		Image: a10
 
 txbmb:
 	Inherits: pcplane
 	Tooltip:
+		Name: Toxin Bomber
+	Tooltip@NoRow:
 		Name: Toxin Bomber
 	Armament:
 		Weapon: ToxinBomb
@@ -555,12 +583,16 @@ txbmbhusk:
 	Inherits: pdplanehusk
 	Tooltip:
 		Name: Toxin Bomber
+	Tooltip@NoRow:
+		Name: Toxin Bomber
 	RenderVoxels:
 		Image: txbmb
 
 f22drop:
 	Inherits: alplane
 	Tooltip:
+		Name: F-22 Raptor
+	Tooltip@NoRow:
 		Name: F-22 Raptor
 	-Targetable@Airborne:
 	Aircraft:
@@ -623,6 +655,8 @@ pdplane.crate:
 	RejectsOrders:
 	Tooltip:
 		Name: Cargo Plane
+	Tooltip@NoRow:
+		Name: Cargo Plane
 	Aircraft:
 		CruiseAltitude: 5c852
 		-AirborneCondition:
@@ -662,6 +696,8 @@ hornet:
 	Valued:
 		Cost: 50
 	Tooltip:
+		Name: Hornet
+	Tooltip@NoRow:
 		Name: Hornet
 	Health:
 		HP: 75
@@ -706,6 +742,8 @@ hornethusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
 		Name: Hornet
+	Tooltip@NoRow:
+		Name: Hornet
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 210
@@ -721,6 +759,8 @@ asw:
 	Valued:
 		Cost: 50
 	Tooltip:
+		Name: Osprey
+	Tooltip@NoRow:
 		Name: Osprey
 	Health:
 		HP: 30
@@ -764,6 +804,8 @@ aswhusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
 		Name: Osprey
+	Tooltip@NoRow:
+		Name: Osprey
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 180
@@ -783,6 +825,8 @@ spyp:
 		Bounds: 100,80
 	RejectsOrders:
 	Tooltip:
+		Name: Spy Plane
+	Tooltip@NoRow:
 		Name: Spy Plane
 	Aircraft:
 		CruiseAltitude: 5c852
@@ -806,6 +850,8 @@ spyp:
 spyphusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
+		Name: Spy Plane
+	Tooltip@NoRow:
 		Name: Spy Plane
 	Aircraft:
 		TurnSpeed: 5
@@ -837,6 +883,8 @@ schp:
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Tooltip:
+		Name: Siege Chopper
+	Tooltip@NoRow:
 		Name: Siege Chopper
 	Selectable:
 		Bounds: 70,60,0,-20
@@ -971,6 +1019,8 @@ schphusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
 		Name: Siege Chopper
+	Tooltip@NoRow:
+		Name: Siege Chopper
 	Aircraft:
 		TurnSpeed: 10
 		Speed: 140
@@ -1003,6 +1053,8 @@ schphusk:
 bpln:
 	Inherits: orca
 	Tooltip:
+		Name: MiG
+	Tooltip@NoRow:
 		Name: MiG
 	-Buildable:
 	-RevealsShroud:
@@ -1049,6 +1101,8 @@ bplnhusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
 		Name: MiG
+	Tooltip@NoRow:
+		Name: MiG
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 240
@@ -1067,6 +1121,8 @@ disk:
 	Valued:
 		Cost: 1750
 	Tooltip:
+		Name: Leech Disc
+	Tooltip@NoRow:
 		Name: Leech Disc
 	Buildable:
 		Queue: Aircraft.Yuri
@@ -1152,6 +1208,8 @@ diskhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
 		Name: Leech Disc
+	Tooltip@NoRow:
+		Name: Leech Disc
 	Aircraft:
 		TurnSpeed: 10
 		Speed: 200
@@ -1183,6 +1241,8 @@ hind:
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Tooltip:
+		Name: Hind Carryall
+	Tooltip@NoRow:
 		Name: Hind Carryall
 	Selectable:
 		Bounds: 70,60,0,-20
@@ -1256,6 +1316,8 @@ hindhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
 		Name: Hind Carryall
+	Tooltip@NoRow:
+		Name: Hind Carryall
 	Aircraft:
 		TurnSpeed: 10
 		Speed: 140
@@ -1300,6 +1362,8 @@ fortress:
 	Valued:
 		Cost: 2500
 	Tooltip:
+		Name: B2 Spirit
+	Tooltip@NoRow:
 		Name: B2 Spirit
 	Buildable:
 		Queue: Aircraft.Allies, Aircraft.Korea
@@ -1378,6 +1442,8 @@ fortresshusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
 		Name: B2 Spirit
+	Tooltip@NoRow:
+		Name: B2 Spirit
 	FallsToEarth:
 		Explosion: B2Explode
 	Aircraft:
@@ -1406,6 +1472,8 @@ sdrn:
 		Bounds: 64,64
 	RejectsOrders:
 	Tooltip:
+		Name: Scout Drone
+	Tooltip@NoRow:
 		Name: Scout Drone
 	Aircraft:
 		CruiseAltitude: 3c852
@@ -1453,6 +1521,8 @@ txdx:
 	Valued:
 		Cost: 1000
 	Tooltip:
+		Name: Mosquito Platform
+	Tooltip@NoRow:
 		Name: Mosquito Platform
 	Buildable:
 		Queue: Aircraft.Yuri
@@ -1516,6 +1586,8 @@ txdx:
 txdxhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
+		Name: Mosquito Platform
+	Tooltip@NoRow:
 		Name: Mosquito Platform
 	Aircraft:
 		TurnSpeed: 10
