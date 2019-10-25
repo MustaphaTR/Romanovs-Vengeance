@@ -43,11 +43,15 @@ M60E:
 
 CRM60:
 	Inherits: M60
-	ReloadDelay: 15
+	ReloadDelay: 25
 	Range: 6c0
 	Report: vifvat2a.wav, vifvat2b.wav, vifvat2c.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25
+		Damage: 35
+		Versus:
+			None: 120
+			Flak: 110
+			Plate: 100
 
 para:
 	Inherits: ^MG
@@ -262,7 +266,11 @@ vulcan:
 	Range: 6c0
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 65
+		Versus:
+			None: 120
+			Flak: 110
+			Plate: 100
 
 vulcan2:
 	Inherits: vulcan
