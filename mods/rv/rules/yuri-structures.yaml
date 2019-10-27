@@ -309,7 +309,7 @@ yaweap:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	PlaceBuildingVariants:
-		Actors: yaweab
+		Actors: yaweab, yaweac, yawead
 
 yayard:
 	Inherits: ^Shipyard
@@ -1241,6 +1241,34 @@ yaweab:
 		Offset: 1,6
 	Exit@1:
 		ExitCell: 1,4
+
+yaweac:
+	Inherits: yaweap
+	-Buildable:
+	-PlaceBuildingVariants:
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	-WithIdleOverlay@lights:
+	Building:
+		Footprint: =xxxx =xxxx =xxxx
+	RallyPoint:
+		Offset: -2,1
+	Exit@1:
+		ExitCell: 0,1
+
+yawead:
+	Inherits: yaweab
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	-WithIdleOverlay@lights:
+	Building:
+		Footprint: === xxx xxx xxx xxx
+	RallyPoint:
+		Offset: 1,-2
+	Exit@1:
+		ExitCell: 1,0
 
 yadepb:
 	Inherits: yadept

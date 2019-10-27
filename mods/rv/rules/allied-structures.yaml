@@ -586,7 +586,7 @@ gaweap:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	PlaceBuildingVariants:
-		Actors: gaweab
+		Actors: gaweab, gaweac, gawead
 
 gayard:
 	Inherits: ^Shipyard
@@ -1472,6 +1472,34 @@ gaweab:
 		Offset: 1,6
 	Exit@1:
 		ExitCell: 1,4
+
+gaweac:
+	Inherits: gaweap
+	-Buildable:
+	-PlaceBuildingVariants:
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	-WithIdleOverlay@fan:
+	Building:
+		Footprint: =xxxx =xxxx =xxxx
+	RallyPoint:
+		Offset: -2,1
+	Exit@1:
+		ExitCell: 0,1
+
+gawead:
+	Inherits: gaweab
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	-WithIdleOverlay@fan:
+	Building:
+		Footprint: === xxx xxx xxx xxx
+	RallyPoint:
+		Offset: 1,-2
+	Exit@1:
+		ExitCell: 1,0
 
 gaairb:
 	Inherits: gaairc

@@ -503,7 +503,7 @@ naweap:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	PlaceBuildingVariants:
-		Actors: naweab
+		Actors: naweab, naweac, nawead
 
 nayard:
 	Inherits: ^Shipyard
@@ -1565,6 +1565,36 @@ naweab:
 		Offset: 1,6
 	Exit@1:
 		ExitCell: 1,4
+
+naweac:
+	Inherits: naweap
+	-Buildable:
+	-PlaceBuildingVariants:
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	WithIdleOverlay@lights:
+		Sequence: idle-flag
+	Building:
+		Footprint: =xxxx =xxxx =xxxx
+	RallyPoint:
+		Offset: -2,1
+	Exit@1:
+		ExitCell: 0,1
+
+nawead:
+	Inherits: naweab
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	-WithIdleOverlay@bib:
+	WithIdleOverlay@lights:
+		Sequence: idle-flag
+	Building:
+		Footprint: === xxx xxx xxx xxx
+	RallyPoint:
+		Offset: 1,-2
+	Exit@1:
+		ExitCell: 1,0
 
 nadepb:
 	Inherits: nadept

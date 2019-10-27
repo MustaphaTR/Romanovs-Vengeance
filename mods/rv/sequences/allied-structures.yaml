@@ -260,10 +260,10 @@ gaweap:
 			NEWURBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
-	idle: ggweap
+	idle:
 		ShadowStart: 3
 		ZOffset: -1024
-	damaged-idle: ggweap
+	damaged-idle:
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -1024
@@ -1081,11 +1081,69 @@ garefd:
 
 gaweab:
 	Inherits: gaweap
-	Defaults:
+	Defaults: gaweap
 		FlipX: true
 		Offset: 30,-60
 	icon:
 		FlipX: false
+
+gaweac:
+	Inherits: gaweap
+	Defaults: canewy21
+		Offset: -18,-54
+	idle:
+		ShadowStart: 4
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	damaged-idle:
+		ShadowStart: 5
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	idle-flag: ggpile_a
+		Length: 16
+		ShadowStart: 32
+	damaged-idle-flag: ggpile_a
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+
+gawead:
+	Inherits: gaweap
+	Defaults: canewy20
+		Offset: 18,-54
+	idle:
+		ShadowStart: 4
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	damaged-idle:
+		ShadowStart: 5
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	idle-flag: ggpile_a
+		Length: 16
+		ShadowStart: 32
+	damaged-idle-flag: ggpile_a
+		Start: 16
+		Length: 16
+		ShadowStart: 48
+	make:
+		FlipX: true
 
 gaairb:
 	Inherits: gaairc

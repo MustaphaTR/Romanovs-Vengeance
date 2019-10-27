@@ -216,10 +216,10 @@ yaweap:
 			NEWURBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
-	idle: ygweap
+	idle:
 		ShadowStart: 3
 		ZOffset: -1536
-	damaged-idle: ygweap
+	damaged-idle:
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -1536
@@ -1018,11 +1018,55 @@ yarfnd:
 
 yaweab:
 	Inherits: yaweap
-	Defaults:
+	Defaults: yaweap
 		FlipX: true
 		Offset: 30,-60
 	icon:
 		FlipX: false
+
+yaweac:
+	Inherits: yaweap
+	Defaults: canewy21
+		Offset: -18,-54
+	idle:
+		ShadowStart: 4
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	damaged-idle:
+		ShadowStart: 5
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+
+yawead:
+	Inherits: yaweap
+	Defaults: canewy20
+		Offset: 18,-54
+	idle:
+		ShadowStart: 4
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	damaged-idle:
+		ShadowStart: 5
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	make:
+		FlipX: true
 
 yadepb:
 	Inherits: yadept

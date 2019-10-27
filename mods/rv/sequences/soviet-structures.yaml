@@ -242,10 +242,10 @@ naweap:
 			NEWURBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
-	idle: ngweap
+	idle:
 		ShadowStart: 3
 		ZOffset: -1536
-	damaged-idle: ngweap
+	damaged-idle:
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -1536
@@ -1077,11 +1077,51 @@ narefd:
 
 naweab:
 	Inherits: naweap
-	Defaults:
+	Defaults: naweap
 		FlipX: true
 		Offset: 30, -60
 	icon:
 		FlipX: false
+
+naweac:
+	Inherits: naweap
+	Defaults: canewy21
+		Offset: -18,-54
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		ShadowStart: 5
+	idle-flag: cagrd1_a
+		Length: 9
+		ShadowStart: 9
+		Tick: 80
+
+nawead:
+	Inherits: naweap
+	Defaults: canewy20
+		Offset: 18,-54
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		ShadowStart: 5
+	idle-flag: cagrd1_a
+		Length: 9
+		ShadowStart: 9
+		Tick: 80
+	make:
+		FlipX: true
 
 nadepb:
 	Inherits: nadept
