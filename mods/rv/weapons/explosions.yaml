@@ -97,10 +97,17 @@ ApocExplode:
 FlameTankExplode:
 	Inherits: KirovExplode
 	Warhead@1Eff: CreateEffect
-		ImpactSounds: gexpapoa.wav, gexpapob.wav, gexpapoc.wav
+		ImpactSounds: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
 	Warhead@2Dam: SpreadDamage
 		Damage: 200
+		Versus:
+			None: 125
+			Flak: 125
+			Plate: 125
 		Spread: 0c768
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		ValidTargets: Ground, Water, Air
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: MediumScorch
 
