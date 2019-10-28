@@ -470,7 +470,7 @@
 		Queue: Building
 		BuildPaletteOrder: 50
 		Prerequisites: refinery, ~techlevel.1
-		Description: Produces and repairs ships,\nsubmarines, transports, and other naval units.
+		Description: Produces and repairs ships,\nsubmarines, transports, and other naval units.\nDetects submarged units.
 	Targetable:
 		TargetTypes: Ground, Water, C4
 	ProvidesPrerequisite@default:
@@ -602,6 +602,9 @@
 	-SpawnActorsOnSell@soviets:
 	RequiresBuildableArea:
 		Adjacent: 13
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 8c0
 
 ^ServiceDepot:
 	Inherits: ^BaseBuilding
