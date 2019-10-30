@@ -29,12 +29,26 @@ commanders_power.mechanic:
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 10
-		Prerequisites: prerequisite.has_points
+		Prerequisites: ~disabled # prerequisite.has_points
 		Description: Enables training of Mechanic from Barracks.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.mechanic
 	RenderSprites:
 		Image: mech
+
+commanders_power.hijacker:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Hijacker
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Enables training of Hijacker from Barracks.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.hijacker
+	RenderSprites:
+		Image: hjck
 
 commanders_power.airpad:
 	Inherits: ^default.commanders_power

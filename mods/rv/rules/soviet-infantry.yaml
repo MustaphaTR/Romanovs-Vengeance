@@ -981,12 +981,12 @@ mech:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: ~prerequisite.mechanic, repairpad, ~techlevel.2
 		BuildPaletteOrder: 60
-		Description: Repairs friendly and steals enemy vehicles.\n  Unarmed
+		Description: Repairs friendly vehicles.\n  Unarmed
 	Valued:
-		Cost: 600
+		Cost: 500
 	DeliversCash:
-		Payload: 300
-		PlayerExperience: 30
+		Payload: 250
+		PlayerExperience: 25
 		Voice: Move
 	Tooltip:
 		Name: Mechanic
@@ -1001,7 +1001,7 @@ mech:
 		PipType: Yellow
 		GarrisonType: Garrisoner
 	Mobile:
-		Speed: 95
+		Speed: 80
 	Passenger:
 		PipType: Yellow
 	Armament:
@@ -1014,10 +1014,6 @@ mech:
 		Voice: Action
 		FacingTolerance: 2
 		PauseOnCondition: chronodisable
-	CaptureManager:
-	Captures:
-		CaptureTypes: vehicle
-		PlayerExperience: 50
 	Voiced:
 		VoiceSet: EngineerVoice
 	Guard:
@@ -1028,6 +1024,55 @@ mech:
 		ScanRadius: 5
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Repair
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
+hjck:
+	Inherits: ^Infantry
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Prerequisites: ~prerequisite.hijacker, repairpad, ~techlevel.2
+		BuildPaletteOrder: 60
+		Description: Steals enemy vehicles.\n  Unarmed
+	Valued:
+		Cost: 550
+	DeliversCash:
+		Payload: 275
+		PlayerExperience: 27
+		Voice: Move
+	Tooltip:
+		Name: Hijacker
+	Tooltip@NoRow:
+		Name: Hijacker
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 50
+	Garrisoner:
+		Voice: Move
+		PipType: Yellow
+		GarrisonType: Garrisoner
+	Mobile:
+		Speed: 80
+	Passenger:
+		PipType: Yellow
+	Cloak:
+		RequiresCondition: !chronodisable
+		InitialDelay: 25
+		CloakDelay: 50
+		IsPlayerPalette: true
+		UncloakOn: Damage, Move
+	CaptureManager:
+	Captures:
+		CaptureTypes: vehicle
+		PlayerExperience: 50
+		Voice: Capture
+	Voiced:
+		VoiceSet: HijackerVoice
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
