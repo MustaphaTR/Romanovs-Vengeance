@@ -244,12 +244,11 @@ namespace OpenRA.Mods.RA2.Traits
 				world.CancelInputMode();
 		}
 
-		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world)
-		{
-			yield break;
-		}
+		protected override IEnumerable<IRenderable> Render(WorldRenderer wr, World world) { yield break; }
 
-		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world)
+		protected override IEnumerable<IRenderable> RenderAboveShroud(WorldRenderer wr, World world) { yield break; }
+
+		protected override IEnumerable<IRenderable> RenderAnnotations(WorldRenderer wr, World world)
 		{
 			if (!self.IsInWorld || self.Owner != self.World.LocalPlayer)
 				yield break;
@@ -257,7 +256,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!self.Trait<PortableChronoRA2>().Info.HasDistanceLimit)
 				yield break;
 
-			yield return new RangeCircleRenderable(
+			yield return new RangeCircleAnnotationRenderable(
 				self.CenterPosition,
 				WDist.FromCells(self.Trait<PortableChronoRA2>().Info.MaxDistance),
 				0,

@@ -165,7 +165,7 @@ namespace OpenRA.Mods.RA2.Activities
 
                 case EnterState.Exiting:
                     {
-                        QueueChild(move.MoveIntoWorld(self));
+                        QueueChild(move.ReturnToCell(self));
                         lastState = EnterState.Finished;
                         return false;
                     }
