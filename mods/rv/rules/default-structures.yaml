@@ -116,45 +116,45 @@
 		Types: SatelliteScan
 		Range: 8c0
 	Valued:
-		Cost: 1000
+		Cost: 800
 	Tooltip:
 		Name: Expansion Node
 	Tooltip@NoRow:
 		Name: Expansion Node
 	BaseBuilding:
-	Transforms:
-		IntoActor: expn
-		Facing: 96
-		DeployCursor: undeploy
-		PauseOnCondition: chronodisable || controlled
-		RequiresCondition: factundeploy && !build-incomplete
-	TransformsIntoMobile:
-		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
-		Locomotor: tracked
-		Voice: Move
-		RequiresForceMove: true
-	TransformsIntoRepairable:
-		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
-		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
-		Voice: Move
-		RequiresForceMove: true
-	TransformsIntoPassenger:
-		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
-		CargoType: Vehicle
-		Voice: Move
-		RequiresForceMove: true
-	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
-		Condition: factundeploy
-		Prerequisites: global-factundeploy
+	# Transforms:
+	#	IntoActor: expn
+	#	Facing: 96
+	#	DeployCursor: undeploy
+	#	PauseOnCondition: chronodisable || controlled
+	#	RequiresCondition: factundeploy && !build-incomplete
+	# TransformsIntoMobile:
+	#	RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
+	#	Locomotor: tracked
+	#	Voice: Move
+	#	RequiresForceMove: true
+	# TransformsIntoRepairable:
+	#	RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
+	#	RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+	#	Voice: Move
+	#	RequiresForceMove: true
+	# TransformsIntoPassenger:
+	#	RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
+	#	CargoType: Vehicle
+	#	Voice: Move
+	#	RequiresForceMove: true
+	# GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
+	#	Condition: factundeploy
+	#	Prerequisites: global-factundeploy
 	BaseProvider:
 		Range: 10c0
 		PauseOnCondition: build-incomplete || chronodisable
-	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
-		Condition: invulnerability
-	TransferTimedExternalConditionOnTransform@INVISIBILITY:
-		Condition: invisibility
-	ExternalCondition@INVISIBILITY:
-		Condition: invisibility
+	# TransferTimedExternalConditionOnTransform@INVULNERABILITY:
+	#	Condition: invulnerability
+	# TransferTimedExternalConditionOnTransform@INVISIBILITY:
+	#	Condition: invisibility
+	# ExternalCondition@INVISIBILITY:
+	#	Condition: invisibility
 
 ^Barracks:
 	Inherits: ^BaseBuilding
