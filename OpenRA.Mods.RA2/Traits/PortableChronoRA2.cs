@@ -188,7 +188,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public string OrderID { get { return "PortableChronoTeleport"; } }
 		public int OrderPriority { get { return 5; } }
 		public bool IsQueued { get; protected set; }
-		public bool TargetOverridesSelection(TargetModifiers modifiers) { return true; }
+		public bool TargetOverridesSelection(Actor self, Target target, List<Actor> actorsAt, CPos xy, TargetModifiers modifiers) { return true; }
 
 		public bool CanTarget(Actor self, Target target, List<Actor> othersAtTarget, ref TargetModifiers modifiers, ref string cursor)
 		{
