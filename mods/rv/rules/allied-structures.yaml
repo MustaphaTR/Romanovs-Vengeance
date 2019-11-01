@@ -1079,6 +1079,8 @@ gaweat:
 			1: 10c0
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughweather
+	AnnounceOnSeen:
+		Notification: WeathercontrolDeviceDetected
 
 gacsph:
 	Inherits: ^SecondarySuperWeapon
@@ -1133,6 +1135,8 @@ gacsph:
 		PauseOnCondition: disabled || chronodisable
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughchrono
+	AnnounceOnSeen:
+		Notification: ChronosphereDetected
 	PlaceBuildingVariants:
 		Actors: gacspb
 

@@ -919,6 +919,8 @@ nairon:
 		PauseOnCondition: disabled || chronodisable
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughiron
+	AnnounceOnSeen:
+		Notification: IronCurtainDetected
 
 namisl:
 	Inherits: ^PrimarySuperWeapon
@@ -975,6 +977,8 @@ namisl:
 		RequiresCondition: !build-incomplete && !chronodisable
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughnuke
+	AnnounceOnSeen:
+		Notification: NuclearSiloDetected
 
 nawall:
 	Inherits: ^Wall
