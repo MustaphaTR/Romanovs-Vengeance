@@ -277,8 +277,21 @@ Flare:
 		Duration: 8
 		Condition: flare
 
+FlareSAW:
+	Inherits: Flare
+	ReloadDelay: 2
+	Warhead@3Sen: SendAirstrike
+		UnitType: bpln
+		SquadSize: 2
+		SquadOffset: -0c512, 0c512, 0
+
 UCFlare:
 	Inherits: Flare
+	Projectile: LaserZap
+		Blockable: false
+
+UCFlareSAW:
+	Inherits: FlareSAW
 	Projectile: LaserZap
 		Blockable: false
 

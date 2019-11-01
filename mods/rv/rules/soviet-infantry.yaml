@@ -833,12 +833,20 @@ boris:
 		Name: opentopped
 		Weapon: AKME
 		RequiresCondition: rank-elite
-	# Armament@flare:
-	#	Name: secondary
-	#	Weapon: Flare
-	#	LocalOffset: 320,128,768
-	#	Cursor: airstrike
-	#	OutsideRangeCursor: airstrike
+	Armament@flare:
+		Name: secondary
+		Weapon: Flare
+		LocalOffset: 320,128,768
+		Cursor: airstrike
+		OutsideRangeCursor: airstrike
+		RequiresCondition: !airstrike
+	Armament@flare-saw:
+		Name: secondary
+		Weapon: FlareSAW
+		LocalOffset: 320,128,768
+		Cursor: airstrike
+		OutsideRangeCursor: airstrike
+		RequiresCondition: airstrike
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCAKM
@@ -849,12 +857,28 @@ boris:
 		Weapon: UCAKME
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
-	# Armament@flare-garrisoned:
-	#	Name: garrisoned
-	#	Weapon: UCFlare
-	#	Cursor: airstrike
-	#	OutsideRangeCursor: airstrike
-	#	PauseOnCondition: chronodisable
+	Armament@flare-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlare
+		Cursor: airstrike
+		OutsideRangeCursor: airstrike
+		PauseOnCondition: chronodisable
+		RequiresCondition: !airstrike
+	Armament@flare-saw-garrisoned:
+		Name: garrisoned
+		Weapon: UCFlareSAW
+		Cursor: airstrike
+		OutsideRangeCursor: airstrike
+		PauseOnCondition: chronodisable
+		RequiresCondition: airstrike
+	GrantConditionOnAttack:
+		Condition: airstrike
+		ArmamentNames: secondary
+		RequiredShotsPerInstance: 250
+		MaximumInstances: 1
+		RevokeDelay: 2
+		RevokeAll: true
+		RevokeOnNewTarget: true
 	# AirstrikeMaster:
 	#	Actors: bpln, bpln
 	#	SquadSize: 2

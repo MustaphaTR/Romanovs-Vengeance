@@ -1065,12 +1065,15 @@ bpln:
 	-Targetable@Airborne:
 	-ProducibleWithLevel:
 	-ExternalCondition@PRODUCED:
-	-VoiceAnnouncement:
+	VoiceAnnouncement:
+		Voice: Attack
+		-RequiresCondition:
 	RejectsOrders:
 	Interactable:
 	Aircraft:
 		Repulsable: false
 		Speed: 525
+		IdleBehavior: LeaveMap
 		-TakeoffSounds:
 		-LandingSounds:
 	SpawnActorOnDeath:
