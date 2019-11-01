@@ -858,14 +858,14 @@ boris:
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Armament@flare-garrisoned:
-		Name: garrisoned
+		Name: garrisoned-secondary
 		Weapon: UCFlare
 		Cursor: airstrike
 		OutsideRangeCursor: airstrike
 		PauseOnCondition: chronodisable
 		RequiresCondition: !airstrike
 	Armament@flare-saw-garrisoned:
-		Name: garrisoned
+		Name: garrisoned-secondary
 		Weapon: UCFlareSAW
 		Cursor: airstrike
 		OutsideRangeCursor: airstrike
@@ -873,7 +873,7 @@ boris:
 		RequiresCondition: airstrike
 	GrantConditionOnAttack:
 		Condition: airstrike
-		ArmamentNames: secondary
+		ArmamentNames: secondary, garrisoned-secondary
 		RequiredShotsPerInstance: 250
 		MaximumInstances: 1
 		RevokeDelay: 2
