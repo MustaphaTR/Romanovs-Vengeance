@@ -104,15 +104,6 @@ brute:
 		Start: 276
 	icon: bruticon
 
-gtrp:
-	Inherits: ^ArmedInfantry
-	Inherits@MC: ^MindControllable
-	run:
-		Tick: 120
-	paradrop:
-		Start: 292
-	icon: gtrpicon
-
 virus:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
@@ -155,3 +146,34 @@ yurix:
 	cheer:
 		Start: 280
 	icon: yypricon
+
+# Custom Infantry
+gtrp:
+	Inherits: ^ArmedInfantry
+	Inherits@MC: ^MindControllable
+	run:
+		Tick: 120
+	paradrop:
+		Start: 292
+	icon: gtrpicon
+
+ttrp:
+	Inherits: ^ArmedInfantry
+	Inherits@MC: ^MindControllable
+	run:
+		Tick: 120
+	deploy:
+		Start: 299
+		Length: 15
+		Tick: 80
+	deployed:
+		Start: 292
+	deployed-shoot:
+		Start: 292
+		Length: 7
+		Tick: 80
+	cheer:
+		Start: 314
+	paradrop:
+		Start: 322
+	icon: desoicon

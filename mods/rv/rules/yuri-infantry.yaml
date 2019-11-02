@@ -233,100 +233,6 @@ brute:
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
 
-gtrp:
-	Inherits@1: ^Infantry
-	Inherits@2: ^Parachutable
-	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@CHAOS: ^Berserkable
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@MC: ^MindControllable
-	Buildable:
-		Queue: Infantry.Yuri
-		Prerequisites: yadome, ~techlevel.2
-		BuildPaletteOrder: 60
-		Description: Infantry armed with a heavy gatling cannon.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles.
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 300
-	DeliversCash:
-		Payload: 150
-		PlayerExperience: 15
-		Voice: Move
-	Tooltip:
-		Name: Gatling Trooper
-	Tooltip@NoRow:
-		Name: Gatling Trooper
-	Selectable:
-		Bounds: 20, 30, 0, -11
-	Health:
-		HP: 125
-	Garrisoner:
-		Voice: Move
-		PipType: Green
-		GarrisonType: Garrisoner
-	Passenger:
-		PipType: Green
-	RevealsShroud:
-		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Range: 6c0
-	RevealOnDeath:
-		Radius: 3c0
-	AttackFrontal:
-		Voice: Attack
-		FacingTolerance: 2
-	Armament@ag-0:
-		Weapon: AGGattTrop
-		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: !gatling
-	Armament@ag-1:
-		Weapon: AGGattTrop2
-		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: gatling == 1
-	Armament@ag-2:
-		Weapon: AGGattTrop3
-		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: gatling >= 2
-	Armament@aa-0:
-		Weapon: AAGattTrop
-		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: !gatling
-	Armament@aa-1:
-		Weapon: AAGattTrop2
-		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: gatling == 1
-	Armament@aa-2:
-		Weapon: AAGattTrop3
-		LocalOffset: 544,100,1024, 544,-100,1024
-		RequiresCondition: gatling >= 2
-	GrantConditionOnAttack:
-		Condition: gatling
-		RequiredShotsPerInstance: 16
-		MaximumInstances: 2
-		RevokeDelay: 25
-		RevokeAll: false
-		IsCyclic: false
-		RevokeOnNewTarget: false
-	#	RequiresCondition: !rank-elite
-	# GrantConditionOnAttack@elite:
-	#	Condition: gatling
-	#	RequiredShotsPerInstance: 8
-	#	MaximumInstances: 2
-	#	RevokeDelay: 25
-	#	RevokeAll: true
-	#	IsCyclic: false
-	#	RevokeOnNewTarget: true
-	#	RequiresCondition: rank-elite
-	WithInfantryBody:
-		DefaultAttackSequence: shoot
-	Voiced:
-		VoiceSet: InitiateVoice
-	ProducibleWithLevel:
-		Prerequisites: vetytnk
-	QuantizeFacingsFromSequence:
-		Sequence: stand
-
 virus:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -458,3 +364,190 @@ yurix:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
 	WithMindControlArc:
 		Offset: 0,0,1024
+
+# Custom Infantry
+gtrp:
+	Inherits@1: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri
+		Prerequisites: yadome, ~techlevel.2
+		BuildPaletteOrder: 60
+		Description: Infantry armed with a heavy gatling cannon.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles.
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 300
+	DeliversCash:
+		Payload: 150
+		PlayerExperience: 15
+		Voice: Move
+	Tooltip:
+		Name: Gatling Trooper
+	Tooltip@NoRow:
+		Name: Gatling Trooper
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Green
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Green
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@ag-0:
+		Weapon: AGGattTrop
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: !gatling
+	Armament@ag-1:
+		Weapon: AGGattTrop2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling == 1
+	Armament@ag-2:
+		Weapon: AGGattTrop3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling >= 2
+	Armament@aa-0:
+		Weapon: AAGattTrop
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: !gatling
+	Armament@aa-1:
+		Weapon: AAGattTrop2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling == 1
+	Armament@aa-2:
+		Weapon: AAGattTrop3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: gatling >= 2
+	GrantConditionOnAttack:
+		Condition: gatling
+		RequiredShotsPerInstance: 16
+		MaximumInstances: 2
+		RevokeDelay: 25
+		RevokeAll: false
+		IsCyclic: false
+		RevokeOnNewTarget: false
+	#	RequiresCondition: !rank-elite
+	# GrantConditionOnAttack@elite:
+	#	Condition: gatling
+	#	RequiredShotsPerInstance: 8
+	#	MaximumInstances: 2
+	#	RevokeDelay: 25
+	#	RevokeAll: true
+	#	IsCyclic: false
+	#	RevokeOnNewTarget: true
+	#	RequiresCondition: rank-elite
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: InitiateVoice
+	ProducibleWithLevel:
+		Prerequisites: vetytnk
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
+ttrp:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 980
+		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
+		Description: Infantry armed with a toxin sprayer.\n\n Strong vs Infantry\n\n Weak vs Buildings, Aircraft
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+		Voice: Move
+	Tooltip:
+		Name: Toxin Trooper
+	Tooltip@NoRow:
+		Name: Toxin Trooper
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 150
+	Garrisoner:
+		Voice: Move
+		PipType: Gray
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Gray
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armor:
+		Type: Plate
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	Crushable:
+		CrushClasses: vehicle
+	Armament@primary:
+		Weapon: ToxinSprayer
+		LocalOffset: 320,-128,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: ToxinSprayerE
+		LocalOffset: 320,-128,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: ToxinSprayer
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: ToxinSprayerE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCToxinSprayer
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCToxinSprayerE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Voiced:
+		VoiceSet: DesolatorVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	-TakeCover:

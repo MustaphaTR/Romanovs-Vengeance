@@ -102,6 +102,84 @@ TankFlamerE:
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
+ToxinSprayer:
+	Inherits: Flamer
+	ReloadDelay: 30
+	BurstDelays: 2
+	InvalidTargets: NonGarrisonableStructure, Wall, Fence, Tree, Bridge
+	Projectile: BulletAS
+		Image: txgasg
+		-TrailImage:
+		-TrailSequences:
+		-TrailInterval:
+		Inaccuracy: 1c0
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: VirusDeath
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 100
+			Light: 70
+			Medium: 15
+			Heavy: 15
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 100
+	Warhead@1Gar: DamageGarrisoner
+		DamageTypes: VirusDeath
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 100
+			Light: 70
+			Medium: 15
+			Heavy: 15
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Drone: 100
+			Rocket: 100
+	-Warhead@2Smu: LeaveSmudge
+	-Warhead@3Eff: CreateEffect
+	Warhead@4Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 400
+		Speed: 0, 25
+		TurnRate: 10
+
+ToxinSprayerE:
+	Inherits: ToxinSprayer
+	Burst: 20
+	Warhead@1Dam: SpreadDamage
+		Damage: 14
+	Warhead@1Gar: DamageGarrisoner
+		Damage: 14
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblue
+
+CRToxinSprayer:
+	Inherits: ToxinSprayer
+	ReloadDelay: 25
+	Burst: 15
+
+UCToxinSprayer:
+	Inherits: ToxinSprayer
+	Range: 6c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCToxinSprayerE:
+	Inherits: ToxinSprayerE
+	Range: 6c0
+	Projectile: BulletAS
+		Blockable: false
+
 EmergencyRepair1:
 	ReloadDelay: 80
 	Range: 1c819
