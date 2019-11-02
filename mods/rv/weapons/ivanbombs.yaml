@@ -51,13 +51,26 @@ TanyaC4Attacher:
 		Type: TanyaC4
 		TriggerTime: 50
 
+TeslaBombAttacher:
+	Inherits: IvanBombAttacher
+	ValidTargets: TeslaBomb
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: TeslaBomb
+		Type: TeslaBomb
+		TriggerTime: 75
+
+TeslaBombAttacherE:
+	Inherits: TeslaBombAttacher
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: TeslaBombE
+
 DefuseKit:
 	ReloadDelay: 50
 	TargetActorCenter: true
 	Range: 1c512
 	Report: gdefuse.wav
 	Projectile: InstantHit
-	ValidTargets: IvanBombCleaner, SEALC4Cleaner, TanyaC4Cleaner
+	ValidTargets: IvanBombCleaner, SEALC4Cleaner, CommandoC4Cleaner, TanyaC4Cleaner, TeslaBombCleaner
 	Warhead@1Det: DetachDelayedWeapon
-		Types: IvanBomb, SEALC4, CommandoC4, TanyaC4
+		Types: IvanBomb, SEALC4, CommandoC4, TanyaC4, TeslaBomb
 	Warhead@2Dam: TargetDamage

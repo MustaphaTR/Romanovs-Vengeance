@@ -218,6 +218,19 @@ SealC4E:
 	Warhead@1Dam: SpreadDamage
 		Damage: 1000
 
+TeslaBomb:
+	Inherits: SealC4
+	Warhead@1Dam: SpreadDamage
+		Damage: 550
+	Warhead@2Eff: CreateEffect
+		Explosions: kirovtesla
+		ExplosionPalette: effect
+
+TeslaBombE:
+	Inherits: TeslaBomb
+	Warhead@1Dam: SpreadDamage
+		Damage: 1300
+
 CRNuke:
 	Inherits: IvanBomber
 	Warhead@1Dam: SpreadDamage

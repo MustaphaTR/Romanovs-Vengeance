@@ -46,6 +46,25 @@ UCElectricBoltE:
 	Inherits: ElectricBoltE
 	Range: 6c0
 
+ElectricBoltCommando:
+	Inherits: ElectricBoltE
+	InvalidTargets: TeslaBomb, TeslaBombCleaner
+	Warhead@1Dam: SpreadDamage
+		Damage: 125
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragmentCommando
+
+ElectricBoltCommandoE:
+	Inherits: ElectricBoltCommando
+	Range: 6c0
+
+UCElectricBoltCommando:
+	Inherits: ElectricBoltCommando
+	Range: 6c0
+
+UCElectricBoltCommandoE:
+	Inherits: ElectricBoltCommandoE
+
 AssaultBolt:
 	ReloadDelay: 70
 	Range: 2c0
@@ -138,6 +157,11 @@ TeslaFragment:
 	ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Structure, Wall
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
+
+TeslaFragmentCommando:
+	Inherits: TeslaFragment
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
 
 SonicZap:
 	ReloadDelay: 120

@@ -88,7 +88,7 @@ flakt:
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: naradr, ~techlevel.2
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 90
 		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -727,7 +727,7 @@ yuripr:
 	Buildable:
 		BuildLimit: 1
 		BuildPaletteOrder: 990
-		Prerequisites: ~nahand, ~soviets.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~disabled # ~nahand, ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units from a great range.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\nMaximum 1 can be trained.
 	Tooltip:
 		Name: Yuri Prime
@@ -924,7 +924,7 @@ pyro:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 70
 		Prerequisites: naradr, ~techlevel.2
 		Description: Advanced anti-infantry and anti-structure infantry.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
@@ -1221,3 +1221,57 @@ itrp:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+
+shkc:
+	Inherits: shk
+	Buildable:
+		BuildPaletteOrder: 990
+		Prerequisites: ~nahand, ~soviets.tech.infiltrated, ~techlevel.4
+		Description: Advanced armored unit using electricity. Can place Tesla Bombs on Buildings.\n  Strong vs Infantry, Tanks, Buildings\n  Weak vs Aircraft.\nSpecial ability: Charge tesla coils
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+	Tooltip:
+		Name: Tesla Commando
+	Tooltip@NoRow:
+		Name: Tesla Commando
+	Health:
+		HP: 150
+	Mobile:
+		Speed: 75
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armament@primary:
+		Weapon: ElectricBoltCommando
+	Armament@elite:
+		Weapon: ElectricBoltCommandoE
+	Armament@tesla-bomb:
+		Weapon: TeslaBombAttacher
+		Cursor: c4
+		OutsideRangeCursor: c4
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-tesla-bomb:
+		Weapon: TeslaBombAttacherE
+		Cursor: c4
+		OutsideRangeCursor: c4
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Weapon: ElectricBoltCommando
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: ElectricBoltCommandoE
+	Armament@garrisoned:
+		Weapon: UCElectricBoltCommando
+	Armament@elite-garrisoned:
+		Weapon: UCElectricBoltCommandoE
+	WithInfantryBody:
+		AttackSequences:
+			secondary: shoot
