@@ -170,7 +170,7 @@ sqd:
 		Queue: Ship.Soviets
 		BuildPaletteOrder: 40
 		Prerequisites: natech, ~techlevel.3
-		Description: Ocean creature\npunches enemies in close combat.\n  Strong vs Ships
+		Description: Large ocean creature capable of grabbing and sinking ships.\nCan be deployed to remove other squids from nearby ships.\n  Strong vs Ships
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -250,6 +250,7 @@ sqd:
 		UncloakSound: vnavupa.wav
 		UncloakOn: Damage, Attack
 		IsPlayerPalette: true
+		PauseOnCondition: deployed
 	Targetable:
 		TargetTypes: Ground, Water, SeaAnimal, Underwater
 	DetectCloaked:
@@ -274,6 +275,16 @@ sqd:
 		CloseEnough: 3c0
 		RepairActors: gayard, nayard
 	HitShape:
+	PeriodicExplosion:
+		Weapon: SquidSplash
+		RequiresCondition: deployed && !chronodisable
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 50
+		CooldownTicks: 0
+		DeployedCondition: deployed
+		ShowSelectionBar: false
+		Voice:
+		PauseOnCondition: chronodisable
 
 dred:
 	Inherits: ^Ship

@@ -77,6 +77,17 @@ SquidPunch:
 		Damage: 50
 		ValidTargets: Water, Underwater
 
+SquidSplash:
+	ReloadDelay: 100
+	Range: 1c0
+	Report: gexpwala.wav
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 2c0
+		DamageTypes: RemovesSquid
+	Warhead@2Eff: CreateEffect
+		Explosions: large_watersplash
+
 Shovel:
 	Inherits: AlligatorBite
 	ReloadDelay: 30
