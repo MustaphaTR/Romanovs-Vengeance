@@ -551,3 +551,125 @@ ttrp:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-TakeCover:
+
+crkt:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+		Voice: Move
+	Tooltip:
+		Name: Chaos Rocket Trooper
+	Tooltip@NoRow:
+		Name: Chaos Rocket Trooper
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 990
+		Prerequisites: ~yuri.tech.infiltrated, ~techlevel.4
+		Description: Long range rocket infantry armed with chaos warheads.\nImmune to chaos gas.\n  Strong vs Infantry, Vehicles, Aircraft\n  Weak vs Buildings
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Garrisoner:
+		Voice: Move
+		PipType: Gray
+		GarrisonType: Garrisoner
+	Passenger:
+		PipType: Gray
+	RevealsShroud:
+		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
+	Armor:
+		Type: None
+	Armament@primary:
+		Weapon: ChaosRocket
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: ChaosRocketE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite
+	Armament@aa:
+		Weapon: ChaosRocketAA
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite
+	Armament@elite-aa:
+		Weapon: ChaosRocketAAE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: ChaosRocket
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: ChaosRocketE
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite
+	Armament@opentopped-aa:
+		Name: opentopped
+		Weapon: ChaosRocketAA
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped-aa:
+		Name: opentopped
+		Weapon: ChaosRocketAAE
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCChaosRocket
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCChaosRocketE
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite
+	Armament@garrisoned-aa:
+		Name: garrisoned
+		Weapon: UCChaosRocketAA
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned-aa:
+		Name: garrisoned
+		Weapon: UCChaosRocketAAE
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 40
+		Count: 1
+	Voiced:
+		VoiceSet: SniperVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	WithDeathAnimation@normal:
+		DeathTypes:
+			BulletDeath: 1
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+		IdleSequences: idle1
+	-TakeCover:

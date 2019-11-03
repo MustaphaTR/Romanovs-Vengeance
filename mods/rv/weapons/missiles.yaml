@@ -424,6 +424,74 @@ UCMissileLauncherAAE:
 	Inherits: MissileLauncherAAE
 	Range: 6c0
 
+ChaosRocket:
+	Inherits: MissileLauncher
+	Range: 9c0
+	Projectile: Missile
+		RangeLimit: 16c512
+		ContrailColor: FFA8FF
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			Light: 65
+			Medium: 90
+			Heavy: 90
+			Wood: 30
+			Steel: 50
+			Concrete: 25
+	Warhead@5Con: GrantExternalCondition
+		ValidTargets: ChaosGasable
+		ValidStances: Enemy, Neutral
+		Condition: chaos
+		Range: 0c128
+		Duration: 200
+
+ChaosRocketE:
+	Inherits: ChaosRocket
+	Burst: 2
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav
+
+ChaosRocketAA:
+	Inherits: ChaosRocket
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+ChaosRocketAAE:
+	Inherits: ChaosRocketE
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+CRChaosRocket:
+	Inherits: ChaosRocket
+	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+
+CRChaosRocketAA:
+	Inherits: CRChaosRocket
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+UCChaosRocket:
+	Inherits: ChaosRocket
+	Projectile: Missile
+		Blockable: false
+
+UCChaosRocketE:
+	Inherits: ChaosRocketE
+	Projectile: Missile
+		Blockable: false
+
+UCChaosRocketAA:
+	Inherits: ChaosRocketAA
+
+UCChaosRocketAAE:
+	Inherits: ChaosRocketAAE
+
 SubTorpedo:
 	ReloadDelay: 120
 	Range: 7c0

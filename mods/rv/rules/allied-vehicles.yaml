@@ -212,10 +212,10 @@ fv:
 		Voice: Move
 	Tooltip:
 		Name: Infantry Fighting Vehicle
-		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && showownername
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-crkt && showownername
 	Tooltip@NoRow:
 		Name: Infantry Fighting Vehicle
-		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !showownername
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-crkt && !showownername
 	Tooltip@mg:
 		Name: Machine Gun IFV
 		GenericName: Vehicle
@@ -414,6 +414,15 @@ fv:
 		GenericName: Vehicle
 		ShowOwnerRow: false
 		RequiresCondition: ifv-toxin && !showownername
+	Tooltip@crkt:
+		Name: Chaos Rocket IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-crkt && showownername
+	Tooltip@crkt-norow:
+		Name: Chaos Rocket IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-crkt && !showownername
 	WithColoredOverlay@ironcurtain:
 		RequiresCondition: invulnerability && !ifv-iron
 	DamageMultiplier@ironcurtain:
@@ -526,26 +535,27 @@ fv:
 			yuripr: ifv-yuri
 			yurix: ifv-yuri
 			ttrp: ifv-toxin
+			crkt: ifv-crkt
 	Armament@primary:
 		Weapon: HoverMissile
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-crkt
 	Armament@elite:
 		Weapon: HoverMissileE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-crkt
 	Armament@primary-aa:
 		Weapon: HoverMissileAA
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-crkt
 	Armament@elite-aa:
 		Weapon: HoverMissileAAE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-crkt
 	Armament@mg:
 		Weapon: CRM60
 		LocalOffset: 188,32,600
@@ -667,6 +677,14 @@ fv:
 		Weapon: CRToxinSprayer
 		LocalOffset: 649,0,1152
 		RequiresCondition: ifv-toxin
+	Armament@crkt:
+		Weapon: CRChaosRocket
+		LocalOffset: 128,-128,1408, 128,128,1408
+		RequiresCondition: ifv-crkt
+	Armament@crkt-aa:
+		Weapon: CRChaosRocketAA
+		LocalOffset: 128,-128,1408, 128,128,1408
+		RequiresCondition: ifv-crkt
 	WithMuzzleOverlay:
 	GrantConditionOnAttack:
 		Condition: gatling
@@ -722,7 +740,7 @@ fv:
 		RequiresCondition: ifv-demo
 	WithVoxelTurret@default:
 		Sequence: turret-missile
-		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-crkt
 	WithVoxelTurret@mg:
 		Sequence: turret-mg
 		RequiresCondition: ifv-mg
@@ -771,6 +789,9 @@ fv:
 	WithVoxelTurret@toxin:
 		Sequence: turret-toxin
 		RequiresCondition: ifv-toxin
+	WithVoxelTurret@crkt:
+		Sequence: turret-crkt
+		RequiresCondition: ifv-crkt
 	Voiced:
 		VoiceSet: IFVVoice
 	ExternalCondition@PRODUCED:
