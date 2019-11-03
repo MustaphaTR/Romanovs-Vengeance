@@ -88,7 +88,7 @@ flakt:
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: naradr, ~techlevel.2
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 60
 		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles.
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -514,7 +514,7 @@ ivan:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 80
 		Prerequisites: naradr, ~techlevel.2
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
 	UpdatesPlayerStatistics:
@@ -1061,7 +1061,7 @@ hjck:
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: ~prerequisite.hijacker, repairpad, ~techlevel.2
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 50
 		Description: Steals enemy vehicles.\n  Unarmed
 	Valued:
 		Cost: 500
@@ -1083,6 +1083,8 @@ hjck:
 		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 80
+	RevealsShroud:
+		Range: 6c0
 	Passenger:
 		PipType: Yellow
 	Cloak:
