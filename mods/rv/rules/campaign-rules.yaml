@@ -1,0 +1,53 @@
+Player:
+	-ConquestVictoryConditions:
+	MissionObjectives:
+		EarlyGameOver: true
+	Shroud:
+		FogCheckboxLocked: True
+		FogCheckboxEnabled: True
+		ExploredMapCheckboxLocked: True
+		ExploredMapCheckboxEnabled: False
+	PlayerResources:
+		DefaultCashDropdownLocked: True
+		DefaultCash: 0
+	ModularBot@CampaignAI:
+		Name: Campaign Player AI
+		Type: campaign
+
+World:
+	CrateSpawner:
+		CheckboxEnabled: False
+		CheckboxLocked: True
+	-SpawnMPUnits:
+	-MPStartLocations:
+	ObjectivesPanel:
+		PanelName: MISSION_OBJECTIVES
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxLocked: True
+		AllyBuildRadiusCheckboxEnabled: False
+		BuildRadiusCheckboxLocked: True
+		BuildRadiusCheckboxEnabled: True
+	MapOptions:
+		TechLevelDropdownLocked: True
+		ShortGameCheckboxLocked: True
+		ShortGameCheckboxEnabled: False
+
+tany.noautotarget:
+	Inherits: tany
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	AttackMove:
+		-AssaultMoveCondition:
+	RenderSprites:
+		Image: tany
+
+boris.noautotarget:
+	Inherits: boris
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	AttackMove:
+		-AssaultMoveCondition:
+	RenderSprites:
+		Image: boris
