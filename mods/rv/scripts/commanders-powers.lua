@@ -26,85 +26,11 @@ else
 	PointsPerRank = { 5, 0, 15, 0, 5 }
 end
 
-PointActorExists = 
-{
-	Multi0 = false,
-	Multi1 = false,
-	Multi2 = false,
-	Multi3 = false,
-	Multi4 = false,
-	Multi5 = false,
-	Multi6 = false,
-	Multi7 = false,
-	Multi8 = false,
-	Multi9 = false,
-	Multi10 = false,
-	Multi11 = false
-}
-
-Points = 
-{
-	Multi0 = PointsPerRank[1],
-	Multi1 = PointsPerRank[1],
-	Multi2 = PointsPerRank[1],
-	Multi3 = PointsPerRank[1],
-	Multi4 = PointsPerRank[1],
-	Multi5 = PointsPerRank[1],
-	Multi6 = PointsPerRank[1],
-	Multi7 = PointsPerRank[1],
-	Multi8 = PointsPerRank[1],
-	Multi9 = PointsPerRank[1],
-	Multi10 = PointsPerRank[1],
-	Multi11 = PointsPerRank[1]
-}
-
-HasPointsActors = 
-{
-	Multi0 = nil,
-	Multi1 = nil,
-	Multi2 = nil,
-	Multi3 = nil,
-	Multi4 = nil,
-	Multi5 = nil,
-	Multi6 = nil,
-	Multi7 = nil,
-	Multi8 = nil,
-	Multi9 = nil,
-	Multi10 = nil,
-	Multi11 = nil
-}
-
-Levels =
-{
-	Multi0 = 0,
-	Multi1 = 0,
-	Multi2 = 0,
-	Multi3 = 0,
-	Multi4 = 0,
-	Multi5 = 0,
-	Multi6 = 0,
-	Multi7 = 0,
-	Multi8 = 0,
-	Multi9 = 0,
-	Multi10 = 0,
-	Multi11 = 0
-}
-
-TextColors =
-{
-	Multi0 = HSLColor.White,
-	Multi1 = HSLColor.White,
-	Multi2 = HSLColor.White,
-	Multi3 = HSLColor.White,
-	Multi4 = HSLColor.White,
-	Multi5 = HSLColor.White,
-	Multi6 = HSLColor.White,
-	Multi7 = HSLColor.White,
-	Multi8 = HSLColor.White,
-	Multi9 = HSLColor.White,
-	Multi10 = HSLColor.White,
-	Multi11 = HSLColor.White
-}
+PointActorExists = { }
+Points = { }
+HasPointsActors =  { }
+Levels = { }
+TextColors ={ }
 
 Ranks =
 {
@@ -206,6 +132,16 @@ Second = function()
 	end)
 end
 
+SetUpDefaults = function()
+	for _,player in pairs(players) do
+		PointActorExists[player.InternalName] = false
+		Points[player.InternalName] = PointsPerRank[1]
+		HasPointsActors[player.InternalName] = nil
+		Levels[player.InternalName] = 0
+		TextColors[player.InternalName] = HSLColor.White
+	end
+end
+
 Tick = function()
 	if GPModifier ~= "disabled" then
 		TickGeneralsPowers()
@@ -213,21 +149,8 @@ Tick = function()
 end
 
 WorldLoaded = function()
-	neutral = Player.GetPlayer("Neutral")
-	mp0 = Player.GetPlayer("Multi0")
-	mp1 = Player.GetPlayer("Multi1")
-	mp2 = Player.GetPlayer("Multi2")
-	mp3 = Player.GetPlayer("Multi3")
-	mp4 = Player.GetPlayer("Multi4")
-	mp5 = Player.GetPlayer("Multi5")
-	mp6 = Player.GetPlayer("Multi6")
-	mp7 = Player.GetPlayer("Multi7")
-	mp8 = Player.GetPlayer("Multi8")
-	mp9 = Player.GetPlayer("Multi9")
-	mp10 = Player.GetPlayer("Multi10")
-	mp11 = Player.GetPlayer("Multi11")
-
-	players = { mp0, mp1, mp2, mp3, mp4, mp5, mp6, mp7, mp8, mp9, mp10, mp11 }
+	players = Player.GetPlayers(function(p) return not p.IsNonCombatant end)
+	SetUpDefaults()
 
 	if CPModifier ~= "disabled" then
 		for _,player in pairs(players) do
