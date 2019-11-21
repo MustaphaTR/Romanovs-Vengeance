@@ -76,7 +76,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (ammoPools.Length == 0)
 				return false;
 
-			return ammoPools.All(x => !x.HasAmmo());
+			return ammoPools.All(x => !x.HasAmmo);
 			/* AutoReloads seems to be removed and i dunno how exactly to implement this check now.
 			 * Doesn't seem like we actually need it for RA2.
 			 * return ammoPools.All(x => !x.AutoReloads && !x.HasAmmo());

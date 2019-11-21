@@ -64,7 +64,7 @@ namespace OpenRA.Mods.RA2.Activities
 				var ammoPools = self.TraitsImplementing<AmmoPool>().ToArray();
 				if (ammoPools != null)
 					foreach (var pool in ammoPools)
-						while (!pool.FullAmmo())
+						while (!pool.HasFullAmmo)
 							pool.GiveAmmo(self, 1);
 			});
 		}
