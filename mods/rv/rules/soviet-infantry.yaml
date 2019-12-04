@@ -414,7 +414,8 @@ deso:
 		PipType: Gray
 		GarrisonType: Garrisoner
 	Mobile:
-		RequiresCondition: !chronodisable && undeployed
+		RequiresCondition: !chronodisable
+		RequireForceMoveCondition: !undeployed
 	RevealsShroud:
 		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
@@ -433,6 +434,7 @@ deso:
 		CrushClasses: vehicle
 	Passenger:
 		PipType: Gray
+		RequireForceMoveCondition: !undeployed
 	Armament@primary:
 		Weapon: RadBeamWeapon
 		LocalOffset: 320,-128,1024
@@ -495,6 +497,7 @@ deso:
 		SmartDeploy: True
 		Facing: 92
 		Voice: Deploy
+		UndeployOnMove: true
 		PauseOnCondition: chronodisable
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, ImmuneToRadiation
