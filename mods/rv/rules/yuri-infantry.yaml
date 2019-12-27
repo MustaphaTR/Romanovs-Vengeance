@@ -111,12 +111,12 @@ init:
 	Passenger:
 		PipType: Green
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 5c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 2c512
+		Radius: 3c0
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -193,12 +193,12 @@ brute:
 	Passenger:
 		PipType: Blue
 	RevealsShroud:
-		Range: 7c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 7c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 3c512
+		Radius: 3c0
 	AttackFrontal:
 		Voice: Attack
 	AutoTarget:
@@ -265,11 +265,11 @@ virus:
 	Passenger:
 		PipType: Green
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
-		Range: 5c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 2c512
+		Radius: 3c0
 	AttackFrontal:
 		Voice: Attack
 	Armament@primary:
@@ -348,9 +348,15 @@ yurix:
 		Weapon: SuperMindControlXE
 		LocalOffset: 0,0,1024
 	Armament@garrisoned:
+		Name: garrisoned
 		Weapon: SuperMindControlX
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
+		Name: garrisoned
 		Weapon: SuperMindControlXE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
 	PeriodicExplosion:
 		Weapon: SuperPsiWave
 	ExternalCondition@PRODUCED:
@@ -585,11 +591,11 @@ crkt:
 	Passenger:
 		PipType: Gray
 	RevealsShroud:
-		Range: 7c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
-		Range: 7c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 3c512
+		Radius: 3c0
 	Armor:
 		Type: None
 	Armament@primary:

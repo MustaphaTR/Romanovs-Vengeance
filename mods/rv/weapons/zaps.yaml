@@ -534,7 +534,11 @@ DiskLaser:
 	Projectile: LaserZap
 		Width: 50
 		Duration: 15
-		Color: aa7990
+		Color: AA799080
+		SecondaryBeam: true
+		SecondaryBeamWidth: 25
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: FFFFFF80
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
@@ -545,8 +549,11 @@ DiskLaser:
 
 DiskLaserE:
 	Inherits: DiskLaser
-	Burst: 2
-	ReloadDelay: 95
+	Range: 9c0
+	Projectile: LaserZap
+		Color: FF000080
+	Warhead@1Dam: SpreadDamage
+		Damage: 150
 
 DiskLaserAA:
 	Inherits: DiskLaser
@@ -556,13 +563,12 @@ DiskLaserAA:
 
 DiskLaserAAE:
 	Inherits: DiskLaserAA
-	Burst: 2
-	ReloadDelay: 95
-
-DiskLaserE:
-	Inherits: DiskLaser
-	Burst: 2
-	ReloadDelay: 95
+	Range: 9c0
+	Projectile: LaserZap
+		Color: FF000080
+	Warhead@1Dam: SpreadDamage
+		Damage: 150
+		ValidTargets: Air
 
 DoomLaser:
 	Inherits: Comet
@@ -573,11 +579,11 @@ DoomLaser:
 		Duration: 15
 		Width: 100
 		ZOffset: 2047
-		Color: FF000080
+		Color: AA799080
 		SecondaryBeam: true
 		SecondaryBeamWidth: 25
 		SecondaryBeamZOffset: 2047
-		SecondaryBeamColor: FFFFFF
+		SecondaryBeamColor: FFFFFF80
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c045
@@ -601,6 +607,8 @@ DoomLaser:
 
 DoomLaserE:
 	Inherits: DoomLaser
-	Range: 7c0
+	Range: 8c0
+	Projectile: LaserZap
+		Color: FF000080
 	Warhead@1Dam: SpreadDamage
 		Damage: 150

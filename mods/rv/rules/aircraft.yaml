@@ -180,10 +180,10 @@ zep:
 		DamageCooldown: 100
 		HealIfBelow: 100
 	RevealsShroud:
-		Range: 9c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament:
@@ -231,14 +231,14 @@ zephusk:
 		Explosion: KirovExplode
 		Spins: False # TODO: In the original they did spin, but that just looks weird.
 	RevealsShroud:
-		Range: 9c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c512
+		Radius: 5c0
 		Duration: 50
 	RenderVoxels:
 		Image: zep
@@ -280,10 +280,10 @@ orca:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 10c0
+		Range: 12c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
+		Range: 12c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament:
@@ -345,14 +345,14 @@ orcahusk:
 		TurnSpeed: 5
 		Speed: 210
 	RevealsShroud:
-		Range: 10c0
+		Range: 12c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
+		Range: 12c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
+		Radius: 6c0
 		Duration: 50
 	RenderVoxels:
 		Image: falc
@@ -373,10 +373,10 @@ beag:
 	SpawnActorOnDeath:
 		Actor: beaghusk
 	RevealsShroud:
-		Range: 10c0
+		Range: 12c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 12c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament:
@@ -414,14 +414,14 @@ beaghusk:
 		TurnSpeed: 5
 		Speed: 210
 	RevealsShroud:
-		Range: 10c0
+		Range: 12c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 12c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c512
+		Radius: 6c0
 		Duration: 50
 	RenderVoxels:
 		Image: beag
@@ -695,7 +695,7 @@ hornet:
 	Inherits: ^Plane
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
-		Cost: 50
+		Cost: 200
 	Tooltip:
 		Name: Hornet
 	Tooltip@NoRow:
@@ -711,6 +711,11 @@ hornet:
 	Armament:
 		Weapon: HornetBomb
 		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: HornetBombE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
 	AttackAircraft:
 		FacingTolerance: 20
 		RequiresCondition: ammo
@@ -1029,14 +1034,14 @@ schphusk:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
-		Range: 8c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 5c0
 		Duration: 50
 	RenderSprites:
 		Image: schp
@@ -1145,10 +1150,10 @@ disk:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 8c0
-		Type: CenterPosition
+		Range: 10c0
+		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament@primary:
@@ -1221,14 +1226,14 @@ diskhusk:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
-		Range: 8c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 5c0
 		Duration: 50
 	RenderVoxels:
 		Image: disk
@@ -1390,10 +1395,10 @@ fortress:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 9c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	-AppearsOnRadar:
@@ -1455,14 +1460,14 @@ fortresshusk:
 		TurnSpeed: 5
 		Speed: 165
 	RevealsShroud:
-		Range: 9c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c512
+		Radius: 5c0
 		Duration: 50
 	RenderVoxels:
 		Image: fortress
@@ -1488,14 +1493,14 @@ sdrn:
 		MaximumPitch: 255
 		VTOL: false
 	RevealsShroud:
-		Range: 7c0
+		Range: 8c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 7c0
+		Range: 8c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 3c512
+		Radius: 4c0
 		Duration: 50
 	DetectCloaked:
 		Range: 6c0
@@ -1546,10 +1551,10 @@ txdx:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 8c0
-		Type: CenterPosition
+		Range: 10c0
+		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament@primary:
@@ -1600,14 +1605,14 @@ txdxhusk:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
-		Range: 8c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 5c0
 		Duration: 50
 	RenderVoxels:
 		Image: txdx

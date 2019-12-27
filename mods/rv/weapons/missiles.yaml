@@ -594,6 +594,19 @@ HornetBomb:
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallCrater
 
+HornetBombE:
+	Inherits: HornetBomb
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Falloff: 100, 0
+		Damage: 140
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
 ASWBomb:
 	Inherits: HornetBomb
 	Range: 3c0
