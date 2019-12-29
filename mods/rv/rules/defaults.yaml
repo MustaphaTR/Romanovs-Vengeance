@@ -1642,7 +1642,7 @@
 		Voice: Move
 		TurnSpeed: 5
 		Locomotor: wheeled
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -1685,6 +1685,7 @@
 		CrushClasses: vehicle
 		WarnProbability: 0
 	CaptureManager:
+		BeingCapturedCondition: being-captured
 	Capturable:
 		Types: vehicle
 		CancelActivity: True

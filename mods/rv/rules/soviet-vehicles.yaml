@@ -222,7 +222,7 @@ htk:
 		Speed: 120
 		TurnSpeed: 5
 		Locomotor: tracked
-		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
 		HP: 250
 	Armor:
@@ -763,7 +763,7 @@ deva:
 		Speed: 90
 		TurnSpeed: 4
 		Locomotor: omnicrusher
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !overload
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured && !overload
 	-Crushable:
 	SelfHealing:
 		PercentageStep: 1
