@@ -442,7 +442,7 @@ pdplane:
 		CruiseAltitude: 5c852
 		Repulsable: false
 		TurnSpeed: 5
-		Speed: 225
+		Speed: 175
 	Health:
 		HP: 400
 	Armor:
@@ -460,6 +460,14 @@ pdplane:
 	HitShape:
 	RenderVoxels:
 		Image: pdplane
+	Contrail@1:
+		Offset: -50,1200,400
+		TrailLength: 15
+		UsePlayerColor: False
+	Contrail@2:
+		Offset: -50,-1200,400
+		TrailLength: 15
+		UsePlayerColor: False
 
 pdplanehusk:
 	Inherits: ^PlaneHusk
@@ -469,7 +477,7 @@ pdplanehusk:
 		Name: Cargo Plane
 	Aircraft:
 		TurnSpeed: 5
-		Speed: 225
+		Speed: 175
 	RenderVoxels:
 		Image: pdplane
 
@@ -490,6 +498,14 @@ bplndrop:
 		Actor: bplnhusk
 	RenderVoxels:
 		Image: bpln
+	Contrail@1:
+		Offset: -600,100,100
+		TrailLength: 15
+		UsePlayerColor: False
+	Contrail@2:
+		Offset: -600,-100,100
+		TrailLength: 15
+		UsePlayerColor: False
 
 alplane:
 	Inherits: pdplane
@@ -547,6 +563,14 @@ a10:
 		AmmoCondition: ammo
 	RenderVoxels:
 		Image: a10
+	Contrail@1:
+		Offset: -900,171,250
+		TrailLength: 15
+		UsePlayerColor: False
+	Contrail@2:
+		Offset: -900,-171,250
+		TrailLength: 15
+		UsePlayerColor: False
 
 a10husk:
 	Inherits: pdplanehusk
@@ -579,6 +603,11 @@ txbmb:
 		AmmoCondition: ammo
 	RenderVoxels:
 		Image: txbmb
+	Contrail@1:
+		Offset: -600,0,100
+		TrailLength: 15
+		UsePlayerColor: False
+	-Contrail@2:
 
 txbmbhusk:
 	Inherits: pdplanehusk
@@ -603,6 +632,11 @@ f22drop:
 		DropRange: 3c0
 	RenderVoxels:
 		Image: f22
+	Contrail@1:
+		Offset: -600,0,100
+		TrailLength: 15
+		UsePlayerColor: False
+	-Contrail@2:
 
 pdplane.emp:
 	Inherits: alplane
@@ -623,6 +657,8 @@ pdplane.leaflet:
 		Ammo: 1
 		AmmoCondition: ammo
 	AttackBomber:
+	Aircraft:
+		Speed: 300
 
 pdplane.naval_mines:
 	Inherits: pdplane
@@ -1104,6 +1140,14 @@ bpln:
 	RenderVoxels:
 		Image: bpln
 	HitShape:
+	Contrail@1:
+		Offset: -600,100,100
+		TrailLength: 15
+		UsePlayerColor: False
+	Contrail@2:
+		Offset: -600,-100,100
+		TrailLength: 15
+		UsePlayerColor: False
 	Rearmable:
 		RearmActors: boris
 
