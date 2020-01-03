@@ -133,9 +133,23 @@ hyd:
 	Armament@primary:
 		Weapon: FlakTrackGun
 		LocalOffset: 256,0,1408
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
 	Armament@secondary:
 		Weapon: FlakWeapon
 		LocalOffset: 256,0,1408
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: FlakTrackGunE
+		LocalOffset: 256,0,1408
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	Armament@secondary-elite:
+		Weapon: FlakWeaponE
+		LocalOffset: 256,0,1408
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode

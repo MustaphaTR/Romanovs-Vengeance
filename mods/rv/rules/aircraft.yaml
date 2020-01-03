@@ -799,7 +799,7 @@ asw:
 	Inherits: ^Plane
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
-		Cost: 50
+		Cost: 200
 	Tooltip:
 		Name: Osprey
 	Tooltip@NoRow:
@@ -815,6 +815,11 @@ asw:
 	Armament:
 		Weapon: ASWBomb
 		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: ASWBombE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
 	AttackAircraft:
 		FacingTolerance: 20
 		RequiresCondition: ammo

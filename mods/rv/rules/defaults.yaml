@@ -180,22 +180,22 @@
 		Conditions:
 			200: rank-veteran
 			400: rank-veteran
-			800: rank-veteran
+			650: rank-veteran
 		LevelUpImage: crate-effects
 	GrantCondition@RANK-ELITE:
 		RequiresCondition: rank-veteran >= 3
 		Condition: rank-elite
 	DamageMultiplier@RANK-2:
 		RequiresCondition: rank-veteran >= 2
-		Modifier: 70
+		Modifier: 60
 	FirepowerMultiplier@RANK-1:
 		RequiresCondition: rank-veteran >= 1
 		Modifier: 125
 	SelfHealing@ELITE:
-		PercentageStep: 5
-		Delay: 75
+		PercentageStep: 2
+		Delay: 100
 		HealIfBelow: 100
-		DamageCooldown: 75
+		DamageCooldown: 0
 		RequiresCondition: rank-elite
 	WithDecoration@RANK-1:
 		Image: rank

@@ -169,6 +169,8 @@ Maverick:
 MaverickE:
 	Inherits: Maverick
 	Range: 9c0
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Damage: 200
 
@@ -225,6 +227,14 @@ Medusa:
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 
+MedusaE:
+	Inherits: Medusa
+	ReloadDelay: 120
+	Burst: 8
+	BurstDelays: 7
+	Projectile: Missile
+		ContrailColor: EA0000
+
 HoverMissile:
 	Inherits: ^Missile
 	ReloadDelay: 50
@@ -273,6 +283,8 @@ HoverMissile:
 HoverMissileE:
 	Inherits: HoverMissile
 	Burst: 4
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
@@ -288,6 +300,8 @@ HoverMissileAAE:
 	Inherits: HoverMissileE
 	Range: 8c0
 	ValidTargets: Air
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
@@ -374,6 +388,8 @@ MissileLauncher:
 MissileLauncherE:
 	Inherits: MissileLauncher
 	Burst: 2
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
@@ -389,6 +405,8 @@ MissileLauncherAAE:
 	Inherits: MissileLauncherE
 	Range: 8c0
 	ValidTargets: Air
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
@@ -594,12 +612,15 @@ HornetBomb:
 
 HornetBombE:
 	Inherits: HornetBomb
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Falloff: 100, 0
 		Damage: 140
 	Warhead@2Eff: CreateEffect
 		Explosions: terrorist_explosion
+		-ExplosionPalette: tseffect
 		ImpactSounds: gexpapoa.wav
 		ValidTargets: Ground
 	Warhead@4Smu: LeaveSmudge
@@ -627,6 +648,13 @@ ASWBomb:
 		Explosions: small_grey_explosion
 		ExplosionPalette: effect
 	-Warhead@4Smu:
+
+ASWBombE:
+	Inherits: ASWBomb
+	Projectile: Missile
+		ContrailColor: EA0000
+	Warhead@1Dam: SpreadDamage
+		Damage: 80
 
 A10Missile:
 	Inherits: ^Missile
