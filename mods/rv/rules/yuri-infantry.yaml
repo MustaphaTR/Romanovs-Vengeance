@@ -439,8 +439,58 @@ gtrp:
 		Weapon: AAGattTrop3
 		LocalOffset: 544,100,1024, 544,-100,1024
 		RequiresCondition: gatling >= 2
+	Armament@opentopped-ag-0:
+		Name: opentopped
+		Weapon: AGGattTrop
+		LocalOffset: 544,100,1024, 544,-100,1024
+		RequiresCondition: !gatling
+	Armament@opentopped-ag-1:
+		Name: opentopped
+		Weapon: AGGattTrop2
+		RequiresCondition: gatling == 1
+	Armament@opentopped-ag-2:
+		Name: opentopped
+		Weapon: AGGattTrop3
+		RequiresCondition: gatling >= 2
+	Armament@opentopped-aa-0:
+		Name: opentopped
+		Weapon: AAGattTrop
+		RequiresCondition: !gatling
+	Armament@opentopped-aa-1:
+		Name: opentopped
+		Weapon: AAGattTrop2
+		RequiresCondition: gatling == 1
+	Armament@opentopped-aa-2:
+		Name: opentopped
+		Weapon: AAGattTrop3
+		RequiresCondition: gatling >= 2
+	Armament@garrisoned-ag-0:
+		Name: garrisoned
+		Weapon: UCAGGattTrop
+		RequiresCondition: !gatling
+	Armament@garrisoned-ag-1:
+		Name: garrisoned
+		Weapon: UCAGGattTrop2
+		RequiresCondition: gatling == 1
+	Armament@garrisoned-ag-2:
+		Name: garrisoned
+		Weapon: UCAGGattTrop3
+		RequiresCondition: gatling >= 2
+	Armament@garrisoned-aa-0:
+		Name: garrisoned
+		Weapon: UCAAGattTrop
+		RequiresCondition: !gatling
+	Armament@garrisoned-aa-1:
+		Name: garrisoned
+		Weapon: UCAAGattTrop2
+		RequiresCondition: gatling == 1
+	Armament@garrisoned-aa-2:
+		Name: garrisoned
+		Weapon: UCAAGattTrop3
+		RequiresCondition: gatling >= 2
 	GrantConditionOnAttack:
 		Condition: gatling
+		ArmamentNames: primary, opentopped, garrisoned
 		RequiredShotsPerInstance: 16
 		MaximumInstances: 2
 		RevokeDelay: 25
@@ -450,6 +500,7 @@ gtrp:
 	#	RequiresCondition: !rank-elite
 	# GrantConditionOnAttack@elite:
 	#	Condition: gatling
+	#	ArmamentNames: primary, opentopped, garrisoned
 	#	RequiredShotsPerInstance: 8
 	#	MaximumInstances: 2
 	#	RevokeDelay: 25
