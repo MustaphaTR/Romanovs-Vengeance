@@ -681,7 +681,7 @@ yuri:
 		RequiresCondition: !deployed && !deploying && !parachute
 	WithSpriteBody@DEPLOYED:
 		Sequence: deployed
-		PauseOnCondition: chronodisable
+		# PauseOnCondition: chronodisable
 		RequiresCondition: (deployed || deploying) && !parachute
 	QuantizeFacingsFromSequence:
 		Sequence: stand
