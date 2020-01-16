@@ -392,8 +392,8 @@ UCAKME:
 	Range: 7c0
 	Burst: 2
 	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
-	Projectile: Bullet
-		Speed: 100c0
+	Projectile: InstantHit
+		Blockable: true
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 		ValidTargets: Ground, Water, Air
@@ -415,6 +415,8 @@ AAGatling:
 	Inherits: ^Gatling
 	Range: 8c0
 	ValidTargets: Air
+	Projectile: InstantHit
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		ValidTargets: Air
@@ -431,6 +433,8 @@ AAGattCann:
 	Inherits: ^Gatling
 	Range: 12c0
 	ValidTargets: Air
+	Projectile: InstantHit
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 		ValidTargets: Air
@@ -449,9 +453,21 @@ AAGattTrop:
 	Range: 8c0
 	Burst: 1
 	ValidTargets: Air
+	Projectile: InstantHit
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 20
 		ValidTargets: Air
+
+UCAGGattTrop:
+	Inherits: AGGattTrop
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCAAGattTrop:
+	Inherits: AAGattTrop
+	Range: 6c0
 
 AGGatling2:
 	Inherits: AGGatling
@@ -483,6 +499,16 @@ AAGattTrop2:
 	ReloadDelay: 8
 	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 
+UCAGGattTrop2:
+	Inherits: AGGattTrop2
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCAAGattTrop2:
+	Inherits: AAGattTrop2
+	Range: 6c0
+
 AGGatling3:
 	Inherits: AGGatling
 	ReloadDelay: 4
@@ -512,6 +538,16 @@ AAGattTrop3:
 	Inherits: AAGattTrop
 	ReloadDelay: 4
 	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
+
+UCAGGattTrop3:
+	Inherits: AGGattTrop3
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCAAGattTrop3:
+	Inherits: AAGattTrop3
+	Range: 6c0
 
 Virusgun:
 	Inherits: awp
