@@ -254,8 +254,10 @@ naradr:
 		HP: 1000
 	Armor:
 		Type: Wood
+	ExternalCondition@disableradar:
+		Condition: disableradar
 	ProvidesRadar:
-		RequiresCondition: !disabled && !chronodisable
+		RequiresCondition: !disabled && !chronodisable && !disableradar
 	RevealsShroud:
 		Range: 10c0
 	RevealsShroudToIntelligenceOwner:

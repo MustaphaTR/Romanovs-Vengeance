@@ -305,8 +305,10 @@ gaairc:
 		HP: 1000
 	Armor:
 		Type: Wood
+	ExternalCondition@disableradar:
+		Condition: disableradar
 	ProvidesRadar:
-		RequiresCondition: !disabled && !chronodisable
+		RequiresCondition: !disabled && !chronodisable && !disableradar
 	RevealsShroud:
 		Range: 10c0
 	RevealsShroudToIntelligenceOwner:
@@ -962,8 +964,10 @@ gaspysat:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
+	ExternalCondition@disableradar:
+		Condition: disableradar
 	ProvidesRadar:
-		RequiresCondition: !disabled
+		RequiresCondition: !disabled && !chronodisable && !disableradar
 	ProvidesPrerequisite@default:
 	Production:
 		Produces: SpySatellite

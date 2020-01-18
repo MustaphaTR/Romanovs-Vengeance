@@ -421,8 +421,10 @@ yadome:
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite:
 		Prerequisite: radar
+	ExternalCondition@disableradar:
+		Condition: disableradar
 	ProvidesRadar:
-		RequiresCondition: !disabled && !chronodisable
+		RequiresCondition: !disabled && !chronodisable && !disableradar
 	RevealsShroud:
 		Range: 10c0
 	RevealsShroudToIntelligenceOwner:
