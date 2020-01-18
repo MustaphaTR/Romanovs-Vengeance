@@ -47,10 +47,6 @@ sabot:
 			None: 10
 			Flak: 10
 			Plate: 5
-			Wood: 40
-			Steel: 60
-			Concrete: 35
-			Rocket: 100
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallCrater
@@ -92,9 +88,8 @@ MirageGun:
 			None: 100
 			Flak: 100
 			Plate: 80
-			Light: 100
 			Wood: 20
-			Steel: 15
+			Steel: 25
 			Concrete: 15
 			Drone: 100
 		DamageTypes: FlameDeath
@@ -139,7 +134,6 @@ MirageGunE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
@@ -182,7 +176,6 @@ ATGUNE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 
 120mm:
 	Inherits: ^LargeBullet
@@ -209,7 +202,6 @@ ATGUNE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
@@ -248,7 +240,6 @@ ATGUNE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 	Warhead@3EffWater: CreateEffect
@@ -260,9 +251,9 @@ ATGUNE:
 120mmxRad:
 	Inherits: 120mmx
 	ReloadDelay: 65
-	Range: 5c0
+	Range: 6c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 150
+		Damage: 100
 		Versus:
 			None: 50
 			Flak: 50
@@ -282,12 +273,11 @@ ATGUNE:
 	Burst: 4
 	BurstDelays: 5
 	Warhead@1Dam: SpreadDamage
-		Damage: 140
+		Damage: 90
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@3EffWater: CreateEffect
 		Explosions: large_watersplash
 		ImpactSounds: gexpwala.wav
@@ -366,7 +356,6 @@ ATGUNE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 

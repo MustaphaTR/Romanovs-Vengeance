@@ -243,7 +243,7 @@ commanders_power.emergency_repair.3:
 	Buildable:
 		Queue: Power.Allies, Power.Soviets, Power.Yuri
 		BuildPaletteOrder: 90
-		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.2
+		Prerequisites: prerequisite.has_points, prerequisite.5_stars, commanders_power.emergency_repair.2
 		Description: Upgrades Emergency Repair power to Level 3.
 
 commanders_power.a10_strike.1:
@@ -680,9 +680,9 @@ prerequisite.grinder:
 			2: Emergency Repair
 			3: Emergency Repair
 		LongDescs:
-			1: Repairs 40% health of vehicles and structures in 6 cell range.
-			2: Repairs 70% health of vehicles and structures in 8 cell range.
-			3: Fully repairs vehicles and structures in 10 cell range.
+			1: Repairs 30% health of vehicles and structures in 5 cell range.
+			2: Repairs 60% health of vehicles and structures in 6 cell range.
+			3: Fully repairs vehicles and structures in 7 cell range.
 		SelectTargetSpeechNotification: SelectTarget
 		Weapons:
 			1: EmergencyRepair1
@@ -690,9 +690,9 @@ prerequisite.grinder:
 			3: EmergencyRepair3
 		ActivationSequence:
 		TargetCircleRanges:
-			1: 6c0
-			2: 8c0
-			3: 10c0
+			1: 5c0
+			2: 6c0
+			3: 7c0
 	AirstrikePower@a10strike:
 		OrderName: AlliedA10Strike
 		RequiresCondition: !lost
