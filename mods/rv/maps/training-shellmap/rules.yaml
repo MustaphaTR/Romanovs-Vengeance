@@ -18,9 +18,6 @@ crate:
 	Crate:
 		Lifetime: 0
 
-^Infantry:
-	-TurnOnIdle:
-
 ^NeutralAircraft:
 	Aircraft:
 		TakeOffOnCreation: false
@@ -46,6 +43,7 @@ camsc13:
 		Modifier: 0
 
 e1:
+	-TurnOnIdle:
 	-AttackFrontal:
 	-WithInfantryBody:
 	ExternalCondition@DEPLOY:
@@ -54,12 +52,29 @@ e1:
 		Condition: rank-veteran
 
 ggi:
+	-TurnOnIdle:
 	-AttackFrontal:
 	-WithInfantryBody:
 	ExternalCondition@DEPLOY:
 		Condition: deployed
 
+ghost:
+	-TurnOnIdle:
+
+engineer:
+	-TurnOnIdle:
+
+dog:
+	-TurnOnIdle:
+
+snipe:
+	-TurnOnIdle:
+
+ssrv:
+	-TurnOnIdle:
+
 pentgen:
 	Inherits@EXPERIENCE: ^GainsExperience
+	-TurnOnIdle:
 	ExternalCondition@VET:
 		Condition: rank-veteran
