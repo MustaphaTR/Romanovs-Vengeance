@@ -89,12 +89,6 @@ namespace OpenRA.Mods.RA2.Traits
         [Desc("Map player to use as an Effective Owner when actor is a mirage.")]
         public readonly string EffectiveOwner = "Neutral";
 
-        [PaletteReference("IsPlayerPalette")]
-        public readonly string Palette = "cloak";
-        public readonly bool IsPlayerPalette = false;
-
-        public readonly BitSet<MirageType> MirageTypes = new BitSet<MirageType>("Mirage");
-
         [GrantedConditionReference]
         [Desc("The condition to grant to self while a mirage.")]
         public readonly string MirageCondition = null;
