@@ -915,7 +915,7 @@ mgtk:
 		Queue: Vehicle.Allies, Vehicle.Germany
 		BuildPaletteOrder: 80
 		Prerequisites: gatech, ~techlevel.3
-		Description: Tank cloaks itself while immobile.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Tank that appears as a tree while immobile.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -926,8 +926,21 @@ mgtk:
 		Voice: Move
 	Tooltip:
 		Name: Mirage Tank
+		RequiresCondition: !tree && showownername
 	Tooltip@NoRow:
 		Name: Mirage Tank
+		RequiresCondition: !tree && !showownername
+	MirageTooltip@Tree:
+		Name: Mirage Tank
+		GenericName: Tree
+		GenericVisibility: Enemy, Neutral
+		RequiresCondition: tree && showownername
+	MirageTooltip@TreeNoRow:
+		Name: Mirage Tank
+		GenericName: Tree
+		ShowOwnerRow: false
+		GenericVisibility: Enemy, Neutral
+		RequiresCondition: tree && !showownername
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	Health:
@@ -953,12 +966,13 @@ mgtk:
 		Weapon: MirageGunE
 		LocalOffset: 640,0,640
 		RequiresCondition: rank-elite
-	Cloak:
+	Mirage:
 		RequiresCondition: !chronodisable && !emp
 		InitialDelay: 25
-		CloakDelay: 25
-		IsPlayerPalette: true
-		UncloakOn: Attack, Damage, Move
+		MirageDelay: 25
+		RevealOn: Attack, Move
+		MirageCondition: tree
+		Actors: tree01, tree02, tree03, tree04
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
@@ -969,8 +983,28 @@ mgtk:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	RenderSprites:
+		Palette: terrain
 	RenderVoxels:
+	GrantRandomCondition:
+		Conditions: tree01, tree02, tree03, tree04
+	WithSpriteBody@Tree01:
+		Name: tree01
+		Sequence: tree01
+		RequiresCondition: tree && tree01
+	WithSpriteBody@Tree02:
+		Name: tree02
+		Sequence: tree02
+		RequiresCondition: tree && tree02
+	WithSpriteBody@Tree03:
+		Name: tree03
+		Sequence: tree03
+		RequiresCondition: tree && tree03
+	WithSpriteBody@Tree04:
+		Name: tree04
+		Sequence: tree04
+		RequiresCondition: tree && tree04
 	WithVoxelBody:
+		RequiresCondition: !tree
 	Voiced:
 		VoiceSet: MirageTankVoice
 	ExternalCondition@PRODUCED:
