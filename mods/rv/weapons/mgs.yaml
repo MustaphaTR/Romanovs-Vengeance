@@ -85,8 +85,45 @@ UCparaE:
 MP5:
 	Inherits: ^MG
 	ReloadDelay: 10
-	Range: 4c0
+	Range: 5c0
 	Report: iseaatta.wav, iseaattb.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Ship
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Ship
+		Damage: 35
+		Versus:
+			Drone: 50
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+
+MP5E:
+	Inherits: MP5
+	Range: 6c0
+	ReloadDelay: 5
+	Warhead@1Dam: SpreadDamage
+		Damage: 45
+
+CRMP5:
+	Inherits: MP5
+	Range: 6c0
+
+UCMP5:
+	Inherits: MP5
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCMP5E:
+	Inherits: MP5E
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+DoublePistols:
+	Inherits: ^MG
+	ReloadDelay: 10
+	Range: 6c0
+	Report: itanatta.wav, itanattb.wav
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
@@ -106,33 +143,6 @@ MP5:
 		DamageTypes: BulletDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
-
-MP5E:
-	Inherits: MP5
-	Range: 5c0
-	ReloadDelay: 8
-
-CRMP5:
-	Inherits: MP5
-	ReloadDelay: 20
-	Range: 5c0
-
-UCMP5:
-	Inherits: MP5
-	Range: 6c0
-	Projectile: InstantHit
-		Blockable: false
-
-UCMP5E:
-	Inherits: MP5E
-	Range: 6c0
-	Projectile: InstantHit
-		Blockable: false
-
-DoublePistols:
-	Inherits: MP5
-	Range: 6c0
-	Report: itanatta.wav, itanattb.wav
 
 DoublePistolsE:
 	Inherits: DoublePistols
