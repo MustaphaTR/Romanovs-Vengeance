@@ -1064,6 +1064,10 @@ schp:
 		RequiresCondition: deployed
 	SpawnActorOnDeath:
 		Actor: schphusk
+		RequiresCondition: airborne
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
 	HitShape:
 
 schphusk:
