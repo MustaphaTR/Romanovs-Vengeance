@@ -18,7 +18,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
-	public class InfectorInfo : ConditionalTraitInfo
+	public class InfectorOldInfo : ConditionalTraitInfo
 	{
 		[FieldLoader.Require]
 		public readonly BitSet<TargetableType> Types;
@@ -54,12 +54,12 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public readonly string Cursor = "attack";
 
-		public override object Create(ActorInitializer init) { return new Infector(this); }
+		public override object Create(ActorInitializer init) { return new InfectorOld(this); }
 	}
 
-	public class Infector : ConditionalTrait<InfectorInfo>, IIssueOrder, IResolveOrder, IOrderVoice
+	public class InfectorOld : ConditionalTrait<InfectorOldInfo>, IIssueOrder, IResolveOrder, IOrderVoice
 	{
-		public Infector(InfectorInfo info)
+		public InfectorOld(InfectorOldInfo info)
 			: base(info) { }
 
 		public IEnumerable<IOrderTargeter> Orders
@@ -89,7 +89,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!order.Queued)
 				self.CancelActivity();
 
-			self.QueueActivity(new Infect(self, order.Target, this));
+			self.QueueActivity(new InfectOld(self, order.Target, this));
 			self.ShowTargetLines();
 		}
 
@@ -100,9 +100,9 @@ namespace OpenRA.Mods.RA2.Traits
 
 		class InfectionOrderTargeter : UnitOrderTargeter
 		{
-			readonly InfectorInfo info;
+			readonly InfectorOldInfo info;
 
-			public InfectionOrderTargeter(InfectorInfo info)
+			public InfectionOrderTargeter(InfectorOldInfo info)
 				: base("Infect", 7, info.Cursor, true, true)
 			{
 				this.info = info;

@@ -25,15 +25,16 @@ DogJaw:
 		DamageTypes: BulletDeath
 
 DroneJump:
-	ValidTargets: Infantry
-	ReloadDelay: 30
+	ValidTargets: TerrorDronable
+	ReloadDelay: 10
 	Range: 3c0
 	Report: vteratta.wav
-	TargetActorCenter: true
 	Projectile: InstantHit
-	Warhead@1Dam: TargetDamage
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Falloff: 100, 0
 		Damage: 1000
-		ValidTargets: Infantry
+		ValidTargets: TerrorDronable
 		Versus:
 			None: 100
 			Flak: 100
@@ -139,7 +140,7 @@ Punch:
 			Concrete: 15
 			Drone: 200
 			Rocket: 100
-		DamageTypes: BruteDeath
+		DamageTypes: BruteDeath, SuppressTerrorDrone
 
 PunchE:
 	Inherits: Punch
@@ -167,7 +168,7 @@ Smash:
 			Concrete: 0
 			Drone: 0
 			Rocket: 0
-		DamageTypes: BruteDeath
+		DamageTypes: BruteDeath, SuppressTerrorDrone
 
 SmashE:
 	Inherits: Smash
@@ -226,7 +227,7 @@ TankGrind:
 			Concrete: 90
 			Drone: 100
 			Rocket: 0
-		DamageTypes: BulletDeath
+		DamageTypes: BulletDeath, SuppressTerrorDrone
 
 TankGrindE:
 	Inherits: TankGrind

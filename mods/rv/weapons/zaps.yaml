@@ -187,7 +187,7 @@ SonicZap:
 		Versus:
 			Heavy: 80
 			Concrete: 60
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, RemovesSquid
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid
 		ValidTargets: Water, Underwater
 	Warhead@2Dam: SpreadDamage
 		Range: 0, 32
@@ -198,7 +198,7 @@ SonicZap:
 		Versus:
 			Heavy: 80
 			Concrete: 60
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, RemovesSquid
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid
 		ValidTargets: Water, Underwater
 		InvalidTargets: ImmuneToAllySonic
 
@@ -230,7 +230,7 @@ PrismShot:
 			Concrete: 90
 			Drone: 200
 			Rocket: 100
-		DamageTypes: ElectroDeath, TriggerProne
+		DamageTypes: ElectroDeath, TriggerProne, SuppressTerrorDrone
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallScorch
 
@@ -258,7 +258,7 @@ Comet:
 			Concrete: 90
 			Drone: 100
 			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath
+		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone
 	Warhead@2Shr: FireShrapnel
 		Weapon: CometFragment
 		Amount: 5
@@ -468,7 +468,7 @@ TeslaFence:
 	Warhead@1Dam: TargetDamage
 		DebugOverlayColor: FF0000
 		Damage: 100000
-		DamageTypes: ElectroDeath
+		DamageTypes: ElectroDeath, SuppressTerrorDrone
 
 MagneShake:
 	ReloadDelay: 110
@@ -542,7 +542,7 @@ DiskLaser:
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
-		DamageTypes: RadiationDeath
+		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
 	-Warhead@2Eff:
 	-Warhead@3EffWater:
@@ -600,7 +600,7 @@ DoomLaser:
 			Concrete: 50
 			Drone: 100
 			Rocket: 100
-		DamageTypes: RadiationDeath
+		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
 	-Warhead@2Eff:
 	-Warhead@3EffWater:

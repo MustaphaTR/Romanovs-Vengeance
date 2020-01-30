@@ -20,7 +20,7 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("Handle infection by infectior units.")]
-	public class InfectableInfo : ITraitInfo, Requires<HealthInfo>
+	public class InfectableOldInfo : ITraitInfo, Requires<HealthInfo>
 	{
 		[Desc("Damage types that removes the infector.")]
 		public readonly BitSet<DamageType> RemoveInfectorDamageTypes = default(BitSet<DamageType>);
@@ -47,16 +47,16 @@ namespace OpenRA.Mods.RA2.Traits
 		[GrantedConditionReference]
 		public IEnumerable<string> LinterConditions { get { return InfectedByConditions.Values; } }
 
-		public object Create(ActorInitializer init) { return new Infectable(init.Self, this); }
+		public object Create(ActorInitializer init) { return new InfectableOld(init.Self, this); }
 	}
 
-	public class Infectable : ISync, ITick, INotifyCreated, INotifyDamage, INotifyKilled, IRemoveInfector
+	public class InfectableOld : ISync, ITick, INotifyCreated, INotifyDamage, INotifyKilled, IRemoveInfector
 	{
-		readonly InfectableInfo info;
+		readonly InfectableOldInfo info;
 		readonly Health health;
 
 		public Actor Infector;
-		public Infector InfectorTrait;
+		public InfectorOld InfectorTrait;
 		public int[] FirepowerMultipliers = new int[] { };
 
 		[Sync]
@@ -69,7 +69,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		int dealthDamage = 0;
 
-		public Infectable(Actor self, InfectableInfo info)
+		public InfectableOld(Actor self, InfectableOldInfo info)
 		{
 			this.info = info;
 

@@ -645,22 +645,44 @@
 	ExternalCondition@CHAOS:
 		Condition: chaos
 
+^TerrorDronable:
+	InfectableRV:
+		KillInfectorDamageTypes: KillsDrone
+		BeingInfectedCondition: beingterrordroned
+		InfectedCondition: terrordroned
+	Targetable@DRONE:
+		TargetTypes: TerrorDronable
+	RevealsShroud@DRONE:
+		Range: 2c0
+		ValidStances: Enemy, Neutral
+		RequiresCondition: terrordroned
+	ExplodeWeapon@dronesparks:
+		RequiresCondition: terrordroned
+		Weapon: DroneSparkSpawner
+		LocalOffset: 0,0,384
+	SpeedMultiplier@DRONE:
+		RequiresCondition: beingterrordroned
+		Modifier: 0
+
 ^SquidGrabbable:
 	WithFacingSpriteBody:
 		Name: squid
 		Sequence: squid
 		RequiresCondition: squid
-	Infectable:
+	InfectableOld:
 		RemoveInfectorDamageTypes: RemovesSquid
 		BeingInfectedCondition: beinginfected
 		InfectedByConditions:
 			sqd: squid
-	RevealsShroud@DRONE:
+	RevealsShroud@SQUID:
 		Range: 5c0
 		ValidStances: Enemy, Neutral
 		RequiresCondition: squid
 	Targetable@SQUID:
 		TargetTypes: SquidInfection
+	SpeedMultiplier@SQUID:
+		RequiresCondition: beinginfected
+		Modifier: 0
 
 ^BuildingParticles:
 	SmokeParticleEmitter@1:
@@ -1296,6 +1318,7 @@
 	Inherits@12: ^AffectedByPropaganda
 	Inherits@13: ^AffectedByChronoBoost
 	Inherits@14: ^AffectedByStealthGenerator
+	Inherits@15: ^TerrorDronable
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
@@ -1635,6 +1658,7 @@
 	Inherits@15: ^AffectedByChronoBoost
 	Inherits@16: ^DisabledByMagnetron
 	Inherits@17: ^AffectedByStealthGenerator
+	Inherits@18: ^TerrorDronable
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -1661,19 +1685,6 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
-	Infectable:
-		KillInfectorDamageTypes: KillsDrone
-		KillInfectorActorTypes: gadept, nadept, nadepb, yadept, yadepb, caoutp
-		BeingInfectedCondition: beingterrordroned
-		InfectedCondition: terrordroned
-	RevealsShroud@DRONE:
-		Range: 2c0
-		ValidStances: Enemy, Neutral
-		RequiresCondition: terrordroned
-	ExplodeWeapon@dronesparks:
-		RequiresCondition: terrordroned
-		Weapon: DroneSparkSpawner
-		LocalOffset: 0,0,384
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp

@@ -123,7 +123,7 @@ dron:
 	Mobile:
 		Speed: 150
 		TurnSpeed: 255
-		RequiresCondition: !attack-cooldown && !chronodisable && !emp && !magnefreeze
+		RequiresCondition: !chronodisable && !emp && !magnefreeze
 	Health:
 		HP: 100
 	Armor:
@@ -139,7 +139,8 @@ dron:
 		CargoType: Infantry
 		Weight: 2
 	RenderSprites:
-	-Infectable:
+	-InfectableRV:
+	-Targetable@DRONE:
 	-RevealsShroud@DRONE:
 	-ExplodeWeapon@dronesparks:
 	-RenderVoxels:
@@ -148,26 +149,31 @@ dron:
 	-Capturable:
 	WithInfantryBody:
 		StandSequences: stand
-		DefaultAttackSequence: shoot
+		DefaultAttackSequence: jump
+		RequiresCondition: !jousting
+	WithFacingSpriteBody:
+		Sequence: shoot
+		RequiresCondition: jousting
 	Armament:
 		Weapon: DroneJump
-		ReloadingCondition: attack-cooldown
-	AttackLeap:
+	AttackInfectRV:
 		Voice: Attack
-		PauseOnCondition: attacking || attack-cooldown || chronodisable || emp
-	Infector:
-		Types: DroneInfection
 		Damage: 100
 		DamageInterval: 60
-		SuppressionDamageThreshold: 10
-		SuppressionAmountThreshold: 2
-		Voice: Attack
+		DamageTypes: DroneInfection, BulletDeath
+		SuppressionDamageThreshold: 250
+		SuppressionCountThreshold: 1
+		SuppressionDamageType: SuppressTerrorDrone
+		JoustRange: 1c768
+		PauseOnCondition: chronodisable || emp
+	RejectsOrders:
+		RequiresCondition: jousting
 	AttackMove:
 		Voice: Move
 	AutoTarget:
 		InitialStance: AttackAnything
 	AutoTargetPriority@DEFAULT:
-		ValidTargets: Infantry
+		ValidTargets: TerrorDronable
 	Targetable:
 		TargetTypes: Ground, TerrorDrone, DetonateAttack, ImmuneToRadiation
 	-DelayedWeaponAttachable@TANYAC4:

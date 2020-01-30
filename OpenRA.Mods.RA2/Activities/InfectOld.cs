@@ -18,12 +18,12 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Activities
 {
-	class Infect : Enter
+	class InfectOld : Enter
 	{
-		readonly Infector infector;
+		readonly InfectorOld infector;
 		readonly Target target;
 
-		public Infect(Actor self, Target target, Infector infector)
+		public InfectOld(Actor self, Target target, InfectorOld infector)
 			: base(self, target, Color.Red)
 		{
 			this.target = target;
@@ -37,7 +37,7 @@ namespace OpenRA.Mods.RA2.Activities
 				if (infector.IsTraitDisabled)
 					return;
 
-				var infectable = targetActor.TraitOrDefault<Infectable>();
+				var infectable = targetActor.TraitOrDefault<InfectableOld>();
 				if (infectable == null || infectable.Infector != null)
 					return;
 
@@ -73,7 +73,7 @@ namespace OpenRA.Mods.RA2.Activities
 			if (target.Actor.IsDead)
 				return;
 
-			var infectable = target.Actor.TraitOrDefault<Infectable>();
+			var infectable = target.Actor.TraitOrDefault<InfectableOld>();
 			if (infectable == null || infectable.Infector != null)
 				return;
 
@@ -88,7 +88,7 @@ namespace OpenRA.Mods.RA2.Activities
 			if (targetActor.IsDead)
 				return false;
 
-			var infectable = targetActor.TraitOrDefault<Infectable>();
+			var infectable = targetActor.TraitOrDefault<InfectableOld>();
 			if (infectable == null || infectable.Infector != null)
 				return false;
 
