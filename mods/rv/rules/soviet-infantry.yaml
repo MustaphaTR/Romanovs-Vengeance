@@ -776,27 +776,10 @@ boris:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SWIMSUIT: ^WithSwimSuit
-	-ReloadDelayMultiplier@PROPAGANDA_TOWER:
-	-ReloadDelayMultiplier@PROPAGANDA1:
-	-ReloadDelayMultiplier@PROPAGANDA2:
-	-ReloadDelayMultiplier@PROPAGANDA3:
-	-ReloadDelayMultiplier@BOOST:
 	-ReloadDelayMultiplier@LEAFLET:
-	FirepowerMultiplier@PROPAGANDA_TOWER:
-		Modifier: 125
-		RequiresCondition: propaganda_tower
-	FirepowerMultiplier@PROPAGANDA1:
-		Modifier: 150
-	FirepowerMultiplier@PROPAGANDA2:
-		Modifier: 200
-	FirepowerMultiplier@PROPAGANDA3:
-		Modifier: 250
 	FirepowerMultiplier@LEAFLET:
 		Modifier: 33
 		RequiresCondition: leaflet
-	FirepowerMultiplier@BOOST:
-		Modifier: 125
-		RequiresCondition: boost1 || boost2 || boost3
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 180
