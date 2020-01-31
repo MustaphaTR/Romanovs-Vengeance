@@ -53,18 +53,15 @@ sabot:
 
 sabotE:
 	Inherits: sabot
-	Burst: 2
-	ReloadDelay: 85
+	Range: 9c0
 	Projectile: BulletAS
 		Blockable: false
 		Speed: 682
+		ContrailLength: 10
+		ContrailColor: FFFFFF
+		ContrailWidth: 0c20
 	Warhead@1Dam: SpreadDamage
-		Damage: 140
-		Versus:
-			None: 20
-			Flak: 20
-			Plate: 15
-			Drone: 100
+		Damage: 175
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
@@ -145,14 +142,12 @@ MirageGunE:
 
 robogun:
 	Inherits: 105mm
-	Range: 5c0
 	Report: vrobatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 
 robogunE:
 	Inherits: 105mmE
-	Range: 5c0
 	Report: vrobatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
