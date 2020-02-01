@@ -50,13 +50,14 @@ ElectricBoltCommando:
 	Inherits: ElectricBoltE
 	InvalidTargets: TeslaBomb, TeslaBombCleaner
 	Warhead@1Dam: SpreadDamage
-		Damage: 125
+		Damage: 100
 	Warhead@2Shr: FireShrapnel
 		Weapon: TeslaFragmentCommando
 
 ElectricBoltCommandoE:
 	Inherits: ElectricBoltCommando
-	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 150
 
 UCElectricBoltCommando:
 	Inherits: ElectricBoltCommando
@@ -429,8 +430,8 @@ CurtainRifleAP:
 	Projectile: TeslaZap
 		Palette: ra
 	Warhead@Damage: SpreadDamage
-		Spread: 0c768
-		Damage: 100
+		Spread: 0c512
+		Damage: 125
 		ValidTargets: Infantry
 		DamageTypes: FlameDeath
 	Warhead@Stars: CreateEffect
@@ -439,8 +440,9 @@ CurtainRifleAP:
 
 CurtainRifleAPE:
 	Inherits: CurtainRifle
+	Range: 6c0
 	Warhead@Damage: SpreadDamage
-		Damage: 125
+		Spread: 0c768
 
 CRCurtainRifle:
 	Inherits: CurtainRifleAP
