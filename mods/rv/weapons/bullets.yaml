@@ -496,7 +496,7 @@ CruiserStrike:
 
 Grenade:
 	Inherits: ^LargeBullet
-	ReloadDelay: 40
+	ReloadDelay: 45
 	Range: 4c0
 	Report: grenade1.aud
 	Projectile: BulletAS
@@ -546,10 +546,23 @@ Grenade:
 
 GrenadeE:
 	Inherits: Grenade
-	Range: 6c0
-	ReloadDelay: 30
+	Range: 5c0
+	ReloadDelay: 55
 	Projectile: BulletAS
 		Speed: 384
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+	Warhead@1Gar: DamageGarrisoner
+		Damage: 60
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 40
+		Condition: emp
+		ValidTargets: EMPulse
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse30p
+		ExplosionPalette: tseffect
+		ImpactSounds: sempexpl.wav
 
 CRGrenade:
 	Inherits: Grenade
