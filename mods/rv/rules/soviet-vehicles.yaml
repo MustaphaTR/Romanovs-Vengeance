@@ -155,6 +155,11 @@ dron:
 	WithFacingSpriteBody:
 		Sequence: shoot
 		RequiresCondition: jousting
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
+	KillsSelf@LowPowerOnWater:
+		RequiresCondition: in_water
 	Armament:
 		Weapon: DroneJump
 	AttackInfectRV:
