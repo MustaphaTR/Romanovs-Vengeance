@@ -1852,8 +1852,11 @@
 	Inherits@9: ^LazarusShieldable
 	Inherits@10: ^AffectedByChronoBoost
 	Inherits@11: ^AffectedByPropaganda
+	Inherits@12: ^TerrorDronable
 	WithTextControlGroupDecoration:
 	Targetable@ChronoDisable:
+		RequiresCondition: !airborne
+	Targetable@DRONE:
 		RequiresCondition: !airborne
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
