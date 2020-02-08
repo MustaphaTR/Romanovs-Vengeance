@@ -283,7 +283,7 @@ Container@PLAYER_WIDGETS:
 			X: WINDOW_RIGHT - 234
 			Y: 0
 			Width: 234
-			Height: 275
+			Height: 295
 			ImageCollection: sidebar
 			ImageName: background-top
 			ClickThrough: false
@@ -460,6 +460,7 @@ Container@PLAYER_WIDGETS:
 			Height: 250
 			Children:
 				Container@PALETTE_BACKGROUND:
+					Y: 20
 					Children:
 						Image@ROW_TEMPLATE:
 							Logic: AddFactionSuffixLogic
@@ -477,7 +478,7 @@ Container@PLAYER_WIDGETS:
 							ImageName: background-bottom
 				PowerMeter:
 					X: WINDOW_RIGHT - 230
-					Y: 270
+					Y: 290
 					MeterAlongside: ROW_TEMPLATE
 					ParentContainer: PALETTE_BACKGROUND
 					MeterHeight: 3
@@ -492,7 +493,7 @@ Container@PLAYER_WIDGETS:
 				LogicTicker@PRODUCTION_TICKER:
 				ProductionPalette@PRODUCTION_PALETTE:
 					X: 24
-					Y: 2
+					Y: 22
 					TooltipContainer: TOOLTIP_CONTAINER
 					ReadyText: READY
 					HoldText: ON HOLD
@@ -657,11 +658,11 @@ Container@PLAYER_WIDGETS:
 							TooltipText: Scroll down
 							TooltipContainer: TOOLTIP_CONTAINER
 		ProductionTabs@PRODUCTION_TABS:
-			Logic: ProductionTabsLogic
+			Logic: ProductionTabsLogic, AddFactionSuffixLogic
 			PaletteWidget: PRODUCTION_PALETTE
 			TypesContainer: PRODUCTION_TYPES
 			BackgroundContainer: PRODUCTION_BACKGROUND
-			X: WINDOW_RIGHT - 256
-			Y: WINDOW_BOTTOM - 20
-			Width: 256
+			X: WINDOW_RIGHT - 212
+			Y: 275
+			Width: 187
 			Height: 20
