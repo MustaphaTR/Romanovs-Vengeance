@@ -664,6 +664,11 @@
 		RequiresCondition: beingterrordroned
 		Modifier: 0
 
+^TerrorDronableAircraft:
+	Inherits: ^TerrorDronable
+	RevealsShroud@DRONE:
+		Type: CenterPosition
+
 ^SquidGrabbable:
 	WithFacingSpriteBody:
 		Name: squid
@@ -1852,7 +1857,7 @@
 	Inherits@9: ^LazarusShieldable
 	Inherits@10: ^AffectedByChronoBoost
 	Inherits@11: ^AffectedByPropaganda
-	Inherits@12: ^TerrorDronable
+	Inherits@12: ^TerrorDronableAircraft
 	WithTextControlGroupDecoration:
 	Targetable@ChronoDisable:
 		RequiresCondition: !airborne
