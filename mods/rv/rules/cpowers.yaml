@@ -50,6 +50,20 @@ commanders_power.hijacker:
 	RenderSprites:
 		Image: hjck
 
+commanders_power.minelayer:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Minelayer
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Enables production of Minelayer from War Factory.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.minelayer
+	RenderSprites:
+		Image: mlyr
+
 commanders_power.airpad:
 	Inherits: ^default.commanders_power
 	Tooltip:

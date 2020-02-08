@@ -426,7 +426,7 @@ tele:
 		Name: Magnetron
 	Buildable:
 		Queue: Vehicle.Yuri
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: yatech
 		Description: Long range magnetic field generator.\nFreezes vehicles and damages structures.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
 	Mobile:
@@ -493,7 +493,7 @@ mind:
 		Name: Master Mind
 	Buildable:
 		Queue: Vehicle.Yuri
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		Prerequisites: yatech
 		Description: Heavy vehicle capable of mind controlling multipile enemy units.\nStarts taking damage if controlling more than 3.\nCan crush enemy vehicles.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
 	Mobile:
@@ -574,6 +574,67 @@ mind:
 	HitShape:
 
 # Custom Yuri Vehicles
+mlyr:
+	Inherits: ^Vehicle
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 300
+		PlayerExperience: 30
+		Voice: Move
+	Tooltip:
+		Name: Minelayer
+	Tooltip@NoRow:
+		Name: Minelayer
+	Selectable:
+		Bounds: 50, 40, 0, -6
+	Buildable:
+		Queue: Vehicle.Yuri
+		Prerequisites: ~prerequisite.minelayer, repairpad, ~techlevel.1
+		BuildPaletteOrder: 80
+		Description: Lays mines to destroy unwary enemy units.\n\nCan detect cloaked units.\n  Unarmed
+	Mobile:
+		Speed: 95
+		TurnSpeed: 5
+		Locomotor: heavytracked
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Minelayer:
+		Mine: mine
+		Voice: Attack
+	MineImmune:
+	AmmoPool:
+		Ammo: 5
+		RearmSound: minelay1.aud
+	Rearmable:
+		RearmActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: FlakTrackVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	HitShape:
+
 kamaz:
 	Inherits: ^Vehicle
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -653,7 +714,7 @@ yhtnk:
 		Name: Lazarus Tank
 	Buildable:
 		Queue: Vehicle.Yuri
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: yatech
 		Description: Fast invisible tank designed for ambushes.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
 	Mobile:
