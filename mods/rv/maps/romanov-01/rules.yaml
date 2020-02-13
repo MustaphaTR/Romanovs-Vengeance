@@ -1,0 +1,54 @@
+World:
+	LuaScript:
+		Scripts: commanders-powers.lua, campaign-global.lua, romanov-01.lua
+	MissionData:
+		Briefing: We have recieved a video message from Premier Romanov. He is being held in the Attica Correcreational Facility in New York.\n\nHe requests us to get him out of there. We have sneaked in a group of troops to the area via a stolen Allied Cargo Plane. The prison isn't heavily guarded, probably not to take attention. Get Comrade Premier out of the prison and move him to safety.\n\nWe are gonna try to land a plane to the main road nearby to take him, there is no nearby airfield and a helicopter is not safe enough. Good luck!
+	ScriptLobbyDropdown@difficulty:
+		ID: difficulty
+		Label: Difficulty
+		Values:
+			easy: Easy
+			normal: Normal
+			hard: Hard
+		Default: normal
+
+powerproxy.paratroopers:
+	AlwaysVisible:
+	ParatroopersPower@Mission:
+		SupportPowerPaletteOrder: 1
+		OrderName: MissionParatroopers
+		Icons:
+			1: paradrop
+		ChargeInterval: 4500
+		Descriptions:
+			1: Soviet Paratroopers
+		LongDescs:
+			1: A Cargo Planes drops 7 Conscripts, an Attack Dog and a Tesla Trooper\nanywhere on the map.
+		DropItems:
+			1: e2,e2,e2,e2,e2,e2,e2,shk,dog
+		QuantizedFacings: 8
+		UnitTypes:
+			1: alplane
+		SquadSizes:
+			1: 1
+		CameraActor: camera
+		Prerequisites:
+			1: techlevel.1
+		DisplayBeacon: false
+
+catexs02:
+	-AutoTarget:
+	-AutoTargetPriority@DEFAULT:
+	-AutoTargetPriority@ATTACKANYTHING:
+	-RevealsShroudToIntelligenceOwner:
+	Tooltip:
+		Name: Prison
+	Tooltip@NoRow:
+		Name: Prison
+	-Garrisonable:
+	-ChangeOwnerOnGarrisoner:
+	-AttackGarrisonedRV:
+	-Targetable@GARRISONED:
+	-WithSpriteBody@GARRISONED:
+	WithSpriteBody:
+		-RequiresCondition:

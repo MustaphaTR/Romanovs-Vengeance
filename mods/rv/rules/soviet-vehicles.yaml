@@ -123,7 +123,7 @@ dron:
 	Mobile:
 		Speed: 150
 		TurnSpeed: 255
-		RequiresCondition: !attack-cooldown && !chronodisable && !emp && !magnefreeze
+		RequiresCondition: !chronodisable && !emp && !magnefreeze
 	Health:
 		HP: 100
 	Armor:
@@ -139,7 +139,9 @@ dron:
 		CargoType: Infantry
 		Weight: 2
 	RenderSprites:
-	-Infectable:
+	-InfectableRV:
+	-Targetable@DRONE:
+	-SpeedMultiplier@DRONE:
 	-RevealsShroud@DRONE:
 	-ExplodeWeapon@dronesparks:
 	-RenderVoxels:
@@ -148,28 +150,39 @@ dron:
 	-Capturable:
 	WithInfantryBody:
 		StandSequences: stand
-		DefaultAttackSequence: shoot
+		DefaultAttackSequence: jump
+		RequiresCondition: !jousting
+	WithFacingSpriteBody:
+		Sequence: shoot
+		RequiresCondition: jousting
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
+	KillsSelf@LowPowerOnWater:
+		RequiresCondition: in_water
 	Armament:
 		Weapon: DroneJump
-		ReloadingCondition: attack-cooldown
-	AttackLeap:
+	AttackInfectRV:
 		Voice: Attack
-		PauseOnCondition: attacking || attack-cooldown || chronodisable || emp
-	Infector:
-		Types: DroneInfection
 		Damage: 100
 		DamageInterval: 60
-		SuppressionDamageThreshold: 10
-		SuppressionAmountThreshold: 2
-		Voice: Attack
+		DamageTypes: DroneInfection, BulletDeath
+		SuppressionDamageThreshold: 250
+		SuppressionCountThreshold: 1
+		SuppressionDamageType: SuppressTerrorDrone
+		JoustRange: 1c768
+		PauseOnCondition: chronodisable || emp
+	RejectsOrders:
+		RequiresCondition: jousting
 	AttackMove:
 		Voice: Move
 	AutoTarget:
 		InitialStance: AttackAnything
 	AutoTargetPriority@DEFAULT:
-		ValidTargets: Infantry
+		ValidTargets: TerrorDronable
 	Targetable:
 		TargetTypes: Ground, TerrorDrone, DetonateAttack, ImmuneToRadiation
+		RequiresCondition: !parachute && !affectedbytemporal && !jousting
 	-DelayedWeaponAttachable@TANYAC4:
 	-Targetable@TANYAC4:
 	-Targetable@TANYAC4CLEANER:
@@ -222,7 +235,7 @@ htk:
 		Speed: 120
 		TurnSpeed: 5
 		Locomotor: tracked
-		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
 		HP: 250
 	Armor:
@@ -243,6 +256,9 @@ htk:
 		PassengerFacing: 0
 		UnloadVoice: Move
 		LoadingCondition: notmobile
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || parachute
@@ -464,12 +480,12 @@ ttnk:
 	Passenger:
 		CargoType: GarrisonerVehicle
 	RevealsShroud:
-		Range: 8c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 8c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 3c0
 	Turreted:
 		TurnSpeed: 5
 	Armament@primary:
@@ -515,10 +531,10 @@ dtruck:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 2000
+		Cost: 1500
 	DeliversCash:
-		Payload: 1000
-		PlayerExperience: 100
+		Payload: 750
+		PlayerExperience: 75
 		Voice: Move
 	Tooltip:
 		Name: Demolition Truck
@@ -535,12 +551,12 @@ dtruck:
 		TurnSpeed: 5
 		Locomotor: heavytracked
 	RevealsShroud:
-		Range: 4c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 4c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 2c0
+		Radius: 3c0
 	Explodes:
 		Weapon: demobomb
 		EmptyWeapon: demobomb
@@ -602,19 +618,19 @@ v3:
 		Speed: 75
 		TurnSpeed: 3
 	RevealsShroud:
-		Range: 7c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 7c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 3c512
+		Radius: 3c0
 	Armament:
 		Weapon: V3Launcher
 	FirepowerMultiplier@RANK-1:
 		RequiresCondition: rank-veteran >= 1 && !rank-elite
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
-		Modifier: 215
+		Modifier: 225
 	AttackFrontal:
 		Voice: Attack
 		TargetFrozenActors: True
@@ -654,7 +670,7 @@ v3rocket:
 		HP: 50
 	Armor:
 		Type: Rocket
-	ShootableBallisticMissile:
+	BallisticMissile:
 		LaunchAngle: 192
 		Speed: 225
 	LeavesTrails:
@@ -701,12 +717,12 @@ tric:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 7c0
+		Range: 8c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 7c0
+		Range: 8c0
 	RevealOnDeath:
-		Radius: 3c512
+		Radius: 4c0
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
@@ -725,7 +741,7 @@ tric:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: MortarTricycleVoice
-		Volume: 6
+		Volume: 8
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -761,9 +777,9 @@ deva:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 90
-		TurnSpeed: 4
+		TurnSpeed: 7
 		Locomotor: omnicrusher
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !overload
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured && !overload
 	-Crushable:
 	SelfHealing:
 		PercentageStep: 1
@@ -785,7 +801,7 @@ deva:
 	Targetable:
 		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 	Turreted:
-		TurnSpeed: 4
+		TurnSpeed: 7
 	Armament@primary:
 		Weapon: 120mmxRad
 		LocalOffset: 768,100,768, 768,-100,768

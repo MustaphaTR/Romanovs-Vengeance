@@ -98,6 +98,9 @@ shad:
 		MaxWeight: 8
 		PipCount: 8
 		UnloadVoice: Move
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
 	SpawnActorOnDeath:
 		Actor: shadhusk
 	HitShape:
@@ -180,10 +183,10 @@ zep:
 		DamageCooldown: 100
 		HealIfBelow: 100
 	RevealsShroud:
-		Range: 9c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament:
@@ -231,14 +234,14 @@ zephusk:
 		Explosion: KirovExplode
 		Spins: False # TODO: In the original they did spin, but that just looks weird.
 	RevealsShroud:
-		Range: 9c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c512
+		Radius: 5c0
 		Duration: 50
 	RenderVoxels:
 		Image: zep
@@ -280,10 +283,10 @@ orca:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 10c0
+		Range: 12c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
+		Range: 12c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament:
@@ -332,6 +335,7 @@ orca:
 	HitShape:
 	ProducibleWithLevel:
 		Prerequisites: vetair
+		InitialLevels: 2
 
 orcahusk:
 	Inherits: ^PlaneHusk
@@ -345,14 +349,14 @@ orcahusk:
 		TurnSpeed: 5
 		Speed: 210
 	RevealsShroud:
-		Range: 10c0
+		Range: 12c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
+		Range: 12c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
+		Radius: 6c0
 		Duration: 50
 	RenderVoxels:
 		Image: falc
@@ -373,10 +377,10 @@ beag:
 	SpawnActorOnDeath:
 		Actor: beaghusk
 	RevealsShroud:
-		Range: 10c0
+		Range: 12c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 12c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament:
@@ -401,6 +405,8 @@ beag:
 	RenderVoxels:
 		Image: beag
 	HitShape:
+	ProducibleWithLevel:
+		InitialLevels: 1
 
 beaghusk:
 	Inherits: ^PlaneHusk
@@ -414,14 +420,14 @@ beaghusk:
 		TurnSpeed: 5
 		Speed: 210
 	RevealsShroud:
-		Range: 10c0
+		Range: 12c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 12c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c512
+		Radius: 6c0
 		Duration: 50
 	RenderVoxels:
 		Image: beag
@@ -442,9 +448,9 @@ pdplane:
 		CruiseAltitude: 5c852
 		Repulsable: false
 		TurnSpeed: 5
-		Speed: 225
+		Speed: 175
 	Health:
-		HP: 400
+		HP: 300
 	Armor:
 		Type: Light
 	RenderSprites:
@@ -460,6 +466,14 @@ pdplane:
 	HitShape:
 	RenderVoxels:
 		Image: pdplane
+	Contrail@1:
+		Offset: -50,1200,400
+		TrailLength: 15
+		UsePlayerColor: False
+	Contrail@2:
+		Offset: -50,-1200,400
+		TrailLength: 15
+		UsePlayerColor: False
 
 pdplanehusk:
 	Inherits: ^PlaneHusk
@@ -469,7 +483,7 @@ pdplanehusk:
 		Name: Cargo Plane
 	Aircraft:
 		TurnSpeed: 5
-		Speed: 225
+		Speed: 175
 	RenderVoxels:
 		Image: pdplane
 
@@ -490,6 +504,14 @@ bplndrop:
 		Actor: bplnhusk
 	RenderVoxels:
 		Image: bpln
+	Contrail@1:
+		Offset: -600,100,100
+		TrailLength: 15
+		UsePlayerColor: False
+	Contrail@2:
+		Offset: -600,-100,100
+		TrailLength: 15
+		UsePlayerColor: False
 
 alplane:
 	Inherits: pdplane
@@ -547,6 +569,14 @@ a10:
 		AmmoCondition: ammo
 	RenderVoxels:
 		Image: a10
+	Contrail@1:
+		Offset: -900,171,250
+		TrailLength: 15
+		UsePlayerColor: False
+	Contrail@2:
+		Offset: -900,-171,250
+		TrailLength: 15
+		UsePlayerColor: False
 
 a10husk:
 	Inherits: pdplanehusk
@@ -579,6 +609,11 @@ txbmb:
 		AmmoCondition: ammo
 	RenderVoxels:
 		Image: txbmb
+	Contrail@1:
+		Offset: -600,0,100
+		TrailLength: 15
+		UsePlayerColor: False
+	-Contrail@2:
 
 txbmbhusk:
 	Inherits: pdplanehusk
@@ -603,6 +638,11 @@ f22drop:
 		DropRange: 3c0
 	RenderVoxels:
 		Image: f22
+	Contrail@1:
+		Offset: -600,0,100
+		TrailLength: 15
+		UsePlayerColor: False
+	-Contrail@2:
 
 pdplane.emp:
 	Inherits: alplane
@@ -623,6 +663,8 @@ pdplane.leaflet:
 		Ammo: 1
 		AmmoCondition: ammo
 	AttackBomber:
+	Aircraft:
+		Speed: 300
 
 pdplane.naval_mines:
 	Inherits: pdplane
@@ -695,7 +737,7 @@ hornet:
 	Inherits: ^Plane
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
-		Cost: 50
+		Cost: 200
 	Tooltip:
 		Name: Hornet
 	Tooltip@NoRow:
@@ -711,6 +753,11 @@ hornet:
 	Armament:
 		Weapon: HornetBomb
 		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: HornetBombE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
 	AttackAircraft:
 		FacingTolerance: 20
 		RequiresCondition: ammo
@@ -758,7 +805,7 @@ asw:
 	Inherits: ^Plane
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
-		Cost: 50
+		Cost: 200
 	Tooltip:
 		Name: Osprey
 	Tooltip@NoRow:
@@ -774,6 +821,11 @@ asw:
 	Armament:
 		Weapon: ASWBomb
 		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: ASWBombE
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
 	AttackAircraft:
 		FacingTolerance: 20
 		RequiresCondition: ammo
@@ -921,7 +973,7 @@ schp:
 		LocalOffset: 768,0,2048
 		RequiresCondition: rank-elite && deployed
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Voiced:
 		VoiceSet: SiegeChopperVoice
 	ExternalCondition@PRODUCED:
@@ -967,7 +1019,6 @@ schp:
 		CruisingCondition: cruising
 		LandOnCondition: !undeployed || emp || chronodisable
 	HeliGrantConditionOnDeploy:
-		Facing: 160
 		BodyNames: dot
 		DeployAnimation: deploy
 		DeployedCondition: deployed
@@ -975,6 +1026,8 @@ schp:
 		DeploySound: vchodepa.wav
 		UndeploySound: vchodepa.wav
 		AllowedTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
+		DeployVoice: Deploy
+		UndeployVoice: Move
 		CanDeployOnRamps: true
 		SynchronizeDeployment: True
 		PauseOnCondition: emp || chronodisable
@@ -1015,6 +1068,10 @@ schp:
 		RequiresCondition: deployed
 	SpawnActorOnDeath:
 		Actor: schphusk
+		RequiresCondition: airborne
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
 	HitShape:
 
 schphusk:
@@ -1029,14 +1086,14 @@ schphusk:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
-		Range: 8c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 5c0
 		Duration: 50
 	RenderSprites:
 		Image: schp
@@ -1099,6 +1156,14 @@ bpln:
 	RenderVoxels:
 		Image: bpln
 	HitShape:
+	Contrail@1:
+		Offset: -600,100,100
+		TrailLength: 15
+		UsePlayerColor: False
+	Contrail@2:
+		Offset: -600,-100,100
+		TrailLength: 15
+		UsePlayerColor: False
 	Rearmable:
 		RearmActors: boris
 
@@ -1145,10 +1210,10 @@ disk:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 8c0
-		Type: CenterPosition
+		Range: 10c0
+		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament@primary:
@@ -1221,14 +1286,14 @@ diskhusk:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
-		Range: 8c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 5c0
 		Duration: 50
 	RenderVoxels:
 		Image: disk
@@ -1257,6 +1322,7 @@ hind:
 		Type: Light
 	Voiced:
 		VoiceSet: HindVoice
+		Volume: 6
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -1295,7 +1361,6 @@ hind:
 		RequiresCondition: !controlled && !permamc && !airborne
 	Targetable@CHAOS:
 		RequiresCondition: !airborne
-	-DeathSounds:
 	RenderSprites:
 		Scale: 1.15
 	RenderVoxels:
@@ -1390,10 +1455,10 @@ fortress:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 9c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	-AppearsOnRadar:
@@ -1455,14 +1520,14 @@ fortresshusk:
 		TurnSpeed: 5
 		Speed: 165
 	RevealsShroud:
-		Range: 9c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 9c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c512
+		Radius: 5c0
 		Duration: 50
 	RenderVoxels:
 		Image: fortress
@@ -1488,14 +1553,14 @@ sdrn:
 		MaximumPitch: 255
 		VTOL: false
 	RevealsShroud:
-		Range: 7c0
+		Range: 8c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 7c0
+		Range: 8c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 3c512
+		Radius: 4c0
 		Duration: 50
 	DetectCloaked:
 		Range: 6c0
@@ -1524,7 +1589,7 @@ txdx:
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
-		Cost: 1000
+		Cost: 900
 	Tooltip:
 		Name: Mosquito Platform
 	Tooltip@NoRow:
@@ -1546,10 +1611,10 @@ txdx:
 	Armor:
 		Type: Light
 	RevealsShroud:
-		Range: 8c0
-		Type: CenterPosition
+		Range: 10c0
+		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	Armament@primary:
@@ -1584,6 +1649,9 @@ txdx:
 		MaxWeight: 5
 		PipCount: 5
 		UnloadVoice: Move
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
 	SpawnActorOnDeath:
 		Actor: txdxhusk
 	HitShape:
@@ -1600,14 +1668,14 @@ txdxhusk:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
-		Range: 8c0
+		Range: 10c0
 		Type: GroundPosition
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 10c0
 		Types: SatelliteScan
 		Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 5c0
 		Duration: 50
 	RenderVoxels:
 		Image: txdx

@@ -180,22 +180,22 @@
 		Conditions:
 			200: rank-veteran
 			400: rank-veteran
-			800: rank-veteran
+			650: rank-veteran
 		LevelUpImage: crate-effects
 	GrantCondition@RANK-ELITE:
 		RequiresCondition: rank-veteran >= 3
 		Condition: rank-elite
 	DamageMultiplier@RANK-2:
 		RequiresCondition: rank-veteran >= 2
-		Modifier: 70
+		Modifier: 60
 	FirepowerMultiplier@RANK-1:
 		RequiresCondition: rank-veteran >= 1
 		Modifier: 125
 	SelfHealing@ELITE:
-		PercentageStep: 5
-		Delay: 75
+		PercentageStep: 2
+		Delay: 100
 		HealIfBelow: 100
-		DamageCooldown: 125
+		DamageCooldown: 0
 		RequiresCondition: rank-elite
 	WithDecoration@RANK-1:
 		Image: rank
@@ -349,7 +349,7 @@
 	SelfHealing@PROPAGANDA_TOWER:
 		Step: 0
 		PercentageStep: 2
-		Delay: 40
+		Delay: 30
 		HealIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: propaganda_tower
@@ -361,13 +361,13 @@
 		Modifier: 80
 		RequiresCondition: boost1 || boost2 || boost3
 	SpeedMultiplier@BOOST1:
-		Modifier: 125
+		Modifier: 130
 		RequiresCondition: boost1
 	SpeedMultiplier@BOOST2:
-		Modifier: 150
+		Modifier: 160
 		RequiresCondition: boost2
 	SpeedMultiplier@BOOST3:
-		Modifier: 175
+		Modifier: 200
 		RequiresCondition: boost3
 	WithColoredOverlay@BOOST:
 		Palette: boost
@@ -645,29 +645,56 @@
 	ExternalCondition@CHAOS:
 		Condition: chaos
 
+^TerrorDronable:
+	InfectableRV:
+		KillInfectorDamageTypes: KillsDrone
+		BeingInfectedCondition: beingterrordroned
+		InfectedCondition: terrordroned
+	Targetable@DRONE:
+		TargetTypes: TerrorDronable
+	RevealsShroud@DRONE:
+		Range: 2c0
+		ValidStances: Enemy, Neutral
+		RequiresCondition: terrordroned
+	ExplodeWeapon@dronesparks:
+		RequiresCondition: terrordroned
+		Weapon: DroneSparkSpawner
+		LocalOffset: 0,0,384
+	SpeedMultiplier@DRONE:
+		RequiresCondition: beingterrordroned
+		Modifier: 0
+
+^TerrorDronableAircraft:
+	Inherits: ^TerrorDronable
+	RevealsShroud@DRONE:
+		Type: CenterPosition
+
 ^SquidGrabbable:
 	WithFacingSpriteBody:
 		Name: squid
 		Sequence: squid
 		RequiresCondition: squid
-	Infectable:
+	InfectableOld:
 		RemoveInfectorDamageTypes: RemovesSquid
 		BeingInfectedCondition: beinginfected
 		InfectedByConditions:
 			sqd: squid
-	RevealsShroud@DRONE:
+	RevealsShroud@SQUID:
 		Range: 5c0
 		ValidStances: Enemy, Neutral
 		RequiresCondition: squid
 	Targetable@SQUID:
 		TargetTypes: SquidInfection
+	SpeedMultiplier@SQUID:
+		RequiresCondition: beinginfected
+		Modifier: 0
 
 ^BuildingParticles:
 	SmokeParticleEmitter@1:
 		RequiresCondition: dmg_heavy
 		Sequences: smallsmoke
 		Palette: effect
-		SpawnFrequency: 3, 10
+		SpawnFrequency: 6, 20
 		Speed: 32
 		Gravity: 48
 		Offset: -384,-384,0, 384,384,0
@@ -703,7 +730,7 @@
 		RequiresCondition: dmg_crit
 		Sequences: largesmoke
 		Palette: effect
-		SpawnFrequency: 3, 10
+		SpawnFrequency: 6, 20
 		Speed: 48
 		Gravity: 72
 		Offset: -384,-384,0, 384,384,0
@@ -1111,6 +1138,7 @@
 	OwnerLostAction:
 		Action: ChangeOwner
 	FrozenUnderFog:
+	-GivesExperience:
 	-CombatDebugOverlay:
 	-DrawLineToTarget:
 	Building:
@@ -1172,6 +1200,7 @@
 		HP: 100
 	Armor:
 		Type: Wood
+	-BlocksProjectiles:
 	LineBuild:
 		NodeTypes: fence
 	LineBuildNode:
@@ -1294,6 +1323,7 @@
 	Inherits@12: ^AffectedByPropaganda
 	Inherits@13: ^AffectedByChronoBoost
 	Inherits@14: ^AffectedByStealthGenerator
+	Inherits@15: ^TerrorDronable
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
@@ -1316,7 +1346,7 @@
 		Radius: 2c0
 		Duration: 50
 	Mobile:
-		Speed: 65
+		Speed: 60
 		Voice: Move
 		Locomotor: foot
 		RequiresCondition: !chronodisable
@@ -1332,6 +1362,9 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	TurnOnIdle:
+		MinDelay: 125
+		MaxDelay: 250
 	WithInfantryBody:
 		IdleSequences: idle1,idle2
 		StandSequences: stand
@@ -1392,7 +1425,7 @@
 		DeathTypes: RadiationDeath
 	DeathSounds@psycrush:
 		Voice: PsyCrush
-		DeathTypes: PsychicDeath
+		DeathTypes: PsychicDeath, BruteDeath
 	DeathSounds@virus:
 		Voice: Virus
 		DeathTypes: VirusDeath
@@ -1534,6 +1567,7 @@
 	Health:
 		HP: 50
 	Mobile:
+		Speed: 45
 		Voice: Move
 	RevealsShroud:
 		Range: 2c0
@@ -1576,7 +1610,7 @@
 	RevealOnDeath:
 		Radius: 1c0
 	Mobile:
-		Speed: 40
+		Speed: 45
 	Selectable:
 		Bounds: 45, 25, 0, -8
 	AttackFrontal:
@@ -1629,6 +1663,7 @@
 	Inherits@15: ^AffectedByChronoBoost
 	Inherits@16: ^DisabledByMagnetron
 	Inherits@17: ^AffectedByStealthGenerator
+	Inherits@18: ^TerrorDronable
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -1642,7 +1677,7 @@
 		Voice: Move
 		TurnSpeed: 5
 		Locomotor: wheeled
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	SelectionDecorations:
 		Palette: pips
 	Selectable:
@@ -1655,19 +1690,6 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
-	Infectable:
-		KillInfectorDamageTypes: KillsDrone
-		KillInfectorActorTypes: gadept, nadept, nadepb, yadept, yadepb, caoutp
-		BeingInfectedCondition: beingterrordroned
-		InfectedCondition: terrordroned
-	RevealsShroud@DRONE:
-		Range: 2c0
-		ValidStances: Enemy, Neutral
-		RequiresCondition: terrordroned
-	ExplodeWeapon@dronesparks:
-		RequiresCondition: terrordroned
-		Weapon: DroneSparkSpawner
-		LocalOffset: 0,0,384
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
@@ -1685,9 +1707,12 @@
 		CrushClasses: vehicle
 		WarnProbability: 0
 	CaptureManager:
+		BeingCapturedCondition: being-captured
 	Capturable:
 		Types: vehicle
 		CancelActivity: True
+	CaptureSound:
+		Sound: ihijweaa.wav
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
 	ActorLostNotification:
@@ -1715,6 +1740,7 @@
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
+		RequiresCondition: !invulnerability
 	Tooltip:
 		Name: Vehicle
 		GenericName: Vehicle
@@ -1740,7 +1766,7 @@
 	Valued:
 		Cost: 800
 	Mobile:
-		Speed: 113
+		Speed: 105
 	Health:
 		HP: 100
 	HitShape:
@@ -1831,12 +1857,16 @@
 	Inherits@9: ^LazarusShieldable
 	Inherits@10: ^AffectedByChronoBoost
 	Inherits@11: ^AffectedByPropaganda
+	Inherits@12: ^TerrorDronableAircraft
 	WithTextControlGroupDecoration:
 	Targetable@ChronoDisable:
+		RequiresCondition: !airborne
+	Targetable@DRONE:
 		RequiresCondition: !airborne
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
+		RequiresCondition: !invulnerability
 
 ^Plane:
 	Inherits: ^Aircraft
@@ -1868,7 +1898,7 @@
 	Inherits@1: ^ExistsInWorld
 	Armor:
 		Type: Missile
-	ShootableBallisticMissile:
+	BallisticMissile:
 		LaunchAngle: 128
 		Speed: 170
 		AirborneCondition: airborne
@@ -2038,6 +2068,7 @@
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
+		RequiresCondition: !invulnerability
 	Tooltip:
 		Name: Ship
 		GenericName: Ship

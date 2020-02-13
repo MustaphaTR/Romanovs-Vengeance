@@ -50,6 +50,20 @@ commanders_power.hijacker:
 	RenderSprites:
 		Image: hjck
 
+commanders_power.minelayer:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Minelayer
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Enables production of Minelayer from War Factory.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.minelayer
+	RenderSprites:
+		Image: mlyr
+
 commanders_power.airpad:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -112,7 +126,7 @@ commanders_power.harrier_training:
 		Queue: Power.Allies
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
-		Description: Makes Allied Aircraft train as veteran.
+		Description: Makes Harriers train as elite and Allied Aircraft train as veteran.
 	ProvidesPrerequisite@powername:
 		Prerequisite: vetair
 
@@ -243,7 +257,7 @@ commanders_power.emergency_repair.3:
 	Buildable:
 		Queue: Power.Allies, Power.Soviets, Power.Yuri
 		BuildPaletteOrder: 90
-		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.2
+		Prerequisites: prerequisite.has_points, prerequisite.5_stars, commanders_power.emergency_repair.2
 		Description: Upgrades Emergency Repair power to Level 3.
 
 commanders_power.a10_strike.1:
@@ -556,7 +570,7 @@ prerequisite.grinder:
 			1: commanders_power.intel_drop
 		Icons:
 			1: intel
-		ChargeInterval: 6000
+		ChargeInterval: 9000
 		StartFullyCharged: true
 		Descriptions:
 			1: Intel Drop
@@ -680,9 +694,9 @@ prerequisite.grinder:
 			2: Emergency Repair
 			3: Emergency Repair
 		LongDescs:
-			1: Repairs 40% health of vehicles and structures in 6 cell range.
-			2: Repairs 70% health of vehicles and structures in 8 cell range.
-			3: Fully repairs vehicles and structures in 10 cell range.
+			1: Repairs 30% health of vehicles and structures in 5 cell range.
+			2: Repairs 60% health of vehicles and structures in 6 cell range.
+			3: Fully repairs vehicles and structures in 7 cell range.
 		SelectTargetSpeechNotification: SelectTarget
 		Weapons:
 			1: EmergencyRepair1
@@ -690,9 +704,9 @@ prerequisite.grinder:
 			3: EmergencyRepair3
 		ActivationSequence:
 		TargetCircleRanges:
-			1: 6c0
-			2: 8c0
-			3: 10c0
+			1: 5c0
+			2: 6c0
+			3: 7c0
 	AirstrikePower@a10strike:
 		OrderName: AlliedA10Strike
 		RequiresCondition: !lost
@@ -846,9 +860,9 @@ prerequisite.grinder:
 			2: Chrono Boost
 			3: Chrono Boost
 		LongDescs:
-			1: Makes a group of units move faster by 25% and fire faster by 25%\nEffect lasts for 20 seconds.
-			2: Makes a group of units move faster by 50% and fire faster by 25%\nEffect lasts for 20 seconds.
-			3: Makes a group of units move faster by 75% and fire faster by 25%\nEffect lasts for 20 seconds.
+			1: Makes a group of units move faster by 30% and fire faster by 25%\nEffect lasts for 20 seconds.
+			2: Makes a group of units move faster by 60% and fire faster by 25%\nEffect lasts for 20 seconds.
+			3: Makes a group of units move faster by 100% and fire faster by 25%\nEffect lasts for 20 seconds.
 		Durations:
 			1: 500
 			2: 500

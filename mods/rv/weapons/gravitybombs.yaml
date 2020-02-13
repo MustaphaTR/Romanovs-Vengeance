@@ -144,7 +144,7 @@ ParaBomb:
 
 ToxinBomb:
 	ReloadDelay: 10
-	Range: 4c0
+	Range: 2c0
 	Report: vkiratta.wav
 	Projectile: GravityBomb
 		Velocity: 0, 0, -50
@@ -196,7 +196,7 @@ ToxinSplash:
 		Palette: ra
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
-		Damage: 25
+		Damage: 20
 		Versus:
 			None: 150
 			Flak: 150
@@ -269,8 +269,9 @@ SpawnMine:
 		IsPlayerPalette: true
 		Blockable: false
 		Speed: 384
-	Warhead@1Spa: SpawnActor
+	Warhead@1Spa: SpawnActorOrWeapon
 		Actors: mine
+		Weapon: MineExplosion
 		Range: 0
 		ForceGround: true
 		ValidTargets: Ground, Water, Air
@@ -331,7 +332,7 @@ SpiritBombE:
 
 LeafletDrop:
 	ReloadDelay: 50
-	Range: 0c256
+	Range: 0c384
 	Report: sleafdro.wav
 	Projectile: InstantExplode
 	Warhead@1Clu: FireCluster

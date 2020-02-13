@@ -1,6 +1,6 @@
 M1Carbine:
 	Inherits: ^MG
-	Range: 4c0
+	Range: 5c0
 	ReloadDelay: 25
 	Warhead@1Dam: SpreadDamage
 		Spread: 64
@@ -10,7 +10,7 @@ M1Carbine:
 M1CarbineE:
 	Inherits: M1Carbine
 	ReloadDelay: 20
-	Range: 5c0
+	Range: 6c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 20
 
@@ -29,7 +29,7 @@ UCM1CarbineE:
 M60:
 	Inherits: ^MG
 	ReloadDelay: 25
-	Range: 4c0
+	Range: 5c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 64
 		Damage: 15
@@ -37,7 +37,7 @@ M60:
 M60E:
 	Inherits: M60
 	ReloadDelay: 20
-	Range: 5c0
+	Range: 6c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 20
 
@@ -62,7 +62,6 @@ para:
 		Damage: 25
 		Versus:
 			Flak: 100
-			Light: 60
 		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
 
 paraE:
@@ -86,8 +85,45 @@ UCparaE:
 MP5:
 	Inherits: ^MG
 	ReloadDelay: 10
-	Range: 4c0
+	Range: 6c0
 	Report: iseaatta.wav, iseaattb.wav
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Ship
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Ship
+		Damage: 35
+		Versus:
+			Drone: 50
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+
+MP5E:
+	Inherits: MP5
+	Range: 7c0
+	ReloadDelay: 5
+	Warhead@1Dam: SpreadDamage
+		Damage: 45
+
+CRMP5:
+	Inherits: MP5
+	Range: 6c0
+
+UCMP5:
+	Inherits: MP5
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCMP5E:
+	Inherits: MP5E
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+DoublePistols:
+	Inherits: ^MG
+	ReloadDelay: 10
+	Range: 6c0
+	Report: itanatta.wav, itanattb.wav
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
@@ -108,33 +144,6 @@ MP5:
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 
-MP5E:
-	Inherits: MP5
-	Range: 5c0
-	ReloadDelay: 8
-
-CRMP5:
-	Inherits: MP5
-	ReloadDelay: 20
-	Range: 5c0
-
-UCMP5:
-	Inherits: MP5
-	Range: 6c0
-	Projectile: InstantHit
-		Blockable: false
-
-UCMP5E:
-	Inherits: MP5E
-	Range: 6c0
-	Projectile: InstantHit
-		Blockable: false
-
-DoublePistols:
-	Inherits: MP5
-	Range: 6c0
-	Report: itanatta.wav, itanattb.wav
-
 DoublePistolsE:
 	Inherits: DoublePistols
 	Range: 8c0
@@ -146,29 +155,29 @@ CRDoublePistols:
 
 UCDoublePistols:
 	Inherits: DoublePistols
-	Range: 7c0
+	Range: 6c0
 	Projectile: InstantHit
 		Blockable: false
 
 UCDoublePistolsE:
 	Inherits: DoublePistolsE
-	Range: 7c0
+	Range: 6c0
 	Projectile: InstantHit
 		Blockable: false
 
 awp:
 	Inherits: DoublePistols
 	InvalidTargets: Bridge, Wall, Fence, Tree, NonGarrisonableStructure, Vehicle, Ship, SeaAnimal
-	ReloadDelay: 100
+	ReloadDelay: 120
 	Range: 14c0
 	Report: isniatta.wav
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship, SeaAnimal
 		Spread: 42
-		Damage: 80
+		Damage: 200
 		DamageTypes: BulletDeath
 		Versus:
-			None: 100
+			None: 200
 			Flak: 100
 			Plate: 100
 			Drone: 100
@@ -193,7 +202,7 @@ awp:
 
 AWPE:
 	Inherits: awp
-	ReloadDelay: 80
+	ReloadDelay: 100
 
 UCawp:
 	Inherits: awp
@@ -308,7 +317,7 @@ SiegeChopperCannon:
 	Inherits: ^MG
 	ReloadDelay: 40
 	Range: 6c0
-	Report: vblhatta.wav, vblhattb.wav
+	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	ValidTargets: Ground, Water
 	Projectile: InstantHit
 		Blockable: false
@@ -324,7 +333,7 @@ SiegeChopperCannon:
 		ValidTargets: Ground, Water
 
 SiegeChopperCannonE:
-	Inherits: BlackHawkCannon
+	Inherits: SiegeChopperCannon
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 
@@ -377,13 +386,13 @@ CRAKM:
 
 UCAKM:
 	Inherits: AKM
-	Range: 7c0
+	Range: 6c0
 	Projectile: InstantHit
 		Blockable: false
 
 UCAKME:
 	Inherits: AKME
-	Range: 7c0
+	Range: 6c0
 	Projectile: InstantHit
 		Blockable: false
 
@@ -393,8 +402,8 @@ UCAKME:
 	Range: 7c0
 	Burst: 2
 	Report: vgatlo1a.wav, vgatlo2a.wav, vgatlo2b.wav, vgatlo2c.wav, vgatlo3a.wav
-	Projectile: Bullet
-		Speed: 100c0
+	Projectile: InstantHit
+		Blockable: true
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 		ValidTargets: Ground, Water, Air
@@ -406,7 +415,7 @@ UCAKME:
 
 AGGatling:
 	Inherits: ^Gatling
-	Range: 5c0
+	Range: 6c0
 	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
@@ -416,6 +425,8 @@ AAGatling:
 	Inherits: ^Gatling
 	Range: 8c0
 	ValidTargets: Air
+	Projectile: InstantHit
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
 		ValidTargets: Air
@@ -432,6 +443,8 @@ AAGattCann:
 	Inherits: ^Gatling
 	Range: 12c0
 	ValidTargets: Air
+	Projectile: InstantHit
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 		ValidTargets: Air
@@ -450,9 +463,21 @@ AAGattTrop:
 	Range: 8c0
 	Burst: 1
 	ValidTargets: Air
+	Projectile: InstantHit
+		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 20
 		ValidTargets: Air
+
+UCAGGattTrop:
+	Inherits: AGGattTrop
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCAAGattTrop:
+	Inherits: AAGattTrop
+	Range: 8c0
 
 AGGatling2:
 	Inherits: AGGatling
@@ -484,6 +509,16 @@ AAGattTrop2:
 	ReloadDelay: 8
 	Report: vgatlo4a.wav, vgatlo5a.wav, vgatlo5b.wav, vgatlo6a.wav
 
+UCAGGattTrop2:
+	Inherits: AGGattTrop2
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCAAGattTrop2:
+	Inherits: AAGattTrop2
+	Range: 6c0
+
 AGGatling3:
 	Inherits: AGGatling
 	ReloadDelay: 4
@@ -514,13 +549,23 @@ AAGattTrop3:
 	ReloadDelay: 4
 	Report: vgatlo7a.wav, vgatlo8a.wav, vgatlo8b.wav, vgatlo9a.wav
 
+UCAGGattTrop3:
+	Inherits: AGGattTrop3
+	Range: 6c0
+	Projectile: InstantHit
+		Blockable: false
+
+UCAAGattTrop3:
+	Inherits: AAGattTrop3
+	Range: 6c0
+
 Virusgun:
 	Inherits: awp
-	ReloadDelay: 100
+	ReloadDelay: 120
 	Range: 10c0
 	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 80
+		Damage: 200
 		Versus:
 			None: 100
 			Flak: 100
@@ -543,7 +588,7 @@ Virusgun:
 
 VirusgunE:
 	Inherits: Virusgun
-	ReloadDelay: 80
+	ReloadDelay: 100
 	Range: 10c0
 
 UCVirusgun:

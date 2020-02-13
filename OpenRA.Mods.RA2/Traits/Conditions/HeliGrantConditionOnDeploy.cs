@@ -11,6 +11,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
@@ -22,7 +23,7 @@ namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("Grants a condition when a deploy order is issued." +
 		"Can be paused with the granted condition to disable undeploying.")]
-	public class HeliGrantConditionOnDeployInfo : PausableConditionalTraitInfo, Requires<AircraftInfo>
+	public class HeliGrantConditionOnDeployInfo : PausableConditionalTraitInfo, Requires<AircraftInfo>, IEditorActorOptions
 	{
 		[GrantedConditionReference]
 		[Desc("The condition to grant while the actor is undeployed.")]
@@ -67,11 +68,37 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Should the aircraft automatically take off after undeploying?")]
 		public readonly bool TakeOffOnUndeploy = true;
 
+		[VoiceReference]
+		public readonly string DeployVoice = "Action";
+
+		[VoiceReference]
+		public readonly string UndeployVoice = "Action";
+
+		[Desc("Display order for the deployed checkbox in the map editor")]
+		public readonly int EditorDeployedDisplayOrder = 4;
+
+		IEnumerable<EditorActorOption> IEditorActorOptions.ActorOptions(ActorInfo ai, World world)
+		{
+			yield return new EditorActorCheckbox("Deployed", EditorDeployedDisplayOrder,
+				actor =>
+				{
+					var init = actor.Init<DeployStateInit>();
+					if (init != null)
+						return init.Value(world) == DeployState.Deployed;
+
+					return false;
+				},
+				(actor, value) =>
+				{
+					actor.ReplaceInit(new DeployStateInit(value ? DeployState.Deployed : DeployState.Undeployed));
+				});
+		}
+
 		public override object Create(ActorInitializer init) { return new HeliGrantConditionOnDeploy(init, this); }
 	}
 
-	public class HeliGrantConditionOnDeploy : PausableConditionalTrait<HeliGrantConditionOnDeployInfo>, IResolveOrder, IIssueOrder, INotifyCreated,
-		INotifyDeployComplete, IIssueDeployOrder
+	public class HeliGrantConditionOnDeploy : PausableConditionalTrait<HeliGrantConditionOnDeployInfo>, IResolveOrder, IIssueOrder,
+		INotifyDeployComplete, IIssueDeployOrder, IOrderVoice
 	{
 		readonly Actor self;
 		readonly bool checkTerrainType;
@@ -95,7 +122,7 @@ namespace OpenRA.Mods.RA2.Traits
 				deployState = init.Get<DeployStateInit, DeployState>();
 		}
 
-		void INotifyCreated.Created(Actor self)
+		protected override void Created(Actor self)
 		{
 			conditionManager = self.TraitOrDefault<ConditionManager>();
 			wsbs = self.TraitsImplementing<WithSpriteBody>().Where(w => Info.BodyNames.Contains(w.Info.Name)).ToArray();
@@ -204,6 +231,19 @@ namespace OpenRA.Mods.RA2.Traits
 				self.QueueActivity(new HeliUndeployForGrantedCondition(self, this));
 			else if (deployState == DeployState.Undeployed)
 				self.QueueActivity(new HeliDeployForGrantedCondition(self, this));
+		}
+
+		public string VoicePhraseForOrder(Actor self, Order order)
+		{
+			return order.OrderString == "HeliGrantConditionOnDeploy" ? GetVoiceLine() : null;
+		}
+
+		string GetVoiceLine()
+		{
+			if (deployState == DeployState.Deployed)
+				return Info.UndeployVoice;
+
+			return Info.DeployVoice;
 		}
 
 		bool IsCursorBlocked()

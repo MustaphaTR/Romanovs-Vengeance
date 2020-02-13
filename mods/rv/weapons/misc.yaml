@@ -106,6 +106,7 @@ ToxinSprayer:
 	Inherits: Flamer
 	ReloadDelay: 30
 	BurstDelays: 2
+	Report: itoxatta.wav, itoxattb.wav, itoxattc.wav, itoxattd.wav, itoxatte.wav
 	InvalidTargets: NonGarrisonableStructure, Wall, Fence, Tree, Bridge
 	Projectile: BulletAS
 		Image: txgasg
@@ -186,8 +187,8 @@ EmergencyRepair1:
 	ValidTargets: Repair, Structure, Wall
 	Projectile: InstantExplode
 	Warhead@1Dam: HealthPercentageDamage
-		Spread: 6c0
-		Damage: -40
+		Spread: 5c0
+		Damage: -30
 		AffectsParent: true
 		ValidStances: Neutral, Ally
 		ValidTargets: Repair, Structure, Wall
@@ -201,13 +202,13 @@ EmergencyRepair1:
 EmergencyRepair2:
 	Inherits: EmergencyRepair1
 	Warhead@1Dam: HealthPercentageDamage
-		Spread: 8c0
-		Damage: -70
+		Spread: 6c0
+		Damage: -60
 
 EmergencyRepair3:
 	Inherits: EmergencyRepair1
 	Warhead@1Dam: HealthPercentageDamage
-		Spread: 10c0
+		Spread: 7c0
 		Damage: -100
 
 AmbulanceHeal:
@@ -238,7 +239,7 @@ UCMindControl:
 	Range: 7c0
 
 UCMindControlE:
-	Inherits: MindControl
+	Inherits: MindControlE
 	Range: 9c0
 
 SuperMindControl:
@@ -246,7 +247,7 @@ SuperMindControl:
 	Range: 30c0
 
 SuperMindControlE:
-	Inherits: MindControl
+	Inherits: MindControlE
 	Range: 35c0
 
 SuperMindControlX:
@@ -332,7 +333,6 @@ DredLauncher:
 
 CruiseLauncher:
 	Inherits: DredLauncher
-	Range: 20c0
 	ValidTargets: Ground
 	Warhead@1Dam: TargetDamage
 		ValidTargets: Ground
@@ -357,7 +357,7 @@ Flare:
 
 FlareSAW:
 	Inherits: Flare
-	ReloadDelay: 2
+	ReloadDelay: 6
 	Warhead@3Sen: SendAirstrike
 		UnitType: bpln
 		SquadSize: 2
@@ -381,7 +381,7 @@ SpyCameraWeapon:
 	Report: vspysnap.wav
 	Warhead@1Rev: RevealShroud
 		Duration: 250
-		Radius: 6c0
+		Radius: 8c0
 		RevealGeneratedShroud: true
 
 PsychicReveal:
@@ -435,6 +435,12 @@ WeatherStormInit:
 		Palette: effect
 		Weapon: WeatherCloudRandomInit
 		Duration: 210
+	Warhead@3Con: GrantExternalCondition
+		Range: 999c0
+		Condition: disableradar
+		Delay: 50
+		Duration: 250
+		ValidStances: Neutral, Enemy
 	Warhead@4: CreateEffect
 		Delay: 50
 		ImpactSounds: sweaintr.wav
@@ -648,7 +654,7 @@ PsychicDomination:
 PsychicJab:
 	Inherits: ^MG
 	ReloadDelay: 15
-	Range: 4c0
+	Range: 5c0
 	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 25
@@ -661,7 +667,7 @@ PsychicJab:
 
 PsychicJabE:
 	Inherits: PsychicJab
-	Range: 5c0
+	Range: 6c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 	Warhead@2Eff: CreateEffect

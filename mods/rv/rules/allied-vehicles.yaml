@@ -67,12 +67,12 @@ cmin:
 	Guard:
 		Voice: Move
 	RevealsShroud:
-		Range: 4c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 4c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 2c0
+		Radius: 3c0
 	Targetable:
 		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 	WithHarvestOverlay:
@@ -152,7 +152,7 @@ tnkd:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
-		Speed: 75
+		Speed: 90
 		TurnSpeed: 5
 		Locomotor: heavytracked
 	Health:
@@ -160,12 +160,12 @@ tnkd:
 	Armor:
 		Type: Heavy
 	RevealsShroud:
-		Range: 8c0
+		Range: 7c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 8c0
+		Range: 7c0
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 3c512
 	Armament@primary:
 		Weapon: sabot
 		LocalOffset: 704,0,768
@@ -437,7 +437,7 @@ fv:
 	Mobile:
 		Speed: 135
 		TurnSpeed: 5
-		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
 		HP: 200
 	Armor:
@@ -536,6 +536,9 @@ fv:
 			yurix: ifv-yuri
 			ttrp: ifv-toxin
 			crkt: ifv-crkt
+	WithCargoSounds:
+		EnterSound: vifvtran.wav
+		ExitSound: vifvtran.wav
 	Armament@primary:
 		Weapon: HoverMissile
 		LocalOffset: 128,-128,1024, 128,128,1024
@@ -841,12 +844,12 @@ sref:
 	Passenger:
 		CargoType: GarrisonerVehicle
 	RevealsShroud:
-		Range: 8c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 8c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 3c0
 	Turreted:
 		TurnSpeed: 10
 		Offset: -30,0,85
@@ -912,7 +915,7 @@ mgtk:
 		Queue: Vehicle.Allies, Vehicle.Germany
 		BuildPaletteOrder: 80
 		Prerequisites: gatech, ~techlevel.3
-		Description: Tank cloaks itself while immobile.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Tank that appears as a tree while immobile.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -923,8 +926,21 @@ mgtk:
 		Voice: Move
 	Tooltip:
 		Name: Mirage Tank
+		RequiresCondition: !tree && showownername
 	Tooltip@NoRow:
 		Name: Mirage Tank
+		RequiresCondition: !tree && !showownername
+	MirageTooltip@Tree:
+		Name: Mirage Tank
+		GenericName: Tree
+		GenericVisibility: Enemy, Neutral
+		RequiresCondition: tree && showownername
+	MirageTooltip@TreeNoRow:
+		Name: Mirage Tank
+		GenericName: Tree
+		ShowOwnerRow: false
+		GenericVisibility: Enemy, Neutral
+		RequiresCondition: tree && !showownername
 	Selectable:
 		Bounds: 64, 52, 0, -6
 	Health:
@@ -950,12 +966,12 @@ mgtk:
 		Weapon: MirageGunE
 		LocalOffset: 640,0,640
 		RequiresCondition: rank-elite
-	Cloak:
+	Mirage:
 		RequiresCondition: !chronodisable && !emp
 		InitialDelay: 25
-		CloakDelay: 25
-		IsPlayerPalette: true
-		UncloakOn: Attack, Damage, Move
+		MirageDelay: 25
+		RevealOn: Attack, Move
+		MirageCondition: tree
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
@@ -966,8 +982,28 @@ mgtk:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	RenderSprites:
+		Palette: terrain
 	RenderVoxels:
+	GrantRandomCondition:
+		Conditions: tree01, tree02, tree03, tree04
+	WithSpriteBody@Tree01:
+		Name: tree01
+		Sequence: tree01
+		RequiresCondition: tree && tree01
+	WithSpriteBody@Tree02:
+		Name: tree02
+		Sequence: tree02
+		RequiresCondition: tree && tree02
+	WithSpriteBody@Tree03:
+		Name: tree03
+		Sequence: tree03
+		RequiresCondition: tree && tree03
+	WithSpriteBody@Tree04:
+		Name: tree04
+		Sequence: tree04
+		RequiresCondition: tree && tree04
 	WithVoxelBody:
+		RequiresCondition: !tree
 	Voiced:
 		VoiceSet: MirageTankVoice
 	ExternalCondition@PRODUCED:
@@ -996,7 +1032,7 @@ bfrt:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 1400
+		Cost: 2000
 	DeliversCash:
 		Payload: 700
 		PlayerExperience: 70
@@ -1008,14 +1044,14 @@ bfrt:
 	Selectable:
 		Bounds: 72, 64, 0, -8
 	Health:
-		HP: 800
+		HP: 600
 	Armor:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 5
-		Speed: 75
+		Speed: 60
 		Locomotor: omnicrusher
-		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	-Crushable:
 	RevealsShroud:
 		Range: 6c0
@@ -1048,7 +1084,9 @@ bfrt:
 			gren: loaded
 			ggi: loaded-air
 			flakt: loaded-air
+			gtrp: loaded-air
 			shk: loaded
+			shkc: loaded
 			pyro: loaded
 			deso: loaded
 			tany: loaded
@@ -1056,7 +1094,14 @@ bfrt:
 			boris: loaded
 			ccomand: loaded
 			snipe: loaded
+			virus: loaded
 			cleg: loaded
+			itrp: loaded
+			ttrp: loaded
+			crkt: loaded-air
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !loaded-air
 	AutoTargetPriority@ATTACKANYTHING:
@@ -1101,10 +1146,10 @@ robo:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
-		Cost: 600
+		Cost: 500
 	DeliversCash:
-		Payload: 300
-		PlayerExperience: 30
+		Payload: 250
+		PlayerExperience: 25
 		Voice: Move
 	Tooltip:
 		Name: Robot Tank
@@ -1118,7 +1163,7 @@ robo:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
-		Speed: 120
+		Speed: 135
 		TurnSpeed: 255
 		Locomotor: amphibious
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && powered

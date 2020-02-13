@@ -1,6 +1,6 @@
 ElectricBolt:
 	Inherits: ^TeslaZap
-	Range: 3c0
+	Range: 4c0
 	ReloadDelay: 60
 	Warhead@1Dam: SpreadDamage
 		Spread: 120
@@ -13,7 +13,7 @@ ElectricBolt:
 			Medium: 100
 			Heavy: 100
 			Wood: 50
-			Steel: 85
+			Steel: 65
 			Concrete: 40
 			Drone: 200
 			Rocket: 100
@@ -50,13 +50,15 @@ ElectricBoltCommando:
 	Inherits: ElectricBoltE
 	InvalidTargets: TeslaBomb, TeslaBombCleaner
 	Warhead@1Dam: SpreadDamage
-		Damage: 125
+		Damage: 100
 	Warhead@2Shr: FireShrapnel
 		Weapon: TeslaFragmentCommando
 
 ElectricBoltCommandoE:
 	Inherits: ElectricBoltCommando
 	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 150
 
 UCElectricBoltCommando:
 	Inherits: ElectricBoltCommando
@@ -123,7 +125,7 @@ OPestCoilBolt:
 
 TankBolt:
 	Inherits: ^TeslaZap
-	Range: 4c0
+	Range: 5c0
 	ReloadDelay: 75
 	Burst: 2
 	BurstDelays: 10
@@ -187,7 +189,7 @@ SonicZap:
 		Versus:
 			Heavy: 80
 			Concrete: 60
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, RemovesSquid
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid
 		ValidTargets: Water, Underwater
 	Warhead@2Dam: SpreadDamage
 		Range: 0, 32
@@ -198,7 +200,7 @@ SonicZap:
 		Versus:
 			Heavy: 80
 			Concrete: 60
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, RemovesSquid
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid
 		ValidTargets: Water, Underwater
 		InvalidTargets: ImmuneToAllySonic
 
@@ -230,7 +232,7 @@ PrismShot:
 			Concrete: 90
 			Drone: 200
 			Rocket: 100
-		DamageTypes: ElectroDeath, TriggerProne
+		DamageTypes: ElectroDeath, TriggerProne, SuppressTerrorDrone
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallScorch
 
@@ -258,7 +260,7 @@ Comet:
 			Concrete: 90
 			Drone: 100
 			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath
+		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone
 	Warhead@2Shr: FireShrapnel
 		Weapon: CometFragment
 		Amount: 5
@@ -429,8 +431,8 @@ CurtainRifleAP:
 	Projectile: TeslaZap
 		Palette: ra
 	Warhead@Damage: SpreadDamage
-		Spread: 0c768
-		Damage: 100
+		Spread: 0c512
+		Damage: 125
 		ValidTargets: Infantry
 		DamageTypes: FlameDeath
 	Warhead@Stars: CreateEffect
@@ -438,9 +440,10 @@ CurtainRifleAP:
 		ValidTargets: Ground, Water
 
 CurtainRifleAPE:
-	Inherits: CurtainRifle
+	Inherits: CurtainRifleAP
+	Range: 6c0
 	Warhead@Damage: SpreadDamage
-		Damage: 125
+		Spread: 0c768
 
 CRCurtainRifle:
 	Inherits: CurtainRifleAP
@@ -468,7 +471,7 @@ TeslaFence:
 	Warhead@1Dam: TargetDamage
 		DebugOverlayColor: FF0000
 		Damage: 100000
-		DamageTypes: ElectroDeath
+		DamageTypes: ElectroDeath, SuppressTerrorDrone
 
 MagneShake:
 	ReloadDelay: 110
@@ -534,19 +537,26 @@ DiskLaser:
 	Projectile: LaserZap
 		Width: 50
 		Duration: 15
-		Color: aa7990
+		Color: AA799080
+		SecondaryBeam: true
+		SecondaryBeamWidth: 25
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: FFFFFF80
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
-		DamageTypes: RadiationDeath
+		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
 	-Warhead@2Eff:
 	-Warhead@3EffWater:
 
 DiskLaserE:
 	Inherits: DiskLaser
-	Burst: 2
-	ReloadDelay: 95
+	Range: 9c0
+	Projectile: LaserZap
+		Color: FF000080
+	Warhead@1Dam: SpreadDamage
+		Damage: 150
 
 DiskLaserAA:
 	Inherits: DiskLaser
@@ -556,13 +566,12 @@ DiskLaserAA:
 
 DiskLaserAAE:
 	Inherits: DiskLaserAA
-	Burst: 2
-	ReloadDelay: 95
-
-DiskLaserE:
-	Inherits: DiskLaser
-	Burst: 2
-	ReloadDelay: 95
+	Range: 9c0
+	Projectile: LaserZap
+		Color: FF000080
+	Warhead@1Dam: SpreadDamage
+		Damage: 150
+		ValidTargets: Air
 
 DoomLaser:
 	Inherits: Comet
@@ -573,11 +582,11 @@ DoomLaser:
 		Duration: 15
 		Width: 100
 		ZOffset: 2047
-		Color: FF000080
+		Color: AA799080
 		SecondaryBeam: true
 		SecondaryBeamWidth: 25
 		SecondaryBeamZOffset: 2047
-		SecondaryBeamColor: FFFFFF
+		SecondaryBeamColor: FFFFFF80
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c045
@@ -594,13 +603,15 @@ DoomLaser:
 			Concrete: 50
 			Drone: 100
 			Rocket: 100
-		DamageTypes: RadiationDeath
+		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
 	-Warhead@2Eff:
 	-Warhead@3EffWater:
 
 DoomLaserE:
 	Inherits: DoomLaser
-	Range: 7c0
+	Range: 8c0
+	Projectile: LaserZap
+		Color: FF000080
 	Warhead@1Dam: SpreadDamage
 		Damage: 150

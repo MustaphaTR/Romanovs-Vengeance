@@ -1,6 +1,7 @@
 ^AmphibiousTransport:
 	Inherits: ^Ship
 	Inherits@CHAOS: ^Berserkable
+	Inherits@DRONE: ^TerrorDronable
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SQUID: ^SquidGrabbable
@@ -63,6 +64,9 @@
 		UnloadVoice: Move
 		EjectOnDeath: true
 		LoadingCondition: notmobile
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
 	Explodes:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode

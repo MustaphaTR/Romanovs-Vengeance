@@ -83,6 +83,7 @@
 		ProductionType: Building
 	ProductionBar@Support:
 		ProductionType: Support
+		Color: 8A8A8A
 	SpawnActorsOnSell@allies:
 		ActorTypes: e1, e1, e1, engineer
 		Factions: america, germany, england, france, korea
@@ -281,7 +282,7 @@
 	StoresResources:
 		PipColor: Yellow
 		PipCount: 10
-		Capacity: 1000
+		Capacity: 2000
 	Explodes:
 		RequiresCondition: !spawn-ore
 	Explodes@Ore:
@@ -407,7 +408,7 @@
 		Footprint: xxxx= xxxx= xxxx=
 		Dimensions: 5,3
 	Health:
-		HP: 1000
+		HP: 1200
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -615,7 +616,7 @@
 		Prerequisites: warfactory, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.
 	Valued:
-		Cost: 800
+		Cost: 500
 	Tooltip:
 		Name: Service Depot
 	Tooltip@NoRow:
@@ -639,7 +640,8 @@
 	RepairsUnits:
 		PauseOnCondition: chronodisable
 		HpPerStep: 20
-		Interval: 7
+		Interval: 15
+		RepairDamageType: KillsDrone
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
 	WithIdleOverlay@bib:

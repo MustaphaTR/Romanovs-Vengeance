@@ -33,11 +33,11 @@ e2:
 	Passenger:
 		PipType: Green
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
-		Range: 5c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 2c512
+		Radius: 3c0
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -231,10 +231,10 @@ shk:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 400
+		Cost: 300
 	DeliversCash:
-		Payload: 200
-		PlayerExperience: 20
+		Payload: 150
+		PlayerExperience: 15
 		Voice: Move
 	Tooltip:
 		Name: Tesla Trooper
@@ -245,11 +245,11 @@ shk:
 	Health:
 		HP: 130
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
-		Range: 5c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 2c512
+		Radius: 3c0
 	Armor:
 		Type: Plate
 	Crushable:
@@ -538,6 +538,8 @@ ivan:
 		VoiceSet: CrazyIvanVoice
 	Health:
 		HP: 125
+	Mobile:
+		Speed: 75
 	Garrisoner:
 		Voice: Move
 		PipType: Green
@@ -571,7 +573,6 @@ ivan:
 	TakeCover:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		IdleSequences: idle1,idle2
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 
@@ -681,7 +682,7 @@ yuri:
 		RequiresCondition: !deployed && !deploying && !parachute
 	WithSpriteBody@DEPLOYED:
 		Sequence: deployed
-		PauseOnCondition: chronodisable
+		# PauseOnCondition: chronodisable
 		RequiresCondition: (deployed || deploying) && !parachute
 	QuantizeFacingsFromSequence:
 		Sequence: stand
@@ -707,7 +708,7 @@ yuri:
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
-		Weapon: UCMindControl
+		Weapon: UCMindControlE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	WithMuzzleOverlay:
@@ -776,6 +777,10 @@ boris:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SWIMSUIT: ^WithSwimSuit
+	-ReloadDelayMultiplier@LEAFLET:
+	FirepowerMultiplier@LEAFLET:
+		Modifier: 33
+		RequiresCondition: leaflet
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 180
@@ -953,11 +958,11 @@ pyro:
 	Passenger:
 		PipType: Green
 	RevealsShroud:
-		Range: 5c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
-		Range: 5c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 2c512
+		Radius: 3c0
 	Armor:
 		Type: None
 	Armament@primary:
@@ -1029,7 +1034,7 @@ mech:
 		PipType: Yellow
 		GarrisonType: Garrisoner
 	Mobile:
-		Speed: 80
+		Speed: 75
 	Passenger:
 		PipType: Yellow
 	Armament:
@@ -1085,9 +1090,13 @@ hjck:
 		PipType: Yellow
 		GarrisonType: Garrisoner
 	Mobile:
-		Speed: 80
+		Speed: 75
 	RevealsShroud:
 		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
 	Passenger:
 		PipType: Yellow
 	Cloak:
@@ -1137,7 +1146,7 @@ itrp:
 		PlayerExperience: 75
 		Voice: Move
 	Mobile:
-		Speed: 50
+		Speed: 45
 	Health:
 		HP: 200
 	Armor:
@@ -1147,11 +1156,11 @@ itrp:
 		PipType: Green
 		GarrisonType: Garrisoner
 	RevealsShroud:
-		Range: 8c0
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
+		Range: 6c0
 	RevealOnDeath:
-		Radius: 4c0
+		Radius: 3c0
 	Passenger:
 		PipType: Green
 	Crushable:

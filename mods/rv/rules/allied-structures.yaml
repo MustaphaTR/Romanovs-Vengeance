@@ -27,6 +27,7 @@ gacnst:
 		ProductionType: Support.Allies
 	ProductionBar@SupportFrance:
 		ProductionType: Support.France
+		Color: 8A8A8A
 	Transforms:
 		IntoActor: amcv
 	WithIdleOverlay@fans:
@@ -305,8 +306,10 @@ gaairc:
 		HP: 1000
 	Armor:
 		Type: Wood
+	ExternalCondition@disableradar:
+		Condition: disableradar
 	ProvidesRadar:
-		RequiresCondition: !disabled && !chronodisable
+		RequiresCondition: !disabled && !chronodisable && !disableradar
 	RevealsShroud:
 		Range: 10c0
 	RevealsShroudToIntelligenceOwner:
@@ -754,7 +757,7 @@ nasam:
 		Prerequisites: gaairc, ~techlevel.2
 		Description: Automated anti-aircraft defense.
 	Valued:
-		Cost: 700
+		Cost: 600
 	Tooltip:
 		Name: Patriot Missile System
 	Tooltip@NoRow:
@@ -799,7 +802,7 @@ nasam:
 		Type: aa
 	AutoTarget:
 	Power:
-		Amount: -35
+		Amount: -30
 	RequiresBuildableArea:
 		Adjacent: 3
 
@@ -962,8 +965,10 @@ gaspysat:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
+	ExternalCondition@disableradar:
+		Condition: disableradar
 	ProvidesRadar:
-		RequiresCondition: !disabled
+		RequiresCondition: !disabled && !chronodisable && !disableradar
 	ProvidesPrerequisite@default:
 	Production:
 		Produces: SpySatellite

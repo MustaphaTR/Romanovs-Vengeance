@@ -47,28 +47,21 @@ sabot:
 			None: 10
 			Flak: 10
 			Plate: 5
-			Wood: 40
-			Steel: 60
-			Concrete: 35
-			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath, SuppressTerrorDrone
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallCrater
 
 sabotE:
 	Inherits: sabot
-	Burst: 2
-	ReloadDelay: 85
+	Range: 9c0
 	Projectile: BulletAS
 		Blockable: false
 		Speed: 682
+		ContrailLength: 10
+		ContrailColor: FFFFFF
+		ContrailWidth: 0c20
 	Warhead@1Dam: SpreadDamage
-		Damage: 140
-		Versus:
-			None: 20
-			Flak: 20
-			Plate: 15
-			Drone: 100
+		Damage: 175
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
@@ -92,12 +85,11 @@ MirageGun:
 			None: 100
 			Flak: 100
 			Plate: 80
-			Light: 100
 			Wood: 20
-			Steel: 15
+			Steel: 25
 			Concrete: 15
 			Drone: 100
-		DamageTypes: FlameDeath
+		DamageTypes: FlameDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: iron_fx
 		ImpactSounds:
@@ -139,7 +131,6 @@ MirageGunE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
@@ -151,14 +142,12 @@ MirageGunE:
 
 robogun:
 	Inherits: 105mm
-	Range: 5c0
 	Report: vrobatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 
 robogunE:
 	Inherits: 105mmE
-	Range: 5c0
 	Report: vrobatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
@@ -182,7 +171,6 @@ ATGUNE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 
 120mm:
 	Inherits: ^LargeBullet
@@ -209,7 +197,6 @@ ATGUNE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
@@ -248,7 +235,6 @@ ATGUNE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 	Warhead@3EffWater: CreateEffect
@@ -260,9 +246,9 @@ ATGUNE:
 120mmxRad:
 	Inherits: 120mmx
 	ReloadDelay: 65
-	Range: 5c0
+	Range: 6c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 150
+		Damage: 100
 		Versus:
 			None: 50
 			Flak: 50
@@ -282,12 +268,11 @@ ATGUNE:
 	Burst: 4
 	BurstDelays: 5
 	Warhead@1Dam: SpreadDamage
-		Damage: 140
+		Damage: 90
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@3EffWater: CreateEffect
 		Explosions: large_watersplash
 		ImpactSounds: gexpwala.wav
@@ -366,7 +351,6 @@ ATGUNE:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
@@ -374,12 +358,12 @@ CycleMortar:
 	Inherits: ^LargeBullet
 	ReloadDelay: 75
 	MinRange: 1c816
-	Range: 8c512
+	Range: 9c0
 	Report: vrobatta.wav
 	Projectile: BulletAS
 		Blockable: false
-		Speed: 192
-		LaunchAngle: 244
+		Speed: 224
+		LaunchAngle: 196
 		ContrailLength: 10
 		ContrailColor: FFFFFF
 		ContrailWidth: 0c21
@@ -405,6 +389,8 @@ CycleMortar:
 CycleMortarE:
 	Inherits: CycleMortar
 	Burst: 2
+	Projectile: BulletAS
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Falloff: 100, 75, 50, 25, 0
 		Spread: 0c384
@@ -510,7 +496,7 @@ CruiserStrike:
 
 Grenade:
 	Inherits: ^LargeBullet
-	ReloadDelay: 40
+	ReloadDelay: 45
 	Range: 4c0
 	Report: grenade1.aud
 	Projectile: BulletAS
@@ -536,7 +522,7 @@ Grenade:
 			Concrete: 90
 			Drone: 100
 			Rocket: 100
-		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@1Gar: DamageGarrisoner
 		ValidTargets: GarrisonedStructure
 		Spread: 256
@@ -554,16 +540,29 @@ Grenade:
 			Concrete: 90
 			Drone: 100
 			Rocket: 100
-		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallCrater
 
 GrenadeE:
 	Inherits: Grenade
-	Range: 6c0
-	ReloadDelay: 30
+	Range: 5c0
+	ReloadDelay: 55
 	Projectile: BulletAS
 		Speed: 384
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+	Warhead@1Gar: DamageGarrisoner
+		Damage: 60
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 40
+		Condition: emp
+		ValidTargets: EMPulse
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse30p
+		ExplosionPalette: tseffect
+		ImpactSounds: sempexpl.wav
 
 CRGrenade:
 	Inherits: Grenade

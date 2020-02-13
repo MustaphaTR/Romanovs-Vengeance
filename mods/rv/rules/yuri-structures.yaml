@@ -421,8 +421,10 @@ yadome:
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite:
 		Prerequisite: radar
+	ExternalCondition@disableradar:
+		Condition: disableradar
 	ProvidesRadar:
-		RequiresCondition: !disabled && !chronodisable
+		RequiresCondition: !disabled && !chronodisable && !disableradar
 	RevealsShroud:
 		Range: 10c0
 	RevealsShroudToIntelligenceOwner:
@@ -737,7 +739,7 @@ yaggun:
 		Footprint: x
 		Dimensions: 1, 1
 	Valued:
-		Cost: 1000
+		Cost: 900
 	Tooltip:
 		Name: Gatling Cannon
 	Tooltip@NoRow:
@@ -1172,8 +1174,11 @@ yasilo:
 
 yaexpn:
 	Inherits: ^ExpansionNode
-	Transforms:
-		IntoActor: expy
+	# Transforms:
+	#	IntoActor: expy
+	Selectable:
+		Bounds: 56, 40, -2, -4
+		DecorationBounds: 86, 78, -2, -15
 	RenderSprites:
 		Image: gaexpn
 

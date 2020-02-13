@@ -59,7 +59,7 @@ MammothTusk:
 			Concrete: 20
 			Drone: 20
 			Rocket: 100
-		DamageTypes: ExplosionDeath
+		DamageTypes: ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_bang
 
@@ -154,7 +154,7 @@ Maverick:
 			Wood: 100
 			Steel: 100
 			Concrete: 90
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: verylarge_clsn
 		ImpactSounds: gexp14a.wav
@@ -169,6 +169,8 @@ Maverick:
 MaverickE:
 	Inherits: Maverick
 	Range: 9c0
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Damage: 200
 
@@ -225,6 +227,14 @@ Medusa:
 	Warhead@1Dam: SpreadDamage
 		Damage: 100
 
+MedusaE:
+	Inherits: Medusa
+	ReloadDelay: 120
+	Burst: 8
+	BurstDelays: 7
+	Projectile: Missile
+		ContrailColor: EA0000
+
 HoverMissile:
 	Inherits: ^Missile
 	ReloadDelay: 50
@@ -258,7 +268,7 @@ HoverMissile:
 			Concrete: 65
 			Drone: 20
 			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: small_grey_explosion
 		ImpactSounds: gexpifva.wav
@@ -273,6 +283,8 @@ HoverMissile:
 HoverMissileE:
 	Inherits: HoverMissile
 	Burst: 4
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
@@ -288,6 +300,8 @@ HoverMissileAAE:
 	Inherits: HoverMissileE
 	Range: 8c0
 	ValidTargets: Air
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
@@ -355,11 +369,11 @@ MissileLauncher:
 			Medium: 100
 			Heavy: 100
 			Wood: 55
-			Steel: 75
+			Steel: 65
 			Concrete: 50
 			Drone: 20
 			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: small_grey_explosion
 		ImpactSounds: gexpifva.wav
@@ -374,6 +388,8 @@ MissileLauncher:
 MissileLauncherE:
 	Inherits: MissileLauncher
 	Burst: 2
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
@@ -389,6 +405,8 @@ MissileLauncherAAE:
 	Inherits: MissileLauncherE
 	Range: 8c0
 	ValidTargets: Air
+	Projectile: Missile
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
@@ -418,11 +436,9 @@ UCMissileLauncherE:
 
 UCMissileLauncherAA:
 	Inherits: MissileLauncherAA
-	Range: 6c0
 
 UCMissileLauncherAAE:
 	Inherits: MissileLauncherAAE
-	Range: 6c0
 
 ChaosRocket:
 	Inherits: MissileLauncher
@@ -523,7 +539,7 @@ SubTorpedo:
 			Concrete: 60
 			Drone: 25
 			Rocket: 100
-		DamageTypes: ExplosionDeath
+		DamageTypes: ExplosionDeath, SuppressTerrorDrone
 	Warhead@2EffWater: CreateEffect
 		Explosions: large_watersplash
 		ImpactSounds: gexpwasa.wav
@@ -581,7 +597,7 @@ HornetBomb:
 			Concrete: 75
 			Drone: 100
 			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: hornet_explosion
 		ExplosionPalette: tseffect
@@ -593,6 +609,22 @@ HornetBomb:
 		ValidTargets: Water
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallCrater
+
+HornetBombE:
+	Inherits: HornetBomb
+	Projectile: Missile
+		ContrailColor: EA0000
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Falloff: 100, 0
+		Damage: 140
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		-ExplosionPalette: tseffect
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 ASWBomb:
 	Inherits: HornetBomb
@@ -617,6 +649,13 @@ ASWBomb:
 		ExplosionPalette: effect
 	-Warhead@4Smu:
 
+ASWBombE:
+	Inherits: ASWBomb
+	Projectile: Missile
+		ContrailColor: EA0000
+	Warhead@1Dam: SpreadDamage
+		Damage: 80
+
 A10Missile:
 	Inherits: ^Missile
 	ReloadDelay: 12
@@ -629,7 +668,7 @@ A10Missile:
 		RangeLimit: 11c410
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
-		Damage: 100
+		Damage: 80
 		Versus:
 			None: 100
 			Flak: 100
@@ -642,7 +681,7 @@ A10Missile:
 			Concrete: 50
 			Drone: 60
 			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: verylarge_clsn
 		ImpactSounds: gexp14a.wav
@@ -785,7 +824,7 @@ MosquitoMissile:
 			Concrete: 65
 			Drone: 20
 			Rocket: 100
-		DamageTypes: Prone70Percent, TriggerProne, VirusDeath
+		DamageTypes: Prone70Percent, TriggerProne, VirusDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: small_grey_explosion
 		ImpactSounds: gexpifva.wav
