@@ -539,3 +539,65 @@ capsyb:
 	WithIdleOverlay@flag:
 		Sequence: flag
 	ProvidesPrerequisite@buildingname:
+
+camisl:
+	Inherits: ^TechBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@shape: ^4x3Shape
+	Tooltip:
+		Name: Tech Missile Silo
+	Tooltip@NoRow:
+		Name: Tech Missile Silo
+	TooltipDescription:
+		Description: Provides Cluster Missile support power. Requires Power to operate.
+	Armor:
+		Type: Wood
+	Health:
+		HP: 1250
+	Building:
+		Dimensions: 4,3
+		Footprint: xxx xxx xxx xxx
+	NukePower:
+		Prerequisites:
+			1: camisl
+		Cursor: nuke
+		Icons:
+			1: abomb
+		ChargeInterval: 7500
+		Descriptions:
+			1: Cluster Missile
+		LongDescs:
+			1: Launches a cluster missile\nat a target location.
+		AllowMultiple: true
+		EndChargeSound: snukread.wav
+		LaunchSound: snuklaun.wav
+		SelectTargetSpeechNotification: SelectTarget
+		MissileWeapon: ClusterMissile
+		MissilePalette: player
+		MissileDelay: 70
+		SpawnOffset: 512,512,0
+		IsPlayerPalette: true
+		DisplayTimerStances: Ally, Neutral, Enemy
+		DisplayBeacon: True
+		DisplayRadarPing: True
+		DetonationAltitude: 6c0
+		BeaconPosters:
+			1: nukeicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		CameraRange: 5c0
+		CameraRemoveDelay: 75
+		PauseOnCondition: disabled || chronodisable
+		FlightDelay: 250
+		FlightVelocity: 0c768
+		TargetCircleRanges:
+			1: 4c0
+	WithNukeLaunchAnimation:
+		RequiresCondition: !chronodisable
+	Power:
+		Amount: -50
+	SupportPowerChargeBar:
+	WithIdleOverlay@flag:
+		Sequence: flag
+	ProvidesPrerequisite@buildingname:

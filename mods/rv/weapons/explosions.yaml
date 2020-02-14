@@ -374,6 +374,48 @@ demobomb:
 	Warhead@5Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
+ClusterMissile:
+	Warhead@Cluster: FireCluster
+		Weapon: ClusterMissileCluster
+		Dimensions: 5,5
+		Footprint: __X__ _XXX_ XXXXX _XXX_ __X__
+	Warhead@2Eff: CreateEffect
+		Explosions: verylarge_clsn
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Air, Ground, Water
+		ImpactActors: false
+
+ClusterMissileCluster:
+	Range: 7c0
+	Projectile: Bullet
+		Image: 160mm
+		Palette: ra
+		Speed: 196
+		LaunchAngle: 0, 32
+		Inaccuracy: 1c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 75
+		Spread: 1c0
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 80
+			Light: 100
+			Medium: 70
+			Heavy: 70
+			Wood: 100
+			Steel: 100
+			Concrete: 90
+			Drone: 100
+			Rocket: 0
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Structure
+	Warhead@3Eff: CreateEffect
+		Explosions: medium_bang
+		ImpactSounds: gexp14a.wav
+
 Demolish:
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: DefaultDeath
@@ -400,10 +442,14 @@ V3Weapon:
 			Rocket: 0
 		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
-		Explosions: large_twlt
-		ImpactSounds: gexpapoa.wav
-		ValidTargets: Ground, Water, Air
-	Warhead@3Smu: LeaveSmudge
+		Explosions: medium_clsn
+		ImpactSounds: gexp14a.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
 DredWeapon:
