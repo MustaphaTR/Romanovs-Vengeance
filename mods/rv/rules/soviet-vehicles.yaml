@@ -160,12 +160,16 @@ dron:
 		Condition: in_water
 	KillsSelf@LowPowerOnWater:
 		RequiresCondition: in_water
-	Armament:
+	Armament@primary:
 		Weapon: DroneJump
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: DroneJumpE
+		RequiresCondition: rank-elite
 	AttackInfectRV:
 		Voice: Attack
-		Damage: 100
-		DamageInterval: 60
+		Damage: 50
+		DamageInterval: 45
 		DamageTypes: DroneInfection, BulletDeath
 		SuppressionDamageThreshold: 250
 		SuppressionCountThreshold: 1
@@ -237,9 +241,9 @@ htk:
 		Locomotor: tracked
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
-		HP: 250
+		HP: 300
 	Armor:
-		Type: Heavy
+		Type: Light
 	Passenger:
 		CargoType: GarrisonerVehicle
 	RevealsShroud:
@@ -366,7 +370,7 @@ apoc:
 		Name: Apocalypse Tank
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Vietnam
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		Prerequisites: natech, ~techlevel.3
 		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\nCan crush enemy vehicles.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
 	UpdatesPlayerStatistics:
@@ -465,7 +469,7 @@ ttnk:
 		Name: Tesla Tank
 	Buildable:
 		Queue: Vehicle.USSR
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~techlevel.3
 		Description: Russian special tank armed with dual small Tesla Coils.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
@@ -525,7 +529,7 @@ dtruck:
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Libya
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~techlevel.3
 		Description: Demolition Truck, actively armed with nuclear explosives.
 	UpdatesPlayerStatistics:
@@ -595,7 +599,7 @@ v3:
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Vietnam
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: natech, ~techlevel.3
 		Description: Long-range rocket artillery.
 	UpdatesPlayerStatistics:
@@ -691,10 +695,10 @@ tric:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
-		Cost: 500
+		Cost: 400
 	DeliversCash:
-		Payload: 250
-		PlayerExperience: 25
+		Payload: 200
+		PlayerExperience: 20
 		Voice: Move
 	Tooltip:
 		Name: Mortar Tricycle
@@ -710,7 +714,7 @@ tric:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
-		Speed: 150
+		Speed: 135
 		TurnSpeed: 15
 	Health:
 		HP: 175
@@ -890,10 +894,10 @@ ftnk:
 	Tooltip@NoRow:
 		Name: Flame Tank
 	Buildable:
-		Queue: Vehicle.Vietnam
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Vietnam
 		BuildPaletteOrder: 80
 		Prerequisites: naradr, ~techlevel.3
-		Description: Vietnamese special tank armed with dual flamethrowers.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		Description: Soviet tank armed with dual flamethrowers.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:

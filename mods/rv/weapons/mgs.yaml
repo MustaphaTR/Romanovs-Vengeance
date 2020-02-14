@@ -47,11 +47,7 @@ CRM60:
 	Range: 6c0
 	Report: vifvat2a.wav, vifvat2b.wav, vifvat2c.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 35
-		Versus:
-			None: 120
-			Flak: 110
-			Plate: 100
+		Damage: 45
 
 para:
 	Inherits: ^MG
@@ -249,6 +245,22 @@ UCAWPE:
 20mmAAE:
 	Inherits: 20mmAA
 	Burst: 2
+
+robogun:
+	Inherits: ^MG
+	ReloadDelay: 40
+	Range: 5c0
+	Burst: 3
+	Report: vwaratta.wav, vwarattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 15
+
+robogunE:
+	Inherits: robogun
+	ReloadDelay: 30
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
 
 20mmrapid:
 	Inherits: ^MG

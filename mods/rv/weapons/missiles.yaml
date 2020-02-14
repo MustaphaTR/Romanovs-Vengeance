@@ -257,15 +257,15 @@ HoverMissile:
 		Damage: 25
 		ValidTargets: Ground
 		Versus:
-			None: 60
-			Flak: 60
-			Plate: 50
-			Light: 70
+			None: 85
+			Flak: 85
+			Plate: 75
+			Light: 75
 			Medium: 35
 			Heavy: 35
-			Wood: 75
+			Wood: 70
 			Steel: 40
-			Concrete: 65
+			Concrete: 60
 			Drone: 20
 			Rocket: 100
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
@@ -365,7 +365,7 @@ MissileLauncher:
 			None: 15
 			Flak: 15
 			Plate: 10
-			Light: 75
+			Light: 50
 			Medium: 100
 			Heavy: 100
 			Wood: 55
@@ -400,6 +400,8 @@ MissileLauncherAA:
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
+		Versus:
+			Light: 75
 
 MissileLauncherAAE:
 	Inherits: MissileLauncherE
@@ -409,18 +411,24 @@ MissileLauncherAAE:
 		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
+		Versus:
+			Light: 75
 
 CRMissileLauncher:
 	Inherits: MissileLauncher
+	ReloadDelay: 60
 	Burst: 2
+	BurstDelays: 10
 	Warhead@1Dam: SpreadDamage
-		Damage: 30
+		Damage: 40
 
 CRMissileLauncherAA:
 	Inherits: MissileLauncherAA
+	ReloadDelay: 60
 	Burst: 2
+	BurstDelays: 10
 	Warhead@1Dam: SpreadDamage
-		Damage: 30
+		Damage: 40
 
 UCMissileLauncher:
 	Inherits: MissileLauncher

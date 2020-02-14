@@ -3,7 +3,6 @@ FlakGuyGun:
 	ReloadDelay: 25
 	Range: 5c0
 	Warhead@1Dam: SpreadDamage
-		Spread: 64
 		Damage: 20
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallCrater
@@ -35,10 +34,7 @@ FlakGuyAAGun:
 	Inherits: ^AAFlak
 	Range: 8c0
 	ValidTargets: Air
-	Projectile: InstantHit
-		Inaccuracy: 128
 	Warhead@1Dam: SpreadDamage
-		Spread: 120
 		Damage: 20
 
 FlakGuyAAGunE:
@@ -92,6 +88,7 @@ FlakWeapon:
 	Report: bflaatta.wav, bflaattb.wav, bflaattc.wav, bflaattd.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
+		Spread: 0c512
 		Versus:
 			None: 100
 			Flak: 100

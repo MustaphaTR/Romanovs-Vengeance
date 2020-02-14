@@ -435,8 +435,8 @@ fv:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
-		Speed: 135
-		TurnSpeed: 5
+		Speed: 120
+		TurnSpeed: 8
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
 		HP: 200
@@ -863,7 +863,8 @@ sref:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		TargetFrozenActors: True
+		TargetFrozenActors: true
+		OpportunityFire: false
 		PauseOnCondition: chronodisable || emp || parachute
 	AutoTarget:
 	Explodes:
@@ -1146,10 +1147,10 @@ robo:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
-		Cost: 500
+		Cost: 300
 	DeliversCash:
-		Payload: 250
-		PlayerExperience: 25
+		Payload: 150
+		PlayerExperience: 15
 		Voice: Move
 	Tooltip:
 		Name: Robot Tank
@@ -1159,11 +1160,11 @@ robo:
 		Queue: Vehicle.Allies, Vehicle.Germany
 		Prerequisites: ~techlevel.2
 		BuildPaletteOrder: 40
-		Description: Remote controlled vehicle.\nCan move over water.\nCannot be mind controlled.\nRequires an Allied War Factory to operate.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
+		Description: Remote controlled vehicle.\nCan move over water.\nCannot be mind controlled.\nRequires an Allied War Factory to operate.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
-		Speed: 135
+		Speed: 120
 		TurnSpeed: 255
 		Locomotor: amphibious
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && powered
@@ -1176,7 +1177,7 @@ robo:
 	Health:
 		HP: 150
 	Armor:
-		Type: Heavy
+		Type: Light
 	-CaptureManager:
 	-Capturable:
 	RevealsShroud:
