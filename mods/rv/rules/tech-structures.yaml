@@ -511,8 +511,8 @@ capsyb:
 		Dimensions: 2,2
 		Footprint: xx xx
 	DetonateWeaponPower:
-		RequiresCondition: enabled
 		OrderName: TechPsychicControl
+		RequiresCondition: enabled
 		PauseOnCondition: chronodisable || emp
 		CameraRange: 4c0
 		CameraRemoveDelay: 100
@@ -588,6 +588,7 @@ camisl:
 		ClockSequence: clock
 		CameraRange: 5c0
 		CameraRemoveDelay: 75
+		RequiresCondition: enabled
 		PauseOnCondition: disabled || chronodisable
 		FlightDelay: 250
 		FlightVelocity: 0c768
@@ -598,6 +599,8 @@ camisl:
 	Power:
 		Amount: -50
 	SupportPowerChargeBar:
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: emp || (disabled && enabled)
 	WithIdleOverlay@flag:
 		Sequence: flag
 	ProvidesPrerequisite@buildingname:
