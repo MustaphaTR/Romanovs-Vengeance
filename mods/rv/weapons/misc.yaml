@@ -15,18 +15,6 @@ Flamer:
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
 		Damage: 10
-		Versus:
-			None: 150
-			Flak: 150
-			Plate: 100
-			Light: 70
-			Medium: 15
-			Heavy: 15
-			Wood: 70
-			Steel: 35
-			Concrete: 60
-			Drone: 100
-			Rocket: 100
 	Warhead@1Gar: DamageGarrisoner
 		ValidTargets: GarrisonedStructure
 		Spread: 341
@@ -728,6 +716,26 @@ CloudDamage:
 			Steel: 0
 			Concrete: 0
 			Drone: 100
+			Rocket: 0
+
+FireDamage:
+	ReloadDelay: 10
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 196
+		Damage: 5
+		DamageTypes: FlameDeath
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 100
+			Light: 35
+			Medium: 7
+			Heavy: 7
+			Wood: 35
+			Steel: 17
+			Concrete: 30
+			Drone: 50
 			Rocket: 0
 
 DiskDrain:

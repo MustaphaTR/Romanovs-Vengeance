@@ -47,6 +47,100 @@ BlimpBombE:
 	Warhead@2Eff: CreateEffect
 		Explosions: kirovtesla
 
+NapalmBomb:
+	ReloadDelay: 65
+	Range: 0c256
+	MinRange: 0c1
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -50
+		Acceleration: 0, 0, -10
+		Image: zbomb
+		Palette: player
+		IsPlayerPalette: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c256
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 50
+		ValidTargets: Building, Ground, Water
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 100
+			Light: 70
+			Medium: 15
+			Heavy: 15
+			Wood: 70
+			Steel: 35
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: napalm_large
+		ExplosionPalette: ra
+		ImpactSounds: firebl3.aud
+		ValidTargets: Ground, Water, Air
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumScorch
+	Warhead@5Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: mediumfire
+		Sequences: idle
+		Palette: effect
+		Weapon: FireDamage
+		Duration: 300
+		Speed: 0, 25
+		TurnRate: 10
+		Delay: 15
+	Warhead@6Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: mediumfire
+		Sequences: idle
+		Palette: effect
+		Weapon: FireDamage
+		Duration: 300
+		Speed: 0, 25
+		TurnRate: 10
+		Delay: 15
+	Warhead@7Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: largefire
+		Sequences: idle
+		Palette: effect
+		Weapon: FireDamage
+		Duration: 300
+		Speed: 0, 25
+		TurnRate: 10
+		Delay: 15
+	Warhead@8Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: smallfire
+		Sequences: idle
+		Palette: effect
+		Weapon: FireDamage
+		Duration: 300
+		Speed: 0, 25
+		TurnRate: 10
+		Delay: 15
+	Warhead@9Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: smallfire
+		Sequences: idle
+		Palette: effect
+		Weapon: FireDamage
+		Duration: 300
+		Speed: 0, 25
+		TurnRate: 10
+		Delay: 15
+
+NapalmBombE:
+	Inherits: NapalmBomb
+	ReloadDelay: 50
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c320
+		Damage: 60
+
 EMPulse:
 	ReloadDelay: 10
 	Range: 1c0

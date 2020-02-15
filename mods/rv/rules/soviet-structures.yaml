@@ -455,10 +455,10 @@ naweap:
 	ProvidesPrerequisite@naweap:
 		Prerequisite: naweap
 	Production:
-		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Vietnam
+		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
 	ProductionQueue:
 		Type: Vehicle.Soviets
-		Factions: america, germany, england, france, korea, cuba, iraq, psicorps
+		Factions: america, germany, england, france, korea, cuba, iraq, vietnam, psicorps
 	ProductionQueue@USSR:
 		Type: Vehicle.USSR
 		Factions: russia
@@ -481,25 +481,12 @@ naweap:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@Vietnam:
-		Type: Vehicle.Vietnam
-		Factions: vietnam
-		Group: Vehicle
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Soviets
 	ProductionBar@USSR:
 		ProductionType: Vehicle.USSR
 	ProductionBar@Libya:
 		ProductionType: Vehicle.Libya
-	ProductionBar@Vietnam:
-		ProductionType: Vehicle.Vietnam
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -617,10 +604,22 @@ naheli:
 	GrantExternalConditionToProduced:
 		Condition: produced
 	Production:
-		Produces: Aircraft.Soviets
+		Produces: Aircraft.Soviets, Aircraft.Vietnam
 		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Aircraft.Soviets
+		Factions: america, germany, england, france, korea, cuba, libya, iraq, russia, psicorps
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Vietnam:
+		Type: Aircraft.Vietnam
+		Factions: vietnam
 		Group: Aircraft
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
@@ -631,6 +630,8 @@ naheli:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Aircraft.Soviets
+	ProductionBar@Vietnam:
+		ProductionType: Aircraft.Vietnam
 	Power:
 		Amount: -35
 	WithIdleOverlay@lights:
@@ -815,7 +816,7 @@ naclon:
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	Production:
-		Produces: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Iraq, Infantry.Vietnam, Infantry.Cuba, Infantry.Yuri
+		Produces: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Iraq, Infantry.Cuba, Infantry.Yuri
 	RallyPoint:
 		Offset: 3,3
 		Palette: mouse
