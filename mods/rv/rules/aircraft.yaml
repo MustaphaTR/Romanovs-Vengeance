@@ -1322,7 +1322,7 @@ hind:
 		Type: Light
 	Voiced:
 		VoiceSet: HindVoice
-		Volume: 6
+		Volume: 3
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -1350,7 +1350,7 @@ hind:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
 		TurnSpeed: 10
-		Speed: 125
+		Speed: 140
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
 		LandOnCondition: emp || chronodisable
@@ -1700,7 +1700,7 @@ kite:
 	Selectable:
 		Bounds: 70,60,0,-20
 	Health:
-		HP: 225
+		HP: 500
 	Armor:
 		Type: Light
 	Armament@primary:
@@ -1723,7 +1723,7 @@ kite:
 		Prerequisites: radar, ~techlevel.3
 		Description: Helicopter armed with napalm bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles
 	Valued:
-		Cost: 1000
+		Cost: 1400
 	RevealsShroud:
 		Range: 8c0
 		Type: GroundPosition
@@ -1739,8 +1739,9 @@ kite:
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
-		TurnSpeed: 10
-		Speed: 140
+		TurnSpeed: 7
+		Speed: 120
+		Repulsable: false
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
 		LandOnCondition: emp || chronodisable
@@ -1772,8 +1773,8 @@ kitehusk:
 	Tooltip@NoRow:
 		Name: Black Kite
 	Aircraft:
-		TurnSpeed: 10
-		Speed: 140
+		TurnSpeed: 7
+		Speed: 120
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:

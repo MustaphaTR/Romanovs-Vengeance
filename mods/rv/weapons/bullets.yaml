@@ -94,10 +94,14 @@ HowiCannon:
 			None: 100
 			Flak: 100
 			Plate: 90
-			Light: 65
+			Light: 85
 			Medium: 65
-			Heavy: 50
-			Drone: 80
+			Heavy: 65
+			Wood: 55
+			Steel: 65
+			Concrete: 50
+			Drone: 100
+			Rocket: 100
 		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_explosion
@@ -106,8 +110,11 @@ HowiCannon:
 
 HowiCannonE:
 	Inherits: HowiCannon
-	Range: 12c0
+	Range: 14c0
+	Projectile: BulletAS
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
 		Damage: 200
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
