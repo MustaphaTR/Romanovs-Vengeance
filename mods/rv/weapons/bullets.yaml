@@ -56,7 +56,6 @@ sabotE:
 	Range: 9c0
 	Projectile: BulletAS
 		Blockable: false
-		Speed: 682
 		ContrailLength: 10
 		ContrailColor: FFFFFF
 		ContrailWidth: 0c20
@@ -70,6 +69,52 @@ sabotE:
 		ImpactSounds: gexpwala.wav
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
+
+HowiCannon:
+	Inherits: ^LargeBullet
+	ValidTargets: Ground, Water
+	Range: 10c0
+	MinRange: 1c512
+	ReloadDelay: 110
+	Report: tnkfire2.aud
+	Projectile: BulletAS
+		Image: 160mm
+		Speed: 446
+		Blockable: false
+		MinimumLaunchAngle: 196
+		MaximumLaunchAngle: 196
+		ContrailLength: 10
+		ContrailColor: FFFFFF
+		ContrailWidth: 0c20
+		Inaccuracy: 1c512
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c256
+		Damage: 175
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 90
+			Light: 65
+			Medium: 65
+			Heavy: 50
+			Drone: 80
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_explosion
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+HowiCannonE:
+	Inherits: HowiCannon
+	Range: 12c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 200
+	Warhead@2Eff: CreateEffect
+		Explosions: elite_explosion
+		ImpactSounds: gexpapoa.wav
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwala.wav
 
 MirageGun:
 	Inherits: ^LargeBullet

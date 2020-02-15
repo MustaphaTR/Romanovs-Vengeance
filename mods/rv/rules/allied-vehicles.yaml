@@ -146,7 +146,7 @@ tnkd:
 		Name: Tank Destroyer
 	Buildable:
 		Queue: Vehicle.Germany
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Special anti-armor unit.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
 	UpdatesPlayerStatistics:
@@ -816,7 +816,7 @@ sref:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 90
 		Prerequisites: gatech, ~techlevel.3
 		Description: Fires deadly beams of light.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
@@ -914,7 +914,7 @@ mgtk:
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 100
 		Prerequisites: gatech, ~techlevel.3
 		Description: Tank that appears as a tree while immobile.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
@@ -1027,7 +1027,7 @@ bfrt:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 110
 		Prerequisites: gatech, ~techlevel.4
 		Description: Large vehicle with 5 fireports for infantry in to fire.\nCan crush enemy vehicles.
 	UpdatesPlayerStatistics:
@@ -1252,6 +1252,76 @@ robo:
 	HitShape:
 
 # Custom Allied Vehicles:
+hwtz:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 950
+	DeliversCash:
+		Payload: 475
+		PlayerExperience: 47
+		Voice: Move
+	Tooltip:
+		Name: Howitzer
+	Tooltip@NoRow:
+		Name: Howitzer
+	Buildable:
+		Queue: Vehicle.Allies, Vehicle.Germany
+		BuildPaletteOrder: 70
+		Prerequisites: gaairc, ~techlevel.3
+		Description: Long range vehicle .\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 90
+		TurnSpeed: 5
+		Locomotor: heavytracked
+	Health:
+		HP: 350
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Armament@primary:
+		Weapon: HowiCannon
+		LocalOffset: 704,0,1024
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: HowiCannonE
+		LocalOffset: 704,0,1024
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp
+		FacingTolerance: 2
+	AutoTarget:
+	RenderSprites:
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	RenderVoxels:
+		NormalsPalette: ts-normals
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: AlliedVehicleVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+
 ctnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
