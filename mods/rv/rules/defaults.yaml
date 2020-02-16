@@ -647,11 +647,13 @@
 
 ^TerrorDronable:
 	InfectableRV:
+		RequiresCondition: !chronodisable
 		KillInfectorDamageTypes: KillsDrone
 		BeingInfectedCondition: beingterrordroned
 		InfectedCondition: terrordroned
 	Targetable@DRONE:
 		TargetTypes: TerrorDronable
+		RequiresCondition: !chronodisable
 	RevealsShroud@DRONE:
 		Range: 2c0
 		ValidStances: Enemy, Neutral
@@ -675,6 +677,7 @@
 		Sequence: squid
 		RequiresCondition: squid
 	InfectableOld:
+		RequiresCondition: !chronodisable
 		RemoveInfectorDamageTypes: RemovesSquid
 		BeingInfectedCondition: beinginfected
 		InfectedByConditions:
@@ -685,6 +688,7 @@
 		RequiresCondition: squid
 	Targetable@SQUID:
 		TargetTypes: SquidInfection
+		RequiresCondition: !chronodisable
 	SpeedMultiplier@SQUID:
 		RequiresCondition: beinginfected
 		Modifier: 0

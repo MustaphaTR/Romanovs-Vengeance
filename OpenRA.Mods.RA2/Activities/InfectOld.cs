@@ -38,7 +38,7 @@ namespace OpenRA.Mods.RA2.Activities
 					return;
 
 				var infectable = targetActor.TraitOrDefault<InfectableOld>();
-				if (infectable == null || infectable.Infector != null)
+				if (infectable == null || infectable.IsTraitDisabled || infectable.Infector != null)
 					return;
 
 				w.Remove(self);
@@ -74,7 +74,7 @@ namespace OpenRA.Mods.RA2.Activities
 				return;
 
 			var infectable = target.Actor.TraitOrDefault<InfectableOld>();
-			if (infectable == null || infectable.Infector != null)
+			if (infectable == null || infectable.IsTraitDisabled || infectable.Infector != null)
 				return;
 
 			infectable.RevokeCondition(target.Actor, true);
@@ -89,7 +89,7 @@ namespace OpenRA.Mods.RA2.Activities
 				return false;
 
 			var infectable = targetActor.TraitOrDefault<InfectableOld>();
-			if (infectable == null || infectable.Infector != null)
+			if (infectable == null || infectable.IsTraitDisabled || infectable.Infector != null)
 				return false;
 
 			infectable.GrantCondition(targetActor, true);
