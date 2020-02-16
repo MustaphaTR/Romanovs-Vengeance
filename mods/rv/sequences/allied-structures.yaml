@@ -990,6 +990,34 @@ gasilo:
 	icon: gsilicon
 		Offset: 0, 0
 
+gamgun:
+	Inherits@MC: ^MindControllable
+	Defaults:
+		Offset: 0, -15
+		ZOffset: -512
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: gamgun
+		ShadowStart: 3
+	damaged-idle: gamgun
+		Start: 1
+		ShadowStart: 4
+	turret: gamguntur
+		Facings: 32
+		ZOffset: 0
+	make: gamgunmk
+		Length: 13
+		ShadowStart: 13
+		ZOffset: 0
+	icon: mgunicon
+		Offset: 0,0
+		UseTilesetCode: false
+
 gaexpn:
 	Inherits@MC: ^MindControllable
 	Defaults:

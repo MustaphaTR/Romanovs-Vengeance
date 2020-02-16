@@ -817,7 +817,7 @@ gtgcan:
 	Buildable:
 		Queue: Support.France
 		BuildPaletteOrder: 70
-		Prerequisites: gaairc, ~techlevel.3
+		Prerequisites: ~disabled # gaairc, ~techlevel.3
 		Description: Automated, long ranged anti-ground defense.
 	Valued:
 		Cost: 2500
@@ -1411,6 +1411,66 @@ gasilo:
 	WithIdleOverlay@LIGHTS:
 		RequiresCondition: !build-incomplete
 		Sequence: idle-lights
+
+gamgun:
+	Inherits: ^SupportBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DRAIN: ^DiskDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.France
+		BuildPaletteOrder: 70
+		Prerequisites: gaairc, ~techlevel.3
+		Description: Defensive structure that is invisible while not firing.
+	Valued:
+		Cost: 1000
+	Tooltip:
+		Name: Mirage Turret
+	Tooltip@NoRow:
+		Name: Mirage Turret
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Health:
+		HP: 500
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 7c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 7c0
+	Selectable:
+		Bounds: 42, 50, 0, -14
+	Armament:
+		Weapon: MirageGun
+		LocalOffset: 416,0,416
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	Turreted:
+		TurnSpeed: 10
+	Cloak:
+		RequiresCondition: !disabled && !chronodisable && !emp
+		InitialDelay: 25
+		CloakDelay: 25
+		IsPlayerPalette: true
+		UncloakOn: Attack, Damage
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+	DetectCloaked:
+		Range: 6c0
+	RenderDetectionCircle:
+	BodyOrientation:
+		QuantizedFacings: 8
+	WithRangeCircle:
+		Range: 7c0
+		Type: mirageturret
+	Power:
+		Amount: -75
 
 gaexpn:
 	Inherits: ^ExpansionNode
