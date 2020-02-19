@@ -371,6 +371,157 @@ yurix:
 	WithMindControlArc:
 		Offset: 0,0,1024
 
+lunr:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	HiddenUnderFog:
+		Type: CenterPosition
+	Buildable:
+		Queue: Infantry.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: ~disabled # radar, ~techlevel.2
+		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: Cosmonaut
+	Tooltip@NoRow:
+		Name: Cosmonaut
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	-Mobile:
+	RevealsShroud:
+		Range: 8c0
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Type: GroundPosition
+	Armor:
+		Type: Light
+	Armament@primary:
+		Weapon: LunarLaser
+		LocalOffset: 128,196,512, 128,-196,512
+		PauseOnCondition: !ammo || chronodisable
+		RequiresCondition: !rank-elite
+	Armament@primary-aa:
+		Weapon: LunarLaserAA
+		LocalOffset: 128,196,512, 128,-196,512
+		PauseOnCondition: !ammo || chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: LunarLaserE
+		LocalOffset: 128,196,512, 128,-196,512
+		PauseOnCondition: !ammo || chronodisable
+		RequiresCondition: rank-elite
+	Armament@elite-aa:
+		Weapon: LunarLaserAAE
+		LocalOffset: 128,196,512, 128,-196,512
+		PauseOnCondition: !ammo || chronodisable
+		RequiresCondition: rank-elite
+	AttackAircraft:
+		Voice: Attack
+		FacingTolerance: 2
+		AttackType: Hover
+	AmmoPool:
+		Ammo: 1
+		PipCount: 0
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Delay: 30
+		Count: 1
+	Aircraft:
+		CruiseAltitude: 3c852
+		InitialFacing: 20
+		TurnSpeed: 255
+		Speed: 140
+		AltitudeVelocity: 120
+		MaximumPitch: 128
+		Voice: Move
+		AirborneCondition: airborne
+		IdealSeparation: 512
+		VTOL: true
+		CanSlide: true
+		CanHover: true
+	WithInfantryBody:
+		StandSequences: fly
+		MoveSequence: fly
+		DefaultAttackSequence: shoot-air
+		IdleSequences: idle-air
+	Hovers:
+		BobDistance: -45
+	-InfectableRV:
+	-Targetable@DRONE:
+	-SpeedMultiplier@DRONE:
+	-RevealsShroud@DRONE:
+	-ExplodeWeapon@dronesparks:
+	-Crushable:
+	-TakeCover:
+	-Targetable:
+	-TurnOnIdle:
+	-WithDeathAnimation@normal:
+	-WithDeathAnimation@effect:
+	-DamagedByTintedCells:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
+	-DeathSounds@zapped:
+	-DeathSounds@radiation:
+	-DeathSounds@psycrush:
+	-DeathSounds@virus:
+	Targetable@airborne:
+		TargetTypes: Air, Disguise
+		RequiresCondition: airborne
+	WithSpriteBody@shadow:
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
+	Voiced:
+		VoiceSet: CosmonautVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Targetable@ground:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		RequiresCondition: !airborne
+	-Passenger:
+	SpawnActorOnDeath:
+		Actor: jumpjet.husk
+
+jumpjet.husk:
+	Inherits: ^HelicopterHusk
+	Inherits@1: ^SpriteActor
+	WithFacingSpriteBody:
+	-RenderVoxels:
+	-WithVoxelBody:
+	Tooltip:
+		Name: Rocketeer
+	Tooltip@NoRow:
+		Name: Rocketeer
+	Aircraft:
+		TurnSpeed: 10
+		Speed: 140
+	FallsToEarth:
+		Explosion: InfantryExplode
+	RevealsShroud:
+		Range: 8c0
+		Type: GroundPosition
+	RevealsShroudToIntelligenceOwner:
+		Range: 8c0
+		Types: SatelliteScan
+		Type: GroundPosition
+	RevealOnDeath:
+		Radius: 4c0
+		Duration: 50
+	WithSpriteBody@shadow:
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
+
 # Custom Infantry
 gtrp:
 	Inherits@1: ^Infantry

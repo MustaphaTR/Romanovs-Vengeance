@@ -616,3 +616,58 @@ DoomLaserE:
 		Color: FF000080
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
+
+LunarLaser:
+	Inherits: Comet
+	ReloadDelay: 20
+	Range: 7c0
+	Report: ilasatta.wav
+	Projectile: LaserZap
+		Duration: 15
+		Width: 75
+		ZOffset: 2047
+		Color: AA799080
+		SecondaryBeam: true
+		SecondaryBeamWidth: 20
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: FFFFFF80
+		UsePlayerColor: false
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c045
+		Damage: 25
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 75
+			Medium: 50
+			Heavy: 50
+			Wood: 100
+			Steel: 100
+			Concrete: 100
+			Drone: 100
+			Rocket: 100
+		DamageTypes: RadiationDeath, SuppressTerrorDrone
+	-Warhead@2Shr:
+	-Warhead@2Eff:
+	-Warhead@3EffWater:
+
+LunarLaserE:
+	Inherits: LunarLaser
+	Range: 9c0
+	Projectile: LaserZap
+		Color: FF000080
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+
+LunarLaserAA:
+	Inherits: LunarLaser
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+LunarLaserAAE:
+	Inherits: LunarLaserE
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
