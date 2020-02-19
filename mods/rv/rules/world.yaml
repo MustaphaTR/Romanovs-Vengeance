@@ -155,6 +155,13 @@
 		RandomFactionMembers: cuba, libya, iraq, russia, vietnam
 		Side: Randoms
 		Description: Random Soviet Country\nA random Soviet country will be chosen when the game starts.
+	Faction@psicorps:
+		Name: Psi-Corps
+		InternalName: random-psicorps
+		RandomFactionMembers: psicorps, psinepal, psisouth, psitrans, psimoon
+		Side: Randoms
+		Description: Random Soviet Country\nA random Soviet country will be chosen when the game starts.
+		Selectable: false
 	Faction@1:
 		Name: USA
 		InternalName: america
@@ -206,11 +213,35 @@
 		Side: Soviets
 		Description: Libya\nSpecial Vehicle: Demolition Truck\nSpecial Ability: Ambush
 	Faction@11:
-		Name: Psi-Corps
+		Name: Yurigrad
 		InternalName: psicorps
 		Side: Psi-Corps
-		Description: Psi-Corps\nSpecial Vehicle: \nSpecial Ability:
-		Selectable: true
+		Description: Yurigrad\nSpecial Vehicle: Slave Miner\nSpecial Ability: Chaos Drop
+		Selectable: false
+	Faction@12:
+		Name: Lazarus Corps
+		InternalName: psinepal
+		Side: Psi-Corps
+		Description: Lazarus Corps\nSpecial Infantry: \nSpecial Ability: Hologram Army
+		Selectable: false
+	Faction@13:
+		Name: Antarctica
+		InternalName: psisouth
+		Side: Psi-Corps
+		Description: Antarctica\nSpecial Building: \nSpecial Ability:
+		Selectable: false
+	Faction@14:
+		Name: Fort. Transylvania
+		InternalName: psitrans
+		Side: Psi-Corps
+		Description: Fortress of Transylvania\nSpecial Vehicle: \nSpecial Ability:
+		Selectable: false
+	Faction@15:
+		Name: Lunar Eclipse
+		InternalName: psimoon
+		Side: Psi-Corps
+		Description: Lunar Eclipse\nSpecial Infantry: Cosmonaut\nSpecial Ability: Ion Cannon
+		Selectable: false
 	ResourceType@Ore:
 		ResourceType: 1
 		Palette: resource
@@ -389,13 +420,13 @@ World:
 	MPStartUnits@pcv:
 		Class: none
 		ClassName: MCV Only
-		Factions: psicorps
+		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 160
 	MPStartUnits@pcvdog:
 		Class: mcvdog
 		ClassName: MCV and Dog
-		Factions: psicorps
+		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 160
 		SupportActors: dog
@@ -405,7 +436,7 @@ World:
 	MPStartUnits@lightpsicorps:
 		Class: light
 		ClassName: Light Support
-		Factions: psicorps
+		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 160
 		SupportActors: dog,init,init,init
@@ -415,7 +446,7 @@ World:
 	MPStartUnits@mediumpsicorps:
 		Class: medium
 		ClassName: Medium Support
-		Factions: psicorps
+		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 160
 		SupportActors: dog,init,init,init,init,ltnk,engineer
@@ -425,7 +456,7 @@ World:
 	MPStartUnits@heavypsicorps:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: psicorps
+		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 160
 		SupportActors: dog,init,init,init,init,init,ltnk,ltnk,ytnk,engineer

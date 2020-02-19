@@ -44,7 +44,11 @@ Ranks =
 	vietnam = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	cuba = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	libya = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
-	psicorps = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "Master" }
+	psicorps = { "Consultant", "Adept", "Overseer", "Elite", "Mastermind" },
+	psinepal = { "Consultant", "Adept", "Overseer", "Elite", "Mastermind" },
+	psitrans = { "Consultant", "Adept", "Overseer", "Elite", "Mastermind" },
+	psisouth = { "Consultant", "Adept", "Overseer", "Elite", "Mastermind" },
+	psimoon = { "Consultant", "Adept", "Overseer", "Elite", "Mastermind" }
 }
 RankXPs = { 0, 800, 1500, 2500, 5000 }
 

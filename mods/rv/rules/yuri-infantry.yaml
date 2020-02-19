@@ -6,7 +6,7 @@ slav:
 	Inherits@MC: ^MindControllable
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
-		Queue: Infantry.Yuri
+		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 50
 		Prerequisites: ~disabled # yarefn, ~techlevel.1
 		Description: Gathers Ore and Gems.
@@ -86,7 +86,7 @@ init:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Yuri
+		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.1
 		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
@@ -161,7 +161,7 @@ brute:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Buildable:
-		Queue: Infantry.Yuri
+		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 20
 		Prerequisites: ~techlevel.1
 		Description: Powerful soldiers.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nCannot be eaten by Attack Dogs.
@@ -240,7 +240,7 @@ virus:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Yuri
+		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 70
 		Prerequisites: yadome, ~techlevel.2
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -296,7 +296,7 @@ virus:
 yuripsi:
 	Inherits: yuri
 	Buildable:
-		Queue: Infantry.Yuri
+		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 80
 		Prerequisites: yadome, ~techlevel.3
 	Valued:
@@ -378,7 +378,7 @@ lunr:
 	HiddenUnderFog:
 		Type: CenterPosition
 	Buildable:
-		Queue: Infantry.Yuri
+		Queue: Infantry.Moon, Infantry.Moon
 		BuildPaletteOrder: 60
 		Prerequisites: ~disabled # radar, ~techlevel.2
 		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
@@ -531,7 +531,7 @@ gtrp:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Yuri
+		Queue: Infantry.Yuri, Infantry.Moon
 		Prerequisites: yadome, ~techlevel.2
 		BuildPaletteOrder: 60
 		Description: Infantry armed with a heavy gatling cannon.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles.
@@ -675,7 +675,7 @@ ttrp:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Yuri
+		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 980
 		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Infantry armed with a toxin sprayer.\n\n Strong vs Infantry\n\n Weak vs Buildings, Aircraft
@@ -776,7 +776,7 @@ crkt:
 	Tooltip@NoRow:
 		Name: Chaos Rocket Trooper
 	Buildable:
-		Queue: Infantry.Yuri
+		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 990
 		Prerequisites: ~yuri.tech.infiltrated, ~techlevel.4
 		Description: Long range rocket infantry armed with chaos warheads.\nImmune to chaos gas.\n  Strong vs Infantry, Vehicles, Aircraft\n  Weak vs Buildings

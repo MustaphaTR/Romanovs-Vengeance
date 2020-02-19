@@ -127,11 +127,25 @@ yabrck:
 		SpawnOffset: -170,810,0
 		ExitCell: 2, 2
 	Production:
-		Produces: Infantry.Yuri
+		Produces: Infantry.Yuri, Infantry.Moon
 	ProductionQueue:
 		Type: Infantry.Yuri
+		Factions: america, germany, england, france, korea, cuba, iraq, libya, russia, vietnam, psicorps, psinepal, psisouth, psitrans
+	ProductionQueue@Moon:
+		Type: Infantry.Moon
+		Factions: psimoon
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Yuri
+	ProductionBar@Moon:
+		ProductionType: Infantry.Moon
 	RallyPoint:
 		Offset: 2,1
 	ProvidesPrerequisite@yabrck:
