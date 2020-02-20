@@ -567,6 +567,26 @@
 	#	Prerequisite: forceshield
 	#	RequiresCondition: forceshield
 
+^AffectedByCashBounty:
+	WithDecoration@BOUNTY:
+		RequiresSelection: false
+		Image: crate-effects
+		Sequence: dollar
+		ReferencePoint: Center
+		ZOffset: 256
+		Palette: effect
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: bounty
+	GivesBounty:
+		Percentage: 50
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: bounty
+	TimedConditionBar@BOUNTY:
+		Color: FFDD00
+		Condition: bounty
+	ExternalCondition@BOUNTY:
+		Condition: bounty
+
 ^ChronoDisable:
 	AffectedByTemporal:
 		Condition: affectedbytemporal
@@ -1343,6 +1363,7 @@
 	Inherits@13: ^AffectedByChronoBoost
 	Inherits@14: ^AffectedByStealthGenerator
 	Inherits@15: ^TerrorDronable
+	Inherits@16: ^AffectedByCashBounty
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
@@ -1683,6 +1704,7 @@
 	Inherits@16: ^DisabledByMagnetron
 	Inherits@17: ^AffectedByStealthGenerator
 	Inherits@18: ^TerrorDronable
+	Inherits@19: ^AffectedByCashBounty
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -1877,6 +1899,7 @@
 	Inherits@10: ^AffectedByChronoBoost
 	Inherits@11: ^AffectedByPropaganda
 	Inherits@12: ^TerrorDronableAircraft
+	Inherits@13: ^AffectedByCashBounty
 	WithTextControlGroupDecoration:
 	Targetable@ChronoDisable:
 		RequiresCondition: !airborne
@@ -2020,6 +2043,7 @@
 	Inherits@14: ^AffectedByChronoBoost
 	Inherits@15: ^DisabledByMagnetron
 	Inherits@16: ^AffectedByStealthGenerator
+	Inherits@17: ^AffectedByCashBounty
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill

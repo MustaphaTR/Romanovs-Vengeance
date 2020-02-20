@@ -176,6 +176,16 @@ commanders_power.drone_drop:
 	RenderSprites:
 		Image: dron
 
+commanders_power.cash_bounty:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Cash Bounty
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 40
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Cash Bounty power.
+
 commanders_power.scout_drone:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -628,6 +638,30 @@ prerequisite.grinder:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
+	GrantExternalConditionPower@cash_bounty:
+		OrderName: YuriCashBounty
+		RequiresCondition: !lost
+		Prerequisites:
+			1: commanders_power.cash_bounty
+		Icons:
+			1: bounty
+		ChargeInterval: 4500
+		StartFullyCharged: true
+		Descriptions:
+			1: Cash Bounty
+		LongDescs:
+			1: Makes a group of units give 50% of their worth to the killer.\nEffect lasts for 20 seconds.
+		Durations:
+			1: 500
+			2: 500
+			3: 500
+		Conditions:
+			1: bounty
+		Ranges:
+			1: 2
+		OnFireSound: ubonus.wav
+		ValidStances: Ally, Neutral, Enemy
+		SelectTargetSpeechNotification: SelectTarget
 	SpawnActorPower@sonar:
 		RequiresCondition: !lost
 		Icons:
