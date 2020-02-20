@@ -141,6 +141,7 @@
 ^MainBattleTank:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -155,8 +156,6 @@
 		Locomotor: heavytracked
 	Armor:
 		Type: Heavy
-	Passenger:
-		CargoType: GarrisonerVehicle
 	RevealsShroud:
 		Range: 6c0
 	RevealsShroudToIntelligenceOwner:

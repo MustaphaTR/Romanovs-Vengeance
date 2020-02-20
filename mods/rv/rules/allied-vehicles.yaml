@@ -200,6 +200,7 @@ tnkd:
 fv:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -442,8 +443,6 @@ fv:
 		HP: 200
 	Armor:
 		Type: Light
-	Passenger:
-		CargoType: GarrisonerVehicle
 	RevealsShroud:
 		Range: 8c0
 		RequiresCondition: !ifv-dog
@@ -810,6 +809,7 @@ fv:
 sref:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -841,8 +841,6 @@ sref:
 		TurnSpeed: 5
 		Speed: 60
 		Locomotor: heavytracked
-	Passenger:
-		CargoType: GarrisonerVehicle
 	RevealsShroud:
 		Range: 6c0
 	RevealsShroudToIntelligenceOwner:

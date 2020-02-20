@@ -589,6 +589,21 @@
 	AffectedByTemporal:
 		RequiresCondition: !invulnerability
 
+^TankBunkerable:
+	FirepowerMultiplier@TANK_BUNKER:
+		Modifier: 130
+		RequiresCondition: in-tank-bunker
+	ReloadDelayMultiplier@TANK_BUNKER:
+		Modifier: 77
+		RequiresCondition: in-tank-bunker
+	RangeMultiplier@TANK_BUNKER:
+		Modifier: 134 # This is meant to be +2
+		RequiresCondition: in-tank-bunker
+	Passenger:
+		CargoType: GarrisonerVehicle
+		CargoConditions:
+			natbnk: in-tank-bunker
+
 ^MindControllable:
 	MindControllable:
 		Condition: controlled

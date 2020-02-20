@@ -10,6 +10,7 @@ smcv:
 harv:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
@@ -72,8 +73,6 @@ harv:
 		Speed: 60
 		TurnSpeed: 8
 		Locomotor: heavytracked
-	Passenger:
-		CargoType: GarrisonerVehicle
 	RevealsShroud:
 		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
@@ -212,6 +211,7 @@ dron:
 htk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -244,8 +244,6 @@ htk:
 		HP: 300
 	Armor:
 		Type: Light
-	Passenger:
-		CargoType: GarrisonerVehicle
 	RevealsShroud:
 		Range: 8c0
 	RevealsShroudToIntelligenceOwner:
@@ -354,6 +352,7 @@ htnk:
 apoc:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -390,8 +389,6 @@ apoc:
 		HP: 800
 	Armor:
 		Type: Heavy
-	Passenger:
-		CargoType: GarrisonerVehicle
 	RevealsShroud:
 		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
@@ -453,6 +450,7 @@ apoc:
 ttnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -481,8 +479,6 @@ ttnk:
 		HP: 300
 	Armor:
 		Type: Heavy
-	Passenger:
-		CargoType: GarrisonerVehicle
 	RevealsShroud:
 		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
@@ -879,6 +875,7 @@ exps:
 ftnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -908,8 +905,6 @@ ftnk:
 		HP: 300
 	Armor:
 		Type: Heavy
-	Passenger:
-		CargoType: GarrisonerVehicle
 	RevealsShroud:
 		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
