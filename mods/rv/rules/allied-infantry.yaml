@@ -1037,6 +1037,25 @@ tany:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		RequiresCondition: !swimming && !snow
+	WithInfantryBody@SNOW:
+		IdleSequences: snow-idle1, snow-idle2
+		StandSequences: snow-stand
+		MoveSequence: snow-run
+		DefaultAttackSequence: snow-shoot
+		RequiresCondition: !swimming && snow
+	WithDeathAnimation@normal:
+		RequiresCondition: !swimming && !snow
+	WithDeathAnimation@SNOW:
+		DeathSequence: snow-die
+		DeathSequencePalette: infantry
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+		RequiresCondition: !swimming && snow
+	GrantConditionOnTileSet@SNOW:
+		Condition: snow
+		TileSets: SNOW
 	TakeCover:
 		RequiresCondition: !swimming
 
