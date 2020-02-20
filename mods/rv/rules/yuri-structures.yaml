@@ -170,6 +170,8 @@ yarefn:
 		Cost: 1600
 	Tooltip:
 		Name: Slave Miner
+	Tooltip@NoRow:
+		Name: Slave Miner
 	Health:
 		HP: 1500
 	Armor:
@@ -198,6 +200,26 @@ yarefn:
 		TickRate: 10
 		DockAngle: 160
 		UseStorage: true
+	Production:
+		Produces: Infantry.Slave
+	ProductionQueue:
+		Type: Infantry.Slave
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Infantry.Slave
+	Exit@1:
+		SpawnOffset: 0,512,0
+		ExitCell: 2, 1
+	Exit@2:
+		SpawnOffset: 0,512,0
+		ExitCell: 1, 2
 	-GivesBuildableArea:
 	Transforms:
 		Facing: 224
@@ -262,14 +284,6 @@ yarefn:
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
-	FreeActor@1:
-		Actor: slav
-		SpawnOffset: 1,1
-		Facing: 128
-	FreeActor@2:
-		Actor: slav
-		SpawnOffset: 1,1
-		Facing: 128
 	Voiced:
 		VoiceSet: SlaveMinerVoice
 	StoresResources:
@@ -284,12 +298,6 @@ yarefn:
 		RequiresCondition: spawn-ore
 	GrantConditionOnPlayerResources:
 		Condition: spawn-ore
-
-yarefn.noslave:
-	Inherits: yarefn
-	-Buildable:
-	-FreeActor@1:
-	-FreeActor@2:
 
 yarfn2:
 	Inherits: ^Refinery
@@ -313,11 +321,25 @@ yaweap:
 	ProvidesPrerequisite@yaweap:
 		Prerequisite: yaweap
 	Production:
-		Produces: Vehicle.Yuri
+		Produces: Vehicle.Yuri, Vehicle.Psi
 	ProductionQueue:
 		Type: Vehicle.Yuri
+		Factions: america, germany, england, france, korea, cuba, iraq, libya, russia, vietnam, psinepal, psisouth, psitrans, psimoon
+	ProductionQueue@Psi:
+		Type: Vehicle.Psi
+		Factions: psicorps
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Yuri
+	ProductionBar@Psi:
+		ProductionType: Vehicle.Psi
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable

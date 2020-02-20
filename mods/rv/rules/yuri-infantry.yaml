@@ -6,9 +6,9 @@ slav:
 	Inherits@MC: ^MindControllable
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Slave
 		BuildPaletteOrder: 50
-		Prerequisites: ~disabled # yarefn, ~techlevel.1
+		Prerequisites: ~techlevel.1
 		Description: Gathers Ore and Gems.
 	Valued:
 		Cost: 100
@@ -378,9 +378,9 @@ lunr:
 	HiddenUnderFog:
 		Type: CenterPosition
 	Buildable:
-		Queue: Infantry.Moon, Infantry.Moon
+		Queue: Infantry.Moon
 		BuildPaletteOrder: 60
-		Prerequisites: ~disabled # radar, ~techlevel.2
+		Prerequisites: yadome, ~techlevel.2
 		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
