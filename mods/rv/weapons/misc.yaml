@@ -265,6 +265,15 @@ PsiWave:
 		Falloff: 100, 100
 		Damage: 250
 		ValidTargets: Infantry
+		ValidStances: Enemy, Neutral
+		DamageTypes: PsychicDeath
+	Warhead@2Dam: SpreadDamage
+		Spread: 3c0
+		Falloff: 100, 100
+		Damage: 250
+		ValidTargets: Infantry
+		InvalidTargets: ImmuneToFriendlyPsiWave
+		ValidStances: Ally
 		DamageTypes: PsychicDeath
 	Warhead@2Eff: CreateEffect
 		Explosions: psi_wave
@@ -276,10 +285,14 @@ CRPsiWave:
 	Projectile: InstantExplode
 	Warhead@1Dam: SpreadDamage
 		Damage: 200
+	Warhead@2Dam: SpreadDamage
+		Damage: 200
 
 SuperPsiWave:
 	Inherits: PsiWave
 	Warhead@1Dam: SpreadDamage
+		Spread: 5c0
+	Warhead@2Dam: SpreadDamage
 		Spread: 5c0
 
 HornetLauncher:
