@@ -835,7 +835,7 @@ napsis:
 		Queue: Support.Soviets
 		BuildPaletteOrder: 80
 		Prerequisites: ~disabled # natech, ~techlevel.4
-		Description: Detects enemy units and structures.
+		Description: Detects enemy units and strikepoints.
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -853,12 +853,19 @@ napsis:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 6c0
+		Range: 15c0
+		RequiresCondition: !disabled
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 6c0
-	GpsASProvider:
-		RequiresCondition: !disabled && !build-incomplete && !chronodisable
+		Range: 15c0
+		RequiresCondition: !disabled
+	RevealsShroud@DISABLED:
+		Range: 5c0
+		RequiresCondition: disabled
+	RevealsShroudToIntelligenceOwner@DISABLED:
+		Types: SatelliteScan
+		Range: 5c0
+		RequiresCondition: disabled
 	RenderDetectionCircle:
 	DetectCloaked:
 		CloakTypes: Cloak, Underwater
@@ -1508,8 +1515,6 @@ naprop:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
 		# RequiresCondition: !build-incomplete
-	GpsDotAS:
-		Sequence: Structure
 
 naexpn:
 	Inherits: ^ExpansionNode
