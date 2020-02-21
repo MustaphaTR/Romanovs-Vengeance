@@ -969,6 +969,8 @@
 		ReferencePoint: Center
 		Palette: mouse
 	CaptureManager:
+	GpsDotAS:
+		Sequence: Structure
 
 ^BaseBuilding:
 	Inherits: ^Building
@@ -998,6 +1000,8 @@
 		Duration: 50
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, NonGarrisonableStructure
+	GpsDotAS:
+		Sequence: Defense
 
 ^BuildingPlug:
 	Interactable:
@@ -1230,6 +1234,8 @@
 		AreaTypes: building
 		Adjacent: 6
 	Interactable:
+	GpsDotAS:
+		Sequence: Wall
 
 ^Fence:
 	Inherits: ^Wall
@@ -1499,6 +1505,8 @@
 	DetectCloaked:
 		CloakTypes: Cloak
 		Range: 1c0
+	GpsDotAS:
+		Sequence: Infantry
 
 ^Parachutable:
 	WithSpriteBody@Parachute:
@@ -1796,6 +1804,8 @@
 		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Vehicle
+	GpsDotAS:
+		Sequence: Vehicle
 
 ^CivVehicle:
 	Inherits: ^Vehicle
@@ -1885,6 +1895,8 @@
 		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Aircraft
+	GpsDotAS:
+		Sequence: Plane
 
 ^Aircraft:
 	Inherits@1: ^NeutralAircraft
@@ -1935,6 +1947,8 @@
 	WithColoredOverlay@IDISABLE:
 		RequiresCondition: disabled
 		Palette: disabled
+	GpsDotAS:
+		Sequence: Helicopter
 
 ^ShootableMissile:
 	Inherits@1: ^ExistsInWorld
@@ -2018,6 +2032,8 @@
 		Velocity: 129
 		Spins: false
 		Moves: true
+	GpsDotAS:
+		Sequence: Plane
 
 ^HelicopterHusk:
 	Inherits: ^Husk
@@ -2025,6 +2041,8 @@
 		VTOL: true
 		CanSlide: true
 		CanHover: true
+	GpsDotAS:
+		Sequence: Helicopter
 
 ^Ship:
 	Inherits@1: ^ExistsInWorld
@@ -2126,6 +2144,8 @@
 		Prerequisites: global-showownername
 	MapEditorData:
 		Categories: Naval
+	GpsDotAS:
+		Sequence: Ship
 
 ^OreDrill:
 	Inherits@1: ^SpriteActor
