@@ -298,6 +298,8 @@ yarefn:
 		RequiresCondition: spawn-ore
 	GrantConditionOnPlayerResources:
 		Condition: spawn-ore
+	GpsDotAS:
+		Sequence: Harvester
 
 yarfn2:
 	Inherits: ^Refinery
@@ -603,7 +605,7 @@ yapsis:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 120
 		Prerequisites: yatech, ~techlevel.4
-		Description: Detects enemy units and strikepoints
+		Description: Detects enemy units and structures.
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -620,19 +622,12 @@ yapsis:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 15c0
-		RequiresCondition: !disabled
+		Range: 6c0
 	RevealsShroudToIntelligenceOwner:
 		Types: SatelliteScan
-		Range: 15c0
-		RequiresCondition: !disabled
-	RevealsShroud@DISABLED:
-		Range: 5c0
-		RequiresCondition: disabled
-	RevealsShroudToIntelligenceOwner@DISABLED:
-		Types: SatelliteScan
-		Range: 5c0
-		RequiresCondition: disabled
+		Range: 6c0
+	GpsASProvider:
+		RequiresCondition: !disabled && !build-incomplete && !chronodisable
 	RenderDetectionCircle:
 	DetectCloaked:
 		CloakTypes: Cloak, Underwater
@@ -1010,6 +1005,8 @@ yasgen:
 		RequiredForShortGame: false
 	-Cloak@stealth-generator:
 	-ExternalCondition@INVISIBILITY-GENERATOR:
+	GpsDotAS:
+		Sequence: Structure
 
 yagntc:
 	Inherits: ^SecondarySuperWeapon
