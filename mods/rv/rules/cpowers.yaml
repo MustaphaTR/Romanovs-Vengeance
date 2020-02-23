@@ -420,12 +420,45 @@ commanders_power.propaganda.3:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.propaganda.2
 		Description: Upgrades Propaganda power to Level 3.
 
+commanders_power.magnetic_beam.1:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Magnetic Beam - Level 1
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 130
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Magnetic Beam power.
+		IconPalette: mgnbicon
+
+commanders_power.magnetic_beam.2:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Magnetic Beam - Level 2
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 140
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.magnetic_beam.1
+		Description: Upgrades Magnetic Beam power to Level 2.
+		IconPalette: mgnbicon
+
+commanders_power.magnetic_beam.3:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Magnetic Beam - Level 3
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 150
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.magnetic_beam.2
+		Description: Upgrades Magnetic Beam power to Level 3.
+		IconPalette: mgnbicon
+
 commanders_power.cruiser_strike:
 	Inherits: ^default.commanders_power
 	Tooltip:
 		Name: Cruiser Strike
 	Buildable:
-		Queue: Power.Allies
+		Queue: Power.Yuri
 		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Crusiser Strike power.
@@ -946,6 +979,34 @@ prerequisite.grinder:
 			2: 2
 			3: 2
 		OnFireSound: sfrenzya.wav
+		SelectTargetSpeechNotification: SelectTarget
+	SpawnActorPower@MANGETIC_BEAM:
+		OrderName: PsiCorpsMagneticBeam
+		RequiresCondition: !lost
+		Actors:
+			1: magnetic_beam.1
+			2: magnetic_beam.2
+			3: magnetic_beam.3
+		Prerequisites:
+			1: commanders_power.magnetic_beam.1
+			2: commanders_power.magnetic_beam.2
+			3: commanders_power.magnetic_beam.3
+		LifeTime: -1
+		ChargeInterval: 4500
+		Icons:
+			1: magnet1
+			2: magnet2
+			3: magnet3
+		IconPalette: mgnbicon
+		StartFullyCharged: true
+		Descriptions:
+			1: Magnetic Beam
+			2: Magnetic Beam
+			3: Magnetic Beam
+		LongDescs:
+			1: Fires a magnetic beam that freezes enemy vehicles within 1 cell around it.\nThe beam lasts 15 seconds.
+			2: Fires a magnetic beam that freezes enemy vehicles within 2 cells around it.\nThe beam lasts 25 seconds.
+			3: Fires a magnetic beam that freezes enemy vehicles within 3 cells around it.\nThe beam lasts 35 seconds.
 		SelectTargetSpeechNotification: SelectTarget
 	DetonateWeaponPower@cruiserstrike:
 		OrderName: AlliedCruiserStrike

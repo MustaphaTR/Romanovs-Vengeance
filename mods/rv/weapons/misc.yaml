@@ -782,3 +782,79 @@ DiskSteal:
 	Warhead@2Dam: TargetDamage
 		ValidTargets: DiskSteal
 		ValidStances: Neutral, Enemy
+
+MagneBeamSpawner:
+	ReloadDelay: 5
+	Projectile: InstantExplode
+	Warhead@1Clu: FireRadius
+		Weapon: MagneBeam
+		Amount: 1
+		AffectsParent: true
+		ValidTargets: Ground, Water, Air
+
+MagneBeam:
+	ReloadDelay: 5
+	Range: 0c001
+	Projectile: LaserZap
+		Duration: 15
+		Width: 384
+		ZOffset: 2047
+		Color: FF50F545
+		UsePlayerColor: false
+	Warhead@1Con: TargetDamage
+
+MagneUmbrellaSpawner1:
+	ReloadDelay: 5
+	Projectile: InstantExplode
+	Warhead@2Rad: FireRadius
+		Weapon: MagneUmbrella1
+		Amount: 50
+		AffectsParent: true
+		ValidTargets: Ground, Water, Air
+
+MagneUmbrella1:
+	ReloadDelay: 5
+	Range: 1c0
+	Projectile: ArcLaserZap
+		Duration: 15
+		Width: 192
+		Color: FF50F545
+	Warhead@1Dam: TargetDamage
+
+MagneUmbrellaSpawner2:
+	Inherits: MagneUmbrellaSpawner1
+	Warhead@2Rad: FireRadius
+		Weapon: MagneUmbrella2
+
+MagneUmbrella2:
+	Inherits: MagneUmbrella1
+	Range: 2c0
+
+MagneUmbrellaSpawner3:
+	Inherits: MagneUmbrellaSpawner1
+	Warhead@2Rad: FireRadius
+		Weapon: MagneUmbrella3
+
+MagneUmbrella3:
+	Inherits: MagneUmbrella1
+	Range: 3c0
+
+MagneBeamFreeze1:
+	ReloadDelay: 1
+	Projectile: InstantExplode
+	Warhead@1Con: GrantExternalCondition
+		Condition: magnefreeze
+		Duration: 1
+		Range: 1c0
+		ValidStances: Neutral, Enemy
+		ValidTargets: MagneFreezable
+
+MagneBeamFreeze2:
+	Inherits: MagneBeamFreeze1
+	Warhead@1Con: GrantExternalCondition
+		Range: 2c0
+
+MagneBeamFreeze3:
+	Inherits: MagneBeamFreeze1
+	Warhead@1Con: GrantExternalCondition
+		Range: 3c0

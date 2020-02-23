@@ -480,16 +480,13 @@ MagneShake:
 	Report: vmagat2a.wav
 	ValidTargets: Ground, MagneFreezable, Structure
 	InvalidTargets: Infantry
-	Projectile: AreaBeam
-		Speed: 0c512
-		Duration: 111
-		DamageInterval: 109
+	Projectile: LaserZap
+		Duration: 110
 		Width: 384
 		Shape: Flat
 		ZOffset: 2047
-		BeyondTargetRange: 0c256
-		TrackTarget: true
 		Color: FF50F545
+		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 100, 100
@@ -512,19 +509,16 @@ MagneFreeze:
 	Report: vmagat1a.wav
 	ValidTargets: Ground, MagneFreezable, Structure
 	InvalidTargets: Infantry
-	Projectile: AreaBeam
-		Speed: 0c512
-		Duration: 111
-		DamageInterval: 1
+	Projectile: LaserZap
+		Duration: 50
 		Width: 384
 		Shape: Flat
 		ZOffset: 2047
-		BeyondTargetRange: 0c256
-		TrackTarget: true
-		Color: FF50F500
+		Color: FF50F545
+		UsePlayerColor: false
 	Warhead@1Con: GrantExternalCondition
 		Condition: magnefreeze
-		Duration: 2
+		Duration: 110
 		Range: 0c128
 		ValidStances: Neutral, Enemy
 		ValidTargets: MagneFreezable

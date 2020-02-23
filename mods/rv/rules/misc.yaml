@@ -226,6 +226,68 @@ camera.8c0:
 		Range: 8c0
 		Type: CenterPosition
 
+magnetic_beam.1:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Selectable:
+		Bounds: 25, 150, 0, -75
+	SelectionDecorations:
+	Tooltip:
+		Name: Magnetic Beam
+	RevealsShroud:
+		Range: 3c0
+		Type: CenterPosition
+	Aircraft:
+		TurnSpeed: 255
+		Speed: 60
+		CruiseAltitude: 0c1
+		IdealSeparation: 0c512
+		TakeOffOnResupply: true
+		MaximumPitch: 255
+		VTOL: true
+		CanHover: True
+		CanSlide: True
+	HiddenUnderFog:
+		Type: CenterPosition
+	RenderSprites:
+		Image: dot # Selection box doesn't work without any render traits.
+	WithSpriteBody:
+	BodyOrientation:
+		QuantizedFacings: 1
+	PeriodicExplosion@Beam:
+		Weapon: MagneBeamSpawner
+		LocalOffset: 0,0,75c0
+	PeriodicExplosion@Umbrella:
+		Weapon: MagneUmbrellaSpawner1
+		LocalOffset: 0,0,2c0
+	PeriodicExplosion@Freeze:
+		Weapon: MagneBeamFreeze1
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 375
+
+magnetic_beam.2:
+	Inherits: magnetic_beam.1
+	PeriodicExplosion@Freeze:
+		Weapon: MagneBeamFreeze2
+	PeriodicExplosion@Umbrella:
+		Weapon: MagneUmbrellaSpawner2
+		LocalOffset: 0,0,4c0
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 625
+
+magnetic_beam.3:
+	Inherits: magnetic_beam.1
+	PeriodicExplosion@Freeze:
+		Weapon: MagneBeamFreeze3
+	PeriodicExplosion@Umbrella:
+		Weapon: MagneUmbrellaSpawner3
+		LocalOffset: 0,0,6c0
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 875
+
 FLAMEGUY:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
