@@ -15,7 +15,7 @@ smin:
 		Queue: Vehicle.Psi
 		BuildPaletteOrder: 90
 		Description: Gathers and processes ore.
-		Prerequisites: yadome
+		Prerequisites: yadome, ~techlevel.3
 	Valued:
 		Cost: 1400
 	DeliversCash:
@@ -251,6 +251,7 @@ ytnk:
 		Name: Gatling Tank
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Anti-infantry and anti-air vehicle.\nFires faster as it continues to fire.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicle
 	Mobile:
@@ -430,7 +431,7 @@ tele:
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi
 		BuildPaletteOrder: 100
-		Prerequisites: yatech
+		Prerequisites: yatech, ~techlevel.4
 		Description: Long range magnetic field generator.\nFreezes vehicles and damages structures.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 75
@@ -497,7 +498,7 @@ mind:
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi
 		BuildPaletteOrder: 120
-		Prerequisites: yatech
+		Prerequisites: yatech, ~techlevel.4
 		Description: Heavy vehicle capable of mind controlling multipile enemy units.\nStarts taking damage if controlling more than 3.\nCan crush enemy vehicles.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
 	Mobile:
 		Speed: 60
@@ -719,7 +720,7 @@ yhtnk:
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi
 		BuildPaletteOrder: 110
-		Prerequisites: yatech
+		Prerequisites: yatech, ~techlevel.4
 		Description: Fast invisible tank designed for ambushes.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 120
