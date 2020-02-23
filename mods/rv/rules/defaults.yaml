@@ -1370,6 +1370,7 @@
 	Inherits@14: ^AffectedByStealthGenerator
 	Inherits@15: ^TerrorDronable
 	Inherits@16: ^AffectedByCashBounty
+	Inherits@17: ^WebDisable
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
@@ -1395,7 +1396,7 @@
 		Speed: 60
 		Voice: Move
 		Locomotor: foot
-		RequiresCondition: !chronodisable
+		RequiresCondition: !chronodisable && !webdisable
 	WithTextControlGroupDecoration:
 	SelectionDecorations:
 		Palette: pips
@@ -1659,6 +1660,7 @@
 		Radius: 1c0
 	Mobile:
 		Speed: 45
+		RequiresCondition: !chronodisable
 	Selectable:
 		Bounds: 45, 25, 0, -8
 	AttackFrontal:
@@ -1686,6 +1688,11 @@
 	-WithDeathAnimation@effect:
 	-SpawnActorOnDeath@flames:
 	-SpawnSmokeParticleOnDeath@virus:
+	-TimedConditionBar@WebDisable:
+	-SpeedMultiplier@WebDisable:
+	-WithIdleOverlay@web:
+	-Targetable@webdisable:
+	-ExternalCondition@webdisable:
 	Crushable:
 	MapEditorData:
 		Categories: Animal
@@ -2371,6 +2378,26 @@
 		TargetTypes: MagneFreezable
 	ExternalCondition@MagneFreeze:
 		Condition: magnefreeze
+
+^WebDisable:
+	TimedConditionBar@WebDisable:
+		Condition: webdisable
+		Color: FFFFFF
+	SpeedMultiplier@WebDisable:
+		RequiresCondition: webdisable
+		Modifier: 0
+	Mobile:
+		PauseOnCondition: webdisable
+	WithInfantryBody:
+		RequiresCondition: !webdisable
+	WithIdleOverlay@web:
+		Sequence: webguy
+		Palette: player
+		RequiresCondition: webdisable
+	Targetable@webdisable:
+		TargetTypes: WebDisableable
+	ExternalCondition@webdisable:
+		Condition: webdisable
 
 ^DiskDrainable:
 	WithColoredOverlay@IDISABLE:

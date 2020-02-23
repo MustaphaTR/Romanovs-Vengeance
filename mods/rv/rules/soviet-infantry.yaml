@@ -71,6 +71,7 @@ e2:
 		RequiresCondition: rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute && !webdisable
 	Voiced:
 		VoiceSet: ConscriptVoice
 	ProducibleWithLevel:
@@ -196,6 +197,7 @@ flakt:
 	WithMuzzleOverlay:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute && !webdisable
 	Voiced:
 		VoiceSet: FlakTrooperVoice
 	ProducibleWithLevel:
@@ -310,6 +312,7 @@ shk:
 		DefaultAttackSequence: shoot
 		AttackSequences:
 			secondary: charge
+		RequiresCondition: !parachute && !webdisable
 	Voiced:
 		VoiceSet: TeslaTrooperVoice
 	ProducibleWithLevel:
@@ -414,7 +417,6 @@ deso:
 		PipType: Gray
 		GarrisonType: Garrisoner
 	Mobile:
-		RequiresCondition: !chronodisable
 		RequireForceMoveCondition: !undeployed
 	RevealsShroud:
 		Range: 6c0
@@ -649,7 +651,7 @@ yuri:
 		PipType: Green
 		GarrisonType: Garrisoner
 	Mobile:
-		RequiresCondition: !deployed && !deploying && !chronodisable
+		RequiresCondition: !deployed && !deploying && !chronodisable && !webdisable
 	RevealsShroud:
 		Range: 8c0
 	RevealsShroudToIntelligenceOwner:
@@ -679,11 +681,11 @@ yuri:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2
-		RequiresCondition: !deployed && !deploying && !parachute
+		RequiresCondition: !deployed && !deploying && !parachute && !webdisable
 	WithSpriteBody@DEPLOYED:
 		Sequence: deployed
 		# PauseOnCondition: chronodisable
-		RequiresCondition: (deployed || deploying) && !parachute
+		RequiresCondition: (deployed || deploying) && !parachute && !webdisable
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	AttackFrontal:
@@ -918,6 +920,7 @@ boris:
 		DefaultAttackSequence: shoot
 		AttackSequences:
 			secondary: shoot-flare
+		RequiresCondition: !swimming && !webdisable
 	WithInfantryBody@Water:
 		-IdleSequences:
 		AttackSequences:

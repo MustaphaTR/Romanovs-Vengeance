@@ -165,6 +165,7 @@ dog:
 		ValidTargets: Infantry
 	WithInfantryBody:
 		DefaultAttackSequence: jump
+		RequiresCondition: !parachute && !webdisable
 	RenderSprites:
 		Image: adog
 		FactionImages:
@@ -299,7 +300,7 @@ e1:
 		DeploySounds: igidepa.wav
 		UndeploySounds: igidepb.wav
 		PauseOnCondition: chronodisable
-		RequiresCondition: !parachute
+		RequiresCondition: !parachute && !webdisable
 	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
@@ -307,7 +308,7 @@ e1:
 		RequiresCondition: !editorhack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: undeployed && !parachute
+		RequiresCondition: undeployed && !parachute && !webdisable
 	WithMakeAnimation:
 		Sequence: deploy
 		BodyNames: dot
@@ -319,11 +320,11 @@ e1:
 	WithSpriteTurret@idle:
 		Turret: deploy
 		Sequence: deployed
-		RequiresCondition: deployed && !animate-turret && !parachute
+		RequiresCondition: deployed && !animate-turret && !parachute && !webdisable
 	WithSpriteTurret@animated:
 		Turret: deploy
 		Sequence: shoot-deployed
-		RequiresCondition: deployed && animate-turret && !parachute
+		RequiresCondition: deployed && animate-turret && !parachute && !webdisable
 	WithSpriteBody:
 		Sequence: dot
 		Name: dot
@@ -516,7 +517,7 @@ ggi:
 		DeploySounds: iggidepa.wav
 		UndeploySounds: iggidepa.wav
 		PauseOnCondition: chronodisable
-		RequiresCondition: !parachute
+		RequiresCondition: !parachute && !webdisable
 	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
@@ -524,7 +525,7 @@ ggi:
 		RequiresCondition: !editorhack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: undeployed && !parachute
+		RequiresCondition: undeployed && !parachute && !webdisable
 	WithMakeAnimation:
 		Sequence: deploy
 		BodyNames: dot
@@ -536,11 +537,11 @@ ggi:
 	WithSpriteTurret@idle:
 		Turret: deploy
 		Sequence: deployed
-		RequiresCondition: deployed && !animate-turret && !parachute
+		RequiresCondition: deployed && !animate-turret && !parachute && !webdisable
 	WithSpriteTurret@animated:
 		Turret: deploy
 		Sequence: shoot-deployed
-		RequiresCondition: deployed && animate-turret && !parachute
+		RequiresCondition: deployed && animate-turret && !parachute && !webdisable
 	WithSpriteBody:
 		Sequence: dot
 		Name: dot
@@ -704,7 +705,7 @@ spy:
 	WithDisguisingInfantryBody:
 		IdleSequences: idle1,idle2
 		StandSequences: stand
-		RequiresCondition: !parachute
+		RequiresCondition: !parachute && !webdisable
 	WithDecoration@disguise:
 		Image: pips
 		Sequence: pip-disguise
@@ -820,13 +821,13 @@ ghost:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: !swimming && !snow
+		RequiresCondition: !swimming && !webdisable && !snow
 	WithInfantryBody@SNOW:
 		IdleSequences: snow-idle1, snow-idle2
 		StandSequences: snow-stand
 		MoveSequence: snow-run
 		DefaultAttackSequence: snow-shoot
-		RequiresCondition: !swimming && snow
+		RequiresCondition: !swimming && !webdisable && snow
 	WithDeathAnimation@normal:
 		RequiresCondition: !swimming && !snow
 	WithDeathAnimation@SNOW:
@@ -883,7 +884,7 @@ ccomand:
 	Chronoshiftable:
 		ExplodeInstead: false
 	WithInfantryBody:
-		-RequiresCondition:
+		RequiresCondition: !webdisable
 	WithDeathAnimation@normal:
 		-RequiresCondition:
 	WithDeathAnimation@effect:
@@ -1037,13 +1038,13 @@ tany:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: !swimming && !snow
+		RequiresCondition: !swimming && !webdisable && !snow
 	WithInfantryBody@SNOW:
 		IdleSequences: snow-idle1, snow-idle2
 		StandSequences: snow-stand
 		MoveSequence: snow-run
 		DefaultAttackSequence: snow-shoot
-		RequiresCondition: !swimming && snow
+		RequiresCondition: !swimming && !webdisable && snow
 	WithDeathAnimation@normal:
 		RequiresCondition: !swimming && !snow
 	WithDeathAnimation@SNOW:
@@ -1138,6 +1139,11 @@ jumpjet:
 		IdleSequences: idle-air
 	Hovers:
 		BobDistance: -45
+	-TimedConditionBar@WebDisable:
+	-SpeedMultiplier@WebDisable:
+	-WithIdleOverlay@web:
+	-Targetable@webdisable:
+	-ExternalCondition@webdisable:
 	-InfectableRV:
 	-Targetable@DRONE:
 	-SpeedMultiplier@DRONE:
@@ -1456,6 +1462,7 @@ gren:
 		RequiresCondition: rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		RequiresCondition: !parachute && !webdisable
 	Voiced:
 		VoiceSet: GrenadierVoice
 		Volume: 12

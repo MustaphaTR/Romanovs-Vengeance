@@ -616,3 +616,42 @@ UCVirusgunE:
 	Range: 10c0
 	Projectile: InstantHit
 		Blockable: false
+
+PoisonSting:
+	Inherits: ^MG
+	ReloadDelay: 40
+	Range: 5c0
+	Report: antbite.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 40
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 50
+			Heavy: 50
+			Wood: 35
+			Steel: 50
+			Concrete: 25
+			Drone: 60
+			Rocket: 100
+		DamageTypes: VirusDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+	Warhead@3Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 250
+		Speed: 0, 25
+		TurnRate: 10
+
+PoisonStingE:
+	Inherits: PoisonSting
+	ReloadDelay: 20
+	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 80

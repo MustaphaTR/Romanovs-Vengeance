@@ -1,7 +1,7 @@
 pcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 	Transforms:
 		IntoActor: yacnst
 	Voiced:
@@ -107,7 +107,7 @@ gmin:
 	Inherits: ^Vehicle
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~techlevel.1
 		Description: Gathers Ore and Gems.\n  Unarmed.\n  Immune to Radiation.\nSpecial ability: Invisiblity
@@ -201,7 +201,7 @@ ltnk:
 	Tooltip@NoRow:
 		Name: Lasher Light Tank
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Description: Yuri Main Battle Tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 120
@@ -250,7 +250,7 @@ ytnk:
 	Tooltip@NoRow:
 		Name: Gatling Tank
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Anti-infantry and anti-air vehicle.\nFires faster as it continues to fire.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicle
@@ -354,7 +354,7 @@ caos:
 	Tooltip@NoRow:
 		Name: Chaos Drone
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 40
 		Prerequisites: ~techlevel.2
 		Description: Drone capable of releasing gas that causes enemy units to fire random units.\nUnits affected by the gas deal more damage.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nCan be deployed to release gas continuously.
@@ -429,7 +429,7 @@ tele:
 	Tooltip:
 		Name: Magnetron
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 100
 		Prerequisites: yadome, ~techlevel.3
 		Description: Long range magnetic field generator.\nFreezes vehicles and damages structures.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
@@ -496,7 +496,7 @@ mind:
 	Tooltip@NoRow:
 		Name: Master Mind
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 120
 		Prerequisites: yatech, ~techlevel.4
 		Description: Heavy vehicle capable of mind controlling multipile enemy units.\nStarts taking damage if controlling more than 3.\nCan crush enemy vehicles.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
@@ -595,7 +595,7 @@ mlyr:
 	Selectable:
 		Bounds: 50, 40, 0, -6
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Prerequisites: ~prerequisite.minelayer, repairpad, ~techlevel.1
 		BuildPaletteOrder: 80
 		Description: Lays mines to destroy unwary enemy units.\n\nCan detect cloaked units.\n  Unarmed
@@ -656,7 +656,7 @@ kamaz:
 	Selectable:
 		Bounds: 50, 40, 0, -6
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 70
 		Description: Heavily armored, unarmed infantry transport vehicle.\n  Unarmed
@@ -718,7 +718,7 @@ yhtnk:
 	Tooltip@NoRow:
 		Name: Lazarus Tank
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 110
 		Prerequisites: yatech, ~techlevel.4
 		Description: Fast invisible tank designed for ambushes.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
@@ -796,7 +796,7 @@ grtk:
 	Tooltip@NoRow:
 		Name: Grinder Tank
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 990
 		Prerequisites: yatech, ~caslab, ~techlevel.4
 		Description: Melee vehicle with high damage against all ground units.\n  Strong vs Buildings, Vehicles, Infantry\n  Weak vs Aircraft
@@ -854,10 +854,104 @@ grtk:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
 
+spider:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@IRON: ^KilledByIronCurtain
+	Inherits@LAZARUS: ^KilledByLazarusShield
+	Valued:
+		Cost: 900
+	DeliversCash:
+		Payload: 450
+		PlayerExperience: 45
+		Voice: Move
+	Tooltip:
+		Name: Giant Tarantuala
+	Tooltip@NoRow:
+		Name: Giant Tarantuala
+	Buildable:
+		Queue: Vehicle.Trans
+		BuildPaletteOrder: 90
+		Prerequisites: yadome, ~techlevel.3
+		Description: Mutated huge spider armed with poison spines and web launchers.\n Receives no damage from radiation.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 105
+		TurnSpeed: 255
+		Locomotor: heavytracked
+		RequiresCondition: !chronodisable && !emp && !magnefreeze
+	Health:
+		HP: 400
+	Armor:
+		Type: Heavy
+	Passenger:
+		CargoType: Infantry
+		Weight: 2
+	RenderSprites:
+	-InfectableRV:
+	-Targetable@DRONE:
+	-SpeedMultiplier@DRONE:
+	-RevealsShroud@DRONE:
+	-ExplodeWeapon@dronesparks:
+	-RenderVoxels:
+	-Carryable:
+	-CaptureManager:
+	-Capturable:
+	-DelayedWeaponAttachable@TANYAC4:
+	-Targetable@TANYAC4:
+	-Targetable@TANYAC4CLEANER:
+	-WithDecoration@TANYAC4:
+	RevealsShroud:
+		Range: 6c0
+	RevealsShroudToIntelligenceOwner:
+		Types: SatelliteScan
+		Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armament@primary:
+		Weapon: PoisonSting
+		LocalOffset: 300,-400,950, 300,400,950
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: PoisonStingE
+		LocalOffset: 300,-400,950, 300,400,950
+		RequiresCondition: rank-elite
+	Armament@secondary:
+		Weapon: SpiderWeb
+		LocalOffset: 0,0,200
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp
+		FacingTolerance: 2
+	AutoTarget:
+	Selectable:
+		Bounds: 40,40,0,-10
+	Voiced:
+		VoiceSet: AntVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	AmbientSound@Walk:
+		SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav, vterlo3.wav
+		Delay: 7
+		Interval: 7
+		RequiresCondition: walking
+	GrantConditionOnMovement:
+		Condition: walking
+	WithInfantryBody:
+	DeathSounds:
+	HitShape:
+
 expy:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 	Selectable:
 		Bounds: 68, 56, 0, -7
 	Transforms:

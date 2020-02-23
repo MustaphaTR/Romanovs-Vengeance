@@ -51,6 +51,7 @@ polarb:
 josh:
 	Inherits: ^Animal
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@WEB: ^WebDisable
 	Tooltip:
 		Name: Monkey
 		GenericName: Monkey
@@ -59,6 +60,8 @@ josh:
 		GenericName: Monkey
 	Voiced:
 		VoiceSet: ChimpanzeeVoice
+	Mobile:
+		RequiresCondition: !chronodisable && !webdisable
 	Armament:
 		Weapon: ChimpBite
 	WithDeathAnimation@effect:

@@ -858,3 +858,21 @@ MagneBeamFreeze3:
 	Inherits: MagneBeamFreeze1
 	Warhead@1Con: GrantExternalCondition
 		Range: 3c0
+
+SpiderWeb:
+	ReloadDelay: 150
+	Range: 5c0
+	Report: fireweb1.aud
+	ValidTargets: WebDisableable
+	Projectile: BulletAS
+		Speed: 250
+		Image: web2
+		Shadow: true
+		LaunchAngle: 130
+		Palette: ra
+	Warhead@1Dam: TargetDamage
+	Warhead@2Con: GrantExternalCondition
+		Range: 1c0
+		Duration: 100
+		ValidTargets: WebDisableable
+		Condition: webdisable

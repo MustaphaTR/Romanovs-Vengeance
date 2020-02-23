@@ -323,13 +323,24 @@ yaweap:
 	ProvidesPrerequisite@yaweap:
 		Prerequisite: yaweap
 	Production:
-		Produces: Vehicle.Yuri, Vehicle.Psi
+		Produces: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 	ProductionQueue:
 		Type: Vehicle.Yuri
-		Factions: america, germany, england, france, korea, cuba, iraq, libya, russia, vietnam, psinepal, psisouth, psitrans, psimoon
+		Factions: america, germany, england, france, korea, cuba, iraq, libya, russia, vietnam, psinepal, psisouth, psimoon
 	ProductionQueue@Psi:
 		Type: Vehicle.Psi
 		Factions: psicorps
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Trans:
+		Type: Vehicle.Trans
+		Factions: psitrans
 		Group: Vehicle
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
@@ -342,6 +353,8 @@ yaweap:
 		ProductionType: Vehicle.Yuri
 	ProductionBar@Psi:
 		ProductionType: Vehicle.Psi
+	ProductionBar@Trans:
+		ProductionType: Vehicle.Trans
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable

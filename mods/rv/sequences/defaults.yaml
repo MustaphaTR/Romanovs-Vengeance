@@ -69,6 +69,7 @@
 ^CivInfantry:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
+	Inherits@Wab: ^WebDisableable
 	-idle2:
 	die1:
 		Start: 71
@@ -112,6 +113,11 @@
 		Start: 276
 	cheer:
 		Start: 293
+
+^WebDisableable:
+	webguy: webguy
+		Length: 6
+		ShadowStart: 6
 
 ^MindControllable:
 	mindcontrol: yuricntl
