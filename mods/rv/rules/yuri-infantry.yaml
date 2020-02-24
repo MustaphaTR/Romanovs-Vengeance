@@ -91,14 +91,14 @@ init:
 		Prerequisites: ~techlevel.1
 		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
 	Valued:
-		Cost: 200
+		Cost: 150
 	Tooltip:
 		Name: Initiate
 	Tooltip@NoRow:
 		Name: Initiate
 	DeliversCash:
-		Payload: 100
-		PlayerExperience: 10
+		Payload: 75
+		PlayerExperience: 8
 		Voice: Move
 	Selectable:
 		Bounds: 20, 30, 0, -11
@@ -538,7 +538,7 @@ gtrp:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
-		Prerequisites: yadome, ~techlevel.2
+		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 60
 		Description: Infantry armed with a heavy gatling cannon.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles.
 	UpdatesPlayerStatistics:
