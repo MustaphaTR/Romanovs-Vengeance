@@ -158,6 +158,7 @@ init:
 
 brute:
 	Inherits: ^Infantry
+	Inherits@2: ^Parachutable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
@@ -231,6 +232,7 @@ brute:
 		DefaultAttackSequence: shoot
 		AttackSequences:
 			secondary: smash
+		RequiresCondition: !parachute && !webdisable
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
 
