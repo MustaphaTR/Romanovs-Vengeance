@@ -88,11 +88,11 @@ CoilBolt:
 	Report: btesat1a.wav
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
-		Damage: 150
+		Damage: 50
 		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
+			None: 1000
+			Flak: 1000
+			Plate: 1000
 			Light: 100
 			Medium: 100
 			Heavy: 100
@@ -109,19 +109,19 @@ OPCoilBolt:
 	Projectile: TeslaZap
 		Image: litningupg
 	Warhead@1Dam: SpreadDamage
-		Damage: 200
+		Damage: 75
 
 OPerCoilBolt:
 	Inherits: OPCoilBolt
 	Range: 9c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 250
+		Damage: 100
 
 OPestCoilBolt:
 	Inherits: OPerCoilBolt
 	Range: 9c512
 	Warhead@1Dam: SpreadDamage
-		Damage: 300
+		Damage: 125
 
 TankBolt:
 	Inherits: ^TeslaZap
@@ -221,9 +221,9 @@ PrismShot:
 		Spread: 42
 		Damage: 120
 		Versus:
-			None: 60
-			Flak: 60
-			Plate: 60
+			None: 1000
+			Flak: 1000
+			Plate: 1000
 			Light: 100
 			Medium: 100
 			Heavy: 100
@@ -233,8 +233,29 @@ PrismShot:
 			Drone: 200
 			Rocket: 100
 		DamageTypes: ElectroDeath, TriggerProne, SuppressTerrorDrone
-	Warhead@2Smu: LeaveSmudge
+	Warhead@2Shr: FireShrapnel
+		Weapon: PrismFragment
+		Amount: 3
+		AimChance: 100
+		AimTargetStances: Enemy, Neutral
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+		ImpactSounds: gexp14a.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallScorch
+
+PrismFragment:
+	Inherits: Comet
+	Range: 3c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
+	-Warhead@2Shr:
 
 Comet:
 	ValidTargets: Ground, Water
