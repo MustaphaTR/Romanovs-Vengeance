@@ -15,29 +15,17 @@ using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.RA2.Activities;
 using OpenRA.Mods.RA2.Orders;
 using OpenRA.Primitives;
+using OpenRA.Support;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
-	public enum AlternateGarrisonMode { None, Force, Default, Always }
-
 	[Desc("This actor can enter Garrisonable actors.")]
 	public class GarrisonerInfo : ITraitInfo
 	{
 		public readonly string GarrisonType = null;
 		public readonly PipType PipType = PipType.Green;
 		public readonly int Weight = 1;
-
-		[Desc("Use to set when to use alternate transports (Never, Force, Default, Always).",
-			"Force - use force move modifier (Alt) to enable.",
-			"Default - use force move modifier (Alt) to disable.")]
-		public readonly AlternateGarrisonMode AlternateGarrisoningMode = AlternateGarrisonMode.Default;
-
-		[Desc("Number of retries using alternate transports.")]
-		public readonly int MaxAlternateTransportAttempts = 1;
-
-		[Desc("Range from self for looking for an alternate transport (default: 5.5 cells).")]
-		public readonly WDist AlternateTransportScanRange = WDist.FromCells(11) / 2;
 
 		[Desc("What diplomatic stances can be Garrisoned by this actor.")]
 		public readonly Stance TargetStances = Stance.Ally | Stance.Neutral;
@@ -56,13 +44,18 @@ namespace OpenRA.Mods.RA2.Traits
 		[VoiceReference]
 		public readonly string Voice = "Action";
 
+		[ConsumedConditionReference]
+		[Desc("Boolean expression defining the condition under which the regular (non-force) enter cursor is disabled.")]
+		public readonly BooleanExpression RequireForceMoveCondition = null;
+
 		public object Create(ActorInitializer init) { return new Garrisoner(this); }
 	}
 
-	public class Garrisoner : INotifyCreated, IIssueOrder, IResolveOrder, IOrderVoice, INotifyRemovedFromWorld, INotifyEnteredGarrison, INotifyExitedGarrison, INotifyKilled
+	public class Garrisoner : INotifyCreated, IIssueOrder, IResolveOrder, IOrderVoice, INotifyRemovedFromWorld, INotifyEnteredGarrison, INotifyExitedGarrison, INotifyKilled, IObservesVariables
 	{
 		public readonly GarrisonerInfo Info;
 		public Actor Transport;
+		bool requireForceMove;
 
 		ConditionManager conditionManager;
 		int anyGarrisonToken = ConditionManager.InvalidConditionToken;
@@ -71,17 +64,17 @@ namespace OpenRA.Mods.RA2.Traits
 		public Garrisoner(GarrisonerInfo info)
 		{
 			Info = info;
-			Func<Actor, Actor, bool> canTarget = IsCorrectGarrisonType;
-			Func<Actor, Actor, bool> useEnterCursor = CanEnter;
-			Orders = new EnterGarrisonOrderTargeter<GarrisonableInfo>[]
-			{
-				new EnterGarrisonOrderTargeter<GarrisonableInfo>("EnterGarrison", 5, canTarget, useEnterCursor, Info.AlternateGarrisoningMode, info)
-			};
 		}
 
 		public Garrisonable ReservedGarrison { get; private set; }
 
-		public IEnumerable<IOrderTargeter> Orders { get; private set; }
+		IEnumerable<IOrderTargeter> IIssueOrder.Orders
+		{
+			get
+			{
+				yield return new EnterGarrisonOrderTargeter<GarrisonableInfo>("EnterGarrison", 5, IsCorrectGarrisonType, CanEnter, Info);
+			}
+		}
 
 		void INotifyCreated.Created(Actor self)
 		{
@@ -96,7 +89,15 @@ namespace OpenRA.Mods.RA2.Traits
 			return null;
 		}
 
-		bool IsCorrectGarrisonType(Actor self, Actor target)
+		bool IsCorrectGarrisonType(Actor target, TargetModifiers modifiers)
+		{
+			if (requireForceMove && !modifiers.HasModifier(TargetModifiers.ForceMove))
+				return false;
+
+			return IsCorrectGarrisonType(target);
+		}
+
+		bool IsCorrectGarrisonType(Actor target)
 		{
 			var ci = target.Info.TraitInfo<GarrisonableInfo>();
 			return ci.Types.Contains(Info.GarrisonType);
@@ -107,7 +108,7 @@ namespace OpenRA.Mods.RA2.Traits
 			return garrison != null && garrison.HasSpace(Info.Weight) && !garrison.IsTraitPaused && !garrison.IsTraitDisabled;
 		}
 
-		bool CanEnter(Actor self, Actor target)
+		bool CanEnter(Actor target)
 		{
 			return CanEnter(target.TraitOrDefault<Garrisonable>());
 		}
@@ -117,7 +118,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (order.OrderString != "EnterGarrison")
 				return null;
 
-			if (order.Target.Type != TargetType.Actor || !CanEnter(self, order.Target.Actor))
+			if (order.Target.Type != TargetType.Actor || !CanEnter(order.Target.Actor))
 				return null;
 
 			return Info.Voice;
@@ -134,6 +135,16 @@ namespace OpenRA.Mods.RA2.Traits
 				if (specificGarrisonToken == ConditionManager.InvalidConditionToken && Info.GarrisonConditions.TryGetValue(garrison.Info.Name, out specificGarrisonCondition))
 					specificGarrisonToken = conditionManager.GrantCondition(self, specificGarrisonCondition);
 			}
+
+			// Allow scripted / initial actors to move from the unload point back into the cell grid on unload
+			// This is handled by the RideTransport activity for player-loaded cargo
+			if (self.IsIdle)
+			{
+				// IMove is not used anywhere else in this trait, there is no benefit to caching it from Created.
+				var move = self.TraitOrDefault<IMove>();
+				if (move != null)
+					self.QueueActivity(move.ReturnToCell(self));
+			}
 		}
 
 		void INotifyExitedGarrison.OnExitedGarrison(Actor self, Actor garrison)
@@ -145,7 +156,7 @@ namespace OpenRA.Mods.RA2.Traits
 				specificGarrisonToken = conditionManager.RevokeCondition(self, specificGarrisonToken);
 		}
 
-		public void ResolveOrder(Actor self, Order order)
+		void IResolveOrder.ResolveOrder(Actor self, Order order)
 		{
 			if (order.OrderString != "EnterGarrison")
 				return;
@@ -153,7 +164,10 @@ namespace OpenRA.Mods.RA2.Traits
 			if (order.Target.Type == TargetType.Actor)
 			{
 				var targetActor = order.Target.Actor;
-				if (!CanEnter(self, targetActor))
+				if (!CanEnter(targetActor))
+					return;
+
+				if (!IsCorrectGarrisonType(targetActor))
 					return;
 			}
 			else
@@ -161,18 +175,19 @@ namespace OpenRA.Mods.RA2.Traits
 				var targetActor = order.Target.FrozenActor;
 			}
 
-			if (!order.Queued)
-				self.CancelActivity();
-
-			self.QueueActivity(new EnterGarrison(self, order.Target));
+			self.QueueActivity(order.Queued, new EnterGarrison(self, order.Target));
 			self.ShowTargetLines();
 		}
 
 		public bool Reserve(Actor self, Garrisonable garrison)
 		{
+			if (garrison == ReservedGarrison)
+				return true;
+
 			Unreserve(self);
 			if (!garrison.ReserveSpace(self))
 				return false;
+
 			ReservedGarrison = garrison;
 			return true;
 		}
@@ -183,6 +198,7 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			if (ReservedGarrison == null)
 				return;
+
 			ReservedGarrison.UnreserveSpace(self);
 			ReservedGarrison = null;
 		}
@@ -195,6 +211,17 @@ namespace OpenRA.Mods.RA2.Traits
 			// Something killed us, but it wasn't our transport blowing up. Remove us from the cargo.
 			if (!Transport.IsDead)
 				self.World.AddFrameEndTask(w => Transport.Trait<Garrisonable>().Unload(Transport, self));
+		}
+
+		IEnumerable<VariableObserver> IObservesVariables.GetVariableObservers()
+		{
+			if (Info.RequireForceMoveCondition != null)
+				yield return new VariableObserver(RequireForceMoveConditionChanged, Info.RequireForceMoveCondition.Variables);
+		}
+
+		void RequireForceMoveConditionChanged(Actor self, IReadOnlyDictionary<string, int> conditions)
+		{
+			requireForceMove = Info.RequireForceMoveCondition.Evaluate(conditions);
 		}
 	}
 }

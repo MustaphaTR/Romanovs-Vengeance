@@ -1,6 +1,6 @@
 Metadata:
 	Title: Red Alert 2: Romanov's Vengeance
-	Version: 5409a42
+	Version: 615e145
 	Website: https://github.com/MustaphaTR/Romanovs-Vengeance
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Romanovs-Vengeance/master/packaging/linux/mod_32x32.png
 
@@ -92,7 +92,7 @@ Packages:
 
 MapFolders:
 	rv|maps: System
-	~^maps/rv/5409a42: User
+	~^maps/rv/615e145: User
 
 Rules:
 	rv|rules/proxy-actors.yaml
@@ -171,6 +171,7 @@ ChromeLayout:
 	rv|chrome/ingame-observer.yaml
 	rv|chrome/ingame-infoobjectives.yaml
 	rv|chrome/mainmenu.yaml
+	common|chrome/mainmenu-prompts.yaml
 	common|chrome/ingame-infostats.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/tooltips.yaml
@@ -338,6 +339,9 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		SIMPLETERRAIN: t
 
 ModelSequenceFormat: VoxelModelSequence
+
+AssetBrowser:
+	SupportedExtensions: .shp, .tmp, .tem, .des, .sno, .int, .vqa
 
 GameSpeeds:
 	slowest:

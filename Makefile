@@ -36,6 +36,7 @@ WHITELISTED_MOD_ASSEMBLIES = "$(shell cat user.config mod.config 2> /dev/null | 
 MANIFEST_PATH = "mods/$(MOD_ID)/mod.yaml"
 HAS_LUAC = $(shell command -v luac 2> /dev/null)
 LUA_FILES = $(shell find mods/*/maps/* -iname '*.lua' 2> /dev/null)
+MOD_SOLUTION_FILES = $(shell find . -maxdepth 1 -iname '*.sln' 2> /dev/null)
 
 MSBUILD = msbuild -verbosity:m -nologo
 
@@ -66,7 +67,7 @@ check-sdk-scripts:
 	fi
 
 check-packaging-scripts:
-	@if [ ! -x "packaging/package-all.sh" ] || [ ! -x "packaging/linux/buildpackage.sh" ] || [ ! -x "packaging/osx/buildpackage.sh" ] || [ ! -x "packaging/windows/buildpackage.sh" ]; then \
+	@if [ ! -x "packaging/package-all.sh" ] || [ ! -x "packaging/linux/buildpackage.sh" ] || [ ! -x "packaging/macos/buildpackage.sh" ] || [ ! -x "packaging/windows/buildpackage.sh" ]; then \
 		echo "Required SDK scripts are not executable:"; \
 		if [ ! -x "packaging/package-all.sh" ]; then \
 			echo "   packaging/package-all.sh"; \
@@ -74,8 +75,8 @@ check-packaging-scripts:
 		if [ ! -x "packaging/linux/buildpackage.sh" ]; then \
 			echo "   packaging/linux/buildpackage.sh"; \
 		fi; \
-		if [ ! -x "packaging/osx/buildpackage.sh" ]; then \
-			echo "   packaging/osx/buildpackage.sh"; \
+		if [ ! -x "packaging/macos/buildpackage.sh" ]; then \
+			echo "   packaging/macos/buildpackage.sh"; \
 		fi; \
 		if [ ! -x "packaging/windows/buildpackage.sh" ]; then \
 			echo "   packaging/windows/buildpackage.sh"; \
@@ -114,6 +115,7 @@ utility: engine-dependencies engine
 
 core:
 	@command -v $(MSBUILD) >/dev/null || (echo "OpenRA requires the '$(MSBUILD)' tool provided by Mono >= 5.4."; exit 1)
+ifneq ("$(MOD_SOLUTION_FILES)","")
 	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:restore \;
 ifeq ($(WIN32), $(filter $(WIN32),true yes y on 1))
 	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:build -p:Configuration="Release-x86" \;
@@ -121,12 +123,15 @@ else
 	@$(MSBUILD) -t:build -p:Configuration=Release
 	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:build -p:Configuration=Release \;
 endif
+endif
 
 all: engine-dependencies engine core
 
 clean: engine
 	@command -v $(MSBUILD) >/dev/null || (echo "OpenRA requires the '$(MSBUILD)' tool provided by Mono >= 5.4."; exit 1)
+ifneq ("$(MOD_SOLUTION_FILES)","")
 	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:clean \;
+endif
 	@cd $(ENGINE_DIRECTORY) && make clean
 	@printf "The engine has been cleaned.\n"
 
@@ -147,8 +152,10 @@ ifneq ("$(LUA_FILES)","")
 endif
 
 check: utility
+ifneq ("$(MOD_SOLUTION_FILES)","")
 	@echo "Compiling in debug mode..."
 	@$(MSBUILD) -t:build -p:Configuration=Debug
+endif
 	@echo "Checking runtime assemblies..."
 	@MOD_SEARCH_PATHS="$(MOD_SEARCH_PATHS)" mono --debug "$(ENGINE_DIRECTORY)/OpenRA.Utility.exe" $(MOD_ID) --check-runtime-assemblies $(WHITELISTED_OPENRA_ASSEMBLIES) $(WHITELISTED_THIRDPARTY_ASSEMBLIES) $(WHITELISTED_CORE_ASSEMBLIES) $(WHITELISTED_MOD_ASSEMBLIES)
 	@echo "Checking for explicit interface violations..."

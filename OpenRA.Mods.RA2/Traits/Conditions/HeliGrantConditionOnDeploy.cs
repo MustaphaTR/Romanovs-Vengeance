@@ -193,7 +193,7 @@ namespace OpenRA.Mods.RA2.Traits
 			return gcodorder;
 		}
 
-		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self) { return !IsTraitPaused && !IsTraitDisabled; }
+		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self, bool queued) { return !IsTraitPaused && !IsTraitDisabled; }
 
 		bool IsGroupDeployNeeded(Actor self, string actorString)
 		{

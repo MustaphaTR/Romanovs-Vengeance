@@ -24,6 +24,6 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			var oldOwner = self.Owner;
 			self.ChangeOwner(newOwner);
-		 }
+		}
 	}
 }

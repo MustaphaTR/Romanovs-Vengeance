@@ -27,13 +27,30 @@ namespace OpenRA.Mods.RA2.Activities
 		readonly Garrisonable garrison;
 		readonly INotifyUnload[] notifiers;
 		readonly bool unloadAll;
+		readonly Aircraft aircraft;
+		readonly Mobile mobile;
+		readonly bool assignTargetOnFirstRun;
+		readonly WDist unloadRange;
 
-		public UnloadGarrison(Actor self, bool unloadAll)
+		Target destination;
+		bool takeOffAfterUnload;
+
+		public UnloadGarrison(Actor self, WDist unloadRange, bool unloadAll = true)
+			: this(self, Target.Invalid, unloadRange, unloadAll)
+		{
+			assignTargetOnFirstRun = true;
+		}
+
+		public UnloadGarrison(Actor self, Target destination, WDist unloadRange, bool unloadAll = true)
 		{
 			this.self = self;
 			garrison = self.Trait<Garrisonable>();
 			notifiers = self.TraitsImplementing<INotifyUnload>().ToArray();
 			this.unloadAll = unloadAll;
+			aircraft = self.TraitOrDefault<Aircraft>();
+			mobile = self.TraitOrDefault<Mobile>();
+			this.destination = destination;
+			this.unloadRange = unloadRange;
 		}
 
 		public Pair<CPos, SubCell>? ChooseExitSubCell(Actor passenger)
@@ -56,47 +73,77 @@ namespace OpenRA.Mods.RA2.Activities
                 .Where(c => pos.CanEnterCell(c, null, BlockedByActor.All) != pos.CanEnterCell(c, null, BlockedByActor.None));
         }
 
+		protected override void OnFirstRun(Actor self)
+		{
+			if (assignTargetOnFirstRun)
+				destination = Target.FromCell(self.World, self.Location);
+
+			// Move to the target destination
+			if (aircraft != null)
+			{
+				// Queue the activity even if already landed in case self.Location != destination
+				QueueChild(new Land(self, destination, unloadRange));
+				takeOffAfterUnload = !aircraft.AtLandAltitude;
+			}
+			else if (mobile != null)
+			{
+				var cell = self.World.Map.Clamp(this.self.World.Map.CellContaining(destination.CenterPosition));
+				QueueChild(new Move(self, cell, unloadRange));
+			}
+
+			QueueChild(new Wait(garrison.Info.BeforeUnloadDelay));
+		}
+
 		public override bool Tick(Actor self)
 		{
-			garrison.Unloading = false;
 			if (IsCanceling || garrison.IsEmpty(self))
 				return true;
 
-			foreach (var inu in notifiers)
-				inu.Unloading(self);
-
-			var actor = garrison.Peek(self);
-			var spawn = self.CenterPosition;
-
-			var exitSubCell = ChooseExitSubCell(actor);
-			if (exitSubCell == null)
+			if (garrison.CanUnload())
 			{
-				self.NotifyBlocker(BlockedExitCells(actor));
+				foreach (var inu in notifiers)
+					inu.Unloading(self);
 
-				Queue(new Wait(10));
-				return false;
+				var actor = garrison.Peek(self);
+				var spawn = self.CenterPosition;
+
+				var exitSubCell = ChooseExitSubCell(actor);
+				if (exitSubCell == null)
+				{
+					self.NotifyBlocker(BlockedExitCells(actor));
+
+					Queue(new Wait(10));
+					return false;
+				}
+
+				garrison.Unload(self);
+				self.World.AddFrameEndTask(w =>
+				{
+					if (actor.Disposed)
+						return;
+
+					var move = actor.Trait<IMove>();
+					var pos = actor.Trait<IPositionable>();
+
+					pos.SetPosition(self, exitSubCell.Value.First, exitSubCell.Value.Second);
+					pos.SetVisualPosition(actor, spawn);
+
+					actor.CancelActivity();
+					w.Add(actor);
+				});
 			}
 
-			garrison.Unload(self);
-			self.World.AddFrameEndTask(w =>
-            {
-                if (actor.Disposed)
-                    return;
+			if (!unloadAll || !garrison.CanUnload())
+			{
+				if (garrison.Info.AfterUnloadDelay > 0)
+					QueueChild(new Wait(garrison.Info.AfterUnloadDelay, false));
 
-                var move = actor.Trait<IMove>();
-                var pos = actor.Trait<IPositionable>();
+				if (takeOffAfterUnload)
+					QueueChild(new TakeOff(self));
 
-                pos.SetPosition(self, exitSubCell.Value.First, exitSubCell.Value.Second);
-                pos.SetVisualPosition(actor, spawn);
-
-                actor.CancelActivity();
-                w.Add(actor);
-            });
-
-			if (!unloadAll || garrison.IsEmpty(self))
 				return true;
+			}
 
-			garrison.Unloading = true;
 			return false;
 		}
 	}

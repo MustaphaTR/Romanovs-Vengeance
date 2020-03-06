@@ -388,13 +388,13 @@ cacomm:
 	RevealsShroud@DISABLED:
 		Range: 4c0
 		RequiresCondition: emp
-	RevealsShroudToIntelligenceOwner:
-		Range: 20c0
-		RequiresCondition: !emp && enabled
-	RevealsShroudToIntelligenceOwner@DISABLED:
-		Range: 4c0
-		Types: SatelliteScan
-		RequiresCondition: emp && enabled
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 20c0
+	#	RequiresCondition: !emp && enabled
+	# RevealsShroudToIntelligenceOwner@DISABLED:
+	#	Range: 4c0
+	#	Types: SatelliteScan
+	#	RequiresCondition: emp && enabled
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp
 	Armor:
@@ -456,7 +456,7 @@ carpad:
 		Sequence: flag
 	WithDeliveryAnimation:
 	RallyPoint:
-		Offset: 0,3
+		Path: 0,3
 		Palette: mouse
 		IsPlayerPalette: false
 	Exit:

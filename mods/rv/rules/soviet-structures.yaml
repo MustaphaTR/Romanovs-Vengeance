@@ -87,9 +87,9 @@ napowr:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -193,7 +193,7 @@ nahand:
 	ProductionBar@Iraq:
 		ProductionType: Infantry.Iraq
 	RallyPoint:
-		Offset: 3,3
+		Path: 3,3
 	ProvidesPrerequisite@nahand:
 		Prerequisite: nahand
 
@@ -260,9 +260,9 @@ naradr:
 		RequiresCondition: !disabled && !chronodisable && !disableradar
 	RevealsShroud:
 		Range: 10c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 10c0
 	SupportPowerChargeBar:
 	ParatroopersPower@tesladrop:
 		OrderName: RussianTeslaDrop
@@ -402,9 +402,9 @@ mine:
 	HiddenUnderFog:
 	RevealsShroud:
 		Range: 1c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 1c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 1c0
 	Mine:
 		CrushClasses: mine
 		DetonateClasses: mine
@@ -519,8 +519,8 @@ nmine:
 		Name: Naval Mine
 	RevealsShroud:
 		Range: 3c0
-	RevealsShroudToIntelligenceOwner:
-		Range: 3c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 3c0
 	Targetable:
 		TargetTypes: Ground, Water, Underwater, Structure, Defense, NonGarrisonableStructure
 	-Mobile:
@@ -551,7 +551,7 @@ nadept:
 		Footprint: x=== x=x= x===
 		Dimensions: 4,3
 	RallyPoint:
-		Offset: 4,1
+		Path: 4,1
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	WithIdleOverlay@normal:
@@ -587,14 +587,14 @@ naheli:
 		HP: 750
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	Armor:
 		Type: Wood
 	Reservable:
 	RallyPoint:
-		Offset: 3,1
+		Path: 3,1
 		Palette: mouse
 		IsPlayerPalette: false
 	Exit@1:
@@ -674,9 +674,9 @@ nanrct:
 		Type: Concrete
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -728,9 +728,9 @@ natech:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	Power:
 		Amount: -100
 	InfiltrateForSupportPower:
@@ -767,9 +767,9 @@ naclon:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	Power:
 		Amount: -200
 	-Capturable:
@@ -816,13 +816,14 @@ naclon:
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	Production:
-		Produces: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Iraq, Infantry.Cuba, Infantry.Yuri
+		Produces: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Iraq, Infantry.Cuba, Infantry.Yuri, Infantry.Moon
 	RallyPoint:
-		Offset: 3,3
+		Path: 3,3
 		Palette: mouse
 		IsPlayerPalette: false
 	ClonesProducedUnits:
 		CloneableTypes: Infantry
+		ProductionTypes: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Iraq, Infantry.Cuba, Infantry.Yuri, Infantry.Moon
 	AcceptsDeliveredCash:
 
 napsis:
@@ -854,9 +855,9 @@ napsis:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	GpsASProvider:
 		RequiresCondition: !disabled && !build-incomplete && !chronodisable
 	RenderDetectionCircle:
@@ -1023,9 +1024,9 @@ naflak:
 		Type: Steel
 	RevealsShroud:
 		Range: 8c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
 	Selectable:
 		Bounds: 46, 62, 0, -20
 	Turreted:
@@ -1082,9 +1083,9 @@ tesla:
 		Type: Steel
 	RevealsShroud:
 		Range: 8c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
 	Selectable:
 		Bounds: 44, 40, -2, -13
 		DecorationBounds: 44, 88, -2, -33
@@ -1160,9 +1161,9 @@ nalasr:
 		Type: Steel
 	RevealsShroud:
 		Range: 7c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 7c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 7c0
 	Selectable:
 		Bounds: 50, 30, 0, -12
 	Turreted:
@@ -1244,9 +1245,9 @@ nabnkr:
 		RequiresCondition: !build-incomplete
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 
 naindp:
 	Inherits: ^BaseBuilding
@@ -1290,9 +1291,9 @@ naindp:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	Power:
 		Amount: -200
 
@@ -1478,9 +1479,9 @@ naprop:
 		Type: Steel
 	RevealsShroud:
 		Range: 7c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 7c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 7c0
 	Selectable:
 		Bounds: 44, 40, -2, -13
 		DecorationBounds: 44, 88, -2, -33
@@ -1572,7 +1573,7 @@ naweab:
 		Footprint: xxx xxx xxx xxx ===
 		Dimensions: 3,5
 	RallyPoint:
-		Offset: 1,6
+		Path: 1,6
 	Exit@1:
 		ExitCell: 1,4
 
@@ -1591,7 +1592,7 @@ naweac:
 	Building:
 		Footprint: =xxxx =xxxx =xxxx
 	RallyPoint:
-		Offset: -2,1
+		Path: -2,1
 	Exit@1:
 		ExitCell: 0,1
 
@@ -1605,7 +1606,7 @@ nawead:
 	Building:
 		Footprint: === xxx xxx xxx xxx
 	RallyPoint:
-		Offset: 1,-2
+		Path: 1,-2
 	Exit@1:
 		ExitCell: 1,0
 
@@ -1621,4 +1622,4 @@ nadepb:
 		Footprint: xxx === =x= ===
 		Dimensions: 3,4
 	RallyPoint:
-		Offset: 1,4
+		Path: 1,4

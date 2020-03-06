@@ -53,9 +53,9 @@ yapowr:
 		Type: Wood
 	RevealsShroud:
 		Range: 4c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 4c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 4c0
 	WithIdleOverlay@empty:
 		Sequence: empty
 		PauseOnCondition: chronodisable
@@ -147,7 +147,7 @@ yabrck:
 	ProductionBar@Moon:
 		ProductionType: Infantry.Moon
 	RallyPoint:
-		Offset: 2,1
+		Path: 2,1
 	ProvidesPrerequisite@yabrck:
 		Prerequisite: yabrck
 	PlaceBuildingVariants:
@@ -178,9 +178,9 @@ yarefn:
 		Type: Medium
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
 	ProvidesPrerequisite@yarefn:
@@ -393,7 +393,7 @@ yadept:
 		Footprint: x=== x=x= x===
 		Dimensions: 4,3
 	RallyPoint:
-		Offset: 4,1
+		Path: 4,1
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
 		PauseOnCondition: chronodisable
@@ -429,9 +429,9 @@ yagrnd:
 		Dimensions: 3,3
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@repairpad:
 		Prerequisite: repairpad
@@ -478,9 +478,9 @@ yadome:
 		RequiresCondition: !disabled && !chronodisable && !disableradar
 	RevealsShroud:
 		Range: 10c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 10c0
 	WithIdleOverlay@light:
 		Sequence: idle-light
 		PauseOnCondition: disabled || chronodisable
@@ -522,14 +522,14 @@ yadisk:
 		HP: 750
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	Armor:
 		Type: Wood
 	Reservable:
 	RallyPoint:
-		Offset: 3,1
+		Path: 3,1
 		Palette: mouse
 		IsPlayerPalette: false
 	Exit@1:
@@ -591,9 +591,9 @@ yatech:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	WithIdleOverlay@lift:
 		Sequence: idle-lift
 		PauseOnCondition: chronodisable
@@ -636,9 +636,9 @@ yapsis:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	GpsASProvider:
 		RequiresCondition: !disabled && !build-incomplete && !chronodisable
 	RenderDetectionCircle:
@@ -679,9 +679,9 @@ yaclon:
 		Type: Wood
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	Power:
 		Amount: -200
 	-Capturable:
@@ -728,13 +728,14 @@ yaclon:
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	Production:
-		Produces: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Iraq, Infantry.Vietnam, Infantry.Cuba, Infantry.Yuri
+		Produces: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Iraq, Infantry.Cuba, Infantry.Yuri, Infantry.Moon
 	RallyPoint:
-		Offset: 3,3
+		Path: 3,3
 		Palette: mouse
 		IsPlayerPalette: false
 	ClonesProducedUnits:
 		CloneableTypes: Infantry
+		ProductionTypes: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Iraq, Infantry.Cuba, Infantry.Yuri, Infantry.Moon
 
 yawall:
 	Inherits: ^Wall
@@ -774,9 +775,9 @@ yaggun:
 		Type: Steel
 	RevealsShroud:
 		Range: 8c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
 	Selectable:
 		Bounds: 53, 56, 0, -25
 	Building:
@@ -903,9 +904,9 @@ natbnk:
 		RequiresCondition: !build-incomplete
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 
 yapsyt:
 	Inherits: ^SupportBuilding
@@ -991,9 +992,9 @@ yasgen:
 		Type: Steel
 	RevealsShroud:
 		Range: 6c0
-	RevealsShroudToIntelligenceOwner:
-		Types: SatelliteScan
-		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
 	Capturable:
 		Types: building
 		RequiresCondition: !build-incomplete
@@ -1242,7 +1243,7 @@ yabrcb:
 		Footprint: xxx xxx
 		Dimensions: 3,2
 	RallyPoint:
-		Offset: 1,2
+		Path: 1,2
 	Exit@0_n1:
 		ExitCell: 0, -1
 	Exit@0_2:
@@ -1296,7 +1297,7 @@ yaweab:
 		Footprint: xxx xxx xxx xxx ===
 		Dimensions: 3,5
 	RallyPoint:
-		Offset: 1,6
+		Path: 1,6
 	Exit@1:
 		ExitCell: 1,4
 
@@ -1313,7 +1314,7 @@ yaweac:
 	Building:
 		Footprint: =xxxx =xxxx =xxxx
 	RallyPoint:
-		Offset: -2,1
+		Path: -2,1
 	Exit@1:
 		ExitCell: 0,1
 
@@ -1326,7 +1327,7 @@ yawead:
 	Building:
 		Footprint: === xxx xxx xxx xxx
 	RallyPoint:
-		Offset: 1,-2
+		Path: 1,-2
 	Exit@1:
 		ExitCell: 1,0
 
@@ -1342,7 +1343,7 @@ yadepb:
 		Footprint: xxx === =x= ===
 		Dimensions: 3,4
 	RallyPoint:
-		Offset: 1,4
+		Path: 1,4
 
 yatecb:
 	Inherits: yatech

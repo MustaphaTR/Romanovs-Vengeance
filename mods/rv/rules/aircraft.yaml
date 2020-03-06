@@ -58,10 +58,10 @@ shad:
 	RevealsShroud:
 		Range: 8c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	-AppearsOnRadar:
 	AttackAircraft:
 		Voice: Attack
@@ -121,10 +121,10 @@ shadhusk:
 	RevealsShroud:
 		Range: 8c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 4c0
 		Duration: 50
@@ -185,10 +185,10 @@ zep:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	Armament:
 		Weapon: BlimpBomb
 		RequiresCondition: !rank-elite
@@ -232,14 +232,14 @@ zephusk:
 		Speed: 25
 	FallsToEarth:
 		Explosion: KirovExplode
-		Spins: False # TODO: In the original they did spin, but that just looks weird.
+		MaximumSpinSpeed: 0
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 5c0
 		Duration: 50
@@ -285,10 +285,10 @@ orca:
 	RevealsShroud:
 		Range: 12c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 12c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 12c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	Armament:
 		Weapon: Maverick
 		PauseOnCondition: !ammo
@@ -352,10 +352,10 @@ orcahusk:
 	RevealsShroud:
 		Range: 12c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 12c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 12c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 6c0
 		Duration: 50
@@ -380,10 +380,10 @@ beag:
 	RevealsShroud:
 		Range: 12c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 12c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 12c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	Armament:
 		Weapon: EMPulseBEagle
 	Armament@Elite:
@@ -424,10 +424,10 @@ beaghusk:
 	RevealsShroud:
 		Range: 12c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 12c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 12c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 6c0
 		Duration: 50
@@ -996,10 +996,10 @@ schp:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	AmmoPool:
 		Ammo: 1
 		PipCount: 0
@@ -1090,10 +1090,10 @@ schphusk:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 5c0
 		Duration: 50
@@ -1119,7 +1119,7 @@ bpln:
 		Name: MiG
 	-Buildable:
 	-RevealsShroud:
-	-RevealsShroudToIntelligenceOwner:
+	# -RevealsShroudToIntelligenceOwner:
 	-Selectable:
 	-SelectionDecorations:
 	Targetable@Airborne:
@@ -1214,10 +1214,10 @@ disk:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	Armament@primary:
 		Weapon: DiskLaser
 		PauseOnCondition: !ammo
@@ -1290,10 +1290,10 @@ diskhusk:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 5c0
 		Duration: 50
@@ -1344,10 +1344,10 @@ hind:
 	RevealsShroud:
 		Range: 8c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
@@ -1398,10 +1398,10 @@ hindhusk:
 	RevealsShroud:
 		Range: 8c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 4c0
 		Duration: 50
@@ -1459,10 +1459,10 @@ fortress:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	-AppearsOnRadar:
 	Armament:
 		Weapon: SpiritBomb
@@ -1525,10 +1525,10 @@ fortresshusk:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 5c0
 		Duration: 50
@@ -1558,10 +1558,10 @@ sdrn:
 	RevealsShroud:
 		Range: 8c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 4c0
 		Duration: 50
@@ -1616,10 +1616,10 @@ txdx:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	Armament@primary:
 		Weapon: MosquitoMissile
 		RequiresCondition: !rank-elite
@@ -1673,10 +1673,10 @@ txdxhusk:
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 10c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 5c0
 		Duration: 50
@@ -1730,10 +1730,10 @@ kite:
 	RevealsShroud:
 		Range: 8c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	AttackAircraft:
 		Voice: Attack
 		FacingTolerance: 2
@@ -1783,10 +1783,10 @@ kitehusk:
 	RevealsShroud:
 		Range: 8c0
 		Type: GroundPosition
-	RevealsShroudToIntelligenceOwner:
-		Range: 8c0
-		Types: SatelliteScan
-		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	RevealOnDeath:
 		Radius: 4c0
 		Duration: 50

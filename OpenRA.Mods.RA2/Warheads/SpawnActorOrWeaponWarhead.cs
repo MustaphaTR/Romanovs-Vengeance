@@ -85,8 +85,9 @@ namespace OpenRA.Mods.RA2.Warheads
 			}
 		}
 
-		public override void DoImpact(Target target, Target guidedTarget, Actor firedBy, IEnumerable<int> damageModifiers)
+		public override void DoImpact(Target target, WarheadArgs args)
 		{
+			var firedBy = args.SourceActor;
 			if (!target.IsValidFor(firedBy))
 				return;
 
@@ -194,7 +195,7 @@ namespace OpenRA.Mods.RA2.Warheads
                     {
                         unit.Dispose();
 
-                        weapon.Impact(target, firedBy, Enumerable.Empty<int>());
+                        weapon.Impact(target, args);
                     }
 				});
 			}

@@ -19,42 +19,24 @@ namespace OpenRA.Mods.RA2.Orders
 {
 	public class EnterGarrisonOrderTargeter<GarrisonableInfo> : UnitOrderTargeter where GarrisonableInfo : ITraitInfo
 	{
-		readonly AlternateGarrisonMode mode;
-		readonly Func<Actor, Actor, bool> canTarget;
-		readonly Func<Actor, Actor, bool> useEnterCursor;
+		readonly Func<Actor, TargetModifiers, bool> canTarget;
+		readonly Func<Actor, bool> useEnterCursor;
 		GarrisonerInfo garrisonerInfo;
 
 		public EnterGarrisonOrderTargeter(string order, int priority,
-			Func<Actor, Actor, bool> canTarget, Func<Actor, Actor, bool> useEnterCursor, AlternateGarrisonMode mode, GarrisonerInfo garrisonerInfo)
+			Func<Actor, TargetModifiers, bool> canTarget, Func<Actor, bool> useEnterCursor, GarrisonerInfo garrisonerInfo)
 			: base(order, priority, "enter", true, true)
 		{
 			this.canTarget = canTarget;
 			this.useEnterCursor = useEnterCursor;
-			this.mode = mode;
 			this.garrisonerInfo = garrisonerInfo;
 		}
 
 		public override bool CanTargetActor(Actor self, Actor target, TargetModifiers modifiers, ref string cursor)
 		{
-			switch (mode)
+			if (garrisonerInfo.TargetStances.HasStance(self.Owner.Stances[target.Owner]) && target.Info.HasTraitInfo<GarrisonableInfo>() && canTarget(target, modifiers))
 			{
-				case AlternateGarrisonMode.None:
-					return false;
-				case AlternateGarrisonMode.Force:
-					if (!modifiers.HasModifier(TargetModifiers.ForceMove))
-						return false;
-					break;
-				case AlternateGarrisonMode.Default:
-					if (modifiers.HasModifier(TargetModifiers.ForceMove))
-						return false;
-					break;
-				case AlternateGarrisonMode.Always:
-					break;
-			}
-
-			if (garrisonerInfo.TargetStances.HasStance(self.Owner.Stances[target.Owner]) && target.Info.HasTraitInfo<GarrisonableInfo>() && canTarget(self, target))
-			{
-				cursor = useEnterCursor(self, target) ? "enter" : "enter-blocked";
+				cursor = useEnterCursor(target) ? "enter" : "enter-blocked";
 				return true;
 			}
 			else
@@ -63,22 +45,6 @@ namespace OpenRA.Mods.RA2.Orders
 
 		public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
 		{
-			switch (mode)
-			{
-				case AlternateGarrisonMode.None:
-					return false;
-				case AlternateGarrisonMode.Force:
-					if (!modifiers.HasModifier(TargetModifiers.ForceMove))
-						return false;
-					break;
-				case AlternateGarrisonMode.Default:
-					if (modifiers.HasModifier(TargetModifiers.ForceMove))
-						return false;
-					break;
-				case AlternateGarrisonMode.Always:
-					break;
-			}
-
 			if (target.Info.HasTraitInfo<GarrisonableInfo>())
 				return true;
 

@@ -353,6 +353,10 @@ atomic:
 		ValidTargets: Ground, Water, Air
 	Warhead@4Radiation: CreateTintedCells
 		Delay: 25
+	Warhead@21Shake: ShakeScreen
+		Duration: 20
+		Intensity: 5
+		Multiplier: 1,1
 
 demobomb:
 	Inherits: NukePayload
@@ -390,6 +394,10 @@ ClusterMissile:
 		ImpactSounds: gexpapoa.wav
 		ValidTargets: Air, Ground, Water
 		ImpactActors: false
+	Warhead@21Shake: ShakeScreen
+		Duration: 20
+		Intensity: 3
+		Multiplier: 1,1
 
 ClusterMissileCluster:
 	Range: 7c0
