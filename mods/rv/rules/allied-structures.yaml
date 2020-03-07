@@ -194,18 +194,50 @@ gapile:
 		Dimensions: 3,2
 	RallyPoint:
 		Path: 2,3
-	Exit@0_n1:
-		SpawnOffset: 170,-810,0
-		ExitCell: 0, -1
-	Exit@0_2:
-		SpawnOffset: -900,220,0
-		ExitCell: 0, 2
-	Exit@2_n1:
-		SpawnOffset: 900,-220,0
-		ExitCell: 2, -1
-	Exit@2_2:
-		SpawnOffset: -170,810,0
-		ExitCell: 2, 2
+	Exit@1:
+		SpawnOffset: 0,768,0
+		ExitCell: 2,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: -694,-196,0
+		ExitCell: 0,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: -384,512,0
+		ExitCell: 1,2
+	Exit@fallback2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,1
+	Exit@fallback3:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,0
+	Exit@fallback4:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+	Exit@fallback5:
+		SpawnOffset: 1086,362,0
+		ExitCell: 2,-1
+	Exit@fallback6:
+		SpawnOffset: 362,-362,0
+		ExitCell: 1,-1
+	Exit@fallback7:
+		SpawnOffset: -362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback8:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback10:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,1
+	Exit@fallback11:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,2
+	Exit@fallback12:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,2
 	Production:
 		Produces: Infantry.Allies, Infantry.USA, Infantry.UK
 	ProductionQueue:
@@ -1490,12 +1522,53 @@ gapilb:
 		Dimensions: 2,3
 	RallyPoint:
 		Path: 3,2
-	Exit@0_n1:
-		ExitCell: -1, 0
-	Exit@0_2:
-		ExitCell: 2, 0
-	Exit@2_n1:
-		ExitCell: -1, 2
+	Building:
+		Footprint: xx xx xx
+		Dimensions: 2,3
+	Exit@1:
+		SpawnOffset: 0,768,0
+		ExitCell: 2,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: 694,-196,0
+		ExitCell: 2,0
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: -362,1086,0
+		ExitCell: 2,3
+	Exit@fallback2:
+		SpawnOffset: -362,1086,0
+		ExitCell: 1,3
+	Exit@fallback3:
+		SpawnOffset: -1086,362,0
+		ExitCell: 0,3
+	Exit@fallback4:
+		SpawnOffset: -1086,362,0
+		ExitCell: -1,3
+	Exit@fallback5:
+		SpawnOffset: -1086,362,0
+		ExitCell: -1,2
+	Exit@fallback6:
+		SpawnOffset: -362,-362,0
+		ExitCell: -1,1
+	Exit@fallback7:
+		SpawnOffset: 362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback8:
+		SpawnOffset: 362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9:
+		SpawnOffset: 362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback10:
+		SpawnOffset: 1086,-362,0
+		ExitCell: 1,-1
+	Exit@fallback11:
+		SpawnOffset: 1086,-362,0
+		ExitCell: 2,-1
+	Exit@fallback12:
+		SpawnOffset: 384,512,0
+		ExitCell: 2,1
 
 garefb:
 	Inherits: ^RefineryB

@@ -114,18 +114,50 @@ yabrck:
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
-	Exit@0_n1:
-		SpawnOffset: 170,-810,0
-		ExitCell: -1, 0
-	Exit@0_2:
-		SpawnOffset: -900,220,0
-		ExitCell: 2, 0
-	Exit@2_n1:
-		SpawnOffset: 900,-220,0
-		ExitCell: -1, 2
-	Exit@2_2:
-		SpawnOffset: -170,810,0
-		ExitCell: 2, 2
+	Exit@1:
+		SpawnOffset: 724,362,0
+		ExitCell: 2,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: 724,362,0
+		ExitCell: 2,1
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: -362,1086,0
+		ExitCell: 2,3
+	Exit@fallback2:
+		SpawnOffset: -362,1086,0
+		ExitCell: 1,3
+	Exit@fallback3:
+		SpawnOffset: -1086,362,0
+		ExitCell: 0,3
+	Exit@fallback4:
+		SpawnOffset: -1086,362,0
+		ExitCell: -1,3
+	Exit@fallback5:
+		SpawnOffset: -1086,362,0
+		ExitCell: -1,2
+	Exit@fallback6:
+		SpawnOffset: -362,-362,0
+		ExitCell: -1,1
+	Exit@fallback7:
+		SpawnOffset: 362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback8:
+		SpawnOffset: 362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9:
+		SpawnOffset: 362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback10:
+		SpawnOffset: 1086,-362,0
+		ExitCell: 1,-1
+	Exit@fallback11:
+		SpawnOffset: 1086,-362,0
+		ExitCell: 2,-1
+	Exit@fallback12:
+		SpawnOffset: 724,362,0
+		ExitCell: 2,0
 	Production:
 		Produces: Infantry.Yuri, Infantry.Moon
 	ProductionQueue:
@@ -689,42 +721,45 @@ yaclon:
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
 	-GrantConditionOnPrerequisite@INSTANTCAPTURE:
-	Exit@n1_0:
-		SpawnOffset: 0,0,0
-		ExitCell: -1, 0
-	Exit@0_n1:
-		SpawnOffset: 0,0,0
-		ExitCell: 0, -1
-	Exit@n1_n1:
-		SpawnOffset: 280,-280,0
-		ExitCell: -1, -1
-	Exit@1_n1:
-		SpawnOffset: 0,0,0
-		ExitCell: 1, -1
-	Exit@n1_1:
-		SpawnOffset: -410,-140,0
-		ExitCell: -1, 1
-	Exit@2_0:
-		SpawnOffset: 410,140,0
-		ExitCell: 2, 0
-	Exit@2_n1:
-		SpawnOffset: 0,0,0
-		ExitCell: 2, -1
-	Exit@2_1:
-		SpawnOffset: 0,0,0
-		ExitCell: 2, 1
-	Exit@0_2:
-		SpawnOffset: -280,280,0
-		ExitCell: 0, 2
-	Exit@n1_2:
-		SpawnOffset: 0,0,0
-		ExitCell: -1, 2
-	Exit@1_2:
-		SpawnOffset: 0,0,0
-		ExitCell: 1, 2
-	Exit@2_2:
-		SpawnOffset: 0,0,0
-		ExitCell: 2, 2
+	ExitsDebugOverlay:
+	Exit@1:
+		SpawnOffset: -640,640,0
+		ExitCell: 1,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: -640,640,0
+		ExitCell: 0,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,2
+	Exit@fallback2:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,1
+	Exit@fallback3:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,0
+	Exit@fallback4:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,-1
+	Exit@fallback5:
+		SpawnOffset: 724,0,0
+		ExitCell: 1,-1
+	Exit@fallback6:
+		SpawnOffset: 0,-724,0
+		ExitCell: 0,-1
+	Exit@fallback7:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,-1
+	Exit@fallback8:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,0
+	Exit@fallback9:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,1
+	Exit@fallback10:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,2
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	Production:
@@ -1244,12 +1279,50 @@ yabrcb:
 		Dimensions: 3,2
 	RallyPoint:
 		Path: 1,2
-	Exit@0_n1:
-		ExitCell: 0, -1
-	Exit@0_2:
-		ExitCell: 0, 2
-	Exit@2_n1:
-		ExitCell: 2, -1
+	Exit@1:
+		SpawnOffset: -724,362,0
+		ExitCell: 2,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: -724,362,0
+		ExitCell: 1,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: -724,362,0
+		ExitCell: 0,2
+	Exit@fallback2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,1
+	Exit@fallback3:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,0
+	Exit@fallback4:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+	Exit@fallback5:
+		SpawnOffset: 1086,362,0
+		ExitCell: 2,-1
+	Exit@fallback6:
+		SpawnOffset: 362,-362,0
+		ExitCell: 1,-1
+	Exit@fallback7:
+		SpawnOffset: -362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback8:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback10:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,1
+	Exit@fallback11:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,2
+	Exit@fallback12:
+		SpawnOffset: 362,1086,0
+		ExitCell: 3,2
 
 yarfnb:
 	Inherits: ^RefineryB
