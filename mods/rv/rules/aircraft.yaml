@@ -75,7 +75,7 @@ shad:
 		Speed: 180
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
-		LandOnCondition: emp || chronodisable
+		PauseOnCondition: emp || chronodisable
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
@@ -103,6 +103,10 @@ shad:
 		ExitSound: gexit1a.wav
 	SpawnActorOnDeath:
 		Actor: shadhusk
+		RequiresCondition: airborne
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
 	HitShape:
 	ProducibleWithLevel:
 		Prerequisites: vetair
@@ -276,6 +280,7 @@ orca:
 		Speed: 210
 		TakeoffSounds: vintupa.wav
 		LandingSounds: vintdna.wav
+		PauseOnCondition: emp || chronodisable
 	Selectable:
 		Bounds: 30,24
 	Health:
@@ -333,6 +338,10 @@ orca:
 		Image: falc
 	SpawnActorOnDeath:
 		Actor: orcahusk
+		RequiresCondition: airborne
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
 	HitShape:
 	ProducibleWithLevel:
 		Prerequisites: vetair
@@ -1019,7 +1028,7 @@ schp:
 		Speed: 140
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
-		LandOnCondition: !undeployed || emp || chronodisable
+		PauseOnCondition: !undeployed || emp || chronodisable
 	HeliGrantConditionOnDeploy:
 		BodyNames: dot
 		DeployAnimation: deploy
@@ -1355,7 +1364,7 @@ hind:
 		Speed: 140
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
-		LandOnCondition: emp || chronodisable
+		PauseOnCondition: emp || chronodisable
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
@@ -1382,6 +1391,10 @@ hind:
 		Voice: Move
 	SpawnActorOnDeath:
 		Actor: hindhusk
+		RequiresCondition: airborne
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
 	HitShape:
 
 hindhusk:
@@ -1450,6 +1463,7 @@ fortress:
 		Speed: 180
 		TakeoffSounds: vintupa.wav
 		LandingSounds: vintdna.wav
+		PauseOnCondition: emp || chronodisable
 	Selectable:
 		Bounds: 30,24
 	Health:
@@ -1507,6 +1521,10 @@ fortress:
 		NormalsPalette: ts-normals
 	SpawnActorOnDeath:
 		Actor: fortresshusk
+		RequiresCondition: airborne
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
 	HitShape:
 	ProducibleWithLevel:
 		Prerequisites: vetair
@@ -1607,6 +1625,7 @@ txdx:
 		TurnSpeed: 255
 		Speed: 195
 		AltitudeVelocity: 200
+		PauseOnCondition: emp || chronodisable
 	Selectable:
 		Bounds: 68, 43, 0, -5
 	Health:
@@ -1657,6 +1676,10 @@ txdx:
 		ExitSound: gexit1a.wav
 	SpawnActorOnDeath:
 		Actor: txdxhusk
+		RequiresCondition: airborne
+	Explodes:
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
 	HitShape:
 
 txdxhusk:
@@ -1747,7 +1770,7 @@ kite:
 		Repulsable: false
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
-		LandOnCondition: emp || chronodisable
+		PauseOnCondition: emp || chronodisable
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp

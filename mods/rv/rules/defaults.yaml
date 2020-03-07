@@ -1926,11 +1926,19 @@
 	Inherits@11: ^AffectedByPropaganda
 	Inherits@12: ^TerrorDronableAircraft
 	Inherits@13: ^AffectedByCashBounty
+	Inherits@14: ^DisabledByEMP
 	WithTextControlGroupDecoration:
 	Targetable@ChronoDisable:
 		RequiresCondition: !airborne
 	Targetable@DRONE:
 		RequiresCondition: !airborne
+	Targetable@EMP:
+		RequiresCondition: !airborne
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
@@ -1954,13 +1962,6 @@
 		CruiseAltitude: 3c852
 		CanSlide: true
 		CanHover: true
-	Targetable@EMP:
-		RequiresCondition: !airborne
-	GrantCondition@IDISABLE:
-		RequiresCondition: emp
-	WithColoredOverlay@IDISABLE:
-		RequiresCondition: disabled
-		Palette: disabled
 	GpsDotAS:
 		Sequence: Helicopter
 
