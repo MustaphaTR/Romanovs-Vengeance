@@ -1927,10 +1927,13 @@
 	Inherits@12: ^TerrorDronableAircraft
 	Inherits@13: ^AffectedByCashBounty
 	Inherits@14: ^DisabledByEMP
+	Inherits@15: ^DisabledByMagnetron
 	WithTextControlGroupDecoration:
 	Targetable@ChronoDisable:
 		RequiresCondition: !airborne
 	Targetable@DRONE:
+		RequiresCondition: !airborne
+	Targetable@MagneFreeze:
 		RequiresCondition: !airborne
 	Targetable@EMP:
 		RequiresCondition: !airborne
