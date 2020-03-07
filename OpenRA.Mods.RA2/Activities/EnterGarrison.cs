@@ -35,6 +35,7 @@ namespace OpenRA.Mods.RA2.Activities
 		// EnterGarrison Properties
 		Actor enterActor;
 		Garrisonable enterGarrison;
+		Aircraft enterAircraft;
 
 		public EnterGarrison(Actor self, Target target, Color? targetLineColor = null)
 		{
@@ -51,6 +52,7 @@ namespace OpenRA.Mods.RA2.Activities
 		{
 			enterActor = targetActor;
 			enterGarrison = targetActor.TraitOrDefault<Garrisonable>();
+			enterAircraft = targetActor.TraitOrDefault<Aircraft>();
 
 			// Make sure we can still enter the transport
 			// (but not before, because this may stop the actor in the middle of nowhere)
@@ -59,6 +61,9 @@ namespace OpenRA.Mods.RA2.Activities
 				Cancel(self, true);
 				return false;
 			}
+
+			if (enterAircraft != null && !enterAircraft.AtLandAltitude)
+				return false;
 
 			return true;
 		}
@@ -69,6 +74,9 @@ namespace OpenRA.Mods.RA2.Activities
 		{
 			self.World.AddFrameEndTask(w =>
 			{
+				if (self.IsDead)
+					return;
+
 				// Make sure the target hasn't changed while entering
 				// OnEnterComplete is only called if targetActor is alive
 				if (targetActor != enterActor)
