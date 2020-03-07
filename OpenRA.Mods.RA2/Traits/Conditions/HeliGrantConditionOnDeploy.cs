@@ -224,13 +224,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (Info.SynchronizeDeployment && deployState == DeployState.Deployed && IsGroupDeployNeeded(self, order.TargetString))
 				return;
 
-			if (!order.Queued)
-				self.CancelActivity();
-
-			if (deployState == DeployState.Deployed)
-				self.QueueActivity(new HeliUndeployForGrantedCondition(self, this));
-			else if (deployState == DeployState.Undeployed)
-				self.QueueActivity(new HeliDeployForGrantedCondition(self, this));
+			self.QueueActivity(order.Queued, new HeliDeployForGrantedCondition(self, this));
 		}
 
 		public string VoicePhraseForOrder(Actor self, Order order)

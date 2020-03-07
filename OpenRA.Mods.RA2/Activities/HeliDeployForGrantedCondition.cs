@@ -24,11 +24,13 @@ namespace OpenRA.Mods.RA2.Activities
 		readonly Aircraft aircraft;
 		readonly HeliGrantConditionOnDeploy deploy;
 		readonly bool canTurn;
+		readonly bool moving;
 
-		public HeliDeployForGrantedCondition(Actor self, HeliGrantConditionOnDeploy deploy)
+		public HeliDeployForGrantedCondition(Actor self, HeliGrantConditionOnDeploy deploy, bool moving = false)
 		{
 			w = self.World;
 			this.deploy = deploy;
+			this.moving = moving;
 			aircraft = self.Trait<Aircraft>();
 			canTurn = self.Info.HasTraitInfo<IFacingInfo>();
 		}
@@ -44,7 +46,7 @@ namespace OpenRA.Mods.RA2.Activities
 			}
 
 			// Turn to the required facing.
-			if (deploy.Info.Facing != -1 && canTurn)
+			if (deploy.DeployState == DeployState.Undeployed && deploy.Info.Facing != -1 && canTurn && !moving)
 				QueueChild(new Turn(self, deploy.Info.Facing));
 
 			QueueChild(new Land(self));
@@ -52,26 +54,43 @@ namespace OpenRA.Mods.RA2.Activities
 
 		public override bool Tick(Actor self)
 		{
-			// Without this, turn for facing deploy angle will be canceled and immediately deploy!
-			if (IsCanceling)
+			if (IsCanceling || (deploy.DeployState != DeployState.Deployed && moving))
 				return true;
 
-			if (IsInterruptible)
-			{
-				IsInterruptible = false; // must DEPLOY from now.
-				deploy.Deploy();
-				return false;
-			}
-
-			// Wait for deployment
-			if (deploy.DeployState == DeployState.Deploying)
-				return false;
-
-			// Failed or success, we are going to NextActivity.
-			// Deploy() at the first run would have put DeployState == Deploying so
-			// if we are back to DeployState.Undeployed, it means deploy failure.
-			// Parent activity will see the status and will take appropriate action.
+			QueueChild(new HeliDeployInner(self, deploy));
 			return true;
+		}
+	}
+
+	public class HeliDeployInner : Activity
+	{
+		readonly HeliGrantConditionOnDeploy deployment;
+		bool initiated;
+
+		public HeliDeployInner(Actor self, HeliGrantConditionOnDeploy deployment)
+		{
+			this.deployment = deployment;
+
+			// Once deployment animation starts, the animation must finish.
+			IsInterruptible = false;
+		}
+
+		public override bool Tick(Actor self)
+		{
+			// Wait for deployment
+			if (deployment.DeployState == DeployState.Deploying || deployment.DeployState == DeployState.Undeploying)
+				return false;
+
+			if (initiated)
+				return true;
+
+			if (deployment.DeployState == DeployState.Undeployed)
+				deployment.Deploy();
+			else
+				deployment.Undeploy();
+
+			initiated = true;
+			return false;
 		}
 	}
 }
