@@ -512,6 +512,7 @@ carpad:
 
 capsyb:
 	Inherits: ^TechBuilding
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@shape: ^2x2Shape
 	Selectable:
@@ -522,7 +523,7 @@ capsyb:
 	Tooltip@NoRow:
 		Name: Tech Psychic Beacon
 	TooltipDescription:
-		Description: Provides Psychic Control support power.
+		Description: Provides Psychic Control support power. Requires Power to operate.
 	Armor:
 		Type: Wood
 	Health:
@@ -533,7 +534,7 @@ capsyb:
 	DetonateWeaponPower:
 		OrderName: TechPsychicControl
 		RequiresCondition: enabled
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: disabled || chronodisable
 		CameraRange: 4c0
 		CameraRemoveDelay: 100
 		SpawnCameraAtGround: true
@@ -549,15 +550,19 @@ capsyb:
 		SelectTargetSpeechNotification: SelectTarget
 		Weapons:
 			1: PsychicControl
+		TargetCircleRanges:
+			1: 1c512
 		ActivationSequence:
 	SupportPowerChargeBar:
-	GrantCondition@IDISABLE:
-		RequiresCondition: emp
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: emp || (disabled && enabled)
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
-		PauseOnCondition: !enabled || emp
+		PauseOnCondition: !enabled || disabled
 	WithIdleOverlay@flag:
 		Sequence: flag
+	Power:
+		Amount: -100
 	ProvidesPrerequisite@buildingname:
 	GpsDotAS:
 		Sequence: Psi
@@ -619,7 +624,7 @@ camisl:
 	WithNukeLaunchAnimation:
 		RequiresCondition: !chronodisable
 	Power:
-		Amount: -50
+		Amount: -100
 	SupportPowerChargeBar:
 	WithColoredOverlay@IDISABLE:
 		RequiresCondition: emp || (disabled && enabled)
