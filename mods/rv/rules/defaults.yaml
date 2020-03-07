@@ -1943,6 +1943,13 @@
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
 		RequiresCondition: !invulnerability
+	RevealsShroud:
+		Type: GroundPosition
+		RequiresCondition: airborne
+	RevealsShroud@Ground:
+		MaxHeightDelta: 3
+		Type: GroundPosition
+		RequiresCondition: !airborne
 
 ^Plane:
 	Inherits: ^Aircraft

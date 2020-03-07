@@ -57,7 +57,8 @@ shad:
 		Cost: 500
 	RevealsShroud:
 		Range: 8c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 8c0
 	#	Types: SatelliteScan
@@ -188,7 +189,8 @@ zep:
 		HealIfBelow: 100
 	RevealsShroud:
 		Range: 10c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 10c0
 	#	Types: SatelliteScan
@@ -289,7 +291,8 @@ orca:
 		Type: Light
 	RevealsShroud:
 		Range: 12c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 12c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 12c0
 	#	Types: SatelliteScan
@@ -386,13 +389,6 @@ beag:
 		Description: Aircraft armed with EMP bomb\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	SpawnActorOnDeath:
 		Actor: beaghusk
-	RevealsShroud:
-		Range: 12c0
-		Type: GroundPosition
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 12c0
-	#	Types: SatelliteScan
-	#	Type: GroundPosition
 	Armament:
 		Weapon: EMPulseBEagle
 	Armament@Elite:
@@ -759,7 +755,9 @@ hornet:
 		Type: Light
 	RevealsShroud:
 		Range: 4c0
-		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@Ground:
+		Range: 4c0
 		RevealGeneratedShroud: False
 	Armament:
 		Weapon: HornetBomb
@@ -828,7 +826,9 @@ asw:
 		Type: Light
 	RevealsShroud:
 		Range: 4c0
-		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@Ground:
+		Range: 4c0
 		RevealGeneratedShroud: False
 	Armament:
 		Weapon: ASWBomb
@@ -1006,7 +1006,8 @@ schp:
 		Cost: 1200
 	RevealsShroud:
 		Range: 10c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 10c0
 	#	Types: SatelliteScan
@@ -1130,6 +1131,7 @@ bpln:
 		Name: MiG
 	-Buildable:
 	-RevealsShroud:
+	-RevealsShroud@Ground:
 	# -RevealsShroudToIntelligenceOwner:
 	-Selectable:
 	-SelectionDecorations:
@@ -1224,7 +1226,8 @@ disk:
 		Type: Light
 	RevealsShroud:
 		Range: 10c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 10c0
 	#	Types: SatelliteScan
@@ -1354,7 +1357,8 @@ hind:
 		Voice: Move
 	RevealsShroud:
 		Range: 8c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 8c0
 	#	Types: SatelliteScan
@@ -1474,7 +1478,8 @@ fortress:
 		Type: Light
 	RevealsShroud:
 		Range: 10c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 10c0
 	#	Types: SatelliteScan
@@ -1577,7 +1582,8 @@ sdrn:
 		VTOL: false
 	RevealsShroud:
 		Range: 8c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 8c0
 	#	Types: SatelliteScan
@@ -1636,7 +1642,8 @@ txdx:
 		Type: Light
 	RevealsShroud:
 		Range: 10c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 10c0
 	#	Types: SatelliteScan
@@ -1754,7 +1761,8 @@ kite:
 		Cost: 1400
 	RevealsShroud:
 		Range: 8c0
-		Type: GroundPosition
+	RevealsShroud@Ground:
+		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 8c0
 	#	Types: SatelliteScan
