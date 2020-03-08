@@ -262,12 +262,22 @@ magnetic_beam.1:
 		LocalOffset: 0,0,2c0
 	PeriodicExplosion@Freeze:
 		Weapon: MagneBeamFreeze1
+	AmbientSound@start:
+		SoundFiles: vmagat2a.wav
+		Delay: 0
+		Interval: 900 # play this only once
+	AmbientSound@loop:
+		SoundFiles: vmagatta.wav
+		Delay: 50
+		Interval: 50
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 375
 
 magnetic_beam.2:
 	Inherits: magnetic_beam.1
+	RevealsShroud:
+		Range: 4c0
 	PeriodicExplosion@Freeze:
 		Weapon: MagneBeamFreeze2
 	PeriodicExplosion@Umbrella:
@@ -279,6 +289,8 @@ magnetic_beam.2:
 
 magnetic_beam.3:
 	Inherits: magnetic_beam.1
+	RevealsShroud:
+		Range: 5c0
 	PeriodicExplosion@Freeze:
 		Weapon: MagneBeamFreeze3
 	PeriodicExplosion@Umbrella:
