@@ -1697,6 +1697,8 @@
 	-WithIdleOverlay@web:
 	-Targetable@webdisable:
 	-ExternalCondition@webdisable:
+	WithInfantryBody:
+		-RequiresCondition:
 	Crushable:
 	MapEditorData:
 		Categories: Animal
@@ -1939,9 +1941,6 @@
 		RequiresCondition: !airborne
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp
-	WithColoredOverlay@IDISABLE:
-		RequiresCondition: disabled
-		Palette: disabled
 	Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
@@ -1973,8 +1972,7 @@
 
 ^Helicopter:
 	Inherits: ^Aircraft
-	Inherits@1: ^DisabledByEMP
-	Inherits@2: ^CrateStatModifiers
+	Inherits@1: ^CrateStatModifiers
 	Aircraft:
 		CruiseAltitude: 3c852
 		CanSlide: true

@@ -1495,6 +1495,8 @@ gamgun:
 		UncloakOn: Attack, Damage
 	WithSpriteTurret:
 		RequiresCondition: !build-incomplete
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	DetectCloaked:
 		Range: 6c0
 	RenderDetectionCircle:
