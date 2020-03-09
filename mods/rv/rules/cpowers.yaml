@@ -15,12 +15,26 @@ commanders_power.medic:
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 10
-		Prerequisites: prerequisite.has_points
+		Prerequisites: ~disabled # prerequisite.has_points
 		Description: Enables training of Medic from Barracks.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.medic
 	RenderSprites:
 		Image: medi
+
+commanders_power.ambulance:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Combat Ambulance
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Enables production of Combat Ambulance from War Factory.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.ambulance
+	RenderSprites:
+		Image: aambu
 
 commanders_power.mechanic:
 	Inherits: ^default.commanders_power

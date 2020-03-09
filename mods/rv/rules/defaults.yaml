@@ -379,6 +379,17 @@
 	ExternalCondition@BOOST3:
 		Condition: boost3
 
+^HealsInAmbulance:
+	SelfHealing@HOSPITAL:
+		PercentageStep: 50
+		Delay: 25
+		HealIfBelow: 100
+		DamageCooldown: 0
+		RequiresCondition: in-ambulance
+	Passenger:
+		CargoConditions:
+			aambu: in-ambulance
+
 ^DamagedByRadiation100Percent:
 	DamagedByTintedCells:
 		Damage: 1
@@ -1374,6 +1385,7 @@
 	Inherits@15: ^TerrorDronable
 	Inherits@16: ^AffectedByCashBounty
 	Inherits@17: ^WebDisable
+	Inherits@18: ^HealsInAmbulance
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:

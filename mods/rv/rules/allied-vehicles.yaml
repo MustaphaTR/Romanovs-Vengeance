@@ -148,7 +148,7 @@ tnkd:
 		Name: Tank Destroyer
 	Buildable:
 		Queue: Vehicle.Germany
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Special anti-armor unit.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
 	UpdatesPlayerStatistics:
@@ -833,10 +833,10 @@ sref:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: gatech, ~techlevel.4
 		Description: Fires deadly beams of light.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
@@ -929,10 +929,10 @@ mgtk:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		Prerequisites: gatech, ~techlevel.3
 		Description: Tank that appears as a tree while immobile.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
@@ -1045,7 +1045,7 @@ bfrt:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 120
 		Prerequisites: gatech, ~techlevel.4
 		Description: Large vehicle with 5 fireports for infantry in to fire.\nCan crush enemy vehicles.
 	UpdatesPlayerStatistics:
@@ -1270,6 +1270,70 @@ robo:
 	HitShape:
 
 # Custom Allied Vehicles:
+aambu:
+	Inherits: ^Vehicle
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Buildable:
+		Queue: Vehicle.Allies, Vehicle.Germany
+		BuildPaletteOrder: 70
+		Prerequisites: ~prerequisite.ambulance, ~techlevel.2
+		Description: Light vehicle capable of healing nearby infantry.\nCan carry up to 5 infantry and heal them faster inside.\n\n Unarmed
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 250
+		PlayerExperience: 25
+		Voice: Move
+	Tooltip:
+		Name: Combat Ambulance
+	Tooltip@NoRow:
+		Name: Combat Ambulance
+	Selectable:
+		Bounds: 64, 52, 0, -6
+	Health:
+		HP: 200
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 5
+		Speed: 120
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
+	PeriodicExplosion:
+		Weapon: AmbulanceHeal
+	WithRangeCircle:
+		Range: 5c0
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Explodes:
+		Weapon: UnitExplodeSmall
+		EmptyWeapon: UnitExplodeSmall
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	Cargo:
+		Types: Infantry, Garrisoner
+		MaxWeight: 5
+		PipCount: 5
+		UnloadVoice: Move
+		EjectOnDeath: false
+		LoadingCondition: notmobile
+	Voiced:
+		VoiceSet: MedicVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	HitShape:
+
 hwtz:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -1289,7 +1353,7 @@ hwtz:
 		Name: Howitzer
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Long range vehicle .\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft
 	UpdatesPlayerStatistics:
