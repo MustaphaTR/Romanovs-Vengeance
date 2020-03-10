@@ -35,7 +35,7 @@ GrandCannonWeapon:
 sabot:
 	Inherits: ^LargeBullet
 	ValidTargets: Ground, Water
-	Range: 7c0
+	Range: 6c0
 	ReloadDelay: 70
 	Report: vtadatta.wav, vtadattb.wav, vtadattc.wav
 	Projectile: BulletAS
@@ -53,14 +53,16 @@ sabot:
 
 sabotE:
 	Inherits: sabot
-	Range: 9c0
+	ReloadDelay: 85
+	Burst: 2
+	BurstDelays: 5
 	Projectile: BulletAS
-		Blockable: false
-		ContrailLength: 10
-		ContrailColor: FFFFFF
-		ContrailWidth: 0c20
 	Warhead@1Dam: SpreadDamage
-		Damage: 175
+		Damage: 140
+		Versus:
+			None: 50
+			Flak: 50
+			Plate: 50
 	Warhead@2Eff: CreateEffect
 		Explosions: elite_explosion
 		ImpactSounds: gexpapoa.wav
@@ -84,14 +86,14 @@ HowiCannon:
 		ContrailLength: 10
 		ContrailColor: FFFFFF
 		ContrailWidth: 0c20
-		Inaccuracy: 1c0
+		Inaccuracy: 0c512
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c256
+		Spread: 0c384
 		Damage: 175
 		Versus:
 			None: 100
 			Flak: 100
-			Plate: 90
+			Plate: 100
 			Light: 85
 			Medium: 65
 			Heavy: 65
@@ -111,7 +113,7 @@ HowiCannonE:
 	Range: 14c0
 	Projectile: BulletAS
 		ContrailColor: EA0000
-		Inaccuracy: 0c512
+		Inaccuracy: 0c256
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Damage: 200
@@ -320,7 +322,7 @@ ATGUNE:
 
 155mm:
 	Inherits: ^LargeBullet
-	ReloadDelay: 110
+	ReloadDelay: 70
 	Range: 8c0
 	Report: vdesatta.wav, vrdesattb.wav
 	InvalidTargets: Underwater
@@ -346,15 +348,13 @@ ATGUNE:
 
 155mmE:
 	Inherits: 155mm
-	ReloadDelay: 125
+	ReloadDelay: 85
 	Burst: 2
 	Warhead@1Dam: SpreadDamage
 		Damage: 50
 		Versus:
-			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 100
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
