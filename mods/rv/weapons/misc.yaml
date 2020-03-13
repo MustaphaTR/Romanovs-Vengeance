@@ -591,6 +591,54 @@ AmbushSpawner:
 		Actors: e2,e2,e2,e2,e2,e2,e2,e2,e2,flakt,flakt,flakt,flakt,flakt,flakt
 		Sounds: sambusha.aud
 
+HologramSpawner:
+	Warhead@1Sha: FireShrapnel
+		Weapon: HologramSpawnerInit
+		Amount: 8
+	Warhead@2Sha: FireShrapnel
+		Weapon: HologramSpawnerBrute
+		Amount: 4
+	Warhead@3Sha: FireShrapnel
+		Weapon: HologramSpawnerGtrp
+		Amount: 2
+	Warhead@4Sha: FireShrapnel
+		Weapon: HologramSpawnerLtnk
+		Amount: 3
+	Warhead@5Sha: FireShrapnel
+		Weapon: HologramSpawnerYtnk
+		Amount: 1
+	Warhead@TargetValidation: TargetDamage
+
+HologramSpawnerInit:
+	Range: 5c0
+	Projectile: InstantHit
+	Warhead@1Spa: SpawnActor
+		Actors: init.holo
+
+HologramSpawnerBrute:
+	Range: 5c0
+	Projectile: InstantHit
+	Warhead@1Spa: SpawnActor
+		Actors: brute.holo
+
+HologramSpawnerGtrp:
+	Range: 5c0
+	Projectile: InstantHit
+	Warhead@1Spa: SpawnActor
+		Actors: gtrp.holo
+
+HologramSpawnerLtnk:
+	Range: 5c0
+	Projectile: InstantHit
+	Warhead@1Spa: SpawnActor
+		Actors: ltnk.holo
+
+HologramSpawnerYtnk:
+	Range: 5c0
+	Projectile: InstantHit
+	Warhead@1Spa: SpawnActor
+		Actors: ytnk.holo
+
 GrizzlySpawner:
 	Warhead@1Spa: SpawnActor
 		Actors: mtnk,mtnk,mtnk

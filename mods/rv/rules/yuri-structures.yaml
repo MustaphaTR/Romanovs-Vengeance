@@ -502,6 +502,21 @@ yadome:
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@psicorps:
+		Prerequisite: radar.psicorps
+		Factions: psicorps
+	ProvidesPrerequisite@psinepal:
+		Prerequisite: radar.psinepal
+		Factions: psinepal
+	ProvidesPrerequisite@psisouth:
+		Prerequisite: radar.psisouth
+		Factions: psisouth
+	ProvidesPrerequisite@psitrans:
+		Prerequisite: radar.psitrans
+		Factions: psitrans
+	ProvidesPrerequisite@psimoon:
+		Prerequisite: radar.psimoon
+		Factions: psimoon
 	ProvidesPrerequisite:
 		Prerequisite: radar
 	ExternalCondition@disableradar:
@@ -513,6 +528,23 @@ yadome:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 10c0
+	SupportPowerChargeBar:
+	DetonateWeaponPower@ambush:
+		OrderName: LazarusHologramArmy
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: radar.psinepal
+		Icons:
+			1: xxicon
+		ChargeInterval: 4500
+		Descriptions:
+			1: Hologram Army
+		LongDescs:
+			1: Spawns a large group of hologram infantry and vehicles\nanywhere on the map.\n\nHolograms stay for 20 seconds.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: HologramSpawner
+		ActivationSequence:
 	WithIdleOverlay@light:
 		Sequence: idle-light
 		PauseOnCondition: disabled || chronodisable

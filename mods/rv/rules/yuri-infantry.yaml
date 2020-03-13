@@ -154,6 +154,20 @@ init:
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
 
+init.holo:
+	Inherits: init
+	Inherits@HOLOGRAM: ^Hologram
+	-Buildable:
+	-DeliversCash:
+	-Passenger:
+	-MapEditorData:
+	-WithDeathAnimation@normal:
+	-WithDeathAnimation@effect:
+	-SpawnActorOnDeath@flames:
+	-SpawnSmokeParticleOnDeath@virus:
+	RenderSprites:
+		Image: init
+
 brute:
 	Inherits: ^Infantry
 	Inherits@2: ^Parachutable
@@ -232,6 +246,20 @@ brute:
 		RequiresCondition: !parachute && !webdisable
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
+
+brute.holo:
+	Inherits: brute
+	Inherits@HOLOGRAM: ^Hologram
+	-Buildable:
+	-DeliversCash:
+	-Passenger:
+	-MapEditorData:
+	-WithDeathAnimation@normal:
+	-WithDeathAnimation@effect:
+	-SpawnActorOnDeath@flames:
+	-SpawnSmokeParticleOnDeath@virus:
+	RenderSprites:
+		Image: brute
 
 virus:
 	Inherits: ^Infantry
@@ -497,18 +525,18 @@ lunr:
 	-Passenger:
 	-SelfHealing@HOSPITAL:
 	SpawnActorOnDeath:
-		Actor: jumpjet.husk
+		Actor: lunr.husk
 
-jumpjet.husk:
+lunr.husk:
 	Inherits: ^HelicopterHusk
 	Inherits@1: ^SpriteActor
 	WithFacingSpriteBody:
 	-RenderVoxels:
 	-WithVoxelBody:
 	Tooltip:
-		Name: Rocketeer
+		Name: Cosmonaut
 	Tooltip@NoRow:
-		Name: Rocketeer
+		Name: Cosmonaut
 	Aircraft:
 		TurnSpeed: 10
 		Speed: 140
@@ -675,6 +703,20 @@ gtrp:
 		Prerequisites: vetytnk
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+
+gtrp.holo:
+	Inherits: gtrp
+	Inherits@HOLOGRAM: ^Hologram
+	-Buildable:
+	-DeliversCash:
+	-Passenger:
+	-MapEditorData:
+	-WithDeathAnimation@normal:
+	-WithDeathAnimation@effect:
+	-SpawnActorOnDeath@flames:
+	-SpawnSmokeParticleOnDeath@virus:
+	RenderSprites:
+		Image: gtrp
 
 ttrp:
 	Inherits: ^Infantry

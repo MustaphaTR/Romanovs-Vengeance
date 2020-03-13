@@ -231,6 +231,20 @@ ltnk:
 		Voice: Build
 		ValidStances: None
 
+ltnk.holo:
+	Inherits: ltnk
+	Inherits@HOLOGRAM: ^Hologram
+	-Buildable:
+	-DeliversCash:
+	-Passenger:
+	-MapEditorData:
+	-Carryable:
+	-Explodes:
+	RenderSprites:
+		Image: ltnk
+	RenderVoxels:
+		Image: ltnk
+
 ytnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -339,6 +353,20 @@ ytnk:
 	ProducibleWithLevel:
 		Prerequisites: vetytnk
 	HitShape:
+
+ytnk.holo:
+	Inherits: ytnk
+	Inherits@HOLOGRAM: ^Hologram
+	-Buildable:
+	-DeliversCash:
+	-Passenger:
+	-MapEditorData:
+	-Carryable:
+	-Explodes:
+	RenderSprites:
+		Image: ytnk
+	RenderVoxels:
+		Image: ytnk
 
 caos:
 	Inherits: ^Vehicle

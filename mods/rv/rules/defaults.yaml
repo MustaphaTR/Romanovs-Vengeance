@@ -739,6 +739,29 @@
 		RequiresCondition: beinginfected
 		Modifier: 0
 
+^Hologram:
+	GrantPeriodicCondition:
+		Condition: holokill
+		CooldownDuration: 500
+	KillsSelf@holokill:
+		RequiresCondition: holokill
+		KillsSelf: True
+		DamageTypes: BulletDeath
+	WithDecoration@holoicon:
+		Image: holo
+		Sequence: icon
+		ReferencePoint: Bottom, Right
+		Palette: ts-mouse
+	# WithDeathAnimation@body:
+	#	DeathSequencePalette: apolra2i
+	#	DeathPaletteIsPlayerPalette: False
+	#	UseDeathTypeSuffix: False
+	#	DeathSequence: dieevaporate
+	FirepowerMultiplier@Hologram:
+		Modifier: 0
+	DamageMultiplier@Hologram:
+		Modifier: 200
+
 ^BuildingParticles:
 	SmokeParticleEmitter@1:
 		RequiresCondition: dmg_heavy
