@@ -372,11 +372,11 @@ ggi:
 		RequiresCondition: (stance-attackanything || assault-move) && undeployed
 	AutoTargetPriority@DEFAULT_ALL:
 		RequiresCondition: (!stance-attackanything && !assault-move) && deployed
-		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Defense
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING_ALL:
 		RequiresCondition: (stance-attackanything || assault-move) && deployed
-		ValidTargets: Infantry, Vehicle, Water, Underwater, Air, Structure, Defense
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
