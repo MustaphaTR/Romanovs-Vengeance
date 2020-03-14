@@ -404,13 +404,29 @@ apoc:
 		Weapon: 120mmx
 		Recoil: 87
 		RecoilRecovery: 12
-		LocalOffset: 640,100,512, 640,-100,512
+		LocalOffset: 640,100,512
+		RequiresCondition: !rank-elite
+	Armament@primary2:
+		Name: primary2
+		Weapon: 120mmx
+		FireDelay: 5
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 640,-100,512
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 120mmxE
 		Recoil: 87
 		RecoilRecovery: 12
-		LocalOffset: 640,100,512, 640,-100,512
+		LocalOffset: 640,100,512
+		RequiresCondition: rank-elite
+	Armament@elite2:
+		Name: primary2
+		Weapon: 120mmxE
+		FireDelay: 5
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 640,-100,512
 		RequiresCondition: rank-elite
 	Armament@antiair:
 		Weapon: MammothTusk
@@ -422,6 +438,7 @@ apoc:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
+		Armaments: primary, primary2
 		PauseOnCondition: chronodisable || emp || parachute
 	AutoTarget:
 	RenderSprites:
@@ -434,6 +451,7 @@ apoc:
 	WithVoxelBarrel:
 	WithVoxelBarrel@2:
 		Sequence: barrel2
+		Armament: primary2
 	Explodes:
 		Weapon: ApocExplode
 		EmptyWeapon: ApocExplode
