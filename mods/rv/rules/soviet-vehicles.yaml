@@ -330,13 +330,15 @@ htnk:
 		Weapon: 120mm
 		Recoil: 87
 		RecoilRecovery: 12
-		LocalOffset: 640,0,512
+		LocalOffset: 768,0,512
+		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 120mmE
 		Recoil: 87
 		RecoilRecovery: 12
-		LocalOffset: 640,0,512
+		LocalOffset: 768,0,512
+		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
 	Selectable:
 		Bounds: 64, 52, 0, -6
@@ -404,7 +406,8 @@ apoc:
 		Weapon: 120mmx
 		Recoil: 87
 		RecoilRecovery: 12
-		LocalOffset: 640,100,512
+		MuzzleSequence: muzzle
+		LocalOffset: 1280,100,768
 		RequiresCondition: !rank-elite
 	Armament@primary2:
 		Name: primary2
@@ -412,13 +415,15 @@ apoc:
 		FireDelay: 5
 		Recoil: 87
 		RecoilRecovery: 12
-		LocalOffset: 640,-100,512
+		MuzzleSequence: muzzle
+		LocalOffset: 1280,-100,768
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 120mmxE
 		Recoil: 87
 		RecoilRecovery: 12
-		LocalOffset: 640,100,512
+		MuzzleSequence: muzzle-2
+		LocalOffset: 1280,100,768
 		RequiresCondition: rank-elite
 	Armament@elite2:
 		Name: primary2
@@ -426,7 +431,8 @@ apoc:
 		FireDelay: 5
 		Recoil: 87
 		RecoilRecovery: 12
-		LocalOffset: 640,-100,512
+		MuzzleSequence: muzzle-2
+		LocalOffset: 1280,-100,768
 		RequiresCondition: rank-elite
 	Armament@antiair:
 		Weapon: MammothTusk
@@ -440,6 +446,7 @@ apoc:
 		Voice: Attack
 		Armaments: primary, primary2
 		PauseOnCondition: chronodisable || emp || parachute
+	WithMuzzleOverlay:
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -754,8 +761,9 @@ tric:
 	Armament@elite:
 		Weapon: CycleMortarE
 		LocalOffset: 128,128,768
-		MuzzleSequence: muzzle
+		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
+	WithMuzzleOverlay:
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
@@ -824,17 +832,20 @@ deva:
 		TurnSpeed: 7
 	Armament@primary:
 		Weapon: 120mmxRad
-		LocalOffset: 768,100,768, 768,-100,768
+		LocalOffset: 896,100,768, 896,-100,768
+		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 120mmxRadE
-		LocalOffset: 768,100,768, 768,-100,768
+		LocalOffset: 896,100,768, 896,-100,768
+		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		RequiresCondition: !overload
 		PauseOnCondition: chronodisable || emp
 		FacingTolerance: 2
+	WithMuzzleOverlay:
 	AutoTarget:
 	RenderSprites:
 	Selectable:

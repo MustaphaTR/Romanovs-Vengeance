@@ -22,6 +22,7 @@ carrier:
 
 cdest:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	Inherits@Squid: ^SquidGrabbable
 	icon: xxicon
 
@@ -49,6 +50,7 @@ cruise:
 
 dest:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	Inherits@Squid: ^SquidGrabbable
 	icon: desticon
 
@@ -135,6 +137,7 @@ gtgcan:
 
 mtnk:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: gtnkicon
 
 harv:
@@ -145,16 +148,17 @@ harv:
 
 htk:
 	Inherits@MC: ^MindControllable
-	muzzle: gunfire
-		Length: *
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: htkicon
 
 htnk:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: htnkicon
 
 howi:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: xxicon
 
 hyd:
@@ -177,6 +181,7 @@ oltnk:
 
 apoc:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: mtnkicon
 
 pick:
@@ -193,6 +198,7 @@ ptruck:
 
 rtnk:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: rtnkicon
 
 smcv:
@@ -226,6 +232,7 @@ taxi:
 
 tnkd:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: tnkdicon
 
 tractor:
@@ -326,6 +333,7 @@ yhvr:
 
 ltnk:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: ltnkicon
 
 mind:
@@ -337,30 +345,7 @@ tele:
 
 ytnk:
 	Inherits@MC: ^MindControllable
-	muzzle:
-		Combine:
-			mgun-n:
-				Length: 3
-			mgun-nw:
-				Length: 3
-			mgun-w:
-				Length: 3
-			mgun-sw:
-				Length: 3
-			mgun-s:
-				Length: 3
-			mgun-se:
-				Length: 3
-			mgun-e:
-				Length: 3
-			mgun-ne:
-				Length: 3
-		Facings: 8
-		Length: 3
-	muzzle-1: gunfire
-		Length: *
-	muzzle-2: vtmuzzle
-		Length: *
+	Inherits@MUZZLE: ^WithGatlingMuzzle
 	icon: ytnkicon
 
 caos:
@@ -379,6 +364,7 @@ smin:
 # Custom Vehicles
 deva:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: devaicon
 
 ctnk:
@@ -407,35 +393,13 @@ grtk:
 
 tric:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: tricicon
 
 gatsub:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithGatlingMuzzle
 	Inherits@Squid: ^SquidGrabbable
-	muzzle:
-		Combine:
-			mgun-n:
-				Length: 3
-			mgun-nw:
-				Length: 3
-			mgun-w:
-				Length: 3
-			mgun-sw:
-				Length: 3
-			mgun-s:
-				Length: 3
-			mgun-se:
-				Length: 3
-			mgun-e:
-				Length: 3
-			mgun-ne:
-				Length: 3
-		Facings: 8
-		Length: 3
-	muzzle-1: gunfire
-		Length: *
-	muzzle-2: vtmuzzle
-		Length: *
 	icon: xxicon
 
 gmin:
@@ -450,6 +414,7 @@ mlyr:
 
 hwtz:
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
 	icon: hwtzicon
 
 spider:
