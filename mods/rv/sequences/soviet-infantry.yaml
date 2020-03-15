@@ -44,6 +44,7 @@ e2:
 flakt:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithFlakMuzzle
 	Inherits@Web: ^WebDisableable
 	run:
 		Tick: 120
@@ -63,8 +64,6 @@ flakt:
 		Start: 165
 	prone-shoot:
 		Start: 245
-	muzzle: gunfire
-		Length: *
 	icon: flkticon
 
 shk:

@@ -994,13 +994,16 @@ schp:
 	Armament@deployed:
 		Weapon: 160mm
 		Name: deployed
+		MuzzleSequence: muzzle
 		LocalOffset: 768,0,2048
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
 		Weapon: 160mmE
 		Name: deployed
+		MuzzleSequence: muzzle
 		LocalOffset: 768,0,2048
 		RequiresCondition: rank-elite && deployed
+	WithMuzzleOverlay:
 	Turreted:
 		TurnSpeed: 20
 	Voiced:
