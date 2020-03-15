@@ -56,15 +56,20 @@ harv:
 		HealIfBelow: 100
 	Armament@primary:
 		Weapon: 20mmrapid
-		LocalOffset: 256,0,1024
+		LocalOffset: 384,0,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 20mmrapidE
-		LocalOffset: 256,0,1024
+		LocalOffset: 384,0,1024
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || parachute
+	WithMuzzleOverlay:
 	AutoTarget:
 	Turreted:
 		TurnSpeed: 10

@@ -222,7 +222,7 @@ yarefn:
 	ProvidesPrerequisite@refinery:
 		Prerequisite: refinery
 	Building:
-		Footprint: xx x=
+		Footprint: xx x+
 		Dimensions: 2,2
 	Refinery:
 		DockOffset: 1,1
@@ -291,18 +291,24 @@ yarefn:
 		RequiresCondition: !build-incomplete
 	Turreted:
 		TurnSpeed: 5
+		Offset: 640,0,0
 	Armament@primary:
 		Weapon: 20mmrapid
-		LocalOffset: 640,0,384
+		LocalOffset: 512,0,1132
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
 	#	RequiresCondition: !rank-elite
 	# Armament@elite:
 	#	Weapon: 20mmrapidE
-	#	LocalOffset: 640,0,384
+	#	LocalOffset: 512,0,1132
+	#	MuzzleSequence: muzzle
+	#	MuzzleSplitFacings: 8
 	#	RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithMuzzleOverlay:
 	RenderSprites:
 		Image: yarefn
 	RenderVoxels:

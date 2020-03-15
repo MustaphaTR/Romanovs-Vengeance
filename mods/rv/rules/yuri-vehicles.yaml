@@ -50,14 +50,20 @@ smin:
 		TurnSpeed: 5
 	Armament@primary:
 		Weapon: 20mmrapid
-		LocalOffset: 640,0,384
+		LocalOffset: 512,0,1388
+		MuzzleSequence: muzzle
+		MuzzleSplitFacings: 8
 	#	RequiresCondition: !rank-elite
 	# Armament@elite:
 	#	Weapon: 20mmrapidE
-	#	LocalOffset: 640,0,384
+	#	LocalOffset: 512,0,1388
+	#	MuzzleSequence: muzzle
+	#	MuzzleSplitFacings: 8
 	#	RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || parachute
+	WithMuzzleOverlay:
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -340,6 +346,7 @@ ytnk:
 	#	RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || parachute
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -502,6 +509,7 @@ tele:
 		LocalOffset: 512,0,1024
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || parachute
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -595,6 +603,7 @@ mind:
 		TurnSpeed: 255
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || parachute
 	AttackMove:
 		Voice: Move
 	AutoTarget:
@@ -796,6 +805,7 @@ yhtnk:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || parachute
 	AutoTarget:
 		InitialStance: ReturnFire
 	RenderSprites:
