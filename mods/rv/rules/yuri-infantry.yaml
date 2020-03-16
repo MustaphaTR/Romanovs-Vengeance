@@ -731,7 +731,7 @@ ttrp:
 		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 980
 		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
-		Description: Infantry armed with a toxin sprayer.\n\n Strong vs Infantry\n\n Weak vs Buildings, Aircraft
+		Description: Infantry armed with a toxin sprayer.\nImmune to toxic clouds.\n\n Strong vs Infantry\n\n Weak vs Buildings, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -803,6 +803,8 @@ ttrp:
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, ImmuneToToxin
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Voiced:
