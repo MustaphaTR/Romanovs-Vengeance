@@ -1,0 +1,70 @@
+Background@MAINMENU_PRERELEASE_NOTIFICATION:
+	Logic: PreReleaseWarningPrompt
+	X: (WINDOW_RIGHT - WIDTH) / 2
+	Y: (WINDOW_BOTTOM - HEIGHT) / 2
+	Width: 520
+	Height: 260
+	Children:
+		Label@PROMPT_TITLE:
+			Width: PARENT_RIGHT
+			Y: 20
+			Height: 25
+			Font: Bold
+			Align: Center
+			Text: Romanov's Vengeance disclaimer
+		Label@PROMPT_TEXT_A:
+			X: 15
+			Y: 50
+			Width: PARENT_RIGHT - 30
+			Height: 16
+			Align: Center
+			Text: This mod is based on the pre-alpha build of OpenRA's Red Alert 2 mod, which
+		Label@PROMPT_TEXT_B:
+			X: 15
+			Y: 68
+			Width: PARENT_RIGHT - 30
+			Height: 16
+			Align: Center
+			Text: is available on GitHub to follow development.
+		Label@PROMPT_TEXT_C:
+			X: 15
+			Y: 104
+			Width: PARENT_RIGHT - 30
+			Height: 16
+			Align: Center
+			Text: Romanov's Vengeance is in an early Alpha stage as well. Neither design,
+		Label@PROMPT_TEXT_D:
+			X: 15
+			Y: 122
+			Width: PARENT_RIGHT - 30
+			Height: 16
+			Align: Center
+			Text: gameplay nor balance are set in stone and subject to change. Expect to see
+		Label@PROMPT_TEXT_E:
+			X: 15
+			Y: 140
+			Width: PARENT_RIGHT - 30
+			Height: 16
+			Align: Center
+			Text: bugs, unbalanced gameplay, placeholders or missing features.
+		Label@PROMPT_TEXT_F:
+			X: 15
+			Y: 176
+			Width: PARENT_RIGHT - 30
+			Height: 16
+			Align: Center
+			Text: Please refrain from posting any download links of our mod as it is not finished
+		Label@PROMPT_TEXT_G:
+			X: 15
+			Y: 194
+			Width: PARENT_RIGHT - 30
+			Height: 16
+			Align: Center
+			Text: and we do not want to show an unfinished product to the public.
+		Button@CONTINUE_BUTTON:
+			X: PARENT_RIGHT - WIDTH - 20
+			Y: PARENT_BOTTOM - 45
+			Width: 120
+			Height: 25
+			Text: I Understand
+			Font: Bold
