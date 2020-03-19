@@ -974,8 +974,15 @@ nafnce:
 
 nasilo:
 	Inherits@MC: ^MindControllable
-	Defaults: ngsilo
+	Defaults: 
 		Offset: 0, -30
+		UseTilesetCode: true
+		  TilesetOverrides:
+		    TEMPERATE: GENERIC
+		    URBAN: GENERIC
+		    NEWURBAN: GENERIC
+		    DESERT: GENERIC
+		    LUNAR: GENERIC
 	idle: ngsilo_a
 	damaged-idle: ngsilo_a
 		Start: 4
@@ -991,11 +998,12 @@ nasilo:
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -512
-	make: ggsilomk
-		Length: 18
-		ShadowStart: 20
+	make: ngsilomk
+		Length: 8
+		ShadowStart: 9
 	icon: nsilicon
 		Offset: 0, 0
+		UseTilesetCode: false
 
 naprop:
 	Inherits@MC: ^MindControllable
