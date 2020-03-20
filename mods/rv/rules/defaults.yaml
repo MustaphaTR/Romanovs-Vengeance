@@ -521,6 +521,9 @@
 		Modifier: 0
 	Targetable@ironcurtain:
 		TargetTypes: IronCurtainable
+	Targetable@ironcurtained:
+		TargetTypes: IronCurtained
+		RequiresCondition: invulnerability
 	TimedConditionBar@invulnerability:
 		Condition: invulnerability
 	ExternalCondition@INVULNERABILITY:
@@ -659,8 +662,6 @@
 	Inherits: ^MindControllable
 	MindControllable:
 		PauseOnCondition: invulnerability
-	Targetable@MC:
-		RequiresCondition: !controlled && !permamc && !invulnerability
 
 ^MindControllableBuilding:
 	Inherits: ^MindControllableDisabledWithIC
