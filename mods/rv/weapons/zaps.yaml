@@ -240,13 +240,10 @@ PrismShot:
 		AimTargetStances: Enemy, Neutral
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
 	Warhead@2Eff: CreateEffect
-		Explosions: medium_clsn
-		ImpactSounds: gexp14a.wav
-		ValidTargets: Ground, Air
-	Warhead@3EffWater: CreateEffect
-		Explosions: small_watersplash
-		ImpactSounds: gexpwasa.wav
-		ValidTargets: Water
+		Explosions: prism_explosion
+		ExplosionPalette: player
+		UsePlayerPalette: true
+		ValidTargets: Ground, Water, Air
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallScorch
 
@@ -290,13 +287,10 @@ Comet:
 		AimTargetStances: Enemy, Neutral
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
 	Warhead@2Eff: CreateEffect
-		Explosions: medium_clsn
-		ImpactSounds: gexp14a.wav
-		ValidTargets: Ground, Air
-	Warhead@3EffWater: CreateEffect
-		Explosions: small_watersplash
-		ImpactSounds: gexpwasa.wav
-		ValidTargets: Water
+		Explosions: prism_explosion
+		ExplosionPalette: player
+		UsePlayerPalette: true
+		ValidTargets: Ground, Water, Air
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: SmallScorch
 
@@ -565,7 +559,6 @@ DiskLaser:
 		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
 	-Warhead@2Eff:
-	-Warhead@3EffWater:
 
 DiskLaserE:
 	Inherits: DiskLaser
@@ -623,7 +616,6 @@ DoomLaser:
 		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
 	-Warhead@2Eff:
-	-Warhead@3EffWater:
 
 DoomLaserE:
 	Inherits: DoomLaser
@@ -666,7 +658,6 @@ LunarLaser:
 		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
 	-Warhead@2Eff:
-	-Warhead@3EffWater:
 
 LunarLaserE:
 	Inherits: LunarLaser
