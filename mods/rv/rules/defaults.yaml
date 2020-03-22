@@ -513,6 +513,27 @@
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: teslabomb
 
+^AcceptsToxinBomb:
+	DelayedWeaponAttachable@TOXINBOMB:
+		Type: ToxinBomb
+		ShowProgressBar: false
+		Condition: toxinbomb
+	Targetable@TOXINBOMB:
+		TargetTypes: ToxinBomb
+		RequiresCondition: !toxinbomb
+	Targetable@TOXINBOMBCLEANER:
+		TargetTypes: ToxinBombCleaner
+		RequiresCondition: toxinbomb
+	WithDecoration@TOXINBOMB:
+		RequiresSelection: false
+		Image: toxinbomb
+		Sequence: idle
+		ReferencePoint: Center
+		ZOffset: 256
+		Palette: mouse
+		ValidStances: Ally, Neutral, Enemy
+		RequiresCondition: toxinbomb
+
 ^IronCurtainable:
 	WithColoredOverlay@ironcurtain:
 		RequiresCondition: invulnerability
@@ -914,6 +935,7 @@
 	Inherits@9: ^ChronoDisableDisabledWithIC
 	Inherits@10: ^AffectedByStealthGenerator
 	Inherits@11: ^AcceptsTeslaBomb
+	Inherits@12: ^AcceptsToxinBomb
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	AppearsOnMapPreview:

@@ -239,6 +239,63 @@ TeslaBombE:
 	Warhead@1Dam: SpreadDamage
 		Damage: 1300
 
+ToxinTrooperBomb:
+	Inherits: SealC4
+	Warhead@1Dam: SpreadDamage
+		Damage: 475
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_toxin_explosion
+		ExplosionPalette: player
+	Warhead@3Shr: FireShrapnel
+		Weapon: ToxinSplash
+		AffectsParent: true
+		Amount: 3
+	Warhead@4Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 400
+		Speed: 0, 25
+		TurnRate: 10
+	Warhead@5Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 400
+		Speed: 0, 25
+		TurnRate: 10
+
+ToxinTrooperBombE:
+	Inherits: ToxinTrooperBomb
+	Warhead@1Dam: SpreadDamage
+		Damage: 1150
+	Warhead@2Eff: CreateEffect
+		Explosions: large_toxin_explosion
+	Warhead@3Shr: FireShrapnel
+		Amount: 6
+	Warhead@6Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 400
+		Speed: 0, 25
+		TurnRate: 10
+	Warhead@7Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Duration: 400
+		Speed: 0, 25
+		TurnRate: 10
+
 CRNuke:
 	Inherits: IvanBomber
 	Warhead@1Dam: SpreadDamage

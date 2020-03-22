@@ -64,13 +64,26 @@ TeslaBombAttacherE:
 	Warhead@1Att: AttachDelayedWeapon
 		Weapon: TeslaBombE
 
+ToxinBombAttacher:
+	Inherits: IvanBombAttacher
+	ValidTargets: ToxinBomb
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: ToxinTrooperBomb
+		Type: ToxinBomb
+		TriggerTime: 75
+
+ToxinBombAttacherE:
+	Inherits: ToxinBombAttacher
+	Warhead@1Att: AttachDelayedWeapon
+		Weapon: ToxinTrooperBombE
+
 DefuseKit:
 	ReloadDelay: 50
 	TargetActorCenter: true
 	Range: 1c512
 	Report: gdefuse.wav
 	Projectile: InstantHit
-	ValidTargets: IvanBombCleaner, SEALC4Cleaner, CommandoC4Cleaner, TanyaC4Cleaner, TeslaBombCleaner
+	ValidTargets: IvanBombCleaner, SEALC4Cleaner, CommandoC4Cleaner, TanyaC4Cleaner, TeslaBombCleaner, ToxinBombCleaner
 	Warhead@1Det: DetachDelayedWeapon
 		Types: IvanBomb, SEALC4, CommandoC4, TanyaC4, TeslaBomb
 	Warhead@2Dam: TargetDamage
