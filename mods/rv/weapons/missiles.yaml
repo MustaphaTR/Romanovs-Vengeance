@@ -466,8 +466,12 @@ ChaosRocket:
 		ValidTargets: ChaosGasable
 		ValidStances: Enemy, Neutral
 		Condition: chaos
-		Range: 0c128
+		Range: 1c512
 		Duration: 200
+	Warhead@5Eff: CreateEffect
+		Explosions: chaosgas50p
+		ImpactSounds: vchaatta.wav
+		ValidTargets: Ground, Water, Air
 
 ChaosRocketE:
 	Inherits: ChaosRocket
