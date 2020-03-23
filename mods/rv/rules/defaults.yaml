@@ -1919,6 +1919,7 @@
 	Aircraft:
 		Voice: Move
 		MaximumPitch: 128
+		AltitudeVelocity: 120
 		AirborneCondition: airborne
 		VTOL: true
 		TakeOffOnResupply: true
@@ -1987,6 +1988,8 @@
 	Inherits@13: ^AffectedByCashBounty
 	Inherits@14: ^DisabledByEMP
 	Inherits@15: ^DisabledByMagnetron
+	Aircraft:
+		AltitudeVelocity: 43
 	WithTextControlGroupDecoration:
 	Targetable@ChronoDisable:
 		RequiresCondition: !airborne
@@ -2115,9 +2118,11 @@
 
 ^PlaneHusk:
 	Inherits: ^Husk
+	Aircraft:
+		AltitudeVelocity: 120
 	FallsToEarth:
 		Explosion: PlaneExplode
-		Velocity: 129
+		Velocity: 240
 		Moves: true
 		MaximumSpinSpeed: 0
 	GpsDotAS:

@@ -355,7 +355,10 @@ orca:
 		Image: falc
 	SpawnActorOnDeath:
 		Actor: orcahusk
-		RequiresCondition: airborne
+		RequiresCondition: airborne && cruising
+	SpawnActorOnDeath@VTOL:
+		Actor: orcahusk.VTOL
+		RequiresCondition: airborne && !cruising
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
@@ -375,6 +378,32 @@ orcahusk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 210
+		AltitudeVelocity: 240
+	RevealsShroud:
+		Range: 12c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 12c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 6c0
+		Duration: 50
+	RenderVoxels:
+		Image: falc
+
+orcahusk.VTOL:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Harrier
+	Tooltip@NoRow:
+		Name: Harrier
+	FallsToEarth:
+		Explosion: PlaneExplode
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 210
+		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 12c0
 		Type: GroundPosition
@@ -403,6 +432,8 @@ beag:
 		Description: Aircraft armed with EMP bomb\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	SpawnActorOnDeath:
 		Actor: beaghusk
+	SpawnActorOnDeath@VTOL:
+		Actor: beaghusk.VTOL
 	Armament:
 		Weapon: EMPulseBEagle
 	Armament@Elite:
@@ -440,6 +471,32 @@ beaghusk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 210
+		AltitudeVelocity: 240
+	RevealsShroud:
+		Range: 12c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 12c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 6c0
+		Duration: 50
+	RenderVoxels:
+		Image: beag
+
+beaghusk.VTOL:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Black Eagle
+	Tooltip@NoRow:
+		Name: Black Eagle
+	FallsToEarth:
+		Explosion: PlaneExplode
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 210
+		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 12c0
 		Type: GroundPosition
@@ -820,6 +877,7 @@ hornethusk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 210
+		AltitudeVelocity: 240
 	FallsToEarth:
 		Explosion: HornetExplode
 	RenderVoxels:
@@ -892,6 +950,7 @@ aswhusk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 180
+		AltitudeVelocity: 240
 	FallsToEarth:
 		Explosion: HornetExplode
 	RenderVoxels:
@@ -1170,6 +1229,8 @@ bpln:
 		-LandingSounds:
 	SpawnActorOnDeath:
 		Actor: bplnhusk
+	SpawnActorOnDeath@VTOL:
+		Actor: bplnhusk.VTOL
 	Armament:
 		Weapon: Maverick3
 	Armament@Elite:
@@ -1210,6 +1271,22 @@ bplnhusk:
 	Aircraft:
 		TurnSpeed: 5
 		Speed: 210
+		AltitudeVelocity: 240
+	RenderVoxels:
+		Image: bpln
+	FallsToEarth:
+		Explosion: UnitExplode
+
+bplnhusk.VTOL:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: MiG
+	Tooltip@NoRow:
+		Name: MiG
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 210
+		AltitudeVelocity: 240
 	RenderVoxels:
 		Image: bpln
 	FallsToEarth:
@@ -1548,7 +1625,10 @@ fortress:
 		NormalsPalette: ts-normals
 	SpawnActorOnDeath:
 		Actor: fortresshusk
-		RequiresCondition: airborne
+		RequiresCondition: airborne && cruising
+	SpawnActorOnDeath@VTOL:
+		Actor: fortresshusk.VTOL
+		RequiresCondition: airborne && !cruising
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
@@ -1566,7 +1646,34 @@ fortresshusk:
 		Explosion: B2Explode
 	Aircraft:
 		TurnSpeed: 5
-		Speed: 165
+		Speed: 180
+		AltitudeVelocity: 240
+	RevealsShroud:
+		Range: 10c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 5c0
+		Duration: 50
+	RenderVoxels:
+		Image: fortress
+		NormalsPalette: ts-normals
+
+fortresshusk.VTOL:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: B2 Spirit
+	Tooltip@NoRow:
+		Name: B2 Spirit
+	FallsToEarth:
+		Explosion: B2Explode
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 180
+		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 10c0
 		Type: GroundPosition
