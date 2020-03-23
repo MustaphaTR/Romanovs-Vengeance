@@ -771,6 +771,15 @@ tric:
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
+	Carryable:
+		CarriedCondition: being-carried
+    LeavesTrails:
+        Image: dust
+		MovingInterval: 2
+		Type: CenterPosition
+        Palette: player50alpha
+        TerrainTypes: Clear, Rough, Green, DirtRoad, Ore, Gems
+		RequiresCondition: !being-carried
 	Voiced:
 		VoiceSet: MortarTricycleVoice
 		Volume: 8
