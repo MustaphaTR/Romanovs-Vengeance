@@ -432,8 +432,8 @@ CurtainRifle:
 		Range: 0c512
 		Duration: 75
 		ValidStances: Ally
-		ValidTargets: Vehicle, Ship, Structure, WaterStructure
-		InvalidTargets: Air
+		ValidTargets: IronCurtainable
+		InvalidTargets: Infantry, Air
 	Warhead@Stars: CreateEffect
 		Explosions: iron_fx
 		ValidTargets: Ground, Water
@@ -447,7 +447,8 @@ CurtainRifleAP:
 	Projectile: TeslaZap
 		Palette: ra
 	Warhead@Damage: SpreadDamage
-		Spread: 0c512
+		Spread: 0c768
+		Falloff: 100, 100
 		Damage: 125
 		ValidTargets: Infantry
 		DamageTypes: FlameDeath
@@ -459,16 +460,28 @@ CurtainRifleAPE:
 	Inherits: CurtainRifleAP
 	Range: 6c0
 	Warhead@Damage: SpreadDamage
-		Spread: 0c768
+		Spread: 1c0
 
 CRCurtainRifle:
-	Inherits: CurtainRifleAP
-	ReloadDelay: 5
-	-Report:
+	Inherits: CurtainRifle
+	ReloadDelay: 70
+	Projectile: TeslaZap
+		Image: litningthicc
+	Warhead@Condition: GrantExternalCondition
+		Range: 1c512
 	Warhead@Damage: SpreadDamage
-		Spread: 2c512
-		Damage: 5
-	-Warhead@Stars:
+		Spread: 1c512
+		Falloff: 100, 100
+		Damage: 125
+		ValidTargets: Infantry
+		DamageTypes: FlameDeath
+	Warhead@Stars:
+		Explosions: ironblast
+
+CRCurtainRifleAP:
+	Inherits: CRCurtainRifle
+	ValidTargets: Infantry
+	-InvalidTargets:
 
 UCCurtainRifle:
 	Inherits: CurtainRifle
