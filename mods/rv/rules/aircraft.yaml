@@ -856,6 +856,10 @@ hornet:
 	RejectsOrders:
 	SpawnActorOnDeath:
 		Actor: hornethusk
+		RequiresCondition: cruising
+	SpawnActorOnDeath@VTOL:
+		Actor: hornethusk.VTOL
+		RequiresCondition: !cruising
 	-Selectable:
 	-ActorLostNotification:
 	CarrierSlave:
@@ -870,6 +874,22 @@ hornet:
 
 hornethusk:
 	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Hornet
+	Tooltip@NoRow:
+		Name: Hornet
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 210
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: hornet
+		NormalsPalette: ts-normals
+
+hornethusk.VTOL:
+	Inherits: ^HelicopterHusk
 	Tooltip:
 		Name: Hornet
 	Tooltip@NoRow:
@@ -929,6 +949,10 @@ asw:
 	RejectsOrders:
 	SpawnActorOnDeath:
 		Actor: aswhusk
+		RequiresCondition: cruising
+	SpawnActorOnDeath@VTOL:
+		Actor: aswhusk.VTOL
+		RequiresCondition: !cruising
 	-Selectable:
 	-ActorLostNotification:
 	CarrierSlave:
@@ -943,6 +967,22 @@ asw:
 
 aswhusk:
 	Inherits: ^PlaneHusk
+	Tooltip:
+		Name: Osprey
+	Tooltip@NoRow:
+		Name: Osprey
+	Aircraft:
+		TurnSpeed: 5
+		Speed: 180
+		AltitudeVelocity: 240
+	FallsToEarth:
+		Explosion: HornetExplode
+	RenderVoxels:
+		Image: asw
+		NormalsPalette: ts-normals
+
+aswhusk.VTOL:
+	Inherits: ^HelicopterHusk
 	Tooltip:
 		Name: Osprey
 	Tooltip@NoRow:
