@@ -571,7 +571,10 @@ DiskLaser:
 		Damage: 90
 		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
-	-Warhead@2Eff:
+	Warhead@2Eff:
+		Explosions: laser_explosion
+		ExplosionPalette: effect
+		UsePlayerPalette: false
 
 DiskLaserE:
 	Inherits: DiskLaser
@@ -580,6 +583,9 @@ DiskLaserE:
 		Color: FF000080
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
+	Warhead@2Eff:
+		Explosions: laser_explosion_red
+		ExplosionPalette: player
 
 DiskLaserAA:
 	Inherits: DiskLaser
@@ -628,7 +634,10 @@ DoomLaser:
 			Rocket: 100
 		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
-	-Warhead@2Eff:
+	Warhead@2Eff:
+		Explosions: laser_explosion
+		ExplosionPalette: effect
+		UsePlayerPalette: false
 
 DoomLaserE:
 	Inherits: DoomLaser
@@ -637,6 +646,9 @@ DoomLaserE:
 		Color: FF000080
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
+	Warhead@2Eff:
+		Explosions: laser_explosion_red
+		ExplosionPalette: player
 
 LunarLaser:
 	Inherits: Comet
@@ -670,7 +682,10 @@ LunarLaser:
 			Rocket: 100
 		DamageTypes: RadiationDeath, SuppressTerrorDrone
 	-Warhead@2Shr:
-	-Warhead@2Eff:
+	Warhead@2Eff:
+		Explosions: laser_explosion
+		ExplosionPalette: effect
+		UsePlayerPalette: false
 
 LunarLaserE:
 	Inherits: LunarLaser
@@ -679,6 +694,9 @@ LunarLaserE:
 		Color: FF000080
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
+	Warhead@2Eff:
+		Explosions: laser_explosion_red
+		ExplosionPalette: player
 
 LunarLaserAA:
 	Inherits: LunarLaser
