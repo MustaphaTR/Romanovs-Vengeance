@@ -95,8 +95,6 @@ smin:
 		ValidStances: None
 	HitShape:
 	StoresResources:
-		PipColor: Yellow
-		PipCount: 10
 		Capacity: 1000
 	Explodes:
 		RequiresCondition: !spawn-ore
@@ -108,6 +106,13 @@ smin:
 		Condition: spawn-ore
 	GpsDotAS:
 		Sequence: Harvester
+	WithResourceStoragePipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-yellow
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 10
 
 gmin:
 	Inherits: ^Vehicle
@@ -193,6 +198,15 @@ gmin:
 	HitShape:
 	GpsDotAS:
 		Sequence: Harvester
+	WithHarvesterPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-blue
 
 ltnk:
 	Inherits: ^MainBattleTank
@@ -596,6 +610,11 @@ mind:
 		ControllingCondition: controlling
 		Sounds: iyurat1a.wav
 		Capacity: -3
+	WithMindControlPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 	WithMindControlArc:
 		UsePlayerColor: true
 		Offset: 0,0,960
@@ -687,6 +706,11 @@ mlyr:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 
 kamaz:
 	Inherits: ^Vehicle
@@ -728,7 +752,6 @@ kamaz:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 5
-		PipCount: 5
 		PassengerFacing: 0
 		UnloadVoice: Move
 		LoadingCondition: notmobile
@@ -747,6 +770,16 @@ kamaz:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
 
 yhtnk:
 	Inherits: ^Vehicle

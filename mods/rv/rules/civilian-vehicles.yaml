@@ -7,11 +7,14 @@ bus:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 20
-		PipCount: 5
 		UnloadVoice: Move
 	WithCargoSounds:
 		EnterSound: genter1a.wav
 		ExitSound: gexit1a.wav
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
 
 limo:
 	Inherits: ^CivVehicle
@@ -22,13 +25,16 @@ limo:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 20
-		PipCount: 5
 		UnloadVoice: Move
 	WithCargoSounds:
 		EnterSound: genter1a.wav
 		ExitSound: gexit1a.wav
 	RenderVoxels:
 		NormalsPalette: ts-normals
+	WithCargoPipsDecoration:
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 5
 
 pick:
 	Inherits: ^CivVehicle

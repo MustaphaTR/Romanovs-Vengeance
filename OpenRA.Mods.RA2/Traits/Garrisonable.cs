@@ -29,9 +29,6 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("The maximum sum of Garrisoner.Weight that this actor can support.")]
 		public readonly int MaxWeight = 0;
 
-		[Desc("Number of pips to display when this actor is selected.")]
-		public readonly int PipCount = 0;
-
 		[Desc("`Garrisoner.GarrisonType`s that can be loaded into this actor.")]
 		public readonly HashSet<string> Types = new HashSet<string>();
 
@@ -91,7 +88,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public override object Create(ActorInitializer init) { return new Garrisonable(init, this); }
 	}
 
-	public class Garrisonable : PausableConditionalTrait<GarrisonableInfo>, IPips, IIssueOrder, IResolveOrder, IOrderVoice, INotifyCreated, INotifyKilled,
+	public class Garrisonable : PausableConditionalTrait<GarrisonableInfo>, IIssueOrder, IResolveOrder, IOrderVoice, INotifyCreated, INotifyKilled,
 		INotifyOwnerChanged, INotifySold, INotifyActorDisposing, IIssueDeployOrder,
 		ITransformActorInitModifier
 	{
@@ -401,30 +398,6 @@ namespace OpenRA.Mods.RA2.Traits
 				var d = Util.ApplyPercentageModifiers(damage, damageModifiers.Append(DamageVersus(passenger, versus)));
 				passenger.InflictDamage(attacker, new Damage(d, damageTypes));
 			}
-		}
-
-		public IEnumerable<PipType> GetPips(Actor self)
-		{
-			var numPips = Info.PipCount;
-
-			for (var i = 0; i < numPips; i++)
-				yield return GetPipAt(i);
-		}
-
-		PipType GetPipAt(int i)
-		{
-			var n = i * Info.MaxWeight / Info.PipCount;
-
-			foreach (var c in garrisonable)
-			{
-				var pi = c.Info.TraitInfo<GarrisonerInfo>();
-				if (n < pi.Weight)
-					return pi.PipType;
-				else
-					n -= pi.Weight;
-			}
-
-			return PipType.Transparent;
 		}
 
 		public void Load(Actor self, Actor a)

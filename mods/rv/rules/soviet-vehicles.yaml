@@ -105,6 +105,15 @@ harv:
 	HitShape:
 	GpsDotAS:
 		Sequence: Harvester
+	WithHarvesterPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-blue
 
 dron:
 	Inherits: ^Vehicle
@@ -261,7 +270,6 @@ htk:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 5
-		PipCount: 5
 		PassengerFacing: 0
 		UnloadVoice: Move
 		LoadingCondition: notmobile
@@ -311,6 +319,16 @@ htk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
 
 htnk:
 	Inherits: ^MainBattleTank
@@ -670,6 +688,11 @@ v3:
 		Actors: v3rocket
 		RespawnTicks: 200
 		LoadedCondition: loaded
+	WithMissileSpawnerPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 	Explodes:
 		Weapon: UnitExplode
 	RenderSprites:
@@ -773,12 +796,12 @@ tric:
 	WithVoxelBody:
 	Carryable:
 		CarriedCondition: being-carried
-    LeavesTrails:
-        Image: dust
+	LeavesTrails:
+		Image: dust
 		MovingInterval: 2
 		Type: CenterPosition
-        Palette: player50alpha
-        TerrainTypes: Clear, Rough, Green, DirtRoad, Ore, Gems
+		Palette: player50alpha
+		TerrainTypes: Clear, Rough, Green, DirtRoad, Ore, Gems
 		RequiresCondition: !being-carried
 	Voiced:
 		VoiceSet: MortarTricycleVoice

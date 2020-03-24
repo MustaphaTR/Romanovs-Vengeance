@@ -24,7 +24,10 @@ namespace OpenRA.Mods.RA2.Traits
 	public class GarrisonerInfo : ITraitInfo
 	{
 		public readonly string GarrisonType = null;
-		public readonly PipType PipType = PipType.Green;
+
+		[Desc("If defined, use a custom pip type defined on the transport's WithGarrisonPipsDecoration.CustomPipSequences list.")]
+		public readonly string CustomPipType = null;
+
 		public readonly int Weight = 1;
 
 		[Desc("What diplomatic stances can be Garrisoned by this actor.")]

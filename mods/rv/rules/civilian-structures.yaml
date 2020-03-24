@@ -112,14 +112,13 @@ cahse01:
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
-	Selectable:
-		Bounds: 56, 58, -5, -14
-		DecorationBounds: 96, 98, -5, -24
 	Garrisonable:
 		MaxWeight: 5
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: cahse01.rubble
+	IsometricSelectable:
+		Height: 60
 
 cahse01.rubble:
 	Inherits: ^Rubble
@@ -138,14 +137,13 @@ cahse02:
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
-	Selectable:
-		Bounds: 70, 65, -15, -14
-		DecorationBounds: 110, 115, -15, -34
 	Garrisonable:
 		MaxWeight: 5
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: cahse02.rubble
+	IsometricSelectable:
+		Height: 75
 
 cahse02.rubble:
 	Inherits: ^Rubble
@@ -164,14 +162,13 @@ cahse03:
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
-	Selectable:
-		Bounds: 100, 65, -15, -14
-		DecorationBounds: 140, 125, -15, -38
 	Garrisonable:
 		MaxWeight: 5
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: cahse03.rubble
+	IsometricSelectable:
+		Height: 60
 
 cahse03.rubble:
 	Inherits: ^Rubble
@@ -190,14 +187,13 @@ cahse04:
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
-	Selectable:
-		Bounds: 70, 65, -10, -14
-		DecorationBounds: 110, 115, -10, -28
 	Garrisonable:
 		MaxWeight: 5
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: cahse04.rubble
+	IsometricSelectable:
+		Height: 75
 
 cahse04.rubble:
 	Inherits: ^Rubble
@@ -262,14 +258,13 @@ cahse07:
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
-	Selectable:
-		Bounds: 80, 55, -2, -14
-		DecorationBounds: 130, 90, -2, -14
 	Garrisonable:
 		MaxWeight: 5
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: cahse07.rubble
+	IsometricSelectable:
+		Height: 60
 
 cahse07.rubble:
 	Inherits: ^Rubble
@@ -286,15 +281,14 @@ cawt01:
 		Name: Water Tower
 	Tooltip@NoRow:
 		Name: Water Tower
-	Selectable:
-		Bounds: 40, 25, -2, -14
-		DecorationBounds: 50, 80, -2, -26
 	Armor:
 		Type: Concrete
 	RevealsShroud:
 		Range: 8c0
 	Health:
 		HP: 400
+	IsometricSelectable:
+		Height: 75
 
 cats01:
 	Inherits: ^CivBuilding
@@ -303,9 +297,6 @@ cats01:
 		Name: Twin Silos
 	Tooltip@NoRow:
 		Name: Twin Silos
-	Selectable:
-		Bounds: 50, 25, 8, -14
-		DecorationBounds: 70, 85, 8, -18
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -315,6 +306,8 @@ cats01:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+	IsometricSelectable:
+		Height: 45
 
 cabarn02:
 	Inherits: ^GarrisonableBuilding
@@ -323,9 +316,6 @@ cabarn02:
 		Name: Barn
 	Tooltip@NoRow:
 		Name: Barn
-	Selectable:
-		Bounds: 62, 48, 2, -14
-		DecorationBounds: 102, 88, 2, -25
 	Health:
 		HP: 500
 	Building:
@@ -334,6 +324,8 @@ cabarn02:
 	Garrisonable:
 		MaxWeight: 5
 		PipCount: 5
+	IsometricSelectable:
+		Height: 45
 
 cawash01:
 	Inherits: ^CivBuilding
@@ -341,9 +333,6 @@ cawash01:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Selectable:
-		Bounds: 150, 90, 0, -19
-		DecorationBounds: 200, 150, 0, -22
 	Tooltip:
 		Name: White House
 	Tooltip@NoRow:
@@ -356,6 +345,8 @@ cawash01:
 		Range: 8c0
 	SpawnActorOnDeath:
 		Actor: cawash01.rubble
+	IsometricSelectable:
+		Height: 60
 
 cawash01.rubble:
 	Inherits: ^Rubble
@@ -372,11 +363,10 @@ cawash03:
 	Building:
 		Footprint: xxxx xxxx xxxx
 		Dimensions: 4, 3
-	Selectable:
-		Bounds: 130, 80, 0, -19
-		DecorationBounds: 180, 140, 0, -29
 	SpawnActorOnDeath:
 		Actor: cawash03.rubble
+	IsometricSelectable:
+		Height: 60
 
 cawash03.rubble:
 	Inherits: ^Rubble
@@ -393,11 +383,10 @@ cawash04:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Selectable:
-		Bounds: 150, 110, 0, -19
-		DecorationBounds: 210, 180, 0, -32
 	SpawnActorOnDeath:
 		Actor: cawash04.rubble
+	IsometricSelectable:
+		Height: 75
 
 cawash04.rubble:
 	Inherits: ^Rubble
@@ -414,11 +403,10 @@ cawash05:
 	Building:
 		Footprint: xxxx xxxx
 		Dimensions: 4, 2
-	Selectable:
-		Bounds: 130, 80, 0, -15
-		DecorationBounds: 190, 160, 0, -34
 	SpawnActorOnDeath:
 		Actor: cawash05.rubble
+	IsometricSelectable:
+		Height: 90
 
 cawash05.rubble:
 	Inherits: ^Rubble
@@ -435,11 +423,10 @@ cawash06:
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
-	Selectable:
-		Bounds: 150, 90, -6, -17
-		DecorationBounds: 210, 150, -11, -29
 	SpawnActorOnDeath:
 		Actor: cawash06.rubble
+	IsometricSelectable:
+		Height: 60
 
 cawash06.rubble:
 	Inherits: ^Rubble
@@ -456,11 +443,10 @@ cawash07:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
-	Selectable:
-		Bounds: 150, 90, 0, -15
-		DecorationBounds: 210, 185, 0, -45
 	SpawnActorOnDeath:
 		Actor: cawash07.rubble
+	IsometricSelectable:
+		Height: 90
 
 cawash07.rubble:
 	Inherits: ^Rubble
@@ -477,11 +463,10 @@ cawash08:
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
-	Selectable:
-		Bounds: 150, 90, 0, -15
-		DecorationBounds: 230, 190, -4, -39
 	SpawnActorOnDeath:
 		Actor: cawash08.rubble
+	IsometricSelectable:
+		Height: 120
 
 cawash08.rubble:
 	Inherits: ^Rubble
@@ -498,11 +483,10 @@ cawash09:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
-	Selectable:
-		Bounds: 100, 90, 5, -8
-		DecorationBounds: 180, 140, 5, -25
 	SpawnActorOnDeath:
 		Actor: cawash09.rubble
+	IsometricSelectable:
+		Height: 90
 
 cawash09.rubble:
 	Inherits: ^Rubble
@@ -519,11 +503,10 @@ cawash10:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Selectable:
-		Bounds: 150, 90, 0, -15
-		DecorationBounds: 230, 180, -4, -30
 	SpawnActorOnDeath:
 		Actor: cawash10.rubble
+	IsometricSelectable:
+		Height: 90
 
 cawash10.rubble:
 	Inherits: ^Rubble
@@ -540,11 +523,10 @@ cawash11:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Selectable:
-		Bounds: 150, 90, 10, -15
-		DecorationBounds: 230, 185, 10, -39
 	SpawnActorOnDeath:
 		Actor: cawash11.rubble
+	IsometricSelectable:
+		Height: 90
 
 cawash11.rubble:
 	Inherits: ^Rubble
@@ -561,9 +543,6 @@ cawsh12:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
-	Selectable:
-		Bounds: 90, 40, 0, -15
-		DecorationBounds: 100, 230, 0, -79
 	Tooltip:
 		Name: Washington Monument
 	Tooltip@NoRow:
@@ -576,20 +555,10 @@ cawsh12:
 		Range: 8c0
 	Turreted:
 		TurnSpeed: 255
-	BodyOrientation:
-		QuantizedFacings: 8
-	Cargo:
-		Types: Garrisoner
-		MaxWeight: 5
-		PipCount: 5
-	AttackGarrisoned:
-		Voice: Attack
-		Armaments: M1Carbine
-		PortOffsets: 384,0,128, 224,-341,128, -224,-341,128, -384,0,128, -224,341,128, 224,341,128
-		PortYaws: 0, 176, 341, 512, 682, 853
-		PortCones: 86, 86, 86, 86, 86, 86
 	SpawnActorOnDeath:
 		Actor: cawsh12.rubble
+	IsometricSelectable:
+		Height: 165
 
 cawsh12.rubble:
 	Inherits: ^Rubble
@@ -606,11 +575,10 @@ cawash13:
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
-	Selectable:
-		Bounds: 100, 90, 5, -8
-		DecorationBounds: 190, 140, 5, -25
 	SpawnActorOnDeath:
 		Actor: cawash13.rubble
+	IsometricSelectable:
+		Height: 60
 
 cawash13.rubble:
 	Inherits: ^Rubble
@@ -628,9 +596,6 @@ cawash14:
 		Name: Jefferson Memorial
 	Tooltip@NoRow:
 		Name: Jefferson Memorial
-	Selectable:
-		Bounds: 70, 50, 0, -5
-		DecorationBounds: 110, 80, 0, -10
 	Armor:
 		Type: Concrete
 	Health:
@@ -640,6 +605,8 @@ cawash14:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: cawash14.rubble
+	IsometricSelectable:
+		Height: 45
 
 cawash14.rubble:
 	Inherits: ^Rubble
@@ -657,9 +624,6 @@ cawash15:
 		Name: Lincoln Memorial
 	Tooltip@NoRow:
 		Name: Lincoln Memorial
-	Selectable:
-		Bounds: 100, 90, 0, -8
-		DecorationBounds: 200, 140, 0, -25
 	Armor:
 		Type: Concrete
 	Health:
@@ -669,6 +633,8 @@ cawash15:
 		Footprint: xxx xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: cawash15.rubble
+	IsometricSelectable:
+		Height: 60
 
 cawash15.rubble:
 	Inherits: ^Rubble
@@ -686,9 +652,6 @@ cawash16:
 		Name: Smithsonian Castle
 	Tooltip@NoRow:
 		Name: Smithsonian Castle
-	Selectable:
-		Bounds: 110, 90, 5, -8
-		DecorationBounds: 190, 140, 3, -28
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -700,6 +663,8 @@ cawash16:
 		Footprint: xxxxx xxxxx xxxxx
 	SpawnActorOnDeath:
 		Actor: cawash16.rubble
+	IsometricSelectable:
+		Height: 75
 
 cawash16.rubble:
 	Inherits: ^Rubble
@@ -717,14 +682,13 @@ cawash17:
 		Name: Smithsonian Natural History Museum
 	Tooltip@NoRow:
 		Name: Smithsonian Natural History Museum
-	Selectable:
-		Bounds: 160, 90, 5, -8
-		DecorationBounds: 220, 150, 5, -25
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
 	SpawnActorOnDeath:
 		Actor: cawash17.rubble
+	IsometricSelectable:
+		Height: 60
 
 cawash17.rubble:
 	Inherits: ^Rubble
@@ -755,6 +719,8 @@ cawash18:
 		Sequence: idle-water
 	MapEditorData:
 		Categories: Decoration
+	IsometricSelectable:
+		Height: 45
 
 cawash19:
 	Inherits: ^CivBuilding
@@ -763,9 +729,6 @@ cawash19:
 		Name: Iwo Jima Memorial
 	Tooltip@NoRow:
 		Name: Iwo Jima Memorial
-	Selectable:
-		Bounds: 100, 60, 0, -8
-		DecorationBounds: 180, 160, 0, -34
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -779,6 +742,8 @@ cawash19:
 		Sequence: idle-flag
 	SpawnActorOnDeath:
 		Actor: cawash19.rubble
+	IsometricSelectable:
+		Height: 90
 
 cawash19.rubble:
 	Inherits: ^Rubble
@@ -795,11 +760,10 @@ canewy01:
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
-	Selectable:
-		Bounds: 150, 90, 0, -15
-		DecorationBounds: 230, 250, -4, -63
 	SpawnActorOnDeath:
 		Actor: canewy01.rubble
+	IsometricSelectable:
+		Height: 75
 
 canewy01.rubble:
 	Inherits: ^Rubble
@@ -817,9 +781,6 @@ canewy04:
 		Name: Statue of Liberty
 	Tooltip@NoRow:
 		Name: Statue of Liberty
-	Selectable:
-		Bounds: 90, 60, 0, -15
-		DecorationBounds: 120, 250, 0, -95
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -833,6 +794,8 @@ canewy04:
 		Actor: canewy04.rubble
 	RenderSprites:
 		Palette: liberty
+	IsometricSelectable:
+		Height: 225
 
 canewy04.rubble:
 	Inherits: ^Rubble
@@ -863,14 +826,13 @@ canewy05:
 canewy06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 80, 0, -15
-		DecorationBounds: 180, 295, 0, -112
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy06.rubble
+	IsometricSelectable:
+		Height: 225
 
 canewy06.rubble:
 	Inherits: ^Rubble
@@ -884,14 +846,13 @@ canewy06.rubble:
 canewy07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 80, 0, -15
-		DecorationBounds: 180, 270, 0, -90
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy07.rubble
+	IsometricSelectable:
+		Height: 180
 
 canewy07.rubble:
 	Inherits: ^Rubble
@@ -905,14 +866,13 @@ canewy07.rubble:
 canewy08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 80, 0, -15
-		DecorationBounds: 180, 270, 0, -90
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy08.rubble
+	IsometricSelectable:
+		Height: 180
 
 canewy08.rubble:
 	Inherits: ^Rubble
@@ -926,14 +886,13 @@ canewy08.rubble:
 canewy10:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Selectable:
-		Bounds: 90, 50, 0, -8
-		DecorationBounds: 150, 248, 0, -93
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy10.rubble
+	IsometricSelectable:
+		Height: 210
 
 canewy10.rubble:
 	Inherits: ^Rubble
@@ -947,14 +906,13 @@ canewy10.rubble:
 canewy11:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Selectable:
-		Bounds: 90, 50, 0, -8
-		DecorationBounds: 150, 190, 0, -65
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy11.rubble
+	IsometricSelectable:
+		Height: 75
 
 canewy11.rubble:
 	Inherits: ^Rubble
@@ -968,14 +926,13 @@ canewy11.rubble:
 canewy12:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 90, 50, 0, -8
-		DecorationBounds: 150, 190, 0, -65
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: canewy12.rubble
+	IsometricSelectable:
+		Height: 75
 
 canewy12.rubble:
 	Inherits: ^Rubble
@@ -989,14 +946,13 @@ canewy12.rubble:
 canewy13:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 90, 50, 0, -8
-		DecorationBounds: 150, 255, 0, -92
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy13.rubble
+	IsometricSelectable:
+		Height: 195
 
 canewy13.rubble:
 	Inherits: ^Rubble
@@ -1010,14 +966,13 @@ canewy13.rubble:
 canewy14:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 90, 50, 0, -8
-		DecorationBounds: 150, 247, 0, -87
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy14.rubble
+	IsometricSelectable:
+		Height: 195
 
 canewy14.rubble:
 	Inherits: ^Rubble
@@ -1031,14 +986,13 @@ canewy14.rubble:
 canewy15:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 90, 50, 0, -8
-		DecorationBounds: 150, 215, 0, -67
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy15.rubble
+	IsometricSelectable:
+		Height: 75
 
 canewy15.rubble:
 	Inherits: ^Rubble
@@ -1052,14 +1006,13 @@ canewy15.rubble:
 canewy16:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 70, 40, 0, -8
-		DecorationBounds: 120, 255, 0, -95
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: canewy16.rubble
+	IsometricSelectable:
+		Height: 210
 
 canewy16.rubble:
 	Inherits: ^Rubble
@@ -1073,14 +1026,13 @@ canewy16.rubble:
 canewy17:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 70, 40, 0, -8
-		DecorationBounds: 120, 160, 0, -47
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: canewy17.rubble
+	IsometricSelectable:
+		Height: 105
 
 canewy17.rubble:
 	Inherits: ^Rubble
@@ -1094,14 +1046,13 @@ canewy17.rubble:
 canewy18:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 70, 40, 0, -8
-		DecorationBounds: 120, 160, 0, -47
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: canewy18.rubble
+	IsometricSelectable:
+		Height: 120
 
 canewy18.rubble:
 	Inherits: ^Rubble
@@ -1115,9 +1066,6 @@ canewy18.rubble:
 canewy20:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x5Shape
-	Selectable:
-		Bounds: 110, 60, 0, -12
-		DecorationBounds: 190, 130, 0, -20
 	Tooltip:
 		Name: Warehouse
 	Tooltip@NoRow:
@@ -1127,6 +1075,8 @@ canewy20:
 		Footprint: xxx xxx xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canewy20.rubble
+	IsometricSelectable:
+		Height: 45
 
 canewy20.rubble:
 	Inherits: ^Rubble
@@ -1140,9 +1090,6 @@ canewy20.rubble:
 canewy21:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^5x3Shape
-	Selectable:
-		Bounds: 110, 60, 0, -12
-		DecorationBounds: 190, 130, 0, -20
 	Tooltip:
 		Name: Warehouse
 	Tooltip@NoRow:
@@ -1152,6 +1099,8 @@ canewy21:
 		Footprint: xxxxx xxxxx xxxxx
 	SpawnActorOnDeath:
 		Actor: canewy21.rubble
+	IsometricSelectable:
+		Height: 45
 
 canewy21.rubble:
 	Inherits: ^Rubble
@@ -1165,14 +1114,13 @@ canewy21.rubble:
 caswst01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 70, 40, 0, -8
-		DecorationBounds: 120, 255, 0, -100
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: caswst01.rubble
+	IsometricSelectable:
+		Height: 195
 
 caswst01.rubble:
 	Inherits: ^Rubble
@@ -1186,9 +1134,6 @@ caswst01.rubble:
 caarmy01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Selectable:
-		Bounds: 60, 40, 0, -5
-		DecorationBounds: 110, 70, 0, -5
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3, 2
@@ -1241,9 +1186,6 @@ caarmy04:
 cawa2a:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 90, 60, -25, -8
-		DecorationBounds: 150, 155, -30, -27
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
@@ -1262,9 +1204,6 @@ cawa2a.rubble:
 cawa2b:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 60, 0, -20
-		DecorationBounds: 215, 125, 0, -35
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
@@ -1283,9 +1222,6 @@ cawa2b.rubble:
 cawa2c:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 90, 60, 17, -8
-		DecorationBounds: 150, 155, 17, -25
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
@@ -1304,9 +1240,6 @@ cawa2c.rubble:
 cawa2d:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 60, 0, -5
-		DecorationBounds: 222, 120, 0, -5
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
@@ -1325,9 +1258,6 @@ cawa2d.rubble:
 cafarm01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 70, 40, 0, -5
-		DecorationBounds: 110, 80, 0, -20
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
@@ -1340,12 +1270,11 @@ cafarm01:
 	Garrisonable:
 		MaxWeight: 6
 		PipCount: 6
+	IsometricSelectable:
+		Height: 60
 
 cafarm02:
 	Inherits: ^CivBuilding
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 80, 0, -30
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1357,6 +1286,8 @@ cafarm02:
 		HP: 400
 	SpawnActorOnDeath:
 		Actor: cafarm02.rubble
+	IsometricSelectable:
+		Height: 75
 
 cafarm02.rubble:
 	Inherits: ^Rubble
@@ -1366,9 +1297,6 @@ cafarm02.rubble:
 cafarm06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 70, 60, 0, -12
-		DecorationBounds: 110, 165, 0, -68
 	Tooltip:
 		Name: Lighthouse
 	Tooltip@NoRow:
@@ -1383,6 +1311,8 @@ cafarm06:
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: cafarm06.rubble
+	IsometricSelectable:
+		Height: 75
 
 cafarm06.rubble:
 	Inherits: ^Rubble
@@ -1395,9 +1325,6 @@ cafarm06.rubble:
 
 causfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: American Flag
 	Tooltip@NoRow:
@@ -1405,9 +1332,6 @@ causfgl:
 
 carufgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Soviet Flag
 	Tooltip@NoRow:
@@ -1415,9 +1339,6 @@ carufgl:
 
 cairfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Iraqi Flag
 	Tooltip@NoRow:
@@ -1425,9 +1346,6 @@ cairfgl:
 
 capofgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Polish Flag
 	Tooltip@NoRow:
@@ -1435,9 +1353,6 @@ capofgl:
 
 caskfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Korean Flag
 	Tooltip@NoRow:
@@ -1445,9 +1360,6 @@ caskfgl:
 
 calbfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Libyan Flag
 	Tooltip@NoRow:
@@ -1455,9 +1367,6 @@ calbfgl:
 
 cafrfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: French Flag
 	Tooltip@NoRow:
@@ -1465,9 +1374,6 @@ cafrfgl:
 
 cagefgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: German Flag
 	Tooltip@NoRow:
@@ -1475,9 +1381,6 @@ cagefgl:
 
 cacufgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Cuban Flag
 	Tooltip@NoRow:
@@ -1485,9 +1388,6 @@ cacufgl:
 
 caukfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: British Flag
 	Tooltip@NoRow:
@@ -1495,9 +1395,6 @@ caukfgl:
 
 cavnfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Vietnamese Flag
 	Tooltip@NoRow:
@@ -1505,9 +1402,6 @@ cavnfgl:
 
 caicfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Icelandic Flag
 	Tooltip@NoRow:
@@ -1515,9 +1409,6 @@ caicfgl:
 
 canwfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Norwegian Flag
 	Tooltip@NoRow:
@@ -1525,9 +1416,6 @@ canwfgl:
 
 caswfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Swedish Flag
 	Tooltip@NoRow:
@@ -1535,9 +1423,6 @@ caswfgl:
 
 cafifgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Finnish Flag
 	Tooltip@NoRow:
@@ -1545,9 +1430,6 @@ cafifgl:
 
 caesfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Estonian Flag
 	Tooltip@NoRow:
@@ -1555,9 +1437,6 @@ caesfgl:
 
 calafgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Latvian Flag
 	Tooltip@NoRow:
@@ -1565,9 +1444,6 @@ calafgl:
 
 califgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Lithuanian Flag
 	Tooltip@NoRow:
@@ -1575,9 +1451,6 @@ califgl:
 
 canlfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Dutch Flag
 	Tooltip@NoRow:
@@ -1585,9 +1458,6 @@ canlfgl:
 
 caeifgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Irish Flag
 	Tooltip@NoRow:
@@ -1595,9 +1465,6 @@ caeifgl:
 
 caspfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Spanish Flag
 	Tooltip@NoRow:
@@ -1605,9 +1472,6 @@ caspfgl:
 
 cajpfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Japanese Flag
 	Tooltip@NoRow:
@@ -1615,9 +1479,6 @@ cajpfgl:
 
 cangfgl:
 	Inherits: ^Flag
-	Selectable:
-		Bounds: 50, 35, 0, -5
-		DecorationBounds: 50, 125, 0, -50
 	Tooltip:
 		Name: Nigerian Flag
 	Tooltip@NoRow:
@@ -1626,9 +1487,6 @@ cangfgl:
 cacolo01:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^5x3Shape
-	Selectable:
-		Bounds: 120, 70, 0, -20
-		DecorationBounds: 200, 180, 0, -50
 	Building:
 		Footprint: xxxxx xxxxx xxxxx
 		Dimensions: 5, 3
@@ -1644,6 +1502,8 @@ cacolo01:
 		Range: 8c0
 	SpawnActorOnDeath:
 		Actor: cacolo01.rubble
+	IsometricSelectable:
+		Height: 120
 
 cacolo01.rubble:
 	Inherits: ^Rubble
@@ -1657,9 +1517,6 @@ cacolo01.rubble:
 caind01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 150, 90, 0, -20
-		DecorationBounds: 230, 187, 0, -50
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4, 4
@@ -1669,6 +1526,8 @@ caind01:
 		Name: Factory
 	SpawnActorOnDeath:
 		Actor: caind01.rubble
+	IsometricSelectable:
+		Height: 120
 
 caind01.rubble:
 	Inherits: ^Rubble
@@ -1682,9 +1541,6 @@ caind01.rubble:
 calab:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 110, 70, 0, -15
-		DecorationBounds: 150, 170, 0, -40
 	Building:
 		Footprint: xxx xxx xxx xxx
 		Dimensions: 3, 4
@@ -1694,6 +1550,8 @@ calab:
 		Name: Einstein's Lab
 	SpawnActorOnDeath:
 		Actor: calab.rubble
+	IsometricSelectable:
+		Height: 90
 
 calab.rubble:
 	Inherits: ^Rubble
@@ -1707,9 +1565,6 @@ calab.rubble:
 cagas01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 110, 60, 0, -12
-		DecorationBounds: 150, 125, 0, -20
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
@@ -1719,6 +1574,8 @@ cagas01:
 		Name: Gas Station
 	SpawnActorOnDeath:
 		Actor: cagas01.rubble
+	IsometricSelectable:
+		Height: 60
 
 cagas01.rubble:
 	Inherits: ^Rubble
@@ -1756,9 +1613,6 @@ galite:
 cacity01:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 140, 80, 0, -15
-		DecorationBounds: 215, 187, -7, -50
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -1775,9 +1629,6 @@ cacity01:
 cacity02:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^5x4Shape
-	Selectable:
-		Bounds: 150, 80, 0, -20
-		DecorationBounds: 240, 195, 0, -57
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -1794,9 +1645,6 @@ cacity02:
 cacity03:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 105, 80, 0, -15
-		DecorationBounds: 150, 180, -10, -57
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -1813,9 +1661,6 @@ cacity03:
 cacity04:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 80, 0, -15
-		DecorationBounds: 180, 180, 0, -43
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -1832,9 +1677,6 @@ cacity04:
 city05:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 140, 80, 0, -15
-		DecorationBounds: 210, 175, 0, -35
 	Tooltip:
 		Name: Battersea Power Station
 	Tooltip@NoRow:
@@ -1851,13 +1693,12 @@ city05:
 	RenderSprites:
 		PlayerPalette:
 		Palette: city
+	IsometricSelectable:
+		Height: 60
 
 catech01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 120, 70, 0, -15
-		DecorationBounds: 180, 155, 0, -40
 	Tooltip:
 		Name: Communications Center
 	Tooltip@NoRow:
@@ -1869,6 +1710,8 @@ catech01:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: catech01.rubble
+	IsometricSelectable:
+		Height: 75
 
 catech01.rubble:
 	Inherits: ^Rubble
@@ -1882,14 +1725,13 @@ catech01.rubble:
 catexs01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 80, 60, 0, -15
-		DecorationBounds: 100, 190, 0, -65
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: catexs01.rubble
+	IsometricSelectable:
+		Height: 135
 
 catexs01.rubble:
 	Inherits: ^Rubble
@@ -1903,9 +1745,6 @@ catexs01.rubble:
 catexs02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 130, 70, 0, -15
-		DecorationBounds: 210, 130, 0, -12
 	Tooltip:
 		Name: Alamo
 	Tooltip@NoRow:
@@ -1919,6 +1758,8 @@ catexs02:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: catexs02.rubble
+	IsometricSelectable:
+		Height: 45
 
 catexs02.rubble:
 	Inherits: ^Rubble
@@ -1932,14 +1773,13 @@ catexs02.rubble:
 catexs03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 130, 70, 0, -15
-		DecorationBounds: 170, 220, 0, -72
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: catexs03.rubble
+	IsometricSelectable:
+		Height: 75
 
 catexs03.rubble:
 	Inherits: ^Rubble
@@ -1953,14 +1793,13 @@ catexs03.rubble:
 catexs04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 130, 70, 0, -15
-		DecorationBounds: 170, 220, 0, -72
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: catexs04.rubble
+	IsometricSelectable:
+		Height: 165
 
 catexs04.rubble:
 	Inherits: ^Rubble
@@ -1974,14 +1813,13 @@ catexs04.rubble:
 catexs05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 130, 70, 0, -15
-		DecorationBounds: 170, 220, 0, -72
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: catexs05.rubble
+	IsometricSelectable:
+		Height: 75
 
 catexs05.rubble:
 	Inherits: ^Rubble
@@ -1995,14 +1833,13 @@ catexs05.rubble:
 catexs06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 110, 70, -10, -15
-		DecorationBounds: 160, 120, -12, -27
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: catexs06.rubble
+	IsometricSelectable:
+		Height: 60
 
 catexs06.rubble:
 	Inherits: ^Rubble
@@ -2016,14 +1853,13 @@ catexs06.rubble:
 catexs07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 120, 70, 0, -15
-		DecorationBounds: 180, 140, 0, -42
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: catexs07.rubble
+	IsometricSelectable:
+		Height: 90
 
 catexs07.rubble:
 	Inherits: ^Rubble
@@ -2037,14 +1873,13 @@ catexs07.rubble:
 catexs08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 100, 70, 0, -15
-		DecorationBounds: 160, 120, 0, -27
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: catexs08.rubble
+	IsometricSelectable:
+		Height: 60
 
 catexs08.rubble:
 	Inherits: ^Rubble
@@ -2062,9 +1897,6 @@ capars01:
 		Name: Eiffel Tower
 	Tooltip@NoRow:
 		Name: Eiffel Tower
-	Selectable:
-		Bounds: 120, 60, 0, -5
-		DecorationBounds: 150, 320, 0, -120
 	Armor:
 		Type: Concrete
 	Health:
@@ -2076,6 +1908,8 @@ capars01:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: capars01.rubble
+	IsometricSelectable:
+		Height: 150
 
 capars01.rubble:
 	Inherits: ^Rubble
@@ -2089,14 +1923,13 @@ capars01.rubble:
 capars02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Selectable:
-		Bounds: 160, 100, 0, -20
-		DecorationBounds: 240, 230, 0, -65
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
 	SpawnActorOnDeath:
 		Actor: capars02.rubble
+	IsometricSelectable:
+		Height: 180
 
 capars02.rubble:
 	Inherits: ^Rubble
@@ -2110,9 +1943,6 @@ capars02.rubble:
 capars04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 110, 70, 0, -15
-		DecorationBounds: 170, 135, 0, -35
 	Health:
 		HP: 1000
 	Building:
@@ -2123,6 +1953,8 @@ capars04:
 		PipCount: 6
 	SpawnActorOnDeath:
 		Actor: capars04.rubble
+	IsometricSelectable:
+		Height: 90
 
 capars04.rubble:
 	Inherits: ^Rubble
@@ -2136,9 +1968,6 @@ capars04.rubble:
 capars05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 110, 70, 0, -15
-		DecorationBounds: 170, 135, 0, -35
 	Health:
 		HP: 1000
 	Building:
@@ -2149,6 +1978,8 @@ capars05:
 		PipCount: 6
 	SpawnActorOnDeath:
 		Actor: capars05.rubble
+	IsometricSelectable:
+		Height: 105
 
 capars05.rubble:
 	Inherits: ^Rubble
@@ -2162,9 +1993,6 @@ capars05.rubble:
 capars06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 110, 70, 0, -15
-		DecorationBounds: 170, 135, 0, -35
 	Health:
 		HP: 1000
 	Building:
@@ -2175,6 +2003,8 @@ capars06:
 		PipCount: 6
 	SpawnActorOnDeath:
 		Actor: capars06.rubble
+	IsometricSelectable:
+		Height: 75
 
 capars06.rubble:
 	Inherits: ^Rubble
@@ -2191,9 +2021,6 @@ capars07:
 		Name: Phone Booth
 	Tooltip@NoRow:
 		Name: Phone Booth
-	Selectable:
-		Bounds: 30, 20, -2, -2
-		DecorationBounds: 20, 30, -2, -8
 	RevealsShroud:
 		Range: 8c0
 	Health:
@@ -2204,14 +2031,13 @@ capars07:
 capars08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Selectable:
-		Bounds: 160, 100, -7, -20
-		DecorationBounds: 260, 230, -10, -65
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
 	SpawnActorOnDeath:
 		Actor: capars08.rubble
+	IsometricSelectable:
+		Height: 75
 
 capars08.rubble:
 	Inherits: ^Rubble
@@ -2225,14 +2051,13 @@ capars08.rubble:
 capars09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Selectable:
-		Bounds: 175, 100, -5, -20
-		DecorationBounds: 260, 210, -7, -50
 	Building:
 		Dimensions: 6,4
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
 	SpawnActorOnDeath:
 		Actor: capars09.rubble
+	IsometricSelectable:
+		Height: 90
 
 capars09.rubble:
 	Inherits: ^Rubble
@@ -2246,9 +2071,6 @@ capars09.rubble:
 capars10:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x3Shape
-	Selectable:
-		Bounds: 120, 80, 0, -20
-		DecorationBounds: 200, 190, 0, -47
 	Tooltip:
 		Name: Bistro
 	Tooltip@NoRow:
@@ -2258,6 +2080,8 @@ capars10:
 		Footprint: xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: capars10.rubble
+	IsometricSelectable:
+		Height: 120
 
 capars10.rubble:
 	Inherits: ^Rubble
@@ -2271,9 +2095,6 @@ capars10.rubble:
 capars11:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 110, 60, 0, -15
-		DecorationBounds: 180, 210, 0, -57
 	Tooltip:
 		Name: Arc de Triumphe
 	Tooltip@NoRow:
@@ -2289,6 +2110,8 @@ capars11:
 		Footprint: xxx xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: capars11.rubble
+	IsometricSelectable:
+		Height: 75
 
 capars11.rubble:
 	Inherits: ^Rubble
@@ -2302,9 +2125,6 @@ capars11.rubble:
 capars12:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x5Shape
-	Selectable:
-		Bounds: 120, 80, 0, -20
-		DecorationBounds: 200, 190, 0, -40
 	Tooltip:
 		Name: Notre Dame
 	Tooltip@NoRow:
@@ -2316,6 +2136,8 @@ capars12:
 		Footprint: xxx xxx xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: capars12.rubble
+	IsometricSelectable:
+		Height: 90
 
 capars12.rubble:
 	Inherits: ^Rubble
@@ -2329,9 +2151,6 @@ capars12.rubble:
 capars13:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 120, 80, 0, -20
-		DecorationBounds: 200, 190, 0, -40
 	Tooltip:
 		Name: Bistro
 	Tooltip@NoRow:
@@ -2341,6 +2160,8 @@ capars13:
 		Footprint: xxx xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: capars13.rubble
+	IsometricSelectable:
+		Height: 120
 
 capars13.rubble:
 	Inherits: ^Rubble
@@ -2354,9 +2175,6 @@ capars13.rubble:
 capars14:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x3Shape
-	Selectable:
-		Bounds: 120, 80, 0, -20
-		DecorationBounds: 200, 200, 0, -45
 	Tooltip:
 		Name: Bistro
 	Tooltip@NoRow:
@@ -2366,6 +2184,8 @@ capars14:
 		Footprint: xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: capars14.rubble
+	IsometricSelectable:
+		Height: 120
 
 capars14.rubble:
 	Inherits: ^Rubble
@@ -2379,9 +2199,6 @@ capars14.rubble:
 cafrma:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 65, 45, -5, -10
-		DecorationBounds: 105, 95, -5, -20
 	Tooltip:
 		Name: Farmhouse
 	Tooltip@NoRow:
@@ -2391,6 +2208,8 @@ cafrma:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+	IsometricSelectable:
+		Height: 60
 
 cafrmb:
 	Inherits: ^GarrisonableBuilding
@@ -2398,9 +2217,6 @@ cafrmb:
 		Name: Outhouse
 	Tooltip@NoRow:
 		Name: Outhouse
-	Selectable:
-		Bounds: 30, 20, -1, -2
-		DecorationBounds: 20, 30, -1, -8
 	RevealsShroud:
 		Range: 8c0
 	Health:
@@ -2414,9 +2230,6 @@ cafrmb:
 caprs03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Selectable:
-		Bounds: 175, 100, -2, -20
-		DecorationBounds: 285, 170, -4, -35
 	Tooltip:
 		Name: Louvre
 	Tooltip@NoRow:
@@ -2428,6 +2241,8 @@ caprs03:
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
 	SpawnActorOnDeath:
 		Actor: caprs03.rubble
+	IsometricSelectable:
+		Height: 45
 
 caprs03.rubble:
 	Inherits: ^Rubble
@@ -2444,9 +2259,6 @@ cagard01:
 		Name: Guard Shack
 	Tooltip@NoRow:
 		Name: Guard Shack
-	Selectable:
-		Bounds: 40, 35, -2, -7
-		DecorationBounds: 30, 45, -2, -16
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -2457,13 +2269,12 @@ cagard01:
 		Sequence: idle-flag
 	MapEditorData:
 		Categories: Decoration
+	IsometricSelectable:
+		Height: 60
 
 carus01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 110, 70, 0, -20
-		DecorationBounds: 190, 255, -10, -70
 	Tooltip:
 		Name: St. Basil's Cathedral
 	Tooltip@NoRow:
@@ -2475,6 +2286,8 @@ carus01:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: carus01.rubble
+	IsometricSelectable:
+		Height: 120
 
 carus01.rubble:
 	Inherits: ^Rubble
@@ -2487,9 +2300,6 @@ carus01.rubble:
 
 carus02a:
 	Inherits: ^CivBuilding
-	Selectable:
-		Bounds: 60, 40, 0, -12
-		DecorationBounds: 60, 185, 0, -75
 	Armor:
 		Type: Concrete
 	Health:
@@ -2498,6 +2308,8 @@ carus02a:
 		Actor: carus02a.rubble
 	MapEditorData:
 		RequireTilesets: SNOW
+	IsometricSelectable:
+		Height: 165
 
 carus02a.rubble:
 	Inherits: ^Rubble
@@ -2511,15 +2323,14 @@ carus02a.rubble:
 
 carus02b:
 	Inherits: ^CivBuilding
-	Selectable:
-		Bounds: 60, 40, 0, -12
-		DecorationBounds: 60, 130, 0, -48
 	Armor:
 		Type: Concrete
 	Health:
 		HP: 500
 	SpawnActorOnDeath:
 		Actor: carus02b.rubble
+	IsometricSelectable:
+		Height: 120
 
 carus02b.rubble:
 	Inherits: ^Rubble
@@ -2535,15 +2346,14 @@ carus02g:
 		Name: Kremlin Wall Clock Tower
 	Tooltip@NoRow:
 		Name: Kremlin Wall Clock Tower
-	Selectable:
-		Bounds: 60, 40, 0, -12
-		DecorationBounds: 60, 220, 0, -90
 	Health:
 		HP: 1500
 	SpawnActorOnDeath:
 		Actor: carus02g.rubble
 	MapEditorData:
 		RequireTilesets: SNOW
+	IsometricSelectable:
+		Height: 165
 
 carus02g.rubble:
 	Inherits: ^Rubble
@@ -2553,9 +2363,6 @@ carus02g.rubble:
 carus03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x5Shape
-	Selectable:
-		Bounds: 110, 60, 0, -20
-		DecorationBounds: 200, 160, 0, -25
 	Tooltip:
 		Name: Kremlin Palace
 	Tooltip@NoRow:
@@ -2567,6 +2374,8 @@ carus03:
 		Footprint: xx xx xx xx xx
 	SpawnActorOnDeath:
 		Actor: carus03.rubble
+	IsometricSelectable:
+		Height: 135
 
 carus03.rubble:
 	Inherits: ^Rubble
@@ -2580,9 +2389,6 @@ carus03.rubble:
 carus04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 90, 0, -20
-		DecorationBounds: 200, 170, 0, -35
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -2591,6 +2397,8 @@ carus04:
 		PipCount: 8
 	SpawnActorOnDeath:
 		Actor: carus04.rubble
+	IsometricSelectable:
+		Height: 90
 
 carus04.rubble:
 	Inherits: ^Rubble
@@ -2604,9 +2412,6 @@ carus04.rubble:
 carus05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 90, 0, -20
-		DecorationBounds: 200, 180, 0, -38
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -2615,6 +2420,8 @@ carus05:
 		PipCount: 8
 	SpawnActorOnDeath:
 		Actor: carus05.rubble
+	IsometricSelectable:
+		Height: 90
 
 carus05.rubble:
 	Inherits: ^Rubble
@@ -2628,9 +2435,6 @@ carus05.rubble:
 carus06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 90, 0, -20
-		DecorationBounds: 200, 155, 0, -28
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
@@ -2639,6 +2443,8 @@ carus06:
 		PipCount: 8
 	SpawnActorOnDeath:
 		Actor: carus06.rubble
+	IsometricSelectable:
+		Height: 60
 
 carus06.rubble:
 	Inherits: ^Rubble
@@ -2651,14 +2457,13 @@ carus06.rubble:
 
 carus08:
 	Inherits: ^GarrisonableBuilding
-	Selectable:
-		Bounds: 60, 40, 0, -12
-		DecorationBounds: 60, 100, 0, -35
 	Garrisonable:
 		MaxWeight: 5
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: carus08.rubble
+	IsometricSelectable:
+		Height: 90
 
 carus08.rubble:
 	Inherits: ^Rubble
@@ -2668,9 +2473,6 @@ carus08.rubble:
 carus09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x1Shape
-	Selectable:
-		Bounds: 80, 50, 0, -12
-		DecorationBounds: 90, 130, 0, -45
 	Building:
 		Dimensions: 2,1
 		Footprint: xx
@@ -2679,6 +2481,8 @@ carus09:
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: carus09.rubble
+	IsometricSelectable:
+		Height: 90
 
 carus09.rubble:
 	Inherits: ^Rubble
@@ -2692,9 +2496,6 @@ carus09.rubble:
 carus10:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^1x2Shape
-	Selectable:
-		Bounds: 65, 40, 0, -12
-		DecorationBounds: 90, 100, 0, -25
 	Building:
 		Dimensions: 1,2
 		Footprint: x x
@@ -2703,6 +2504,8 @@ carus10:
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: carus10.rubble
+	IsometricSelectable:
+		Height: 60
 
 carus10.rubble:
 	Inherits: ^Rubble
@@ -2716,9 +2519,6 @@ carus10.rubble:
 carus11:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x1Shape
-	Selectable:
-		Bounds: 65, 40, 0, -12
-		DecorationBounds: 90, 100, 0, -25
 	Building:
 		Dimensions: 2,1
 		Footprint: xx
@@ -2727,6 +2527,8 @@ carus11:
 		PipCount: 5
 	SpawnActorOnDeath:
 		Actor: carus11.rubble
+	IsometricSelectable:
+		Height: 60
 
 carus11.rubble:
 	Inherits: ^Rubble
@@ -2740,14 +2542,13 @@ carus11.rubble:
 camiam01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x2Shape
-	Selectable:
-		Bounds: 110, 90, -10, -20
-		DecorationBounds: 180, 240, -10, -85
 	Building:
 		Dimensions: 4,2
 		Footprint: xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: camiam01.rubble
+	IsometricSelectable:
+		Height: 180
 
 camiam01.rubble:
 	Inherits: ^Rubble
@@ -2761,14 +2562,13 @@ camiam01.rubble:
 camiam02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x2Shape
-	Selectable:
-		Bounds: 110, 80, -10, -20
-		DecorationBounds: 180, 230, -10, -75
 	Building:
 		Dimensions: 4,2
 		Footprint: xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: camiam02.rubble
+	IsometricSelectable:
+		Height: 180
 
 camiam02.rubble:
 	Inherits: ^Rubble
@@ -2782,14 +2582,13 @@ camiam02.rubble:
 camiam03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 110, 80, -5, -20
-		DecorationBounds: 180, 220, -5, -75
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: camiam03.rubble
+	IsometricSelectable:
+		Height: 180
 
 camiam03.rubble:
 	Inherits: ^Rubble
@@ -2802,9 +2601,6 @@ camiam03.rubble:
 
 camiam04:
 	Inherits: ^GarrisonableBuilding
-	Selectable:
-		Bounds: 40, 35, 0, -7
-		DecorationBounds: 45, 45, 0, -12
 	Tooltip:
 		Name: Lifeguard Hut
 	Tooltip@NoRow:
@@ -2816,18 +2612,19 @@ camiam04:
 	Garrisonable:
 		MaxWeight: 3
 		PipCount: 3
+	IsometricSelectable:
+		Height: 30
 
 camiam05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 110, 80, 0, -20
-		DecorationBounds: 180, 155, 0, -40
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camiam05.rubble
+	IsometricSelectable:
+		Height: 75
 
 camiam05.rubble:
 	Inherits: ^Rubble
@@ -2841,14 +2638,13 @@ camiam05.rubble:
 camiam06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 125, 80, 0, -20
-		DecorationBounds: 230, 170, 0, -40
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: camiam06.rubble
+	IsometricSelectable:
+		Height: 75
 
 camiam06.rubble:
 	Inherits: ^Rubble
@@ -2862,14 +2658,13 @@ camiam06.rubble:
 camiam07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 80, 0, -20
-		DecorationBounds: 225, 170, 0, -40
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: camiam07.rubble
+	IsometricSelectable:
+		Height: 75
 
 camiam07.rubble:
 	Inherits: ^Rubble
@@ -2882,9 +2677,6 @@ camiam07.rubble:
 camiam08:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x1Shape
-	Selectable:
-		Bounds: 65, 40, 0, -7
-		DecorationBounds: 110, 80, 0, -8
 	Tooltip:
 		Name: Arizona Memorial
 	Tooltip@NoRow:
@@ -2900,6 +2692,8 @@ camiam08:
 		Footprint: xxx
 	SpawnActorOnDeath:
 		Actor: camiam08.rubble
+	IsometricSelectable:
+		Height: 30
 
 camiam08.rubble:
 	Inherits: ^Rubble
@@ -2913,14 +2707,13 @@ camiam08.rubble:
 canwy05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 125, 80, 0, -20
-		DecorationBounds: 230, 280, 0, -90
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: canwy05.rubble
+	IsometricSelectable:
+		Height: 265
 
 canwy05.rubble:
 	Inherits: ^Rubble
@@ -2934,9 +2727,6 @@ canwy05.rubble:
 canwy09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 80, 60, 0, -12
-		DecorationBounds: 145, 260, 0, -97
 	Health:
 		HP: 800
 	Building:
@@ -2944,6 +2734,8 @@ canwy09:
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: canwy09.rubble
+	IsometricSelectable:
+		Height: 225
 
 canwy09.rubble:
 	Inherits: ^Rubble
@@ -2957,9 +2749,6 @@ canwy09.rubble:
 canwy22:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 80, 60, 0, -12
-		DecorationBounds: 145, 160, 0, -40
 	Health:
 		HP: 800
 	Building:
@@ -2967,6 +2756,8 @@ canwy22:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canwy22.rubble
+	IsometricSelectable:
+		Height: 105
 
 canwy22.rubble:
 	Inherits: ^Rubble
@@ -2980,9 +2771,6 @@ canwy22.rubble:
 canwy23:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Selectable:
-		Bounds: 90, 60, 0, -12
-		DecorationBounds: 160, 265, 0, -97
 	Health:
 		HP: 800
 	Building:
@@ -2990,6 +2778,8 @@ canwy23:
 		Footprint: xxx xxx
 	SpawnActorOnDeath:
 		Actor: canwy23.rubble
+	IsometricSelectable:
+		Height: 210
 
 canwy23.rubble:
 	Inherits: ^Rubble
@@ -3003,9 +2793,6 @@ canwy23.rubble:
 canwy24:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 90, 60, 0, -12
-		DecorationBounds: 160, 225, 0, -74
 	Health:
 		HP: 800
 	Building:
@@ -3013,6 +2800,8 @@ canwy24:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canwy24.rubble
+	IsometricSelectable:
+		Height: 165
 
 canwy24.rubble:
 	Inherits: ^Rubble
@@ -3026,9 +2815,6 @@ canwy24.rubble:
 canwy25:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 90, 60, 0, -4
-		DecorationBounds: 150, 160, 0, -52
 	Health:
 		HP: 800
 	Building:
@@ -3036,6 +2822,8 @@ canwy25:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: canwy25.rubble
+	IsometricSelectable:
+		Height: 105
 
 canwy25.rubble:
 	Inherits: ^Rubble
@@ -3049,9 +2837,6 @@ canwy25.rubble:
 canwy26:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^5x3Shape
-	Selectable:
-		Bounds: 90, 80, 0, -12
-		DecorationBounds: 180, 245, 0, -85
 	Health:
 		HP: 800
 	Building:
@@ -3059,6 +2844,8 @@ canwy26:
 		Footprint: xxxxx xxxxx xxxxx
 	SpawnActorOnDeath:
 		Actor: canwy26.rubble
+	IsometricSelectable:
+		Height: 165
 
 canwy26.rubble:
 	Inherits: ^Rubble
@@ -3072,9 +2859,6 @@ canwy26.rubble:
 camex01:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x2Shape
-	Selectable:
-		Bounds: 80, 50, 0, -12
-		DecorationBounds: 135, 175, 0, -58
 	Tooltip:
 		Name: Mayan Pyramid
 	Tooltip@NoRow:
@@ -3090,6 +2874,8 @@ camex01:
 		Footprint: xxx xxx
 	SpawnActorOnDeath:
 		Actor: camex01.rubble
+	IsometricSelectable:
+		Height: 135
 
 camex01.rubble:
 	Inherits: ^Rubble
@@ -3103,9 +2889,6 @@ camex01.rubble:
 camex02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Selectable:
-		Bounds: 140, 90, 10, -12
-		DecorationBounds: 260, 205, 10, -40
 	Tooltip:
 		Name: Mayan Castillo
 	Tooltip@NoRow:
@@ -3115,6 +2898,8 @@ camex02:
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
 	SpawnActorOnDeath:
 		Actor: camex02.rubble
+	IsometricSelectable:
+		Height: 90
 
 camex02.rubble:
 	Inherits: ^Rubble
@@ -3128,9 +2913,6 @@ camex02.rubble:
 camex03:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 75, 40, 4, -12
-		DecorationBounds: 150, 110, 0, -18
 	Tooltip:
 		Name: Mayan Minor Temple
 	Tooltip@NoRow:
@@ -3146,6 +2928,8 @@ camex03:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camex03.rubble
+	IsometricSelectable:
+		Height: 45
 
 camex03.rubble:
 	Inherits: ^Rubble
@@ -3159,9 +2943,6 @@ camex03.rubble:
 camex04:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 100, 50, 4, -12
-		DecorationBounds: 192, 130, 0, -18
 	Tooltip:
 		Name: Mayan Large Temple
 	Tooltip@NoRow:
@@ -3177,6 +2958,8 @@ camex04:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: camex04.rubble
+	IsometricSelectable:
+		Height: 45
 
 camex04.rubble:
 	Inherits: ^Rubble
@@ -3190,9 +2973,6 @@ camex04.rubble:
 camex05:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 40, 30, 0, -5
-		DecorationBounds: 85, 65, 0, -8
 	Tooltip:
 		Name: Mayan Platfrom
 	Tooltip@NoRow:
@@ -3208,6 +2988,8 @@ camex05:
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: camex05.rubble
+	IsometricSelectable:
+		Height: 30
 
 camex05.rubble:
 	Inherits: ^Rubble
@@ -3221,9 +3003,6 @@ camex05.rubble:
 caeur1:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 40, 30, 0, -5
-		DecorationBounds: 73, 75, 0, -23
 	Tooltip:
 		Name: Cottage
 	Tooltip@NoRow:
@@ -3238,6 +3017,8 @@ caeur1:
 		PipCount: 3
 	SpawnActorOnDeath:
 		Actor: caeur1.rubble
+	IsometricSelectable:
+		Height: 45
 
 caeur1.rubble:
 	Inherits: ^Rubble
@@ -3251,9 +3032,6 @@ caeur1.rubble:
 caeur2:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 40, 30, 0, -5
-		DecorationBounds: 73, 75, 0, -23
 	Tooltip:
 		Name: Cottage
 	Tooltip@NoRow:
@@ -3268,6 +3046,8 @@ caeur2:
 		PipCount: 3
 	SpawnActorOnDeath:
 		Actor: caeur2.rubble
+	IsometricSelectable:
+		Height: 45
 
 caeur2.rubble:
 	Inherits: ^Rubble
@@ -3281,9 +3061,6 @@ caeur2.rubble:
 caeur04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x3Shape
-	Selectable:
-		Bounds: 100, 70, -4, -20
-		DecorationBounds: 190, 130, -4, -29
 	Health:
 		HP: 800
 	Building:
@@ -3291,6 +3068,8 @@ caeur04:
 		Footprint: xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: caeur04.rubble
+	IsometricSelectable:
+		Height: 45
 
 caeur04.rubble:
 	Inherits: ^Rubble
@@ -3304,14 +3083,13 @@ caeur04.rubble:
 cachig01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Selectable:
-		Bounds: 85, 50, 0, -12
-		DecorationBounds: 150, 185, 0, -58
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
 	SpawnActorOnDeath:
 		Actor: cachig01.rubble
+	IsometricSelectable:
+		Height: 135
 
 cachig01.rubble:
 	Inherits: ^Rubble
@@ -3325,14 +3103,13 @@ cachig01.rubble:
 cachig02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 85, 50, 0, -12
-		DecorationBounds: 150, 185, 0, -58
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: cachig02.rubble
+	IsometricSelectable:
+		Height: 135
 
 cachig02.rubble:
 	Inherits: ^Rubble
@@ -3346,14 +3123,13 @@ cachig02.rubble:
 cachig03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Selectable:
-		Bounds: 85, 50, 0, -12
-		DecorationBounds: 160, 220, 0, -80
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
 	SpawnActorOnDeath:
 		Actor: cachig03.rubble
+	IsometricSelectable:
+		Height: 180
 
 cachig03.rubble:
 	Inherits: ^Rubble
@@ -3367,9 +3143,6 @@ cachig03.rubble:
 cachig04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 60, 40, 0, -12
-		DecorationBounds: 110, 235, 0, -97
 	Tooltip:
 		Name: Associates Center
 	Tooltip@NoRow:
@@ -3379,6 +3152,8 @@ cachig04:
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: cachig04.rubble
+	IsometricSelectable:
+		Height: 195
 
 cachig04.rubble:
 	Inherits: ^Rubble
@@ -3392,9 +3167,6 @@ cachig04.rubble:
 cachig05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 105, 70, 0, -20
-		DecorationBounds: 210, 330, 0, -125
 	Tooltip:
 		Name: Sears Tower
 	Tooltip@NoRow:
@@ -3408,6 +3180,8 @@ cachig05:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: cachig05.rubble
+	IsometricSelectable:
+		Height: 660
 
 cachig05.rubble:
 	Inherits: ^Rubble
@@ -3421,9 +3195,6 @@ cachig05.rubble:
 cachig06:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 65, 50, 0, -12
-		DecorationBounds: 125, 260, 0, -105
 	Tooltip:
 		Name: Water Tower
 	Tooltip@NoRow:
@@ -3437,6 +3208,8 @@ cachig06:
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: cachig06.rubble
+	IsometricSelectable:
+		Height: 225
 
 cachig06.rubble:
 	Inherits: ^Rubble
@@ -3450,14 +3223,13 @@ cachig06.rubble:
 castl01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 85, 50, 0, -12
-		DecorationBounds: 150, 170, 0, -50
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl01.rubble
+	IsometricSelectable:
+		Height: 105
 
 castl01.rubble:
 	Inherits: ^Rubble
@@ -3471,14 +3243,13 @@ castl01.rubble:
 castl02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 85, 50, 0, -12
-		DecorationBounds: 150, 170, 0, -50
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl02.rubble
+	IsometricSelectable:
+		Height: 105
 
 castl02.rubble:
 	Inherits: ^Rubble
@@ -3492,14 +3263,13 @@ castl02.rubble:
 castl03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 85, 50, 0, -12
-		DecorationBounds: 150, 150, 0, -43
 	Building:
 		Dimensions: 4,4
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl03.rubble
+	IsometricSelectable:
+		Height: 90
 
 castl03.rubble:
 	Inherits: ^Rubble
@@ -3513,14 +3283,13 @@ castl03.rubble:
 castl04:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x6Shape
-	Selectable:
-		Bounds: 110, 70, 0, -10
-		DecorationBounds: 260, 310, 0, -95
 	Building:
 		Dimensions: 2,6
 		Footprint: xx xx xx xx xx xx
 	SpawnActorOnDeath:
 		Actor: castl04.rubble
+	IsometricSelectable:
+		Height: 240
 
 castl04.rubble:
 	Inherits: ^Rubble
@@ -3534,9 +3303,6 @@ castl04.rubble:
 castl05a:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 100, 70, 0, 4
-		DecorationBounds: 180, 120, 0, -4
 	Tooltip:
 		Name: Stadium
 	Tooltip@NoRow:
@@ -3548,6 +3314,8 @@ castl05a:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl05a.rubble
+	IsometricSelectable:
+		Height: 90
 
 castl05a.rubble:
 	Inherits: ^Rubble
@@ -3561,9 +3329,6 @@ castl05a.rubble:
 castl05b:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 100, 70, 0, -12
-		DecorationBounds: 190, 165, -7, -30
 	Tooltip:
 		Name: Stadium
 	Tooltip@NoRow:
@@ -3575,6 +3340,8 @@ castl05b:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl05b.rubble
+	IsometricSelectable:
+		Height: 90
 
 castl05b.rubble:
 	Inherits: ^Rubble
@@ -3588,9 +3355,6 @@ castl05b.rubble:
 castl05c:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 80, 70, -40, -12
-		DecorationBounds: 140, 150, -52, -35
 	Tooltip:
 		Name: Stadium
 	Tooltip@NoRow:
@@ -3602,6 +3366,8 @@ castl05c:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl05c.rubble
+	IsometricSelectable:
+		Height: 90
 
 castl05c.rubble:
 	Inherits: ^Rubble
@@ -3615,9 +3381,6 @@ castl05c.rubble:
 castl05d:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 100, 70, 0, -12
-		DecorationBounds: 190, 165, -7, -30
 	Tooltip:
 		Name: Stadium
 	Tooltip@NoRow:
@@ -3629,6 +3392,8 @@ castl05d:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl05d.rubble
+	IsometricSelectable:
+		Height: 90
 
 castl05d.rubble:
 	Inherits: ^Rubble
@@ -3642,9 +3407,6 @@ castl05d.rubble:
 castl05e:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 100, 70, 5, -12
-		DecorationBounds: 190, 165, 5, -30
 	Tooltip:
 		Name: Stadium
 	Tooltip@NoRow:
@@ -3656,6 +3418,8 @@ castl05e:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl05e.rubble
+	IsometricSelectable:
+		Height: 90
 
 castl05e.rubble:
 	Inherits: ^Rubble
@@ -3669,9 +3433,6 @@ castl05e.rubble:
 castl05f:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 80, 70, 45, -17
-		DecorationBounds: 140, 150, 50, -35
 	Tooltip:
 		Name: Stadium
 	Tooltip@NoRow:
@@ -3683,6 +3444,8 @@ castl05f:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl05f.rubble
+	IsometricSelectable:
+		Height: 90
 
 castl05f.rubble:
 	Inherits: ^Rubble
@@ -3696,9 +3459,6 @@ castl05f.rubble:
 castl05g:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 110, 70, 0, -12
-		DecorationBounds: 190, 165, -7, -30
 	Tooltip:
 		Name: Stadium
 	Tooltip@NoRow:
@@ -3710,6 +3470,8 @@ castl05g:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl05g.rubble
+	IsometricSelectable:
+		Height: 90
 
 castl05g.rubble:
 	Inherits: ^Rubble
@@ -3723,9 +3485,6 @@ castl05g.rubble:
 castl05h:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 100, 70, 0, -40
-		DecorationBounds: 170, 120, 0, -47
 	Tooltip:
 		Name: Stadium
 	Tooltip@NoRow:
@@ -3737,6 +3496,8 @@ castl05h:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: castl05h.rubble
+	IsometricSelectable:
+		Height: 90
 
 castl05h.rubble:
 	Inherits: ^Rubble
@@ -3750,9 +3511,6 @@ castl05h.rubble:
 camsc07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 65, 40, 0, -10
-		DecorationBounds: 80, 80, 0, -15
 	Tooltip:
 		Name: Hut
 	Tooltip@NoRow:
@@ -3765,13 +3523,12 @@ camsc07:
 	Garrisonable:
 		MaxWeight: 6
 		PipCount: 6
+	IsometricSelectable:
+		Height: 45
 
 camsc08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 40, 30, 0, -10
-		DecorationBounds: 40, 55, 0, -15
 	Tooltip:
 		Name: Hut
 	Tooltip@NoRow:
@@ -3781,13 +3538,12 @@ camsc08:
 	Garrisonable:
 		MaxWeight: 6
 		PipCount: 6
+	IsometricSelectable:
+		Height: 45
 
 camsc09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 40, 30, 0, -10
-		DecorationBounds: 40, 55, 0, -15
 	Tooltip:
 		Name: Hut
 	Tooltip@NoRow:
@@ -3797,13 +3553,12 @@ camsc09:
 	Garrisonable:
 		MaxWeight: 6
 		PipCount: 6
+	IsometricSelectable:
+		Height: 45
 
 camsc10:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 110, 60, 0, -10
-		DecorationBounds: 200, 150, -5, -34
 	Tooltip:
 		Name: McBurger Kong
 	Tooltip@NoRow:
@@ -3813,6 +3568,8 @@ camsc10:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: camsc10.rubble
+	IsometricSelectable:
+		Height: 90
 
 camsc10.rubble:
 	Inherits: ^Rubble
@@ -3826,9 +3583,6 @@ camsc10.rubble:
 cabunk01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 65, 40, 7, -10
-		DecorationBounds: 90, 95, 7, -30
 	Tooltip:
 		Name: Concrete Bunker
 	Tooltip@NoRow:
@@ -3843,6 +3597,8 @@ cabunk01:
 		PipCount: 8
 	SpawnActorOnDeath:
 		Actor: cabunk01.rubble
+	IsometricSelectable:
+		Height: 60
 
 cabunk01.rubble:
 	Inherits: ^Rubble
@@ -3856,9 +3612,6 @@ cabunk01.rubble:
 cabunk02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 65, 40, -7, -10
-		DecorationBounds: 90, 95, -7, -30
 	Tooltip:
 		Name: Concrete Bunker
 	Tooltip@NoRow:
@@ -3873,6 +3626,8 @@ cabunk02:
 		PipCount: 8
 	SpawnActorOnDeath:
 		Actor: cabunk02.rubble
+	IsometricSelectable:
+		Height: 60
 
 cabunk02.rubble:
 	Inherits: ^Rubble
@@ -3887,9 +3642,6 @@ cabunk02.rubble:
 cabunk03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 65, 40, -7, -10
-		DecorationBounds: 90, 84, -7, -20
 	Tooltip:
 		Name: Concrete Bunker
 	Tooltip@NoRow:
@@ -3904,6 +3656,8 @@ cabunk03:
 		PipCount: 8
 	SpawnActorOnDeath:
 		Actor: cabunk03.rubble
+	IsometricSelectable:
+		Height: 30
 
 cabunk03.rubble:
 	Inherits: ^Rubble
@@ -3917,9 +3671,6 @@ cabunk03.rubble:
 cabunk04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 65, 40, 7, -10
-		DecorationBounds: 90, 95, 7, -30
 	Tooltip:
 		Name: Concrete Bunker
 	Tooltip@NoRow:
@@ -3934,6 +3685,8 @@ cabunk04:
 		PipCount: 8
 	SpawnActorOnDeath:
 		Actor: cabunk04.rubble
+	IsometricSelectable:
+		Height: 30
 
 cabunk04.rubble:
 	Inherits: ^Rubble
@@ -3947,14 +3700,13 @@ cabunk04.rubble:
 camorr01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 110, 80, 0, -5
-		DecorationBounds: 170, 185, 0, -50
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camorr01.rubble
+	IsometricSelectable:
+		Height: 120
 
 camorr01.rubble:
 	Inherits: ^Rubble
@@ -3968,14 +3720,13 @@ camorr01.rubble:
 camorr02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 70, 0, -5
-		DecorationBounds: 160, 175, 0, -45
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camorr02.rubble
+	IsometricSelectable:
+		Height: 120
 
 camorr02.rubble:
 	Inherits: ^Rubble
@@ -3989,14 +3740,13 @@ camorr02.rubble:
 camorr03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 70, 0, -5
-		DecorationBounds: 160, 180, 0, -45
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camorr03.rubble
+	IsometricSelectable:
+		Height: 120
 
 camorr03.rubble:
 	Inherits: ^Rubble
@@ -4010,14 +3760,13 @@ camorr03.rubble:
 camorr04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 70, 0, -5
-		DecorationBounds: 160, 240, 0, -80
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camorr04.rubble
+	IsometricSelectable:
+		Height: 180
 
 camorr04.rubble:
 	Inherits: ^Rubble
@@ -4031,14 +3780,13 @@ camorr04.rubble:
 camorr05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 110, 70, 0, -5
-		DecorationBounds: 170, 160, 0, -34
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camorr05.rubble
+	IsometricSelectable:
+		Height: 105
 
 camorr05.rubble:
 	Inherits: ^Rubble
@@ -4052,14 +3800,13 @@ camorr05.rubble:
 camorr06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 110, 70, 0, -5
-		DecorationBounds: 165, 155, 0, -25
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camorr06.rubble
+	IsometricSelectable:
+		Height: 105
 
 camorr06.rubble:
 	Inherits: ^Rubble
@@ -4073,14 +3820,13 @@ camorr06.rubble:
 camorr07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 60, 0, -5
-		DecorationBounds: 155, 155, 0, -25
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camorr07.rubble
+	IsometricSelectable:
+		Height: 90
 
 camorr07.rubble:
 	Inherits: ^Rubble
@@ -4094,14 +3840,13 @@ camorr07.rubble:
 camorr08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 60, 0, -5
-		DecorationBounds: 155, 155, 0, -25
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camorr08.rubble
+	IsometricSelectable:
+		Height: 105
 
 camorr08.rubble:
 	Inherits: ^Rubble
@@ -4115,14 +3860,13 @@ camorr08.rubble:
 camorr09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 60, 0, -5
-		DecorationBounds: 155, 145, 0, -20
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: camorr09.rubble
+	IsometricSelectable:
+		Height: 90
 
 camorr09.rubble:
 	Inherits: ^Rubble
@@ -4136,14 +3880,13 @@ camorr09.rubble:
 camorr10:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 70, 40, 0, -5
-		DecorationBounds: 110, 230, 0, -95
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: camorr10.rubble
+	IsometricSelectable:
+		Height: 195
 
 camorr10.rubble:
 	Inherits: ^Rubble
@@ -4157,14 +3900,13 @@ camorr10.rubble:
 cala01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 110, 70, 0, -5
-		DecorationBounds: 175, 165, 0, -38
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: cala01.rubble
+	IsometricSelectable:
+		Height: 105
 
 cala01.rubble:
 	Inherits: ^Rubble
@@ -4178,9 +3920,6 @@ cala01.rubble:
 cala03:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x1Shape
-	Selectable:
-		Bounds: 80, 40, 0, -5
-		DecorationBounds: 120, 75, 0, -16
 	Tooltip:
 		Name: Hollywood Sign
 	Tooltip@NoRow:
@@ -4190,6 +3929,8 @@ cala03:
 		Footprint: xxx
 	SpawnActorOnDeath:
 		Actor: cala03.rubble
+	IsometricSelectable:
+		Height: 45
 
 cala03.rubble:
 	Inherits: ^Rubble
@@ -4203,9 +3944,6 @@ cala03.rubble:
 cala04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 70, 0, -5
-		DecorationBounds: 200, 130, 0, -20
 	Tooltip:
 		Name: Hollywood Bowl
 	Tooltip@NoRow:
@@ -4215,6 +3953,8 @@ cala04:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: cala04.rubble
+	IsometricSelectable:
+		Height: 45
 
 cala04.rubble:
 	Inherits: ^Rubble
@@ -4228,9 +3968,6 @@ cala04.rubble:
 cala05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 100, 65, 0, -5
-		DecorationBounds: 150, 110, 0, -15
 	Tooltip:
 		Name: LAX
 	Tooltip@NoRow:
@@ -4240,6 +3977,8 @@ cala05:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: cala05.rubble
+	IsometricSelectable:
+		Height: 45
 
 cala05.rubble:
 	Inherits: ^Rubble
@@ -4253,9 +3992,6 @@ cala05.rubble:
 cala06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 90, 50, 0, -5
-		DecorationBounds: 130, 200, 0, -65
 	Tooltip:
 		Name: LAX Control Tower
 	Tooltip@NoRow:
@@ -4265,6 +4001,8 @@ cala06:
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: cala06.rubble
+	IsometricSelectable:
+		Height: 135
 
 cala06.rubble:
 	Inherits: ^Rubble
@@ -4278,9 +4016,6 @@ cala06.rubble:
 cala07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 120, 70, 0, -5
-		DecorationBounds: 165, 160, 0, -45
 	Tooltip:
 		Name: Movie Theater
 	Tooltip@NoRow:
@@ -4290,6 +4025,8 @@ cala07:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: cala07.rubble
+	IsometricSelectable:
+		Height: 105
 
 cala07.rubble:
 	Inherits: ^Rubble
@@ -4303,9 +4040,6 @@ cala07.rubble:
 cala08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x2Shape
-	Selectable:
-		Bounds: 120, 60, 0, -5
-		DecorationBounds: 175, 150, 6, -35
 	Tooltip:
 		Name: Car Dealership
 	Tooltip@NoRow:
@@ -4315,6 +4049,8 @@ cala08:
 		Footprint: xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: cala08.rubble
+	IsometricSelectable:
+		Height: 90
 
 cala08.rubble:
 	Inherits: ^Rubble
@@ -4328,9 +4064,6 @@ cala08.rubble:
 cala09:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 120, 70, 0, -5
-		DecorationBounds: 140, 110, 0, -18
 	Tooltip:
 		Name: Convenience Store
 	Tooltip@NoRow:
@@ -4340,6 +4073,8 @@ cala09:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: cala09.rubble
+	IsometricSelectable:
+		Height: 60
 
 cala09.rubble:
 	Inherits: ^Rubble
@@ -4353,9 +4088,6 @@ cala09.rubble:
 cala10:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^1x3Shape
-	Selectable:
-		Bounds: 80, 40, 0, -5
-		DecorationBounds: 110, 115, 0, -38
 	Tooltip:
 		Name: Billboard
 	Tooltip@NoRow:
@@ -4371,6 +4103,8 @@ cala10:
 		Footprint: x x x
 	SpawnActorOnDeath:
 		Actor: cala10.rubble
+	IsometricSelectable:
+		Height: 75
 
 cala10.rubble:
 	Inherits: ^Rubble
@@ -4384,9 +4118,6 @@ cala10.rubble:
 cala11:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 120, 70, 0, 0
-		DecorationBounds: 150, 100, 4, 0
 	Tooltip:
 		Name: Hollywood Bowl
 	Tooltip@NoRow:
@@ -4402,6 +4133,8 @@ cala11:
 		Footprint: xxx xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: cala11.rubble
+	IsometricSelectable:
+		Height: 15
 
 cala11.rubble:
 	Inherits: ^Rubble
@@ -4415,9 +4148,6 @@ cala11.rubble:
 cala12:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 120, 70, -10, -5
-		DecorationBounds: 160, 100, -17, -5
 	Tooltip:
 		Name: Hollywood Bowl
 	Tooltip@NoRow:
@@ -4433,6 +4163,8 @@ cala12:
 		Footprint: xxx xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: cala12.rubble
+	IsometricSelectable:
+		Height: 15
 
 cala12.rubble:
 	Inherits: ^Rubble
@@ -4446,9 +4178,6 @@ cala12.rubble:
 cala13:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x1Shape
-	Selectable:
-		Bounds: 80, 40, 0, -5
-		DecorationBounds: 120, 75, 0, -16
 	Tooltip:
 		Name: Hollywood Sign
 	Tooltip@NoRow:
@@ -4464,6 +4193,8 @@ cala13:
 		Footprint: xxx
 	SpawnActorOnDeath:
 		Actor: cala13.rubble
+	IsometricSelectable:
+		Height: 45
 
 cala13.rubble:
 	Inherits: ^Rubble
@@ -4477,9 +4208,6 @@ cala13.rubble:
 cala14:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 120, 70, 0, -5
-		DecorationBounds: 175, 135, 0, -25
 	Tooltip:
 		Name: Mini Mall
 	Tooltip@NoRow:
@@ -4489,6 +4217,8 @@ cala14:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: cala14.rubble
+	IsometricSelectable:
+		Height: 90
 
 cala14.rubble:
 	Inherits: ^Rubble
@@ -4502,9 +4232,6 @@ cala14.rubble:
 cala15:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 120, 70, 0, -5
-		DecorationBounds: 175, 135, 0, -25
 	Tooltip:
 		Name: Mini Mall
 	Tooltip@NoRow:
@@ -4514,6 +4241,8 @@ cala15:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: cala15.rubble
+	IsometricSelectable:
+		Height: 90
 
 cala15.rubble:
 	Inherits: ^Rubble
@@ -4527,9 +4256,6 @@ cala15.rubble:
 caegyp01:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 70, 10, -5
-		DecorationBounds: 245, 245, 0, -65
 	Tooltip:
 		Name: Pyramid
 	Tooltip@NoRow:
@@ -4545,6 +4271,8 @@ caegyp01:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: caegyp01.rubble
+	IsometricSelectable:
+		Height: 265
 
 caegyp01.rubble:
 	Inherits: ^Rubble
@@ -4558,9 +4286,6 @@ caegyp01.rubble:
 caegyp02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 130, 70, 0, -5
-		DecorationBounds: 225, 160, 0, -20
 	Tooltip:
 		Name: Pyramid
 	Tooltip@NoRow:
@@ -4570,6 +4295,8 @@ caegyp02:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: caegyp02.rubble
+	IsometricSelectable:
+		Height: 60
 
 caegyp02.rubble:
 	Inherits: ^Rubble
@@ -4583,9 +4310,6 @@ caegyp02.rubble:
 caegyp03:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x2Shape
-	Selectable:
-		Bounds: 90, 50, 10, -5
-		DecorationBounds: 165, 100, 19, 0
 	Tooltip:
 		Name: Sphinx
 	Tooltip@NoRow:
@@ -4601,6 +4325,8 @@ caegyp03:
 		Footprint: xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: caegyp02.rubble
+	IsometricSelectable:
+		Height: 60
 
 caegyp03.rubble:
 	Inherits: ^Rubble
@@ -4614,9 +4340,6 @@ caegyp03.rubble:
 caegyp04:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 130, 70, 0, -5
-		DecorationBounds: 230, 300, 0, -95
 	Tooltip:
 		Name: Pyramid
 	Tooltip@NoRow:
@@ -4632,6 +4355,8 @@ caegyp04:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: caegyp04.rubble
+	IsometricSelectable:
+		Height: 265
 
 caegyp04.rubble:
 	Inherits: ^Rubble
@@ -4645,9 +4370,6 @@ caegyp04.rubble:
 caegyp05:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 130, 70, -10, -5
-		DecorationBounds: 245, 245, 0, -65
 	Tooltip:
 		Name: Pyramid
 	Tooltip@NoRow:
@@ -4663,6 +4385,8 @@ caegyp05:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: caegyp05.rubble
+	IsometricSelectable:
+		Height: 265
 
 caegyp05.rubble:
 	Inherits: ^Rubble
@@ -4676,9 +4400,6 @@ caegyp05.rubble:
 caegyp06:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 130, 70, 0, -5
-		DecorationBounds: 230, 140, 0, -5
 	Tooltip:
 		Name: Pyramid
 	Tooltip@NoRow:
@@ -4694,6 +4415,8 @@ caegyp06:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: caegyp06.rubble
+	IsometricSelectable:
+		Height: 30
 
 caegyp06.rubble:
 	Inherits: ^Rubble
@@ -4707,14 +4430,13 @@ caegyp06.rubble:
 calond01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 90, 60, 0, -5
-		DecorationBounds: 110, 135, 0, -38
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: calond01.rubble
+	IsometricSelectable:
+		Height: 90
 
 calond01.rubble:
 	Inherits: ^Rubble
@@ -4728,14 +4450,13 @@ calond01.rubble:
 calond03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 90, 60, 0, -5
-		DecorationBounds: 110, 135, 0, -48
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: calond03.rubble
+	IsometricSelectable:
+		Height: 90
 
 calond03.rubble:
 	Inherits: ^Rubble
@@ -4749,9 +4470,6 @@ calond03.rubble:
 calond04:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Selectable:
-		Bounds: 180, 120, 0, -15
-		DecorationBounds: 295, 220, -10, -40
 	Tooltip:
 		Name: British Parlaiment
 	Tooltip@NoRow:
@@ -4761,6 +4479,8 @@ calond04:
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
 	SpawnActorOnDeath:
 		Actor: calond04.rubble
+	IsometricSelectable:
+		Height: 90
 
 calond04.rubble:
 	Inherits: ^Rubble
@@ -4777,15 +4497,14 @@ calond05:
 		Name: Big Ben
 	Tooltip@NoRow:
 		Name: Big Ben
-	Selectable:
-		Bounds: 50, 30, 0, -5
-		DecorationBounds: 70, 220, 0, -98
 	RevealsShroud:
 		Range: 10c0
 	Health:
 		HP: 1500
 	SpawnActorOnDeath:
 		Actor: calond05.rubble
+	IsometricSelectable:
+		Height: 210
 
 calond05.rubble:
 	Inherits: ^Rubble
@@ -4798,9 +4517,6 @@ calond05.rubble:
 calond06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 120, 80, 16, -5
-		DecorationBounds: 200, 235, 16, -50
 	Tooltip:
 		Name: Tower of London
 	Tooltip@NoRow:
@@ -4814,6 +4530,8 @@ calond06:
 		Sequence: idle-flag
 	SpawnActorOnDeath:
 		Actor: calond06.rubble
+	IsometricSelectable:
+		Height: 165
 
 calond06.rubble:
 	Inherits: ^Rubble
@@ -4827,14 +4545,13 @@ calond06.rubble:
 casanf01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 100, 70, 0, -15
-		DecorationBounds: 150, 170, 0, -50
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: casanf01.rubble
+	IsometricSelectable:
+		Height: 120
 
 casanf01.rubble:
 	Inherits: ^Rubble
@@ -4848,14 +4565,13 @@ casanf01.rubble:
 casanf02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 120, 80, 0, -15
-		DecorationBounds: 175, 170, 0, -55
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: casanf02.rubble
+	IsometricSelectable:
+		Height: 120
 
 casanf02.rubble:
 	Inherits: ^Rubble
@@ -4869,14 +4585,13 @@ casanf02.rubble:
 casanf03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 100, 70, 0, -15
-		DecorationBounds: 150, 170, 0, -50
 	Building:
 		Dimensions: 2,3
 		Footprint: xx xx xx
 	SpawnActorOnDeath:
 		Actor: casanf03.rubble
+	IsometricSelectable:
+		Height: 120
 
 casanf03.rubble:
 	Inherits: ^Rubble
@@ -4890,9 +4605,6 @@ casanf03.rubble:
 casanf05:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Selectable:
-		Bounds: 100, 70, 0, -15
-		DecorationBounds: 150, 170, 0, -50
 	Tooltip:
 		Name: Alcatraz
 	Tooltip@NoRow:
@@ -4904,6 +4616,8 @@ casanf05:
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
 	SpawnActorOnDeath:
 		Actor: casanf05.rubble
+	IsometricSelectable:
+		Height: 120
 
 casanf05.rubble:
 	Inherits: ^Rubble
@@ -4917,14 +4631,13 @@ casanf05.rubble:
 casanf06:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Selectable:
-		Bounds: 100, 70, 0, -15
-		DecorationBounds: 150, 170, 0, -50
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
 	SpawnActorOnDeath:
 		Actor: casanf06.rubble
+	IsometricSelectable:
+		Height: 120
 
 casanf06.rubble:
 	Inherits: ^Rubble
@@ -4938,14 +4651,13 @@ casanf06.rubble:
 casanf07:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x2Shape
-	Selectable:
-		Bounds: 100, 70, 0, -15
-		DecorationBounds: 150, 170, 0, -50
 	Building:
 		Dimensions: 3,2
 		Footprint: xxx xxx
 	SpawnActorOnDeath:
 		Actor: casanf07.rubble
+	IsometricSelectable:
+		Height: 120
 
 casanf07.rubble:
 	Inherits: ^Rubble
@@ -4959,14 +4671,13 @@ casanf07.rubble:
 casanf08:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 120, 80, 0, -15
-		DecorationBounds: 175, 170, 0, -55
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: casanf08.rubble
+	IsometricSelectable:
+		Height: 120
 
 casanf08.rubble:
 	Inherits: ^Rubble
@@ -4983,9 +4694,6 @@ casanf15:
 		Name: Alcatraz Water Tower
 	Tooltip@NoRow:
 		Name: Alcatraz Water Tower
-	Selectable:
-		Bounds: 40, 30, 0, -5
-		DecorationBounds: 60, 80, 0, -30
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -4994,6 +4702,8 @@ casanf15:
 		HP: 1500
 	SpawnActorOnDeath:
 		Actor: casanf15.rubble
+	IsometricSelectable:
+		Height: 60
 
 casanf15.rubble:
 	Inherits: ^Rubble
@@ -5009,9 +4719,6 @@ casanf16:
 		Name: Light House
 	Tooltip@NoRow:
 		Name: Light House
-	Selectable:
-		Bounds: 40, 30, 0, -5
-		DecorationBounds: 40, 120, 0, -52
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -5020,6 +4727,8 @@ casanf16:
 		HP: 1500
 	SpawnActorOnDeath:
 		Actor: casanf16.rubble
+	IsometricSelectable:
+		Height: 120
 
 casanf16.rubble:
 	Inherits: ^Rubble
@@ -5032,14 +4741,13 @@ casanf16.rubble:
 casanf17:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 70, 0, -15
-		DecorationBounds: 130, 140, -15, -40
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: casanf17.rubble
+	IsometricSelectable:
+		Height: 60
 
 casanf17.rubble:
 	Inherits: ^Rubble
@@ -5052,14 +4760,13 @@ casanf17.rubble:
 casanf18:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x5Shape
-	Selectable:
-		Bounds: 100, 60, 0, -15
-		DecorationBounds: 180, 130, 0, -20
 	Building:
 		Dimensions: 2,5
 		Footprint: xx xx xx xx xx
 	SpawnActorOnDeath:
 		Actor: casanf18.rubble
+	IsometricSelectable:
+		Height: 45
 
 casanf18.rubble:
 	Inherits: ^Rubble
@@ -5073,9 +4780,6 @@ casanf18.rubble:
 casydn02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^3x3Shape
-	Selectable:
-		Bounds: 100, 50, 0, -10
-		DecorationBounds: 180, 110, -5, -30
 	Tooltip:
 		Name: McRoo Burger
 	Tooltip@NoRow:
@@ -5085,6 +4789,8 @@ casydn02:
 		Footprint: xxx xxx xxx
 	SpawnActorOnDeath:
 		Actor: casydn02.rubble
+	IsometricSelectable:
+		Height: 75
 
 casydn02.rubble:
 	Inherits: ^Rubble
@@ -5097,9 +4803,6 @@ casydn02.rubble:
 casydn03:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^6x4Shape
-	Selectable:
-		Bounds: 140, 70, 0, -15
-		DecorationBounds: 250, 170, -15, -20
 	Tooltip:
 		Name: Sydney Opera House
 	Tooltip@NoRow:
@@ -5111,6 +4814,8 @@ casydn03:
 		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
 	SpawnActorOnDeath:
 		Actor: casydn03.rubble
+	IsometricSelectable:
+		Height: 120
 
 casydn03.rubble:
 	Inherits: ^Rubble
@@ -5123,9 +4828,6 @@ casydn03.rubble:
 calunr01:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 40, 30, 0, -5
-		DecorationBounds: 80, 80, 0, -25
 	Tooltip:
 		Name: Lunar Lander
 	Tooltip@NoRow:
@@ -5139,6 +4841,8 @@ calunr01:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+	IsometricSelectable:
+		Height: 45
 
 calunr02:
 	Inherits: ^CivBuilding
@@ -5146,22 +4850,18 @@ calunr02:
 		Name: American Flag
 	Tooltip@NoRow:
 		Name: American Flag
-	Selectable:
-		Bounds: 20, 20, 0, -5
-		DecorationBounds: 25, 35, 0, -15
 	Armor:
 		Type: Wood
 	RevealsShroud:
 		Range: 8c0
 	Health:
 		HP: 100
+	IsometricSelectable:
+		Height: 30
 
 caseat01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 40, 30, 0, -5
-		DecorationBounds: 70, 220, 0, -90
 	Tooltip:
 		Name: Seattle Space Needle
 	Tooltip@NoRow:
@@ -5175,6 +4875,8 @@ caseat01:
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: caseat01.rubble
+	IsometricSelectable:
+		Height: 195
 
 caseat01.rubble:
 	Inherits: ^Rubble
@@ -5187,9 +4889,6 @@ caseat01.rubble:
 caseat02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 130, 70, 0, -15
-		DecorationBounds: 230, 180, 0, -40
 	Tooltip:
 		Name: MassiveSoft Campus
 	Tooltip@NoRow:
@@ -5201,6 +4900,8 @@ caseat02:
 		Sequence: idle-globe
 	SpawnActorOnDeath:
 		Actor: caseat02.rubble
+	IsometricSelectable:
+		Height: 120
 
 caseat02.rubble:
 	Inherits: ^Rubble
@@ -5213,9 +4914,6 @@ caseat02.rubble:
 catran01:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 70, 50, 0, -15
-		DecorationBounds: 100, 110, 5, -34
 	Tooltip:
 		Name: Crypt
 	Tooltip@NoRow:
@@ -5225,6 +4923,8 @@ catran01:
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: catran01.rubble
+	IsometricSelectable:
+		Height: 75
 
 catran01.rubble:
 	Inherits: ^Rubble
@@ -5237,9 +4937,6 @@ catran01.rubble:
 catran02:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
-	Selectable:
-		Bounds: 70, 50, 0, -15
-		DecorationBounds: 100, 110, -5, -29
 	Tooltip:
 		Name: Crypt
 	Tooltip@NoRow:
@@ -5249,6 +4946,8 @@ catran02:
 		Footprint: xx xx
 	SpawnActorOnDeath:
 		Actor: catran02.rubble
+	IsometricSelectable:
+		Height: 75
 
 catran02.rubble:
 	Inherits: ^Rubble
@@ -5261,9 +4960,6 @@ catran02.rubble:
 catran03:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^4x4Shape
-	Selectable:
-		Bounds: 90, 60, 0, -15
-		DecorationBounds: 230, 200, 0, -55
 	Tooltip:
 		Name: Yuri's Fortress
 	Tooltip@NoRow:
@@ -5279,6 +4975,8 @@ catran03:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: catran03.rubble
+	IsometricSelectable:
+		Height: 120
 
 catran03.rubble:
 	Inherits: ^Rubble
@@ -5291,9 +4989,6 @@ catran03.rubble:
 catime01:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 90, 50, 20, -15
-		DecorationBounds: 160, 110, 25, -10
 	Tooltip:
 		Name: Time Machine
 	Tooltip@NoRow:
@@ -5307,13 +5002,12 @@ catime01:
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
+	IsometricSelectable:
+		Height: 90
 
 catime02:
 	Inherits: ^CivBuilding
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 90, 50, 29, -15
-		DecorationBounds: 160, 110, 29, -10
 	Tooltip:
 		Name: Time Machine
 	Tooltip@NoRow:
@@ -5327,3 +5021,5 @@ catime02:
 	Building:
 		Dimensions: 3,4
 		Footprint: xxx xxx xxx xxx
+	IsometricSelectable:
+		Height: 90

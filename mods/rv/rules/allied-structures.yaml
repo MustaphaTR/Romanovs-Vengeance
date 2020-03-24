@@ -1,8 +1,5 @@
 gacnst:
 	Inherits: ^ConstructionYard
-	Selectable:
-		Bounds: 160, 95, 0, -20
-		DecorationBounds: 220, 155, 0, -20
 	Production:
 		Produces: Building.Allies, Support.Allies, Support.France
 	ProductionQueue@Building:
@@ -76,6 +73,8 @@ gacnst:
 		Palette: player
 		IsPlayerPalette: false
 		RequiresCondition: !build-incomplete && korea
+	IsometricSelectable:
+		Height: 60
 
 gapowr:
 	Inherits: ^BaseBuilding
@@ -88,9 +87,6 @@ gapowr:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Provides power for other structures.
-	Selectable:
-		Bounds: 56, 58, -2, -14
-		DecorationBounds: 96, 98, -2, -24
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -164,6 +160,8 @@ gapowr:
 	PowerTooltip:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	IsometricSelectable:
+		Height: 60
 
 gapowrup:
 	Inherits: ^BuildingPlug
@@ -186,9 +184,6 @@ gapile:
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
-	Selectable:
-		Bounds: 84, 72, 0, -8
-		DecorationBounds: 134, 132, 0, -28
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -279,18 +274,19 @@ gapile:
 		Prerequisite: gapile
 	PlaceBuildingVariants:
 		Actors: gapilb
+	IsometricSelectable:
+		Height: 60
 
 garefn:
 	Inherits: ^Refinery
 	Buildable:
 		Queue: Building.Allies
-	Selectable:
-		Bounds: 126, 70, 0, -5
-		DecorationBounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
 	PlaceBuildingVariants:
 		Actors: garefb, garefc, garefd
+	IsometricSelectable:
+		Height: 60
 
 gaairc:
 	Inherits: ^BaseBuilding
@@ -331,9 +327,6 @@ gaairc:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Selectable:
-		Bounds: 92, 70, -3, -05
-		DecorationBounds: 142, 150, -3, -42
 	Health:
 		HP: 1000
 	Armor:
@@ -579,14 +572,13 @@ gaairc:
 		IsPlayerPalette: false
 	PlaceBuildingVariants:
 		Actors: gaairb
+	IsometricSelectable:
+		Height: 105
 
 gaweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Allies
-	Selectable:
-		Bounds: 152, 88, -15, -08
-		DecorationBounds: 212, 158, -7, -28
 	ProvidesPrerequisite@gaweap:
 		Prerequisite: gaweap
 	ProvidesPrerequisite@powered:
@@ -622,14 +614,13 @@ gaweap:
 		RequiresCondition: !build-incomplete
 	PlaceBuildingVariants:
 		Actors: gaweab, gaweac, gawead
+	IsometricSelectable:
+		Height: 60
 
 gayard:
 	Inherits: ^Shipyard
 	Buildable:
 		Queue: Building.Allies
-	Selectable:
-		Bounds: 92, 100, -3, -22
-		DecorationBounds: 152, 190, 10, -50
 	Production:
 		Produces: Ship.Allies
 	ProductionQueue:
@@ -637,6 +628,8 @@ gayard:
 	ProductionBar:
 		ProductionType: Ship.Allies
 	-WithProductionOverlay@lights:
+	IsometricSelectable:
+		Height: 120
 
 gadept:
 	Inherits: ^ServiceDepot
@@ -644,9 +637,6 @@ gadept:
 	Buildable:
 		Queue: Building.Allies
 		Prerequisites: gaweap, ~techlevel.1
-	Selectable:
-		Bounds: 104, 48, -12, -6
-		DecorationBounds: 144, 88, -12, -16
 	Building:
 		Footprint: x++ x++ x++
 		Dimensions: 3,3
@@ -656,6 +646,8 @@ gadept:
 		Sequence: idle-side
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	IsometricSelectable:
+		Height: 45
 
 gatech:
 	Inherits: ^BaseBuilding
@@ -666,9 +658,6 @@ gatech:
 		BuildPaletteOrder: 90
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Allows deployment of advanced units.\nCan be rotated.
-	Selectable:
-		Bounds: 72, 76, 0, -10
-		DecorationBounds: 122, 216, 0, -81
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -702,6 +691,8 @@ gatech:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	PlaceBuildingVariants:
 		Actors: gatecb
+	IsometricSelectable:
+		Height: 180
 
 gawall:
 	Inherits: ^Wall
@@ -750,8 +741,6 @@ gapill:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 7c0
-	Selectable:
-		Bounds: 50, 30, 0, -4
 	Armament:
 		Weapon: vulcan2
 		LocalOffset: 416,0,416
@@ -775,6 +764,8 @@ gapill:
 	AutoTarget:
 	RequiresBuildableArea:
 		Adjacent: 4
+	IsometricSelectable:
+		Height: 15
 
 nasam:
 	Inherits: ^VoxelLighting
@@ -806,9 +797,6 @@ nasam:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 8c0
-	Selectable:
-		Bounds: 46, 52, 0, -10
-		DecorationBounds: 46, 62, 0, -20
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
@@ -837,6 +825,8 @@ nasam:
 		Amount: -30
 	RequiresBuildableArea:
 		Adjacent: 3
+	IsometricSelectable:
+		Height: 45
 
 gtgcan:
 	Inherits: ^VoxelLighting
@@ -869,9 +859,6 @@ gtgcan:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 10c0
-	Selectable:
-		Bounds: 56, 48, -2, -10
-		DecorationBounds: 106, 78, -2, -19
 	Turreted:
 		TurnSpeed: 3
 		InitialFacing: 224
@@ -904,6 +891,8 @@ gtgcan:
 		Type: grandcannon
 	Power:
 		Amount: -100
+	IsometricSelectable:
+		Height: 45
 
 gaorep:
 	Inherits: ^BaseBuilding
@@ -915,9 +904,6 @@ gaorep:
 		Prerequisites: garefn, gatech, ~techlevel.4
 		Description: Refines income from ores and gems by 25%.\nMaximum 1 can be built.\nCan not be captured.
 		BuildLimit: 1
-	Selectable:
-		Bounds: 84, 52, -10, -11
-		DecorationBounds: 134, 102, -10, -21
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -949,6 +935,8 @@ gaorep:
 		Modifier: 25
 	Power:
 		Amount: -200
+	IsometricSelectable:
+		Height: 60
 
 gaspysat:
 	Inherits: ^BaseBuilding
@@ -961,9 +949,6 @@ gaspysat:
 		BuildPaletteOrder: 110
 		Prerequisites: gatech, ~techlevel.4
 		Description: Provides Satellite Scan power, which reveals the map for a while.\nProvides Radar.
-	Selectable:
-		Bounds: 56, 48, -4, -10
-		DecorationBounds: 96, 98, -4, -30
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -1021,6 +1006,8 @@ gaspysat:
 		AutoFire: true
 		ChargeInterval: 4500
 		OrderName: SatelliteScanPowerInfoOrder
+	IsometricSelectable:
+		Height: 75
 
 gagap:
 	Inherits: ^SupportBuilding
@@ -1039,9 +1026,6 @@ gagap:
 		BuildPaletteOrder: 80
 		Prerequisites: gatech, ~techlevel.3
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
-	Selectable:
-		Bounds: 50, 44, -1, -05
-		DecorationBounds: 50, 114, -1, -45
 	Health:
 		HP: 600
 	Armor:
@@ -1073,6 +1057,8 @@ gagap:
 		RequiredForShortGame: false
 	GpsDotAS:
 		Sequence: Structure
+	IsometricSelectable:
+		Height: 90
 
 gaweat:
 	Inherits: ^PrimarySuperWeapon
@@ -1080,9 +1066,6 @@ gaweat:
 		Queue: Support.Allies, Support.France
 		Prerequisites: gatech, !enoughweather, ~techlevel.5
 		Description: Play God with deadly weather!
-	Selectable:
-		Bounds: 66, 46, -2, -06
-		DecorationBounds: 116, 106, -2, -26
 	Tooltip:
 		Name: Weather Controller
 	Tooltip@NoRow:
@@ -1120,6 +1103,8 @@ gaweat:
 		Prerequisite: enoughweather
 	AnnounceOnSeen:
 		Notification: WeathercontrolDeviceDetected
+	IsometricSelectable:
+		Height: 75
 
 gacsph:
 	Inherits: ^SecondarySuperWeapon
@@ -1128,9 +1113,6 @@ gacsph:
 		Queue: Support.Allies, Support.France
 		Prerequisites: gatech, !enoughchrono, ~techlevel.5
 		Description: Allows teleporting maximum of 13 vehicles.\nKills infantry.\nCan be rotated.
-	Selectable:
-		Bounds: 116, 60, -5, -4
-		DecorationBounds: 176, 110, -5, -14
 	Tooltip:
 		Name: Chronosphere
 	Tooltip@NoRow:
@@ -1178,6 +1160,8 @@ gacsph:
 		Notification: ChronosphereDetected
 	PlaceBuildingVariants:
 		Actors: gacspb
+	IsometricSelectable:
+		Height: 45
 
 atesla:
 	Inherits: ^SupportBuilding
@@ -1200,9 +1184,6 @@ atesla:
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
-	Selectable:
-		Bounds: 44, 42, 0, -10
-		DecorationBounds: 44, 102, 0, -40
 	Health:
 		HP: 600
 	Armor:
@@ -1258,6 +1239,8 @@ atesla:
 		RequiresCondition: prism_forwarding >= 3
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
+	IsometricSelectable:
+		Height: 90
 
 power:
 	AlwaysVisible:
@@ -1307,9 +1290,6 @@ garobo:
 		BuildPaletteOrder: 80
 		Prerequisites: ~disabled # gaweap
 		Description: Allows production of Robot Tanks.\nRequired for Robot Tanks to function.
-	Selectable:
-		Bounds: 66, 58, 4, 0
-		DecorationBounds: 96, 108, 10, -25
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -1338,6 +1318,8 @@ garobo:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
+	IsometricSelectable:
+		Height: 60
 
 # Custom Structures
 gaapad:
@@ -1359,9 +1341,6 @@ gaapad:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Selectable:
-		Bounds: 78, 46, 0, -06
-		DecorationBounds: 128, 96, 0, -16
 	Health:
 		HP: 350
 	Armor:
@@ -1395,6 +1374,8 @@ gaapad:
 	Exit@3:
 		Facing: 224
 		SpawnOffset: 0,512,0
+	IsometricSelectable:
+		Height: 30
 
 gagatea:
 	Inherits: ^Gate_A
@@ -1406,9 +1387,6 @@ gagatea:
 		Name: Allied Gate
 	Tooltip@NoRow:
 		Name: Allied Gate
-	Selectable:
-		Bounds: 68, 36, 0, -6
-		DecorationBounds: 118, 56, 0, -10
 	LineBuildNode:
 		Types: gawall
 	WithGateSpriteBody:
@@ -1425,9 +1403,6 @@ gagateb:
 		Name: Allied Gate
 	Tooltip@NoRow:
 		Name: Allied Gate
-	Selectable:
-		Bounds: 68, 36, 0, -6
-		DecorationBounds: 118, 56, 0, -10
 	LineBuildNode:
 		Types: gawall
 	WithGateSpriteBody:
@@ -1439,9 +1414,6 @@ gasilo:
 	Inherits: ^Silo
 	Buildable:
 		Queue: Support.Allies, Support.France
-	Selectable:
-		Bounds: 70, 45, -5, 0
-		DecorationBounds: 88, 55,-5, -5
 	WithIdleOverlay@LIGHTS:
 		RequiresCondition: !build-incomplete
 		Sequence: idle-lights
@@ -1476,8 +1448,6 @@ gamgun:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 7c0
-	Selectable:
-		Bounds: 42, 50, 0, -14
 	Armament:
 		Weapon: MirageGun
 		LocalOffset: 768,0,980
@@ -1509,12 +1479,11 @@ gamgun:
 		Type: mirageturret
 	Power:
 		Amount: -75
+	IsometricSelectable:
+		Height: 30
 
 gaexpn:
 	Inherits: ^ExpansionNode
-	Selectable:
-		Bounds: 56, 40, -2, -4
-		DecorationBounds: 86, 78, -2, -15
 
 gapilb:
 	Inherits: gapile
@@ -1576,41 +1545,35 @@ gapilb:
 
 garefb:
 	Inherits: ^RefineryB
-	Selectable:
-		Bounds: 126, 70, 0, -5
-		DecorationBounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
 	-WithDockedOverlay: # This causes a crash for some reason.
 	ProvidesPrerequisite@garefn:
 		Prerequisite: garefn
+	IsometricSelectable:
+		Height: 60
 
 garefc:
 	Inherits: ^RefineryC
-	Selectable:
-		Bounds: 126, 70, 0, -5
-		DecorationBounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
 	ProvidesPrerequisite@garefn:
 		Prerequisite: garefn
+	IsometricSelectable:
+		Height: 60
 
 garefd:
 	Inherits: ^RefineryD
-	Selectable:
-		Bounds: 126, 70, 0, -5
-		DecorationBounds: 176, 150, 0, -20
 	FreeActor:
 		Actor: cmin
 	ProvidesPrerequisite@garefn:
 		Prerequisite: garefn
+	IsometricSelectable:
+		Height: 60
 
 gaweab:
 	Inherits: gaweap
 	Inherits@shape: ^3x5Shape
-	Selectable:
-		Bounds: 152, 88, 10, -8
-		DecorationBounds: 212, 158, 0, -28
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -1623,9 +1586,6 @@ gaweab:
 
 gaweac:
 	Inherits: gaweap
-	Selectable:
-		Bounds: 152, 88, 15, -08
-		DecorationBounds: 212, 158, 23, -28
 	-Buildable:
 	-PlaceBuildingVariants:
 	-WithExitOverlay@front:

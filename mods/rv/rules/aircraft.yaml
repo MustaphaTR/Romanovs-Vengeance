@@ -48,7 +48,6 @@ shad:
 	WithMuzzleOverlay:
 	AmmoPool:
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 40
@@ -110,7 +109,6 @@ shad:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 8
-		PipCount: 8
 		UnloadVoice: Move
 	WithCargoSounds:
 		EnterSound: genter1a.wav
@@ -124,6 +122,16 @@ shad:
 	HitShape:
 	ProducibleWithLevel:
 		Prerequisites: vetair
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
 
 shadhusk:
 	Inherits: ^HelicopterHusk
@@ -342,9 +350,6 @@ orca:
 	AmmoPool:
 		Ammo: 2
 		ReloadDelay: 150
-		PipCount: 2
-		PipType: Ammo
-		PipTypeEmpty: AmmoEmpty
 		AmmoCondition: ammo
 	AutoTarget:
 		InitialStance: HoldFire
@@ -366,6 +371,13 @@ orca:
 	ProducibleWithLevel:
 		Prerequisites: vetair
 		InitialLevels: 2
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 
 orcahusk:
 	Inherits: ^PlaneHusk
@@ -441,7 +453,6 @@ beag:
 	AmmoPool:
 		Ammo: 1
 		ReloadDelay: 200
-		PipCount: 1
 	Health:
 		HP: 200
 	Voiced:
@@ -871,6 +882,11 @@ hornet:
 	RenderSprites:
 	Rearmable:
 		RearmActors: carrier
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 
 hornethusk:
 	Inherits: ^PlaneHusk
@@ -964,6 +980,11 @@ asw:
 	RenderSprites:
 	Rearmable:
 		RearmActors: dest, cdest
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 
 aswhusk:
 	Inherits: ^PlaneHusk
@@ -1132,7 +1153,6 @@ schp:
 	#	Type: GroundPosition
 	AmmoPool:
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 40
@@ -1281,7 +1301,6 @@ bpln:
 		HP: 100
 	AmmoPool:
 		Ammo: 2
-		PipCount: 2
 	AirstrikeSlave:
 		LandingDistance: 1c0
 	Voiced:
@@ -1395,7 +1414,6 @@ disk:
 	AmmoPool:
 		Armaments: primary
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 80
@@ -1653,9 +1671,6 @@ fortress:
 	AmmoPool:
 		Ammo: 5
 		ReloadDelay: 100
-		PipCount: 5
-		PipType: Ammo
-		PipTypeEmpty: AmmoEmpty
 		AmmoCondition: ammo
 	AutoTarget:
 		InitialStance: HoldFire
@@ -1675,6 +1690,13 @@ fortress:
 	HitShape:
 	ProducibleWithLevel:
 		Prerequisites: vetair
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 
 fortresshusk:
 	Inherits: ^PlaneHusk
@@ -1844,7 +1866,6 @@ txdx:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 5
-		PipCount: 5
 		UnloadVoice: Move
 	WithCargoSounds:
 		EnterSound: genter1a.wav
@@ -1856,6 +1877,16 @@ txdx:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
 
 txdxhusk:
 	Inherits: ^HelicopterHusk

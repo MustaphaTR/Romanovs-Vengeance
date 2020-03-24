@@ -31,7 +31,6 @@ e2:
 		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -112,7 +111,6 @@ flakt:
 		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -258,10 +256,10 @@ shk:
 		CrushClasses: vehicle
 	Garrisoner:
 		Voice: Move
-		PipType: Blue
+		CustomPipType: blue
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Blue
+		CustomPipType: blue
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -305,7 +303,6 @@ shk:
 		OutsideRangeCursor: ability
 		PauseOnCondition: chronodisable
 	AmmoPool:
-		PipCount: 0
 	ReloadAmmoPool:
 		Delay: 70
 	WithInfantryBody:
@@ -347,8 +344,10 @@ terror:
 		HP: 75
 	Garrisoner:
 		Voice: Move
-		PipType: Gray
+		CustomPipType: gray
 		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: gray
 	Mobile:
 		Speed: 90
 	RevealsShroud:
@@ -359,8 +358,6 @@ terror:
 		Radius: 3c0
 	Armor:
 		Type: Flak
-	Passenger:
-		PipType: Gray
 	Explodes:
 		Weapon: TerrorBomb
 		EmptyWeapon: TerrorBomb
@@ -414,8 +411,11 @@ deso:
 		HP: 150
 	Garrisoner:
 		Voice: Move
-		PipType: Gray
+		CustomPipType: gray
 		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: gray
+		RequireForceMoveCondition: !undeployed
 	Mobile:
 		RequireForceMoveCondition: !undeployed
 	RevealsShroud:
@@ -434,9 +434,6 @@ deso:
 		HealIfBelow: 100
 	Crushable:
 		CrushClasses: vehicle
-	Passenger:
-		PipType: Gray
-		RequireForceMoveCondition: !undeployed
 	Armament@primary:
 		Weapon: RadBeamWeapon
 		LocalOffset: 320,-128,1024
@@ -556,7 +553,6 @@ ivan:
 	Armor:
 		Type: None
 	Passenger:
-		PipType: Green
 	Explodes:
 		Weapon: IvanBomber
 		EmptyWeapon: IvanBomber
@@ -600,10 +596,10 @@ civan:
 		HP: 100
 	Garrisoner:
 		Voice: Move
-		PipType: Gray
+		CustomPipType: gray
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Gray
+		CustomPipType: gray
 	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
@@ -662,7 +658,6 @@ yuri:
 	Armor:
 		Type: None
 	Passenger:
-		PipType: Green
 	PeriodicExplosion:
 		Weapon: PsiWave
 		LocalOffset: 0,0,128
@@ -719,6 +714,11 @@ yuri:
 		ArmamentNames: primary, garrisoned
 		ControllingCondition: controlling
 		Sounds: iyurat1a.wav
+	WithMindControlPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 	WithMindControlArc:
 		UsePlayerColor: true
 		Offset: 0,0,960
@@ -751,10 +751,10 @@ yuripr:
 		HP: 200
 	Garrisoner:
 		Voice: Move
-		PipType: Gray
+		CustomPipType: gray
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Gray
+		CustomPipType: gray
 	Armor:
 		Type: Flak
 	Crushable:
@@ -810,8 +810,10 @@ boris:
 		HP: 125
 	Garrisoner:
 		Voice: Move
-		PipType: Red
+		CustomPipType: red
 		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: red
 	Mobile:
 		Speed: 75
 		Locomotor: swimsuit
@@ -831,8 +833,6 @@ boris:
 		Delay: 100
 		DamageCooldown: 100
 		HealIfBelow: 100
-	Passenger:
-		PipType: Red
 	Armament@primary:
 		Weapon: AKM
 		RequiresCondition: !rank-elite
@@ -962,7 +962,6 @@ pyro:
 		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1037,12 +1036,12 @@ mech:
 		HP: 50
 	Garrisoner:
 		Voice: Move
-		PipType: Yellow
+		CustomPipType: yellow
 		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: yellow
 	Mobile:
 		Speed: 75
-	Passenger:
-		PipType: Yellow
 	Armament:
 		Weapon: MechRepair
 		Cursor: goldwrench
@@ -1093,8 +1092,10 @@ hjck:
 		HP: 75
 	Garrisoner:
 		Voice: Move
-		PipType: Yellow
+		CustomPipType: yellow
 		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: yellow
 	Mobile:
 		Speed: 75
 	RevealsShroud:
@@ -1103,8 +1104,6 @@ hjck:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
-	Passenger:
-		PipType: Yellow
 	Cloak:
 		RequiresCondition: !chronodisable
 		InitialDelay: 25
@@ -1168,7 +1167,6 @@ itrp:
 	RevealOnDeath:
 		Radius: 3c0
 	Passenger:
-		PipType: Green
 	Crushable:
 		CrushClasses: vehicle
 	-TakeCover:

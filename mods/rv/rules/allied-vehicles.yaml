@@ -92,6 +92,15 @@ cmin:
 	HitShape:
 	GpsDotAS:
 		Sequence: Harvester
+	WithHarvesterPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-blue
 
 mtnk:
 	Inherits: ^MainBattleTank
@@ -493,7 +502,6 @@ fv:
 		TurnSpeed: 10
 	AmmoPool:
 		Ammo: 2
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 50
@@ -501,7 +509,6 @@ fv:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 1
-		PipCount: 1
 		UnloadVoice: Move
 		EjectOnDeath: false
 		LoadingCondition: notmobile
@@ -831,6 +838,16 @@ fv:
 	ProducibleWithLevel:
 		Prerequisites: vetifv
 	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
 
 sref:
 	Inherits: ^Vehicle
@@ -1101,7 +1118,6 @@ bfrt:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 5
-		PipCount: 5
 		UnloadVoice: Move
 		EjectOnDeath: false
 		LoadingCondition: notmobile
@@ -1168,6 +1184,16 @@ bfrt:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
 
 robo:
 	Inherits: ^Vehicle
@@ -1330,7 +1356,6 @@ aambu:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 5
-		PipCount: 5
 		UnloadVoice: Move
 		EjectOnDeath: false
 		LoadingCondition: notmobile
@@ -1348,6 +1373,16 @@ aambu:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
 
 hwtz:
 	Inherits: ^Vehicle

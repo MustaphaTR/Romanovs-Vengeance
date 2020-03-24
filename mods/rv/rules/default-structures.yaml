@@ -13,8 +13,6 @@
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4,4
 	ProvidesPrerequisite@default:
-	Selectable:
-		Bounds: 220, 180, 0, -35
 	Health:
 		HP: 1600
 	Armor:
@@ -104,6 +102,8 @@
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
+	IsometricSelectable:
+		Height: 60
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -281,8 +281,6 @@
 	SpawnActorsOnSell@soviets:
 		ActorTypes: e2
 	StoresResources:
-		PipColor: Yellow
-		PipCount: 10
 		Capacity: 2000
 	Explodes:
 		RequiresCondition: !spawn-ore
@@ -292,6 +290,15 @@
 		RequiresCondition: spawn-ore
 	GrantConditionOnPlayerResources:
 		Condition: spawn-ore
+	WithResourceStoragePipsDecoration:
+		FullSequence: pip-building-yellow
+		EmptySequence: pip-building-empty
+		Palette: ra
+		Margin: 8, 2
+		PipStride: 4, 2
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 25
 
 ^RefineryB:
 	Inherits: ^Refinery
@@ -341,6 +348,8 @@
 	Inherits: ^BaseBuilding
 	Inherits@DISK: ^DiskStealable
 	Inherits@SHAPE: ^2x2Shape
+	IsometricSelectable:
+		Height: 30
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 30
@@ -371,12 +380,9 @@
 	WithSpriteBody:
 		Sequence: idle-underlay
 	StoresResources:
-		PipColor: Yellow
-		PipCount: 5
 		Capacity: 2000
 	Power:
 		Amount: -10
-	SelectionDecorations:
 	Explodes:
 		RequiresCondition: !spawn-ore
 	Explodes@Ore:
@@ -385,6 +391,15 @@
 		RequiresCondition: spawn-ore
 	GrantConditionOnPlayerResources:
 		Condition: spawn-ore
+	WithResourceStoragePipsDecoration:
+		FullSequence: pip-building-yellow
+		EmptySequence: pip-building-empty
+		Palette: ra
+		Margin: 8, 2
+		PipStride: 4, 2
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 12
 
 ^WarFactory:
 	Inherits: ^BaseBuilding
@@ -395,8 +410,6 @@
 		BuildPaletteOrder: 40
 		Prerequisites: refinery, ~techlevel.1
 		Description: Produces vehicles.\nCan be rotated.
-	Selectable:
-		Bounds: 196, 178, -6, -48
 	Valued:
 		Cost: 2000
 	Tooltip:

@@ -22,6 +22,8 @@ yacnst:
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
+	IsometricSelectable:
+		Height: 60
 
 yapowr:
 	Inherits: ^BaseBuilding
@@ -34,8 +36,6 @@ yapowr:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Provides power for other structures.\nCan be occupied with up to 5 infantry for 50 more power each.
-	Selectable:
-		Bounds: 96, 128, 0, -36
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -94,7 +94,6 @@ yapowr:
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 5
-		PipCount: 5
 		EjectOnDeath: true
 		LoadedCondition: loaded
 	ScalePowerWithHealth:
@@ -103,12 +102,25 @@ yapowr:
 	PowerTooltip:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	WithCargoPipsDecoration:
+		FullSequence: pip-building-green
+		EmptySequence: pip-building-empty
+		Palette: ra
+		Margin: 8, 2
+		PipStride: 4, 2
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-building-gray
+			yellow: pip-building-yellow
+			blue: pip-building-blue
+			red: pip-building-red
+	IsometricSelectable:
+		Height: 60
 
 yabrck:
 	Inherits: ^Barracks
 	Inherits@shape: ^2x3Shape
-	Selectable:
-		Bounds: 120, 132, -16, -40
 	Buildable:
 		Queue: Building.Yuri
 	Building:
@@ -184,6 +196,8 @@ yabrck:
 		Prerequisite: yabrck
 	PlaceBuildingVariants:
 		Actors: yabrcb
+	IsometricSelectable:
+		Height: 105
 
 yarefn:
 	Inherits: ^BaseBuilding
@@ -195,9 +209,6 @@ yarefn:
 		BuildPaletteOrder: 30
 		Prerequisites: ~disabled # power
 		Description: Gathers and processes ore.\nComes with 2 slaves.
-	Selectable:
-		Class: yarefn
-		Bounds: 70, 50, 0, -20
 	Valued:
 		Cost: 1600
 	Tooltip:
@@ -325,8 +336,6 @@ yarefn:
 	Voiced:
 		VoiceSet: SlaveMinerVoice
 	StoresResources:
-		PipColor: Yellow
-		PipCount: 10
 		Capacity: 1000
 	Explodes:
 		RequiresCondition: !spawn-ore
@@ -338,6 +347,17 @@ yarefn:
 		Condition: spawn-ore
 	GpsDotAS:
 		Sequence: Harvester
+	WithResourceStoragePipsDecoration:
+		FullSequence: pip-building-yellow
+		EmptySequence: pip-building-empty
+		Palette: ra
+		Margin: 8, 2
+		PipStride: 4, 2
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 15
+	IsometricSelectable:
+		Height: 45
 
 yarfn2:
 	Inherits: ^Refinery
@@ -345,14 +365,13 @@ yarfn2:
 		Queue: Building.Yuri
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
-	Selectable:
-		Bounds: 126, 70, -10, -20
-		DecorationBounds: 170, 150, -6, -33
 	FreeActor:
 		Actor: gmin
 	-WithDockedOverlay:
 	PlaceBuildingVariants:
 		Actors: yarfnb, yarfnc, yarfnd
+	IsometricSelectable:
+		Height: 105
 
 yaweap:
 	Inherits: ^WarFactory
@@ -399,6 +418,8 @@ yaweap:
 		RequiresCondition: !build-incomplete
 	PlaceBuildingVariants:
 		Actors: yaweab, yaweac, yawead
+	IsometricSelectable:
+		Height: 75
 
 yayard:
 	Inherits: ^Shipyard
@@ -414,6 +435,8 @@ yayard:
 		Type: Ship.Yuri
 	ProductionBar:
 		ProductionType: Ship.Yuri
+	IsometricSelectable:
+		Height: 120
 
 yadept:
 	Inherits: ^ServiceDepot
@@ -422,9 +445,6 @@ yadept:
 		Queue: Building.Yuri
 		Prerequisites: yaweap, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.\nCan be rotated.
-	Selectable:
-		Bounds: 104, 55, -12, -15
-		DecorationBounds: 156, 150, 0, -38
 	ProvidesPrerequisite@default:
 		Prerequisite: yadept
 	Building:
@@ -438,6 +458,8 @@ yadept:
 		RequiresCondition: !build-incomplete
 	PlaceBuildingVariants:
 		Actors: yadepb
+	IsometricSelectable:
+		Height: 105
 
 yagrnd:
 	Inherits: ^BaseBuilding
@@ -448,8 +470,6 @@ yagrnd:
 		BuildPaletteOrder: 110
 		Prerequisites: yaweap, ~prerequisite.grinder, ~techlevel.1
 		Description: Converts Infantry and Vehicles back to credits.
-	Selectable:
-		Bounds: 154, 127, 0, -22
 	Health:
 		HP: 900
 	Armor:
@@ -480,6 +500,8 @@ yagrnd:
 		Sound: bgrinda.wav
 	Power:
 		Amount: -50
+	IsometricSelectable:
+		Height: 75
 
 yadome:
 	Inherits: ^BaseBuilding
@@ -501,8 +523,6 @@ yadome:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Selectable:
-		Bounds: 128, 140, 0, -40
 	Health:
 		HP: 1000
 	Armor:
@@ -565,6 +585,8 @@ yadome:
 		Types: SpyInfiltrate
 	Power:
 		Amount: -75
+	IsometricSelectable:
+		Height: 75
 
 yadisk:
 	Inherits: ^BaseBuilding
@@ -575,9 +597,6 @@ yadisk:
 		BuildPaletteOrder: 100
 		Prerequisites: yadome, ~techlevel.2
 		Description: Produces Psi-Crops aircraft.
-	Selectable:
-		Bounds: 104, 48, 2, -6
-		DecorationBounds: 144, 135, 0, -35
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -632,6 +651,8 @@ yadisk:
 		RequiresCondition: !chronodisable
 	RenderSprites:
 		Image: yarock
+	IsometricSelectable:
+		Height: 30
 
 yatech:
 	Inherits: ^BaseBuilding
@@ -642,8 +663,6 @@ yatech:
 		BuildPaletteOrder: 90
 		Prerequisites: yadome, ~techlevel.3
 		Description: Allows deployment of advanced units.\nCan be rotated.
-	Selectable:
-		Bounds: 122, 216, 0, -81
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -677,6 +696,8 @@ yatech:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	PlaceBuildingVariants:
 		Actors: yatecb
+	IsometricSelectable:
+		Height: 180
 
 yapsis:
 	Inherits: ^BaseBuilding
@@ -698,8 +719,6 @@ yapsis:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Selectable:
-		Bounds: 82, 150, -1, -55
 	Health:
 		HP: 500
 	Armor:
@@ -721,6 +740,8 @@ yapsis:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
+	IsometricSelectable:
+		Height: 120
 
 yaclon:
 	Inherits: ^BaseBuilding
@@ -741,8 +762,6 @@ yaclon:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
-	Selectable:
-		Bounds: 108, 134, 0, -48
 	Health:
 		HP: 750
 	Armor:
@@ -809,6 +828,8 @@ yaclon:
 	ClonesProducedUnits:
 		CloneableTypes: Infantry
 		ProductionType: Clone.Yuri
+	IsometricSelectable:
+		Height: 90
 
 yawall:
 	Inherits: ^Wall
@@ -851,8 +872,6 @@ yaggun:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 8c0
-	Selectable:
-		Bounds: 53, 56, 0, -25
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -927,6 +946,8 @@ yaggun:
 	AutoTarget:
 	Power:
 		Amount: -50
+	IsometricSelectable:
+		Height: 45
 
 natbnk:
 	Inherits: ^SupportBuilding
@@ -947,9 +968,6 @@ natbnk:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Selectable:
-		Bounds: 64, 50, 0, -5
-		DecorationBounds: 94, 94, 0, -10
 	Health:
 		HP: 1000
 	Armor:
@@ -957,7 +975,6 @@ natbnk:
 	Cargo:
 		Types: GarrisonerVehicle
 		MaxWeight: 3
-		PipCount: 3
 		EjectOnDeath: true
 		LoadedCondition: loaded
 	WithCargoSounds:
@@ -980,6 +997,8 @@ natbnk:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 6c0
+	IsometricSelectable:
+		Height: 45
 
 yapsyt:
 	Inherits: ^SupportBuilding
@@ -991,8 +1010,6 @@ yapsyt:
 		BuildPaletteOrder: 60
 		Prerequisites: yadome
 		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.
-	Selectable:
-		Bounds: 69, 150, 0, -74
 	Health:
 		HP: 600
 	Armor:
@@ -1029,6 +1046,14 @@ yapsyt:
 		ControllingCondition: controlling
 		Sounds: iyurat1a.wav
 		RequiresCondition: !disabled && !chronodisable
+	WithMindControlPipsDecoration:
+		FullSequence: pip-building-green
+		EmptySequence: pip-building-empty
+		Palette: ra
+		Margin: 8, 2
+		PipStride: 4, 2
+		Position: BottomLeft
+		RequiresSelection: true
 	WithMindControlArc:
 		UsePlayerColor: true
 		Offset: 0,0,960
@@ -1038,6 +1063,8 @@ yapsyt:
 		RequiresCondition: controlling >= 3
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
+	IsometricSelectable:
+		Height: 120
 
 yasgen:
 	Inherits: ^SupportBuilding
@@ -1056,9 +1083,6 @@ yasgen:
 		BuildPaletteOrder: 80
 		Prerequisites: yatech, ~techlevel.3
 		Description: Makes nearby units and structures invisibile while not firing.\nRequires power to operate.
-	Selectable:
-		Bounds: 50, 44, -1, -5
-		DecorationBounds: 50, 84, -1, -30
 	Health:
 		HP: 600
 	Armor:
@@ -1094,6 +1118,8 @@ yasgen:
 	-ExternalCondition@INVISIBILITY-GENERATOR:
 	GpsDotAS:
 		Sequence: Structure
+	IsometricSelectable:
+		Height: 60
 
 yagntc:
 	Inherits: ^SecondarySuperWeapon
@@ -1101,8 +1127,6 @@ yagntc:
 		Queue: Support.Yuri
 		Prerequisites: yatech, !enoughlazarus, ~techlevel.5
 		Description: Makes units invisible.
-	Selectable:
-		Bounds: 160, 142, 0, -34
 	Tooltip:
 		Name: Lazarus Shield Generator
 	Tooltip@NoRow:
@@ -1143,6 +1167,8 @@ yagntc:
 		Prerequisite: enoughlazarus
 	AnnounceOnSeen:
 		Notification: GeneticMutatorDetected # LazarusShieldDetected
+	IsometricSelectable:
+		Height: 120
 
 yappet:
 	Inherits: ^PrimarySuperWeapon
@@ -1150,8 +1176,6 @@ yappet:
 		Queue: Support.Yuri
 		Prerequisites: yatech, !enoughdominator, ~techlevel.5
 		Description: Release powerful energy that damages structures and mind controls units.\nRequires power to operate.\n  Special Ability: Psychic Domination
-	Selectable:
-		Bounds: 131, 152, 0, -40
 	Tooltip:
 		Name: Psychic Dominator
 	Tooltip@NoRow:
@@ -1181,6 +1205,8 @@ yappet:
 		Prerequisite: enoughdominator
 	AnnounceOnSeen:
 		Notification: PsychicDominatorDetected
+	IsometricSelectable:
+		Height: 75
 
 yacomd:
 	Inherits: ^CivBuilding
@@ -1200,6 +1226,8 @@ yacomd:
 		Footprint: xxxx xxxx xxxx xxxx
 	SpawnActorOnDeath:
 		Actor: yacomd.rubble
+	IsometricSelectable:
+		Height: 180
 
 yacomd.rubble:
 	Inherits: ^Rubble
@@ -1225,6 +1253,8 @@ yapppt:
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
+	IsometricSelectable:
+		Height: 75
 
 yarock:
 	Inherits: ^CivBuilding
@@ -1242,6 +1272,8 @@ yarock:
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
+	IsometricSelectable:
+		Height: 120
 
 # Custom Structures
 yagatea:
@@ -1254,9 +1286,6 @@ yagatea:
 		Name: Psi-Corps Gate
 	Tooltip@NoRow:
 		Name: Psi-Corps Gate
-	Selectable:
-		Bounds: 68, 36, 0, 2
-		DecorationBounds: 118, 56, 0, -3
 	LineBuildNode:
 		Types: yawall
 	WithGateSpriteBody:
@@ -1273,9 +1302,6 @@ yagateb:
 		Name: Psi-Corps Gate
 	Tooltip@NoRow:
 		Name: Psi-Corps Gate
-	Selectable:
-		Bounds: 68, 36, 0, 2
-		DecorationBounds: 118, 56, 0, -3
 	LineBuildNode:
 		Types: yawall
 	WithGateSpriteBody:
@@ -1299,9 +1325,6 @@ yaexpn:
 	Inherits: ^ExpansionNode
 	# Transforms:
 	#	IntoActor: expy
-	Selectable:
-		Bounds: 56, 40, -2, -4
-		DecorationBounds: 86, 78, -2, -15
 	RenderSprites:
 		Image: gaexpn
 
@@ -1310,8 +1333,6 @@ yabrcb:
 	Inherits@shape: ^3x2Shape
 	-Buildable:
 	-PlaceBuildingVariants:
-	Selectable:
-		Bounds: 120, 132, 16, -40
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -1364,9 +1385,6 @@ yabrcb:
 
 yarfnb:
 	Inherits: ^RefineryB
-	Selectable:
-		Bounds: 126, 70, 10, -20
-		DecorationBounds: 170, 150, 6, -33
 	FreeActor:
 		Actor: gmin
 	ProvidesPrerequisite@yarfn2:
@@ -1374,30 +1392,30 @@ yarfnb:
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
 	-WithDockedOverlay:
+	IsometricSelectable:
+		Height: 105
 
 yarfnc:
 	Inherits: ^RefineryC
-	Selectable:
-		Bounds: 126, 70, 10, -10
-		DecorationBounds: 170, 150, -6, -33
 	FreeActor:
 		Actor: gmin
 	ProvidesPrerequisite@yarfn2:
 		Prerequisite: yarfn2
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
+	IsometricSelectable:
+		Height: 105
 
 yarfnd:
 	Inherits: ^RefineryD
-	Selectable:
-		Bounds: 126, 70, -10, -10
-		DecorationBounds: 170, 150, 6, -33
 	FreeActor:
 		Actor: gmin
 	ProvidesPrerequisite@yarfn2:
 		Prerequisite: yarfn2
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
+	IsometricSelectable:
+		Height: 105
 
 yaweab:
 	Inherits: yaweap
@@ -1414,8 +1432,6 @@ yaweab:
 
 yaweac:
 	Inherits: yaweap
-	Selectable:
-		Bounds: 196, 178, 16, -48
 	-Buildable:
 	-PlaceBuildingVariants:
 	-WithExitOverlay@front:
@@ -1445,9 +1461,6 @@ yawead:
 yadepb:
 	Inherits: yadept
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 104, 55, 12, -15
-		DecorationBounds: 156, 150, 0, -38
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:

@@ -201,25 +201,22 @@
 		Image: rank
 		Sequence: rank-veteran-1
 		Palette: pips
-		ReferencePoint: Bottom, Right
+		Position: BottomRight
 		RequiresCondition: rank-veteran == 1
 		ValidStances: Ally, Enemy, Neutral
-		ZOffset: 256
 	WithDecoration@RANK-2:
 		Image: rank
 		Sequence: rank-veteran-2
 		Palette: pips
-		ReferencePoint: Bottom, Right
+		Position: BottomRight
 		RequiresCondition: rank-veteran == 2
-		ZOffset: 256
 		ValidStances: Ally, Enemy, Neutral
 	WithDecoration@RANK-ELITE:
 		Image: rank
 		Sequence: rank-elite
 		Palette: pips
-		ReferencePoint: Bottom, Right
+		Position: BottomRight
 		RequiresCondition: rank-elite
-		ZOffset: 256
 		ValidStances: Ally, Enemy, Neutral
 	GainsExperienceMultiplier@ARMORY:
 		Modifier: 125
@@ -239,9 +236,8 @@
 		Image: tech
 		Sequence: heal
 		Palette: pips
-		ReferencePoint: Top, Right
+		Position: TopRight
 		RequiresCondition: heal
-		ZOffset: 256
 		ValidStances: Ally
 	GrantConditionOnPrerequisite@HOSPITAL:
 		Condition: heal
@@ -258,9 +254,8 @@
 		Image: tech
 		Sequence: repair
 		Palette: pips
-		ReferencePoint: Top, Right
+		Position: TopRight
 		RequiresCondition: repair
-		ZOffset: 256
 		ValidStances: Ally
 	GrantConditionOnPrerequisite@MACHINESHOP:
 		Condition: repair
@@ -302,9 +297,7 @@
 		Image: leaflet
 		Sequence: icon
 		Palette: ra
-		ReferencePoint: Top, Left
 		RequiresCondition: leaflet
-		ZOffset: 256
 		ValidStances: Ally, Enemy, Neutral
 	ExternalCondition@LEAFLET:
 		Condition: leaflet
@@ -424,8 +417,7 @@
 		Image: dynamite
 		Sequence: idle
 		Palette: mouse
-		ReferencePoint: Center
-		ZOffset: 256
+		Position: Center
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: ivanbomb
 
@@ -445,8 +437,7 @@
 		Image: c4
 		Sequence: idle
 		Palette: mouse
-		ReferencePoint: Center
-		ZOffset: 256
+		Position: Center
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: sealC4
 
@@ -466,8 +457,7 @@
 		Image: c4
 		Sequence: idle
 		Palette: mouse
-		ReferencePoint: Center
-		ZOffset: 256
+		Position: Center
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: commandoC4
 
@@ -486,8 +476,7 @@
 		RequiresSelection: false
 		Image: c4
 		Sequence: idle
-		ReferencePoint: Center
-		ZOffset: 256
+		Position: Center
 		Palette: mouse
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: tanyaC4
@@ -507,8 +496,7 @@
 		RequiresSelection: false
 		Image: c4
 		Sequence: idle
-		ReferencePoint: Center
-		ZOffset: 256
+		Position: Center
 		Palette: mouse
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: teslabomb
@@ -528,8 +516,7 @@
 		RequiresSelection: false
 		Image: toxinbomb
 		Sequence: idle
-		ReferencePoint: Center
-		ZOffset: 256
+		Position: Center
 		Palette: mouse
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: toxinbomb
@@ -607,8 +594,7 @@
 		RequiresSelection: false
 		Image: crate-effects
 		Sequence: dollar
-		ReferencePoint: Center
-		ZOffset: 256
+		Position: Center
 		Palette: effect
 		ValidStances: Ally, Neutral, Enemy
 		RequiresCondition: bounty
@@ -771,7 +757,7 @@
 	WithDecoration@holoicon:
 		Image: holo
 		Sequence: icon
-		ReferencePoint: Bottom, Right
+		Position: BottomRight
 		Palette: ts-mouse
 	# WithDeathAnimation@body:
 	#	DeathSequencePalette: apolra2i
@@ -926,26 +912,23 @@
 ^Building:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
-	Inherits@3: ^IronCurtainable
-	Inherits@4: ^ForceShieldable
-	Inherits@5: ^AcceptsIvanBomb
-	Inherits@6: ^AcceptsSEALC4
-	Inherits@7: ^AcceptsCommandoC4
-	Inherits@8: ^BuildingParticles
-	Inherits@9: ^ChronoDisableDisabledWithIC
-	Inherits@10: ^AffectedByStealthGenerator
-	Inherits@11: ^AcceptsTeslaBomb
-	Inherits@12: ^AcceptsToxinBomb
+	Inherits@3: ^SelectableBuilding
+	Inherits@4: ^IronCurtainable
+	Inherits@5: ^ForceShieldable
+	Inherits@6: ^AcceptsIvanBomb
+	Inherits@7: ^AcceptsSEALC4
+	Inherits@8: ^AcceptsCommandoC4
+	Inherits@9: ^BuildingParticles
+	Inherits@10: ^ChronoDisableDisabledWithIC
+	Inherits@11: ^AffectedByStealthGenerator
+	Inherits@12: ^AcceptsTeslaBomb
+	Inherits@13: ^AcceptsToxinBomb
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	AppearsOnMapPreview:
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath
-	SelectionDecorations:
-		Palette: pips
-	Selectable:
-		Priority: 3
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	WithColoredOverlay@FLARE:
@@ -1025,7 +1008,7 @@
 	WithBuildingRepairDecoration:
 		Image: allyrepair
 		Sequence: repair
-		ReferencePoint: Center
+		Position: Center
 		Palette: mouse
 	CaptureManager:
 	GpsDotAS:
@@ -1124,6 +1107,19 @@
 		LoadedCondition: loaded
 		PauseOnCondition: chronodisable
 		RequiresCondition: !dmg_crit
+	WithGarrisonPipsDecoration:
+		EmptySequence: pip-garrison-empty
+		FullSequence: pip-garrison-green
+		Margin: 4, 3
+		PipStride: 4, 2
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-garrison-gray
+			yellow: pip-garrison-yellow
+			blue: pip-garrison-blue
+			red: pip-garrison-red
 	AttackGarrisonedRV:
 		Armaments: garrisoned, garrisoned-secondary
 		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
@@ -1199,8 +1195,8 @@
 	Inherits: ^CivBuilding
 	OwnerLostAction:
 		Action: ChangeOwner
-	Selectable:
-		Bounds: 50, 228, 0, 0
+	IsometricSelectable:
+		Height: 120
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1327,6 +1323,8 @@
 
 ^Gate:
 	Inherits: ^Building
+	IsometricSelectable:
+		Height: 30
 	AppearsOnMapPreview:
 	Huntable:
 	Valued:
@@ -1376,9 +1374,6 @@
 ^Gate_A:
 	Inherits: ^Gate
 	Inherits@shape: ^3x1Shape
-	Selectable:
-		Bounds: 68, 36, 0, -6
-		DecorationBounds: 118, 60, 0, -12
 	Health:
 	Building:
 		Dimensions: 3,1
@@ -1396,9 +1391,6 @@
 ^Gate_B:
 	Inherits: ^Gate
 	Inherits@shape: ^1x3Shape
-	Selectable:
-		Bounds: 68, 36, 0, -6
-		DecorationBounds: 118, 60, 0, -12
 	Health:
 	Building:
 		Dimensions: 1,3
@@ -1460,7 +1452,6 @@
 		RequiresCondition: !chronodisable && !webdisable
 	WithTextControlGroupDecoration:
 	SelectionDecorations:
-		Palette: pips
 	Selectable:
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
@@ -1801,7 +1792,6 @@
 		Range: 5c0
 		MaxHeightDelta: 3
 	SelectionDecorations:
-		Palette: pips
 	Selectable:
 		Bounds: 32,32
 	Targetable:
@@ -1914,7 +1904,6 @@
 		Action: Kill
 		DeathTypes: BulletDeath
 	SelectionDecorations:
-		Palette: pips
 	Selectable:
 	Aircraft:
 		Voice: Move
@@ -2176,7 +2165,6 @@
 		StationaryInterval: 18
 		MovingInterval: 6
 	SelectionDecorations:
-		Palette: pips
 	Selectable:
 		Bounds: 32,32
 	Targetable:
@@ -2417,7 +2405,7 @@
 		Sequence: offline
 		Palette: ts-mouse
 		RequiresCondition: powerdown
-		ReferencePoint: Center
+		Position: Center
 	PowerMultiplier@POWERDOWN:
 		RequiresCondition: powerdown
 		Modifier: 0
@@ -2495,3 +2483,10 @@
 ^DiskStealable:
 	Targetable@DISKSTEAL:
 		TargetTypes: DiskSteal
+
+^SelectableBuilding:
+	IsometricSelectable:
+		Priority: 3
+	IsometricSelectionDecorations:
+	WithTextControlGroupDecoration:
+		Margin: 1, 1

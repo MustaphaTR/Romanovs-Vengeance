@@ -26,7 +26,6 @@ slav:
 	Harvester:
 		DeliveryBuildings: yarefn, yarefn.noslave
 		Capacity: 4
-		PipCount: 4
 		MaxUnloadQueue: 9
 		UnloadQueueCostModifier: 4
 		BaleUnloadDelay: 1
@@ -38,12 +37,10 @@ slav:
 		HP: 100
 	Garrisoner:
 		Voice: Move
-		PipType: Green
 		GarrisonType: Garrisoner
 	Mobile:
 		Speed: 45
 	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 5c0
 	# RevealsShroudToIntelligenceOwner:
@@ -76,6 +73,15 @@ slav:
 		RequiresCondition: !no-ore
 	AttackFrontal:
 		Voice: Attack
+	WithHarvesterPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 4
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-blue
 
 init:
 	Inherits: ^Infantry
@@ -105,10 +111,8 @@ init:
 		HP: 100
 	Garrisoner:
 		Voice: Move
-		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -196,8 +200,10 @@ brute:
 		HP: 200
 	Garrisoner:
 		Voice: Move
-		PipType: Blue
+		CustomPipType: blue
 		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: blue
 	Armor:
 		Type: Plate
 	Crushable:
@@ -205,8 +211,6 @@ brute:
 	-TakeCover:
 	Mobile:
 		Speed: 90
-	Passenger:
-		PipType: Blue
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -290,10 +294,8 @@ virus:
 		HP: 100
 	Garrisoner:
 		Voice: Move
-		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -353,10 +355,10 @@ yurix:
 		HP: 150
 	Garrisoner:
 		Voice: Move
-		PipType: Red
+		CustomPipType: red
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Red
+		CustomPipType: red
 	Mobile:
 		Locomotor: swimsuit
 	LeavesTrails:
@@ -459,7 +461,6 @@ lunr:
 		AttackType: Hover
 	AmmoPool:
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 30
@@ -590,10 +591,8 @@ gtrp:
 		HP: 125
 	Garrisoner:
 		Voice: Move
-		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -750,10 +749,10 @@ ttrp:
 		HP: 150
 	Garrisoner:
 		Voice: Move
-		PipType: Gray
+		CustomPipType: gray
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Gray
+		CustomPipType: gray
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -855,10 +854,10 @@ crkt:
 		HP: 125
 	Garrisoner:
 		Voice: Move
-		PipType: Gray
+		CustomPipType: gray
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Gray
+		CustomPipType: gray
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -932,7 +931,6 @@ crkt:
 		FacingTolerance: 2
 	AmmoPool:
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 40

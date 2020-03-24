@@ -1,8 +1,5 @@
 nacnst:
 	Inherits: ^ConstructionYard
-	Selectable:
-		Bounds: 160, 95, 0, -20
-		DecorationBounds: 220, 175, 0, -35
 	ProvidesPrerequisite@soviets:
 		Prerequisite: structures.soviets
 	Production:
@@ -55,6 +52,8 @@ nacnst:
 	WithIdleOverlay@Libya:
 		Sequence: flag-libya
 		RequiresCondition: !build-incomplete && libya
+	IsometricSelectable:
+		Height: 90
 
 napowr:
 	Inherits: ^BaseBuilding
@@ -78,9 +77,6 @@ napowr:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Selectable:
-		Bounds: 84, 65, 0, -15
-		DecorationBounds: 126, 94, 2, -16
 	Health:
 		HP: 500
 	Armor:
@@ -110,6 +106,8 @@ napowr:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	PlaceBuildingVariants:
 		Actors: napowb
+	IsometricSelectable:
+		Height: 45
 
 nahand:
 	Inherits: ^Barracks
@@ -120,9 +118,6 @@ nahand:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Selectable:
-		Bounds: 56, 50, -2, -20
-		DecorationBounds: 94, 168, 0, -58
 	Exit@1:
 		SpawnOffset: -512,768,0
 		ExitCell: 1,2
@@ -198,18 +193,19 @@ nahand:
 		Path: 3,3
 	ProvidesPrerequisite@nahand:
 		Prerequisite: nahand
+	IsometricSelectable:
+		Height: 135
 
 narefn:
 	Inherits: ^Refinery
 	Buildable:
 		Queue: Building.Soviets
-	Selectable:
-		Bounds: 126, 70, -10, -20
-		DecorationBounds: 170, 150, -6, -33
 	FreeActor:
 		Actor: harv
 	PlaceBuildingVariants:
 		Actors: narefb, narefc, narefd
+	IsometricSelectable:
+		Height: 90
 
 naradr:
 	Inherits: ^BaseBuilding
@@ -249,9 +245,6 @@ naradr:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Selectable:
-		Bounds: 56, 58, -2, -14
-		DecorationBounds: 95, 130, 0, -40
 	Health:
 		HP: 1000
 	Armor:
@@ -394,6 +387,8 @@ naradr:
 		Types: SpyInfiltrate
 	Power:
 		Amount: -75
+	IsometricSelectable:
+		Height: 90
 
 mine:
 	Inherits@1: ^SpriteActor
@@ -451,9 +446,6 @@ naweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Soviets
-	Selectable:
-		Bounds: 152, 88, -15, -8
-		DecorationBounds: 212, 175, -15, -45
 	ProvidesPrerequisite@naweap:
 		Prerequisite: naweap
 	Production:
@@ -495,20 +487,21 @@ naweap:
 		RequiresCondition: !build-incomplete
 	PlaceBuildingVariants:
 		Actors: naweab, naweac, nawead
+	IsometricSelectable:
+		Height: 90
 
 nayard:
 	Inherits: ^Shipyard
 	Buildable:
 		Queue: Building.Soviets
-	Selectable:
-		Bounds: 92, 100, -3, -22
-		DecorationBounds: 170, 200, 0, -55
 	Production:
 		Produces: Ship.Soviets
 	ProductionQueue:
 		Type: Ship.Soviets
 	ProductionBar:
 		ProductionType: Ship.Soviets
+	IsometricSelectable:
+		Height: 120
 
 nmine:
 	Inherits: mine
@@ -544,9 +537,6 @@ nadept:
 		Queue: Building.Soviets
 		Prerequisites: naweap, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.\nCan be rotated.
-	Selectable:
-		Bounds: 104, 55, -12, -15
-		DecorationBounds: 156, 150, 0, -38
 	ProvidesPrerequisite@default:
 		Prerequisite: nadept
 	Building:
@@ -562,6 +552,8 @@ nadept:
 		RequiresCondition: !build-incomplete
 	PlaceBuildingVariants:
 		Actors: nadepb
+	IsometricSelectable:
+		Height: 90
 
 naheli:
 	Inherits: ^BaseBuilding
@@ -572,9 +564,6 @@ naheli:
 		BuildPaletteOrder: 100
 		Prerequisites: naradr, ~techlevel.2
 		Description: Produces Soviet aircraft.
-	Selectable:
-		Bounds: 104, 48, 2, -6
-		DecorationBounds: 144, 135, 0, -35
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -644,6 +633,8 @@ naheli:
 		Sequence: idle-dish
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	IsometricSelectable:
+		Height: 60
 
 nanrct:
 	Inherits: ^BaseBuilding
@@ -667,9 +658,6 @@ nanrct:
 	Building:
 		Footprint: xxxx xxxx xxxx _xx_
 		Dimensions: 4,4
-	Selectable:
-		Bounds: 117, 70, 9, -11
-		DecorationBounds: 167, 130, 9, -31
 	Health:
 		HP: 1000
 	Armor:
@@ -701,6 +689,8 @@ nanrct:
 	PowerTooltip:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	IsometricSelectable:
+		Height: 60
 
 natech:
 	Inherits: ^BaseBuilding
@@ -721,9 +711,6 @@ natech:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
-	Selectable:
-		Bounds: 102, 80, 0, -10
-		DecorationBounds: 152, 164, 0, -50
 	Health:
 		HP: 500
 	Armor:
@@ -740,6 +727,8 @@ natech:
 		Proxy: soviets.tech.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	IsometricSelectable:
+		Height: 120
 
 naclon:
 	Inherits: ^BaseBuilding
@@ -760,9 +749,6 @@ naclon:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
-	Selectable:
-		Bounds: 56, 58, -2, -14
-		DecorationBounds: 108, 134, 0, -48
 	Health:
 		HP: 750
 	Armor:
@@ -830,6 +816,8 @@ naclon:
 		CloneableTypes: Infantry
 		ProductionType: Clone.Soviets
 	AcceptsDeliveredCash:
+	IsometricSelectable:
+		Height: 90
 
 napsis:
 	Inherits: ^BaseBuilding
@@ -851,9 +839,6 @@ napsis:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Selectable:
-		Bounds: 56, 50, -2, -10
-		DecorationBounds: 82, 150, -1, -55
 	Health:
 		HP: 500
 	Armor:
@@ -875,6 +860,8 @@ napsis:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
+	IsometricSelectable:
+		Height: 120
 
 nairon:
 	Inherits: ^SecondarySuperWeapon
@@ -886,9 +873,6 @@ nairon:
 		Name: Iron Curtain Device
 	Tooltip@NoRow:
 		Name: Iron Curtain Device
-	Selectable:
-		Bounds: 84, 52, -10, -11
-		DecorationBounds: 136, 100, 0, -20
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	GrantExternalConditionPower@IRONCURTAIN:
@@ -923,6 +907,8 @@ nairon:
 		Prerequisite: enoughiron
 	AnnounceOnSeen:
 		Notification: IronCurtainDetected
+	IsometricSelectable:
+		Height: 75
 
 namisl:
 	Inherits: ^PrimarySuperWeapon
@@ -934,9 +920,6 @@ namisl:
 		Name: Nuclear Missile Silo
 	Tooltip@NoRow:
 		Name: Nuclear Missile Silo
-	Selectable:
-		Bounds: 84, 52, 0, -5
-		DecorationBounds: 152, 130, 0, -25
 	NukePower:
 		Prerequisites:
 			1: namisl
@@ -981,6 +964,8 @@ namisl:
 		Prerequisite: enoughnuke
 	AnnounceOnSeen:
 		Notification: NuclearSiloDetected
+	IsometricSelectable:
+		Height: 120
 
 nawall:
 	Inherits: ^Wall
@@ -1031,9 +1016,6 @@ naflak:
 		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
-	#	Range: 8c0
-	Selectable:
-		Bounds: 46, 62, 0, -20
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
@@ -1063,6 +1045,8 @@ naflak:
 		Amount: -40
 	RequiresBuildableArea:
 		Adjacent: 3
+	IsometricSelectable:
+		Height: 60
 
 tesla:
 	Inherits: ^SupportBuilding
@@ -1094,9 +1078,6 @@ tesla:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 8c0
-	Selectable:
-		Bounds: 44, 40, -2, -13
-		DecorationBounds: 44, 88, -2, -33
 	Targetable@TeslaBoost:
 		TargetTypes: TeslaBoost
 		RequiresCondition: !powerdown
@@ -1144,6 +1125,8 @@ tesla:
 		RequiresCondition: !disabled && !build-incomplete
 	ExternalCondition@CHARGED:
 		Condition: charged
+	IsometricSelectable:
+		Height: 75
 
 nalasr:
 	Inherits: ^VoxelLighting
@@ -1172,8 +1155,6 @@ nalasr:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 7c0
-	Selectable:
-		Bounds: 50, 30, 0, -12
 	Turreted:
 		TurnSpeed: 10
 		InitialFacing: 224
@@ -1203,6 +1184,8 @@ nalasr:
 	AutoTarget:
 	RequiresBuildableArea:
 		Adjacent: 4
+	IsometricSelectable:
+		Height: 30
 
 # Yuri's Revenge Structures
 nabnkr:
@@ -1224,9 +1207,6 @@ nabnkr:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Selectable:
-		Bounds: 64, 50, 0, -5
-		DecorationBounds: 94, 94, 0, -10
 	Health:
 		HP: 600
 	Armor:
@@ -1234,7 +1214,6 @@ nabnkr:
 	Cargo:
 		Types: Garrisoner
 		MaxWeight: 6
-		PipCount: 6
 		EjectOnDeath: true
 		LoadedCondition: loaded
 	WithCargoSounds:
@@ -1260,6 +1239,21 @@ nabnkr:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 6c0
+	WithCargoPipsDecoration:
+		EmptySequence: pip-garrison-empty
+		FullSequence: pip-garrison-green
+		Margin: 4, 3
+		PipStride: 4, 2
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-garrison-gray
+			yellow: pip-garrison-yellow
+			blue: pip-garrison-blue
+			red: pip-garrison-red
+	IsometricSelectable:
+		Height: 45
 
 naindp:
 	Inherits: ^BaseBuilding
@@ -1286,9 +1280,6 @@ naindp:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
-	Selectable:
-		Bounds: 102, 90, 0, -20
-		DecorationBounds: 160, 190, 0, -60
 	WithIdleOverlay@pistons:
 		Sequence: idle-pistons
 		PauseOnCondition: chronodisable
@@ -1308,6 +1299,8 @@ naindp:
 	#	Range: 6c0
 	Power:
 		Amount: -200
+	IsometricSelectable:
+		Height: 120
 
 # Custom Structures
 nagatea:
@@ -1320,9 +1313,6 @@ nagatea:
 		Name: Soviet Gate
 	Tooltip@NoRow:
 		Name: Soviet Gate
-	Selectable:
-		Bounds: 68, 36, 0, 2
-		DecorationBounds: 118, 56, 0, -3
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
@@ -1339,9 +1329,6 @@ nagateb:
 		Name: Soviet Gate
 	Tooltip@NoRow:
 		Name: Soviet Gate
-	Selectable:
-		Bounds: 68, 36, 0, 2
-		DecorationBounds: 118, 56, 0, -3
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
@@ -1373,9 +1360,6 @@ napost:
 		NodeTypes: teslafencenode
 		SegmentType: nafnce
 		SegmentsRequireNode: true
-	Selectable:
-		Bounds: 42, 24, 0, -5
-		DecorationBounds: 42, 44, 0, -12
 	LineBuildNode:
 		Types: teslafencenode
 	Power:
@@ -1395,6 +1379,8 @@ napost:
 		Condition: active-posts
 	RequiresBuildableArea:
 		Adjacent: 6
+	IsometricSelectable:
+		Height: 30
 
 nafnce:
 	Inherits: ^Wall
@@ -1452,15 +1438,14 @@ nafnce:
 
 nasilo:
 	Inherits: ^Silo
-	Selectable:
-		Bounds: 45, 50, -2, -15
-		DecorationBounds: 75, 80, -2, -15
 	Buildable:
 		Queue: Support.Soviets
 	Capturable:
 		RequiresCondition: !invulnerability
 	Sellable:
 		RequiresCondition: !chronodisable
+	IsometricSelectable:
+		Height: 45
 
 naprop:
 	Inherits: ^SupportBuilding
@@ -1491,9 +1476,6 @@ naprop:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 7c0
-	Selectable:
-		Bounds: 44, 40, -2, -13
-		DecorationBounds: 44, 88, -2, -33
 	-WithMakeAnimation:
 	Sellable:
 		RequiresCondition: !chronodisable
@@ -1520,14 +1502,13 @@ naprop:
 		# RequiresCondition: !build-incomplete
 	GpsDotAS:
 		Sequence: Structure
+	IsometricSelectable:
+		Height: 60
 
 naexpn:
 	Inherits: ^ExpansionNode
 	# Transforms:
 	#	IntoActor: exps
-	Selectable:
-		Bounds: 56, 40, -2, -4
-		DecorationBounds: 86, 78, -2, -15
 	RenderSprites:
 		Image: gaexpn
 
@@ -1542,40 +1523,34 @@ napowb:
 
 narefb:
 	Inherits: ^RefineryB
-	Selectable:
-		Bounds: 126, 70, 10, -20
-		DecorationBounds: 170, 150, 6, -33
 	FreeActor:
 		Actor: harv
 	ProvidesPrerequisite@narefn:
 		Prerequisite: narefn
+	IsometricSelectable:
+		Height: 90
 
 narefc:
 	Inherits: ^RefineryC
-	Selectable:
-		Bounds: 126, 70, 10, -10
-		DecorationBounds: 170, 150, -6, -33
 	FreeActor:
 		Actor: harv
 	ProvidesPrerequisite@narefn:
 		Prerequisite: narefn
+	IsometricSelectable:
+		Height: 90
 
 narefd:
 	Inherits: ^RefineryD
-	Selectable:
-		Bounds: 126, 70, -10, -10
-		DecorationBounds: 170, 150, 6, -33
 	FreeActor:
 		Actor: harv
 	ProvidesPrerequisite@narefn:
 		Prerequisite: narefn
+	IsometricSelectable:
+		Height: 90
 
 naweab:
 	Inherits: naweap
 	Inherits@shape: ^3x5Shape
-	Selectable:
-		Bounds: 152, 88, 0, -8
-		DecorationBounds: 212, 175, -15, -45
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -1588,9 +1563,6 @@ naweab:
 
 naweac:
 	Inherits: naweap
-	Selectable:
-		Bounds: 152, 88, 22, -8
-		DecorationBounds: 212, 175, 22, -45
 	-Buildable:
 	-PlaceBuildingVariants:
 	-WithExitOverlay@front:
@@ -1622,9 +1594,6 @@ nawead:
 nadepb:
 	Inherits: nadept
 	Inherits@shape: ^3x4Shape
-	Selectable:
-		Bounds: 104, 55, 12, -15
-		DecorationBounds: 156, 150, 0, -38
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:

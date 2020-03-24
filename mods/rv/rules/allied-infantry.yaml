@@ -25,10 +25,10 @@ engineer:
 		HP: 75
 	Garrisoner:
 		Voice: Move
-		PipType: Yellow
+		CustomPipType: yellow
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Yellow
+		CustomPipType: yellow
 	RevealsShroud:
 		Range: 5c0
 	# RevealsShroudToIntelligenceOwner:
@@ -142,7 +142,6 @@ dog:
 	Mobile:
 		Speed: 90
 	Passenger:
-		PipType: Green
 		CargoType: Infantry
 	RevealsShroud:
 		Range: 8c0
@@ -238,10 +237,8 @@ e1:
 		RequireForceMoveCondition: !undeployed
 	Garrisoner:
 		Voice: Move
-		PipType: Green
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Green
 		RequireForceMoveCondition: !undeployed
 	RevealsShroud:
 		Range: 6c0
@@ -403,10 +400,10 @@ ggi:
 		RequireForceMoveCondition: !undeployed
 	Garrisoner:
 		Voice: Move
-		PipType: Blue
+		CustomPipType: blue
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Blue
+		CustomPipType: blue
 		RequireForceMoveCondition: !undeployed
 	RevealsShroud:
 		Range: 6c0
@@ -501,7 +498,6 @@ ggi:
 		RequiresCondition: rank-elite
 	AmmoPool:
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 40
@@ -605,10 +601,10 @@ snipe:
 		HP: 100
 	Garrisoner:
 		Voice: Move
-		PipType: Gray
+		CustomPipType: gray
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Gray
+		CustomPipType: gray
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -686,16 +682,16 @@ spy:
 		HP: 100
 	Garrisoner:
 		Voice: Move
-		PipType: Yellow
+		CustomPipType: yellow
 		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: yellow
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
-	Passenger:
-		PipType: Yellow
 	TakeCover:
 	Disguise:
 		DisguisedCondition: disguise
@@ -710,8 +706,7 @@ spy:
 		Image: pips
 		Sequence: pip-disguise
 		Palette: pips
-		ReferencePoint: Top, Right
-		ZOffset: 256
+		Position: TopRight
 		RequiresCondition: disguise
 	Voiced:
 		VoiceSet: SpyVoice
@@ -752,8 +747,10 @@ ghost:
 		HP: 125
 	Garrisoner:
 		Voice: Move
-		PipType: Gray
+		CustomPipType: gray
 		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: gray
 	Mobile:
 		Speed: 75
 		Locomotor: swimsuit
@@ -765,8 +762,6 @@ ghost:
 		Radius: 3c0
 	Armor:
 		Type: Flak
-	Passenger:
-		PipType: Gray
 	Armament@primary:
 		Weapon: MP5
 		PauseOnCondition: chronodisable
@@ -963,8 +958,10 @@ tany:
 		HP: 125
 	Garrisoner:
 		Voice: Move
-		PipType: Red
+		CustomPipType: red
 		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: red
 	Mobile:
 		Speed: 75
 		Locomotor: swimsuit
@@ -987,8 +984,6 @@ tany:
 		Delay: 100
 		DamageCooldown: 100
 		HealIfBelow: 100
-	Passenger:
-		PipType: Red
 	Armament@primary:
 		Weapon: DoublePistols
 		PauseOnCondition: chronodisable
@@ -1114,7 +1109,6 @@ jumpjet:
 		AttackType: Hover
 	AmmoPool:
 		Ammo: 1
-		PipCount: 0
 		AmmoCondition: ammo
 	ReloadAmmoPool:
 		Delay: 30
@@ -1245,7 +1239,6 @@ cleg:
 		HP: 125
 	Garrisoner:
 		Voice: Move
-		PipType: Green
 		GarrisonType: Garrisoner
 	RevealsShroud:
 		Range: 6c0
@@ -1254,7 +1247,6 @@ cleg:
 	RevealOnDeath:
 		Radius: 3c0
 	Passenger:
-		PipType: Green
 	Crushable:
 	-TakeCover:
 	PortableChronoRA2:
@@ -1346,10 +1338,10 @@ medi:
 	Health:
 		HP: 75
 	Garrisoner:
-		PipType: Yellow
+		CustomPipType: yellow
 		GarrisonType: Garrisoner
 	Passenger:
-		PipType: Yellow
+		CustomPipType: yellow
 	RevealsShroud:
 		Range: 5c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1413,10 +1405,7 @@ gren:
 		Speed: 75
 	Garrisoner:
 		Voice: Move
-		PipType: Green
 		GarrisonType: Garrisoner
-	Passenger:
-		PipType: Green
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
