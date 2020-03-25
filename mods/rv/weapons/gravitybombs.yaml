@@ -141,6 +141,28 @@ NapalmBombE:
 		Spread: 0c384
 		Damage: 200
 
+ChaosGasDrop:
+	Range: 5c0
+	ReloadDelay: 2
+	Report: vchaatta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -25
+		Acceleration: 0, 0, -5
+		Image: txgasp
+		Sequences: projectile
+		Palette: effect
+	Warhead@1Dam: TargetDamage
+		Damage: 0
+	Warhead@2Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasp
+		Sequences: idle
+		Palette: effect
+		Weapon: ChaosCloud
+		Duration: 250
+		Speed: 0, 25
+		TurnRate: 10
+
 EMPulse:
 	ReloadDelay: 10
 	Range: 1c0

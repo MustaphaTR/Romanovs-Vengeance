@@ -555,6 +555,34 @@ yadome:
 	#	Types: SatelliteScan
 	#	Range: 10c0
 	SupportPowerChargeBar:
+	AirstrikePower@chaosgas:
+		OrderName: YurigradChaosDrop
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: radar.psicorps
+		Icons:
+			1: xxicon
+		ChargeInterval: 7500
+		Descriptions:
+			1: Chaos Gas Drop
+		LongDescs:
+			1: A Cargo Plane drops a trail of Chaos\nGas anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitTypes:
+			1: pdplane.chaos
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: xxicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
 	DetonateWeaponPower@ambush:
 		OrderName: LazarusHologramArmy
 		PauseOnCondition: disabled || chronodisable

@@ -805,6 +805,16 @@ FireDamage:
 			Drone: 50
 			Rocket: 0
 
+ChaosCloud:
+	ReloadDelay: 1
+	Projectile: InstantExplode
+	Warhead@1Con: GrantExternalCondition
+		ValidTargets: ChaosGasable
+		ValidStances: Enemy, Neutral
+		Condition: chaos
+		Range: 1c0
+		Duration: 200
+
 DiskDrain:
 	ReloadDelay: 5
 	Range: 0c256

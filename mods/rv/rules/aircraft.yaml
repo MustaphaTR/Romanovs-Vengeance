@@ -538,6 +538,7 @@ pdplane:
 		Repulsable: false
 		TurnSpeed: 5
 		Speed: 180
+		TakeOffOnCreation: false
 	Health:
 		HP: 300
 	Armor:
@@ -772,6 +773,21 @@ pdplane.cluster_mines:
 		PauseOnCondition: !ammo
 	AmmoPool:
 		Ammo: 1
+		AmmoCondition: ammo
+	AttackBomber:
+
+pdplane.chaos:
+	Inherits: pcplane
+	Armament@1:
+		Weapon: ChaosGasDrop
+		LocalOffset: 0,-640,0
+		PauseOnCondition: !ammo
+	Armament@2:
+		Weapon: ChaosGasDrop
+		LocalOffset: 0,640,0
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 100
 		AmmoCondition: ammo
 	AttackBomber:
 
