@@ -599,6 +599,25 @@ yadome:
 		Weapons:
 			1: HologramSpawner
 		ActivationSequence:
+	IonCannonPower@:
+		OrderName: LunarIonCannon
+		# Cursor: ioncannon
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: radar.psimoon
+		Icons:
+			1: ioncannon
+		Effect: dot
+		WeaponDelay: 0
+		ChargeInterval: 7500
+		Descriptions:
+			1: Ion Cannon
+		LongDescs:
+			1: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+		SelectTargetSpeechNotification: SelectTarget
+		DisplayRadarPing: True
+		CameraActor: camera
+		OnFireSound: ion1.aud
 	WithIdleOverlay@light:
 		Sequence: idle-light
 		PauseOnCondition: disabled || chronodisable
