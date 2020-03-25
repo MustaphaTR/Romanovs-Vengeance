@@ -1,6 +1,6 @@
-﻿#region Copyright & License Information
+#region Copyright & License Information
 /*
- * Copyright 2007-2018 The OpenRA Developers (see AUTHORS)
+ * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -10,51 +10,51 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using OpenRA.Graphics;
-using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
-using OpenRA.Primitives;
 using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
-    [Desc("Overrides the default Tooltip when this actor is a mirage (aids in deceiving enemy players).")]
-    class MirageTooltipInfo : TooltipInfo, Requires<MirageInfo>
-    {
-        public override object Create(ActorInitializer init) { return new MirageTooltip(init.Self, this); }
-    }
+	[Desc("Tag trait for trees used as mirage.")]
+	public class MirageTargetInfo : TraitInfo<MirageTarget> { }
+	public class MirageTarget { }
 
-    class MirageTooltip : ConditionalTrait<MirageTooltipInfo>, ITooltip
-    {
-        readonly Actor self;
-        readonly Mirage mirage;
+	[Desc("Overrides the default Tooltip to aid in deceiving enemy players.")]
+	class MirageTooltipInfo : TooltipInfo, Requires<MirageInfo>
+	{
+		public override object Create(ActorInitializer init) { return new MirageTooltip(init.Self, this); }
+	}
 
-        public MirageTooltip(Actor self, MirageTooltipInfo info)
-            : base(info)
-        {
-            this.self = self;
-            mirage = self.Trait<Mirage>();
-        }
+	class MirageTooltip : ConditionalTrait<MirageTooltipInfo>, ITooltip
+	{
+		readonly Actor self;
+		readonly Mirage mirage;
 
-        public ITooltipInfo TooltipInfo { get { return Info; } }
+		public MirageTooltip(Actor self, MirageTooltipInfo info)
+			: base(info)
+		{
+			this.self = self;
+			mirage = self.Trait<Mirage>();
+		}
 
-        public Player Owner
-        {
-            get
-            {
-                if (!mirage.IsMirage || self.Owner.IsAlliedWith(self.World.RenderPlayer))
-                    return self.Owner;
+		public ITooltipInfo TooltipInfo { get { return Info; } }
 
-                return self.World.Players.First(p => p.InternalName == mirage.Info.EffectiveOwner);
-            }
-        }
-    }
+		public Player Owner
+		{
+			get
+			{
+				if (!mirage.IsMirage || self.Owner.IsAlliedWith(self.World.RenderPlayer))
+					return self.Owner;
 
-    [Flags]
-    public enum MirageRevealType
-    {
+				return self.World.Players.First(p => p.InternalName == mirage.Info.EffectiveOwner);
+			}
+		}
+	}
+
+	[Flags]
+	public enum MirageRevealType
+	{
 		None = 0,
 		Attack = 1,
 		Move = 2,
@@ -65,188 +65,185 @@ namespace OpenRA.Mods.RA2.Traits
 		Heal = 64,
 		SelfHeal = 128,
 		Dock = 256
-    }
+	}
 
-    // Type tag for miragetypes
-    public class MirageType { }
+	[Desc("This actor can appear as a different actor in specific situations.")]
+	public class MirageInfo : PausableConditionalTraitInfo
+	{
+		[Desc("Measured in game ticks.")]
+		public readonly int InitialDelay = 25;
 
-    [Desc("This actor can appear as a differnt actor in specific situations.")]
-    public class MirageInfo : PausableConditionalTraitInfo
-    {
-        [Desc("Measured in game ticks.")]
-        public readonly int InitialDelay = 10;
+		[Desc("Measured in game ticks.")]
+		public readonly int RevealDelay = 25;
 
-        [Desc("Measured in game ticks.")]
-        public readonly int MirageDelay = 30;
+		[Desc("Events leading to the actor getting revealed. Possible values are: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal and SelfHeal.")]
+		public readonly MirageRevealType RevealOn = MirageRevealType.Attack
+			| MirageRevealType.Unload | MirageRevealType.Infiltrate | MirageRevealType.Demolish | MirageRevealType.Dock;
 
-        [Desc("Events leading to the actor getting revealed. Possible values are: Attack, Move, Unload, Infiltrate, Demolish, Dock, Damage, Heal and SelfHeal.")]
-        public readonly MirageRevealType RevealOn = MirageRevealType.Attack
-            | MirageRevealType.Unload | MirageRevealType.Infiltrate | MirageRevealType.Demolish | MirageRevealType.Dock;
+		[Desc("Map player to use as an effective owner when actor is a mirage.")]
+		public readonly string EffectiveOwner = "Neutral";
 
-        public readonly string MirageSound = null;
-        public readonly string RevealSound = null;
+		[GrantedConditionReference]
+		[Desc("Granted when the mirage is active.")]
+		public readonly string MirageCondition = null;
 
-        [Desc("Map player to use as an Effective Owner when actor is a mirage.")]
-        public readonly string EffectiveOwner = "Neutral";
+		[Desc("Backfall to these actors if none exist in the map.")]
+		[ActorReference]
+		public readonly string[] DefaultTargetTypes = null;
 
-        [GrantedConditionReference]
-        [Desc("The condition to grant to self while a mirage.")]
-        public readonly string MirageCondition = null;
+		public override object Create(ActorInitializer init) { return new Mirage(init, this); }
+	}
 
-        public override object Create(ActorInitializer init) { return new Mirage(init, this); }
-    }
+	public class Mirage : PausableConditionalTrait<MirageInfo>, INotifyDamage, IEffectiveOwner, INotifyUnload, INotifyDemolition, INotifyInfiltration,
+		INotifyAttack, ITick, INotifyCreated, INotifyHarvesterAction
+	{
+		[Sync]
+		private int remainingTime;
 
-    public class Mirage : PausableConditionalTrait<MirageInfo>, INotifyDamage, IEffectiveOwner, INotifyUnload, INotifyDemolition, INotifyInfiltration,
-        INotifyAttack, ITick, INotifyCreated, INotifyHarvesterAction
-    {
-        [Sync]
-        private int remainingTime;
+		Actor self;
 
-        Actor self;
+		bool isDocking;
+		ConditionManager conditionManager;
 
-        bool isDocking;
-        ConditionManager conditionManager;
-        Mirage[] otherMirages;
+		ActorInfo[] targetTypes;
 
-        CPos? lastPos;
-        bool wasMirage = false;
-        bool firstTick = true;
-        int mirageToken = ConditionManager.InvalidConditionToken;
+		CPos? lastPos;
+		bool wasMirage = false;
+		int mirageToken = ConditionManager.InvalidConditionToken;
 
-        public bool Disguised { get { return IsMirage; } }
-        public Player Owner { get { return IsMirage ? self.World.Players.First(p => p.InternalName == Info.EffectiveOwner) : null; } }
+		public bool Disguised { get { return IsMirage; } }
 
-        public Mirage(ActorInitializer init, MirageInfo info)
-            : base(info)
-        {
-            self = init.Self;
-            remainingTime = info.InitialDelay;
-        }
+		public ActorInfo ActorType { get; private set; }
+		public Player Owner { get { return IsMirage ? self.World.Players.First(p => p.InternalName == Info.EffectiveOwner) : null; } }
 
-        protected override void Created(Actor self)
-        {
-            conditionManager = self.TraitOrDefault<ConditionManager>();
-            otherMirages = self.TraitsImplementing<Mirage>()
-                .Where(c => c != this)
-                .ToArray();
+		public Mirage(ActorInitializer init, MirageInfo info)
+			: base(info)
+		{
+			self = init.Self;
+			remainingTime = info.InitialDelay;
 
-            if (IsMirage)
-            {
-                wasMirage = true;
-                if (conditionManager != null && mirageToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(Info.MirageCondition))
-                    mirageToken = conditionManager.GrantCondition(self, Info.MirageCondition);
-            }
+			var targets = self.World.ActorsWithTrait<MirageTarget>().Distinct();
+			targetTypes = targets.Select(a => a.Actor.Info).ToArray();
 
-            base.Created(self);
-        }
+			if (!targetTypes.Any() && info.DefaultTargetTypes != null)
+				targetTypes = self.World.Map.Rules.Actors.Where(a => info.DefaultTargetTypes.Contains(a.Key)).Select(a => a.Value).ToArray();
 
-        public bool IsMirage { get { return !IsTraitDisabled && !IsTraitPaused && remainingTime <= 0; } }
+			ActorType = targetTypes.RandomOrDefault(self.World.SharedRandom);
+		}
 
-        public void Reveal() { Reveal(Info.MirageDelay); }
+		protected override void Created(Actor self)
+		{
+			conditionManager = self.TraitOrDefault<ConditionManager>();
 
-        public void Reveal(int time)
-        {
-            remainingTime = Math.Max(remainingTime, time);
-        }
+			if (IsMirage)
+			{
+				wasMirage = true;
+				if (conditionManager != null && mirageToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(Info.MirageCondition))
+					mirageToken = conditionManager.GrantCondition(self, Info.MirageCondition);
+			}
 
-        void INotifyAttack.Attacking(Actor self, Target target, Armament a, Barrel barrel) { if (Info.RevealOn.HasFlag(MirageRevealType.Attack)) Reveal(); }
+			base.Created(self);
+		}
 
-        void INotifyAttack.PreparingAttack(Actor self, Target target, Armament a, Barrel barrel) { }
+		public bool IsMirage { get { return !IsTraitDisabled && !IsTraitPaused && remainingTime <= 0; } }
 
-        void INotifyDamage.Damaged(Actor self, AttackInfo e)
-        {
-            if (e.Damage.Value == 0)
-                return;
+		public void Reveal() { Reveal(Info.RevealDelay); }
 
-            var type = e.Damage.Value < 0
-                ? (e.Attacker == self ? MirageRevealType.SelfHeal : MirageRevealType.Heal)
-                : MirageRevealType.Damage;
-            if (Info.RevealOn.HasFlag(type))
-                Reveal();
-        }
+		public void Reveal(int time)
+		{
+			remainingTime = Math.Max(remainingTime, time);
+		}
 
-        void ITick.Tick(Actor self)
-        {
-            if (!IsTraitDisabled && !IsTraitPaused)
-            {
-                if (remainingTime > 0 && !isDocking)
-                    remainingTime--;
+		void INotifyAttack.Attacking(Actor self, Target target, Armament a, Barrel barrel) { if (Info.RevealOn.HasFlag(MirageRevealType.Attack)) Reveal(); }
 
-                if (Info.RevealOn.HasFlag(MirageRevealType.Move) && (lastPos == null || lastPos.Value != self.Location))
-                {
-                    Reveal();
-                    lastPos = self.Location;
-                }
-            }
+		void INotifyAttack.PreparingAttack(Actor self, Target target, Armament a, Barrel barrel) { }
 
-            var isMirage = IsMirage;
-            if (isMirage && !wasMirage)
-            {
-                if (conditionManager != null && mirageToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(Info.MirageCondition))
-                    mirageToken = conditionManager.GrantCondition(self, Info.MirageCondition);
+		void INotifyDamage.Damaged(Actor self, AttackInfo e)
+		{
+			if (e.Damage.Value == 0)
+				return;
 
-                // Sounds shouldn't play if the actor starts cloaked
-                if (!(firstTick && Info.InitialDelay == 0) && !otherMirages.Any(a => a.IsMirage))
-                    Game.Sound.Play(SoundType.World, Info.MirageSound, self.CenterPosition);
-            }
-            else if (!isMirage && wasMirage)
-            {
-                if (mirageToken != ConditionManager.InvalidConditionToken)
-                    mirageToken = conditionManager.RevokeCondition(self, mirageToken);
+			var type = e.Damage.Value < 0
+				? (e.Attacker == self ? MirageRevealType.SelfHeal : MirageRevealType.Heal)
+				: MirageRevealType.Damage;
+			if (Info.RevealOn.HasFlag(type))
+				Reveal();
+		}
 
-                if (!(firstTick && Info.InitialDelay == 0) && !otherMirages.Any(a => a.IsMirage))
-                    Game.Sound.Play(SoundType.World, Info.RevealSound, self.CenterPosition);
-            }
+		void ITick.Tick(Actor self)
+		{
+			if (!IsTraitDisabled && !IsTraitPaused)
+			{
+				if (remainingTime > 0 && !isDocking)
+					remainingTime--;
 
-            wasMirage = isMirage;
-            firstTick = false;
-        }
+				if (Info.RevealOn.HasFlag(MirageRevealType.Move) && (lastPos == null || lastPos.Value != self.Location))
+				{
+					Reveal();
+					lastPos = self.Location;
+				}
+			}
 
-        protected override void TraitEnabled(Actor self)
-        {
-            remainingTime = Info.InitialDelay;
-        }
+			var isMirage = IsMirage;
+			if (isMirage && !wasMirage)
+			{
+				if (conditionManager != null && mirageToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(Info.MirageCondition))
+					mirageToken = conditionManager.GrantCondition(self, Info.MirageCondition);
+			}
+			else if (!isMirage && wasMirage)
+			{
+				if (mirageToken != ConditionManager.InvalidConditionToken)
+					mirageToken = conditionManager.RevokeCondition(self, mirageToken);
+			}
 
-        protected override void TraitDisabled(Actor self) { Reveal(); }
+			wasMirage = isMirage;
+		}
 
-        void INotifyHarvesterAction.MovingToResources(Actor self, CPos targetCell) { }
+		protected override void TraitEnabled(Actor self)
+		{
+			remainingTime = Info.InitialDelay;
+		}
 
-        void INotifyHarvesterAction.MovingToRefinery(Actor self, Actor refineryActor) { }
+		protected override void TraitDisabled(Actor self) { Reveal(); }
 
-        void INotifyHarvesterAction.MovementCancelled(Actor self) { }
+		void INotifyHarvesterAction.MovingToResources(Actor self, CPos targetCell) { }
 
-        void INotifyHarvesterAction.Harvested(Actor self, ResourceType resource) { }
+		void INotifyHarvesterAction.MovingToRefinery(Actor self, Actor refineryActor) { }
 
-        void INotifyHarvesterAction.Docked()
-        {
-            if (Info.RevealOn.HasFlag(MirageRevealType.Dock))
-            {
-                isDocking = true;
-                Reveal();
-            }
-        }
+		void INotifyHarvesterAction.MovementCancelled(Actor self) { }
 
-        void INotifyHarvesterAction.Undocked()
-        {
-            isDocking = false;
-        }
+		void INotifyHarvesterAction.Harvested(Actor self, ResourceType resource) { }
 
-        void INotifyUnload.Unloading(Actor self)
-        {
-            if (Info.RevealOn.HasFlag(MirageRevealType.Unload))
-                Reveal();
-        }
+		void INotifyHarvesterAction.Docked()
+		{
+			if (Info.RevealOn.HasFlag(MirageRevealType.Dock))
+			{
+				isDocking = true;
+				Reveal();
+			}
+		}
 
-        void INotifyDemolition.Demolishing(Actor self)
-        {
-            if (Info.RevealOn.HasFlag(MirageRevealType.Demolish))
-                Reveal();
-        }
+		void INotifyHarvesterAction.Undocked()
+		{
+			isDocking = false;
+		}
 
-        void INotifyInfiltration.Infiltrating(Actor self)
-        {
-            if (Info.RevealOn.HasFlag(MirageRevealType.Infiltrate))
-                Reveal();
-        }
-    }
+		void INotifyUnload.Unloading(Actor self)
+		{
+			if (Info.RevealOn.HasFlag(MirageRevealType.Unload))
+				Reveal();
+		}
+
+		void INotifyDemolition.Demolishing(Actor self)
+		{
+			if (Info.RevealOn.HasFlag(MirageRevealType.Demolish))
+				Reveal();
+		}
+
+		void INotifyInfiltration.Infiltrating(Actor self)
+		{
+			if (Info.RevealOn.HasFlag(MirageRevealType.Infiltrate))
+				Reveal();
+		}
+	}
 }

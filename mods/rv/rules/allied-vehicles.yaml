@@ -1017,6 +1017,7 @@ mgtk:
 		MirageDelay: 25
 		RevealOn: Attack, Move
 		MirageCondition: tree
+		DefaultTargetTypes: tree01, tree02, tree03, tree04
 	AttackFrontal:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
@@ -1028,25 +1029,9 @@ mgtk:
 		EmptyWeapon: UnitExplodeSmall
 	RenderSprites:
 		Palette: terrain
+	WithMirageSpriteBody:
+		RequiresCondition: tree
 	RenderVoxels:
-	GrantRandomCondition:
-		Conditions: tree01, tree02, tree03, tree04
-	WithSpriteBody@Tree01:
-		Name: tree01
-		Sequence: tree01
-		RequiresCondition: tree && tree01
-	WithSpriteBody@Tree02:
-		Name: tree02
-		Sequence: tree02
-		RequiresCondition: tree && tree02
-	WithSpriteBody@Tree03:
-		Name: tree03
-		Sequence: tree03
-		RequiresCondition: tree && tree03
-	WithSpriteBody@Tree04:
-		Name: tree04
-		Sequence: tree04
-		RequiresCondition: tree && tree04
 	WithVoxelBody:
 		RequiresCondition: !tree
 	Voiced:
