@@ -1422,6 +1422,7 @@
 	Inherits@16: ^AffectedByCashBounty
 	Inherits@17: ^WebDisable
 	Inherits@18: ^HealsInAmbulance
+	Inherits@19: ^AffectedBySpectreBullets
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
@@ -1773,6 +1774,7 @@
 	Inherits@17: ^AffectedByStealthGenerator
 	Inherits@18: ^TerrorDronable
 	Inherits@19: ^AffectedByCashBounty
+	Inherits@20: ^AffectedBySpectreBullets
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -1976,6 +1978,7 @@
 	Inherits@13: ^AffectedByCashBounty
 	Inherits@14: ^DisabledByEMP
 	Inherits@15: ^DisabledByMagnetron
+	Inherits@16: ^AffectedBySpectreBullets
 	Aircraft:
 		AltitudeVelocity: 43
 	WithTextControlGroupDecoration:
@@ -2143,6 +2146,7 @@
 	Inherits@15: ^DisabledByMagnetron
 	Inherits@16: ^AffectedByStealthGenerator
 	Inherits@17: ^AffectedByCashBounty
+	Inherits@18: ^AffectedBySpectreBullets
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -2453,6 +2457,16 @@
 		TargetTypes: MagneFreezable
 	ExternalCondition@MagneFreeze:
 		Condition: magnefreeze
+
+^AffectedBySpectreBullets:
+	SpeedMultiplier@MagneSlow:
+		Modifier: 33
+		RequiresCondition: magneslow
+	WithColoredOverlay@MagneSlow:
+		RequiresCondition: magneslow
+		Palette: magneslow
+	ExternalCondition@MagneSlow:
+		Condition: magneslow
 
 ^WebDisable:
 	TimedConditionBar@WebDisable:

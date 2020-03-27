@@ -214,6 +214,50 @@ UCAWPE:
 	Projectile: InstantHit
 		Blockable: false
 
+MagneRifle:
+	Inherits: awp
+	ReloadDelay: 75
+	Burst: 2
+	BurstDelays: 10
+	Range: 9c0
+	InvalidTargets: Bridge, Wall, Fence
+	Warhead@1Dam: SpreadDamage
+		InvalidTargets: Bridge, Wall, Fence
+		Spread: 128
+		Damage: 60
+		Versus:
+			None: 45
+			Flak: 45
+			Plate: 40
+			Light: 100
+			Medium: 95
+			Heavy: 90
+			Wood: 10
+			Steel: 10
+			Concrete: 5
+			Drone: 100
+			Rocket: 100
+	-Warhead@1Gar:
+	Warhead@1Con: GrantExternalCondition
+		Condition: magneslow
+		Duration: 125
+		Range: 0c128
+		ValidStances: Neutral, Enemy
+
+MagneRifleE:
+	Inherits: MagneRifle
+	ReloadDelay: 60
+
+UCMagneRifle:
+	Inherits: MagneRifle
+	Projectile: InstantHit
+		Blockable: false
+
+UCMagneRifleE:
+	Inherits: MagneRifleE
+	Projectile: InstantHit
+		Blockable: false
+
 20mm:
 	Inherits: ^MG
 	ReloadDelay: 30

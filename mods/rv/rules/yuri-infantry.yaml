@@ -94,7 +94,7 @@ init:
 		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.1
-		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan garrison.
+		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -341,7 +341,7 @@ yurix:
 	Inherits: yuripr
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: yatech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nCannot be eaten by Attack Dogs.\n\nMaximum 1 can be trained.
 	Valued:
@@ -719,6 +719,99 @@ gtrp.holo:
 	-SpawnSmokeParticleOnDeath@virus:
 	RenderSprites:
 		Image: gtrp
+
+spct:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Infantry.Yuri, Infantry.Moon
+		BuildPaletteOrder: 90
+		Prerequisites: yatech, ~techlevel.4
+		Description: Invisible infantry armed with AP rifles with bullets capable of slowing enemy units.\nCan be deployed to make nearby units invisible but itself becomes visible.\n\n  Strong vs Vehicles\n  Weak vs Buildings, Aircraft
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+		Voice: Move
+	Tooltip:
+		Name: Lazarus Spectre
+	Tooltip@NoRow:
+		Name: Lazarus Spectre
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 125
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+	Passenger:
+	RevealsShroud:
+		Range: 7c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 7c0
+	RevealOnDeath:
+		Radius: 3c512
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: MagneRifle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: MagneRifleE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: MagneRifle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: MagneRifleE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCMagneRifle
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCMagneRifleE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	Cloak:
+		RequiresCondition: !chronodisable && !webdisable && !deployed
+		InitialDelay: 25
+		CloakDelay: 100
+		IsPlayerPalette: true
+		UncloakOn: Attack, Damage
+	GrantConditionOnDeploy:
+		DeployedCondition: deployed
+		CanDeployOnRamps: True
+		SmartDeploy: True
+		Voice: Move
+		PauseOnCondition: chronodisable
+	ProximityExternalCondition@INVISIBILITY-GENERATOR:
+		Condition: invisibility-generator
+		Range: 3c0
+		RequiresCondition: deployed
+	WithRangeCircle:
+		Range: 3c0
+		Type: invisibility
+		RequiresCondition: deployed
+	Voiced:
+		VoiceSet: InitiateVoice
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
 
 ttrp:
 	Inherits: ^Infantry
