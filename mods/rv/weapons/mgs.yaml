@@ -221,6 +221,15 @@ MagneRifle:
 	BurstDelays: 10
 	Range: 9c0
 	InvalidTargets: Bridge, Wall, Fence
+	Report: tibrifle01.aud, tibrifle02.aud, tibrifle03.aud
+	-Projectile:
+	Projectile: BulletAS
+		Speed: 1c0
+		Image: dot
+		ContrailDelay: 0
+		ContrailLength: 5
+		ContrailWidth: 20
+		ContrailColor: FFDD00
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence
 		Spread: 128
@@ -250,12 +259,12 @@ MagneRifleE:
 
 UCMagneRifle:
 	Inherits: MagneRifle
-	Projectile: InstantHit
+	Projectile: BulletAS
 		Blockable: false
 
 UCMagneRifleE:
 	Inherits: MagneRifleE
-	Projectile: InstantHit
+	Projectile: BulletAS
 		Blockable: false
 
 20mm:
