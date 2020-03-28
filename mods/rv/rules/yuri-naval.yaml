@@ -244,3 +244,49 @@ gatsub:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+
+buoy:
+	Inherits: ^Ship
+	Inherits@C4: ^AcceptsSEALC4
+	Inherits@PARACHUTE: ^ParachutableVehicle
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 250
+	-Selectable:
+	Interactable:
+		Bounds: 64,64
+	RejectsOrders:
+	Tooltip:
+		Name: Sensor Buoy
+	Tooltip@NoRow:
+		Name: Sensor Buoy
+	Health:
+		HP: 150
+	Armor:
+		Type: Light
+	# Hovers:
+	#	InitialHeight: 64 # Enable this after figuring a way to make the shadow not hover.
+	Passenger:
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	-LeavesTrails:
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 6c0
+	RenderDetectionCircle:
+	WithVoxelBody:
+		Scale: 14
+	WithSpriteBody:
+		RequiresCondition: !parachute
+	RenderSprites:
+		Palette: effect50alpha
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	-MustBeDestroyed:
+	HitShape:

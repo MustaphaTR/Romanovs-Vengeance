@@ -254,6 +254,16 @@ commanders_power.naval_mines:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Naval Mines power.
 
+commanders_power.sensor_buoy:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Sensor Buoy
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Sensor Buoy power.
+
 commanders_power.emergency_repair.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -771,6 +781,38 @@ prerequisite.grinder:
 		DisplayBeacon: True
 		BeaconPosters:
 			1: nmineicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	ParatroopersPower@sensorbuoy:
+		OrderName: PsiCorpsSensorBuoy
+		RequiresCondition: !lost
+		Prerequisites:
+			1: commanders_power.sensor_buoy
+		Icons:
+			1: xxicon
+		ChargeInterval: 9000
+		StartFullyCharged: true
+		Descriptions:
+			1: Sensor Buoy
+		LongDescs:
+			1: A Toxin Bomber paradrops a Sensor Buoy\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
+		DropItems:
+			1: buoy
+		SquadSizes:
+			1: 1
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		UnitTypes:
+			1: txbmbdrop
+		CameraActor: camera
+		DisplayBeacon: True
+		BeaconPosters:
+			1: xxicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		UseDirectionalTarget: True
