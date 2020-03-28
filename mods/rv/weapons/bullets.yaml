@@ -537,6 +537,98 @@ CruiserStrike:
 		SmudgeType: MediumCrater, MediumScorch
 		InvalidTargets: Vehicle, Building, Wall
 
+OrbitalDropInit:
+	Projectile: InstantExplode
+	ReloadDelay: 1
+	Warhead@1Eff: CreateEffect
+		ImpactSounds: scruweaa.wav
+		ValidTargets: Ground, Water, Air
+	Warhead@1Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: _______ ___X___ _______ _X___X_ _______ ___X___ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 75
+	Warhead@2Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: _______ _X___X_ _______ _______ _______ _X___X_ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 93
+	Warhead@3Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: _______ _______ ___X___ __X_X__ ___X___ _______ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 110
+	Warhead@4Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: X_____X _______ _______ _______ _______ _______ X_____X
+		ValidTargets: Ground, Water, Air
+		Delay: 128
+	Warhead@5Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: _______ _______ __X_X__ _______ __X_X__ _______ _______
+		ValidTargets: Ground, Water, Air
+		Delay: 145
+	Warhead@6Clu: FireCluster
+		Weapon: OrbitalDrop
+		Dimensions: 7,7
+		Footprint: ___X___ _______ _______ X_____X _______ _______ ___X___
+		ValidTargets: Ground, Water, Air
+		Delay: 163
+
+OrbitalCloud:
+	ReloadDelay: 120
+	Range: 7c0
+	Projectile: AthenaProjectile
+		Altitude: 25c0
+	Warhead@1: FireFragment
+		UseZOffsetAsAbsoluteHeight: true
+		Weapon: OrbitalDrop
+		ValidTargets: Air, Ground, Water
+		Delay: 15
+	Warhead@TargetValidation: SpreadDamage
+
+OrbitalDrop:
+	Inherits: ^LargeBullet
+	Range: 7c0
+	ReloadDelay: 10
+	Report: vkiratta.wav
+	Projectile: BulletAS
+		Image: debris
+		Sequences: large1, large2, large3, large4, large5, large6, large7, large8, large9, large10, rock1, rock2, rock3
+		Speed: 768
+		Blockable: false
+		ContrailLength: 10
+		ContrailWidth: 24
+		Shadow: true
+		Palette: effect
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Falloff: 100, 75, 50, 25, 0
+		Damage: 85
+		Versus:
+			None: 150
+			Flak: 150
+			Plate: 150
+			Light: 150
+			Medium: 150
+			Heavy: 150
+			Wood: 100
+			Steel: 200
+			Concrete: 50
+			Drone: 100
+			Rocket: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: large_twlt
+		ImpactSounds: gexpapoa.wav
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+		InvalidTargets: Vehicle, Building, Wall
+
 Grenade:
 	Inherits: ^LargeBullet
 	ReloadDelay: 45

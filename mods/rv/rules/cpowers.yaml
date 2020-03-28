@@ -487,6 +487,16 @@ commanders_power.v3_storm:
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables V3 Storm power.
 
+commanders_power.orbital_drop:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Orbital Drop
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 160
+		Prerequisites: prerequisite.has_points, prerequisite.5_stars
+		Description: Enables Orbital Drop power.
+
 hack.has_points:
 	AlwaysVisible:
 	Interactable:
@@ -540,13 +550,22 @@ prerequisite.5_stars:
 prerequisite.medic:
 	Inherits: ^default.commanders_power_prerequisite
 
-prerequisite.grenadier:
+prerequisite.ambulance:
 	Inherits: ^default.commanders_power_prerequisite
 
 prerequisite.airpad:
 	Inherits: ^default.commanders_power_prerequisite
 
 prerequisite.tesla_fence:
+	Inherits: ^default.commanders_power_prerequisite
+
+prerequisite.mechanic:
+	Inherits: ^default.commanders_power_prerequisite
+
+prerequisite.hijacker:
+	Inherits: ^default.commanders_power_prerequisite
+
+prerequisite.minelayer:
 	Inherits: ^default.commanders_power_prerequisite
 
 prerequisite.grinder:
@@ -1064,6 +1083,29 @@ prerequisite.grinder:
 		SelectTargetSpeechNotification: SelectTarget
 		Weapons:
 			1: V3StormInit
+		AirburstAltitude: 25c0
+		ActivationSequence:
+		TargetCircleRanges:
+			1: 6c0
+	DetonateWeaponPower@orbital_drop:
+		OrderName: PsiCorpsOrbitalDrop
+		RequiresCondition: !lost
+		Prerequisites:
+			1: commanders_power.orbital_drop
+		Icons:
+			1: xxicon
+		ChargeInterval: 7500
+		CameraRange: 8c0
+		CameraRemoveDelay: 400
+		SpawnCameraAtGround: true
+		StartFullyCharged: true
+		Descriptions:
+			1: Orbital Drop
+		LongDescs:
+			1: Launches Space Junk from the Orbit\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: OrbitalDropInit
 		AirburstAltitude: 25c0
 		ActivationSequence:
 		TargetCircleRanges:
