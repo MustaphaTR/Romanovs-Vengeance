@@ -95,6 +95,7 @@ TankFlamerE:
 ToxinSprayer:
 	Inherits: Flamer
 	ReloadDelay: 30
+	Burst: 10
 	BurstDelays: 2
 	Report: itoxatta.wav, itoxattb.wav, itoxattc.wav, itoxattd.wav, itoxatte.wav
 	InvalidTargets: NonGarrisonableStructure, Wall, Fence, Tree, Bridge
@@ -106,6 +107,7 @@ ToxinSprayer:
 		Inaccuracy: 1c0
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: VirusDeath
+		Damage: 10
 		Versus:
 			None: 150
 			Flak: 150
@@ -120,6 +122,7 @@ ToxinSprayer:
 			Rocket: 100
 	Warhead@1Gar: DamageGarrisoner
 		DamageTypes: VirusDeath
+		Damage: 10
 		Versus:
 			None: 150
 			Flak: 150
@@ -140,7 +143,7 @@ ToxinSprayer:
 		Sequences: idle
 		Palette: effect
 		Weapon: CloudDamage
-		Duration: 400
+		Duration: 200
 		Speed: 0, 25
 		TurnRate: 10
 
@@ -181,8 +184,9 @@ ToxinSprayerTruck:
 
 ToxinSprayerTruckE:
 	Inherits: ToxinSprayerTruck
-	ReloadDelay: 35
-	Burst: 7
+	Burst: 10
+	Warhead@1Dam: SpreadDamage
+		Damage: 10
 
 EmergencyRepair1:
 	ReloadDelay: 80
@@ -778,20 +782,20 @@ ChaosAttack:
 		Explosions: chaosgas
 
 CloudDamage:
-	ReloadDelay: 5
+	ReloadDelay: 7
 	Projectile: InstantExplode
 	Warhead@1Dam: SpreadDamage
 		Spread: 196
-		Damage: 5
+		Damage: 4
 		DamageTypes: VirusDeath
 		InvalidTargets: ImmuneToToxin
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 50
-			Medium: 50
-			Heavy: 50
+			Light: 30
+			Medium: 15
+			Heavy: 15
 			Wood: 0
 			Steel: 0
 			Concrete: 0

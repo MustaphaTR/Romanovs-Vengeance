@@ -211,10 +211,10 @@ gmin:
 ltnk:
 	Inherits: ^MainBattleTank
 	Valued:
-		Cost: 700
+		Cost: 650
 	DeliversCash:
-		Payload: 350
-		PlayerExperience: 35
+		Payload: 325
+		PlayerExperience: 33
 		Voice: Move
 	Tooltip:
 		Name: Lasher Light Tank
@@ -714,18 +714,22 @@ mlyr:
 
 kamaz:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
-		Cost: 700
+		Cost: 900
 	DeliversCash:
-		Payload: 350
-		PlayerExperience: 35
+		Payload: 450
+		PlayerExperience: 45
 		Voice: Move
 	Tooltip:
-		Name: Posion Transport
+		Name: Poison Transport
 	Tooltip@NoRow:
-		Name: Posion Transport
+		Name: Poison Transport
 	Selectable:
 		Bounds: 50, 40, 0, -6
 	Buildable:
@@ -734,12 +738,12 @@ kamaz:
 		BuildPaletteOrder: 80
 		Description: Armored infantry transport vehicle armed with a toxin sprayer.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Aircraft
 	Mobile:
-		Speed: 120
-		TurnSpeed: 5
+		Speed: 75
+		TurnSpeed: 4
 		Locomotor: heavytracked
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
-		HP: 350
+		HP: 500
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -750,7 +754,7 @@ kamaz:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 4
 		Offset: 512,0,1152
 	Armament@primary:
 		Weapon: ToxinSprayerTruck
