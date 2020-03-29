@@ -17,10 +17,10 @@ smin:
 		Description: Gathers and processes ore.
 		Prerequisites: yadome, ~techlevel.3
 	Valued:
-		Cost: 1400
+		Cost: 2000
 	DeliversCash:
-		Payload: 700
-		PlayerExperience: 70
+		Payload: 1000
+		PlayerExperience: 100
 		Voice: Move
 	Tooltip:
 		Name: Slave Miner
@@ -137,9 +137,9 @@ gmin:
 		Bounds: 64, 52, 0, -6
 	Harvester:
 		DeliveryBuildings: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd
-		Capacity: 30
+		Capacity: 40
 		Resources: Ore, Gems
-		BaleUnloadDelay: 2
+		BaleUnloadDelay: 1
 		HarvestVoice: Harvest
 		DeliverVoice: Move
 		EmptyCondition: no-ore
@@ -288,10 +288,10 @@ ytnk:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
-		Cost: 600
+		Cost: 700
 	DeliversCash:
-		Payload: 300
-		PlayerExperience: 30
+		Payload: 350
+		PlayerExperience: 35
 		Voice: Move
 	Tooltip:
 		Name: Gatling Tank
@@ -563,10 +563,10 @@ mind:
 	Inherits: ^Vehicle
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
-		Cost: 1750
+		Cost: 2000
 	DeliversCash:
-		Payload: 875
-		PlayerExperience: 87
+		Payload: 1000
+		PlayerExperience: 100
 		Voice: Move
 	Tooltip:
 		Name: Master Mind
@@ -591,17 +591,17 @@ mind:
 		RequiresCondition: controlling < 4
 	SelfHealing@OVERLOAD-1:
 		Step: -25
-		Delay: 60
+		Delay: 30
 		HealIfBelow: 101
 		RequiresCondition: controlling >= 4 && controlling < 7
 	SelfHealing@OVERLOAD-2:
 		Step: -50
-		Delay: 60
+		Delay: 30
 		HealIfBelow: 101
 		RequiresCondition: controlling >= 7 && controlling < 11
 	SelfHealing@OVERLOAD-3:
 		Step: -100
-		Delay: 60
+		Delay: 30
 		HealIfBelow: 101
 		RequiresCondition: controlling >= 11
 	ExplodeWeapon@OVERLOADSPARKS:

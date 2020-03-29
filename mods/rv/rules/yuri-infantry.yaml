@@ -285,7 +285,7 @@ virus:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		Prerequisites: yadome, ~techlevel.2
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
@@ -339,7 +339,7 @@ yuripsi:
 	Inherits: yuri
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: yadome, ~techlevel.3
 	Valued:
 		Cost: 1200
@@ -351,7 +351,7 @@ yurix:
 	Inherits: yuripr
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		Prerequisites: yatech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nCannot be eaten by Attack Dogs.\n\nMaximum 1 can be trained.
 	Valued:
@@ -421,13 +421,13 @@ lunr:
 		Type: CenterPosition
 	Buildable:
 		Queue: Infantry.Moon
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: yadome, ~techlevel.3
 		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 600
+		Cost: 800
 	Tooltip:
 		Name: Cosmonaut
 	Tooltip@NoRow:
@@ -754,7 +754,7 @@ spct:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: yatech, ~techlevel.4
 		Description: Invisible infantry armed with AP rifles with bullets capable of slowing enemy units.\nCan be deployed to make nearby units invisible but itself becomes visible.\n\n  Strong vs Vehicles\n  Weak vs Buildings, Aircraft
 	Valued:
@@ -828,10 +828,10 @@ spct:
 		PauseOnCondition: chronodisable
 	ProximityExternalCondition@INVISIBILITY-GENERATOR:
 		Condition: invisibility-generator
-		Range: 3c0
+		Range: 5c0
 		RequiresCondition: deployed
 	WithRangeCircle:
-		Range: 3c0
+		Range: 5c0
 		Type: invisibility
 		RequiresCondition: deployed
 	Voiced:
