@@ -259,6 +259,8 @@ buoy:
 		HP: 150
 	Armor:
 		Type: Light
+	Mobile:
+		RequiresCondition: !chronodisable && !emp && !magnefreeze
 	# Hovers:
 	#	InitialHeight: 64 # Enable this after figuring a way to make the shadow not hover.
 	Passenger:
@@ -280,5 +282,6 @@ buoy:
 		RequiresCondition: !parachute
 	RenderSprites:
 		Palette: effect50alpha
+	-Voiced:
 	-MustBeDestroyed:
 	HitShape:
