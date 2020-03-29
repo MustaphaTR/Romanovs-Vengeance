@@ -634,33 +634,36 @@ HologramSpawner:
 		ImpactSounds: holoinit.aud
 		ValidTargets: Ground, Water, Air
 
-HologramSpawnerInit:
+^HologramSpawnerDefault:
 	Range: 5c0
 	Projectile: InstantHit
+	Warhead@2Eff: CreateEffect
+		Explosions: holosmoke1, holosmoke2, holosmoke3, holosmoke4
+		ExplosionPalette: cyanjascpal
+		ValidTargets: Ground, Water, Air
+
+HologramSpawnerInit:
+	Inherits: ^HologramSpawnerDefault
 	Warhead@1Spa: SpawnActor
 		Actors: init.holo
 
 HologramSpawnerBrute:
-	Range: 5c0
-	Projectile: InstantHit
+	Inherits: ^HologramSpawnerDefault
 	Warhead@1Spa: SpawnActor
 		Actors: brute.holo
 
 HologramSpawnerGtrp:
-	Range: 5c0
-	Projectile: InstantHit
+	Inherits: ^HologramSpawnerDefault
 	Warhead@1Spa: SpawnActor
 		Actors: gtrp.holo
 
 HologramSpawnerLtnk:
-	Range: 5c0
-	Projectile: InstantHit
+	Inherits: ^HologramSpawnerDefault
 	Warhead@1Spa: SpawnActor
 		Actors: ltnk.holo
 
 HologramSpawnerYtnk:
-	Range: 5c0
-	Projectile: InstantHit
+	Inherits: ^HologramSpawnerDefault
 	Warhead@1Spa: SpawnActor
 		Actors: ytnk.holo
 
