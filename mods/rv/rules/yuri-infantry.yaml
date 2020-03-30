@@ -825,11 +825,14 @@ spct:
 		CanDeployOnRamps: True
 		SmartDeploy: True
 		Voice: Move
+		DeploySounds: cloak5.aud
 		PauseOnCondition: chronodisable
 	ProximityExternalCondition@INVISIBILITY-GENERATOR:
 		Condition: invisibility-generator
 		Range: 5c0
 		RequiresCondition: deployed
+	-Cloak@stealth-generator:
+	-ExternalCondition@INVISIBILITY-GENERATOR:
 	WithRangeCircle:
 		Range: 5c0
 		Type: invisibility
