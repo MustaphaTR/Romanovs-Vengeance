@@ -226,6 +226,20 @@ camera.8c0:
 		Range: 8c0
 		Type: CenterPosition
 
+camera.spyplane:
+	Inherits: camera.8c0
+	DetectCloaked:
+		Range: 8c0
+		Type: CenterPosition
+	KillsSelf:
+		RemoveInstead: true
+		Delay: 250
+
+camera.psychicreveal:
+	Inherits: camera.spyplane
+	KillsSelf:
+		Delay: 375
+
 magnetic_beam.1:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor

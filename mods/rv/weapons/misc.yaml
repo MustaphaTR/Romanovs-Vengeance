@@ -395,24 +395,13 @@ UCFlareSAW:
 	Projectile: LaserZap
 		Blockable: false
 
-SpyCameraWeapon:
-	Range: 20c0
-	ReloadDelay: 25
-	Projectile: GravityBomb
-		Velocity: 0,0,-10c0
-	Report: vspysnap.wav
-	Warhead@1Rev: RevealShroud
-		Duration: 250
-		Radius: 8c0
-		RevealGeneratedShroud: true
-
 PsychicReveal:
 	ReloadDelay: 25
 	Projectile: InstantExplode
-	Warhead@1Rev: RevealShroud
-		Duration: 375
-		Radius: 8c0
-		RevealGeneratedShroud: true
+	Warhead@1Spa: SpawnActor
+		Actors: camera.psychicreveal
+		Range: 1
+		ValidTargets: Ground, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: scananim
 		ExplosionPalette: tseffect
