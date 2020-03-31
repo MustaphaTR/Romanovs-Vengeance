@@ -131,6 +131,23 @@ Player:
 		Id: unrestricted
 	ConditionManager:
 	GrantConditionOnPrerequisiteManager:
+	ExternalCondition@IndustrialPlant:
+		Condition: naindp
+	ProvidesPrerequisite@naindp-1:
+		Prerequisite: prerequisite.one_naindp
+		RequiresCondition: naindp
+	ProvidesPrerequisite@naindp-2:
+		Prerequisite: prerequisite.two_naindp
+		RequiresCondition: naindp > 1
+	ProvidesPrerequisite@naindp-3:
+		Prerequisite: prerequisite.three_naindp
+		RequiresCondition: naindp > 2
+	ProvidesPrerequisite@naindp-4:
+		Prerequisite: prerequisite.four_naindp
+		RequiresCondition: naindp > 3
+	ProvidesPrerequisite@naindp-5:
+		Prerequisite: prerequisite.five_naindp
+		RequiresCondition: naindp > 4
 	VeteranProductionIconOverlay:
 		Image: cameo-chevron
 		Sequence: idle
