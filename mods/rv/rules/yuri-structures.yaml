@@ -596,7 +596,23 @@ yadome:
 		Weapons:
 			1: HologramSpawner
 		ActivationSequence:
-	IonCannonPower@:
+	DetonateWeaponPower@mosquitoswarm:
+		OrderName: TransylvaniaMosquitoSwarm
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: radar.psitrans
+		Icons:
+			1: xxicon
+		ChargeInterval: 4500
+		Descriptions:
+			1: Mosquito Swarm
+		LongDescs:
+			1: Spawns 3 Mosquito Platforms\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: MosquitoSpawnerSpawnerSpawner
+		ActivationSequence:
+	IonCannonPower@ioncanon:
 		OrderName: LunarIonCannon
 		# Cursor: ioncannon
 		PauseOnCondition: disabled || chronodisable
