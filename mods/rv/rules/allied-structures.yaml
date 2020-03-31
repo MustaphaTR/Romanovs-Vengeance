@@ -722,7 +722,7 @@ gapill:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 40
 		Prerequisites: gapile, ~techlevel.1
-		Description: Automated anti-infantry defense.
+		Description: Automated anti-infantry defense.\nCan detect cloaked units.
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -778,7 +778,7 @@ nasam:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 50
 		Prerequisites: gaairc, ~techlevel.2
-		Description: Automated anti-aircraft defense.
+		Description: Automated anti-aircraft defense.\nCan detect cloaked units.
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -827,6 +827,10 @@ nasam:
 		Adjacent: 3
 	IsometricSelectable:
 		Height: 45
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
 
 gtgcan:
 	Inherits: ^VoxelLighting
@@ -1174,7 +1178,7 @@ atesla:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 	Valued:
 		Cost: 1200
 	Tooltip:
@@ -1204,7 +1208,7 @@ atesla:
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	DetectCloaked:
-		Range: 6c0
+		Range: 7c0
 		RequiresCondition: !disabled
 	RenderDetectionCircle:
 	Power:

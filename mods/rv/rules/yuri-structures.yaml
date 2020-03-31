@@ -907,7 +907,7 @@ yaggun:
 		Queue: Support.Yuri
 		BuildPaletteOrder: 40
 		Prerequisites: yabrck, ~techlevel.1
-		Description: Automated anti-infantry and anti-air defense.
+		Description: Automated anti-infantry and anti-air defense.\nCan detect cloaked units.
 	Health:
 		HP: 600
 	Armor:
@@ -993,6 +993,10 @@ yaggun:
 		Amount: -50
 	IsometricSelectable:
 		Height: 45
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
 
 natbnk:
 	Inherits: ^SupportBuilding
@@ -1055,7 +1059,7 @@ yapsyt:
 		Queue: Support.Yuri
 		BuildPaletteOrder: 60
 		Prerequisites: yadome
-		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.
+		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.\nCan detect cloaked units.
 	Health:
 		HP: 600
 	Armor:
@@ -1111,6 +1115,10 @@ yapsyt:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	IsometricSelectable:
 		Height: 120
+	DetectCloaked:
+		Range: 6c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
 
 yasgen:
 	Inherits: ^SupportBuilding
