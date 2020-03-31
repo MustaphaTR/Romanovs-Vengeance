@@ -1463,6 +1463,8 @@ gamgun:
 		InitialDelay: 25
 		CloakDelay: 25
 		IsPlayerPalette: true
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
 		UncloakOn: Attack, Damage
 	WithSpriteTurret:
 		RequiresCondition: !build-incomplete
@@ -1478,6 +1480,8 @@ gamgun:
 		Type: mirageturret
 	Power:
 		Amount: -50
+	-Cloak@stealth-generator:
+	-ExternalCondition@INVISIBILITY-GENERATOR:
 	IsometricSelectable:
 		Height: 30
 
