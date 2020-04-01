@@ -552,6 +552,27 @@ MagneFreeze:
 		ValidStances: Neutral, Enemy
 		ValidTargets: MagneFreezable
 
+DiskMagneShake:
+	Inherits: MagneShake
+	ReloadDelay: 100
+	Range: 8c0
+	Projectile: LaserZap
+		Shape: Cylindrical
+
+DiskMagneShakeE:
+	Inherits: DiskMagneShake
+	Warhead@1Dam: SpreadDamage
+		Damage: 90
+
+DiskMagneFreeze:
+	Inherits: MagneFreeze
+	ReloadDelay: 100
+	Range: 8c0
+	Projectile: LaserZap
+		Shape: Cylindrical
+	Warhead@1Con: GrantExternalCondition
+		Duration: 100
+
 DiskLaser:
 	Inherits: Comet
 	ReloadDelay: 80

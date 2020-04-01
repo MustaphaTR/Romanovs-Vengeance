@@ -1396,8 +1396,8 @@ disk:
 	Tooltip@NoRow:
 		Name: Leech Disc
 	Buildable:
-		Queue: Aircraft.Yuri
-		BuildPaletteOrder: 30
+		Queue: Aircraft.Yuri, Aircraft.Lazarus
+		BuildPaletteOrder: 40
 		Prerequisites: yatech, ~techlevel.4
 		Description: Floating Disc armed with lasers.\nCan disable power plants and powered defences.\nCan steal resources from enemy refineries.\n Strong vs Infantry, Aircraft\n Weak vs Vehicles
 	Aircraft:
@@ -1843,7 +1843,7 @@ txdx:
 	Tooltip@NoRow:
 		Name: Mosquito Platform
 	Buildable:
-		Queue: Aircraft.Yuri
+		Queue: Aircraft.Yuri, Aircraft.Lazarus
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.2
 		Description: Light Transport Disc armed with toxin missile launchers.\n\n Strong vs Infantry\n Weak vs Structures, Aircraft
@@ -2062,5 +2062,109 @@ kitehusk:
 	WithFacingSpriteBody:
 		Sequence: shadow
 		ForceToGround: true
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+
+magnedisk:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@EXPERIENCE: ^GainsExperience
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
+	Valued:
+		Cost: 1250
+	Tooltip:
+		Name: Magnedisc
+	Tooltip@NoRow:
+		Name: Magnedisc
+	Buildable:
+		Queue: Aircraft.Lazarus
+		BuildPaletteOrder: 30
+		Prerequisites: yadome, ~techlevel.3
+		Description: Invisible Floating Disc armed magnetic field generators.\n Strong vs Vehicles, Buildings\n Weak vs Infantry, Aircraft
+	Aircraft:
+		TurnSpeed: 255
+		Speed: 175
+		AltitudeVelocity: 200
+	Selectable:
+		Bounds: 78, 43, 0, -15
+	Health:
+		HP: 350
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	RevealsShroud@Ground:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	Armament@primary:
+		Weapon: DiskMagneShake
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: DiskMagneShakeE
+		RequiresCondition: rank-elite
+	Armament@secondary:
+		Weapon: DiskMagneFreeze
+	AttackAircraft:
+		Voice: Attack
+		AttackType: Hover
+		FacingTolerance: 128
+	Voiced:
+		VoiceSet: FloatingDiskVoice
+	Cloak:
+		RequiresCondition: !chronodisable && !emp
+		InitialDelay: 25
+		CloakDelay: 100
+		IsPlayerPalette: true
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
+		UncloakOn: Attack, Damage, Dock
+	Turreted:
+		TurnSpeed: 255
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelBody:
+	WithVoxelTurret:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	HitShape:
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+	SpawnActorOnDeath:
+		Actor: magnediskhusk
+
+magnediskhusk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Magnedisc
+	Tooltip@NoRow:
+		Name: Magnedisc
+	Aircraft:
+		TurnSpeed: 10
+		Speed: 150
+	FallsToEarth:
+		Explosion: PlaneExplode
+	RevealsShroud:
+		Range: 10c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 5c0
+		Duration: 50
+	RenderVoxels:
+		Image: magnedisk
+	WithVoxelBody@turret:
+		Sequence: turret
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false

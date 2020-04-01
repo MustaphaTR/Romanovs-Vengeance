@@ -689,10 +689,22 @@ yadisk:
 	GrantExternalConditionToProduced:
 		Condition: produced
 	Production:
-		Produces: Aircraft.Yuri
+		Produces: Aircraft.Yuri, Aircraft.Lazarus
 		PauseOnCondition: chronodisable
 	ProductionQueue:
 		Type: Aircraft.Yuri
+		Factions: america, germany, england, france, korea, cuba, iraq, libya, russia, vietnam, psicorps, psisouth, psitrans, psimoon
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Lazarus:
+		Type: Aircraft.Lazarus
+		Factions: psinepal
 		Group: Aircraft
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
@@ -703,6 +715,8 @@ yadisk:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Aircraft.Yuri
+	ProductionBar@Lazarus:
+		ProductionType: Aircraft.Lazarus
 	Power:
 		Amount: -50
 	-WithMakeAnimation:
