@@ -28,6 +28,12 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Sound played when the last actor exits this garrison.")]
 		public readonly string ExitSound = null;
 
+		[Desc("Does the sound play under shroud or fog.")]
+		public readonly bool AudibleThroughFog = false;
+
+		[Desc("Volume the EnterSound and ExitSound played at.")]
+		public readonly float SoundVolume = 1;
+
 		public override object Create(ActorInitializer init) { return new WithCargoSounds(init.Self, this); }
 	}
 
@@ -43,13 +49,17 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void INotifyPassengerEntered.OnPassengerEntered(Actor self, Actor passenger)
 		{
-			Game.Sound.Play(SoundType.World, Info.EnterSound, self.CenterPosition);
+			if (Info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition))
+				Game.Sound.Play(SoundType.World, Info.EnterSound, self.CenterPosition, Info.SoundVolume);
+
 			Game.Sound.PlayNotification(self.World.Map.Rules, passenger.Owner, "Speech", Info.EnterNotification, passenger.Owner.Faction.InternalName);
 		}
 
 		void INotifyPassengerExited.OnPassengerExited(Actor self, Actor passenger)
 		{
-			Game.Sound.Play(SoundType.World, Info.ExitSound, self.CenterPosition);
+			if (Info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition))
+				Game.Sound.Play(SoundType.World, Info.ExitSound, self.CenterPosition, Info.SoundVolume);
+
 			Game.Sound.PlayNotification(self.World.Map.Rules, passenger.Owner, "Speech", Info.ExitNotification, passenger.Owner.Faction.InternalName);
 		}
 	}
