@@ -358,12 +358,18 @@ orca:
 		Image: falc
 	RenderVoxels:
 		Image: falc
+	GrantConditionOnMovement@V:
+		Condition: vmove
+		ValidMovementTypes: Vertical
+	GrantConditionOnMovement@H:
+		Condition: hmove
+		ValidMovementTypes: Horizontal
 	SpawnActorOnDeath:
 		Actor: orcahusk
-		RequiresCondition: airborne && cruising
+		RequiresCondition: airborne && (!vmove || hmove)
 	SpawnActorOnDeath@VTOL:
 		Actor: orcahusk.VTOL
-		RequiresCondition: airborne && !cruising
+		RequiresCondition: airborne && vmove && !hmove
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
@@ -896,12 +902,18 @@ hornet:
 		Ammo: 3
 		AmmoCondition: ammo
 	RejectsOrders:
+	GrantConditionOnMovement@V:
+		Condition: vmove
+		ValidMovementTypes: Vertical
+	GrantConditionOnMovement@H:
+		Condition: hmove
+		ValidMovementTypes: Horizontal
 	SpawnActorOnDeath:
 		Actor: hornethusk
-		RequiresCondition: cruising
+		RequiresCondition: !vmove || hmove
 	SpawnActorOnDeath@VTOL:
 		Actor: hornethusk.VTOL
-		RequiresCondition: !cruising
+		RequiresCondition: vmove && !hmove
 	-Selectable:
 	-ActorLostNotification:
 	CarrierSlave:
@@ -994,12 +1006,18 @@ asw:
 		Ammo: 5
 		AmmoCondition: ammo
 	RejectsOrders:
+	GrantConditionOnMovement@V:
+		Condition: vmove
+		ValidMovementTypes: Vertical
+	GrantConditionOnMovement@H:
+		Condition: hmove
+		ValidMovementTypes: Horizontal
 	SpawnActorOnDeath:
 		Actor: aswhusk
-		RequiresCondition: cruising
+		RequiresCondition: !vmove || hmove
 	SpawnActorOnDeath@VTOL:
 		Actor: aswhusk.VTOL
-		RequiresCondition: !cruising
+		RequiresCondition: vmove && !hmove
 	-Selectable:
 	-ActorLostNotification:
 	CarrierSlave:
@@ -1709,12 +1727,18 @@ fortress:
 	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
+	GrantConditionOnMovement@V:
+		Condition: vmove
+		ValidMovementTypes: Vertical
+	GrantConditionOnMovement@H:
+		Condition: hmove
+		ValidMovementTypes: Horizontal
 	SpawnActorOnDeath:
 		Actor: fortresshusk
-		RequiresCondition: airborne && cruising
+		RequiresCondition: airborne && (!vmove || hmove)
 	SpawnActorOnDeath@VTOL:
 		Actor: fortresshusk.VTOL
-		RequiresCondition: airborne && !cruising
+		RequiresCondition: airborne && vmove && !hmove
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
