@@ -53,7 +53,7 @@ nacnst:
 		Sequence: flag-libya
 		RequiresCondition: !build-incomplete && libya
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 napowr:
 	Inherits: ^BaseBuilding
@@ -107,7 +107,7 @@ napowr:
 	PlaceBuildingVariants:
 		Actors: napowb
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 
 nahand:
 	Inherits: ^Barracks
@@ -194,7 +194,7 @@ nahand:
 	ProvidesPrerequisite@nahand:
 		Prerequisite: nahand
 	IsometricSelectable:
-		Height: 135
+		DecorationHeight: 135
 
 narefn:
 	Inherits: ^Refinery
@@ -205,7 +205,7 @@ narefn:
 	PlaceBuildingVariants:
 		Actors: narefb, narefc, narefd
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 naradr:
 	Inherits: ^BaseBuilding
@@ -388,7 +388,7 @@ naradr:
 	Power:
 		Amount: -75
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 mine:
 	Inherits@1: ^SpriteActor
@@ -488,7 +488,7 @@ naweap:
 	PlaceBuildingVariants:
 		Actors: naweab, naweac, nawead
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 nayard:
 	Inherits: ^Shipyard
@@ -501,7 +501,7 @@ nayard:
 	ProductionBar:
 		ProductionType: Ship.Soviets
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 nmine:
 	Inherits: mine
@@ -553,7 +553,7 @@ nadept:
 	PlaceBuildingVariants:
 		Actors: nadepb
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 naheli:
 	Inherits: ^BaseBuilding
@@ -634,7 +634,7 @@ naheli:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 nanrct:
 	Inherits: ^BaseBuilding
@@ -690,7 +690,7 @@ nanrct:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 natech:
 	Inherits: ^BaseBuilding
@@ -728,7 +728,7 @@ natech:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 naclon:
 	Inherits: ^BaseBuilding
@@ -812,7 +812,7 @@ naclon:
 		ProductionType: Clone.Soviets
 	AcceptsDeliveredCash:
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 napsis:
 	Inherits: ^BaseBuilding
@@ -856,7 +856,7 @@ napsis:
 	Power:
 		Amount: -100
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 nairon:
 	Inherits: ^SecondarySuperWeapon
@@ -903,7 +903,7 @@ nairon:
 	AnnounceOnSeen:
 		Notification: IronCurtainDetected
 	IsometricSelectable:
-		Height: 75
+		DecorationHeight: 75
 
 namisl:
 	Inherits: ^PrimarySuperWeapon
@@ -960,7 +960,7 @@ namisl:
 	AnnounceOnSeen:
 		Notification: NuclearSiloDetected
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 nawall:
 	Inherits: ^Wall
@@ -1041,7 +1041,7 @@ naflak:
 	RequiresBuildableArea:
 		Adjacent: 3
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 	DetectCloaked:
 		Range: 5c0
 		RequiresCondition: !disabled
@@ -1125,7 +1125,7 @@ tesla:
 	ExternalCondition@CHARGED:
 		Condition: charged
 	IsometricSelectable:
-		Height: 75
+		DecorationHeight: 75
 
 nalasr:
 	Inherits: ^VoxelLighting
@@ -1184,7 +1184,7 @@ nalasr:
 	RequiresBuildableArea:
 		Adjacent: 4
 	IsometricSelectable:
-		Height: 30
+		DecorationHeight: 30
 
 # Yuri's Revenge Structures
 nabnkr:
@@ -1253,7 +1253,7 @@ nabnkr:
 			blue: pip-garrison-blue
 			red: pip-garrison-red
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 
 naindp:
 	Inherits: ^BaseBuilding
@@ -1297,7 +1297,7 @@ naindp:
 	Power:
 		Amount: -200
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 # Custom Structures
 nagatea:
@@ -1377,7 +1377,7 @@ napost:
 	RequiresBuildableArea:
 		Adjacent: 6
 	IsometricSelectable:
-		Height: 30
+		DecorationHeight: 30
 
 nafnce:
 	Inherits: ^Wall
@@ -1442,7 +1442,7 @@ nasilo:
 	Sellable:
 		RequiresCondition: !chronodisable
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 
 naprop:
 	Inherits: ^SupportBuilding
@@ -1500,7 +1500,7 @@ naprop:
 	GpsDotAS:
 		Sequence: Structure
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 naexpn:
 	Inherits: ^ExpansionNode
@@ -1525,7 +1525,7 @@ narefb:
 	ProvidesPrerequisite@narefn:
 		Prerequisite: narefn
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 narefc:
 	Inherits: ^RefineryC
@@ -1534,7 +1534,7 @@ narefc:
 	ProvidesPrerequisite@narefn:
 		Prerequisite: narefn
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 narefd:
 	Inherits: ^RefineryD
@@ -1543,7 +1543,7 @@ narefd:
 	ProvidesPrerequisite@narefn:
 		Prerequisite: narefn
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 naweab:
 	Inherits: naweap

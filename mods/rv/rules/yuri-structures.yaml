@@ -23,7 +23,7 @@ yacnst:
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 yapowr:
 	Inherits: ^BaseBuilding
@@ -110,7 +110,7 @@ yapowr:
 			blue: pip-building-blue
 			red: pip-building-red
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 yabrck:
 	Inherits: ^Barracks
@@ -191,7 +191,7 @@ yabrck:
 	PlaceBuildingVariants:
 		Actors: yabrcb
 	IsometricSelectable:
-		Height: 105
+		DecorationHeight: 105
 
 yarefn:
 	Inherits: ^BaseBuilding
@@ -354,7 +354,7 @@ yarefn:
 		RequiresSelection: true
 		PipCount: 15
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 
 yarfn2:
 	Inherits: ^Refinery
@@ -368,7 +368,7 @@ yarfn2:
 	PlaceBuildingVariants:
 		Actors: yarfnb, yarfnc, yarfnd
 	IsometricSelectable:
-		Height: 105
+		DecorationHeight: 105
 
 yaweap:
 	Inherits: ^WarFactory
@@ -416,7 +416,7 @@ yaweap:
 	PlaceBuildingVariants:
 		Actors: yaweab, yaweac, yawead
 	IsometricSelectable:
-		Height: 75
+		DecorationHeight: 75
 
 yayard:
 	Inherits: ^Shipyard
@@ -433,7 +433,7 @@ yayard:
 	ProductionBar:
 		ProductionType: Ship.Yuri
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 yadept:
 	Inherits: ^ServiceDepot
@@ -456,7 +456,7 @@ yadept:
 	PlaceBuildingVariants:
 		Actors: yadepb
 	IsometricSelectable:
-		Height: 105
+		DecorationHeight: 105
 
 yagrnd:
 	Inherits: ^BaseBuilding
@@ -498,7 +498,7 @@ yagrnd:
 	Power:
 		Amount: -50
 	IsometricSelectable:
-		Height: 75
+		DecorationHeight: 75
 
 yadome:
 	Inherits: ^BaseBuilding
@@ -647,7 +647,7 @@ yadome:
 	Power:
 		Amount: -75
 	IsometricSelectable:
-		Height: 75
+		DecorationHeight: 75
 
 yadisk:
 	Inherits: ^BaseBuilding
@@ -727,7 +727,7 @@ yadisk:
 	RenderSprites:
 		Image: yarock
 	IsometricSelectable:
-		Height: 30
+		DecorationHeight: 30
 
 yatech:
 	Inherits: ^BaseBuilding
@@ -772,7 +772,7 @@ yatech:
 	PlaceBuildingVariants:
 		Actors: yatecb
 	IsometricSelectable:
-		Height: 180
+		DecorationHeight: 180
 
 yapsis:
 	Inherits: ^BaseBuilding
@@ -816,7 +816,7 @@ yapsis:
 	Power:
 		Amount: -200
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 yaclon:
 	Inherits: ^BaseBuilding
@@ -899,7 +899,7 @@ yaclon:
 		CloneableTypes: Infantry
 		ProductionType: Clone.Yuri
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 yawall:
 	Inherits: ^Wall
@@ -1017,7 +1017,7 @@ yaggun:
 	Power:
 		Amount: -50
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 	DetectCloaked:
 		Range: 5c0
 		RequiresCondition: !disabled
@@ -1073,7 +1073,7 @@ natbnk:
 	#	Types: SatelliteScan
 	#	Range: 6c0
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 
 yapsyt:
 	Inherits: ^SupportBuilding
@@ -1139,7 +1139,7 @@ yapsyt:
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 	DetectCloaked:
 		Range: 6c0
 		RequiresCondition: !disabled
@@ -1198,7 +1198,7 @@ yasgen:
 	GpsDotAS:
 		Sequence: Structure
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 yagntc:
 	Inherits: ^SecondarySuperWeapon
@@ -1247,7 +1247,7 @@ yagntc:
 	AnnounceOnSeen:
 		Notification: GeneticMutatorDetected # LazarusShieldDetected
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 yappet:
 	Inherits: ^PrimarySuperWeapon
@@ -1285,7 +1285,7 @@ yappet:
 	AnnounceOnSeen:
 		Notification: PsychicDominatorDetected
 	IsometricSelectable:
-		Height: 75
+		DecorationHeight: 75
 
 yacomd:
 	Inherits: ^CivBuilding
@@ -1306,7 +1306,7 @@ yacomd:
 	SpawnActorOnDeath:
 		Actor: yacomd.rubble
 	IsometricSelectable:
-		Height: 180
+		DecorationHeight: 180
 
 yacomd.rubble:
 	Inherits: ^Rubble
@@ -1333,7 +1333,7 @@ yapppt:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	IsometricSelectable:
-		Height: 75
+		DecorationHeight: 75
 
 yarock:
 	Inherits: ^CivBuilding
@@ -1352,7 +1352,7 @@ yarock:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 # Custom Structures
 yagatea:
@@ -1472,7 +1472,7 @@ yarfnb:
 		Prerequisite: psirefn
 	-WithDockedOverlay:
 	IsometricSelectable:
-		Height: 105
+		DecorationHeight: 105
 
 yarfnc:
 	Inherits: ^RefineryC
@@ -1483,7 +1483,7 @@ yarfnc:
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
 	IsometricSelectable:
-		Height: 105
+		DecorationHeight: 105
 
 yarfnd:
 	Inherits: ^RefineryD
@@ -1494,7 +1494,7 @@ yarfnd:
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
 	IsometricSelectable:
-		Height: 105
+		DecorationHeight: 105
 
 yaweab:
 	Inherits: yaweap

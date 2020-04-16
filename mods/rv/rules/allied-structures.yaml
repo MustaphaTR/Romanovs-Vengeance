@@ -74,7 +74,7 @@ gacnst:
 		IsPlayerPalette: false
 		RequiresCondition: !build-incomplete && korea
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 gapowr:
 	Inherits: ^BaseBuilding
@@ -161,7 +161,7 @@ gapowr:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 gapowrup:
 	Inherits: ^BuildingPlug
@@ -275,7 +275,7 @@ gapile:
 	PlaceBuildingVariants:
 		Actors: gapilb
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 garefn:
 	Inherits: ^Refinery
@@ -286,7 +286,7 @@ garefn:
 	PlaceBuildingVariants:
 		Actors: garefb, garefc, garefd
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 gaairc:
 	Inherits: ^BaseBuilding
@@ -573,7 +573,7 @@ gaairc:
 	PlaceBuildingVariants:
 		Actors: gaairb
 	IsometricSelectable:
-		Height: 105
+		DecorationHeight: 105
 
 gaweap:
 	Inherits: ^WarFactory
@@ -615,7 +615,7 @@ gaweap:
 	PlaceBuildingVariants:
 		Actors: gaweab, gaweac, gawead
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 gayard:
 	Inherits: ^Shipyard
@@ -629,7 +629,7 @@ gayard:
 		ProductionType: Ship.Allies
 	-WithProductionOverlay@lights:
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 
 gadept:
 	Inherits: ^ServiceDepot
@@ -647,7 +647,7 @@ gadept:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 
 gatech:
 	Inherits: ^BaseBuilding
@@ -692,7 +692,7 @@ gatech:
 	PlaceBuildingVariants:
 		Actors: gatecb
 	IsometricSelectable:
-		Height: 180
+		DecorationHeight: 180
 
 gawall:
 	Inherits: ^Wall
@@ -765,7 +765,7 @@ gapill:
 	RequiresBuildableArea:
 		Adjacent: 4
 	IsometricSelectable:
-		Height: 15
+		DecorationHeight: 15
 
 nasam:
 	Inherits: ^VoxelLighting
@@ -826,7 +826,7 @@ nasam:
 	RequiresBuildableArea:
 		Adjacent: 3
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 	DetectCloaked:
 		Range: 5c0
 		RequiresCondition: !disabled
@@ -896,7 +896,7 @@ gtgcan:
 	Power:
 		Amount: -100
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 
 gaorep:
 	Inherits: ^BaseBuilding
@@ -935,7 +935,7 @@ gaorep:
 	Power:
 		Amount: -200
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 gaspysat:
 	Inherits: ^BaseBuilding
@@ -1006,7 +1006,7 @@ gaspysat:
 		ChargeInterval: 4500
 		OrderName: SatelliteScanPowerInfoOrder
 	IsometricSelectable:
-		Height: 75
+		DecorationHeight: 75
 
 gagap:
 	Inherits: ^SupportBuilding
@@ -1057,7 +1057,7 @@ gagap:
 	GpsDotAS:
 		Sequence: Structure
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 gaweat:
 	Inherits: ^PrimarySuperWeapon
@@ -1103,7 +1103,7 @@ gaweat:
 	AnnounceOnSeen:
 		Notification: WeathercontrolDeviceDetected
 	IsometricSelectable:
-		Height: 75
+		DecorationHeight: 75
 
 gacsph:
 	Inherits: ^SecondarySuperWeapon
@@ -1160,7 +1160,7 @@ gacsph:
 	PlaceBuildingVariants:
 		Actors: gacspb
 	IsometricSelectable:
-		Height: 45
+		DecorationHeight: 45
 
 atesla:
 	Inherits: ^SupportBuilding
@@ -1239,7 +1239,7 @@ atesla:
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	IsometricSelectable:
-		Height: 90
+		DecorationHeight: 90
 
 power:
 	AlwaysVisible:
@@ -1318,7 +1318,7 @@ garobo:
 	Power:
 		Amount: -50
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 # Custom Structures
 gaapad:
@@ -1374,7 +1374,7 @@ gaapad:
 		Facing: 224
 		SpawnOffset: 0,512,0
 	IsometricSelectable:
-		Height: 30
+		DecorationHeight: 30
 
 gagatea:
 	Inherits: ^Gate_A
@@ -1483,7 +1483,7 @@ gamgun:
 	-Cloak@stealth-generator:
 	-ExternalCondition@INVISIBILITY-GENERATOR:
 	IsometricSelectable:
-		Height: 30
+		DecorationHeight: 30
 
 gaexpn:
 	Inherits: ^ExpansionNode
@@ -1554,7 +1554,7 @@ garefb:
 	ProvidesPrerequisite@garefn:
 		Prerequisite: garefn
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 garefc:
 	Inherits: ^RefineryC
@@ -1563,7 +1563,7 @@ garefc:
 	ProvidesPrerequisite@garefn:
 		Prerequisite: garefn
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 garefd:
 	Inherits: ^RefineryD
@@ -1572,7 +1572,7 @@ garefd:
 	ProvidesPrerequisite@garefn:
 		Prerequisite: garefn
 	IsometricSelectable:
-		Height: 60
+		DecorationHeight: 60
 
 gaweab:
 	Inherits: gaweap

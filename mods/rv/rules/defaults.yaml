@@ -1215,7 +1215,7 @@
 	OwnerLostAction:
 		Action: ChangeOwner
 	IsometricSelectable:
-		Height: 120
+		DecorationHeight: 120
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1343,7 +1343,7 @@
 ^Gate:
 	Inherits: ^Building
 	IsometricSelectable:
-		Height: 30
+		DecorationHeight: 30
 	AppearsOnMapPreview:
 	Huntable:
 	Valued:
@@ -2523,6 +2523,8 @@
 ^SelectableBuilding:
 	IsometricSelectable:
 		Priority: 3
+		Height: 0
+		DecorationHeight: 24
 	IsometricSelectionDecorations:
 	WithTextControlGroupDecoration:
 		Margin: 1, 1
