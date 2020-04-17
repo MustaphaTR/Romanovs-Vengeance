@@ -1174,11 +1174,21 @@ itrp:
 		OutsideRangeCursor: iron-curtain
 		TargetStances: Ally
 		ForceTargetStances: Ally, Neutral, Enemy
+		RequiresCondition: !rank-elite
 	Armament@ap:
 		Weapon: CurtainRifleAP
 		LocalOffset: 512,0,384
 		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: CurtainRifleE
+		LocalOffset: 512,0,384
+		PauseOnCondition: chronodisable
+		Cursor: iron-curtain
+		OutsideRangeCursor: iron-curtain
+		TargetStances: Ally
+		ForceTargetStances: Ally, Neutral, Enemy
+		RequiresCondition: rank-elite
 	Armament@elite-ap:
 		Weapon: CurtainRifleAPE
 		LocalOffset: 512,0,384
@@ -1192,11 +1202,21 @@ itrp:
 		OutsideRangeCursor: iron-curtain
 		TargetStances: Ally
 		ForceTargetStances: Ally, Neutral, Enemy
+		RequiresCondition: !rank-elite
 	Armament@opentopped-ap:
 		Name: opentopped
 		Weapon: CurtainRifleAP
 		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: CurtainRifleE
+		PauseOnCondition: chronodisable
+		Cursor: iron-curtain
+		OutsideRangeCursor: iron-curtain
+		TargetStances: Ally
+		ForceTargetStances: Ally, Neutral, Enemy
+		RequiresCondition: rank-elite
 	Armament@elite-opentopped-ap:
 		Name: opentopped
 		Weapon: CurtainRifleAPE
@@ -1210,11 +1230,21 @@ itrp:
 		OutsideRangeCursor: iron-curtain
 		TargetStances: Ally
 		ForceTargetStances: Ally, Neutral, Enemy
+		RequiresCondition: !rank-elite
 	Armament@garrisoned-ap:
 		Name: garrisoned
 		Weapon: UCCurtainRifleAP
 		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCCurtainRifle
+		PauseOnCondition: chronodisable
+		Cursor: iron-curtain
+		OutsideRangeCursor: iron-curtain
+		TargetStances: Ally
+		ForceTargetStances: Ally, Neutral, Enemy
+		RequiresCondition: rank-elite
 	Armament@elite-garrisoned-ap:
 		Name: garrisoned
 		Weapon: UCCurtainRifleAPE

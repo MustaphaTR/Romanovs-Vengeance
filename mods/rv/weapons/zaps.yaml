@@ -420,7 +420,7 @@ UCNeutronRifleSound:
 
 CurtainRifle:
 	ReloadDelay: 75
-	Range: 5c0
+	Range: 6c0
 	Report: siroon.wav
 	TargetActorCenter: true
 	ValidTargets: IronCurtainable
@@ -440,7 +440,7 @@ CurtainRifle:
 
 CurtainRifleAP:
 	ReloadDelay: 75
-	Range: 5c0
+	Range: 6c0
 	Report: siroon.wav
 	TargetActorCenter: true
 	ValidTargets: Infantry
@@ -449,16 +449,22 @@ CurtainRifleAP:
 	Warhead@Damage: SpreadDamage
 		Spread: 0c768
 		Falloff: 100, 100
-		Damage: 125
+		Damage: 500
+			Versus:
+				Heavy: 25
 		ValidTargets: Infantry
 		DamageTypes: FlameDeath
 	Warhead@Stars: CreateEffect
 		Explosions: iron_fx
 		ValidTargets: Ground, Water
 
+CurtainRifleE:
+	Inherits: CurtainRifle
+	Range: 7c0
+
 CurtainRifleAPE:
 	Inherits: CurtainRifleAP
-	Range: 6c0
+	Range: 7c0
 	Warhead@Damage: SpreadDamage
 		Spread: 1c0
 
@@ -485,15 +491,15 @@ CRCurtainRifleAP:
 
 UCCurtainRifle:
 	Inherits: CurtainRifle
-	Range: 6c0
 
 UCCurtainRifleAP:
 	Inherits: CurtainRifleAP
-	Range: 6c0
+
+UCCurtainRifleE:
+	Inherits: CurtainRifleE
 
 UCCurtainRifleAPE:
 	Inherits: CurtainRifleAPE
-	Range: 6c0
 
 TeslaFence:
 	TargetActorCenter: true
