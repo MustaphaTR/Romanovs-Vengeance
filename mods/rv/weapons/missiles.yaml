@@ -27,7 +27,6 @@ RedEye2:
 			Steel: 0
 			Concrete: 0
 			Drone: 100
-			Rocket: 100
 
 MammothTusk:
 	Inherits: ^AAMissile
@@ -58,7 +57,6 @@ MammothTusk:
 			Steel: 40
 			Concrete: 20
 			Drone: 20
-			Rocket: 100
 		DamageTypes: ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_bang
@@ -106,7 +104,6 @@ APTusk:
 			Steel: 85
 			Concrete: 60
 			Drone: 20
-			Rocket: 100
 	Warhead@3Eff: CreateEffect
 		Explosions: chronotank_explosion
 		ExplosionPalette: ra
@@ -158,7 +155,6 @@ Maverick:
 			Steel: 75
 			Concrete: 50
 			Drone: 100
-			Rocket: 100
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: verylarge_clsn
@@ -272,7 +268,7 @@ HoverMissile:
 			Steel: 40
 			Concrete: 60
 			Drone: 20
-			Rocket: 100
+			Rocket: 200
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: small_grey_explosion
@@ -342,7 +338,7 @@ OutpostMissile:
 			Steel: 40
 			Concrete: 65
 			Drone: 20
-			Rocket: 100
+			Rocket: 200
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallCrater
 
@@ -377,7 +373,7 @@ MissileLauncher:
 			Steel: 65
 			Concrete: 50
 			Drone: 20
-			Rocket: 100
+			Rocket: 200
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: small_grey_explosion
@@ -467,6 +463,7 @@ ChaosRocket:
 			Wood: 30
 			Steel: 50
 			Concrete: 25
+			Rocket: 200
 	Warhead@5Con: GrantExternalCondition
 		ValidTargets: ChaosGasable
 		ValidStances: Enemy, Neutral
@@ -541,7 +538,7 @@ SubTorpedo:
 		IsPlayerPalette: true
 		TerrainHeightAware: true
 	Warhead@1Dam: SpreadDamage
-		Spread: 426
+		Spread: 256
 		Damage: 100
 		ValidTargets: Water, Underwater, Bridge
 		Versus:
@@ -555,7 +552,6 @@ SubTorpedo:
 			Steel: 85
 			Concrete: 60
 			Drone: 25
-			Rocket: 100
 		DamageTypes: ExplosionDeath, SuppressTerrorDrone
 	Warhead@2EffWater: CreateEffect
 		Explosions: large_watersplash
@@ -613,7 +609,6 @@ HornetBomb:
 			Steel: 100
 			Concrete: 75
 			Drone: 100
-			Rocket: 100
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: hornet_explosion
@@ -660,7 +655,6 @@ ASWBomb:
 			Steel: 85
 			Concrete: 60
 			Drone: 25
-			Rocket: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: small_grey_explosion
 		ExplosionPalette: effect
@@ -697,7 +691,6 @@ A10Missile:
 			Steel: 85
 			Concrete: 50
 			Drone: 60
-			Rocket: 100
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: verylarge_clsn
@@ -840,7 +833,6 @@ MosquitoMissile:
 			Steel: 65
 			Concrete: 50
 			Drone: 20
-			Rocket: 100
 		DamageTypes: Prone70Percent, TriggerProne, VirusDeath, SuppressTerrorDrone
 	Warhead@2Eff: CreateEffect
 		Explosions: small_grey_explosion
