@@ -65,6 +65,9 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Sound to play when undeploying.")]
 		public readonly string UndeploySound = null;
 
+		[Desc("Do the deploy and undeploy sounds play under shroud or fog.")]
+		public readonly bool AudibleThroughFog = false;
+
 		[Desc("Should the aircraft automatically take off after undeploying?")]
 		public readonly bool TakeOffOnUndeploy = true;
 
@@ -304,7 +307,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!IsValidTerrain(self.Location))
 				return;
 
-			if (!string.IsNullOrEmpty(Info.DeploySound))
+			if (!string.IsNullOrEmpty(Info.DeploySound) && (Info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition)))
 				Game.Sound.Play(SoundType.World, Info.DeploySound, self.CenterPosition);
 
 			// Revoke condition that is applied while undeployed.
@@ -332,7 +335,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!init && deployState != DeployState.Deployed)
 				return;
 
-			if (!string.IsNullOrEmpty(Info.UndeploySound))
+			if (!string.IsNullOrEmpty(Info.UndeploySound) && (Info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition)))
 				Game.Sound.Play(SoundType.World, Info.UndeploySound, self.CenterPosition);
 
 			var wsb = wsbs.FirstEnabledTraitOrDefault();
