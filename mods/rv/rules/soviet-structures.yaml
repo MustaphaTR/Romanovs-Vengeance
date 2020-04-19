@@ -1252,6 +1252,11 @@ nabnkr:
 			yellow: pip-garrison-yellow
 			blue: pip-garrison-blue
 			red: pip-garrison-red
+	EngineerRepairable:
+		RequiresCondition: damaged
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 	IsometricSelectable:
 		DecorationHeight: 45
 

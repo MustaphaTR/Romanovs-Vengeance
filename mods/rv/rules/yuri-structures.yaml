@@ -109,6 +109,11 @@ yapowr:
 			yellow: pip-building-yellow
 			blue: pip-building-blue
 			red: pip-building-red
+	EngineerRepairable:
+		RequiresCondition: damaged
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 	IsometricSelectable:
 		DecorationHeight: 60
 

@@ -1157,6 +1157,11 @@
 		Name: garrisoned
 		Sequence: garrisoned
 		RequiresCondition: loaded
+	EngineerRepairable:
+		RequiresCondition: damaged
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 
 ^Rubble:
 	Inherits@1: ^SpriteActor
