@@ -1253,7 +1253,7 @@ nabnkr:
 			blue: pip-garrison-blue
 			red: pip-garrison-red
 	EngineerRepairable:
-		RequiresCondition: damaged
+		RequiresCondition: !ivanbomb && !sealC4 && !commandoC4 && !teslabomb && !toxinbomb && damaged
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
