@@ -783,6 +783,8 @@ tric:
 		Radius: 4c0
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
+		TargetFrozenActors: true
 		PauseOnCondition: chronodisable || emp
 	Armament@primary:
 		Weapon: CycleMortar
@@ -882,9 +884,9 @@ deva:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 		RequiresCondition: !overload
 		PauseOnCondition: chronodisable || emp
-		FacingTolerance: 2
 	WithMuzzleOverlay:
 	AutoTarget:
 	RenderSprites:
