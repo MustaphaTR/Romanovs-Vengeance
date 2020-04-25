@@ -93,8 +93,7 @@ function build_platform()
 	make clean
 	make core "${TARGETPLATFORM}" "${IS_WIN32}"
 	make version VERSION="${ENGINE_VERSION}"
-	make install-engine gameinstalldir="" DESTDIR="${BUILTDIR}"
-	make install-common-mod-files gameinstalldir="" DESTDIR="${BUILTDIR}"
+	make install-core "${TARGETPLATFORM}" gameinstalldir="" DESTDIR="${BUILTDIR}"
 	make install-dependencies "${TARGETPLATFORM}" gameinstalldir="" DESTDIR="${BUILTDIR}"
 
 	for f in ${PACKAGING_COPY_ENGINE_FILES}; do
