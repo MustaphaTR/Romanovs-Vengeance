@@ -76,9 +76,11 @@ popd > /dev/null
 function build_platform()
 {
 	if [ "$1" = "x86" ]; then
+		TARGETPLATFORM="TARGETPLATFORM=win-x86"
 		IS_WIN32="WIN32=true"
 	else
 		IS_WIN32="WIN32=false"
+		TARGETPLATFORM="TARGETPLATFORM=win-x64"
 	fi
 
 	pushd ${TEMPLATE_ROOT} > /dev/null
@@ -89,11 +91,11 @@ function build_platform()
 	SRC_DIR="$(pwd)"
 
 	make clean
-	make windows-dependencies "${IS_WIN32}"
-	make core "${IS_WIN32}"
+	make core "${TARGETPLATFORM}" "${IS_WIN32}"
 	make version VERSION="${ENGINE_VERSION}"
 	make install-engine gameinstalldir="" DESTDIR="${BUILTDIR}"
 	make install-common-mod-files gameinstalldir="" DESTDIR="${BUILTDIR}"
+	make install-dependencies "${TARGETPLATFORM}" gameinstalldir="" DESTDIR="${BUILTDIR}"
 
 	for f in ${PACKAGING_COPY_ENGINE_FILES}; do
 		mkdir -p "${BUILTDIR}/$(dirname "${f}")"
