@@ -1,10 +1,15 @@
 Container@OBSERVER_WIDGETS:
 	Logic: MenuButtonsChromeLogic
 	Children:
+		SupportPowerTimerRV@SUPPORT_POWER_TIMER:
+			X: WINDOW_RIGHT - WIDTH - 260
+			Align: Right
+			Format: {1} : {0}
+			Order: Descending
 		Container@MUTE_INDICATOR:
 			Logic: MuteIndicatorLogic
-			X: WINDOW_RIGHT - WIDTH - 260
-			Y: 10
+			X: (WINDOW_RIGHT / 2) - 156
+			Y: 60
 			Width: 200
 			Height: 25
 			Children:

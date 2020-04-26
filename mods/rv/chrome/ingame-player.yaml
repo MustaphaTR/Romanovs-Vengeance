@@ -27,9 +27,10 @@ Container@PLAYER_WIDGETS:
 							IgnoreMouseOver: true
 							ImageCollection: sidebar
 							ImageName: background-supportoverlay
-		SupportPowerTimer@SUPPORT_POWER_TIMER:
-			X: 80
-			Y: 10
+		SupportPowerTimerRV@SUPPORT_POWER_TIMER:
+			X: WINDOW_RIGHT - WIDTH - 235
+			Align: Right
+			Format: {1} : {0}
 			Order: Descending
 		Image@COMMAND_BAR_BACKGROUND:
 			Logic: AddFactionSuffixLogic
@@ -280,8 +281,8 @@ Container@PLAYER_WIDGETS:
 							ImageName: hold-fire
 		Container@MUTE_INDICATOR:
 			Logic: MuteIndicatorLogic
-			X: WINDOW_RIGHT - WIDTH - 260
-			Y: 10
+			X: (WINDOW_RIGHT / 2) - 156
+			Y: 60
 			Width: 200
 			Height: 25
 			Children:
