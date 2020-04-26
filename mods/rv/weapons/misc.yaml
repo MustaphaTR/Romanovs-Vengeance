@@ -609,9 +609,30 @@ BunkerSpawner:
 		Sounds: uplace.wav
 
 AmbushSpawner:
+	Warhead@1Sha: FireShrapnel
+		Weapon: AmbushSpawnerE2
+		Amount: 9
+	Warhead@2Sha: FireShrapnel
+		Weapon: AmbushSpawnerFlakt
+		Amount: 6
+	Warhead@TargetValidation: TargetDamage
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: sambusha.aud
+		ValidTargets: Ground, Water, Air
+
+AmbushSpawnerE2:
+	Inherits: ^HologramSpawnerDefault
+	Range: 2c0
 	Warhead@1Spa: SpawnActor
-		Actors: e2,e2,e2,e2,e2,e2,e2,e2,e2,flakt,flakt,flakt,flakt,flakt,flakt
-		Sounds: sambusha.aud
+		Actors: e2
+		Delay: 25
+
+AmbushSpawnerFlakt:
+	Inherits: ^HologramSpawnerDefault
+	Range: 2c0
+	Warhead@1Spa: SpawnActor
+		Actors: flakt
+		Delay: 25
 
 HologramSpawner:
 	Warhead@1Sha: FireShrapnel
