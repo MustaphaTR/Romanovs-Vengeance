@@ -14,7 +14,7 @@ shad:
 	Selectable:
 		Bounds: 70,60,0,-20
 	Health:
-		HP: 175
+		HP: 225
 	Armor:
 		Type: Light
 	Armament@primary:
@@ -66,7 +66,7 @@ shad:
 		Prerequisites: gapile, ~techlevel.2
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
-		Cost: 500
+		Cost: 800
 	RevealsShroud:
 		Range: 8c0
 	RevealsShroud@Ground:
@@ -108,7 +108,7 @@ shad:
 		BobDistance: -45
 	Cargo:
 		Types: Infantry, Garrisoner
-		MaxWeight: 8
+		MaxWeight: 10
 		UnloadVoice: Move
 	WithCargoSounds:
 		EnterSound: genter1a.wav
@@ -120,8 +120,6 @@ shad:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	HitShape:
-	ProducibleWithLevel:
-		Prerequisites: vetair
 	WithCargoPipsDecoration:
 		Margin: 4, 3
 		Palette: ra
@@ -225,6 +223,7 @@ zep:
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
+		FacingTolerance: 128
 	AutoTarget:
 	RenderSprites:
 	RenderVoxels:
@@ -543,10 +542,10 @@ pdplane:
 		CruiseAltitude: 5c852
 		Repulsable: false
 		TurnSpeed: 5
-		Speed: 180
+		Speed: 270
 		TakeOffOnCreation: false
 	Health:
-		HP: 300
+		HP: 200
 	Armor:
 		Type: Light
 	RenderSprites:
@@ -579,7 +578,7 @@ pdplanehusk:
 		Name: Cargo Plane
 	Aircraft:
 		TurnSpeed: 5
-		Speed: 180
+		Speed: 270
 	RenderVoxels:
 		Image: pdplane
 
@@ -615,11 +614,15 @@ alplane:
 		Actor: alplanehusk
 	RenderVoxels:
 		Image: alplane
+	Aircraft:
+		Speed: 270
 
 alplanehusk:
 	Inherits: pdplanehusk
 	RenderVoxels:
 		Image: alplane
+	Aircraft:
+		Speed: 270
 
 pcplane:
 	Inherits: pdplane
@@ -642,6 +645,8 @@ pdplane.parabomb:
 		Ammo: 4
 		AmmoCondition: ammo
 	AttackBomber:
+	Aircraft:
+		Speed: 270
 
 a10:
 	Inherits: alplane
@@ -673,6 +678,8 @@ a10:
 		Offset: -900,-171,250
 		TrailLength: 15
 		UsePlayerColor: False
+	Aircraft:
+		Speed: 300
 
 a10husk:
 	Inherits: pdplanehusk
@@ -682,6 +689,8 @@ a10husk:
 		Name: A-10 Thunderbolt
 	RenderVoxels:
 		Image: a10
+	Aircraft:
+		Speed: 300
 
 txbmb:
 	Inherits: pcplane
@@ -710,6 +719,8 @@ txbmb:
 		TrailLength: 15
 		UsePlayerColor: False
 	-Contrail@2:
+	Aircraft:
+		Speed: 270
 
 txbmbhusk:
 	Inherits: pdplanehusk
@@ -719,6 +730,8 @@ txbmbhusk:
 		Name: Toxin Bomber
 	RenderVoxels:
 		Image: txbmb
+	Aircraft:
+		Speed: 270
 
 f22drop:
 	Inherits: alplane
@@ -764,6 +777,8 @@ pdplane.emp:
 		Ammo: 1
 		AmmoCondition: ammo
 	AttackBomber:
+	Aircraft:
+		Speed: 270
 
 pdplane.leaflet:
 	Inherits: alplane
@@ -775,7 +790,7 @@ pdplane.leaflet:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 300
+		Speed: 270
 
 pdplane.naval_mines:
 	Inherits: pdplane
@@ -786,6 +801,8 @@ pdplane.naval_mines:
 		Ammo: 5
 		AmmoCondition: ammo
 	AttackBomber:
+	Aircraft:
+		Speed: 270
 
 pdplane.cluster_mines:
 	Inherits: pdplane
@@ -796,6 +813,8 @@ pdplane.cluster_mines:
 		Ammo: 1
 		AmmoCondition: ammo
 	AttackBomber:
+	Aircraft:
+		Speed: 270
 
 pdplane.chaos:
 	Inherits: pcplane
@@ -811,6 +830,8 @@ pdplane.chaos:
 		Ammo: 100
 		AmmoCondition: ammo
 	AttackBomber:
+	Aircraft:
+		Speed: 270
 
 pdplane.crate:
 	Inherits: ^NeutralAircraft
@@ -1536,7 +1557,7 @@ hind:
 	Selectable:
 		Bounds: 70,60,0,-20
 	Health:
-		HP: 225
+		HP: 300
 	Armor:
 		Type: Light
 	Voiced:
@@ -2021,7 +2042,7 @@ kite:
 	#	Type: GroundPosition
 	AttackAircraft:
 		Voice: Attack
-		FacingTolerance: 2
+		FacingTolerance: 128
 		AttackType: Hover
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Aircraft:

@@ -96,7 +96,7 @@ init:
 		Prerequisites: ~techlevel.1
 		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
-		Cost: 150
+		Cost: 100
 	Tooltip:
 		Name: Initiate
 	Tooltip@NoRow:
@@ -109,6 +109,8 @@ init:
 		Bounds: 20, 30, 0, -11
 	Health:
 		HP: 100
+	Mobile:
+		Speed: 75
 	Garrisoner:
 		Voice: Move
 		GarrisonType: Garrisoner
@@ -289,19 +291,19 @@ virus:
 		Prerequisites: yadome, ~techlevel.2
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 	Valued:
-		Cost: 800
+		Cost: 900
 	Tooltip:
 		Name: Virus
 	Tooltip@NoRow:
 		Name: Virus
 	DeliversCash:
-		Payload: 400
-		PlayerExperience: 40
+		Payload: 450
+		PlayerExperience: 45
 		Voice: Move
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
-		HP: 100
+		HP: 75
 	Garrisoner:
 		Voice: Move
 		GarrisonType: Garrisoner
@@ -486,7 +488,7 @@ lunr:
 		CruiseAltitude: 3c852
 		InitialFacing: 20
 		TurnSpeed: 255
-		Speed: 140
+		Speed: 150
 		AltitudeVelocity: 120
 		MaximumPitch: 128
 		Voice: Move
@@ -774,7 +776,9 @@ spct:
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Health:
-		HP: 125
+		HP: 100
+	Mobile:
+		Speed: 75
 	Garrisoner:
 		Voice: Move
 		GarrisonType: Garrisoner

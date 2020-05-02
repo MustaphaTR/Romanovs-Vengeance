@@ -176,7 +176,7 @@ awp:
 	Inherits: DoublePistols
 	InvalidTargets: Bridge, Wall, Fence, Tree, NonGarrisonableStructure, Vehicle, Ship, SeaAnimal
 	ReloadDelay: 120
-	Range: 14c0
+	Range: 12c0
 	Report: isniatta.wav
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship, SeaAnimal
@@ -187,7 +187,7 @@ awp:
 			None: 200
 			Flak: 100
 			Plate: 100
-			Drone: 100
+			Drone: 25
 	Warhead@1Gar: DamageGarrisoner
 		ValidTargets: GarrisonedStructure
 		InvalidTargets: IronCurtained, ForceShielded
@@ -205,24 +205,24 @@ awp:
 			Wood: 1
 			Steel: 1
 			Concrete: 1
-			Drone: 100
+			Drone: 25
 			Rocket: 100
 
 AWPE:
 	Inherits: awp
-	ReloadDelay: 100
+	ReloadDelay: 90
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
 
 UCawp:
 	Inherits: awp
-	Range: 14c0
+	Range: 12c0
 	Projectile: InstantHit
 		Blockable: false
 
 UCAWPE:
 	Inherits: AWPE
-	Range: 14c0
+	Range: 12c0
 	Projectile: InstantHit
 		Blockable: false
 
@@ -300,6 +300,7 @@ UCMagneRifleE:
 			Light: 50
 			Medium: 40
 			Heavy: 40
+			Rocket: 50
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 		ValidTargets: Ground, Water, Air
@@ -388,6 +389,8 @@ BlackHawkCannon:
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
 		Damage: 35
+		Versus:
+			Rocket: 25
 		ValidTargets: Ground, Water
 
 BlackHawkCannonE:
@@ -427,6 +430,7 @@ SiegeChopperCannon:
 			Wood: 15
 			Steel: 5
 			Concrete: 10
+			Rocket: 25
 		ValidTargets: Ground, Water
 
 SiegeChopperCannonE:
