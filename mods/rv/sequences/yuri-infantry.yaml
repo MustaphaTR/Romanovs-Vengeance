@@ -138,26 +138,31 @@ yurix:
 	icon: yypricon
 
 lunr:
-	stand:
+	Defaults:
+		Length: 6
 		Facings: 8
+	stand:
+		Length: 1
 	run:
 		Start: 8
 		Tick: 120
-		Length: 6
-		Facings: 8
 	idle1:
 		Start: 56
 		Length: 15
+		Facings: 1
 		Tick: 100
 	idle2:
 		Start: 71
 		Length: 15
+		Facings: 1
 		Tick: 100
-	prone-run:
-		Start: 86
-		Tick: 100
-		Length: 6
-		Facings: 8
+	# prone-stand:
+	#	Frames: 86, 92, 98, 104, 110, 116, 122, 128
+	#	Length: 1
+	#	Facings: 8
+	# prone-run:
+	#	Start: 86
+	#	Tick: 100
 	die1: # copied from die-air
 		# Start: 134
 		# Length: 14
@@ -199,18 +204,12 @@ lunr:
 	shoot:
 		Start: 164
 		Tick: 80
-		Length: 6
-		Facings: 8
-	prone-shoot:
-		Start: 212
-		Tick: 80
-		Length: 6
-		Facings: 8
+	# prone-shoot:
+	#	Start: 212
+	#	Tick: 80
 	fly:
 		Start: 292
 		Tick: 100
-		Length: 6
-		Facings: 8
 	die-air:
 		Start: 340
 		Length: 16
@@ -219,17 +218,20 @@ lunr:
 	shoot-air:
 		Start: 370
 		Tick: 80
-		Length: 6
-		Facings: 8
 	idle-air:
 		Start: 419
 		Length: 8
+		Facings: 1
 		Tick: 100
 	paradrop:
 		Start: 418
 	shadow: infshdw
 		Start: 1
+		Length: 1
+		Facings: 1
 	icon: lunricon
+		Length: 1
+		Facings: 1
 
 lunr.husk:
 	idle: lunr

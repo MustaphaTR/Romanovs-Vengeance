@@ -496,11 +496,13 @@ lunr:
 		CanSlide: true
 		CanHover: true
 	WithInfantryBody:
+		RequiresCondition: !airborne
+	WithInfantryBody@Air:
 		StandSequences: fly
 		MoveSequence: fly
 		DefaultAttackSequence: shoot-air
 		IdleSequences: idle-air
-		-RequiresCondition:
+		RequiresCondition: airborne
 	Hovers:
 		BobDistance: -45
 	-TimedConditionBar@WebDisable:
@@ -529,6 +531,9 @@ lunr:
 	Targetable@airborne:
 		TargetTypes: Air, Disguise
 		RequiresCondition: airborne
+	Targetable@ground:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		RequiresCondition: !airborne
 	WithSpriteBody@shadow:
 		Name: shadow
 		Sequence: shadow
@@ -539,9 +544,6 @@ lunr:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	Targetable@ground:
-		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
-		RequiresCondition: !airborne
 	-Passenger:
 	-SelfHealing@HOSPITAL:
 	SpawnActorOnDeath:
