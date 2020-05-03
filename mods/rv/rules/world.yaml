@@ -162,6 +162,13 @@
 		Side: Randoms
 		Description: Random Psi-Corps Faction\nA random Psi-Corps faction will be chosen when the game starts.
 		Selectable: false
+	Faction@baku:
+		Name: Baku Pact
+		InternalName: random-bakupact
+		RandomFactionMembers: transcaucus, turkmen, tuva, russianfed, serbia
+		Side: Randoms
+		Description: Random Baku Pact Country\nA random Baku Pact country will be chosen when the game starts.
+		Selectable: false
 	Faction@1:
 		Name: USA
 		InternalName: america
@@ -241,6 +248,84 @@
 		InternalName: psimoon
 		Side: Psi-Corps
 		Description: Lunar Eclipse\nSpecial Infantry: Cosmonaut\nSpecial Ability: Ion Cannon
+		Selectable: false
+	Faction@16:
+		Name: Japan
+		InternalName: japan
+		Side: Allies
+		Description: State of Japan
+		Selectable: false
+	Faction@17:
+		Name: Belarus
+		InternalName: belarus
+		Side: Allies
+		Description: Republic of Belarus
+		Selectable: false
+	Faction@18:
+		Name: Poland
+		InternalName: poland
+		Side: Allies
+		Description: Republic of Poland
+		Selectable: false
+	Faction@19:
+		Name: Ukraine
+		InternalName: ukraine
+		Side: Allies
+		Description: Ukrainian Republic
+		Selectable: false
+	Faction@20:
+		Name: Australia
+		InternalName: aussie
+		Side: Allies
+		Description: Commonwealth of Australia
+		Selectable: false
+	Faction@21:
+		Name: China
+		InternalName: china
+		Side: Allies
+		Description: Republic of China
+		Selectable: false
+	Faction@22:
+		Name: Turkey
+		InternalName: turkey
+		Side: Allies
+		Description: Republic of Turkey
+		Selectable: false
+	Faction@23:
+		Name: Chile
+		InternalName: chile
+		Side: Soviets
+		Description: Republic of Chile
+		Selectable: false
+	Faction@24:
+		Name: Transcaucasia
+		InternalName: transcaucus
+		Side: Baku Pact
+		Description: Transcaucasian Socialist Federative Republic
+		Selectable: false
+	Faction@25:
+		Name: Turkmenistan
+		InternalName: turkmen
+		Side: Baku Pact
+		Description: Republic of Turkmenistan
+		Selectable: false
+	Faction@26:
+		Name: Tuva
+		InternalName: tuva
+		Side: Baku Pact
+		Description: Second Tuvan Republic
+		Selectable: false
+	Faction@27:
+		Name: Russia
+		InternalName: russianfed
+		Side: Baku Pact
+		Description: Russian Federation
+		Selectable: false
+	Faction@28:
+		Name: Serbia & Montenegro
+		InternalName: serbia
+		Side: Baku Pact
+		Description: Socialist Union of Serbia and Montenegro
 		Selectable: false
 	ResourceType@Ore:
 		ResourceType: 1
@@ -330,13 +415,13 @@ World:
 	MPStartUnits@amcv:
 		Class: none
 		ClassName: MCV Only
-		Factions: allies, america, germany, england, france, korea
+		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey
 		BaseActor: amcv
 		BaseActorFacing: 160
 	MPStartUnits@amcvdog:
 		Class: mcvdog
 		ClassName: MCV and Dog
-		Factions: allies, america, germany, england, france, korea
+		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey
 		BaseActor: amcv
 		BaseActorFacing: 160
 		SupportActors: dog
@@ -346,7 +431,7 @@ World:
 	MPStartUnits@lightallies:
 		Class: light
 		ClassName: Light Support
-		Factions: allies, america, germany, england, france, korea
+		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey
 		BaseActor: amcv
 		BaseActorFacing: 160
 		SupportActors: dog,e1,e1
@@ -356,7 +441,7 @@ World:
 	MPStartUnits@mediumallies:
 		Class: medium
 		ClassName: Medium Support
-		Factions: allies, america, germany, england, france, korea
+		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey
 		BaseActor: amcv
 		BaseActorFacing: 160
 		SupportActors: dog,e1,e1,e1,mtnk,engineer
@@ -366,7 +451,7 @@ World:
 	MPStartUnits@heavyallies:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: allies, america, germany, england, france, korea
+		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey
 		BaseActor: amcv
 		BaseActorFacing: 160
 		SupportActors: dog,e1,e1,e1,e1,mtnk,mtnk,fv,engineer
@@ -376,13 +461,13 @@ World:
 	MPStartUnits@smcv:
 		Class: none
 		ClassName: MCV Only
-		Factions: soviets, cuba, libya, iraq, russia, vietnam
+		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 160
 	MPStartUnits@smcvdog:
 		Class: mcvdog
 		ClassName: MCV and Dog
-		Factions: soviets, cuba, libya, iraq, russia, vietnam
+		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 160
 		SupportActors: dog
@@ -392,7 +477,7 @@ World:
 	MPStartUnits@lightsoviets:
 		Class: light
 		ClassName: Light Support
-		Factions: soviets, cuba, libya, iraq, russia, vietnam
+		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 160
 		SupportActors: dog,e2,e2,e2
@@ -402,7 +487,7 @@ World:
 	MPStartUnits@mediumsoviets:
 		Class: medium
 		ClassName: Medium Support
-		Factions: soviets, cuba, libya, iraq, russia, vietnam
+		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 160
 		SupportActors: dog,e2,e2,e2,e2,htnk,engineer
@@ -412,7 +497,7 @@ World:
 	MPStartUnits@heavysoviets:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: soviets, cuba, libya, iraq, russia, vietnam
+		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 160
 		SupportActors: dog,e2,e2,e2,e2,e2,htnk,htnk,htk,engineer
