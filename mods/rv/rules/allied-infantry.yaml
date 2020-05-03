@@ -151,10 +151,10 @@ dog:
 		Radius: 4c0
 	Armament:
 		Weapon: DogJaw
-		PauseOnCondition: chronodisable
-	AttackFrontal:
+	AttackLeap:
 		Voice: Attack
-		FacingTolerance: 2
+		Speed: 105
+		PauseOnCondition: chronodisable || webdisable
 	AttackMove:
 		Voice: Move
 	AutoTarget:
@@ -164,7 +164,10 @@ dog:
 		ValidTargets: Infantry
 	WithInfantryBody:
 		DefaultAttackSequence: jump
-		RequiresCondition: !parachute && !webdisable
+		RequiresCondition: !parachute && !webdisable && !attacking
+	WithFacingSpriteBody:
+		Sequence: shoot
+		RequiresCondition: attacking
 	RenderSprites:
 		Image: adog
 		FactionImages:
@@ -174,11 +177,17 @@ dog:
 			iraq: dog
 			russia: dog
 			vietnam: dog
+			chile: dog
 			psicorps: bdog
 			psinepal: bdog
 			psisouth: bdog
 			psitrans: bdog
 			psimoon: bdog
+			transcaucus: dog
+			serbia: dog
+			turkmen: dog
+			tuva: dog
+			russianfed: dog
 	IgnoresDisguise:
 	DetectCloaked:
 		Range: 5c0
