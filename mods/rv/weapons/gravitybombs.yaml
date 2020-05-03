@@ -187,12 +187,13 @@ EMPulseBEagle:
 	Inherits: EMPulse
 	Range: 6c0
 	-Projectile:
-	Projectile: BulletAS
+	Projectile: Missile
 		Speed: 512
 		Blockable: false
 		Image: empbomb50p
 		Palette: player
 		IsPlayerPalette: true
+		RangeLimit: 20c204
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Falloff: 100, 70, 40, 0
@@ -204,10 +205,11 @@ EMPulseBEagle:
 			Concrete: 75
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
 	Warhead@1Dis: GrantExternalCondition
-		Range: 1c256
+		Range: 1c0
 		Duration: 200
 	Warhead@2Eff: CreateEffect
 		Explosions: empulse50p
+		ValidTargets: Ground, Water, Air
 
 EMPulseBEagleE:
 	Inherits: EMPulseBEagle
