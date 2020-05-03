@@ -31,7 +31,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly bool AudibleThroughFog = false;
 
 		[Desc("Volume the EnterSound and ExitSound played at.")]
-		public readonly float SoundVolume = 1;
+		public readonly float SoundVolume = 1f;
 
 		public override object Create(ActorInitializer init) { return new ChangeOwnerOnGarrisoner(init.Self, this); }
 	}
@@ -57,8 +57,9 @@ namespace OpenRA.Mods.RA2.Traits
 
 			NeedChangeOwner(self, garrisoner, newOwner);
 
-			if (info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition))
-				Game.Sound.Play(SoundType.World, info.EnterSound, self.CenterPosition, info.SoundVolume);
+			var pos = self.CenterPosition;
+			if (info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
+				Game.Sound.Play(SoundType.World, info.EnterSound, pos, info.SoundVolume);
 
 			Game.Sound.PlayNotification(self.World.Map.Rules, garrisoner.Owner, "Speech", info.EnterNotification, newOwner.Faction.InternalName);
 		}
@@ -68,8 +69,9 @@ namespace OpenRA.Mods.RA2.Traits
 			if (garrison.GarrisonerCount > 0)
 				return;
 
-			if (info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition))
-				Game.Sound.Play(SoundType.World, info.ExitSound, self.CenterPosition, info.SoundVolume);
+			var pos = self.CenterPosition;
+			if (info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
+				Game.Sound.Play(SoundType.World, info.ExitSound, pos, info.SoundVolume);
 
 			Game.Sound.PlayNotification(self.World.Map.Rules, garrisoner.Owner, "Speech", info.ExitNotification, garrisoner.Owner.Faction.InternalName);
 			NeedChangeOwner(self, garrisoner, originalOwner);

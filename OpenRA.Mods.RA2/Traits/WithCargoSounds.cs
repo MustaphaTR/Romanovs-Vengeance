@@ -32,7 +32,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly bool AudibleThroughFog = false;
 
 		[Desc("Volume the EnterSound and ExitSound played at.")]
-		public readonly float SoundVolume = 1;
+		public readonly float SoundVolume = 1f;
 
 		public override object Create(ActorInitializer init) { return new WithCargoSounds(init.Self, this); }
 	}
@@ -49,7 +49,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void INotifyPassengerEntered.OnPassengerEntered(Actor self, Actor passenger)
 		{
-			if (Info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition))
+			var pos = self.CenterPosition;
+			if (Info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
 				Game.Sound.Play(SoundType.World, Info.EnterSound, self.CenterPosition, Info.SoundVolume);
 
 			Game.Sound.PlayNotification(self.World.Map.Rules, passenger.Owner, "Speech", Info.EnterNotification, passenger.Owner.Faction.InternalName);
@@ -57,7 +58,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void INotifyPassengerExited.OnPassengerExited(Actor self, Actor passenger)
 		{
-			if (Info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition))
+			var pos = self.CenterPosition;
+			if (Info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
 				Game.Sound.Play(SoundType.World, Info.ExitSound, self.CenterPosition, Info.SoundVolume);
 
 			Game.Sound.PlayNotification(self.World.Map.Rules, passenger.Owner, "Speech", Info.ExitNotification, passenger.Owner.Faction.InternalName);

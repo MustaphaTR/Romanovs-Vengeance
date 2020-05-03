@@ -307,8 +307,12 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!IsValidTerrain(self.Location))
 				return;
 
-			if (!string.IsNullOrEmpty(Info.DeploySound) && (Info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition)))
-				Game.Sound.Play(SoundType.World, Info.DeploySound, self.CenterPosition);
+			if (!string.IsNullOrEmpty(Info.DeploySound))
+			{
+				var pos = self.CenterPosition;
+				if (Info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
+					Game.Sound.Play(SoundType.World, Info.DeploySound, pos);
+			}
 
 			// Revoke condition that is applied while undeployed.
 			if (!init)
@@ -335,8 +339,12 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!init && deployState != DeployState.Deployed)
 				return;
 
-			if (!string.IsNullOrEmpty(Info.UndeploySound) && (Info.AudibleThroughFog || !self.World.FogObscures(self.CenterPosition)))
-				Game.Sound.Play(SoundType.World, Info.UndeploySound, self.CenterPosition);
+			if (!string.IsNullOrEmpty(Info.UndeploySound))
+			{
+				var pos = self.CenterPosition;
+				if (Info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
+					Game.Sound.Play(SoundType.World, Info.UndeploySound, pos);
+			}
 
 			var wsb = wsbs.FirstEnabledTraitOrDefault();
 
