@@ -956,7 +956,7 @@ namisl:
 		FlightVelocity: 1c0
 		TargetCircleRanges:
 			1: 10c0
-	WithNukeLaunchAnimation:
+	WithSupportPowerActivationAnimation:
 		RequiresCondition: !build-incomplete && !chronodisable
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughnuke
@@ -1232,11 +1232,9 @@ nabnkr:
 	WithIdleOverlay@Garrisoned:
 		Sequence: garrisoned
 		RequiresCondition: loaded
-	AttackGarrisoned:
+	AttackOpenTopped:
 		Armaments: garrisoned, garrisoned-secondary
 		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
-		PortYaws: 0, 176, 341, 512, 682, 853
-		PortCones: 88, 88, 88, 88, 88, 88
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	RevealsShroud:

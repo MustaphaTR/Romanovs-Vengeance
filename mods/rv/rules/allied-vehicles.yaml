@@ -1138,12 +1138,10 @@ bfrt:
 		RequiresCondition: (stance-attackanything || assault-move) && loaded-air
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
-	AttackGarrisoned:
+	AttackOpenTopped:
 		Voice: Attack
 		Armaments: opentopped
 		PortOffsets: 768,0,256, 448,-682,256, -448,-682,256, -768,0,256, -448,682,256, 448,682,256
-		PortYaws: 0, 176, 341, 512, 682, 853
-		PortCones: 88, 88, 88, 88, 88, 88
 		PauseOnCondition: chronodisable || emp
 		RequiresCondition: loaded || loaded-air
 	RenderSprites:

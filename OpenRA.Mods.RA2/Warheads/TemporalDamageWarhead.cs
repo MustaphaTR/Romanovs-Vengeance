@@ -10,6 +10,7 @@
 #endregion
 
 using System.Collections.Generic;
+using OpenRA.GameRules;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Mods.Common.Warheads;
@@ -21,13 +22,13 @@ namespace OpenRA.Mods.RA2.Warheads
     [Desc("Deals temporal damage to the actors with AffectedByTemporal trait.")]
     public class TemporalWarhead : TargetDamageWarhead
     {
-        protected override void InflictDamage(Actor victim, Actor firedBy, HitShapeInfo hitshapeInfo, IEnumerable<int> damageModifiers)
-        {
+        protected override void InflictDamage(Actor victim, Actor firedBy, HitShape shape, WarheadArgs args)
+		{
             var affectedByTemportal = victim.TraitOrDefault<AffectedByTemporal>();
             if (affectedByTemportal == null)
                 return;
 
-            var damage = Util.ApplyPercentageModifiers(Damage, damageModifiers.Append(DamageVersus(victim, hitshapeInfo)));
+            var damage = Util.ApplyPercentageModifiers(Damage, args.DamageModifiers.Append(DamageVersus(victim, shape, args)));
             affectedByTemportal.AddDamage(damage, firedBy);
         }
     }
