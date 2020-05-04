@@ -208,6 +208,8 @@
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate
 		Proxy: barracks.infiltrated
+		InfiltratedNotification: TechnologyStolen
+		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 
@@ -471,6 +473,8 @@
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate
 		Proxy: warfactory.infiltrated
+		InfiltratedNotification: TechnologyStolen
+		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 
@@ -703,6 +707,12 @@
 	Power:
 		Amount: -200
 	SupportPowerChargeBar:
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate
+		InfiltratedNotification: BuildingInfiltrated
+		InfiltrationNotification: BuildingInfiltrated
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@swlimit:
 		RequiresPrerequisites: global-swlimit
@@ -738,6 +748,12 @@
 	Power:
 		Amount: -200
 	SupportPowerChargeBar:
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate
+		InfiltratedNotification: BuildingInfiltrated
+		InfiltrationNotification: BuildingInfiltrated
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@swlimit:
 		RequiresPrerequisites: global-swlimit
