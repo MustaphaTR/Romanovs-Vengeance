@@ -139,6 +139,8 @@ gacnst:
 		RequiresCondition: !build-incomplete && canada
 	IsometricSelectable:
 		DecorationHeight: 60
+	Voiced:
+		VoiceSet: AlliedConstructionYardVoice
 
 gapowr:
 	Inherits: ^BaseBuilding
@@ -226,6 +228,8 @@ gapowr:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	IsometricSelectable:
 		DecorationHeight: 60
+	Voiced:
+		VoiceSet: PowerPlantVoice
 
 gapowrup:
 	Inherits: ^BuildingPlug
@@ -642,6 +646,8 @@ gaairc:
 		Actors: gaairb
 	IsometricSelectable:
 		DecorationHeight: 105
+	Voiced:
+		VoiceSet: AirfieldVoice
 
 gaweap:
 	Inherits: ^WarFactory
@@ -763,6 +769,8 @@ gatech:
 		Actors: gatecb
 	IsometricSelectable:
 		DecorationHeight: 180
+	Voiced:
+		VoiceSet: TechCenterVoice
 
 gawall:
 	Inherits: ^Wall
@@ -873,7 +881,6 @@ nasam:
 		PreviewFacing: 224
 		Offset: 550,0,0
 	AttackTurreted:
-		Voice: Attack
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Armament:
@@ -901,6 +908,8 @@ nasam:
 		Range: 5c0
 		RequiresCondition: !disabled
 	RenderDetectionCircle:
+	Voiced:
+		VoiceSet: PatriotMissileVoice
 
 gtgcan:
 	Inherits: ^VoxelLighting
@@ -1006,6 +1015,8 @@ gaorep:
 		Amount: -200
 	IsometricSelectable:
 		DecorationHeight: 60
+	Voiced:
+		VoiceSet: OrePurifierVoice
 
 gaspysat:
 	Inherits: ^BaseBuilding
@@ -1077,6 +1088,8 @@ gaspysat:
 		OrderName: SatelliteScanPowerInfoOrder
 	IsometricSelectable:
 		DecorationHeight: 75
+	Voiced:
+		VoiceSet: SpySatelliteVoice
 
 gagap:
 	Inherits: ^SupportBuilding
@@ -1445,6 +1458,8 @@ gaapad:
 		SpawnOffset: 0,512,0
 	IsometricSelectable:
 		DecorationHeight: 30
+	Voiced:
+		VoiceSet: AirfieldVoice
 
 gagatea:
 	Inherits: ^Gate_A

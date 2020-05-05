@@ -56,6 +56,7 @@
 		IntoActor: mcv
 		Offset: 1,1
 		Facing: 96
+		Voice: Move
 		DeployCursor: undeploy
 		PauseOnCondition: chronodisable || controlled
 		RequiresCondition: factundeploy && !build-incomplete
@@ -97,6 +98,8 @@
 		Condition: invisibility
 	ExternalCondition@INVISIBILITY:
 		Condition: invisibility
+	Voiced:
+		VoiceSet: ConstructionYardVoice
 
 ^ExpansionNode:
 	Inherits: ^BaseBuilding
@@ -126,6 +129,7 @@
 	# Transforms:
 	#	IntoActor: expn
 	#	Facing: 96
+	#	Voice: Move
 	#	DeployCursor: undeploy
 	#	PauseOnCondition: chronodisable || controlled
 	#	RequiresCondition: factundeploy && !build-incomplete
@@ -212,6 +216,8 @@
 		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Voiced:
+		VoiceSet: BarracksVoice
 
 ^Refinery:
 	Inherits: ^BaseBuilding
@@ -304,6 +310,8 @@
 		Position: BottomLeft
 		RequiresSelection: true
 		PipCount: 25
+	Voiced:
+		VoiceSet: RefineryVoice
 
 ^RefineryB:
 	Inherits: ^Refinery
@@ -477,6 +485,8 @@
 		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Voiced:
+		VoiceSet: WarFactoryVoice
 
 ^Shipyard:
 	Inherits: ^BaseBuilding
@@ -681,6 +691,8 @@
 		RequiresCondition: !build-incomplete && !chronodisable
 	Power:
 		Amount: -35
+	Voiced:
+		VoiceSet: ServiceDepotVoice
 
 ^PrimarySuperWeapon:
 	Inherits: ^BaseBuilding
