@@ -53,6 +53,7 @@ Ranks =
 	cuba = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	libya = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	chile = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
+	mexico = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	psicorps = { "Consultant", "Adept", "Overseer", "Elite", "Mastermind" },
 	psinepal = { "Consultant", "Adept", "Overseer", "Elite", "Mastermind" },
 	psitrans = { "Consultant", "Adept", "Overseer", "Elite", "Mastermind" },
