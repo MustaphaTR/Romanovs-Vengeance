@@ -129,9 +129,9 @@ gmin:
 		PlayerExperience: 50
 		Voice: Move
 	Tooltip:
-		Name: Stealth Miner
+		Name: Lazarus Miner
 	Tooltip@NoRow:
-		Name: Stealth Miner
+		Name: Lazarus Miner
 	Selectable:
 		Priority: 7
 		Bounds: 64, 52, 0, -6
@@ -213,10 +213,10 @@ gmin:
 ltnk:
 	Inherits: ^MainBattleTank
 	Valued:
-		Cost: 650
+		Cost: 600
 	DeliversCash:
-		Payload: 325
-		PlayerExperience: 33
+		Payload: 300
+		PlayerExperience: 30
 		Voice: Move
 	Tooltip:
 		Name: Lasher Light Tank
@@ -228,7 +228,7 @@ ltnk:
 	Mobile:
 		Speed: 120
 	Health:
-		HP: 240
+		HP: 200
 	Armament@primary:
 		Weapon: ATGUN
 		Recoil: 87
@@ -686,7 +686,7 @@ mlyr:
 		BuildPaletteOrder: 70
 		Description: Lays mines to destroy unwary enemy units.\n\nCan detect cloaked units.\n  Unarmed
 	Mobile:
-		Speed: 95
+		Speed: 90
 		TurnSpeed: 5
 		Locomotor: heavytracked
 	Health:
@@ -746,9 +746,9 @@ kamaz:
 		PlayerExperience: 45
 		Voice: Move
 	Tooltip:
-		Name: Poison Transport
+		Name: Poison Carrier
 	Tooltip@NoRow:
-		Name: Poison Transport
+		Name: Poison Carrier
 	Selectable:
 		Bounds: 50, 40, 0, -6
 	Buildable:
@@ -762,7 +762,7 @@ kamaz:
 		Locomotor: heavytracked
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
-		HP: 500
+		HP: 600
 	Armor:
 		Type: Heavy
 	RevealsShroud:
@@ -864,7 +864,7 @@ yhtnk:
 	Cloak:
 		RequiresCondition: !chronodisable && !emp
 		InitialDelay: 25
-		CloakDelay: 100
+		CloakDelay: 110
 		IsPlayerPalette: true
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
