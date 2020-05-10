@@ -291,9 +291,9 @@ orca:
 		Name: Harrier
 	Buildable:
 		Queue: Aircraft.Allies, Aircraft.Korea
-		Prerequisites: ~techlevel.3
+		Prerequisites: !prerequisite.enoughair, ~techlevel.3
 		BuildPaletteOrder: 10
-		Description: Fast assault fighter\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Aircraft:
@@ -342,7 +342,7 @@ orca:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	Rearmable:
-		RearmActors: gaairc, gaairb, gaapad
+		RearmActors: gaairc, gaairb, gaapad, gadock
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
 	Targetable@CHAOS:
@@ -373,6 +373,8 @@ orca:
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	GrantExternalConditionToOwner:
+		Condition: padaircraft
 	HitShape:
 	ProducibleWithLevel:
 		Prerequisites: vetair
@@ -446,8 +448,8 @@ beag:
 	Buildable:
 		Queue: Aircraft.Korea
 		BuildPaletteOrder: 30
-		Prerequisites: ~techlevel.3
-		Description: Aircraft armed with EMP bomb\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+		Prerequisites: !prerequisite.enoughair, ~techlevel.3
+		Description: Aircraft armed with EMP bomb.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 	SpawnActorOnDeath:
 		Actor: beaghusk
 	SpawnActorOnDeath@VTOL:
@@ -1349,6 +1351,7 @@ bpln:
 	Targetable@Airborne:
 	-ProducibleWithLevel:
 	-ExternalCondition@PRODUCED:
+	-GrantExternalConditionToOwner:
 	VoiceAnnouncement:
 		Voice: Attack
 		-RequiresCondition:
@@ -1686,8 +1689,8 @@ fortress:
 	Buildable:
 		Queue: Aircraft.Allies, Aircraft.Korea
 		BuildPaletteOrder: 40
-		Description: Carpet bomber plane.\nUndetectable by radar.\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft
-		Prerequisites: gatech, ~techlevel.4
+		Description: Carpet bomber plane.\nUndetectable by radar.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft
+		Prerequisites: gatech, !prerequisite.enoughair, ~techlevel.4
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Aircraft:
@@ -1737,7 +1740,7 @@ fortress:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	Rearmable:
-		RearmActors: gaairc, gaairb, gaapad
+		RearmActors: gaairc, gaairb, gaapad, gadock
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
 	Targetable@CHAOS:
@@ -1767,6 +1770,8 @@ fortress:
 	Explodes:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	GrantExternalConditionToOwner:
+		Condition: padaircraft
 	HitShape:
 	ProducibleWithLevel:
 		Prerequisites: vetair

@@ -149,6 +149,13 @@ Player:
 	ProvidesPrerequisite@naindp-5:
 		Prerequisite: prerequisite.five_naindp
 		RequiresCondition: naindp > 4
+	ExternalCondition@PadAircraft:
+		Condition: padaircraft
+	ExternalCondition@AirDock:
+		Condition: airdock
+	ProvidesPrerequisite@enoughair:
+		Prerequisite: prerequisite.enoughair
+		RequiresCondition: padaircraft >= airdock
 	VeteranProductionIconOverlay:
 		Image: cameo-chevron
 		Sequence: idle

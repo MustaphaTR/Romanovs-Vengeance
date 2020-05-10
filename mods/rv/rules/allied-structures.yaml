@@ -393,7 +393,7 @@ gaairc:
 	ProvidesPrerequisite@gaairc:
 		Prerequisite: gaairc
 	Building:
-		Footprint: xxx xxx
+		Footprint: x=x x==
 		Dimensions: 3,2
 	Health:
 		HP: 1000
@@ -441,6 +441,8 @@ gaairc:
 	Exit@4:
 		Facing: 224
 		SpawnOffset: 512,-512,0
+	GrantExternalConditionToOwner:
+		Condition: airdock
 	GrantExternalConditionToProduced:
 		Condition: produced
 	Production:
@@ -642,6 +644,9 @@ gaairc:
 		Path: 1,2
 		Palette: mouse
 		IsPlayerPalette: false
+	LaysMinefield:
+		Mines: gadock
+		Locations: 1,0, 1,1, 2,1
 	PlaceBuildingVariants:
 		Actors: gaairb
 	IsometricSelectable:
@@ -1420,8 +1425,10 @@ gaapad:
 	Tooltip@NoRow:
 		Name: Airpad
 	ProvidesPrerequisite@default:
+	GrantExternalConditionToOwner:
+		Condition: airdock
 	Building:
-		Footprint: xx xx
+		Footprint: x= x=
 		Dimensions: 2,2
 	Health:
 		HP: 350
@@ -1456,10 +1463,28 @@ gaapad:
 	Exit@3:
 		Facing: 224
 		SpawnOffset: 0,512,0
+	LaysMinefield:
+		Mines: gadock
+		Locations: 1,0, 1,1
 	IsometricSelectable:
 		DecorationHeight: 30
 	Voiced:
 		VoiceSet: AirfieldVoice
+
+gadock:
+	Interactable:
+	AlwaysVisible:
+	ConditionManager:
+	Reservable:
+	GrantExternalConditionToOwner:
+		Condition: airdock
+	GrantCondition:
+		Condition: dontmove
+	Mobile:
+		Speed: 1
+		Locomotor: wheeled
+		PauseOnCondition: dontmove
+	RejectsOrders:
 
 gagatea:
 	Inherits: ^Gate_A
@@ -1704,7 +1729,7 @@ gaairb:
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
-		Footprint: xx xx xx
+		Footprint: xx == x=
 		Dimensions: 2,3
 	RallyPoint:
 		Path: 2,1
@@ -1716,6 +1741,8 @@ gaairb:
 		SpawnOffset: 512,512,0
 	Exit@4:
 		SpawnOffset: -512,-512,0
+	LaysMinefield:
+		Locations: 0,1, 1,1, 1,2
 
 gatecb:
 	Inherits: gatech
