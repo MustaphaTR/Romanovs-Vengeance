@@ -256,7 +256,7 @@ htk:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 120
-		TurnSpeed: 5
+		TurnSpeed: 10
 		Locomotor: tracked
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
@@ -305,7 +305,7 @@ htk:
 		RequiresCondition: rank-elite
 	WithMuzzleOverlay:
 	Turreted:
-		TurnSpeed: 15
+		TurnSpeed: 10
 		Offset: -280,-3,0
 	RenderSprites:
 	RenderVoxels:
@@ -405,7 +405,7 @@ apoc:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 60
-		TurnSpeed: 4
+		TurnSpeed: 5
 		Locomotor: omnicrusher
 	-Crushable:
 	SelfHealing:
@@ -426,7 +426,7 @@ apoc:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 3
+		TurnSpeed: 4
 	Armament@primary:
 		Weapon: 120mmx
 		Recoil: 87
@@ -526,6 +526,7 @@ ttnk:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 90
+		TurnSpeed: 8
 		Locomotor: heavytracked
 	Health:
 		HP: 300
@@ -539,7 +540,7 @@ ttnk:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 7
 	Armament@primary:
 		Weapon: TankBolt
 		LocalOffset: 280,196,640, 280,-196,640
@@ -600,7 +601,7 @@ dtruck:
 		Type: Light
 	Mobile:
 		Speed: 75
-		TurnSpeed: 5
+		TurnSpeed: 8
 		Locomotor: heavytracked
 	RevealsShroud:
 		Range: 6c0
@@ -669,7 +670,7 @@ v3:
 		Type: Light
 	Mobile:
 		Speed: 75
-		TurnSpeed: 5
+		TurnSpeed: 8
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -769,7 +770,7 @@ tric:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 150
-		TurnSpeed: 15
+		TurnSpeed: 20
 	Health:
 		HP: 175
 	Armor:
@@ -847,7 +848,7 @@ deva:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 90
-		TurnSpeed: 7
+		TurnSpeed: 8
 		Locomotor: omnicrusher
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured && !overload
 	-Crushable:
@@ -871,7 +872,7 @@ deva:
 	Targetable:
 		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 8
 	Armament@primary:
 		Weapon: 120mmxRad
 		LocalOffset: 896,100,768, 896,-100,768
@@ -972,7 +973,7 @@ ftnk:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 105
-		TurnSpeed: 6
+		TurnSpeed: 8
 		Locomotor: heavytracked
 	Health:
 		HP: 300
@@ -986,7 +987,7 @@ ftnk:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 7
 	Armament@primary:
 		Weapon: TankFlamer
 		LocalOffset: 768,384,640, 768,-384,640

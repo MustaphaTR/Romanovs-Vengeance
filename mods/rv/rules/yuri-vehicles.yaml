@@ -306,7 +306,7 @@ ytnk:
 		Description: Anti-infantry and anti-air vehicle.\nFires faster as it continues to fire.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicle
 	Mobile:
 		Speed: 105
-		TurnSpeed: 5
+		TurnSpeed: 10
 	Health:
 		HP: 250
 	Armor:
@@ -319,7 +319,7 @@ ytnk:
 	RevealOnDeath:
 		Radius: 4c0
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 10
 	Armament@ag-0:
 		Weapon: AGGatling
 		LocalOffset: 544,100,1024, 544,-100,1024
@@ -436,7 +436,7 @@ caos:
 		Description: Drone capable of releasing gas that causes enemy units to fire random units.\nUnits affected by the gas deal more damage.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nCan be deployed to release gas continuously.
 	Mobile:
 		Speed: 135
-		TurnSpeed: 10
+		TurnSpeed: 15
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned
 	Health:
 		HP: 200
@@ -513,7 +513,7 @@ tele:
 		Description: Long range magnetic field generator.\nFreezes vehicles and damages structures.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
 	Mobile:
 		Speed: 75
-		TurnSpeed: 5
+		TurnSpeed: 8
 	Health:
 		HP: 150
 	Armor:
@@ -526,7 +526,7 @@ tele:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 7
 		Offset: -640,0,0
 	Armament@primary:
 		Weapon: MagneShake
@@ -687,7 +687,7 @@ mlyr:
 		Description: Lays mines to destroy unwary enemy units.\n\nCan detect cloaked units.\n  Unarmed
 	Mobile:
 		Speed: 90
-		TurnSpeed: 5
+		TurnSpeed: 8
 		Locomotor: heavytracked
 	Health:
 		HP: 400
@@ -758,7 +758,7 @@ kamaz:
 		Description: Armored infantry transport vehicle armed with a toxin sprayer.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Aircraft
 	Mobile:
 		Speed: 75
-		TurnSpeed: 4
+		TurnSpeed: 5
 		Locomotor: heavytracked
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
@@ -773,7 +773,7 @@ kamaz:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 4
+		TurnSpeed: 7
 		Offset: 512,0,1152
 	Armament@primary:
 		Weapon: ToxinSprayerTruck
@@ -929,7 +929,7 @@ grtk:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 120
-		TurnSpeed: 3
+		TurnSpeed: 5
 		Locomotor: heavytracked
 	SelfHealing:
 		PercentageStep: 1
