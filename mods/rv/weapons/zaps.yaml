@@ -70,7 +70,7 @@ UCElectricBoltCommandoE:
 AssaultBolt:
 	ReloadDelay: 70
 	Range: 2c0
-	Report: iteschaa.wav
+	# Report: iteschaa.wav # Move this back after adding Volume to WeaponInfo
 	ValidTargets: TeslaBoost
 	Projectile: TeslaZap
 		Image: litningupg
@@ -80,6 +80,9 @@ AssaultBolt:
 		Condition: charged
 		ValidStances: Ally
 		ValidTargets: TeslaBoost
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: iteschaa.wav
+		Volume: 0.15
 
 CoilBolt:
 	Inherits: ^TeslaZap
