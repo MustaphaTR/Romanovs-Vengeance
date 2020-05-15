@@ -161,10 +161,10 @@ nahand:
 		SpawnOffset: -724,0,0
 		ExitCell: -1,2
 	Production:
-		Produces: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Produces: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku
 	ProductionQueue:
 		Type: Infantry.Soviets
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, libya, russia, vietnam, chile, mexico, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, libya, russia, vietnam, chile, mexico, psicorps, psinepal, psisouth, psitrans, psimoon
 	ProductionQueue@Cuba:
 		Type: Infantry.Cuba
 		Factions: cuba
@@ -187,12 +187,25 @@ nahand:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@Baku:
+		Type: Infantry.Baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Soviets
 	ProductionBar@Cuba:
 		ProductionType: Infantry.Cuba
 	ProductionBar@Iraq:
 		ProductionType: Infantry.Iraq
+	ProductionBar@Baku:
+		ProductionType: Infantry.Baku
 	RallyPoint:
 		Path: 3,3
 	ProvidesPrerequisite@nahand:
@@ -246,6 +259,9 @@ naradr:
 	ProvidesPrerequisite@libya:
 		Prerequisite: radar.libya
 		Factions: libya
+	ProvidesPrerequisite@baku:
+		Prerequisite: radar.baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -379,6 +395,35 @@ naradr:
 		DisplayBeacon: True
 		BeaconPosters:
 			1: mineicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	AirstrikePower@leafletdrop:
+		OrderName: BakuPactLeafletDrop
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: radar.baku
+		Icons:
+			1: leaflet
+		ChargeInterval: 3750
+		Descriptions:
+			1: Leaflet Drop
+		LongDescs:
+			1: A Cargo Plane drops leaflets\nanywhere on the map.\nLeaflets slow enemy infantry\nand vehicle movement and\nfire speed.
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		UnitTypes:
+			1: pdplane.leaflet.baku
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: leaficon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		UseDirectionalTarget: True

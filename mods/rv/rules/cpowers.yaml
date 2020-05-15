@@ -78,6 +78,22 @@ commanders_power.minelayer:
 	RenderSprites:
 		Image: mlyr
 
+commanders_power.support_infantry:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Support Infantry
+	Buildable:
+		Queue: Power.Baku
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Enables training of Medic and Mechanic from Barracks.
+	ProvidesPrerequisite@medic:
+		Prerequisite: prerequisite.medic
+	ProvidesPrerequisite@mechanic:
+		Prerequisite: prerequisite.mechanic
+	RenderSprites:
+		Image: mech
+
 commanders_power.airpad:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -97,7 +113,7 @@ commanders_power.tesla_fence:
 	Tooltip:
 		Name: Tesla Fence
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.has_points
 		Description: Enables construction of Tesla Fence from Construction Yard.
@@ -149,7 +165,7 @@ commanders_power.inf_training:
 	Tooltip:
 		Name: Infantry Training
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
 		Description: Makes Conscripts and Flak Troopers train as veteran.
@@ -173,7 +189,7 @@ commanders_power.intel_drop:
 	Tooltip:
 		Name: Intel Drop
 	Buildable:
-		Queue: Power.Allies
+		Queue: Power.Allies, Power.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Intel Drop power.
@@ -217,7 +233,7 @@ commanders_power.spy_plane:
 	Tooltip:
 		Name: Spy Plane
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points
 		Description: Enables Spy Plane power.
@@ -237,7 +253,7 @@ commanders_power.psychic_reveal:
 commanders_power.sonar_pulse:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Scout Drone
+		Name: Sonar Pulse
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 60
@@ -249,7 +265,7 @@ commanders_power.naval_mines:
 	Tooltip:
 		Name: Naval Mines
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 60
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Naval Mines power.
@@ -269,7 +285,7 @@ commanders_power.emergency_repair.1:
 	Tooltip:
 		Name: Emergency Repair - Level 1
 	Buildable:
-		Queue: Power.Allies, Power.Soviets, Power.Yuri
+		Queue: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Emergency Repair.
@@ -279,7 +295,7 @@ commanders_power.emergency_repair.2:
 	Tooltip:
 		Name: Emergency Repair - Level 2
 	Buildable:
-		Queue: Power.Allies, Power.Soviets, Power.Yuri
+		Queue: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.1
 		Description: Upgrades Emergency Repair power to Level 2.
@@ -289,7 +305,7 @@ commanders_power.emergency_repair.3:
 	Tooltip:
 		Name: Emergency Repair - Level 3
 	Buildable:
-		Queue: Power.Allies, Power.Soviets, Power.Yuri
+		Queue: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		BuildPaletteOrder: 90
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars, commanders_power.emergency_repair.2
 		Description: Upgrades Emergency Repair power to Level 3.
@@ -329,7 +345,7 @@ commanders_power.parabombs.1:
 	Tooltip:
 		Name: Parabombs - Level 1
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Parabombs power.
@@ -339,7 +355,7 @@ commanders_power.parabombs.2:
 	Tooltip:
 		Name: Parabombs - Level 2
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.1
 		Description: Upgrades Parabombs power to Level 2.
@@ -349,7 +365,7 @@ commanders_power.parabombs.3:
 	Tooltip:
 		Name: Parabombs - Level 3
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars, commanders_power.parabombs.2
 		Description: Upgrades Parabombs power to Level 3.
@@ -419,7 +435,7 @@ commanders_power.propaganda.1:
 	Tooltip:
 		Name: Propaganda - Level 1
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 130
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Propaganda power.
@@ -429,7 +445,7 @@ commanders_power.propaganda.2:
 	Tooltip:
 		Name: Propaganda - Level 2
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 140
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.propaganda.1
 		Description: Upgrades Propaganda power to Level 2.
@@ -439,7 +455,7 @@ commanders_power.propaganda.3:
 	Tooltip:
 		Name: Propaganda - Level 3
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 150
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.propaganda.2
 		Description: Upgrades Propaganda power to Level 3.
@@ -492,7 +508,7 @@ commanders_power.v3_storm:
 	Tooltip:
 		Name: V3 Storm
 	Buildable:
-		Queue: Power.Soviets
+		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables V3 Storm power.
