@@ -996,8 +996,22 @@ gaorep:
 		Cost: 2000
 	Tooltip:
 		Name: Ore Purifier
+		RequiresCondition: !megawealth && showownername
 	Tooltip@NoRow:
 		Name: Ore Purifier
+		RequiresCondition: !megawealth && !showownername
+	Tooltip@Megawealth:
+		Name: Oil Purifier
+		GenericName: Structure
+		RequiresCondition: megawealth && showownername
+	Tooltip@Megawealth-NoRow:
+		Name: Oil Purifier
+		GenericName: Structure
+		ShowOwnerRow: false
+		RequiresCondition: megawealth && !showownername
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -1018,6 +1032,7 @@ gaorep:
 		Modifier: 25
 	Power:
 		Amount: -200
+	ProvidesPrerequisite@default:
 	IsometricSelectable:
 		DecorationHeight: 60
 	Voiced:

@@ -44,8 +44,14 @@ caoild:
 		RequiresCondition: enabled
 	GpsDotAS:
 		Sequence: Oil
+	CashTricklerMultiplier:
+		Modifier: 125
+		RequiresCondition: orepurifier && megawealth
 	IsometricSelectable:
 		DecorationHeight: 75
+	GrantConditionOnPrerequisite@orepurifier:
+		Condition: orepurifier
+		Prerequisites: gaorep
 	GrantConditionOnPrerequisite@megawealth:
 		Condition: megawealth
 		Prerequisites: global-megawealth
