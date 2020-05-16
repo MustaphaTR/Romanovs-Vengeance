@@ -8,6 +8,13 @@ mpspawn:
 	QuantizeFacingsFromSequence:
 	MapEditorData:
 		Categories: System
+	ConditionManager:
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	FreeActor:
+		Actor: oreclearer
+		RequiresCondition: megawealth
 
 waypoint:
 	Immobile:
@@ -19,6 +26,12 @@ waypoint:
 	QuantizeFacingsFromSequence:
 	MapEditorData:
 		Categories: System
+
+oreclearer:
+	Immobile:
+		OccupiesSpace: false
+	AlwaysVisible:
+	ClearsResources:
 
 ^ambient:
 	Inherits: waypoint

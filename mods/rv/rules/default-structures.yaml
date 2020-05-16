@@ -216,6 +216,15 @@
 		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	ProvidesPrerequisite@mwgenref:
+		Prerequisite: refinery
+		RequiresCondition: megawealth
+	ProvidesPrerequisite@mwfacref:
+		Prerequisite: garefn
+		RequiresCondition: megawealth
 	Voiced:
 		VoiceSet: BarracksVoice
 
@@ -227,7 +236,7 @@
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 30
-		Prerequisites: power, ~techlevel.1
+		Prerequisites: power, ~!global-megawealth, ~techlevel.1
 		Description: Processes ore into credits.\nCan be rotated.
 	Valued:
 		Cost: 1400
@@ -366,7 +375,7 @@
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 30
-		Prerequisites: refinery, ~techlevel.1
+		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
 		Description: Stores excess Ore.
 	Valued:
 		Cost: 150

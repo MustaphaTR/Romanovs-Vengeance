@@ -2260,6 +2260,7 @@
 
 ^OreDrill:
 	Inherits@1: ^SpriteActor
+	ConditionManager:
 	Tooltip:
 		Name: Ore Drill
 	WithSpriteBody:
@@ -2285,6 +2286,12 @@
 	MapEditorData:
 		Categories: Resource spawn
 	Interactable:
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	KillsSelf:
+		RemoveInstead: true
+		RequiresCondition: megawealth
 
 ^Tree:
 	Inherits@1: ^ExistsInWorld

@@ -46,6 +46,63 @@ caoild:
 		Sequence: Oil
 	IsometricSelectable:
 		DecorationHeight: 75
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	Targetable:
+		RequiresCondition: !megawealth
+	DamageMultiplier@megawealth:
+		RequiresCondition: megawealth
+		Modifier: 0
+
+caoild.mwspawner:
+	Inherits@shape: ^2x2Shape
+	Interactable:
+	EditorOnlyTooltip:
+		Name: Megawealth Only Oil Derrick
+	FrozenUnderFog:
+	RenderSpritesEditorOnly:
+		Image: caoild
+		PlayerPalette: player50alpha
+	WithSpriteBody:
+	WithIdleOverlay@pump:
+		Sequence: idle-pump
+		PauseOnCondition: !enabled
+	WithIdleOverlay@flag:
+		Sequence: flag
+		Offset: 1000,0,0
+	BodyOrientation:
+		QuantizedFacings: 1
+	ConditionManager:
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
+	KillsSelf@spawn:
+		RequiresCondition: megawealth
+	KillsSelf@remove:
+		RemoveInstead: true
+		RequiresCondition: !megawealth
+	SpawnActorOnDeath:
+		Actor: caoild
+	Health:
+		HP: 100000
+	Building:
+		Footprint: __ __
+		Dimensions: 2, 2
+	MapEditorData:
+		Categories: Tech building
+
+caoild.nonmwspawner:
+	Inherits: caoild.mwspawner
+	EditorOnlyTooltip:
+		Name: Non-Megawealth Only Oil Derrick
+	RenderSpritesEditorOnly:
+		Image: caoild
+		PlayerPalette: player50alpha
+	KillsSelf@spawn:
+		RequiresCondition: !megawealth
+	KillsSelf@remove:
+		RequiresCondition: megawealth
 
 caairp:
 	Inherits: ^TechBuilding
