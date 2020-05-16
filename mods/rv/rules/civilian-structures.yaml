@@ -1314,6 +1314,22 @@ cafarm06.rubble:
 	RenderSprites:
 		Image: cafarm06
 
+cadmfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Flag
+	Tooltip@NoRow:
+		Name: Flag
+	GrantConditionOnPrerequisite@domination:
+		Condition: domination
+		Prerequisites: global-domination
+	-Targetable:
+	DamageMultiplier@domination:
+		Modifier: 0
+	KillsSelf:
+		RemoveInstead: true
+		RequiresCondition: !domination
+
 causfgl:
 	Inherits: ^Flag
 	Tooltip:

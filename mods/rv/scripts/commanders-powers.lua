@@ -1,11 +1,14 @@
 --[[
-   Copyright 2007-2018 The OpenRA Developers (see AUTHORS)
+   Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
    This file is part of OpenRA, which is free software. It is made
    available to you under the terms of the GNU General Public License
    as published by the Free Software Foundation, either version 3 of
    the License, or (at your option) any later version. For more
    information, see COPYING.
 ]]
+
+CommandersPowerText = ""
+DominationText = ""
 
 Seconds = 0
 CPModifier = Map.LobbyOption("cpmodifier")
@@ -81,14 +84,16 @@ TickGeneralsPowers = function()
 		if player.IsLocalPlayer then
 			localPlayerIsNull = false;
 			if Levels[player.InternalName] < 4 then
-				UserInterface.SetMissionText("Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "", TextColors[player.InternalName])
+				CommandersPowerText = "Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "\n\n"
 			else 
-				UserInterface.SetMissionText("Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "", TextColors[player.InternalName])
+				CommandersPowerText = "Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\n\n"
 			end
+			UserInterface.SetMissionText(CommandersPowerText .. DominationText, TextColors[player.InternalName])
 		end
 
 		if localPlayerIsNull then
-			UserInterface.SetMissionText("", player.Color)
+			CommandersPowerText = ""
+			UserInterface.SetMissionText(CommandersPowerText .. DominationText)
 		end
 
 		if Points[player.InternalName] > 0 and not PointActorExists[player.InternalName] then
@@ -165,6 +170,8 @@ Tick = function()
 	if GPModifier ~= "disabled" then
 		TickGeneralsPowers()
 	end
+	
+	TickDomination()
 end
 
 WorldLoaded = function()
@@ -178,4 +185,6 @@ WorldLoaded = function()
 
 		Second()
 	end
+	
+	WorldLoadedDomination()
 end

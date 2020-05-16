@@ -49,7 +49,7 @@ Player:
 	ResourceStorageWarning:
 		Notification: InsufficientSilos
 	DeveloperMode:
-		CheckboxDisplayOrder: 11
+		CheckboxDisplayOrder: 14
 	GpsWatcher:
 	Shroud:
 		ExploredMapCheckboxEnabled: True
@@ -82,6 +82,13 @@ Player:
 		Enabled: False
 		DisplayOrder: 10
 		Prerequisites: global-techbuildarea
+	LobbyPrerequisiteCheckbox@domination:
+		ID: domination
+		Label: Domination
+		Description: Control the flags on the map to win
+		Enabled: False
+		DisplayOrder: 11
+		Prerequisites: global-domination
 	LobbyPrerequisiteCheckbox@INSTANTCAPTURE:
 		ID: instantcapture
 		Label: Instant Capture
@@ -94,7 +101,7 @@ Player:
 		Label: Megawealth
 		Description: Removes all the Ore on the map and makes the economy dependent on Oil Derricks
 		Enabled: False
-		DisplayOrder: 14
+		DisplayOrder: 13
 		Prerequisites: global-megawealth
 	LobbyPrerequisiteCheckbox@SHOWOWNERNAME:
 		ID: showownername
@@ -102,7 +109,7 @@ Player:
 		Description: Show name and flag of the owner of a unit on its tooltip
 		Enabled: True
 		Visible: False # Too lazy to remove the setup for this.
-		DisplayOrder: 13
+		DisplayOrder: 14
 		Prerequisites: global-showownername
 	ProvidesRadar:
 		RequiresCondition: freeminimap
