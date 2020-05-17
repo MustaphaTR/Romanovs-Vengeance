@@ -507,6 +507,15 @@ fv:
 	ReloadAmmoPool:
 		Delay: 50
 		Count: 2
+	AmmoPool@elite:
+		Ammo: 4
+		Name: elite
+		Armaments: elite
+		AmmoCondition: ammo-elite
+	ReloadAmmoPool@elite:
+		Delay: 50
+		Count: 4
+		AmmoPool: elite
 	Cargo:
 		Types: Infantry, Garrisoner
 		MaxWeight: 1
@@ -560,7 +569,8 @@ fv:
 	Armament@elite:
 		Weapon: HoverMissileE
 		LocalOffset: 128,-128,1024, 128,128,1024
-		PauseOnCondition: !ammo
+		Name: elite
+		PauseOnCondition: !ammo-elite
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-crkt
 	Armament@primary-aa:
 		Weapon: HoverMissileAA
@@ -570,7 +580,8 @@ fv:
 	Armament@elite-aa:
 		Weapon: HoverMissileAAE
 		LocalOffset: 128,-128,1024, 128,128,1024
-		PauseOnCondition: !ammo
+		Name: elite
+		PauseOnCondition: !ammo-elite
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-crkt
 	Armament@mg:
 		Weapon: CRM60
@@ -729,7 +740,7 @@ fv:
 		RevokeOnNewTarget: false
 	AttackTurreted:
 		Voice: Attack
-		Armaments: primary, gatling
+		Armaments: primary, elite, gatling
 		PauseOnCondition: chronodisable || emp || parachute
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-sniper && !ifv-virus && !ifv-tesla && !ifv-deso && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-demo && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin
