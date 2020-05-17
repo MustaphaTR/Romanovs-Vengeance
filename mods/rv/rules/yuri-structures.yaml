@@ -1,5 +1,7 @@
 yacnst:
 	Inherits: ^ConstructionYard
+	Buildable:
+		BuildPaletteOrder: 30
 	ProvidesPrerequisite@yuri:
 		Prerequisite: structures.yuri
 	Production:
@@ -26,6 +28,8 @@ yacnst:
 		DecorationHeight: 60
 	Voiced:
 		VoiceSet: YuriConstructionYardVoice
+	RenderSprites:
+		Image: yacnst
 
 yapowr:
 	Inherits: ^BaseBuilding

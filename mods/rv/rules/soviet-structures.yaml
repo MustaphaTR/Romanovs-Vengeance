@@ -1,5 +1,7 @@
 nacnst:
 	Inherits: ^ConstructionYard
+	Buildable:
+		BuildPaletteOrder: 20
 	ProvidesPrerequisite@soviets:
 		Prerequisite: structures.soviets
 	Production:
@@ -56,6 +58,8 @@ nacnst:
 		DecorationHeight: 90
 	Voiced:
 		VoiceSet: SovietConstructionYardVoice
+	RenderSprites:
+		Image: nacnst
 
 napowr:
 	Inherits: ^BaseBuilding

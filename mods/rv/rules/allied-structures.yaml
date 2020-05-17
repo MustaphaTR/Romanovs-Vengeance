@@ -1,5 +1,7 @@
 gacnst:
 	Inherits: ^ConstructionYard
+	Buildable:
+		BuildPaletteOrder: 10
 	Production:
 		Produces: Building.Allies, Support.Allies, Support.France
 	ProductionQueue@Building:
@@ -141,6 +143,8 @@ gacnst:
 		DecorationHeight: 60
 	Voiced:
 		VoiceSet: AlliedConstructionYardVoice
+	RenderSprites:
+		Image: gacnst
 
 gapowr:
 	Inherits: ^BaseBuilding
