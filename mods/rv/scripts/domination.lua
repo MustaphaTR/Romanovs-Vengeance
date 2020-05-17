@@ -10,7 +10,7 @@
 local distance_to_flag = 2048
 local check_interval_ticks = 25
 local points_per_interval = 1
-local target_points = 500
+local target_points = 350
 
 local flags
 local neutral
