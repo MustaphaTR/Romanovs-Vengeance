@@ -159,6 +159,41 @@ MirageGunE:
 		Versus:
 			Plate: 100
 
+Sub70mm:
+	Inherits: ^LargeBullet
+	ReloadDelay: 25
+	Range: 5c0
+	Report: vlasatta.wav
+	Projectile: BulletAS
+		Speed: 682
+	Warhead@1Dam: SpreadDamage
+		Damage: 45
+	Warhead@2Eff: CreateEffect
+		Explosions: small_clsn
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+Sub70mmE:
+	Inherits: Sub70mm
+	ReloadDelay: 35
+	Burst: 2
+	BurstDelays: 5
+	Warhead@1Dam: SpreadDamage
+		Damage: 45
+	Warhead@1Dam: SpreadDamage
+		Damage: 55
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_clsn
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
 105mm:
 	Inherits: ^LargeBullet
 	ReloadDelay: 60
