@@ -5009,3 +5009,30 @@ catime02:
 		Footprint: xxx xxx xxx xxx
 	IsometricSelectable:
 		DecorationHeight: 90
+
+caeast01:
+	Inherits: ^CivBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Moai
+	Tooltip@NoRow:
+		Name: Moai
+	Armor:
+		Type: Steel
+	Health:
+		HP: 3000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	SpawnActorOnDeath:
+		Actor: caeast01.rubble
+	IsometricSelectable:
+		DecorationHeight: 135
+
+caeast01.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: caeast01
