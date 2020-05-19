@@ -609,7 +609,7 @@ yadome:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
-	DetonateWeaponPower@ambush:
+	DetonateWeaponPower@hologram:
 		OrderName: LazarusHologramArmy
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
@@ -625,6 +625,25 @@ yadome:
 		Weapons:
 			1: HologramSpawner
 		ActivationSequence:
+	GrantExternalConditionPower@pointdefencedrones:
+		OrderName: AntarcticaPointDefenceDrones
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: radar.psisouth
+		Icons:
+			1: xxicon
+		ChargeInterval: 4500
+		Descriptions:
+			1: Point Defence Drones
+		LongDescs:
+			1: Gives a group of vehicles Point Defence Drones which reduces the taken damage.\nDrones regenerate over time.
+		SelectTargetSpeechNotification: SelectTarget
+		Durations:
+			1: -1
+		Conditions:
+			1: pointdefence
+		Ranges:
+			1: 1
 	DetonateWeaponPower@mosquitoswarm:
 		OrderName: TransylvaniaMosquitoSwarm
 		PauseOnCondition: disabled || chronodisable

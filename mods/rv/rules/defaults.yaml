@@ -608,6 +608,39 @@
 	#	Prerequisite: forceshield
 	#	RequiresCondition: forceshield
 
+^AcceptsPointDefenceDrones:
+	WithColoredOverlay@PointDefence1:
+		Palette: pointdefence1
+		RequiresCondition: pointdefence && breakpointdefence == 3
+	WithColoredOverlay@PointDefence2:
+		Palette: pointdefence2
+		RequiresCondition: pointdefence && breakpointdefence == 2
+	WithColoredOverlay@PointDefence3:
+		Palette: pointdefence3
+		RequiresCondition: pointdefence && breakpointdefence == 1
+	WithColoredOverlay@PointDefence4:
+		Palette: pointdefence4
+		RequiresCondition: pointdefence && !breakpointdefence
+	ExternalCondition@PointDefence:
+		Condition: pointdefence
+	ExternalCondition@BreakPointDefence:
+		Condition: breakpointdefence
+	Targetable@PointDefence:
+		TargetTypes: WithPointDefence
+		RequiresCondition: pointdefence
+	DamageMultiplier@PointDefence1:
+		RequiresCondition: pointdefence && breakpointdefence == 3
+		Modifier: 75
+	DamageMultiplier@PointDefence2:
+		RequiresCondition: pointdefence && breakpointdefence == 2
+		Modifier: 50
+	DamageMultiplier@PointDefence3:
+		RequiresCondition: pointdefence && breakpointdefence == 1
+		Modifier: 25
+	DamageMultiplier@PointDefence4:
+		RequiresCondition: pointdefence && !breakpointdefence
+		Modifier: 12
+
 ^AffectedByCashBounty:
 	WithDecoration@BOUNTY:
 		RequiresSelection: false
@@ -1801,6 +1834,7 @@
 	Inherits@18: ^TerrorDronable
 	Inherits@19: ^AffectedByCashBounty
 	Inherits@20: ^AffectedBySpectreBullets
+	Inherits@21: ^AcceptsPointDefenceDrones
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -2005,6 +2039,7 @@
 	Inherits@14: ^DisabledByEMP
 	Inherits@15: ^DisabledByMagnetron
 	Inherits@16: ^AffectedBySpectreBullets
+	Inherits@17: ^AcceptsPointDefenceDrones
 	Aircraft:
 		AltitudeVelocity: 43
 	WithTextControlGroupDecoration:
@@ -2174,6 +2209,7 @@
 	Inherits@16: ^AffectedByStealthGenerator
 	Inherits@17: ^AffectedByCashBounty
 	Inherits@18: ^AffectedBySpectreBullets
+	Inherits@19: ^AcceptsPointDefenceDrones
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
