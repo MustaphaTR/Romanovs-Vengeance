@@ -645,7 +645,7 @@ DoomLaser:
 		SecondaryBeamColor: FFFFFF80
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c045
+		Spread: 0c48
 		Damage: 120
 		Versus:
 			None: 40
@@ -693,7 +693,7 @@ LunarLaser:
 		SecondaryBeamColor: FFFFFF80
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c045
+		Spread: 0c48
 		Damage: 25
 		Versus:
 			None: 100
@@ -736,6 +736,18 @@ LunarLaserAAE:
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
+
+LaserShot:
+	Inherits: DoomLaser
+	Range: 9c0
+	Burst: 2
+	BurstDelays: 10
+	Projectile: LaserZap
+		Width: 200
+		SecondaryBeamWidth: 50
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Damage: 200
 
 IonCannon:
 	ValidTargets: Ground, Water, Air

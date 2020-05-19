@@ -5,17 +5,30 @@ yacnst:
 	ProvidesPrerequisite@yuri:
 		Prerequisite: structures.yuri
 	Production:
-		Produces: Building.Yuri, Support.Yuri
+		Produces: Building.Yuri, Support.Yuri, Support.Antarctica
 	ProductionQueue@Building:
 		Type: Building.Yuri
 	ProductionQueue@Support:
 		Type: Support.Yuri
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, psicorps, psinepal, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+	ProductionQueue@SupportFrance:
+		Type: Support.Antarctica
+		Factions: psisouth
+		Group: Support
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
 	Transforms:
 		IntoActor: pcv
 	ProductionBar@Building:
 		ProductionType: Building.Yuri
 	ProductionBar@Support:
 		ProductionType: Support.Yuri
+	ProductionBar@SupportAntarctica:
+		ProductionType: Support.Antarctica
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		RequiresCondition: !build-incomplete
@@ -934,7 +947,7 @@ yaclon:
 yawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support.Yuri
+		Queue: Support.Yuri, Support.Antarctica
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Heavy wall capable of blocking units and projectiles.
@@ -959,7 +972,7 @@ yaggun:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Yuri
+		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 40
 		Prerequisites: yabrck, ~techlevel.1
 		Description: Automated anti-infantry and anti-air defense.\nCan detect cloaked units.
@@ -1042,7 +1055,6 @@ yaggun:
 	WithRangeCircle@AA:
 		Range: 12c0
 		Type: aa
-	AutoTarget:
 	Power:
 		Amount: -50
 	IsometricSelectable:
@@ -1060,7 +1072,7 @@ natbnk:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support.Yuri
+		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 50
 		Prerequisites: yaweap, ~techlevel.1
 		Description: Static defense with fireports for a vehicle to garrison.\n\nProvides increased firepower, fire speed and range to the vehicle.
@@ -1112,7 +1124,7 @@ yapsyt:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
-		Queue: Support.Yuri
+		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 60
 		Prerequisites: yadome
 		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.\nCan detect cloaked units.
@@ -1189,7 +1201,7 @@ yasgen:
 	Tooltip@NoRow:
 		Name: Stealth Generator
 	Buildable:
-		Queue: Support.Yuri
+		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 80
 		Prerequisites: yatech, ~techlevel.3
 		Description: Makes nearby units and structures invisibile while not firing.\nRequires power to operate.
@@ -1234,7 +1246,7 @@ yasgen:
 yagntc:
 	Inherits: ^SecondarySuperWeapon
 	Buildable:
-		Queue: Support.Yuri
+		Queue: Support.Yuri, Support.Antarctica
 		Prerequisites: yatech, !enoughlazarus, ~techlevel.5
 		Description: Makes units invisible.
 	Tooltip:
@@ -1283,7 +1295,7 @@ yagntc:
 yappet:
 	Inherits: ^PrimarySuperWeapon
 	Buildable:
-		Queue: Support.Yuri
+		Queue: Support.Yuri, Support.Antarctica
 		Prerequisites: yatech, !enoughdominator, ~techlevel.5
 		Description: Release powerful energy that damages structures and mind controls units.\nRequires power to operate.\n  Special Ability: Psychic Domination
 	Tooltip:
@@ -1385,11 +1397,141 @@ yarock:
 	IsometricSelectable:
 		DecorationHeight: 120
 
+caeast02:
+	Inherits: ^CivBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DRAIN: ^DiskDrainable
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Yuri Statue
+	Tooltip@NoRow:
+		Name: Yuri Statue
+	Armor:
+		Type: Steel
+	Health:
+		HP: 3000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	Armament:
+		Weapon: LaserShot
+		LocalOffset: 512,-256,1024, 512,256,1024
+	AttackTurreted:
+		PauseOnCondition: disabled || chronodisable
+	Turreted:
+		TurnSpeed: 3
+		Offset: 0,0,3096
+		InitialFacing: 160
+		PreviewFacing: 160
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Heavy, Critical
+	WithVoxelTurret:
+		RequiresCondition: !damaged
+	WithVoxelTurret@damaged:
+		Sequence: turret-damaged
+		RequiresCondition: damaged
+	RenderVoxels:
+		Image: cahead
+		Scale: 1.17
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	Power:
+		Amount: -100
+	SpawnActorOnDeath:
+		Actor: caeast02.rubble
+	IsometricSelectable:
+		DecorationHeight: 135
+
+caeast02.rubble:
+	Inherits: ^Rubble
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: caeast02
+
+yaeast02:
+	Inherits: ^VoxelLighting
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DRAIN: ^DiskDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@shape: ^2x2Shape
+	Buildable:
+		Queue: Support.Antarctica
+		BuildPaletteOrder: 60
+		Prerequisites: yadome, ~techlevel.2
+		Description: Big defense structure armed with lasers.\nCan detect cloaked units.
+	Health:
+		HP: 1100
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	Valued:
+		Cost: 2500
+	Tooltip:
+		Name: Yuri Statue
+	Tooltip@NoRow:
+		Name: Yuri Statue
+	Turreted:
+		TurnSpeed: 3
+		Offset: 0,0,3096
+		InitialFacing: 160
+		PreviewFacing: 160
+	AttackTurreted:
+		PauseOnCondition: disabled || chronodisable
+	Armament:
+		Weapon: LaserShot
+		LocalOffset: 512,-256,1024, 512,256,1024
+	RenderVoxels:
+		Image: cahead
+		Scale: 1.17
+	RenderSprites:
+		Image: caeast02
+	-WithMakeAnimation:
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Heavy, Critical
+	WithVoxelTurret:
+		RequiresCondition: !damaged
+	WithVoxelTurret@damaged:
+		Sequence: turret-damaged
+		RequiresCondition: damaged
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
+	WithRangeCircle:
+		Range: 9c0
+		Type: yuristatue
+	Power:
+		Amount: -100
+	IsometricSelectable:
+		DecorationHeight: 135
+	DetectCloaked:
+		Range: 5c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
+
 # Custom Structures
 yagatea:
 	Inherits: ^Gate_A
 	Buildable:
-		Queue: Support.Yuri
+		Queue: Support.Yuri, Support.Antarctica
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 	Tooltip:
@@ -1422,7 +1564,7 @@ yagateb:
 yasilo:
 	Inherits: ^Silo
 	Buildable:
-		Queue: Support.Yuri
+		Queue: Support.Yuri, Support.Antarctica
 	-WithMakeAnimation:
 	WithResourceLevelOverlay@FILLSTAGE:
 		-RequiresCondition:
