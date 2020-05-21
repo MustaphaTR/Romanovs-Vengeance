@@ -332,6 +332,128 @@ gatsub:
 		ValidStances: None
 	HitShape:
 
+floater:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@4: ^ChronoDisable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@INVULNERABILITY: ^KilledByIronCurtain
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath
+	Buildable:
+		Queue: Ship.Yuri
+		BuildPaletteOrder: 40
+		Prerequisites: yatech, ~techlevel.3
+		Description: Large ocean creature capable of dealing heavy damage in close combat.\nCan move to land.\n  Strong vs Ships
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1000
+	DeliversCash:
+		Payload: 500
+		PlayerExperience: 50
+		Voice: Move
+	Tooltip:
+		Name: Mutant Crab
+		GenericName: Crab
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Mutant Crab
+		GenericName: Crab
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
+	Armor:
+		Type: Light
+	Health:
+		HP: 250
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	Mobile:
+		TurnSpeed: 255
+		Speed: 90
+		Locomotor: amphibious
+		Voice: Move
+	SpeedMultiplier:
+		Modifier: 75
+		RequiresCondition: !in_water
+	Selectable:
+		Bounds: 32,32,0,-5
+	Voiced:
+		VoiceSet: GiantSquidVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	Armament:
+		Weapon: CrabPunch
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 128
+		PauseOnCondition: chronodisable
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+		Duration: 50
+	Cloak:
+		CloakTypes: Underwater
+		InitialDelay: 50
+		CloakDelay: 75
+		CloakSound: vnavupa.wav
+		UncloakSound: vnavupa.wav
+		UncloakOn: Damage, Attack
+		IsPlayerPalette: true
+		PauseOnCondition: deployed
+		RequiresCondition: in_water
+	Targetable:
+		TargetTypes: Ground, SeaAnimal
+		RequiresCondition: !in_water
+	Targetable@WATER:
+		TargetTypes: Ground, Water, SeaAnimal, Underwater
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 5c0
+	HiddenUnderFog:
+	ActorLostNotification:
+	Guard:
+		Voice: Attack
+	Guardable:
+	DeathSounds:
+	QuantizeFacingsFromSequence:
+		Sequence: idle
+	Chronoshiftable:
+		ExplodeInstead: true
+	RenderDetectionCircle:
+	WithSpriteBody:
+	WithAttackAnimation:
+		Sequence: attack
+	RepairableNear:
+		Voice: Move
+		CloseEnough: 3c0
+		RepairActors: gayard, nayard, yayard
+	HitShape:
+	RenderSprites:
+		PlayerPalette: infantry
+
 buoy:
 	Inherits: ^Ship
 	Inherits@C4: ^AcceptsSEALC4
@@ -354,7 +476,7 @@ buoy:
 	Mobile:
 		RequiresCondition: !chronodisable && !emp && !magnefreeze
 	# Hovers:
-	#	InitialHeight: 64 # Enable this after figuring a way to make the shadow not hover.
+	#	InitialHeight: 64 # Enable this after figuring a way to make the wave anim not hover.
 	Passenger:
 	RevealsShroud:
 		Range: 6c0

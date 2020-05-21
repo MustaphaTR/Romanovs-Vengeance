@@ -73,6 +73,22 @@ ChimpBite:
 	Inherits: AlligatorBite
 	Report: gchiatta.wav, gchiattb.wav, gchiattc.wav
 
+CrabPunch:
+	Inherits@1: ^BreakPointDefenceDrones
+	Inherits: AlligatorBite
+	ReloadDelay: 40
+	Range: 1c856
+	Report: vsquat1a.wav
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+		ValidTargets: Ground, Water
+		Versus:
+			Heavy: 90
+			Wood: 75
+			Steel: 65
+			Concrete: 50
+
 SquidPunch:
 	Inherits@1: ^BreakPointDefenceDrones
 	Inherits: AlligatorBite
