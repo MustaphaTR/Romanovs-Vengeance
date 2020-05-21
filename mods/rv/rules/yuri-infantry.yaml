@@ -699,22 +699,22 @@ gtrp:
 	GrantConditionOnAttack:
 		Condition: gatling
 		ArmamentNames: primary, opentopped, garrisoned
-		RequiredShotsPerInstance: 16
+		RequiredShotsPerInstance: 16, 32
 		MaximumInstances: 2
 		RevokeDelay: 25
-		RevokeAll: false
+		RevokeAll: true
 		IsCyclic: false
 		RevokeOnNewTarget: false
 		RequiresCondition: !rank-elite
 	GrantConditionOnAttack@elite:
 		Condition: gatling
 		ArmamentNames: primary, opentopped, garrisoned
-		RequiredShotsPerInstance: 8
+		RequiredShotsPerInstance: 8, 16
 		MaximumInstances: 2
 		RevokeDelay: 25
 		RevokeAll: true
 		IsCyclic: false
-		RevokeOnNewTarget: true
+		RevokeOnNewTarget: false
 		RequiresCondition: rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
