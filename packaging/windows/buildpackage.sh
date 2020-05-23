@@ -122,7 +122,14 @@ function build_platform()
 	sed "s|DISPLAY_NAME|${PACKAGING_DISPLAY_NAME}|" "${SRC_DIR}/packaging/windows/WindowsLauncher.cs.in" | sed "s|MOD_ID|${MOD_ID}|" | sed "s|FAQ_URL|${PACKAGING_FAQ_URL}|" > "${BUILTDIR}/WindowsLauncher.cs"
 	csc "${BUILTDIR}/WindowsLauncher.cs" -nologo -warn:4 -warnaserror -platform:"$1" -out:"${BUILTDIR}/${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" -t:winexe ${LAUNCHER_LIBS} -win32icon:"${BUILTDIR}/${MOD_ID}.ico"
 	rm "${BUILTDIR}/WindowsLauncher.cs"
-	mono "${SRC_DIR}/OpenRA.PostProcess.exe" "${BUILTDIR}/${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" -LAA > /dev/null
+
+	if [ "$1" = "x86" ]; then
+		# Enable the full 4GB address space for the 32 bit game executable
+		# The server and utility do not use enough memory to need this 
+		csc MakeLAA.cs -warn:4 -warnaserror -out:"MakeLAA.exe"
+		mono "MakeLAA.exe" "${BUILTDIR}/${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe"
+		rm MakeLAA.exe
+	fi
 
  	echo "Building Windows setup.exe ($1)"
 	pushd "${PACKAGING_DIR}" > /dev/null
