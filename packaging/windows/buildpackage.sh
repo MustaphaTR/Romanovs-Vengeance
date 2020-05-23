@@ -126,7 +126,7 @@ function build_platform()
 	if [ "$1" = "x86" ]; then
 		# Enable the full 4GB address space for the 32 bit game executable
 		# The server and utility do not use enough memory to need this 
-		csc "{SRC_DIR}/packaging/windows/MakeLAA.cs" -warn:4 -warnaserror -out:"MakeLAA.exe"
+		csc "${SRC_DIR}/packaging/windows/MakeLAA.cs" -warn:4 -warnaserror -out:"MakeLAA.exe"
 		mono "MakeLAA.exe" "${BUILTDIR}/${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe"
 		rm MakeLAA.exe
 	fi
