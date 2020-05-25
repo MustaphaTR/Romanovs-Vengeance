@@ -517,7 +517,7 @@ ivan:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: naradr, ~techlevel.3
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
@@ -1321,3 +1321,18 @@ shkc:
 	WithInfantryBody:
 		AttackSequences:
 			secondary: shoot
+
+sspy:
+	Inherits: spy
+	Buildable:
+		Queue: Infantry.Baku
+		Prerequisites: naradr, ~techlevel.3
+
+ssnipe:
+	Inherits: snipe
+	Buildable:
+		Queue: Infantry.Baku
+		Prerequisites: naradr, ~techlevel.3
+	RenderSprites:
+		Image: snipe
+
