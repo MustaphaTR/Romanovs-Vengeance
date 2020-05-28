@@ -5,15 +5,29 @@ nacnst:
 	ProvidesPrerequisite@soviets:
 		Prerequisite: structures.soviets
 	Production:
-		Produces: Building.Soviets, Support.Soviets
+		Produces: Building.Soviets, Support.Soviets, Support.Baku
 	ProductionQueue@Building:
 		Type: Building.Soviets
 	ProductionQueue@Support:
 		Type: Support.Soviets
+		Factions: america, germany, france, england, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProductionQueue@SupportBaku:
+		Type: Support.Baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+		Group: Support
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar@Building:
 		ProductionType: Building.Soviets
 	ProductionBar@Support:
 		ProductionType: Support.Soviets
+	ProductionBar@SupportBaku:
+		ProductionType: Support.Baku
 	Transforms:
 		IntoActor: smcv
 	WithIdleOverlay@top:
@@ -513,10 +527,10 @@ naweap:
 	ProvidesPrerequisite@naweap:
 		Prerequisite: naweap
 	Production:
-		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
+		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
 	ProductionQueue:
 		Type: Vehicle.Soviets
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, vietnam, chile, mexico, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, vietnam, chile, mexico, psicorps, psinepal, psisouth, psitrans, psimoon
 	ProductionQueue@USSR:
 		Type: Vehicle.USSR
 		Factions: russia
@@ -539,12 +553,25 @@ naweap:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@Baku:
+		Type: Vehicle.Baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Soviets
 	ProductionBar@USSR:
 		ProductionType: Vehicle.USSR
 	ProductionBar@Libya:
 		ProductionType: Vehicle.Libya
+	ProductionBar@Baku:
+		ProductionType: Vehicle.Baku
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -899,7 +926,7 @@ napsis:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: ~disabled # natech, ~techlevel.4
 		Description: Detects enemy units and structures.
@@ -942,7 +969,7 @@ napsis:
 nairon:
 	Inherits: ^SecondarySuperWeapon
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		Prerequisites: natech, !enoughiron, ~techlevel.5
 		Description: Grants invulnerability to vehicles and structures.\nKills infantry.
 	Tooltip:
@@ -1049,7 +1076,7 @@ namisl:
 nawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Heavy wall capable of blocking units and projectiles.
@@ -1074,7 +1101,7 @@ naflak:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 60
 		Prerequisites: naradr, ~techlevel.2
 		Description: Automated anti-aircraft defense.\nCan detect cloaked units.
@@ -1139,7 +1166,7 @@ tesla:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: naradr, ~techlevel.3
 		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
@@ -1216,7 +1243,7 @@ nalasr:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 50
 		Prerequisites: nahand, ~techlevel.1
 		Description: Automated anti-infantry defense.\nCan detect cloaked units.
@@ -1277,7 +1304,7 @@ nabnkr:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: ~disabled
 		Description: Static defense with fireports for 6 garrisoned soldiers.\nInfantry inside cannot be killed by garrison killers.
@@ -1395,7 +1422,7 @@ naindp:
 nagatea:
 	Inherits: ^Gate_A
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 	Tooltip:
@@ -1430,7 +1457,7 @@ napost:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: power, ~prerequisite.tesla_fence, ~techlevel.1
 		Description: Stops infantry and blocks enemy fire.
@@ -1528,7 +1555,7 @@ nafnce:
 nasilo:
 	Inherits: ^Silo
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 	Capturable:
 		RequiresCondition: !invulnerability
 	Sellable:
@@ -1543,7 +1570,7 @@ naprop:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Soviets
+		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: natech, ~techlevel.4
 		Description: Buffs fire speed of nearby units and heals them.
