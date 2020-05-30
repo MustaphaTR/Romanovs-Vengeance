@@ -2,7 +2,7 @@ World:
 	LuaScript:
 		Scripts: commanders-powers.lua, campaign-global.lua, romanov-01.lua
 	MissionData:
-		Briefing: We have recieved a video message from Premier Romanov. He is being held in the Attica Correcreational Facility in New York.\n\nHe requests us to get him out of there. We have sneaked in a group of troops to the area via a stolen Allied Cargo Plane. The prison isn't heavily guarded, probably not to take attention. Get Comrade Premier out of the prison and move him to safety.\n\nWe are gonna try to land a plane to the main road nearby to take him, there is no nearby airfield and a helicopter is not safe enough. Good luck!
+		Briefing: We have recieved a video message from Premier Romanov from some KGB remnants. He is being held in the Attica Correcreational Facility in New York.\n\nHe requests us to get him out of there. The ex-KGB spies are interested in helping us against Yuri and they seem to have a presence in the area. We have sneaked in a group of troops via a stolen Allied Cargo Plane. Establish contact with the spies, get Comrade Premier out of the prison and move him to safety.\n\nWe are gonna try to land a plane to the main road nearby to take him, there is no nearby airfield and a helicopter is not safe enough. Good luck!\n\n\nObjective 1: Establish contact with ex-KGB spies.\nObjective 2: Infiltrate the Prison to get Premier out.\nObjective 3: Get Premier to the plane alive.
 	ScriptLobbyDropdown@difficulty:
 		ID: difficulty
 		Label: Difficulty
@@ -23,9 +23,9 @@ powerproxy.paratroopers:
 		Descriptions:
 			1: Soviet Paratroopers
 		LongDescs:
-			1: A Cargo Planes drops 7 Conscripts, an Attack Dog and a Tesla Trooper\nanywhere on the map.
+			1: A Cargo Planes drops 6 Conscripts, an Attack Dog and a Tesla Trooper\nanywhere on the map.
 		DropItems:
-			1: e2,e2,e2,e2,e2,e2,e2,shk,dog
+			1: e2,e2,e2,e2,e2,e2,shk,dog
 		QuantizedFacings: 8
 		UnitTypes:
 			1: alplane
@@ -35,6 +35,10 @@ powerproxy.paratroopers:
 		Prerequisites:
 			1: techlevel.1
 		DisplayBeacon: false
+
+alplane:
+	ParaDrop:
+		DropInterval: 3
 
 catexs02:
 	-AutoTarget:

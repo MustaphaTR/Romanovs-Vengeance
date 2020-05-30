@@ -8,7 +8,7 @@
 ]]
 
 APillBox1WarningZone = { CPos.New(104, -9), CPos.New(105, -9), CPos.New(105, -10), CPos.New(105, -12), CPos.New(106, -10), CPos.New(106, -11), CPos.New(106, -12) }
-PrisonZone = { CPos.New(68, -16), CPos.New(69, -16), CPos.New(68, -17), CPos.New(69, -17), CPos.New(68, -18), CPos.New(69, -18), CPos.New(68, -19), CPos.New(69, -19), CPos.New(66, -20), CPos.New(67, -20), CPos.New(68, -20), CPos.New(69, -20), CPos.New(70, -20), CPos.New(71, -20), CPos.New(66, -25), CPos.New(67, -21), CPos.New(71, -21), CPos.New(67, -22), CPos.New(71, -22), CPos.New(67, -23), CPos.New(71, -23), CPos.New(67, -24), CPos.New(71, -24), CPos.New(67, -25), CPos.New(68, -25), CPos.New(69, -25), CPos.New(70, -25), CPos.New(71, -25)
+PrisonZone = { CPos.New(68, -16), CPos.New(69, -16), CPos.New(68, -17), CPos.New(69, -17), CPos.New(68, -18), CPos.New(69, -18), CPos.New(68, -19), CPos.New(69, -19), CPos.New(66, -20), CPos.New(67, -20), CPos.New(68, -20), CPos.New(69, -20), CPos.New(70, -20), CPos.New(71, -20), CPos.New(66, -25), CPos.New(67, -21), CPos.New(71, -21), CPos.New(67, -22), CPos.New(71, -22), CPos.New(67, -23), CPos.New(71, -23), CPos.New(67, -24), CPos.New(71, -24), CPos.New(67, -25), CPos.New(68, -25), CPos.New(69, -25), CPos.New(70, -25), CPos.New(71, -25) }
 
 PatrolWPs1 = { APatrolWP1A.Location, APatrolWP1B.Location }
 PatrolWPs2 = { APatrolWP2A.Location, APatrolWP2B.Location }
@@ -18,7 +18,7 @@ PatrolWPs5 = { APatrolWP5A.Location, APatrolWP5B.Location }
 
 SendStartingParadrops = function()
 	paracamera.Destroy()
-	local units = powerproxy.SendParatroopers(StartingParadropPoint.CenterPosition, false, 32)
+	local units = powerproxy.ActivateParatroopers(StartingParadropPoint.CenterPosition, 32)
 	powerproxy.Destroy()
 end
 
@@ -57,7 +57,7 @@ SetUpWarnings = function()
 end
 
 PrisonGuardsAndRomanov = function()
-	Trigger
+	
 end
 
 Intro = function()
