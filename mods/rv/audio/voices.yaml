@@ -395,6 +395,7 @@ HijackerVoice:
 DogVoice:
 	DefaultVariant: .wav
 	Voices:
+		Build: wolves
 		Select: idogsela
 		Move: idogmova
 		Attack: idogatca, idogmova # move sound?
@@ -671,7 +672,17 @@ CosmonautVoice:
 		Attack: ilasata, ilasatb, ilasatc, ilasatd, ilasatf
 		Feedback: ilasfea, ilasfeb, ilasfec, ilasfed
 		Die: ilasdia, ilasdib, ilasdic, ilasdid, ilasdie
-        
+
+VolkovVoice:
+	Inherits: ^InfantryDeath
+	DefaultVariant: .wav
+	Voices:
+		Build: iromatd
+		Select: iromsec
+		Move: irommoa, irommob, irommoc, irommod
+		Attack: iromata, iromatc, iromatd, iromate
+		Die: iromdia, iromdib, iromdic, iromdid, iromdie
+
 AntVoice:
 	Voices:
 		Build: antbite

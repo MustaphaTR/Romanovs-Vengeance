@@ -1335,3 +1335,216 @@ ssnipe:
 		Prerequisites: naradr, ~techlevel.3
 	RenderSprites:
 		Image: snipe
+
+vlkv:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Buildable:
+		Queue: Infantry.Baku
+		BuildPaletteOrder: 190
+		Prerequisites: natech, ~techlevel.4
+		BuildLimit: 1
+		Description: Elite cybernatic commando, armed with\na tesla rifle.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nMaximum 1 can be trained.
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1500
+	DeliversCash:
+		Payload: 750
+		PlayerExperience: 75
+		Voice: Move
+	Tooltip:
+		Name: Vladislav Volkov
+	Tooltip@NoRow:
+		Name: Vladislav Volkov
+	Selectable:
+		Bounds: 20, 30, 0, -11
+	Health:
+		HP: 225
+	Garrisoner:
+		Voice: Move
+		CustomPipType: red
+		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: red
+	Mobile:
+		Speed: 60
+	RevealsShroud:
+		Range: 9c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 9c0
+	RevealOnDeath:
+		Radius: 4c512
+	Armor:
+		Type: Plate
+	Crushable:
+		CrushClasses: vehicle
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	Armament@primary:
+		Weapon: ElectricBoltVolkov
+		LocalOffset: 320,128,512
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: ElectricBoltVolkovE
+		LocalOffset: 320,128,512
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: ElectricBoltVolkov
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: ElectricBoltVolkovE
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCElectricBoltVolkov
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCElectricBoltVolkovE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		TargetFrozenActors: True
+		PauseOnCondition: chronodisable
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
+	-TakeCover:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+	Voiced:
+		VoiceSet: VolkovVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+
+chit:
+	Inherits: ^Infantry
+	Inherits@2: ^Parachutable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Buildable:
+		Queue: Infantry.Baku
+		Prerequisites: natech, ~techlevel.4
+		BuildPaletteOrder: 200
+		BuildLimit: 1
+		Description: Cybernatic canine capable of destroying infantry and vehicles in seconds.\nCan detect cloaked units and spies.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nMaximum 1 can be trained.
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1200
+	DeliversCash:
+		Payload: 120
+		PlayerExperience: 12
+		Voice: Move
+	Tooltip:
+		Name: Chitzkoi
+		GenericName: Dog
+	Tooltip@NoRow:
+		Name: Chitzkoi
+		GenericName: Dog
+	Selectable:
+		Bounds: 30, 24, 0, -5
+	Health:
+		HP: 225
+	Mobile:
+		Speed: 105
+	Passenger:
+		CustomPipType: red
+		CargoType: Infantry
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Armor:
+		Type: Plate
+	Crushable:
+		CrushClasses: vehicle
+	SelfHealing:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		HealIfBelow: 100
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
+	KillsSelf@LowPowerOnWater:
+		RequiresCondition: in_water
+	Armament@primary:
+		Weapon: ChitzJump
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: ChitzJumpE
+		RequiresCondition: rank-elite
+	AttackInfectRV:
+		Voice: Attack
+		Damage: 75
+		DamageInterval: 25
+		DamageTypes: DroneInfection, BulletDeath
+		JoustRange: 1c768
+		PauseOnCondition: chronodisable || emp
+	RejectsOrders:
+		RequiresCondition: jousting
+	AttackMove:
+		Voice: Move
+	AutoTarget:
+		ScanRadius: 5
+		InitialStance: AttackAnything
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: TerrorDronable
+	WithInfantryBody:
+		DefaultAttackSequence: jump
+		RequiresCondition: !parachute && !webdisable && !jousting
+	WithFacingSpriteBody:
+		Sequence: shoot
+		RequiresCondition: jousting
+	Targetable:
+		TargetTypes: Ground, TerrorDrone, DetonateAttack, ImmuneToRadiation
+		RequiresCondition: !parachute && !chronodisable && !jousting
+	IgnoresDisguise:
+	DetectCloaked:
+		Range: 6c0
+	Voiced:
+		VoiceSet: DogVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	-TakeCover:
+	-SpawnActorOnDeath@flames:
+	-SpawnSmokeParticleOnDeath@virus:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithDeathAnimation@normal:
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+			FlameDeath: 1
+			RadiationDeath: 1
+			PsychicDeath: 1
+			ElectroDeath: 2
+			VirusDeath: 2
+			BruteDeath: 1
+	-WithDeathAnimation@effect:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
+	-DeathSounds@zapped:
+	-DeathSounds@radiation:
+	-DeathSounds@psycrush:
+	-DeathSounds@virus:
