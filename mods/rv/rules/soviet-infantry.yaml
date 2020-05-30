@@ -1339,6 +1339,7 @@ ssnipe:
 vlkv:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Infantry.Baku
@@ -1370,6 +1371,7 @@ vlkv:
 		CustomPipType: red
 	Mobile:
 		Speed: 60
+		RequiresCondition: !chronodisable && !webdisable && !emp
 	RevealsShroud:
 		Range: 9c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1416,7 +1418,7 @@ vlkv:
 		Voice: Attack
 		FacingTolerance: 2
 		TargetFrozenActors: True
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || emp
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
 	-TakeCover:
@@ -1437,6 +1439,7 @@ vlkv:
 chit:
 	Inherits: ^Infantry
 	Inherits@2: ^Parachutable
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Infantry.Baku
