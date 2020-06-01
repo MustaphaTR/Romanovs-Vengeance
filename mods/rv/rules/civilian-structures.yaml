@@ -316,8 +316,19 @@ cabarn02:
 		Footprint: xx xx
 	Garrisonable:
 		MaxWeight: 5
+	SpawnActorOnDeath:
+		Actor: cabarn02.rubble
 	IsometricSelectable:
 		DecorationHeight: 45
+
+cabarn02.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x2Shape
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: cabarn02
 
 cawash01:
 	Inherits: ^CivBuilding
