@@ -1388,6 +1388,11 @@ vlkv:
 		Delay: 100
 		DamageCooldown: 100
 		HealIfBelow: 100
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
 	Armament@primary:
 		Weapon: ElectricBoltVolkov
 		LocalOffset: 320,128,512
@@ -1491,6 +1496,11 @@ chit:
 		Condition: in_water
 	KillsSelf@LowPowerOnWater:
 		RequiresCondition: in_water
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
 	Armament@primary:
 		Weapon: ChitzJump
 		RequiresCondition: !rank-elite
