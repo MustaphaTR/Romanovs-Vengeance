@@ -995,9 +995,9 @@ spider:
 		PlayerExperience: 45
 		Voice: Move
 	Tooltip:
-		Name: Giant Tarantula
+		Name: Mutant Tarantula
 	Tooltip@NoRow:
-		Name: Giant Tarantula
+		Name: Mutant Tarantula
 	Buildable:
 		Queue: Vehicle.Trans
 		BuildPaletteOrder: 90
@@ -1009,7 +1009,7 @@ spider:
 		Speed: 105
 		TurnSpeed: 255
 		Locomotor: heavytracked
-		RequiresCondition: !chronodisable && !emp && !magnefreeze
+		RequiresCondition: !chronodisable && !magnefreeze
 	Health:
 		HP: 600
 	Armor:
@@ -1031,6 +1031,13 @@ spider:
 	-Targetable@TANYAC4:
 	-Targetable@TANYAC4CLEANER:
 	-WithDecoration@TANYAC4:
+	-WithColoredOverlay@IDISABLE:
+	-GrantCondition@IDISABLE:
+	-WithIdleOverlayAS@EMP:
+	-Targetable@EMP:
+	-TimedConditionBar@EMP:
+	-ExternalCondition@emp:
+	-Explodes:
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1040,18 +1047,19 @@ spider:
 		Radius: 3c0
 	Armament@primary:
 		Weapon: PoisonSting
-		LocalOffset: 300,-400,950, 300,400,950
+		LocalOffset: 128,-96,768, 128,96,768
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: PoisonStingE
-		LocalOffset: 300,-400,950, 300,400,950
+		LocalOffset: 128,-96,768, 128,96,768
 		RequiresCondition: rank-elite
 	Armament@secondary:
+		Name: secondary
 		Weapon: SpiderWeb
-		LocalOffset: 0,0,200
+		LocalOffset: -512,0,1024
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable
 		FacingTolerance: 2
 	AutoTarget:
 	Selectable:
@@ -1066,15 +1074,21 @@ spider:
 		RequiresCondition: produced
 		Voice: Build
 		ValidStances: None
-	AmbientSound@Walk:
-		SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav, vterlo3.wav
-		Delay: 7
-		Interval: 7
-		RequiresCondition: walking
-	GrantConditionOnMovement:
-		Condition: walking
 	WithInfantryBody:
+		DefaultAttackSequence: spit
+		AttackSequences:
+			secondary: web
 	DeathSounds:
+	WithDeathAnimation@normal:
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+			FlameDeath: 1
+			RadiationDeath: 1
+			PsychicDeath: 1
+			ElectroDeath: 2
+			VirusDeath: 2
+			BruteDeath: 1
 	HitShape:
 
 expy:
