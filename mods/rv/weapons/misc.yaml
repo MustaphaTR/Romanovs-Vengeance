@@ -530,16 +530,16 @@ WeatherBolt:
 	Projectile: InstantHit
 	Range: 512
 	Warhead@1Dam: SpreadDamage
-		Spread: 256
+		Spread: 0c512
 		Falloff: 100, 66, 33, 0
-		Damage: 180
+		Damage: 200
 		AffectsParent: true
 		ValidTargets: Ground, Air, Water
 		DamageTypes: TriggerProne, ElectroDeath
 		Versus:
-			Wood: 85
-			Steel: 75
-			Concrete: 15
+			Wood: 100
+			Steel: 100
+			Concrete: 25
 	Warhead@4: CreateEffect
 		Explosions: weatherbolt1, weatherbolt2, weatherbolt3, weatherbolt1f, weatherbolt2f, weatherbolt3f
 		ImpactSounds: sweastra.wav, sweastrb.wav, sweastrc.wav, sweastrd.wav
@@ -743,7 +743,7 @@ PsychicDomination:
 	Inherits: PsychicControl
 	Warhead@5Dam: SpreadDamage
 		Spread: 1c410
-		Damage: 1000 # 200
+		Damage: 2000 # 200
 		Falloff: 100, 80, 60, 40, 20, 0
 		ValidTargets: Ground, Water
 		Versus:
@@ -753,8 +753,8 @@ PsychicDomination:
 			Light: 0
 			Medium: 0
 			Heavy: 0
-			Wood: 100
-			Steel: 100
+			Wood: 150
+			Steel: 150
 			Concrete: 40 # 12
 			Drone: 0
 			Rocket: 0
