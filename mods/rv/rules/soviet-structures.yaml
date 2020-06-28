@@ -470,7 +470,6 @@ naradr:
 
 mine:
 	Inherits@1: ^SpriteActor
-	ConditionManager:
 	Interactable:
 		Bounds: 24,24
 	WithSpriteBody:
@@ -994,8 +993,10 @@ nairon:
 			1: 500
 		Conditions:
 			1: invulnerability
-		Ranges:
-			1: 2
+		Dimensions:
+			1: 5,5
+		Footprints:
+			1: __x__ _xxx_ xxxxx _xxx_ __x__
 		ValidStances: Ally, Neutral, Enemy
 		SelectTargetSpeechNotification: SelectTarget
 		EndChargeSpeechNotification: IronCurtainReady

@@ -20,7 +20,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
-	class PortableChronoRA2Info : ITraitInfo
+	class PortableChronoRA2Info : TraitInfo
 	{
 		[Desc("Cooldown in ticks until the unit can teleport.")]
 		public readonly int ChargeDelay = 500;
@@ -62,10 +62,10 @@ namespace OpenRA.Mods.RA2.Traits
 		[VoiceReference]
 		public readonly string Voice = "Action";
 
-		public object Create(ActorInitializer init) { return new PortableChronoRA2(this); }
+		public override object Create(ActorInitializer init) { return new PortableChronoRA2(this); }
 	}
 
-	class PortableChronoRA2 : INotifyCreated, IIssueOrder, IResolveOrder, ITick, ISelectionBar, IOrderVoice, ISync
+	class PortableChronoRA2 : IIssueOrder, IResolveOrder, ITick, ISelectionBar, IOrderVoice, ISync
 	{
 		[Sync]
 		int chargeTick = 0;
@@ -75,17 +75,11 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public readonly PortableChronoRA2Info Info;
 
-		ConditionManager conditionManager;
-		int token = ConditionManager.InvalidConditionToken;
+		int token = Actor.InvalidConditionToken;
 
 		public PortableChronoRA2(PortableChronoRA2Info info)
 		{
 			Info = info;
-		}
-
-		void INotifyCreated.Created(Actor self)
-		{
-			conditionManager = self.TraitOrDefault<ConditionManager>();
 		}
 
 		void ITick.Tick(Actor self)
@@ -93,8 +87,8 @@ namespace OpenRA.Mods.RA2.Traits
 			if (chargeTick > 0)
 				chargeTick--;
 
-			if (--conditionTicks < 0 && conditionManager != null && token != ConditionManager.InvalidConditionToken)
-				token = conditionManager.RevokeCondition(self, token);
+			if (--conditionTicks < 0 && token != Actor.InvalidConditionToken)
+				token = self.RevokeCondition(token);
 		}
 
 		public IEnumerable<IOrderTargeter> Orders
@@ -144,15 +138,12 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public void GrantCondition(Actor self)
 		{
-			if (conditionManager == null)
-				return;
-
 			if (string.IsNullOrEmpty(Info.TeleportCondition))
 				return;
 
-			if (token == ConditionManager.InvalidConditionToken)
+			if (token == Actor.InvalidConditionToken)
 			{
-				token = conditionManager.GrantCondition(self, Info.TeleportCondition);
+				token = self.GrantCondition(Info.TeleportCondition);
 				conditionTicks = Info.ConditionDuration;
 			}
 		}

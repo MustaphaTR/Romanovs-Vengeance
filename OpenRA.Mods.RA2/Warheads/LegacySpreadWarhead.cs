@@ -31,7 +31,7 @@ namespace OpenRA.Mods.RA2.Warheads
 		[Desc("In vanilia RA2, each cell of a structure were affected independently. Ares offered this control instead.")]
 		public readonly int MaxAffect = int.MaxValue;
 
-		public override void DoImpact(WPos pos, Actor firedBy, WarheadArgs args)
+		protected override void DoImpact(WPos pos, Actor firedBy, WarheadArgs args)
 		{
 			if (Spread == WDist.Zero)
 				return;

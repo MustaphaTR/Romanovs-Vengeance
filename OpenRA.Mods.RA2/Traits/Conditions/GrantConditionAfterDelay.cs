@@ -32,11 +32,10 @@ namespace OpenRA.Mods.RA2.Traits
 		public override object Create(ActorInitializer init) { return new GrantConditionAfterDelay(this); }
 	}
 
-	public class GrantConditionAfterDelay : PausableConditionalTrait<GrantConditionAfterDelayInfo>, ITick, ISync, INotifyCreated, ISelectionBar
+	public class GrantConditionAfterDelay : PausableConditionalTrait<GrantConditionAfterDelayInfo>, ITick, ISync, ISelectionBar
 	{
 		readonly GrantConditionAfterDelayInfo info;
-		ConditionManager manager;
-		int token = ConditionManager.InvalidConditionToken;
+		int token = Actor.InvalidConditionToken;
 
 		[Sync]
 		public int Ticks { get; private set; }
@@ -48,22 +47,12 @@ namespace OpenRA.Mods.RA2.Traits
 			Ticks = info.Delay;
 		}
 
-		protected override void Created(Actor self)
-		{
-			manager = self.TraitOrDefault<ConditionManager>();
-
-			base.Created(self);
-		}
-
 		void GrantCondition(Actor self, string cond)
 		{
-			if (manager == null)
-				return;
-
 			if (string.IsNullOrEmpty(cond))
 				return;
 
-			token = manager.GrantCondition(self, cond);
+			token = self.GrantCondition(cond);
 		}
 
 		void ITick.Tick(Actor self)
@@ -75,7 +64,7 @@ namespace OpenRA.Mods.RA2.Traits
 				return;
 
 			if (--Ticks < 0)
-				if (token == ConditionManager.InvalidConditionToken)
+				if (token == Actor.InvalidConditionToken)
 					GrantCondition(self, info.Condition);
 		}
 
@@ -96,10 +85,10 @@ namespace OpenRA.Mods.RA2.Traits
 
 		protected override void TraitDisabled(Actor self)
 		{
-			if (token == ConditionManager.InvalidConditionToken)
+			if (token == Actor.InvalidConditionToken)
 				return;
 
-			token = manager.RevokeCondition(self, token);
+			token = self.RevokeCondition(token);
 		}
 	}
 }

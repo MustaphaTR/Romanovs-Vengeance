@@ -15,12 +15,12 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits.Sound
 {
-	public class CaptureSoundInfo : ITraitInfo
+	public class CaptureSoundInfo : TraitInfo
     {
         [Desc("Sound to play when actor is captured.")]
         public readonly string Sound = null;
 
-        public object Create(ActorInitializer init) { return new CaptureSound(this); }
+        public override object Create(ActorInitializer init) { return new CaptureSound(this); }
 	}
 
 	public class CaptureSound : INotifyCapture

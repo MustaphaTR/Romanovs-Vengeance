@@ -42,12 +42,11 @@ namespace OpenRA.Mods.RA2.Traits
 		public override object Create(ActorInitializer init) { return new AffectedByTemporal(init, this); }
 	}
 
-	public class AffectedByTemporal : ConditionalTrait<AffectedByTemporalInfo>, INotifyCreated, ISync, ITick, ISelectionBar
+	public class AffectedByTemporal : ConditionalTrait<AffectedByTemporalInfo>, ISync, ITick, ISelectionBar
 	{
 		Actor self;
-		ConditionManager conditionManager;
 
-		int token = ConditionManager.InvalidConditionToken;
+		int token = Actor.InvalidConditionToken;
 		int requiredDamage;
 		int recievedDamage;
 
@@ -60,11 +59,6 @@ namespace OpenRA.Mods.RA2.Traits
 			self = init.Self;
 			var health = self.Info.TraitInfoOrDefault<IHealthInfo>();
 			requiredDamage = info.EraseDamage >= 0 || health == null ? info.EraseDamage : health.MaxHP * info.EraseDamageMultiplier / 100;
-		}
-
-		void INotifyCreated.Created(Actor self)
-		{
-			conditionManager = self.TraitOrDefault<ConditionManager>();
 		}
 
 		public void AddDamage(int damage, Actor damager)
@@ -86,10 +80,9 @@ namespace OpenRA.Mods.RA2.Traits
 				}
 			}
 
-			if (conditionManager != null &&
-				!string.IsNullOrEmpty(Info.Condition) &&
-				token == ConditionManager.InvalidConditionToken)
-				token = conditionManager.GrantCondition(self, Info.Condition);
+			if (!string.IsNullOrEmpty(Info.Condition) &&
+				token == Actor.InvalidConditionToken)
+				token = self.GrantCondition(Info.Condition);
 		}
 
 		void ITick.Tick(Actor self)
@@ -98,8 +91,8 @@ namespace OpenRA.Mods.RA2.Traits
 			{
 				recievedDamage = 0;
 
-				if (conditionManager != null && token != ConditionManager.InvalidConditionToken)
-					token = conditionManager.RevokeCondition(self, token);
+				if (token != Actor.InvalidConditionToken)
+					token = self.RevokeCondition(token);
 			}
 		}
 
@@ -119,8 +112,8 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			recievedDamage = 0;
 
-			if (conditionManager != null && token != ConditionManager.InvalidConditionToken)
-				token = conditionManager.RevokeCondition(self, token);
+			if (token != Actor.InvalidConditionToken)
+				token = self.RevokeCondition(token);
 		}
 	}
 }

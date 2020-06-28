@@ -62,19 +62,12 @@ namespace OpenRA.Mods.RA2.Traits
 	{
 		readonly AttackInfectRVInfo info;
 
-		ConditionManager conditionManager;
-		int joustToken = ConditionManager.InvalidConditionToken;
+		int joustToken = Actor.InvalidConditionToken;
 
 		public AttackInfectRV(Actor self, AttackInfectRVInfo info)
 			: base(self, info)
 		{
 			this.info = info;
-		}
-
-		protected override void Created(Actor self)
-		{
-			conditionManager = self.TraitOrDefault<ConditionManager>();
-			base.Created(self);
 		}
 
 		protected override bool CanAttack(Actor self, Target target)
@@ -90,14 +83,14 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public void GrantJoustCondition(Actor self)
 		{
-			if (conditionManager != null && !string.IsNullOrEmpty(info.JoustCondition))
-				joustToken = conditionManager.GrantCondition(self, info.JoustCondition);
+			if (!string.IsNullOrEmpty(info.JoustCondition))
+				joustToken = self.GrantCondition(info.JoustCondition);
 		}
 
 		public void RevokeJoustCondition(Actor self)
 		{
-			if (joustToken != ConditionManager.InvalidConditionToken)
-				joustToken = conditionManager.RevokeCondition(self, joustToken);
+			if (joustToken != Actor.InvalidConditionToken)
+				joustToken = self.RevokeCondition(joustToken);
 		}
 
 		public override Activity GetAttackActivity(Actor self, AttackSource source, Target newTarget, bool allowMove, bool forceAttack, Color? targetLineColor)

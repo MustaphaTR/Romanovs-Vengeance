@@ -16,21 +16,20 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("Grants a condition if owner is combatant.")]
-	public class GrantConditionOnCombatantOwnerInfo : ITraitInfo
+	public class GrantConditionOnCombatantOwnerInfo : TraitInfo
 	{
 		[GrantedConditionReference]
 		[Desc("The condition to grant")]
 		public readonly string Condition = null;
 
-		public object Create(ActorInitializer init) { return new GrantConditionOnCombatantOwner(init.Self, this); }
+		public override object Create(ActorInitializer init) { return new GrantConditionOnCombatantOwner(init.Self, this); }
 	}
 
 	public class GrantConditionOnCombatantOwner : INotifyCreated, INotifyOwnerChanged
 	{
 		readonly GrantConditionOnCombatantOwnerInfo info;
-		ConditionManager manager;
 
-		int token = ConditionManager.InvalidConditionToken;
+		int token = Actor.InvalidConditionToken;
 
 		public GrantConditionOnCombatantOwner(Actor self, GrantConditionOnCombatantOwnerInfo info)
 		{
@@ -39,36 +38,28 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			manager = self.Trait<ConditionManager>();
-
 			if (!self.Owner.NonCombatant)
 				GrantCondition(self, info.Condition);
 		}
 
 		void GrantCondition(Actor self, string cond)
 		{
-			if (manager == null)
-				return;
-
 			if (string.IsNullOrEmpty(cond))
 				return;
 
-			token = manager.GrantCondition(self, cond);
+			token = self.GrantCondition(cond);
 		}
 
 		void RevokeCondition(Actor self)
 		{
-			if (manager == null)
-				return;
-
-			token = manager.RevokeCondition(self, token);
+			token = self.RevokeCondition(token);
 		}
 
 		void INotifyOwnerChanged.OnOwnerChanged(Actor self, Player oldOwner, Player newOwner)
 		{
-			if (!newOwner.NonCombatant && token == ConditionManager.InvalidConditionToken)
+			if (!newOwner.NonCombatant && token == Actor.InvalidConditionToken)
 				GrantCondition(self, info.Condition);
-			else if (newOwner.NonCombatant && token != ConditionManager.InvalidConditionToken)
+			else if (newOwner.NonCombatant && token != Actor.InvalidConditionToken)
 				RevokeCondition(self);
 		}
 	}

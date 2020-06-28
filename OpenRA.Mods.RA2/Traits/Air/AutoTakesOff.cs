@@ -16,9 +16,9 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("This actor takes of automatically on creation.")]
-	public class AutoTakesOffInfo : ITraitInfo, Requires<AircraftInfo>
+	public class AutoTakesOffInfo : TraitInfo, Requires<AircraftInfo>
 	{
-		public object Create(ActorInitializer init) { return new AutoTakesOff(this); }
+		public override object Create(ActorInitializer init) { return new AutoTakesOff(this); }
 	}
 
 	public class AutoTakesOff : INotifyAddedToWorld

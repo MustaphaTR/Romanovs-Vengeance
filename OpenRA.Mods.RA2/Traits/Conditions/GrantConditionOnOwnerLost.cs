@@ -16,29 +16,24 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Traits
 {
 	[Desc("Gives a condition to the actor after its owner loses the game.")]
-	public class GrantConditionOnOwnerLostInfo : ITraitInfo
+	public class GrantConditionOnOwnerLostInfo : TraitInfo
 	{
 		[GrantedConditionReference]
 		[Desc("The condition to grant")]
 		public readonly string Condition = null;
 
-		public object Create(ActorInitializer init) { return new GrantConditionOnOwnerLost(this); }
+		public override object Create(ActorInitializer init) { return new GrantConditionOnOwnerLost(this); }
 	}
 
-	public class GrantConditionOnOwnerLost : INotifyCreated, INotifyOwnerLost
+	public class GrantConditionOnOwnerLost : INotifyOwnerLost
 	{
 		GrantConditionOnOwnerLostInfo info;
-		ConditionManager manager;
-		int token = ConditionManager.InvalidConditionToken;
+
+		int token = Actor.InvalidConditionToken;
 
 		public GrantConditionOnOwnerLost(GrantConditionOnOwnerLostInfo info)
 		{
 			this.info = info;
-		}
-
-		void INotifyCreated.Created(Actor self)
-		{
-			manager = self.TraitOrDefault<ConditionManager>();
 		}
 
 		void INotifyOwnerLost.OnOwnerLost(Actor self)
@@ -48,16 +43,13 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void GrantCondition(Actor self, string cond)
 		{
-			if (manager == null)
-				return;
-
 			if (string.IsNullOrEmpty(cond))
 				return;
 
-			if (token != ConditionManager.InvalidConditionToken)
+			if (token != Actor.InvalidConditionToken)
 				return;
 
-			token = manager.GrantCondition(self, cond);
+			token = self.GrantCondition(cond);
 		}
 	}
 }

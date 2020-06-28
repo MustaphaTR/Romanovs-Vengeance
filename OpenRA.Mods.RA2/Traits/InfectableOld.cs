@@ -50,7 +50,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public override object Create(ActorInitializer init) { return new InfectableOld(init.Self, this); }
 	}
 
-	public class InfectableOld : ConditionalTrait<InfectableOldInfo>, ISync, ITick, INotifyCreated, INotifyDamage, INotifyKilled, IRemoveInfector
+	public class InfectableOld : ConditionalTrait<InfectableOldInfo>, ISync, ITick, INotifyDamage, INotifyKilled, IRemoveInfector
 	{
 		readonly Health health;
 
@@ -61,10 +61,9 @@ namespace OpenRA.Mods.RA2.Traits
 		[Sync]
 		public int Ticks;
 
-		ConditionManager conditionManager;
-		int beingInfectedToken = ConditionManager.InvalidConditionToken;
-		int infectedToken = ConditionManager.InvalidConditionToken;
-		int infectedByToken = ConditionManager.InvalidConditionToken;
+		int beingInfectedToken = Actor.InvalidConditionToken;
+		int infectedToken = Actor.InvalidConditionToken;
+		int infectedByToken = Actor.InvalidConditionToken;
 
 		int dealthDamage = 0;
 
@@ -74,49 +73,38 @@ namespace OpenRA.Mods.RA2.Traits
 			health = self.Trait<Health>();
 		}
 
-		void INotifyCreated.Created(Actor self)
-		{
-			conditionManager = self.TraitOrDefault<ConditionManager>();
-		}
-
 		public void GrantCondition(Actor self, bool infecting = false)
 		{
-			if (conditionManager != null)
+			if (infecting)
 			{
-				if (infecting)
-				{
-					if (beingInfectedToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(Info.BeingInfectedCondition))
-						beingInfectedToken = conditionManager.GrantCondition(self, Info.BeingInfectedCondition);
-				}
-				else
-				{
-					if (infectedToken == ConditionManager.InvalidConditionToken && !string.IsNullOrEmpty(Info.InfectedCondition))
-						infectedToken = conditionManager.GrantCondition(self, Info.InfectedCondition);
+				if (beingInfectedToken == Actor.InvalidConditionToken && !string.IsNullOrEmpty(Info.BeingInfectedCondition))
+					beingInfectedToken = self.GrantCondition(Info.BeingInfectedCondition);
+			}
+			else
+			{
+				if (infectedToken == Actor.InvalidConditionToken && !string.IsNullOrEmpty(Info.InfectedCondition))
+					infectedToken = self.GrantCondition(Info.InfectedCondition);
 
-					string infectedByCondition;
-					if (Info.InfectedByConditions.TryGetValue(Infector.Info.Name, out infectedByCondition))
-						infectedByToken = conditionManager.GrantCondition(self, infectedByCondition);
-				}
+				string infectedByCondition;
+				if (Info.InfectedByConditions.TryGetValue(Infector.Info.Name, out infectedByCondition))
+					infectedByToken = self.GrantCondition(infectedByCondition);
 			}
 		}
 
 		public void RevokeCondition(Actor self, bool infecting = false)
 		{
-			if (conditionManager != null)
+			if (infecting)
 			{
-				if (infecting)
-				{
-					if (beingInfectedToken != ConditionManager.InvalidConditionToken)
-						beingInfectedToken = conditionManager.RevokeCondition(self, beingInfectedToken);
-				}
-				else
-				{
-					if (infectedToken != ConditionManager.InvalidConditionToken)
-						infectedToken = conditionManager.RevokeCondition(self, infectedToken);
+				if (beingInfectedToken != Actor.InvalidConditionToken)
+					beingInfectedToken = self.RevokeCondition(beingInfectedToken);
+			}
+			else
+			{
+				if (infectedToken != Actor.InvalidConditionToken)
+					infectedToken = self.RevokeCondition(infectedToken);
 
-					if (infectedByToken != ConditionManager.InvalidConditionToken)
-						infectedByToken = conditionManager.RevokeCondition(self, infectedByToken);
-				}
+				if (infectedByToken != Actor.InvalidConditionToken)
+					infectedByToken = self.RevokeCondition(infectedByToken);
 			}
 		}
 

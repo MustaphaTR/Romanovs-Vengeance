@@ -85,9 +85,9 @@ namespace OpenRA.Mods.RA2.Traits
 			yield return new EditorActorCheckbox("Deployed", EditorDeployedDisplayOrder,
 				actor =>
 				{
-					var init = actor.Init<DeployStateInit>();
+					var init = actor.GetInitOrDefault<DeployStateInit>();
 					if (init != null)
-						return init.Value(world) == DeployState.Deployed;
+						return init.Value == DeployState.Deployed;
 
 					return false;
 				},
@@ -108,10 +108,9 @@ namespace OpenRA.Mods.RA2.Traits
 		readonly bool canTurn;
 
 		DeployState deployState;
-		ConditionManager conditionManager;
 		WithSpriteBody[] wsbs;
-		int deployedToken = ConditionManager.InvalidConditionToken;
-		int undeployedToken = ConditionManager.InvalidConditionToken;
+		int deployedToken = Actor.InvalidConditionToken;
+		int undeployedToken = Actor.InvalidConditionToken;
 
 		public DeployState DeployState { get { return deployState; } }
 
@@ -121,13 +120,11 @@ namespace OpenRA.Mods.RA2.Traits
 			self = init.Self;
 			checkTerrainType = info.AllowedTerrainTypes.Count > 0;
 			canTurn = self.Info.HasTraitInfo<IFacingInfo>();
-			if (init.Contains<DeployStateInit>())
-				deployState = init.Get<DeployStateInit, DeployState>();
+			deployState = init.GetValue<DeployStateInit, DeployState>(DeployState.Undeployed);
 		}
 
 		protected override void Created(Actor self)
 		{
-			conditionManager = self.TraitOrDefault<ConditionManager>();
 			wsbs = self.TraitsImplementing<WithSpriteBody>().Where(w => Info.BodyNames.Contains(w.Info.Name)).ToArray();
 
 			switch (deployState)
@@ -137,19 +134,19 @@ namespace OpenRA.Mods.RA2.Traits
 					break;
 				case DeployState.Deploying:
 					if (canTurn)
-						self.Trait<IFacing>().Facing = Info.Facing;
+						self.Trait<IFacing>().Facing = WAngle.FromFacing(Info.Facing);
 
 					Deploy(true);
 					break;
 				case DeployState.Deployed:
 					if (canTurn)
-						self.Trait<IFacing>().Facing = Info.Facing;
+						self.Trait<IFacing>().Facing = WAngle.FromFacing(Info.Facing);
 
 					OnDeployCompleted();
 					break;
 				case DeployState.Undeploying:
 					if (canTurn)
-						self.Trait<IFacing>().Facing = Info.Facing;
+						self.Trait<IFacing>().Facing = WAngle.FromFacing(Info.Facing);
 
 					Undeploy(true);
 					break;
@@ -359,32 +356,32 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void OnDeployStarted()
 		{
-			if (undeployedToken != ConditionManager.InvalidConditionToken)
-				undeployedToken = conditionManager.RevokeCondition(self, undeployedToken);
+			if (undeployedToken != Actor.InvalidConditionToken)
+				undeployedToken = self.RevokeCondition(undeployedToken);
 
 			deployState = DeployState.Deploying;
 		}
 
 		void OnDeployCompleted()
 		{
-			if (conditionManager != null && !string.IsNullOrEmpty(Info.DeployedCondition) && deployedToken == ConditionManager.InvalidConditionToken)
-				deployedToken = conditionManager.GrantCondition(self, Info.DeployedCondition);
+			if (!string.IsNullOrEmpty(Info.DeployedCondition) && deployedToken == Actor.InvalidConditionToken)
+				deployedToken = self.GrantCondition(Info.DeployedCondition);
 
 			deployState = DeployState.Deployed;
 		}
 
 		void OnUndeployStarted()
 		{
-			if (deployedToken != ConditionManager.InvalidConditionToken)
-				deployedToken = conditionManager.RevokeCondition(self, deployedToken);
+			if (deployedToken != Actor.InvalidConditionToken)
+				deployedToken = self.RevokeCondition(deployedToken);
 
 			deployState = DeployState.Deploying;
 		}
 
 		void OnUndeployCompleted()
 		{
-			if (conditionManager != null && !string.IsNullOrEmpty(Info.UndeployedCondition) && undeployedToken == ConditionManager.InvalidConditionToken)
-				undeployedToken = conditionManager.GrantCondition(self, Info.UndeployedCondition);
+			if (!string.IsNullOrEmpty(Info.UndeployedCondition) && undeployedToken == Actor.InvalidConditionToken)
+				undeployedToken = self.GrantCondition(Info.UndeployedCondition);
 
 			if (Info.TakeOffOnUndeploy)
 				self.QueueActivity(new Fly(self, Target.FromCell(self.World, self.Location)));
