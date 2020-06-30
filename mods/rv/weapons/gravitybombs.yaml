@@ -55,13 +55,13 @@ NapalmBomb:
 	MinRange: 0c1
 	Report: vkiratta.wav
 	Projectile: GravityBomb
-		Velocity: 0, 0, -50
+		Velocity: 0, 0, -100
 		Acceleration: 0, 0, -10
 		Image: zbomb
 		Palette: player
 		IsPlayerPalette: true
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c256
+		Spread: 0c384
 		Falloff: 100, 83, 67, 50, 0
 		Damage: 100
 		ValidTargets: Building, Ground, Water
@@ -91,56 +91,56 @@ NapalmBomb:
 		Sequences: idle
 		Palette: effect
 		Weapon: FireDamage
-		Duration: 300
+		Duration: 500
 		Speed: 0, 25
 		TurnRate: 10
-		Delay: 10
+		Delay: 4
 	Warhead@6Par: SpawnSmokeParticle
 		ValidTargets: Ground, Air, Water
 		Image: mediumfire
 		Sequences: idle
 		Palette: effect
 		Weapon: FireDamage
-		Duration: 300
+		Duration: 500
 		Speed: 0, 25
 		TurnRate: 10
-		Delay: 10
+		Delay: 4
 	Warhead@7Par: SpawnSmokeParticle
 		ValidTargets: Ground, Air, Water
 		Image: largefire
 		Sequences: idle
 		Palette: effect
 		Weapon: FireDamage
-		Duration: 300
+		Duration: 500
 		Speed: 0, 25
 		TurnRate: 10
-		Delay: 10
+		Delay: 2
 	Warhead@8Par: SpawnSmokeParticle
 		ValidTargets: Ground, Air, Water
 		Image: smallfire
 		Sequences: idle
 		Palette: effect
 		Weapon: FireDamage
-		Duration: 300
+		Duration: 500
 		Speed: 0, 25
 		TurnRate: 10
-		Delay: 10
+		Delay: 5
 	Warhead@9Par: SpawnSmokeParticle
 		ValidTargets: Ground, Air, Water
 		Image: smallfire
 		Sequences: idle
 		Palette: effect
 		Weapon: FireDamage
-		Duration: 300
+		Duration: 500
 		Speed: 0, 25
 		TurnRate: 10
-		Delay: 10
+		Delay: 5
 
 NapalmBombE:
 	Inherits: NapalmBomb
 	ReloadDelay: 40
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c384
+		Spread: 0c512
 		Damage: 200
 
 ChaosGasDrop:
