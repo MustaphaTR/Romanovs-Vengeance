@@ -10,6 +10,8 @@ slav:
 		BuildPaletteOrder: 50
 		Prerequisites: ~techlevel.1
 		Description: Gathers Ore and Gems.
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 100
 	Tooltip:
@@ -95,6 +97,8 @@ init:
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.1
 		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 75
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 100
 	DeliversCash:
@@ -194,6 +198,8 @@ brute:
 		BuildPaletteOrder: 20
 		Prerequisites: ~techlevel.1
 		Description: Powerful soldiers.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nCannot be eaten by Attack Dogs.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 300
 	Tooltip:
@@ -290,6 +296,8 @@ virus:
 		BuildPaletteOrder: 80
 		Prerequisites: yadome, ~techlevel.2
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 900
 	Tooltip:
@@ -345,6 +353,8 @@ yuripsi:
 		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 90
 		Prerequisites: yadome, ~techlevel.3
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1200
 	DeliversCash:
@@ -358,6 +368,8 @@ yurix:
 		BuildPaletteOrder: 110
 		Prerequisites: yatech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nCannot be eaten by Attack Dogs.\n\nMaximum 1 can be trained.
+		BuildDuration: 1125
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	DeliversCash:
@@ -428,6 +440,8 @@ lunr:
 		BuildPaletteOrder: 70
 		Prerequisites: yadome, ~techlevel.3
 		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -594,6 +608,8 @@ gtrp:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 60
 		Description: Infantry armed with a heavy gatling cannon.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -763,6 +779,8 @@ spct:
 		BuildPaletteOrder: 100
 		Prerequisites: yatech, ~techlevel.4
 		Description: Invisible infantry armed with AP rifles with bullets capable of slowing enemy units.\nCan be deployed to make nearby units invisible but itself becomes visible.\n\n  Strong vs Vehicles\n  Weak vs Buildings, Aircraft
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	DeliversCash:
@@ -864,6 +882,8 @@ ttrp:
 		BuildPaletteOrder: 980
 		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Infantry armed with a toxin sprayer and toxin bombs.\nImmune to toxic clouds.\n\n Strong vs Infantry, Buildings\n\n Weak Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -981,6 +1001,8 @@ crkt:
 		BuildPaletteOrder: 990
 		Prerequisites: ~yuri.tech.infiltrated, ~techlevel.4
 		Description: Long range rocket infantry armed with chaos warheads.\nImmune to chaos gas.\n  Strong vs Infantry, Vehicles, Aircraft\n  Weak vs Buildings
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:

@@ -55,6 +55,8 @@ yapowr:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Provides power for other structures.\nCan be occupied with up to 3 infantry for 50 more power each.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -232,8 +234,10 @@ yarefn:
 		BuildPaletteOrder: 30
 		Prerequisites: ~disabled # power
 		Description: Gathers and processes ore.\nComes with 2 slaves.
+		BuildDuration: 750
+		BuildDurationModifier: 100
 	Valued:
-		Cost: 1600
+		Cost: 2000
 	Tooltip:
 		Name: Slave Miner
 	Tooltip@NoRow:
@@ -497,6 +501,8 @@ yagrnd:
 		BuildPaletteOrder: 110
 		Prerequisites: yaweap, ~prerequisite.grinder, ~techlevel.1
 		Description: Converts Infantry and Vehicles back to credits.
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Health:
 		HP: 900
 	Armor:
@@ -541,6 +547,8 @@ yadome:
 		BuildPaletteOrder: 60
 		Prerequisites: power, psirefn, ~techlevel.2
 		Description: Provides radar
+		BuildDuration: 875
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -714,6 +722,8 @@ yadisk:
 		BuildPaletteOrder: 100
 		Prerequisites: yadome, ~techlevel.2
 		Description: Produces Psi-Crops aircraft.
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -797,6 +807,8 @@ yatech:
 		BuildPaletteOrder: 90
 		Prerequisites: yadome, ~techlevel.3
 		Description: Allows deployment of advanced units.\nCan be rotated.
+		BuildDuration: 1000
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -849,6 +861,8 @@ yapsis:
 		BuildPaletteOrder: 120
 		Prerequisites: yatech, ~techlevel.4
 		Description: Detects enemy units and structures.
+		BuildDuration: 1000
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 4000
 	Tooltip:
@@ -895,6 +909,8 @@ yaclon:
 		Prerequisites: yatech, ~techlevel.4
 		Description: Clones most trained infantry.\nMaximum 1 can be built.
 		BuildLimit: 1
+		BuildDuration: 1250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -1003,6 +1019,8 @@ yaggun:
 		BuildPaletteOrder: 40
 		Prerequisites: yabrck, ~techlevel.1
 		Description: Automated anti-infantry and anti-air defense.\nCan detect cloaked units.
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Health:
 		HP: 600
 	Armor:
@@ -1104,6 +1122,8 @@ natbnk:
 		BuildPaletteOrder: 50
 		Prerequisites: yaweap, ~techlevel.1
 		Description: Static defense with fireports for a vehicle to garrison.\n\nProvides increased firepower, fire speed and range to the vehicle.
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 400
 	Tooltip:
@@ -1156,6 +1176,8 @@ yapsyt:
 		BuildPaletteOrder: 60
 		Prerequisites: yadome
 		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.\nCan detect cloaked units.
+		BuildDuration: 625
+		BuildDurationModifier: 100
 	Health:
 		HP: 600
 	Armor:
@@ -1233,6 +1255,8 @@ yasgen:
 		BuildPaletteOrder: 80
 		Prerequisites: yatech, ~techlevel.3
 		Description: Makes nearby units and structures invisibile while not firing.\nRequires power to operate.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Health:
 		HP: 600
 	Armor:
@@ -1566,6 +1590,8 @@ yagatea:
 		Queue: Support.Yuri, Support.Antarctica
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Tooltip:
 		Name: Psi-Corps Gate
 	Tooltip@NoRow:

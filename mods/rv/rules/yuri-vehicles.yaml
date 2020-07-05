@@ -16,6 +16,8 @@ smin:
 		BuildPaletteOrder: 90
 		Description: Gathers and processes ore.
 		Prerequisites: yadome, ~!global-megawealth, ~techlevel.3
+		BuildDuration: 750
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	DeliversCash:
@@ -122,6 +124,8 @@ gmin:
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
 		Description: Gathers Ore and Gems.\n  Unarmed.\n  Immune to Radiation.\nSpecial ability: Invisiblity
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1000
 	DeliversCash:
@@ -226,6 +230,8 @@ ltnk:
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Description: Yuri Main Battle Tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Mobile:
 		Speed: 120
 	Health:
@@ -305,6 +311,8 @@ ytnk:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Anti-infantry and anti-air vehicle.\nFires faster as it continues to fire.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicle
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Mobile:
 		Speed: 105
 		TurnSpeed: 10
@@ -435,6 +443,8 @@ caos:
 		BuildPaletteOrder: 40
 		Prerequisites: ~techlevel.2
 		Description: Drone capable of releasing gas that causes enemy units to fire random units.\nUnits affected by the gas deal more damage.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nCan be deployed to release gas continuously.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Mobile:
 		Speed: 135
 		TurnSpeed: 15
@@ -512,6 +522,8 @@ tele:
 		BuildPaletteOrder: 100
 		Prerequisites: yadome, ~techlevel.3
 		Description: Long range magnetic field generator.\nFreezes vehicles and damages structures.\n  Strong vs Vehicles, Ships, Buildings\n  Weak vs Infantry, Aircraft
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	Mobile:
 		Speed: 75
 		TurnSpeed: 8
@@ -581,6 +593,8 @@ mind:
 		BuildPaletteOrder: 120
 		Prerequisites: yatech, ~techlevel.4
 		Description: Heavy vehicle capable of mind controlling multipile enemy units.\nStarts taking damage if controlling more than 3.\nCan crush enemy vehicles.\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft
+		BuildDuration: 875
+		BuildDurationModifier: 100
 	Mobile:
 		Speed: 60
 		TurnSpeed: 5
@@ -686,6 +700,8 @@ mlyr:
 		Prerequisites: ~prerequisite.minelayer, repairpad, ~techlevel.1
 		BuildPaletteOrder: 70
 		Description: Lays mines to destroy unwary enemy units.\n\nCan detect cloaked units.\n  Unarmed
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Mobile:
 		Speed: 90
 		TurnSpeed: 8
@@ -757,6 +773,8 @@ kamaz:
 		Prerequisites: yadome, ~techlevel.2
 		BuildPaletteOrder: 80
 		Description: Armored infantry transport vehicle armed with a toxin sprayer.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Mobile:
 		Speed: 75
 		TurnSpeed: 5
@@ -845,6 +863,8 @@ yhtnk:
 		BuildPaletteOrder: 110
 		Prerequisites: yatech, ~techlevel.4
 		Description: Fast invisible tank designed for ambushes.\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft
+		BuildDuration: 625
+		BuildDurationModifier: 100
 	Mobile:
 		Speed: 120
 		TurnSpeed: 10
@@ -926,6 +946,8 @@ grtk:
 		BuildPaletteOrder: 990
 		Prerequisites: yatech, ~caslab, ~techlevel.4
 		Description: Melee vehicle with high damage against all ground units.\n  Strong vs Buildings, Vehicles, Infantry\n  Weak vs Aircraft
+		BuildDuration: 1125
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -1003,6 +1025,8 @@ spider:
 		BuildPaletteOrder: 90
 		Prerequisites: yadome, ~techlevel.3
 		Description: Mutated huge spider armed with poison spines and web launchers.\n Receives no damage from radiation.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:

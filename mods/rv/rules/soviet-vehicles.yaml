@@ -18,6 +18,8 @@ harv:
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
 		Description: Gathers Ore and Gems.\n  Immune to Radiation.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1000
 	DeliversCash:
@@ -136,6 +138,8 @@ dron:
 		Prerequisites: ~techlevel.2
 		BuildPaletteOrder: 40
 		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n  Immune to Radiation.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		BuildDuration: 175
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -257,6 +261,8 @@ htk:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Infantry Transport and Anti-Air/Anti-Infantry vehicle.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -353,6 +359,8 @@ htnk:
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
 		Description: Soviet Main Battle Tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	Mobile:
 		Speed: 90
 	Health:
@@ -406,6 +414,8 @@ apoc:
 		BuildPaletteOrder: 110
 		Prerequisites: natech, ~techlevel.4
 		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\nCan crush enemy vehicles.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
+		BuildDuration: 875
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -527,6 +537,8 @@ ttnk:
 		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~techlevel.3
 		Description: Russian special tank armed with dual small Tesla Coils.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft
+		BuildDuration: 625
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -586,6 +598,8 @@ dtruck:
 		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~techlevel.3
 		Description: Demolition Truck, actively armed with nuclear explosives.
+		BuildDuration: 750
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -657,6 +671,8 @@ v3:
 		BuildPaletteOrder: 100
 		Prerequisites: natech, ~techlevel.3
 		Description: Long-range rocket artillery.
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -771,6 +787,8 @@ tric:
 		Prerequisites: naradr, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: Fast medium range unit.\n  Strong vs Structures, Infantry\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 175
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -849,6 +867,8 @@ deva:
 		BuildPaletteOrder: 990
 		Prerequisites: natech, ~caslab, ~techlevel.4
 		Description: Soviet Advanced Battle Tank with Double Barrel\narmed with nuclear warheads.\n  Immune to Radiation.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft\n\nCan be deployed to self-destruct and explode violently.
+		BuildDuration: 1125
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -974,6 +994,8 @@ ftnk:
 		BuildPaletteOrder: 80
 		Prerequisites: naradr, ~techlevel.3
 		Description: Soviet tank armed with dual flamethrowers.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:

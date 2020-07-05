@@ -8,6 +8,8 @@ engineer:
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Captures enemy structures.\n  Unarmed
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 400
 	DeliversCash:
@@ -95,6 +97,8 @@ dog:
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
 		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 50
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -231,6 +235,8 @@ e1:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan deploy to gain more range and damage.
+		BuildDuration: 100
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -395,6 +401,8 @@ ggi:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Anti-tank/anti-air infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\nCan deploy to gain more range.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -608,6 +616,8 @@ snipe:
 		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Special anti-infantry unit.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
@@ -675,6 +685,8 @@ spy:
 		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\n  Unarmed\nSpecial Ability: Disguises
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -745,6 +757,8 @@ ghost:
 		BuildPaletteOrder: 100
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Elite commando infantry, armed with a sub machine gun\nand C4 that damages Buildings and Ships.\nCan swim.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -861,6 +875,8 @@ ccomand:
 		BuildPaletteOrder: 960
 		Prerequisites: ~allies.tech.infiltrated, ~techlevel.4
 		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Tooltip:
 		Name: Chrono Commando
 	Tooltip@NoRow:
@@ -919,6 +935,8 @@ ptroop:
 		BuildPaletteOrder: 980
 		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Can C4 Buildings
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	DeliversCash:
@@ -956,6 +974,8 @@ tany:
 		Prerequisites: gatech, ~techlevel.4
 		BuildLimit: 1
 		Description: Elite commando infantry, armed with \ndual pistols and C4.\nCan swim.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can C4 Buildings and Vehicles.\n\nMaximum 1 can be trained.
+		BuildDuration: 1125
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -1082,6 +1102,8 @@ jumpjet:
 		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.2
 		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -1248,6 +1270,8 @@ cleg:
 		BuildPaletteOrder: 140
 		Prerequisites: gatech, ~techlevel.4
 		Description: High-tech soldier capable of erasing enemy units.\n Strong vs Infantry, Vehicles, Structures\n Weak vs Aircraft
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	ProducibleWithLevel:
@@ -1346,6 +1370,8 @@ medi:
 		Prerequisites: ~prerequisite.medic, ~techlevel.1
 		BuildPaletteOrder: 50
 		Description: Heals infantry.\n  Unarmed
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 150
 	DeliversCash:
@@ -1408,6 +1434,8 @@ gren:
 		Prerequisites: gaairc, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: Infantry armed with grenades.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:

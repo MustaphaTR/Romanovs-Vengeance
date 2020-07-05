@@ -157,6 +157,8 @@ gapowr:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Provides power for other structures.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -247,6 +249,8 @@ gapowrup:
 		BuildPaletteOrder: 80
 		Prerequisites: gapowr, gaairc, ~techlevel.2
 		Description: Better coolants allow power plant to work more efficently\nproviding 150 more power.
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Plug:
 		Type: powrup
 	Power:
@@ -372,6 +376,8 @@ gaairc:
 		BuildPaletteOrder: 60
 		Prerequisites: power, garefn, ~techlevel.2
 		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.
+		BuildDuration: 625
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -745,6 +751,8 @@ gatech:
 		BuildPaletteOrder: 90
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Allows deployment of advanced units.\nCan be rotated.
+		BuildDuration: 1000
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -815,6 +823,8 @@ gapill:
 		BuildPaletteOrder: 40
 		Prerequisites: gapile, ~techlevel.1
 		Description: Automated anti-infantry defense.\nCan detect cloaked units.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -871,6 +881,8 @@ nasam:
 		BuildPaletteOrder: 50
 		Prerequisites: gaairc, ~techlevel.2
 		Description: Automated anti-aircraft defense.\nCan detect cloaked units.
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -1002,6 +1014,8 @@ gaorep:
 		Prerequisites: garefn, gatech, ~techlevel.4
 		Description: Refines income from ores and gems by 25%.\nMaximum 1 can be built.
 		BuildLimit: 1
+		BuildDuration: 1250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -1060,6 +1074,8 @@ gaspysat:
 		BuildPaletteOrder: 110
 		Prerequisites: gatech, ~techlevel.4
 		Description: Provides Satellite Scan power, which reveals the map for a while.\nProvides Radar.
+		BuildDuration: 1000
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -1140,6 +1156,8 @@ gagap:
 		BuildPaletteOrder: 80
 		Prerequisites: gatech, ~techlevel.3
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Health:
 		HP: 600
 	Armor:
@@ -1291,6 +1309,8 @@ atesla:
 		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		BuildDuration: 625
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -1447,6 +1467,8 @@ gaapad:
 		BuildPaletteOrder: 100
 		Prerequisites: gaairc, ~prerequisite.airpad, ~techlevel.2
 		Description: Rearms up to 3 aircraft.
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 250
 	Tooltip:
@@ -1521,6 +1543,8 @@ gagatea:
 		Queue: Support.Allies, Support.France
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Tooltip:
 		Name: Allied Gate
 	Tooltip@NoRow:
@@ -1568,6 +1592,8 @@ gamgun:
 		BuildPaletteOrder: 70
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Defensive structure that is invisible while not firing.
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 800
 	Tooltip:

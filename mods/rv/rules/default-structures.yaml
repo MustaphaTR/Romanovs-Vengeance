@@ -6,8 +6,8 @@
 		Queue: Building.ConYards
 		Prerequisites: ~disabled
 		Description: Allows construction of base structures.
-		BuildDuration: 3750
-		BuildDurationModifier: 40
+		BuildDuration: 1125
+		BuildDurationModifier: 100
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4,4
@@ -22,7 +22,7 @@
 	#	Types: SatelliteScan
 	#	Range: 6c0
 	Valued:
-		Cost: 3500
+		Cost: 4000
 	Production:
 		Produces: Building, Support
 		PauseOnCondition: chronodisable
@@ -169,6 +169,8 @@
 		BuildPaletteOrder: 20
 		Prerequisites: power, ~techlevel.1
 		Description: Trains infantry.\nCan be rotated.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -239,8 +241,10 @@
 		BuildPaletteOrder: 30
 		Prerequisites: power, ~!global-megawealth, ~techlevel.1
 		Description: Processes ore into credits.\nCan be rotated.
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Valued:
-		Cost: 1400
+		Cost: 1500
 	Tooltip:
 		Name: Ore Refinery
 	Tooltip@NoRow:
@@ -379,6 +383,8 @@
 		BuildPaletteOrder: 30
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
 		Description: Stores excess Ore.
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 150
 	Tooltip:
@@ -434,6 +440,8 @@
 		BuildPaletteOrder: 40
 		Prerequisites: refinery, ~techlevel.1
 		Description: Produces vehicles.\nCan be rotated.
+		BuildDuration: 750
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -515,6 +523,8 @@
 		BuildPaletteOrder: 50
 		Prerequisites: refinery, ~techlevel.1
 		Description: Produces and repairs ships,\nsubmarines, transports, and other naval units.\nDetects submarged units.
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	Targetable:
 		TargetTypes: Ground, Water, WaterStructure, C4
 	ProvidesPrerequisite@default:
@@ -665,6 +675,8 @@
 		BuildPaletteOrder: 70
 		Prerequisites: warfactory, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -757,6 +769,8 @@
 	Buildable:
 		Queue: Support
 		BuildPaletteOrder: 100
+		BuildDuration: 1125
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Building:

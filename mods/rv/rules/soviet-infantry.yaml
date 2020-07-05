@@ -10,6 +10,8 @@ e2:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Cheap rifle infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft.
+		BuildDuration: 75
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -91,6 +93,8 @@ flakt:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 60
 		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -228,6 +232,8 @@ shk:
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Special armored unit using electricity.\n  Strong vs Infantry, Tanks\n  Weak vs Aircraft.\nSpecial ability: Charge tesla coils
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -326,6 +332,8 @@ terror:
 		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~techlevel.3
 		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n  Strong vs Ground units\n  Weak vs Aircraft
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -394,6 +402,8 @@ deso:
 		BuildPaletteOrder: 100
 		Prerequisites: naradr, ~techlevel.3
 		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n  Immune to Radiation.\n  Strong vs Infantry, Light armor\n  Weak vs Tanks, Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -521,6 +531,8 @@ ivan:
 		BuildPaletteOrder: 80
 		Prerequisites: naradr, ~techlevel.3
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -582,6 +594,8 @@ civan:
 		BuildPaletteOrder: 970
 		Prerequisites: ~allies.tech.infiltrated, ~techlevel.4
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows. Can teleport on anywhere on the map.
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Tooltip:
 		Name: Chrono Ivan
 	Tooltip@NoRow:
@@ -626,6 +640,8 @@ yuri:
 		BuildPaletteOrder: 150
 		Prerequisites: ~disabled # natech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -738,6 +754,8 @@ yuripr:
 		BuildPaletteOrder: 990
 		Prerequisites: ~disabled # ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units from a great range.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\nMaximum 1 can be trained.
+		BuildDuration: 1125
+		BuildDurationModifier: 100
 	Tooltip:
 		Name: Yuri Prime
 	Tooltip@NoRow:
@@ -792,6 +810,8 @@ boris:
 		Prerequisites: natech, ~techlevel.4
 		BuildLimit: 1
 		Description: Elite commando infantry, armed with\nAKM rifle and signal flare.\nCan use a boat to move over water.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can call airstrike against Buildings.\n\nMaximum 1 can be trained.
+		BuildDuration: 1125
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -941,6 +961,8 @@ pyro:
 		BuildPaletteOrder: 70
 		Prerequisites: naradr, ~techlevel.2
 		Description: Advanced anti-infantry and anti-structure infantry.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -1019,6 +1041,8 @@ mech:
 		Prerequisites: ~prerequisite.mechanic, repairpad, ~techlevel.2
 		BuildPaletteOrder: 60
 		Description: Repairs friendly vehicles.\n  Unarmed
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -1075,6 +1099,8 @@ hjck:
 		Prerequisites: ~prerequisite.hijacker, repairpad, ~techlevel.2
 		BuildPaletteOrder: 50
 		Description: Steals enemy vehicles.\n  Unarmed
+		BuildDuration: 125
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -1139,6 +1165,8 @@ itrp:
 		BuildPaletteOrder: 140
 		Prerequisites: natech, ~techlevel.4
 		Description: High-tech soldier capable of making friendly vehicles invulnerabile and\ndamage enemy infantry.\n Strong vs Infantry\n Weak vs Vehicles, Aircraft\n\nCannot be eaten by Attack Dogs.
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	ProducibleWithLevel:
@@ -1274,6 +1302,8 @@ shkc:
 		BuildPaletteOrder: 990
 		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Advanced armored unit using electricity. Can place Tesla Bombs on Buildings.\n  Strong vs Infantry, Tanks, Buildings\n  Weak vs Aircraft.\nSpecial ability: Charge tesla coils
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	DeliversCash:
@@ -1347,6 +1377,8 @@ vlkv:
 		Prerequisites: natech, ~techlevel.4
 		BuildLimit: 1
 		Description: Elite cybernatic commando, armed with\na tesla rifle.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nMaximum 1 can be trained.
+		BuildDuration: 1250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -1452,6 +1484,8 @@ chit:
 		BuildPaletteOrder: 200
 		BuildLimit: 1
 		Description: Cybernatic canine capable of destroying infantry and vehicles in seconds.\nCan detect cloaked units and spies.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nMaximum 1 can be trained.
+		BuildDuration: 1250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:

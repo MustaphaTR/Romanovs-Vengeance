@@ -65,6 +65,8 @@ shad:
 		BuildPaletteOrder: 20
 		Prerequisites: gapile, ~techlevel.2
 		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 800
 	RevealsShroud:
@@ -182,6 +184,8 @@ zep:
 		BuildPaletteOrder: 40
 		Prerequisites: natech, ~techlevel.4
 		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles
+		BuildDuration: 1000
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Selectable:
@@ -294,6 +298,8 @@ orca:
 		Prerequisites: !prerequisite.enoughair, ~techlevel.3
 		BuildPaletteOrder: 10
 		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+		BuildDuration: 500
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Aircraft:
@@ -450,6 +456,8 @@ beag:
 		BuildPaletteOrder: 30
 		Prerequisites: !prerequisite.enoughair, ~techlevel.3
 		Description: Aircraft armed with EMP bomb.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+		BuildDuration: 750
+		BuildDurationModifier: 100
 	SpawnActorOnDeath:
 		Actor: beaghusk
 	SpawnActorOnDeath@VTOL:
@@ -1226,6 +1234,8 @@ schp:
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.3
 		Description: Helicopter capable of deploying into a long range artillery.\n\nMobile:\n Strong vs Infantry\n Weak vs Vehicles\nDeployed:\n Strong vs Buildings, Vehicles\n Weak vs Aircraft
+		BuildDuration: 625
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -1457,6 +1467,8 @@ disk:
 		BuildPaletteOrder: 40
 		Prerequisites: yatech, ~techlevel.4
 		Description: Floating Disc armed with lasers.\nCan disable power plants and powered defences.\nCan steal resources from enemy refineries.\n Strong vs Infantry, Aircraft\n Weak vs Vehicles
+		BuildDuration: 1000
+		BuildDurationModifier: 100
 	Aircraft:
 		TurnSpeed: 255
 		Speed: 150
@@ -1593,6 +1605,8 @@ hind:
 		Prerequisites: naweap, ~techlevel.2
 		Description: Vehicle Transport Helicopter\n  Unarmed.
 		IconPalette: ts-chrome
+		BuildDuration: 250
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Guard:
@@ -1703,6 +1717,8 @@ fortress:
 		BuildPaletteOrder: 40
 		Description: Carpet bomber plane.\nUndetectable by radar.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft
 		Prerequisites: gatech, !prerequisite.enoughair, ~techlevel.4
+		BuildDuration: 1250
+		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Aircraft:
@@ -1913,6 +1929,8 @@ txdx:
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.2
 		Description: Light Transport Disc armed with toxin missile launchers.\n\n Strong vs Infantry\n Weak vs Structures, Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		TurnSpeed: 255
@@ -2051,6 +2069,8 @@ kite:
 		BuildPaletteOrder: 30
 		Prerequisites: radar, ~techlevel.3
 		Description: Helicopter armed with napalm bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles
+		BuildDuration: 625
+		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	RevealsShroud:
@@ -2150,6 +2170,8 @@ magnedisk:
 		BuildPaletteOrder: 30
 		Prerequisites: yadome, ~techlevel.3
 		Description: Invisible Floating Disc armed magnetic field generators.\n Strong vs Vehicles, Buildings\n Weak vs Infantry, Aircraft
+		BuildDuration: 625
+		BuildDurationModifier: 100
 	Aircraft:
 		TurnSpeed: 255
 		Speed: 150
