@@ -594,6 +594,10 @@ nayard:
 		Type: Ship.Soviets
 	ProductionBar:
 		ProductionType: Ship.Soviets
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
 	IsometricSelectable:
 		DecorationHeight: 120
 
