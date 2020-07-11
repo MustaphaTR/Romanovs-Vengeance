@@ -37,6 +37,36 @@ yacnst:
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
+	GrantConditionOnFaction@Yurigrad:
+		Condition: psicorps
+		Factions: psicorps
+	GrantConditionOnFaction@Lazarus:
+		Condition: psinepal
+		Factions: psinepal
+	GrantConditionOnFaction@Antarctica:
+		Condition: psisouth
+		Factions: psisouth
+	GrantConditionOnFaction@Transylvania:
+		Condition: psitrans
+		Factions: psitrans
+	GrantConditionOnFaction@Luna:
+		Condition: psimoon
+		Factions: psimoon
+	WithIdleOverlay@Yurigrad:
+		Sequence: flag-psicorps
+		RequiresCondition: !build-incomplete && psicorps
+	WithIdleOverlay@Lazarus:
+		Sequence: flag-psinepal
+		RequiresCondition: !build-incomplete && psinepal
+	WithIdleOverlay@Antarctica:
+		Sequence: flag-psisouth
+		RequiresCondition: !build-incomplete && psisouth
+	WithIdleOverlay@Transylvania:
+		Sequence: flag-psitrans
+		RequiresCondition: !build-incomplete && psitrans
+	WithIdleOverlay@Luna:
+		Sequence: flag-psimoon
+		RequiresCondition: !build-incomplete && psimoon
 	IsometricSelectable:
 		DecorationHeight: 60
 	Voiced:
