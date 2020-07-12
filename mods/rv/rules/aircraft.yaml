@@ -1537,6 +1537,14 @@ disk:
 	VoiceAnnouncement:
 		RequiresCondition: produced
 		Voice: Build
+	AmbientSound@Walk:
+		SoundFiles: vflolo5a.wav, vflolo5b.wav
+		Volume: 0.65
+		RequiresCondition: stealing
+	GrantConditionOnAttack:
+		Condition: stealing
+		RevokeDelay: 6
+		ArmamentNames: secondary
 	HitShape:
 	Repairable:
 		Voice: Move
