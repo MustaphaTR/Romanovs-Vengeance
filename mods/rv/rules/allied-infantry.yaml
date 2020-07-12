@@ -363,7 +363,7 @@ e1:
 		ArmamentNames: deployed
 	RejectsOrders@deployment:
 		Reject: AttackMove, AssaultMove
-		RequiresCondition: deployed
+		RequiresCondition: deployed && !chaos
 	TakeCover:
 		RequiresCondition: undeployed
 	Voiced:
@@ -581,7 +581,7 @@ ggi:
 		ArmamentNames: deployed
 	RejectsOrders@deployment:
 		Reject: AttackMove, AssaultMove
-		RequiresCondition: deployed
+		RequiresCondition: deployed && !chaos
 	TakeCover:
 		RequiresCondition: undeployed
 	Voiced:
