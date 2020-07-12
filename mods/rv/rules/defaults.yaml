@@ -628,17 +628,17 @@
 		TargetTypes: WithPointDefence
 		RequiresCondition: pointdefence
 	DamageMultiplier@PointDefence1:
-		RequiresCondition: pointdefence && breakpointdefence == 3
-		Modifier: 75
+		RequiresCondition: pointdefence && breakpointdefence <= 3
+		Modifier: 50
 	DamageMultiplier@PointDefence2:
 		RequiresCondition: pointdefence && breakpointdefence == 2
-		Modifier: 50
+		Modifier: 26
 	DamageMultiplier@PointDefence3:
 		RequiresCondition: pointdefence && breakpointdefence == 1
-		Modifier: 25
+		Modifier: 12
 	DamageMultiplier@PointDefence4:
 		RequiresCondition: pointdefence && !breakpointdefence
-		Modifier: 12
+		Modifier: 6
 
 ^AffectedByCashBounty:
 	WithDecoration@BOUNTY:
