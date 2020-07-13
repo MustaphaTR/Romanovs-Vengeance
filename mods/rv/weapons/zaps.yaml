@@ -111,7 +111,7 @@ CoilBolt:
 	Report: btesat1a.wav
 	Warhead@1Dam: SpreadDamage
 		Spread: 42
-		Damage: 50
+		Damage: 75
 		Versus:
 			None: 1000
 			Flak: 1000
@@ -132,19 +132,19 @@ OPCoilBolt:
 	Projectile: TeslaZap
 		Image: litningupg
 	Warhead@1Dam: SpreadDamage
-		Damage: 75
+		Damage: 100
 
 OPerCoilBolt:
 	Inherits: OPCoilBolt
 	Range: 9c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 125
 
 OPestCoilBolt:
 	Inherits: OPerCoilBolt
 	Range: 9c512
 	Warhead@1Dam: SpreadDamage
-		Damage: 125
+		Damage: 150
 
 TankBolt:
 	Inherits: ^TeslaZap
@@ -727,9 +727,9 @@ LunarLaser:
 			Light: 75
 			Medium: 50
 			Heavy: 50
-			Wood: 100
-			Steel: 100
-			Concrete: 100
+			Wood: 75
+			Steel: 50
+			Concrete: 65
 			Drone: 100
 			Rocket: 100
 		DamageTypes: RadiationDeath, SuppressTerrorDrone
@@ -764,6 +764,7 @@ LunarLaserAAE:
 
 LaserShot:
 	Inherits: DoomLaser
+	ReloadDelay: 80
 	Range: 9c0
 	Burst: 2
 	BurstDelays: 10
@@ -773,7 +774,7 @@ LaserShot:
 		SecondaryBeamWidth: 50
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
-		Damage: 200
+		Damage: 300
 
 IonCannon:
 	Inherits@1: ^BreakPointDefenceDrones

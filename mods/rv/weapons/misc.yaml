@@ -177,16 +177,16 @@ UCToxinSprayerE:
 ToxinSprayerTruck:
 	Inherits: ToxinSprayer
 	ReloadDelay: 40
-	Burst: 5
+	Burst: 8
 	BurstDelays: 2
 	Warhead@1Dam: SpreadDamage
 		Damage: 8
 
 ToxinSprayerTruckE:
 	Inherits: ToxinSprayerTruck
-	Burst: 10
+	Burst: 20
 	Warhead@1Dam: SpreadDamage
-		Damage: 10
+		Damage: 16
 
 EmergencyRepair1:
 	ReloadDelay: 80
@@ -272,7 +272,7 @@ TowerMindControl:
 
 MasterMindControl:
 	Inherits: MindControl
-	ReloadDelay: 10
+	ReloadDelay: 100
 
 PsiWave:
 	ReloadDelay: 100
@@ -980,7 +980,7 @@ MagneBeamFreeze3:
 
 SpiderWeb:
 	ReloadDelay: 180
-	Range: 6c0
+	Range: 5c0
 	Report: fireweb1.aud
 	ValidTargets: WebDisableable
 	Projectile: BulletAS
@@ -991,7 +991,7 @@ SpiderWeb:
 		Palette: ra
 	Warhead@1Dam: TargetDamage
 	Warhead@2Con: GrantExternalCondition
-		Range: 2c0
+		Range: 0c512
 		Duration: 150
 		ValidTargets: WebDisableable
 		Condition: webdisable
