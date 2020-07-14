@@ -80,6 +80,11 @@ BuildingExplode:
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
+ReactorExplode:
+	Inherits: BuildingExplode
+	Warhead@1Eff: CreateEffect
+		ImpactSounds: bpowdiea.wav, bpowdieb.wav
+
 KirovExplode:
 	Inherits: UnitExplode
 	Inherits@1: ^BreakPointDefenceDrones
