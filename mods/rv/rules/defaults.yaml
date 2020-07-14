@@ -896,6 +896,17 @@
 		Weapon: DamageSparkSpawner
 		LocalOffset: 0,0,384
 
+^WithFeedbackVoicelines:
+	GrantRandomCondition@Feedback:
+		Conditions: playfeedback, dontplayfeedback, dontplayfeedback, dontplayfeedback
+	GrantConditionOnDamageState@Feedback:
+		Condition: feedback
+		ValidDamageStates: Critical
+	VoiceAnnouncement:
+		RequiresCondition: feedback && playfeedback
+		Voice: Feedback
+		ValidStances: None
+
 ^AutoTargetGround:
 	AutoTarget:
 		AttackAnythingCondition: stance-attackanything

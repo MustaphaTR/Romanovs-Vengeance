@@ -3,6 +3,7 @@ engineer:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku
 		Prerequisites: ~barracks, ~techlevel.1
@@ -103,6 +104,7 @@ dog:
 	Inherits: ^Infantry
 	Inherits@2: ^Parachutable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku
 		Prerequisites: ~barracks, ~techlevel.1
@@ -241,6 +243,7 @@ e1:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		Prerequisites: ~techlevel.1
@@ -395,6 +398,7 @@ ggi:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && undeployed
 	AutoTargetPriority@ATTACKANYTHING:
@@ -612,6 +616,7 @@ snipe:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	Valued:
 		Cost: 900
 	DeliversCash:
@@ -691,6 +696,7 @@ snipe:
 spy:
 	Inherits: ^Infantry
 	Inherits@2: ^Parachutable
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 80
@@ -763,6 +769,7 @@ ghost:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@SWIMSUIT: ^WithSwimSuit
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.USA
 		BuildPaletteOrder: 100
@@ -979,6 +986,7 @@ tany:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SWIMSUIT: ^WithSwimSuit
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 160
@@ -1106,6 +1114,7 @@ jumpjet:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	HiddenUnderFog:
 		Type: CenterPosition
 	Buildable:
@@ -1270,6 +1279,7 @@ cleg:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@VOICES: ^WithFeedbackVoicelines
 	Selectable:
 		Bounds: 20, 30, 0, -11
 	Tooltip:
