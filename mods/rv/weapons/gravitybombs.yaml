@@ -50,7 +50,7 @@ BlimpBombE:
 
 NapalmBomb:
 	Inherits@1: ^BreakPointDefenceDrones
-	ReloadDelay: 65
+	ReloadDelay: 50
 	Range: 0c512
 	MinRange: 0c1
 	Report: vkiratta.wav
@@ -63,7 +63,7 @@ NapalmBomb:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c384
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 100
+		Damage: 150
 		ValidTargets: Building, Ground, Water
 		Versus:
 			None: 100
@@ -138,7 +138,7 @@ NapalmBomb:
 
 NapalmBombE:
 	Inherits: NapalmBomb
-	ReloadDelay: 40
+	ReloadDelay: 30
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Damage: 200
