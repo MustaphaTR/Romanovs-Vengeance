@@ -305,7 +305,7 @@ yarefn:
 		TickLifetime: 30
 		TickVelocity: 1
 		TickRate: 10
-		DockAngle: 160
+		DockAngle: 640
 		UseStorage: true
 	Production:
 		Produces: Infantry.Slave
@@ -329,7 +329,7 @@ yarefn:
 		ExitCell: 1, 2
 	-GivesBuildableArea:
 	Transforms:
-		Facing: 224
+		Facing: 896
 		IntoActor: smin
 		DeployCursor: undeploy
 		Voice: Undeploy
@@ -366,7 +366,7 @@ yarefn:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Offset: 640,0,0
 	Armament@primary:
 		Weapon: 20mmrapid
@@ -786,7 +786,7 @@ yadisk:
 		Palette: mouse
 		IsPlayerPalette: false
 	Exit@1:
-		Facing: 160
+		Facing: 640
 		ExitCell: 1,1
 		SpawnOffset: 0,0,0
 	GrantExternalConditionToProduced:
@@ -1077,9 +1077,8 @@ yaggun:
 	Tooltip@NoRow:
 		Name: Gatling Cannon
 	Turreted:
-		TurnSpeed: 10
-		InitialFacing: 224
-		PreviewFacing: 224
+		TurnSpeed: 40
+		InitialFacing: 896
 		Offset: -512,0,480
 	AttackTurreted:
 		PauseOnCondition: disabled || chronodisable
@@ -1232,7 +1231,7 @@ yapsyt:
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Turreted:
-		TurnSpeed: 225
+		TurnSpeed: 900
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		PauseOnCondition: disabled || chronodisable
@@ -1513,10 +1512,9 @@ caeast02:
 	AttackTurreted:
 		PauseOnCondition: disabled || chronodisable
 	Turreted:
-		TurnSpeed: 3
+		TurnSpeed: 12
 		Offset: 0,0,3096
-		InitialFacing: 160
-		PreviewFacing: 160
+		InitialFacing: 640
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	GrantConditionOnDamageState@DAMAGED:
@@ -1583,10 +1581,9 @@ yaeast02:
 	Tooltip@NoRow:
 		Name: Yuri Statue
 	Turreted:
-		TurnSpeed: 3
+		TurnSpeed: 12
 		Offset: 0,0,3096
-		InitialFacing: 160
-		PreviewFacing: 160
+		InitialFacing: 640
 	AttackTurreted:
 		PauseOnCondition: disabled || chronodisable
 	Armament:

@@ -31,7 +31,7 @@ namespace OpenRA.Mods.Common.Traits
 		{
 			resLayer = self.World.WorldActor.Trait<ResourceLayer>();
 			resRenderer = self.World.WorldActor.Trait<ResourceRenderer>();
-			allCells = self.World.Map.ProjectedCellBounds.ToArray();
+			allCells = self.World.Map.ProjectedCells.ToArray();
 		}
 
 		protected override void TraitEnabled(Actor self)

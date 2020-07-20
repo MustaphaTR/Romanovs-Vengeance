@@ -32,7 +32,7 @@ smin:
 		Priority: 7
 		Bounds: 64, 52, 0, -6
 	Transforms:
-		Facing: 224
+		Facing: 896
 		IntoActor: yarefn
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
@@ -47,9 +47,9 @@ smin:
 		Type: Medium
 	Mobile:
 		Speed: 45
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Turreted:
-		TurnSpeed: 5
+		TurnSpeed: 20
 	Armament@primary:
 		Weapon: 20mmrapid
 		LocalOffset: 512,0,1388
@@ -165,7 +165,7 @@ gmin:
 		HealIfBelow: 100
 	Mobile:
 		Speed: 60
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Locomotor: heavytracked
 	Guard:
 		Voice: Move
@@ -315,7 +315,7 @@ ytnk:
 		BuildDurationModifier: 100
 	Mobile:
 		Speed: 90
-		TurnSpeed: 10
+		TurnSpeed: 40
 	Health:
 		HP: 300
 	Armor:
@@ -328,7 +328,7 @@ ytnk:
 	RevealOnDeath:
 		Radius: 4c512
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 40
 	Armament@ag-0:
 		Weapon: AGGatling
 		LocalOffset: 544,100,1024, 544,-100,1024
@@ -447,7 +447,7 @@ caos:
 		BuildDurationModifier: 100
 	Mobile:
 		Speed: 135
-		TurnSpeed: 15
+		TurnSpeed: 60
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned
 	Health:
 		HP: 200
@@ -526,7 +526,7 @@ tele:
 		BuildDurationModifier: 100
 	Mobile:
 		Speed: 75
-		TurnSpeed: 8
+		TurnSpeed: 32
 	Health:
 		HP: 150
 	Armor:
@@ -539,7 +539,7 @@ tele:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Offset: -640,0,0
 	Armament@primary:
 		Weapon: MagneShake
@@ -597,7 +597,7 @@ mind:
 		BuildDurationModifier: 100
 	Mobile:
 		Speed: 60
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Locomotor: omnicrusher
 	-Crushable:
 	SelfHealing@HEAL:
@@ -653,7 +653,7 @@ mind:
 		UsePlayerColor: true
 		Offset: 0,0,960
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || parachute
@@ -704,7 +704,7 @@ mlyr:
 		BuildDurationModifier: 100
 	Mobile:
 		Speed: 90
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Locomotor: heavytracked
 	Health:
 		HP: 400
@@ -777,7 +777,7 @@ kamaz:
 		BuildDurationModifier: 100
 	Mobile:
 		Speed: 75
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Locomotor: heavytracked
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
@@ -792,7 +792,7 @@ kamaz:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Offset: 512,0,1152
 	Armament@primary:
 		Weapon: ToxinSprayerTruck
@@ -867,7 +867,7 @@ yhtnk:
 		BuildDurationModifier: 100
 	Mobile:
 		Speed: 120
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Locomotor: heavytracked
 	Health:
 		HP: 200
@@ -881,7 +881,7 @@ yhtnk:
 	RevealOnDeath:
 		Radius: 4c0
 	Turreted:
-		TurnSpeed: 9
+		TurnSpeed: 36
 	Cloak:
 		RequiresCondition: !chronodisable && !emp
 		InitialDelay: 25
@@ -952,7 +952,7 @@ grtk:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 120
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Locomotor: heavytracked
 	SelfHealing:
 		PercentageStep: 1
@@ -1031,7 +1031,7 @@ spider:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 105
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Locomotor: heavytracked
 		RequiresCondition: !chronodisable && !magnefreeze
 	Health:

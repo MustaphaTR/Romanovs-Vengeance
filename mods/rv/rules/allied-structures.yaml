@@ -189,6 +189,8 @@ gapowr:
 			powrup: powrup
 		Requirements:
 			powrup: !build-incomplete && !powrup
+		EditorOptions:
+			powrup: Advanced Coolants
 	Pluggable@2:
 		Offset: 0,1
 		Conditions:
@@ -443,16 +445,16 @@ gaairc:
 		Amount: -75
 	Reservable:
 	Exit@1:
-		Facing: 224
+		Facing: 896
 		SpawnOffset: 1024,512,0
 	Exit@2:
-		Facing: 224
+		Facing: 896
 		SpawnOffset: 512,1024,0
 	Exit@3:
-		Facing: 224
+		Facing: 896
 		SpawnOffset: -512,512,0
 	Exit@4:
-		Facing: 224
+		Facing: 896
 		SpawnOffset: 512,-512,0
 	GrantExternalConditionToOwner:
 		Condition: airdock
@@ -855,7 +857,7 @@ gapill:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 	DetectCloaked:
 		Range: 5c0
 	RenderDetectionCircle:
@@ -903,9 +905,8 @@ nasam:
 	#	Types: SatelliteScan
 	#	Range: 8c0
 	Turreted:
-		TurnSpeed: 10
-		InitialFacing: 224
-		PreviewFacing: 224
+		TurnSpeed: 40
+		InitialFacing: 896
 		Offset: 550,0,0
 	AttackTurreted:
 		PauseOnCondition: disabled || chronodisable
@@ -971,9 +972,8 @@ gtgcan:
 	#	Types: SatelliteScan
 	#	Range: 10c0
 	Turreted:
-		TurnSpeed: 3
-		InitialFacing: 224
-		PreviewFacing: 224
+		TurnSpeed: 12
+		InitialFacing: 896
 		Offset: 400,0,0
 	AttackTurreted:
 		Voice: Attack
@@ -1507,13 +1507,13 @@ gaapad:
 		Amount: -10
 	Reservable:
 	Exit@1:
-		Facing: 224
+		Facing: 896
 		SpawnOffset: -512,0,0
 	Exit@2:
-		Facing: 224
+		Facing: 896
 		SpawnOffset: 512,0,0
 	Exit@3:
-		Facing: 224
+		Facing: 896
 		SpawnOffset: 0,512,0
 	LaysMinefield:
 		Mines: gadock
@@ -1623,7 +1623,7 @@ gamgun:
 		RequiresCondition: !build-incomplete
 	WithMuzzleOverlay:
 	Turreted:
-		TurnSpeed: 10
+		TurnSpeed: 40
 	Cloak:
 		RequiresCondition: !disabled && !chronodisable && !emp
 		InitialDelay: 25

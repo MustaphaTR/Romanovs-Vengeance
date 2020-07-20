@@ -65,7 +65,7 @@ cmin:
 		HealIfBelow: 100
 	Mobile:
 		Speed: 60
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Locomotor: heavytracked
 	Guard:
 		Voice: Move
@@ -173,7 +173,7 @@ tnkd:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 90
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Locomotor: heavytracked
 	Health:
 		HP: 400
@@ -471,7 +471,7 @@ fv:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 135
-		TurnSpeed: 15
+		TurnSpeed: 60
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
 		HP: 250
@@ -509,7 +509,7 @@ fv:
 		Range: 5c0
 		RequiresCondition: ifv-medic
 	Turreted:
-		TurnSpeed: 15
+		TurnSpeed: 60
 	AmmoPool:
 		Ammo: 2
 		AmmoCondition: ammo
@@ -910,7 +910,7 @@ sref:
 	Armor:
 		Type: Light
 	Mobile:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Speed: 75
 		Locomotor: heavytracked
 	RevealsShroud:
@@ -921,7 +921,7 @@ sref:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Offset: -30,0,85
 	Armament@primary:
 		Weapon: Comet
@@ -1018,7 +1018,7 @@ mgtk:
 	Armor:
 		Type: Heavy
 	Mobile:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Speed: 105
 		Locomotor: heavytracked
 	RevealsShroud:
@@ -1105,7 +1105,7 @@ bfrt:
 	Armor:
 		Type: Heavy
 	Mobile:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 60
 		Locomotor: omnicrusher
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
@@ -1229,7 +1229,7 @@ robo:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 120
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Locomotor: amphibious
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && powered
 	Hovers:
@@ -1252,7 +1252,7 @@ robo:
 	RevealOnDeath:
 		Radius: 3c0
 	Turreted:
-		TurnSpeed: 9
+		TurnSpeed: 36
 	Armament:
 		LocalOffset: 640,0,640
 		Weapon: robogun
@@ -1346,7 +1346,7 @@ aambu:
 	Armor:
 		Type: Light
 	Mobile:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 120
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	PeriodicExplosion:
@@ -1425,7 +1425,7 @@ hwtz:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 75
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Locomotor: heavytracked
 	Health:
 		HP: 200
@@ -1504,7 +1504,7 @@ ctnk:
 	Armor:
 		Type: Light
 	Mobile:
-		TurnSpeed: 8
+		TurnSpeed: 32
 		Speed: 90
 		Locomotor: heavytracked
 	RevealsShroud:

@@ -86,7 +86,7 @@ shad:
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 180
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
@@ -140,7 +140,7 @@ shadhusk:
 	Tooltip@NoRow:
 		Name: Night Hawk
 	Aircraft:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 180
 	FallsToEarth:
 		Explosion: PlaneExplode
@@ -192,7 +192,7 @@ zep:
 		Bounds: 100,60,0,-10
 	Aircraft:
 		CruiseAltitude: 5c852
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 30
 		Voice: Move
 		Repulsable: false
@@ -262,7 +262,7 @@ zephusk:
 	Tooltip@NoRow:
 		Name: Kirov Airship
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 30
 	FallsToEarth:
 		Explosion: KirovExplode
@@ -308,7 +308,7 @@ orca:
 		AddToArmyValue: true
 	Aircraft:
 		AltitudeVelocity: 240
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 210
 		TakeoffSounds: vintupa.wav
 		LandingSounds: vintdna.wav
@@ -406,7 +406,7 @@ orcahusk:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 210
 		AltitudeVelocity: 240
 	RevealsShroud:
@@ -431,7 +431,7 @@ orcahusk.VTOL:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 210
 		AltitudeVelocity: 240
 	RevealsShroud:
@@ -500,7 +500,7 @@ beaghusk:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 210
 		AltitudeVelocity: 240
 	RevealsShroud:
@@ -525,7 +525,7 @@ beaghusk.VTOL:
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 210
 		AltitudeVelocity: 240
 	RevealsShroud:
@@ -556,7 +556,7 @@ pdplane:
 	Aircraft:
 		CruiseAltitude: 5c852
 		Repulsable: false
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 270
 		TakeOffOnCreation: false
 	Health:
@@ -592,7 +592,7 @@ pdplanehusk:
 	Tooltip@NoRow:
 		Name: Cargo Plane
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 270
 	RenderVoxels:
 		Image: pdplane
@@ -878,7 +878,7 @@ pdplane.crate:
 		CruiseAltitude: 5c852
 		-AirborneCondition:
 		Repulsable: false
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 225
 	RenderSprites:
 	WithVoxelHelicopterBody:
@@ -940,8 +940,8 @@ hornet:
 		RequiresCondition: ammo
 	Aircraft:
 		AltitudeVelocity: 240
-		InitialFacing: 192
-		TurnSpeed: 8
+		InitialFacing: 768
+		TurnSpeed: 32
 		Speed: 210
 		Repulsable: false
 		TakeoffSounds: vhortaka.wav, vhortakb.wav
@@ -987,7 +987,7 @@ hornethusk:
 	Tooltip@NoRow:
 		Name: Hornet
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 210
 		AltitudeVelocity: 240
 	FallsToEarth:
@@ -1003,7 +1003,7 @@ hornethusk.VTOL:
 	Tooltip@NoRow:
 		Name: Hornet
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 210
 		AltitudeVelocity: 240
 	FallsToEarth:
@@ -1045,8 +1045,8 @@ asw:
 		RequiresCondition: ammo
 	Aircraft:
 		AltitudeVelocity: 240
-		InitialFacing: 192
-		TurnSpeed: 8
+		InitialFacing: 768
+		TurnSpeed: 32
 		Speed: 180
 		RepulsionSpeed: 40
 		TakeoffSounds: vospstaa.wav
@@ -1092,7 +1092,7 @@ aswhusk:
 	Tooltip@NoRow:
 		Name: Osprey
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 180
 		AltitudeVelocity: 240
 	FallsToEarth:
@@ -1108,7 +1108,7 @@ aswhusk.VTOL:
 	Tooltip@NoRow:
 		Name: Osprey
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 180
 		AltitudeVelocity: 240
 	FallsToEarth:
@@ -1133,7 +1133,7 @@ spyp:
 	Aircraft:
 		CruiseAltitude: 5c852
 		Repulsable: false
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 225
 	Armament:
 		Weapon: SpyCameraWeapon
@@ -1156,7 +1156,7 @@ spyphusk:
 	Tooltip@NoRow:
 		Name: Spy Plane
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 225
 	RenderVoxels:
 		Image: spyp
@@ -1224,7 +1224,7 @@ schp:
 		RequiresCondition: rank-elite && deployed
 	WithMuzzleOverlay:
 	Turreted:
-		TurnSpeed: 20
+		TurnSpeed: 80
 	Voiced:
 		VoiceSet: SiegeChopperVoice
 	ExternalCondition@PRODUCED:
@@ -1266,7 +1266,7 @@ schp:
 		CanForceLand: false
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 150
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
@@ -1334,7 +1334,7 @@ schphusk:
 	Tooltip@NoRow:
 		Name: Siege Chopper
 	Aircraft:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 150
 	FallsToEarth:
 		Explosion: PlaneExplode
@@ -1430,7 +1430,7 @@ bplnhusk:
 	Tooltip@NoRow:
 		Name: MiG
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 210
 		AltitudeVelocity: 240
 	RenderVoxels:
@@ -1445,7 +1445,7 @@ bplnhusk.VTOL:
 	Tooltip@NoRow:
 		Name: MiG
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 210
 		AltitudeVelocity: 240
 	RenderVoxels:
@@ -1474,7 +1474,7 @@ disk:
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	Aircraft:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Speed: 150
 		AltitudeVelocity: 200
 	Selectable:
@@ -1531,7 +1531,7 @@ disk:
 	WithMuzzleOverlay:
 	AutoTarget:
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
@@ -1563,7 +1563,7 @@ diskhusk:
 	Tooltip@NoRow:
 		Name: Leech Disc
 	Aircraft:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 150
 	FallsToEarth:
 		Explosion: PlaneExplode
@@ -1634,7 +1634,7 @@ hind:
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 150
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
@@ -1678,7 +1678,7 @@ hindhusk:
 	Tooltip@NoRow:
 		Name: Hind Carryall
 	Aircraft:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 150
 	FallsToEarth:
 		Explosion: PlaneExplode
@@ -1735,7 +1735,7 @@ fortress:
 		AddToArmyValue: true
 	Aircraft:
 		AltitudeVelocity: 240
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 180
 		TakeoffSounds: vintupa.wav
 		LandingSounds: vintdna.wav
@@ -1832,7 +1832,7 @@ fortresshusk:
 	FallsToEarth:
 		Explosion: B2Explode
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 180
 		AltitudeVelocity: 240
 	RevealsShroud:
@@ -1858,7 +1858,7 @@ fortresshusk.VTOL:
 	FallsToEarth:
 		Explosion: B2Explode
 	Aircraft:
-		TurnSpeed: 5
+		TurnSpeed: 20
 		Speed: 180
 		AltitudeVelocity: 240
 	RevealsShroud:
@@ -1890,7 +1890,7 @@ sdrn:
 	Aircraft:
 		CruiseAltitude: 3c852
 		Repulsable: false
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 128
 		MaximumPitch: 255
 		VTOL: false
@@ -1945,7 +1945,7 @@ txdx:
 		BuildDurationModifier: 100
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Speed: 180
 		AltitudeVelocity: 200
 		PauseOnCondition: emp || magnefreeze || chronodisable
@@ -1976,7 +1976,7 @@ txdx:
 	Voiced:
 		VoiceSet: FloatingDiskVoice
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
@@ -2022,7 +2022,7 @@ txdxhusk:
 	Tooltip@NoRow:
 		Name: Mosquito Platform
 	Aircraft:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 180
 	FallsToEarth:
 		Explosion: PlaneExplode
@@ -2101,7 +2101,7 @@ kite:
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
-		TurnSpeed: 3
+		TurnSpeed: 12
 		Speed: 120
 		Repulsable: true
 		AltitudeVelocity: 200
@@ -2136,7 +2136,7 @@ kitehusk:
 	Tooltip@NoRow:
 		Name: Black Kite
 	Aircraft:
-		TurnSpeed: 7
+		TurnSpeed: 28
 		Speed: 120
 	FallsToEarth:
 		Explosion: PlaneExplode
@@ -2185,7 +2185,7 @@ magnedisk:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Aircraft:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 		Speed: 150
 		AltitudeVelocity: 200
 	Selectable:
@@ -2227,7 +2227,7 @@ magnedisk:
 		UncloakSound: cloak5.aud
 		UncloakOn: Attack, Damage, Dock
 	Turreted:
-		TurnSpeed: 255
+		TurnSpeed: 1023
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
@@ -2252,7 +2252,7 @@ magnediskhusk:
 	Tooltip@NoRow:
 		Name: Magnedisc
 	Aircraft:
-		TurnSpeed: 10
+		TurnSpeed: 40
 		Speed: 150
 	FallsToEarth:
 		Explosion: PlaneExplode
