@@ -1181,6 +1181,9 @@ natbnk:
 	WithCargoSounds:
 		EnterSound: btanupa.wav
 		ExitSound: btandowa.wav
+	WithCargoBuilding:
+		Facing: 384
+		DisplayTypes: GarrisonerVehicle
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
 	-SpawnActorsOnSell@psicorps:
@@ -1188,7 +1191,11 @@ natbnk:
 	WithIdleOverlay@Garrisoned:
 		Sequence: idle-garrisoned
 		RequiresCondition: loaded
+	WithIdleOverlay@GarrisonedFront:
+		Sequence: idle-garrisoned-front
+		RequiresCondition: loaded
 	AttackGarrisoned:
+		Armaments: primary, secondary, gatling
 		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
