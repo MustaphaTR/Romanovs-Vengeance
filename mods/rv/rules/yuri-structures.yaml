@@ -698,7 +698,7 @@ yadome:
 		Prerequisites:
 			1: radar.psitrans
 		Icons:
-			1: xxicon
+			1: mosquito
 		ChargeInterval: 4500
 		Descriptions:
 			1: Mosquito Swarm
@@ -1193,6 +1193,9 @@ natbnk:
 		RequiresCondition: loaded
 	WithIdleOverlay@GarrisonedFront:
 		Sequence: idle-garrisoned-front
+		RequiresCondition: loaded
+	Targetable@loaded:
+		TargetTypes: LoadedTankBunker
 		RequiresCondition: loaded
 	AttackGarrisoned:
 		Armaments: primary, secondary, gatling

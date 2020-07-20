@@ -65,6 +65,26 @@ NapalmBomb:
 		Falloff: 100, 83, 67, 50, 0
 		Damage: 150
 		ValidTargets: Building, Ground, Water
+		InvalidTargets: LoadedTankBunker
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 70
+			Medium: 15
+			Heavy: 15
+			Wood: 70
+			Steel: 35
+			Concrete: 60
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath
+	Warhead@1Gar: OpenToppedDamage
+		ValidTargets: LoadedTankBunker
+		InvalidTargets: IronCurtained, ForceShielded
+		Spread: 0c384
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 150
 		Versus:
 			None: 100
 			Flak: 100
@@ -142,6 +162,9 @@ NapalmBombE:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Damage: 200
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c512
+		Damage: 200
 
 ChaosGasDrop:
 	Range: 5c0
@@ -198,6 +221,19 @@ EMPulseBEagle:
 		IsPlayerPalette: true
 		RangeLimit: 20c204
 	Warhead@1Dam: SpreadDamage
+		InvalidTargets: LoadedTankBunker
+		Spread: 0c512
+		Falloff: 100, 70, 40, 0
+		Damage: 150
+		Versus:
+			None: 50
+			Flak: 50
+			Plate: 50
+			Concrete: 75
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@1Gar: OpenToppedDamage
+		ValidTargets: LoadedTankBunker
+		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 0c512
 		Falloff: 100, 70, 40, 0
 		Damage: 150
@@ -217,6 +253,8 @@ EMPulseBEagle:
 EMPulseBEagleE:
 	Inherits: EMPulseBEagle
 	Warhead@1Dam: SpreadDamage
+		Damage: 200
+	Warhead@1Gar: OpenToppedDamage
 		Damage: 200
 	Warhead@1Dis: GrantExternalCondition
 		Duration: 300

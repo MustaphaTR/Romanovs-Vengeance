@@ -395,10 +395,31 @@ BlackHawkCannon:
 		Versus:
 			Rocket: 25
 		ValidTargets: Ground, Water
+		InvalidTargets: Bridge, Wall, Fence, Tree, LoadedTankBunker
+	Warhead@1Gar: OpenToppedDamage
+		ValidTargets: LoadedTankBunker
+		InvalidTargets: IronCurtained, ForceShielded
+		Spread: 64
+		Damage: 35
+		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
+			Light: 40
+			Medium: 10
+			Heavy: 10
+			Wood: 35
+			Steel: 10
+			Concrete: 30
+			Drone: 100
+			Rocket: 25
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath
 
 BlackHawkCannonE:
 	Inherits: BlackHawkCannon
 	Warhead@1Dam: SpreadDamage
+		Damage: 50
+	Warhead@1Gar: OpenToppedDamage
 		Damage: 50
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
@@ -408,6 +429,7 @@ BlackHawkCannonAA:
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
+	-Warhead@1Gar:
 
 BlackHawkCannonAAE:
 	Inherits: BlackHawkCannonAA
@@ -435,10 +457,31 @@ SiegeChopperCannon:
 			Concrete: 10
 			Rocket: 25
 		ValidTargets: Ground, Water
+		InvalidTargets: Bridge, Wall, Fence, Tree, LoadedTankBunker
+	Warhead@1Gar: OpenToppedDamage
+		ValidTargets: LoadedTankBunker
+		InvalidTargets: IronCurtained, ForceShielded
+		Spread: 64
+		Damage: 70
+		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
+			Light: 50
+			Medium: 10
+			Heavy: 10
+			Wood: 15
+			Steel: 5
+			Concrete: 10
+			Drone: 100
+			Rocket: 25
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath
 
 SiegeChopperCannonE:
 	Inherits: SiegeChopperCannon
 	Warhead@1Dam: SpreadDamage
+		Damage: 100
+	Warhead@1Gar: OpenToppedDamage
 		Damage: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
@@ -448,6 +491,7 @@ SiegeChopperCannonAA:
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
+	-Warhead@1Gar:
 
 SiegeChopperCannonAAE:
 	Inherits: SiegeChopperCannonAA
