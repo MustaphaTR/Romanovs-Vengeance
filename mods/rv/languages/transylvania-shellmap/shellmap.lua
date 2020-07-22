@@ -125,7 +125,7 @@ SendActor = function(units, waypoints, owner, delay)
 end
 
 SendAirstrike = function(delay)
-	AirstrikeProxy.SendAirstrike(AirstrikeTarget.CenterPosition, false, 192)
+	AirstrikeProxy.TargetAirstrike(AirstrikeTarget.CenterPosition, 768)
 
 	Trigger.AfterDelay(delay, function()
 		SendAirstrike(delay)
