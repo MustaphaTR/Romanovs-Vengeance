@@ -394,6 +394,14 @@
 		CargoConditions:
 			aambu: in-ambulance
 
+^LowHealthSpeedPenalty:
+	SpeedMultiplier@CRITICAL:
+		Modifier: 50
+		RequiresCondition: critical
+	GrantConditionOnDamageState@CRITICAL:
+		Condition: critical
+		ValidDamageStates: Critical
+
 ^DamagedByRadiation100Percent:
 	DamagedByTintedCells:
 		Damage: 1
@@ -1846,6 +1854,7 @@
 	Inherits@19: ^AffectedByCashBounty
 	Inherits@20: ^AffectedBySpectreBullets
 	Inherits@21: ^AcceptsPointDefenceDrones
+	Inherits@22: ^LowHealthSpeedPenalty
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
