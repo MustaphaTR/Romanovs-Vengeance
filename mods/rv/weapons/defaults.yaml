@@ -1,12 +1,12 @@
-^BreakPointDefenceDrones:
+^BreakPointDefenseDrones:
 	Warhead@ShieldUpgrade: GrantExternalCondition
-		Condition: breakpointdefence
+		Condition: breakpointdefense
 		Range: 96
 		Duration: 500
 		ValidTargets: Ground, Water, Air
 
 ^Flak:
-	Inherits@1: ^BreakPointDefenceDrones
+	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 25
 	Range: 5c0
 	Report: vflaat1a.wav, vflaat1b.wav
@@ -62,7 +62,7 @@
 		Explosions: flak_puff_AA
 
 ^LargeBullet:
-	Inherits@1: ^BreakPointDefenceDrones
+	Inherits@1: ^BreakPointDefenseDrones
 	Projectile: BulletAS
 		Speed: 40c0
 		Image: 120mm
@@ -94,7 +94,7 @@
 		ValidTargets: Water
 
 ^Missile:
-	Inherits@1: ^BreakPointDefenceDrones
+	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 60
 	Range: 12c0
 	Report: bpatatta.wav
@@ -144,7 +144,7 @@
 		ValidTargets: Water
 
 ^MG:
-	Inherits@1: ^BreakPointDefenceDrones
+	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 20
 	Range: 4c0
 	Report: igiat1a.wav, igiat1b.wav, igiat1c.wav
@@ -173,7 +173,7 @@
 		ValidTargets: Ground, Water
 
 ^TeslaZap:
-	Inherits@1: ^BreakPointDefenceDrones
+	Inherits@1: ^BreakPointDefenseDrones
 	Range: 3c0
 	ReloadDelay: 60
 	Report: itesatta.wav
@@ -203,7 +203,7 @@
 		AffectsParent: true
 
 ^FireWeapon:
-	Inherits@1: ^BreakPointDefenceDrones
+	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 65
 	Range: 5c0
 	Report: flamtnk1.aud

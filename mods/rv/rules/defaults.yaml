@@ -615,37 +615,37 @@
 	#	Prerequisite: forceshield
 	#	RequiresCondition: forceshield
 
-^AcceptsPointDefenceDrones:
-	WithColoredOverlay@PointDefence1:
-		Palette: pointdefence1
-		RequiresCondition: pointdefence && breakpointdefence == 3
-	WithColoredOverlay@PointDefence2:
-		Palette: pointdefence2
-		RequiresCondition: pointdefence && breakpointdefence == 2
-	WithColoredOverlay@PointDefence3:
-		Palette: pointdefence3
-		RequiresCondition: pointdefence && breakpointdefence == 1
-	WithColoredOverlay@PointDefence4:
-		Palette: pointdefence4
-		RequiresCondition: pointdefence && !breakpointdefence
-	ExternalCondition@PointDefence:
-		Condition: pointdefence
-	ExternalCondition@BreakPointDefence:
-		Condition: breakpointdefence
-	Targetable@PointDefence:
-		TargetTypes: WithPointDefence
-		RequiresCondition: pointdefence
-	DamageMultiplier@PointDefence1:
-		RequiresCondition: pointdefence && breakpointdefence <= 3
+^AcceptsPointDefenseDrones:
+	WithColoredOverlay@PointDefense1:
+		Palette: pointdefense1
+		RequiresCondition: pointdefense && breakpointdefense == 3
+	WithColoredOverlay@PointDefense2:
+		Palette: pointdefense2
+		RequiresCondition: pointdefense && breakpointdefense == 2
+	WithColoredOverlay@PointDefense3:
+		Palette: pointdefense3
+		RequiresCondition: pointdefense && breakpointdefense == 1
+	WithColoredOverlay@PointDefense4:
+		Palette: pointdefense4
+		RequiresCondition: pointdefense && !breakpointdefense
+	ExternalCondition@PointDefense:
+		Condition: pointdefense
+	ExternalCondition@BreakPointDefense:
+		Condition: breakpointdefense
+	Targetable@PointDefense:
+		TargetTypes: WithPointDefense
+		RequiresCondition: pointdefense
+	DamageMultiplier@PointDefense1:
+		RequiresCondition: pointdefense && breakpointdefense <= 3
 		Modifier: 50
-	DamageMultiplier@PointDefence2:
-		RequiresCondition: pointdefence && breakpointdefence == 2
+	DamageMultiplier@PointDefense2:
+		RequiresCondition: pointdefense && breakpointdefense == 2
 		Modifier: 26
-	DamageMultiplier@PointDefence3:
-		RequiresCondition: pointdefence && breakpointdefence == 1
+	DamageMultiplier@PointDefense3:
+		RequiresCondition: pointdefense && breakpointdefense == 1
 		Modifier: 12
-	DamageMultiplier@PointDefence4:
-		RequiresCondition: pointdefence && !breakpointdefence
+	DamageMultiplier@PointDefense4:
+		RequiresCondition: pointdefense && !breakpointdefense
 		Modifier: 6
 
 ^AffectedByCashBounty:
@@ -1853,7 +1853,7 @@
 	Inherits@18: ^TerrorDronable
 	Inherits@19: ^AffectedByCashBounty
 	Inherits@20: ^AffectedBySpectreBullets
-	Inherits@21: ^AcceptsPointDefenceDrones
+	Inherits@21: ^AcceptsPointDefenseDrones
 	Inherits@22: ^LowHealthSpeedPenalty
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
@@ -2059,7 +2059,7 @@
 	Inherits@14: ^DisabledByEMP
 	Inherits@15: ^DisabledByMagnetron
 	Inherits@16: ^AffectedBySpectreBullets
-	Inherits@17: ^AcceptsPointDefenceDrones
+	Inherits@17: ^AcceptsPointDefenseDrones
 	Aircraft:
 		AltitudeVelocity: 43
 	WithTextControlGroupDecoration:
@@ -2228,7 +2228,7 @@
 	Inherits@16: ^AffectedByStealthGenerator
 	Inherits@17: ^AffectedByCashBounty
 	Inherits@18: ^AffectedBySpectreBullets
-	Inherits@19: ^AcceptsPointDefenceDrones
+	Inherits@19: ^AcceptsPointDefenseDrones
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
