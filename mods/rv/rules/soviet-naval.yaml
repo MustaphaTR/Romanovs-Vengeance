@@ -86,6 +86,13 @@ sub:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vsqumova.wav, vsqumovb.wav
+		Volume: 0.45
+		RequiresCondition: moving
 
 hyd:
 	Inherits: ^Ship
@@ -163,6 +170,13 @@ hyd:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vseastaa.wav, vseastab.wav, vseastac.wav, vseastad.wav
+		Volume: 0.4
+		RequiresCondition: moving
 
 sqd:
 	Inherits@1: ^ExistsInWorld
@@ -378,6 +392,13 @@ dred:
 		RequiresCondition: produced
 		Voice: Build
 		ValidStances: None
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vdrestaa.wav, vdrestab.wav, vdrestac.wav
+		Volume: 0.5
+		RequiresCondition: moving
 
 dmisl:
 	Inherits: ^ShootableMissile

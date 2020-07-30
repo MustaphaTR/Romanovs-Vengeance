@@ -69,6 +69,13 @@
 		RequiresCondition: produced
 		Voice: Build
 		ValidStances: None
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vmcvstaa.wav
+		Volume: 0.4
+		RequiresCondition: moving
 
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
@@ -139,6 +146,13 @@
 		RequiresCondition: produced
 		Voice: Build
 		ValidStances: None
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vmcvstaa.wav
+		Volume: 0.4
+		RequiresCondition: moving
 
 ^MainBattleTank:
 	Inherits: ^Vehicle

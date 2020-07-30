@@ -343,6 +343,13 @@ htk:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vflastaa.wav, vflastab.wav, vflastac.wav, vflastad.wav
+		Volume: 0.35
+		RequiresCondition: moving
 
 htnk:
 	Inherits: ^MainBattleTank
@@ -390,6 +397,13 @@ htnk:
 		RequiresCondition: produced
 		Voice: Build
 		ValidStances: None
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vrhistaa.wav, vrhistab.wav, vrhistac.wav, vrhistad.wav
+		Volume: 0.3
+		RequiresCondition: moving
 
 apoc:
 	Inherits: ^Vehicle
@@ -513,6 +527,13 @@ apoc:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vapostaa.wav, vapostab.wav, vapostac.wav
+		Volume: 0.5
+		RequiresCondition: moving
 
 ttnk:
 	Inherits: ^Vehicle
@@ -587,6 +608,13 @@ ttnk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vtesstaa.wav, vtesstab.wav
+		Volume: 0.35
+		RequiresCondition: moving
 
 dtruck:
 	Inherits: ^Vehicle
@@ -658,6 +686,13 @@ dtruck:
 	Voiced:
 		VoiceSet: DemolitionTruckVoice
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vdemstaa.wav, vdemstab.wav, vdemstac.wav
+		Volume: 0.4
+		RequiresCondition: moving
 
 v3:
 	Inherits: ^Vehicle
@@ -737,6 +772,13 @@ v3:
 		ValidStances: None
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vv3lstaa.wav, vv3lstab.wav, vv3lstac.wav
+		Volume: 0.35
+		RequiresCondition: moving
 
 v3rocket:
 	Inherits: ^ShootableMissile
@@ -953,6 +995,13 @@ deva:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vapostaa.wav, vapostab.wav, vapostac.wav
+		Volume: 0.5
+		RequiresCondition: moving
 
 exps:
 	Inherits: ^ExpansionVehicle
@@ -1047,3 +1096,10 @@ ftnk:
 		Weapon: FlameTankExplode
 		EmptyWeapon: FlameTankExplode
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vrhistaa.wav, vrhistab.wav, vrhistac.wav, vrhistad.wav
+		Volume: 0.3
+		RequiresCondition: moving

@@ -100,6 +100,13 @@ dest:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vdesstaa.wav, vdesstab.wav
+		Volume: 0.3
+		RequiresCondition: moving
 
 aegis:
 	Inherits: ^Ship
@@ -166,6 +173,13 @@ aegis:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vaegstaa.wav, vaegstab.wav
+		Volume: 0.5
+		RequiresCondition: moving
 
 dlph:
 	Inherits@1: ^ExistsInWorld
@@ -353,3 +367,10 @@ carrier:
 		Facing: 0
 	Armament:
 		Weapon: HornetLauncher
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vaccstaa.wav, vaccstab.wav
+		Volume: 0.5
+		RequiresCondition: moving

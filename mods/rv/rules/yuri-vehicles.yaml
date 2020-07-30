@@ -214,6 +214,13 @@ gmin:
 		ResourceSequences:
 			Ore: pip-yellow
 			Gems: pip-blue
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vslastaa.wav, vslastab.wav
+		Volume: 0.55
+		RequiresCondition: moving
 
 ltnk:
 	Inherits: ^MainBattleTank
@@ -262,6 +269,13 @@ ltnk:
 		RequiresCondition: produced
 		Voice: Build
 		ValidStances: None
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vlasstaa.wav, vlasstab.wav, vlasstac.wav
+		Volume: 0.35
+		RequiresCondition: moving
 
 ltnk.holo:
 	Inherits: ltnk
@@ -400,6 +414,13 @@ ytnk:
 	ProducibleWithLevel:
 		Prerequisites: vetytnk
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vgatstaa.wav, vgatstab.wav, vgatstac.wav
+		Volume: 0.35
+		RequiresCondition: moving
 
 ytnk.holo:
 	Inherits: ytnk
@@ -500,6 +521,13 @@ caos:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vchastaa.wav, vchastab.wav, vchastac.wav
+		Volume: 0.5
+		RequiresCondition: moving
 
 tele:
 	Inherits: ^Vehicle
@@ -575,6 +603,13 @@ tele:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vmagstaa.wav, vmagstab.wav, vmagstac.wav
+		Volume: 0.65
+		RequiresCondition: moving
 
 mind:
 	Inherits: ^Vehicle
@@ -678,6 +713,13 @@ mind:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vmasstaa.wav, vmasstab.wav, vmasstac.wav
+		Volume: 0.65
+		RequiresCondition: moving
 
 # Custom Yuri Vehicles
 mlyr:
@@ -840,6 +882,13 @@ kamaz:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vdemstaa.wav, vdemstab.wav, vdemstac.wav
+		Volume: 0.4
+		RequiresCondition: moving
 
 yhtnk:
 	Inherits: ^Vehicle
@@ -1003,6 +1052,13 @@ grtk:
 	ProducibleWithLevel:
 		Prerequisites: warfactory.infiltrated
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vmagstaa.wav, vmagstab.wav, vmagstac.wav
+		Volume: 0.65
+		RequiresCondition: moving
 
 spider:
 	Inherits: ^Vehicle

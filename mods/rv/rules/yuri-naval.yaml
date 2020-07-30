@@ -106,6 +106,13 @@ bsub:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vboostaa.wav, vboostab.wav
+		Volume: 0.6
+		RequiresCondition: moving
 
 cmisl:
 	Inherits: ^ShootableMissile
@@ -221,6 +228,13 @@ piranha:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vsqumova.wav, vsqumovb.wav
+		Volume: 0.45
+		RequiresCondition: moving
 
 gatsub:
 	Inherits: ^Ship
@@ -342,6 +356,13 @@ gatsub:
 		Voice: Build
 		ValidStances: None
 	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vboostaa.wav, vboostab.wav
+		Volume: 0.6
+		RequiresCondition: moving
 
 floater:
 	Inherits@1: ^ExistsInWorld
