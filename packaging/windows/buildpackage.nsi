@@ -90,6 +90,8 @@ Section "Game" GAME
 	File "${SRCDIR}\eluant.dll"
 	File "${SRCDIR}\BeaconLib.dll"
 	File "${SRCDIR}\soft_oal.dll"
+	File "${SRCDIR}\DiscordRPC.dll"
+	File "${SRCDIR}\Newtonsoft.Json.dll"
 	File "${SRCDIR}\SDL2.dll"
 	File "${SRCDIR}\freetype6.dll"
 	File "${SRCDIR}\lua51.dll"
@@ -186,6 +188,8 @@ Function ${UN}Clean
 	Delete $INSTDIR\lua51.dll
 	Delete $INSTDIR\eluant.dll
 	Delete $INSTDIR\freetype6.dll
+	Delete $INSTDIR\DiscordRPC.dll
+	Delete $INSTDIR\Newtonsoft.Json.dll
 	Delete $INSTDIR\SDL2-CS.dll
 	Delete $INSTDIR\OpenAL-CS.Core.dll
 	Delete $INSTDIR\BeaconLib.dll
