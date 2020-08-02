@@ -245,7 +245,7 @@ gapowr:
 gapowrup:
 	Inherits: ^BuildingPlug
 	Valued:
-		Cost: 200
+		Cost: 500
 	Tooltip:
 		Name: Advanced Coolants
 	Buildable:
@@ -258,7 +258,7 @@ gapowrup:
 	Plug:
 		Type: powrup
 	Power:
-		Amount: 150
+		Amount: 300
 
 gapile:
 	Inherits: ^Barracks
@@ -1593,7 +1593,7 @@ gamgun:
 		Queue: Support.France
 		BuildPaletteOrder: 70
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Defensive structure that is invisible while not firing.
+		Description: Defensive structure that is invisible while not firing.\nCan be placed further than any structure.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1644,9 +1644,9 @@ gamgun:
 		Range: 7c0
 		Type: mirageturret
 	Power:
-		Amount: -55
+		Amount: -25
 	RequiresBuildableArea:
-		Adjacent: 4
+		Adjacent: 14
 	-Cloak@stealth-generator:
 	-ExternalCondition@INVISIBILITY-GENERATOR:
 	IsometricSelectable:

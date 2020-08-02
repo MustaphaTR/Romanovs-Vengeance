@@ -12,24 +12,6 @@ FlakGuyGunE:
 	Burst: 2
 	Range: 6c0
 
-UCFlakGuyGun:
-	Inherits: FlakGuyGun
-	Range: 6c0
-	Projectile: BulletAS
-		Blockable: false
-
-UCFlakGuyGunE:
-	Inherits: FlakGuyGunE
-	Range: 6c0
-	Projectile: BulletAS
-		Blockable: false
-
-CRFlakGuyGun:
-	Inherits: FlakGuyGun
-	Range: 6c0
-	Warhead@1Dam: SpreadDamage
-		Damage: 30
-
 FlakGuyAAGun:
 	Inherits: ^AAFlak
 	Range: 8c0
@@ -41,11 +23,29 @@ FlakGuyAAGunE:
 	Inherits: FlakGuyAAGun
 	Burst: 2
 
+UCFlakGuyGun:
+	Inherits: FlakGuyGun
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCFlakGuyGunE:
+	Inherits: FlakGuyGunE
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
 UCFlakGuyAAGun:
 	Inherits: FlakGuyAAGun
 
 UCFlakGuyAAGunE:
 	Inherits: FlakGuyAAGunE
+
+CRFlakGuyGun:
+	Inherits: FlakGuyGun
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 30
 
 CRFlakGuyGunAA:
 	Inherits: ^AAFlak

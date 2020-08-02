@@ -57,13 +57,13 @@ CRFlamer:
 
 UCFlamer:
 	Inherits: Flamer
-	Range: 6c0
+	Range: 7c0
 	Projectile: BulletAS
 		Blockable: false
 
 UCFlamerE:
 	Inherits: FlamerE
-	Range: 6c0
+	Range: 7c0
 	Projectile: BulletAS
 		Blockable: false
 
@@ -76,7 +76,10 @@ TankFlamer:
 		Speed: 340
 		LaunchAngle: 0
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c512
+		Spread: 0c768
+		Damage: 10
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c768
 		Damage: 10
 
 TankFlamerE:
@@ -87,8 +90,10 @@ TankFlamerE:
 		TrailImage: fireballblue
 	Warhead@1Dam: SpreadDamage
 		Damage: 14
+		Spread: 0c768
 	Warhead@1Gar: OpenToppedDamage
 		Damage: 14
+		Spread: 0c768
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
@@ -164,13 +169,13 @@ CRToxinSprayer:
 
 UCToxinSprayer:
 	Inherits: ToxinSprayer
-	Range: 6c0
+	Range: 7c0
 	Projectile: BulletAS
 		Blockable: false
 
 UCToxinSprayerE:
 	Inherits: ToxinSprayerE
-	Range: 6c0
+	Range: 7c0
 	Projectile: BulletAS
 		Blockable: false
 
@@ -785,13 +790,13 @@ PsychicJabE:
 
 UCPsychicJab:
 	Inherits: PsychicJab
-	Range: 6c0
+	Range: 7c0
 	Projectile: InstantHit
 		Blockable: false
 
 UCPsychicJabE:
 	Inherits: PsychicJabE
-	Range: 6c0
+	Range: 7c0
 	Projectile: InstantHit
 		Blockable: false
 
