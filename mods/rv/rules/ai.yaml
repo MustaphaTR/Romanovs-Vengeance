@@ -214,7 +214,7 @@ Player:
 					Attractiveness: -1
 					TargetMetric: Value
 					CheckRadius: 5c0
-			tesladrop:
+			ambush:
 				OrderName: LibyanAmbush
 				MinimumAttractiveness: 5
 				Consideration@1:
@@ -229,6 +229,21 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
+			v3storm:
+				OrderName: SovietV3Storm
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 			nukepower:
 				OrderName: NukePowerInfoOrder
 				MinimumAttractiveness: 3000
@@ -267,7 +282,7 @@ Player:
 					Against: Ally
 					Types: Ground, Water
 					Attractiveness: -20
-			psipsychicreveal:
+			psychicreveal:
 				OrderName: psipsychicreveal
 				MinimumAttractiveness: 5
 				IgnoreVisibility: true
@@ -283,7 +298,67 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
-			psipsychicdomination:
+			toxinbombing:
+				OrderName: PsiCorpsToxinBombing
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			orbitaldrop:
+				OrderName: PsiCorpsOrbitalDrop
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			mosquitoswarm:
+				OrderName: TransylvaniaMosquitoSwarm
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			ioncannon:
+				OrderName: LunarIonCannon
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			psychicdomination:
 				OrderName: PsiPsychicDomination
 				MinimumAttractiveness: 250
 				Types: Ground
@@ -448,10 +523,12 @@ Player:
 			ssnipe: 4
 			pyro: 7
 			deso: 2
+			spct: 2
 			tany: 2
 			boris: 2
 			yuri: 1
 			yuripsi: 1
+			yurix: 2
 			cmin: 20
 			harv: 20
 			gmin: 20
@@ -476,6 +553,7 @@ Player:
 			ftnk: 20
 			yhtnk: 20
 			tele: 10
+			spider: 10
 			mind: 10
 			orca: 5
 			beag: 2
@@ -485,22 +563,23 @@ Player:
 			magnedisk: 1
 			commanders_power.harrier_training: 1
 			commanders_power.inf_training: 1
+			commanders_power.gatling_training: 1
 			commanders_power.drone_drop: 1
 			commanders_power.spy_plane: 1
 			commanders_power.scout_drone: 1
+			commanders_power.psychic_reveal: 1
 			commanders_power.a10_strike.1: 1
 			commanders_power.a10_strike.2: 1
 			commanders_power.a10_strike.3: 1
 			commanders_power.parabombs.1: 1
 			commanders_power.parabombs.2: 1
 			commanders_power.parabombs.3: 1
-			commanders_power.cruiser_strike: 1
-			commanders_power.v3_strorm: 1
-			commanders_power.gatling_training: 1
-			commanders_power.psychic_reveal: 1
 			commanders_power.toxin_bombing.1: 1
 			commanders_power.toxin_bombing.2: 1
 			commanders_power.toxin_bombing.3: 1
+			commanders_power.cruiser_strike: 1
+			commanders_power.v3_strorm: 1
+			commanders_power.orbital_drop: 1
 		UnitLimits:
 			dog: 4
 			cmin: 8
