@@ -1298,9 +1298,12 @@ itrp:
 		Voice: Attack
 		FacingTolerance: 2
 	Targetable:
-		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune, IronCurtainImmune
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	-Targetable@ironcurtain:
+	-KillsSelf@ironcurtain:
+	-ExternalCondition@INVULNERABILITY:
 
 shkc:
 	Inherits: shk
