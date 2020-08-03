@@ -379,8 +379,85 @@ Player:
 					Against: Ally
 					Types: Ground, Water
 					Attractiveness: -20
+			alliedparadrop:
+				OrderName: AlliedParatroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			sovietparadrop:
+				OrderName: SovietParatroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			psicorpsparadrop:
+				OrderName: PsiCorpsParatroopers
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			psychiccontrol:
+				OrderName: TechPsychicControl
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			clustermissile:
+				OrderName: TechClusterMissile
+				MinimumAttractiveness: 3000
+				Types: Ground
+				IgnoreVisibility: true
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 	BaseBuilderBotModule@test:
-		RequiresCondition: enable-test-ai
+		RequiresCondition: enable-test-ai && !megawealth
 		BuildingQueues: Building.Allies, Building.Soviets, Building.Yuri
 		DefenseQueues: Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
 		MinimumExcessPower: 60
@@ -475,6 +552,93 @@ Player:
 			gaweat: 2
 			namisl: 2
 			yappet: 2
+	BaseBuilderBotModule@test-megawealth:
+		RequiresCondition: enable-test-ai && megawealth
+		BuildingQueues: Building.Allies, Building.Soviets, Building.Yuri
+		DefenseQueues: Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
+		MinimumExcessPower: 60
+		MaximumExcessPower: 160
+		ExcessPowerIncrement: 40
+		ExcessPowerIncreaseThreshold: 3
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		PowerTypes: gapowr, napowr, nanrct, yapowr
+		BarracksTypes: gapile, nahand, yabrck
+		VehiclesFactoryTypes: gaweap, naweap, yaweap
+		ProductionTypes: gapile, nahand, yabrck, gaweap, naweap, yaweap, gaairc, yadisk #, naheli
+		BuildingLimits:
+			gapowr: 8
+			napowr: 8
+			nanrct: 1
+			yapowr: 8
+			gapile: 2
+			nahand: 2
+			yabrck: 2
+			gaweap: 3
+			naweap: 3
+			yaweap: 3
+			# gadept: 1
+			# nadept: 1
+			# yadept: 1
+			gaairc: 1
+			# naheli: 1
+			yadisk: 1
+			naradr: 1
+			yadome: 1
+			gatech: 1
+			natech: 1
+			yatech: 1
+			gaspysat: 1
+			yapsis: 1
+			naprop: 1
+			gagap: 1
+			yasgen: 1
+			gaweat: 2
+			namisl: 2
+			yappet: 2
+		BuildingFractions:
+			gapowr: 70
+			napowr: 50
+			nanrct: 20
+			yapowr: 70
+			gapile: 40
+			nahand: 40
+			yabrck: 40
+			gaweap: 20
+			naweap: 20
+			yaweap: 20
+			# gadept: 1
+			# nadept: 1
+			# yadept: 1
+			gaairc: 10
+			# naheli: 10
+			yadisk: 10
+			naradr: 10
+			yadome: 10
+			gatech: 20
+			natech: 20
+			yatech: 20
+			gaorep: 10
+			naindp: 10
+			yaclon: 10
+			gaspysat: 1
+			yapsis: 1
+			gapill: 20
+			nalasr: 20
+			yaggun: 28
+			nasam: 8
+			naflak: 8
+			tesla: 8
+			atesla: 8
+			yapsyt: 8
+			gtgcan: 2
+			yaeast02: 2
+			gamgun: 4
+			gagap: 1
+			naprop: 1
+			yasgen: 1
+			gaweat: 2
+			namisl: 2
+			yappet: 2
 	PlugSpawnerBotModule@test:
 		RequiresCondition: enable-test-ai && powerplug
 		Plug: gapowrup
@@ -483,8 +647,11 @@ Player:
 	GrantConditionOnPrerequisite@powerplug:
 		Condition: powerplug
 		Prerequisites: gacnst, gapowr.pluggable, gaairc, ~techlevel.2
+	GrantConditionOnPrerequisite@megawealth:
+		Condition: megawealth
+		Prerequisites: global-megawealth
 	HarvesterBotModule@test:
-		RequiresCondition: enable-test-ai
+		RequiresCondition: enable-test-ai && !megawealth
 		HarvesterTypes: cmin, harv, gmin
 	BuildingRepairBotModule@test:
 		RequiresCondition: enable-test-ai
@@ -493,7 +660,7 @@ Player:
 		SquadSize: 5
 		RushAttackScanRadius: 30
 		ProtectUnitScanRadius: 25
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, ymcv, gadock, mine
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, ymcv, gadock, mine, engineer
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, gatsub, bsub
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 	McvManagerBotModule@test:
@@ -502,7 +669,7 @@ Player:
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		McvFactoryTypes: gaweap, naweap, yaweap
 	UnitBuilderBotModule@test:
-		RequiresCondition: enable-test-ai
+		RequiresCondition: enable-test-ai && !megawealth
 		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Vietnam, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
 		UnitsToBuild:
 			e1: 180
@@ -555,6 +722,88 @@ Player:
 			tele: 10
 			spider: 10
 			mind: 10
+			ctnk: 2
+			deva: 2
+			grtk: 2
+			orca: 5
+			beag: 2
+			fortress: 2
+			txdx: 1
+			disk: 2
+			magnedisk: 1
+			commanders_power.harrier_training: 1
+			commanders_power.inf_training: 1
+			commanders_power.gatling_training: 1
+			commanders_power.drone_drop: 1
+			commanders_power.spy_plane: 1
+			commanders_power.scout_drone: 1
+			commanders_power.psychic_reveal: 1
+			commanders_power.a10_strike.1: 1
+			commanders_power.a10_strike.2: 1
+			commanders_power.a10_strike.3: 1
+			commanders_power.parabombs.1: 1
+			commanders_power.parabombs.2: 1
+			commanders_power.parabombs.3: 1
+			commanders_power.toxin_bombing.1: 1
+			commanders_power.toxin_bombing.2: 1
+			commanders_power.toxin_bombing.3: 1
+			commanders_power.cruiser_strike: 1
+			commanders_power.v3_strorm: 1
+			commanders_power.orbital_drop: 1
+	UnitBuilderBotModule@test-megawealth:
+		RequiresCondition: enable-test-ai && megawealth
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Vietnam, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
+		UnitsToBuild:
+			e1: 180
+			e2: 180
+			init: 180
+			dog: 2
+			engineer: 180
+			flakt: 20
+			gtrp: 20
+			ggi: 20
+			shk: 20
+			brute: 20
+			gren: 7
+			ivan: 5
+			ghost: 4
+			jumpjet: 4
+			lunr: 4
+			snipe: 4
+			ssnipe: 4
+			pyro: 7
+			deso: 2
+			spct: 2
+			tany: 2
+			boris: 2
+			yuri: 1
+			yuripsi: 1
+			yurix: 2
+			htnk: 100
+			mtnk: 100
+			ltnk: 100
+			htk: 40
+			fv: 40
+			ytnk: 40
+			dron: 2
+			robo: 2
+			tric: 10
+			v3: 10
+			howi: 10
+			kamaz: 10
+			sref: 20
+			mgtk: 20
+			apoc: 20
+			tnkd: 30
+			ttnk: 30
+			ftnk: 20
+			yhtnk: 20
+			tele: 10
+			spider: 10
+			mind: 10
+			ctnk: 2
+			deva: 2
+			grtk: 2
 			orca: 5
 			beag: 2
 			fortress: 2
@@ -582,10 +831,7 @@ Player:
 			commanders_power.orbital_drop: 1
 		UnitLimits:
 			dog: 4
-			cmin: 8
-			harv: 8
-			gmin: 8
-			slav: 20
+			engineer: 1
 			dron: 1
 			robo: 1
 			orca: 3
@@ -594,3 +840,8 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 1
+	CaptureManagerBotModule:
+		RequiresCondition: enable-test-ai
+		CapturingActorTypes: engineer
+		CapturableActorTypes: caoild, caairp, capowr, caoutp, cahosp, cathosp, camach, caslab, capsyb, camisl, cacomm, caarmr, carpad
+		MinimumCaptureDelay: 125
