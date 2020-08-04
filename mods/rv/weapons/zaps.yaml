@@ -148,6 +148,50 @@ OPestCoilBolt:
 	Warhead@1Dam: SpreadDamage
 		Damage: 150
 
+PostBolt:
+	Inherits: ^TeslaZap
+	ReloadDelay: 3
+	Range: 3c0
+	Report: btesat1a.wav
+	Warhead@1Dam: SpreadDamage
+		Spread: 42
+		Damage: 30
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 50
+			Medium: 100
+			Heavy: 75
+			Wood: 50
+			Steel: 65
+			Concrete: 40
+			Drone: 200
+			Rocket: 100
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallScorch
+
+OPPostBolt:
+	Inherits: PostBolt
+	Range: 3c512
+	Report: btesat2a.wav
+	Projectile: TeslaZap
+		Image: litningupg
+	Warhead@1Dam: SpreadDamage
+		Damage: 45
+
+OPerPostBolt:
+	Inherits: OPPostBolt
+	Range: 4c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 60
+
+OPestPostBolt:
+	Inherits: OPerPostBolt
+	Range: 4c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 75
+
 TankBolt:
 	Inherits: ^TeslaZap
 	Range: 5c0

@@ -1478,17 +1478,18 @@ nagateb:
 
 napost:
 	Inherits: ^BaseBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Buildable:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: power, ~prerequisite.tesla_fence, ~techlevel.1
-		Description: Stops infantry and blocks enemy fire.
-		BuildDuration: 75
+		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\n\nRequires power to operate.
+		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
-		Cost: 150
+		Cost: 200
 	Tooltip:
 		Name: Tesla Fence Post
 	Tooltip@NoRow:
@@ -1504,8 +1505,35 @@ napost:
 		SegmentsRequireNode: true
 	LineBuildNode:
 		Types: teslafencenode
+	Targetable@TeslaBoost:
+		TargetTypes: TeslaBoost
+		RequiresCondition: !powerdown
+	WithTeslaChargeOverlay:
+	Armament:
+		Weapon: PostBolt
+		LocalOffset: 0,0,30
+		RequiresCondition: (!lowpower && !charged) || (lowpower && charged == 1)
+	Armament@1:
+		Weapon: OPPostBolt
+		LocalOffset: 0,0,30
+		RequiresCondition: (!lowpower && charged == 1) || (lowpower && charged == 2)
+	Armament@2:
+		Weapon: OPerPostBolt
+		LocalOffset: 0,0,30
+		RequiresCondition: (!lowpower && charged == 2) || (lowpower && charged >= 3)
+	Armament@3:
+		Weapon: OPestPostBolt
+		LocalOffset: 0,0,30
+		RequiresCondition: !lowpower && charged >= 3
+	AttackTesla:
+		Voice: Attack
+		MaxCharges: 1
+		ReloadDelay: 80
+		ChargeAudio: btespow.wav
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
 	Power:
-		Amount: -5
+		Amount: -10
 	RevealsShroud:
 		Range: 4c0
 	WithIdleOverlay@LIGHTS:
@@ -1523,6 +1551,15 @@ napost:
 		Adjacent: 6
 	IsometricSelectable:
 		DecorationHeight: 30
+	GrantConditionOnPowerState@LOWPOWER:
+		RequiresCondition: !charged
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
+	WithRangeCircle:
+		Range: 3c0
+		Type: teslacoil
+	ExternalCondition@CHARGED:
+		Condition: charged
 
 nafnce:
 	Inherits: ^Wall
