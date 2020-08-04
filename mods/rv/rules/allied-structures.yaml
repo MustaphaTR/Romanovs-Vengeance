@@ -881,7 +881,7 @@ nasam:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies, Support.France
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.2
 		Description: Automated anti-aircraft defense.\nCan detect cloaked units.
 		BuildDuration: 375
@@ -950,7 +950,7 @@ gtgcan:
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Support.France
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		Prerequisites: ~disabled # gaairc, ~techlevel.3
 		Description: Automated, long ranged anti-ground defense.
 	Valued:
@@ -1154,7 +1154,7 @@ gagap:
 		Name: Gap Generator
 	Buildable:
 		Queue: Support.Allies, Support.France
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		Prerequisites: gatech, ~techlevel.3
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
 		BuildDuration: 125
@@ -1308,7 +1308,7 @@ atesla:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies, Support.France
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 		BuildDuration: 625
@@ -1591,7 +1591,7 @@ gamgun:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.France
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Defensive structure that is invisible while not firing.\nCan be placed further than any structure.
 		BuildDuration: 375
@@ -1625,6 +1625,8 @@ gamgun:
 	WithMuzzleOverlay:
 	Turreted:
 		TurnSpeed: 40
+		InitialFacing: 896
+		PreviewFacing: 896
 	Cloak:
 		RequiresCondition: !disabled && !chronodisable && !emp
 		InitialDelay: 25
@@ -1641,14 +1643,73 @@ gamgun:
 	BodyOrientation:
 		QuantizedFacings: 8
 	WithRangeCircle:
-		Range: 7c0
+		Range: 6c0
 		Type: mirageturret
 	Power:
 		Amount: -25
 	RequiresBuildableArea:
-		Adjacent: 14
+		Adjacent: 13
 	-Cloak@stealth-generator:
 	-ExternalCondition@INVISIBILITY-GENERATOR:
+	IsometricSelectable:
+		DecorationHeight: 30
+
+gagun:
+	Inherits: ^SupportBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Allies, Support.France
+		BuildPaletteOrder: 50
+		Prerequisites: gapile, ~prerequisite.gun_turret, ~techlevel.1
+		Description: Anti-tank defense structure.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 650
+	Tooltip:
+		Name: Gun Turret
+	Tooltip@NoRow:
+		Name: Gun Turret
+	Building:
+		Footprint: x
+		Dimensions: 1, 1
+	Health:
+		HP: 500
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 7c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 7c0
+	Armament:
+		Weapon: sabotT
+		LocalOffset: 874,0,640
+		MuzzleSequence: muzzle
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	WithMuzzleOverlay:
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		PreviewFacing: 896
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	BodyOrientation:
+		QuantizedFacings: 8
+	WithRangeCircle:
+		Range: 6c0
+		Type: gunturret
+	Power:
+		Amount: -10
+	RequiresBuildableArea:
+		Adjacent: 4
 	IsometricSelectable:
 		DecorationHeight: 30
 

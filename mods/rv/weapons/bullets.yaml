@@ -72,6 +72,17 @@ sabotE:
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
+sabotT:
+	Inherits: sabot
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 25
+			Flak: 25
+			Plate: 15
+			Wood: 65
+			Steel: 75
+			Concrete: 55
+
 HowiCannon:
 	Inherits: ^LargeBullet
 	ValidTargets: Ground, Water

@@ -1008,7 +1008,40 @@ gamgun:
 		Length: 13
 		ShadowStart: 13
 		ZOffset: 0
+	muzzle:
+		UseTilesetCode: false
 	icon: mgunicon
+		Offset: 0,0
+		UseTilesetCode: false
+
+gagun:
+	Inherits@MC: ^MindControllable
+	Inherits@MUZZLE: ^WithCannonMuzzle
+	Defaults:
+		Offset: 0, -15
+		ZOffset: -512
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+	idle: gagun
+		ShadowStart: 3
+	damaged-idle: gagun
+		Start: 1
+		ShadowStart: 4
+	turret: gaguntur
+		Facings: 32
+		ZOffset: 0
+	make: gagunmk
+		Length: 13
+		ShadowStart: 13
+		ZOffset: 0
+	muzzle:
+		UseTilesetCode: false
+	icon: gturicon
 		Offset: 0,0
 		UseTilesetCode: false
 
