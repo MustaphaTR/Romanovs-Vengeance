@@ -221,7 +221,7 @@ gapowr:
 		Amount: 150
 		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
 	Power@plug:
-		Amount: 150
+		Amount: 300
 		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && powrup
 	GrantCondition@IDISABLE:
 		RequiresCondition: power-outage || diskdrain
@@ -245,7 +245,7 @@ gapowr:
 gapowrup:
 	Inherits: ^BuildingPlug
 	Valued:
-		Cost: 500
+		Cost: 750
 	Tooltip:
 		Name: Advanced Coolants
 	Buildable:
@@ -1679,12 +1679,14 @@ gagun:
 	Armor:
 		Type: Steel
 	RevealsShroud:
-		Range: 7c0
+		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
-	#	Range: 7c0
+	#	Range: 8c0
 	Armament:
 		Weapon: sabotT
+		Recoil: 87
+		RecoilRecovery: 12
 		LocalOffset: 874,0,640
 		MuzzleSequence: muzzle
 	AttackTurreted:
@@ -1704,7 +1706,7 @@ gagun:
 	BodyOrientation:
 		QuantizedFacings: 8
 	WithRangeCircle:
-		Range: 6c0
+		Range: 7c0
 		Type: gunturret
 	Power:
 		Amount: -10
