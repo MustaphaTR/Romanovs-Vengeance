@@ -485,9 +485,9 @@ Player:
 			gaweap: 3
 			naweap: 3
 			yaweap: 3
-			# gadept: 1
-			# nadept: 1
-			# yadept: 1
+			gadept: 1
+			nadept: 1
+			yadept: 1
 			gaairc: 1
 			# naheli: 1
 			yadisk: 1
@@ -519,9 +519,9 @@ Player:
 			gaweap: 20
 			naweap: 20
 			yaweap: 20
-			# gadept: 1
-			# nadept: 1
-			# yadept: 1
+			gadept: 1
+			nadept: 1
+			yadept: 1
 			gaairc: 10
 			# naheli: 10
 			yadisk: 10
@@ -577,9 +577,9 @@ Player:
 			gaweap: 3
 			naweap: 3
 			yaweap: 3
-			# gadept: 1
-			# nadept: 1
-			# yadept: 1
+			gadept: 1
+			nadept: 1
+			yadept: 1
 			gaairc: 1
 			# naheli: 1
 			yadisk: 1
@@ -607,9 +607,9 @@ Player:
 			gaweap: 20
 			naweap: 20
 			yaweap: 20
-			# gadept: 1
-			# nadept: 1
-			# yadept: 1
+			gadept: 1
+			nadept: 1
+			yadept: 1
 			gaairc: 10
 			# naheli: 10
 			yadisk: 10
@@ -657,11 +657,13 @@ Player:
 		HarvesterTypes: cmin, harv, gmin
 	BuildingRepairBotModule@test:
 		RequiresCondition: enable-test-ai
-	SquadManagerBotModule@test:
+	SquadManagerBotModuleRV@test:
 		RequiresCondition: enable-test-ai
-		SquadSize: 5
+		SquadSize: 15
 		RushAttackScanRadius: 30
 		ProtectUnitScanRadius: 25
+		RushInterval : 4000
+		MinimumAttackForceDelay: 2500
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, ymcv, gadock, mine, engineer
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, gatsub, bsub
 		ConstructionYardTypes: gacnst, nacnst, yacnst
@@ -733,6 +735,7 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 1
+			engineer: 1
 			commanders_power.gun_turret: 1
 			commanders_power.harrier_training: 1
 			commanders_power.inf_training: 1
@@ -753,6 +756,9 @@ Player:
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
+		UnitLimits:
+			dog: 4
+			engineer: 1
 	UnitBuilderBotModule@test-megawealth:
 		RequiresCondition: enable-test-ai && megawealth
 		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Vietnam, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
@@ -849,3 +855,5 @@ Player:
 		CapturingActorTypes: engineer
 		CapturableActorTypes: caoild, caairp, capowr, caoutp, cahosp, cathosp, camach, caslab, capsyb, camisl, cacomm, caarmr, carpad
 		MinimumCaptureDelay: 125
+	PowerDownBotModuleRV:
+		RequiresCondition: enable-test-ai
