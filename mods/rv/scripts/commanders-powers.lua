@@ -168,7 +168,7 @@ SetUpDefaults = function()
 end
 
 Tick = function()
-	if GPModifier ~= "disabled" then
+	if CPModifier ~= "disabled" then
 		TickGeneralsPowers()
 	end
 	
