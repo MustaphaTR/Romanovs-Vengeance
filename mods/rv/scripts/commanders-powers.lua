@@ -24,9 +24,9 @@ elseif CPModifier == "double" then
 elseif CPModifier == "three" then
 	PointsPerRank = { 3, 3, 3, 3, 3 }
 elseif CPModifier == "triple" then
-	PointsPerRank = { 3, 3, 3, 3, 9 }
+	PointsPerRank = { 3, 3, 3, 3, 4 }
 else
-	PointsPerRank = { 5, 0, 15, 0, 5 }
+	PointsPerRank = { 4, 0, 11, 0, 1 }
 end
 
 PointActorExists = { }
@@ -171,7 +171,7 @@ Tick = function()
 	if CPModifier ~= "disabled" then
 		TickGeneralsPowers()
 	end
-	
+
 	TickDomination()
 end
 
