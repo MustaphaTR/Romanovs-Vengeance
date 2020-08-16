@@ -1626,7 +1626,6 @@ gamgun:
 	Turreted:
 		TurnSpeed: 40
 		InitialFacing: 896
-		PreviewFacing: 896
 	Cloak:
 		RequiresCondition: !disabled && !chronodisable && !emp
 		InitialDelay: 25
@@ -1691,13 +1690,12 @@ gagun:
 		MuzzleSequence: muzzle
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: disabled || chronodisable
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithMuzzleOverlay:
 	Turreted:
 		TurnSpeed: 40
 		InitialFacing: 896
-		PreviewFacing: 896
 	WithSpriteTurret:
 		RequiresCondition: !build-incomplete
 	DetectCloaked:
