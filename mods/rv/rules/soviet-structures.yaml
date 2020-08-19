@@ -50,24 +50,53 @@ nacnst:
 	GrantConditionOnFaction@Cuba:
 		Condition: cuba
 		Factions: cuba
-	GrantConditionOnFaction@libya:
+	GrantConditionOnFaction@Libya:
 		Condition: libya
 		Factions: libya
+	GrantConditionOnFaction@Chile:
+		Condition: chile
+		Factions: chile
+	GrantConditionOnFaction@Mexico:
+		Condition: mexico
+		Factions: mexico
+	GrantConditionOnFaction@Mongolia:
+		Condition: mongolia
+		Factions: mongolia
 	WithIdleOverlay@Russia:
 		Sequence: flag-russia
 		RequiresCondition: !build-incomplete && russia
 	WithIdleOverlay@Iraq:
 		Sequence: flag-iraq
+		Palette: iraq
 		RequiresCondition: !build-incomplete && iraq
 	WithIdleOverlay@Vietnam:
 		Sequence: flag-vietnam
 		RequiresCondition: !build-incomplete && vietnam
 	WithIdleOverlay@Cuba:
 		Sequence: flag-cuba
+		Palette: cuba
 		RequiresCondition: !build-incomplete && cuba
 	WithIdleOverlay@Libya:
 		Sequence: flag-libya
+		Palette: libya
 		RequiresCondition: !build-incomplete && libya
+	WithIdleOverlay@Chile:
+		Sequence: flag-chile
+		Palette: chile
+		RequiresCondition: !build-incomplete && chile
+	WithIdleOverlay@Mexico:
+		Sequence: flag-mexico
+		Palette: mexico
+		RequiresCondition: !build-incomplete && mexico
+	WithIdleOverlay@Mongolia:
+		Sequence: flag-mongolia
+		Palette: mongolia
+		RequiresCondition: !build-incomplete && mongolia
+	WithIdleOverlay@FlagShadow:
+		Sequence: flag-shadow
+		Palette: shadow
+		IsPlayerPalette: false
+		RequiresCondition: !build-incomplete && (russia || iraq || vietnam || cuba || libya || chile || mexico || mongolia)
 	IsometricSelectable:
 		DecorationHeight: 90
 	Voiced:
