@@ -74,6 +74,9 @@ nacnst:
 	GrantConditionOnFaction@Russia:
 		Condition: russianfed
 		Factions: russianfed
+	GrantConditionOnFaction@Serbia:
+		Condition: serbia
+		Factions: serbia
 	WithIdleOverlay@USSR:
 		Sequence: flag-russia
 		Palette: ussr
@@ -122,11 +125,15 @@ nacnst:
 		Sequence: flag-russianfed
 		Palette: russia
 		RequiresCondition: !build-incomplete && russianfed
+	WithIdleOverlay@Serbia:
+		Sequence: flag-serbia
+		Palette: serbia
+		RequiresCondition: !build-incomplete && serbia
 	WithIdleOverlay@FlagShadow:
 		Sequence: flag-shadow
 		Palette: shadow
 		IsPlayerPalette: false
-		RequiresCondition: !build-incomplete && (russia || iraq || vietnam || cuba || libya || chile || mexico || mongolia || transcaucus || turkmen || tuva || russianfed)
+		RequiresCondition: !build-incomplete && (russia || iraq || vietnam || cuba || libya || chile || mexico || mongolia || transcaucus || turkmen || tuva || russianfed || serbia)
 	IsometricSelectable:
 		DecorationHeight: 90
 	Voiced:
