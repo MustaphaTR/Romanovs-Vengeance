@@ -38,7 +38,7 @@ nacnst:
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
-	GrantConditionOnFaction@Russia:
+	GrantConditionOnFaction@USSR:
 		Condition: russia
 		Factions: russia
 	GrantConditionOnFaction@Iraq:
@@ -62,7 +62,19 @@ nacnst:
 	GrantConditionOnFaction@Mongolia:
 		Condition: mongolia
 		Factions: mongolia
-	WithIdleOverlay@Russia:
+	GrantConditionOnFaction@Transcaucasia:
+		Condition: transcaucus
+		Factions: transcaucus
+	GrantConditionOnFaction@Turkmenistan:
+		Condition: turkmen
+		Factions: turkmen
+	GrantConditionOnFaction@Tuva:
+		Condition: tuva
+		Factions: tuva
+	GrantConditionOnFaction@Russia:
+		Condition: russianfed
+		Factions: russianfed
+	WithIdleOverlay@USSR:
 		Sequence: flag-russia
 		Palette: ussr
 		RequiresCondition: !build-incomplete && russia
@@ -94,11 +106,27 @@ nacnst:
 		Sequence: flag-mongolia
 		Palette: mongolia
 		RequiresCondition: !build-incomplete && mongolia
+	WithIdleOverlay@Transcaucasia:
+		Sequence: flag-transcaucus
+		Palette: transcaucasia
+		RequiresCondition: !build-incomplete && transcaucus
+	WithIdleOverlay@Turkmenistan:
+		Sequence: flag-turkmen
+		Palette: turkmenistan
+		RequiresCondition: !build-incomplete && turkmen
+	WithIdleOverlay@Tuva:
+		Sequence: flag-tuva
+		Palette: tuva
+		RequiresCondition: !build-incomplete && tuva
+	WithIdleOverlay@Russia:
+		Sequence: flag-russianfed
+		Palette: russia
+		RequiresCondition: !build-incomplete && russianfed
 	WithIdleOverlay@FlagShadow:
 		Sequence: flag-shadow
 		Palette: shadow
 		IsPlayerPalette: false
-		RequiresCondition: !build-incomplete && (russia || iraq || vietnam || cuba || libya || chile || mexico || mongolia)
+		RequiresCondition: !build-incomplete && (russia || iraq || vietnam || cuba || libya || chile || mexico || mongolia || transcaucus || turkmen || tuva || russianfed)
 	IsometricSelectable:
 		DecorationHeight: 90
 	Voiced:
