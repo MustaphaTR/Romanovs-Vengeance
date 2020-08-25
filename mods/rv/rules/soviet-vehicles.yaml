@@ -51,12 +51,12 @@ harv:
 		HP: 800
 	Armor:
 		Type: Medium
-	SelfHealing:
+	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
 		Delay: 100
 		DamageCooldown: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 	Armament@primary:
 		Weapon: 20mmrapid
 		LocalOffset: 384,0,1024
@@ -438,12 +438,12 @@ apoc:
 		TurnSpeed: 20
 		Locomotor: omnicrusher
 	-Crushable:
-	SelfHealing:
+	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
 		Delay: 100
 		DamageCooldown: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 	Health:
 		HP: 800
 	Armor:
@@ -922,12 +922,12 @@ deva:
 		Locomotor: omnicrusher
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured && !overload
 	-Crushable:
-	SelfHealing:
+	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
 		Delay: 100
 		DamageCooldown: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 	Health:
 		HP: 1000
 	Armor:

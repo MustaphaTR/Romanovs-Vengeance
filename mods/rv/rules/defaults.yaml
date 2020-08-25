@@ -190,10 +190,10 @@
 	FirepowerMultiplier@RANK-1:
 		RequiresCondition: rank-veteran >= 1
 		Modifier: 120
-	SelfHealing@ELITE:
+	ChangesHealth@ELITE:
 		PercentageStep: 2
 		Delay: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: rank-elite
 	WithDecoration@RANK-1:
@@ -225,10 +225,10 @@
 		Condition: armory
 
 ^HospitalHealing:
-	SelfHealing@HOSPITAL:
+	ChangesHealth@HOSPITAL:
 		Step: 20
 		Delay: 50
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 125
 		RequiresCondition: heal
 	WithDecoration@HOSPITAL:
@@ -243,10 +243,10 @@
 		Prerequisites: cahosp
 
 ^MachineShopRepair:
-	SelfHealing@MACHINESHOP:
+	ChangesHealth@MACHINESHOP:
 		Step: 5
 		Delay: 75
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 125
 		RequiresCondition: repair
 	WithDecoration@MACHINESHOP:
@@ -350,11 +350,11 @@
 	WithColoredOverlay@PROPAGANDA_TOWER:
 		Palette: propaganda_tower
 		RequiresCondition: propaganda_tower
-	SelfHealing@PROPAGANDA_TOWER:
+	ChangesHealth@PROPAGANDA_TOWER:
 		Step: 0
 		PercentageStep: 2
 		Delay: 30
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: propaganda_tower
 	ExternalCondition@PROPAGANDA_TOWER:
@@ -384,10 +384,10 @@
 		Condition: boost3
 
 ^HealsInAmbulance:
-	SelfHealing@HOSPITAL:
+	ChangesHealth@HOSPITAL:
 		PercentageStep: 50
 		Delay: 25
-		HealIfBelow: 100
+		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: in-ambulance
 	Passenger:
@@ -2555,9 +2555,8 @@
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp
 		Condition: disabled
-	WithIdleOverlayAS@EMP:
-		Image: emp_fx01
-		Sequence: idle
+	WithIdleOverlay@EMP:
+		Sequence: emp
 		Palette: tseffect
 		RequiresCondition: emp
 	Targetable@EMP:

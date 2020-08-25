@@ -1036,12 +1036,12 @@ tany:
 		Type: Flak
 	Crushable:
 		CrushClasses: vehicle
-	SelfHealing:
+	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
 		Delay: 100
 		DamageCooldown: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 	Armament@primary:
 		Weapon: DoublePistols
 		PauseOnCondition: chronodisable
@@ -1242,7 +1242,7 @@ jumpjet:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-Passenger:
-	-SelfHealing@HOSPITAL:
+	-ChangesHealth@HOSPITAL:
 	SpawnActorOnDeath:
 		Actor: jumpjet.husk
 

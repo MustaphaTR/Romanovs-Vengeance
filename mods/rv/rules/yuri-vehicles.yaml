@@ -157,12 +157,12 @@ gmin:
 		HP: 800
 	Armor:
 		Type: Medium
-	SelfHealing:
+	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
 		Delay: 100
 		DamageCooldown: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 	Mobile:
 		Speed: 60
 		TurnSpeed: 32
@@ -637,27 +637,27 @@ mind:
 		TurnSpeed: 20
 		Locomotor: omnicrusher
 	-Crushable:
-	SelfHealing@HEAL:
+	ChangesHealth@HEAL:
 		PercentageStep: 1
 		Step: 0
 		Delay: 100
 		DamageCooldown: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 		RequiresCondition: controlling < 4
-	SelfHealing@OVERLOAD-1:
+	ChangesHealth@OVERLOAD-1:
 		Step: -25
 		Delay: 30
-		HealIfBelow: 101
+		StartIfBelow: 101
 		RequiresCondition: controlling >= 4 && controlling < 7
-	SelfHealing@OVERLOAD-2:
+	ChangesHealth@OVERLOAD-2:
 		Step: -50
 		Delay: 30
-		HealIfBelow: 101
+		StartIfBelow: 101
 		RequiresCondition: controlling >= 7 && controlling < 11
-	SelfHealing@OVERLOAD-3:
+	ChangesHealth@OVERLOAD-3:
 		Step: -100
 		Delay: 30
-		HealIfBelow: 101
+		StartIfBelow: 101
 		RequiresCondition: controlling >= 11
 	ExplodeWeapon@OVERLOADSPARKS:
 		RequiresCondition: controlling >= 4
@@ -1005,12 +1005,12 @@ grtk:
 		Speed: 120
 		TurnSpeed: 20
 		Locomotor: heavytracked
-	SelfHealing:
+	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
 		Delay: 100
 		DamageCooldown: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 	Health:
 		HP: 800
 	Armor:
@@ -1118,7 +1118,7 @@ spider:
 	-AmbientSound@TANYAC4:
 	-WithColoredOverlay@IDISABLE:
 	-GrantCondition@IDISABLE:
-	-WithIdleOverlayAS@EMP:
+	-WithIdleOverlay@EMP:
 	-Targetable@EMP:
 	-TimedConditionBar@EMP:
 	-ExternalCondition@emp:

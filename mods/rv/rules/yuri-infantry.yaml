@@ -173,7 +173,7 @@ init.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
-	-SelfHealing@HOSPITAL:
+	-ChangesHealth@HOSPITAL:
 	-MapEditorData:
 	-MindControllable:
 	-WithMindControlArc:
@@ -278,7 +278,7 @@ brute.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
-	-SelfHealing@HOSPITAL:
+	-ChangesHealth@HOSPITAL:
 	-MapEditorData:
 	-WithDeathAnimation@normal:
 	-WithDeathAnimation@effect:
@@ -565,7 +565,7 @@ lunr:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-Passenger:
-	-SelfHealing@HOSPITAL:
+	-ChangesHealth@HOSPITAL:
 	SpawnActorOnDeath:
 		Actor: lunr.husk
 
@@ -755,7 +755,7 @@ gtrp.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
-	-SelfHealing@HOSPITAL:
+	-ChangesHealth@HOSPITAL:
 	-MapEditorData:
 	-MindControllable:
 	-WithMindControlArc:
@@ -924,12 +924,12 @@ ttrp:
 		Radius: 3c0
 	Armor:
 		Type: Plate
-	SelfHealing:
+	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
 		Delay: 100
 		DamageCooldown: 100
-		HealIfBelow: 100
+		StartIfBelow: 100
 	Crushable:
 		CrushClasses: vehicle
 	Armament@primary:
