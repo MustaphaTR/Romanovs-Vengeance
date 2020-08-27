@@ -86,7 +86,7 @@ TickGeneralsPowers = function()
 			localPlayerIsNull = false;
 			if Levels[player.InternalName] < 4 then
 				CommandersPowerText = "Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "\n\n"
-			else 
+			else
 				CommandersPowerText = "Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\n\n"
 			end
 			UserInterface.SetMissionText(CommandersPowerText .. DominationText, TextColors[player.InternalName])
@@ -186,6 +186,6 @@ WorldLoaded = function()
 
 		Second()
 	end
-	
+
 	WorldLoadedDomination()
 end
