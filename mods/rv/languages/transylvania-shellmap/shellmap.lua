@@ -30,7 +30,7 @@ IFVTypes = { "fv.flamer", "fv.virus", "fv.init", "fv.hijacker", "fv.ivan", "fv.t
 
 ProduceCivilians = function(house)
 	local delay = Utils.RandomInteger(0, 200)
-	
+
 	Trigger.AfterDelay(delay, function()
 		house.Produce(Utils.Random(CivilianTypes))
 	end)
@@ -114,7 +114,7 @@ end
 SendActor = function(units, waypoints, owner, delay)
 	local unit = Utils.Random(units)
 	local actor = Actor.Create(unit, true, { Owner = owner, Location = waypoints[1] })
-	for _,waypoint in pairs(waypoints) do 
+	for _,waypoint in pairs(waypoints) do
 		actor.Move(waypoint)
 	end
 	actor.Destroy()

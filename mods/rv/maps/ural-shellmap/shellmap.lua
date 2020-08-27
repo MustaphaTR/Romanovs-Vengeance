@@ -79,7 +79,7 @@ end
 
 SendActor = function(unit, waypoints, delay)
 	local actor = Actor.Create(unit, true, { Owner = soviets, Location = waypoints[1] })
-	for _,waypoint in pairs(waypoints) do 
+	for _,waypoint in pairs(waypoints) do
 		actor.Move(waypoint)
 	end
 	actor.Destroy()
