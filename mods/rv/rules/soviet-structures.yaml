@@ -1724,7 +1724,6 @@ naprop:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 7c0
-	-WithMakeAnimation:
 	Sellable:
 		RequiresCondition: !chronodisable
 	ProximityExternalCondition@propaganda_tower:
@@ -1744,14 +1743,10 @@ naprop:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	Power:
 		Amount: -50
-	WithIdleOverlay@flag:
-		Sequence: idle-flag
-		PauseOnCondition: chronodisable
-		# RequiresCondition: !build-incomplete
 	GpsDotAS:
 		Sequence: Structure
 	IsometricSelectable:
-		DecorationHeight: 60
+		DecorationHeight: 75
 
 naexpn:
 	Inherits: ^ExpansionNode
