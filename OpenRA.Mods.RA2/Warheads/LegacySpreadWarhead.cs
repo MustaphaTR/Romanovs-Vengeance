@@ -47,20 +47,20 @@ namespace OpenRA.Mods.RA2.Warheads
 
 				var closestActiveShape = victim.TraitsImplementing<HitShape>()
 						.Where(Exts.IsTraitEnabled)
-						.Select(s => Pair.New(s, s.DistanceFromEdge(victim, pos)))
-						.MinByOrDefault(s => s.Second);
+						.Select(s => (s, s.DistanceFromEdge(victim, pos)))
+						.MinByOrDefault(s => s.Item2);
 
 				// Cannot be damaged without an active HitShape or if HitShape is outside Spread
-				if (closestActiveShape.First == null || closestActiveShape.Second > Spread)
+				if (closestActiveShape.s == null || closestActiveShape.Item2 > Spread)
 					continue;
 
 				var building = victim.TraitOrDefault<Building>();
 
-				var adjustedDamageModifiers = args.DamageModifiers.Append(DamageVersus(victim, closestActiveShape.First, args));
+				var adjustedDamageModifiers = args.DamageModifiers.Append(DamageVersus(victim, closestActiveShape.s, args));
 
 				if (MaxAffect > 0 && building != null)
 				{
-					var affectedcells = building.OccupiedCells().Select(x => (pos - firedBy.World.Map.CenterOfCell(x.First)).Length)
+					var affectedcells = building.OccupiedCells().Select(x => (pos - firedBy.World.Map.CenterOfCell(x.Item1)).Length)
 						.Where(x => x > Spread.Length).OrderBy(x => x).Take(MaxAffect);
 
 					var delivereddamage = 0;
@@ -73,7 +73,7 @@ namespace OpenRA.Mods.RA2.Warheads
 				else
 				{
 					var damage = Util.ApplyPercentageModifiers(Damage,
-						adjustedDamageModifiers.Append(int2.Lerp(PercentAtMax, 100, closestActiveShape.Second.Length, Spread.Length)));
+						adjustedDamageModifiers.Append(int2.Lerp(PercentAtMax, 100, closestActiveShape.Item2.Length, Spread.Length)));
 					victim.InflictDamage(firedBy, new Damage(damage, DamageTypes));
 				}
 			}

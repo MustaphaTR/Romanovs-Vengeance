@@ -63,7 +63,7 @@ namespace OpenRA.Mods.RA2.Traits
 		int burst;
 		AmmoPool ammoPool;
 
-		List<Pair<int, Action>> delayedActions = new List<Pair<int, Action>>();
+		List<(int Delay, Action Action)> delayedActions = new List<(int Delay, Action Action)>();
 
 		public PeriodicExplosion(Actor self, PeriodicExplosionInfo info)
 			: base(info)
@@ -85,12 +85,12 @@ namespace OpenRA.Mods.RA2.Traits
 			for (var i = 0; i < delayedActions.Count; i++)
 			{
 				var x = delayedActions[i];
-				if (--x.First <= 0)
-					x.Second();
+				if (--x.Delay <= 0)
+					x.Action();
 				delayedActions[i] = x;
 			}
 
-			delayedActions.RemoveAll(a => a.First <= 0);
+			delayedActions.RemoveAll(a => a.Delay <= 0);
 
 			if (IsTraitDisabled)
 				return;
@@ -158,7 +158,7 @@ namespace OpenRA.Mods.RA2.Traits
 		protected void ScheduleDelayedAction(int t, Action a)
 		{
 			if (t > 0)
-				delayedActions.Add(Pair.New(t, a));
+				delayedActions.Add((t, a));
 			else
 				a();
 		}
