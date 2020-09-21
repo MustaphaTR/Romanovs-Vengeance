@@ -29,7 +29,7 @@ namespace OpenRA.Mods.RA2.Warheads
                 return;
 
             var damage = Util.ApplyPercentageModifiers(Damage, args.DamageModifiers.Append(DamageVersus(victim, shape, args)));
-            affectedByTemportal.AddDamage(damage, firedBy);
+            affectedByTemportal.AddDamage(damage, firedBy, DamageTypes);
         }
     }
 }

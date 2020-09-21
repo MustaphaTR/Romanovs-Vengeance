@@ -33,8 +33,11 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("List of sound which one randomly played after erasing is done.")]
 		public readonly string[] EraseSounds = { };
 
-		[Desc("If erase delay is calculated from cost, multipile the cost with this to get the time.")]
+		[Desc("If erase delay is calculated from health, multipile the cost with this to get the time.")]
 		public readonly int EraseDamageMultiplier = 100;
+
+		[Desc("Remove the erased actor from the world (and destroy it) instead of killing it.")]
+		public readonly bool RemoveInstead = false;
 
 		public readonly bool ShowSelectionBar = true;
 		public readonly Color SelectionBarColor = Color.Magenta;
@@ -61,7 +64,7 @@ namespace OpenRA.Mods.RA2.Traits
 			requiredDamage = info.EraseDamage >= 0 || health == null ? info.EraseDamage : health.MaxHP * info.EraseDamageMultiplier / 100;
 		}
 
-		public void AddDamage(int damage, Actor damager)
+		public void AddDamage(int damage, Actor damager, BitSet<DamageType> damageTypes)
 		{
 			if (IsTraitDisabled)
 				return;
@@ -71,7 +74,10 @@ namespace OpenRA.Mods.RA2.Traits
 
 			if (recievedDamage >= requiredDamage)
 			{
-				self.Dispose();
+				if (Info.RemoveInstead)
+					self.Dispose();
+				else
+					self.Kill(damager, damageTypes);
 
 				if (Info.EraseSounds.Any())
 				{

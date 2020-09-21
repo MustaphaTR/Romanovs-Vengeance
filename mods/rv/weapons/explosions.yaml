@@ -22,7 +22,7 @@ LargeBarrelExplode:
 			Drone: 100
 			Rocket: 100
 		AffectsParent: true
-		DamageTypes: Prone70Percent, TriggerProne, FlameDeath, SuppressTerrorDrone
+		DamageTypes: Prone70Percent, TriggerProne, FlameDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: large_barrel_explosion
 		ValidTargets: Ground, Water, Air
@@ -92,7 +92,7 @@ KirovExplode:
 		Spread: 0c512
 		Damage: 750 # 250
 		Falloff: 100, 83, 67, 50, 0
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: MediumCrater
 
@@ -187,7 +187,7 @@ IvanBomber:
 			Concrete: 100
 			Drone: 100
 			Rocket: 100
-		DamageTypes: PsychicDeath, Prone100Percent, SuppressTerrorDrone
+		DamageTypes: PsychicDeath, Prone100Percent, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: ivan_explosion
 		ImpactSounds: gexpcraa.wav
@@ -220,7 +220,7 @@ TanyaC4:
 			Concrete: 0
 			Drone: 100
 			Rocket: 0
-		DamageTypes: PsychicDeath, Prone100Percent, SuppressTerrorDrone
+		DamageTypes: PsychicDeath, Prone100Percent, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: c4explosion
 		ExplosionPalette: tseffect
@@ -348,7 +348,7 @@ TerrorBomb:
 			Drone: 100
 			Rocket: 100
 		AffectsParent: true
-		DamageTypes: Prone70Percent, TriggerProne, FlameDeath, SuppressTerrorDrone
+		DamageTypes: Prone70Percent, TriggerProne, FlameDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: terrorist_explosion
 		ImpactSounds: gexpapoa.wav
@@ -394,7 +394,7 @@ NukePayload:
 			Drone: 100
 			Rocket: 100
 		AffectsParent: true
-		DamageTypes: Prone50Percent, TriggerProne, RadiationDeath, SuppressTerrorDrone
+		DamageTypes: Prone50Percent, TriggerProne, RadiationDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Res_impact: DestroyResource
 		Size: 10
 	Warhead@3Eff_impact: CreateEffect
@@ -420,7 +420,7 @@ atomic:
 		Versus:
 			Wood: 100
 			Concrete: 30
-		DamageTypes: RadiationDeath, SuppressTerrorDrone
+		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
 		Delay: 25
 	Warhead@2Res_impact: DestroyResource
 		Delay: 25
@@ -499,7 +499,7 @@ ClusterMissileCluster:
 			Concrete: 90
 			Drone: 100
 			Rocket: 0
-		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 		InvalidTargets: Vehicle, Structure
@@ -509,7 +509,7 @@ ClusterMissileCluster:
 
 Demolish:
 	Warhead@1Dam: SpreadDamage
-		DamageTypes: DefaultDeath
+		DamageTypes: DefaultDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: large_twlt
 		ImpactSounds: expnew09.wav
@@ -532,7 +532,7 @@ V3Weapon:
 			Concrete: 90
 			Drone: 100
 			Rocket: 0
-		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
+		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_clsn
 		ImpactSounds: gexp14a.wav
@@ -573,7 +573,7 @@ RadiationMissile:
 			Concrete: 90
 			Drone: 80
 			Rocket: 0
-		DamageTypes: Prone70Percent, TriggerProne, RadiationDeath, SuppressTerrorDrone
+		DamageTypes: Prone70Percent, TriggerProne, RadiationDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: demotruck_explosion
 		ImpactSounds: vdemdiea.wav
@@ -592,7 +592,7 @@ MineExplosion:
 		Damage: 400
 		AffectsParent: true
 		InvalidTargets: Structure, Wall, Trees
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: mine_explosion
 		ExplosionPalette: tseffect

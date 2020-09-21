@@ -147,7 +147,7 @@ DoublePistols:
 			Concrete: 1
 			Drone: 50
 			Rocket: 100
-		DamageTypes: BulletDeath
+		DamageTypes: BulletDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 
@@ -183,7 +183,7 @@ awp:
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship, SeaAnimal
 		Spread: 42
 		Damage: 200
-		DamageTypes: BulletDeath
+		DamageTypes: BulletDeath, NonTemporal
 		Versus:
 			None: 100
 			Flak: 100
@@ -195,7 +195,7 @@ awp:
 		Spread: 42
 		Damage: 200
 		Amount: 1
-		DamageTypes: BulletDeath
+		DamageTypes: BulletDeath, NonTemporal
 		Versus:
 			None: 100
 			Flak: 100
@@ -412,7 +412,7 @@ BlackHawkCannon:
 			Concrete: 30
 			Drone: 100
 			Rocket: 25
-		DamageTypes: Prone70Percent, TriggerProne, BulletDeath
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath, NonTemporal
 
 BlackHawkCannonE:
 	Inherits: BlackHawkCannon
@@ -474,7 +474,7 @@ SiegeChopperCannon:
 			Concrete: 10
 			Drone: 100
 			Rocket: 25
-		DamageTypes: Prone70Percent, TriggerProne, BulletDeath
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath, NonTemporal
 
 SiegeChopperCannonE:
 	Inherits: SiegeChopperCannon
@@ -521,7 +521,7 @@ AKM:
 			Concrete: 1
 			Drone: 100
 			Rocket: 100
-		DamageTypes: BulletDeath
+		DamageTypes: BulletDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 
@@ -558,10 +558,10 @@ Virusgun:
 			None: 100
 			Flak: 100
 			Plate: 100
-		DamageTypes: VirusDeath
+		DamageTypes: VirusDeath, NonTemporal
 	Warhead@1Gar: OpenToppedDamage
 		Damage: 200
-		DamageTypes: VirusDeath
+		DamageTypes: VirusDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 	Warhead@3Par: SpawnSmokeParticle
@@ -619,7 +619,7 @@ PoisonSting:
 			Concrete: 25
 			Drone: 60
 			Rocket: 100
-		DamageTypes: VirusDeath
+		DamageTypes: VirusDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 	Warhead@3Par: SpawnSmokeParticle

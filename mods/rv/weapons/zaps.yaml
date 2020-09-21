@@ -259,7 +259,7 @@ SonicZap:
 		Versus:
 			Heavy: 80
 			Concrete: 60
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid, NonTemporal
 		ValidTargets: Water, Underwater
 	Warhead@2Dam: SpreadDamage
 		Range: 0, 32
@@ -270,7 +270,7 @@ SonicZap:
 		Versus:
 			Heavy: 80
 			Concrete: 60
-		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid, NonTemporal
 		ValidTargets: Water, Underwater
 		InvalidTargets: ImmuneToAllySonic
 
@@ -303,7 +303,7 @@ PrismShot:
 			Concrete: 90
 			Drone: 200
 			Rocket: 100
-		DamageTypes: ElectroDeath, TriggerProne, SuppressTerrorDrone
+		DamageTypes: ElectroDeath, TriggerProne, SuppressTerrorDrone, NonTemporal
 	Warhead@2Shr: FireShrapnel
 		Weapon: PrismFragment
 		Amount: 3
@@ -351,7 +351,7 @@ Comet:
 			Concrete: 90
 			Drone: 100
 			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone
+		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Shr: FireShrapnel
 		Weapon: CometFragment
 		Amount: 5
@@ -412,7 +412,7 @@ RadBeamWeapon:
 			Drone: 40
 			Rocket: 100
 		InvalidTargets: Structure, Wall, ImmuneToRadiation
-		DamageTypes: RadiationDeath
+		DamageTypes: RadiationDeath, NonTemporal
 
 RadBeamWeaponE:
 	Inherits: RadBeamWeapon
@@ -447,6 +447,7 @@ NeutronRifle:
 		Spread: 1
 		ValidTargets: ChronoDisable
 		InvalidTargets: Air
+		DamageTypes: Temporal
 	Warhead@Stars: CreateEffect
 		Explosions: chronosk
 		ValidTargets: Ground, Water
@@ -528,7 +529,7 @@ CurtainRifleAP:
 				Heavy: 25
 		ValidTargets: Infantry
 		InvalidTargets: IronCurtainImmune
-		DamageTypes: FlameDeath
+		DamageTypes: FlameDeath, NonTemporal
 	Warhead@Stars: CreateEffect
 		Explosions: iron_fx
 		ValidTargets: Ground, Water
@@ -555,7 +556,7 @@ CRCurtainRifle:
 		Falloff: 100, 100
 		Damage: 125
 		ValidTargets: Infantry
-		DamageTypes: FlameDeath
+		DamageTypes: FlameDeath, NonTemporal
 	Warhead@Stars: CreateEffect
 		Explosions: ironblast
 
@@ -584,7 +585,7 @@ TeslaFence:
 	Warhead@1Dam: TargetDamage
 		DebugOverlayColor: FF0000
 		Damage: 100000
-		DamageTypes: ElectroDeath, SuppressTerrorDrone
+		DamageTypes: ElectroDeath, SuppressTerrorDrone, NonTemporal
 
 MagneShake:
 	ReloadDelay: 110
@@ -674,7 +675,7 @@ DiskLaser:
 	Warhead@1Dam: SpreadDamage
 		Damage: 90
 		InvalidTargets: LoadedTankBunker
-		DamageTypes: RadiationDeath, SuppressTerrorDrone
+		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@1Gar: OpenToppedDamage
 		ValidTargets: LoadedTankBunker
 		InvalidTargets: IronCurtained, ForceShielded
@@ -692,7 +693,7 @@ DiskLaser:
 			Concrete: 90
 			Drone: 100
 			Rocket: 100
-		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone
+		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone, NonTemporal
 	-Warhead@2Shr:
 	Warhead@2Eff: CreateEffect
 		Explosions: laser_explosion
@@ -756,7 +757,7 @@ DoomLaser:
 			Concrete: 50
 			Drone: 100
 			Rocket: 100
-		DamageTypes: RadiationDeath, SuppressTerrorDrone
+		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
 	-Warhead@2Shr:
 	Warhead@2Eff: CreateEffect
 		Explosions: laser_explosion
@@ -804,7 +805,7 @@ LunarLaser:
 			Concrete: 65
 			Drone: 100
 			Rocket: 100
-		DamageTypes: RadiationDeath, SuppressTerrorDrone
+		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
 	-Warhead@2Shr:
 	Warhead@2Eff: CreateEffect
 		Explosions: laser_explosion
@@ -858,14 +859,14 @@ IonCannon:
 		Falloff: 1000, 368, 135, 50, 18, 7, 0
 		Delay: 75
 		ValidTargets: Ground, Water, Air
-		DamageTypes: Prone100Percent, TriggerProne, FlameDeath
+		DamageTypes: Prone100Percent, TriggerProne, FlameDeath, NonTemporal
 	Warhead@2Dam_area: SpreadDamage
 		Spread: 1c0
 		Damage: 250
 		Falloff: 100, 50, 25, 0
 		Delay: 78
 		ValidTargets: Ground, Water, Air
-		DamageTypes: Prone50Percent, TriggerProne, FlameDeath
+		DamageTypes: Prone50Percent, TriggerProne, FlameDeath, NonTemporal
 	Warhead@3Smu_area: LeaveSmudge
 		SmudgeType: SmallScorch
 		InvalidTargets: Vehicle, Building, Wall

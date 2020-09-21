@@ -112,9 +112,11 @@ shad:
 		EnterSound: genter1a.wav
 		ExitSound: gexit1a.wav
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: shadhusk
 		RequiresCondition: airborne
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	HitShape:
@@ -235,6 +237,7 @@ zep:
 	Hovers:
 		BobDistance: -10
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		Chance: 75
 	AutoTarget:
@@ -248,6 +251,7 @@ zep:
 	Voiced:
 		VoiceSet: KirovVoice
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: zephusk
 	HitShape:
 
@@ -373,12 +377,14 @@ orca:
 		Condition: hmove
 		ValidMovementTypes: Horizontal
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: orcahusk
 		RequiresCondition: airborne && (!vmove || hmove)
 	SpawnActorOnDeath@VTOL:
 		Actor: orcahusk.VTOL
 		RequiresCondition: airborne && vmove && !hmove
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	GrantExternalConditionToOwner:
@@ -461,6 +467,7 @@ beag:
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: beaghusk
 	SpawnActorOnDeath@VTOL:
 		Actor: beaghusk.VTOL
@@ -570,6 +577,7 @@ pdplane:
 		DropRange: 4c0
 		ChuteSound: sparadra.wav
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: pdplanehusk
 	HitShape:
 	RenderVoxels:
@@ -609,6 +617,7 @@ bplndrop:
 		DropRange: 3c0
 		DropInterval: 1
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: bplnhusk
 	RenderVoxels:
 		Image: bpln
@@ -624,6 +633,7 @@ bplndrop:
 alplane:
 	Inherits: pdplane
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: alplanehusk
 	RenderVoxels:
 		Image: alplane
@@ -640,6 +650,7 @@ alplanehusk:
 pcplane:
 	Inherits: pdplane
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: pcplanehusk
 	RenderVoxels:
 		Image: pcplane
@@ -677,6 +688,7 @@ a10:
 		PauseOnCondition: !ammo
 	AttackBomber:
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: a10husk
 	AmmoPool:
 		Ammo: 6
@@ -721,6 +733,7 @@ txbmb:
 		PauseOnCondition: !ammo
 	AttackBomber:
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: txbmbhusk
 	AmmoPool:
 		Ammo: 6
@@ -956,6 +969,7 @@ hornet:
 		Condition: hmove
 		ValidMovementTypes: Horizontal
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: hornethusk
 		RequiresCondition: !vmove || hmove
 	SpawnActorOnDeath@VTOL:
@@ -1061,6 +1075,7 @@ asw:
 		Condition: hmove
 		ValidMovementTypes: Horizontal
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: aswhusk
 		RequiresCondition: !vmove || hmove
 	SpawnActorOnDeath@VTOL:
@@ -1144,6 +1159,7 @@ spyp:
 	WithVoxelWalkerBody:
 		TickRate: 1
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: spyphusk
 	HitShape:
 
@@ -1318,9 +1334,11 @@ schp:
 		Range: 12c0
 		RequiresCondition: deployed
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: schphusk
 		RequiresCondition: airborne
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	HitShape:
@@ -1388,6 +1406,7 @@ bpln:
 		-TakeoffSounds:
 		-LandingSounds:
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: bplnhusk
 	SpawnActorOnDeath@VTOL:
 		Actor: bplnhusk.VTOL
@@ -1552,6 +1571,7 @@ disk:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: diskhusk
 
 diskhusk:
@@ -1662,9 +1682,11 @@ hind:
 		LocalOffset: 0,0,-512
 		Voice: Move
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: hindhusk
 		RequiresCondition: airborne
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	HitShape:
@@ -1802,12 +1824,14 @@ fortress:
 		Condition: hmove
 		ValidMovementTypes: Horizontal
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: fortresshusk
 		RequiresCondition: airborne && (!vmove || hmove)
 	SpawnActorOnDeath@VTOL:
 		Actor: fortresshusk.VTOL
 		RequiresCondition: airborne && vmove && !hmove
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	GrantExternalConditionToOwner:
@@ -1920,6 +1944,7 @@ sdrn:
 		Condition: visible
 		ShowSelectionBar: false
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 	HitShape:
 
@@ -1998,9 +2023,11 @@ txdx:
 		EnterSound: genter1a.wav
 		ExitSound: gexit1a.wav
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: txdxhusk
 		RequiresCondition: airborne
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	HitShape:
@@ -2126,6 +2153,7 @@ kite:
 		BobDistance: -45
 	-DeathSounds:
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: kitehusk
 	HitShape:
 
@@ -2243,6 +2271,7 @@ magnedisk:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	SpawnActorOnDeath:
+		DeathType: NonTemporal
 		Actor: magnediskhusk
 
 magnediskhusk:

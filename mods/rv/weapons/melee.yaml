@@ -23,7 +23,7 @@ DogJaw:
 			Concrete: 0
 			Drone: 0
 			Rocket: 0
-		DamageTypes: BulletDeath
+		DamageTypes: BulletDeath, NonTemporal
 
 DroneJump:
 	ValidTargets: TerrorDronable
@@ -48,7 +48,7 @@ DroneJump:
 			Concrete: 0
 			Drone: 0
 			Rocket: 0
-		DamageTypes: BulletDeath
+		DamageTypes: BulletDeath, NonTemporal
 
 DroneJumpE:
 	Inherits: DroneJump
@@ -71,7 +71,7 @@ AlligatorBite:
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
 		Damage: 30
-		DamageTypes: BulletDeath
+		DamageTypes: BulletDeath, NonTemporal
 
 BearBite:
 	Inherits: AlligatorBite
@@ -116,7 +116,7 @@ SquidSplash:
 	Projectile: InstantExplode
 	Warhead@1Dam: SpreadDamage
 		Spread: 2c0
-		DamageTypes: RemovesSquid
+		DamageTypes: RemovesSquid, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: large_watersplash
 
@@ -172,7 +172,7 @@ Punch:
 			Concrete: 15
 			Drone: 200
 			Rocket: 100
-		DamageTypes: BruteDeath, SuppressTerrorDrone
+		DamageTypes: BruteDeath, SuppressTerrorDrone, NonTemporal
 
 PunchE:
 	Inherits: Punch
@@ -201,7 +201,7 @@ Smash:
 			Concrete: 0
 			Drone: 0
 			Rocket: 0
-		DamageTypes: BruteDeath, SuppressTerrorDrone
+		DamageTypes: BruteDeath, SuppressTerrorDrone, NonTemporal
 
 SmashE:
 	Inherits: Smash
@@ -229,7 +229,7 @@ RepairBullet:
 		Spread: 213
 		Damage: -50
 		ValidTargets: Repair
-		DamageTypes: KillsDrone
+		DamageTypes: KillsDrone, NonTemporal
 
 MechRepair:
 	Inherits: RepairBullet
@@ -261,7 +261,7 @@ TankGrind:
 			Concrete: 90
 			Drone: 100
 			Rocket: 0
-		DamageTypes: BulletDeath, SuppressTerrorDrone
+		DamageTypes: BulletDeath, SuppressTerrorDrone, NonTemporal
 
 TankGrindE:
 	Inherits: TankGrind

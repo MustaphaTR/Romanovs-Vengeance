@@ -844,6 +844,7 @@
 		Position: BottomRight
 		Palette: ts-mouse
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: HoloExplode
 		EmptyWeapon: HoloExplode
 	FirepowerMultiplier@Hologram:
@@ -1058,10 +1059,12 @@
 		Condition: instantcapture
 		Prerequisites: global-instantcapture
 	SoundOnDamageTransition:
+		# DamageTypes: NonTemporal
 		DamagedSounds: gdamag1a.wav, gdamag1b.wav, gdamag1c.wav, gdamag1d.wav, gdamag1e.wav
 		DestroyedSounds: bgendiea.wav, bgendieb.wav, bgendiec.wav, bgendied.wav, bgendiee.wav, bgendief.wav
 	WithSpriteBody:
 	Explodes:
+		DeathTypes: NonTemporal
 		Type: Footprint
 		Weapon: BuildingExplode
 	RepairableBuilding:
@@ -1081,6 +1084,7 @@
 	MustBeDestroyed:
 		RequiredForShortGame: true
 	ShakeOnDeath:
+	#	DeathTypes: NonTemporal
 	ProximityCaptor:
 		Types: Building
 	Guardable:
@@ -1949,6 +1953,7 @@
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 	RenderVoxels:
@@ -2311,6 +2316,7 @@
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	Explodes:
+		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 	RenderVoxels:

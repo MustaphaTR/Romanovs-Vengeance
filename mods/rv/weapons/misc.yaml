@@ -21,7 +21,7 @@ Flamer:
 		Spread: 341
 		Damage: 10
 		Amount: 3
-		DamageTypes: FlameDeath
+		DamageTypes: FlameDeath, NonTemporal
 		Versus:
 			None: 150
 			Flak: 150
@@ -111,7 +111,7 @@ ToxinSprayer:
 		-TrailInterval:
 		Inaccuracy: 1c0
 	Warhead@1Dam: SpreadDamage
-		DamageTypes: VirusDeath
+		DamageTypes: VirusDeath, NonTemporal
 		Damage: 10
 		Versus:
 			None: 150
@@ -126,7 +126,7 @@ ToxinSprayer:
 			Drone: 100
 			Rocket: 100
 	Warhead@1Gar: OpenToppedDamage
-		DamageTypes: VirusDeath
+		DamageTypes: VirusDeath, NonTemporal
 		Damage: 10
 		Versus:
 			None: 150
@@ -204,7 +204,7 @@ EmergencyRepair1:
 		AffectsParent: true
 		ValidStances: Neutral, Ally
 		ValidTargets: Repair, Structure, Wall
-		DamageTypes: KillsDrone
+		DamageTypes: KillsDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: wrench
 		ExplosionPalette: mouse
@@ -290,7 +290,7 @@ PsiWave:
 		Damage: 250
 		ValidTargets: Infantry
 		ValidStances: Enemy, Neutral
-		DamageTypes: PsychicDeath
+		DamageTypes: PsychicDeath, NonTemporal
 	Warhead@2Dam: SpreadDamage
 		Spread: 3c0
 		Falloff: 100, 100
@@ -298,7 +298,7 @@ PsiWave:
 		ValidTargets: Infantry
 		InvalidTargets: ImmuneToFriendlyPsiWave
 		ValidStances: Ally
-		DamageTypes: PsychicDeath
+		DamageTypes: PsychicDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: psi_wave
 		ValidTargets: Ground, Water, Air
@@ -484,7 +484,7 @@ WeatherCloudDirectInit:
 		AffectsParent: true
 		ValidTargets: Air
 		Delay: 28
-		DamageTypes: TriggerProne, ElectroDeath
+		DamageTypes: TriggerProne, ElectroDeath, NonTemporal
 		Versus:
 			Wood: 85
 			Steel: 75
@@ -503,7 +503,7 @@ WeatherCloudRandomInit:
 		AffectsParent: true
 		ValidTargets: Air
 		Delay: 28
-		DamageTypes: TriggerProne, ElectroDeath
+		DamageTypes: TriggerProne, ElectroDeath, NonTemporal
 		Versus:
 			Wood: 85
 			Steel: 75
@@ -539,7 +539,7 @@ WeatherBolt:
 		Damage: 200
 		AffectsParent: true
 		ValidTargets: Ground, Air, Water
-		DamageTypes: TriggerProne, ElectroDeath
+		DamageTypes: TriggerProne, ElectroDeath, NonTemporal
 		Versus:
 			Wood: 100
 			Steel: 100
@@ -763,7 +763,7 @@ PsychicDomination:
 			Drone: 0
 			Rocket: 0
 		AffectsParent: true
-		DamageTypes: PsychicDeath
+		DamageTypes: PsychicDeath, NonTemporal
 		Delay: 40
 
 PsychicJab:
@@ -776,7 +776,7 @@ PsychicJab:
 		Versus:
 			Wood: 45
 			Concrete: 40
-		DamageTypes: Prone50Percent, TriggerProne, FlameDeath
+		DamageTypes: Prone50Percent, TriggerProne, FlameDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: largefire
 
@@ -831,7 +831,7 @@ CloudDamage:
 	Warhead@1Dam: SpreadDamage
 		Spread: 196
 		Damage: 4
-		DamageTypes: VirusDeath
+		DamageTypes: VirusDeath, NonTemporal
 		InvalidTargets: ImmuneToToxin
 		Versus:
 			None: 100
@@ -852,7 +852,7 @@ FireDamage:
 	Warhead@1Dam: SpreadDamage
 		Spread: 196
 		Damage: 4
-		DamageTypes: FlameDeath
+		DamageTypes: FlameDeath, NonTemporal
 		Versus:
 			None: 150
 			Flak: 150
