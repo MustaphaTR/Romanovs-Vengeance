@@ -424,9 +424,13 @@ gadept:
 			NEWURBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
-	idle: ggdept_d
+	idle: dot
+		Offset: 0,0
+		ZOffset: -9999
+		UseTilesetCode: false
+	idle-base: ggdept_d
 		ShadowStart: 2
-	damaged-idle: ggdept_d
+	damaged-idle-base: ggdept_d
 		Start: 1
 		ShadowStart: 3
 	idle-side: ggdept
@@ -437,7 +441,7 @@ gadept:
 		ShadowStart: 4
 	bib: ggdeptbb
 		ShadowStart: 3
-		ZOffset: -512
+		ZOffset: -1c0
 	make: gtdeptmk
 		Length: 25
 		ShadowStart: 25
@@ -447,15 +451,33 @@ gadept:
 			NEWURBAN: NEWURBAN
 			DESERT: DESERT
 			LUNAR: LUNAR
-	repair: ggdept_c
+	repair-start: ggdept_a
 		Length: 10
 		ShadowStart: 20
-		Tick: 180
-	damaged-repair: ggdept_c
+		Tick: 120
+	damaged-repair-start: ggdept_a
 		Start: 10
 		Length: 10
 		ShadowStart: 30
-		Tick: 180
+		Tick: 120
+	repair: ggdept_b
+		Length: 20
+		ShadowStart: 40
+		Tick: 120
+	damaged-repair: ggdept_b
+		Start: 20
+		Length: 20
+		ShadowStart: 60
+		Tick: 120
+	repair-end: ggdept_c
+		Length: 10
+		ShadowStart: 20
+		Tick: 120
+	damaged-repair-end: ggdept_c
+		Start: 10
+		Length: 10
+		ShadowStart: 30
+		Tick: 120
 	icon: fixicon
 		Offset: 0,0
 		UseTilesetCode: false

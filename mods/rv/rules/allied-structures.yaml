@@ -731,6 +731,14 @@ gadept:
 		Sequence: idle-side
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	-WithResupplyAnimation:
+	WithIdleRepairOverlay:
+		IdleSequence: idle-base
+		StartSequence: repair-start
+		Sequence: repair
+		EndSequence: repair-end
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
 	IsometricSelectable:
 		DecorationHeight: 45
 

@@ -99,11 +99,8 @@ namespace OpenRA.Mods.Common.Traits.Render
 			var body = self.Trait<BodyOrientation>();
 
 			overlay = new Animation(self.World, rs.GetImage(self), () => IsTraitPaused);
-			overlay.PlayThen(info.Sequence, () =>
-			{
-				overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, self.GetDamageState(), Info.IdleSequence));
-				idling = true;
-			});
+			overlay.PlayRepeating(RenderSprites.NormalizeSequence(overlay, self.GetDamageState(), Info.IdleSequence));
+			idling = true;
 
 			var anim = new AnimationWithOffset(overlay,
 				() => body.LocalToWorld(info.Offset.Rotate(body.QuantizeOrientation(self, self.Orientation))),
