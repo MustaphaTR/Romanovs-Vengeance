@@ -638,15 +638,12 @@
 		FinishRepairingNotification: UnitRepaired
 	Power:
 		Amount: -50
-	WithIdleOverlay@crane:
-		Sequence: idle-crane
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithRepairOverlay:
+	WithIdleRepairOverlay:
+		IdleSequence: idle-crane
 		Sequence: repair
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
