@@ -309,6 +309,8 @@ orca:
 	Aircraft:
 		AltitudeVelocity: 240
 		TurnSpeed: 20
+		IdleTurnSpeed: 10
+		IdleSpeed: 105
 		Speed: 210
 		TakeoffSounds: vintupa.wav
 		LandingSounds: vintdna.wav
@@ -400,6 +402,22 @@ orca:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+	Contrail@1:
+		Offset: -100,-500,100
+		Color: 55555580
+		UsePlayerColor: false
+		TrailWidth: 32
+	Contrail@2:
+		Offset: -100,500,100
+		Color: 55555580
+		UsePlayerColor: false
+		TrailWidth: 32
+	Contrail@FlameTrail:
+		Offset: -700,0,50
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailWidth: 96
+		TrailLength: 7
 
 orcahusk:
 	Inherits: ^PlaneHusk
@@ -495,6 +513,12 @@ beag:
 	HitShape:
 	ProducibleWithLevel:
 		InitialLevels: 1
+	Contrail@1:
+		Offset: 0,-500,100
+	Contrail@2:
+		Offset: 0,500,100
+	Contrail@FlameTrail:
+		Offset: -700,0,50
 
 beaghusk:
 	Inherits: ^PlaneHusk
@@ -1755,6 +1779,8 @@ fortress:
 		AddToArmyValue: true
 	Aircraft:
 		AltitudeVelocity: 240
+		IdleTurnSpeed: 10
+		IdleSpeed: 90
 		TurnSpeed: 20
 		Speed: 180
 		TakeoffSounds: vintupa.wav
@@ -1846,6 +1872,38 @@ fortress:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+	Contrail@1:
+		Offset: -400,-700,300
+		Color: 55555580
+		UsePlayerColor: false
+		TrailWidth: 32
+	Contrail@2:
+		Offset: -400,700,300
+		Color: 55555580
+		UsePlayerColor: false
+		TrailWidth: 32
+	Contrail@3:
+		Offset: -200,-400,300
+		Color: 55555580
+		UsePlayerColor: false
+		TrailWidth: 32
+	Contrail@4:
+		Offset: -200,400,300
+		Color: 55555580
+		UsePlayerColor: false
+		TrailWidth: 32
+	Contrail@FlameTrail1:
+		Offset: -500,-100,200
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailWidth: 96
+		TrailLength: 7
+	Contrail@FlameTrail2:
+		Offset: -500,100,200
+		Color: FFEA0080
+		UsePlayerColor: false
+		TrailWidth: 96
+		TrailLength: 7
 
 fortresshusk:
 	Inherits: ^PlaneHusk

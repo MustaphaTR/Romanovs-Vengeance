@@ -125,7 +125,7 @@ APTuskE:
 
 Maverick:
 	Inherits: ^Missile
-	ReloadDelay: 10
+	ReloadDelay: 5
 	Range: 6c0
 	Report: vintatta.wav
 	ValidTargets: Ground, Water
@@ -272,7 +272,7 @@ HoverMissile:
 	Projectile: Missile
 		Speed: 512
 		Arm: 2
-		RangeLimit: 14c512
+		RangeLimit: 11c0
 		ContrailColor: D8D8FF
 		MinimumLaunchAngle: 255
 		MaximumLaunchAngle: 255
@@ -320,6 +320,8 @@ HoverMissileAA:
 	Inherits: HoverMissile
 	Range: 8c0
 	ValidTargets: Air
+	Projectile: Missile
+		RangeLimit: 14c512
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
@@ -328,6 +330,7 @@ HoverMissileAAE:
 	Range: 8c0
 	ValidTargets: Air
 	Projectile: Missile
+		RangeLimit: 14c512
 		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
@@ -446,6 +449,8 @@ CRMissileLauncher:
 	ReloadDelay: 80
 	Burst: 3
 	BurstDelays: 5
+	Projectile: Missile
+		RangeLimit: 11c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 40
 
