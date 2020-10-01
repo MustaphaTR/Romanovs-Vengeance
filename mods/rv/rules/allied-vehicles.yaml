@@ -44,6 +44,7 @@ cmin:
 	Explodes:
 		RequiresCondition: no-ore
 	Explodes@Ore:
+		DeathTypes: NonTemporal
 		Weapon: MinerExplode
 		RequiresCondition: !no-ore
 	ChronoResourceDelivery:
@@ -1318,6 +1319,7 @@ robo:
 		Palette: disabled
 		RequiresCondition: !powered
 	KillsSelf@LowPowerOnWater:
+		DamageTypes: NonTemporal
 		RequiresCondition: (!powered || emp || magnefreeze) && in_water
 	ExplodeWeapon@disabledsparks:
 		RequiresCondition: !powered

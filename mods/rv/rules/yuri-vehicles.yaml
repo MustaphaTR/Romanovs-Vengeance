@@ -100,6 +100,7 @@ smin:
 		RequiresCondition: !spawn-ore
 	Explodes@Ore:
 		Type: Footprint
+		DeathTypes: NonTemporal
 		Weapon: RefineryExplode
 		RequiresCondition: spawn-ore
 	GrantConditionOnPlayerResources:
@@ -149,6 +150,7 @@ gmin:
 	Explodes:
 		RequiresCondition: no-ore
 	Explodes@Ore:
+		DeathTypes: NonTemporal
 		Weapon: MinerExplode
 		RequiresCondition: !no-ore
 	Health:
