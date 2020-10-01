@@ -674,6 +674,7 @@ dtruck:
 		DeployedCondition: triggered
 		PauseOnCondition: chronodisable || emp
 	KillsSelf:
+		DamageTypes: NonTemporal
 		RequiresCondition: triggered
 	RenderSprites:
 	RenderVoxels:
@@ -984,6 +985,7 @@ deva:
 		RequiresCondition: overload
 	KillsSelf@MELTDOWN:
 		Delay: 75
+		DamageTypes: NonTemporal
 		RequiresCondition: overload && !chronodisable && !emp
 		GrantsCondition: meltdown
 	Voiced:
