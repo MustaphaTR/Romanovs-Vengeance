@@ -79,7 +79,7 @@ ReducePoints = function(player)
 	end)
 end
 
-TickGeneralsPowers = function()
+TickCommandersPowers = function()
 	localPlayerIsNull = true;
 	for _,player in pairs(players) do
 		if player.IsLocalPlayer then
@@ -167,15 +167,7 @@ SetUpDefaults = function()
 	end
 end
 
-Tick = function()
-	if CPModifier ~= "disabled" then
-		TickGeneralsPowers()
-	end
-
-	TickDomination()
-end
-
-WorldLoaded = function()
+WorldLoadedCommandersPowers = function()
 	players = Player.GetPlayers(function(p) return not p.IsNonCombatant end)
 	SetUpDefaults()
 
@@ -186,6 +178,4 @@ WorldLoaded = function()
 
 		Second()
 	end
-
-	WorldLoadedDomination()
 end

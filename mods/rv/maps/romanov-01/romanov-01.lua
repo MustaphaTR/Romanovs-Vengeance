@@ -122,7 +122,7 @@ end
 
 Tick = function()
 	if GPModifier ~= "disabled" then
-		TickGeneralsPowers()
+		TickCommandersPowers()
 	end
 end
 
@@ -151,4 +151,6 @@ WorldLoaded = function()
 	Intro()
 	SetUpPatrols()
 	SetUpWarnings()
+	
+	WorldLoadedCommandersPowers()
 end
