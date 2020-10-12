@@ -181,21 +181,27 @@
 			400: rank-veteran
 			600: rank-veteran
 		LevelUpImage: crate-effects
-	GrantCondition@RANK-ELITE:
-		RequiresCondition: rank-veteran >= 3
-		Condition: rank-elite
-	DamageMultiplier@RANK-2:
-		RequiresCondition: rank-veteran >= 2
-		Modifier: 70
 	FirepowerMultiplier@RANK-1:
 		RequiresCondition: rank-veteran >= 1
 		Modifier: 120
+	DamageMultiplier@RANK-2:
+		RequiresCondition: rank-veteran >= 2
+		Modifier: 70
+	GrantCondition@RANK-ELITE:
+		RequiresCondition: rank-veteran >= 3
+		Condition: rank-elite
 	ChangesHealth@ELITE:
 		PercentageStep: 2
 		Delay: 100
 		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: rank-elite
+	SpeedMultiplier@ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 130
+	RevealsShroudMultiplier@ELITE:
+		RequiresCondition: rank-elite
+		Modifier: 130
 	WithDecoration@RANK-1:
 		Image: rank
 		Sequence: rank-veteran-1
@@ -218,7 +224,7 @@
 		RequiresCondition: rank-elite
 		ValidStances: Ally, Enemy, Neutral
 	GainsExperienceMultiplier@ARMORY:
-		Modifier: 125
+		Modifier: 150
 		RequiresCondition: armory
 	GrantConditionOnPrerequisite@ARMORY:
 		Prerequisites: caarmr
@@ -2371,7 +2377,7 @@
 	FrozenUnderFog:
 	SeedsResource:
 		ResourceType: Ore
-		Interval: 40
+		Interval: 50
 	WithIdleAnimation:
 	QuantizeFacingsFromSequence:
 	RenderSprites:

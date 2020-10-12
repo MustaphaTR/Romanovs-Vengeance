@@ -88,7 +88,7 @@
 	SpawnActorsOnSell@psicorps:
 		ActorTypes: init, init, init, engineer
 	BaseProvider:
-		Range: 14c0
+		Range: 16c0
 		PauseOnCondition: build-incomplete || chronodisable
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
@@ -151,7 +151,7 @@
 	#	Condition: factundeploy
 	#	Prerequisites: global-factundeploy
 	BaseProvider:
-		Range: 10c0
+		Range: 12c0
 		PauseOnCondition: build-incomplete || chronodisable
 	# TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 	#	Condition: invulnerability
@@ -240,7 +240,7 @@
 		BuildPaletteOrder: 30
 		Prerequisites: power, ~!global-megawealth, ~techlevel.1
 		Description: Processes ore into credits.\nCan be rotated.
-		BuildDuration: 375
+		BuildDuration: 500
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
@@ -272,7 +272,7 @@
 		DockAngle: 640
 		UseStorage: true
 	CustomSellValue:
-		Value: 400
+		Value: 300
 	InfiltrateForCash:
 		Types: SpyInfiltrate
 		Percentage: 50
