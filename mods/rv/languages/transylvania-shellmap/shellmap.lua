@@ -30,7 +30,7 @@ IFVTypes = { "fv.flamer", "fv.virus", "fv.init", "fv.hijacker", "fv.ivan", "fv.t
 
 ProduceCivilians = function(house)
 	local delay = Utils.RandomInteger(0, 200)
-
+	
 	Trigger.AfterDelay(delay, function()
 		house.Produce(Utils.Random(CivilianTypes))
 	end)
@@ -42,18 +42,10 @@ ProduceTrees = function()
 	end)
 end
 
-DeployStuff = function()
-	local gis = allies.GetActorsByType("e1")
-	local ggis = allies.GetActorsByType("ggi")
-	local schps = soviets.GetActorsByType("schp")
-	Utils.Do(gis, function(gi)
-		gi.GrantCondition("deployed")
-	end)
-	Utils.Do(ggis, function(ggi)
-		ggi.GrantCondition("deployed")
-	end)
-	Utils.Do(schps, function(schp)
-		schp.GrantCondition("deployed")
+DeployChoppers = function()
+	local choppers = soviets.GetActorsByType("schp")
+	Utils.Do(choppers, function(chopper)
+		chopper.GrantCondition("deployed")
 	end)
 end
 
@@ -114,7 +106,7 @@ end
 SendActor = function(units, waypoints, owner, delay)
 	local unit = Utils.Random(units)
 	local actor = Actor.Create(unit, true, { Owner = owner, Location = waypoints[1] })
-	for _,waypoint in pairs(waypoints) do
+	for _,waypoint in pairs(waypoints) do 
 		actor.Move(waypoint)
 	end
 	actor.Destroy()
@@ -125,7 +117,7 @@ SendActor = function(units, waypoints, owner, delay)
 end
 
 SendAirstrike = function(delay)
-	AirstrikeProxy.TargetAirstrike(AirstrikeTarget.CenterPosition, Angle.West)
+	AirstrikeProxy.TargetAirstrike(AirstrikeTarget.CenterPosition, Angle.East)
 
 	Trigger.AfterDelay(delay, function()
 		SendAirstrike(delay)
@@ -148,7 +140,7 @@ WorldLoaded = function()
 	psicorps = Player.GetPlayer("PsiCorps")
 	viewportOrigin = Camera.Position
 
-	DeployStuff();
+	DeployChoppers();
 	GiveVeterancy();
 
 	local lazarus1 = Actor.Create("yhtnk", true, { Owner = psicorps, Location = LazarusPatrol1[1] })
@@ -159,8 +151,8 @@ WorldLoaded = function()
 	local gatling1 = Actor.Create("ytnk", true, { Owner = psicorps, Location = GatlingPatrol1[1] })
 	Patrol2A(gatling1, GatlingPatrol1, DateTime.Seconds(10))
 
-	local mastermind1 = Actor.Create("mind", true, { Owner = psicorps, Location = MastermindPatrol1[1], Facing = 160 })
-	local mastermind2 = Actor.Create("mind", true, { Owner = psicorps, Location = MastermindPatrol2[1], Facing = 32 })
+	local mastermind1 = Actor.Create("mind", true, { Owner = psicorps, Location = MastermindPatrol1[1], Facing = Angle.SouthEast })
+	local mastermind2 = Actor.Create("mind", true, { Owner = psicorps, Location = MastermindPatrol2[1], Facing = Angle.NorthWest })
 	Patrol2A(mastermind1, MastermindPatrol1, DateTime.Seconds(12))
 	Patrol2A(mastermind2, MastermindPatrol2, DateTime.Seconds(12))
 

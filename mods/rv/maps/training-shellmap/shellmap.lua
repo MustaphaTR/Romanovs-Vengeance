@@ -18,17 +18,6 @@ RobotPatrol1 = { Robot1WP1.Location, Robot1WP2.Location }
 
 CargoPlaneWP = { CargoPlaneEntry.Location, CargoPlaneExit.Location }
 
-DeployGIs = function()
-	local gis = allies.GetActorsByType("e1")
-	local ggis = allies.GetActorsByType("ggi")
-	Utils.Do(gis, function(gi)
-		gi.GrantCondition("deployed")
-	end)
-	Utils.Do(ggis, function(ggi)
-		ggi.GrantCondition("deployed")
-	end)
-end
-
 GiveVeterancy = function()
 	Utils.Do(VeteranUnits, function(VeteranUnit)
 		VeteranUnit.GrantCondition("rank-veteran")
@@ -80,7 +69,6 @@ WorldLoaded = function()
 	soviets = Player.GetPlayer("Soviets")
 	viewportOrigin = Camera.Position
 
-	DeployGIs();
 	GiveVeterancy();
 
 	Utils.Do(TankGIs, function(tankgi)
