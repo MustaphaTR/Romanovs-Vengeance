@@ -1,15 +1,17 @@
 dog:
 	Inherits: adog
-	shoot: dogp
+	Defaults: conquer|dog
+	shoot: conquer|dogp
 		Length: 1
 		Facings: 32
-	icon: dogicon
+	icon: cameo|dogicon
 
 sengineer:
 	Inherits: engineer
-	icon: sengicon
+	icon: bits/cameos/sengicon
 
 sqd:
+	Defaults: conquer|sqd
 	stand:
 		Start: 160
 		Facings: -8
@@ -28,24 +30,25 @@ sqd:
 		Length: 14
 		Facings: -8
 		Tick: 120
-	icon: sqdicon
+	icon: cameo|sqdicon
 
 e2:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
-	Defaults: cons
+	Defaults: conquer|cons
 	run:
 		Tick: 120
 	paradrop:
 		Start: 292
-	icon: e2icon
+	icon: cameo|e2icon
 
 flakt:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@MUZZLE: ^WithFlakMuzzle
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|flakt
 	run:
 		Tick: 120
 	die1:
@@ -64,34 +67,35 @@ flakt:
 		Start: 165
 	prone-shoot:
 		Start: 245
-	icon: flkticon
+	icon: cameo|flkticon
 
 shk:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
-	run: shkfix
+	Defaults: conquer|shk
+	run: bits/infantry/shkfix
 		Start: 0
 		Tick: 120
 	paradrop:
 		Start: 292
-	charge: shkfix
+	charge: bits/infantry/shkfix
 		Start: 48
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-charge: shkfix
+	prone-charge: bits/infantry/shkfix
 		Start: 96
 		Length: 6
 		Facings: 8
 		Tick: 80
-	icon: shkicon
+	icon: cameo|shkicon
 
 terror:
 	Inherits: ^BasicInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
-	Defaults: trst
+	Defaults: conquer|trst
 	run:
 		Tick: 120
 	die1:
@@ -111,12 +115,13 @@ terror:
 		Start: 179
 	cheer:
 		Start: 180
-	icon: trsticon
+	icon: cameo|trsticon
 
 deso:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|deso
 	dot: dot
 		ZOffset: -9999
 	run:
@@ -133,14 +138,15 @@ deso:
 		Tick: 80
 	cheer:
 		Start: 314
-	paradrop: desofix
+	paradrop: bits/infantry/desofix
 		Start: 0
-	icon: desoicon
+	icon: cameo|desoicon
 
 ivan:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|ivan
 	run:
 		Tick: 120
 	liedown:
@@ -154,15 +160,17 @@ ivan:
 		Length: 15
 	cheer:
 		Start: 259
-	icon: ivanicon
+	icon: cameo|ivanicon
 
 civan:
 	Inherits: ivan
-	icon: ivncicon
+	Defaults: conquer|civan
+	icon: cameo|ivncicon
 
 yuri:
 	Inherits: ^ArmedInfantry
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|yuri
 	deploy:
 		Start: 292
 		Length: 7
@@ -176,16 +184,18 @@ yuri:
 		Start: 308
 	muzzle: yuricntl
 		Length: *
-	icon: yuriicon
+	icon: cameo|yuriicon
 
 yuripr:
 	Inherits: yuri
-	icon: yurpicon
+	Defaults: conquer|yuripr
+	icon: cameo|yurpicon
 
 # Yuri's Revenge Infantry
 boris:
 	Inherits: ^ArmedInfantry
 	Inherits@Web: ^WebDisableable
+	Defaults: conqmd|boris
 	idle2:
 		Length: 20
 	die1:
@@ -208,27 +218,27 @@ boris:
 		Start: 401
 		Facings: 8
 		Tick: 80
-	swim-stand: borisboat
+	swim-stand: bits/infantry/borisboat
 		Facings: 8
 		Length: 3
 		Tick: 160
-	swim-run: borisboat
+	swim-run: bits/infantry/borisboat
 		Start: 24
 		Facings: 8
 		Length: 5
 		Tick: 120
-	swim-die1: borisboat
+	swim-die1: bits/infantry/borisboat
 		Start: 64
 		Length: 12
-	swim-die2: borisboat
+	swim-die2: bits/infantry/borisboat
 		Start: 64
 		Length: 12
-	swim-shoot: borisboat
+	swim-shoot: bits/infantry/borisboat
 		Start: 76
 		Length: 2
 		Facings: 8
 		Tick: 160
-	swim-shoot-flare: borisboat
+	swim-shoot-flare: bits/infantry/borisboat
 		Start: 92
 		Facings: 8
 		Tick: 80
@@ -238,13 +248,14 @@ boris:
 		Start: 281
 	cheer:
 		Start: 297
-	icon: brisicon
+	icon: cameomd|brisicon
 
 # Custom Infantry
 pyro:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: bits/infantry/pyro
 	stand:
 		ShadowStart: 1701
 	run:
@@ -309,12 +320,13 @@ pyro:
 		ShadowStart: 3162
 		Facings: 8
 		Length: 15
-	icon: pyroicon
+	icon: bits/cameos/pyroicon
 
 mech:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: bits/infantry/mech
 	run:
 		Tick: 120
 	prone-shoot:
@@ -323,16 +335,18 @@ mech:
 		Start: 244
 	cheer:
 		Start: 245
-	icon: mechicon
+	icon: bits/cameos/mechicon
 
 itrp:
 	Inherits: cleg
-	icon: itrpicon
+	Defaults: bits/infantry/itrp
+	icon: bits/cameos/itrpicon
 
 hjck:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: bits/infantry/hjck
 	die1:
 		Start: 185
 	die2:
@@ -356,25 +370,29 @@ hjck:
 	cheer:
 		Start: 181
 		Length: 4
-	icon: hjckicon
+	icon: bits/cameos/hjckicon
 
 shkc:
 	Inherits: shk
-	run: shkc
+	Defaults: bits/infantry/shkc
+	run: bits/infantry/shkc
 		Start: 8
 		Length: 6
 		Facings: 8
-	icon: shkcicon
+	charge: bits/infantry/shkc
+	prone-charge: bits/infantry/shkc
+	icon: bits/cameos/shkcicon
 
 sspy:
 	Inherits: spy
 	Defaults: spy
-	icon: raspyicon.png
+	icon: bits/cameos/raspyicon.png
 		AddExtension: false
 
 vlkv:
 	Inherits: ^ArmedInfantry
 	Inherits@Web: ^WebDisableable
+	Defaults: bits/infantry/vlkv
 	die1:
 		Start: 86
 	die2:
@@ -386,9 +404,10 @@ vlkv:
 	cheer:
 		Start: 150
 		Length: 8
-	icon: vlkvicon
+	icon: bits/cameos/vlkvicon
 
 chit:
 	Inherits: dog
-	shoot: chitp
-	icon: chiticon
+	Defaults: bits/infantry/chit
+	shoot: bits/infantry/chitp
+	icon: bits/cameos/chiticon

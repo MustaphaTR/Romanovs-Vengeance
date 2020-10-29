@@ -2,7 +2,7 @@ engineer:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
-	Defaults: engineer
+	Defaults: conquer|engineer
 	shoot:
 		Start: 164
 		Length: 6
@@ -14,11 +14,12 @@ engineer:
 		Start: 228
 	paradrop:
 		Start: 244
-	icon: engnicon
+	icon: cameo|engnicon
 
 adog:
 	Inherits: ^BasicInfantry
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|adog
 	cheer:
 		Start: 164
 	die1:
@@ -33,14 +34,15 @@ adog:
 		Start: 116
 		Length: 6
 		Facings: 8
-	shoot: adogp
+	shoot: conquer|adogp
 		Length: 1
 		Facings: 32
 	paradrop:
 		Start: 11
-	icon: adogicon
+	icon: cameo|adogicon
 
 dlph:
+	Defaults: conquer|dlph
 	stand:
 		Start: 48
 		Facings: -8
@@ -71,7 +73,7 @@ e1:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
-	Defaults: gi
+	Defaults: conquer|gi
 	dot: dot
 		ZOffset: -9999
 	run:
@@ -90,34 +92,37 @@ e1:
 		Start: 363
 	cheer:
 		Start: 364
-	icon: giicon
+	icon: cameo|giicon
 
 snipe:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|snipe
 	paradrop:
 		Start: 292
-	icon: snipicon
+	icon: cameo|snipicon
 
 spy:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|spy
 	liedown:
 		Start: 164
 	standup:
 		Start: 180
 	cheer:
 		Start: 196
-	paradrop: spyfix
+	paradrop: bits/infantry/spyfix
 		Start: 0
-	icon: spyicon
+	icon: cameo|spyicon
 
 seal:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|seal
 	run:
 		Tick: 120
 	swim-stand:
@@ -157,63 +162,64 @@ seal:
 		Tick: 120
 	paradrop:
 		Start: 602
-	snow-stand: seala
+	snow-stand: conquer|seala
 		Facings: 8
-	snow-run: seala
+	snow-run: conquer|seala
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 120
-	snow-idle1: seala
+	snow-idle1: conquer|seala
 		Start: 56
 		Length: 15
 		Tick: 120
-	snow-idle2: seala
+	snow-idle2: conquer|seala
 		Start: 71
 		Length: 15
 		Tick: 120
-	snow-die1: seala
+	snow-die1: conquer|seala
 		Start: 134
 		Length: 15
-	snow-die2: seala
+	snow-die2: conquer|seala
 		Start: 149
 		Length: 15
-	snow-shoot: seala
+	snow-shoot: conquer|seala
 		Start: 164
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-snow-shoot: seala
+	prone-snow-shoot: conquer|seala
 		Start: 212
 		Length: 6
 		Facings: 8
 		Tick: 80
-	snow-liedown: seala
+	snow-liedown: conquer|seala
 		Start: 260
 		Length: 2
 		Facings: 8
-	snow-standup: seala
+	snow-standup: conquer|seala
 		Start: 276
 		Length: 2
 		Facings: 8
-	prone-snow-stand: seala
+	prone-snow-stand: conquer|seala
 		Frames: 86, 92, 98, 104, 110, 116, 122, 128
 		Facings: 8
-	prone-snow-run: seala
+	prone-snow-run: conquer|seala
 		Start: 86
 		Length: 6
 		Facings: 8
 		Tick: 100
-	snow-cheer: seala
+	snow-cheer: conquer|seala
 		Start: 603
 		Length: 8
 		Tick: 120
-	snow-paradrop: seala
+	snow-paradrop: conquer|seala
 		Start: 602
-	icon: sealicon
+	icon: cameo|sealicon
 
 ccomand:
 	Inherits: seal
+	Defaults: conquer|ccomand
 	-swim-stand:
 	-swim-idle1:
 	-swim-idle2:
@@ -225,15 +231,17 @@ ccomand:
 		Start: 340
 	-swim-cheer:
 	-paradrop:
-	icon: ccomicon
+	icon: cameo|ccomicon
 
 ptroop:
 	Inherits: yuri
-	icon: psicicon
+	Defaults: conquer|ptroop
+	icon: cameo|psicicon
 
 tany:
 	Inherits: ^ArmedInfantry
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|tany
 	run:
 		Tick: 120
 	swim-stand:
@@ -273,63 +281,63 @@ tany:
 		Tick: 120
 	paradrop:
 		Start: 602
-	snow-stand: tanya
+	snow-stand: bits/infantry/tanya
 		Facings: 8
-	snow-run: tanya
+	snow-run: bits/infantry/tanya
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 120
-	snow-idle1: tanya
+	snow-idle1: bits/infantry/tanya
 		Start: 56
 		Length: 15
 		Tick: 120
-	snow-idle2: tanya
+	snow-idle2: bits/infantry/tanya
 		Start: 71
 		Length: 15
 		Tick: 120
-	snow-die1: tanya
+	snow-die1: bits/infantry/tanya
 		Start: 134
 		Length: 15
-	snow-die2: tanya
+	snow-die2: bits/infantry/tanya
 		Start: 149
 		Length: 15
-	snow-shoot: tanya
+	snow-shoot: bits/infantry/tanya
 		Start: 164
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-snow-shoot: tanya
+	prone-snow-shoot: bits/infantry/tanya
 		Start: 212
 		Length: 6
 		Facings: 8
 		Tick: 80
-	snow-liedown: tanya
+	snow-liedown: bits/infantry/tanya
 		Start: 260
 		Length: 2
 		Facings: 8
-	snow-standup: tanya
+	snow-standup: bits/infantry/tanya
 		Start: 276
 		Length: 2
 		Facings: 8
-	prone-snow-stand: tanya
+	prone-snow-stand: bits/infantry/tanya
 		Frames: 86, 92, 98, 104, 110, 116, 122, 128
 		Facings: 8
-	prone-snow-run: tanya
+	prone-snow-run: bits/infantry/tanya
 		Start: 86
 		Length: 6
 		Facings: 8
 		Tick: 100
-	snow-cheer: tanya
+	snow-cheer: bits/infantry/tanya
 		Start: 603
 		Length: 8
 		Tick: 120
-	snow-paradrop: tanya
+	snow-paradrop: bits/infantry/tanya
 		Start: 602
-	icon: tanyicon
+	icon: cameo|tanyicon
 
 jumpjet:
-	Defaults: rock
+	Defaults: conquer|rock
 		Length: 6
 		Facings: 8
 	stand:
@@ -418,12 +426,12 @@ jumpjet:
 		Start: 1
 		Length: 1
 		Facings: 1
-	icon: jjeticon
+	icon: cameo|jjeticon
 		Length: 1
 		Facings: 1
 
 jumpjet.husk:
-	idle: rock
+	idle: conquer|rock
 		Start: 340
 		Length: 16
 		Facings: 2
@@ -435,6 +443,7 @@ cleg:
 	Inherits: ^BasicInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: conquer|cleg
 	run:
 		Start: 117
 	shoot:
@@ -453,13 +462,14 @@ cleg:
 		Start: 116
 	cheer:
 		Start: 165
-	icon: clegicon
+	icon: cameo|clegicon
 
 # Yuri's Revenge Allied Infantry
 ggi:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: conqmd|ggi
 	dot: dot
 		ZOffset: -9999
 	liedown:
@@ -486,13 +496,14 @@ ggi:
 		Start: 371
 	cheer:
 		Start: 196
-	icon: gdgiicon
+	icon: cameomd|gdgiicon
 
 # Custom Allied Infantry
 medi:
 	Inherits: ^Infantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: bits/infantry/medi
 	shoot:
 		Start: 164
 		Length: 6
@@ -504,12 +515,13 @@ medi:
 		Start: 276
 	paradrop:
 		Start: 244
-	icon: mediicon
+	icon: bits/cameos/mediicon
 
 gren:
 	Inherits: ^ArmedInfantry
 	Inherits@MC: ^MindControllable
 	Inherits@Web: ^WebDisableable
+	Defaults: bits/infantry/gren
 	run:
 		Length: 8
 		Tick: 120
@@ -548,4 +560,4 @@ gren:
 		Length: 25
 	paradrop:
 		Start: 541
-	icon: grenicon
+	icon: bits/cameos/grenicon
