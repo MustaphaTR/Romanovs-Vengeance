@@ -400,17 +400,15 @@ NukePayload:
 			Rocket: 100
 		AffectsParent: true
 		DamageTypes: Prone50Percent, TriggerProne, RadiationDeath, SuppressTerrorDrone, NonTemporal
-	Warhead@2Res_impact: DestroyResource
-		Size: 10
-	Warhead@3Eff_impact: CreateEffect
+	Warhead@2Eff_impact: CreateEffect
 		Explosions: nuke_explosion
 		ImpactSounds: snukexpl.wav
 		ValidTargets: Ground, Water, Air
-	Warhead@4Radiation: CreateTintedCells
+	Warhead@3Radiation: CreateTintedCells
 		Spread: 10c0
 		Falloff: 100, 100
 		Level: 500
-	Warhead@5Smu: LeaveSmudge
+	Warhead@4Smu: LeaveSmudge
 		SmudgeType: LargeCrater, LargeScorch
 
 atomic:
@@ -427,14 +425,12 @@ atomic:
 			Concrete: 30
 		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
 		Delay: 25
-	Warhead@2Res_impact: DestroyResource
-		Delay: 25
-	Warhead@3Eff_impact: CreateEffect
+	Warhead@2Eff_impact: CreateEffect
 		Delay: 25
 		ValidTargets: Ground, Water, Air
-	Warhead@4Radiation: CreateTintedCells
+	Warhead@3Radiation: CreateTintedCells
 		Delay: 25
-	Warhead@21Shake: ShakeScreen
+	Warhead@5Shake: ShakeScreen
 		Duration: 20
 		Intensity: 5
 		Multiplier: 1,1
@@ -454,15 +450,13 @@ demobomb:
 			Wood: 80
 			Steel: 150
 			Concrete: 80 # 10
-	Warhead@2Res_impact: DestroyResource
-		Size: 4
-	Warhead@3Eff_impact: CreateEffect
+	Warhead@2Eff_impact: CreateEffect
 		Explosions: demotruck_explosion
 		ImpactSounds: vdemdiea.wav
-	Warhead@4Radiation: CreateTintedCells
+	Warhead@3Radiation: CreateTintedCells
 		Spread: 6c0
 		Level: 100
-	Warhead@5Smu: LeaveSmudge
+	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
 ClusterMissile:
