@@ -69,7 +69,7 @@ Ranks =
 	russianfed = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	serbia = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" }
 }
-RankXPs = { 0, 800, 1500, 2500, 5000 }
+RankXPs = { 0, 400, 1300, 2500, 5000 }
 
 ReducePoints = function(player)
 	Trigger.OnProduction(player.GetActorsByType("player")[1], function()
