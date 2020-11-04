@@ -6,7 +6,7 @@ bus:
 		Name: School Bus
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
-		MaxWeight: 20
+		MaxWeight: 5
 		UnloadVoice: Move
 	WithCargoSounds:
 		EnterSound: genter1a.wav
@@ -23,30 +23,11 @@ bus:
 			red: pip-red
 
 limo:
-	Inherits: ^CivVehicle
+	Inherits: bus
 	Tooltip:
 		Name: Limousine
 	Tooltip@NoRow:
 		Name: Limousine
-	Cargo:
-		Types: Infantry, Garrisoner, SmallVehicle
-		MaxWeight: 20
-		UnloadVoice: Move
-	WithCargoSounds:
-		EnterSound: genter1a.wav
-		ExitSound: gexit1a.wav
-	RenderVoxels:
-		NormalsPalette: ts-normals
-	WithCargoPipsDecoration:
-		Margin: 4, 3
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-		CustomPipSequences:
-			gray: pip-gray
-			yellow: pip-yellow
-			blue: pip-blue
-			red: pip-red
 
 pick:
 	Inherits: ^CivVehicle
@@ -179,11 +160,7 @@ cblc:
 		Name: Cable Car
 
 ddbx:
-	Inherits: ^CivVehicle
-	Tooltip:
-		Name: Bus
-	Tooltip@NoRow:
-		Name: Bus
+	Inherits: bus
 
 doly:
 	Inherits: ^CivVehicle
