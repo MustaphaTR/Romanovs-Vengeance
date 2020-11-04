@@ -1657,6 +1657,9 @@ gamgun:
 gagun:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DRAIN: ^DiskDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies, Support.France
@@ -1700,6 +1703,8 @@ gagun:
 		RealignDelay: -1
 	WithSpriteTurret:
 		RequiresCondition: !build-incomplete
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	DetectCloaked:
 		Range: 5c0
 	RenderDetectionCircle:
