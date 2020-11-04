@@ -27,37 +27,42 @@ Container@OBSERVER_WIDGETS:
 					Text: Audio Muted
 					Contrast: true
 		LogicKeyListener@OBSERVER_KEY_LISTENER:
-		MenuButton@OPTIONS_BUTTON:
-			Width: 160
-			Height: 25
-			Text: Options (Esc)
-			Font: Bold
-			Key: escape
-			DisableWorldSounds: true
-		Container@GAME_TIMER_BLOCK:
-			Logic: GameTimerLogic
-			X: (WINDOW_RIGHT - WIDTH) / 2
-			Width: 100
-			Height: 55
-			Children:
-				LabelWithTooltip@GAME_TIMER:
-					Width: PARENT_RIGHT
-					Height: 30
-					Align: Center
-					Font: Title
-					Contrast: true
-					TooltipContainer: TOOLTIP_CONTAINER
-					TooltipTemplate: SIMPLE_TOOLTIP
-				Label@GAME_TIMER_STATUS:
-					Y: 32
-					Width: PARENT_RIGHT
-					Height: 15
-					Align: Center
-					Font: Bold
-					Contrast: true
-		Background@RADAR_BG:
+		Background@SIDEBAR_BACKGROUND_TOP:
 			X: WINDOW_RIGHT - 255
 			Y: 5
+			Width: 250
+			Height: 56
+			Children:
+				MenuButton@OPTIONS_BUTTON:
+					X: PARENT_RIGHT - 41
+					Y: 15
+					Width: 26
+					Height: 26
+					Key: escape
+					TooltipText: Options
+					TooltipContainer: TOOLTIP_CONTAINER
+					DisableWorldSounds: true
+					Children:
+						Image@ICON:
+							X: 5
+							Y: 5
+							ImageCollection: order-icons
+							ImageName: options
+				Container@GAME_TIMER_BLOCK:
+					Logic: GameTimerLogic
+					X: 15
+					Width: 100
+					Height: 56
+					Children:
+						LabelWithTooltip@GAME_TIMER:
+							Width: PARENT_RIGHT
+							Height: PARENT_BOTTOM
+							Font: BigBold
+							TooltipContainer: TOOLTIP_CONTAINER
+							TooltipTemplate: SIMPLE_TOOLTIP
+		Background@RADAR_BG:
+			X: WINDOW_RIGHT - 255
+			Y: 66
 			Width: 250
 			Height: 250
 			Children:
@@ -75,7 +80,7 @@ Container@OBSERVER_WIDGETS:
 					Skippable: false
 		Background@OBSERVER_CONTROL_BG:
 			X: WINDOW_RIGHT - 255
-			Y: 260
+			Y: 321
 			Width: 250
 			Height: 55
 			Children:
@@ -198,12 +203,12 @@ Container@OBSERVER_WIDGETS:
 				StatisticsGraphKey: StatisticsGraph
 				StatisticsArmyGraphKey: StatisticsArmyGraph
 				StatsDropDownPanelTemplate: SPECTATOR_LABEL_DROPDOWN_TEMPLATE
-			X: 5
+			X: 0
 			Width: 760
 			Height: 240
 			Children:
 				DropDownButton@STATS_DROPDOWN:
-					X: 165
+					X: 0
 					Y: 0
 					Width: 185
 					Height: 25
