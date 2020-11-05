@@ -1,142 +1,260 @@
 1tnk:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Allies
 	Tooltip:
 		Name: Light Tank
 	Tooltip@NoRow:
 		Name: Light Tank
+	Health:
+		HP: 200
 	Turreted:
 		TurnSpeed: 30
+	Armament:
+		Weapon: ATGUN
+	AttackTurreted:
+		Voice: Attack
+	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 2tnk:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Allies
 	Tooltip:
 		Name: Medium Tank
 	Tooltip@NoRow:
 		Name: Medium Tank
+	Health:
+		HP: 300
 	Turreted:
 		TurnSpeed: 28
+	Armament:
+		Weapon: 105mm
+	AttackTurreted:
+		Voice: Attack
+	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 3tnk:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Soviets
 	Tooltip:
 		Name: Heavy Tank
 	Tooltip@NoRow:
 		Name: Heavy Tank
+	Health:
+		HP: 400
 	Turreted:
 		TurnSpeed: 28
+	Armament:
+		Weapon: 120mm
+	AttackTurreted:
+		Voice: Attack
+	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 4tnk:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Soviets
 	Tooltip:
 		Name: Mammoth Tank
 	Tooltip@NoRow:
 		Name: Mammoth Tank
+	Health:
+		HP: 800
 	Turreted:
+		Offset: -256,0,0
 		TurnSpeed: 16
+	Armament:
+		Weapon: 120mm
+	AttackTurreted:
+		Voice: Attack
+	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 arty:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Allies
 	Tooltip:
 		Name: Artillery
 	Tooltip@NoRow:
 		Name: Artillery
+	Health:
+		HP: 200
 	Turreted:
+		Offset: -500,0,0
 		TurnSpeed: 30
-	WithVoxelBarrel:
+	Armament:
+		Weapon: HowiCannon
+	AttackFrontal:
+		Voice: Attack
+	WithVoxelBody:
+	WithVoxelTurret:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 ftnktd:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Soviets
 	Tooltip:
 		Name: Flame Tank
 	Tooltip@NoRow:
 		Name: Flame Tank
+	Health:
+		HP: 400
+	WithVoxelBody:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 hmve:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Allies
 	Tooltip:
 		Name: Humvee
 	Tooltip@NoRow:
 		Name: Humvee
+	Health:
+		HP: 150
 	Turreted:
 		TurnSpeed: 30
+	Armament:
+		Weapon: M1Carbine
+	AttackTurreted:
+		Voice: Attack
+	WithVoxelBody:
 	WithVoxelTurret:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 m113:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Allies
 	Tooltip:
 		Name: APC
 	Tooltip@NoRow:
 		Name: APC
+	Health:
+		HP: 400
 	Turreted:
 		TurnSpeed: 30
+	Armament:
+		Weapon: M1Carbine
+	AttackTurreted:
+		Voice: Attack
+	WithVoxelBody:
 	WithVoxelTurret:
+	Cargo:
+		Types: Infantry, Garrisoner, SmallVehicle
+		MaxWeight: 5
+		AfterLoadDelay: 0
+		BeforeUnloadDelay: 0
+		AfterUnloadDelay: 0
+		PassengerFacing: 0
+		UnloadVoice: Move
+		LoadingCondition: notmobile
+	WithCargoSounds:
+		EnterSound: genter1a.wav
+		ExitSound: gexit1a.wav
+	WithCargoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		CustomPipSequences:
+			gray: pip-gray
+			yellow: pip-yellow
+			blue: pip-blue
+			red: pip-red
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 mlrs:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Soviets
 	Tooltip:
 		Name: Rocket Launcher
 	Tooltip@NoRow:
 		Name: Rocket Launcher
+	Health:
+		HP: 150
 	Turreted:
 		Offset: -256,0,0
 		TurnSpeed: 28
+	WithVoxelBody:
 	WithVoxelTurret:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 mnly:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Allies, Vehicle.Soviets
 	Tooltip:
 		Name: Minelayer
 	Tooltip@NoRow:
 		Name: Minelayer
+	Health:
+		HP: 400
+	WithVoxelBody:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
 
 mrj:
-	Inherits: ^CivVehicle
+	Inherits: ^Vehicle
+	Buildable:
+		Queue: Vehicle.Allies
 	Tooltip:
 		Name: Mobile Radar Jammer
 	Tooltip@NoRow:
 		Name: Mobile Radar Jammer
+	Health:
+		HP: 400
 	Turreted:
 		Offset: -256,0,0
 		TurnSpeed: 30
+	WithVoxelBody:
 	WithVoxelTurret:
+	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
