@@ -748,6 +748,7 @@
 		TargetTypes: MindControl
 		RequiresCondition: !controlled && !permamc
 	WithIdleOverlay@mindcontrol:
+		Image: mindcontrol
 		Sequence: mindcontrol
 		Palette: effect
 		RequiresCondition: controlled || permamc
@@ -2575,6 +2576,7 @@
 		RequiresCondition: lowpower || powerdown || emp
 		Condition: disabled
 	WithIdleOverlay@EMP:
+		Image: emp
 		Sequence: emp
 		Palette: tseffect
 		RequiresCondition: emp
@@ -2615,6 +2617,7 @@
 	WithInfantryBody:
 		RequiresCondition: !webdisable
 	WithIdleOverlay@web:
+		Image: webguy
 		Sequence: webguy
 		Palette: player
 		RequiresCondition: webdisable

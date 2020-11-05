@@ -68,8 +68,6 @@
 
 ^CivInfantry:
 	Inherits: ^Infantry
-	Inherits@MC: ^MindControllable
-	Inherits@Web: ^WebDisableable
 	-idle2:
 	die1:
 		Start: 71
@@ -113,22 +111,6 @@
 		Start: 276
 	cheer:
 		Start: 293
-
-^EMPDisableable:
-	emp: conquer|emp_fx01
-		Length: *
-		UseTilesetCode: false
-
-^WebDisableable:
-	webguy: bits/animations/webguy
-		Length: 6
-		ShadowStart: 6
-
-^MindControllable:
-	mindcontrol: conquer|yuricntl
-		Length: *
-		Offset: 0, -24, 24
-		UseTilesetCode: false
 
 ^SquidGrabbable:
 	squid: sqdg
