@@ -42,13 +42,13 @@ resources:
 	gem12: gem12
 
 shroud:
-	shroud:
+	shroud: conquer|shroud
 		Length: *
-	fog: fog
+	fog: conquer|fog
 		Length: *
 
 overlay:
-	Defaults: place
+	Defaults: conquer|place
 		Offset: 0, -15
 	build-valid-temperate:
 	build-valid-snow:
@@ -75,7 +75,7 @@ overlay:
 		Start: 2
 
 editor-overlay:
-	Defaults: place
+	Defaults: conquer|place
 		Offset: 0, -15
 	copy:
 	paste:
@@ -95,12 +95,12 @@ allyrepair:
 		ZOffset: 2047
 
 rallypoint:
-	flag: mouse
+	flag: conquer|mouse
 		Start: 269
 		Length: 10
 		Offset: 2,-12
 		ZOffset: -1023
-	circles: mouse
+	circles: conquer|mouse
 		Start: 249
 		Length: 10
 		ZOffset: -2047
@@ -192,7 +192,7 @@ beacon:
 	xxicon: cameo|xxicon
 		Length: *
 		Offset: 0,-86
-	clock: clock
+	clock: bits/animations/clock
 		Length: *
 		Offset: 0,-86
 		BlendMode: Multiply
@@ -200,15 +200,15 @@ beacon:
 crate-effects:
 	Defaults: null
 		Length: *
-	dollar: money
-	reveal-map: reveal
-	hide-map: shroudx
-	fpower: firepowr
-	armor: armor
-	heal: healall
-	nuke: mltimisl
-	levelup: veteran
-	speed: speed
+	dollar: conquer|money
+	reveal-map: conquer|reveal
+	hide-map: conquer|shroudx
+	fpower: conquer|firepowr
+	armor: conquer|armor
+	heal: conquer|healall
+	nuke: conquer|mltimisl
+	levelup: conquer|veteran
+	speed: conquer|speed
 
 crate:
 	idle:
@@ -226,47 +226,48 @@ crate:
 		Offset: 0, 0
 
 rank:
-	rank-veteran-1: newpips
-	rank-veteran-2: newpips
+	rank-veteran-1: bits/newpips
+	rank-veteran-2: bits/newpips
 		Start: 1
-	rank-elite: newpips
+	rank-elite: bits/newpips
 		Start: 2
 
 tech:
-	heal: newpips
+	heal: bits/newpips
 		Start: 3
-	repair: newpips
+	repair: bits/newpips
 		Start: 4
 
 leaflet:
-	idle:
+	idle: bits/projectiles/leaflet
 		Length: *
 		Ticks: 160
-	icon: newpips
+	icon: bits/newpips
 		Start: 5
 
 holo:
-	icon: newpips
+	icon: bits/newpips
 		Start: 7
 
 mpspawn:
-	idle:
+	idle: bits/mpspawn
 		Length: *
 
 waypoint:
-	idle:
+	idle: bits/waypoint
 		Length: *
 
 ambient:
-	idle:
+	idle: bits/ambient
 		Length: *
 
 clock:
-	idle:
+	idle: bits/animations/clock
 		Length: *
 		BlendMode: Multiply
 
 parach:
+	Defaults: conquer|parach
 	open:
 		Length: 19
 	idle:
@@ -281,38 +282,39 @@ cameo-chevron:
 		AddExtension: false
 
 pips:
+	Defaults: conqmd|pips
 	medic:
 		Start: 6
-	groups: pipsra #TODO: backfall to RA asset
+	groups: bits/pipsra #TODO: backfall to RA asset
 		Start: 8
 		Length: 10
-	pip-empty: pips2
-	pip-green: pips2
+	pip-empty: conqmd|pips2
+	pip-green: conqmd|pips2
 		Start: 1
-	pip-yellow: pips2
+	pip-yellow: conqmd|pips2
 		Start: 2
-	pip-gray: pips2
+	pip-gray: conqmd|pips2
 		Start: 3
-	pip-red: pips2
+	pip-red: conqmd|pips2
 		Start: 4
-	pip-blue: pips2
+	pip-blue: conqmd|pips2
 		Start: 5
-	pip-ammo: ammopips
-	pip-ammoempty: ammopips
+	pip-ammo: bits/ammopips
+	pip-ammoempty: bits/ammopips
 		Start: 1
-	pip-garrison-empty: pips2
+	pip-garrison-empty: conqmd|pips2
 		Start: 6
-	pip-garrison-green: pips2
+	pip-garrison-green: conqmd|pips2
 		Start: 7
-	pip-garrison-yellow: pips2
+	pip-garrison-yellow: conqmd|pips2
 		Start: 8
-	pip-garrison-gray: pips2
+	pip-garrison-gray: conqmd|pips2
 		Start: 9
-	pip-garrison-red: pips2
+	pip-garrison-red: conqmd|pips2
 		Start: 10
-	pip-garrison-blue: pips2
+	pip-garrison-blue: conqmd|pips2
 		Start: 11
-	pip-garrison-purple: pips2
+	pip-garrison-purple: conqmd|pips2
 		Start: 12
 	pip-building-empty:
 	pip-building-green:
@@ -325,7 +327,7 @@ pips:
 		Start: 4
 	pip-building-blue:
 		Start: 5
-	pip-disguise: pip-disguise
+	pip-disguise: bits/pip-disguise
 		Length: *
 		Tick: 300
 		Offset: 6, -2
@@ -333,156 +335,157 @@ pips:
 explosion:
 	Defaults:
 		Length: *
-	huge_watersplash: h2o_exp1
-	large_watersplash: h2o_exp2
-	small_watersplash: h2o_exp3
-	piff: piff
-	piffpiff: piffpiff
-	piffred: piffred
-	piffpiffred: piffpiffred
-	small_explosion: explosml
-	medium_explosion: explomed
-	large_explosion: explolrg
-	small_toxin_explosion: explosmlgrn
-	medium_toxin_explosion: explomedgrn
-	large_toxin_explosion: explolrggrn
-	tiny_bang: s_bang16
-	small_bang: s_bang24
-	medium_bang: s_bang34
-	large_bang: s_bang48
-	tiny_brnl: s_brnl20
-	small_brnl: s_brnl30
-	medium_brnl: s_brnl40
-	large_brnl: s_brnl58
-	tiny_tumu: s_tumu22
-	small_tumu: s_tumu30
-	medium_tumu: s_tumu42
-	large_tumu: s_tumu60
-	tiny_clsn: s_clsn16
-	small_clsn: s_clsn22
-	medium_clsn: s_clsn30
-	large_clsn: s_clsn42
-	verylarge_clsn: s_clsn58
-	tiny_twlt: twlt026
-	small_twlt: twlt036
-	medium_twlt: twlt050
-	large_twlt: twlt070
-	verylarge_twlt: twlt100
-	tiny_grey_explosion: xgrysml1
-	small_grey_explosion: xgrysml2
-	medium_grey_explosion: xgrymed1
-	large_grey_explosion: xgrymed2
-	small_barrel_explosion: brrlexp1
-	large_barrel_explosion: brrlexp2
-	nuke_explosion: nukeanim
-	nuke_ball: nukeball
-	demotruck_explosion: demtexp
-	elite_explosion: vtexplod
-	terrorist_explosion: mininuke
-	apoc_explosion: apocexp
-	flak_puff: htrkpuff
-	flak_puff_AA: smkpuff
-	ivan_explosion: crivexp
-	ivan_explosionE: crivexp2
-	tesla_impact: tstimpct
-	tesla_explosion: tstlexp
-	prism_explosion: prismexp
+	huge_watersplash: conquer|h2o_exp1
+	large_watersplash: conquer|h2o_exp2
+	small_watersplash: conquer|h2o_exp3
+	piff: conquer|piff
+	piffpiff: conquer|piffpiff
+	piffred: bits/animations/piffred
+	piffpiffred: bits/animations/piffpiffred
+	small_explosion: conquer|explosml
+	medium_explosion: conquer|explomed
+	large_explosion: conquer|explolrg
+	small_toxin_explosion: bits/animations/explosmlgrn
+	medium_toxin_explosion: bits/animations/explomedgrn
+	large_toxin_explosion: bits/animations/explolrggrn
+	tiny_bang: conquer|s_bang16
+	small_bang: conquer|s_bang24
+	medium_bang: conquer|s_bang34
+	large_bang: conquer|s_bang48
+	tiny_brnl: conquer|s_brnl20
+	small_brnl: conquer|s_brnl30
+	medium_brnl: conquer|s_brnl40
+	large_brnl: conquer|s_brnl58
+	tiny_tumu: conquer|s_tumu22
+	small_tumu: conquer|s_tumu30
+	medium_tumu: conquer|s_tumu42
+	large_tumu: conquer|s_tumu60
+	tiny_clsn: conquer|s_clsn16
+	small_clsn: conquer|s_clsn22
+	medium_clsn: conquer|s_clsn30
+	large_clsn: conquer|s_clsn42
+	verylarge_clsn: conquer|s_clsn58
+	tiny_twlt: conquer|twlt026
+	small_twlt: conquer|twlt036
+	medium_twlt: conquer|twlt050
+	large_twlt: conquer|twlt070
+	verylarge_twlt: conquer|twlt100
+	tiny_grey_explosion: conquer|xgrysml1
+	small_grey_explosion: conquer|xgrysml2
+	medium_grey_explosion: conquer|xgrymed1
+	large_grey_explosion: conquer|xgrymed2
+	small_barrel_explosion: conquer|brrlexp1
+	large_barrel_explosion: conquer|brrlexp2
+	nuke_explosion: conquer|nukeanim
+	nuke_ball: conquer|nukeball
+	demotruck_explosion: conquer|demtexp
+	elite_explosion: conquer|vtexplod
+	terrorist_explosion: conquer|mininuke
+	apoc_explosion: conquer|apocexp
+	flak_puff: conquer|htrkpuff
+	flak_puff_AA: conquer|smkpuff
+	ivan_explosion: conquer|crivexp
+	ivan_explosionE: conquer|crivexp2
+	tesla_impact: conquer|tstimpct
+	tesla_explosion: conquer|tstlexp
+	prism_explosion: bits/animations/prismexp
 		Start: 5
 		Length: 28
-	laser_explosion: laserexp
-	laser_explosion_red: laserexpe
-	iron_fx: ironfx
-	ironblast: ironblst
-	chronofd: chronofd
-	chronosk: chronosk
-	psi_wave: ring1
-	weathercloud1: wccloud1
-	weathercloud2: wccloud2
-	weathercloud1f: wccloud1
+	laser_explosion: bits/animations/laserexp
+	laser_explosion_red: bits/animations/laserexpe
+	iron_fx: conquer|ironfx
+	ironblast: conquer|ironblst
+	chronofd: conquer|chronofd
+	chronosk: conquer|chronosk
+	psi_wave: conquer|ring1
+	weathercloud1: conquer|wccloud1
+	weathercloud2: conquer|wccloud2
+	weathercloud1f: conquer|wccloud1
 		FlipX: true
-	weathercloud2f: wccloud2
+	weathercloud2f: conquer|wccloud2
 		FlipX: true
-	weatherbolt1: wclbolt1
-	weatherbolt2: wclbolt2
-	weatherbolt3: wclbolt3
-	weatherbolt1f: wclbolt1
+	weatherbolt1: conquer|wclbolt1
+	weatherbolt2: conquer|wclbolt2
+	weatherbolt3: conquer|wclbolt3
+	weatherbolt1f: conquer|wclbolt1
 		FlipX: true
-	weatherbolt2f: wclbolt2
+	weatherbolt2f: conquer|wclbolt2
 		FlipX: true
-	weatherbolt3f: wclbolt3
+	weatherbolt3f: conquer|wclbolt3
 		FlipX: true
-	weatherboltexplosion: explolb
-	weatherboltexplosionf: explolb
+	weatherboltexplosion: conquer|explolb
+	weatherboltexplosionf: conquer|explolb
 		FlipX: true
-	largefire: fire01
-	largefireblue: bluefire01
-	c4explosion: tstwlt070
-	parabomb: tss_tumu60
-	devastator_explosion: plxplo
-	ra1_atomic: atomsfx
-	mine_explosion: tss_brnl58
-	hornet_explosion: tss_bang48
-	chronotank_explosion: art-exp1
-	wrench: mouse
+	largefire: conquer|fire01
+	largefireblue: bits/animations/bluefire01
+	c4explosion: bits/animations/tstwlt070
+	parabomb: bits/animations/tss_tumu60
+	devastator_explosion: bits/animations/plxplo
+	ra1_atomic: bits/animations/atomsfx
+	mine_explosion: bits/animations/tss_brnl58
+	hornet_explosion: bits/animations/tss_bang48
+	chronotank_explosion: bits/animations/art-exp1
+	wrench: conquer|mouse
 		Start: 170
 		Length: 20
-	empulse: pulsefx1
-	empulse30p: pulsefx130p
-	empulse50p: pulsefx150p
-	kirovtesla: ktstlexp
-	yuriface: pdfxcld
+	empulse: bits/animations/pulsefx1
+	empulse30p: bits/animations/pulsefx130p
+	empulse50p: bits/animations/pulsefx150p
+	kirovtesla: conquer|ktstlexp
+	yuriface: conqmd|pdfxcld
 		Offset: 0,-64
 	controlwave: pdfxloc
-	chaosgas: cdgas
-	chaosgas50p: cdgas50p
-	napalm_large: napalm3
-	scananim: scananim
+	chaosgas: bits/animations/cdgas
+	chaosgas50p: bits/animations/cdgas50p
+	napalm_large: bits/animations/napalm3
+	scananim: bits/animations/scananim
 		Length: *
 		ZOffset: 1023
-	ionring: ionring
+	ionring: bits/animations/ionring
 		ZRamp: 1
 		Tick: 100
-	ionbeam: ionbeam
+	ionbeam: bits/animations/ionbeam
 		Offset: 0, -60, 60
 		ZRamp: 1
 		Tick: 100
-	ionbeam2: ionbeam
+	ionbeam2: bits/animations/ionbeam
 		Offset: 0, -180, 60
 		ZRamp: 1
 		Tick: 100
-	ionbeam3: ionbeam
+	ionbeam3: bits/animations/ionbeam
 		Offset: 0, -300, 60
 		ZRamp: 1
 		Tick: 100
-	ionbeam4: ionbeam
+	ionbeam4: bits/animations/ionbeam
 		Offset: 0, -420, 60
 		ZRamp: 1
 		Tick: 100
-	ionbeam5: ionbeam
+	ionbeam5: bits/animations/ionbeam
 		Offset: 0, -540, 60
 		ZRamp: 1
 		Tick: 100
-	ionbeam6: ionbeam
+	ionbeam6: bits/animations/ionbeam
 		Offset: 0, -660, 60
 		ZRamp: 1
 		Tick: 100
-	holosmoke1: holosmoke1
+	holosmoke1: bits/animations/holosmoke1
 		ZOffset: 1024
-	holosmoke2: holosmoke2
+	holosmoke2: bits/animations/holosmoke2
 		ZOffset: 1024
-	holosmoke3: holosmoke3
+	holosmoke3: bits/animations/holosmoke3
 		ZOffset: 1024
-	holosmoke4: holosmoke4
+	holosmoke4: bits/animations/holosmoke4
 		ZOffset: 1024
-	holodis: holodis
-	temporal_explosion: warpout
+	holodis: bits/animations/holodis
+	temporal_explosion: conquer|warpout
 
 txgasg:
-	idle:
+	idle: conqmd|txgasg
 		Length: *
 		ZOffset: 4096
 
 txgasp:
+	Defaults: bits/projectiles/txgasp
 	idle:
 		Length: *
 		ZOffset: 4096
@@ -490,18 +493,18 @@ txgasp:
 		Length: *
 
 particles:
-	largesmoke: lgrysmk1
+	largesmoke: conquer|lgrysmk1
 		Length: *
 		Tick: 80
-	smallsmoke: sgrysmk1
+	smallsmoke: conquer|sgrysmk1
 		Length: *
 		Tick: 80
-	fire: fire03
+	fire: conquer|fire03
 		Length: *
-	damagespark: dmgspark
+	damagespark: bits/animations/dmgspark
 		Length: *
 		Tick: 100
-	inviso: inviso
+	inviso: conquer|inviso
 
 debris:
 	Defaults:
@@ -532,126 +535,127 @@ debris:
 	flyingbody: dbrs10sm
 
 dynamite:
-	idle: bombcurs
+	idle: cache|bombcurs
 		Length: 12
 		Tick: 300
 
 c4:
-	idle: mouse
+	idle: conquer|mouse
 		Start: 309
 		Length: 10
 
 toxinbomb:
-	idle:
+	idle: bits/animations/toxinbomb
 		Length: *
 
 discus:
-	idle:
+	idle: conquer|discus
 		Length: *
 
 canister:
-	idle:
+	idle: conquer|dragon
 		Length: 15
 
 dragon:
-	idle:
+	idle: conquer|dragon
 		Facings: 32
 
 smokey2:
-	idle:
+	idle: conquer|smokey2
 		Length: *
 
 smokeyv3:
-	idle: smokey2
+	idle: conquer|smokey2
 		Length: *
 		Offset: 0, -52
 
 grenade:
-	idle:
+	idle: bits/projectiles/grenade
 
 120mm:
-	idle:
+	idle: conquer|120mm
 
 160mm:
-	idle:
+	idle: bits/projectiles/160mm
 
 bbblelrg:
-	idle:
+	idle: conquer|bbblelrg
 		Length: *
 
 empbomb:
-	idle:
+	idle: bits/projectiles/empbomb
 
 empbomb50p:
-	idle:
+	idle: bits/projectiles/empbomb50p
 
 missile:
-	idle:
+	idle: conquer|missile
 		Facings: 32
 
 ra1patriot:
-	idle:
+	idle: bits/projectiles/ra1patriot
 		Facings: 32
 
 parabomb:
-	idle:
-	open: parach
+	idle: bits/projectiles/parabomb
+	open: conquer|parach
 		Length: 19
 		Offset: 0, -15
-	parach: parach
+	parach: conquer|parach
 		Start: 19
 		Length: 20
 		Offset: 0, -15
-	close: parach
+	close: conquer|parach
 		Start: 40
 		Length: 29
 		Offset: 0, -15
 
 subt:
-	idle:
+	idle: bits/projectiles/zbomb
 		Facings: 32
 
 zbomb:
-	idle:
+	idle: bits/projectiles/zbomb
 		Facings: 32
 
 largesmoke:
-	idle: lgrysmk1
+	idle: conquer|lgrysmk1
 		Length: *
 
 smallsmoke:
-	idle: sgrysmk1
+	idle: conquer|sgrysmk1
 		Length: *
 
 largefire:
-	idle: fire01
+	idle: conquer|fire01
 		Length: *
 
 mediumfire:
-	idle: fire02
+	idle: conquer|fire02
 		Length: *
 
 smallfire:
-	idle: fire03
+	idle: conquer|fire03
 		Length: *
 
 smallfireblue:
-	idle: bluefire03
+	idle: bits/animations/bluefire03
 		Length: *
 
 fireball:
-	idle: fb1
+	idle: bits/animations/fb1
 		Length: *
-	trailer: fb2
+	trailer: bits/animations/fb2
 		Length: *
 
 fireballblue:
-	idle: fb1blue
+	idle: bits/animations/fb1blue
 		Length: *
-	trailer: fb2blue
+	trailer: bits/animations/fb2blue
 		Length: *
 
 litning:
+	Defaults: bits/projectiles/litning
 	bright:
 		Length: 4
 	dim:
@@ -659,13 +663,15 @@ litning:
 		Length: 4
 
 litningupg:
+	Defaults: bits/projectiles/litningupg
 	bright:
 		Length: 4
-	dim: litning
+	dim: bits/projectiles/litning
 		Start: 4
 		Length: 4
 
 litningthicc:
+	Defaults: bits/projectiles/litningthicc
 	bright:
 		Length: 4
 	dim:
@@ -673,6 +679,7 @@ litningthicc:
 		Length: 4
 
 litningred:
+	Defaults: bits/projectiles/litningred
 	bright:
 		Length: 4
 	dim:
@@ -680,6 +687,7 @@ litningred:
 		Length: 4
 
 litningredthicc:
+	Defaults: bits/projectiles/litningredthicc
 	bright:
 		Length: 4
 	dim:
@@ -687,7 +695,7 @@ litningredthicc:
 		Length: 4
 
 moveflsh:
-	idle: ring
+	idle: conquer|ring
 		Length: *
 		Tick: 30
 
@@ -825,25 +833,16 @@ icon:
 		AddExtension: false
 
 atomic:
-	up: nkmslup
-	down: nkmsldn
+	up: conquer|nkmslup
+	down: conquer|nkmsldn
 
 radiationmissile:
-	up: v3mslup
-	down: v3msldn
+	up: bits/projectiles/v3mslup
+	down: bits/projectiles/v3msldn
 
 clustermissile:
-	up: camslup
-	down: camsldn
-
-bombcurs:
-	idle:
-		Length: *
-		Tick: 300
-
-emp_fx01:
-	idle:
-		Length: *
+	up: bits/projectiles/camslup
+	down: bits/projectiles/camsldn
 
 trock01:
 	idle:
@@ -906,11 +905,11 @@ srock05:
 		UseTilesetExtension: true
 
 camera:
-	idle:
+	idle: bits/camera
 		Length: *
 
 flameguy:
-	Defaults:
+	Defaults: conquer|flameguy
 		Facings: 8
 		Tick: 80
 	idle:
@@ -923,12 +922,14 @@ flameguy:
 		Length: 104
 
 mine:
+	Defaults: bits/structures/mine
 	idle:
 		Facings: 8
 	projectile:
 		Start: 8
 
 nmine:
+	Defaults: bits/structures/nmine
 	idle:
 		Length: *
 		Tick: 200
@@ -937,39 +938,41 @@ nmine:
 		Length: 1
 
 oreshimmering:
-	idle: twnk1
+	idle: conquer|twnk1
 		Length: *
 
 swtarget:
-	cursor: mouse
+	cursor: conquer|mouse
 		Start: 329
 		Length: 10
 
 spyptarget:
-	cursor: mouse.sha
+	cursor: conqmd|mouse.sha
 		Start: 504
 		Length: 8
 		AddExtension: false
 
 swdirection:
-	arrow-t: mouse
+	Defaults: conquer|mouse
+	arrow-t:
 		Start: 2
-	arrow-tr: mouse
+	arrow-tr:
 		Start: 3
-	arrow-r: mouse
+	arrow-r:
 		Start: 4
-	arrow-br: mouse
+	arrow-br:
 		Start: 5
-	arrow-b: mouse
+	arrow-b:
 		Start: 6
-	arrow-bl: mouse
+	arrow-bl:
 		Start: 7
-	arrow-l: mouse
+	arrow-l:
 		Start: 8
-	arrow-tl: mouse
+	arrow-tl:
 		Start: 9
 
 gpsdot:
+	Defaults: bits/gpsdot
 	Infantry:
 	Vehicle:
 		Start: 1
@@ -1015,15 +1018,15 @@ gpsdot:
 		Start: 21
 
 dot:
-	idle:
+	idle: bits/dot
 
 web2:
-	idle:
+	idle: bits/projectiles/vehicledust
 		Length: *
 		ZOffset: 1023
 
 dust:
-	idle: vehicledust
+	idle: bits/animations/vehicledust
 		Length: *
 		ZOffset: -2047
 		Tick: 30
@@ -1034,11 +1037,9 @@ galite:
 		Offset: 0, -15
 		ShadowStart: 2
 
-
 emp:
 	emp: conquer|emp_fx01
 		Length: *
-		UseTilesetCode: false
 
 webguy:
 	webguy: bits/animations/webguy
@@ -1049,4 +1050,3 @@ mindcontrol:
 	mindcontrol: conquer|yuricntl
 		Length: *
 		Offset: 0, -24, 24
-		UseTilesetCode: false
