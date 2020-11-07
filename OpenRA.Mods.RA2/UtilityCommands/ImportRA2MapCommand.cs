@@ -363,7 +363,14 @@ namespace OpenRA.Mods.Cnc.UtilityCommands
 			{ "amradr", "gaairc" },
 			{ "sengineer", "engineer" },
 			{ "yengineer", "engineer" },
-			{ "adog", "dog" }
+			{ "adog", "dog" },
+			{ "ingalite", "galite.white" },
+			{ "neglamp", "galite.black" },
+			{ "inredlmp", "galite.red" },
+			{ "inblulmp", "galite.blue" },
+			{ "ingrnlmp", "galite.green" },
+			{ "inyelwlamp", "galite.yellow" },
+			{ "inpurplamp", "galite.purple" }
 		};
 
 		[Desc("FILENAME", "Convert a Red Alert 2 map to the OpenRA format.")]
