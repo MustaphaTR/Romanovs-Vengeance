@@ -87,26 +87,28 @@ UCparaE:
 
 MP5:
 	Inherits: ^MG
-	ReloadDelay: 10
+	ReloadDelay: 15
 	Range: 6c0
 	Report: iseaatta.wav, iseaattb.wav
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Ship
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Ship
-		Damage: 45
+		Damage: 70
 		Versus:
 			None: 200
 			Flak: 150
 			Plate: 100
-			Light: 15
-			Drone: 30
+			Light: 50
+			Medium: 35
+			Heavy: 35
+			Drone: 50
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 
 MP5E:
 	Inherits: MP5
 	Range: 7c0
-	ReloadDelay: 5
+	ReloadDelay: 10
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
 
@@ -177,7 +179,7 @@ awp:
 	Inherits: DoublePistols
 	InvalidTargets: Bridge, Wall, Fence, Tree, NonGarrisonableStructure, Vehicle, Ship, SeaAnimal
 	ReloadDelay: 120
-	Range: 10c0
+	Range: 12c0
 	Report: isniatta.wav
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship, SeaAnimal
@@ -212,7 +214,7 @@ awp:
 AWPE:
 	Inherits: awp
 	ReloadDelay: 90
-	Range: 12c0
+	Range: 14c0
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
 
@@ -225,6 +227,13 @@ UCAWPE:
 	Inherits: AWPE
 	Projectile: InstantHit
 		Blockable: false
+
+CRAWP:
+	Inherits: awp
+	ReloadDelay: 180
+	Range: 12c0
+	Warhead@2Eff: CreateEffect
+		Explosions: piffred
 
 MagneRifle:
 	Inherits: awp
@@ -502,7 +511,7 @@ SiegeChopperCannonAAE:
 # Yuri's Revenge Bullets:
 AKM:
 	Inherits: ^MG
-	ReloadDelay: 20
+	ReloadDelay: 15
 	Range: 8c0
 	Report: iboratta.wav, iborattb.wav
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure
