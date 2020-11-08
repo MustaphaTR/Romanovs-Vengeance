@@ -426,6 +426,22 @@
 		DamageLevel: 50
 		DamageTypes: RadiationDeath, NonTemporal
 
+^AcceptsDeathBomb:
+	WithDecoration@DEATHBOMBS:
+		RequiresSelection: false
+		Image: dynamite
+		Sequence: small
+		Palette: mouse
+		ValidStances: Ally
+		RequiresCondition: deathbombs
+	Explodes@DEATHBOMBS:
+		DeathTypes: NonTemporal
+		Weapon: DeathBombExplode
+		EmptyWeapon: DeathBombExplode
+		RequiresCondition: deathbombs
+	ExternalCondition@DEATHBOMBS:
+		Condition: deathbombs
+
 ^AcceptsIvanBomb:
 	DelayedWeaponAttachable@IVANBOMB:
 		Type: IvanBomb
@@ -1551,6 +1567,7 @@
 	Inherits@17: ^WebDisable
 	Inherits@18: ^HealsInAmbulance
 	Inherits@19: ^AffectedBySpectreBullets
+	Inherits@20: ^AcceptsDeathBomb
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
@@ -1905,6 +1922,7 @@
 	Inherits@20: ^AffectedBySpectreBullets
 	Inherits@21: ^AcceptsPointDefenseDrones
 	Inherits@22: ^LowHealthSpeedPenalty
+	Inherits@23: ^AcceptsDeathBomb
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -2112,6 +2130,7 @@
 	Inherits@15: ^DisabledByMagnetron
 	Inherits@16: ^AffectedBySpectreBullets
 	Inherits@17: ^AcceptsPointDefenseDrones
+	Inherits@19: ^AcceptsDeathBomb
 	Aircraft:
 		AltitudeVelocity: 43
 	WithTextControlGroupDecoration:
@@ -2280,6 +2299,7 @@
 	Inherits@17: ^AffectedByCashBounty
 	Inherits@18: ^AffectedBySpectreBullets
 	Inherits@19: ^AcceptsPointDefenseDrones
+	Inherits@20: ^AcceptsDeathBomb
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
