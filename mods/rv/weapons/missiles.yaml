@@ -554,6 +554,62 @@ UCChaosRocketAA:
 UCChaosRocketAAE:
 	Inherits: ChaosRocketAAE
 
+HeliRocket:
+	Inherits: ^Missile
+	ReloadDelay: 60
+	Range: 6c0
+	Burst: 2
+	Report: iggiat2a.wav, iggiat2b.wav
+	ValidTargets: Ground, Water
+	Projectile: Missile
+		Speed: 512
+		Arm: 2
+		Image: subt
+		RangeLimit: 14c512
+		ContrailLength: 35
+		ContrailColor: D8D8FF
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 100
+		ValidTargets: Ground, Water
+		Versus:
+			None: 15
+			Flak: 15
+			Plate: 10
+			Light: 75
+			Medium: 100
+			Heavy: 100
+			Wood: 50
+			Steel: 60
+			Concrete: 40
+			Drone: 20
+			Rocket: 200
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexpifva.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+HeliRocketE:
+	Inherits: HeliRocket
+	Burst: 2
+	Projectile: Missile
+		ContrailColor: EA0000
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav
+
 SubTorpedo:
 	ReloadDelay: 120
 	Range: 7c0

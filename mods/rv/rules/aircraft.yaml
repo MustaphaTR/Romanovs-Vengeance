@@ -183,7 +183,7 @@ zep:
 		Name: Kirov Airship
 	Buildable:
 		Queue: Aircraft.Soviets, Aircraft.Vietnam
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 50
 		Prerequisites: natech, ~techlevel.4
 		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles
 		BuildDuration: 1000
@@ -2172,8 +2172,8 @@ kite:
 		ValidStances: None
 	Buildable:
 		Queue: Aircraft.Vietnam
-		BuildPaletteOrder: 30
-		Prerequisites: radar, ~techlevel.3
+		BuildPaletteOrder: 40
+		Prerequisites: naradr, ~techlevel.3
 		Description: Helicopter armed with napalm bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -2367,5 +2367,130 @@ magnediskhusk:
 		Image: magnedisk
 	WithVoxelBody@turret:
 		Sequence: turret
+	BodyOrientation:
+		UseClassicPerspectiveFudge: false
+
+havoc:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
+	Tooltip:
+		Name: Havoc Attack Helicopter
+	Tooltip@NoRow:
+		Name: Havoc Attack Helicopter
+	Selectable:
+		Bounds: 70,60,0,-20
+	Health:
+		HP: 500
+	Armor:
+		Type: Medium
+	Armament@primary:
+		Weapon: HeliRocket
+		LocalOffset: 0,512,256, 0,-512,256
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: HeliRocketE
+		LocalOffset: 0,512,256, 0,-512,256
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: BlackKiteVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidStances: None
+	Buildable:
+		Queue: Aircraft.Soviets, Aircraft.Vietnam
+		BuildPaletteOrder: 30
+		Prerequisites: ~prerequisite.havoc, naradr, ~techlevel.3
+		Description: Armored helicopter armed with anti-tank rockets.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		BuildDuration: 625
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 1500
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroud@Ground:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	AttackAircraft:
+		Voice: Attack
+		FacingTolerance: 2
+		AttackType: Hover
+		PauseOnCondition: emp || magnefreeze || chronodisable
+	Aircraft:
+		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
+		Crushes: crate
+		CrushDamageTypes: NonTemporal
+		TurnSpeed: 16
+		Speed: 120
+		Repulsable: true
+		AltitudeVelocity: 200
+		CruisingCondition: cruising
+		PauseOnCondition: emp || magnefreeze || chronodisable
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+	RenderSprites:
+	Targetable@MC:
+		RequiresCondition: !controlled && !permamc && !airborne
+	Targetable@CHAOS:
+		RequiresCondition: !airborne
+	WithVoxelHelicopterBody:
+		TickRate: 1
+		ShowShadow: false
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
+	Hovers@CRUISING:
+		RequiresCondition: cruising
+		BobDistance: -45
+	-DeathSounds:
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: kitehusk
+	HitShape:
+
+havochusk:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Havoc Attack Helicopter
+	Tooltip@NoRow:
+		Name: Havoc Attack Helicopter
+	Aircraft:
+		TurnSpeed: 28
+		Speed: 120
+	FallsToEarth:
+		Explosion: PlaneExplode
+	RevealsShroud:
+		Range: 8c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 4c0
+		Duration: 50
+	RenderSprites:
+		Image: havoc
+	RenderVoxels:
+		Image: havoc
+	-WithVoxelBody:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+		ShowShadow: false
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false

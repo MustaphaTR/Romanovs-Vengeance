@@ -57,12 +57,26 @@ commanders_power.hijacker:
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 10
-		Prerequisites: prerequisite.has_points
+		Prerequisites: ~disabled
 		Description: Enables training of Hijacker from Barracks.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.hijacker
 	RenderSprites:
 		Image: hjck
+
+commanders_power.havoc:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Havoc Attack Helicopter
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Enables training of Havoc Attack Helicopter from Helipad.
+	ProvidesPrerequisite@powername:
+		Prerequisite: prerequisite.havoc
+	RenderSprites:
+		Image: havoc
 
 commanders_power.minelayer:
 	Inherits: ^default.commanders_power
