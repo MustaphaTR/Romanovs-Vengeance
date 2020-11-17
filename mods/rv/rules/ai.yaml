@@ -5,6 +5,11 @@ Player:
 	GrantConditionOnBotOwner@test:
 		Condition: enable-test-ai
 		Bots: test
+	CashTrickler@AICashDevour:
+		Interval: 500
+		Amount: 1500
+		ShowTicks: false
+		RequiresCondition: enable-test-ai
 	SupportPowerBotASModule@test:
 		RequiresCondition: enable-test-ai
 		Decisions:
@@ -584,11 +589,11 @@ Player:
 			gaweap: 3
 			naweap: 3
 			yaweap: 3
-			# gadept: 1
-			# nadept: 1
-			# yadept: 1
+			gadept: 1
+			nadept: 1
+			yadept: 1
 			gaairc: 1
-			# naheli: 1
+			naheli: 1
 			yadisk: 1
 			naradr: 1
 			yadome: 1
@@ -618,11 +623,11 @@ Player:
 			gaweap: 20
 			naweap: 20
 			yaweap: 20
-			# gadept: 1
-			# nadept: 1
-			# yadept: 1
+			gadept: 1
+			nadept: 1
+			yadept: 1
 			gaairc: 10
-			# naheli: 10
+			naheli: 10
 			yadisk: 10
 			naradr: 10
 			yadome: 10
@@ -676,11 +681,11 @@ Player:
 			gaweap: 3
 			naweap: 3
 			yaweap: 3
-			# gadept: 1
-			# nadept: 1
-			# yadept: 1
+			gadept: 1
+			nadept: 1
+			yadept: 1
 			gaairc: 1
-			# naheli: 1
+			naheli: 1
 			yadisk: 1
 			naradr: 1
 			yadome: 1
@@ -706,11 +711,11 @@ Player:
 			gaweap: 20
 			naweap: 20
 			yaweap: 20
-			# gadept: 1
-			# nadept: 1
-			# yadept: 1
+			gadept: 1
+			nadept: 1
+			yadept: 1
 			gaairc: 10
-			# naheli: 10
+			naheli: 10
 			yadisk: 10
 			naradr: 10
 			yadome: 10
@@ -760,8 +765,8 @@ Player:
 		RequiresCondition: enable-test-ai
 	SquadManagerBotModule@test:
 		RequiresCondition: enable-test-ai
-		SquadSize: 5
-		RushAttackScanRadius: 30
+		SquadSize: 10
+		RushAttackScanRadius: 30000000 ##Rush squad has some bug will affect normal attack squad
 		ProtectUnitScanRadius: 25
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, ymcv, gadock, mine, engineer, mengineer
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, gatsub, bsub
@@ -771,6 +776,7 @@ Player:
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		McvFactoryTypes: gaweap, naweap, yaweap
+		MinimumConstructionYardCount: 2
 	UnitBuilderBotModule@test:
 		RequiresCondition: enable-test-ai && !megawealth
 		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Vietnam, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
@@ -837,6 +843,8 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 1
+			schp: 1
+			kite: 1
 			commanders_power.gun_turret: 1
 			commanders_power.harrier_training: 1
 			commanders_power.inf_training: 1
@@ -920,6 +928,8 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 1
+			schp: 1
+			kite: 1
 			commanders_power.gun_turret: 1
 			commanders_power.harrier_training: 1
 			commanders_power.inf_training: 1
