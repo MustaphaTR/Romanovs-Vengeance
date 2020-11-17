@@ -246,6 +246,7 @@ e1:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
+	Inherits@AI: ^AImicroManagable
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		Prerequisites: ~techlevel.1
@@ -379,7 +380,7 @@ e1:
 		ArmamentNames: deployed
 	RejectsOrders@deployment:
 		Reject: AttackMove, AssaultMove
-		RequiresCondition: deployed && !chaos
+		RequiresCondition: !AImicroManage && deployed && !chaos
 	TakeCover:
 		RequiresCondition: undeployed
 	Voiced:
@@ -388,10 +389,12 @@ e1:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	AutoDeployer:
-		DeployChance: 75
-		DeployTicks: 1000
-		UndeployTicks: 1000
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && !deployed
+		DeployTrigger: Attack
+		DeployChance: 100
+		DeployTicks: 5
+		UndeployTicks: 50
 
 ggi:
 	Inherits@1: ^Infantry
@@ -401,6 +404,7 @@ ggi:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
+	Inherits@AI: ^AImicroManagable
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && undeployed
 	AutoTargetPriority@ATTACKANYTHING:
@@ -599,7 +603,7 @@ ggi:
 		ArmamentNames: deployed
 	RejectsOrders@deployment:
 		Reject: AttackMove, AssaultMove
-		RequiresCondition: deployed && !chaos
+		RequiresCondition: !AImicroManage && deployed && !chaos
 	TakeCover:
 		RequiresCondition: undeployed
 	Voiced:
@@ -608,10 +612,12 @@ ggi:
 		Prerequisites: barracks.infiltrated
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	AutoDeployer:
-		DeployChance: 75
-		DeployTicks: 1000
-		UndeployTicks: 1000
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && !deployed
+		DeployChance: 100
+		DeployTrigger: Attack
+		DeployTicks: 5
+		UndeployTicks: 50
 
 snipe:
 	Inherits: ^Infantry
