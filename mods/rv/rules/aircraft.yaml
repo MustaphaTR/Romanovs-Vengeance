@@ -2317,7 +2317,7 @@ magnedisk:
 	Cloak:
 		RequiresCondition: !chronodisable && !emp
 		InitialDelay: 25
-		CloakDelay: 100
+		CloakDelay: 125
 		IsPlayerPalette: true
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
@@ -2386,9 +2386,9 @@ havoc:
 	Selectable:
 		Bounds: 70,60,0,-20
 	Health:
-		HP: 500
+		HP: 1000
 	Armor:
-		Type: Medium
+		Type: Light
 	Armament@primary:
 		Weapon: HeliRocket
 		LocalOffset: 0,512,256, 0,-512,256
@@ -2413,7 +2413,7 @@ havoc:
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
-		Cost: 1500
+		Cost: 1750
 	RevealsShroud:
 		Range: 8c0
 	RevealsShroud@Ground:
@@ -2457,7 +2457,7 @@ havoc:
 	-DeathSounds:
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
-		Actor: kitehusk
+		Actor: havochusk
 	HitShape:
 
 havochusk:
