@@ -901,44 +901,6 @@ fv:
 		Volume: 0.3
 		RequiresCondition: moving
 
-fv-e1:
-	Inherits: fv
-	Buildable:
-		BuildPaletteOrder: 31
-		Prerequisites: ~prerequisite.aiplayer, ~techlevel.1
-	ProductionCostMultiplier:
-		Multiplier: 125
-	ProductionTimeMultiplier:
-		Multiplier: 140
-	Cargo:
-		InitialUnits: e1
-
-fv-ggi:
-	Inherits: fv
-	Buildable:
-		BuildPaletteOrder: 32
-		Prerequisites: ~prerequisite.aiplayer, ~techlevel.1
-	ProductionCostMultiplier:
-		Multiplier: 150
-	ProductionTimeMultiplier:
-		Multiplier: 200
-	Cargo:
-		InitialUnits: ggi
-
-fv-gren:
-	Inherits: fv
-	Buildable:
-		BuildPaletteOrder: 33
-		Prerequisites: ~prerequisite.aiplayer, gaairc, ~techlevel.2
-	ProductionCostMultiplier@1:
-		Multiplier: 1334
-	ProductionCostMultiplier@2:
-		Multiplier: 10
-	ProductionTimeMultiplier:
-		Multiplier: 150
-	Cargo:
-		InitialUnits: gren
-
 sref:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove

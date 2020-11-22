@@ -541,6 +541,10 @@ ggi:
 		Weapon: UCMissileLauncherAAE
 		PauseOnCondition: chronodisable || !ammo
 		RequiresCondition: rank-elite
+	Armament@AIDummyAiming: ## Hack: Make AI GGI deploy to attack air
+		PauseOnCondition: chronodisable
+		RequiresCondition: AImicroManage && !deployed
+		Weapon: AirDummyAim
 	AmmoPool:
 		Ammo: 1
 		AmmoCondition: ammo
