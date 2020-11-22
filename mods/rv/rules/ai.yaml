@@ -766,8 +766,15 @@ Player:
 	SquadManagerBotModule@test:
 		RequiresCondition: enable-test-ai
 		SquadSize: 10
-		RushAttackScanRadius: 30000000 ##Rush squad has some bug will affect normal attack squad
+		RushInterval: 30000000 ##Rush squad has some bug will affect normal attack squad
+		MinimumAttackForceDelay: 1000
 		ProtectUnitScanRadius: 25
+		DangerScanRadius: 18
+		AttackForceInterval: 59
+		AssignRolesInterval: 73
+		IdleScanRadius: 15
+		AttackScanRadius: 14
+		ProtectionScanRadius: 15
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, ymcv, gadock, mine, engineer, mengineer
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, gatsub, bsub
 		ConstructionYardTypes: gacnst, nacnst, yacnst
@@ -812,21 +819,23 @@ Player:
 			htnk: 100
 			mtnk: 100
 			ltnk: 100
-			htk: 4
-			htkfull-dron: 8
-			htkfull-normal: 8
+			htk: 1
+			htk-dron: 1
+			htk-squad-1: 1
 			fv: 1
-			fv-e1: 10
-			fv-ggi: 5
-			fv-gren: 5
-			bfrtfull-normal: 10
-			bfrtfull-adv: 5
+			fv-e1: 1
+			fv-ggi: 1
+			fv-gren: 1
+			fv-cleg: 1
+			bfrt-squad-1: 5
+			bfrt-squad-2: 5
+			bfrt-squad-3: 1
 			ytnk: 40
 			dron: 2
 			robo: 2
 			tric: 10
 			v3: 10
-			howi: 10
+			hwtz: 10
 			kamaz: 10
 			sref: 20
 			mgtk: 20
@@ -849,9 +858,11 @@ Player:
 			magnedisk: 1
 			zep: 1
 			kite: 1
-			shadfull_normal: 1
-			shadfull_T2: 1
-			shadfull_T3: 1
+			shad-squad-1: 1
+			shad-squad-2: 1
+			shad-squad-3: 1
+			exps: 1
+			expn: 1
 			commanders_power.gun_turret: 1
 			commanders_power.harrier_training: 1
 			commanders_power.inf_training: 1
@@ -911,21 +922,23 @@ Player:
 			htnk: 100
 			mtnk: 100
 			ltnk: 100
-			htk: 4
-			htkfull-dron: 8
-			htkfull-normal: 8
+			htk: 1
+			htk-dron: 1
+			htk-squad-1: 1
 			fv: 1
-			fv-e1: 10
-			fv-ggi: 5
-			fv-gren: 5
-			bfrtfull-normal: 10
-			bfrtfull-adv: 5
+			fv-e1: 1
+			fv-ggi: 1
+			fv-gren: 1
+			fv-cleg: 1
+			bfrt-squad-1: 5
+			bfrt-squad-2: 5
+			bfrt-squad-3: 1
 			ytnk: 40
 			dron: 2
 			robo: 2
 			tric: 10
 			v3: 10
-			howi: 10
+			hwtz: 10
 			kamaz: 10
 			sref: 20
 			mgtk: 20
@@ -948,9 +961,11 @@ Player:
 			magnedisk: 1
 			zep: 1
 			kite: 1
-			shadfull_normal: 1
-			shadfull_T2: 1
-			shadfull_T3: 1
+			shad-squad-1: 1
+			shad-squad-2: 1
+			shad-squad-3: 1
+			exps: 1
+			expn: 1
 			commanders_power.gun_turret: 1
 			commanders_power.harrier_training: 1
 			commanders_power.inf_training: 1
@@ -972,6 +987,9 @@ Player:
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
 		UnitLimits:
+			cmin: 6
+			harv: 6
+			gmin: 6
 			dog: 4
 			engineer: 1
 			dron: 1
