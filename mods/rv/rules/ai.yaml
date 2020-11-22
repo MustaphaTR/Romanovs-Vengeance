@@ -756,9 +756,9 @@ Player:
 	GrantConditionOnPrerequisite@megawealth:
 		Condition: megawealth
 		Prerequisites: global-megawealth
-	HarvesterBotModule@test:
-		RequiresCondition: enable-test-ai && !megawealth
-		HarvesterTypes: cmin, harv, gmin
+	####HarvesterBotModule@test: Drop it due to performance
+	##	RequiresCondition: enable-test-ai && !megawealth
+	##	HarvesterTypes: cmin, harv, gmin
 	BuildingRepairBotModule@test:
 		RequiresCondition: enable-test-ai
 	AutoDeployManager@test:
@@ -805,9 +805,9 @@ Player:
 			yuri: 1
 			yuripsi: 1
 			yurix: 2
-			cmin: 20
-			harv: 20
-			gmin: 20
+			cmin: 100
+			harv: 100
+			gmin: 100
 			slav: 40
 			htnk: 100
 			mtnk: 100
@@ -874,6 +874,10 @@ Player:
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
+		UnitLimits:
+			cmin: 6
+			harv: 6
+			gmin: 6
 	UnitBuilderBotModule@test-megawealth:
 		RequiresCondition: enable-test-ai && megawealth
 		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Vietnam, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
