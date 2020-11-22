@@ -1,0 +1,120 @@
+### This file defines units can be only built by AI player, which
+### 1. will use diffirent set of logic compared to orignal units used by AI
+### 2. are pre-loaded transprot units with unload logic.
+
+fv-e1:
+	Inherits: fv
+	Buildable:
+		BuildPaletteOrder: 31
+		Prerequisites: ~prerequisite.aiplayer, ~techlevel.1
+	ProductionCostMultiplier:
+		Multiplier: 125
+	Cargo:
+		InitialUnits: e1
+
+fv-ggi:
+	Inherits: fv-e1
+	Buildable:
+		BuildPaletteOrder: 32
+		Prerequisites: ~prerequisite.aiplayer, ~techlevel.1
+	ProductionCostMultiplier:
+		Multiplier: 150
+	Cargo:
+		InitialUnits: ggi
+
+fv-gren:
+	Inherits: fv-e1
+	Buildable:
+		BuildPaletteOrder: 33
+		Prerequisites: ~prerequisite.aiplayer, gaairc, ~techlevel.2
+	ProductionCostMultiplier@1:
+		Multiplier: 150
+	Cargo:
+		InitialUnits: gren
+
+bfrtfull-normal:
+	Inherits: bfrt
+	Selectable:
+		Class: bfrt
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.4
+	Cargo:
+		InitialUnits: ggi, ggi, ggi, gren, gren
+	ProductionCostMultiplier@1:
+		Multiplier: 150
+	RenderSprites:
+		Image: bfrt
+	RenderVoxels:
+		Image: bfrt
+
+bfrtfull-adv:
+	Inherits: bfrtfull-normal
+	Cargo:
+		InitialUnits: e1, cleg, ggi, ggi, cleg
+	ProductionCostMultiplier@1:
+		Multiplier: 200
+
+^AItransportControl:
+	Inherits@AI: ^AImicroManagable
+	Cargo:
+		LoadedCondition: loaded
+	AutoDeployer@AI:
+		RequiresCondition: AImicroManage && loaded
+		DeployChance: 100
+		DeployTicks: 50
+		UndeployTicks: 200
+
+htkfull-dron:
+	Inherits: htk
+	Inherits@AI: ^AItransportControl
+	Selectable:
+		Class: htk
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer
+	ProductionCostMultiplier@1:
+		Multiplier: 150
+	Cargo:
+		InitialUnits: dron
+	RenderSprites:
+		Image: htk
+	RenderVoxels:
+		Image: htk
+
+htkfull-normal:
+	Inherits: htkfull-dron
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer
+	Cargo:
+		InitialUnits: e2, e2, flakt, flakt, shk
+	ProductionCostMultiplier@1:
+		Multiplier: 250
+
+shadfull_normal:
+	Inherits: shad
+	Inherits@AI: ^AItransportControl
+	Selectable:
+		Class: shad
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer, ~techlevel.1, ~!LoadedExists1
+	Cargo:
+		InitialUnits: ggi, dog, ggi, dog, e1, e1, e1
+	ProductionCostMultiplier@1:
+		Multiplier: 125
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: loaded
+		Prerequisite: LoadedExists1
+	RenderSprites:
+		Image: shad
+	RenderVoxels:
+		Image: shad
+
+shadfull_T2:
+	Inherits: shadfull_normal
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer, gaairc, ~techlevel.2, ~!LoadedExists2
+	ProductionCostMultiplier@1:
+		Multiplier: 150
+	Cargo:
+		InitialUnits: e1, ggi, ggi, gren, gren, dog, dog
+	ProvidesPrerequisite@AIbuildinglimit:
+		Prerequisite: LoadedExists2
