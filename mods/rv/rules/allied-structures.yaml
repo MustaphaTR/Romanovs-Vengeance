@@ -1151,6 +1151,15 @@ gaorep:
 	Voiced:
 		VoiceSet: OrePurifierVoice
 		Volume: 0.8
+	### AI cash cheat
+	GrantConditionOnBotOwner@test:
+		Condition: enable-test-ai
+		Bots: test
+	CashTrickler@AICashDevour:
+		Interval: 500
+		Amount: 375
+		ShowTicks: false
+		RequiresCondition: enable-test-ai
 
 gaspysat:
 	Inherits: ^BaseBuilding

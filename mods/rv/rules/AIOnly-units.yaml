@@ -118,3 +118,12 @@ shadfull_T2:
 		InitialUnits: e1, ggi, ggi, gren, gren, dog, dog
 	ProvidesPrerequisite@AIbuildinglimit:
 		Prerequisite: LoadedExists2
+
+shadfull_T3:
+	Inherits: shadfull_normal
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.2, ~!LoadedExists3, ~!tany
+	Cargo:
+		InitialUnits: e1, ggi, ggi, tany, dog, dog
+	ProvidesPrerequisite@AIbuildinglimit:
+		Prerequisite: LoadedExists3
