@@ -278,7 +278,18 @@ nahand:
 		CancelledAudio: Cancelled
 	ProductionQueue@Baku:
 		Type: Infantry.Baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: transcaucus, turkmen, russianfed, serbia
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Tuva:
+		Type: Infantry.Baku
+		Factions: tuva
 		Group: Infantry
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
@@ -295,6 +306,8 @@ nahand:
 		ProductionType: Infantry.Iraq
 	ProductionBar@Baku:
 		ProductionType: Infantry.Baku
+	ProductionBar@Tuva:
+		ProductionType: Infantry.Tuva
 	RallyPoint:
 		Path: 3,3
 	ProvidesPrerequisite@nahand:

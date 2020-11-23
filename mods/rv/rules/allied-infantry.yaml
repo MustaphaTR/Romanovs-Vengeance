@@ -5,10 +5,10 @@ engineer:
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku
+		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Captures enemy structures.\n  Unarmed
+		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n  Unarmed
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -107,7 +107,7 @@ dog:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku
+		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
 		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -1391,7 +1391,7 @@ medi:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Baku
+		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~prerequisite.medic, ~techlevel.1
 		BuildPaletteOrder: 50
 		Description: Heals infantry.\n  Unarmed

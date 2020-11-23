@@ -664,7 +664,7 @@ Player:
 		SquadSize: 5
 		RushAttackScanRadius: 30
 		ProtectUnitScanRadius: 25
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, ymcv, gadock, mine, engineer
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, ymcv, gadock, mine, engineer, mengineer
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, gatsub, bsub
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 	McvManagerBotModule@test:
@@ -674,7 +674,7 @@ Player:
 		McvFactoryTypes: gaweap, naweap, yaweap
 	UnitBuilderBotModule@test:
 		RequiresCondition: enable-test-ai && !megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Vietnam, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Vietnam, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -760,7 +760,7 @@ Player:
 			commanders_power.orbital_drop: 1
 	UnitBuilderBotModule@test-megawealth:
 		RequiresCondition: enable-test-ai && megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Vietnam, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.Korea, Aircraft.Soviets, Aircraft.Vietnam, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -851,7 +851,7 @@ Player:
 			magnedisk: 1
 	CaptureManagerBotASModule:
 		RequiresCondition: enable-test-ai
-		CapturingActorTypes: engineer
+		CapturingActorTypes: engineer, mengineer
 		PriorityCaptureChance: 100
 		PriorityCapturableActorTypes: caoild, caairp, capowr, caoutp, cahosp, cathosp, camach, caslab, capsyb, camisl, cacomm, caarmr, carpad
 		CapturableActorTypes: gacnst, nacnst, yacnst, gaweap, naweap, yaweap, gaweab, naweab, yaweab, gaweac, naweac, yaweac, gawead, nawead, yawead, gatech, gatecb, natech, yatech, yatecb

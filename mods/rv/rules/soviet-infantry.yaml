@@ -7,7 +7,7 @@ e2:
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Cheap rifle infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft.
@@ -91,7 +91,7 @@ flakt:
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 60
 		Description: Anti-Air/Anti-Infantry unit.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles.
@@ -231,7 +231,7 @@ shk:
 	AttackMove:
 		AttackMoveCondition: attack-move
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Special armored unit using electricity.\n  Strong vs Infantry, Tanks\n  Weak vs Aircraft.\nSpecial ability: Charge tesla coils
@@ -533,7 +533,7 @@ ivan:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 80
 		Prerequisites: naradr, ~techlevel.3
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
@@ -1045,7 +1045,7 @@ mech:
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~prerequisite.mechanic, repairpad, ~techlevel.2
 		BuildPaletteOrder: 60
 		Description: Repairs friendly vehicles.\n  Unarmed
@@ -1103,7 +1103,7 @@ hjck:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		Prerequisites: naradr, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: Steals enemy vehicles.\n  Unarmed
@@ -1169,7 +1169,7 @@ itrp:
 	Tooltip@NoRow:
 		Name: Iron Trooper
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 140
 		Prerequisites: natech, ~techlevel.4
 		Description: High-tech soldier capable of making friendly vehicles invulnerabile and\ndamage enemy infantry.\n Strong vs Infantry\n Weak vs Vehicles, Aircraft\n\nCannot be eaten by Attack Dogs.
@@ -1363,16 +1363,59 @@ shkc:
 		AttackSequences:
 			secondary: shoot
 
+# Baku Pact Infantry
+mengineer:
+	Inherits: engineer
+	Buildable:
+		Queue: Infantry.Tuva
+		BuildPaletteOrder: 35
+		Description: Fast unit capable of capturing enemy structures, repairing damaged buildings and bridges.\nDisarms explosives.\n  Unarmed
+		BuildDuration: 300
+	Valued:
+		Cost: 600
+	DeliversCash:
+		Payload: 300
+		PlayerExperience: 30
+	Tooltip:
+		Name: Motorised Engineer
+	Tooltip@NoRow:
+		Name: Motorised Engineer
+	Health:
+		HP: 100
+	Mobile:
+		Speed: 105
+	Captures@TIMED:
+		CaptureDelay: 200
+	Explodes:
+		Weapon: InfantryExplode
+		EmptyWeapon: InfantryExplode
+	-WithInfantryBody:
+	WithFacingSpriteBody:
+	-TakeCover:
+	-SpawnActorOnDeath@flames:
+	-SpawnSmokeParticleOnDeath@virus:
+	-WithDeathAnimation@effect:
+	-WithDeathAnimation@normal:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
+	-DeathSounds@zapped:
+	-DeathSounds@radiation:
+	-DeathSounds@psycrush:
+	-DeathSounds@virus:
+	RenderSprites:
+		Image: mengineer
+		-FactionImages:
+
 sspy:
 	Inherits: spy
 	Buildable:
-		Queue: Infantry.Baku
+		Queue: Infantry.Baku, Infantry.Tuva
 		Prerequisites: naradr, ~techlevel.3
 
 ssnipe:
 	Inherits: snipe
 	Buildable:
-		Queue: Infantry.Baku
+		Queue: Infantry.Baku, Infantry.Tuva
 		Prerequisites: naradr, ~techlevel.3
 	RenderSprites:
 		Image: snipe
@@ -1383,7 +1426,7 @@ vlkv:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
-		Queue: Infantry.Baku
+		Queue: Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 190
 		Prerequisites: natech, ~techlevel.4
 		BuildLimit: 1
@@ -1490,7 +1533,7 @@ chit:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
-		Queue: Infantry.Baku
+		Queue: Infantry.Baku, Infantry.Tuva
 		Prerequisites: natech, ~techlevel.4
 		BuildPaletteOrder: 200
 		BuildLimit: 1
