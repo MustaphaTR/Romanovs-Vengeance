@@ -32,7 +32,18 @@ fv-gren:
 	Cargo:
 		InitialUnits: gren
 
-bfrtfull-normal:
+fv-cleg:
+	Inherits: fv-e1
+	Buildable:
+		BuildPaletteOrder: 33
+		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.4
+	ProductionCostMultiplier@1:
+		Multiplier: 150
+	Cargo:
+		InitialUnits: cleg
+	
+
+bfrt-squad-1:
 	Inherits: bfrt
 	Selectable:
 		Class: bfrt
@@ -47,24 +58,33 @@ bfrtfull-normal:
 	RenderVoxels:
 		Image: bfrt
 
-bfrtfull-adv:
-	Inherits: bfrtfull-normal
+bfrt-squad-2:
+	Inherits: bfrt-squad-1
 	Cargo:
-		InitialUnits: e1, cleg, ggi, ggi, cleg
+		InitialUnits: cleg, cleg, ggi, ggi, cleg
+	ProductionCostMultiplier@1:
+		Multiplier: 200
+
+bfrt-squad-3:
+	Inherits: bfrt-squad-1
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.4, ~!tany
+	Cargo:
+		InitialUnits: ggi, ggi, ggi, ggi, tany
 	ProductionCostMultiplier@1:
 		Multiplier: 200
 
 ^AItransportControl:
-	Inherits@AI: ^AImicroManagable
+	Inherits@AI: ^AIMicroManagable
 	Cargo:
 		LoadedCondition: loaded
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && loaded
+		RequiresCondition: ai-control && loaded
 		DeployChance: 100
 		DeployTicks: 50
 		UndeployTicks: 200
 
-htkfull-dron:
+htk-dron:
 	Inherits: htk
 	Inherits@AI: ^AItransportControl
 	Selectable:
@@ -80,8 +100,8 @@ htkfull-dron:
 	RenderVoxels:
 		Image: htk
 
-htkfull-normal:
-	Inherits: htkfull-dron
+htk-squad-1:
+	Inherits: htk-dron
 	Buildable:
 		Prerequisites: ~prerequisite.aiplayer
 	Cargo:
@@ -89,7 +109,7 @@ htkfull-normal:
 	ProductionCostMultiplier@1:
 		Multiplier: 300
 
-shadfull_normal:
+shad-squad-1:
 	Inherits: shad
 	Inherits@AI: ^AItransportControl
 	Selectable:
@@ -108,19 +128,19 @@ shadfull_normal:
 	RenderVoxels:
 		Image: shad
 
-shadfull_T2:
-	Inherits: shadfull_normal
+shad-squad-2:
+	Inherits: shad-squad-1
 	Buildable:
 		Prerequisites: ~prerequisite.aiplayer, gaairc, ~techlevel.2, ~!LoadedExists2
 	ProductionCostMultiplier@1:
 		Multiplier: 150
 	Cargo:
-		InitialUnits: e1, ggi, ggi, gren, gren, dog, dog
+		InitialUnits: e1, ggi, ggi, gren, gren, e1, e1
 	ProvidesPrerequisite@AIbuildinglimit:
 		Prerequisite: LoadedExists2
 
-shadfull_T3:
-	Inherits: shadfull_normal
+shad-squad-3:
+	Inherits: shad-squad-1
 	Buildable:
 		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.2, ~!LoadedExists3, ~!tany
 	Cargo:

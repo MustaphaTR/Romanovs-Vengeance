@@ -246,7 +246,7 @@ e1:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
-	Inherits@AI: ^AImicroManagable
+	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		Prerequisites: ~techlevel.1
@@ -380,7 +380,7 @@ e1:
 		ArmamentNames: deployed
 	RejectsOrders@deployment:
 		Reject: AttackMove, AssaultMove
-		RequiresCondition: !AImicroManage && deployed && !chaos
+		RequiresCondition: !ai-control && deployed && !chaos
 	TakeCover:
 		RequiresCondition: undeployed
 	Voiced:
@@ -390,7 +390,7 @@ e1:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && !deployed
+		RequiresCondition: ai-control && !deployed
 		DeployTrigger: Attack
 		DeployChance: 100
 		DeployTicks: 5
@@ -404,7 +404,7 @@ ggi:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
-	Inherits@AI: ^AImicroManagable
+	Inherits@AI: ^AIMicroManagable
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && undeployed
 	AutoTargetPriority@ATTACKANYTHING:
@@ -543,7 +543,7 @@ ggi:
 		RequiresCondition: rank-elite
 	Armament@AIDummyAiming: ## Hack: Make AI GGI deploy to attack air
 		PauseOnCondition: chronodisable
-		RequiresCondition: AImicroManage && !deployed
+		RequiresCondition: ai-control && !deployed
 		Weapon: AirDummyAim
 	AmmoPool:
 		Ammo: 1
@@ -607,7 +607,7 @@ ggi:
 		ArmamentNames: deployed
 	RejectsOrders@deployment:
 		Reject: AttackMove, AssaultMove
-		RequiresCondition: !AImicroManage && deployed && !chaos
+		RequiresCondition: !ai-control && deployed && !chaos
 	TakeCover:
 		RequiresCondition: undeployed
 	Voiced:
@@ -617,7 +617,7 @@ ggi:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	AutoDeployer@AI:
-		RequiresCondition: AImicroManage && !deployed
+		RequiresCondition: ai-control && !deployed
 		DeployChance: 100
 		DeployTrigger: Attack
 		DeployTicks: 5

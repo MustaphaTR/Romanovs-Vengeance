@@ -4,11 +4,12 @@
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Vehicle
 		BuildPaletteOrder: 50
 		Description: Deploys into a Construction Yard.
-		Prerequisites: ~techlevel.2
+		Prerequisites: ~techlevel.2, ~!AllowOneOnly
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Valued:
@@ -76,6 +77,9 @@
 		SoundFiles: vmcvstaa.wav
 		Volume: 0.4
 		RequiresCondition: moving
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: AllowOneOnly
 
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
