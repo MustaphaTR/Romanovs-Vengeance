@@ -1819,6 +1819,10 @@ gagun:
 
 gaexpn:
 	Inherits: ^ExpansionNode
+	Inherits@AI: ^AIMicroManagable
+	ProvidesPrerequisite@AITowerRush:
+		RequiresCondition: ai-control
+		Prerequisite: AITowerRush
 
 gapilb:
 	Inherits: gapile
