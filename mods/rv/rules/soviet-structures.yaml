@@ -1828,6 +1828,10 @@ naexpn:
 	Inherits: ^ExpansionNode
 	# Transforms:
 	#	IntoActor: exps
+	Inherits@AI: ^AIMicroManagable
+	ProvidesPrerequisite@AITowerRush:
+		RequiresCondition: ai-control
+		Prerequisite: AITowerRush
 	RenderSprites:
 		Image: gaexpn
 

@@ -147,3 +147,83 @@ shad-squad-3:
 		InitialUnits: e1, ggi, ggi, tany, dog, dog
 	ProvidesPrerequisite@AIbuildinglimit:
 		Prerequisite: LoadedExists3
+
+nalasr-tr:
+	Inherits: nalasr
+	Buildable:
+		Prerequisites: nahand, ~techlevel.1, ~AITowerRush
+	ProductionCostMultiplier@1:
+		Multiplier: 50
+	RenderVoxels:
+		Image: nalasr
+	RenderSprites:
+		Image: nalasr
+
+tesla-tr:
+	Inherits: tesla
+	Buildable:
+		Prerequisites: naradr, ~techlevel.3 , ~AITowerRush
+	ProductionCostMultiplier@1:
+		Multiplier: 50
+	RenderSprites:
+		Image: tesla
+
+naflak-tr:
+	Inherits: naflak
+	Buildable:
+		Prerequisites: naradr, ~techlevel.2, ~AITowerRush
+	ProductionCostMultiplier@1:
+		Multiplier: 50
+	RenderVoxels:
+		Image: naflak
+	RenderSprites:
+		Image: naflak
+
+gapill-tr:
+	Inherits: naflak
+	Buildable:
+		Prerequisites: gapile, ~techlevel.1, ~AITowerRush
+	ProductionCostMultiplier@1:
+		Multiplier: 50
+	RenderVoxels:
+		Image: naflak
+	RenderSprites:
+		Image: naflak
+
+nasam-tr:
+	Inherits: nasam
+	Buildable:
+		Prerequisites: gaairc, ~techlevel.2, ~AITowerRush
+	ProductionCostMultiplier@1:
+		Multiplier: 50
+	RenderVoxels:
+		Image: nasam
+	RenderSprites:
+		Image: nasam
+
+atesla-tr:
+	Inherits: atesla
+	Buildable:
+		Prerequisites: gaairc, ~techlevel.3, ~AITowerRush
+	ProductionCostMultiplier@1:
+		Multiplier: 50
+	RenderSprites:
+		Image: atesla
+
+gagun-tr:
+	Inherits: gagun
+	Buildable:
+		Prerequisites: gapile, ~prerequisite.gun_turret, ~techlevel.1, ~AITowerRush
+	ProductionCostMultiplier@1:
+		Multiplier: 50
+	RenderSprites:
+		Image: gagun
+
+gamgun-tr:
+	Inherits: gamgun
+	Buildable:
+		Prerequisites: gaairc, ~techlevel.3, ~AITowerRush
+	ProductionCostMultiplier@1:
+		Multiplier: 50
+	RenderSprites:
+		Image: gamgun
