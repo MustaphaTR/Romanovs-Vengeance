@@ -295,6 +295,7 @@ orca:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@AI: ^AIMicroManagable
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
@@ -424,6 +425,9 @@ orca:
 		UsePlayerColor: false
 		TrailWidth: 96
 		TrailLength: 7
+	ProductionCostMultiplier@AI:
+		Prerequisites: prerequisite.aiplayer
+		Multiplier: 40
 
 orcahusk:
 	Inherits: ^PlaneHusk
@@ -1800,6 +1804,7 @@ fortress:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@AI: ^AIMicroManagable
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
@@ -1944,6 +1949,9 @@ fortress:
 		UsePlayerColor: false
 		TrailWidth: 96
 		TrailLength: 7
+	ProductionCostMultiplier@AI:
+		Prerequisites: prerequisite.aiplayer
+		Multiplier: 20
 
 fortresshusk:
 	Inherits: ^PlaneHusk
