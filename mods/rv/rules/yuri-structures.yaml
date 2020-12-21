@@ -628,11 +628,41 @@ yadome:
 	#	Types: SatelliteScan
 	#	Range: 10c0
 	SupportPowerChargeBar:
+	ParatroopersPower@psiops:
+		OrderName: YurigradPsiOps
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: radar.psicorps
+		Icons:
+			1: psiops
+		ChargeInterval: 6000
+		Descriptions:
+			1: Psi-Ops Drop
+		LongDescs:
+			1: A Cargo Plane drops 3 Yuri Clones\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
+		DropItems:
+			1: yuripsi, yuripsi, yuripsi
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		UnitTypes:
+			1: pcplane
+		CameraActor: camera
+		DisplayBeacon: True
+		BeaconPosters:
+			1: yclnicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
 	AirstrikePower@chaosgas:
 		OrderName: YurigradChaosDrop
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
-			1: radar.psicorps
+			1: disabled
 		Icons:
 			1: xxicon
 		ChargeInterval: 4500
