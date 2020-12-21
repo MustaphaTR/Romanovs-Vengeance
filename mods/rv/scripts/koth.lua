@@ -17,7 +17,7 @@ local players = {}
 local in_play = false
 
 EachKotHInterval = function()
-	local buffer = "\n\nPsychic Beacon is offline."
+	KotHText = "\n\nPsychic Beacon is offline."
 
 	if beacon_owner ~= beacon.Owner then
 		timer = target_time
@@ -28,24 +28,50 @@ EachKotHInterval = function()
 	if beacon_owner ~= neutral then
 		timer = timer - 1
 
-		buffer = "\n\nPsychic Beacon is held by: " .. beacon_owner.Name .. "\nIt'll activate in: " .. Utils.FormatTime(timer)
+		KotHText = "\n\nPsychic Beacon is held by: " .. beacon_owner.Name .. "\nIt'll activate in: " .. Utils.FormatTime(timer)
 	end
 
 	for i,player in pairs(players) do
-		KotHText = buffer
 		if player.IsLocalPlayer then
 			UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText, TextColors[player.InternalName])
 		end
 	end
 
 	if timer <= 0 then
+		Lighting.Red = Lighting.Red * 2
+
+		KotHText = "\n\nPsychic Beacon is activated by " .. beacon_owner.Name
 		for i,player in pairs(players) do
-			if player.object == beacon_owner then
-				player.object.MarkCompletedObjective(player.objective)
-			else
-				player.object.MarkFailedObjective(player.objective)
+			local actors = player.object.GetActors()
+			Utils.Do(actors, function(actor)
+				if actor.Type ~= "player" then
+					actor.Owner = beacon_owner
+				end
+			end)
+
+			if player.IsLocalPlayer then
+				UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText, TextColors[player.InternalName])
 			end
 		end
+
+		local neutrals = neutral.GetActors()
+		Utils.Do(neutrals, function(actor)
+			if actor.Type ~= "player" then
+				actor.Owner = beacon_owner
+			end
+		end)
+
+		beacon.GrantCondition("activated")
+
+		Trigger.AfterDelay(DateTime.Seconds(5), function()
+			for i,player in pairs(players) do
+				if player.object == beacon_owner then
+					player.object.MarkCompletedObjective(player.objective)
+				else
+					player.object.MarkFailedObjective(player.objective)
+				end
+			end
+		end)
 
 		in_play = false
 	end
