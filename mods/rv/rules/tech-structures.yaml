@@ -640,6 +640,51 @@ capsyb:
 	IsometricSelectable:
 		DecorationHeight: 120
 
+capsyb.koth:
+	Inherits: ^TechBuilding
+	Inherits@shape: ^2x2Shape
+	Tooltip:
+		Name: Psychic Beacon
+	Tooltip@NoRow:
+		Name: Psychic Beacon
+	TooltipDescription:
+		Description: Capture and hold for 5 minutes to win.
+	Armor:
+		Type: Wood
+	Health:
+		HP: 750
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithIdleOverlay@spin:
+		Sequence: idle-spin
+		PauseOnCondition: !enabled
+	ProvidesPrerequisite@buildingname:
+	AmbientSound@Ambient:
+		SoundFiles: gpsyampa.wav, gpsyampb.wav, gpsyampc.wav
+		Volume: 0.5
+		RequiresCondition: enabled
+	GrantConditionOnPrerequisite@koth:
+		Condition: koth
+		Prerequisites: global-koth
+	-Targetable:
+	-Targetable@ChronoDisable:
+	DamageMultiplier@koth:
+		Modifier: 0
+	KillsSelf:
+		RemoveInstead: true
+		RequiresCondition: !koth
+	-GivesBuildableArea:
+	-BaseProvider:
+	-GrantConditionOnPrerequisite@BUILD:
+	-Demolishable:
+	RenderSprites:
+		Image: capsyb
+	GpsDotAS:
+		Sequence: Psi
+	IsometricSelectable:
+		DecorationHeight: 120
+
 camisl:
 	Inherits: ^TechBuilding
 	Inherits@EMPULSE: ^DisabledByEMP

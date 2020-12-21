@@ -7,9 +7,6 @@
    information, see COPYING.
 ]]
 
-CommandersPowerText = ""
-DominationText = ""
-
 Seconds = 0
 CPModifier = Map.LobbyOption("cpmodifier")
 
@@ -89,12 +86,12 @@ TickCommandersPowers = function()
 			else
 				CommandersPowerText = "Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\n\n"
 			end
-			UserInterface.SetMissionText(CommandersPowerText .. DominationText, TextColors[player.InternalName])
+			UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText, TextColors[player.InternalName])
 		end
 
 		if localPlayerIsNull then
 			CommandersPowerText = ""
-			UserInterface.SetMissionText(CommandersPowerText .. DominationText)
+			UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText)
 		end
 
 		if Points[player.InternalName] > 0 and not PointActorExists[player.InternalName] then

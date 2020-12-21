@@ -83,20 +83,20 @@ Player:
 		Enabled: False
 		DisplayOrder: 10
 		Prerequisites: global-techbuildarea
-	LobbyPrerequisiteCheckbox@domination:
-		ID: domination
-		Label: Domination
-		Description: Control the flags on the map to win
-		Enabled: False
-		DisplayOrder: 11
-		Prerequisites: global-domination
 	LobbyPrerequisiteCheckbox@INSTANTCAPTURE:
 		ID: instantcapture
 		Label: Instant Capture
 		Description: Engineers can enter a building without waiting to capture
 		Enabled: False
-		DisplayOrder: 12
+		DisplayOrder: 11
 		Prerequisites: global-instantcapture
+	LobbyPrerequisiteCheckbox@domination:
+		ID: domination
+		Label: Domination
+		Description: Control the flags on the map to win
+		Enabled: False
+		DisplayOrder: 12
+		Prerequisites: global-domination
 	LobbyPrerequisiteCheckbox@megawealth:
 		ID: megawealth
 		Label: Megawealth
@@ -112,6 +112,13 @@ Player:
 		Visible: False # Too lazy to remove the setup for this.
 		DisplayOrder: 14
 		Prerequisites: global-showownername
+	LobbyPrerequisiteCheckbox@koth:
+		ID: koth
+		Label: King of the Hill
+		Description: Capture and hold the Psychic Beacon on the map to win
+		Enabled: False
+		DisplayOrder: 15
+		Prerequisites: global-koth
 	ProvidesRadar:
 		RequiresCondition: freeminimap
 	GrantConditionOnPrerequisite@FREEMINIMAP:

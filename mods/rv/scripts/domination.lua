@@ -73,7 +73,7 @@ EachInterval = function()
 
 		DominationText = buffer
 		if player.IsLocalPlayer then
-			UserInterface.SetMissionText(CommandersPowerText .. DominationText, TextColors[player.InternalName])
+			UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText, TextColors[player.InternalName])
 		end
 	end
 
