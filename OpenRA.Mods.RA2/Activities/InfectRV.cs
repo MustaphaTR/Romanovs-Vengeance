@@ -139,7 +139,7 @@ namespace OpenRA.Mods.RA2.Activities
 			return true;
 		}
 
-		protected override void TickInner(Actor self, Target target, bool targetIsDeadOrHiddenActor)
+		protected override void TickInner(Actor self, in Target target, bool targetIsDeadOrHiddenActor)
 		{
 			if (target.Type != TargetType.Actor || !IsValidInfection(self, target.Actor))
 			{

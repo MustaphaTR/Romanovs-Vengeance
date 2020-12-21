@@ -49,8 +49,8 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Voice string when ordered to infect an actor.")]
 		public readonly string Voice = "Action";
 
-		public readonly Stance TargetStances = Stance.Enemy | Stance.Neutral;
-		public readonly Stance ForceTargetStances = Stance.Enemy | Stance.Neutral | Stance.Ally;
+		public readonly PlayerRelationship TargetRelationships = PlayerRelationship.Enemy | PlayerRelationship.Neutral;
+		public readonly PlayerRelationship ForceTargetRelationships = PlayerRelationship.Enemy | PlayerRelationship.Neutral | PlayerRelationship.Ally;
 
 		public readonly string Cursor = "attack";
 
@@ -73,7 +73,7 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-		public Order IssueOrder(Actor self, IOrderTargeter order, Target target, bool queued)
+		public Order IssueOrder(Actor self, IOrderTargeter order, in Target target, bool queued)
 		{
 			if (order.OrderID != "Infect")
 				return null;
@@ -114,10 +114,10 @@ namespace OpenRA.Mods.RA2.Traits
 				if (modifiers.HasModifier(TargetModifiers.ForceMove))
 					return false;
 
-				var stance = self.Owner.Stances[target.Owner];
-				if (!info.TargetStances.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
+				var stance = self.Owner.RelationshipWith(target.Owner);
+				if (!info.TargetRelationships.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
 					return false;
-				if (!info.ForceTargetStances.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
+				if (!info.ForceTargetRelationships.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
 					return false;
 
 				return info.Types.Overlaps(target.GetAllTargetTypes());
@@ -125,10 +125,10 @@ namespace OpenRA.Mods.RA2.Traits
 
 			public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
 			{
-				var stance = self.Owner.Stances[target.Owner];
-				if (!info.TargetStances.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
+				var stance = self.Owner.RelationshipWith(target.Owner);
+				if (!info.TargetRelationships.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
 					return false;
-				if (!info.ForceTargetStances.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
+				if (!info.ForceTargetRelationships.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
 					return false;
 
 				return info.Types.Overlaps(target.Info.GetAllTargetTypes());

@@ -190,7 +190,7 @@ EmergencyRepair1:
 		Spread: 5c0
 		Damage: -30
 		AffectsParent: true
-		ValidStances: Neutral, Ally
+		ValidRelationships: Neutral, Ally
 		ValidTargets: Repair, Structure, Wall
 		DamageTypes: KillsDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
@@ -219,7 +219,7 @@ AmbulanceHeal:
 		Spread: 5c0
 		Falloff: 100, 0
 		Damage: -20
-		ValidStances: Neutral, Ally
+		ValidRelationships: Neutral, Ally
 		ValidTargets: Heal
 
 MindControl:
@@ -277,7 +277,7 @@ PsiWave:
 		Falloff: 100, 100
 		Damage: 250
 		ValidTargets: Infantry
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 		DamageTypes: PsychicDeath, NonTemporal
 	Warhead@2Dam: SpreadDamage
 		Spread: 3c0
@@ -285,7 +285,7 @@ PsiWave:
 		Damage: 250
 		ValidTargets: Infantry
 		InvalidTargets: ImmuneToFriendlyPsiWave
-		ValidStances: Ally
+		ValidRelationships: Ally
 		DamageTypes: PsychicDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: psi_wave
@@ -456,7 +456,7 @@ WeatherStormInit:
 		Condition: disableradar
 		Delay: 50
 		Duration: 250
-		ValidStances: Neutral, Enemy
+		ValidRelationships: Neutral, Enemy
 	Warhead@4: CreateEffect
 		Delay: 50
 		ImpactSounds: sweaintr.wav
@@ -802,14 +802,14 @@ ChaosAttack:
 	Projectile: InstantExplode
 	Warhead@1Con: GrantExternalCondition
 		ValidTargets: ChaosGasable
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 		Condition: chaos
 		Range: 3c0
 		Duration: 200
 	Warhead@2Dam: TargetDamage
 		Damage: 0
 		ValidTargets: ChaosGasable
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 	Warhead@3Eff: CreateEffect
 		Explosions: chaosgas
 
@@ -859,7 +859,7 @@ ChaosCloud:
 	Projectile: InstantExplode
 	Warhead@1Con: GrantExternalCondition
 		ValidTargets: ChaosGasable
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 		Condition: chaos
 		Range: 1c0
 		Duration: 200
@@ -875,10 +875,10 @@ DiskDrain:
 		Condition: diskdrain
 		Duration: 6
 		Range: 0c256
-		ValidStances: Neutral, Enemy
+		ValidRelationships: Neutral, Enemy
 	Warhead@2Dam: TargetDamage
 		ValidTargets: DiskDrain
-		ValidStances: Neutral, Enemy
+		ValidRelationships: Neutral, Enemy
 
 DiskSteal:
 	ReloadDelay: 5
@@ -890,10 +890,10 @@ DiskSteal:
 	Warhead@1Ste: StealResource
 		Cash: 10
 		ValidTargets: DiskSteal
-		ValidStances: Neutral, Enemy
+		ValidRelationships: Neutral, Enemy
 	Warhead@2Dam: TargetDamage
 		ValidTargets: DiskSteal
-		ValidStances: Neutral, Enemy
+		ValidRelationships: Neutral, Enemy
 
 MagneBeamSpawner:
 	ReloadDelay: 5
@@ -958,7 +958,7 @@ MagneBeamFreeze1:
 		Condition: magneslow
 		Duration: 1
 		Range: 1c0
-		ValidStances: Neutral, Enemy
+		ValidRelationships: Neutral, Enemy
 		ValidTargets: MagneFreezable
 
 MagneBeamFreeze2:

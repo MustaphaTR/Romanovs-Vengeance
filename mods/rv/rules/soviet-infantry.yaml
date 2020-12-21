@@ -227,7 +227,7 @@ shk:
 	AutoTargetPriority@TESLAAMOVE:
 		RequiresCondition: assault-move || attack-move
 		ValidTargets: TeslaBoost
-		ValidStances: Enemy
+		ValidRelationships: Enemy
 	AttackMove:
 		AttackMoveCondition: attack-move
 	Buildable:
@@ -306,8 +306,8 @@ shk:
 		Name: secondary
 		Weapon: AssaultBolt
 		LocalOffset: 320,128,1024
-		TargetStances: Ally
-		ForceTargetStances: None
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
 		Cursor: ability
 		OutsideRangeCursor: ability
 		PauseOnCondition: chronodisable
@@ -1077,8 +1077,8 @@ mech:
 		Weapon: MechRepair
 		Cursor: goldwrench
 		OutsideRangeCursor: goldwrench
-		TargetStances: Ally
-		ForceTargetStances: None
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
 	AttackFrontal:
 		Voice: Action
 		FacingTolerance: 2
@@ -1212,8 +1212,8 @@ itrp:
 		PauseOnCondition: chronodisable
 		Cursor: iron-curtain
 		OutsideRangeCursor: iron-curtain
-		TargetStances: Ally
-		ForceTargetStances: Ally, Neutral, Enemy
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally, Neutral, Enemy
 		RequiresCondition: !rank-elite
 	Armament@ap:
 		Weapon: CurtainRifleAP
@@ -1226,8 +1226,8 @@ itrp:
 		PauseOnCondition: chronodisable
 		Cursor: iron-curtain
 		OutsideRangeCursor: iron-curtain
-		TargetStances: Ally
-		ForceTargetStances: Ally, Neutral, Enemy
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally, Neutral, Enemy
 		RequiresCondition: rank-elite
 	Armament@elite-ap:
 		Weapon: CurtainRifleAPE
@@ -1240,8 +1240,8 @@ itrp:
 		PauseOnCondition: chronodisable
 		Cursor: iron-curtain
 		OutsideRangeCursor: iron-curtain
-		TargetStances: Ally
-		ForceTargetStances: Ally, Neutral, Enemy
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally, Neutral, Enemy
 		RequiresCondition: !rank-elite
 	Armament@opentopped-ap:
 		Name: opentopped
@@ -1254,8 +1254,8 @@ itrp:
 		PauseOnCondition: chronodisable
 		Cursor: iron-curtain
 		OutsideRangeCursor: iron-curtain
-		TargetStances: Ally
-		ForceTargetStances: Ally, Neutral, Enemy
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally, Neutral, Enemy
 		RequiresCondition: rank-elite
 	Armament@elite-opentopped-ap:
 		Name: opentopped
@@ -1268,8 +1268,8 @@ itrp:
 		PauseOnCondition: chronodisable
 		Cursor: iron-curtain
 		OutsideRangeCursor: iron-curtain
-		TargetStances: Ally
-		ForceTargetStances: Ally, Neutral, Enemy
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally, Neutral, Enemy
 		RequiresCondition: !rank-elite
 	Armament@garrisoned-ap:
 		Name: garrisoned
@@ -1282,8 +1282,8 @@ itrp:
 		PauseOnCondition: chronodisable
 		Cursor: iron-curtain
 		OutsideRangeCursor: iron-curtain
-		TargetStances: Ally
-		ForceTargetStances: Ally, Neutral, Enemy
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally, Neutral, Enemy
 		RequiresCondition: rank-elite
 	Armament@elite-garrisoned-ap:
 		Name: garrisoned
@@ -1293,7 +1293,7 @@ itrp:
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Infantry
-		ValidStances: Enemy
+		ValidRelationships: Enemy
 	AttackMove:
 		Voice: Attack
 	AttackFrontal:

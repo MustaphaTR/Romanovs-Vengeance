@@ -85,7 +85,7 @@ namespace OpenRA.Mods.RA2.Warheads
 			}
 		}
 
-		public override void DoImpact(Target target, WarheadArgs args)
+		public override void DoImpact(in Target target, WarheadArgs args)
 		{
 			var firedBy = args.SourceActor;
 			if (!target.IsValidFor(firedBy))
@@ -151,6 +151,8 @@ namespace OpenRA.Mods.RA2.Warheads
 					return;
 				}
 
+				// Lambdas can't use 'in' variables, so capture a copy for later
+				var delayedTarget = target;
 				firedBy.World.AddFrameEndTask(w =>
                 {
                     var unit = firedBy.World.CreateActor(false, a.ToLowerInvariant(), td);
@@ -167,7 +169,7 @@ namespace OpenRA.Mods.RA2.Warheads
 
                             var pos = unit.CenterPosition;
                             if (!ForceGround)
-                                pos += new WVec(WDist.Zero, WDist.Zero, firedBy.World.Map.DistanceAboveTerrain(target.CenterPosition));
+                                pos += new WVec(WDist.Zero, WDist.Zero, firedBy.World.Map.DistanceAboveTerrain(delayedTarget.CenterPosition));
 
                             positionable.SetVisualPosition(unit, pos);
                             w.Add(unit);
@@ -195,7 +197,7 @@ namespace OpenRA.Mods.RA2.Warheads
                     {
                         unit.Dispose();
 
-                        weapon.Impact(target, args);
+                        weapon.Impact(delayedTarget, args);
                     }
 				});
 			}

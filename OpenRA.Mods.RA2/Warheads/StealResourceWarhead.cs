@@ -28,7 +28,7 @@ namespace OpenRA.Mods.RA2.Warheads
 		[Desc("Whether to show the cash tick indicators rising from the actor.")]
 		public readonly bool ShowTicks = true;
 
-		public override void DoImpact(Target target, WarheadArgs args)
+		public override void DoImpact(in Target target, WarheadArgs args)
 		{
 			if (target.Actor == null)
 				return;
@@ -43,7 +43,11 @@ namespace OpenRA.Mods.RA2.Warheads
 			selfResources.GiveCash(stolen);
 
 			if (ShowTicks)
-				firedBy.World.AddFrameEndTask(w => w.Add(new FloatingText(target.Actor.CenterPosition, firedBy.Owner.Color, FloatingText.FormatCashTick(stolen), 30)));
+			{
+				// Lambdas can't use 'in' variables, so capture a copy for later
+				var delayedTarget = target;
+				firedBy.World.AddFrameEndTask(w => w.Add(new FloatingText(delayedTarget.Actor.CenterPosition, firedBy.Owner.Color, FloatingText.FormatCashTick(stolen), 30)));
+			}
 		}
 	}
 }

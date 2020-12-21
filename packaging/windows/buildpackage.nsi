@@ -20,10 +20,26 @@
 !include "WordFunc.nsh"
 
 Name "${PACKAGING_DISPLAY_NAME}"
-OutFile "OpenRA.Setup.exe"
+OutFile "${OUTFILE}"
 
-InstallDir "$PROGRAMFILES\${PACKAGING_WINDOWS_INSTALL_DIR_NAME}"
-InstallDirRegKey HKLM "Software\${PACKAGING_WINDOWS_REGISTRY_KEY}" "InstallDir"
+ManifestDPIAware true
+
+Unicode True
+
+Function .onInit
+	!ifndef USE_PROGRAMFILES32
+		SetRegView 64
+	!endif
+	ReadRegStr $INSTDIR HKLM "Software\${PACKAGING_WINDOWS_REGISTRY_KEY}" "InstallDir"
+	StrCmp $INSTDIR "" unset done
+	unset:
+	!ifndef USE_PROGRAMFILES32
+		StrCpy $INSTDIR "$PROGRAMFILES64\${PACKAGING_WINDOWS_INSTALL_DIR_NAME}"
+	!else
+		StrCpy $INSTDIR "$PROGRAMFILES32\${PACKAGING_WINDOWS_INSTALL_DIR_NAME}"
+	!endif
+	done:
+FunctionEnd
 
 SetCompressor lzma
 RequestExecutionLevel admin
@@ -63,38 +79,29 @@ Section "-Reg" Reg
 	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}\DefaultIcon" "" "$INSTDIR\${MOD_ID}.ico,0"
 	WriteRegStr HKLM "Software\Classes\openra-${MOD_ID}-${TAG}\Shell\Open\Command" "" "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe Launch.URI=%1"
 
+	!ifdef USE_DISCORDID
+		WriteRegStr HKLM "Software\Classes\discord-${USE_DISCORDID}" "" "URL:Run game ${USE_DISCORDID} protocol"
+		WriteRegStr HKLM "Software\Classes\discord-${USE_DISCORDID}" "URL Protocol" ""
+		WriteRegStr HKLM "Software\Classes\discord-${USE_DISCORDID}\DefaultIcon" "" "$INSTDIR\${MOD_ID}.ico,0"
+		WriteRegStr HKLM "Software\Classes\discord-${USE_DISCORDID}\Shell\Open\Command" "" "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe"
+	!endif
+
 SectionEnd
 
 Section "Game" GAME
 	SectionIn RO
 
 	SetOutPath "$INSTDIR"
-	File /r "${SRCDIR}\mods"
-	File "${SRCDIR}\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe"
-	File "${SRCDIR}\OpenRA.Game.exe"
-	File "${SRCDIR}\OpenRA.Game.exe.config"
-	File "${SRCDIR}\OpenRA.Utility.exe"
-	File "${SRCDIR}\OpenRA.Server.exe"
-	File "${SRCDIR}\OpenRA.Platforms.Default.dll"
-	File "${SRCDIR}\ICSharpCode.SharpZipLib.dll"
-	File "${SRCDIR}\FuzzyLogicLibrary.dll"
-	File "${SRCDIR}\Open.Nat.dll"
+	File "${SRCDIR}\*.exe"
+	File "${SRCDIR}\*.exe.config"
+	File "${SRCDIR}\*.dll"
+	File "${SRCDIR}\*.ico"
 	File "${SRCDIR}\VERSION"
 	File "${SRCDIR}\AUTHORS"
 	File "${SRCDIR}\COPYING"
-	File "${SRCDIR}\${MOD_ID}.ico"
-	File "${SRCDIR}\SDL2-CS.dll"
-	File "${SRCDIR}\OpenAL-CS.Core.dll"
 	File "${SRCDIR}\global mix database.dat"
 	File "${SRCDIR}\IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP"
-	File "${SRCDIR}\eluant.dll"
-	File "${SRCDIR}\BeaconLib.dll"
-	File "${SRCDIR}\soft_oal.dll"
-	File "${SRCDIR}\DiscordRPC.dll"
-	File "${SRCDIR}\Newtonsoft.Json.dll"
-	File "${SRCDIR}\SDL2.dll"
-	File "${SRCDIR}\freetype6.dll"
-	File "${SRCDIR}\lua51.dll"
+	File /r "${SRCDIR}\mods"
 
 	!insertmacro MUI_STARTMENU_WRITE_BEGIN Application
 		CreateDirectory "$SMPROGRAMS\$StartMenuFolder"
@@ -168,31 +175,15 @@ Function ${UN}Clean
 	RMDir /r $INSTDIR\maps
 	RMDir /r $INSTDIR\glsl
 	RMDir /r $INSTDIR\lua
-	Delete "$INSTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe"
-	Delete $INSTDIR\OpenRA.Game.exe
-	Delete $INSTDIR\OpenRA.Game.exe.config
-	Delete $INSTDIR\OpenRA.Utility.exe
-	Delete $INSTDIR\OpenRA.Server.exe
-	Delete $INSTDIR\OpenRA.Platforms.Default.dll
-	Delete $INSTDIR\ICSharpCode.SharpZipLib.dll
-	Delete $INSTDIR\FuzzyLogicLibrary.dll
-	Delete $INSTDIR\Open.Nat.dll
+	Delete $INSTDIR\*.exe
+	Delete $INSTDIR\*.exe.config
+	Delete $INSTDIR\*.dll
+	Delete $INSTDIR\*.ico
 	Delete $INSTDIR\VERSION
 	Delete $INSTDIR\AUTHORS
 	Delete $INSTDIR\COPYING
-	Delete $INSTDIR\${MOD_ID}.ico
 	Delete "$INSTDIR\global mix database.dat"
 	Delete $INSTDIR\IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP
-	Delete $INSTDIR\soft_oal.dll
-	Delete $INSTDIR\SDL2.dll
-	Delete $INSTDIR\lua51.dll
-	Delete $INSTDIR\eluant.dll
-	Delete $INSTDIR\freetype6.dll
-	Delete $INSTDIR\DiscordRPC.dll
-	Delete $INSTDIR\Newtonsoft.Json.dll
-	Delete $INSTDIR\SDL2-CS.dll
-	Delete $INSTDIR\OpenAL-CS.Core.dll
-	Delete $INSTDIR\BeaconLib.dll
 	RMDir /r $INSTDIR\Support
 
 	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PACKAGING_WINDOWS_REGISTRY_KEY}"

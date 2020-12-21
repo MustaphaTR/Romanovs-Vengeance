@@ -6,7 +6,7 @@
     <LangVersion>7.3</LangVersion>
     <DebugSymbols>true</DebugSymbols>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <OutputPath>../mods/rv</OutputPath>
+    <OutputPath>../engine/bin</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -21,6 +21,9 @@
     <Optimize>false</Optimize>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Traits\Render\WithIdleRepairOverlay.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj">
       <Private>False</Private>
     </ProjectReference>
@@ -31,6 +34,7 @@
       <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
+      <Private>False</Private>
     </ProjectReference>
     <PackageReference Include="StyleCop.Analyzers" Version="1.1.118" />
 	<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0" PrivateAssets="All" />

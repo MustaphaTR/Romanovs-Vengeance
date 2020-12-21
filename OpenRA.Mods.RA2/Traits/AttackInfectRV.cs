@@ -70,7 +70,7 @@ namespace OpenRA.Mods.RA2.Traits
 			this.info = info;
 		}
 
-		protected override bool CanAttack(Actor self, Target target)
+		protected override bool CanAttack(Actor self, in Target target)
 		{
 			if (target.Type != TargetType.Actor)
 				return false;
@@ -93,7 +93,7 @@ namespace OpenRA.Mods.RA2.Traits
 				joustToken = self.RevokeCondition(joustToken);
 		}
 
-		public override Activity GetAttackActivity(Actor self, AttackSource source, Target newTarget, bool allowMove, bool forceAttack, Color? targetLineColor)
+		public override Activity GetAttackActivity(Actor self, AttackSource source, in Target newTarget, bool allowMove, bool forceAttack, Color? targetLineColor)
 		{
 			return new InfectRV(self, newTarget, this, info, targetLineColor);
 		}

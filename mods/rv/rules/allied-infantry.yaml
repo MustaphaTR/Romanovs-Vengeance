@@ -44,7 +44,7 @@ engineer:
 	EngineerRepair@CIV:
 		Types: civilian
 		RepairSound: urepair.wav
-		ValidStances: Ally, Neutral
+		ValidRelationships: Ally, Neutral
 	RepairsBridges:
 		RepairNotification: BridgeRepaired
 	Captures@INSTANT:
@@ -61,8 +61,8 @@ engineer:
 		Weapon: DefuseKit
 		Cursor: remove-bomb
 		OutsideRangeCursor: remove-bomb
-		TargetStances: Ally
-		ForceTargetStances: None
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
 		PauseOnCondition: chronodisable
 	AttackFrontal:
 		Voice: Action
@@ -1030,7 +1030,7 @@ tany:
 	RevealOnDeath:
 		Radius: 4c0
 	Demolition:
-		TargetStances: Enemy
+		TargetRelationships: Enemy
 		Voice: Demolish
 		DamageTypes: NonTemporal
 	Armor:
@@ -1426,8 +1426,8 @@ medi:
 		Weapon: Heal
 		Cursor: heal
 		OutsideRangeCursor: heal
-		TargetStances: Ally
-		ForceTargetStances: None
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
 		PauseOnCondition: chronodisable
 	AttackFrontal:
 		Voice: Action

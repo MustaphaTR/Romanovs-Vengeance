@@ -208,21 +208,21 @@
 		Palette: pips
 		Position: BottomRight
 		RequiresCondition: rank-veteran == 1
-		ValidStances: Ally, Enemy, Neutral
+		ValidRelationships: Ally, Enemy, Neutral
 	WithDecoration@RANK-2:
 		Image: rank
 		Sequence: rank-veteran-2
 		Palette: pips
 		Position: BottomRight
 		RequiresCondition: rank-veteran == 2
-		ValidStances: Ally, Enemy, Neutral
+		ValidRelationships: Ally, Enemy, Neutral
 	WithDecoration@RANK-ELITE:
 		Image: rank
 		Sequence: rank-elite
 		Palette: pips
 		Position: BottomRight
 		RequiresCondition: rank-elite
-		ValidStances: Ally, Enemy, Neutral
+		ValidRelationships: Ally, Enemy, Neutral
 	GainsExperienceMultiplier@ARMORY:
 		Modifier: 150
 		RequiresCondition: armory
@@ -243,7 +243,7 @@
 		Palette: pips
 		Position: TopRight
 		RequiresCondition: heal
-		ValidStances: Ally
+		ValidRelationships: Ally
 	GrantConditionOnPrerequisite@HOSPITAL:
 		Condition: heal
 		Prerequisites: cahosp
@@ -261,7 +261,7 @@
 		Palette: pips
 		Position: TopRight
 		RequiresCondition: repair
-		ValidStances: Ally
+		ValidRelationships: Ally
 	GrantConditionOnPrerequisite@MACHINESHOP:
 		Condition: repair
 		Prerequisites: camach
@@ -315,7 +315,7 @@
 		Sequence: icon
 		Palette: ra
 		RequiresCondition: leaflet
-		ValidStances: Ally, Enemy, Neutral
+		ValidRelationships: Ally, Enemy, Neutral
 	ExternalCondition@LEAFLET:
 		Condition: leaflet
 
@@ -432,7 +432,7 @@
 		Image: dynamite
 		Sequence: small
 		Palette: mouse
-		ValidStances: Ally
+		ValidRelationships: Ally
 		RequiresCondition: deathbombs
 	Explodes@DEATHBOMBS:
 		DeathTypes: NonTemporal
@@ -459,7 +459,7 @@
 		Sequence: idle
 		Palette: mouse
 		Position: Center
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: ivanbomb
 	AmbientSound@IVANBOMB:
 		SoundFiles: icraloop.wav
@@ -483,7 +483,7 @@
 		Sequence: idle
 		Palette: mouse
 		Position: Center
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: sealC4
 	AmbientSound@SEALC4:
 		SoundFiles: icraloop.wav
@@ -507,7 +507,7 @@
 		Sequence: idle
 		Palette: mouse
 		Position: Center
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: commandoC4
 	AmbientSound@COMMANDOC4:
 		SoundFiles: icraloop.wav
@@ -531,7 +531,7 @@
 		Sequence: idle
 		Position: Center
 		Palette: mouse
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: tanyaC4
 	AmbientSound@TANYAC4:
 		SoundFiles: icraloop.wav
@@ -555,7 +555,7 @@
 		Sequence: idle
 		Position: Center
 		Palette: mouse
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: teslabomb
 	AmbientSound@TESLABOMB:
 		SoundFiles: icraloop.wav
@@ -579,7 +579,7 @@
 		Sequence: idle
 		Position: Center
 		Palette: mouse
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: toxinbomb
 	AmbientSound@TOXINBOMB:
 		SoundFiles: icraloop.wav
@@ -701,11 +701,11 @@
 		Sequence: dollar
 		Position: Center
 		Palette: effect
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: bounty
 	GivesBounty:
 		Percentage: 50
-		ValidStances: Ally, Neutral, Enemy
+		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: bounty
 	TimedConditionBar@BOUNTY:
 		Color: FFDD00
@@ -821,7 +821,7 @@
 		RequiresCondition: !chronodisable
 	RevealsShroud@DRONE:
 		Range: 2c0
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 		RequiresCondition: terrordroned
 	ExplodeWeapon@dronesparks:
 		RequiresCondition: terrordroned
@@ -849,7 +849,7 @@
 			sqd: squid
 	RevealsShroud@SQUID:
 		Range: 5c0
-		ValidStances: Enemy, Neutral
+		ValidRelationships: Enemy, Neutral
 		RequiresCondition: squid
 	Targetable@SQUID:
 		TargetTypes: SquidInfection
@@ -965,7 +965,7 @@
 	VoiceAnnouncement:
 		RequiresCondition: feedback && playfeedback
 		Voice: Feedback
-		ValidStances: None
+		ValidRelationships: None
 
 ^AutoTargetGround:
 	AutoTarget:

@@ -1,6 +1,6 @@
 Metadata:
 	Title: Red Alert 2: Romanov's Vengeance
-	Version: 95af887
+	Version: 256f88e
 	Website: https://github.com/MustaphaTR/Romanovs-Vengeance
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Romanovs-Vengeance/master/packaging/linux/mod_32x32.png
 
@@ -12,12 +12,11 @@ ModCredits:
 PackageFormats: Mix, AudioBag
 
 Packages:
-	~^Content/ra2
-	~^Content/ra2/taunts
-	.
+	~^SupportDir|Content/ra2
+	~^SupportDir|Content/ra2/taunts
+	^EngineDir
+	^EngineDir|mods/common: common
 	$rv: rv
-	./mods/common: common
-	./mods/as: as
 	~ra2md.mix # put YR files first so stuff like Psychic Sensor and Cloning Vats won't get overridden with Yuri artwork.
 	~ra2.mix
 	~langmd.mix
@@ -84,7 +83,7 @@ Packages:
 
 MapFolders:
 	rv|maps: System
-	~^maps/rv/95af887: User
+	~^SupportDir|maps/rv/256f88e: User
 
 Rules:
 	rv|rules/proxy-actors.yaml
@@ -154,10 +153,10 @@ Chrome:
 	rv|chrome.yaml
 
 Assemblies:
-	common|OpenRA.Mods.Common.dll
-	common|OpenRA.Mods.Cnc.dll
-	rv|OpenRA.Mods.RA2.dll
-	as|OpenRA.Mods.AS.dll
+	^BinDir|OpenRA.Mods.Common.dll
+	^BinDir|OpenRA.Mods.Cnc.dll
+	^BinDir|OpenRA.Mods.RA2.dll
+	^BinDir|OpenRA.Mods.AS.dll
 
 ChromeLayout:
 	rv|chrome/assetbrowser.yaml
@@ -384,18 +383,18 @@ ModContent:
 	HeaderMessage: The original game content must be copied from an original game disc.
 	Packages:
 		base: Base Game Files
-			TestFiles: ^Content/ra2/ra2.mix, ^Content/ra2/language.mix
+			TestFiles: ^SupportDir|Content/ra2/ra2.mix, ^SupportDir|Content/ra2/language.mix
 			Sources: ra2, origin, tfd
 			Required: true
 		music: Base Game Music
-			TestFiles: ^Content/ra2/theme.mix
+			TestFiles: ^SupportDir|Content/ra2/theme.mix
 			Sources: ra2, origin, tfd
 		explosion: Expansion Files
-			TestFiles: ^Content/ra2/ra2md.mix, ^Content/ra2/langmd.mix
+			TestFiles: ^SupportDir|Content/ra2/ra2md.mix, ^SupportDir|Content/ra2/langmd.mix
 			Sources: origin-yr, tfd-yr
 			Required: true
 		explosion-music: Expansion Music
-			TestFiles: ^Content/ra2/thememd.mix
+			TestFiles: ^SupportDir|Content/ra2/thememd.mix
 			Sources: origin-yr, tfd-yr
 	Sources:
 		rv|installer/ra2.yaml
