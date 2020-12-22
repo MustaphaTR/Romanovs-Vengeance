@@ -308,6 +308,26 @@ commanders_power.sensor_buoy:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Sensor Buoy power.
 
+commanders_power.leaflet_drop:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Leaflet Drop
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 60
+		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Leaflet Drop power.
+
+commanders_power.cluster_mines:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Cluster Mines
+	Buildable:
+		Queue: Power.Soviets, Power.Baku
+		BuildPaletteOrder: 60
+		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Cluster Mines power.
+
 commanders_power.emergency_repair.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -550,6 +570,26 @@ commanders_power.orbital_drop:
 		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Orbital Drop power.
+
+commanders_power.em_pulse_strike:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: E.M. Pulse Strike
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 170
+		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.5_stars
+		Description: Enables E.M. Pulse Strike power.
+
+commanders_power.chaos_gas_drop:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Chaos Gas Drop
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 170
+		Prerequisites: ~disabled prerequisite.has_points, prerequisite.5_stars
+		Description: Enables Chaos Gas Drop power.
 
 hack.has_points:
 	AlwaysVisible:
@@ -860,6 +900,64 @@ prerequisite.grinder:
 		DisplayBeacon: True
 		BeaconPosters:
 			1: buoyicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	AirstrikePower@leafletdrop:
+		OrderName: AlliedLeafletDrop
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: commanders_power.leaflet_drop
+		Icons:
+			1: leaflet
+		ChargeInterval: 3750
+		Descriptions:
+			1: Leaflet Drop
+		LongDescs:
+			1: A Cargo Plane drops leaflets\nanywhere on the map.\nLeaflets slow enemy infantry\nand vehicle movement and\nfire speed.
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		UnitTypes:
+			1: pdplane.leaflet
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: leaficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	AirstrikePowerRV@clustermines:
+		ActivationDelay: 125
+		OrderName: SovietClusterMines
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: commanders_power.cluster_mines
+		Icons:
+			1: cluster
+		ChargeInterval: 4500
+		Descriptions:
+			1: Cluster Mines
+		LongDescs:
+			1: A Cargo plane drops 13 mines\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		UnitTypes:
+			1: pdplane.cluster_mines
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: camera.5c0
+		DisplayBeacon: True
+		BeaconPosters:
+			1: mineicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		UseDirectionalTarget: True
@@ -1210,5 +1308,63 @@ prerequisite.grinder:
 		ActivationSequence:
 		TargetCircleRanges:
 			1: 6c0
+	AirstrikePowerRV@empulse:
+		ActivationDelay: 125
+		OrderName: AlliedEMP
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: commanders_power.em_pulse_strike
+		Icons:
+			1: empulse
+		ChargeInterval: 6000
+		Descriptions:
+			1: E. M. Pulse Strike
+		LongDescs:
+			1: A Cargo Plane drops an Electromagnetic Pulse\nbomb anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		UnitTypes:
+			1: pdplane.emp
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: empuicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	AirstrikePower@chaosgas:
+		OrderName: PsiCorpsChaosDrop
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: commanders_power.chaos_gas_drop
+		Icons:
+			1: xxicon
+		ChargeInterval: 4500
+		Descriptions:
+			1: Chaos Gas Drop
+		LongDescs:
+			1: A Cargo Plane drops a trail of Chaos\nGas anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitTypes:
+			1: pdplane.chaos
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: xxicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
 	GrantConditionOnOwnerLost:
 		Condition: lost

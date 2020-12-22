@@ -84,6 +84,21 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
+			leafletdropshared:
+				OrderName: AlliedLeafletDrop
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 			chronogrizzly:
 				OrderName: GermanChronoGrizzly
 				MinimumAttractiveness: 5
@@ -116,6 +131,21 @@ Player:
 					CheckRadius: 8c0
 			empulse:
 				OrderName: KoreanEMP
+				MinimumAttractiveness: 5
+				Consideration@1:
+					Against: Enemy
+					Types: Structure, Vehicle
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 8c0
+				Consideration@2:
+					Against: Enemy
+					Types: Water
+					Attractiveness: -5
+					TargetMetric: None
+					CheckRadius: 8c0
+			empulseshared:
+				OrderName: AlliedEMP
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
@@ -207,6 +237,15 @@ Player:
 					CheckRadius: 7c0
 			clustermines:
 				OrderName: CubanClusterMines
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy, Neutral, Ally
+					Types: Structure, Vehicle, Infantry
+					Attractiveness: -1
+					TargetMetric: Value
+					CheckRadius: 5c0
+			clusterminesshared:
+				OrderName: SovietClusterMines
 				MinimumAttractiveness: 3000
 				Consideration@1:
 					Against: Enemy, Neutral, Ally
@@ -315,6 +354,36 @@ Player:
 					CheckRadius: 7c0
 			orbitaldrop:
 				OrderName: PsiCorpsOrbitalDrop
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			chaosdrop:
+				OrderName: YurigradChaosDrop
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
+			chaosdropshared:
+				OrderName: PsiCorpsChaosDrop
 				MinimumAttractiveness: 3000
 				Consideration@1:
 					Against: Enemy

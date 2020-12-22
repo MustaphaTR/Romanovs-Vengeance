@@ -542,6 +542,35 @@ gaairc:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
+	AirstrikePowerRV@clustermines:
+		ActivationDelay: 125
+		OrderName: CubanClusterMines
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: disabled
+		Icons:
+			1: cluster
+		ChargeInterval: 4500
+		Descriptions:
+			1: Cluster Mines
+		LongDescs:
+			1: A Cargo plane drops 13 mines\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		UnitTypes:
+			1: pdplane.cluster_mines
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: camera.5c0
+		DisplayBeacon: True
+		BeaconPosters:
+			1: mineicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
 	DetonateWeaponPower@chronogrizzly:
 		OrderName: GermanChronoGrizzly
 		PauseOnCondition: disabled || chronodisable
