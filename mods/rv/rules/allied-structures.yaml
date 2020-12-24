@@ -517,7 +517,7 @@ gaairc:
 		OrderName: BritishLeafletDrop
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
-			1: radar.england
+			1: disabled
 		Icons:
 			1: leaflet
 		ChargeInterval: 3750
@@ -542,30 +542,31 @@ gaairc:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
-	AirstrikePowerRV@clustermines:
+	AirstrikePowerRV@carpetbombing:
 		ActivationDelay: 125
-		OrderName: CubanClusterMines
+		OrderName: BritishCarpetBombing
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
-			1: disabled
+			1: radar.england
 		Icons:
-			1: cluster
-		ChargeInterval: 4500
+			1: carpetbomb
+		ChargeInterval: 7500
 		Descriptions:
-			1: Cluster Mines
+			1: Carpet Bombing
 		LongDescs:
-			1: A Cargo plane drops 13 mines\nanywhere on the map.
+			1: A B-52 drops bombs in a line\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
 		UnitTypes:
-			1: pdplane.cluster_mines
+			1: b52
 		SquadSizes:
 			1: 1
 		QuantizedFacings: 8
-		CameraActor: camera.5c0
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
 		DisplayBeacon: True
 		BeaconPosters:
-			1: mineicon
+			1: carpicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		UseDirectionalTarget: True

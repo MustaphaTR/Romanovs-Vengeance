@@ -300,6 +300,45 @@ ParaBomb:
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
 
+CarpetBomb:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 7
+	Range: 8c0
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -25
+		Acceleration: 0, 0, -10
+		Image: 160mm
+		Shadow: true
+		Palette: ra
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Damage: 150
+		Versus:
+			None: 125
+			Flak: 125
+			Plate: 125
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 40
+			Steel: 100
+			Concrete: 40
+			Drone: 100
+			Rocket: 100
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, NonTemporal
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: Crater
+		InvalidTargets: Vehicle, TerrorDrone, Structure, Wall, Husk, Trees
+	Warhead@3Eff: CreateEffect
+		Explosions: medium_explosion
+		ImpactSounds: gexpapoa.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+
 ToxinBomb:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 7
