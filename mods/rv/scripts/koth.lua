@@ -7,7 +7,7 @@
    information, see COPYING.
 ]]
 
-local target_time = DateTime.Minutes(5)
+local target_time = DateTime.Minutes(6)
 local timer = target_time
 
 local beacon
