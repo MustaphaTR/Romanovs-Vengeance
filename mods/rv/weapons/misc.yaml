@@ -989,3 +989,58 @@ SpiderWeb:
 		Duration: 150
 		ValidTargets: WebDisableable
 		Condition: webdisable
+
+DroppodSpawner:
+	ReloadDelay: 6
+	Range: 12c0
+	Projectile: InstantExplode
+	Warhead@op: FireShrapnel
+		Weapon: DroppodElevator
+		Amount: 5
+		AllowDirectHit: false
+		ValidTargets: Infantry, Vehicle, Building, Wall, Ground, Water, Air, AirHit
+		ImpactActors: false
+
+DroppodElevator:
+	ReloadDelay: 6
+	Range: 3c0
+	MinRange: 1c0
+	Projectile: AthenaProjectile
+		Altitude: 8000
+	Warhead@op: FireShrapnel
+		Weapon: droppod
+		ImpactActors: false
+		AimChance: 25
+		ValidTargets: Infantry, Vehicle, Building, Wall, Ground, Water, Air, AirHit
+
+droppod:
+	ReloadDelay: 3
+	Range: 3c0
+	ValidTargets: Ground, Water, BlueTiberium, Tiberium, Air, Vehicle, Building, Infantry, Water
+	Projectile: BulletAS
+		Speed: 350
+		Image: pod
+		Palette: player
+		Shadow: true
+		TrailImage: smokey2
+		Inaccuracy: 600
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+	Warhead@3Eff: CreateEffect
+		Explosions: small_clsn, large_twlt, medium_brnl
+		ImpactSounds: gexp14a.wav
+		InvalidTargets: Vehicle, Building, Wall
+	Warhead@4Eff: CreateEffect
+		Explosions: podring
+		ImpactSounds: gexp14a.wav
+		InvalidTargets: Vehicle, Building, Wall
+	Warhead@5Eff: CreateEffect
+		Explosions: droppod, droppod2
+		ImpactSounds: gexp14a.wav
+		InvalidTargets: Vehicle, Building, Wall
+	Warhead@5Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+		InvalidTargets: Vehicle, Building, Wall
+	Warhead@5Effect: SpawnActor
+		Actors: brute
+		Range: 3

@@ -285,7 +285,7 @@ commanders_power.sonar_pulse:
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Sonar Pulse power.
 
 commanders_power.naval_mines:
@@ -295,7 +295,7 @@ commanders_power.naval_mines:
 	Buildable:
 		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 60
-		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Naval Mines power.
 
 commanders_power.sensor_buoy:
@@ -305,7 +305,7 @@ commanders_power.sensor_buoy:
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 60
-		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Sensor Buoy power.
 
 commanders_power.leaflet_drop:
@@ -315,7 +315,7 @@ commanders_power.leaflet_drop:
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Leaflet Drop power.
 
 commanders_power.cluster_mines:
@@ -325,8 +325,18 @@ commanders_power.cluster_mines:
 	Buildable:
 		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 60
-		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Cluster Mines power.
+
+commanders_power.brute_drop:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Brute Drop
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 60
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Brute Drop power.
 
 commanders_power.emergency_repair.1:
 	Inherits: ^default.commanders_power
@@ -963,6 +973,27 @@ prerequisite.grinder:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
+	DetonateWeaponPower@brutedrop:
+		OrderName: PsiCorpsBruteDrop
+		RequiresCondition: !lost
+		Prerequisites:
+			1: commanders_power.brute_drop
+		Icons:
+			1: xxicon
+		Descriptions:
+			1: Brute Drop
+		LongDescs:
+			1: Drops 5 Brutes with drop pods\nanywhere on the map.
+		Weapons:
+			1: DroppodSpawner
+		ChargeInterval: 4500
+		CameraActor: camera.5c0
+		ActivationSequence:
+		TargetCircleRanges:
+			1: 6c0
+		CameraRange: 7c0
+		CameraSpawnAdvance: 25
+		CameraRemoveDelay: 350
 	DetonateWeaponPower@emergencyrepair:
 		OrderName: EmergencyRepair
 		RequiresCondition: !lost
