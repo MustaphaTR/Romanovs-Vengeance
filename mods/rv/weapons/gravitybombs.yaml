@@ -300,6 +300,44 @@ ParaBomb:
 		ImpactSounds: gexpwasa.wav
 		ValidTargets: Water
 
+FalloutBomb:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 10
+	Range: 1c0
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -50
+		Acceleration: 0, 0, -10
+		Image: nbomb
+		Palette: player
+		IsPlayerPalette: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 2c512
+		Damage: 400
+		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
+			Light: 90
+			Medium: 70
+			Heavy: 70
+			Wood: 100
+			Steel: 60
+			Concrete: 90
+			Drone: 80
+			Rocket: 0
+		DamageTypes: Prone70Percent, TriggerProne, RadiationDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion
+		ImpactSounds: vdemdiea.wav
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 7c0
+		Falloff: 100, 100
+		Level: 1500
+		MaxLevel: 1500
+	Warhead@5Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
 CarpetBomb:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 6

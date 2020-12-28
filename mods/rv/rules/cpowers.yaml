@@ -588,8 +588,18 @@ commanders_power.em_pulse_strike:
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 170
-		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.5_stars
+		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables E.M. Pulse Strike power.
+
+commanders_power.fallout_bomb:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Fallout Bomb
+	Buildable:
+		Queue: Power.Soviets
+		BuildPaletteOrder: 170
+		Prerequisites: prerequisite.has_points, prerequisite.5_stars
+		Description: Enables Fallout Bomb power.
 
 commanders_power.chaos_gas_drop:
 	Inherits: ^default.commanders_power
@@ -598,7 +608,7 @@ commanders_power.chaos_gas_drop:
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 170
-		Prerequisites: ~disabled prerequisite.has_points, prerequisite.5_stars
+		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Chaos Gas Drop power.
 
 hack.has_points:
@@ -1284,6 +1294,35 @@ prerequisite.grinder:
 		DisplayBeacon: True
 		BeaconPosters:
 			1: empuicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	AirstrikePowerRV@falloutbomb:
+		ActivationDelay: 125
+		OrderName: SovietFalloutBomb
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: commanders_power.fallout_bomb
+		Icons:
+			1: xxicon
+		ChargeInterval: 4500
+		Descriptions:
+			1: Fallout Bomb
+		LongDescs:
+			1: A Cargo plane drops a bomb that coveres\narea with radiation anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		UnitTypes:
+			1: pdplane.fallout_bomb
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: camera.5c0
+		DisplayBeacon: True
+		BeaconPosters:
+			1: xxicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		UseDirectionalTarget: True
