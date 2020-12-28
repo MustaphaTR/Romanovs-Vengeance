@@ -744,6 +744,25 @@ gayard:
 		Type: Ship.Allies
 	ProductionBar:
 		ProductionType: Ship.Allies
+	SpawnActorPower@sonar:
+		Icons:
+			1: sonar
+		Cursor: reveal
+		Prerequisites:
+			1: gayard
+		StartFullyCharged: true
+		Descriptions:
+			1: Sonar Pulse
+		LongDescs:
+			1: Reveals all submarines and naval mines in a\nlarge area for a short time.
+		ChargeInterval: 1000
+		SelectTargetSpeechNotification: SelectTarget
+		Actors:
+			1: sonar
+		LifeTime: 375
+		DeploySound: sonpulse.aud
+		EffectImage: moveflsh
+		EffectPalette: moveflash
 	IsometricSelectable:
 		DecorationHeight: 120
 

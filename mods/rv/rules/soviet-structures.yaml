@@ -703,6 +703,33 @@ nayard:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	AirstrikePower@navalmines:
+		OrderName: SovietNavalMines
+		Icons:
+			1: navalmines
+		Prerequisites:
+			1: nayard
+		ChargeInterval: 3000
+		StartFullyCharged: true
+		Descriptions:
+			1: Naval Mines
+		LongDescs:
+			1: A Cargo plane drops 5 naval mines\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		UnitTypes:
+			1: pdplane.naval_mines
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: camera.5c0
+		DisplayBeacon: True
+		BeaconPosters:
+			1: nmineicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
 	IsometricSelectable:
 		DecorationHeight: 120
 

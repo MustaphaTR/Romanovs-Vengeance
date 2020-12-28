@@ -504,6 +504,37 @@ yayard:
 		Type: Ship.Yuri
 	ProductionBar:
 		ProductionType: Ship.Yuri
+	ParatroopersPower@sensorbuoy:
+		OrderName: PsiCorpsSensorBuoy
+		Prerequisites:
+			1: yayard
+		Icons:
+			1: buoy
+		ChargeInterval: 9000
+		StartFullyCharged: true
+		Descriptions:
+			1: Sensor Buoy
+		LongDescs:
+			1: A Toxin Bomber paradrops a Sensor Buoy\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
+		DropItems:
+			1: buoy
+		SquadSizes:
+			1: 1
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		UnitTypes:
+			1: txbmbdrop
+		CameraActor: camera
+		DisplayBeacon: True
+		BeaconPosters:
+			1: buoyicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
 	IsometricSelectable:
 		DecorationHeight: 120
 
