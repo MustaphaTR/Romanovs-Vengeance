@@ -600,6 +600,17 @@ BunkerSpawner:
 		Buildings: nabnkr
 		Sounds: uplace.wav
 
+BarrelSpawner:
+	Warhead@1Spa: SpawnBuilding
+		Buildings: gabarl, gabarls, gabarl, gabarls, gabarl
+		Delay: 15
+		Range: 3
+		Sounds: uplace.wav
+	Warhead@2Eff: CreateEffect
+		Explosions: chronofd
+		ImpactSounds: schrmov.wav
+		ValidTargets: Ground, Water, Air
+
 AmbushSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: AmbushSpawnerE2

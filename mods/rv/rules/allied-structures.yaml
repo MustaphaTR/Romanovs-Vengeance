@@ -652,7 +652,7 @@ gaairc:
 		OrderName: KoreanEMP
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
-			1: radar.korea
+			1: disabled
 		Icons:
 			1: empulse
 		ChargeInterval: 7500
@@ -677,6 +677,24 @@ gaairc:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
+	DetonateWeaponPower@chronobomb:
+		OrderName: KoreanChronoBomb
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: radar.korea
+		Icons:
+			1: xxicon
+		ChargeInterval: 6000
+		Descriptions:
+			1: Chronobomb
+		LongDescs:
+			1: Chronoshifts several explosive barrels\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: BarrelSpawner
+		ActivationSequence:
+		CameraRange: 6c0
+		CameraRemoveDelay: 25
 	RallyPoint:
 		Path: 1,2
 		Palette: mouse
@@ -691,6 +709,22 @@ gaairc:
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
+
+gabarl:
+	Inherits: camisc02
+	KillsSelf@Explode:
+		Delay: 75
+		DamageTypes: NonTemporal
+	RenderSprites:
+		Image: camisc02
+
+gabarls:
+	Inherits: camisc01
+	KillsSelf@Explode:
+		Delay: 75
+		DamageTypes: NonTemporal
+	RenderSprites:
+		Image: camisc01
 
 gaweap:
 	Inherits: ^WarFactory

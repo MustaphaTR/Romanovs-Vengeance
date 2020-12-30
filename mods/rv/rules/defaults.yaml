@@ -606,7 +606,7 @@
 	Targetable@ironcurtain:
 		TargetTypes: IronCurtainable
 	KillsSelf@ironcurtain:
-		DamageTypes: FlameDeath
+		DamageTypes: FlameDeath, NonTemporal
 		RequiresCondition: invulnerability
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
@@ -625,7 +625,7 @@
 
 ^KilledByLazarusShield:
 	KillsSelf@lazarus:
-		DamageTypes: RadiationDeath
+		DamageTypes: RadiationDeath, NonTemporal
 		RequiresCondition: invisibility
 	ExternalCondition@INVISIBILITY:
 		Condition: invisibility
@@ -864,7 +864,7 @@
 		CooldownDuration: 500
 	KillsSelf@holokill:
 		RequiresCondition: holokill
-		DamageTypes: BulletDeath
+		DamageTypes: BulletDeath, NonTemporal
 	WithDecoration@holoicon:
 		Image: holo
 		Sequence: icon
