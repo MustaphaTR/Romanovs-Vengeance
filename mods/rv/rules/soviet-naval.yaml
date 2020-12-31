@@ -419,6 +419,7 @@ dmisl:
 		Speed: 225
 		LaunchSounds: vdreatta.wav, vdreattb.wav
 		SoundVolume: 0.6
+		AirborneCondition: airborne
 	LeavesTrails:
 		Image: smokey2
 		MovingInterval: 2
@@ -427,3 +428,8 @@ dmisl:
 	SpawnedExplodes:
 		Weapon: DredWeapon
 		EmptyWeapon: DredWeapon
+		RequiresCondition: !airborne
+	SpawnedExplodes@Airborne:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+		RequiresCondition: airborne

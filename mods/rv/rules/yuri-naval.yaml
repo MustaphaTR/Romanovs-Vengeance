@@ -131,6 +131,7 @@ cmisl:
 		Speed: 255
 		LaunchSounds: vbooat1a.wav
 		SoundVolume: 0.6
+		AirborneCondition: airborne
 	LeavesTrails:
 		Image: smokey2
 		MovingInterval: 2
@@ -139,6 +140,11 @@ cmisl:
 	SpawnedExplodes:
 		Weapon: CruiseWeapon
 		EmptyWeapon: CruiseWeapon
+		RequiresCondition: !airborne
+	SpawnedExplodes@Airborne:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+		RequiresCondition: airborne
 	RenderVoxels:
 		Image: bsubmisl
 

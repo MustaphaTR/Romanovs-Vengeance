@@ -803,6 +803,7 @@ v3rocket:
 		Speed: 225
 		LaunchSounds: vv3latta.wav, vv3lattb.wav
 		SoundVolume: 0.7
+		AirborneCondition: airborne
 	LeavesTrails:
 		Image: smokey2
 		MovingInterval: 2
@@ -811,6 +812,11 @@ v3rocket:
 	SpawnedExplodes:
 		Weapon: V3Weapon
 		EmptyWeapon: V3Weapon
+		RequiresCondition: !airborne
+	SpawnedExplodes@Airborne:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+		RequiresCondition: airborne
 
 # Custom Soviet Vehicles
 tric:
