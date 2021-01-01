@@ -10,6 +10,7 @@ pcv:
 smin:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
 		Queue: Vehicle.Psi
@@ -73,8 +74,6 @@ smin:
 		Radius: 3c0
 	MustBeDestroyed:
 		RequiredForShortGame: true
-	Targetable:
-		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 	ProvidesPrerequisite@yarefn:
 		Prerequisite: yarefn
 	ProvidesPrerequisite@psirefn:
@@ -117,6 +116,7 @@ smin:
 
 gmin:
 	Inherits: ^Vehicle
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
@@ -186,8 +186,6 @@ gmin:
 		UncloakOn: Attack, Damage, Dock
 	-Cloak@lazarus:
 	-ExternalCondition@INVISIBILITY:
-	Targetable:
-		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect

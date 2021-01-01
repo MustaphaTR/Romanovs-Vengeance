@@ -12,6 +12,7 @@ harv:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
@@ -87,8 +88,6 @@ harv:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
-	Targetable:
-		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect
