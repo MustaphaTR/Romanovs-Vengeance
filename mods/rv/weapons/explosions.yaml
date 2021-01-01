@@ -36,6 +36,38 @@ SmallBarrelExplode:
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: SmallCrater
 
+LargeChronobombExplode:
+	Inherits: LargeBarrelExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Damage: 200
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 75
+			Steel: 100
+			Concrete: 65
+
+SmallChronobombExplode:
+	Inherits: SmallBarrelExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Damage: 200
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 75
+			Steel: 100
+			Concrete: 65
+
 DerrickExplode:
 	Inherits: LargeBarrelExplode
 	Warhead@1Dam: SpreadDamage
