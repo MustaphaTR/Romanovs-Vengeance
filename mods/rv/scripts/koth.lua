@@ -37,6 +37,25 @@ EachKotHInterval = function()
 		end
 	end
 
+	local players_still_in = 0
+	for i,player in pairs(players) do
+		if player.alive == true then
+			if player.object.HasNoRequiredUnits() then
+				player.alive = false
+			else
+				players_still_in = players_still_in + 1
+			end
+		end
+	end
+
+	if players_still_in <= 1 then
+		for i,player in pairs(players) do
+			if player.alive then
+				player.object.MarkCompletedObjective(player.objective)
+			end
+		end
+	end
+
 	if timer <= 0 then
 		Lighting.Red = Lighting.Red * 2
 
@@ -97,7 +116,8 @@ WorldLoadedKotH = function()
 				if not player.IsNonCombatant then
 					players[player.InternalName] = {
 						object = player,
-						objective = player.AddPrimaryObjective("Hold the Psychic Beacon for " .. Utils.FormatTime(target_time) .. " or destroy all enemy forces.")
+						objective = player.AddPrimaryObjective("Hold the Psychic Beacon for " .. Utils.FormatTime(target_time) .. " or destroy all enemy forces."),
+						alive = true
 					}
 				end
 			end
