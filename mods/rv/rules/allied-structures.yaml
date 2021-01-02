@@ -1707,7 +1707,6 @@ gamgun:
 		LocalOffset: 768,0,980
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		Voice: Attack
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	WithMuzzleOverlay:
@@ -1781,8 +1780,7 @@ gagun:
 		LocalOffset: 874,0,640
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		Voice: Attack
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	WithMuzzleOverlay:
 	Turreted:
