@@ -100,6 +100,8 @@ init:
 		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 		BuildDuration: 75
 		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Valued:
 		Cost: 100
 	DeliversCash:
@@ -185,6 +187,8 @@ init.holo:
 	-WithDeathAnimation@effect:
 	-SpawnActorOnDeath@flames:
 	-SpawnSmokeParticleOnDeath@virus:
+	UpdatesPlayerStatistics:
+		AddToArmyValue: false
 	RenderSprites:
 		Image: init
 
@@ -202,6 +206,8 @@ brute:
 		Description: Powerful soldiers.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nCannot be eaten by Attack Dogs.
 		BuildDuration: 175
 		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Valued:
 		Cost: 300
 	Tooltip:
@@ -284,6 +290,8 @@ brute.holo:
 	-WithDeathAnimation@effect:
 	-SpawnActorOnDeath@flames:
 	-SpawnSmokeParticleOnDeath@virus:
+	UpdatesPlayerStatistics:
+		AddToArmyValue: false
 	RenderSprites:
 		Image: brute
 
@@ -301,6 +309,8 @@ virus:
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 		BuildDuration: 250
 		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Valued:
 		Cost: 600
 	Tooltip:
@@ -767,6 +777,8 @@ gtrp.holo:
 	-WithDeathAnimation@effect:
 	-SpawnActorOnDeath@flames:
 	-SpawnSmokeParticleOnDeath@virus:
+	UpdatesPlayerStatistics:
+		AddToArmyValue: false
 	Explodes:
 		Weapon: HoloExplode
 		EmptyWeapon: HoloExplode
@@ -787,6 +799,8 @@ spct:
 		Description: Invisible infantry armed with AP rifles with bullets capable of slowing enemy units.\nCan be deployed to make nearby units invisible but itself becomes visible.\n\n  Strong vs Vehicles\n  Weak vs Buildings, Aircraft
 		BuildDuration: 500
 		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
 	Valued:
 		Cost: 1200
 	DeliversCash:
