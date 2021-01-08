@@ -360,9 +360,10 @@ garefn:
 
 gaairc:
 	Inherits: ^BaseBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
@@ -451,7 +452,7 @@ gaairc:
 		Condition: produced
 	Production:
 		Produces: Aircraft.Allies, Aircraft.Korea
-		PauseOnCondition: powerdown || chronodisable
+		PauseOnCondition: powerdown || chronodisable || infiltrated
 	ProductionQueue:
 		Type: Aircraft.Allies
 		Factions: america, germany, england, france, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
@@ -478,6 +479,8 @@ gaairc:
 		ProductionType: Aircraft.Allies
 	ProductionBar@Korea:
 		ProductionType: Aircraft.Korea
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
 		InfiltratedNotification: RadarSabotaged
@@ -959,8 +962,8 @@ nasam:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@DRAIN: ^DiskDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies, Support.France

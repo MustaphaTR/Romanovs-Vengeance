@@ -163,6 +163,7 @@
 ^Barracks:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^DisabledByInfiltration
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 20
@@ -195,7 +196,7 @@
 		Condition: produced
 	Production:
 		Produces: Infantry
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || infiltrated
 	ProductionQueue:
 		Type: Infantry
 		Group: Infantry
@@ -210,11 +211,11 @@
 		ProductionType: Infantry
 	Power:
 		Amount: -35
-	InfiltrateForSupportPower:
-		Types: SpyInfiltrate
-		Proxy: barracks.infiltrated
-		InfiltratedNotification: TechnologyStolen
-		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
+	#InfiltrateForSupportPower:
+	#	Types: SpyInfiltrate
+	#	Proxy: barracks.infiltrated
+	#	InfiltratedNotification: TechnologyStolen
+	#	InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	GrantConditionOnPrerequisite@megawealth:
@@ -435,6 +436,7 @@
 ^WarFactory:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@shape: ^5x3Shape
 	Buildable:
 		Queue: Building
@@ -473,7 +475,7 @@
 		Condition: produced
 	Production:
 		Produces: Vehicle
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || infiltrated
 	ProductionQueue:
 		Type: Vehicle
 		Group: Vehicle
@@ -498,11 +500,11 @@
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
-	InfiltrateForSupportPower:
-		Types: SpyInfiltrate
-		Proxy: warfactory.infiltrated
-		InfiltratedNotification: TechnologyStolen
-		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
+	#InfiltrateForSupportPower:
+	#	Types: SpyInfiltrate
+	#	Proxy: warfactory.infiltrated
+	#	InfiltratedNotification: TechnologyStolen
+	#	InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Voiced:

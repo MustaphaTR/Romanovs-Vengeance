@@ -566,6 +566,8 @@ naradr:
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
 		InfiltratedNotification: RadarSabotaged
@@ -788,6 +790,7 @@ nadept:
 naheli:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -828,7 +831,7 @@ naheli:
 		Condition: produced
 	Production:
 		Produces: Aircraft.Soviets, Aircraft.Vietnam
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || infiltrated
 	ProductionQueue:
 		Type: Aircraft.Soviets
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
@@ -857,6 +860,8 @@ naheli:
 		ProductionType: Aircraft.Vietnam
 	Power:
 		Amount: -50
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable

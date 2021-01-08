@@ -799,6 +799,8 @@ yadome:
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate
 	InfiltrateForExploration:
 		Types: SpyInfiltrate
 		InfiltratedNotification: RadarSabotaged
@@ -814,6 +816,7 @@ yadome:
 yadisk:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Yuri
@@ -854,7 +857,7 @@ yadisk:
 		Condition: produced
 	Production:
 		Produces: Aircraft.Yuri, Aircraft.Lazarus
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || infiltrated
 	ProductionQueue:
 		Type: Aircraft.Yuri
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
@@ -883,6 +886,8 @@ yadisk:
 		ProductionType: Aircraft.Lazarus
 	Power:
 		Amount: -50
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	-WithMakeAnimation:
 	Capturable:
 		RequiresCondition: !invulnerability

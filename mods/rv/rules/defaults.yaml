@@ -2615,6 +2615,21 @@
 	ExternalCondition@emp:
 		Condition: emp
 
+^DisabledByInfiltration:
+	GrantConditionOnInfiltration:
+		Types: SpyInfiltrate
+		Condition: infiltrated
+		Duration: 750
+	WithColoredOverlay@IDISABLE:
+		RequiresCondition: disabled
+		Palette: disabled
+	GrantCondition@IDISABLE:
+		RequiresCondition: infiltrated
+		Condition: disabled
+	TimedConditionBar@INFILTRATED:
+		Condition: infiltrated
+		Color: 0088FF
+
 ^DisabledByMagnetron:
 	WithColoredOverlay@MagneFreeze:
 		RequiresCondition: magnefreeze
