@@ -1,6 +1,7 @@
 ^ConstructionYard:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@shape: ^4x4Shape
 	Buildable:
 		Queue: Building.ConYards
@@ -24,7 +25,7 @@
 		Cost: 4000
 	Production:
 		Produces: Building, Support
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || infiltrated
 	ProductionQueue@Building:
 		Type: Building
 		Group: Building
@@ -56,7 +57,7 @@
 		Facing: 384
 		Voice: Move
 		DeployCursor: undeploy
-		PauseOnCondition: chronodisable || controlled
+		PauseOnCondition: chronodisable || controlled || infiltrated
 		RequiresCondition: factundeploy && !build-incomplete
 	TransformsIntoMobile:
 		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
@@ -96,6 +97,8 @@
 		Condition: invisibility
 	ExternalCondition@INVISIBILITY:
 		Condition: invisibility
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Voiced:
 		VoiceSet: ConstructionYardVoice
 		Volume: 0.8
