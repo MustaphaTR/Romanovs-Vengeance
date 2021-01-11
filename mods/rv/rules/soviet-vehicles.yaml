@@ -1022,8 +1022,6 @@ deva:
 
 exps:
 	Inherits: ^ExpansionVehicle
-	Inherits@AI: ^AIMicroManagable
-	Inherits@AUTOTARGETAI: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
 		Prerequisites: repairpad, ~techlevel.2, ~!AllowOneOnly
@@ -1039,22 +1037,6 @@ exps:
 		Image: expn
 	RenderVoxels:
 		Image: expn
-	AutoDeployer@AI:
-		RequiresCondition: ai-control
-		DeployTrigger: Attack
-		DeployChance: 100
-		DeployTicks: 5
-		UndeployTicks: 50
-	Armament@AIDummyAiming: ## Hack: Make AI ExpansionVehicle deploy
-		RequiresCondition: ai-control
-		Weapon: GroundDummyAim
-	AttackFrontal:
-		Voice: Attack
-		PauseOnCondition: chronodisable || emp
-		FacingTolerance: 128
-	ProvidesPrerequisite@AIbuildinglimit:
-		RequiresCondition: ai-control
-		Prerequisite: AllowOneOnly
 
 ftnk:
 	Inherits: ^Vehicle

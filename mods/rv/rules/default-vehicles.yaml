@@ -83,6 +83,8 @@
 
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
+	Inherits@AI: ^AIMicroManagable
+	Inherits@AUTOTARGETAI: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -157,6 +159,22 @@
 		SoundFiles: vmcvstaa.wav
 		Volume: 0.4
 		RequiresCondition: moving
+	AutoDeployer@AI:
+		RequiresCondition: ai-control
+		DeployTrigger: Attack
+		DeployChance: 100
+		DeployTicks: 5
+		UndeployTicks: 50
+	Armament@AIDummyAiming: ## Hack: Make AI ExpansionVehicle deploy
+		RequiresCondition: ai-control
+		Weapon: GroundDummyAim
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp
+		FacingTolerance: 128
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: AllowOneOnly
 
 ^MainBattleTank:
 	Inherits: ^Vehicle

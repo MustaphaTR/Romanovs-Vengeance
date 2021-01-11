@@ -105,6 +105,7 @@
 
 ^ExpansionNode:
 	Inherits: ^BaseBuilding
+	Inherits@AI: ^AIMicroManagable
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	IsometricSelectable:
@@ -162,6 +163,9 @@
 	#	Condition: invisibility
 	# ExternalCondition@INVISIBILITY:
 	#	Condition: invisibility
+	ProvidesPrerequisite@AITowerRush:
+		RequiresCondition: ai-control
+		Prerequisite: AITowerRush
 
 ^Barracks:
 	Inherits: ^BaseBuilding

@@ -1646,8 +1646,6 @@ ctnk:
 
 expn:
 	Inherits: ^ExpansionVehicle
-	Inherits@AI: ^AIMicroManagable
-	Inherits@AUTOTARGETAI: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.Germany
 		Prerequisites: repairpad, ~techlevel.2, ~!AllowOneOnly
@@ -1659,19 +1657,3 @@ expn:
 		VoiceSet: AlliedConstructionVehicleVoice
 	Hovers:
 		InitialHeight: 128
-	AutoDeployer@AI:
-		RequiresCondition: ai-control
-		DeployTrigger: Attack
-		DeployChance: 100
-		DeployTicks: 5
-		UndeployTicks: 50
-	Armament@AIDummyAiming: ## Hack: Make AI ExpansionVehicle deploy
-		RequiresCondition: ai-control
-		Weapon: GroundDummyAim
-	AttackFrontal:
-		Voice: Attack
-		PauseOnCondition: chronodisable || emp
-		FacingTolerance: 128
-	ProvidesPrerequisite@AIbuildinglimit:
-		RequiresCondition: ai-control
-		Prerequisite: AllowOneOnly
