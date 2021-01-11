@@ -241,12 +241,12 @@ dog:
 e1:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
+	Inherits@AI: ^AIMicroManagable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
-	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		Prerequisites: ~techlevel.1
@@ -399,12 +399,12 @@ e1:
 ggi:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
+	Inherits@AI: ^AIMicroManagable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
-	Inherits@AI: ^AIMicroManagable
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && undeployed && !ai-control
 	AutoTargetPriority@ATTACKANYTHING:
