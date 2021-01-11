@@ -147,6 +147,36 @@ shad-squad-3:
 	ProvidesPrerequisite@AIbuildinglimit:
 		Prerequisite: LoadedExists
 
+yapowr-full:
+	Inherits: yapowr
+	Buildable:
+		BuildPaletteOrder: 11
+		Prerequisites: yabrck, ~prerequisite.aiplayer, ~techlevel.1
+	ProductionCostMultiplier:
+		Multiplier: 160
+	Cargo:
+		InitialUnits: init, init, init
+
+natbnk-ltnk:
+	Inherits: natbnk
+	Buildable:
+		BuildPaletteOrder: 51
+		Prerequisites: yaweap, ~prerequisite.aiplayer, ~techlevel.1
+	ProductionCostMultiplier:
+		Multiplier: 220
+	Cargo:
+		InitialUnits: ltnk
+
+natbnk-ytnk:
+	Inherits: natbnk
+	Buildable:
+		BuildPaletteOrder: 52
+		Prerequisites: yaweap, ~prerequisite.aiplayer, ~techlevel.1
+	ProductionCostMultiplier:
+		Multiplier: 260
+	Cargo:
+		InitialUnits: ytnk
+
 nalasr-tr:
 	Inherits: nalasr
 	Buildable:

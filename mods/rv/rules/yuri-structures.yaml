@@ -176,10 +176,13 @@ yapowr:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
 	IsometricSelectable:
+		Class: yapowr
 		DecorationHeight: 60
 	Voiced:
 		VoiceSet: PowerPlantVoice
 		Volume: 0.8
+	RenderSprites:
+		Image: yapowr
 
 yabrck:
 	Inherits: ^Barracks
@@ -1260,10 +1263,10 @@ natbnk:
 	WithSpriteBody:
 	WithIdleOverlay@Garrisoned:
 		Sequence: idle-garrisoned
-		RequiresCondition: loaded
+		RequiresCondition: !build-incomplete && loaded
 	WithIdleOverlay@GarrisonedFront:
 		Sequence: idle-garrisoned-front
-		RequiresCondition: loaded
+		RequiresCondition: !build-incomplete && loaded
 	Targetable@loaded:
 		TargetTypes: LoadedTankBunker
 		RequiresCondition: loaded
@@ -1280,7 +1283,10 @@ natbnk:
 	#	Types: SatelliteScan
 	#	Range: 6c0
 	IsometricSelectable:
+		Class: natbnk
 		DecorationHeight: 45
+	RenderSprites:
+		Image: natbnk
 
 yapsyt:
 	Inherits: ^SupportBuilding
