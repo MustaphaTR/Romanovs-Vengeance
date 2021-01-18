@@ -73,7 +73,7 @@ bfrt-squad-3:
 	ProductionCostMultiplier@1:
 		Multiplier: 200
 
-^AItransportControl:
+^AItransportControl: ## For Cargo trait
 	Inherits@AI: ^AIMicroManagable
 	Cargo:
 		LoadedCondition: loaded
@@ -82,6 +82,75 @@ bfrt-squad-3:
 		DeployChance: 100
 		DeployTicks: 50
 		UndeployTicks: 200
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: loaded
+		Prerequisite: LoadedExists
+
+^AIcarryallControl: ## For Carryall trait
+	Inherits: ^AItransportControl
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	-Cargo:
+	Carryall:
+		CarryCondition: loaded
+	AttackAircraft:
+		FacingTolerance: 127
+		AttackType: Hover
+	Armament@primary:
+		Weapon: GroundDummyAim
+	KillsSelf@DisappearsIfUnload:
+		Delay: 500
+		RequiresCondition: ai-control && !loaded
+		RemoveInstead: true
+
+hind-htnk:
+	Inherits: hind
+	Inherits@AI: ^AIcarryallControl
+	Selectable:
+		Class: hind
+	Buildable:
+		Prerequisites: naweap, ~techlevel.2, ~prerequisite.aiplayer, ~!LoadedExists
+	ProductionCostMultiplier@1:
+		Multiplier: 200
+	Carryall:
+		InitialActor: htnk
+	RenderSprites:
+		Image: hind
+	RenderVoxels:
+		Image: hind
+
+hind-ftnk:
+	Inherits: hind-htnk
+	Carryall:
+		InitialActor: ftnk
+	Buildable:
+		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+
+hind-apoc:
+	Inherits: hind-htnk
+	Carryall:
+		InitialActor: apoc
+	Buildable:
+		Prerequisites: naweap, natech, ~techlevel.4, ~prerequisite.aiplayer, ~!LoadedExists
+	ProductionCostMultiplier@1:
+		Multiplier: 300
+
+hind-htk-squad-1:
+	Inherits: hind-htnk
+	Carryall:
+		InitialActor: htk-squad-1
+	Buildable:
+		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+	ProductionCostMultiplier@1:
+		Multiplier: 300
+
+hind-htk-squad-2:
+	Inherits: hind-htnk
+	Carryall:
+		InitialActor: htk-squad-2
+	Buildable:
+		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+	ProductionCostMultiplier@1:
+		Multiplier: 500
 
 htk-dron:
 	Inherits: htk
@@ -108,6 +177,15 @@ htk-squad-1:
 	ProductionCostMultiplier@1:
 		Multiplier: 300
 
+htk-squad-2:
+	Inherits: htk-dron
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer
+	Cargo:
+		InitialUnits: ivan, ivan, ivan, ivan, ivan
+	ProductionCostMultiplier@1:
+		Multiplier: 400
+
 shad-squad-1:
 	Inherits: shad
 	Inherits@AI: ^AItransportControl
@@ -119,9 +197,6 @@ shad-squad-1:
 		InitialUnits: ggi, dog, ggi, dog, e1, e1, e1
 	ProductionCostMultiplier@1:
 		Multiplier: 125
-	ProvidesPrerequisite@AIbuildinglimit:
-		RequiresCondition: loaded
-		Prerequisite: LoadedExists
 	RenderSprites:
 		Image: shad
 	RenderVoxels:
@@ -135,8 +210,6 @@ shad-squad-2:
 		Multiplier: 150
 	Cargo:
 		InitialUnits: e1, ggi, ggi, gren, gren, e1, e1
-	ProvidesPrerequisite@AIbuildinglimit:
-		Prerequisite: LoadedExists
 
 shad-squad-3:
 	Inherits: shad-squad-1
@@ -144,8 +217,6 @@ shad-squad-3:
 		Prerequisites: gapile, ~prerequisite.aiplayer, gatech, ~techlevel.2, ~!LoadedExists, ~!tany
 	Cargo:
 		InitialUnits: e1, ggi, ggi, tany, dog, dog
-	ProvidesPrerequisite@AIbuildinglimit:
-		Prerequisite: LoadedExists
 
 yapowr-full:
 	Inherits: yapowr
