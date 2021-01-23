@@ -2,8 +2,8 @@ Flamer:
 	Inherits: ^FireWeapon
 	ReloadDelay: 50
 	Range: 5c0
-	Burst: 10
-	BurstDelays: 1
+	Burst: 5
+	BurstDelays: 2
 	Projectile: BulletAS
 		Speed: 170
 		Image: fireball
@@ -25,9 +25,15 @@ Flamer:
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallScorch
 
+FlamerSound:
+	Inherits: Flamer
+	Report: flamtnk1.aud
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: firebl3.aud
+
 FlamerE:
 	Inherits: Flamer
-	Burst: 20
+	Burst: 10
 	Projectile: BulletAS
 		Image: fireballblue
 		TrailImage: fireballblue
@@ -38,10 +44,22 @@ FlamerE:
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
+FlamerSoundE:
+	Inherits: FlamerE
+	Report: flamtnk1.aud
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: firebl3.aud
+
 CRFlamer:
 	Inherits: Flamer
 	ReloadDelay: 40
-	Burst: 15
+	Burst: 8
+
+CRFlamerSound:
+	Inherits: CRFlamer
+	Report: flamtnk1.aud
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: firebl3.aud
 
 UCFlamer:
 	Inherits: Flamer
@@ -49,17 +67,29 @@ UCFlamer:
 	Projectile: BulletAS
 		Blockable: false
 
+UCFlamerSound:
+	Inherits: UCFlamer
+	Report: flamtnk1.aud
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: firebl3.aud
+
 UCFlamerE:
 	Inherits: FlamerE
 	Range: 7c0
 	Projectile: BulletAS
 		Blockable: false
 
+UCFlamerSoundE:
+	Inherits: UCFlamerE
+	Report: flamtnk1.aud
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: firebl3.aud
+
 TankFlamer:
 	Inherits: Flamer
 	ReloadDelay: 40
 	Range: 5c0
-	Burst: 20
+	Burst: 10
 	Projectile: BulletAS
 		Speed: 340
 		LaunchAngle: 0
@@ -70,9 +100,15 @@ TankFlamer:
 		Spread: 0c768
 		Damage: 10
 
+TankFlamerSound:
+	Inherits: TankFlamer
+	Report: flamtnk1.aud
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: firebl3.aud
+
 TankFlamerE:
 	Inherits: TankFlamer
-	Burst: 40
+	Burst: 20
 	Projectile: BulletAS
 		Image: fireballblue
 		TrailImage: fireballblue
@@ -84,6 +120,12 @@ TankFlamerE:
 		Spread: 0c768
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
+
+TankFlamerSoundE:
+	Inherits: TankFlamerE
+	Report: flamtnk1.aud
+	Warhead@3Eff: CreateEffect
+		ImpactSounds: firebl3.aud
 
 ToxinSprayer:
 	Inherits: Flamer

@@ -1083,11 +1083,19 @@ ftnk:
 		TurnSpeed: 28
 	Armament@primary:
 		Weapon: TankFlamer
-		LocalOffset: 768,384,640, 768,-384,640
+		LocalOffset: 768,-384,640
+		RequiresCondition: !rank-elite
+	Armament@primary-sound:
+		Weapon: TankFlamerSound
+		LocalOffset: 768,384,640
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: TankFlamerE
-		LocalOffset: 768,384,640, 768,-384,640
+		LocalOffset: 768,-384,640
+		RequiresCondition: rank-elite
+	Armament@elite-sound:
+		Weapon: TankFlamerSoundE
+		LocalOffset: 768,384,640
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
