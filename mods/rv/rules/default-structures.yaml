@@ -242,7 +242,7 @@
 	Inherits: ^BaseBuilding
 	Inherits@DISK: ^DiskStealable
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^4x3Shape
+	Inherits@shape: ^NormalRefineryHitShape
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 30
@@ -338,7 +338,7 @@
 
 ^RefineryB:
 	Inherits: ^Refinery
-	Inherits@shape: ^3x4Shape
+	Inherits@shape: ^FlippedRefineryXHitshape
 	-Buildable:
 	Building:
 		Footprint: xxx xxx xxx ===
@@ -352,6 +352,7 @@
 
 ^RefineryC:
 	Inherits: ^Refinery
+	Inherits@shape: ^FlippedRefineryHitshape
 	-Buildable:
 	Building:
 		Footprint: =xxx =xxx =xxx
@@ -366,7 +367,7 @@
 
 ^RefineryD:
 	Inherits: ^Refinery
-	Inherits@shape: ^3x4Shape
+	Inherits@shape: ^FlippedRefineryYHitshape
 	-Buildable:
 	Building:
 		Footprint: === xxx xxx xxx
