@@ -272,12 +272,13 @@ e1:
 		HP: 125
 	Mobile:
 		Speed: 75
-		RequireForceMoveCondition: !undeployed
+		RequiresCondition: undeployed
+		# RequireForceMoveCondition: !undeployed
 	Garrisoner:
 		Voice: Move
 		GarrisonType: Garrisoner
-	Passenger:
-		RequireForceMoveCondition: !undeployed
+	# Passenger:
+	#	RequireForceMoveCondition: !undeployed
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -331,7 +332,7 @@ e1:
 		SmartDeploy: True
 		Facing: 384
 		Voice: Deploy
-		UndeployOnMove: true
+		# UndeployOnMove: true
 		DeploySounds: igidepa.wav
 		UndeploySounds: igidepb.wav
 		PauseOnCondition: chronodisable
@@ -446,14 +447,15 @@ ggi:
 		HP: 100
 	Mobile:
 		Speed: 75
-		RequireForceMoveCondition: !undeployed
+		RequiresCondition: undeployed
+		# RequireForceMoveCondition: !undeployed
 	Garrisoner:
 		Voice: Move
 		CustomPipType: blue
 		GarrisonType: Garrisoner
 	Passenger:
 		CustomPipType: blue
-		RequireForceMoveCondition: !undeployed
+		# RequireForceMoveCondition: !undeployed
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -562,7 +564,7 @@ ggi:
 		SmartDeploy: True
 		Facing: 384
 		Voice: Deploy
-		UndeployOnMove: true
+		# UndeployOnMove: true
 		DeploySounds: iggidepa.wav
 		UndeploySounds: iggidepa.wav
 		PauseOnCondition: chronodisable
