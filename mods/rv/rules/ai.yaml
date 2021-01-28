@@ -279,20 +279,32 @@ Player:
 				OrderName: CubanClusterMines
 				MinimumAttractiveness: 3000
 				Consideration@1:
-					Against: Enemy, Neutral, Ally
-					Types: Structure, Vehicle, Infantry
-					Attractiveness: -1
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 			clusterminesshared:
 				OrderName: SovietClusterMines
 				MinimumAttractiveness: 3000
 				Consideration@1:
-					Against: Enemy, Neutral, Ally
-					Types: Structure, Vehicle, Infantry
-					Attractiveness: -1
+					Against: Enemy
+					Types: Infantry, Vehicle
+					Attractiveness: 1
 					TargetMetric: Value
 					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 			ambush:
 				OrderName: LibyanAmbush
 				MinimumAttractiveness: 5
