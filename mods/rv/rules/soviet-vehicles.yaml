@@ -196,7 +196,7 @@ dron:
 		SuppressionCountThreshold: 1
 		SuppressionDamageType: SuppressTerrorDrone
 		JoustRange: 1c768
-		PauseOnCondition: chronodisable || emp
+		RequiresCondition: !chronodisable && !emp
 	RejectsOrders:
 		RequiresCondition: jousting
 	SpeedMultiplier@JOUSTING:
