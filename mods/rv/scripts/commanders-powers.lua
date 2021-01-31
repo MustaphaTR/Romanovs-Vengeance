@@ -21,9 +21,9 @@ elseif CPModifier == "double" then
 elseif CPModifier == "three" then
 	PointsPerRank = { 3, 3, 3, 3, 3 }
 elseif CPModifier == "triple" then
-	PointsPerRank = { 3, 3, 3, 3, 4 }
+	PointsPerRank = { 3, 3, 3, 3, 5 }
 else
-	PointsPerRank = { 4, 0, 11, 0, 1 }
+	PointsPerRank = { 4, 0, 11, 0, 2 }
 end
 
 PointActorExists = { }
