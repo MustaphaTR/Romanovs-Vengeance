@@ -402,7 +402,7 @@
 		Modifier: 70
 		RequiresCondition: propaganda1 || propaganda2 || propaganda3
 	WithColoredOverlay@PROPAGANDA:
-		Palette: propaganda
+		Color: FF800080
 		RequiresCondition: propaganda1 || propaganda2 || propaganda3
 	ExternalCondition@PROPAGANDA1:
 		Condition: propaganda1
@@ -414,7 +414,7 @@
 		RequiresCondition: propaganda_tower
 		Modifier: 75
 	WithColoredOverlay@PROPAGANDA_TOWER:
-		Palette: propaganda_tower
+		Color: FF800040
 		RequiresCondition: propaganda_tower
 	ChangesHealth@PROPAGANDA_TOWER:
 		Step: 0
@@ -440,7 +440,7 @@
 		Modifier: 200
 		RequiresCondition: boost3
 	WithColoredOverlay@BOOST:
-		Palette: boost
+		Color: FFFFFF40
 		RequiresCondition: boost1 || boost2 || boost3
 	ExternalCondition@BOOST1:
 		Condition: boost1
@@ -648,6 +648,7 @@
 
 ^IronCurtainable:
 	WithColoredOverlay@ironcurtain:
+		Color: 40000080
 		RequiresCondition: invulnerability
 	DamageMultiplier@ironcurtain:
 		RequiresCondition: invulnerability
@@ -704,7 +705,7 @@
 
 ^ForceShieldable:
 	WithColoredOverlay@forceshield:
-		Palette: force
+		Color: 00004080
 		RequiresCondition: forceshield
 	DamageMultiplier@forceshield:
 		RequiresCondition: forceshield
@@ -723,16 +724,16 @@
 
 ^AcceptsPointDefenseDrones:
 	WithColoredOverlay@PointDefense1:
-		Palette: pointdefense1
+		Color: 30003040
 		RequiresCondition: pointdefense && breakpointdefense == 3
 	WithColoredOverlay@PointDefense2:
-		Palette: pointdefense2
+		Color: 30003060
 		RequiresCondition: pointdefense && breakpointdefense == 2
 	WithColoredOverlay@PointDefense3:
-		Palette: pointdefense3
+		Color: 30003080
 		RequiresCondition: pointdefense && breakpointdefense == 1
 	WithColoredOverlay@PointDefense4:
-		Palette: pointdefense4
+		Color: 300030A0
 		RequiresCondition: pointdefense && !breakpointdefense
 	ExternalCondition@PointDefense:
 		Condition: pointdefense
@@ -787,7 +788,7 @@
 	Targetable@ChronoDisable:
 		TargetTypes: ChronoDisable
 	WithColoredOverlay@ChronoDisable:
-		Palette: chronodisable
+		Color: 0060C040
 		RequiresCondition: chronodisable
 	GrantCondition@ChronoDisable:
 		Condition: chronodisable
@@ -860,7 +861,7 @@
 	RejectsOrders@CHAOS:
 		RequiresCondition: chaos
 	WithColoredOverlay@CHAOS:
-		Palette: chaos
+		Color: 80008040
 		RequiresCondition: chaos
 	TimedConditionBar@CHAOS:
 		Color: 880088
@@ -1082,6 +1083,11 @@
 		AssaultMoveCondition: assault-move
 		Voice: Attack
 
+^PlayerHandicaps:
+	HandicapFirepowerMultiplier:
+	HandicapDamageMultiplier:
+	HandicapProductionTimeMultiplier:
+
 ^FlatSelectionMode:
 	Selectable:
 		PriorityModifiers: Ctrl
@@ -1104,6 +1110,7 @@
 	Inherits@11: ^AffectedByStealthGenerator
 	Inherits@12: ^AcceptsTeslaBomb
 	Inherits@13: ^AcceptsToxinBomb
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@shape: ^1x1Shape
 	-DrawLineToTarget:
 	AppearsOnMapPreview:
@@ -1113,7 +1120,7 @@
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	WithColoredOverlay@FLARE:
-		Palette: flare
+		Color: FF000080
 		RequiresCondition: flare
 	ExternalCondition@FLARE:
 		Condition: flare
@@ -1433,6 +1440,7 @@
 ^Wall:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@shape: ^1x1Shape
 	AppearsOnMapPreview:
 	OwnerLostAction:
@@ -1628,6 +1636,7 @@
 	Inherits@18: ^HealsInAmbulance
 	Inherits@19: ^AffectedBySpectreBullets
 	Inherits@20: ^AcceptsDeathBomb
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	Health:
 	OwnerLostAction:
@@ -1984,6 +1993,7 @@
 	Inherits@21: ^AcceptsPointDefenseDrones
 	Inherits@22: ^LowHealthSpeedPenalty
 	Inherits@23: ^AcceptsDeathBomb
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -2021,9 +2031,6 @@
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp
-	WithColoredOverlay@IDISABLE:
-		RequiresCondition: disabled
-		Palette: disabled
 	Carryable:
 	Passenger:
 		Voice: Move
@@ -2115,6 +2122,7 @@
 
 ^NeutralAircraft:
 	Inherits@1: ^ExistsInWorld
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -2250,6 +2258,7 @@
 
 ^ShootableMissile:
 	Inherits@1: ^ExistsInWorld
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	-GivesExperience:
 	Armor:
 		Type: Missile
@@ -2369,6 +2378,7 @@
 	Inherits@18: ^AffectedBySpectreBullets
 	Inherits@19: ^AcceptsPointDefenseDrones
 	Inherits@20: ^AcceptsDeathBomb
+	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
 		Action: Kill
@@ -2406,9 +2416,6 @@
 		RepairActors: gayard, nayard, yayard
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp
-	WithColoredOverlay@IDISABLE:
-		RequiresCondition: disabled
-		Palette: disabled
 	HiddenUnderFog:
 	ActorLostNotification:
 	ProximityCaptor:
@@ -2614,8 +2621,8 @@
 
 ^DisableOnLowPower:
 	WithColoredOverlay@IDISABLE:
+		Color: 00000080
 		RequiresCondition: disabled
-		Palette: disabled
 	GrantConditionOnPowerState@LOWPOWER:
 		Condition: lowpower
 		ValidPowerStates: Low, Critical
@@ -2645,8 +2652,8 @@
 
 ^DisabledByPowerOutage:
 	WithColoredOverlay@IDISABLE:
+		Color: 00000080
 		RequiresCondition: disabled
-		Palette: disabled
 	GrantCondition@IDISABLE:
 		RequiresCondition: power-outage
 		Condition: disabled
@@ -2661,8 +2668,8 @@
 
 ^DisabledByEMP:
 	WithColoredOverlay@IDISABLE:
+		Color: 00000080
 		RequiresCondition: disabled
-		Palette: disabled
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp
 		Condition: disabled
@@ -2685,8 +2692,8 @@
 		Condition: infiltrated
 		Duration: 750
 	WithColoredOverlay@IDISABLE:
+		Color: 00000080
 		RequiresCondition: disabled
-		Palette: disabled
 	GrantCondition@IDISABLE:
 		RequiresCondition: infiltrated
 		Condition: disabled
@@ -2696,8 +2703,8 @@
 
 ^DisabledByMagnetron:
 	WithColoredOverlay@MagneFreeze:
+		Color: FF50F580
 		RequiresCondition: magnefreeze
-		Palette: magnefreeze
 	Targetable@MagneFreeze:
 		TargetTypes: MagneFreezable
 	ExternalCondition@MagneFreeze:
@@ -2708,8 +2715,8 @@
 		Modifier: 33
 		RequiresCondition: magneslow
 	WithColoredOverlay@MagneSlow:
+		Color: FF50F540
 		RequiresCondition: magneslow
-		Palette: magneslow
 	ExternalCondition@MagneSlow:
 		Condition: magneslow
 
@@ -2734,8 +2741,8 @@
 
 ^DiskDrainable:
 	WithColoredOverlay@IDISABLE:
+		Color: 00000080
 		RequiresCondition: disabled
-		Palette: disabled
 	ExternalCondition@DISKDRAIN:
 		Condition: diskdrain
 	Targetable@DISKDRAIN:

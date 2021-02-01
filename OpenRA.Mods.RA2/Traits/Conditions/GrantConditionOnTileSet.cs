@@ -39,7 +39,7 @@ namespace OpenRA.Mods.Common.Traits
 
 		void INotifyCreated.Created(Actor self)
 		{
-			if (info.TileSets.Contains(self.World.Map.Rules.TileSet.Id))
+			if (info.TileSets.Contains(self.World.Map.Rules.TerrainInfo.Id))
 				self.GrantCondition(info.Condition);
 		}
 	}

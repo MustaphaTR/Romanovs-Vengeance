@@ -275,7 +275,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (self.World.Map.Contains(location))
 			{
 				var tile = self.World.Map.Tiles[location];
-				var ti = self.World.Map.Rules.TileSet.GetTileInfo(tile);
+				var ti = self.World.Map.Rules.TerrainInfo.GetTerrainInfo(tile);
 				if (ti != null)
 					ramp = ti.RampType;
 			}
