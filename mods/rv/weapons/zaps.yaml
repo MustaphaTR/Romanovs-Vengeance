@@ -217,7 +217,7 @@ TankBoltE:
 TeslaFragment:
 	Inherits: TankBolt
 	Range: 3c0
-	ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Structure, Wall
+	ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Structure, Barrel, Mine, Wall
 	Warhead@1Dam: SpreadDamage
 		Damage: 30
 
@@ -384,7 +384,7 @@ RadBeamWeapon:
 	Range: 6c0
 	ReloadDelay: 100
 	Report: idesat1a.wav
-	InvalidTargets: Structure, Wall, ImmuneToRadiation
+	InvalidTargets: Structure, Barrel, Mine, Wall, ImmuneToRadiation
 	Projectile: RadBeam
 		Amplitude: 476
 		WaveLength: 384
@@ -403,7 +403,7 @@ RadBeamWeapon:
 			Concrete: 0
 			Drone: 40
 			Rocket: 100
-		InvalidTargets: Structure, Wall, ImmuneToRadiation
+		InvalidTargets: Structure, Barrel, Mine, Wall, ImmuneToRadiation
 		DamageTypes: RadiationDeath, NonTemporal
 
 RadBeamWeaponE:
@@ -489,7 +489,7 @@ CurtainRifle:
 	Report: siroon.wav
 	TargetActorCenter: true
 	ValidTargets: IronCurtainable
-	InvalidTargets: Infantry, Air, Structure
+	InvalidTargets: Infantry, Air, Structure, Barrel, Mine
 	Projectile: TeslaZap
 		Image: litningred
 	Warhead@Condition: GrantExternalCondition
@@ -498,7 +498,7 @@ CurtainRifle:
 		Duration: 75
 		ValidRelationships: Ally
 		ValidTargets: IronCurtainable
-		InvalidTargets: Infantry, Air, Structure
+		InvalidTargets: Infantry, Air, Structure, Barrel, Mine
 	Warhead@Stars: CreateEffect
 		Explosions: iron_fx
 		ValidTargets: Ground, Water
@@ -583,7 +583,7 @@ MagneShake:
 	ReloadDelay: 110
 	Range: 10c0
 	Report: vmagat2a.wav
-	ValidTargets: Ground, MagneFreezable, Structure
+	ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
 	InvalidTargets: Infantry
 	Projectile: LaserZap
 		Duration: 110
@@ -597,11 +597,11 @@ MagneShake:
 		Falloff: 100, 100
 		Damage: 80
 		AffectsParent: false
-		ValidTargets: Structure
+		ValidTargets: Structure, Barrel, Mine
 		DamageTypes: NonTemporal
 	Warhead@2Dam: TargetDamage
 		Damage: 0
-		ValidTargets: Ground, MagneFreezable, Structure
+		ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
 		InvalidTargets: Infantry
 
 MagneShakeE:
@@ -613,7 +613,7 @@ MagneFreeze:
 	ReloadDelay: 110
 	Range: 10c0
 	Report: vmagat1a.wav
-	ValidTargets: Ground, MagneFreezable, Structure
+	ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
 	InvalidTargets: Infantry
 	Projectile: LaserZap
 		Duration: 50

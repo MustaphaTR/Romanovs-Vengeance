@@ -536,7 +536,7 @@ ClusterMissileCluster:
 		DamageTypes: Prone70Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
-		InvalidTargets: Vehicle, Structure
+		InvalidTargets: Vehicle, Structure, Barrel, Mine, Wall
 	Warhead@3Eff: CreateEffect
 		Explosions: large_twlt
 		ImpactSounds: gexpapoa.wav
@@ -625,7 +625,7 @@ MineExplosion:
 		Spread: 256
 		Damage: 400
 		AffectsParent: true
-		InvalidTargets: Structure, Wall, Trees
+		InvalidTargets: Structure, Barrel, Mine, Wall, Trees
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: mine_explosion
@@ -633,4 +633,4 @@ MineExplosion:
 		ImpactSounds: mine1.aud, mineblo1.aud
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
-		InvalidTargets: Structure, Wall, Trees
+		InvalidTargets: Structure, Barrel, Mine, Wall, Trees
