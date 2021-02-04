@@ -456,11 +456,33 @@ gaairc:
 	GrantExternalConditionToProduced:
 		Condition: produced
 	Production:
-		Produces: Aircraft.Allies, Aircraft.Korea
+		Produces: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		PauseOnCondition: powerdown || chronodisable || infiltrated
 	ProductionQueue:
 		Type: Aircraft.Allies
-		Factions: america, germany, england, france, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: germany, france, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@USA:
+		Type: Aircraft.USA
+		Factions: america
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@UK:
+		Type: Aircraft.UK
+		Factions: england
 		Group: Aircraft
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
@@ -482,6 +504,10 @@ gaairc:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Aircraft.Allies
+	ProductionBar@USA:
+		ProductionType: Aircraft.USA
+	ProductionBar@UK:
+		ProductionType: Aircraft.UK
 	ProductionBar@Korea:
 		ProductionType: Aircraft.Korea
 	InfiltrateForSupportPowerReset:
@@ -750,10 +776,32 @@ gaweap:
 		Prerequisite: powered_robo
 		RequiresCondition: !chronodisable
 	Production:
-		Produces: Vehicle.Allies, Vehicle.Germany
+		Produces: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 	ProductionQueue:
 		Type: Vehicle.Allies
-		Factions: america, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+	ProductionQueue@USA:
+		Type: Vehicle.USA
+		Factions: america
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@UK:
+		Type: Vehicle.UK
+		Factions: england
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionQueue@Germany:
 		Type: Vehicle.Germany
 		Factions: germany
@@ -767,6 +815,10 @@ gaweap:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Vehicle.Allies
+	ProductionBar@USA:
+		ProductionType: Vehicle.USA
+	ProductionBar@UK:
+		ProductionType: Vehicle.UK
 	ProductionBar@Germany:
 		ProductionType: Vehicle.Germany
 	WithIdleOverlay@flag:

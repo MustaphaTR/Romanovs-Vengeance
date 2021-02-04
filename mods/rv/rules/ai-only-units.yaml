@@ -32,10 +32,32 @@ fv-gren:
 	Cargo:
 		InitialUnits: gren
 
+fv-ghost:
+	Inherits: fv-e1
+	Buildable:
+		Queue: Vehicle.USA
+		BuildPaletteOrder: 34
+		Prerequisites: ~prerequisite.aiplayer, gaairc, ~techlevel.3
+	ProductionCostMultiplier@1:
+		Multiplier: 150
+	Cargo:
+		InitialUnits: ghost
+
+fv-snipe:
+	Inherits: fv-e1
+	Buildable:
+		Queue: Vehicle.UK
+		BuildPaletteOrder: 34
+		Prerequisites: ~prerequisite.aiplayer, gaairc, ~techlevel.3
+	ProductionCostMultiplier@1:
+		Multiplier: 150
+	Cargo:
+		InitialUnits: snipe
+
 fv-cleg:
 	Inherits: fv-e1
 	Buildable:
-		BuildPaletteOrder: 33
+		BuildPaletteOrder: 35
 		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.4
 	ProductionCostMultiplier@1:
 		Multiplier: 150
@@ -123,6 +145,22 @@ hind-ftnk:
 	Carryall:
 		InitialActor: ftnk
 	Buildable:
+		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+
+hind-ttnk:
+	Inherits: hind-htnk
+	Carryall:
+		InitialActor: ttnk
+	Buildable:
+		Queue: Aircraft.USSR
+		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+
+hind-dtruck:
+	Inherits: hind-htnk
+	Carryall:
+		InitialActor: dtruck
+	Buildable:
+		Queue: Aircraft.Libya
 		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
 
 hind-apoc:
@@ -214,9 +252,17 @@ shad-squad-2:
 shad-squad-3:
 	Inherits: shad-squad-1
 	Buildable:
-		Prerequisites: gapile, ~prerequisite.aiplayer, gatech, ~techlevel.2, ~!LoadedExists, ~!tany
+		Prerequisites: gapile, ~prerequisite.aiplayer, gatech, ~techlevel.4, ~!LoadedExists, ~!tany
 	Cargo:
 		InitialUnits: e1, ggi, ggi, tany, dog, dog
+
+shad-squad-4:
+	Inherits: shad-squad-1
+	Buildable:
+		Queue: Aircraft.USA
+		Prerequisites: gapile, ~prerequisite.aiplayer, gaairc, ~techlevel.3, ~!LoadedExists
+	Cargo:
+		InitialUnits: e1, ggi, ggi, ghost, ghost, dog, dog
 
 yapowr-full:
 	Inherits: yapowr

@@ -638,13 +638,35 @@ naweap:
 	ProvidesPrerequisite@naweap:
 		Prerequisite: naweap
 	Production:
-		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	ProductionQueue:
 		Type: Vehicle.Soviets
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
 	ProductionQueue@USSR:
 		Type: Vehicle.USSR
 		Factions: russia
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Iraq:
+		Type: Vehicle.Iraq
+		Factions: iraq
+		Group: Vehicle
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@Cuba:
+		Type: Vehicle.Cuba
+		Factions: cuba
 		Group: Vehicle
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
@@ -679,6 +701,10 @@ naweap:
 		ProductionType: Vehicle.Soviets
 	ProductionBar@USSR:
 		ProductionType: Vehicle.USSR
+	ProductionBar@Iraq:
+		ProductionType: Vehicle.Iraq
+	ProductionBar@Cuba:
+		ProductionType: Vehicle.Cuba
 	ProductionBar@Libya:
 		ProductionType: Vehicle.Libya
 	ProductionBar@Baku:
@@ -830,11 +856,22 @@ naheli:
 	GrantExternalConditionToProduced:
 		Condition: produced
 	Production:
-		Produces: Aircraft.Soviets, Aircraft.Vietnam
+		Produces: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Libya
 		PauseOnCondition: chronodisable || infiltrated
 	ProductionQueue:
 		Type: Aircraft.Soviets
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionQueue@USSR:
+		Type: Aircraft.USSR
+		Factions: russia
 		Group: Aircraft
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
@@ -854,10 +891,25 @@ naheli:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionQueue@Libya:
+		Type: Aircraft.Libya
+		Factions: libya
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Aircraft.Soviets
+	ProductionBar@USSR:
+		ProductionType: Aircraft.USSR
 	ProductionBar@Vietnam:
 		ProductionType: Aircraft.Vietnam
+	ProductionBar@Libya:
+		ProductionType: Aircraft.Libya
 	Power:
 		Amount: -50
 	Targetable:

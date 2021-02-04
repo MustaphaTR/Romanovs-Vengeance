@@ -1,7 +1,7 @@
 smcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	Transforms:
 		IntoActor: nacnst
 	Voiced:
@@ -15,7 +15,7 @@ harv:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
 		Description: Gathers Ore and Gems.\n  Immune to Radiation.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -132,7 +132,7 @@ dron:
 	Tooltip@NoRow:
 		Name: Terror Drone
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		Prerequisites: ~techlevel.2
 		BuildPaletteOrder: 40
 		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n  Immune to Radiation.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
@@ -262,7 +262,7 @@ htk:
 		Class: htk
 		Bounds: 50, 40, 0, -6
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Infantry Transport and Anti-Air/Anti-Infantry vehicle.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles
@@ -372,7 +372,7 @@ htnk:
 	Tooltip@NoRow:
 		Name: Rhino Heavy Tank
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		Description: Soviet Main Battle Tank.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 		BuildDuration: 450
 		BuildDurationModifier: 100
@@ -432,7 +432,7 @@ apoc:
 	Tooltip@NoRow:
 		Name: Apocalypse Tank
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		BuildPaletteOrder: 110
 		Prerequisites: natech, ~techlevel.4
 		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\nCan crush enemy vehicles.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
@@ -711,7 +711,7 @@ v3:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		BuildPaletteOrder: 100
 		Prerequisites: natech, ~techlevel.3
 		Description: Long-range rocket artillery.
@@ -842,7 +842,7 @@ tric:
 	Selectable:
 		Bounds: 40, 40, 0, -10
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		Prerequisites: naradr, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: Fast medium range unit.\n  Strong vs Structures, Infantry\n  Weak vs Vehicles, Aircraft
@@ -922,7 +922,7 @@ deva:
 	Tooltip@NoRow:
 		Name: Devastator
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 990
 		Prerequisites: natech, ~caslab, ~techlevel.4
 		Description: Soviet Advanced Battle Tank with Double Barrel\narmed with nuclear warheads.\n  Immune to Radiation.\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft\n\nCan be deployed to self-destruct and explode violently.
@@ -1024,7 +1024,7 @@ deva:
 exps:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	Selectable:
 		Bounds: 68, 56, 0, -7
 	Transforms:
@@ -1057,7 +1057,7 @@ ftnk:
 	Tooltip@NoRow:
 		Name: Flame Tank
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Libya
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 80
 		Prerequisites: naradr, ~techlevel.3
 		Description: Soviet tank armed with dual flamethrowers.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
