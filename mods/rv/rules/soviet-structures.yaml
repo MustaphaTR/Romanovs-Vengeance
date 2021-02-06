@@ -1450,7 +1450,7 @@ tesla:
 		DecorationHeight: 75
 
 nalasr:
-	Inherits: ^VoxelLighting
+	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
@@ -1481,7 +1481,7 @@ nalasr:
 	Turreted:
 		TurnSpeed: 40
 		InitialFacing: 896
-		Offset: 320,0,0
+		Offset: 0,0,0
 		RealignDelay: -1
 	AttackTurreted:
 		Voice: Attack
@@ -1489,7 +1489,7 @@ nalasr:
 		RequiresCondition: !build-incomplete
 	Armament:
 		Weapon: vulcan
-		LocalOffset: 544,128,480, 544,-128,480
+		LocalOffset: 702,128,768, 702,-128,768
 		MuzzleSequence: muzzle
 	WithMuzzleOverlay:
 	DetectCloaked:
@@ -1497,8 +1497,7 @@ nalasr:
 	RenderDetectionCircle:
 	BodyOrientation:
 		QuantizedFacings: 16
-	RenderVoxels:
-	WithVoxelTurret:
+	WithSpriteTurret:
 		RequiresCondition: !build-incomplete
 	WithRangeCircle:
 		Range: 6c0

@@ -730,7 +730,7 @@ nawall:
 
 nalasr:
 	Inherits@MUZZLE: ^WithMachineGunMuzzle
-	Defaults:
+	Defaults: nasnty
 		Offset: 0, -20
 		ZOffset: -512
 		UseTilesetCode: true
@@ -740,20 +740,17 @@ nalasr:
 			NEWURBAN: GENERIC
 			DESERT: GENERIC
 			LUNAR: GENERIC
-	idle: nalasr
+	idle: nasnty
 		ShadowStart: 3
-	damaged-idle: nalasr
+	damaged-idle: nasnty
 		Start: 1
 		ShadowStart: 4
-	make: nalasrmk
-		Length: 12
-		ShadowStart: 12
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
+	turret: nasntytur
+		Facings: 32
+		ShadowStart: 32
+	make: nasntymk
+		Length: 21
+		ShadowStart: 21
 		ZOffset: 0
 	icon: cameo|plticon
 		Offset: 0,0
