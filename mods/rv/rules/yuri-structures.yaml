@@ -1459,14 +1459,14 @@ yagntc:
 		DisplayTimerRelationships: Ally, Neutral, Enemy
 		DisplayRadarPing: True
 		PauseOnCondition: disabled || chronodisable
-	WithIdleOverlay@top:
-		Sequence: idle-top
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughlazarus
 	AnnounceOnSeen:
 		Notification: GeneticMutatorDetected # LazarusShieldDetected
+	WithIdleOverlay@top:
+		Sequence: idle-top
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
 	IsometricSelectable:
 		DecorationHeight: 120
 
@@ -1506,7 +1506,7 @@ yappet:
 	AnnounceOnSeen:
 		Notification: PsychicDominatorDetected
 	IsometricSelectable:
-		DecorationHeight: 75
+		DecorationHeight: 120
 
 yacomd:
 	Inherits: ^CivBuilding

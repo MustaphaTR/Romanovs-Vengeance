@@ -1247,7 +1247,6 @@ namisl:
 		IncomingSpeechNotification: NuclearMissileLaunched
 		MissileWeapon: atomic
 		MissilePalette: player
-		MissileDelay: 35
 		SpawnOffset: 0,0,-1c0
 		IsPlayerPalette: true
 		DisplayTimerRelationships: Ally, Neutral, Enemy
@@ -1266,12 +1265,13 @@ namisl:
 			1: 10c0
 		CircleColor: FFFFFFFF
 		CircleBorderColor: 00000060
-	WithSupportPowerActivationAnimation:
-		RequiresCondition: !build-incomplete && !chronodisable
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughnuke
 	AnnounceOnSeen:
 		Notification: NuclearSiloDetected
+	WithSupportPowerActivationOverlay:
+		Sequence: smoke
+		Palette: effect50alpha
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:

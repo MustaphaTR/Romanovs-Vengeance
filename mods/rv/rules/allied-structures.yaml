@@ -1375,6 +1375,7 @@ gaweat:
 			1: Applies heavy damage over a large area.
 		Weapons:
 			1: WeatherStormInit
+		ActivationSequence:
 		AirburstAltitude: 4c512
 		AllowMultiple: true
 		CameraRange: 10c0
@@ -1411,10 +1412,6 @@ gacsph:
 	Building:
 		Footprint: xxx xxx xxx xxx
 		Dimensions: 4,3
-	WithIdleOverlay:
-		Sequence: idle-dome
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
 	ChronoshiftPower@chronoshift:
 		OrderName: Chronoshift
 		Prerequisites:
@@ -1452,6 +1449,14 @@ gacsph:
 		Prerequisite: enoughchrono
 	AnnounceOnSeen:
 		Notification: ChronosphereDetected
+	WithIdleOverlay@dome:
+		Sequence: idle-dome
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@fans:
+		Sequence: idle-fans
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
 	PlaceBuildingVariants:
 		Actors: gacspb
 	IsometricSelectable:
