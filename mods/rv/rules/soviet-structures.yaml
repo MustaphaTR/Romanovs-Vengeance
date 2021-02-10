@@ -791,6 +791,8 @@ nmine:
 nadept:
 	Inherits: ^ServiceDepot
 	Inherits@shape: ^4x3Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, -360,360,0, 360,-360,0, -1080,1080,0, -360,1800,0, -1800,360,0, 360,1080,0, -360,-1080,0, 1080,360,0, -1080,-360,0
 	Buildable:
 		Queue: Building.Soviets
 		Prerequisites: naweap, ~techlevel.1
@@ -1969,6 +1971,8 @@ nawead:
 nadepb:
 	Inherits: nadept
 	Inherits@shape: ^3x4Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, 360,360,0, -360,-360,0, -1080,-1080,0, -360,-1800,0, -1800,-360,0, 360,-1080,0, -360,1080,0, -1080,360,0, 1080,-360,0
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:

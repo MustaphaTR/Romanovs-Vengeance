@@ -868,6 +868,8 @@ gayard:
 gadept:
 	Inherits: ^ServiceDepot
 	Inherits@shape: ^3x3Shape
+	HitShape:
+		TargetableOffsets: 0,0,0, -720,-720,0, 720,720,0, -720,720,0, 0,1440,0, -1440,0,0
 	Buildable:
 		Queue: Building.Allies
 		Prerequisites: gaweap, ~techlevel.1
