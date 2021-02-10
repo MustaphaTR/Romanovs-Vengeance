@@ -634,3 +634,9 @@ MineExplosion:
 	Warhead@Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 		InvalidTargets: Structure, Barrel, Mine, Wall, Trees
+
+NavalMineExplosion:
+	Inherits@1: MineExplosion
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Water, Underwater
+		InvalidTargets: Structure, WaterStructure, Barrel, Mine, Wall, Trees

@@ -81,7 +81,7 @@ namespace OpenRA.Mods.RA2.Warheads
 				var buildingInfo = actorInfo.TraitInfoOrDefault<BuildingInfo>();
 
 				if (buildingInfo != null)
-					throw new YamlException("SpawnActorWarhead cannot be used to spawn building actor '{0}'!".F(a));
+					throw new YamlException("SpawnActorOrWeaponWarhead cannot be used to spawn building actor '{0}'!".F(a));
 			}
 		}
 
