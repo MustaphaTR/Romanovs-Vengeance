@@ -39,6 +39,12 @@ fi
 
 require_variables "MOD_ID" "ENGINE_VERSION" "ENGINE_DIRECTORY"
 
+if command -v mono >/dev/null 2>&1 && [ "$(grep -c .NETCoreApp,Version= ${ENGINE_DIRECTORY}/bin/OpenRA.Server.dll)" = "0" ]; then
+	RUNTIME_LAUNCHER="mono --debug"
+else
+	RUNTIME_LAUNCHER="dotnet"
+fi
+
 NAME="${Name:-"Dedicated Server"}"
 LAUNCH_MOD="${Mod:-"${MOD_ID}"}"
 LISTEN_PORT="${ListenPort:-"1234"}"
@@ -57,7 +63,7 @@ SHARE_ANONYMISED_IPS="${ShareAnonymizedIPs:-"True"}"
 SUPPORT_DIR="${SupportDir:-""}"
 
 cd "${TEMPLATE_ROOT}"
-if [ ! -f "${ENGINE_DIRECTORY}/OpenRA.Game.exe" ] || [ "$(cat "${ENGINE_DIRECTORY}/VERSION")" != "${ENGINE_VERSION}" ]; then
+if [ ! -f "${ENGINE_DIRECTORY}/OpenRA.Game.dll" ] || [ "$(cat "${ENGINE_DIRECTORY}/VERSION")" != "${ENGINE_VERSION}" ]; then
 	echo "Required engine files not found."
 	echo "Run \`make\` in the mod directory to fetch and build the required files, then try again.";
 	exit 1
@@ -66,7 +72,7 @@ fi
 cd "${ENGINE_DIRECTORY}"
 
 while true; do
-     MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" mono --debug bin/OpenRA.Server.exe Engine.EngineDir=".." Game.Mod="${LAUNCH_MOD}" \
+     MOD_SEARCH_PATHS="${MOD_SEARCH_PATHS}" ${RUNTIME_LAUNCHER} bin/OpenRA.Server.dll Engine.EngineDir=".." Game.Mod="${LAUNCH_MOD}" \
      Server.Name="${NAME}" Server.ListenPort="${LISTEN_PORT}" \
      Server.AdvertiseOnline="${ADVERTISE_ONLINE}" \
      Server.Password="${PASSWORD}" \

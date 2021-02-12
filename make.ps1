@@ -15,7 +15,7 @@ function All-Command
 		return
 	}
 
-	dotnet build /p:Configuration=Release /nologo
+	dotnet build -c Release --nologo -p:TargetPlatform=win-x64
 	if ($lastexitcode -ne 0)
 	{
 		Write-Host "Build failed. If just the development tools failed to build, try installing Visual Studio. You may also still be able to run the game." -ForegroundColor Red
@@ -129,7 +129,7 @@ function Check-Command
 	}
 
 	Write-Host "Compiling in debug configuration..." -ForegroundColor Cyan
-	dotnet build /p:Configuration=Debug /nologo
+	dotnet build -c Debug --nologo -p:TargetPlatform=win-x64
 	if ($lastexitcode -ne 0)
 	{
 		Write-Host "Build failed." -ForegroundColor Red
@@ -137,9 +137,6 @@ function Check-Command
 
 	if ((CheckForUtility) -eq 0)
 	{
-		Write-Host "Checking runtime assemblies..." -ForegroundColor Cyan
-		Invoke-Expression "$utilityPath $modID --check-runtime-assemblies $(WHITELISTED_OPENRA_ASSEMBLIES) $(WHITELISTED_THIRDPARTY_ASSEMBLIES) $(WHITELISTED_CORE_ASSEMBLIES) $(WHITELISTED_MOD_ASSEMBLIES)"
-
 		Write-Host "Checking for explicit interface violations..." -ForegroundColor Cyan
 		Invoke-Expression "$utilityPath $modID --check-explicit-interfaces"
 
@@ -194,7 +191,7 @@ function CheckForDotnet
 {
 	if ((Get-Command "dotnet" -ErrorAction SilentlyContinue) -eq $null) 
 	{
-		Write-Host "The 'dotnet' tool is required to compile OpenRA. Please install the .NET Core SDK or Visual Studio and try again. https://dotnet.microsoft.com/download" -ForegroundColor Red
+		Write-Host "The 'dotnet' tool is required to compile OpenRA. Please install the .NET 5.0 SDK and try again. https://dotnet.microsoft.com/download/dotnet/5.0" -ForegroundColor Red
 		return 1
 	}
 
@@ -226,9 +223,7 @@ function ReadConfigLine($line, $name)
 function ParseConfigFile($fileName)
 {
 	$names = @("MOD_ID", "ENGINE_VERSION", "AUTOMATIC_ENGINE_MANAGEMENT", "AUTOMATIC_ENGINE_SOURCE",
-		"AUTOMATIC_ENGINE_EXTRACT_DIRECTORY", "AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME", "ENGINE_DIRECTORY",
-		"WHITELISTED_OPENRA_ASSEMBLIES", "WHITELISTED_THIRDPARTY_ASSEMBLIES", "WHITELISTED_CORE_ASSEMBLIES",
-		"WHITELISTED_MOD_ASSEMBLIES")
+		"AUTOMATIC_ENGINE_EXTRACT_DIRECTORY", "AUTOMATIC_ENGINE_TEMP_ARCHIVE_NAME", "ENGINE_DIRECTORY")
 
 	$reader = [System.IO.File]::OpenText($fileName)
 	while($null -ne ($line = $reader.ReadLine()))
