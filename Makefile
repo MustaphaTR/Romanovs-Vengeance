@@ -123,7 +123,7 @@ check-variables:
 
 engine: check-variables check-sdk-scripts
 	@./fetch-engine.sh || (printf "Unable to continue without engine files\n"; exit 1)
-	@cd $(ENGINE_DIRECTORY) && make all
+	@cd $(ENGINE_DIRECTORY) && make TARGETPLATFORM=$(TARGETPLATFORM) all
 
 all: engine
 	@command -v $(MSBUILD) >/dev/null || (echo "OpenRA requires the '$(MSBUILD)' tool provided by Mono >= 5.18."; exit 1)
@@ -137,7 +137,6 @@ ifneq ("$(MOD_SOLUTION_FILES)","")
 	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:clean \;
 endif
 	@cd $(ENGINE_DIRECTORY) && make clean
-	@printf "The engine has been cleaned.\n"
 
 version: check-variables
 	@sh -c '. $(ENGINE_DIRECTORY)/packaging/functions.sh; set_mod_version $(VERSION) $(MANIFEST_PATH)'
@@ -156,7 +155,7 @@ endif
 check: engine
 ifneq ("$(MOD_SOLUTION_FILES)","")
 	@echo "Compiling in debug mode..."
-	@$(MSBUILD) -t:build -restore -p:Configuration=Debug
+	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:Build -restore -p:Configuration=Debug -p:TargetPlatform=$(TARGETPLATFORM) \;
 endif
 	@echo "Checking runtime assemblies..."
 	@./utility.sh --check-runtime-assemblies $(WHITELISTED_OPENRA_ASSEMBLIES) $(WHITELISTED_THIRDPARTY_ASSEMBLIES) $(WHITELISTED_CORE_ASSEMBLIES) $(WHITELISTED_MOD_ASSEMBLIES)
@@ -165,6 +164,6 @@ endif
 	@echo "Checking for incorrect conditional trait interface overrides..."
 	@./utility.sh --check-conditional-trait-interface-overrides
 
-test: engine
+test: all
 	@echo "Testing $(MOD_ID) mod MiniYAML..."
 	@./utility.sh --check-yaml
