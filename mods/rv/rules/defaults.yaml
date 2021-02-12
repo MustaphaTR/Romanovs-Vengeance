@@ -1907,6 +1907,30 @@
 		MinMoveDelay: 150
 		MaxMoveDelay: 750
 
+^RegicideLeader:
+	Inherits: ^CivilianInfantry
+	Valued:
+		Cost: 1000
+	-DeliversCash:
+	Health:
+		HP: 150
+	Armor:
+		Type: Flak
+	RevealsShroud:
+		Range: 5c0
+	RevealOnDeath:
+		Radius: 2c512
+	Mobile:
+		Speed: 60
+	-MindControllable:
+	-WithMindControlArc:
+	-Targetable@MC:
+	-WithIdleOverlay@mindcontrol:
+	-Capturable@PERMAMC:
+	-ExternalCondition@PERMAMC:
+	-MapEditorData:
+	-Wanders:
+
 ^Animal:
 	Inherits: ^Infantry
 	Valued:
