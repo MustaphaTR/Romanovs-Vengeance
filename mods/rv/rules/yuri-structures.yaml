@@ -972,7 +972,7 @@ yapsis:
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	Valued:
-		Cost: 4000
+		Cost: 1500
 	Tooltip:
 		Name: Psychic Sensor
 	Tooltip@NoRow:
@@ -985,13 +985,16 @@ yapsis:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 6c0
+		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 6c0
 	GpsASProvider:
 		RequiresCondition: !disabled && !build-incomplete && !chronodisable
 	RenderDetectionCircle:
+	WithRangeCircle:
+		Range: 25c0
+		Type: sensor
 	DetectCloaked:
 		CloakTypes: Cloak, Underwater
 		Range: 25c0

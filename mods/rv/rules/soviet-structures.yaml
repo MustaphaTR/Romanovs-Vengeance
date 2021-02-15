@@ -1135,7 +1135,7 @@ napsis:
 		Prerequisites: ~disabled # natech, ~techlevel.4
 		Description: Detects enemy units and structures.
 	Valued:
-		Cost: 1000
+		Cost: 1500
 	Tooltip:
 		Name: Psychic Sensor
 	Tooltip@NoRow:
@@ -1148,13 +1148,16 @@ napsis:
 	Armor:
 		Type: Wood
 	RevealsShroud:
-		Range: 6c0
+		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 6c0
 	GpsASProvider:
 		RequiresCondition: !disabled && !build-incomplete && !chronodisable
 	RenderDetectionCircle:
+	WithRangeCircle:
+		Range: 25c0
+		Type: sensor
 	DetectCloaked:
 		CloakTypes: Cloak, Underwater
 		Range: 25c0
@@ -1163,7 +1166,7 @@ napsis:
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Power:
-		Amount: -100
+		Amount: -200
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
