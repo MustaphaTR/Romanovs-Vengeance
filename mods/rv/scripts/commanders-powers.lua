@@ -91,6 +91,8 @@ TickCommandersPowers = function()
 
 		if localPlayerIsNull then
 			CommandersPowerText = ""
+			DominationText = ""
+			KotHText = ""
 			UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText)
 		end
 
