@@ -739,7 +739,6 @@ camisl:
 		SelectTargetSpeechNotification: SelectTarget
 		MissileWeapon: ClusterMissile
 		MissilePalette: player
-		MissileDelay: 70
 		SpawnOffset: 512,512,0
 		IsPlayerPalette: true
 		DisplayTimerRelationships: Ally, Neutral, Enemy
@@ -760,11 +759,10 @@ camisl:
 			1: 4c0
 		CircleColor: FFFFFFFF
 		CircleBorderColor: 00000060
-	WithSupportPowerActivationAnimation:
-		RequiresCondition: !chronodisable
 	Power:
 		Amount: -100
 	SupportPowerChargeBar:
+	WithSupportPowerChargedOverlay:
 	WithColoredOverlay@IDISABLE:
 		RequiresCondition: emp || (disabled && enabled)
 	WithIdleOverlay@flag:
