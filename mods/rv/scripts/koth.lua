@@ -31,10 +31,16 @@ EachKotHInterval = function()
 		KotHText = "\n\nPsychic Beacon is held by: " .. beacon_owner.Name .. "\nIt'll activate in: " .. Utils.FormatTime(timer)
 	end
 
+	local localPlayerIsNull = true
 	for i,player in pairs(players) do
 		if player.IsLocalPlayer then
+			localPlayerIsNull = false
 			UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText, TextColors[player.InternalName])
 		end
+	end
+
+	if localPlayerIsNull then
+		UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText)
 	end
 
 	local players_still_in = 0

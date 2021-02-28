@@ -77,10 +77,10 @@ ReducePoints = function(player)
 end
 
 TickCommandersPowers = function()
-	localPlayerIsNull = true;
+	local localPlayerIsNull = true
 	for _,player in pairs(players) do
 		if player.IsLocalPlayer then
-			localPlayerIsNull = false;
+			localPlayerIsNull = false
 			if Levels[player.InternalName] < 4 then
 				CommandersPowerText = "Current Rank: " .. Ranks[player.Faction][Levels[player.InternalName] + 1] .. "\nCommander's Points: " .. Points[player.InternalName] .. "\nProgress to Next Rank: " .. player.Experience - RankXPs[Levels[player.InternalName] + 1] .. "/" .. RankXPs[Levels[player.InternalName] + 2] - RankXPs[Levels[player.InternalName] + 1] .. "\n\n"
 			else
@@ -91,8 +91,6 @@ TickCommandersPowers = function()
 
 		if localPlayerIsNull then
 			CommandersPowerText = ""
-			DominationText = ""
-			KotHText = ""
 			UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText)
 		end
 

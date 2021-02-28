@@ -57,6 +57,7 @@ EachInterval = function()
 
 	local winner = nil
 	local players_still_in = 0
+	local localPlayerIsNull = true
 	buffer = buffer .. "\n\nFirst to " .. target_points
 	for i,player in pairs(players) do
 		buffer = buffer .. " | " .. player.object.Name .. ": " .. player.points
@@ -73,8 +74,13 @@ EachInterval = function()
 
 		DominationText = buffer
 		if player.IsLocalPlayer then
+			localPlayerIsNull = false
 			UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText, TextColors[player.InternalName])
 		end
+	end
+
+	if localPlayerIsNull then
+		UserInterface.SetMissionText(CommandersPowerText .. DominationText .. KotHText)
 	end
 
 	if players_still_in <= 1 then
