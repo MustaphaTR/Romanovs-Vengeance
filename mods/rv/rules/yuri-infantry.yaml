@@ -610,6 +610,17 @@ lunr.husk:
 		Sequence: shadow
 		ForceToGround: true
 
+lunr.spawner:
+	Inherits: ^Infantry
+	FreeActor:
+		Actor: lunr
+		Facing: 640
+	KillsSelf:
+		RemoveInstead: true
+	-MapEditorData:
+	RenderSprites:
+		Image: lunr
+
 # Custom Infantry
 gtrp:
 	Inherits@1: ^Infantry

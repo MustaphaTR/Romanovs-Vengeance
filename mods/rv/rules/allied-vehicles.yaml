@@ -1662,3 +1662,28 @@ expn:
 		VoiceSet: AlliedConstructionVehicleVoice
 	Hovers:
 		InitialHeight: 128
+
+mrcv:
+	Inherits: ^Vehicle
+	#Buildable:
+	#	Queue: Vehicle.Allies
+	Tooltip:
+		Name: Mobile Robot Control Vehicle
+	Tooltip@NoRow:
+		Name: Mobile Robot Control Vehicle
+	Health:
+		HP: 400
+	Turreted:
+		Offset: -256,0,0
+		TurnSpeed: 30
+	ProvidesPrerequisite@powered:
+		Prerequisite: powered_robo
+		RequiresCondition: !disabled && !chronodisable
+	WithVoxelBody:
+	WithVoxelTurret:
+	RenderSprites:
+		Image: mrj
+	RenderVoxels:
+		Image: mrj
+		NormalsPalette: ts-normals
+		Scale: 16

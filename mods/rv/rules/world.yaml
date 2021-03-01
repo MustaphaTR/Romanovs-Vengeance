@@ -167,13 +167,13 @@
 	Faction@allies:
 		Name: Allies
 		InternalName: random-allies
-		RandomFactionMembers: america, germany, england, france, korea
+		RandomFactionMembers: america, england, france, germany, korea
 		Side: Randoms
 		Description: Random Allied Country\nA random Allied country will be chosen when the game starts.
 	Faction@soviets:
 		Name: Soviets
 		InternalName: random-soviets
-		RandomFactionMembers: cuba, libya, iraq, russia, vietnam
+		RandomFactionMembers: russia, iraq, vietnam, cuba, libya
 		Side: Randoms
 		Description: Random Soviet Country\nA random Soviet country will be chosen when the game starts.
 	Faction@psicorps:
@@ -451,16 +451,56 @@ World:
 		TechLevelDropdownDisplayOrder: 2
 		GameSpeedDropdownDisplayOrder: 5
 	CreateMapPlayers:
+	StartingUnits@nobasesallies:
+		Class: nobases
+		ClassName: No Bases
+		Factions: france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		BaseActor: tany
+		BaseActorFacing: 640
+		SupportActors: e1, e1, e1, e1, ggi, ggi, ggi, dog, dog, engineer, gren, gren, jumpjet.spawner, jumpjet.spawner, cleg, mtnk, mtnk, fv, fv, robo, robo, robo, mrcv, hwtz, mgtk, bfrt, sref, shad
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasesamerica:
+		Class: nobases
+		ClassName: No Bases
+		Factions: america
+		BaseActor: tany
+		BaseActorFacing: 640
+		SupportActors: e1, e1, e1, e1, ggi, ggi, ggi, dog, dog, engineer, gren, jumpjet.spawner, jumpjet.spawner, ghost, cleg, mtnk, mtnk, fv, fv, robo, robo, robo, mrcv, hwtz, mgtk, bfrt, sref, shad
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasesengland:
+		Class: nobases
+		ClassName: No Bases
+		Factions: england
+		BaseActor: tany
+		BaseActorFacing: 640
+		SupportActors: e1, e1, e1, e1, ggi, ggi, ggi, dog, dog, engineer, gren, jumpjet.spawner, jumpjet.spawner, snipe, cleg, mtnk, mtnk, fv, fv, robo, robo, robo, mrcv, hwtz, mgtk, bfrt, sref, shad
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasesgermany:
+		Class: nobases
+		ClassName: No Bases
+		Factions: germany
+		BaseActor: tany
+		BaseActorFacing: 640
+		SupportActors: e1, e1, e1, e1, ggi, ggi, ggi, dog, dog, engineer, gren, jumpjet.spawner, jumpjet.spawner, cleg, mtnk, mtnk, fv, fv, robo, robo, robo, mrcv, hwtz, tnkd, mgtk, bfrt, sref, shad
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
 	StartingUnits@amcv:
 		Class: none
 		ClassName: MCV Only
-		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
 	StartingUnits@amcvdog:
 		Class: mcvdog
 		ClassName: MCV and Dog
-		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
 		SupportActors: dog
@@ -470,7 +510,7 @@ World:
 	StartingUnits@lightallies:
 		Class: light
 		ClassName: Light Support
-		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
 		SupportActors: dog,e1,e1
@@ -480,7 +520,7 @@ World:
 	StartingUnits@mediumallies:
 		Class: medium
 		ClassName: Medium Support
-		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
 		SupportActors: dog,e1,e1,e1,mtnk,engineer
@@ -490,23 +530,83 @@ World:
 	StartingUnits@heavyallies:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: allies, america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
 		SupportActors: dog,e1,e1,e1,e1,mtnk,mtnk,fv,engineer
 		SupportActorsFacing: 640
 		InnerSupportRadius: 4
 		OuterSupportRadius: 5
+	StartingUnits@nobasessoviets:
+		Class: nobases
+		ClassName: No Bases
+		Factions: vietnam, mexico, mongolia
+		BaseActor: boris
+		BaseActorFacing: 640
+		SupportActors: e2, e2, e2, e2, e2, shk, shk, shk, dog, dog, engineer, flakt, flakt, ivan, hjck, itrp, htnk, htnk, htk, htk, dron, dron, dron, dron, ftnk, tric, tric, apoc, v3, hind
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasesrussia:
+		Class: nobases
+		ClassName: No Bases
+		Factions: russia
+		BaseActor: boris
+		BaseActorFacing: 640
+		SupportActors: e2, e2, e2, e2, e2, shk, shk, shk, dog, dog, engineer, flakt, flakt, ivan, hjck, itrp, htnk, htk, htk, dron, dron, dron, dron, ftnk, ttnk, tric, tric, apoc, v3, hind
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasesiraq:
+		Class: nobases
+		ClassName: No Bases
+		Factions: iraq
+		BaseActor: boris
+		BaseActorFacing: 640
+		SupportActors: e2, e2, e2, e2, e2, shk, shk, shk, dog, dog, engineer, flakt, flakt, ivan, hjck, deso, itrp, htnk, htk, htk, dron, dron, dron, dron, ftnk, tric, tric, apoc, v3, hind
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasesvietnam:
+		Class: nobases
+		ClassName: No Bases
+		Factions: vietnam
+		BaseActor: boris
+		BaseActorFacing: 640
+		SupportActors: e2, e2, e2, e2, e2, shk, shk, shk, dog, dog, engineer, flakt, flakt, ivan, hjck, itrp, htnk, htk, htk, dron, dron, dron, dron, ftnk, tric, tric, apoc, v3, hind, kite.spawner
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasescuba:
+		Class: nobases
+		ClassName: No Bases
+		Factions: cuba
+		BaseActor: boris
+		BaseActorFacing: 640
+		SupportActors: e2, e2, e2, e2, e2, shk, shk, shk, dog, dog, engineer, flakt, flakt, ivan, hjck, itrp, terror, terror, htnk, htk, htk, dron, dron, dron, dron, ftnk, tric, tric, apoc, v3, hind
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobaseslibya:
+		Class: nobases
+		ClassName: No Bases
+		Factions: libya
+		BaseActor: boris
+		BaseActorFacing: 640
+		SupportActors: e2, e2, e2, e2, e2, shk, shk, shk, dog, dog, engineer, flakt, flakt, ivan, hjck, itrp, htnk, htk, htk, dron, dron, dron, dron, ftnk, dtruck, tric, tric, apoc, v3, hind
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
 	StartingUnits@smcv:
 		Class: none
 		ClassName: MCV Only
-		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
 	StartingUnits@smcvdog:
 		Class: mcvdog
 		ClassName: MCV and Dog
-		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
 		SupportActors: dog
@@ -516,7 +616,7 @@ World:
 	StartingUnits@lightsoviets:
 		Class: light
 		ClassName: Light Support
-		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
 		SupportActors: dog,e2,e2,e2
@@ -526,7 +626,7 @@ World:
 	StartingUnits@mediumsoviets:
 		Class: medium
 		ClassName: Medium Support
-		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
 		SupportActors: dog,e2,e2,e2,e2,htnk,engineer
@@ -536,13 +636,53 @@ World:
 	StartingUnits@heavysoviets:
 		Class: heavy
 		ClassName: Heavy Support
-		Factions: soviets, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
 		SupportActors: dog,e2,e2,e2,e2,e2,htnk,htnk,htk,engineer
 		SupportActorsFacing: 640
 		InnerSupportRadius: 4
 		OuterSupportRadius: 5
+	StartingUnits@nobasespsicorps:
+		Class: nobases
+		ClassName: No Bases
+		Factions: psicorps, psisouth
+		BaseActor: yurix
+		BaseActorFacing: 640
+		SupportActors: init, init, init, init, brute, brute, brute, dog, dog, engineer, gtrp, gtrp, virus, yuripsi, spct, ltnk, ltnk, ltnk, ytnk, ytnk, caos, kamaz, tele, yhtnk, mind, txdx
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasespsipsinepal:
+		Class: nobases
+		ClassName: No Bases
+		Factions: psinepal
+		BaseActor: yurix
+		BaseActorFacing: 640
+		SupportActors: init, init, init, init, brute, brute, brute, dog, dog, engineer, gtrp, gtrp, virus, yuripsi, spct, ltnk, ltnk, ytnk, ytnk, caos, kamaz, tele, yhtnk, mind, txdx, magnedisk.spawner
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasespsitrans:
+		Class: nobases
+		ClassName: No Bases
+		Factions: psitrans
+		BaseActor: yurix
+		BaseActorFacing: 640
+		SupportActors: init, init, init, init, brute, brute, brute, dog, dog, engineer, gtrp, gtrp, virus, yuripsi, spct, ltnk, ltnk, ytnk, ytnk, spider, caos, kamaz, tele, yhtnk, mind, txdx
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasespsipsimoon:
+		Class: nobases
+		ClassName: No Bases
+		Factions: psimoon
+		BaseActor: yurix
+		BaseActorFacing: 640
+		SupportActors: init, init, init, init, brute, brute, brute, dog, dog, engineer, gtrp, gtrp, virus, yuripsi, lunr.spawner, spct, ltnk, ltnk, ytnk, ytnk, spider, caos, kamaz, tele, yhtnk, mind, txdx
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
 	StartingUnits@pcv:
 		Class: none
 		ClassName: MCV Only
@@ -589,6 +729,26 @@ World:
 		SupportActorsFacing: 640
 		InnerSupportRadius: 4
 		OuterSupportRadius: 5
+	StartingUnits@nobasesbaku:
+		Class: nobases
+		ClassName: No Bases
+		Factions: transcaucus, turkmen, russianfed, serbia
+		BaseActor: vlkv
+		BaseActorFacing: 640
+		SupportActors: e2, e2, e2, e2, e2, shk, shk, shk, dog, chit, engineer, flakt, flakt, ivan, hjck, itrp, htnk, htnk, htk, htk, htk, dron, dron, dron, dron, tric, tric, apoc, v3, hind
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
+	StartingUnits@nobasestuva:
+		Class: nobases
+		ClassName: No Bases
+		Factions: tuva
+		BaseActor: vlkv
+		BaseActorFacing: 640
+		SupportActors: e2, e2, e2, e2, e2, shk, shk, shk, dog, chit, engineer, mengineer, flakt, flakt, ivan, hjck, itrp, htnk, htk, htk, htk, dron, dron, dron, dron, tric, tric, apoc, v3, hind
+		SupportActorsFacing: 640
+		InnerSupportRadius: 2
+		OuterSupportRadius: 8
 	CrateSpawner:
 		DeliveryAircraft: pdplane.crate
 		Minimum: 1

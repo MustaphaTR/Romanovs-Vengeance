@@ -1290,6 +1290,17 @@ jumpjet.husk:
 		Sequence: shadow
 		ForceToGround: true
 
+jumpjet.spawner:
+	Inherits: ^Infantry
+	FreeActor:
+		Actor: jumpjet
+		Facing: 640
+	KillsSelf:
+		RemoveInstead: true
+	-MapEditorData:
+	RenderSprites:
+		Image: jumpjet
+
 cleg:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove

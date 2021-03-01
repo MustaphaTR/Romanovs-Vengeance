@@ -2309,6 +2309,17 @@ kitehusk:
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 
+kite.spawner:
+	Inherits: ^Vehicle
+	FreeActor:
+		Actor: kite
+		Facing: 640
+	KillsSelf:
+		RemoveInstead: true
+	-MapEditorData:
+	RenderSprites:
+		Image: kite
+
 magnedisk:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -2420,6 +2431,17 @@ magnediskhusk:
 		Sequence: turret
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
+
+magnedisk.spawner:
+	Inherits: ^Vehicle
+	FreeActor:
+		Actor: magnedisk
+		Facing: 640
+	KillsSelf:
+		RemoveInstead: true
+	-MapEditorData:
+	RenderSprites:
+		Image: magnedisk
 
 havoc:
 	Inherits: ^Helicopter

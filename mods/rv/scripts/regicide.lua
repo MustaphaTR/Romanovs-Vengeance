@@ -8,7 +8,7 @@
 ]]
 
 local players = { }
-mcvs = { "amcv", "smcv", "pcv" }
+mcvs = { "amcv", "smcv", "pcv", "tany", "boris", "yurix", "vlkv" }
 
 LeaderTypes =
 {
