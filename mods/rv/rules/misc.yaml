@@ -247,14 +247,17 @@ crate:
 		Amount: 500
 		SelectionShares: 10
 		UseCashTick: true
+		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1000:
 		Amount: 1000
 		SelectionShares: 20
 		UseCashTick: true
+		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1500:
 		Amount: 1500
 		SelectionShares: 10
 		UseCashTick: true
+		Prerequisites: !hack.no_bases
 	HealActorsCrateAction:
 		Sound: gcraheal.aud
 		SelectionShares: 2
@@ -265,17 +268,26 @@ crate:
 	LevelUpCrateAction:
 		SelectionShares: 25
 		# Sound: gcraprom.wav
-	GiveMcvCrateAction@soviets:
-		SelectionShares: 0
-		NoBaseSelectionShares: 150
-		ValidFactions: cuba, libya, iraq, russia, vietnam
-		Units: smcv
-		Sound: gcrafree.wav
 	GiveMcvCrateAction@allied:
 		SelectionShares: 0
 		NoBaseSelectionShares: 150
-		ValidFactions: america, germany, england, france, korea
+		Prerequisites: !hack.no_bases
+		ValidFactions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		Units: amcv
+		Sound: gcrafree.wav
+	GiveMcvCrateAction@soviets:
+		SelectionShares: 0
+		NoBaseSelectionShares: 150
+		Prerequisites: !hack.no_bases
+		ValidFactions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+		Units: smcv
+		Sound: gcrafree.wav
+	GiveMcvCrateAction@psicorps:
+		SelectionShares: 0
+		NoBaseSelectionShares: 150
+		Prerequisites: !hack.no_bases
+		ValidFactions: psicorps, psinepal, psisouth, psitrans, psimoon
+		Units: smcv
 		Sound: gcrafree.wav
 	GrantExternalConditionCrateAction@fpower:
 		SelectionShares: 10
@@ -295,6 +307,11 @@ crate:
 		Sound: gcraspee.wav
 		Notification: SpeedUpgraded
 		Condition: crate-armor
+
+hack.no_bases:
+	Interactable:
+	AlwaysVisible:
+	ProvidesPrerequisite@upgradename:
 
 amcv.colorpicker:
 	Inherits: amcv
