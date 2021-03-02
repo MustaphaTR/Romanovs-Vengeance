@@ -245,64 +245,130 @@ crate:
 		Lifetime: 240
 	GiveCashCrateAction@500:
 		Amount: 500
-		SelectionShares: 10
+		SelectionShares: 40
 		UseCashTick: true
 		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1000:
 		Amount: 1000
-		SelectionShares: 20
+		SelectionShares: 80
 		UseCashTick: true
 		Prerequisites: !hack.no_bases
 	GiveCashCrateAction@1500:
 		Amount: 1500
-		SelectionShares: 10
+		SelectionShares: 40
 		UseCashTick: true
 		Prerequisites: !hack.no_bases
 	HealActorsCrateAction:
 		Sound: gcraheal.aud
-		SelectionShares: 2
+		SelectionShares: 8
 		Sequence: heal
 	RevealMapCrateAction:
-		SelectionShares: 2
+		SelectionShares: 8
 		Sequence: reveal-map
 	LevelUpCrateAction:
-		SelectionShares: 25
+		SelectionShares: 100
 		# Sound: gcraprom.wav
+	GiveUnitCrateAction@cmin:
+		SelectionShares: 1
+		Units: cmin
+	GiveUnitCrateAction@harv:
+		SelectionShares: 1
+		Units: harv
+	GiveUnitCrateAction@gmin:
+		SelectionShares: 1
+		Units: gmin
+	GiveUnitCrateAction@mtnk:
+		SelectionShares: 5
+		Units: mtnk
+	GiveUnitCrateAction@htnk:
+		SelectionShares: 5
+		Units: htnk
+	GiveUnitCrateAction@ltnk:
+		SelectionShares: 5
+		Units: ltnk
+	GiveUnitCrateAction@fv:
+		SelectionShares: 5
+		Units: fv
+	GiveUnitCrateAction@htk:
+		SelectionShares: 5
+		Units: htk
+	GiveUnitCrateAction@ytnk:
+		SelectionShares: 5
+		Units: ytnk
+	GiveUnitCrateAction@lcrf:
+		SelectionShares: 1
+		Units: lcrf
+	GiveUnitCrateAction@sapc:
+		SelectionShares: 1
+		Units: sapc
+	GiveUnitCrateAction@yhvr:
+		SelectionShares: 1
+		Units: yhvr
+	GiveUnitCrateAction@e1:
+		SelectionShares: 10
+		Units: e1,e1,e1
+	GiveUnitCrateAction@e2:
+		SelectionShares: 10
+		Units: e2,e2,e2
+	GiveUnitCrateAction@init:
+		SelectionShares: 10
+		Units: init,init,init
+	GiveUnitCrateAction@ggi:
+		SelectionShares: 5
+		Units: ggi,ggi,ggi
+	GiveUnitCrateAction@shk:
+		SelectionShares: 5
+		Units: shk,shk,shk
+	GiveUnitCrateAction@brute:
+		SelectionShares: 5
+		Units: brute,brute,brute
+	GiveUnitCrateAction@gren:
+		SelectionShares: 2
+		Units: gren,gren,gren
+	GiveUnitCrateAction@flakt:
+		SelectionShares: 2
+		Units: flakt,flakt,flakt
+	GiveUnitCrateAction@gtrp:
+		SelectionShares: 2
+		Units: gtrp,gtrp,gtrp
+	GiveUnitCrateAction@engineer:
+		SelectionShares: 1
+		Units: engineer
 	GiveMcvCrateAction@allied:
 		SelectionShares: 0
-		NoBaseSelectionShares: 150
+		NoBaseSelectionShares: 1000
 		Prerequisites: !hack.no_bases
 		ValidFactions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		Units: amcv
 		Sound: gcrafree.wav
 	GiveMcvCrateAction@soviets:
 		SelectionShares: 0
-		NoBaseSelectionShares: 150
+		NoBaseSelectionShares: 1000
 		Prerequisites: !hack.no_bases
 		ValidFactions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		Units: smcv
 		Sound: gcrafree.wav
 	GiveMcvCrateAction@psicorps:
 		SelectionShares: 0
-		NoBaseSelectionShares: 150
+		NoBaseSelectionShares: 1000
 		Prerequisites: !hack.no_bases
 		ValidFactions: psicorps, psinepal, psisouth, psitrans, psimoon
 		Units: smcv
 		Sound: gcrafree.wav
 	GrantExternalConditionCrateAction@fpower:
-		SelectionShares: 10
+		SelectionShares: 40
 		Sequence: fpower
 		Notification: FirepowerUpgraded
 		Sound: gcrafire.wav
 		Condition: crate-firepower
 	GrantExternalConditionCrateAction@armor:
-		SelectionShares: 10
+		SelectionShares: 40
 		Sequence: armor
 		Sound: gcraarmo.wav
 		Notification: ArmorUpgraded
 		Condition: crate-armor
 	GrantExternalConditionCrateAction@speed:
-		SelectionShares: 10
+		SelectionShares: 40
 		Sequence: speed
 		Sound: gcraspee.wav
 		Notification: SpeedUpgraded
