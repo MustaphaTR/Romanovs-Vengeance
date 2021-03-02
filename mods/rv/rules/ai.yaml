@@ -1213,6 +1213,9 @@ Player:
 	GrantConditionOnPrerequisite@megawealth:
 		Condition: megawealth
 		Prerequisites: global-megawealth
+	GrantConditionOnPrerequisite@no_bases:
+		Condition: no_bases
+		Prerequisites: hack.no_bases
 	####HarvesterBotModule@generic: Drop it due to performance
 	##	RequiresCondition: enable-generic-ai && !megawealth
 	##	HarvesterTypes: cmin, harv, gmin
@@ -1223,7 +1226,7 @@ Player:
 	AutoDeployManager@generic:
 		RequiresCondition: enable-generic-ai
 	SquadManagerBotModule@generic:
-		RequiresCondition: enable-generic-ai
+		RequiresCondition: enable-generic-ai && !no_bases
 		SquadSize: 10
 		RushInterval: 30000000 ##Rush squad has some bug will affect normal attack squad
 		MinimumAttackForceDelay: 1000
@@ -1234,8 +1237,23 @@ Player:
 		IdleScanRadius: 15
 		AttackScanRadius: 14
 		ProtectionScanRadius: 15
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, ymcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
-		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, gatsub, bsub
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
+		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+	SquadManagerBotModule@no_bases:
+		RequiresCondition: enable-generic-ai && no_bases
+		SquadSize: 10
+		RushInterval: 30000000 ##Rush squad has some bug will affect normal attack squad
+		MinimumAttackForceDelay: 1000
+		ProtectUnitScanRadius: 25
+		DangerScanRadius: 18
+		AttackForceInterval: 59
+		AssignRolesInterval: 73
+		IdleScanRadius: 15
+		AttackScanRadius: 14
+		ProtectionScanRadius: 15
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
+		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 	McvManagerBotModule@generic:
 		RequiresCondition: enable-generic-ai
