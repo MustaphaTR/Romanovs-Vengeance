@@ -1822,7 +1822,7 @@ nasilo:
 	Buildable:
 		Queue: Support.Soviets, Support.Baku
 	Capturable:
-		RequiresCondition: !invulnerability
+		RequiresCondition: !invulnerability && !forceshield
 	Sellable:
 		RequiresCondition: !chronodisable
 	IsometricSelectable:
@@ -1859,20 +1859,18 @@ naprop:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 7c0
-	Sellable:
-		RequiresCondition: !chronodisable
 	ProximityExternalCondition@propaganda_tower:
 		Condition: propaganda_tower
 		Range: 8c0
-		RequiresCondition: !disabled
+		RequiresCondition: !disabled && !chronodisable
 	WithRangeCircle:
 		Range: 8c0
 		Type: propaganda
-		RequiresCondition: !disabled
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	Capturable:
 		Types: building
+		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
 	CaptureNotification:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure

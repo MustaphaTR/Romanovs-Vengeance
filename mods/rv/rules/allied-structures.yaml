@@ -1333,7 +1333,7 @@ gagap:
 		RequiresCondition: !disabled && !chronodisable
 	Capturable:
 		Types: building
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
 	CaptureNotification:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure

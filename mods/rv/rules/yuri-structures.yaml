@@ -895,7 +895,7 @@ yadisk:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	-WithMakeAnimation:
 	Capturable:
-		RequiresCondition: !invulnerability
+		RequiresCondition: !invulnerability && !forceshield
 	Sellable:
 		RequiresCondition: !chronodisable
 	RenderSprites:
@@ -1397,7 +1397,7 @@ yasgen:
 	#	Range: 6c0
 	Capturable:
 		Types: building
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
 	CaptureNotification:
 	ProximityExternalCondition@INVISIBILITY-GENERATOR:
 		Condition: invisibility-generator
@@ -1758,7 +1758,7 @@ yasilo:
 	WithResourceLevelOverlay@FILLSTAGE:
 		-RequiresCondition:
 	Capturable:
-		RequiresCondition: !invulnerability
+		RequiresCondition: !invulnerability && !forceshield
 	Sellable:
 		RequiresCondition: !chronodisable
 
