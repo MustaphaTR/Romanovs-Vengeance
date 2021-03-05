@@ -108,7 +108,7 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-		public void RemoveInfector(Actor self, bool kill, AttackInfo e)
+		void RemoveInfector(Actor self, bool kill, AttackInfo e)
 		{
 			if (Infector != null && !Infector.IsDead)
 			{
