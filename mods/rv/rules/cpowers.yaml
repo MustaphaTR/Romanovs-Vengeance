@@ -847,7 +847,7 @@ prerequisite.grinder:
 		SelectTargetSpeechNotification: SelectTarget
 	AirstrikePower@leafletdrop:
 		OrderName: AlliedLeafletDrop
-		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.leaflet_drop
 		Icons:
@@ -878,7 +878,7 @@ prerequisite.grinder:
 	AirstrikePowerRV@clustermines:
 		ActivationDelay: 125
 		OrderName: SovietClusterMines
-		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.cluster_mines
 		Icons:
@@ -920,7 +920,6 @@ prerequisite.grinder:
 			1: DroppodSpawner
 		ChargeInterval: 4500
 		StartFullyCharged: true
-		CameraActor: camera.5c0
 		ActivationSequence:
 		TargetCircleRanges:
 			1: 6c0
@@ -1275,7 +1274,7 @@ prerequisite.grinder:
 	AirstrikePowerRV@empulse:
 		ActivationDelay: 125
 		OrderName: AlliedEMP
-		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.em_pulse_strike
 		Icons:
@@ -1306,7 +1305,7 @@ prerequisite.grinder:
 	AirstrikePowerRV@falloutbomb:
 		ActivationDelay: 125
 		OrderName: SovietFalloutBomb
-		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.fallout_bomb
 		Icons:
@@ -1335,7 +1334,7 @@ prerequisite.grinder:
 		DirectionArrowPalette: mouse
 	AirstrikePower@chaosgas:
 		OrderName: PsiCorpsChaosDrop
-		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !lost
 		Prerequisites:
 			1: commanders_power.chaos_gas_drop
 		Icons:
