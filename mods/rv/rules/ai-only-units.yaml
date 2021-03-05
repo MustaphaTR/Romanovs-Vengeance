@@ -95,7 +95,7 @@ bfrt-squad-3:
 	ProductionCostMultiplier@1:
 		Multiplier: 200
 
-^AItransportControl: ## For Cargo trait
+^AITransportControl: ## For Cargo trait
 	Inherits@AI: ^AIMicroManagable
 	Cargo:
 		LoadedCondition: loaded
@@ -108,15 +108,18 @@ bfrt-squad-3:
 		RequiresCondition: loaded
 		Prerequisite: LoadedExists
 
-^AIcarryallControl: ## For Carryall trait
-	Inherits: ^AItransportControl
+^AICarryallControl: ## For Carryall trait
+	Inherits: ^AITransportControl
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	-Cargo:
 	Carryall:
 		CarryCondition: loaded
+	AttackMove:
+		Voice: Move
 	AttackAircraft:
 		FacingTolerance: 127
 		AttackType: Hover
+		Voice: Move
 	Armament@primary:
 		Weapon: GroundDummyAim
 	KillsSelf@DisappearsIfUnload:
@@ -126,7 +129,7 @@ bfrt-squad-3:
 
 hind-htnk:
 	Inherits: hind
-	Inherits@AI: ^AIcarryallControl
+	Inherits@AI: ^AICarryallControl
 	Selectable:
 		Class: hind
 	Buildable:
@@ -192,7 +195,7 @@ hind-htk-squad-2:
 
 htk-dron:
 	Inherits: htk
-	Inherits@AI: ^AItransportControl
+	Inherits@AI: ^AITransportControl
 	Selectable:
 		Class: htk
 	Buildable:
@@ -226,7 +229,7 @@ htk-squad-2:
 
 shad-squad-1:
 	Inherits: shad
-	Inherits@AI: ^AItransportControl
+	Inherits@AI: ^AITransportControl
 	Selectable:
 		Class: shad
 	Buildable:
