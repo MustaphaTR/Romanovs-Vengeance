@@ -179,5 +179,10 @@ namespace OpenRA.Mods.RA2.Traits
 				}
 			}
 		}
+
+		void IRemoveInfector.RemoveInfector(Actor self, bool kill, AttackInfo e)
+		{
+			RemoveInfector(self, kill, e);
+		}
 	}
 }
