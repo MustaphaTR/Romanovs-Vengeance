@@ -1501,10 +1501,20 @@ atesla:
 	Armament:
 		Weapon: PrismShot
 		LocalOffset: 0,0,3072
-	AttackTesla:
+	Armament@Support:
+		Name: support
+		Weapon: PrismSupport
+		LocalOffset: 0,0,3072
+	WithPrismChargeAnimation:
+	AttackPrismSupported:
 		Voice: Attack
 		ReloadDelay: 60
+		TicksPerHop: 3
+		ReceiverOffset: 0,0,3072
 		ChargeAudio: bpripow.wav
+		SupportArmament: support
+		BuffCondition: prism-stack
+		MaxSupportersPerAttacker: 3
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	DetectCloaked:
@@ -1523,24 +1533,15 @@ atesla:
 	WithRangeCircle:
 		Range: 8c0
 		Type: prismcannon
-	WithRangeCircle@prism_forwarding:
-		Range: 8c0
-		Type: prismcannon
-	ProximityExternalCondition@prism_forwarding:
-		Condition: prism_forwarding
-		Range: 8c0
-		RequiresCondition: !disabled && !chronodisable
-	ExternalCondition@prism_forwarding:
-		Condition: prism_forwarding
 	FirepowerMultiplier@1:
 		Modifier: 200
-		RequiresCondition: prism_forwarding == 1
+		RequiresCondition: prism-stack == 1
 	FirepowerMultiplier@2:
 		Modifier: 300
-		RequiresCondition: prism_forwarding == 2
+		RequiresCondition: prism-stack == 2
 	FirepowerMultiplier@3:
 		Modifier: 400
-		RequiresCondition: prism_forwarding >= 3
+		RequiresCondition: prism-stack >= 3
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	IsometricSelectable:

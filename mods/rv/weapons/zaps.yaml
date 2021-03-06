@@ -318,6 +318,16 @@ PrismFragment:
 		Damage: 30
 	-Warhead@2Shr:
 
+PrismSupport:
+	Inherits: PrismShot
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+	-Warhead@2Shr:
+	-Warhead@2Eff:
+	-Warhead@4Smu:
+	AirThreshold: 5000
+
 Comet:
 	Inherits@1: ^BreakPointDefenseDrones
 	ValidTargets: Ground, Water
