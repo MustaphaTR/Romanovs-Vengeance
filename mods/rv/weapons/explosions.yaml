@@ -68,6 +68,36 @@ SmallChronobombExplode:
 			Steel: 100
 			Concrete: 65
 
+RadCrateExplode:
+	Inherits: SmallBarrelExplode
+	Warhead@1Dam: SpreadDamage
+		Damage: 300
+		DamageTypes: Prone70Percent, TriggerProne, RadiationDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 3c0
+		Falloff: 100, 100
+		Level: 750
+		MaxLevel: 750
+
+GasCrateExplode:
+	Inherits: SmallBarrelExplode
+	Warhead@1Dam: SpreadDamage
+		Damage: 300
+		DamageTypes: Prone70Percent, TriggerProne, VirusDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_toxin_explosion
+		ExplosionPalette: player
+	Warhead@3Par: SpawnSmokeParticle
+		ValidTargets: Ground, Air, Water
+		Image: txgasg
+		Sequences: idle
+		Palette: effect
+		Weapon: CloudDamage
+		Count: 5
+		Duration: 400
+		Speed: 0, 25
+		TurnRate: 10
+
 DerrickExplode:
 	Inherits: LargeBarrelExplode
 	Warhead@1Dam: SpreadDamage
