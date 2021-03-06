@@ -42,7 +42,7 @@ namespace OpenRA.Mods.RA2.Warheads
 		[Desc("Defines the image of an optional animation played at the spawning location.")]
 		public readonly string Image = null;
 
-		[SequenceReference("Image")]
+		[SequenceReference(nameof(Image))]
 		[Desc("Defines the sequence of an optional animation played at the spawning location.")]
 		public readonly string Sequence = "idle";
 
