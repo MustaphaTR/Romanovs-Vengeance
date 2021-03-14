@@ -1022,32 +1022,17 @@ gagateb:
 
 gasilo:
 	Defaults: ggsilo
-		Offset: 0, -30
-	idle: ggsilo_a
-	damaged-idle: ggsilo_a
-		Start: 4
-	stages: ggsilo_a
+		Offset: 0, -5
+	idle:
 		Length: 4
-	damaged-stages: ggsilo_a
+		ShadowStart: 8
+	damaged-idle:
 		Start: 4
 		Length: 4
-	idle-underlay:
-		ShadowStart: 3
-		ZOffset: -512
-	damaged-idle-underlay:
-		Start: 1
-		ShadowStart: 4
-		ZOffset: -512
-	idle-lights: ggsilo_b
-		Length: 16
-		Tick: 120
-	damaged-idle-lights: ggsilo_b
-		Start: 16
-		Length: 16
-		Tick: 120
+		ShadowStart: 12
 	make: ggsilomk
-		Length: 18
-		ShadowStart: 20
+		Length: 17
+		ShadowStart: 17
 	icon: bits/cameos/gsilicon
 		Offset: 0, 0
 

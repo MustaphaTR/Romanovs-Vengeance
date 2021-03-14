@@ -1748,9 +1748,12 @@ gasilo:
 	Inherits: ^Silo
 	Buildable:
 		Queue: Support.Allies, Support.France
-	WithIdleOverlay@LIGHTS:
-		RequiresCondition: !build-incomplete
-		Sequence: idle-lights
+	-WithResourceLevelOverlay@FILLSTAGE:
+	-WithSpriteBody:
+	WithResourceLevelSpriteBody:
+		Stages: 4
+	IsometricSelectable:
+		DecorationHeight: 45
 
 gamgun:
 	Inherits: ^SupportBuilding
