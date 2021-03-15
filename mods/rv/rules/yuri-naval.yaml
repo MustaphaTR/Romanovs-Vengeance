@@ -89,6 +89,7 @@ bsub:
 		SpawnAllAtOnce: true
 		RespawnTicks: 120
 		ArmamentNames: missile
+		SpawnOffset: 280,280,0, -280,280,0
 	WithSpawnerMasterPipsDecoration:
 		Margin: 4, 3
 		Palette: ra
@@ -127,8 +128,13 @@ cmisl:
 	Armor:
 		Type: Rocket
 	BallisticMissile:
-		LaunchAngle: 192
+		CreateAngle: 255
+		LaunchAngle: 255
+		PrepareTick: 30
+		TurnSpeed: 25
 		Speed: 255
+		LaunchAcceleration: 16
+		HitAcceleration: 30
 		LaunchSounds: vbooat1a.wav
 		SoundVolume: 0.6
 		AirborneCondition: airborne
