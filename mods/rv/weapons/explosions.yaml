@@ -7,7 +7,7 @@ LargeBarrelExplode:
 		Speed: 1c682
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
-		Damage: 450 # 225
+		Damage: 45000 # 22500
 		Falloff: 100, 73, 47, 20, 0
 		Versus:
 			None: 150
@@ -40,7 +40,7 @@ LargeChronobombExplode:
 	Inherits: LargeBarrelExplode
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
-		Damage: 200
+		Damage: 20000
 		Versus:
 			None: 100
 			Flak: 100
@@ -56,7 +56,7 @@ SmallChronobombExplode:
 	Inherits: SmallBarrelExplode
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
-		Damage: 200
+		Damage: 20000
 		Versus:
 			None: 100
 			Flak: 100
@@ -71,7 +71,7 @@ SmallChronobombExplode:
 RadCrateExplode:
 	Inherits: SmallBarrelExplode
 	Warhead@1Dam: SpreadDamage
-		Damage: 300
+		Damage: 30000
 		DamageTypes: Prone70Percent, TriggerProne, RadiationDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@4Radiation: CreateTintedCells
 		Spread: 3c0
@@ -82,7 +82,7 @@ RadCrateExplode:
 GasCrateExplode:
 	Inherits: SmallBarrelExplode
 	Warhead@1Dam: SpreadDamage
-		Damage: 300
+		Damage: 30000
 		DamageTypes: Prone70Percent, TriggerProne, VirusDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_toxin_explosion
@@ -152,7 +152,7 @@ KirovExplode:
 	Inherits@1: ^BreakPointDefenseDrones
 	Warhead@2Dam: SpreadDamage
 		Spread: 0c512
-		Damage: 750 # 250
+		Damage: 75000 # 25000
 		Falloff: 100, 83, 67, 50, 0
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@3Smu: LeaveSmudge
@@ -163,14 +163,14 @@ ApocExplode:
 	Warhead@1Eff: CreateEffect
 		ImpactSounds: gexpapoa.wav, gexpapob.wav, gexpapoc.wav
 	Warhead@2Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 
 FlameTankExplode:
 	Inherits: KirovExplode
 	Warhead@1Eff: CreateEffect
 		ImpactSounds: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
 	Warhead@2Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 		Versus:
 			None: 100
 			Flak: 100
@@ -193,17 +193,17 @@ FlameTankExplode:
 PlaneExplode:
 	Inherits: KirovExplode
 	Warhead@2Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 
 B2Explode:
 	Inherits: PlaneExplode
 	Warhead@2Dam: SpreadDamage
-		Damage: 200
+		Damage: 20000
 
 HornetExplode:
 	Inherits: KirovExplode
 	Warhead@2Dam: SpreadDamage
-		Damage: 2
+		Damage: 200
 
 InfantryExplode:
 	Inherits: UnitExplode
@@ -240,7 +240,7 @@ IvanBomber:
 	Inherits@1: ^BreakPointDefenseDrones
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c384
-		Damage: 600
+		Damage: 60000
 		Falloff: 100, 75, 50, 25, 0
 		Versus:
 			None: 100
@@ -266,7 +266,7 @@ IvanBomberE:
 	Inherits: IvanBomber
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
-		Damage: 1500
+		Damage: 150000
 	Warhead@2Eff: CreateEffect
 		Explosions: ivan_explosionE
 
@@ -274,7 +274,7 @@ TanyaC4:
 	Inherits: IvanBomber
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c32
-		Damage: 100000
+		Damage: 10000000
 		Versus:
 			None: 0
 			Flak: 0
@@ -296,7 +296,7 @@ TanyaC4:
 SealC4:
 	Inherits: TanyaC4
 	Warhead@1Dam: SpreadDamage
-		Damage: 400
+		Damage: 40000
 		Versus:
 			Wood: 100
 			Steel: 100
@@ -305,12 +305,12 @@ SealC4:
 SealC4E:
 	Inherits: SealC4
 	Warhead@1Dam: SpreadDamage
-		Damage: 1000
+		Damage: 100000
 
 TeslaBomb:
 	Inherits: SealC4
 	Warhead@1Dam: SpreadDamage
-		Damage: 550
+		Damage: 55000
 	Warhead@2Eff: CreateEffect
 		Explosions: kirovtesla
 		ExplosionPalette: effect
@@ -318,12 +318,12 @@ TeslaBomb:
 TeslaBombE:
 	Inherits: TeslaBomb
 	Warhead@1Dam: SpreadDamage
-		Damage: 1300
+		Damage: 130000
 
 ToxinTrooperBomb:
 	Inherits: SealC4
 	Warhead@1Dam: SpreadDamage
-		Damage: 475
+		Damage: 47500
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_toxin_explosion
 		ExplosionPalette: player
@@ -353,7 +353,7 @@ ToxinTrooperBomb:
 ToxinTrooperBombE:
 	Inherits: ToxinTrooperBomb
 	Warhead@1Dam: SpreadDamage
-		Damage: 1150
+		Damage: 115000
 	Warhead@2Eff: CreateEffect
 		Explosions: large_toxin_explosion
 	Warhead@3Shr: FireShrapnel
@@ -381,7 +381,7 @@ CRNuke:
 	Inherits: IvanBomber
 	Warhead@1Dam: SpreadDamage
 		Spread: 426
-		Damage: 200
+		Damage: 20000
 		Versus:
 			Light: 90
 			Medium: 50
@@ -400,7 +400,7 @@ TerrorBomb:
 		Speed: 1c682
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
-		Damage: 450 # 225
+		Damage: 45000 # 22500
 		Falloff: 100, 73, 47, 20, 0
 		Versus:
 			None: 150
@@ -426,7 +426,7 @@ TerrorBomb:
 CRTerrorBomb:
 	Inherits: TerrorBomb
 	Warhead@1Dam: SpreadDamage
-		Damage: 500 # 250
+		Damage: 50000 # 25000
 
 DeathBombExplode:
 	Inherits: TerrorBomb
@@ -435,7 +435,7 @@ DevastatorExplosion:
 	Inherits: TerrorBomb
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
-		Damage: 1000 # 500
+		Damage: 100000 # 50000
 	Warhead@4Radiation: CreateTintedCells
 		Spread: 4c0
 		Falloff: 100, 100
@@ -448,7 +448,7 @@ NukePayload:
 	ValidTargets: Ground, Water
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 1c0
-		Damage: 1000 # 200
+		Damage: 100000 # 20000
 		Falloff: 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 0
 		ValidTargets: Ground, Water
 		Versus:
@@ -484,7 +484,7 @@ atomic:
 		ImpactSounds: snukintr.wav
 		ValidTargets: Ground, Water, Air
 	Warhead@1Dam_impact: SpreadDamage
-		Damage: 2000 # 400
+		Damage: 200000 # 40000
 		Versus:
 			Wood: 100
 			Concrete: 30
@@ -505,7 +505,7 @@ demobomb:
 	ValidTargets: Ground, Water
 	Warhead@1Dam_impact: SpreadDamage
 		Spread: 2c0
-		Damage: 1200 # 300
+		Damage: 120000 # 30000
 		Falloff: 100, 70, 40, 10, 0
 		ValidTargets: Ground, Water
 		Versus:
@@ -549,7 +549,7 @@ ClusterMissileCluster:
 		LaunchAngle: 0, 32
 		Inaccuracy: 1c512
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 		Spread: 2c0
 		Versus:
 			None: 100
@@ -582,7 +582,7 @@ V3Weapon:
 	Inherits@1: ^BreakPointDefenseDrones
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c256
-		Damage: 200
+		Damage: 20000
 		ValidTargets: Ground, Water
 		Versus:
 			None: 100
@@ -612,19 +612,19 @@ DredWeapon:
 	Inherits: V3Weapon
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
-		Damage: 200
+		Damage: 20000
 
 CruiseWeapon:
 	Inherits: DredWeapon
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c410
-		Damage: 150
+		Damage: 15000
 
 RadiationMissile:
 	Inherits@1: ^BreakPointDefenseDrones
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c512
-		Damage: 250
+		Damage: 25000
 		Versus:
 			None: 100
 			Flak: 90
@@ -653,7 +653,7 @@ MineExplosion:
 	Inherits@1: ^BreakPointDefenseDrones
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
-		Damage: 400
+		Damage: 40000
 		AffectsParent: true
 		InvalidTargets: Structure, WaterStructure, Barrel, Mine, Wall, Trees
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal

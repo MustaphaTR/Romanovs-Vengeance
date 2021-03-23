@@ -14,12 +14,12 @@ Flamer:
 		Inaccuracy: 0c512
 	Warhead@1Dam: SpreadDamage
 		Spread: 341
-		Damage: 10
+		Damage: 1000
 	Warhead@1Gar: OpenToppedDamage
 		ValidTargets: GarrisonedStructure
 		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 341
-		Damage: 10
+		Damage: 1000
 		Amount: 3
 		DamageTypes: FlameDeath, NonTemporal
 	Warhead@2Smu: LeaveSmudge
@@ -38,9 +38,9 @@ FlamerE:
 		Image: fireballblue
 		TrailImage: fireballblue
 	Warhead@1Dam: SpreadDamage
-		Damage: 14
+		Damage: 1400
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 14
+		Damage: 1400
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
@@ -95,10 +95,10 @@ TankFlamer:
 		LaunchAngle: 0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
-		Damage: 10
+		Damage: 1000
 	Warhead@1Gar: OpenToppedDamage
 		Spread: 0c768
-		Damage: 10
+		Damage: 1000
 
 TankFlamerSound:
 	Inherits: TankFlamer
@@ -113,10 +113,10 @@ TankFlamerE:
 		Image: fireballblue
 		TrailImage: fireballblue
 	Warhead@1Dam: SpreadDamage
-		Damage: 14
+		Damage: 1400
 		Spread: 0c768
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 14
+		Damage: 1400
 		Spread: 0c768
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
@@ -142,7 +142,7 @@ ToxinSprayer:
 		Inaccuracy: 1c0
 	Warhead@1Dam: SpreadDamage
 		DamageTypes: VirusDeath, NonTemporal
-		Damage: 10
+		Damage: 1000
 		Versus:
 			None: 150
 			Flak: 150
@@ -157,7 +157,7 @@ ToxinSprayer:
 			Rocket: 100
 	Warhead@1Gar: OpenToppedDamage
 		DamageTypes: VirusDeath, NonTemporal
-		Damage: 10
+		Damage: 1000
 		Versus:
 			None: 150
 			Flak: 150
@@ -186,9 +186,9 @@ ToxinSprayerE:
 	Inherits: ToxinSprayer
 	Burst: 20
 	Warhead@1Dam: SpreadDamage
-		Damage: 14
+		Damage: 1400
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 14
+		Damage: 1400
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
@@ -215,13 +215,13 @@ ToxinSprayerTruck:
 	Burst: 8
 	BurstDelays: 2
 	Warhead@1Dam: SpreadDamage
-		Damage: 8
+		Damage: 800
 
 ToxinSprayerTruckE:
 	Inherits: ToxinSprayerTruck
 	Burst: 20
 	Warhead@1Dam: SpreadDamage
-		Damage: 16
+		Damage: 1600
 
 EmergencyRepair1:
 	ReloadDelay: 80
@@ -230,7 +230,7 @@ EmergencyRepair1:
 	Projectile: InstantExplode
 	Warhead@1Dam: HealthPercentageDamage
 		Spread: 5c0
-		Damage: -30
+		Damage: -3000
 		AffectsParent: true
 		ValidRelationships: Neutral, Ally
 		ValidTargets: Repair, Structure, Barrel, Mine, Wall
@@ -245,13 +245,13 @@ EmergencyRepair2:
 	Inherits: EmergencyRepair1
 	Warhead@1Dam: HealthPercentageDamage
 		Spread: 6c0
-		Damage: -60
+		Damage: -6000
 
 EmergencyRepair3:
 	Inherits: EmergencyRepair1
 	Warhead@1Dam: HealthPercentageDamage
 		Spread: 7c0
-		Damage: -100
+		Damage: -10000
 
 AmbulanceHeal:
 	ReloadDelay: 25
@@ -260,7 +260,7 @@ AmbulanceHeal:
 	Warhead@1Dam: SpreadDamage
 		Spread: 5c0
 		Falloff: 100, 0
-		Damage: -20
+		Damage: -2000
 		ValidRelationships: Neutral, Ally
 		ValidTargets: Heal
 
@@ -317,14 +317,14 @@ PsiWave:
 	Warhead@1Dam: SpreadDamage
 		Spread: 3c0
 		Falloff: 100, 100
-		Damage: 250
+		Damage: 25000
 		ValidTargets: Infantry
 		ValidRelationships: Enemy, Neutral
 		DamageTypes: PsychicDeath, NonTemporal
 	Warhead@2Dam: SpreadDamage
 		Spread: 3c0
 		Falloff: 100, 100
-		Damage: 250
+		Damage: 25000
 		ValidTargets: Infantry
 		InvalidTargets: ImmuneToFriendlyPsiWave
 		ValidRelationships: Ally
@@ -338,9 +338,9 @@ CRPsiWave:
 	ReloadDelay: 20
 	Projectile: InstantExplode
 	Warhead@1Dam: SpreadDamage
-		Damage: 200
+		Damage: 20000
 	Warhead@2Dam: SpreadDamage
-		Damage: 200
+		Damage: 20000
 
 SuperPsiWave:
 	Inherits: PsiWave
@@ -511,7 +511,7 @@ WeatherCloudDirectInit:
 	Warhead@Dam1: SpreadDamage
 		Spread: 3c0
 		Falloff: 100, 66, 33, 0
-		Damage: 180
+		Damage: 18000
 		AffectsParent: true
 		ValidTargets: Air
 		Delay: 28
@@ -530,7 +530,7 @@ WeatherCloudRandomInit:
 	Warhead@Dam1: SpreadDamage
 		Spread: 3c0
 		Falloff: 100, 66, 33, 0
-		Damage: 180
+		Damage: 18000
 		AffectsParent: true
 		ValidTargets: Air
 		Delay: 28
@@ -567,7 +567,7 @@ WeatherBolt:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Falloff: 100, 66, 33, 0
-		Damage: 200
+		Damage: 20000
 		AffectsParent: true
 		ValidTargets: Ground, Air, Water
 		DamageTypes: TriggerProne, ElectroDeath, NonTemporal
@@ -790,7 +790,7 @@ PsychicDomination:
 	Inherits: PsychicControl
 	Warhead@5Dam: SpreadDamage
 		Spread: 1c410
-		Damage: 2000 # 200
+		Damage: 200000 # 20000
 		Falloff: 100, 80, 60, 40, 20, 0
 		ValidTargets: Ground, Water
 		Versus:
@@ -815,7 +815,7 @@ PsychicJab:
 	Range: 5c0
 	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 15
+		Damage: 1500
 		Versus:
 			Wood: 45
 			Concrete: 40
@@ -827,7 +827,7 @@ PsychicJabE:
 	Inherits: PsychicJab
 	Range: 6c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 20
+		Damage: 2000
 	Warhead@2Eff: CreateEffect
 		Explosions: largefireblue
 
@@ -847,7 +847,7 @@ CRPsychicJab:
 	Inherits: PsychicJab
 	Range: 6c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 25
+		Damage: 2500
 
 ChaosAttack:
 	Range: 3c0
@@ -873,7 +873,7 @@ CloudDamage:
 	Projectile: InstantExplode
 	Warhead@1Dam: SpreadDamage
 		Spread: 196
-		Damage: 4
+		Damage: 400
 		DamageTypes: VirusDeath, NonTemporal
 		InvalidTargets: ImmuneToToxin
 		Versus:
@@ -894,7 +894,7 @@ FireDamage:
 	Projectile: InstantExplode
 	Warhead@1Dam: SpreadDamage
 		Spread: 196
-		Damage: 4
+		Damage: 400
 		DamageTypes: FlameDeath, NonTemporal
 		Versus:
 			None: 150

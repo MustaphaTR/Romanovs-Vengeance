@@ -8,7 +8,7 @@ DogJaw:
 	Warhead@1Dam: SpreadDamage
 		Spread: 64
 		Falloff: 100, 0
-		Damage: 1000
+		Damage: 100000
 		ValidTargets: Infantry
 		InvalidTargets: DogImmune
 		Versus:
@@ -34,7 +34,7 @@ DroneJump:
 	Warhead@1Dam: SpreadDamage
 		Spread: 64
 		Falloff: 100, 0
-		Damage: 1000
+		Damage: 100000
 		ValidTargets: TerrorDronable
 		Versus:
 			None: 100
@@ -70,7 +70,7 @@ AlligatorBite:
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
-		Damage: 30
+		Damage: 3000
 		DamageTypes: BulletDeath, NonTemporal
 
 BearBite:
@@ -89,7 +89,7 @@ CrabPunch:
 	Report: vsquat1a.wav
 	ValidTargets: Ground, Water
 	Warhead@1Dam: SpreadDamage
-		Damage: 60
+		Damage: 6000
 		ValidTargets: Ground, Water
 		Versus:
 			Heavy: 90
@@ -105,7 +105,7 @@ SquidPunch:
 	Report: vsquat1a.wav
 	ValidTargets: Water, Underwater
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 		ValidTargets: Water, Underwater
 
 SquidSplash:
@@ -148,7 +148,7 @@ ShovelE:
 	Inherits: Shovel
 	ReloadDelay: 15
 	Warhead@1Dam: SpreadDamage
-		Damage: 35
+		Damage: 3500
 
 Punch:
 	Inherits@1: ^BreakPointDefenseDrones
@@ -158,7 +158,7 @@ Punch:
 	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
-		Damage: 125
+		Damage: 12500
 		ValidTargets: Infantry, TerrorDrone, Structure, Barrel, Mine, Bridge, Wall, Fence, Tree
 		Versus:
 			None: 100
@@ -187,7 +187,7 @@ Smash:
 	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 		ValidTargets: Vehicle
 		Versus:
 			None: 0
@@ -206,7 +206,7 @@ Smash:
 SmashE:
 	Inherits: Smash
 	Warhead@1Dam: SpreadDamage
-		Damage: 150
+		Damage: 15000
 
 Heal:
 	ReloadDelay: 80
@@ -216,7 +216,7 @@ Heal:
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
-		Damage: -50
+		Damage: -5000
 		ValidTargets: Heal
 
 RepairBullet:
@@ -227,7 +227,7 @@ RepairBullet:
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
-		Damage: -50
+		Damage: -5000
 		ValidTargets: Repair
 		DamageTypes: KillsDrone, NonTemporal
 
@@ -236,7 +236,7 @@ MechRepair:
 	Range: 2c0
 	Report: fixit1.aud
 	Warhead@1Dam: SpreadDamage
-		Damage: -40
+		Damage: -4000
 
 TankGrind:
 	Inherits@1: ^BreakPointDefenseDrones
@@ -247,7 +247,7 @@ TankGrind:
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Spread: 128
-		Damage: 150
+		Damage: 15000
 		ValidTargets: Ground
 		Versus:
 			None: 150
@@ -273,7 +273,7 @@ CRGrind:
 	ValidTargets: Vehicle, TerrorDrone, Ship
 	Warhead@1Dam: SpreadDamage
 		Spread: 213
-		Damage: 50
+		Damage: 5000
 		Versus:
 			None: 0
 			Flak: 0

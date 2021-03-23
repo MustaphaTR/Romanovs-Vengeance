@@ -14,7 +14,7 @@ RedEye2:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c307
 		Falloff: 100, 0
-		Damage: 30
+		Damage: 3000
 		ValidTargets: Air
 		Versus:
 			None: 100
@@ -46,7 +46,7 @@ MammothTusk:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 80
+		Damage: 8000
 		Versus:
 			Flak: 90
 			Plate: 80
@@ -67,7 +67,7 @@ MammothTuskE:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 70
+		Damage: 7000
 
 APTusk:
 	Inherits: ^Missile
@@ -91,7 +91,7 @@ APTusk:
 		Speed: 512
 	Warhead@1Dam: SpreadDamage
 		Spread: 683
-		Damage: 25
+		Damage: 2500
 		ValidTargets: Ground, Water
 		Versus:
 			None: 15
@@ -122,7 +122,7 @@ APTuskE:
 	ReloadDelay: 75
 	Range: 9c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 
 Maverick:
 	Inherits: ^Missile
@@ -145,7 +145,7 @@ Maverick:
 		InvalidTargets: LoadedTankBunker
 		Spread: 0c512
 		Falloff: 100, 0
-		Damage: 100
+		Damage: 10000
 		Versus:
 			None: 150
 			Flak: 150
@@ -162,7 +162,7 @@ Maverick:
 		ValidTargets: LoadedTankBunker
 		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 0c512
-		Damage: 100
+		Damage: 10000
 		Versus:
 			None: 150
 			Flak: 150
@@ -192,26 +192,26 @@ MaverickE:
 	Projectile: Missile
 		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
-		Damage: 200
+		Damage: 20000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 200
+		Damage: 20000
 
 Maverick2:
 	Inherits: Maverick
 	Report: vbleatta.wav, vbleattb.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 200
+		Damage: 20000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 200
+		Damage: 20000
 
 Maverick2E:
 	Inherits: Maverick2
 	Range: 9c0
 	ReloadDelay: 10
 	Warhead@1Dam: SpreadDamage
-		Damage: 400
+		Damage: 40000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 400
+		Damage: 40000
 
 Maverick3:
 	Inherits: Maverick
@@ -219,7 +219,7 @@ Maverick3:
 	Projectile: Missile
 		Image: ra1patriot
 	Warhead@1Dam: SpreadDamage
-		Damage: 300
+		Damage: 30000
 		-InvalidTargets:
 		Versus:
 			Wood: 100
@@ -235,7 +235,7 @@ Maverick3E:
 	Inherits: Maverick3
 	Range: 9c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 1000
+		Damage: 100000
 
 Medusa:
 	Inherits: ^AAMissile
@@ -253,7 +253,7 @@ Medusa:
 		MaximumLaunchSpeed: 512
 		MinimumLaunchSpeed: 512
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 
 MedusaE:
 	Inherits: Medusa
@@ -282,7 +282,7 @@ HoverMissile:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 25
+		Damage: 2500
 		ValidTargets: Ground
 		Versus:
 			None: 100
@@ -355,7 +355,7 @@ OutpostMissile:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 30
+		Damage: 3000
 		ValidTargets: Ground, Air
 		Versus:
 			None: 80
@@ -390,7 +390,7 @@ MissileLauncher:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 40
+		Damage: 4000
 		ValidTargets: Ground
 		Versus:
 			None: 15
@@ -453,7 +453,7 @@ CRMissileLauncher:
 	Projectile: Missile
 		RangeLimit: 11c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 
 CRMissileLauncherAA:
 	Inherits: MissileLauncherAA
@@ -461,7 +461,7 @@ CRMissileLauncherAA:
 	Burst: 3
 	BurstDelays: 5
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 
 UCMissileLauncher:
 	Inherits: MissileLauncher
@@ -530,7 +530,7 @@ CRChaosRocket:
 	Inherits: ChaosRocket
 	Burst: 2
 	Warhead@1Dam: SpreadDamage
-		Damage: 30
+		Damage: 3000
 
 CRChaosRocketAA:
 	Inherits: CRChaosRocket
@@ -576,7 +576,7 @@ HeliRocket:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 50
+		Damage: 5000
 		ValidTargets: Ground, Water
 		Versus:
 			None: 15
@@ -629,7 +629,7 @@ SubTorpedo:
 		TerrainHeightAware: true
 	Warhead@1Dam: SpreadDamage
 		Spread: 256
-		Damage: 100
+		Damage: 10000
 		ValidTargets: Water, Underwater, Bridge
 		Versus:
 			None: 25
@@ -661,7 +661,7 @@ BoomerTorpedo:
 	Report: vbooat2a.wav
 	Burst: 2
 	Warhead@1Dam: SpreadDamage
-		Damage: 60
+		Damage: 6000
 		Versus:
 			None: 100
 			Flak: 100
@@ -686,7 +686,7 @@ HornetBomb:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c410
 		Falloff: 100, 0
-		Damage: 80
+		Damage: 8000
 		ValidTargets: Ground, Water
 		Versus:
 			None: 100
@@ -719,7 +719,7 @@ HornetBombE:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Falloff: 100, 0
-		Damage: 140
+		Damage: 14000
 	Warhead@2Eff: CreateEffect
 		Explosions: terrorist_explosion
 		-ExplosionPalette: tseffect
@@ -733,7 +733,7 @@ ASWBomb:
 	Range: 3c0
 	ValidTargets: Underwater
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 		Versus:
 			None: 25
 			Flak: 25
@@ -755,7 +755,7 @@ ASWBombE:
 	Projectile: Missile
 		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
-		Damage: 80
+		Damage: 8000
 
 A10Missile:
 	Inherits: ^Missile
@@ -769,7 +769,7 @@ A10Missile:
 		RangeLimit: 11c410
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c512
-		Damage: 80
+		Damage: 8000
 		Versus:
 			None: 100
 			Flak: 100
@@ -869,7 +869,7 @@ V3StormStrike:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
 		Falloff: 100, 75, 50, 25, 0
-		Damage: 150
+		Damage: 15000
 		Versus:
 			None: 100
 			Flak: 100
@@ -912,7 +912,7 @@ MosquitoMissile:
 		InvalidTargets: LoadedTankBunker
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
-		Damage: 20
+		Damage: 2000
 		Versus:
 			None: 15
 			Flak: 15
@@ -929,7 +929,7 @@ MosquitoMissile:
 		ValidTargets: LoadedTankBunker
 		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 0c128
-		Damage: 20
+		Damage: 2000
 		Versus:
 			None: 15
 			Flak: 15

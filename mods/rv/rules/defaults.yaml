@@ -470,20 +470,20 @@
 
 ^DamagedByRadiation100Percent:
 	DamagedByTintedCells:
-		Damage: 1
-		DamageLevel: 5
+		Damage: 100
+		DamageLevel: 10
 		DamageTypes: RadiationDeath, NonTemporal
 
 ^DamagedByRadiation50Percent:
 	DamagedByTintedCells:
-		Damage: 1
+		Damage: 50
 		DamageLevel: 10
 		DamageTypes: RadiationDeath, NonTemporal
 
 ^DamagedByRadiation10Percent:
 	DamagedByTintedCells:
-		Damage: 1
-		DamageLevel: 50
+		Damage: 10
+		DamageLevel: 10
 		DamageTypes: RadiationDeath, NonTemporal
 
 ^AcceptsDeathBomb:
@@ -1163,6 +1163,7 @@
 	Explodes@ChronoDisable:
 		Type: Footprint
 	RepairableBuilding:
+		RepairStep: 700
 		RepairingNotification: Repairing
 	EngineerRepairable:
 		Types: building
@@ -1272,7 +1273,7 @@
 	EngineerRepairable:
 		Types: civilian
 	Health:
-		HP: 1400
+		HP: 140000
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -1368,7 +1369,7 @@
 	OwnerLostAction:
 		Action: ChangeOwner
 	Health:
-		HP: 900
+		HP: 90000
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -1410,7 +1411,7 @@
 	Tooltip@NoRow:
 		Name: Flag
 	Health:
-		HP: 20
+		HP: 2000
 	Armor:
 		Type: Steel
 	RevealsShroud:
@@ -1476,7 +1477,7 @@
 	CustomSellValue:
 		Value: 0
 	Health:
-		HP: 300
+		HP: 30000
 	Armor:
 		Type: Concrete
 	Crushable:
@@ -1509,7 +1510,7 @@
 	Valued:
 		Cost: 25
 	Health:
-		HP: 100
+		HP: 10000
 	Armor:
 		Type: Wood
 	-BlocksProjectiles:
@@ -1542,7 +1543,7 @@
 	Valued:
 		Cost: 75
 	Health:
-		HP: 350
+		HP: 35000
 	Armor:
 		Type: Concrete
 	LineBuildNode:
@@ -1884,7 +1885,7 @@
 		Name: Civilian
 		GenericName: Civilian
 	Health:
-		HP: 50
+		HP: 5000
 	Mobile:
 		Speed: 45
 		Voice: Move
@@ -1916,7 +1917,7 @@
 		Cost: 1000
 	-DeliversCash:
 	Health:
-		HP: 150
+		HP: 15000
 	Armor:
 		Type: Flak
 	RevealsShroud:
@@ -1951,7 +1952,7 @@
 	Armor:
 		Type: None
 	Health:
-		HP: 200
+		HP: 20000
 	Targetable:
 		TargetTypes: Ground, Infantry
 	RevealsShroud:
@@ -2046,7 +2047,7 @@
 		Range: 5c0
 		MaxHeightDelta: 3
 	Health:
-		HP: 100
+		HP: 10000
 	HitShape:
 	SelectionDecorations:
 	Selectable:
@@ -2348,7 +2349,7 @@
 		Type: CenterPosition
 	ScriptTriggers:
 	Health:
-		HP: 1
+		HP: 100
 	FallsToEarth:
 		Velocity: 86
 	HitShape:
@@ -2555,7 +2556,7 @@
 	Targetable:
 		TargetTypes: Ground, Tree, DetonateAttack
 	Health:
-		HP: 200
+		HP: 20000
 	HitShape:
 	Armor:
 		Type: Wood
@@ -2585,14 +2586,14 @@
 	Armor:
 		Type: steel
 	Health:
-		HP: 50
+		HP: 5000
 
 ^TelephonePole:
 	Inherits: ^StreetSign
 	Tooltip:
 		Name: Utility Pole
 	Health:
-		HP: 20
+		HP: 2000
 	Armor:
 		Type: Concrete
 

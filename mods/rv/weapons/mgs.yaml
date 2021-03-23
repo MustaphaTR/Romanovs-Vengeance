@@ -4,7 +4,7 @@ M1Carbine:
 	ReloadDelay: 25
 	Warhead@1Dam: SpreadDamage
 		Spread: 64
-		Damage: 15
+		Damage: 1500
 	Report: iconatta.wav, iconattb.wav, iconattc.wav, iconattd.wav, iconatte.wav
 
 M1CarbineE:
@@ -12,7 +12,7 @@ M1CarbineE:
 	ReloadDelay: 20
 	Range: 6c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 20
+		Damage: 2000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -34,14 +34,14 @@ M60:
 	Range: 5c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 64
-		Damage: 15
+		Damage: 1500
 
 M60E:
 	Inherits: M60
 	ReloadDelay: 20
 	Range: 6c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 20
+		Damage: 2000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -52,7 +52,7 @@ CRM60:
 	Range: 6c0
 	Report: vifvat2a.wav, vifvat2b.wav, vifvat2c.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 35
+		Damage: 3500
 
 para:
 	Inherits: ^MG
@@ -60,7 +60,7 @@ para:
 	ReloadDelay: 20
 	Report: igiat2a.wav, igiat2b.wav, igiat2c.wav, igiat2d.wav, igiat2c.wav, igiat2d.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 20
+		Damage: 2000
 		Versus:
 			Flak: 100
 
@@ -69,7 +69,7 @@ paraE:
 	Range: 6c0
 	ReloadDelay: 15
 	Warhead@1Dam: SpreadDamage
-		Damage: 25
+		Damage: 2500
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -93,7 +93,7 @@ MP5:
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Ship
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Ship
-		Damage: 70
+		Damage: 7000
 		Versus:
 			None: 200
 			Flak: 150
@@ -136,7 +136,7 @@ DoublePistols:
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
-		Damage: 125
+		Damage: 12500
 		Versus:
 			None: 200
 			Flak: 100
@@ -184,7 +184,7 @@ awp:
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
 		Spread: 42
-		Damage: 200
+		Damage: 20000
 		DamageTypes: BulletDeath, NonTemporal
 		Versus:
 			None: 100
@@ -197,7 +197,7 @@ awp:
 		ValidTargets: GarrisonedStructure
 		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 42
-		Damage: 200
+		Damage: 20000
 		Amount: 1
 		DamageTypes: BulletDeath, NonTemporal
 		Versus:
@@ -256,7 +256,7 @@ MagneRifle:
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence
 		Spread: 128
-		Damage: 60
+		Damage: 6000
 		Versus:
 			None: 45
 			Flak: 45
@@ -283,7 +283,7 @@ MagneRifleE:
 	Projectile: BulletAS
 		ContrailColor: FF0000
 	Warhead@1Dam: SpreadDamage
-		Damage: 90
+		Damage: 9000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
 
@@ -307,7 +307,7 @@ UCMagneRifleE:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 25
+		Damage: 2500
 		ValidTargets: Ground, Water
 		Versus:
 			Flak: 100
@@ -343,7 +343,7 @@ robogun:
 	Range: 5c0
 	Report: vwaratta.wav, vwarattb.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 25
+		Damage: 2500
 		Versus:
 			Drone: 200
 
@@ -352,7 +352,7 @@ robogunE:
 	ReloadDelay: 30
 	Range: 6c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 30
+		Damage: 3000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -362,7 +362,7 @@ robogunE:
 	Range: 6c0
 	Report: vwaratta.wav, vwarattb.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 30
+		Damage: 3000
 		Versus:
 			Medium: 20
 			Heavy: 20
@@ -375,7 +375,7 @@ robogunE:
 	Inherits: 20mmrapid
 	ReloadDelay: 15
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -385,7 +385,7 @@ vulcan:
 	Range: 6c0
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 65
+		Damage: 6500
 		Versus:
 			None: 120
 			Flak: 110
@@ -404,7 +404,7 @@ BlackHawkCannon:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 35
+		Damage: 3500
 		Versus:
 			Rocket: 25
 		ValidTargets: Ground, Water
@@ -413,7 +413,7 @@ BlackHawkCannon:
 		ValidTargets: LoadedTankBunker
 		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 64
-		Damage: 35
+		Damage: 3500
 		Versus:
 			None: 100
 			Flak: 90
@@ -431,9 +431,9 @@ BlackHawkCannon:
 BlackHawkCannonE:
 	Inherits: BlackHawkCannon
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 50
+		Damage: 5000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -447,7 +447,7 @@ BlackHawkCannonAA:
 BlackHawkCannonAAE:
 	Inherits: BlackHawkCannonAA
 	Warhead@1Dam: SpreadDamage
-		Damage: 50
+		Damage: 5000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -460,7 +460,7 @@ SiegeChopperCannon:
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 70
+		Damage: 7000
 		Versus:
 			Light: 50
 			Medium: 10
@@ -475,7 +475,7 @@ SiegeChopperCannon:
 		ValidTargets: LoadedTankBunker
 		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 64
-		Damage: 70
+		Damage: 7000
 		Versus:
 			None: 100
 			Flak: 90
@@ -493,9 +493,9 @@ SiegeChopperCannon:
 SiegeChopperCannonE:
 	Inherits: SiegeChopperCannon
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 100
+		Damage: 10000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -509,7 +509,7 @@ SiegeChopperCannonAA:
 SiegeChopperCannonAAE:
 	Inherits: SiegeChopperCannonAA
 	Warhead@1Dam: SpreadDamage
-		Damage: 100
+		Damage: 10000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -522,7 +522,7 @@ AKM:
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence, Tree, Structure
-		Damage: 65
+		Damage: 6500
 		Versus:
 			None: 200
 			Flak: 200
@@ -543,7 +543,7 @@ AKME:
 	Inherits: AKM
 	Range: 9c0
 	Warhead@1Dam: SpreadDamage
-		Damage: 90
+		Damage: 9000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
 
@@ -567,14 +567,14 @@ Virusgun:
 	Range: 9c0
 	Report: iviratta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 200
+		Damage: 20000
 		Versus:
 			Plate: 100
 			Light: 100
 			Heavy: 75
 		DamageTypes: VirusDeath, NonTemporal
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 200
+		Damage: 20000
 		Versus:
 			Plate: 100
 			Light: 100
@@ -624,7 +624,7 @@ PoisonSting:
 		ContrailWidth: 30
 		ContrailColor: 2eed14
 	Warhead@1Dam: SpreadDamage
-		Damage: 40
+		Damage: 4000
 		Versus:
 			None: 100
 			Flak: 100
@@ -654,4 +654,4 @@ PoisonStingE:
 	Inherits: PoisonSting
 	ReloadDelay: 20
 	Warhead@1Dam: SpreadDamage
-		Damage: 80
+		Damage: 8000
