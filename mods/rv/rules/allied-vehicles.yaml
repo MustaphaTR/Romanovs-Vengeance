@@ -1286,7 +1286,8 @@ robo:
 		Speed: 120
 		TurnSpeed: 1023
 		Locomotor: amphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && powered
+		PauseOnCondition: !powered
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned
 	Hovers:
 		Ticks: 10
 		BobDistance: -64
