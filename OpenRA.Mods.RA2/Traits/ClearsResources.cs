@@ -22,14 +22,14 @@ namespace OpenRA.Mods.Common.Traits
 
 	public class ClearsResources : ConditionalTrait<ClearsResourcesInfo>
 	{
-		ResourceLayer resLayer;
+		IResourceLayer resLayer;
 		ResourceRenderer resRenderer;
 		PPos[] allCells;
 
 		public ClearsResources(ClearsResourcesInfo info, Actor self)
 			: base(info)
 		{
-			resLayer = self.World.WorldActor.Trait<ResourceLayer>();
+			resLayer = self.World.WorldActor.Trait<IResourceLayer>();
 			resRenderer = self.World.WorldActor.Trait<ResourceRenderer>();
 			allCells = self.World.Map.ProjectedCells.ToArray();
 		}
@@ -39,7 +39,7 @@ namespace OpenRA.Mods.Common.Traits
 			foreach (var cell in allCells)
 			{
 				var pos = ((MPos)cell).ToCPos(self.World.Map);
-				resLayer.Destroy(pos);
+				resLayer.ClearResources(pos);
 				resRenderer.UpdateRenderedSprite(pos, RendererCellContents.Empty);
 			}
 		}

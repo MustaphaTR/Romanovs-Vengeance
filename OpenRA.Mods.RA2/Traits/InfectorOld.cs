@@ -114,10 +114,10 @@ namespace OpenRA.Mods.RA2.Traits
 				if (modifiers.HasModifier(TargetModifiers.ForceMove))
 					return false;
 
-				var stance = self.Owner.RelationshipWith(target.Owner);
-				if (!info.TargetRelationships.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
+				var relationship = self.Owner.RelationshipWith(target.Owner);
+				if (!info.TargetRelationships.HasRelationship(relationship) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
 					return false;
-				if (!info.ForceTargetRelationships.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
+				if (!info.ForceTargetRelationships.HasRelationship(relationship) && modifiers.HasModifier(TargetModifiers.ForceAttack))
 					return false;
 
 				return info.Types.Overlaps(target.GetAllTargetTypes());
@@ -125,10 +125,10 @@ namespace OpenRA.Mods.RA2.Traits
 
 			public override bool CanTargetFrozenActor(Actor self, FrozenActor target, TargetModifiers modifiers, ref string cursor)
 			{
-				var stance = self.Owner.RelationshipWith(target.Owner);
-				if (!info.TargetRelationships.HasStance(stance) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
+				var relationship = self.Owner.RelationshipWith(target.Owner);
+				if (!info.TargetRelationships.HasRelationship(relationship) && !modifiers.HasModifier(TargetModifiers.ForceAttack))
 					return false;
-				if (!info.ForceTargetRelationships.HasStance(stance) && modifiers.HasModifier(TargetModifiers.ForceAttack))
+				if (!info.ForceTargetRelationships.HasRelationship(relationship) && modifiers.HasModifier(TargetModifiers.ForceAttack))
 					return false;
 
 				return info.Types.Overlaps(target.Info.GetAllTargetTypes());
