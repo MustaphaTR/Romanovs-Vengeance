@@ -1079,36 +1079,23 @@ nafnce:
 		Length: 16
 
 nasilo:
-	Defaults:
-		Offset: 0, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-	idle: ngsilo_a
-	damaged-idle: ngsilo_a
-		Start: 4
-	stages: ngsilo_a
+	Defaults: ngsilo
+		Offset: 0, -5
+	idle:
 		Length: 4
-	damaged-stages: ngsilo_a
+		ShadowStart: 8
+	damaged-idle:
 		Start: 4
 		Length: 4
-	idle-underlay:
-		ShadowStart: 3
-		ZOffset: -512
-	damaged-idle-underlay:
+		ShadowStart: 12
+	idle-hns: ngsilo_a
+	idle-star: ngsilo_a
 		Start: 1
-		ShadowStart: 4
-		ZOffset: -512
 	make: ngsilomk
-		Length: 8
-		ShadowStart: 9
+		Length: 12
+		ShadowStart: 12
 	icon: bits/cameos/nsilicon
 		Offset: 0, 0
-		UseTilesetCode: false
 
 naprop:
 	Defaults:

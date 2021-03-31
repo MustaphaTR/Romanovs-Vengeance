@@ -1821,10 +1821,22 @@ nasilo:
 	Inherits: ^Silo
 	Buildable:
 		Queue: Support.Soviets, Support.Baku
-	Capturable:
-		RequiresCondition: !invulnerability && !forceshield
-	Sellable:
-		RequiresCondition: !chronodisable
+	-WithResourceLevelOverlay@FILLSTAGE:
+	-WithSpriteBody:
+	WithResourceLevelSpriteBody:
+		Stages: 4
+	GrantConditionOnFaction@Soviets:
+		Condition: soviets
+		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+	WithIdleOverlay@Soviets:
+		Sequence: idle-hns
+		RequiresCondition: !build-incomplete && soviets
+	WithIdleOverlay@Baku:
+		Sequence: idle-star
+		RequiresCondition: !build-incomplete && baku
 	IsometricSelectable:
 		DecorationHeight: 45
 
