@@ -1,7 +1,15 @@
 1tnk:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 700
 	#Buildable:
-	#	Queue: Vehicle.Allies
+	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 	Tooltip:
 		Name: Light Tank
 	Tooltip@NoRow:
@@ -10,10 +18,11 @@
 		HP: 20000
 	Armor:
 		Type: Heavy
+		Locomotor: heavytracked
 	Turreted:
 		TurnSpeed: 30
 	Armament:
-		Weapon: ATGUN
+		Weapon: 75mm
 	AttackTurreted:
 		Voice: Attack
 	WithVoxelBody:
@@ -26,8 +35,16 @@
 
 2tnk:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 850
 	#Buildable:
-	#	Queue: Vehicle.Allies
+	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 	Tooltip:
 		Name: Medium Tank
 	Tooltip@NoRow:
@@ -36,10 +53,11 @@
 		HP: 30000
 	Armor:
 		Type: Heavy
+		Locomotor: heavytracked
 	Turreted:
 		TurnSpeed: 28
 	Armament:
-		Weapon: 105mm
+		Weapon: 90mm
 	AttackTurreted:
 		Voice: Attack
 	WithVoxelBody:
@@ -52,8 +70,16 @@
 
 3tnk:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 1150
 	#Buildable:
-	#	Queue: Vehicle.Soviets
+	#	Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	Tooltip:
 		Name: Heavy Tank
 	Tooltip@NoRow:
@@ -62,24 +88,51 @@
 		HP: 40000
 	Armor:
 		Type: Heavy
+		Locomotor: heavytracked
 	Turreted:
 		TurnSpeed: 28
-	Armament:
-		Weapon: 120mm
+	Armament@primary:
+		Weapon: 105mmx
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle
+		LocalOffset: 1024,-100,640
+	Armament@primary2:
+		Name: primary2
+		Weapon: 105mmx
+		FireDelay: 5
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle
+		LocalOffset: 1024,100,640
 	AttackTurreted:
 		Voice: Attack
+		Armaments: primary, primary2
+		PauseOnCondition: chronodisable || emp || parachute
+	WithMuzzleOverlay:
 	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
+	WithVoxelBarrel@2:
+		Sequence: barrel2
+		Armament: primary2
 	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
-		Scale: 16
+		Scale: 13
 
 4tnk:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 2000
 	#Buildable:
-	#	Queue: Vehicle.Soviets
+	#	Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	Tooltip:
 		Name: Mammoth Tank
 	Tooltip@NoRow:
@@ -88,6 +141,7 @@
 		HP: 80000
 	Armor:
 		Type: Heavy
+		Locomotor: omnicrusher
 	Turreted:
 		Offset: -256,0,0
 		TurnSpeed: 16
@@ -95,6 +149,7 @@
 		Weapon: 120mm
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
@@ -105,8 +160,15 @@
 
 arty:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 850
 	#Buildable:
-	#	Queue: Vehicle.Allies
+	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 	Tooltip:
 		Name: Artillery
 	Tooltip@NoRow:
@@ -131,8 +193,15 @@ arty:
 
 ftnktd:
 	Inherits: ^Vehicle
+	#Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 600
 	#Buildable:
-	#	Queue: Vehicle.Soviets
+	#	Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	Tooltip:
 		Name: Flame Tank
 	Tooltip@NoRow:
@@ -149,8 +218,16 @@ ftnktd:
 
 hmve:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 400
 	#Buildable:
-	#	Queue: Vehicle.Allies
+	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 	Tooltip:
 		Name: Humvee
 	Tooltip@NoRow:
@@ -165,6 +242,7 @@ hmve:
 		Weapon: M1Carbine
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	RenderSprites:
@@ -174,8 +252,16 @@ hmve:
 
 m113:
 	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 850
 	#Buildable:
-	#	Queue: Vehicle.Allies
+	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 	Tooltip:
 		Name: APC
 	Tooltip@NoRow:
@@ -192,6 +278,7 @@ m113:
 		Weapon: M1Carbine
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	Cargo:
@@ -223,8 +310,15 @@ m113:
 
 mlrs:
 	Inherits: ^Vehicle
+	#Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 900
 	#Buildable:
-	#	Queue: Vehicle.Soviets
+	#	Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	Tooltip:
 		Name: Rocket Launcher
 	Tooltip@NoRow:
@@ -245,8 +339,13 @@ mlrs:
 
 mnly:
 	Inherits: ^Vehicle
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Valued:
+		Cost: 800
 	#Buildable:
-	#	Queue: Vehicle.Allies, Vehicle.Soviets
+	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	Tooltip:
 		Name: Minelayer
 	Tooltip@NoRow:
@@ -263,8 +362,13 @@ mnly:
 
 mrj:
 	Inherits: ^Vehicle
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 1000
 	#Buildable:
-	#	Queue: Vehicle.Allies
+	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 	Tooltip:
 		Name: Mobile Radar Jammer
 	Tooltip@NoRow:

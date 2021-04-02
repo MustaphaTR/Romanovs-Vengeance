@@ -250,6 +250,15 @@ Sub70mmE:
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
+90mm:
+	Inherits: 105mm
+	Report: cannon1.aud
+
+105mmx:
+	Inherits: 90mm
+	ReloadDelay: 65
+	Report: cannon1.aud
+
 ATGUN:
 	Inherits: 105mm
 	Range: 6c0
@@ -269,6 +278,10 @@ ATGUNE:
 			None: 100
 			Flak: 100
 			Plate: 100
+
+75mm:
+	Inherits: ATGUN
+	Report: cannon2.aud
 
 120mm:
 	Inherits: ^LargeBullet
