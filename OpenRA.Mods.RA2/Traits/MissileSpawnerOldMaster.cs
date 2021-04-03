@@ -105,7 +105,7 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 
 			// Program the trajectory.
-			var bm = se.Actor.Trait<BallisticMissile>();
+			var bm = se.Actor.Trait<BallisticMissileOld>();
 			bm.Target = Target.FromPos(target.CenterPosition);
 
 			SpawnIntoWorld(self, se.Actor, self.CenterPosition);

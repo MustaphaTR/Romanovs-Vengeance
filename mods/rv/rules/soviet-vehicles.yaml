@@ -433,7 +433,7 @@ apoc:
 		Name: Apocalypse Tank
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 120
 		Prerequisites: natech, ~techlevel.4
 		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\nCan crush enemy vehicles.\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry
 		BuildDuration: 875
@@ -765,7 +765,9 @@ v3:
 		Position: BottomLeft
 		RequiresSelection: true
 	RenderSprites:
+		Image: v3
 	RenderVoxels:
+		Image: v3
 	WithVoxelBody@FULL:
 		RequiresCondition: loaded
 	WithVoxelBody@EMPTY:
@@ -789,6 +791,22 @@ v3:
 		SoundFiles: vv3lstaa.wav, vv3lstab.wav, vv3lstac.wav
 		Volume: 0.35
 		RequiresCondition: moving
+
+m3:
+	Inherits: v3
+	Tooltip:
+		Name: Meme3 Launcher
+	Tooltip@NoRow:
+		Name: Meme3 Launcher
+	Buildable:
+		BuildPaletteOrder: 110
+		Prerequisites: ~disabled
+	-MissileSpawnerMaster:
+	MissileSpawnerOldMaster:
+		Actors: m3rocket
+		RespawnTicks: 200
+		LoadedCondition: loaded
+		SpawnOffset: 0,640,300
 
 v3rocket:
 	Inherits: ^ShootableMissile
@@ -825,6 +843,25 @@ v3rocket:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
+	RenderVoxels:
+		Image: v3rocket
+
+m3rocket:
+	Inherits: v3rocket
+	Tooltip:
+		Name: Meme3 Rocket
+	Tooltip@NoRow:
+		Name: Meme3 Rocket
+	-BallisticMissile:
+	BallisticMissileOld:
+		LaunchAngle: 160
+		Speed: 225
+		LazyCurve: true
+		LaunchSounds: vv3latta.wav, vv3lattb.wav
+		SoundVolume: 0.7
+		AirborneCondition: airborne
+	-MissileSpawnerSlave:
+	MissileSpawnerOldSlave:
 
 # Custom Soviet Vehicles
 tric:
