@@ -1228,7 +1228,6 @@ Player:
 	SquadManagerBotModule@generic:
 		RequiresCondition: enable-generic-ai && !no_bases
 		SquadSize: 10
-		RushInterval: 30000000 ##Rush squad has some bug will affect normal attack squad
 		MinimumAttackForceDelay: 1000
 		ProtectUnitScanRadius: 25
 		DangerScanRadius: 18
@@ -1240,10 +1239,11 @@ Player:
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
 		ConstructionYardTypes: gacnst, nacnst, yacnst
+		SuggestedLeaderLocomotor: foot, wheeled, tracked, heavytracked
+		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1,tric,kite,havoc, ltnk, ytnk, caos, yhtnk, disk, txdx, magnedisk
 	SquadManagerBotModule@no_bases:
 		RequiresCondition: enable-generic-ai && no_bases
 		SquadSize: 10
-		RushInterval: 30000000 ##Rush squad has some bug will affect normal attack squad
 		MinimumAttackForceDelay: 1000
 		ProtectUnitScanRadius: 25
 		DangerScanRadius: 18
@@ -1255,6 +1255,8 @@ Player:
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
 		ConstructionYardTypes: gacnst, nacnst, yacnst
+		SuggestedLeaderLocomotor: foot, wheeled, tracked, heavytracked
+		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1,tric,kite,havoc, ltnk, ytnk, caos, yhtnk, disk, txdx, magnedisk
 	McvManagerBotModule@generic:
 		RequiresCondition: enable-generic-ai
 		McvTypes: amcv, smcv, pcv
