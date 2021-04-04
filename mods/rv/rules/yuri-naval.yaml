@@ -169,7 +169,7 @@ piranha:
 		Queue: Ship.Yuri
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Submerged unit armed with fast firing canon.\nCan detect other submarines and sea animals.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\nSpecial Ability: Submerge
+		Description: Submerged unit armed with fast firing torpedoes.\nCan detect other submarines and sea animals.\n  Strong vs Ships\n  Weak vs Ground units, Aircraft, Ships\nSpecial Ability: Submerge
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -205,34 +205,27 @@ piranha:
 		UncloakSound: vnavupa.wav
 		UncloakOn: Attack, Damage
 		IsPlayerPalette: true
-	Turreted:
-		Offset: -136,0,256
-		InitialFacing: 512
-		TurnSpeed: 40
 	Armament:
-		Weapon: Sub70mm
-		Recoil: 87
-		RecoilRecovery: 12
-		LocalOffset: 400,0,416
-		MuzzleSequence: muzzle
+		Weapon: PiraTorpedo
+		LocalOffset: 768,0,0
+		FireDelay: 2
 		RequiresCondition: !rank-elite
 	Armament@elite:
-		Weapon: Sub70mmE
-		Recoil: 87
-		RecoilRecovery: 12
-		LocalOffset: 400,0,416
-		MuzzleSequence: muzzle-2
+		Weapon: PiraTorpedoE
+		LocalOffset: 768,0,0
+		FireDelay: 2
 		RequiresCondition: rank-elite
-	WithMuzzleOverlay:
-	AttackTurreted:
+	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
+		PauseOnCondition: chronodisable || emp
+	WithMuzzleOverlay:
 	DetectCloaked:
 		CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
 	-MustBeDestroyed:
 	WithVoxelBody:
-	WithVoxelTurret:
 	RenderSprites:
 	Voiced:
 		VoiceSet: TyphoonVoice
