@@ -461,9 +461,15 @@ ggi:
 	RevealOnDeath:
 		Radius: 3c0
 	Crushable:
-		RequiresCondition: undeployed
+		RequiresCondition: !cheater-ai && !vengeful-ai && undeployed
+	Crushable@Cheater:
+		RequiresCondition: cheater-ai && undeployed
+	Crushable@Vengeful:
+		RequiresCondition: vengeful-ai && undeployed
 	Crushable@deployed:
+		WarnProbability: 0
 		CrushClasses: vehicle
+		CrushSound: igensqua.wav
 		RequiresCondition: !undeployed
 	Armament@primary:
 		Weapon: M60
@@ -926,6 +932,10 @@ ccomand:
 		Locomotor: foot
 	Crushable:
 		CrushClasses: vehicle
+	Crushable@Cheater:
+		CrushClasses: vehicle
+	Crushable@Vengeful:
+		CrushClasses: vehicle
 	Armament@sapper:
 		Weapon: CommandoC4Attacher
 	Armament@sapper-elite:
@@ -1049,6 +1059,10 @@ tany:
 	Armor:
 		Type: Flak
 	Crushable:
+		CrushClasses: vehicle
+	Crushable@Cheater:
+		CrushClasses: vehicle
+	Crushable@Vengeful:
 		CrushClasses: vehicle
 	ChangesHealth:
 		PercentageStep: 1
@@ -1228,6 +1242,8 @@ jumpjet:
 	-RevealsShroud@DRONE:
 	-ExplodeWeapon@dronesparks:
 	-Crushable:
+	-Crushable@Cheater:
+	-Crushable@Vengeful:
 	-TakeCover:
 	-Targetable:
 	-TurnOnIdle:
@@ -1344,7 +1360,6 @@ cleg:
 	RevealOnDeath:
 		Radius: 3c0
 	Passenger:
-	Crushable:
 	-TakeCover:
 	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav

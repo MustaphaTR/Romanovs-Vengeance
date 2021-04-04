@@ -1729,6 +1729,21 @@
 	Crushable:
 		WarnProbability: 0
 		CrushSound: igensqua.wav
+		RequiresCondition: !cheater-ai && !vengeful-ai
+	Crushable@Cheater:
+		WarnProbability: 50
+		CrushSound: igensqua.wav
+		RequiresCondition: cheater-ai
+	Crushable@Vengeful:
+		WarnProbability: 100
+		CrushSound: igensqua.wav
+		RequiresCondition: vengeful-ai
+	GrantConditionOnBotOwner@Cheater:
+		Condition: cheater-ai
+		Bots: cheater
+	GrantConditionOnBotOwner@Vengeful:
+		Condition: vengeful-ai
+		Bots: vengeful
 	Guard:
 		Voice: Attack
 	Guardable:
@@ -1996,7 +2011,6 @@
 	-ExternalCondition@webdisable:
 	WithInfantryBody:
 		-RequiresCondition:
-	Crushable:
 	MapEditorData:
 		Categories: Animal
 	Wanders:
@@ -2071,8 +2085,23 @@
 		CargoType: Vehicle
 		Weight: 3
 	Crushable:
-		CrushClasses: vehicle
 		WarnProbability: 0
+		CrushClasses: vehicle
+		RequiresCondition: !cheater-ai && !vengeful-ai
+	Crushable@Cheater:
+		WarnProbability: 50
+		CrushClasses: vehicle
+		RequiresCondition: cheater-ai
+	Crushable@Vengeful:
+		WarnProbability: 100
+		CrushClasses: vehicle
+		RequiresCondition: vengeful-ai
+	GrantConditionOnBotOwner@Cheater:
+		Condition: cheater-ai
+		Bots: cheater
+	GrantConditionOnBotOwner@Vengeful:
+		Condition: vengeful-ai
+		Bots: vengeful
 	CaptureManager:
 		BeingCapturedCondition: being-captured
 	Capturable:
