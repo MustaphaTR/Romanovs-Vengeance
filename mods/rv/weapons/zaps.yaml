@@ -228,7 +228,7 @@ TeslaFragmentCommando:
 
 SonicZap:
 	Inherits@1: ^BreakPointDefenseDrones
-	ReloadDelay: 120
+	ReloadDelay: 90
 	Range: 6c0
 	Report: vdolatta.wav
 	ValidTargets: Water, Underwater
@@ -245,7 +245,7 @@ SonicZap:
 	Warhead@1Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 100, 100
-		Damage: 1000
+		Damage: 750
 		AffectsParent: false
 		ValidRelationships: Neutral, Enemy
 		Versus:
@@ -256,7 +256,7 @@ SonicZap:
 	Warhead@2Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 50, 50
-		Damage: 1000
+		Damage: 750
 		AffectsParent: false
 		ValidRelationships: Ally
 		Versus:
@@ -268,9 +268,9 @@ SonicZap:
 
 SonicZapE:
 	Inherits: SonicZap
-	ReloadDelay: 80
+	ReloadDelay: 60
 	Warhead@1Dam: SpreadDamage
-		Damage: 1500
+		Damage: 1250
 
 PrismShot:
 	Inherits@1: ^BreakPointDefenseDrones
