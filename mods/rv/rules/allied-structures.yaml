@@ -1000,7 +1000,6 @@ gapill:
 		MuzzleSequence: muzzle
 	WithMuzzleOverlay:
 	AttackTurreted:
-		Voice: Attack
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	Turreted:
@@ -1127,7 +1126,6 @@ gtgcan:
 		Offset: 400,0,0
 		RealignDelay: -1
 	AttackTurreted:
-		Voice: Attack
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Armament:
@@ -1155,6 +1153,9 @@ gtgcan:
 		Amount: -100
 	IsometricSelectable:
 		DecorationHeight: 45
+	Voiced:
+		VoiceSet: GrandCannonVoice
+		Volume: 0.8
 
 gaorep:
 	Inherits: ^BaseBuilding
@@ -1512,7 +1513,6 @@ atesla:
 		LocalOffset: 0,0,3072
 	WithPrismChargeAnimation:
 	AttackPrismSupported:
-		Voice: Attack
 		ReloadDelay: 50
 		TicksPerHop: 3
 		ReceiverOffset: 0,0,3072

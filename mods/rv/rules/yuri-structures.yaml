@@ -385,7 +385,6 @@ yarefn:
 	#	MuzzleSequence: muzzle
 	#	RequiresCondition: rank-elite
 	AttackTurreted:
-		Voice: Attack
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithMuzzleOverlay:
@@ -608,6 +607,9 @@ yagrnd:
 		Amount: -50
 	IsometricSelectable:
 		DecorationHeight: 75
+	Voiced:
+		VoiceSet: GrinderVoice
+		Volume: 0.8
 
 yadome:
 	Inherits: ^BaseBuilding
@@ -1319,7 +1321,6 @@ yapsyt:
 	Tooltip@NoRow:
 		Name: Psychic Tower
 	AttackTurreted:
-		Voice: Attack
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	Turreted:
