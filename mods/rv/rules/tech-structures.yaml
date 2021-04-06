@@ -31,10 +31,12 @@ caoild:
 		Delay: 1
 		ShowSelectionBar: false
 		Condition: cashgiven
-		RequiresCondition: enabled
+		RequiresCondition: captured
 	GivesCashOnCapture:
 		Amount: 500
 		RequiresCondition: !cashgiven
+	GrantConditionOnCapture:
+		Condition: captured
 	Explodes:
 		Weapon: DerrickExplode
 	UpdatesDerrickCount:
