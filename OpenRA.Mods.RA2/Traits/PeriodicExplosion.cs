@@ -116,10 +116,18 @@ namespace OpenRA.Mods.RA2.Traits
 				weapon.Impact(Target.FromPos(self.CenterPosition + localoffset), args);
 
 				if (weapon.Report != null && weapon.Report.Any())
-					Game.Sound.Play(SoundType.World, weapon.Report.Random(self.World.SharedRandom), self.CenterPosition);
+				{
+					var pos = self.CenterPosition;
+					if (weapon.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
+						Game.Sound.Play(SoundType.World, weapon.Report.Random(self.World.SharedRandom), pos, weapon.SoundVolume);
+				}
 
 				if (burst == weapon.Burst && weapon.StartBurstReport != null && weapon.StartBurstReport.Any())
-					Game.Sound.Play(SoundType.World, weapon.StartBurstReport.Random(self.World.SharedRandom), self.CenterPosition);
+				{
+					var pos = self.CenterPosition;
+					if (weapon.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
+						Game.Sound.Play(SoundType.World, weapon.StartBurstReport.Random(self.World.SharedRandom), pos, weapon.SoundVolume);
+				}
 
 				if (--burst > 0)
 				{
@@ -139,7 +147,9 @@ namespace OpenRA.Mods.RA2.Traits
 					{
 						ScheduleDelayedAction(weapon.AfterFireSoundDelay, () =>
 						{
-							Game.Sound.Play(SoundType.World, weapon.AfterFireSound.Random(self.World.SharedRandom), self.CenterPosition);
+							var pos = self.CenterPosition;
+							if (weapon.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
+								Game.Sound.Play(SoundType.World, weapon.AfterFireSound.Random(self.World.SharedRandom), pos, weapon.SoundVolume);
 						});
 					}
 				}
