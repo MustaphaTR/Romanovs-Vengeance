@@ -1,4 +1,4 @@
-; Copyright 2007-2019 OpenRA developers (see AUTHORS)
+; Copyright 2007-2021 OpenRA developers (see AUTHORS)
 ; This file is part of OpenRA.
 ;
 ;  OpenRA is free software: you can redistribute it and/or modify
@@ -178,6 +178,10 @@ Function ${UN}Clean
 
 	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PACKAGING_WINDOWS_REGISTRY_KEY}"
 	DeleteRegKey HKLM "Software\Classes\openra-${MOD_ID}-${TAG}"
+
+	!ifdef USE_DISCORDID
+		DeleteRegKey HKLM "Software\Classes\discord-${DISCORD_APP_ID}"
+	!endif
 
 	Delete $INSTDIR\uninstaller.exe
 	RMDir $INSTDIR

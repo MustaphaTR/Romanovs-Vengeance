@@ -143,7 +143,6 @@ else
 endif
 
 clean: engine
-
 ifneq ("$(MOD_SOLUTION_FILES)","")
 ifeq ($(RUNTIME), mono)
 	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:clean \;

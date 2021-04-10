@@ -57,6 +57,7 @@ if [ ! -f "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/Makefile" ]; then
 fi
 
 . "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/packaging/functions.sh"
+. "${TEMPLATE_ROOT}/packaging/functions.sh"
 
 if [ ! -d "${OUTPUTDIR}" ]; then
 	echo "Output directory '${OUTPUTDIR}' does not exist.";
@@ -73,16 +74,9 @@ for f in ${PACKAGING_COPY_ENGINE_FILES}; do
 done
 
 echo "Building mod files"
-pushd "${TEMPLATE_ROOT}" > /dev/null
-make all
-popd > /dev/null
+install_mod_assemblies "${TEMPLATE_ROOT}" "${APPDIR}/usr/lib/openra" "linux-x64"
 
 cp -Lr "${TEMPLATE_ROOT}/mods/"* "${APPDIR}/usr/lib/openra/mods"
-
-for f in ${PACKAGING_COPY_MOD_BINARIES}; do
-	mkdir -p "${APPDIR}/usr/lib/openra/$(dirname "${f}")"
-	cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f}" "${APPDIR}/usr/lib/openra/${f}"
-done
 
 set_engine_version "${ENGINE_VERSION}" "${APPDIR}/usr/lib/openra"
 if [ "${PACKAGING_OVERWRITE_MOD_VERSION}" == "True" ]; then
@@ -121,7 +115,7 @@ cp "${APPDIR}/usr/share/applications/openra-${MOD_ID}.desktop" "${APPDIR}/openra
 rm temp.desktop.in
 
 mkdir -p "${APPDIR}/usr/share/mime/packages"
-chmod 0755 temp.xml.in
+chmod 0644 temp.xml.in
 sed "s/{MODID}/${MOD_ID}/g" temp.xml.in | sed "s/{TAG}/${TAG}/g" > "${APPDIR}/usr/share/mime/packages/openra-${MOD_ID}.xml"
 rm temp.xml.in
 
@@ -138,7 +132,7 @@ done
 
 install -d "${APPDIR}/usr/bin"
 
-sed "s/{MODID}/${MOD_ID}/g" "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/packaging/linux/openra.appimage.in"| sed "s/{TAG}/${TAG}/g" | sed "s/{MODNAME}/${PACKAGING_DISPLAY_NAME}/g" | sed "s/{MODINSTALLERNAME}/${PACKAGING_INSTALLER_NAME}/g" | sed "s|{MODFAQURL}|${PACKAGING_FAQ_URL}|g" > "${APPDIR}/usr/bin/openra-${MOD_ID}"
+sed "s/{MODID}/${MOD_ID}/g" "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/packaging/linux/openra.appimage.in" | sed "s/{TAG}/${TAG}/g" | sed "s/{MODNAME}/${PACKAGING_DISPLAY_NAME}/g" | sed "s/{MODINSTALLERNAME}/${PACKAGING_INSTALLER_NAME}/g" | sed "s|{MODFAQURL}|${PACKAGING_FAQ_URL}|g" > "${APPDIR}/usr/bin/openra-${MOD_ID}"
 chmod 0755 "${APPDIR}/usr/bin/openra-${MOD_ID}"
 
 sed "s/{MODID}/${MOD_ID}/g" "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/packaging/linux/openra-server.appimage.in" > "${APPDIR}/usr/bin/openra-${MOD_ID}-server"
@@ -149,10 +143,8 @@ chmod 0755 "${APPDIR}/usr/bin/openra-${MOD_ID}-utility"
 
 install -m 0755 "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/packaging/linux/gtk-dialog.py" "${APPDIR}/usr/bin/gtk-dialog.py"
 
-# travis-ci doesn't support mounting FUSE filesystems so extract and run the contents manually
 chmod a+x appimagetool-x86_64.AppImage
-./appimagetool-x86_64.AppImage --appimage-extract
-ARCH=x86_64 ./squashfs-root/AppRun "${APPDIR}" "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}-x86_64.AppImage"
+ARCH=x86_64 ./appimagetool-x86_64.AppImage "${APPDIR}" "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}-x86_64.AppImage"
 
 # Clean up
-rm -rf appimagetool-x86_64.AppImage squashfs-root "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" "${APPDIR}"
+rm -rf appimagetool-x86_64.AppImage "${PACKAGING_APPIMAGE_DEPENDENCIES_TEMP_ARCHIVE_NAME}" "${APPDIR}"

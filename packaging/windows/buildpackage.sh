@@ -56,6 +56,7 @@ if [ ! -f "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/Makefile" ]; then
 fi
 
 . "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/packaging/functions.sh"
+. "${TEMPLATE_ROOT}/packaging/functions.sh"
 
 if [ ! -d "${OUTPUTDIR}" ]; then
 	echo "Output directory '${OUTPUTDIR}' does not exist.";
@@ -93,16 +94,9 @@ function build_platform()
 	done
 
 	echo "Building mod files (${PLATFORM})"
-	pushd "${TEMPLATE_ROOT}" > /dev/null
-	make all
-	popd > /dev/null
+	install_mod_assemblies "${TEMPLATE_ROOT}" "${BUILTDIR}" "win-${PLATFORM}"
 
 	cp -Lr "${TEMPLATE_ROOT}/mods/"* "${BUILTDIR}/mods"
-
-	for f in ${PACKAGING_COPY_MOD_BINARIES}; do
-		mkdir -p "${BUILTDIR}/$(dirname "${f}")"
-		cp "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}/bin/${f}" "${BUILTDIR}/${f}"
-	done
 
 	set_engine_version "${ENGINE_VERSION}" "${BUILTDIR}"
 	if [ "${PACKAGING_OVERWRITE_MOD_VERSION}" == "True" ]; then
@@ -126,7 +120,9 @@ function build_platform()
 	popd > /dev/null
 
 	echo "Packaging zip archive (${PLATFORM})"
+	pushd "${BUILTDIR}" > /dev/null
 	zip "${OUTPUTDIR}/${PACKAGING_INSTALLER_NAME}-${TAG}-${PLATFORM}-winportable.zip" -r -9 ./* --quiet
+	popd > /dev/null
 
 	# Cleanup
 	rm -rf "${BUILTDIR}"
