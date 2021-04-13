@@ -1,6 +1,6 @@
 Metadata:
 	Title: Red Alert 2: Romanov's Vengeance
-	Version: release-20210409
+	Version: e4a6211
 	Website: https://github.com/MustaphaTR/Romanovs-Vengeance
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Romanovs-Vengeance/master/packaging/artwork/icon_32x32.png
 
@@ -83,7 +83,7 @@ Packages:
 
 MapFolders:
 	rv|maps: System
-	~^SupportDir|maps/rv/release-20210409: User
+	~^SupportDir|maps/rv/e4a6211: User
 
 Rules:
 	rv|rules/proxy-actors.yaml
@@ -356,34 +356,36 @@ AssetBrowser:
 	SupportedExtensions: .shp, .tmp, .tem, .des, .sno, .int, .vqa, .png
 
 GameSpeeds:
-	slowest:
-		Name: Slowest
-		Timestep: 80
-		OrderLatency: 2
-	slower:
-		Name: Slower
-		Timestep: 50
-		OrderLatency: 3
-	default:
-		Name: Normal
-		Timestep: 40
-		OrderLatency: 3
-	fast:
-		Name: Fast
-		Timestep: 35
-		OrderLatency: 4
-	faster:
-		Name: Faster
-		Timestep: 30
-		OrderLatency: 4
-	fastest:
-		Name: Fastest
-		Timestep: 20
-		OrderLatency: 6
-	ludicrous:
-		Name: Ludicrous
-		Timestep: 5
-		OrderLatency: 9
+	DefaultSpeed: default
+	Speeds:
+		slowest:
+			Name: Slowest
+			Timestep: 80
+			OrderLatency: 2
+		slower:
+			Name: Slower
+			Timestep: 50
+			OrderLatency: 3
+		default:
+			Name: Normal
+			Timestep: 40
+			OrderLatency: 3
+		fast:
+			Name: Fast
+			Timestep: 35
+			OrderLatency: 4
+		faster:
+			Name: Faster
+			Timestep: 30
+			OrderLatency: 4
+		fastest:
+			Name: Fastest
+			Timestep: 20
+			OrderLatency: 6
+		ludicrous:
+			Name: Ludicrous
+			Timestep: 5
+			OrderLatency: 9
 
 ColorValidator:
 	TeamColorPresets: dee308, ff1818, 2973e7, 39d629, ffa518, 31d6e7, 9429bd, ff9cef, fefefe, 6f7104, 7f0c0c, 143973, 1c6b14, 7f520c, 186b73, 4a145e, 7f484e, 000000
