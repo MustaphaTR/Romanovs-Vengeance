@@ -1251,6 +1251,7 @@ schp:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@AI: ^AIMicroManagable
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !deployed
 	AutoTargetPriority@ATTACKANYTHING:
@@ -1414,6 +1415,15 @@ schp:
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
 	HitShape:
+	AutoDeployer@AI:
+		RequiresCondition: ai-control
+		DeployChance: 50
+		DeployTicks: 300
+		UndeployTicks: 200
+		DeployTrigger: Periodically
+	RejectsOrders@deploymentAI:
+		Reject: AttackMove, AssaultMove, Attack #HACK: Deployed Siege Chopper will try to aim orignal target set by squad if not block the Attack order
+		RequiresCondition: ai-control && !undeployed
 
 schphusk:
 	Inherits: ^HelicopterHusk
