@@ -447,6 +447,13 @@ yurix:
 	WithMindControlArc:
 		Offset: 0,0,1024
 
+ptroop.yuri:
+	Inherits: ptroop
+	Buildable:
+		Queue: Infantry.Yuri, Infantry.Moon
+		Prerequisites: ~allied.tech.infiltrated, ~techlevel.4
+	-MapEditorData:
+
 lunr:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -938,6 +945,7 @@ ttrp:
 	Tooltip@NoRow:
 		Name: Toxin Trooper
 	Selectable:
+		Class: ttrp
 		Bounds: 482, 1448, 0, -530
 	Health:
 		HP: 20000
@@ -1025,6 +1033,8 @@ ttrp:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-TakeCover:
+	RenderSprites:
+		Image: ttrp
 
 crkt:
 	Inherits: ^Infantry

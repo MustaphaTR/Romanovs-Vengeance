@@ -652,6 +652,10 @@ civan:
 	Chronoshiftable:
 		ExplodeInstead: false
 	-Explodes:
+	Selectable:
+		Class: civan
+	RenderSprites:
+		Image: civan
 
 yuri:
 	Inherits: ^Infantry
@@ -1422,6 +1426,13 @@ shkc:
 	WithInfantryBody:
 		AttackSequences:
 			secondary: shoot
+
+ttrp.soviet:
+	Inherits: ttrp
+	Buildable:
+		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		Prerequisites: ~yuri.tech.infiltrated, ~techlevel.4
+	-MapEditorData:
 
 # Baku Pact Infantry
 mengineer:

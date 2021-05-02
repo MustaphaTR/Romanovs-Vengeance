@@ -977,7 +977,7 @@ ptroop:
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 980
-		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~yuri.tech.infiltrated, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Can C4 Buildings
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1006,6 +1006,17 @@ ptroop:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Armaments: primary, sapper
+	Selectable:
+		Class: ptroop
+	RenderSprites:
+		Image: ptroop
+
+civan.allied:
+	Inherits: civan
+	Buildable:
+		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
+		Prerequisites: ~soviet.tech.infiltrated, ~techlevel.4
+	-MapEditorData:
 
 tany:
 	Inherits: ^Infantry
