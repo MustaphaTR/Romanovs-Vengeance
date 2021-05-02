@@ -1,8 +1,8 @@
 slav:
 	Inherits: ^Infantry
-	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
@@ -73,7 +73,7 @@ slav:
 		StandSequences: stand
 		MoveSequence: full-run
 		DefaultAttackSequence: shoot
-		RequiresCondition: !no-ore
+		RequiresCondition: !no-ore && !freed
 	AttackFrontal:
 		Voice: Attack
 	WithHarvesterPipsDecoration:
