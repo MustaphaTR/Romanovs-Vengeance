@@ -353,6 +353,10 @@ garefn:
 		Queue: Building.Allies
 	FreeActor:
 		Actor: cmin
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: -1024,-512,3456
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: -64,-1280,3456
 	PlaceBuildingVariants:
 		Actors: garefb, garefc, garefd
 	IsometricSelectable:
@@ -1209,6 +1213,19 @@ gaorep:
 		Modifier: 25
 	Power:
 		Amount: -200
+	GrantConditionOnResourcePurify:
+		Condition: resource-purify
+		Duration: 3
+	SmokeParticleEmitter@purifiersmoke:
+		RequiresCondition: resource-purify && !chronodisable
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect50alpha
+		SpawnFrequency: 1,2
+		Speed: 0, 36
+		Gravity: 27, 54
+		Duration: 39
+		Offset: -128,0,3560
 	ProvidesPrerequisite@default:
 	IsometricSelectable:
 		DecorationHeight: 60
@@ -1972,6 +1989,10 @@ garefb:
 	-WithDockedOverlay: # This causes a crash for some reason.
 	ProvidesPrerequisite@garefn:
 		Prerequisite: garefn
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: 1024,-512,3456
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: 64,-1280,3456
 	IsometricSelectable:
 		DecorationHeight: 60
 
@@ -1981,6 +2002,10 @@ garefc:
 		Actor: cmin
 	ProvidesPrerequisite@garefn:
 		Prerequisite: garefn
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: 1024,512,3456
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: 64,1280,3456
 	IsometricSelectable:
 		DecorationHeight: 60
 
@@ -1990,6 +2015,10 @@ garefd:
 		Actor: cmin
 	ProvidesPrerequisite@garefn:
 		Prerequisite: garefn
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: -1024,512,3456
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: -64,1280,3456
 	IsometricSelectable:
 		DecorationHeight: 60
 

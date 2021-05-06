@@ -323,6 +323,27 @@
 		RequiresCondition: spawn-ore
 	GrantConditionOnPlayerResources:
 		Condition: spawn-ore
+	GrantConditionOnResourceDelivery:
+		Condition: resource-delivered
+		Duration: 3
+	SmokeParticleEmitter@refinerysmoke1:
+		RequiresCondition: resource-delivered
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect50alpha
+		SpawnFrequency: 1,2
+		Speed: 0, 36
+		Gravity: 27, 54
+		Duration: 39
+	SmokeParticleEmitter@refinerysmoke2:
+		RequiresCondition: resource-delivered
+		Image: smallsmoke
+		Sequences: idle
+		Palette: effect50alpha
+		SpawnFrequency: 1,2
+		Speed: 0, 36
+		Gravity: 27, 54
+		Duration: 39
 	WithResourceStoragePipsDecoration:
 		FullSequence: pip-building-yellow
 		EmptySequence: pip-building-empty

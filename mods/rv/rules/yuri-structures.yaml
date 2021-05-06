@@ -330,9 +330,11 @@ yarefn:
 	Exit@1:
 		SpawnOffset: 0,512,0
 		ExitCell: 2, 1
+		Facing: 128
 	Exit@2:
 		SpawnOffset: 0,512,0
 		ExitCell: 1, 2
+		Facing: 128
 	-GivesBuildableArea:
 	Transforms:
 		Facing: 896
@@ -373,6 +375,7 @@ yarefn:
 		RequiresCondition: !build-incomplete
 	Turreted:
 		TurnSpeed: 20
+		InitialFacing: 128
 		Offset: 640,0,0
 	Armament@primary:
 		Weapon: 20mmrapid
@@ -440,6 +443,10 @@ yarfn2:
 	FreeActor:
 		Actor: gmin
 	-WithDockedOverlay:
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: -416,-416,3648
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: -960,-960,3648
 	PlaceBuildingVariants:
 		Actors: yarfnb, yarfnc, yarfnd
 	IsometricSelectable:
@@ -1834,11 +1841,15 @@ yarfnb:
 	Inherits: ^RefineryB
 	FreeActor:
 		Actor: gmin
+	-WithDockedOverlay:
 	ProvidesPrerequisite@yarfn2:
 		Prerequisite: yarfn2
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
-	-WithDockedOverlay:
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: 416,-416,3648
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: 960,-960,3648
 	IsometricSelectable:
 		DecorationHeight: 105
 
@@ -1850,6 +1861,10 @@ yarfnc:
 		Prerequisite: yarfn2
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: -416,416,3648
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: -960,960,3648
 	IsometricSelectable:
 		DecorationHeight: 105
 
@@ -1861,6 +1876,10 @@ yarfnd:
 		Prerequisite: yarfn2
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: 416,416,3648
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: 960,960,3648
 	IsometricSelectable:
 		DecorationHeight: 105
 
