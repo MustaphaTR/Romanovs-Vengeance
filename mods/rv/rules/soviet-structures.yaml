@@ -1327,7 +1327,7 @@ naflak:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 60
 		Prerequisites: naradr, ~techlevel.2
-		Description: Automated anti-aircraft defense.\nCan detect cloaked units.
+		Description: Automated anti-aircraft defense.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1378,6 +1378,9 @@ naflak:
 	IsometricSelectable:
 		Class: naflak
 		DecorationHeight: 60
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	DetectCloaked:
 		Range: 5c0
 		RequiresCondition: !disabled
@@ -1394,7 +1397,7 @@ tesla:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: naradr, ~techlevel.3
-		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -1464,6 +1467,9 @@ tesla:
 	IsometricSelectable:
 		Class: tesla
 		DecorationHeight: 75
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: TeslaCoilVoice
 		Volume: 0.8
@@ -1476,7 +1482,7 @@ nalasr:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 50
 		Prerequisites: nahand, ~techlevel.1
-		Description: Automated anti-infantry defense.\nCan detect cloaked units.
+		Description: Automated anti-infantry defense.\nCan detect cloaked units.\nCan be placed on water.
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1485,9 +1491,6 @@ nalasr:
 		Name: Sentry Gun
 	Tooltip@NoRow:
 		Name: Sentry Gun
-	Building:
-		Footprint: x
-		Dimensions: 1, 1
 	Health:
 		HP: 40000
 	Armor:
@@ -1526,6 +1529,9 @@ nalasr:
 	IsometricSelectable:
 		Class: nalasr
 		DecorationHeight: 30
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 
 # Yuri's Revenge Structures
 nabnkr:
@@ -1549,6 +1555,7 @@ nabnkr:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 60000
 	Armor:
@@ -1871,6 +1878,8 @@ naprop:
 		Description: Buffs fire speed of nearby units and heals them.
 		BuildDuration: 125
 		BuildDurationModifier: 100
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Valued:
 		Cost: 500
 	Tooltip:

@@ -1228,7 +1228,7 @@
 		AreaTypes: building
 		Adjacent: 3
 	GivesBuildableArea:
-		AreaTypes: building
+		AreaTypes: building, defence
 
 ^SupportBuilding:
 	Inherits: ^BaseBuilding
@@ -1240,14 +1240,31 @@
 	-MustBeDestroyed:
 	-ShakeOnDeath:
 	-GivesBuildableArea:
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	RevealOnFire:
 		Radius: 1c512
 		Duration: 50
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, NonGarrisonableStructure
+		RequiresCondition: !in_water
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, Defense, C4
+		RequiresCondition: in_water
+	SpawnActorsOnSell@allies:
+		RequiresCondition: !in_water
+	SpawnActorsOnSell@soviets:
+		RequiresCondition: !in_water
+	SpawnActorsOnSell@psicorps:
+		RequiresCondition: !in_water
 	GpsDotAS:
 		Range: 25c0
 		Sequence: Defense
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
+	RequiresBuildableArea:
+		AreaTypes: defence
 
 ^BuildingPlug:
 	Interactable:
@@ -1390,7 +1407,7 @@
 		Notification: TechBuildingCaptured
 		LoseNotification: TechBuildingLost
 	GivesBuildableArea:
-		AreaTypes: building
+		AreaTypes: building, defence
 		RequiresCondition: techbuild
 	BaseProvider:
 		Range: 5c0

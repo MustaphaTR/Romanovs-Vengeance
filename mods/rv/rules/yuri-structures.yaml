@@ -1139,7 +1139,7 @@ yaggun:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 40
 		Prerequisites: yabrck, ~techlevel.1
-		Description: Automated anti-infantry and anti-air defense.\nCan detect cloaked units.
+		Description: Automated anti-infantry and anti-air defense.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Health:
@@ -1230,6 +1230,9 @@ yaggun:
 		Range: 5c0
 		RequiresCondition: !disabled
 	RenderDetectionCircle:
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: GatlingCannonVoice
 		Volume: 0.8
@@ -1255,6 +1258,7 @@ natbnk:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 100000
 	Armor:
@@ -1313,7 +1317,7 @@ yapsyt:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 60
 		Prerequisites: yadome, ~techlevel.3
-		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.\nCan detect cloaked units.
+		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Health:
@@ -1373,6 +1377,9 @@ yapsyt:
 		Range: 6c0
 		RequiresCondition: !disabled
 	RenderDetectionCircle:
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 
 yasgen:
 	Inherits: ^SupportBuilding
@@ -1393,6 +1400,8 @@ yasgen:
 		Description: Makes nearby units and structures invisibile while not firing.\nRequires power to operate.
 		BuildDuration: 250
 		BuildDurationModifier: 100
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 60000
 	Armor:
@@ -1612,6 +1621,7 @@ caeast02:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Armament:
 		Weapon: LaserShot
 		LocalOffset: 512,-256,1024, 512,256,1024
@@ -1862,9 +1872,9 @@ yarfnc:
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
 	SmokeParticleEmitter@refinerysmoke1:
-		Offset: -416,416,3648
+		Offset: 416,416,3648
 	SmokeParticleEmitter@refinerysmoke2:
-		Offset: -960,960,3648
+		Offset: 960,960,3648
 	IsometricSelectable:
 		DecorationHeight: 105
 
@@ -1877,9 +1887,9 @@ yarfnd:
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
 	SmokeParticleEmitter@refinerysmoke1:
-		Offset: 416,416,3648
+		Offset: -416,416,3648
 	SmokeParticleEmitter@refinerysmoke2:
-		Offset: 960,960,3648
+		Offset: -960,960,3648
 	IsometricSelectable:
 		DecorationHeight: 105
 

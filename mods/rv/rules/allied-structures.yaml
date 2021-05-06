@@ -977,7 +977,7 @@ gapill:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 40
 		Prerequisites: gapile, ~techlevel.1
-		Description: Automated anti-infantry defense.\nCan detect cloaked units.
+		Description: Automated anti-infantry defense.\nCan detect cloaked units.\nCan be placed on water.
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1019,6 +1019,9 @@ gapill:
 	AutoTarget:
 	RequiresBuildableArea:
 		Adjacent: 4
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		Class: gapill
 		DecorationHeight: 15
@@ -1034,7 +1037,7 @@ nasam:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.2
-		Description: Automated anti-aircraft defense.\nCan detect cloaked units.
+		Description: Automated anti-aircraft defense.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1085,6 +1088,9 @@ nasam:
 	IsometricSelectable:
 		Class: nasam
 		DecorationHeight: 45
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	DetectCloaked:
 		Range: 5c0
 		RequiresCondition: !disabled
@@ -1115,6 +1121,7 @@ gtgcan:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 90000
 	Armor:
@@ -1337,6 +1344,8 @@ gagap:
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 60000
 	Armor:
@@ -1499,7 +1508,7 @@ atesla:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 70
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\nCan detect cloaked units.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -1569,6 +1578,9 @@ atesla:
 	IsometricSelectable:
 		Class: atesla
 		DecorationHeight: 90
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: PrismTowerVoice
 		Volume: 0.8
@@ -1791,7 +1803,7 @@ gamgun:
 		Queue: Support.France
 		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Defensive structure that is invisible while not firing.\nCan be placed further than any structure.
+		Description: Defensive structure that is invisible while not firing.\nRequires power to operate.\nCan be placed further than any structure.\nCan be placed on water.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1851,6 +1863,9 @@ gamgun:
 	IsometricSelectable:
 		Class: gamgun
 		DecorationHeight: 30
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: MirageTurretVoice
 		Volume: 0.8
@@ -1866,7 +1881,7 @@ gagun:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 50
 		Prerequisites: gapile, ~prerequisite.gun_turret, ~techlevel.1
-		Description: Anti-tank defense structure.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		Description: Anti-tank defense structure.\nRequires power to operate.\nCan be placed on water.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1917,6 +1932,9 @@ gagun:
 		Amount: -15
 	RequiresBuildableArea:
 		Adjacent: 4
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		Class: gagun
 		DecorationHeight: 30
