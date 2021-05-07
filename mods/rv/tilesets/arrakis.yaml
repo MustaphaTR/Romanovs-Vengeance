@@ -1,0 +1,4301 @@
+General:
+	Name: DUNE
+	Id: DUNE
+	Palette: isodes.pal
+	HeightDebugColors: 00000080, 00004480, 00008880, 0000CC80, 0000FF80, 4400CC80, 88008880, CC004480, FF110080, FF550080, FF990080, FFDD0080, DDFF0080, 99FF0080, 55FF0080, 11FF0080
+	EditorTemplateOrder: Dune Clear, Dune Clear (Cliff), Dune Clear Cliff Set, Dune Clear Debris, Dune Infantry Rock (Clear), Dune MM Clear, Dune MM Clear Cliff, Dune MM Rock, Dune MM Rock Cliff, Dune MM Rock 2, Dune MM Sand, Dune MM Sand Cliff, Dune Rock (AutoLAT), Dune Rock (Cleanup), Dune Rock LAT, Dune Rock (Cliff), Dune Rock Cliff Set, Dune Rock Debris, Dune Infantry Rock (Rock), Dune Clear-Rock Cliff Set, Dune Extra Cliffs, Dune Sand (AutoLAT), Dune Sand LAT, Concrete
+	SheetSize: 2048
+	EnableDepth: true
+
+Terrain:
+	TerrainType@Clear:
+		Type: Clear
+		TargetTypes: Ground
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 000000
+	TerrainType@Sand:
+		Type: Sand
+		TargetTypes: Ground
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 000000
+	TerrainType@Dune:
+		Type: Dune
+		TargetTypes: Ground
+		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
+		Color: 000000
+	TerrainType@Ice:
+		Type: Ice
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Road:
+		Type: Road
+		TargetTypes: Ground
+		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
+		Color: 000000
+	TerrainType@Bridge:
+		Type: Bridge
+		Color: 000000
+		TargetTypes: Ground
+	TerrainType@Rail:
+		Type: Rail
+		TargetTypes: Ground
+		AcceptsSmudgeType: SmallScorch, MediumScorch, LargeScorch
+		Color: 000000
+	TerrainType@Impassable:
+		Type: Impassable
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Water:
+		Type: Water
+		TargetTypes: Water
+		Color: 000000
+	TerrainType@DirtRoad:
+		Type: DirtRoad
+		TargetTypes: Ground
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 000000
+	TerrainType@Rough:
+		Type: Rough
+		TargetTypes: Ground
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 000000
+	TerrainType@Cliff:
+		Type: Cliff
+		TargetTypes: Ground
+		Color: 000000
+	TerrainType@Tree:
+		Type: Tree
+		TargetTypes: Ground
+		Color: 506428
+	TerrainType@Rock:
+		Type: Rock
+		TargetTypes: Ground
+		Color: 745A3F
+	TerrainType@Ore:
+		Type: Ore
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: F0C000
+		TargetTypes: Ground
+	TerrainType@Gems:
+		Type: Gems
+		AcceptsSmudgeType: SmallCrater, MediumCrater, LargeCrater, SmallScorch, MediumScorch, LargeScorch
+		Color: 600060
+		TargetTypes: Ground
+
+Templates:
+	Template@0:
+		Categories: Dune Clear
+		Id: 0
+		Images: dclear01.des, dclear01a.des, dclear01b.des, dclear01c.des, dclear01d.des, dclear01e.des, dclear01f.des, dclear01g.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E8CA8B
+				MaxColor: E8CA8B
+	Template@1081:
+		Categories: Dune Clear
+		Id: 1081
+		Images: dclear01.des, dclear01a.des, dclear01b.des, dclear01c.des, dclear01d.des, dclear01e.des, dclear01f.des, dclear01g.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E8CA8B
+				MaxColor: E8CA8B
+	Template@1082:
+		Categories: Dune Clear (Cliff)
+		Id: 1082
+		Images: iclear01.des, iclear01a.des, iclear01b.des, iclear01c.des, iclear01d.des, iclear01e.des, iclear01f.des, iclear01g.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				MinColor: E8CA8B
+				MaxColor: E8CA8B
+	Template@1083:
+		Categories: Dune Clear Cliff Set
+		Id: 1083
+		Images: scliff01.des
+		Size: 3, 5
+		Tiles:
+			6: Sand
+				MinColor: E7C98A
+				MaxColor: E7C98A
+			7: Cliff
+				MinColor: BE9360
+				MaxColor: BE9360
+			10: Cliff
+				MinColor: BF9966
+				MaxColor: BF9966
+			11: Cliff
+				MinColor: 9F7349
+				MaxColor: 9F7349
+			14: Sand
+				MinColor: DFBD81
+				MaxColor: DFBD81
+	Template@1084:
+		Categories: Dune Clear Cliff Set
+		Id: 1084
+		Images: scliff02.des
+		Size: 3, 5
+		Tiles:
+			6: Cliff
+				MinColor: D6B379
+				MaxColor: D6B379
+			7: Cliff
+				MinColor: 845332
+				MaxColor: 845332
+			10: Cliff
+				MinColor: 8F5D37
+				MaxColor: 8F5D37
+			11: Cliff
+				MinColor: 956B43
+				MaxColor: 956B43
+			14: Cliff
+				MinColor: D9B87D
+				MaxColor: D9B87D
+	Template@1085:
+		Categories: Dune Clear Cliff Set
+		Id: 1085
+		Images: scliff03.des
+		Size: 3, 5
+		Tiles:
+			6: Cliff
+				MinColor: DFC083
+				MaxColor: DFC083
+			7: Cliff
+				MinColor: 9B6C41
+				MaxColor: 9B6C41
+			10: Cliff
+				MinColor: 8A5935
+				MaxColor: 8A5935
+			11: Cliff
+				MinColor: 875C3A
+				MaxColor: 875C3A
+			14: Cliff
+				MinColor: BD9663
+				MaxColor: BD9663
+	Template@1086:
+		Categories: Dune Clear Cliff Set
+		Id: 1086
+		Images: scliff04.des
+		Size: 3, 5
+		Tiles:
+			6: Cliff
+				MinColor: E4C587
+				MaxColor: E4C587
+			7: Cliff
+				MinColor: 9C734A
+				MaxColor: 9C734A
+			10: Cliff
+				MinColor: 9C6036
+				MaxColor: 9C6036
+			11: Cliff
+				MinColor: 93653F
+				MaxColor: 93653F
+			14: Cliff
+				MinColor: D4B177
+				MaxColor: D4B177
+	Template@1087:
+		Categories: Dune Clear Cliff Set
+		Id: 1087
+		Images: scliff05.des
+		Size: 5, 4
+		Tiles:
+			5: Cliff
+				MinColor: DBBB80
+				MaxColor: DBBB80
+			6: Cliff
+				MinColor: D8B87E
+				MaxColor: D8B87E
+			7: Cliff
+				MinColor: DBBA7E
+				MaxColor: DBBA7E
+			8: Cliff
+				MinColor: 966943
+				MaxColor: 966943
+			11: Cliff
+				MinColor: 94613B
+				MaxColor: 94613B
+			12: Cliff
+				MinColor: 905A35
+				MaxColor: 905A35
+			13: Cliff
+				MinColor: 985D35
+				MaxColor: 985D35
+			14: Cliff
+				MinColor: 8C623C
+				MaxColor: 8C623C
+			17: Cliff
+				MinColor: BD905C
+				MaxColor: BD905C
+			18: Cliff
+				MinColor: A46D41
+				MaxColor: A46D41
+			19: Cliff
+				MinColor: C5A06A
+				MaxColor: C5A06A
+	Template@1088:
+		Categories: Dune Clear Cliff Set
+		Id: 1088
+		Images: scliff06.des
+		Size: 3, 5
+		Tiles:
+			0: Cliff
+				MinColor: D3B279
+				MaxColor: D3B279
+			1: Cliff
+				MinColor: 000000
+				MaxColor: 000000
+			3: Cliff
+				MinColor: 986F47
+				MaxColor: 986F47
+			4: Cliff
+				MinColor: 98633A
+				MaxColor: 98633A
+			5: Cliff
+				MinColor: 956A42
+				MaxColor: 956A42
+			6: Cliff
+				MinColor: A98B5F
+				MaxColor: A98B5F
+			7: Cliff
+				MinColor: 89623E
+				MaxColor: 89623E
+			8: Cliff
+				MinColor: BC9967
+				MaxColor: BC9967
+			10: Cliff
+				MinColor: 6C492F
+				MaxColor: 6C492F
+			11: Cliff
+				MinColor: 7E6042
+				MaxColor: 7E6042
+			14: Cliff
+				MinColor: BC9461
+				MaxColor: BC9461
+	Template@1089:
+		Categories: Dune Clear Cliff Set
+		Id: 1089
+		Images: scliff07.des
+		Size: 3, 5
+		Tiles:
+			6: Sand
+				MinColor: DFBF83
+				MaxColor: DFBF83
+			7: Cliff
+				MinColor: C49C67
+				MaxColor: C49C67
+			10: Cliff
+				MinColor: 8B5532
+				MaxColor: 8B5532
+			11: Cliff
+				MinColor: BB9562
+				MaxColor: BB9562
+			14: Sand
+				MinColor: E3C386
+				MaxColor: E3C386
+	Template@1090:
+		Categories: Dune Clear Cliff Set
+		Id: 1090
+		Images: scliff08.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: D6B47B
+				MaxColor: D6B47B
+			2: Sand
+				MinColor: E6C789
+				MaxColor: E6C789
+			4: Cliff
+				MinColor: E2C285
+				MaxColor: E2C285
+			5: Cliff
+				MinColor: 8B5E3C
+				MaxColor: 8B5E3C
+			6: Cliff
+				MinColor: AE8052
+				MaxColor: AE8052
+			7: Sand
+				MinColor: E4C488
+				MaxColor: E4C488
+			9: Cliff
+				MinColor: 9C6036
+				MaxColor: 9C6036
+			10: Cliff
+				MinColor: A6764A
+				MaxColor: A6764A
+			11: Cliff
+				MinColor: D2AD75
+				MaxColor: D2AD75
+			14: Cliff
+				MinColor: DABB7F
+				MaxColor: DABB7F
+	Template@1091:
+		Categories: Dune Clear Cliff Set
+		Id: 1091
+		Images: scliff09.des
+		Size: 3, 3
+		Tiles:
+			1: Sand
+				MinColor: E4C588
+				MaxColor: E4C588
+			3: Sand
+				MinColor: E7C98C
+				MaxColor: E7C98C
+			4: Cliff
+				MinColor: CB9D66
+				MaxColor: CB9D66
+			5: Cliff
+				MinColor: D9B97E
+				MaxColor: D9B97E
+			7: Cliff
+				MinColor: E1BE81
+				MaxColor: E1BE81
+			8: Cliff
+				MinColor: CB9E65
+				MaxColor: CB9E65
+	Template@1092:
+		Categories: Dune Clear Cliff Set
+		Id: 1092
+		Images: scliff10.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: E1C185
+				MaxColor: E1C185
+			3: Sand
+				MinColor: E5C689
+				MaxColor: E5C689
+			4: Cliff
+				MinColor: C09967
+				MaxColor: C09967
+			5: Cliff
+				MinColor: DFC184
+				MaxColor: DFC184
+			7: Sand
+				MinColor: E2C285
+				MaxColor: E2C285
+			8: Cliff
+				MinColor: A37B4F
+				MaxColor: A37B4F
+	Template@1093:
+		Categories: Dune Clear Cliff Set
+		Id: 1093
+		Images: scliff11.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: E2C183
+				MaxColor: E2C183
+			3: Sand
+				MinColor: E5C486
+				MaxColor: E5C486
+			4: Cliff
+				MinColor: CB9B63
+				MaxColor: CB9B63
+			5: Cliff
+				MinColor: D8B379
+				MaxColor: D8B379
+			7: Cliff
+				MinColor: D7B177
+				MaxColor: D7B177
+			8: Cliff
+				MinColor: CB9E66
+				MaxColor: CB9E66
+	Template@1094:
+		Categories: Dune Clear Cliff Set
+		Id: 1094
+		Images: scliff12.des
+		Size: 3, 3
+		Tiles:
+			1: Sand
+				MinColor: E6C78A
+				MaxColor: E6C78A
+			3: Cliff
+				MinColor: E1BF82
+				MaxColor: E1BF82
+			4: Cliff
+				MinColor: B48756
+				MaxColor: B48756
+			5: Cliff
+				MinColor: B79564
+				MaxColor: B79564
+			7: Cliff
+				MinColor: D7B177
+				MaxColor: D7B177
+			8: Cliff
+				MinColor: A37448
+				MaxColor: A37448
+	Template@1095:
+		Categories: Dune Clear Cliff Set
+		Id: 1095
+		Images: scliff13.des
+		Size: 2, 2
+		Tiles:
+			1: Sand
+				MinColor: E4C488
+				MaxColor: E4C488
+			2: Cliff
+				MinColor: E4C586
+				MaxColor: E4C586
+			3: Cliff
+				MinColor: AF8759
+				MaxColor: AF8759
+	Template@1096:
+		Categories: Dune Clear Cliff Set
+		Id: 1096
+		Images: scliff14.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: DEBC81
+				MaxColor: DEBC81
+			2: Cliff
+				MinColor: D3B077
+				MaxColor: D3B077
+			4: Sand
+				MinColor: E7C88A
+				MaxColor: E7C88A
+			5: Cliff
+				MinColor: A57245
+				MaxColor: A57245
+			6: Cliff
+				MinColor: 91603A
+				MaxColor: 91603A
+			7: Cliff
+				MinColor: D0A56C
+				MaxColor: D0A56C
+			9: Cliff
+				MinColor: DAB77B
+				MaxColor: DAB77B
+			10: Cliff
+				MinColor: B68C5B
+				MaxColor: B68C5B
+			11: Cliff
+				MinColor: C89D66
+				MaxColor: C89D66
+			14: Sand
+				MinColor: E7C989
+				MaxColor: E7C989
+	Template@1097:
+		Categories: Dune Clear Cliff Set
+		Id: 1097
+		Images: scliff15.des
+		Size: 3, 4
+		Tiles:
+			1: Cliff
+				MinColor: E1C285
+				MaxColor: E1C285
+			3: Cliff
+				MinColor: E0C083
+				MaxColor: E0C083
+			4: Cliff
+				MinColor: C49B66
+				MaxColor: C49B66
+			5: Cliff
+				MinColor: DDBB7F
+				MaxColor: DDBB7F
+			7: Cliff
+				MinColor: C3955F
+				MaxColor: C3955F
+			8: Cliff
+				MinColor: B8915F
+				MaxColor: B8915F
+			10: Sand
+				MinColor: E2BF82
+				MaxColor: E2BF82
+			11: Cliff
+				MinColor: B07746
+				MaxColor: B07746
+	Template@1098:
+		Categories: Dune Clear Cliff Set
+		Id: 1098
+		Images: scliff16.des
+		Size: 3, 3
+		Tiles:
+			1: Sand
+				MinColor: DCBD83
+				MaxColor: DCBD83
+			3: Cliff
+				MinColor: E2BF83
+				MaxColor: E2BF83
+			4: Cliff
+				MinColor: C1905A
+				MaxColor: C1905A
+			5: Sand
+				MinColor: E6C78A
+				MaxColor: E6C78A
+			7: Cliff
+				MinColor: DEB97D
+				MaxColor: DEB97D
+			8: Cliff
+				MinColor: D4AF75
+				MaxColor: D4AF75
+	Template@1099:
+		Categories: Dune Clear Cliff Set
+		Id: 1099
+		Images: scliff17.des
+		Size: 3, 3
+		Tiles:
+			1: Sand
+				MinColor: E1C285
+				MaxColor: E1C285
+			3: Cliff
+				MinColor: E4C386
+				MaxColor: E4C386
+			4: Cliff
+				MinColor: AD8759
+				MaxColor: AD8759
+			5: Sand
+				MinColor: E2C487
+				MaxColor: E2C487
+			7: Cliff
+				MinColor: 735E44
+				MaxColor: 735E44
+			8: Cliff
+				MinColor: C9A874
+				MaxColor: C9A874
+	Template@1100:
+		Categories: Dune Clear Cliff Set
+		Id: 1100
+		Images: scliff18.des
+		Size: 4, 3
+		Tiles:
+			0: Sand
+				MinColor: E8CA8B
+				MaxColor: E8CA8B
+			1: Cliff
+				MinColor: CAA874
+				MaxColor: CAA874
+			2: Cliff
+				MinColor: CDAE78
+				MaxColor: CDAE78
+			5: Cliff
+				MinColor: 946E49
+				MaxColor: 946E49
+			6: Cliff
+				MinColor: CC9D64
+				MaxColor: CC9D64
+			7: Sand
+				MinColor: E5C688
+				MaxColor: E5C688
+			10: Cliff
+				MinColor: E7C889
+				MaxColor: E7C889
+	Template@1101:
+		Categories: Dune Clear Cliff Set
+		Id: 1101
+		Images: scliff19.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E8CA8A
+				MaxColor: E8CA8A
+			1: Cliff
+				MinColor: A28259
+				MaxColor: A28259
+			4: Cliff
+				MinColor: 775B41
+				MaxColor: 775B41
+			5: Cliff
+				MinColor: B28D5D
+				MaxColor: B28D5D
+			8: Cliff
+				MinColor: DDB779
+				MaxColor: DDB779
+	Template@1102:
+		Categories: Dune Clear Cliff Set
+		Id: 1102
+		Images: scliff20.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E2C488
+				MaxColor: E2C488
+			1: Cliff
+				MinColor: AE9568
+				MaxColor: AE9568
+			4: Cliff
+				MinColor: 775B3E
+				MaxColor: 775B3E
+			5: Cliff
+				MinColor: D5B47C
+				MaxColor: D5B47C
+			8: Sand
+				MinColor: E8CA8B
+				MaxColor: E8CA8B
+	Template@1103:
+		Categories: Dune Clear Cliff Set
+		Id: 1103
+		Images: scliff21.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E8CA8A
+				MaxColor: E8CA8A
+			1: Cliff
+				MinColor: B89D6D
+				MaxColor: B89D6D
+			4: Cliff
+				MinColor: 9C6F45
+				MaxColor: 9C6F45
+			5: Cliff
+				MinColor: D5B077
+				MaxColor: D5B077
+			8: Sand
+				MinColor: E7C88A
+				MaxColor: E7C88A
+	Template@1104:
+		Categories: Dune Clear Cliff Set
+		Id: 1104
+		Images: scliff22.des
+		Size: 3, 4
+		Tiles:
+			0: Cliff
+				MinColor: DEBF83
+				MaxColor: DEBF83
+			1: Cliff
+				MinColor: AE976B
+				MaxColor: AE976B
+			3: Cliff
+				MinColor: B1885A
+				MaxColor: B1885A
+			4: Cliff
+				MinColor: 776045
+				MaxColor: 776045
+			5: Sand
+				MinColor: E3C487
+				MaxColor: E3C487
+			6: Cliff
+				MinColor: D4AE75
+				MaxColor: D4AE75
+			7: Cliff
+				MinColor: 796144
+				MaxColor: 796144
+			8: Cliff
+				MinColor: D4B076
+				MaxColor: D4B076
+			10: Cliff
+				MinColor: 7A6549
+				MaxColor: 7A6549
+			11: Sand
+				MinColor: E3C283
+				MaxColor: E3C283
+	Template@1105:
+		Categories: Dune Clear Cliff Set
+		Id: 1105
+		Images: scliff23.des
+		Size: 4, 3
+		Tiles:
+			1: Sand
+				MinColor: E0C387
+				MaxColor: E0C387
+			5: Cliff
+				MinColor: 6B553D
+				MaxColor: 6B553D
+			6: Cliff
+				MinColor: 856F50
+				MaxColor: 856F50
+			10: Cliff
+				MinColor: D1B57E
+				MaxColor: D1B57E
+			11: Cliff
+				MinColor: DCBC81
+				MaxColor: DCBC81
+	Template@1106:
+		Categories: Dune Clear Cliff Set
+		Id: 1106
+		Images: scliff24.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E8C98A
+				MaxColor: E8C98A
+			1: Cliff
+				MinColor: D2B680
+				MaxColor: D2B680
+			3: Cliff
+				MinColor: D7B47B
+				MaxColor: D7B47B
+			4: Cliff
+				MinColor: B0895A
+				MaxColor: B0895A
+			5: Cliff
+				MinColor: D4B178
+				MaxColor: D4B178
+			7: Sand
+				MinColor: E7C98A
+				MaxColor: E7C98A
+	Template@1107:
+		Categories: Dune Clear Cliff Set
+		Id: 1107
+		Images: scliff25.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: B59B6E
+				MaxColor: B59B6E
+			4: Cliff
+				MinColor: CDAF7A
+				MaxColor: CDAF7A
+			5: Cliff
+				MinColor: 765C41
+				MaxColor: 765C41
+			6: Cliff
+				MinColor: A18B63
+				MaxColor: A18B63
+			9: Cliff
+				MinColor: D9BB82
+				MaxColor: D9BB82
+			10: Cliff
+				MinColor: 7A6346
+				MaxColor: 7A6346
+			11: Sand
+				MinColor: E2C386
+				MaxColor: E2C386
+			14: Sand
+				MinColor: E6C688
+				MaxColor: E6C688
+			15: Sand
+				MinColor: E8CA8A
+				MaxColor: E8CA8A
+	Template@1108:
+		Categories: Dune Clear Cliff Set
+		Id: 1108
+		Images: scliff26.des
+		Size: 3, 3
+		Tiles:
+			4: Cliff
+				MinColor: C9AA75
+				MaxColor: C9AA75
+			5: Cliff
+				MinColor: B99E6F
+				MaxColor: B99E6F
+			7: Cliff
+				MinColor: D7B379
+				MaxColor: D7B379
+			8: Cliff
+				MinColor: 70553B
+				MaxColor: 70553B
+	Template@1109:
+		Categories: Dune Clear Cliff Set
+		Id: 1109
+		Images: scliff27.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B0966A
+				MaxColor: B0966A
+			3: Cliff
+				MinColor: CFB17A
+				MaxColor: CFB17A
+			4: Cliff
+				MinColor: 523D2C
+				MaxColor: 523D2C
+			5: Cliff
+				MinColor: C5A875
+				MaxColor: C5A875
+			7: Cliff
+				MinColor: AE9366
+				MaxColor: AE9366
+			8: Cliff
+				MinColor: 5C4835
+				MaxColor: 5C4835
+	Template@1110:
+		Categories: Dune Clear Cliff Set
+		Id: 1110
+		Images: scliff28.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B3996C
+				MaxColor: B3996C
+			3: Cliff
+				MinColor: DBBA7F
+				MaxColor: DBBA7F
+			4: Cliff
+				MinColor: 5E4635
+				MaxColor: 5E4635
+			5: Cliff
+				MinColor: B09469
+				MaxColor: B09469
+			7: Cliff
+				MinColor: AF8E61
+				MaxColor: AF8E61
+			8: Cliff
+				MinColor: 523D2D
+				MaxColor: 523D2D
+	Template@1111:
+		Categories: Dune Clear Cliff Set
+		Id: 1111
+		Images: scliff29.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B2986B
+				MaxColor: B2986B
+			3: Cliff
+				MinColor: D1B079
+				MaxColor: D1B079
+			4: Cliff
+				MinColor: 473428
+				MaxColor: 473428
+			5: Cliff
+				MinColor: A89267
+				MaxColor: A89267
+			7: Cliff
+				MinColor: D1B47C
+				MaxColor: D1B47C
+			8: Cliff
+				MinColor: 5F4531
+				MaxColor: 5F4531
+	Template@1112:
+		Categories: Dune Clear Cliff Set
+		Id: 1112
+		Images: scliff30.des
+		Size: 4, 3
+		Tiles:
+			1: Cliff
+				MinColor: 907957
+				MaxColor: 907957
+			2: Sand
+				MinColor: DCBE83
+				MaxColor: DCBE83
+			4: Cliff
+				MinColor: DABC83
+				MaxColor: DABC83
+			5: Cliff
+				MinColor: 5D4533
+				MaxColor: 5D4533
+			6: Cliff
+				MinColor: 735A40
+				MaxColor: 735A40
+			7: Cliff
+				MinColor: CAAE77
+				MaxColor: CAAE77
+			9: Sand
+				MinColor: E7C88A
+				MaxColor: E7C88A
+			10: Cliff
+				MinColor: 9E7E56
+				MaxColor: 9E7E56
+			11: Cliff
+				MinColor: 5C4330
+				MaxColor: 5C4330
+	Template@1113:
+		Categories: Dune Clear Cliff Set
+		Id: 1113
+		Images: scliff31.des
+		Size: 3, 4
+		Tiles:
+			1: Cliff
+				MinColor: B99E6E
+				MaxColor: B99E6E
+			3: Cliff
+				MinColor: BC9D6C
+				MaxColor: BC9D6C
+			4: Cliff
+				MinColor: 3F2B21
+				MaxColor: 3F2B21
+			5: Cliff
+				MinColor: BEA270
+				MaxColor: BEA270
+			6: Sand
+				MinColor: E7C88A
+				MaxColor: E7C88A
+			7: Cliff
+				MinColor: 5F4936
+				MaxColor: 5F4936
+			8: Cliff
+				MinColor: 725940
+				MaxColor: 725940
+			10: Cliff
+				MinColor: B59768
+				MaxColor: B59768
+			11: Cliff
+				MinColor: 563E2D
+				MaxColor: 563E2D
+	Template@1114:
+		Categories: Dune Clear Cliff Set
+		Id: 1114
+		Images: scliff32.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B99E70
+				MaxColor: B99E70
+			3: Cliff
+				MinColor: DEBE83
+				MaxColor: DEBE83
+			4: Cliff
+				MinColor: 856B4C
+				MaxColor: 856B4C
+			5: Sand
+				MinColor: E1C284
+				MaxColor: E1C284
+			7: Cliff
+				MinColor: D0AA72
+				MaxColor: D0AA72
+			8: Cliff
+				MinColor: CCA770
+				MaxColor: CCA770
+	Template@1115:
+		Categories: Dune Clear Cliff Set
+		Id: 1115
+		Images: scliff33.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: 916A46
+				MaxColor: 916A46
+			4: Sand
+				MinColor: E8C98B
+				MaxColor: E8C98B
+			5: Cliff
+				MinColor: 7C5C3F
+				MaxColor: 7C5C3F
+			6: Cliff
+				MinColor: 885B38
+				MaxColor: 885B38
+			9: Cliff
+				MinColor: BEA170
+				MaxColor: BEA170
+			10: Cliff
+				MinColor: 604732
+				MaxColor: 604732
+			11: Cliff
+				MinColor: B0976B
+				MaxColor: B0976B
+			14: Cliff
+				MinColor: CCAA74
+				MaxColor: CCAA74
+			15: Cliff
+				MinColor: 473429
+				MaxColor: 473429
+	Template@1116:
+		Categories: Dune Clear Cliff Set
+		Id: 1116
+		Images: scliff34.des
+		Size: 3, 4
+		Tiles:
+			0: Cliff
+				MinColor: D1B67F
+				MaxColor: D1B67F
+			3: Cliff
+				MinColor: CEB17A
+				MaxColor: CEB17A
+			4: Cliff
+				MinColor: CEAF79
+				MaxColor: CEAF79
+			6: Sand
+				MinColor: E3C487
+				MaxColor: E3C487
+			7: Cliff
+				MinColor: B39162
+				MaxColor: B39162
+			10: Cliff
+				MinColor: E5C487
+				MaxColor: E5C487
+			11: Cliff
+				MinColor: C0915D
+				MaxColor: C0915D
+	Template@1117:
+		Categories: Dune Clear Cliff Set
+		Id: 1117
+		Images: scliff35.des
+		Size: 3, 3
+		Tiles:
+			0: Cliff
+				MinColor: D2AC73
+				MaxColor: D2AC73
+			1: Cliff
+				MinColor: 976D47
+				MaxColor: 976D47
+			3: Cliff
+				MinColor: E0BF82
+				MaxColor: E0BF82
+			4: Cliff
+				MinColor: 8C5D39
+				MaxColor: 8C5D39
+			5: Cliff
+				MinColor: A47347
+				MaxColor: A47347
+			7: Cliff
+				MinColor: DAB579
+				MaxColor: DAB579
+			8: Cliff
+				MinColor: DEBC80
+				MaxColor: DEBC80
+	Template@1118:
+		Categories: Dune Clear Cliff Set
+		Id: 1118
+		Images: scliff36.des
+		Size: 3, 4
+		Tiles:
+			1: Cliff
+				MinColor: AE9468
+				MaxColor: AE9468
+			3: Cliff
+				MinColor: D5B57C
+				MaxColor: D5B57C
+			4: Cliff
+				MinColor: 52402F
+				MaxColor: 52402F
+			5: Cliff
+				MinColor: C6AC78
+				MaxColor: C6AC78
+			7: Cliff
+				MinColor: 7C5032
+				MaxColor: 7C5032
+			8: Cliff
+				MinColor: A18259
+				MaxColor: A18259
+			11: Cliff
+				MinColor: DBBA7E
+				MaxColor: DBBA7E
+	Template@1119:
+		Categories: Dune Clear Cliff Set
+		Id: 1119
+		Images: scliff37.des
+		Size: 4, 3
+		Tiles:
+			0: Sand
+				MinColor: E5C689
+				MaxColor: E5C689
+			1: Cliff
+				MinColor: A5895F
+				MaxColor: A5895F
+			2: Cliff
+				MinColor: CBB17C
+				MaxColor: CBB17C
+			5: Cliff
+				MinColor: 8A714F
+				MaxColor: 8A714F
+			6: Cliff
+				MinColor: 6D5940
+				MaxColor: 6D5940
+			7: Cliff
+				MinColor: B59C6E
+				MaxColor: B59C6E
+			10: Sand
+				MinColor: E0C386
+				MaxColor: E0C386
+			11: Cliff
+				MinColor: 49362B
+				MaxColor: 49362B
+	Template@1120:
+		Categories: Dune Clear Cliff Set
+		Id: 1120
+		Images: scliff38.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: A17A50
+				MaxColor: A17A50
+			4: Cliff
+				MinColor: E2C082
+				MaxColor: E2C082
+			5: Cliff
+				MinColor: 89603E
+				MaxColor: 89603E
+			6: Cliff
+				MinColor: 865735
+				MaxColor: 865735
+			9: Cliff
+				MinColor: 765A3E
+				MaxColor: 765A3E
+			10: Cliff
+				MinColor: 775336
+				MaxColor: 775336
+			11: Cliff
+				MinColor: A78D63
+				MaxColor: A78D63
+			14: Sand
+				MinColor: DDBD81
+				MaxColor: DDBD81
+			15: Cliff
+				MinColor: 5A412F
+				MaxColor: 5A412F
+	Template@1121:
+		Categories: Dune Clear Cliff Set
+		Id: 1121
+		Images: scliff39.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: A28961
+				MaxColor: A28961
+			4: Cliff
+				MinColor: D9B87E
+				MaxColor: D9B87E
+			5: Cliff
+				MinColor: 745338
+				MaxColor: 745338
+			6: Cliff
+				MinColor: 877151
+				MaxColor: 877151
+			9: Cliff
+				MinColor: 885735
+				MaxColor: 885735
+			10: Cliff
+				MinColor: 99673C
+				MaxColor: 99673C
+			11: Cliff
+				MinColor: C09A65
+				MaxColor: C09A65
+			14: Cliff
+				MinColor: CDA66E
+				MaxColor: CDA66E
+			15: Cliff
+				MinColor: D4A86D
+				MaxColor: D4A86D
+	Template@1122:
+		Categories: Dune Clear Debris
+		Id: 1122
+		Images: sdebris01.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E3C78B
+				MaxColor: E3C78B
+	Template@1123:
+		Categories: Dune Clear Debris
+		Id: 1123
+		Images: sdebris02.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E1BF83
+				MaxColor: E1BF83
+	Template@1124:
+		Categories: Dune Clear Debris
+		Id: 1124
+		Images: sdebris03.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E0BE80
+				MaxColor: E0BE80
+	Template@1125:
+		Categories: Dune Clear Debris
+		Id: 1125
+		Images: sdebris04.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				MinColor: CDA772
+				MaxColor: CDA772
+	Template@1126:
+		Categories: Dune Clear Debris
+		Id: 1126
+		Images: sdebris05.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D9B77B
+				MaxColor: D9B77B
+	Template@1127:
+		Categories: Dune Clear Debris
+		Id: 1127
+		Images: sdebris06.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CDA972
+				MaxColor: CDA972
+	Template@1128:
+		Categories: Dune Clear Debris
+		Id: 1128
+		Images: sdebris07.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D8B478
+				MaxColor: D8B478
+	Template@1129:
+		Categories: Dune Clear Debris
+		Id: 1129
+		Images: sdebris08.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D1AF79
+				MaxColor: D1AF79
+	Template@1130:
+		Categories: Dune Clear Debris
+		Id: 1130
+		Images: sdebris09.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				MinColor: AE8457
+				MaxColor: AE8457
+	Template@1131:
+		Categories: Dune Clear Debris
+		Id: 1131
+		Images: sdebris10.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E3C78D
+				MaxColor: E3C78D
+	Template@1132:
+		Categories: Dune Clear Debris
+		Id: 1132
+		Images: sdebris11.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E2C388
+				MaxColor: E2C388
+	Template@1133:
+		Categories: Dune Clear Debris
+		Id: 1133
+		Images: sdebris12.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D7BC87
+				MaxColor: D7BC87
+	Template@1134:
+		Categories: Dune Clear Debris
+		Id: 1134
+		Images: sdebris13.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				MinColor: C19F71
+				MaxColor: C19F71
+	Template@1135:
+		Categories: Dune Clear Debris
+		Id: 1135
+		Images: sdebris14.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D7BE8B
+				MaxColor: D7BE8B
+	Template@1136:
+		Categories: Dune Clear Debris
+		Id: 1136
+		Images: sdebris15.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D0B47E
+				MaxColor: D0B47E
+	Template@1137:
+		Categories: Dune Clear Debris
+		Id: 1137
+		Images: sdebris16.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				MinColor: D7BA83
+				MaxColor: D7BA83
+	Template@1138:
+		Categories: Dune Clear Debris
+		Id: 1138
+		Images: sdebris17.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D5B57B
+				MaxColor: D5B57B
+	Template@1139:
+		Categories: Dune Clear Debris
+		Id: 1139
+		Images: sdebris18.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: DFBF85
+				MaxColor: DFBF85
+	Template@1140:
+		Categories: Dune Clear Debris
+		Id: 1140
+		Images: sdebris19.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: DBBE84
+				MaxColor: DBBE84
+	Template@1141:
+		Categories: Dune Clear Debris
+		Id: 1141
+		Images: sdebris20.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				MinColor: 917752
+				MaxColor: 917752
+	Template@1142:
+		Categories: Dune Clear Debris
+		Id: 1142
+		Images: sdebris21.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: DAB275
+				MaxColor: DAB275
+	Template@1143:
+		Categories: Dune Clear Debris
+		Id: 1143
+		Images: sdebris22.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E0C48A
+				MaxColor: E0C48A
+	Template@1144:
+		Categories: Dune Clear Debris
+		Id: 1144
+		Images: sdebris23.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: DAB980
+				MaxColor: DAB980
+	Template@1145:
+		Categories: Dune Clear Debris
+		Id: 1145
+		Images: sdebris24.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				MinColor: D0BB8E
+				MaxColor: D0BB8E
+	Template@1146:
+		Categories: Dune Clear Debris
+		Id: 1146
+		Images: sdebris25.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E3C588
+				MaxColor: E3C588
+	Template@1147:
+		Categories: Dune Clear Debris
+		Id: 1147
+		Images: sdebris26.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D3B882
+				MaxColor: D3B882
+	Template@1148:
+		Categories: Dune Clear Debris
+		Id: 1148
+		Images: sdebris27.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E1C48A
+				MaxColor: E1C48A
+	Template@1149:
+		Categories: Dune Clear Debris
+		Id: 1149
+		Images: sdebris28.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CCA975
+				MaxColor: CCA975
+	Template@1150:
+		Categories: Dune Clear Debris
+		Id: 1150
+		Images: sdebris29.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: DFC388
+				MaxColor: DFC388
+	Template@1151:
+		Categories: Dune Clear Debris
+		Id: 1151
+		Images: sdebris30.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E0C489
+				MaxColor: E0C489
+	Template@1152:
+		Categories: Dune Clear Debris
+		Id: 1152
+		Images: sdebris31.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CFAD77
+				MaxColor: CFAD77
+	Template@1153:
+		Categories: Dune Clear Debris
+		Id: 1153
+		Images: sdebris32.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E2C488
+				MaxColor: E2C488
+	Template@1154:
+		Categories: Dune Clear Debris
+		Id: 1154
+		Images: sdebris33.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E1C58A
+				MaxColor: E1C58A
+	Template@1155:
+		Categories: Dune Clear Debris
+		Id: 1155
+		Images: sdebris34.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E6C98C
+				MaxColor: E6C98C
+	Template@1156:
+		Categories: Dune Clear Debris
+		Id: 1156
+		Images: sdebris35.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E3C98F
+				MaxColor: E3C98F
+	Template@1157:
+		Categories: Dune Clear Debris
+		Id: 1157
+		Images: sdebris36.des
+		Size: 1, 1
+		Tiles:
+			0: Cliff
+				MinColor: D5B880
+				MaxColor: D5B880
+	Template@1158:
+		Categories: Dune Clear Debris
+		Id: 1158
+		Images: sdebris37.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E3C78C
+				MaxColor: E3C78C
+	Template@1159:
+		Categories: Dune Clear Debris
+		Id: 1159
+		Images: sdebris38.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E1C891
+				MaxColor: E1C891
+	Template@1160:
+		Categories: Dune Clear Debris
+		Id: 1160
+		Images: sdebris39.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E2C88F
+				MaxColor: E2C88F
+	Template@1161:
+		Categories: Dune Clear Debris
+		Id: 1161
+		Images: sdebris40.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				MinColor: B78C5C
+				MaxColor: B78C5C
+			1: Sand
+				MinColor: DEBE82
+				MaxColor: DEBE82
+	Template@1162:
+		Categories: Dune Clear Debris
+		Id: 1162
+		Images: sdebris41.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				MinColor: A1835A
+				MaxColor: A1835A
+			1: Cliff
+				MinColor: C7A36D
+				MaxColor: C7A36D
+	Template@1163:
+		Categories: Dune Clear Debris
+		Id: 1163
+		Images: sdebris42.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				MinColor: D2BC8B
+				MaxColor: D2BC8B
+			1: Sand
+				MinColor: E5C88C
+				MaxColor: E5C88C
+	Template@1164:
+		Categories: Dune Clear Debris
+		Id: 1164
+		Images: sdebris43.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				MinColor: CFB37E
+				MaxColor: CFB37E
+			1: Cliff
+				MinColor: C8AE7C
+				MaxColor: C8AE7C
+	Template@1165:
+		Categories: Dune Clear Debris
+		Id: 1165
+		Images: sdebris44.des
+		Size: 1, 2
+		Tiles:
+			0: Sand
+				MinColor: CDB37F
+				MaxColor: CDB37F
+			1: Sand
+				MinColor: E5C98D
+				MaxColor: E5C98D
+	Template@1166:
+		Categories: Dune Clear Debris
+		Id: 1166
+		Images: sdebris45.des
+		Size: 1, 2
+		Tiles:
+			0: Sand
+				MinColor: DDC189
+				MaxColor: DDC189
+			1: Sand
+				MinColor: CCB282
+				MaxColor: CCB282
+	Template@1167:
+		Categories: Dune Clear Debris
+		Id: 1167
+		Images: sdebris46.des
+		Size: 1, 2
+		Tiles:
+			0: Cliff
+				MinColor: D1A76D
+				MaxColor: D1A76D
+			1: Cliff
+				MinColor: D7B076
+				MaxColor: D7B076
+	Template@1168:
+		Categories: Dune Clear Debris
+		Id: 1168
+		Images: sdebris47.des
+		Size: 2, 1
+		Tiles:
+			0: Sand
+				MinColor: E1C78F
+				MaxColor: E1C78F
+			1: Sand
+				MinColor: E8CC90
+				MaxColor: E8CC90
+	Template@1169:
+		Categories: Dune Clear Debris
+		Id: 1169
+		Images: sdebris48.des
+		Size: 2, 1
+		Tiles:
+			0: Sand
+				MinColor: E1C58A
+				MaxColor: E1C58A
+			1: Sand
+				MinColor: E2C68C
+				MaxColor: E2C68C
+	Template@1170:
+		Categories: Dune Clear Debris
+		Id: 1170
+		Images: sdebris49.des
+		Size: 2, 1
+		Tiles:
+			0: Sand
+				MinColor: E5CF9E
+				MaxColor: E5CF9E
+			1: Sand
+				MinColor: E2CC9B
+				MaxColor: E2CC9B
+	Template@1171:
+		Categories: Dune Clear Debris
+		Id: 1171
+		Images: sdebris50.des
+		Size: 2, 1
+		Tiles:
+			0: Sand
+				MinColor: E4C689
+				MaxColor: E4C689
+			1: Sand
+				MinColor: E7C98C
+				MaxColor: E7C98C
+	Template@1172:
+		Categories: Dune Clear Debris
+		Id: 1172
+		Images: sdebris51.des
+		Size: 2, 1
+		Tiles:
+			0: Sand
+				MinColor: E0C186
+				MaxColor: E0C186
+			1: Sand
+				MinColor: E5C78A
+				MaxColor: E5C78A
+	Template@1173:
+		Categories: Dune Clear Debris
+		Id: 1173
+		Images: sdebris52.des
+		Size: 2, 1
+		Tiles:
+			0: Sand
+				MinColor: DEBB7D
+				MaxColor: DEBB7D
+			1: Sand
+				MinColor: E5C486
+				MaxColor: E5C486
+	Template@1174:
+		Categories: Dune Clear Debris
+		Id: 1174
+		Images: sdebris53.des
+		Size: 2, 1
+		Tiles:
+			0: Sand
+				MinColor: CCA872
+				MaxColor: CCA872
+			1: Sand
+				MinColor: E0C286
+				MaxColor: E0C286
+	Template@1175:
+		Categories: Dune Clear Debris
+		Id: 1175
+		Images: sdebris54.des
+		Size: 2, 2
+		Tiles:
+			0: Sand
+				MinColor: BC9360
+				MaxColor: BC9360
+			1: Sand
+				MinColor: DDBB80
+				MaxColor: DDBB80
+			2: Sand
+				MinColor: D7B47B
+				MaxColor: D7B47B
+	Template@1176:
+		Categories: Dune Clear Debris
+		Id: 1176
+		Images: sdebris55.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: C7A977
+				MaxColor: C7A977
+			1: Cliff
+				MinColor: C0A573
+				MaxColor: C0A573
+			2: Cliff
+				MinColor: D3B67F
+				MaxColor: D3B67F
+	Template@1184:
+		Categories: Dune Clear Debris
+		Id: 1184
+		Images: sdebris63.des
+		Size: 2, 2
+		Tiles:
+			0: Sand
+				MinColor: D2B37B
+				MaxColor: D2B37B
+			1: Sand
+				MinColor: DCC38C
+				MaxColor: DCC38C
+			2: Sand
+				MinColor: DDC087
+				MaxColor: DDC087
+			3: Sand
+				MinColor: D4BA84
+				MaxColor: D4BA84
+	Template@1185:
+		Categories: Dune Clear Debris
+		Id: 1185
+		Images: sdebris64.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: D9C08B
+				MaxColor: D9C08B
+			1: Cliff
+				MinColor: E4C78B
+				MaxColor: E4C78B
+			2: Cliff
+				MinColor: E2C68C
+				MaxColor: E2C68C
+			3: Cliff
+				MinColor: E3C88F
+				MaxColor: E3C88F
+	Template@1186:
+		Categories: Dune Clear Debris
+		Id: 1186
+		Images: sdebris65.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: DCC28A
+				MaxColor: DCC28A
+			1: Cliff
+				MinColor: E4C78A
+				MaxColor: E4C78A
+			2: Cliff
+				MinColor: E0C48A
+				MaxColor: E0C48A
+			3: Cliff
+				MinColor: E2C78E
+				MaxColor: E2C78E
+	Template@1187:
+		Categories: Dune Clear Debris
+		Id: 1187
+		Images: sdebris66.des
+		Size: 2, 2
+		Tiles:
+			0: Sand
+				MinColor: DABF87
+				MaxColor: DABF87
+			1: Sand
+				MinColor: E2C78C
+				MaxColor: E2C78C
+			2: Sand
+				MinColor: C0A97A
+				MaxColor: C0A97A
+			3: Sand
+				MinColor: E1C58A
+				MaxColor: E1C58A
+	Template@1188:
+		Categories: Dune Clear Debris
+		Id: 1188
+		Images: sdebris67.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: BEA575
+				MaxColor: BEA575
+			1: Cliff
+				MinColor: BDA476
+				MaxColor: BDA476
+			2: Cliff
+				MinColor: D1B681
+				MaxColor: D1B681
+			3: Cliff
+				MinColor: C0A877
+				MaxColor: C0A877
+	Template@1189:
+		Categories: Dune Clear Debris
+		Id: 1189
+		Images: sdebris68.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: B59E72
+				MaxColor: B59E72
+			1: Cliff
+				MinColor: CCB37F
+				MaxColor: CCB37F
+			2: Cliff
+				MinColor: CDB27D
+				MaxColor: CDB27D
+			3: Cliff
+				MinColor: CDB481
+				MaxColor: CDB481
+	Template@1190:
+		Categories: Dune Clear Debris
+		Id: 1190
+		Images: sdebris69.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: DEC288
+				MaxColor: DEC288
+			1: Cliff
+				MinColor: DBBF88
+				MaxColor: DBBF88
+			2: Cliff
+				MinColor: CEB581
+				MaxColor: CEB581
+			3: Sand
+				MinColor: E1C58C
+				MaxColor: E1C58C
+	Template@1191:
+		Categories: Dune Clear Debris
+		Id: 1191
+		Images: sdebris70.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: C9AB78
+				MaxColor: C9AB78
+			1: Cliff
+				MinColor: DBBF85
+				MaxColor: DBBF85
+			2: Cliff
+				MinColor: DCBE87
+				MaxColor: DCBE87
+			3: Cliff
+				MinColor: D6B880
+				MaxColor: D6B880
+	Template@1192:
+		Categories: Dune Clear Debris
+		Id: 1192
+		Images: sdebris71.des
+		Size: 2, 2
+		Tiles:
+			0: Sand
+				MinColor: E6CA8E
+				MaxColor: E6CA8E
+			1: Cliff
+				MinColor: BCA477
+				MaxColor: BCA477
+			2: Cliff
+				MinColor: C1A677
+				MaxColor: C1A677
+			3: Cliff
+				MinColor: D8BD86
+				MaxColor: D8BD86
+	Template@1193:
+		Categories: Dune Clear Debris
+		Id: 1193
+		Images: sdebris72.des
+		Size: 2, 2
+		Tiles:
+			0: Sand
+				MinColor: CBB07C
+				MaxColor: CBB07C
+			1: Sand
+				MinColor: D5B980
+				MaxColor: D5B980
+			2: Sand
+				MinColor: CAAF7B
+				MaxColor: CAAF7B
+			3: Sand
+				MinColor: C9AE79
+				MaxColor: C9AE79
+	Template@1194:
+		Categories: Dune Clear Debris
+		Id: 1194
+		Images: sdebris73.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: B99969
+				MaxColor: B99969
+			1: Sand
+				MinColor: E0C388
+				MaxColor: E0C388
+			2: Cliff
+				MinColor: B89B6B
+				MaxColor: B89B6B
+			3: Cliff
+				MinColor: C2A06C
+				MaxColor: C2A06C
+	Template@1195:
+		Categories: Dune Clear Debris
+		Id: 1195
+		Images: sdebris74.des
+		Size: 2, 2
+		Tiles:
+			0: Sand
+				MinColor: E4C88E
+				MaxColor: E4C88E
+			1: Sand
+				MinColor: E4CA92
+				MaxColor: E4CA92
+			2: Sand
+				MinColor: D9BD87
+				MaxColor: D9BD87
+			3: Sand
+				MinColor: E0C893
+				MaxColor: E0C893
+	Template@1196:
+		Categories: Dune Clear Debris
+		Id: 1196
+		Images: sdebris75.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: BAA171
+				MaxColor: BAA171
+			1: Sand
+				MinColor: DEC187
+				MaxColor: DEC187
+			2: Cliff
+				MinColor: C7AC78
+				MaxColor: C7AC78
+			3: Cliff
+				MinColor: C4AA78
+				MaxColor: C4AA78
+	Template@1197:
+		Categories: Dune Clear Debris
+		Id: 1197
+		Images: sdebris76.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: BCA06F
+				MaxColor: BCA06F
+			1: Cliff
+				MinColor: E2C68C
+				MaxColor: E2C68C
+			2: Cliff
+				MinColor: E0C186
+				MaxColor: E0C186
+			3: Cliff
+				MinColor: B18F62
+				MaxColor: B18F62
+	Template@1198:
+		Categories: Dune Clear Debris
+		Id: 1198
+		Images: sdebris77.des
+		Size: 2, 2
+		Tiles:
+			0: Sand
+				MinColor: BD9261
+				MaxColor: BD9261
+			1: Sand
+				MinColor: CFA771
+				MaxColor: CFA771
+			2: Sand
+				MinColor: BE9D6B
+				MaxColor: BE9D6B
+			3: Sand
+				MinColor: D0AE77
+				MaxColor: D0AE77
+	Template@1199:
+		Categories: Dune Clear Debris
+		Id: 1199
+		Images: sdebris78.des
+		Size: 2, 2
+		Tiles:
+			0: Cliff
+				MinColor: D0B784
+				MaxColor: D0B784
+			1: Cliff
+				MinColor: C7AE7D
+				MaxColor: C7AE7D
+			2: Cliff
+				MinColor: BCA070
+				MaxColor: BCA070
+			3: Cliff
+				MinColor: A48A62
+				MaxColor: A48A62
+	Template@1200:
+		Categories: Dune Clear Debris
+		Id: 1200
+		Images: sdebris79.des
+		Size: 3, 3
+		Tiles:
+			0: Cliff
+				MinColor: E6C889
+				MaxColor: E6C889
+			1: Sand
+				MinColor: A58860
+				MaxColor: A58860
+			2: Cliff
+				MinColor: E3C487
+				MaxColor: E3C487
+			3: Cliff
+				MinColor: D8BB80
+				MaxColor: D8BB80
+			4: Cliff
+				MinColor: A8895F
+				MaxColor: A8895F
+			5: Cliff
+				MinColor: D8BA7F
+				MaxColor: D8BA7F
+			7: Cliff
+				MinColor: DEBE82
+				MaxColor: DEBE82
+			8: Cliff
+				MinColor: DCBD83
+				MaxColor: DCBD83
+	Template@1201:
+		Categories: Dune Clear Debris
+		Id: 1201
+		Images: sdebris80.des
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				MinColor: D1B580
+				MaxColor: D1B580
+			2: Cliff
+				MinColor: 99825F
+				MaxColor: 99825F
+			3: Cliff
+				MinColor: BDA372
+				MaxColor: BDA372
+			4: Cliff
+				MinColor: C4AA79
+				MaxColor: C4AA79
+			5: Cliff
+				MinColor: A58D67
+				MaxColor: A58D67
+	Template@1202:
+		Categories: Dune Clear Debris
+		Id: 1202
+		Images: sdebris81.des
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				MinColor: CDB381
+				MaxColor: CDB381
+			1: Sand
+				MinColor: E6C88B
+				MaxColor: E6C88B
+			2: Cliff
+				MinColor: E6C88B
+				MaxColor: E6C88B
+			3: Cliff
+				MinColor: D4BA84
+				MaxColor: D4BA84
+			5: Sand
+				MinColor: E5C88A
+				MaxColor: E5C88A
+	Template@1203:
+		Categories: Dune Clear Debris
+		Id: 1203
+		Images: sdebris82.des
+		Size: 3, 2
+		Tiles:
+			0: Cliff
+				MinColor: E2C68A
+				MaxColor: E2C68A
+			1: Cliff
+				MinColor: D4BF8C
+				MaxColor: D4BF8C
+			2: Cliff
+				MinColor: E1C58A
+				MaxColor: E1C58A
+			4: Cliff
+				MinColor: DFC489
+				MaxColor: DFC489
+			5: Cliff
+				MinColor: DBC28A
+				MaxColor: DBC28A
+	Template@1204:
+		Categories: Dune Clear Debris
+		Id: 1204
+		Images: sdebris83.des
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				MinColor: DAC594
+				MaxColor: DAC594
+			1: Cliff
+				MinColor: D7BF8A
+				MaxColor: D7BF8A
+			2: Cliff
+				MinColor: E1C890
+				MaxColor: E1C890
+			3: Cliff
+				MinColor: DBC28C
+				MaxColor: DBC28C
+			5: Cliff
+				MinColor: DEC691
+				MaxColor: DEC691
+	Template@1205:
+		Categories: Dune Clear Debris
+		Id: 1205
+		Images: sdebris84.des
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				MinColor: DAC594
+				MaxColor: DAC594
+			1: Sand
+				MinColor: D7BF8A
+				MaxColor: D7BF8A
+			2: Cliff
+				MinColor: E1C890
+				MaxColor: E1C890
+			3: Cliff
+				MinColor: DBC28C
+				MaxColor: DBC28C
+			5: Cliff
+				MinColor: DEC691
+				MaxColor: DEC691
+	Template@1206:
+		Categories: Dune Clear Debris
+		Id: 1206
+		Images: sdebris85.des
+		Size: 3, 3
+		Tiles:
+			3: Cliff
+				MinColor: B59D6F
+				MaxColor: B59D6F
+			4: Cliff
+				MinColor: B39B6E
+				MaxColor: B39B6E
+			6: Cliff
+				MinColor: B9A071
+				MaxColor: B9A071
+			7: Cliff
+				MinColor: A99368
+				MaxColor: A99368
+			8: Sand
+				MinColor: DFC286
+				MaxColor: DFC286
+	Template@1207:
+		Categories: Dune Clear Debris
+		Id: 1207
+		Images: sdebris86.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: DCC085
+				MaxColor: DCC085
+			3: Cliff
+				MinColor: E2C589
+				MaxColor: E2C589
+			4: Cliff
+				MinColor: D6BD87
+				MaxColor: D6BD87
+			5: Cliff
+				MinColor: DABF85
+				MaxColor: DABF85
+			7: Cliff
+				MinColor: E0C488
+				MaxColor: E0C488
+			8: Cliff
+				MinColor: D5BE89
+				MaxColor: D5BE89
+	Template@1208:
+		Categories: Dune Clear Debris
+		Id: 1208
+		Images: sdebris87.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: 000000
+				MaxColor: 000000
+			1: Sand
+				MinColor: 000000
+				MaxColor: 000000
+			3: Sand
+				MinColor: 000000
+				MaxColor: 000000
+			4: Sand
+				MinColor: 000000
+				MaxColor: 000000
+			7: Sand
+				MinColor: 000000
+				MaxColor: 000000
+			8: Sand
+				MinColor: 000000
+				MaxColor: 000000
+	Template@1209:
+		Categories: Dune Clear Debris
+		Id: 1209
+		Images: sdebris88.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E2C184
+				MaxColor: E2C184
+			1: Sand
+				MinColor: E6C98C
+				MaxColor: E6C98C
+			3: Sand
+				MinColor: D7B67A
+				MaxColor: D7B67A
+			4: Sand
+				MinColor: D8C292
+				MaxColor: D8C292
+			5: Sand
+				MinColor: E7CB8D
+				MaxColor: E7CB8D
+			6: Sand
+				MinColor: DBBA7F
+				MaxColor: DBBA7F
+			7: Sand
+				MinColor: E5C687
+				MaxColor: E5C687
+	Template@1210:
+		Categories: Dune Clear Debris
+		Id: 1210
+		Images: sdebris89.des
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				MinColor: E2C386
+				MaxColor: E2C386
+			2: Cliff
+				MinColor: E4C78A
+				MaxColor: E4C78A
+			3: Cliff
+				MinColor: E6C789
+				MaxColor: E6C789
+			5: Cliff
+				MinColor: E0C388
+				MaxColor: E0C388
+	Template@1211:
+		Categories: Dune Clear Debris
+		Id: 1211
+		Images: sdebris90.des
+		Size: 2, 3
+		Tiles:
+			0: Cliff
+				MinColor: BDA679
+				MaxColor: BDA679
+			1: Cliff
+				MinColor: D9BD84
+				MaxColor: D9BD84
+			2: Cliff
+				MinColor: B39C72
+				MaxColor: B39C72
+			3: Cliff
+				MinColor: C2A777
+				MaxColor: C2A777
+			4: Cliff
+				MinColor: D7BC86
+				MaxColor: D7BC86
+			5: Cliff
+				MinColor: D7BC86
+				MaxColor: D7BC86
+	Template@1212:
+		Categories: Dune Clear Debris
+		Id: 1212
+		Images: sdebris91.des
+		Size: 3, 3
+		Tiles:
+			0: Cliff
+				MinColor: D3BD90
+				MaxColor: D3BD90
+			1: Sand
+				MinColor: E7CA8C
+				MaxColor: E7CA8C
+			3: Sand
+				MinColor: E5C88D
+				MaxColor: E5C88D
+			4: Sand
+				MinColor: DABC84
+				MaxColor: DABC84
+			5: Sand
+				MinColor: E6C98E
+				MaxColor: E6C98E
+			7: Sand
+				MinColor: E6C98C
+				MaxColor: E6C98C
+			8: Sand
+				MinColor: DDC28A
+				MaxColor: DDC28A
+	Template@1213:
+		Categories: Dune Clear Debris
+		Id: 1213
+		Images: sdebris92.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E4C688
+				MaxColor: E4C688
+			1: Sand
+				MinColor: DAB87C
+				MaxColor: DAB87C
+			3: Sand
+				MinColor: E7CA8C
+				MaxColor: E7CA8C
+			4: Sand
+				MinColor: D6AF73
+				MaxColor: D6AF73
+			5: Sand
+				MinColor: E7C98A
+				MaxColor: E7C98A
+			7: Sand
+				MinColor: E3C284
+				MaxColor: E3C284
+			8: Sand
+				MinColor: E5C689
+				MaxColor: E5C689
+	Template@1214:
+		Categories: Dune Clear Debris
+		Id: 1214
+		Images: sdebris93.des
+		Size: 3, 3
+		Tiles:
+			0: Cliff
+				MinColor: E1C489
+				MaxColor: E1C489
+			1: Cliff
+				MinColor: CDB788
+				MaxColor: CDB788
+			3: Cliff
+				MinColor: DBC087
+				MaxColor: DBC087
+			4: Cliff
+				MinColor: BAA984
+				MaxColor: BAA984
+			5: Cliff
+				MinColor: D9BE86
+				MaxColor: D9BE86
+			7: Cliff
+				MinColor: E0C58C
+				MaxColor: E0C58C
+			8: Cliff
+				MinColor: DFC388
+				MaxColor: DFC388
+	Template@1215:
+		Categories: Dune Clear Debris
+		Id: 1215
+		Images: sdebris94.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E0C388
+				MaxColor: E0C388
+			1: Sand
+				MinColor: DABD84
+				MaxColor: DABD84
+			3: Sand
+				MinColor: DABC83
+				MaxColor: DABC83
+			4: Sand
+				MinColor: AF9668
+				MaxColor: AF9668
+			5: Sand
+				MinColor: D0B078
+				MaxColor: D0B078
+			7: Sand
+				MinColor: DCC087
+				MaxColor: DCC087
+			8: Sand
+				MinColor: DFC287
+				MaxColor: DFC287
+	Template@1216:
+		Categories: Dune Clear Debris
+		Id: 1216
+		Images: sdebris95.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E8CA8C
+				MaxColor: E8CA8C
+			3: Sand
+				MinColor: E0CCA0
+				MaxColor: E0CCA0
+			4: Sand
+				MinColor: E5CA91
+				MaxColor: E5CA91
+			6: Sand
+				MinColor: E8CA8C
+				MaxColor: E8CA8C
+			7: Sand
+				MinColor: E3C58B
+				MaxColor: E3C58B
+			8: Sand
+				MinColor: E8CA8B
+				MaxColor: E8CA8B
+	Template@1217:
+		Categories: Dune Clear Debris
+		Id: 1217
+		Images: sdebris96.des
+		Size: 3, 3
+		Tiles:
+			0: Cliff
+				MinColor: CFB178
+				MaxColor: CFB178
+			1: Cliff
+				MinColor: BD9E6B
+				MaxColor: BD9E6B
+			2: Sand
+				MinColor: E2C387
+				MaxColor: E2C387
+			3: Cliff
+				MinColor: B08F5F
+				MaxColor: B08F5F
+			4: Cliff
+				MinColor: AD8D5D
+				MaxColor: AD8D5D
+			5: Cliff
+				MinColor: 997E54
+				MaxColor: 997E54
+			6: Sand
+				MinColor: E5C688
+				MaxColor: E5C688
+			7: Cliff
+				MinColor: CEAE76
+				MaxColor: CEAE76
+			8: Cliff
+				MinColor: D4B57D
+				MaxColor: D4B57D
+	Template@1218:
+		Categories: Dune Clear Debris
+		Id: 1218
+		Images: sdebris97.des
+		Size: 4, 4
+		Tiles:
+			0: Cliff
+				MinColor: 9A7B55
+				MaxColor: 9A7B55
+			1: Cliff
+				MinColor: 8E7151
+				MaxColor: 8E7151
+			2: Sand
+				MinColor: D9BB81
+				MaxColor: D9BB81
+			3: Sand
+				MinColor: 000000
+				MaxColor: 000000
+			4: Cliff
+				MinColor: 604633
+				MaxColor: 604633
+			5: Cliff
+				MinColor: 775539
+				MaxColor: 775539
+			6: Cliff
+				MinColor: 9B7E55
+				MaxColor: 9B7E55
+			7: Cliff
+				MinColor: B4986A
+				MaxColor: B4986A
+			8: Cliff
+				MinColor: B39A6B
+				MaxColor: B39A6B
+			9: Cliff
+				MinColor: 594A36
+				MaxColor: 594A36
+			10: Cliff
+				MinColor: 624836
+				MaxColor: 624836
+			11: Cliff
+				MinColor: AB8C61
+				MaxColor: AB8C61
+			14: Cliff
+				MinColor: 9C825E
+				MaxColor: 9C825E
+			15: Cliff
+				MinColor: AF9568
+				MaxColor: AF9568
+	Template@1219:
+		Categories: Dune Clear Debris
+		Id: 1219
+		Images: sdebris98.des
+		Size: 4, 4
+		Tiles:
+			0: Sand
+				MinColor: E8C98B
+				MaxColor: E8C98B
+			1: Cliff
+				MinColor: A39069
+				MaxColor: A39069
+			2: Cliff
+				MinColor: C1A979
+				MaxColor: C1A979
+			3: Sand
+				MinColor: E6C88B
+				MaxColor: E6C88B
+			4: Cliff
+				MinColor: CEB481
+				MaxColor: CEB481
+			5: Cliff
+				MinColor: 6B6352
+				MaxColor: 6B6352
+			6: Cliff
+				MinColor: 635747
+				MaxColor: 635747
+			7: Cliff
+				MinColor: 9E8E69
+				MaxColor: 9E8E69
+			8: Cliff
+				MinColor: AB976E
+				MaxColor: AB976E
+			9: Cliff
+				MinColor: 7C745D
+				MaxColor: 7C745D
+			10: Sand
+				MinColor: DBBF85
+				MaxColor: DBBF85
+			11: Sand
+				MinColor: E6C88A
+				MaxColor: E6C88A
+			12: Cliff
+				MinColor: D8BC84
+				MaxColor: D8BC84
+			13: Cliff
+				MinColor: A2906A
+				MaxColor: A2906A
+	Template@1220:
+		Categories: Dune Clear Debris
+		Id: 1220
+		Images: sdebris99.des
+		Size: 4, 6
+		Tiles:
+			1: Sand
+				MinColor: E6CA8D
+				MaxColor: E6CA8D
+			2: Sand
+				MinColor: E5CB93
+				MaxColor: E5CB93
+			4: Sand
+				MinColor: E5C688
+				MaxColor: E5C688
+			5: Sand
+				MinColor: C9AC77
+				MaxColor: C9AC77
+			6: Sand
+				MinColor: E0CDA1
+				MaxColor: E0CDA1
+			8: Sand
+				MinColor: DCBD85
+				MaxColor: DCBD85
+			9: Sand
+				MinColor: C2A26D
+				MaxColor: C2A26D
+			10: Sand
+				MinColor: D9C08C
+				MaxColor: D9C08C
+			12: Sand
+				MinColor: E7C98E
+				MaxColor: E7C98E
+			13: Sand
+				MinColor: B89A6E
+				MaxColor: B89A6E
+			14: Sand
+				MinColor: CEB17C
+				MaxColor: CEB17C
+			15: Sand
+				MinColor: E7C989
+				MaxColor: E7C989
+			17: Sand
+				MinColor: DABE8B
+				MaxColor: DABE8B
+			18: Sand
+				MinColor: CCB483
+				MaxColor: CCB483
+			21: Sand
+				MinColor: E3C68E
+				MaxColor: E3C68E
+			22: Sand
+				MinColor: E7C88B
+				MaxColor: E7C88B
+	Template@1221:
+		Categories: Dune Infantry Rock (Clear)
+		Id: 1221
+		Images: sirck01.des, sirck01a.des, sirck01b.des, sirck01c.des, sirck01d.des, sirck01e.des, sirck01f.des, sirck01g.des
+		Size: 1, 1
+		Tiles:
+			0: Road
+				MinColor: C69E68
+				MaxColor: C69E68
+	Template@1229:
+		Categories: Dune Rock (AutoLAT)
+		Id: 1229
+		Images: druff01.des, druff01a.des, druff01b.des, druff01c.des, druff01d.des, druff01e.des, druff01f.des, druff01g.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				MinColor: CB7F40
+				MaxColor: CB7F40
+	Template@1230:
+		Categories: Dune Rock (Cleanup)
+		Id: 1230
+		Images: druff01.des, druff01a.des, druff01b.des, druff01c.des, druff01d.des, druff01e.des, druff01f.des, druff01g.des
+		Size: 1, 1
+		Tiles:
+			0: Clear
+				MinColor: CB7F40
+				MaxColor: CB7F40
+	Template@1231:
+		Categories: Dune Rock LAT
+		Id: 1231
+		Images: dclat01.des, dclat01a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: C8894E
+				MaxColor: C8894E
+	Template@1232:
+		Categories: Dune Rock LAT
+		Id: 1232
+		Images: dclat02.des, dclat02a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CC9A62
+				MaxColor: CC9A62
+	Template@1233:
+		Categories: Dune Rock LAT
+		Id: 1233
+		Images: dclat03.des, dclat03a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: BE824C
+				MaxColor: BE824C
+	Template@1234:
+		Categories: Dune Rock LAT
+		Id: 1234
+		Images: dclat04.des, dclat04a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D09C61
+				MaxColor: D09C61
+	Template@1235:
+		Categories: Dune Rock LAT
+		Id: 1235
+		Images: dclat05.des, dclat05a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: C28851
+				MaxColor: C28851
+	Template@1236:
+		Categories: Dune Rock LAT
+		Id: 1236
+		Images: dclat06.des, dclat06a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CC9358
+				MaxColor: CC9358
+	Template@1237:
+		Categories: Dune Rock LAT
+		Id: 1237
+		Images: dclat07.des, dclat07a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D3A064
+				MaxColor: D3A064
+	Template@1238:
+		Categories: Dune Rock LAT
+		Id: 1238
+		Images: dclat08.des, dclat08a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E2BA7A
+				MaxColor: E2BA7A
+	Template@1239:
+		Categories: Dune Rock LAT
+		Id: 1239
+		Images: dclat09.des, dclat09a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: C48249
+				MaxColor: C48249
+	Template@1240:
+		Categories: Dune Rock LAT
+		Id: 1240
+		Images: dclat10.des, dclat10a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CD955B
+				MaxColor: CD955B
+	Template@1241:
+		Categories: Dune Rock LAT
+		Id: 1241
+		Images: dclat11.des, dclat11a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D09A5E
+				MaxColor: D09A5E
+	Template@1242:
+		Categories: Dune Rock LAT
+		Id: 1242
+		Images: dclat12.des, dclat12a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D9B176
+				MaxColor: D9B176
+	Template@1243:
+		Categories: Dune Rock LAT
+		Id: 1243
+		Images: dclat13.des, dclat13a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D9AC6F
+				MaxColor: D9AC6F
+	Template@1244:
+		Categories: Dune Rock LAT
+		Id: 1244
+		Images: dclat14.des, dclat14a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D5A56A
+				MaxColor: D5A56A
+	Template@1245:
+		Categories: Dune Rock LAT
+		Id: 1245
+		Images: dclat15.des, dclat15a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CA965E
+				MaxColor: CA965E
+	Template@1246:
+		Categories: Dune Rock LAT
+		Id: 1246
+		Images: dclat16.des, dclat16a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D3A76E
+				MaxColor: D3A76E
+	Template@1247:
+		Categories: Dune Rock LAT
+		Id: 1247
+		Images: dclat01.des, dclat01a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: C8894E
+				MaxColor: C8894E
+	Template@1248:
+		Categories: Dune Rock LAT
+		Id: 1248
+		Images: dclat02.des, dclat02a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CC9A62
+				MaxColor: CC9A62
+	Template@1249:
+		Categories: Dune Rock LAT
+		Id: 1249
+		Images: dclat03.des, dclat03a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: BE824C
+				MaxColor: BE824C
+	Template@1250:
+		Categories: Dune Rock LAT
+		Id: 1250
+		Images: dclat04.des, dclat04a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D09C61
+				MaxColor: D09C61
+	Template@1251:
+		Categories: Dune Rock LAT
+		Id: 1251
+		Images: dclat05.des, dclat05a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: C28851
+				MaxColor: C28851
+	Template@1252:
+		Categories: Dune Rock LAT
+		Id: 1252
+		Images: dclat06.des, dclat06a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CC9358
+				MaxColor: CC9358
+	Template@1253:
+		Categories: Dune Rock LAT
+		Id: 1253
+		Images: dclat07.des, dclat07a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D3A064
+				MaxColor: D3A064
+	Template@1254:
+		Categories: Dune Rock LAT
+		Id: 1254
+		Images: dclat08.des, dclat08a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: E2BA7A
+				MaxColor: E2BA7A
+	Template@1255:
+		Categories: Dune Rock LAT
+		Id: 1255
+		Images: dclat09.des, dclat09a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: C48249
+				MaxColor: C48249
+	Template@1256:
+		Categories: Dune Rock LAT
+		Id: 1256
+		Images: dclat10.des, dclat10a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CD955B
+				MaxColor: CD955B
+	Template@1257:
+		Categories: Dune Rock LAT
+		Id: 1257
+		Images: dclat11.des, dclat11a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D09A5E
+				MaxColor: D09A5E
+	Template@1258:
+		Categories: Dune Rock LAT
+		Id: 1258
+		Images: dclat12.des, dclat12a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D9B176
+				MaxColor: D9B176
+	Template@1259:
+		Categories: Dune Rock LAT
+		Id: 1259
+		Images: dclat13.des, dclat13a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D9AC6F
+				MaxColor: D9AC6F
+	Template@1260:
+		Categories: Dune Rock LAT
+		Id: 1260
+		Images: dclat14.des, dclat14a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D5A56A
+				MaxColor: D5A56A
+	Template@1261:
+		Categories: Dune Rock LAT
+		Id: 1261
+		Images: dclat15.des, dclat15a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: CA965E
+				MaxColor: CA965E
+	Template@1262:
+		Categories: Dune Rock LAT
+		Id: 1262
+		Images: dclat16.des, dclat16a.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D3A76E
+				MaxColor: D3A76E
+	Template@1309:
+		Categories: Dune Rock Debris
+		Id: 1309
+		Images: rdebris07.des
+		Size: 1, 1
+		Tiles:
+			0: Sand
+				MinColor: D8B478
+				MaxColor: D8B478
+	Template@1403:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1403
+		Images: srcliff01.des
+		Size: 3, 5
+		Tiles:
+			6: Sand
+				MinColor: D4A368
+				MaxColor: D4A368
+			7: Cliff
+				MinColor: B0703E
+				MaxColor: B0703E
+			10: Cliff
+				MinColor: BD9360
+				MaxColor: BD9360
+			11: Cliff
+				MinColor: A0754A
+				MaxColor: A0754A
+			14: Cliff
+				MinColor: DEBD80
+				MaxColor: DEBD80
+	Template@1404:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1404
+		Images: srcliff02.des
+		Size: 3, 5
+		Tiles:
+			6: Cliff
+				MinColor: BF753C
+				MaxColor: BF753C
+			7: Cliff
+				MinColor: 875230
+				MaxColor: 875230
+			10: Cliff
+				MinColor: 915D37
+				MaxColor: 915D37
+			11: Cliff
+				MinColor: 986E45
+				MaxColor: 986E45
+			14: Cliff
+				MinColor: DAB97F
+				MaxColor: DAB97F
+	Template@1405:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1405
+		Images: srcliff03.des
+		Size: 3, 5
+		Tiles:
+			6: Cliff
+				MinColor: C3793E
+				MaxColor: C3793E
+			7: Cliff
+				MinColor: 9C663B
+				MaxColor: 9C663B
+			10: Cliff
+				MinColor: 8A5935
+				MaxColor: 8A5935
+			11: Cliff
+				MinColor: 875C3A
+				MaxColor: 875C3A
+			14: Cliff
+				MinColor: BD9663
+				MaxColor: BD9663
+	Template@1406:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1406
+		Images: srcliff04.des
+		Size: 3, 5
+		Tiles:
+			6: Cliff
+				MinColor: C77B3F
+				MaxColor: C77B3F
+			7: Cliff
+				MinColor: 9A6237
+				MaxColor: 9A6237
+			10: Cliff
+				MinColor: 9E6136
+				MaxColor: 9E6136
+			11: Cliff
+				MinColor: 94663F
+				MaxColor: 94663F
+			14: Cliff
+				MinColor: D5B176
+				MaxColor: D5B176
+	Template@1407:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1407
+		Images: srcliff05.des
+		Size: 5, 4
+		Tiles:
+			5: Cliff
+				MinColor: C3793E
+				MaxColor: C3793E
+			6: Cliff
+				MinColor: B8703A
+				MaxColor: B8703A
+			7: Cliff
+				MinColor: C3793E
+				MaxColor: C3793E
+			8: Cliff
+				MinColor: 945B33
+				MaxColor: 945B33
+			11: Cliff
+				MinColor: 925E38
+				MaxColor: 925E38
+			12: Cliff
+				MinColor: 935B35
+				MaxColor: 935B35
+			13: Cliff
+				MinColor: 9A5D35
+				MaxColor: 9A5D35
+			14: Cliff
+				MinColor: 8D633D
+				MaxColor: 8D633D
+			17: Cliff
+				MinColor: BE905B
+				MaxColor: BE905B
+			18: Cliff
+				MinColor: A76E42
+				MaxColor: A76E42
+			19: Cliff
+				MinColor: C6A069
+				MaxColor: C6A069
+	Template@1408:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1408
+		Images: srcliff06.des
+		Size: 3, 5
+		Tiles:
+			0: Cliff
+				MinColor: BD753C
+				MaxColor: BD753C
+			1: Cliff
+				MinColor: 915832
+				MaxColor: 915832
+			3: Cliff
+				MinColor: 905A33
+				MaxColor: 905A33
+			4: Cliff
+				MinColor: 996038
+				MaxColor: 996038
+			5: Cliff
+				MinColor: 956B44
+				MaxColor: 956B44
+			6: Cliff
+				MinColor: 9A6135
+				MaxColor: 9A6135
+			7: Cliff
+				MinColor: 7C5637
+				MaxColor: 7C5637
+			8: Cliff
+				MinColor: BD9866
+				MaxColor: BD9866
+			10: Cliff
+				MinColor: 6F4A30
+				MaxColor: 6F4A30
+			11: Cliff
+				MinColor: 846443
+				MaxColor: 846443
+			14: Cliff
+				MinColor: BD9562
+				MaxColor: BD9562
+	Template@1409:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1409
+		Images: srcliff07.des
+		Size: 3, 5
+		Tiles:
+			6: Clear
+				MinColor: C3793E
+				MaxColor: C3793E
+			7: Sand
+				MinColor: BD8853
+				MaxColor: BD8853
+			10: Cliff
+				MinColor: 8C5531
+				MaxColor: 8C5531
+			11: Cliff
+				MinColor: BC9866
+				MaxColor: BC9866
+			14: Sand
+				MinColor: E2C386
+				MaxColor: E2C386
+	Template@1410:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1410
+		Images: srcliff08.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: B8723C
+				MaxColor: B8723C
+			2: Cliff
+				MinColor: BE753C
+				MaxColor: BE753C
+			4: Cliff
+				MinColor: C87B3E
+				MaxColor: C87B3E
+			5: Cliff
+				MinColor: 8B5835
+				MaxColor: 8B5835
+			6: Cliff
+				MinColor: 9D673C
+				MaxColor: 9D673C
+			7: Cliff
+				MinColor: C77C40
+				MaxColor: C77C40
+			9: Cliff
+				MinColor: 9C6036
+				MaxColor: 9C6036
+			10: Cliff
+				MinColor: A37247
+				MaxColor: A37247
+			11: Cliff
+				MinColor: BF8750
+				MaxColor: BF8750
+			14: Cliff
+				MinColor: DABA7E
+				MaxColor: DABA7E
+	Template@1411:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1411
+		Images: srcliff09.des
+		Size: 3, 3
+		Tiles:
+			1: Sand
+				MinColor: E0BA7C
+				MaxColor: E0BA7C
+			3: Sand
+				MinColor: E7C98B
+				MaxColor: E7C98B
+			4: Cliff
+				MinColor: CA975E
+				MaxColor: CA975E
+			5: Cliff
+				MinColor: BA773F
+				MaxColor: BA773F
+			7: Cliff
+				MinColor: E1BE81
+				MaxColor: E1BE81
+			8: Cliff
+				MinColor: C1864F
+				MaxColor: C1864F
+	Template@1412:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1412
+		Images: srcliff10.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: C77D40
+				MaxColor: C77D40
+			3: Cliff
+				MinColor: E4C587
+				MaxColor: E4C587
+			4: Cliff
+				MinColor: C09967
+				MaxColor: C09967
+			5: Cliff
+				MinColor: DFC184
+				MaxColor: DFC184
+			7: Cliff
+				MinColor: E3C385
+				MaxColor: E3C385
+			8: Cliff
+				MinColor: 9F6C41
+				MaxColor: 9F6C41
+	Template@1413:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1413
+		Images: srcliff11.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: C87D40
+				MaxColor: C87D40
+			3: Cliff
+				MinColor: E4C386
+				MaxColor: E4C386
+			4: Cliff
+				MinColor: C6884F
+				MaxColor: C6884F
+			5: Cliff
+				MinColor: D8B379
+				MaxColor: D8B379
+			7: Cliff
+				MinColor: D8B277
+				MaxColor: D8B277
+			8: Cliff
+				MinColor: C08047
+				MaxColor: C08047
+	Template@1414:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1414
+		Images: srcliff12.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: C77C3F
+				MaxColor: C77C3F
+			3: Cliff
+				MinColor: E2BF81
+				MaxColor: E2BF81
+			4: Cliff
+				MinColor: B37D4B
+				MaxColor: B37D4B
+			5: Cliff
+				MinColor: A66C3B
+				MaxColor: A66C3B
+			7: Cliff
+				MinColor: D8B176
+				MaxColor: D8B176
+			8: Cliff
+				MinColor: A47043
+				MaxColor: A47043
+	Template@1415:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1415
+		Images: srcliff13.des
+		Size: 2, 2
+		Tiles:
+			1: Cliff
+				MinColor: C2783D
+				MaxColor: C2783D
+			2: Cliff
+				MinColor: E6C486
+				MaxColor: E6C486
+			3: Cliff
+				MinColor: A16E42
+				MaxColor: A16E42
+	Template@1416:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1416
+		Images: srcliff14.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: C2763C
+				MaxColor: C2763C
+			2: Cliff
+				MinColor: BC743C
+				MaxColor: BC743C
+			4: Cliff
+				MinColor: E7C88A
+				MaxColor: E7C88A
+			5: Cliff
+				MinColor: A36F43
+				MaxColor: A36F43
+			6: Cliff
+				MinColor: A16337
+				MaxColor: A16337
+			7: Cliff
+				MinColor: C88B50
+				MaxColor: C88B50
+			9: Cliff
+				MinColor: DCB87C
+				MaxColor: DCB87C
+			10: Cliff
+				MinColor: B88D5D
+				MaxColor: B88D5D
+			11: Cliff
+				MinColor: C3905A
+				MaxColor: C3905A
+			14: Sand
+				MinColor: E7C889
+				MaxColor: E7C889
+	Template@1417:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1417
+		Images: srcliff15.des
+		Size: 3, 4
+		Tiles:
+			1: Clear
+				MinColor: C77B3E
+				MaxColor: C77B3E
+			3: Cliff
+				MinColor: E3C184
+				MaxColor: E3C184
+			4: Cliff
+				MinColor: BF8048
+				MaxColor: BF8048
+			5: Clear
+				MinColor: C57C41
+				MaxColor: C57C41
+			7: Cliff
+				MinColor: C1925C
+				MaxColor: C1925C
+			8: Cliff
+				MinColor: AD7240
+				MaxColor: AD7240
+			10: Cliff
+				MinColor: E2BF82
+				MaxColor: E2BF82
+			11: Cliff
+				MinColor: B37643
+				MaxColor: B37643
+	Template@1418:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1418
+		Images: srcliff16.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: C77F43
+				MaxColor: C77F43
+			3: Cliff
+				MinColor: E2BF83
+				MaxColor: E2BF83
+			4: Cliff
+				MinColor: C79159
+				MaxColor: C79159
+			5: Sand
+				MinColor: C67D41
+				MaxColor: C67D41
+			7: Cliff
+				MinColor: DEB97E
+				MaxColor: DEB97E
+			8: Cliff
+				MinColor: D0A66B
+				MaxColor: D0A66B
+	Template@1419:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1419
+		Images: srcliff17.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: C4793E
+				MaxColor: C4793E
+			3: Cliff
+				MinColor: E3C285
+				MaxColor: E3C285
+			4: Cliff
+				MinColor: A37044
+				MaxColor: A37044
+			5: Cliff
+				MinColor: C1783E
+				MaxColor: C1783E
+			7: Cliff
+				MinColor: 795B3D
+				MaxColor: 795B3D
+			8: Cliff
+				MinColor: A36A3B
+				MaxColor: A36A3B
+	Template@1420:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1420
+		Images: srcliff18.des
+		Size: 4, 3
+		Tiles:
+			0: Sand
+				MinColor: E8CA8B
+				MaxColor: E8CA8B
+			1: Cliff
+				MinColor: CAA773
+				MaxColor: CAA773
+			2: Cliff
+				MinColor: D5B479
+				MaxColor: D5B479
+			5: Cliff
+				MinColor: 886443
+				MaxColor: 886443
+			6: Cliff
+				MinColor: C2864D
+				MaxColor: C2864D
+			7: Sand
+				MinColor: E5C385
+				MaxColor: E5C385
+			10: Clear
+				MinColor: CC8142
+				MaxColor: CC8142
+	Template@1421:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1421
+		Images: srcliff19.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E8CA8A
+				MaxColor: E8CA8A
+			1: Cliff
+				MinColor: A28259
+				MaxColor: A28259
+			4: Cliff
+				MinColor: 75583C
+				MaxColor: 75583C
+			5: Cliff
+				MinColor: AB6B3A
+				MaxColor: AB6B3A
+			8: Clear
+				MinColor: C97F42
+				MaxColor: C97F42
+	Template@1422:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1422
+		Images: srcliff20.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E3C588
+				MaxColor: E3C588
+			1: Cliff
+				MinColor: AE9568
+				MaxColor: AE9568
+			4: Cliff
+				MinColor: 724C2E
+				MaxColor: 724C2E
+			5: Cliff
+				MinColor: B7723D
+				MaxColor: B7723D
+			8: Clear
+				MinColor: BD773F
+				MaxColor: BD773F
+	Template@1423:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1423
+		Images: srcliff21.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E8CA8A
+				MaxColor: E8CA8A
+			1: Cliff
+				MinColor: B89D6D
+				MaxColor: B89D6D
+			4: Cliff
+				MinColor: 9A683E
+				MaxColor: 9A683E
+			5: Cliff
+				MinColor: B36F3B
+				MaxColor: B36F3B
+			8: Clear
+				MinColor: C3783D
+				MaxColor: C3783D
+	Template@1424:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1424
+		Images: srcliff22.des
+		Size: 3, 4
+		Tiles:
+			0: Cliff
+				MinColor: DEC085
+				MaxColor: DEC085
+			1: Cliff
+				MinColor: AF976C
+				MaxColor: AF976C
+			3: Cliff
+				MinColor: BA905F
+				MaxColor: BA905F
+			4: Cliff
+				MinColor: 7D5A3C
+				MaxColor: 7D5A3C
+			5: Clear
+				MinColor: C47B40
+				MaxColor: C47B40
+			6: Cliff
+				MinColor: D7B177
+				MaxColor: D7B177
+			7: Cliff
+				MinColor: 815C3C
+				MaxColor: 815C3C
+			8: Clear
+				MinColor: BD773F
+				MaxColor: BD773F
+			10: Cliff
+				MinColor: 7E5C3D
+				MaxColor: 7E5C3D
+			11: Clear
+				MinColor: C77E42
+				MaxColor: C77E42
+	Template@1425:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1425
+		Images: srcliff23.des
+		Size: 4, 3
+		Tiles:
+			1: Sand
+				MinColor: E0C387
+				MaxColor: E0C387
+			5: Cliff
+				MinColor: 6D533A
+				MaxColor: 6D533A
+			6: Cliff
+				MinColor: 877050
+				MaxColor: 877050
+			10: Cliff
+				MinColor: A86535
+				MaxColor: A86535
+			11: Cliff
+				MinColor: C1793E
+				MaxColor: C1793E
+	Template@1426:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1426
+		Images: srcliff24.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: DABE83
+				MaxColor: DABE83
+			1: Cliff
+				MinColor: BAA373
+				MaxColor: BAA373
+			3: Cliff
+				MinColor: CEAD76
+				MaxColor: CEAD76
+			4: Cliff
+				MinColor: AC7C4D
+				MaxColor: AC7C4D
+			5: Cliff
+				MinColor: BB743D
+				MaxColor: BB743D
+			7: Sand
+				MinColor: E2BB7D
+				MaxColor: E2BB7D
+	Template@1427:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1427
+		Images: srcliff25.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: B59B6E
+				MaxColor: B59B6E
+			4: Cliff
+				MinColor: B5723D
+				MaxColor: B5723D
+			5: Cliff
+				MinColor: 6C482F
+				MaxColor: 6C482F
+			6: Cliff
+				MinColor: A18B63
+				MaxColor: A18B63
+			9: Clear
+				MinColor: BF763C
+				MaxColor: BF763C
+			10: Cliff
+				MinColor: 714E32
+				MaxColor: 714E32
+			11: Clear
+				MinColor: C47A3F
+				MaxColor: C47A3F
+			14: Clear
+				MinColor: C77C40
+				MaxColor: C77C40
+			15: Clear
+				MinColor: C7793D
+				MaxColor: C7793D
+	Template@1428:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1428
+		Images: srcliff26.des
+		Size: 3, 3
+		Tiles:
+			4: Cliff
+				MinColor: C6A671
+				MaxColor: C6A671
+			5: Cliff
+				MinColor: B79D6E
+				MaxColor: B79D6E
+			7: Sand
+				MinColor: C9945B
+				MaxColor: C9945B
+			8: Cliff
+				MinColor: 69482F
+				MaxColor: 69482F
+	Template@1429:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1429
+		Images: srcliff27.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B09669
+				MaxColor: B09669
+			3: Cliff
+				MinColor: B5703A
+				MaxColor: B5703A
+			4: Cliff
+				MinColor: 523929
+				MaxColor: 523929
+			5: Cliff
+				MinColor: C5A875
+				MaxColor: C5A875
+			7: Cliff
+				MinColor: 9E6437
+				MaxColor: 9E6437
+			8: Cliff
+				MinColor: 5E4732
+				MaxColor: 5E4732
+	Template@1430:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1430
+		Images: srcliff28.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B3996C
+				MaxColor: B3996C
+			3: Clear
+				MinColor: BA723B
+				MaxColor: BA723B
+			4: Cliff
+				MinColor: 5D3F2D
+				MaxColor: 5D3F2D
+			5: Cliff
+				MinColor: B09469
+				MaxColor: B09469
+			7: Cliff
+				MinColor: A56637
+				MaxColor: A56637
+			8: Cliff
+				MinColor: 513B2B
+				MaxColor: 513B2B
+	Template@1431:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1431
+		Images: srcliff29.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B2986B
+				MaxColor: B2986B
+			3: Cliff
+				MinColor: B26D39
+				MaxColor: B26D39
+			4: Cliff
+				MinColor: 4D3729
+				MaxColor: 4D3729
+			5: Cliff
+				MinColor: A89267
+				MaxColor: A89267
+			7: Cliff
+				MinColor: B8733C
+				MaxColor: B8733C
+			8: Cliff
+				MinColor: 5C3C28
+				MaxColor: 5C3C28
+	Template@1432:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1432
+		Images: srcliff30.des
+		Size: 4, 3
+		Tiles:
+			1: Cliff
+				MinColor: 907957
+				MaxColor: 907957
+			2: Sand
+				MinColor: DDBE83
+				MaxColor: DDBE83
+			4: Cliff
+				MinColor: BB743D
+				MaxColor: BB743D
+			5: Cliff
+				MinColor: 553826
+				MaxColor: 553826
+			6: Cliff
+				MinColor: 725A41
+				MaxColor: 725A41
+			7: Cliff
+				MinColor: C4AA76
+				MaxColor: C4AA76
+			9: Clear
+				MinColor: C0783E
+				MaxColor: C0783E
+			10: Cliff
+				MinColor: 8C5732
+				MaxColor: 8C5732
+			11: Cliff
+				MinColor: 5B3D2A
+				MaxColor: 5B3D2A
+	Template@1433:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1433
+		Images: srcliff31.des
+		Size: 3, 4
+		Tiles:
+			1: Cliff
+				MinColor: B99E6E
+				MaxColor: B99E6E
+			3: Cliff
+				MinColor: A66737
+				MaxColor: A66737
+			4: Cliff
+				MinColor: 422C22
+				MaxColor: 422C22
+			5: Cliff
+				MinColor: BEA270
+				MaxColor: BEA270
+			6: Cliff
+				MinColor: B6703A
+				MaxColor: B6703A
+			7: Cliff
+				MinColor: 5D3B26
+				MaxColor: 5D3B26
+			8: Cliff
+				MinColor: 725A40
+				MaxColor: 725A40
+			10: Cliff
+				MinColor: A26537
+				MaxColor: A26537
+			11: Cliff
+				MinColor: 553827
+				MaxColor: 553827
+	Template@1434:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1434
+		Images: srcliff32.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B89D6F
+				MaxColor: B89D6F
+			3: Clear
+				MinColor: C0783E
+				MaxColor: C0783E
+			4: Cliff
+				MinColor: 856747
+				MaxColor: 856747
+			5: Clear
+				MinColor: E0C184
+				MaxColor: E0C184
+			7: Cliff
+				MinColor: C48F57
+				MaxColor: C48F57
+			8: Cliff
+				MinColor: CEA970
+				MaxColor: CEA970
+	Template@1435:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1435
+		Images: srcliff33.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: 804F2F
+				MaxColor: 804F2F
+			4: Clear
+				MinColor: C57D41
+				MaxColor: C57D41
+			5: Cliff
+				MinColor: 72462B
+				MaxColor: 72462B
+			6: Cliff
+				MinColor: 895F3B
+				MaxColor: 895F3B
+			9: Cliff
+				MinColor: A56839
+				MaxColor: A56839
+			10: Cliff
+				MinColor: 5D3E2A
+				MaxColor: 5D3E2A
+			11: Cliff
+				MinColor: B0976B
+				MaxColor: B0976B
+			14: Cliff
+				MinColor: A76A3A
+				MaxColor: A76A3A
+			15: Cliff
+				MinColor: 463227
+				MaxColor: 463227
+	Template@1436:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1436
+		Images: srcliff34.des
+		Size: 3, 4
+		Tiles:
+			0: Cliff
+				MinColor: D3B880
+				MaxColor: D3B880
+			3: Cliff
+				MinColor: BA9A6B
+				MaxColor: BA9A6B
+			4: Cliff
+				MinColor: B97943
+				MaxColor: B97943
+			6: Sand
+				MinColor: E1C386
+				MaxColor: E1C386
+			7: Cliff
+				MinColor: AA7A4A
+				MaxColor: AA7A4A
+			10: Cliff
+				MinColor: E2BD80
+				MaxColor: E2BD80
+			11: Cliff
+				MinColor: BE8048
+				MaxColor: BE8048
+	Template@1437:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1437
+		Images: srcliff35.des
+		Size: 3, 3
+		Tiles:
+			0: Cliff
+				MinColor: C68E55
+				MaxColor: C68E55
+			1: Cliff
+				MinColor: 8E5D37
+				MaxColor: 8E5D37
+			3: Cliff
+				MinColor: E1BF82
+				MaxColor: E1BF82
+			4: Cliff
+				MinColor: 8D5E39
+				MaxColor: 8D5E39
+			5: Cliff
+				MinColor: A37246
+				MaxColor: A37246
+			7: Cliff
+				MinColor: D9B378
+				MaxColor: D9B378
+			8: Cliff
+				MinColor: DAB67B
+				MaxColor: DAB67B
+	Template@1438:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1438
+		Images: srcliff36.des
+		Size: 3, 4
+		Tiles:
+			1: Cliff
+				MinColor: AE9468
+				MaxColor: AE9468
+			3: Cliff
+				MinColor: BF7A41
+				MaxColor: BF7A41
+			4: Cliff
+				MinColor: 57402D
+				MaxColor: 57402D
+			5: Cliff
+				MinColor: C6AC79
+				MaxColor: C6AC79
+			7: Cliff
+				MinColor: 7E5233
+				MaxColor: 7E5233
+			8: Cliff
+				MinColor: A58459
+				MaxColor: A58459
+			11: Cliff
+				MinColor: DDBA7E
+				MaxColor: DDBA7E
+	Template@1439:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1439
+		Images: srcliff37.des
+		Size: 4, 3
+		Tiles:
+			0: Sand
+				MinColor: E4C588
+				MaxColor: E4C588
+			1: Cliff
+				MinColor: B69669
+				MaxColor: B69669
+			2: Cliff
+				MinColor: D4B981
+				MaxColor: D4B981
+			5: Cliff
+				MinColor: 8F6641
+				MaxColor: 8F6641
+			6: Cliff
+				MinColor: 6B4C33
+				MaxColor: 6B4C33
+			7: Cliff
+				MinColor: B79E6F
+				MaxColor: B79E6F
+			10: Clear
+				MinColor: C17A40
+				MaxColor: C17A40
+			11: Cliff
+				MinColor: 483428
+				MaxColor: 483428
+	Template@1440:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1440
+		Images: srcliff38.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: 986339
+				MaxColor: 986339
+			4: Cliff
+				MinColor: E2C082
+				MaxColor: E2C082
+			5: Cliff
+				MinColor: 89603E
+				MaxColor: 89603E
+			6: Cliff
+				MinColor: 865735
+				MaxColor: 865735
+			9: Cliff
+				MinColor: 745639
+				MaxColor: 745639
+			10: Cliff
+				MinColor: 765235
+				MaxColor: 765235
+			11: Cliff
+				MinColor: A78D63
+				MaxColor: A78D63
+			14: Clear
+				MinColor: C68144
+				MaxColor: C68144
+			15: Cliff
+				MinColor: 583C2A
+				MaxColor: 583C2A
+	Template@1441:
+		Categories: Dune Clear-Rock Cliff Set
+		Id: 1441
+		Images: srcliff39.des
+		Size: 4, 4
+		Tiles:
+			1: Cliff
+				MinColor: A28961
+				MaxColor: A28961
+			4: Cliff
+				MinColor: C27B40
+				MaxColor: C27B40
+			5: Cliff
+				MinColor: 724C30
+				MaxColor: 724C30
+			6: Cliff
+				MinColor: 877151
+				MaxColor: 877151
+			9: Cliff
+				MinColor: 885735
+				MaxColor: 885735
+			10: Cliff
+				MinColor: 99673C
+				MaxColor: 99673C
+			11: Cliff
+				MinColor: B0723E
+				MaxColor: B0723E
+			14: Cliff
+				MinColor: CDA66E
+				MaxColor: CDA66E
+			15: Cliff
+				MinColor: C68448
+				MaxColor: C68448
+	Template@1442:
+		Categories: Dune Extra Cliffs
+		Id: 1442
+		Images: excliff01.des
+		Size: 3, 5
+		Tiles:
+			6: Clear
+				MinColor: C57B3F
+				MaxColor: C57B3F
+			7: Cliff
+				MinColor: AB7140
+				MaxColor: AB7140
+			10: Cliff
+				MinColor: 7A5538
+				MaxColor: 7A5538
+			11: Cliff
+				MinColor: 976B47
+				MaxColor: 976B47
+			14: Cliff
+				MinColor: A3865E
+				MaxColor: A3865E
+	Template@1443:
+		Categories: Dune Extra Cliffs
+		Id: 1443
+		Images: excliff02.des
+		Size: 3, 5
+		Tiles:
+			6: Sand
+				MinColor: C58D55
+				MaxColor: C58D55
+			7: Cliff
+				MinColor: 865432
+				MaxColor: 865432
+			10: Cliff
+				MinColor: 915D37
+				MaxColor: 915D37
+			11: Cliff
+				MinColor: 966B43
+				MaxColor: 966B43
+			14: Cliff
+				MinColor: DAB97E
+				MaxColor: DAB97E
+	Template@1444:
+		Categories: Dune Extra Cliffs
+		Id: 1444
+		Images: excliff03.des
+		Size: 3, 5
+		Tiles:
+			6: Sand
+				MinColor: C68D55
+				MaxColor: C68D55
+			7: Cliff
+				MinColor: 865230
+				MaxColor: 865230
+			10: Cliff
+				MinColor: 915D36
+				MaxColor: 915D36
+			11: Cliff
+				MinColor: 956A43
+				MaxColor: 956A43
+			14: Cliff
+				MinColor: D5B57B
+				MaxColor: D5B57B
+	Template@1445:
+		Categories: Dune Extra Cliffs
+		Id: 1445
+		Images: excliff04.des
+		Size: 3, 3
+		Tiles:
+			1: Clear
+				MinColor: C87D40
+				MaxColor: C87D40
+			3: Cliff
+				MinColor: E4C386
+				MaxColor: E4C386
+			4: Cliff
+				MinColor: CB985E
+				MaxColor: CB985E
+			5: Sand
+				MinColor: C9965D
+				MaxColor: C9965D
+			7: Cliff
+				MinColor: D8B378
+				MaxColor: D8B378
+			8: Cliff
+				MinColor: CB9C63
+				MaxColor: CB9C63
+	Template@1446:
+		Categories: Dune Extra Cliffs
+		Id: 1446
+		Images: excliff05.des
+		Size: 3, 3
+		Tiles:
+			1: Sand
+				MinColor: E2C182
+				MaxColor: E2C182
+			3: Cliff
+				MinColor: E5C486
+				MaxColor: E5C486
+			4: Cliff
+				MinColor: CF9F66
+				MaxColor: CF9F66
+			5: Sand
+				MinColor: BE844F
+				MaxColor: BE844F
+			7: Cliff
+				MinColor: D8B278
+				MaxColor: D8B278
+			8: Cliff
+				MinColor: C48D54
+				MaxColor: C48D54
+	Template@1447:
+		Categories: Dune Extra Cliffs
+		Id: 1447
+		Images: excliff06.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E8CA8A
+				MaxColor: E8CA8A
+			1: Cliff
+				MinColor: A2835A
+				MaxColor: A2835A
+			4: Cliff
+				MinColor: 7B5E40
+				MaxColor: 7B5E40
+			5: Cliff
+				MinColor: BB9260
+				MaxColor: BB9260
+			8: Sand
+				MinColor: D7A86C
+				MaxColor: D7A86C
+	Template@1448:
+		Categories: Dune Extra Cliffs
+		Id: 1448
+		Images: excliff07.des
+		Size: 3, 3
+		Tiles:
+			0: Sand
+				MinColor: E8CA8A
+				MaxColor: E8CA8A
+			1: Cliff
+				MinColor: A28259
+				MaxColor: A28259
+			4: Cliff
+				MinColor: 775B41
+				MaxColor: 775B41
+			5: Cliff
+				MinColor: A87446
+				MaxColor: A87446
+			8: Cliff
+				MinColor: DDB77A
+				MaxColor: DDB77A
+	Template@1449:
+		Categories: Dune Extra Cliffs
+		Id: 1449
+		Images: excliff08.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B2986C
+				MaxColor: B2986C
+			3: Sand
+				MinColor: CA965D
+				MaxColor: CA965D
+			4: Cliff
+				MinColor: 5E4432
+				MaxColor: 5E4432
+			5: Cliff
+				MinColor: C5A976
+				MaxColor: C5A976
+			7: Cliff
+				MinColor: B09062
+				MaxColor: B09062
+			8: Cliff
+				MinColor: 4D3A2C
+				MaxColor: 4D3A2C
+	Template@1450:
+		Categories: Dune Extra Cliffs
+		Id: 1450
+		Images: excliff09.des
+		Size: 3, 3
+		Tiles:
+			1: Cliff
+				MinColor: B3996C
+				MaxColor: B3996C
+			3: Sand
+				MinColor: C99158
+				MaxColor: C99158
+			4: Cliff
+				MinColor: 5D3F2D
+				MaxColor: 5D3F2D
+			5: Cliff
+				MinColor: B09469
+				MaxColor: B09469
+			7: Cliff
+				MinColor: A56637
+				MaxColor: A56637
+			8: Cliff
+				MinColor: 513B2B
+				MaxColor: 513B2B
+	Template@1541:
+		Categories: Dune Sand (AutoLAT)
+		Id: 1541
+		Images: dsandy01.des, dsandy01a.des, dsandy01b.des, dsandy01c.des, dsandy01d.des, dsandy01e.des, dsandy01f.des, dsandy01g.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E6CA8C
+				MaxColor: E6CA8C
+	Template@1542:
+		Categories: Dune Sand LAT
+		Id: 1542
+		Images: ddlat01.des, ddlat01a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7CA8B
+				MaxColor: E7CA8B
+	Template@1543:
+		Categories: Dune Sand LAT
+		Id: 1543
+		Images: ddlat02.des, ddlat02a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7C98C
+				MaxColor: E7C98C
+	Template@1544:
+		Categories: Dune Sand LAT
+		Id: 1544
+		Images: ddlat03.des, ddlat03a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7C98C
+				MaxColor: E7C98C
+	Template@1545:
+		Categories: Dune Sand LAT
+		Id: 1545
+		Images: ddlat04.des, ddlat04a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7CA8E
+				MaxColor: E7CA8E
+	Template@1546:
+		Categories: Dune Sand LAT
+		Id: 1546
+		Images: ddlat05.des, ddlat05a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E6C98B
+				MaxColor: E6C98B
+	Template@1547:
+		Categories: Dune Sand LAT
+		Id: 1547
+		Images: ddlat06.des, ddlat06a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E6C98E
+				MaxColor: E6C98E
+	Template@1548:
+		Categories: Dune Sand LAT
+		Id: 1548
+		Images: ddlat07.des, ddlat07a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7C98B
+				MaxColor: E7C98B
+	Template@1549:
+		Categories: Dune Sand LAT
+		Id: 1549
+		Images: ddlat08.des, ddlat08a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7C98C
+				MaxColor: E7C98C
+	Template@1550:
+		Categories: Dune Sand LAT
+		Id: 1550
+		Images: ddlat09.des, ddlat09a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7CA8C
+				MaxColor: E7CA8C
+	Template@1551:
+		Categories: Dune Sand LAT
+		Id: 1551
+		Images: ddlat10.des, ddlat10a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7C98C
+				MaxColor: E7C98C
+	Template@1552:
+		Categories: Dune Sand LAT
+		Id: 1552
+		Images: ddlat11.des, ddlat11a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7C98B
+				MaxColor: E7C98B
+	Template@1553:
+		Categories: Dune Sand LAT
+		Id: 1553
+		Images: ddlat12.des, ddlat12a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7C98B
+				MaxColor: E7C98B
+	Template@1554:
+		Categories: Dune Sand LAT
+		Id: 1554
+		Images: ddlat13.des, ddlat13a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E6C88C
+				MaxColor: E6C88C
+	Template@1555:
+		Categories: Dune Sand LAT
+		Id: 1555
+		Images: ddlat14.des, ddlat14a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E8CA8E
+				MaxColor: E8CA8E
+	Template@1556:
+		Categories: Dune Sand LAT
+		Id: 1556
+		Images: ddlat15.des, ddlat15a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E7C98C
+				MaxColor: E7C98C
+	Template@1557:
+		Categories: Dune Sand LAT
+		Id: 1557
+		Images: ddlat16.des, ddlat16a.des
+		Size: 1, 1
+		Tiles:
+			0: Dune
+				MinColor: E6C88C
+				MaxColor: E6C88C
+	Template@2500:
+		Categories: Concrete
+		Id: 2500
+		PickAny: True
+		Images: d2kconc01.des, d2kconc01a.des, d2kconc01b.des
+		Size: 1, 1
+		Tiles:
+			0: Road
+				MinColor: CE8C42
+				MaxColor: CE8C42

@@ -1,0 +1,28 @@
+concrete:
+	AlwaysVisible:
+	Interactable:
+	D2kBuilding:
+		TerrainTypes: Clear, Rough
+		ConcreteTemplate: 2500
+		BuildSounds: uplace.wav
+		AllowInvalidPlacement: true
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	FootprintPlaceBuildingPreview:
+		Palette: placefootprint
+	RequiresBuildableArea:
+		AreaTypes: building
+		Adjacent: 4
+	Tooltip:
+		Name: Concrete Slab
+		GenericName: Structure
+	Valued:
+		Cost: 50
+	RenderSprites:
+	KillsSelf:
+		RemoveInstead: true
+	Buildable:
+		Queue: Support.Allies, Support.France, Support.Soviets, Support.Baku, Support.Yuri, Support.Antarctica
+		BuildPaletteOrder: 990
+		Description: Our buildings are strong enough for Arrakis' terrain, but concrete still looks good.
+		Prerequisites: ~on_dune

@@ -195,6 +195,12 @@ Player:
 	ProvidesPrerequisite@aiplayer:
 		Prerequisite: prerequisite.aiplayer
 		RequiresCondition: enable-generic-ai
+	GrantConditionOnTileSet:
+		TileSets: DUNE
+		Condition: dune
+	ProvidesPrerequisite@dune:
+		Prerequisite: on_dune
+		RequiresCondition: dune
 	VeteranProductionIconOverlay:
 		Image: cameo-chevron
 		Sequence: idle

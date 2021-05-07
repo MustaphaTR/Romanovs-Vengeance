@@ -70,6 +70,7 @@ Packages:
 	~urban.mix
 	~audio.bag
 	rv|bits
+	rv|bits/arrakis.mix
 	rv|bits/terrain-expansion.mix
 	rv|bits/audio
 	rv|bits/audio/buildingselection
@@ -115,6 +116,7 @@ Rules:
 	rv|rules/allied-naval.yaml
 	rv|rules/soviet-naval.yaml
 	rv|rules/yuri-naval.yaml
+	rv|rules/arrakis.yaml
 	rv|rules/aircraft.yaml
 	rv|rules/civilian-props.yaml
 	rv|rules/trees.yaml
@@ -139,6 +141,7 @@ Sequences:
 	rv|sequences/soviet-structures.yaml
 	rv|sequences/tech-structures.yaml
 	rv|sequences/trees.yaml
+	rv|sequences/arrakis.yaml
 	rv|sequences/vehicles.yaml
 	rv|sequences/yuri-infantry.yaml
 	rv|sequences/yuri-structures.yaml
@@ -156,6 +159,7 @@ Chrome:
 Assemblies:
 	^BinDir|OpenRA.Mods.Common.dll
 	^BinDir|OpenRA.Mods.Cnc.dll
+	^BinDir|OpenRA.Mods.D2k.dll
 	^BinDir|OpenRA.Mods.RA2.dll
 	^BinDir|OpenRA.Mods.AS.dll
 
@@ -240,6 +244,7 @@ TileSets:
 	rv|tilesets/newurban.yaml
 	rv|tilesets/desert.yaml
 	rv|tilesets/lunar.yaml
+	rv|tilesets/arrakis.yaml
 	rv|tilesets/simpleterrain.yaml
 
 Missions:
@@ -339,6 +344,7 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		NEWURBAN: .ubn
 		DESERT: .des
 		LUNAR: .lun
+		DUNE: .des
 		SIMPLETERRAIN: .tem
 	TilesetCodes:
 		GENERIC: g
@@ -348,6 +354,7 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 		NEWURBAN: n
 		DESERT: d
 		LUNAR: l
+		DUNE: d
 		SIMPLETERRAIN: t
 
 ModelSequenceFormat: VoxelModelSequence

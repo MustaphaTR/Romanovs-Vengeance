@@ -5488,8 +5488,19 @@ calunr01:
 	Inherits@shape: ^2x2Shape
 	Tooltip:
 		Name: Lunar Lander
+		RequiresCondition: showownername && !dune
 	Tooltip@NoRow:
 		Name: Lunar Lander
+		RequiresCondition: !showownername && !dune
+	Tooltip@Dune:
+		Name: Dunar Lander
+		GenericName: Structure
+		RequiresCondition: showownername && dune
+	Tooltip@DuneNoRow:
+		Name: Dunar Lander
+		GenericName: Structure
+		ShowOwnerRow: false
+		RequiresCondition: !showownername && dune
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -5499,6 +5510,9 @@ calunr01:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+	GrantConditionOnTileSet:
+		TileSets: DUNE
+		Condition: dune
 	IsometricSelectable:
 		DecorationHeight: 45
 
