@@ -1,30 +1,27 @@
 caoild:
 	Defaults:
+		Offset: 0, -30
 		UseTilesetCode: true
 	idle:
 		ShadowStart: 4
-		Offset: 0, -30
 	damaged-idle:
 		Start: 1
 		ShadowStart: 5
-		Offset: 0, -30
 	idle-pump: caoild_a
 		Length: 32
 		ShadowStart: 64
-		Offset: 0, -30
 	damaged-idle-pump: caoild_a
 		Start: 32
 		Length: 32
 		ShadowStart: 96
-		Offset: 0, -30
 	flag: caoild_f
 		Length: 16
 		Offset: 0, -9
 
 caairp:
 	Defaults:
-		UseTilesetCode: true
 		Offset: 7, -45
+		UseTilesetCode: true
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -43,26 +40,55 @@ caairp:
 
 cahosp:
 	Defaults:
+		Offset: -30, -75
 		UseTilesetCode: true
 	idle:
 		ShadowStart: 4
-		Offset: -30, -75
 	damaged-idle:
 		Start: 1
 		ShadowStart: 5
-		Offset: -30, -75
 	idle-overlay: cahosp_a
 		Length: 2
-		Offset: -30, -75
 		Tick: 400
 	damaged-idle-overlay: cahosp_a
 		Start: 2
 		Length: 2
-		Offset: -30, -75
 		Tick: 400
 	flag: cahosp_f
-		Offset: -9, -23
 		Length: 16
+		Offset: -9, -23
+
+cashosp:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0, -45
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+			DUNE: GENERIC
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	idle-overlay: cashosp_a
+		Length: 2
+		Tick: 400
+		TilesetOverrides:
+			SNOW: GENERIC
+	flag: cahosp_f
+		Length: 16
+		Offset: -48, -16
+		TilesetOverrides:
+			TEMPERATE: TEMPERATE
+			URBAN: URBAN
+			NEWURBAN: NEWURBAN
+			DESERT: DESERT
+			LUNAR: LUNAR
+			DUNE: DUNE
 
 caoutp:
 	Defaults:
