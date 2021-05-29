@@ -1062,6 +1062,82 @@ deva:
 		Volume: 0.5
 		RequiresCondition: moving
 
+qyzyl:
+	Inherits: ^Vehicle
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Valued:
+		Cost: 2200
+	DeliversCash:
+		Payload: 1100
+		PlayerExperience: 110
+		Voice: Move
+	Tooltip:
+		Name: Qızıl Ulduz Defense Platform
+	Tooltip@NoRow:
+		Name: Qızıl Ulduz Defense Platform
+	Buildable:
+		Queue: Vehicle.Baku
+		BuildPaletteOrder: 990
+		Prerequisites: natech, ~caslab, ~techlevel.4
+		Description: Heavy armored vehicle capable of making other nearby vehicles invulnerable.\n\nDamages nearby enemy infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		BuildDuration: 1125
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 90
+		TurnSpeed: 32
+		Locomotor: omnicrusher
+	-Crushable:
+	ChangesHealth:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		StartIfBelow: 100
+	Health:
+		HP: 60000
+	Armor:
+		Type: Heavy
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	RenderSprites:
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
+	RenderVoxels:
+		Scale: 10
+	WithVoxelBody:
+	PeriodicExplosion:
+		Weapon: RedStarCurtain
+		RequiresCondition: !chronodisable
+	WithRangeCircle:
+		Range: 4c0
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal
+	SoundAnnouncement:
+		SoundFiles: vapostaa.wav, vapostab.wav, vapostac.wav
+		Volume: 0.5
+		RequiresCondition: moving
+
 exps:
 	Inherits: ^ExpansionVehicle
 	Buildable:

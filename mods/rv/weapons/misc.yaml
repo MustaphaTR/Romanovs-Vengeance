@@ -264,6 +264,25 @@ AmbulanceHeal:
 		ValidRelationships: Neutral, Ally
 		ValidTargets: Heal
 
+RedStarCurtain:
+	ReloadDelay: 4
+	ValidTargets: Infantry, IronCurtainable
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Spread: 4c0
+		Falloff: 100, 0
+		Damage: 10000
+		ValidRelationships: Enemy, Neutral
+		ValidTargets: Infantry
+		DamageTypes: FlameDeath, NonTemporal
+	Warhead@Condition: GrantExternalCondition
+		Condition: invulnerability
+		Range: 4c0
+		Duration: 20
+		ValidRelationships: Ally
+		ValidTargets: IronCurtainable
+		InvalidTargets: Infantry, Air, Structure, Barrel, Mine
+
 MindControl:
 	ReloadDelay: 200
 	Range: 7c0
