@@ -1431,12 +1431,22 @@
 		Name: Flag
 	Tooltip@NoRow:
 		Name: Flag
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	Health:
 		HP: 2000
 	Armor:
 		Type: Steel
 	RevealsShroud:
 		Range: 6c0
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Palette: player
@@ -1445,6 +1455,9 @@
 		Sequence: flag-shadow
 		Palette: shadow
 		IsPlayerPalette: false
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	SoundOnDamageTransition:
 		DamagedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
 		DestroyedSounds: bmetdama.wav, bmetdamb.wav, bmetdamc.wav
