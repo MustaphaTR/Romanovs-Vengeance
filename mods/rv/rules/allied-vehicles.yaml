@@ -10,44 +10,18 @@ amcv:
 		VoiceSet: AlliedConstructionVehicleVoice
 
 cmin:
-	Inherits: ^Vehicle
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
-	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits: ^Miner
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
-		BuildPaletteOrder: 10
-		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
-		Description: Gathers Ore and Gems.\n  Unarmed.\n  Immune to Radiation.\nSpecial ability: Can teleport to own refineries
-		BuildDuration: 625
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 1400
-	DeliversCash:
-		Payload: 700
-		PlayerExperience: 70
-		Voice: Move
+		Description: Gathers Ore and Gems.\n  Unarmed.\nSpecial ability: Can teleport to own refineries
 	Tooltip:
 		Name: Chrono Miner
 	Tooltip@NoRow:
 		Name: Chrono Miner
-	Selectable:
-		Priority: 7
-		Bounds: 1544, 2509, 0, -289
 	Harvester:
-		DeliveryBuildings: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd
 		Capacity: 20
-		Resources: Ore, Gems
-		BaleLoadDelay: 12
 		BaleUnloadDelay: 2
-		HarvestVoice: Harvest
 		DeliverVoice: Deliver
-		EmptyCondition: no-ore
-	Explodes:
-		RequiresCondition: no-ore
-	Explodes@Ore:
-		DeathTypes: NonTemporal
-		Weapon: MinerExplode
-		RequiresCondition: !no-ore
 	ChronoResourceDelivery:
 		WarpInSequence: warpout
 		WarpInSound: vchrtele.wav
@@ -55,55 +29,10 @@ cmin:
 		SoundVolume: 0.5
 		AudibleThroughFog: false
 		RequiresCondition: !chronodisable && !emp && !beingterrordroned
-	Health:
-		HP: 100000
-	Armor:
-		Type: Medium
-	ChangesHealth:
-		PercentageStep: 1
-		Step: 0
-		Delay: 100
-		DamageCooldown: 100
-		StartIfBelow: 100
-	Mobile:
-		Speed: 60
-		TurnSpeed: 32
-		Locomotor: heavytracked
 	Guard:
 		Voice: Move
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	RevealOnDeath:
-		Radius: 3c0
-	WithHarvestOverlay:
-		LocalOffset: 121,0,0
-		Palette: effect
-	RenderSprites: # TODO: WithHarvestOverlay relies on this, but it should actually be removed
-	RenderVoxels:
-	WithVoxelUnloadBody:
 	Voiced:
 		VoiceSet: ChronoMinerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
-	HitShape:
-	GpsDotAS:
-		Sequence: Harvester
-	WithHarvesterPipsDecoration:
-		Margin: 4, 3
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-		PipCount: 7
-		ResourceSequences:
-			Ore: pip-yellow
-			Gems: pip-blue
 
 mtnk:
 	Inherits: ^MainBattleTank

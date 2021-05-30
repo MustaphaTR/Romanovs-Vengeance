@@ -1,3 +1,88 @@
+^Miner:
+	Inherits: ^Vehicle
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 10
+		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
+		Description: Gathers Ore and Gems.\n  Unarmed.
+		BuildDuration: 625
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 1400
+	DeliversCash:
+		Payload: 700
+		PlayerExperience: 70
+		Voice: Move
+	Tooltip:
+		Name: Ore Miner
+	Tooltip@NoRow:
+		Name: Ore Miner
+	Selectable:
+		Priority: 7
+		Bounds: 1544, 2509, 0, -289
+	Harvester:
+		DeliveryBuildings: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd
+		Capacity: 40
+		Resources: Ore, Gems
+		BaleLoadDelay: 12
+		BaleUnloadDelay: 1
+		HarvestVoice: Harvest
+		DeliverVoice: Move
+		EmptyCondition: no-ore
+	Explodes:
+		RequiresCondition: no-ore
+	Explodes@Ore:
+		DeathTypes: NonTemporal
+		Weapon: MinerExplode
+		RequiresCondition: !no-ore
+	Health:
+		HP: 100000
+	Armor:
+		Type: Medium
+	ChangesHealth:
+		PercentageStep: 1
+		Step: 0
+		Delay: 100
+		DamageCooldown: 100
+		StartIfBelow: 100
+	Mobile:
+		Speed: 60
+		TurnSpeed: 32
+		Locomotor: heavytracked
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	WithHarvestOverlay:
+		LocalOffset: 121,0,0
+		Palette: effect
+	RenderSprites:
+	RenderVoxels:
+	WithVoxelUnloadBody:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	GpsDotAS:
+		Sequence: Harvester
+	WithHarvesterPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		PipCount: 7
+		ResourceSequences:
+			Ore: pip-yellow
+			Gems: pip-blue
+
 ^ConstructionVehicle:
 	Inherits: ^Vehicle
 	Inherits@AI: ^AIMicroManagable
