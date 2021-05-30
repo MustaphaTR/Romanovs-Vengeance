@@ -902,26 +902,19 @@ naheli:
 		Volume: 0.8
 
 nanrct:
-	Inherits: ^BaseBuilding
-	Inherits@DRAIN: ^DiskDrainable
-	Inherits@MC: ^MindControllableBuilding
-	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits: ^PowerPlant
 	Inherits@shape: ^4x4Shape
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 110
 		Prerequisites: natech, ~techlevel.3
-		Description: Provides power for other structures.
 		BuildDuration: 1000
-		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
 		Name: Nuclear Reactor
 	Tooltip@NoRow:
 		Name: Nuclear Reactor
-	ProvidesPrerequisite:
-		Prerequisite: power
 	Building:
 		Footprint: xxxx xxxx xxxx _xx_
 		Dimensions: 4,4
@@ -929,11 +922,6 @@ nanrct:
 		HP: 100000
 	Armor:
 		Type: Concrete
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -944,18 +932,6 @@ nanrct:
 		EmptyWeapon: NukePayload
 	Power:
 		Amount: 1000
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
-	GrantCondition@IDISABLE:
-		RequiresCondition: power-outage || diskdrain
-	GrantConditionOnPrerequisite@forceshield:
-		Condition: forceshieldnopower
-		Prerequisites: forceshield
-	ScalePowerWithHealth:
-	SoundOnDamageTransition:
-		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
-	PowerTooltip:
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	IsometricSelectable:
 		DecorationHeight: 60
 	Voiced:
