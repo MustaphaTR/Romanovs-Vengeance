@@ -882,49 +882,20 @@ yadisk:
 		Volume: 0.8
 
 yatech:
-	Inherits: ^BaseBuilding
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^BattleLab
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Yuri
-		BuildPaletteOrder: 90
 		Prerequisites: yadome, ~techlevel.3
-		Description: Allows deployment of advanced units.\nCan be rotated.
-		BuildDuration: 1000
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 2000
-	Tooltip:
-		Name: Battle Lab
-	Tooltip@NoRow:
-		Name: Battle Lab
 	ProvidesPrerequisite@yatech:
 		Prerequisite: yatech
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Health:
-		HP: 75000
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
 	WithIdleOverlay@lift:
 		Sequence: idle-lift
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	Power:
-		Amount: -100
-	InfiltrateForSupportPower:
-		Types: SpyInfiltrate
-		Proxy: yuri.tech.infiltrated
-		InfiltratedNotification: TechnologyStolen
-		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	PlaceBuildingVariants:
 		Actors: yatecb
 	IsometricSelectable:

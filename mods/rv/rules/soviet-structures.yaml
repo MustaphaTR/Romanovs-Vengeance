@@ -963,44 +963,16 @@ nanrct:
 		Volume: 0.8
 
 natech:
-	Inherits: ^BaseBuilding
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^BattleLab
 	Inherits@shape: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 90
 		Prerequisites: naradr, ~techlevel.3
 		Description: Allows deployment of advanced units.
-		BuildDuration: 1000
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 2000
-	Tooltip:
-		Name: Battle Lab
-	Tooltip@NoRow:
-		Name: Battle Lab
 	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
-	Health:
-		HP: 75000
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	Power:
-		Amount: -100
-	InfiltrateForSupportPower:
-		Types: SpyInfiltrate
-		Proxy: soviets.tech.infiltrated
-		InfiltratedNotification: TechnologyStolen
-		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:

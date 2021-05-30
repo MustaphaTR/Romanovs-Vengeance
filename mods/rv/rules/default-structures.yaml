@@ -798,6 +798,41 @@
 		VoiceSet: ServiceDepotVoice
 		Volume: 0.8
 
+^BattleLab:
+	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 90
+		Prerequisites: radar, ~techlevel.3
+		Description: Allows deployment of advanced units.\nCan be rotated.
+		BuildDuration: 1000
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Battle Lab
+	Tooltip@NoRow:
+		Name: Battle Lab
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	Power:
+		Amount: -100
+	InfiltrateForSupportPower:
+		Types: SpyInfiltrate
+		Proxy: allies.tech.infiltrated
+		InfiltratedNotification: TechnologyStolen
+		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+
 ^PrimarySuperWeapon:
 	Inherits: ^BaseBuilding
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
