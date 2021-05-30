@@ -136,42 +136,16 @@ gacnst:
 		Image: gacnst
 
 gapowr:
-	Inherits: ^BaseBuilding
-	Inherits@DRAIN: ^DiskDrainable
-	Inherits@MC: ^MindControllableBuilding
-	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits: ^PowerPlant
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Allies
-		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 10
-		Description: Provides power for other structures.
-		BuildDuration: 250
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 500
-	Tooltip:
-		Name: Power Plant
-	Tooltip@NoRow:
-		Name: Power Plant
-	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@no-plug:
 		Prerequisite: gapowr.pluggable
 		RequiresCondition: !powrup
-	ProvidesPrerequisite:
-		Prerequisite: power
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Health:
-		HP: 50000
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
 	Pluggable@1:
 		Offset: 0,0
 		Conditions:
@@ -206,25 +180,9 @@ gapowr:
 		Sequence: idle-glow-coolant
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && powrup
-	Power:
-		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
 	Power@plug:
 		Amount: 300
 		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && powrup
-	GrantCondition@IDISABLE:
-		RequiresCondition: power-outage || diskdrain
-	GrantConditionOnPrerequisite@forceshield:
-		Condition: forceshieldnopower
-		Prerequisites: forceshield
-	ScalePowerWithHealth:
-	SoundOnDamageTransition:
-		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
-	PowerTooltip:
-	Explodes:
-		Weapon: ReactorExplode
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	IsometricSelectable:
 		DecorationHeight: 60
 	Voiced:

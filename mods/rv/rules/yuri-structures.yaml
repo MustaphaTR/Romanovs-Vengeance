@@ -75,38 +75,18 @@ yacnst:
 		Image: yacnst
 
 yapowr:
-	Inherits: ^BaseBuilding
-	Inherits@DRAIN: ^DiskDrainable
-	Inherits@MC: ^MindControllableBuilding
-	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits: ^PowerPlant
 	Inherits@shape: ^2x2Shape
 	Buildable:
 		Queue: Building.Yuri
-		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 10
 		Description: Provides power for other structures.\nCan be occupied with up to 3 infantry for 50 more power each.
-		BuildDuration: 250
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 500
 	Tooltip:
 		Name: Bio Reactor
 	Tooltip@NoRow:
 		Name: Bio Reactor
-	ProvidesPrerequisite:
-		Prerequisite: power
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Health:
-		HP: 50000
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 4c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 4c0
 	WithIdleOverlay@empty:
 		Sequence: empty
 		PauseOnCondition: chronodisable
@@ -119,9 +99,6 @@ yapowr:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	Power@0:
-		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
 	Power@1:
 		Amount: 50
 		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 1
@@ -134,11 +111,6 @@ yapowr:
 	Power@4:
 		Amount: 100
 		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loadedvehicle
-	GrantCondition@IDISABLE:
-		RequiresCondition: power-outage || diskdrain
-	GrantConditionOnPrerequisite@forceshield:
-		Condition: forceshieldnopower
-		Prerequisites: forceshield
 	Cargo:
 		Types: Infantry, Garrisoner, NaturalVehicle
 		MaxWeight: 3
@@ -149,14 +121,6 @@ yapowr:
 		LoadedCondition: loaded
 		PassengerConditions:
 			spider: loadedvehicle
-	ScalePowerWithHealth:
-	SoundOnDamageTransition:
-		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
-	PowerTooltip:
-	Explodes:
-		Weapon: ReactorExplode
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	WithCargoPipsDecoration:
 		FullSequence: pip-building-green
 		EmptySequence: pip-building-empty

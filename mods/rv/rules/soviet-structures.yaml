@@ -142,58 +142,22 @@ nacnst:
 		Image: nacnst
 
 napowr:
-	Inherits: ^BaseBuilding
-	Inherits@DRAIN: ^DiskDrainable
-	Inherits@MC: ^MindControllableBuilding
-	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Inherits: ^PowerPlant
 	Inherits@shape: ^3x2Shape
 	Buildable:
 		Queue: Building.Soviets
-		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 10
 		Description: Provides power for other structures.\nCan be rotated.
-		BuildDuration: 250
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 500
 	Tooltip:
 		Name: Tesla Reactor
 	Tooltip@NoRow:
 		Name: Tesla Reactor
-	ProvidesPrerequisite:
-		Prerequisite: power
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
-	Health:
-		HP: 50000
-	Armor:
-		Type: Wood
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	Power:
-		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
-	GrantCondition@IDISABLE:
-		RequiresCondition: power-outage || diskdrain
-	GrantConditionOnPrerequisite@forceshield:
-		Condition: forceshieldnopower
-		Prerequisites: forceshield
-	ScalePowerWithHealth:
-	SoundOnDamageTransition:
-		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
-	PowerTooltip:
-	Explodes:
-		Weapon: ReactorExplode
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	PlaceBuildingVariants:
 		Actors: napowb
 	IsometricSelectable:

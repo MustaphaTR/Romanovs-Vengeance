@@ -167,6 +167,53 @@
 		RequiresCondition: ai-control
 		Prerequisite: AITowerRush
 
+^PowerPlant:
+	Inherits: ^BaseBuilding
+	Inherits@DRAIN: ^DiskDrainable
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
+	Buildable:
+		Queue: Building
+		Prerequisites: ~techlevel.1
+		BuildPaletteOrder: 10
+		Description: Provides power for other structures.
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Power Plant
+	Tooltip@NoRow:
+		Name: Power Plant
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite:
+		Prerequisite: power
+	Health:
+		HP: 50000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	Power:
+		Amount: 150
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
+	GrantCondition@IDISABLE:
+		RequiresCondition: power-outage || diskdrain
+	GrantConditionOnPrerequisite@forceshield:
+		Condition: forceshieldnopower
+		Prerequisites: forceshield
+	ScalePowerWithHealth:
+	SoundOnDamageTransition:
+		DestroyedSounds: bpowdiea.wav, bpowdieb.wav
+	PowerTooltip:
+	Explodes:
+		Weapon: ReactorExplode
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+
 ^Barracks:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
