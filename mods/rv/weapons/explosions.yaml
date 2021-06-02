@@ -117,6 +117,29 @@ UnitExplode:
 		Amount: 1,4
 		AffectsParent: true
 
+UnitSink:
+	ValidTargets: Water
+	Warhead@DebrisSpawn: FireShrapnel
+		Weapon: UnitSinkSharpnel
+		Amount: 8,12
+		AffectsParent: true
+		ValidTargets: Water
+	Warhead@1Eff: CreateEffect
+		ImpactSounds: gnavsina.wav
+		ValidTargets: Water
+
+UnitSinkSharpnel:
+	Range: 1c0
+	ValidTargets: Water
+	Projectile: BulletAS
+		Speed: 5c0
+		Inaccuracy: 1c0
+	Warhead@1Eff: CreateEffect
+		Image: wake
+		Explosions: idle
+		ExplosionPalette: effect50alpha
+		ValidTargets: Water
+
 UnitExplodeSmall:
 	Inherits: UnitExplode
 	Warhead@1Eff: CreateEffect
