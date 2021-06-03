@@ -858,11 +858,15 @@ gadept:
 gatech:
 	Inherits: ^BattleLab
 	Inherits@shape: ^3x2Shape
+	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Allies
-		Prerequisites: gaairc, ~techlevel.3
+		Prerequisites: gaairc, ~techlevel.3, ~!ai.gatech
 	ProvidesPrerequisite@gatech:
 		Prerequisite: gatech
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.gatech
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -1101,6 +1105,7 @@ gaorep:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x3Shape
+	Inherits@AICash: ^AICashCheat
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 120
@@ -1168,15 +1173,6 @@ gaorep:
 	Voiced:
 		VoiceSet: OrePurifierVoice
 		Volume: 0.8
-	### AI cash cheat
-	GrantConditionOnBotOwner@test:
-		Condition: enable-test-ai
-		Bots: test
-	CashTrickler@AICashDevour:
-		Interval: 500
-		Amount: 375
-		ShowTicks: false
-		RequiresCondition: enable-test-ai
 
 gaspysat:
 	Inherits: ^BaseBuilding

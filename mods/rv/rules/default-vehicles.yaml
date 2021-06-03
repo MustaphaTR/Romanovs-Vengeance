@@ -94,7 +94,7 @@
 		Queue: Vehicle
 		BuildPaletteOrder: 50
 		Description: Deploys into a Construction Yard.
-		Prerequisites: ~techlevel.2, ~!AllowOneOnly
+		Prerequisites: ~techlevel.2, ~!ai.mcv
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Valued:
@@ -166,7 +166,7 @@
 		RequiresCondition: moving
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
-		Prerequisite: AllowOneOnly
+		Prerequisite: ai.mcv
 
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
@@ -180,7 +180,7 @@
 		Queue: Vehicle
 		BuildPaletteOrder: 60
 		Description: Deploys into an Expansion Node.\nCannot be undeployed back.
-		Prerequisites: repairpad, ~techlevel.2, ~!AllowOneOnly
+		Prerequisites: repairpad, ~techlevel.2, ~!ai.ev
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	Valued:
@@ -262,7 +262,7 @@
 		Voice: Move
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
-		Prerequisite: AllowOneOnly
+		Prerequisite: ai.ev
 
 ^MainBattleTank:
 	Inherits: ^Vehicle
