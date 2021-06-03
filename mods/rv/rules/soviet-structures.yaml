@@ -302,13 +302,17 @@ naradr:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
+	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 60
-		Prerequisites: power, narefn, ~techlevel.2
+		Prerequisites: power, narefn, ~techlevel.2, ~!ai.naradr
 		Description: Provides radar
 		BuildDuration: 750
 		BuildDurationModifier: 100
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.naradr
 	Valued:
 		Cost: 1500
 	Tooltip:
@@ -941,10 +945,14 @@ nanrct:
 natech:
 	Inherits: ^BattleLab
 	Inherits@shape: ^3x3Shape
+	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Soviets
-		Prerequisites: naradr, ~techlevel.3
+		Prerequisites: naradr, ~techlevel.3, ~!ai.natech
 		Description: Allows deployment of advanced units.
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.natech
 	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xxx xxx xxx

@@ -2882,3 +2882,21 @@
 	GrantConditionOnBotOwner@ai-control:
 		Condition: ai-control
 		Bots: easy, cheater, vengeful
+
+^AICashCheat:
+	GrantConditionOnBotOwner@cheater:
+		Condition: enable-cheater-ai
+		Bots: cheater
+	GrantConditionOnBotOwner@vengeful:
+		Condition: enable-vengeful-ai
+		Bots: vengeful
+	CashTrickler@cheater:
+		Interval: 500
+		Amount: 500
+		ShowTicks: false
+		RequiresCondition: enable-cheater-ai
+	CashTrickler@vengeful:
+		Interval: 500
+		Amount: 1000
+		ShowTicks: false
+		RequiresCondition: enable-vengeful-ai
