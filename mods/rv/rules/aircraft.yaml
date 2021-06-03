@@ -178,6 +178,7 @@ zep:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@AI: ^AIMicroManagable
 	Valued:
 		Cost: 2000
 	Tooltip:
@@ -261,6 +262,11 @@ zep:
 		DeathType: NonTemporal
 		Actor: zephusk
 	HitShape:
+	GrantConditionOnActivity@AI:
+		Condition: AIattack
+	RejectsOrders@AI: ## Make AI zep more offensive when attack
+		Reject: Move, Attack, ReturnToBase
+		RequiresCondition: ai-control && AIattack
 
 zephusk:
 	Inherits: ^HelicopterHusk
