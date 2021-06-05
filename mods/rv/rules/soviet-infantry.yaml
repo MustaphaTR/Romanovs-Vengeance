@@ -1440,7 +1440,7 @@ mengineer:
 	Buildable:
 		Queue: Infantry.Tuva
 		BuildPaletteOrder: 35
-		Description: Fast unit capable of capturing enemy structures, repairing damaged buildings and bridges.\nDisarms explosives.\n  Unarmed
+		Description: Fast unit capable of capturing enemy structures (slower than regular engineers), repairing damaged buildings and bridges.\nDisarms explosives.\nUnarmed.\nCannot be eaten by Attack Dogs.
 		BuildDuration: 300
 	Valued:
 		Cost: 600
@@ -1456,10 +1456,12 @@ mengineer:
 	Mobile:
 		Speed: 105
 	Captures@TIMED:
-		CaptureDelay: 200
+		CaptureDelay: 125
 	Explodes:
 		Weapon: InfantryExplode
 		EmptyWeapon: InfantryExplode
+	Targetable:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
 	-WithInfantryBody:
 	WithFacingSpriteBody:
 	-TakeCover:
