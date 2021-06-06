@@ -377,8 +377,8 @@ mrj:
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 1000
-	#Buildable:
-	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+	Buildable:
+		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 	Tooltip:
 		Name: Mobile Radar Jammer
 	Tooltip@NoRow:
@@ -404,13 +404,10 @@ mrj:
 	RenderDetectionCircle:
 	RenderJammerCircle:
 	Turreted:
-		Offset: -256,0,0
+		Offset: -256,0,-128
 		TurnSpeed: 30
 	WithVoxelBody:
 	WithVoxelTurret:
 	RenderSprites:
-		Image: mrj
 	RenderVoxels:
-		Image: mrj
-		NormalsPalette: ts-normals
 		Scale: 16
