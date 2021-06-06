@@ -217,10 +217,12 @@ commanders_power.intel_drop:
 	Tooltip:
 		Name: Intel Drop
 	Buildable:
-		Queue: Power.Allies, Power.Baku
+		Queue: Power.Allies
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Intel Drop power.
+	RenderSprites:
+		Image: commanders_power.intel_drop
 
 commanders_power.drone_drop:
 	Inherits: ^default.commanders_power
@@ -243,6 +245,11 @@ commanders_power.cash_bounty:
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Cash Bounty power.
+
+commanders_power.intel_drop.baku:
+	Inherits: commanders_power.intel_drop
+	Buildable:
+		Queue: Power.Baku
 
 commanders_power.scout_drone:
 	Inherits: ^default.commanders_power
@@ -848,6 +855,38 @@ prerequisite.grinder:
 		OnFireSound: ubonus.wav
 		ValidRelationships: Ally, Neutral, Enemy
 		SelectTargetSpeechNotification: SelectTarget
+	ParatroopersPower@inteldropbaku:
+		OrderName: BakuIntelDrop
+		RequiresCondition: !lost
+		Prerequisites:
+			1: commanders_power.intel_drop.baku
+		Icons:
+			1: intel
+		ChargeInterval: 6000
+		StartFullyCharged: true
+		Descriptions:
+			1: Intel Drop
+		LongDescs:
+			1: A MiG paradrops a spy\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		EndChargeSpeechNotification: ParatroopersReady
+		DropItems:
+			1: sspy
+		SquadSizes:
+			1: 1
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		UnitTypes:
+			1: bplndrop
+		CameraActor: camera
+		DisplayBeacon: True
+		BeaconPosters:
+			1: sdrpicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
 	AirstrikePower@leafletdrop:
 		OrderName: AlliedLeafletDrop
 		RequiresCondition: !lost
