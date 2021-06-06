@@ -387,6 +387,22 @@ mrj:
 		HP: 40000
 	Armor:
 		Type: Light
+	ProximityExternalCondition@DISABLERADAR:
+		Range: 20c0
+		ValidRelationships: Enemy, Neutral
+		Condition: disableradar
+	DetectCloaked:
+		CloakTypes: Cloak
+		Range: 10c0
+	JamsMissiles:
+		Range: 5c0
+		DeflectionRelationships: Enemy, Neutral
+	WithRangeCircle@JAMMER:
+		Type: jammer
+		Range: 20c0
+		Color: 0000FF80
+	RenderDetectionCircle:
+	RenderJammerCircle:
 	Turreted:
 		Offset: -256,0,0
 		TurnSpeed: 30
