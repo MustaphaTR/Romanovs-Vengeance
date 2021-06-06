@@ -689,11 +689,9 @@ prerequisite.grinder:
 	Inherits: ^default.commanders_power_prerequisite
 
 ^CommandersPowers:
-	SpawnActorPower@SCOUT_DRONE:
+	DetonateWeaponPower@SCOUT_DRONE:
 		OrderName: AlliedScoutDrone
 		RequiresCondition: !lost
-		Actors:
-			1: sdrn
 		Prerequisites:
 			1: commanders_power.scout_drone
 		LifeTime: -1
@@ -706,8 +704,12 @@ prerequisite.grinder:
 			1: Scout Drone
 		LongDescs:
 			1: Spawns a Scout Drone anywhere on the map.
-		DeploySound: vdr2crea.wav
 		SelectTargetSpeechNotification: SelectTarget
+		Weapons:
+			1: ScoutDroneSpawner
+		ActivationSequence:
+		TargetCircleRanges:
+			1: 8c0
 	AirstrikePower@spyplane:
 		OrderName: SovietSpyPlane
 		RequiresCondition: !lost
