@@ -1170,3 +1170,15 @@ ftnk:
 		SoundFiles: vrhistaa.wav, vrhistab.wav, vrhistac.wav, vrhistad.wav
 		Volume: 0.3
 		RequiresCondition: moving
+
+smrj:
+	Inherits: mrj
+	Buildable:
+		Queue: Vehicle.Baku
+		BuildPaletteOrder: 80
+		Prerequisites: naradr, ~techlevel.3
+		Description: Jams nearby enemy radar domes and deflects incoming missiles.\nCan detect cloaked units.\n\n  Unarmed
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	Voiced:
+		VoiceSet: SovietVehicleVoice
