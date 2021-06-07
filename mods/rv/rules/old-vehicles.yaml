@@ -203,7 +203,7 @@ arty:
 
 ftnktd:
 	Inherits: ^Vehicle
-	#Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -220,6 +220,17 @@ ftnktd:
 		HP: 40000
 	Armor:
 		Type: Heavy
+	Armament@primary:
+		Weapon: TankFlamer
+		LocalOffset: 768,-128,384
+		RequiresCondition: !rank-elite
+	Armament@primary-sound:
+		Weapon: TankFlamerSound
+		LocalOffset: 768,128,384
+		RequiresCondition: !rank-elite
+	AttackFrontal:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp
 	WithVoxelBody:
 	RenderSprites:
 	RenderVoxels:
@@ -320,7 +331,7 @@ m113:
 
 mlrs:
 	Inherits: ^Vehicle
-	#Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -340,6 +351,13 @@ mlrs:
 	Turreted:
 		Offset: -256,0,0
 		TurnSpeed: 28
+	Armament:
+		Weapon: APTusk
+		LocalOffset: 256,160,768, 256,-160,768
+	AttackTurreted:
+		Voice: Attack
+		TargetFrozenActors: true
+		PauseOnCondition: chronodisable || emp || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	RenderSprites:
