@@ -3,7 +3,7 @@ General:
 	Id: TEMPERATE
 	Extensions: .tem, .shp
 	HeightDebugColors: 00000080, 00004480, 00008880, 0000CC80, 0000FF80, 4400CC80, 88008880, CC004480, FF110080, FF550080, FF990080, FFDD0080, DDFF0080, 99FF0080, 55FF0080, 11FF0080
-	EditorTemplateOrder: Lat Grass, Blank, ZMM Ramps, Grass Ramps, Grass Cliffs, Sand Shorelines, LAT Dark Grass, LAT Dark Grass Transitions, Grass Water Cliffs, Grass DirtRoad Bends, Grass DirtRoad Junctions, Grass DirtRoads, Grass Bridges, Highway Roads, Water, Grass DirtRoad Ramps, Grass Slopes, Grass Waterfalls A, LAT Rough Grass, LAT Rough Grass Transitions, Farm Crops, Highway Road Ends, Pavement Bits, LAT Pavement Transitions, Highway Road Bits, LAT Sand, LAT Sand Transitions, Ramp edge fixup, LAT Pavement, Highway Road Ramps, Grass Waterfalls B, Grass Waterfalls C, Grass Waterfalls D, Grass Road Tunnels, Grass Tunnel Sides, Grass Rubble Cliffs, Grass Water Caves A, ZMM Straight Dirt Roads, ZMM Waterfalls-C, ZMM Waterfalls-D, Grass DirtTunnel Floor, Sand (beach), Sand (beach) Transitions, Sand Shorelines Bridges, RA2 rubble farm, RA2 rubble mobile, RA2 rubble mexican, Grass Wood Bridges, Sunkan USS Arizona, *Pavement Shorelines A*, *Pavement Shorelines B*, ZMM Tunnel Floor, ZMM Tunnel Side, *Grass Train Ramps*, *Grass Train Tunnels*, *Train Crossings*, *Train Junctions*, *Train Switch*, ZMM Water Tunnel Floor, *Water Tunnels and others*, *Pavement*, *Pavement Fixes A*, *Grass Water Caves B*, ZMM Water Caves1, *Highway Road Guard Rails*, *Track Under Bridges fix*, *Water Tunnel Sides*, ZMM Under bridge track, ZMM Water Tunnel Side, *Helipad*, *Grass Destroyable Cliffs*, Grass, Dark Grass, Rough Grass, Sand, Pavement, *TrainBridges*, Baracades A, LAT Soil, Highway Roads B, Highway Road Ends B, Dirt Road on Concrete Junctions, Urban Features, Dirt Road on Concrete, Baseball Field, One Color Tiles, Two Color Tiles, One Color Tiles B, Two Color Tiles B, Allied Pavement, Soviet Pavement, Yuri Pavement, GLA Pavement # Obsolete Height Pieces, ZMM Cliff Set, ZMM Dirt Road Slopes, ZSlope Set Pieces, New MM Height Pieces, Ramp edge fixup - Marble Madness, Newest MM Height, ZMM Bendy Dirt Roads, ZMM Dirt Road Junctions, ZMM Shore Pieces, ZMM Waterfalls, ZMM Waterfalls-B, ZMM Water Caves, ZMMCliff/Water pieces, ZMM Water, Concrete
+	EditorTemplateOrder: LAT Grass, LAT Dark Grass, LAT Rough Grass, LAT Sand, LAT Soil, LAT Pavement, LAT Dark Grass Transitions, LAT Rough Grass Transitions, LAT Sand Transitions, LAT Pavement Transitions, Pavement Bits, Water, Sand Shorelines, Pavement Shorelines, Sand Shoreline Bridges, Grass Ramps, Grass Cliffs, Grass Slopes, Grass Water Cliffs, Grass Waterfalls, Grass DirtRoads, Grass DirtRoad Bends, Grass DirtRoad Junctions, Grass DirtRoad Ramps, Concrete DirtRoad, Concrete DirtRoad Junctions, Grass Concrete Bridges, Grass Wood Bridges, Grass Train Bridges, Highway Roads, Highway Road Ramps, Highway Road Ends, Highway Road Bits, Highway Road Guard Rails, Farm Crops, Urban Features, Baracades, Helipad, Ramp edge fixup, Grass Tunnel, Grass Road Tunnels, Grass Train Tunnels, Water Tunnels, Grass Tunnel Sides, Water Tunnel Sides, Grass Water Caves, Sand (beach), Sand (beach) Transitions, Sunken USS Arizona, Grass Train Ramps, Train Crossings, Train Junctions, Train Switch, Track Under Bridges fix, Grass Rubble Cliffs, Grass Destroyable Cliffs, Grass, Dark Grass, Rough Grass, Sand, Pavement, Pavement Fixes, One Color Tiles, Two Color Tiles, Allied Pavement, Soviet Pavement, Yuri Pavement, GLA Pavement, Concrete
 	SheetSize: 4096
 	EnableDepth: true
 
@@ -70,7 +70,7 @@ Terrain:
 
 Templates:
 	Template@0:
-		Categories: Lat Grass
+		Categories: LAT Grass
 		Id: 0
 		Images: clear01.tem, clear01a.tem, clear01b.tem, clear01c.tem, clear01d.tem, clear01e.tem, clear01f.tem, clear01g.tem
 		Size: 1, 1
@@ -78,25 +78,6 @@ Templates:
 			0: Clear
 				MinColor: A2A850
 				MaxColor: A3A750
-	Template@1:
-		Categories: Blank
-		Id: 1
-		Images: blank01.tem
-		Size: 1, 1
-		Tiles:
-			0: Rough
-				MinColor: D2D2DC
-				MaxColor: D0D0DA
-	Template@14:
-		Categories: ZMM Ramps
-		Id: 14
-		Images: mslop13.tem
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 13
-				MinColor: C0B468
-				MaxColor: C4AE4C
 	Template@29:
 		Categories: Grass Ramps
 		Id: 29
@@ -4922,7 +4903,7 @@ Templates:
 				MinColor: A3A74F
 				MaxColor: 9D9D4C
 	Template@277:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 277
 		Images: ovrps01.tem, ovrps01a.tem
 		Size: 3, 5
@@ -4981,7 +4962,7 @@ Templates:
 				MinColor: 9DA351
 				MaxColor: 9EA54C
 	Template@278:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 278
 		Images: ovrps02.tem, ovrps02a.tem
 		Size: 3, 5
@@ -5040,7 +5021,7 @@ Templates:
 				MinColor: 3E4053
 				MaxColor: 3E4056
 	Template@279:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 279
 		Images: ovrps03.tem, ovrps03a.tem
 		Size: 2, 5
@@ -5084,7 +5065,7 @@ Templates:
 				MinColor: 7E754B
 				MaxColor: 7D7860
 	Template@280:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 280
 		Images: ovrps04.tem, ovrps04a.tem
 		Size: 5, 3
@@ -5143,7 +5124,7 @@ Templates:
 				MinColor: 9EA54C
 				MaxColor: 9EA451
 	Template@281:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 281
 		Images: ovrps05.tem, ovrps05a.tem
 		Size: 5, 3
@@ -5202,7 +5183,7 @@ Templates:
 				MinColor: 3D3F54
 				MaxColor: 3D4051
 	Template@282:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 282
 		Images: ovrps06.tem, ovrps06a.tem
 		Size: 5, 2
@@ -5246,7 +5227,7 @@ Templates:
 				MinColor: 7B7854
 				MaxColor: 7D755B
 	Template@283:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 283
 		Images: ovrps07.tem
 		Size: 2, 5
@@ -5285,7 +5266,7 @@ Templates:
 				MinColor: 3C4356
 				MaxColor: 3A4158
 	Template@284:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 284
 		Images: ovrps08.tem
 		Size: 2, 5
@@ -5324,7 +5305,7 @@ Templates:
 				MinColor: 3D4356
 				MaxColor: 3A4158
 	Template@285:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 285
 		Images: ovrps09.tem
 		Size: 2, 5
@@ -5363,7 +5344,7 @@ Templates:
 				MinColor: 3D4357
 				MaxColor: 3A4159
 	Template@286:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 286
 		Images: ovrps10.tem
 		Size: 2, 5
@@ -5402,7 +5383,7 @@ Templates:
 				MinColor: 3D4356
 				MaxColor: 3A4158
 	Template@287:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 287
 		Images: ovrps11.tem
 		Size: 2, 5
@@ -5441,7 +5422,7 @@ Templates:
 				MinColor: 3D4356
 				MaxColor: 3A4158
 	Template@288:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 288
 		Images: ovrps12.tem
 		Size: 5, 2
@@ -5480,7 +5461,7 @@ Templates:
 				MinColor: 3F465D
 				MaxColor: 41485C
 	Template@289:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 289
 		Images: ovrps13.tem
 		Size: 5, 2
@@ -5519,7 +5500,7 @@ Templates:
 				MinColor: 3F465D
 				MaxColor: 41485C
 	Template@290:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 290
 		Images: ovrps14.tem
 		Size: 5, 2
@@ -5558,7 +5539,7 @@ Templates:
 				MinColor: 3F475D
 				MaxColor: 42485C
 	Template@291:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 291
 		Images: ovrps15.tem
 		Size: 5, 2
@@ -5597,7 +5578,7 @@ Templates:
 				MinColor: 3F465D
 				MaxColor: 41485C
 	Template@292:
-		Categories: Grass Bridges
+		Categories: Grass Concrete Bridges
 		Id: 292
 		Images: ovrps16.tem
 		Size: 5, 2
@@ -7179,7 +7160,7 @@ Templates:
 				MinColor: 796D37
 				MaxColor: 717536
 	Template@414:
-		Categories: Grass Waterfalls A
+		Categories: Grass Waterfalls
 		Id: 414
 		Images: w-a-01.tem
 		Size: 2, 4
@@ -7213,7 +7194,7 @@ Templates:
 				MinColor: 6C765F
 				MaxColor: 4A5058
 	Template@415:
-		Categories: Grass Waterfalls A
+		Categories: Grass Waterfalls
 		Id: 415
 		Images: w-a-02.tem
 		Size: 1, 4
@@ -7233,7 +7214,7 @@ Templates:
 				MinColor: 404357
 				MaxColor: 444857
 	Template@416:
-		Categories: Grass Waterfalls A
+		Categories: Grass Waterfalls
 		Id: 416
 		Images: w-a-03.tem
 		Size: 2, 4
@@ -7267,7 +7248,7 @@ Templates:
 				MinColor: 414457
 				MaxColor: 434758
 	Template@417:
-		Categories: Grass Waterfalls A
+		Categories: Grass Waterfalls
 		Id: 417
 		Images: w-a-04.tem
 		Size: 2, 4
@@ -9266,7 +9247,7 @@ Templates:
 				MinColor: 5F6264
 				MaxColor: 878988
 	Template@539:
-		Categories: Grass Waterfalls B
+		Categories: Grass Waterfalls
 		Id: 539
 		Images: w-b-01.tem
 		Size: 4, 2
@@ -9300,7 +9281,7 @@ Templates:
 				MinColor: C3B46A
 				MaxColor: D4B77C
 	Template@540:
-		Categories: Grass Waterfalls B
+		Categories: Grass Waterfalls
 		Id: 540
 		Images: w-b-02.tem
 		Size: 4, 1
@@ -9320,7 +9301,7 @@ Templates:
 				MinColor: 444857
 				MaxColor: 444859
 	Template@541:
-		Categories: Grass Waterfalls B
+		Categories: Grass Waterfalls
 		Id: 541
 		Images: w-b-03.tem
 		Size: 4, 2
@@ -9354,7 +9335,7 @@ Templates:
 				MinColor: 444857
 				MaxColor: 434658
 	Template@542:
-		Categories: Grass Waterfalls B
+		Categories: Grass Waterfalls
 		Id: 542
 		Images: w-b-04.tem
 		Size: 4, 2
@@ -9388,7 +9369,7 @@ Templates:
 				MinColor: 50565B
 				MaxColor: 797C5E
 	Template@543:
-		Categories: Grass Waterfalls C
+		Categories: Grass Waterfalls
 		Id: 543
 		Images: w-c-01.tem
 		Size: 2, 2
@@ -9410,7 +9391,7 @@ Templates:
 				MinColor: 515544
 				MaxColor: 393D3E
 	Template@544:
-		Categories: Grass Waterfalls C
+		Categories: Grass Waterfalls
 		Id: 544
 		Images: w-c-02.tem
 		Size: 1, 2
@@ -9424,7 +9405,7 @@ Templates:
 				MinColor: 323542
 				MaxColor: 363A42
 	Template@545:
-		Categories: Grass Waterfalls C
+		Categories: Grass Waterfalls
 		Id: 545
 		Images: w-c-03.tem
 		Size: 2, 2
@@ -9446,7 +9427,7 @@ Templates:
 				MinColor: 30323A
 				MaxColor: 32353B
 	Template@546:
-		Categories: Grass Waterfalls C
+		Categories: Grass Waterfalls
 		Id: 546
 		Images: w-c-04.tem
 		Size: 2, 2
@@ -9468,7 +9449,7 @@ Templates:
 				MinColor: 917E5D
 				MaxColor: 767149
 	Template@547:
-		Categories: Grass Waterfalls D
+		Categories: Grass Waterfalls
 		Id: 547
 		Images: w-d-01.tem
 		Size: 2, 2
@@ -9490,7 +9471,7 @@ Templates:
 				MinColor: 90814E
 				MaxColor: 81784F
 	Template@548:
-		Categories: Grass Waterfalls D
+		Categories: Grass Waterfalls
 		Id: 548
 		Images: w-d-02.tem
 		Size: 2, 1
@@ -9504,7 +9485,7 @@ Templates:
 				MinColor: 373B42
 				MaxColor: 333643
 	Template@549:
-		Categories: Grass Waterfalls D
+		Categories: Grass Waterfalls
 		Id: 549
 		Images: w-d-03.tem
 		Size: 2, 2
@@ -9526,7 +9507,7 @@ Templates:
 				MinColor: 373A42
 				MaxColor: 353842
 	Template@550:
-		Categories: Grass Waterfalls D
+		Categories: Grass Waterfalls
 		Id: 550
 		Images: w-d-04.tem
 		Size: 2, 2
@@ -9918,7 +9899,7 @@ Templates:
 				MinColor: B0934A
 				MaxColor: AB7239
 	Template@574:
-		Categories: Grass Water Caves A
+		Categories: Grass Water Caves
 		Id: 574
 		Images: wcave01.tem
 		Size: 2, 2
@@ -9938,7 +9919,7 @@ Templates:
 				MinColor: 404352
 				MaxColor: 3F3528
 	Template@575:
-		Categories: Grass Water Caves A
+		Categories: Grass Water Caves
 		Id: 575
 		Images: wcave02.tem
 		Size: 2, 2
@@ -9958,7 +9939,7 @@ Templates:
 				MinColor: 3E4154
 				MaxColor: 302923
 	Template@576:
-		Categories: Grass Water Caves A
+		Categories: Grass Water Caves
 		Id: 576
 		Images: wcave03.tem
 		Size: 1, 2
@@ -9971,7 +9952,7 @@ Templates:
 				MinColor: 3F4352
 				MaxColor: 3B2F23
 	Template@577:
-		Categories: Grass Water Caves A
+		Categories: Grass Water Caves
 		Id: 577
 		Images: wcave04.tem
 		Size: 2, 2
@@ -9990,198 +9971,8 @@ Templates:
 			3: Cliff
 				MinColor: 404252
 				MaxColor: 84653A
-	Template@643:
-		Categories: ZMM Straight Dirt Roads
-		Id: 643
-		Images: mdrods31.tem
-		Size: 4, 3
-		Tiles:
-			0: DirtRoad
-				MinColor: 4D804D
-				MaxColor: 15B015
-			1: Clear
-				MinColor: 24A423
-				MaxColor: 00C200
-			4: DirtRoad
-				MinColor: 169B15
-				MaxColor: 4D794D
-			5: DirtRoad
-				MinColor: 349633
-				MaxColor: 686968
-			6: DirtRoad
-				MinColor: 696869
-				MaxColor: 3A9139
-			7: DirtRoad
-				MinColor: 4F7E4F
-				MaxColor: 19AD18
-			10: Clear
-				MinColor: 00C200
-				MaxColor: 1EA81E
-			11: DirtRoad
-				MinColor: 12B311
-				MaxColor: 4D804D
-	Template@729:
-		Categories: ZMM Waterfalls-C
-		Id: 729
-		Images: mwc-01.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 702B50
-				MaxColor: 802869
-			1: Cliff
-				Height: 4
-				MinColor: 3109B6
-				MaxColor: 0D0B9B
-			2: Rough
-				Height: 4
-				MinColor: 3D2F6F
-				MaxColor: 100FB1
-			3: Cliff
-				Height: 4
-				MinColor: 251293
-				MaxColor: 1A0498
-	Template@730:
-		Categories: ZMM Waterfalls-C
-		Id: 730
-		Images: mwc-02.tem
-		Size: 1, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 0100A4
-				MaxColor: 0100A1
-			1: Cliff
-				Height: 4
-				MinColor: 351073
-				MaxColor: 360996
-	Template@731:
-		Categories: ZMM Waterfalls-C
-		Id: 731
-		Images: mwc-03.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 0100A6
-				MaxColor: 0000B6
-			1: Cliff
-				Height: 4
-				MinColor: 0000BB
-				MaxColor: 0100A1
-			2: Cliff
-				Height: 4
-				MinColor: 351073
-				MaxColor: 2A09B8
-			3: Cliff
-				Height: 4
-				MinColor: 190094
-				MaxColor: 2D0098
-	Template@732:
-		Categories: ZMM Waterfalls-C
-		Id: 732
-		Images: mwc-04.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 1600A6
-				MaxColor: 200BB0
-			1: Cliff
-				Height: 4
-				MinColor: 443E9C
-				MaxColor: A2001F
-			2: Cliff
-				Height: 4
-				MinColor: 340F73
-				MaxColor: 0F0CB8
-			3: Rough
-				Height: 4
-				MinColor: 180A94
-				MaxColor: 36358B
-	Template@733:
-		Categories: ZMM Waterfalls-D
-		Id: 733
-		Images: mwd-01.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 200BB0
-				MaxColor: 1600A6
-			1: Cliff
-				Height: 4
-				MinColor: 0804B8
-				MaxColor: 240074
-			2: Cliff
-				Height: 4
-				MinColor: A2001F
-				MaxColor: 443E9C
-			3: Rough
-				Height: 4
-				MinColor: 39388B
-				MaxColor: 2E2193
-	Template@734:
-		Categories: ZMM Waterfalls-D
-		Id: 734
-		Images: mwd-02.tem
-		Size: 2, 1
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 0100A1
-				MaxColor: 0100A4
-			1: Cliff
-				Height: 4
-				MinColor: 3A0D96
-				MaxColor: 330E73
-	Template@735:
-		Categories: ZMM Waterfalls-D
-		Id: 735
-		Images: mwd-03.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 0000B6
-				MaxColor: 0100A6
-			1: Cliff
-				Height: 4
-				MinColor: 2000B8
-				MaxColor: 250074
-			2: Cliff
-				Height: 4
-				MinColor: 0100A1
-				MaxColor: 0000BB
-			3: Cliff
-				Height: 4
-				MinColor: 370A98
-				MaxColor: 2A1293
-	Template@736:
-		Categories: ZMM Waterfalls-D
-		Id: 736
-		Images: mwd-04.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 802869
-				MaxColor: 702B50
-			1: Rough
-				Height: 4
-				MinColor: 1110B1
-				MaxColor: 3D2F6F
-			2: Cliff
-				Height: 4
-				MinColor: 0D0B9B
-				MaxColor: 3109B6
-			3: Cliff
-				Height: 4
-				MinColor: 1D0798
-				MaxColor: 271493
 	Template@783:
-		Categories: Grass DirtTunnel Floor
+		Categories: Grass Tunnel
 		Id: 783
 		Images: dtunn01.tem
 		Size: 3, 5
@@ -10232,7 +10023,7 @@ Templates:
 				MinColor: 6D7138
 				MaxColor: 6C703A
 	Template@784:
-		Categories: Grass DirtTunnel Floor
+		Categories: Grass Tunnel
 		Id: 784
 		Images: dtunn02.tem
 		Size: 5, 3
@@ -10283,7 +10074,7 @@ Templates:
 				MinColor: 6C703A
 				MaxColor: 6D7138
 	Template@785:
-		Categories: Grass DirtTunnel Floor
+		Categories: Grass Tunnel
 		Id: 785
 		Images: dtunn03.tem
 		Size: 3, 4
@@ -10325,7 +10116,7 @@ Templates:
 				MinColor: A7A955
 				MaxColor: A4A84E
 	Template@786:
-		Categories: Grass DirtTunnel Floor
+		Categories: Grass Tunnel
 		Id: 786
 		Images: dtunn04.tem
 		Size: 4, 3
@@ -10520,7 +10311,7 @@ Templates:
 				MinColor: B0AC58
 				MaxColor: B7AE5A
 	Template@804:
-		Categories: Sand Shorelines Bridges
+		Categories: Sand Shoreline Bridges
 		Id: 804
 		Images: wbrdge01.tem
 		Size: 2, 4
@@ -10550,7 +10341,7 @@ Templates:
 				MinColor: D5B270
 				MaxColor: A79966
 	Template@805:
-		Categories: Sand Shorelines Bridges
+		Categories: Sand Shoreline Bridges
 		Id: 805
 		Images: wbrdge02.tem
 		Size: 4, 2
@@ -10579,381 +10370,6 @@ Templates:
 			7: Rough
 				MinColor: D3B983
 				MaxColor: E3C181
-	Template@806:
-		Categories: RA2 rubble farm
-		Id: 806
-		Images: farm01.tem
-		Size: 2, 3
-		Tiles:
-			0: Rough
-				MinColor: 7D7D71
-				MaxColor: 6D6A55
-			1: Rough
-				MinColor: 796735
-				MaxColor: 98A24D
-			2: Rough
-				MinColor: 6A4C38
-				MaxColor: 706959
-			3: Rough
-				MinColor: 705437
-				MaxColor: 868241
-			4: Rough
-				MinColor: A2A756
-				MaxColor: 87703C
-			5: Rough
-				MinColor: 8D9144
-				MaxColor: 8B8345
-	Template@807:
-		Categories: RA2 rubble farm
-		Id: 807
-		Images: farm02.tem
-		Size: 1, 1
-		Tiles:
-			0: Rough
-				MinColor: 887748
-				MaxColor: 806B3A
-	Template@808:
-		Categories: RA2 rubble farm
-		Id: 808
-		Images: farm03.tem
-		Size: 1, 1
-		Tiles:
-			0: Rough
-				MinColor: 59493B
-				MaxColor: 79624E
-	Template@809:
-		Categories: RA2 rubble farm
-		Id: 809
-		Images: farm04.tem
-		Size: 2, 2
-		Tiles:
-			0: Rough
-				MinColor: 7D7743
-				MaxColor: 9A9347
-			1: Rough
-				MinColor: 6F6E3D
-				MaxColor: 98A44F
-			2: Rough
-				MinColor: A0A750
-				MaxColor: 7C7947
-			3: Rough
-				MinColor: 818641
-				MaxColor: 8A834D
-	Template@810:
-		Categories: RA2 rubble farm
-		Id: 810
-		Images: farm05.tem
-		Size: 2, 2
-		Tiles:
-			0: Rough
-				MinColor: 928C4E
-				MaxColor: 6D623A
-			1: Rough
-				MinColor: 3E3A22
-				MaxColor: 888C4E
-			2: Rough
-				MinColor: 888D4A
-				MaxColor: 4E472E
-			3: Rough
-				MinColor: 625E37
-				MaxColor: 6F6736
-	Template@811:
-		Categories: RA2 rubble farm
-		Id: 811
-		Images: farm06.tem
-		Size: 2, 2
-		Tiles:
-			0: Rough
-				MinColor: 59512F
-				MaxColor: 7A7141
-			1: Rough
-				MinColor: 524830
-				MaxColor: 777B45
-			2: Rough
-				MinColor: 92964F
-				MaxColor: 3F3523
-			3: Rough
-				MinColor: 6D6C37
-				MaxColor: 7F783D
-	Template@812:
-		Categories: RA2 rubble farm
-		Id: 812
-		Images: farm07.tem
-		Size: 2, 2
-		Tiles:
-			0: Rough
-				MinColor: 71695C
-				MaxColor: 7E7262
-			1: Rough
-				MinColor: 827569
-				MaxColor: 7E7C72
-			2: Rough
-				MinColor: 93946D
-				MaxColor: 85776B
-			3: Rough
-				MinColor: 88885E
-				MaxColor: 7F6A50
-	Template@813:
-		Categories: RA2 rubble farm
-		Id: 813
-		Images: farm08.tem
-		Size: 1, 1
-		Tiles:
-			0: Rough
-				MinColor: 968843
-				MaxColor: 917C3A
-	Template@814:
-		Categories: RA2 rubble mobile
-		Id: 814
-		Images: mobil01.tem
-		Size: 2, 3
-		Tiles:
-			0: Rough
-				MinColor: 817459
-				MaxColor: 83734A
-			1: Rough
-				MinColor: 8B904C
-				MaxColor: 98A44F
-			2: Rough
-				MinColor: 796842
-				MaxColor: 836D54
-			3: Rough
-				MinColor: 888D58
-				MaxColor: 989F4A
-			4: Rough
-				MinColor: 9DA44E
-				MaxColor: 636333
-			5: Rough
-				MinColor: 919A46
-				MaxColor: 98A048
-	Template@815:
-		Categories: RA2 rubble mobile
-		Id: 815
-		Images: mobil02.tem
-		Size: 2, 2
-		Tiles:
-			0: Rough
-				MinColor: 816248
-				MaxColor: 87704B
-			1: Rough
-				MinColor: 634E39
-				MaxColor: 90994C
-			2: Rough
-				MinColor: 899245
-				MaxColor: 908154
-			3: Rough
-				MinColor: 868941
-				MaxColor: 828149
-	Template@816:
-		Categories: RA2 rubble mexican
-		Id: 816
-		Images: mex01.tem
-		Size: 3, 2
-		Tiles:
-			0: Rough
-				MinColor: 7E7D7B
-				MaxColor: 777675
-			1: Rough
-				MinColor: 7D6D5F
-				MaxColor: 76716A
-			2: Rough
-				MinColor: 939487
-				MaxColor: A2A85B
-			3: Rough
-				MinColor: 9BA159
-				MaxColor: 756650
-			4: Rough
-				MinColor: 8E9060
-				MaxColor: 6B4A3E
-			5: Rough
-				MinColor: 8A8D60
-				MaxColor: 959968
-	Template@817:
-		Categories: RA2 rubble mexican
-		Id: 817
-		Images: mex02.tem
-		Size: 5, 5
-		Tiles:
-			0: Rough
-				MinColor: B0B1B1
-				MaxColor: A6A7A8
-			1: Rough
-				MinColor: 60605D
-				MaxColor: 484847
-			2: Rough
-				MinColor: 969490
-				MaxColor: 72716C
-			3: Rough
-				MinColor: 5B5247
-				MaxColor: 7D7D7B
-			4: Rough
-				MinColor: 424039
-				MaxColor: 8F9549
-			5: Rough
-				MinColor: 979997
-				MaxColor: 8B8C8B
-			6: Rough
-				MinColor: 89847E
-				MaxColor: 5A5956
-			7: Rough
-				MinColor: 605E5B
-				MaxColor: 6F6861
-			8: Rough
-				MinColor: 726456
-				MaxColor: 7B7673
-			9: Rough
-				MinColor: 454037
-				MaxColor: 5D5943
-			10: Rough
-				MinColor: 8A8683
-				MaxColor: 8C8884
-			11: Rough
-				MinColor: 9C9184
-				MaxColor: 908F8D
-			12: Rough
-				MinColor: 746F69
-				MaxColor: 938984
-			13: Rough
-				MinColor: A2A1A1
-				MaxColor: A69F98
-			14: Rough
-				MinColor: 48443A
-				MaxColor: 595A40
-			15: Rough
-				MinColor: 7B7C7B
-				MaxColor: 888480
-			16: Rough
-				MinColor: 90867B
-				MaxColor: 8C837B
-			17: Rough
-				MinColor: 969189
-				MaxColor: 686159
-			18: Rough
-				MinColor: 8A8B8A
-				MaxColor: 525453
-			19: Rough
-				MinColor: 696B5A
-				MaxColor: 636249
-			20: Rough
-				MinColor: 999F5A
-				MaxColor: 797B6C
-			21: Rough
-				MinColor: 85896B
-				MaxColor: 929390
-			22: Rough
-				MinColor: 8A8E6F
-				MaxColor: 8B8C89
-			23: Rough
-				MinColor: 80825C
-				MaxColor: 787A63
-			24: Rough
-				MinColor: 929A56
-				MaxColor: 979E54
-	Template@818:
-		Categories: RA2 rubble mexican
-		Id: 818
-		Images: mex03.tem
-		Size: 3, 3
-		Tiles:
-			0: Rough
-				MinColor: 958B94
-				MaxColor: C5BCC2
-			1: Rough
-				MinColor: 968D93
-				MaxColor: 595153
-			2: Rough
-				MinColor: 59534D
-				MaxColor: 746E7B
-			3: Rough
-				MinColor: 453F42
-				MaxColor: 80777F
-			4: Rough
-				MinColor: 4A4548
-				MaxColor: 50474A
-			5: Rough
-				MinColor: 565148
-				MaxColor: 605B69
-			6: Rough
-				MinColor: 90899B
-				MaxColor: 7A7473
-			7: Rough
-				MinColor: 736D77
-				MaxColor: 888281
-			8: Rough
-				MinColor: 867F87
-				MaxColor: 6A666E
-	Template@819:
-		Categories: RA2 rubble mexican
-		Id: 819
-		Images: mex04.tem
-		Size: 4, 4
-		Tiles:
-			0: Rough
-				MinColor: 5C5456
-				MaxColor: 655F61
-			1: Rough
-				MinColor: 807A7C
-				MaxColor: A0969F
-			2: Rough
-				MinColor: 564D50
-				MaxColor: 463F3D
-			3: Rough
-				MinColor: 918D80
-				MaxColor: 918796
-			4: Rough
-				MinColor: 766E70
-				MaxColor: 585151
-			5: Rough
-				MinColor: A59E9A
-				MaxColor: ABA1A8
-			6: Rough
-				MinColor: 4C453F
-				MaxColor: 4C473A
-			7: Rough
-				MinColor: 8F8B74
-				MaxColor: 837C8D
-			8: Rough
-				MinColor: 8A8475
-				MaxColor: 5C5652
-			9: Rough
-				MinColor: 8B886F
-				MaxColor: 666061
-			10: Rough
-				MinColor: 656351
-				MaxColor: 5C5843
-			11: Rough
-				MinColor: 9E9789
-				MaxColor: 817985
-			12: Rough
-				MinColor: 8D8590
-				MaxColor: A49E94
-			13: Rough
-				MinColor: 817788
-				MaxColor: 9A9587
-			14: Rough
-				MinColor: 887E87
-				MaxColor: 908E73
-			15: Rough
-				MinColor: 8C8591
-				MaxColor: 8E8394
-	Template@820:
-		Categories: RA2 rubble mexican
-		Id: 820
-		Images: mex05.tem
-		Size: 2, 2
-		Tiles:
-			0: Rough
-				MinColor: 938992
-				MaxColor: A29AA5
-			1: Rough
-				MinColor: 978E96
-				MaxColor: 8F8893
-			2: Rough
-				MinColor: 847D85
-				MaxColor: 938994
-			3: Rough
-				MinColor: 938C93
-				MaxColor: 7D7582
 	Template@821:
 		Categories: Grass Wood Bridges
 		Id: 821
@@ -11669,7 +11085,7 @@ Templates:
 				MinColor: 9EA54D
 				MaxColor: 9EA455
 	Template@837:
-		Categories: Sunkan USS Arizona
+		Categories: Sunken USS Arizona
 		Id: 837
 		Images: ariz01.tem
 		Size: 3, 6
@@ -11729,7 +11145,7 @@ Templates:
 				MinColor: 3F4258
 				MaxColor: 3F4259
 	Template@838:
-		Categories: *Pavement Shorelines A*
+		Categories: Pavement Shorelines
 		Id: 838
 		Images: pshore01.tem
 		Size: 1, 1
@@ -11738,7 +11154,7 @@ Templates:
 				MinColor: 988776
 				MaxColor: 6F5A4A
 	Template@839:
-		Categories: *Pavement Shorelines A*
+		Categories: Pavement Shorelines
 		Id: 839
 		Images: pshore02.tem
 		Size: 1, 1
@@ -11747,7 +11163,7 @@ Templates:
 				MinColor: 806A55
 				MaxColor: 58473F
 	Template@840:
-		Categories: *Pavement Shorelines A*
+		Categories: Pavement Shorelines
 		Id: 840
 		Images: pshore03.tem
 		Size: 1, 1
@@ -11756,7 +11172,7 @@ Templates:
 				MinColor: 917F6C
 				MaxColor: 645246
 	Template@841:
-		Categories: *Pavement Shorelines A*
+		Categories: Pavement Shorelines
 		Id: 841
 		Images: pshore04.tem
 		Size: 1, 1
@@ -11765,7 +11181,7 @@ Templates:
 				MinColor: 645345
 				MaxColor: 655449
 	Template@842:
-		Categories: *Pavement Shorelines A*
+		Categories: Pavement Shorelines
 		Id: 842
 		Images: pshore05.tem
 		Size: 1, 1
@@ -11774,7 +11190,7 @@ Templates:
 				MinColor: 645245
 				MaxColor: 8C7C6B
 	Template@843:
-		Categories: *Pavement Shorelines A*
+		Categories: Pavement Shorelines
 		Id: 843
 		Images: pshore06.tem
 		Size: 1, 1
@@ -11783,7 +11199,7 @@ Templates:
 				MinColor: 564740
 				MaxColor: 816C58
 	Template@844:
-		Categories: *Pavement Shorelines A*
+		Categories: Pavement Shorelines
 		Id: 844
 		Images: pshore07.tem
 		Size: 1, 1
@@ -11792,7 +11208,7 @@ Templates:
 				MinColor: 6F5B4D
 				MaxColor: 948471
 	Template@845:
-		Categories: *Pavement Shorelines A*
+		Categories: Pavement Shorelines
 		Id: 845
 		Images: pshore08.tem
 		Size: 1, 1
@@ -11801,7 +11217,7 @@ Templates:
 				MinColor: 6F5C4D
 				MaxColor: 6F5B4C
 	Template@846:
-		Categories: *Pavement Shorelines B*
+		Categories: Pavement Shorelines
 		Id: 846
 		Images: pshora01.tem
 		Size: 1, 1
@@ -11810,7 +11226,7 @@ Templates:
 				MinColor: AFA698
 				MaxColor: 836D5A
 	Template@847:
-		Categories: *Pavement Shorelines B*
+		Categories: Pavement Shorelines
 		Id: 847
 		Images: pshora02.tem
 		Size: 1, 1
@@ -11819,7 +11235,7 @@ Templates:
 				MinColor: 948371
 				MaxColor: 8E7E6E
 	Template@848:
-		Categories: *Pavement Shorelines B*
+		Categories: Pavement Shorelines
 		Id: 848
 		Images: pshora03.tem
 		Size: 1, 1
@@ -11828,7 +11244,7 @@ Templates:
 				MinColor: 776250
 				MaxColor: AEA597
 	Template@849:
-		Categories: *Pavement Shorelines B*
+		Categories: Pavement Shorelines
 		Id: 849
 		Images: pshora04.tem
 		Size: 1, 1
@@ -11836,226 +11252,8 @@ Templates:
 			0: Road
 				MinColor: 968675
 				MaxColor: 948472
-	Template@850:
-		Categories: ZMM Tunnel Floor
-		Id: 850
-		Images: mtnnl01.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: DE0000
-				MaxColor: DE0000
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Road
-				MinColor: 525557
-				MaxColor: 818380
-			4: Clear
-				MinColor: 515457
-				MaxColor: 828380
-			5: Clear
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Road
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Clear
-				MinColor: 434542
-				MaxColor: 404343
-			8: Clear
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Road
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Clear
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Clear
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@851:
-		Categories: ZMM Tunnel Floor
-		Id: 851
-		Images: mtnnl02.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: DE0000
-				MaxColor: DE0000
-			1: Road
-				MinColor: 808380
-				MaxColor: 525557
-			2: Road
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Road
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Cliff
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Clear
-				MinColor: 828380
-				MaxColor: 515457
-			7: Clear
-				MinColor: 404343
-				MaxColor: 434542
-			8: Clear
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Cliff
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Clear
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Clear
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Clear
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@852:
-		Categories: ZMM Tunnel Floor
-		Id: 852
-		Images: mtnnl03.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Clear
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@853:
-		Categories: ZMM Tunnel Floor
-		Id: 853
-		Images: mtnnl04.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 363837
-				MaxColor: 615F51
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Clear
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
-	Template@854:
-		Categories: ZMM Tunnel Side
-		Id: 854
-		Images: mtnnx01.tem
-		Size: 3, 1
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 940004
-				MaxColor: B50020
-			1: Cliff
-				MinColor: DE0000
-				MaxColor: DC8298
-			2: Clear
-				MinColor: DE0000
-				MaxColor: DE0000
-	Template@855:
-		Categories: ZMM Tunnel Side
-		Id: 855
-		Images: mtnnx02.tem
-		Size: 1, 3
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: B50020
-				MaxColor: 940004
-			1: Cliff
-				MinColor: F90000
-				MaxColor: F2A3B2
-			2: Clear
-				MinColor: DE0000
-				MaxColor: DE0000
 	Template@856:
-		Categories: *Grass Train Ramps*
+		Categories: Grass Train Ramps
 		Id: 856
 		Images: tslope01.tem
 		Size: 1, 1
@@ -12065,7 +11263,7 @@ Templates:
 				MinColor: 736E48
 				MaxColor: 6C674C
 	Template@857:
-		Categories: *Grass Train Ramps*
+		Categories: Grass Train Ramps
 		Id: 857
 		Images: tslope02.tem
 		Size: 1, 1
@@ -12075,7 +11273,7 @@ Templates:
 				MinColor: 615F44
 				MaxColor: 636141
 	Template@858:
-		Categories: *Grass Train Ramps*
+		Categories: Grass Train Ramps
 		Id: 858
 		Images: tslope03.tem
 		Size: 1, 1
@@ -12085,7 +11283,7 @@ Templates:
 				MinColor: 646242
 				MaxColor: 615E44
 	Template@859:
-		Categories: *Grass Train Ramps*
+		Categories: Grass Train Ramps
 		Id: 859
 		Images: tslope04.tem
 		Size: 1, 1
@@ -12095,7 +11293,7 @@ Templates:
 				MinColor: 6C684B
 				MaxColor: 76714A
 	Template@860:
-		Categories: *Grass Train Tunnels*
+		Categories: Grass Train Tunnels
 		Id: 860
 		Images: dtunnt01.tem
 		Size: 3, 5
@@ -12146,7 +11344,7 @@ Templates:
 				MinColor: 6D7138
 				MaxColor: 6C703B
 	Template@861:
-		Categories: *Grass Train Tunnels*
+		Categories: Grass Train Tunnels
 		Id: 861
 		Images: dtunnt02.tem
 		Size: 5, 3
@@ -12197,7 +11395,7 @@ Templates:
 				MinColor: 6C703B
 				MaxColor: 6D7138
 	Template@862:
-		Categories: *Grass Train Tunnels*
+		Categories: Grass Train Tunnels
 		Id: 862
 		Images: dtunnt03.tem
 		Size: 3, 4
@@ -12239,7 +11437,7 @@ Templates:
 				MinColor: A7A955
 				MaxColor: A4A84E
 	Template@863:
-		Categories: *Grass Train Tunnels*
+		Categories: Grass Train Tunnels
 		Id: 863
 		Images: dtunnt04.tem
 		Size: 4, 3
@@ -12281,7 +11479,7 @@ Templates:
 				MinColor: B6AF5C
 				MaxColor: ADAB53
 	Template@864:
-		Categories: *Train Crossings*
+		Categories: Train Crossings
 		Id: 864
 		Images: trcros01.tem
 		Size: 4, 1
@@ -12299,7 +11497,7 @@ Templates:
 				MinColor: 4B4E50
 				MaxColor: 6D706F
 	Template@865:
-		Categories: *Train Crossings*
+		Categories: Train Crossings
 		Id: 865
 		Images: trcros02.tem
 		Size: 1, 4
@@ -12317,7 +11515,7 @@ Templates:
 				MinColor: 6E706F
 				MaxColor: 4C4E51
 	Template@866:
-		Categories: *Train Crossings*
+		Categories: Train Crossings
 		Id: 866
 		Images: trcros03.tem
 		Size: 4, 1
@@ -12335,7 +11533,7 @@ Templates:
 				MinColor: 4B4E50
 				MaxColor: 6D706F
 	Template@867:
-		Categories: *Train Crossings*
+		Categories: Train Crossings
 		Id: 867
 		Images: trcros04.tem
 		Size: 1, 4
@@ -12353,7 +11551,7 @@ Templates:
 				MinColor: 6E706F
 				MaxColor: 4C4E51
 	Template@868:
-		Categories: *Train Crossings*
+		Categories: Train Crossings
 		Id: 868
 		Images: trcros05.tem
 		Size: 4, 1
@@ -12371,7 +11569,7 @@ Templates:
 				MinColor: 4B4E50
 				MaxColor: 6D706F
 	Template@869:
-		Categories: *Train Crossings*
+		Categories: Train Crossings
 		Id: 869
 		Images: trcros06.tem
 		Size: 1, 4
@@ -12389,7 +11587,7 @@ Templates:
 				MinColor: 6E706F
 				MaxColor: 4C4E51
 	Template@870:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 870
 		Images: ralcrs01.tem
 		Size: 4, 4
@@ -12410,7 +11608,7 @@ Templates:
 				MinColor: 5C5C40
 				MaxColor: 606041
 	Template@871:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 871
 		Images: ralcrs02.tem
 		Size: 4, 4
@@ -12431,7 +11629,7 @@ Templates:
 				MinColor: A1A650
 				MaxColor: 90964D
 	Template@872:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 872
 		Images: ralcrs03.tem
 		Size: 4, 4
@@ -12452,7 +11650,7 @@ Templates:
 				MinColor: 5C5C40
 				MaxColor: 5B5A3E
 	Template@873:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 873
 		Images: ralcrs04.tem
 		Size: 4, 4
@@ -12473,7 +11671,7 @@ Templates:
 				MinColor: A1A650
 				MaxColor: 8C944A
 	Template@874:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 874
 		Images: ralcrs05.tem
 		Size: 4, 4
@@ -12494,7 +11692,7 @@ Templates:
 				MinColor: 635E59
 				MaxColor: 69635C
 	Template@875:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 875
 		Images: ralcrs06.tem
 		Size: 4, 4
@@ -12515,7 +11713,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: ACA292
 	Template@876:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 876
 		Images: ralcrs07.tem
 		Size: 4, 4
@@ -12536,7 +11734,7 @@ Templates:
 				MinColor: 635F5A
 				MaxColor: 635D57
 	Template@877:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 877
 		Images: ralcrs08.tem
 		Size: 4, 4
@@ -12557,7 +11755,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: A99F90
 	Template@878:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 878
 		Images: ralcrs09.tem
 		Size: 4, 4
@@ -12578,7 +11776,7 @@ Templates:
 				MinColor: 6E614A
 				MaxColor: 79684D
 	Template@879:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 879
 		Images: ralcrs10.tem
 		Size: 4, 4
@@ -12599,7 +11797,7 @@ Templates:
 				MinColor: E4BE72
 				MaxColor: D0AD69
 	Template@880:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 880
 		Images: ralcrs11.tem
 		Size: 4, 4
@@ -12620,7 +11818,7 @@ Templates:
 				MinColor: 6F614B
 				MaxColor: 716249
 	Template@881:
-		Categories: *Train Junctions*
+		Categories: Train Junctions
 		Id: 881
 		Images: ralcrs12.tem
 		Size: 4, 4
@@ -12641,7 +11839,7 @@ Templates:
 				MinColor: E4BE72
 				MaxColor: CDAB67
 	Template@882:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 882
 		Images: switch01.tem
 		Size: 4, 4
@@ -12671,7 +11869,7 @@ Templates:
 				MinColor: 9EA64E
 				MaxColor: 8D9549
 	Template@883:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 883
 		Images: switch02.tem
 		Size: 4, 4
@@ -12701,7 +11899,7 @@ Templates:
 				MinColor: 9EA64E
 				MaxColor: 8D9449
 	Template@884:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 884
 		Images: switch03.tem
 		Size: 4, 4
@@ -12731,7 +11929,7 @@ Templates:
 				MinColor: 9EA64E
 				MaxColor: 8D9549
 	Template@885:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 885
 		Images: switch04.tem
 		Size: 4, 4
@@ -12761,7 +11959,7 @@ Templates:
 				MinColor: 9EA64E
 				MaxColor: 8D9549
 	Template@886:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 886
 		Images: switch05.tem
 		Size: 4, 4
@@ -12791,7 +11989,7 @@ Templates:
 				MinColor: A5A853
 				MaxColor: 949A49
 	Template@887:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 887
 		Images: switch06.tem
 		Size: 4, 4
@@ -12821,7 +12019,7 @@ Templates:
 				MinColor: A5A853
 				MaxColor: 949A4A
 	Template@888:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 888
 		Images: switch07.tem
 		Size: 4, 4
@@ -12851,7 +12049,7 @@ Templates:
 				MinColor: A5A853
 				MaxColor: 949A49
 	Template@889:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 889
 		Images: switch08.tem
 		Size: 4, 4
@@ -12881,7 +12079,7 @@ Templates:
 				MinColor: A5A853
 				MaxColor: 939849
 	Template@890:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 890
 		Images: switch09.tem
 		Size: 4, 4
@@ -12905,7 +12103,7 @@ Templates:
 				MinColor: A5A853
 				MaxColor: 94994B
 	Template@891:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 891
 		Images: switch10.tem
 		Size: 4, 4
@@ -12929,7 +12127,7 @@ Templates:
 				MinColor: 91974A
 				MaxColor: 8E954A
 	Template@892:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 892
 		Images: switch11.tem
 		Size: 4, 4
@@ -12953,7 +12151,7 @@ Templates:
 				MinColor: A5A853
 				MaxColor: 949A49
 	Template@893:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 893
 		Images: switch12.tem
 		Size: 4, 4
@@ -12977,7 +12175,7 @@ Templates:
 				MinColor: 4D4D41
 				MaxColor: 636243
 	Template@894:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 894
 		Images: switch13.tem
 		Size: 4, 4
@@ -13001,7 +12199,7 @@ Templates:
 				MinColor: A5A853
 				MaxColor: 93984A
 	Template@895:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 895
 		Images: switch14.tem
 		Size: 4, 4
@@ -13025,7 +12223,7 @@ Templates:
 				MinColor: A5A853
 				MaxColor: 94994A
 	Template@896:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 896
 		Images: switch15.tem
 		Size: 4, 4
@@ -13049,7 +12247,7 @@ Templates:
 				MinColor: 616241
 				MaxColor: 535341
 	Template@897:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 897
 		Images: switch16.tem
 		Size: 4, 4
@@ -13073,7 +12271,7 @@ Templates:
 				MinColor: 616342
 				MaxColor: 4F4E42
 	Template@898:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 898
 		Images: switch17.tem
 		Size: 4, 4
@@ -13103,7 +12301,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: AAA091
 	Template@899:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 899
 		Images: switch18.tem
 		Size: 4, 4
@@ -13133,7 +12331,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: A9A091
 	Template@900:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 900
 		Images: switch19.tem
 		Size: 4, 4
@@ -13163,7 +12361,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: AAA091
 	Template@901:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 901
 		Images: switch20.tem
 		Size: 4, 4
@@ -13193,7 +12391,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: AAA091
 	Template@902:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 902
 		Images: switch21.tem
 		Size: 4, 4
@@ -13223,7 +12421,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: ACA292
 	Template@903:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 903
 		Images: switch22.tem
 		Size: 4, 4
@@ -13253,7 +12451,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: ACA292
 	Template@904:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 904
 		Images: switch23.tem
 		Size: 4, 4
@@ -13283,7 +12481,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: ACA292
 	Template@905:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 905
 		Images: switch24.tem
 		Size: 4, 4
@@ -13313,7 +12511,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: AAA091
 	Template@906:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 906
 		Images: switch25.tem
 		Size: 4, 4
@@ -13337,7 +12535,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: AAA091
 	Template@907:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 907
 		Images: switch26.tem
 		Size: 4, 4
@@ -13361,7 +12559,7 @@ Templates:
 				MinColor: A69C8F
 				MaxColor: ACA292
 	Template@908:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 908
 		Images: switch27.tem
 		Size: 4, 4
@@ -13385,7 +12583,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: ACA292
 	Template@909:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 909
 		Images: switch28.tem
 		Size: 4, 4
@@ -13409,7 +12607,7 @@ Templates:
 				MinColor: 514E4C
 				MaxColor: 6A655E
 	Template@910:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 910
 		Images: switch29.tem
 		Size: 4, 4
@@ -13433,7 +12631,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: A99F90
 	Template@911:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 911
 		Images: switch30.tem
 		Size: 4, 4
@@ -13457,7 +12655,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: ACA292
 	Template@912:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 912
 		Images: switch31.tem
 		Size: 4, 4
@@ -13481,7 +12679,7 @@ Templates:
 				MinColor: 68635E
 				MaxColor: 5A5551
 	Template@913:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 913
 		Images: switch32.tem
 		Size: 4, 4
@@ -13505,7 +12703,7 @@ Templates:
 				MinColor: 6B6560
 				MaxColor: 53504D
 	Template@914:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 914
 		Images: switch33.tem
 		Size: 4, 4
@@ -13535,7 +12733,7 @@ Templates:
 				MinColor: E6BF74
 				MaxColor: CEAB68
 	Template@915:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 915
 		Images: switch34.tem
 		Size: 4, 4
@@ -13565,7 +12763,7 @@ Templates:
 				MinColor: E6BF74
 				MaxColor: CDAB67
 	Template@916:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 916
 		Images: switch35.tem
 		Size: 4, 4
@@ -13595,7 +12793,7 @@ Templates:
 				MinColor: E6BF74
 				MaxColor: CEAB67
 	Template@917:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 917
 		Images: switch36.tem
 		Size: 4, 4
@@ -13625,7 +12823,7 @@ Templates:
 				MinColor: E6BF74
 				MaxColor: CEAB67
 	Template@918:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 918
 		Images: switch37.tem
 		Size: 4, 4
@@ -13655,7 +12853,7 @@ Templates:
 				MinColor: E4BE72
 				MaxColor: D0AD69
 	Template@919:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 919
 		Images: switch38.tem
 		Size: 4, 4
@@ -13685,7 +12883,7 @@ Templates:
 				MinColor: E4BE72
 				MaxColor: D0AD6A
 	Template@920:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 920
 		Images: switch39.tem
 		Size: 4, 4
@@ -13715,7 +12913,7 @@ Templates:
 				MinColor: E4BE72
 				MaxColor: D0AD69
 	Template@921:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 921
 		Images: switch40.tem
 		Size: 4, 4
@@ -13745,7 +12943,7 @@ Templates:
 				MinColor: E4BE72
 				MaxColor: CEAB69
 	Template@922:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 922
 		Images: switch41.tem
 		Size: 4, 4
@@ -13769,7 +12967,7 @@ Templates:
 				MinColor: E6BF72
 				MaxColor: D0AD6A
 	Template@923:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 923
 		Images: switch42.tem
 		Size: 4, 4
@@ -13793,7 +12991,7 @@ Templates:
 				MinColor: D1AE6B
 				MaxColor: D1AE6A
 	Template@924:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 924
 		Images: switch43.tem
 		Size: 4, 4
@@ -13817,7 +13015,7 @@ Templates:
 				MinColor: E4BE72
 				MaxColor: D0AD69
 	Template@925:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 925
 		Images: switch44.tem
 		Size: 4, 4
@@ -13841,7 +13039,7 @@ Templates:
 				MinColor: 575045
 				MaxColor: 7B6A4E
 	Template@926:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 926
 		Images: switch45.tem
 		Size: 4, 4
@@ -13865,7 +13063,7 @@ Templates:
 				MinColor: E6BF72
 				MaxColor: CFAC69
 	Template@927:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 927
 		Images: switch46.tem
 		Size: 4, 4
@@ -13889,7 +13087,7 @@ Templates:
 				MinColor: E4BE72
 				MaxColor: D0AD69
 	Template@928:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 928
 		Images: switch47.tem
 		Size: 4, 4
@@ -13913,7 +13111,7 @@ Templates:
 				MinColor: 7B6A4F
 				MaxColor: 615747
 	Template@929:
-		Categories: *Train Switch*
+		Categories: Train Switch
 		Id: 929
 		Images: switch48.tem
 		Size: 4, 4
@@ -13936,194 +13134,8 @@ Templates:
 			10: Rail
 				MinColor: 7C6C50
 				MaxColor: 585147
-	Template@930:
-		Categories: ZMM Water Tunnel Floor
-		Id: 930
-		Images: mwtnnl01.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Road
-				MinColor: 525557
-				MaxColor: 818380
-			4: Clear
-				MinColor: 515457
-				MaxColor: 828380
-			5: Clear
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Road
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Clear
-				MinColor: 434542
-				MaxColor: 404343
-			8: Clear
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Road
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Clear
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Clear
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@931:
-		Categories: ZMM Water Tunnel Floor
-		Id: 931
-		Images: mwtnnl02.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 1900C5
-				MaxColor: 1900C5
-			1: Road
-				MinColor: 5D393C
-				MaxColor: 75391D
-			2: Road
-				MinColor: 5D393C
-				MaxColor: 75391D
-			3: Road
-				MinColor: 5D393C
-				MaxColor: 75391D
-			4: Cliff
-				MinColor: 0200F5
-				MaxColor: 310096
-			5: Cliff
-				MinColor: 1900C5
-				MaxColor: 0100F8
-			6: Clear
-				MinColor: 0000FB
-				MaxColor: 0000FC
-			7: Clear
-				MinColor: 0000FC
-				MaxColor: 0000FC
-			8: Clear
-				MinColor: 0000FC
-				MaxColor: 0000FC
-			9: Cliff
-				MinColor: 0100F8
-				MaxColor: 1900C5
-			10: Cliff
-				MinColor: DE0086
-				MaxColor: F90096
-			11: Clear
-				MinColor: FC0098
-				MaxColor: FC0098
-			12: Clear
-				MinColor: FC0098
-				MaxColor: FC0098
-			13: Clear
-				MinColor: FC0098
-				MaxColor: FC0098
-			14: Cliff
-				MinColor: F90096
-				MaxColor: DE0086
-	Template@932:
-		Categories: ZMM Water Tunnel Floor
-		Id: 932
-		Images: mwtnnl03.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Clear
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@933:
-		Categories: ZMM Water Tunnel Floor
-		Id: 933
-		Images: mwtnnl04.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 363837
-				MaxColor: 615F51
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Clear
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
 	Template@934:
-		Categories: *Water Tunnels and others*
+		Categories: Water Tunnels
 		Id: 934
 		Images: wtunnl01.tem
 		Size: 3, 5
@@ -14174,7 +13186,7 @@ Templates:
 				MinColor: 262A3C
 				MaxColor: 272A3E
 	Template@935:
-		Categories: *Water Tunnels and others*
+		Categories: Water Tunnels
 		Id: 935
 		Images: wtunnl02.tem
 		Size: 5, 3
@@ -14225,7 +13237,7 @@ Templates:
 				MinColor: 262A3C
 				MaxColor: 272A3E
 	Template@936:
-		Categories: *Water Tunnels and others*
+		Categories: Water Tunnels
 		Id: 936
 		Images: wtunnl03.tem
 		Size: 3, 4
@@ -14267,7 +13279,7 @@ Templates:
 				MinColor: 3F4258
 				MaxColor: 414358
 	Template@937:
-		Categories: *Water Tunnels and others*
+		Categories: Water Tunnels
 		Id: 937
 		Images: wtunnl04.tem
 		Size: 4, 3
@@ -14309,7 +13321,7 @@ Templates:
 				MinColor: 404358
 				MaxColor: 3E4056
 	Template@938:
-		Categories: *Water Tunnels and others*
+		Categories: Water Tunnels
 		Id: 938
 		Images: wtunnl05.tem
 		Size: 3, 5
@@ -14359,2741 +13371,8 @@ Templates:
 			14: Cliff
 				MinColor: 6D7138
 				MaxColor: 6C703B
-	Template@939:
-		Categories: *Water Tunnels and others*
-		Id: 939
-		Images: wtunnl06.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Road
-				MinColor: 808380
-				MaxColor: 525557
-			2: Road
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Road
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Cliff
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Cliff
-				MinColor: 828380
-				MaxColor: 515457
-			7: Cliff
-				MinColor: 404343
-				MaxColor: 434542
-			8: Cliff
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Cliff
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@940:
-		Categories: *Water Tunnels and others*
-		Id: 940
-		Images: wtunnl07.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Clear
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@941:
-		Categories: *Water Tunnels and others*
-		Id: 941
-		Images: wtunnl08.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 86193F
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Road
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
-	Template@942:
-		Categories: *Water Tunnels and others*
-		Id: 942
-		Images: wtunnl09.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Road
-				MinColor: 525557
-				MaxColor: 818380
-			4: Cliff
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Road
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Cliff
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Road
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Cliff
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@943:
-		Categories: *Water Tunnels and others*
-		Id: 943
-		Images: wtunnl10.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Road
-				MinColor: 808380
-				MaxColor: 525557
-			2: Road
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Road
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Cliff
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Cliff
-				MinColor: 828380
-				MaxColor: 515457
-			7: Cliff
-				MinColor: 404343
-				MaxColor: 434542
-			8: Cliff
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Cliff
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@944:
-		Categories: *Water Tunnels and others*
-		Id: 944
-		Images: wtunnl11.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Road
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@945:
-		Categories: *Water Tunnels and others*
-		Id: 945
-		Images: wtunnl12.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 363837
-				MaxColor: 615F51
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Clear
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
-	Template@946:
-		Categories: *Water Tunnels and others*
-		Id: 946
-		Images: wtunnl13.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Road
-				MinColor: 525557
-				MaxColor: 818380
-			4: Cliff
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Road
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Cliff
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Road
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Cliff
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@947:
-		Categories: *Water Tunnels and others*
-		Id: 947
-		Images: wtunnl14.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Road
-				MinColor: 808380
-				MaxColor: 525557
-			2: Road
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Road
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Cliff
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Cliff
-				MinColor: 828380
-				MaxColor: 515457
-			7: Cliff
-				MinColor: 404343
-				MaxColor: 434542
-			8: Cliff
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Cliff
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@948:
-		Categories: *Water Tunnels and others*
-		Id: 948
-		Images: wtunnl15.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Road
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@949:
-		Categories: *Water Tunnels and others*
-		Id: 949
-		Images: wtunnl16.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 363837
-				MaxColor: 615F51
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Clear
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
-	Template@950:
-		Categories: *Water Tunnels and others*
-		Id: 950
-		Images: wtunnl17.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Road
-				MinColor: 525557
-				MaxColor: 818380
-			4: Cliff
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Road
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Cliff
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Road
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Cliff
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@951:
-		Categories: *Water Tunnels and others*
-		Id: 951
-		Images: wtunnl18.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Road
-				MinColor: 808380
-				MaxColor: 525557
-			2: Road
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Road
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Cliff
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Cliff
-				MinColor: 828380
-				MaxColor: 515457
-			7: Cliff
-				MinColor: 404343
-				MaxColor: 434542
-			8: Cliff
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Cliff
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@952:
-		Categories: *Water Tunnels and others*
-		Id: 952
-		Images: wtunnl19.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Clear
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@953:
-		Categories: *Water Tunnels and others*
-		Id: 953
-		Images: wtunnl20.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 363837
-				MaxColor: 615F51
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Clear
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
-	Template@954:
-		Categories: *Water Tunnels and others*
-		Id: 954
-		Images: wtunnl21.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Road
-				MinColor: 525557
-				MaxColor: 818380
-			4: Cliff
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Road
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Cliff
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Road
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Cliff
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@955:
-		Categories: *Water Tunnels and others*
-		Id: 955
-		Images: wtunnl22.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Road
-				MinColor: 808380
-				MaxColor: 525557
-			2: Road
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Road
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Cliff
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Cliff
-				MinColor: 828380
-				MaxColor: 515457
-			7: Cliff
-				MinColor: 404343
-				MaxColor: 434542
-			8: Cliff
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Cliff
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@956:
-		Categories: *Water Tunnels and others*
-		Id: 956
-		Images: wtunnl23.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Clear
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@957:
-		Categories: *Water Tunnels and others*
-		Id: 957
-		Images: wtunnl24.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 363837
-				MaxColor: 615F51
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Clear
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
-	Template@958:
-		Categories: *Water Tunnels and others*
-		Id: 958
-		Images: wtunnl25.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Road
-				MinColor: 525557
-				MaxColor: 818380
-			4: Cliff
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Road
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Cliff
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Road
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Cliff
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@959:
-		Categories: *Water Tunnels and others*
-		Id: 959
-		Images: wtunnl26.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Road
-				MinColor: 808380
-				MaxColor: 525557
-			2: Road
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Road
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Cliff
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Cliff
-				MinColor: 828380
-				MaxColor: 515457
-			7: Cliff
-				MinColor: 404343
-				MaxColor: 434542
-			8: Cliff
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Cliff
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@960:
-		Categories: *Water Tunnels and others*
-		Id: 960
-		Images: wtunnl27.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Clear
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@961:
-		Categories: *Water Tunnels and others*
-		Id: 961
-		Images: wtunnl28.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 363837
-				MaxColor: 615F51
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Clear
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
-	Template@962:
-		Categories: *Water Tunnels and others*
-		Id: 962
-		Images: wtunnl29.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Road
-				MinColor: 525557
-				MaxColor: 818380
-			4: Cliff
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Road
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Cliff
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Road
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Cliff
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@963:
-		Categories: *Water Tunnels and others*
-		Id: 963
-		Images: wtunnl30.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Road
-				MinColor: 808380
-				MaxColor: 525557
-			2: Road
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Road
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Cliff
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Cliff
-				MinColor: 828380
-				MaxColor: 515457
-			7: Cliff
-				MinColor: 404343
-				MaxColor: 434542
-			8: Cliff
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Cliff
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@964:
-		Categories: *Water Tunnels and others*
-		Id: 964
-		Images: wtunnl31.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Clear
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@965:
-		Categories: *Water Tunnels and others*
-		Id: 965
-		Images: wtunnl32.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 363837
-				MaxColor: 615F51
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Clear
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
-	Template@966:
-		Categories: *Water Tunnels and others*
-		Id: 966
-		Images: wtunnl33.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Road
-				MinColor: 525557
-				MaxColor: 818380
-			4: Cliff
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Road
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Cliff
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Road
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Cliff
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@967:
-		Categories: *Water Tunnels and others*
-		Id: 967
-		Images: wtunnl34.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Road
-				MinColor: 808380
-				MaxColor: 525557
-			2: Road
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Road
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Cliff
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Cliff
-				MinColor: 828380
-				MaxColor: 515457
-			7: Cliff
-				MinColor: 404343
-				MaxColor: 434542
-			8: Cliff
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Cliff
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@968:
-		Categories: *Water Tunnels and others*
-		Id: 968
-		Images: wtunnl35.tem
-		Size: 3, 4
-		Tiles:
-			0: Cliff
-				MinColor: 2B2725
-				MaxColor: 4E4E40
-			1: Cliff
-				MinColor: 635F4C
-				MaxColor: 979C4E
-			2: Clear
-				MinColor: 9EA351
-				MaxColor: 9DA254
-			3: Road
-				MinColor: 171917
-				MaxColor: 393C39
-			4: Clear
-				MinColor: 363839
-				MaxColor: 777875
-			5: Clear
-				MinColor: 535657
-				MaxColor: 838481
-			6: Road
-				MinColor: 0E0F0C
-				MaxColor: 474A3E
-			7: Rail
-				MinColor: 212420
-				MaxColor: 3A3C3B
-			8: Rail
-				MinColor: 434542
-				MaxColor: 414343
-			9: Road
-				MinColor: 876D4D
-				MaxColor: 353938
-			10: Clear
-				MinColor: 464844
-				MaxColor: 3F4244
-			11: Clear
-				MinColor: 7D7E7C
-				MaxColor: 4B4F53
-	Template@969:
-		Categories: *Water Tunnels and others*
-		Id: 969
-		Images: wtunnl36.tem
-		Size: 4, 3
-		Tiles:
-			0: Cliff
-				MinColor: 363837
-				MaxColor: 615F51
-			1: Road
-				MinColor: 1C1D1A
-				MaxColor: 4C4F4B
-			2: Road
-				MinColor: 333533
-				MaxColor: 606054
-			3: Road
-				MinColor: 545759
-				MaxColor: 6D6347
-			4: Cliff
-				MinColor: 969D4F
-				MaxColor: 66614B
-			5: Clear
-				MinColor: 757673
-				MaxColor: 494C4E
-			6: Rail
-				MinColor: 424443
-				MaxColor: 424442
-			7: Clear
-				MinColor: 4D5154
-				MaxColor: 6C6E6B
-			8: Clear
-				MinColor: A0A64D
-				MaxColor: A1A753
-			9: Clear
-				MinColor: 838481
-				MaxColor: 535657
-			10: Rail
-				MinColor: 414343
-				MaxColor: 434542
-			11: Clear
-				MinColor: 4B4F52
-				MaxColor: 7D7E7C
-	Template@970:
-		Categories: *Water Tunnels and others*
-		Id: 970
-		Images: wtunnl37.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			2: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-			3: Road
-				MinColor: BA6728
-				MaxColor: BB6022
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			6: Water
-				MinColor: F2322D
-				MaxColor: FB0303
-			7: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			8: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-	Template@971:
-		Categories: *Water Tunnels and others*
-		Id: 971
-		Images: wtunnl38.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Road
-				MinColor: BB6022
-				MaxColor: BA6728
-			2: Water
-				MinColor: FB0303
-				MaxColor: F2322D
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			6: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-			7: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			8: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-	Template@972:
-		Categories: *Water Tunnels and others*
-		Id: 972
-		Images: wtunnl39.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 8D1F42
-			1: Cliff
-				MinColor: FB0303
-				MaxColor: F2322D
-			2: Road
-				MinColor: B03039
-				MaxColor: BB6022
-			3: Water
-				MinColor: FB0101
-				MaxColor: F71B18
-	Template@973:
-		Categories: *Water Tunnels and others*
-		Id: 973
-		Images: wtunnl40.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 86193F
-			1: Road
-				MinColor: BB6022
-				MaxColor: 9C1D2D
-			2: Cliff
-				MinColor: F2322D
-				MaxColor: FB0303
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-	Template@974:
-		Categories: *Water Tunnels and others*
-		Id: 974
-		Images: wtunnl41.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			2: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-			3: Road
-				MinColor: BA6728
-				MaxColor: BB6022
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			6: Water
-				MinColor: F2322D
-				MaxColor: FB0303
-			7: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			8: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-	Template@975:
-		Categories: *Water Tunnels and others*
-		Id: 975
-		Images: wtunnl42.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Road
-				MinColor: BB6022
-				MaxColor: BA6728
-			2: Water
-				MinColor: FB0303
-				MaxColor: F2322D
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			6: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-			7: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			8: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-	Template@976:
-		Categories: *Water Tunnels and others*
-		Id: 976
-		Images: wtunnl43.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 8D1F42
-			1: Cliff
-				MinColor: FB0303
-				MaxColor: F2322D
-			2: Road
-				MinColor: B03039
-				MaxColor: BB6022
-			3: Water
-				MinColor: FB0101
-				MaxColor: F71B18
-	Template@977:
-		Categories: *Water Tunnels and others*
-		Id: 977
-		Images: wtunnl44.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 86193F
-			1: Road
-				MinColor: BB6022
-				MaxColor: 9C1D2D
-			2: Cliff
-				MinColor: F2322D
-				MaxColor: FB0303
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-	Template@978:
-		Categories: *Water Tunnels and others*
-		Id: 978
-		Images: wtunnl45.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			2: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-			3: Road
-				MinColor: BA6728
-				MaxColor: BB6022
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			6: Water
-				MinColor: F2322D
-				MaxColor: FB0303
-			7: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			8: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-	Template@979:
-		Categories: *Water Tunnels and others*
-		Id: 979
-		Images: wtunnl46.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Road
-				MinColor: BB6022
-				MaxColor: BA6728
-			2: Water
-				MinColor: FB0303
-				MaxColor: F2322D
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			6: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-			7: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			8: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-	Template@980:
-		Categories: *Water Tunnels and others*
-		Id: 980
-		Images: wtunnl47.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 8D1F42
-			1: Cliff
-				MinColor: FB0303
-				MaxColor: F2322D
-			2: Road
-				MinColor: B03039
-				MaxColor: BB6022
-			3: Water
-				MinColor: FB0101
-				MaxColor: F71B18
-	Template@981:
-		Categories: *Water Tunnels and others*
-		Id: 981
-		Images: wtunnl48.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 86193F
-			1: Road
-				MinColor: BB6022
-				MaxColor: 9C1D2D
-			2: Cliff
-				MinColor: F2322D
-				MaxColor: FB0303
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-	Template@982:
-		Categories: *Water Tunnels and others*
-		Id: 982
-		Images: wtunnl49.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			2: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-			3: Road
-				MinColor: BA6728
-				MaxColor: BB6022
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			6: Water
-				MinColor: F2322D
-				MaxColor: FB0303
-			7: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			8: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-	Template@983:
-		Categories: *Water Tunnels and others*
-		Id: 983
-		Images: wtunnl50.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Road
-				MinColor: BB6022
-				MaxColor: BA6728
-			2: Water
-				MinColor: FB0303
-				MaxColor: F2322D
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			6: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-			7: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			8: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-	Template@984:
-		Categories: *Water Tunnels and others*
-		Id: 984
-		Images: wtunnl51.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 8D1F42
-			1: Cliff
-				MinColor: FB0303
-				MaxColor: F2322D
-			2: Road
-				MinColor: B03039
-				MaxColor: BB6022
-			3: Water
-				MinColor: FB0101
-				MaxColor: F71B18
-	Template@985:
-		Categories: *Water Tunnels and others*
-		Id: 985
-		Images: wtunnl52.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 86193F
-			1: Road
-				MinColor: BB6022
-				MaxColor: 9C1D2D
-			2: Cliff
-				MinColor: F2322D
-				MaxColor: FB0303
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-	Template@986:
-		Categories: *Water Tunnels and others*
-		Id: 986
-		Images: wtunnl53.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			2: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-			3: Road
-				MinColor: BA6728
-				MaxColor: BB6022
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			6: Water
-				MinColor: F2322D
-				MaxColor: FB0303
-			7: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			8: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-	Template@987:
-		Categories: *Water Tunnels and others*
-		Id: 987
-		Images: wtunnl54.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Road
-				MinColor: BB6022
-				MaxColor: BA6728
-			2: Water
-				MinColor: FB0303
-				MaxColor: F2322D
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			6: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-			7: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			8: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-	Template@988:
-		Categories: *Water Tunnels and others*
-		Id: 988
-		Images: wtunnl55.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 8D1F42
-			1: Cliff
-				MinColor: FB0303
-				MaxColor: F2322D
-			2: Road
-				MinColor: B03039
-				MaxColor: BB6022
-			3: Water
-				MinColor: FB0101
-				MaxColor: F71B18
-	Template@989:
-		Categories: *Water Tunnels and others*
-		Id: 989
-		Images: wtunnl56.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 86193F
-			1: Road
-				MinColor: BB6022
-				MaxColor: 9C1D2D
-			2: Cliff
-				MinColor: F2322D
-				MaxColor: FB0303
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-	Template@990:
-		Categories: *Water Tunnels and others*
-		Id: 990
-		Images: wtunnl57.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			2: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-			3: Road
-				MinColor: BA6728
-				MaxColor: BB6022
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			6: Water
-				MinColor: F2322D
-				MaxColor: FB0303
-			7: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			8: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-	Template@991:
-		Categories: *Water Tunnels and others*
-		Id: 991
-		Images: wtunnl58.tem
-		Size: 3, 3
-		Tiles:
-			0: Water
-				MinColor: F71B18
-				MaxColor: F71B18
-			1: Road
-				MinColor: BB6022
-				MaxColor: BA6728
-			2: Water
-				MinColor: FB0303
-				MaxColor: F2322D
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-			4: Cliff
-				MinColor: FC0000
-				MaxColor: FC0000
-			5: Cliff
-				MinColor: FB0101
-				MaxColor: F71B18
-			6: Cliff
-				MinColor: F71B9D
-				MaxColor: FB0198
-			7: Cliff
-				MinColor: FC0098
-				MaxColor: FC0098
-			8: Cliff
-				MinColor: FB0198
-				MaxColor: F71B9D
-	Template@992:
-		Categories: *Water Tunnels and others*
-		Id: 992
-		Images: wtunnl59.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 8D1F42
-			1: Cliff
-				MinColor: FB0303
-				MaxColor: F2322D
-			2: Road
-				MinColor: B03039
-				MaxColor: BB6022
-			3: Water
-				MinColor: FB0101
-				MaxColor: F71B18
-	Template@993:
-		Categories: *Water Tunnels and others*
-		Id: 993
-		Images: wtunnl60.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				MinColor: 050307
-				MaxColor: 86193F
-			1: Road
-				MinColor: BB6022
-				MaxColor: 9C1D2D
-			2: Cliff
-				MinColor: F2322D
-				MaxColor: FB0303
-			3: Cliff
-				MinColor: F71B18
-				MaxColor: FB0101
-	Template@994:
-		Categories: *Water Tunnels and others*
-		Id: 994
-		Images: wtunnl61.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Rough
-				Height: 4
-				MinColor: 525557
-				MaxColor: 818380
-			4: Rough
-				Height: 4
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Rail
-				Height: 4
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Rail
-				Height: 4
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Rough
-				Height: 4
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Rough
-				Height: 4
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@995:
-		Categories: *Water Tunnels and others*
-		Id: 995
-		Images: wtunnl62.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Rough
-				Height: 4
-				MinColor: 808380
-				MaxColor: 525557
-			2: Rail
-				Height: 4
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Rough
-				Height: 4
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Road
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Rough
-				Height: 4
-				MinColor: 828380
-				MaxColor: 515457
-			7: Rail
-				Height: 4
-				MinColor: 404343
-				MaxColor: 434542
-			8: Rough
-				Height: 4
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Road
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@996:
-		Categories: *Water Tunnels and others*
-		Id: 996
-		Images: wtunnl63.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Rough
-				Height: 4
-				MinColor: 525557
-				MaxColor: 818380
-			4: Rough
-				Height: 4
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Rail
-				Height: 4
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Rail
-				Height: 4
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Rough
-				Height: 4
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Rough
-				Height: 4
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@997:
-		Categories: *Water Tunnels and others*
-		Id: 997
-		Images: wtunnl64.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Rough
-				Height: 4
-				MinColor: 808380
-				MaxColor: 525557
-			2: Rail
-				Height: 4
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Rough
-				Height: 4
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Road
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Rough
-				Height: 4
-				MinColor: 828380
-				MaxColor: 515457
-			7: Rail
-				Height: 4
-				MinColor: 404343
-				MaxColor: 434542
-			8: Rough
-				Height: 4
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Road
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@998:
-		Categories: *Water Tunnels and others*
-		Id: 998
-		Images: wtunnl65.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Rough
-				Height: 4
-				MinColor: 525557
-				MaxColor: 818380
-			4: Rough
-				Height: 4
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Rail
-				Height: 4
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Rail
-				Height: 4
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Rough
-				Height: 4
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Rough
-				Height: 4
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@999:
-		Categories: *Water Tunnels and others*
-		Id: 999
-		Images: wtunnl66.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Rough
-				Height: 4
-				MinColor: 808380
-				MaxColor: 525557
-			2: Rail
-				Height: 4
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Rough
-				Height: 4
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Road
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Rough
-				Height: 4
-				MinColor: 828380
-				MaxColor: 515457
-			7: Rail
-				Height: 4
-				MinColor: 404343
-				MaxColor: 434542
-			8: Rough
-				Height: 4
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Road
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@1000:
-		Categories: *Water Tunnels and others*
-		Id: 1000
-		Images: wtunnl67.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Rough
-				Height: 4
-				MinColor: 525557
-				MaxColor: 818380
-			4: Rough
-				Height: 4
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Rail
-				Height: 4
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Rail
-				Height: 4
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Rough
-				Height: 4
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Rough
-				Height: 4
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@1001:
-		Categories: *Water Tunnels and others*
-		Id: 1001
-		Images: wtunnl68.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Rough
-				Height: 4
-				MinColor: 808380
-				MaxColor: 525557
-			2: Rail
-				Height: 4
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Rough
-				Height: 4
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Road
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Rough
-				Height: 4
-				MinColor: 828380
-				MaxColor: 515457
-			7: Rail
-				Height: 4
-				MinColor: 404343
-				MaxColor: 434542
-			8: Rough
-				Height: 4
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Road
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@1002:
-		Categories: *Water Tunnels and others*
-		Id: 1002
-		Images: wtunnl69.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Rough
-				Height: 4
-				MinColor: 525557
-				MaxColor: 818380
-			4: Rough
-				Height: 4
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Rail
-				Height: 4
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Rail
-				Height: 4
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Rough
-				Height: 4
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Rough
-				Height: 4
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@1003:
-		Categories: *Water Tunnels and others*
-		Id: 1003
-		Images: wtunnl70.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Rough
-				Height: 4
-				MinColor: 808380
-				MaxColor: 525557
-			2: Rail
-				Height: 4
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Rough
-				Height: 4
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Road
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Rough
-				Height: 4
-				MinColor: 828380
-				MaxColor: 515457
-			7: Rail
-				Height: 4
-				MinColor: 404343
-				MaxColor: 434542
-			8: Rough
-				Height: 4
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Road
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-	Template@1004:
-		Categories: *Water Tunnels and others*
-		Id: 1004
-		Images: wtunnl71.tem
-		Size: 3, 5
-		Tiles:
-			0: Cliff
-				MinColor: 9DA557
-				MaxColor: 97A351
-			1: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			2: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703A
-			3: Rough
-				Height: 4
-				MinColor: 525557
-				MaxColor: 818380
-			4: Rough
-				Height: 4
-				MinColor: 515457
-				MaxColor: 828380
-			5: Cliff
-				MinColor: 373A3B
-				MaxColor: 595A58
-			6: Rail
-				Height: 4
-				MinColor: 414442
-				MaxColor: 3F4242
-			7: Rail
-				Height: 4
-				MinColor: 434542
-				MaxColor: 404343
-			8: Cliff
-				MinColor: 2F302D
-				MaxColor: 2C2F2E
-			9: Rough
-				Height: 4
-				MinColor: 7D7F7D
-				MaxColor: 4A4E52
-			10: Rough
-				Height: 4
-				MinColor: 7F817E
-				MaxColor: 4B4F53
-			11: Cliff
-				MinColor: 565856
-				MaxColor: 343738
-			12: Cliff
-				MinColor: 9DA557
-				MaxColor: 98A351
-			13: Cliff
-				MinColor: A3A850
-				MaxColor: 98A04F
-			14: Cliff
-				MinColor: 6D7138
-				MaxColor: 6C703B
-	Template@1005:
-		Categories: *Water Tunnels and others*
-		Id: 1005
-		Images: wtunnl72.tem
-		Size: 5, 3
-		Tiles:
-			0: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			1: Rough
-				Height: 4
-				MinColor: 808380
-				MaxColor: 525557
-			2: Rail
-				Height: 4
-				MinColor: 3F4242
-				MaxColor: 424442
-			3: Rough
-				Height: 4
-				MinColor: 494E52
-				MaxColor: 7D7F7D
-			4: Cliff
-				MinColor: 97A351
-				MaxColor: 9DA457
-			5: Road
-				MinColor: 99A04F
-				MaxColor: A3A850
-			6: Rough
-				Height: 4
-				MinColor: 828380
-				MaxColor: 515457
-			7: Rail
-				Height: 4
-				MinColor: 404343
-				MaxColor: 434542
-			8: Rough
-				Height: 4
-				MinColor: 4B4F53
-				MaxColor: 7E817E
-			9: Road
-				MinColor: 98A04F
-				MaxColor: A3A850
-			10: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
-			11: Cliff
-				MinColor: 595A58
-				MaxColor: 373A3B
-			12: Cliff
-				MinColor: 2D2F2E
-				MaxColor: 2F312E
-			13: Cliff
-				MinColor: 343738
-				MaxColor: 565856
-			14: Cliff
-				MinColor: 6C703A
-				MaxColor: 6D7138
 	Template@1006:
-		Categories: *Pavement*
+		Categories: Pavement
 		Id: 1006
 		Images: pvclr01.tem, pvclr01a.tem, pvclr01b.tem, pvclr01c.tem, pvclr01d.tem, pvclr01e.tem, pvclr01f.tem, pvclr01g.tem
 		Size: 1, 1
@@ -17102,7 +13381,7 @@ Templates:
 				MinColor: B7B09F
 				MaxColor: B2AA9B
 	Template@1007:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1007
 		Images: plat01.tem, plat01a.tem
 		Size: 1, 1
@@ -17111,7 +13390,7 @@ Templates:
 				MinColor: AEAA92
 				MaxColor: ABA78E
 	Template@1008:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1008
 		Images: plat02.tem, plat02a.tem
 		Size: 1, 1
@@ -17120,7 +13399,7 @@ Templates:
 				MinColor: BBB4A8
 				MaxColor: B8B59D
 	Template@1009:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1009
 		Images: plat03.tem, plat03a.tem
 		Size: 1, 1
@@ -17129,7 +13408,7 @@ Templates:
 				MinColor: B7AE9D
 				MaxColor: B4AE90
 	Template@1010:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1010
 		Images: plat04.tem, plat04a.tem
 		Size: 1, 1
@@ -17138,7 +13417,7 @@ Templates:
 				MinColor: B2AA9E
 				MaxColor: 9FA45F
 	Template@1011:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1011
 		Images: plat05.tem, plat05a.tem
 		Size: 1, 1
@@ -17147,7 +13426,7 @@ Templates:
 				MinColor: ACA58C
 				MaxColor: B5AC9D
 	Template@1012:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1012
 		Images: plat06.tem, plat06a.tem
 		Size: 1, 1
@@ -17156,7 +13435,7 @@ Templates:
 				MinColor: ABA58A
 				MaxColor: B7B096
 	Template@1013:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1013
 		Images: plat07.tem, plat07a.tem
 		Size: 1, 1
@@ -17165,7 +13444,7 @@ Templates:
 				MinColor: A2A179
 				MaxColor: ABA986
 	Template@1014:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1014
 		Images: plat08.tem, plat08a.tem
 		Size: 1, 1
@@ -17174,7 +13453,7 @@ Templates:
 				MinColor: B4ADA2
 				MaxColor: B1AD90
 	Template@1015:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1015
 		Images: plat09.tem, plat09a.tem
 		Size: 1, 1
@@ -17183,7 +13462,7 @@ Templates:
 				MinColor: B9B49E
 				MaxColor: B8B1A4
 	Template@1016:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1016
 		Images: plat10.tem, plat10a.tem
 		Size: 1, 1
@@ -17192,7 +13471,7 @@ Templates:
 				MinColor: ACAA7B
 				MaxColor: ACAB80
 	Template@1017:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1017
 		Images: plat11.tem, plat11a.tem
 		Size: 1, 1
@@ -17201,7 +13480,7 @@ Templates:
 				MinColor: B6B19D
 				MaxColor: B2AC98
 	Template@1018:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1018
 		Images: plat12.tem, plat12a.tem
 		Size: 1, 1
@@ -17210,7 +13489,7 @@ Templates:
 				MinColor: B9B19C
 				MaxColor: B1AC81
 	Template@1019:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1019
 		Images: plat13.tem, plat13a.tem
 		Size: 1, 1
@@ -17219,7 +13498,7 @@ Templates:
 				MinColor: 9AA355
 				MaxColor: B1AC9E
 	Template@1020:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1020
 		Images: plat14.tem, plat14a.tem
 		Size: 1, 1
@@ -17228,7 +13507,7 @@ Templates:
 				MinColor: AAAA7C
 				MaxColor: B8B395
 	Template@1021:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1021
 		Images: plat15.tem, plat15a.tem
 		Size: 1, 1
@@ -17237,7 +13516,7 @@ Templates:
 				MinColor: A9AA76
 				MaxColor: ADA88A
 	Template@1022:
-		Categories: *Pavement Fixes A*
+		Categories: Pavement Fixes
 		Id: 1022
 		Images: plat16.tem, plat16a.tem
 		Size: 1, 1
@@ -17246,7 +13525,7 @@ Templates:
 				MinColor: ADAC82
 				MaxColor: B2B08A
 	Template@1023:
-		Categories: *Grass Water Caves B*
+		Categories: Grass Water Caves
 		Id: 1023
 		Images: wcavee01.tem
 		Size: 2, 2
@@ -17266,7 +13545,7 @@ Templates:
 				MinColor: 4D5147
 				MaxColor: 7C5B37
 	Template@1024:
-		Categories: *Grass Water Caves B*
+		Categories: Grass Water Caves
 		Id: 1024
 		Images: wcavee02.tem
 		Size: 2, 2
@@ -17286,7 +13565,7 @@ Templates:
 				MinColor: 373A47
 				MaxColor: 322A25
 	Template@1025:
-		Categories: *Grass Water Caves B*
+		Categories: Grass Water Caves
 		Id: 1025
 		Images: wcavee03.tem
 		Size: 2, 2
@@ -17299,7 +13578,7 @@ Templates:
 				MinColor: 353943
 				MaxColor: 3D3126
 	Template@1026:
-		Categories: *Grass Water Caves B*
+		Categories: Grass Water Caves
 		Id: 1026
 		Images: wcavee04.tem
 		Size: 2, 2
@@ -17318,81 +13597,8 @@ Templates:
 			3: Cliff
 				MinColor: 3C3E42
 				MaxColor: 6D5333
-	Template@1027:
-		Categories: ZMM Water Caves1
-		Id: 1027
-		Images: mwcavd01.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: A60006
-				MaxColor: A4001F
-			1: Cliff
-				MinColor: 0200EE
-				MaxColor: 543668
-			2: Cliff
-				Height: 4
-				MinColor: 941317
-				MaxColor: B50727
-			3: Cliff
-				MinColor: 1F06C4
-				MaxColor: 9581BA
-	Template@1028:
-		Categories: ZMM Water Caves1
-		Id: 1028
-		Images: mwcavd02.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: A60006
-				MaxColor: A3001F
-			1: Cliff
-				MinColor: 0200ED
-				MaxColor: 3E1D51
-			2: Cliff
-				Height: 4
-				MinColor: 941317
-				MaxColor: B50727
-			3: Cliff
-				MinColor: 1900BE
-				MaxColor: 391D5A
-	Template@1029:
-		Categories: ZMM Water Caves1
-		Id: 1029
-		Images: mwcavd03.tem
-		Size: 2, 1
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 941317
-				MaxColor: A30524
-			1: Cliff
-				MinColor: 1A00BB
-				MaxColor: 402053
-	Template@1030:
-		Categories: ZMM Water Caves1
-		Id: 1030
-		Images: mwcavd04.tem
-		Size: 2, 2
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: A60006
-				MaxColor: A3001F
-			1: Cliff
-				MinColor: 0200ED
-				MaxColor: 9D80AD
-			2: Cliff
-				Height: 4
-				MinColor: 941317
-				MaxColor: B50727
-			3: Cliff
-				MinColor: 1A00BE
-				MaxColor: 4F336E
 	Template@1031:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1031
 		Images: grdrl01.tem
 		Size: 1, 1
@@ -17401,7 +13607,7 @@ Templates:
 				MinColor: 5B5D5C
 				MaxColor: 5A5B58
 	Template@1032:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1032
 		Images: grdrl02.tem
 		Size: 1, 1
@@ -17410,7 +13616,7 @@ Templates:
 				MinColor: 5A5C5B
 				MaxColor: 595A58
 	Template@1033:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1033
 		Images: grdrl03.tem
 		Size: 1, 1
@@ -17419,7 +13625,7 @@ Templates:
 				MinColor: 5A5C5B
 				MaxColor: 585A57
 	Template@1034:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1034
 		Images: grdrl04.tem
 		Size: 1, 1
@@ -17428,7 +13634,7 @@ Templates:
 				MinColor: 5B5D5D
 				MaxColor: 585A57
 	Template@1035:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1035
 		Images: grdrl05.tem
 		Size: 1, 1
@@ -17437,7 +13643,7 @@ Templates:
 				MinColor: 575957
 				MaxColor: 5B5D5C
 	Template@1036:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1036
 		Images: grdrl06.tem
 		Size: 1, 1
@@ -17446,7 +13652,7 @@ Templates:
 				MinColor: 585A58
 				MaxColor: 555858
 	Template@1037:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1037
 		Images: grdrl07.tem
 		Size: 1, 1
@@ -17455,7 +13661,7 @@ Templates:
 				MinColor: 575957
 				MaxColor: 555858
 	Template@1038:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1038
 		Images: grdrl08.tem
 		Size: 1, 1
@@ -17464,7 +13670,7 @@ Templates:
 				MinColor: 565856
 				MaxColor: 5B5D5C
 	Template@1039:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1039
 		Images: grdrl09.tem, grdrl09a.tem, grdrl09b.tem
 		Size: 1, 1
@@ -17473,7 +13679,7 @@ Templates:
 				MinColor: 3E4246
 				MaxColor: 404347
 	Template@1040:
-		Categories: *Highway Road Guard Rails*
+		Categories: Highway Road Guard Rails
 		Id: 1040
 		Images: grdrl10.tem, grdrl10a.tem, grdrl10b.tem
 		Size: 1, 1
@@ -17482,7 +13688,7 @@ Templates:
 				MinColor: 404347
 				MaxColor: 3D4146
 	Template@1041:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1041
 		Images: btrack01.tem
 		Size: 1, 1
@@ -17491,7 +13697,7 @@ Templates:
 				MinColor: 5D5C42
 				MaxColor: 676442
 	Template@1042:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1042
 		Images: btrack02.tem
 		Size: 1, 1
@@ -17500,7 +13706,7 @@ Templates:
 				MinColor: 676544
 				MaxColor: 5F5E44
 	Template@1043:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1043
 		Images: btrack03.tem
 		Size: 1, 1
@@ -17509,7 +13715,7 @@ Templates:
 				MinColor: 645F5A
 				MaxColor: 6A645D
 	Template@1044:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1044
 		Images: btrack04.tem
 		Size: 1, 1
@@ -17518,7 +13724,7 @@ Templates:
 				MinColor: 6B655F
 				MaxColor: 67625C
 	Template@1045:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1045
 		Images: btrack05.tem
 		Size: 1, 1
@@ -17527,7 +13733,7 @@ Templates:
 				MinColor: 70624B
 				MaxColor: 7B6A4C
 	Template@1046:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1046
 		Images: btrack06.tem
 		Size: 1, 1
@@ -17536,7 +13742,7 @@ Templates:
 				MinColor: 7F6E50
 				MaxColor: 72644D
 	Template@1047:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1047
 		Images: btrack07.tem
 		Size: 1, 1
@@ -17545,7 +13751,7 @@ Templates:
 				MinColor: 9BA44A
 				MaxColor: 9EA54B
 	Template@1048:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1048
 		Images: btrack08.tem
 		Size: 1, 1
@@ -17554,7 +13760,7 @@ Templates:
 				MinColor: B6AD9E
 				MaxColor: BBB09E
 	Template@1049:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1049
 		Images: btrack09.tem
 		Size: 1, 1
@@ -17563,7 +13769,7 @@ Templates:
 				MinColor: E6BF74
 				MaxColor: E3BC6E
 	Template@1050:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1050
 		Images: btrack10.tem, btrack10a.tem, btrack10b.tem, btrack10c.tem
 		Size: 1, 1
@@ -17572,7 +13778,7 @@ Templates:
 				MinColor: 3F4242
 				MaxColor: 424442
 	Template@1051:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1051
 		Images: btrack11.tem, btrack11a.tem, btrack11b.tem, btrack11c.tem
 		Size: 1, 1
@@ -17581,7 +13787,7 @@ Templates:
 				MinColor: 424444
 				MaxColor: 454642
 	Template@1052:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1052
 		Images: btrack12.tem, btrack12a.tem, btrack12b.tem, btrack12c.tem
 		Size: 1, 1
@@ -17590,7 +13796,7 @@ Templates:
 				MinColor: 4C5052
 				MaxColor: 7E7F7D
 	Template@1053:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1053
 		Images: btrack13.tem, btrack13a.tem, btrack13b.tem, btrack13c.tem
 		Size: 1, 1
@@ -17599,7 +13805,7 @@ Templates:
 				MinColor: 7D7E7C
 				MaxColor: 4B4F52
 	Template@1054:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1054
 		Images: btrack14.tem, btrack14a.tem, btrack14b.tem, btrack14c.tem
 		Size: 1, 1
@@ -17608,7 +13814,7 @@ Templates:
 				MinColor: 434542
 				MaxColor: 414343
 	Template@1055:
-		Categories: *Track Under Bridges fix*
+		Categories: Track Under Bridges fix
 		Id: 1055
 		Images: btrack15.tem, btrack15a.tem, btrack15b.tem, btrack15c.tem
 		Size: 1, 1
@@ -17617,7 +13823,7 @@ Templates:
 				MinColor: 535557
 				MaxColor: 838480
 	Template@1056:
-		Categories: *Water Tunnel Sides*
+		Categories: Water Tunnel Sides
 		Id: 1056
 		Images: wtunxd01.tem
 		Size: 3, 1
@@ -17633,7 +13839,7 @@ Templates:
 				MinColor: 414358
 				MaxColor: 414358
 	Template@1057:
-		Categories: *Water Tunnel Sides*
+		Categories: Water Tunnel Sides
 		Id: 1057
 		Images: wtunxd02.tem
 		Size: 1, 3
@@ -17648,175 +13854,8 @@ Templates:
 			2: Water
 				MinColor: 414358
 				MaxColor: 414358
-	Template@1058:
-		Categories: ZMM Under bridge track
-		Id: 1058
-		Images: mbtrack01.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 762B2A
-				MaxColor: 842222
-	Template@1059:
-		Categories: ZMM Under bridge track
-		Id: 1059
-		Images: mbtrack02.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 862424
-				MaxColor: 782D2D
-	Template@1060:
-		Categories: ZMM Under bridge track
-		Id: 1060
-		Images: mbtrack03.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 762B2A
-				MaxColor: 842222
-	Template@1061:
-		Categories: ZMM Under bridge track
-		Id: 1061
-		Images: mbtrack04.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 862424
-				MaxColor: 782D2D
-	Template@1062:
-		Categories: ZMM Under bridge track
-		Id: 1062
-		Images: mbtrack05.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 762B2A
-				MaxColor: 842222
-	Template@1063:
-		Categories: ZMM Under bridge track
-		Id: 1063
-		Images: mbtrack06.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 862424
-				MaxColor: 782D2D
-	Template@1064:
-		Categories: ZMM Under bridge track
-		Id: 1064
-		Images: mbtrack07.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 424298
-				MaxColor: 434398
-	Template@1065:
-		Categories: ZMM Under bridge track
-		Id: 1065
-		Images: mbtrack08.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 424298
-				MaxColor: 434398
-	Template@1066:
-		Categories: ZMM Under bridge track
-		Id: 1066
-		Images: mbtrack09.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 424298
-				MaxColor: 434398
-	Template@1067:
-		Categories: ZMM Under bridge track
-		Id: 1067
-		Images: mbtrack10.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 0909C8
-				MaxColor: 0F0FC3
-	Template@1068:
-		Categories: ZMM Under bridge track
-		Id: 1068
-		Images: mbtrack11.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 0C0CC5
-				MaxColor: 0C0CC5
-	Template@1069:
-		Categories: ZMM Under bridge track
-		Id: 1069
-		Images: mbtrack12.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 1010C2
-				MaxColor: 0808C8
-	Template@1070:
-		Categories: ZMM Under bridge track
-		Id: 1070
-		Images: mbtrack13.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 0808C8
-				MaxColor: 1010C2
-	Template@1071:
-		Categories: ZMM Under bridge track
-		Id: 1071
-		Images: mbtrack14.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 0C0CC5
-				MaxColor: 0C0CC5
-	Template@1072:
-		Categories: ZMM Under bridge track
-		Id: 1072
-		Images: mbtrack15.tem
-		Size: 1, 1
-		Tiles:
-			0: Rail
-				MinColor: 0F0FC3
-				MaxColor: 0909C8
-	Template@1073:
-		Categories: ZMM Water Tunnel Side
-		Id: 1073
-		Images: mwtnnx01.tem
-		Size: 3, 1
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: 940004
-				MaxColor: B50020
-			1: Cliff
-				MinColor: 1900C5
-				MaxColor: 9E82D6
-			2: Clear
-				MinColor: 1900C5
-				MaxColor: 1900C5
-	Template@1074:
-		Categories: ZMM Water Tunnel Side
-		Id: 1074
-		Images: mwtnnx02.tem
-		Size: 1, 3
-		Tiles:
-			0: Cliff
-				Height: 4
-				MinColor: B50020
-				MaxColor: 940004
-			1: Cliff
-				MinColor: 0100F8
-				MaxColor: C0A3E3
-			2: Clear
-				MinColor: 1900C5
-				MaxColor: 1900C5
 	Template@1075:
-		Categories: *Helipad*
+		Categories: Helipad
 		Id: 1075
 		Images: phelad01.tem
 		Size: 6, 6
@@ -17897,7 +13936,7 @@ Templates:
 				MinColor: 33363B
 				MaxColor: 33363B
 	Template@1076:
-		Categories: *Helipad*
+		Categories: Helipad
 		Id: 1076
 		Images: phelad02.tem
 		Size: 3, 3
@@ -17930,7 +13969,7 @@ Templates:
 				MinColor: 626040
 				MaxColor: 6E6B4C
 	Template@1077:
-		Categories: *Helipad*
+		Categories: Helipad
 		Id: 1077
 		Images: phelad03.tem, phelad03a.tem, phelad03b.tem, phelad03c.tem, phelad03d.tem, phelad03e.tem, phelad03f.tem
 		Size: 1, 1
@@ -17939,7 +13978,7 @@ Templates:
 				MinColor: 34373B
 				MaxColor: 32353A
 	Template@1078:
-		Categories: *Grass Destroyable Cliffs*
+		Categories: Grass Destroyable Cliffs
 		Id: 1078
 		Images: dcliff01.tem
 		Size: 6, 4
@@ -18015,7 +14054,7 @@ Templates:
 				MinColor: 8D8E46
 				MaxColor: 929244
 	Template@1079:
-		Categories: *Grass Destroyable Cliffs*
+		Categories: Grass Destroyable Cliffs
 		Id: 1079
 		Images: dcliff02.tem
 		Size: 4, 6
@@ -18136,7 +14175,7 @@ Templates:
 				MinColor: B7B09F
 				MaxColor: B2AA9B
 	Template@1085:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1085
 		Images: tovrps01.tem, tovrps01a.tem
 		Size: 3, 5
@@ -18195,7 +14234,7 @@ Templates:
 				MinColor: 9DA351
 				MaxColor: 9EA54C
 	Template@1086:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1086
 		Images: tovrps02.tem, tovrps02a.tem
 		Size: 3, 5
@@ -18254,7 +14293,7 @@ Templates:
 				MinColor: 3E4053
 				MaxColor: 3E4056
 	Template@1087:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1087
 		Images: tovrps03.tem, tovrps03a.tem
 		Size: 2, 5
@@ -18298,7 +14337,7 @@ Templates:
 				MinColor: 7E754B
 				MaxColor: 7D7860
 	Template@1088:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1088
 		Images: tovrps04.tem, tovrps04a.tem
 		Size: 5, 3
@@ -18357,7 +14396,7 @@ Templates:
 				MinColor: 9EA54C
 				MaxColor: 9EA451
 	Template@1089:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1089
 		Images: tovrps05.tem, tovrps05a.tem
 		Size: 5, 3
@@ -18416,7 +14455,7 @@ Templates:
 				MinColor: 3D3F54
 				MaxColor: 3D4051
 	Template@1090:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1090
 		Images: tovrps06.tem, tovrps06a.tem
 		Size: 5, 2
@@ -18460,7 +14499,7 @@ Templates:
 				MinColor: 7B7854
 				MaxColor: 7D755B
 	Template@1091:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1091
 		Images: tovrps07.tem
 		Size: 2, 5
@@ -18499,7 +14538,7 @@ Templates:
 				MinColor: 3C4356
 				MaxColor: 3A4158
 	Template@1092:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1092
 		Images: tovrps08.tem
 		Size: 2, 5
@@ -18538,7 +14577,7 @@ Templates:
 				MinColor: 3D4356
 				MaxColor: 3A4158
 	Template@1093:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1093
 		Images: tovrps09.tem
 		Size: 2, 5
@@ -18577,7 +14616,7 @@ Templates:
 				MinColor: 3D4357
 				MaxColor: 3A4159
 	Template@1094:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1094
 		Images: tovrps10.tem
 		Size: 2, 5
@@ -18616,7 +14655,7 @@ Templates:
 				MinColor: 3D4356
 				MaxColor: 3A4158
 	Template@1095:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1095
 		Images: tovrps11.tem
 		Size: 2, 5
@@ -18655,7 +14694,7 @@ Templates:
 				MinColor: 3D4356
 				MaxColor: 3A4158
 	Template@1096:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1096
 		Images: tovrps12.tem
 		Size: 5, 2
@@ -18694,7 +14733,7 @@ Templates:
 				MinColor: 3F465D
 				MaxColor: 41485C
 	Template@1097:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1097
 		Images: tovrps13.tem
 		Size: 5, 2
@@ -18733,7 +14772,7 @@ Templates:
 				MinColor: 3F465D
 				MaxColor: 41485C
 	Template@1098:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1098
 		Images: tovrps14.tem
 		Size: 5, 2
@@ -18772,7 +14811,7 @@ Templates:
 				MinColor: 3F475D
 				MaxColor: 42485C
 	Template@1099:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1099
 		Images: tovrps15.tem
 		Size: 5, 2
@@ -18811,7 +14850,7 @@ Templates:
 				MinColor: 3F465D
 				MaxColor: 41485C
 	Template@1100:
-		Categories: *TrainBridges*
+		Categories: Grass Train Bridges
 		Id: 1100
 		Images: tovrps16.tem
 		Size: 5, 2
@@ -18850,7 +14889,7 @@ Templates:
 				MinColor: 3F475E
 				MaxColor: 42495D
 	Template@1101:
-		Categories: Baracades A
+		Categories: Baracades
 		Id: 1101
 		Images: baracd01.tem
 		Size: 1, 3
@@ -18865,7 +14904,7 @@ Templates:
 				MinColor: 8F8272
 				MaxColor: 776C60
 	Template@1102:
-		Categories: Baracades A
+		Categories: Baracades
 		Id: 1102
 		Images: baracd02.tem
 		Size: 3, 1
@@ -18889,7 +14928,7 @@ Templates:
 				MinColor: 694F2F
 				MaxColor: 6A5032
 	Template@1104:
-		Categories: Highway Roads B
+		Categories: Highway Roads
 		Id: 1104
 		Images: proadd01.tem
 		Size: 4, 3
@@ -18931,7 +14970,7 @@ Templates:
 				MinColor: 767574
 				MaxColor: 4A4A4E
 	Template@1105:
-		Categories: Highway Roads B
+		Categories: Highway Roads
 		Id: 1105
 		Images: proadd02.tem
 		Size: 4, 3
@@ -18973,7 +15012,7 @@ Templates:
 				MinColor: 49494C
 				MaxColor: 7C7B78
 	Template@1106:
-		Categories: Highway Roads B
+		Categories: Highway Roads
 		Id: 1106
 		Images: proadd03.tem
 		Size: 4, 3
@@ -19015,7 +15054,7 @@ Templates:
 				MinColor: 737270
 				MaxColor: 494B4C
 	Template@1107:
-		Categories: Highway Roads B
+		Categories: Highway Roads
 		Id: 1107
 		Images: proadd04.tem
 		Size: 3, 4
@@ -19057,7 +15096,7 @@ Templates:
 				MinColor: B9B2A5
 				MaxColor: B7AFA3
 	Template@1108:
-		Categories: Highway Roads B
+		Categories: Highway Roads
 		Id: 1108
 		Images: proadd05.tem
 		Size: 3, 4
@@ -19099,7 +15138,7 @@ Templates:
 				MinColor: 4A4B4E
 				MaxColor: 757574
 	Template@1109:
-		Categories: Highway Roads B
+		Categories: Highway Roads
 		Id: 1109
 		Images: proadd06.tem
 		Size: 3, 4
@@ -19141,7 +15180,7 @@ Templates:
 				MinColor: 42464B
 				MaxColor: 81817F
 	Template@1110:
-		Categories: Highway Road Ends B
+		Categories: Highway Road Ends
 		Id: 1110
 		Images: pendb01.tem
 		Size: 1, 3
@@ -19156,7 +15195,7 @@ Templates:
 				MinColor: 727372
 				MaxColor: 848584
 	Template@1111:
-		Categories: Highway Road Ends B
+		Categories: Highway Road Ends
 		Id: 1111
 		Images: pendb02.tem
 		Size: 3, 1
@@ -19171,7 +15210,7 @@ Templates:
 				MinColor: 4A4D4F
 				MaxColor: 898A89
 	Template@1112:
-		Categories: Highway Road Ends B
+		Categories: Highway Road Ends
 		Id: 1112
 		Images: pendb03.tem
 		Size: 1, 3
@@ -19186,7 +15225,7 @@ Templates:
 				MinColor: 898A88
 				MaxColor: 484B4D
 	Template@1113:
-		Categories: Highway Road Ends B
+		Categories: Highway Road Ends
 		Id: 1113
 		Images: pendb04.tem
 		Size: 3, 1
@@ -19201,7 +15240,7 @@ Templates:
 				MinColor: 848584
 				MaxColor: 717373
 	Template@1114:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1114
 		Images: droncj01.tem
 		Size: 2, 2
@@ -19219,7 +15258,7 @@ Templates:
 				MinColor: B49349
 				MaxColor: B39A4C
 	Template@1115:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1115
 		Images: droncj02.tem
 		Size: 2, 2
@@ -19237,7 +15276,7 @@ Templates:
 				MinColor: A09944
 				MaxColor: AA9443
 	Template@1116:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1116
 		Images: droncj03.tem
 		Size: 2, 2
@@ -19255,7 +15294,7 @@ Templates:
 				MinColor: A59245
 				MaxColor: A09D4D
 	Template@1117:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1117
 		Images: droncj04.tem
 		Size: 2, 2
@@ -19273,7 +15312,7 @@ Templates:
 				MinColor: A5A24B
 				MaxColor: AB9445
 	Template@1118:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1118
 		Images: droncj05.tem
 		Size: 2, 2
@@ -19291,7 +15330,7 @@ Templates:
 				MinColor: B19B48
 				MaxColor: A49649
 	Template@1119:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1119
 		Images: droncj06.tem
 		Size: 3, 3
@@ -19318,7 +15357,7 @@ Templates:
 				MinColor: AB8F40
 				MaxColor: A39846
 	Template@1120:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1120
 		Images: droncj07.tem
 		Size: 3, 3
@@ -19342,7 +15381,7 @@ Templates:
 				MinColor: AC9244
 				MaxColor: A29A4C
 	Template@1121:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1121
 		Images: droncj08.tem
 		Size: 3, 3
@@ -19366,7 +15405,7 @@ Templates:
 				MinColor: B59B4A
 				MaxColor: B4A450
 	Template@1122:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1122
 		Images: droncj09.tem
 		Size: 3, 3
@@ -19393,7 +15432,7 @@ Templates:
 				MinColor: AF9746
 				MaxColor: A09748
 	Template@1123:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1123
 		Images: droncj10.tem
 		Size: 3, 3
@@ -19420,7 +15459,7 @@ Templates:
 				MinColor: A99646
 				MaxColor: A99F4B
 	Template@1124:
-		Categories: Dirt Road on Concrete Junctions
+		Categories: Concrete DirtRoad Junctions
 		Id: 1124
 		Images: droncj11.tem
 		Size: 4, 4
@@ -20455,7 +16494,7 @@ Templates:
 				MinColor: 838C58
 				MaxColor: 7C8551
 	Template@1136:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1136
 		Images: droncs01.tem
 		Size: 4, 4
@@ -20488,7 +16527,7 @@ Templates:
 				MinColor: AB9A4A
 				MaxColor: A09F4F
 	Template@1137:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1137
 		Images: droncs02.tem
 		Size: 4, 4
@@ -20521,7 +16560,7 @@ Templates:
 				MinColor: AEA04E
 				MaxColor: 9EA050
 	Template@1138:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1138
 		Images: droncs03.tem
 		Size: 4, 4
@@ -20554,7 +16593,7 @@ Templates:
 				MinColor: AE9A4B
 				MaxColor: A69A4C
 	Template@1139:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1139
 		Images: droncs04.tem
 		Size: 4, 4
@@ -20596,7 +16635,7 @@ Templates:
 				MinColor: AE9C48
 				MaxColor: A89D4B
 	Template@1140:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1140
 		Images: droncs05.tem
 		Size: 3, 3
@@ -20620,7 +16659,7 @@ Templates:
 				MinColor: B5A350
 				MaxColor: B4A54F
 	Template@1141:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1141
 		Images: droncs06.tem
 		Size: 2, 2
@@ -20635,7 +16674,7 @@ Templates:
 				MinColor: AE9C4A
 				MaxColor: AAA04B
 	Template@1142:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1142
 		Images: droncs07.tem
 		Size: 2, 2
@@ -20650,7 +16689,7 @@ Templates:
 				MinColor: AD9A4D
 				MaxColor: A6994A
 	Template@1143:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1143
 		Images: droncs08.tem
 		Size: 4, 4
@@ -20680,7 +16719,7 @@ Templates:
 				MinColor: B6A04D
 				MaxColor: B3A651
 	Template@1144:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1144
 		Images: droncs09.tem
 		Size: 4, 3
@@ -20713,7 +16752,7 @@ Templates:
 				MinColor: A4A34D
 				MaxColor: 9F994A
 	Template@1145:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1145
 		Images: droncs10.tem
 		Size: 3, 3
@@ -20737,7 +16776,7 @@ Templates:
 				MinColor: B49E49
 				MaxColor: AC9F4C
 	Template@1146:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1146
 		Images: droncs11.tem
 		Size: 4, 4
@@ -20770,7 +16809,7 @@ Templates:
 				MinColor: 98A14C
 				MaxColor: 9CA14B
 	Template@1147:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1147
 		Images: droncs12.tem
 		Size: 3, 4
@@ -20803,7 +16842,7 @@ Templates:
 				MinColor: A2A755
 				MaxColor: A6A655
 	Template@1148:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1148
 		Images: droncs13.tem
 		Size: 3, 3
@@ -20827,7 +16866,7 @@ Templates:
 				MinColor: A5A756
 				MaxColor: A8A656
 	Template@1149:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1149
 		Images: droncs14.tem
 		Size: 5, 3
@@ -20863,7 +16902,7 @@ Templates:
 				MinColor: B09A47
 				MaxColor: A4994A
 	Template@1150:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1150
 		Images: droncs15.tem
 		Size: 3, 5
@@ -20899,7 +16938,7 @@ Templates:
 				MinColor: B99445
 				MaxColor: B2994A
 	Template@1151:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1151
 		Images: droncs16.tem
 		Size: 2, 4
@@ -20923,7 +16962,7 @@ Templates:
 				MinColor: A5A853
 				MaxColor: ACA953
 	Template@1152:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1152
 		Images: droncs17.tem
 		Size: 4, 2
@@ -20953,7 +16992,7 @@ Templates:
 				MinColor: A3A54D
 				MaxColor: AE9648
 	Template@1153:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1153
 		Images: droncs18.tem
 		Size: 4, 2
@@ -20983,7 +17022,7 @@ Templates:
 				MinColor: A2A34D
 				MaxColor: AF9546
 	Template@1154:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1154
 		Images: droncs19.tem
 		Size: 4, 2
@@ -21013,7 +17052,7 @@ Templates:
 				MinColor: 9DA254
 				MaxColor: A09648
 	Template@1155:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1155
 		Images: droncs20.tem
 		Size: 4, 2
@@ -21043,7 +17082,7 @@ Templates:
 				MinColor: A99C48
 				MaxColor: B09143
 	Template@1156:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1156
 		Images: droncs21.tem
 		Size: 3, 2
@@ -21067,7 +17106,7 @@ Templates:
 				MinColor: A6A853
 				MaxColor: B49C4D
 	Template@1157:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1157
 		Images: droncs22.tem
 		Size: 2, 2
@@ -21085,7 +17124,7 @@ Templates:
 				MinColor: A99E4A
 				MaxColor: B09648
 	Template@1158:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1158
 		Images: droncs23.tem
 		Size: 1, 2
@@ -21097,7 +17136,7 @@ Templates:
 				MinColor: A6A14C
 				MaxColor: A89244
 	Template@1159:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1159
 		Images: droncs24.tem
 		Size: 1, 2
@@ -21109,7 +17148,7 @@ Templates:
 				MinColor: A59C50
 				MaxColor: A49648
 	Template@1160:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1160
 		Images: droncs25.tem
 		Size: 3, 2
@@ -21133,7 +17172,7 @@ Templates:
 				MinColor: A6A752
 				MaxColor: ABAA54
 	Template@1161:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1161
 		Images: droncs26.tem
 		Size: 2, 2
@@ -21151,7 +17190,7 @@ Templates:
 				MinColor: A49F4D
 				MaxColor: A19D48
 	Template@1162:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1162
 		Images: droncs27.tem
 		Size: 3, 3
@@ -21178,7 +17217,7 @@ Templates:
 				MinColor: 9FA053
 				MaxColor: 989F4E
 	Template@1163:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1163
 		Images: droncs28.tem
 		Size: 3, 2
@@ -21202,7 +17241,7 @@ Templates:
 				MinColor: 9FA450
 				MaxColor: A49847
 	Template@1164:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1164
 		Images: droncs29.tem
 		Size: 2, 2
@@ -21220,7 +17259,7 @@ Templates:
 				MinColor: A6A555
 				MaxColor: AC9D4F
 	Template@1165:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1165
 		Images: droncs30.tem
 		Size: 2, 2
@@ -21238,7 +17277,7 @@ Templates:
 				MinColor: 9F9D50
 				MaxColor: 9E9849
 	Template@1166:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1166
 		Images: droncs31.tem
 		Size: 4, 3
@@ -21268,7 +17307,7 @@ Templates:
 				MinColor: A3A14B
 				MaxColor: AA9447
 	Template@1167:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1167
 		Images: droncs32.tem
 		Size: 4, 3
@@ -21298,7 +17337,7 @@ Templates:
 				MinColor: A29D4A
 				MaxColor: 9D9548
 	Template@1168:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1168
 		Images: droncs33.tem
 		Size: 4, 2
@@ -21328,7 +17367,7 @@ Templates:
 				MinColor: A1A54D
 				MaxColor: A3A651
 	Template@1169:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1169
 		Images: droncs34.tem
 		Size: 4, 4
@@ -21361,7 +17400,7 @@ Templates:
 				MinColor: AF9548
 				MaxColor: AE9F4C
 	Template@1170:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1170
 		Images: droncs35.tem
 		Size: 4, 4
@@ -21394,7 +17433,7 @@ Templates:
 				MinColor: B09243
 				MaxColor: AC9D4C
 	Template@1171:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1171
 		Images: droncs36.tem
 		Size: 4, 4
@@ -21427,7 +17466,7 @@ Templates:
 				MinColor: AB9547
 				MaxColor: AEA450
 	Template@1172:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1172
 		Images: droncs37.tem
 		Size: 4, 4
@@ -21460,7 +17499,7 @@ Templates:
 				MinColor: AF9948
 				MaxColor: A6A04D
 	Template@1173:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1173
 		Images: droncs38.tem
 		Size: 3, 3
@@ -21484,7 +17523,7 @@ Templates:
 				MinColor: B08E43
 				MaxColor: AF9D4B
 	Template@1174:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1174
 		Images: droncs39.tem
 		Size: 2, 2
@@ -21499,7 +17538,7 @@ Templates:
 				MinColor: AB9344
 				MaxColor: A0994B
 	Template@1175:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1175
 		Images: droncs40.tem
 		Size: 2, 2
@@ -21514,7 +17553,7 @@ Templates:
 				MinColor: AC9444
 				MaxColor: A49346
 	Template@1176:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1176
 		Images: droncs41.tem
 		Size: 4, 4
@@ -21547,7 +17586,7 @@ Templates:
 				MinColor: A5A954
 				MaxColor: ABA954
 	Template@1177:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1177
 		Images: droncs42.tem
 		Size: 4, 5
@@ -21583,7 +17622,7 @@ Templates:
 				MinColor: 9CA250
 				MaxColor: 999D4F
 	Template@1178:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1178
 		Images: droncs43.tem
 		Size: 3, 3
@@ -21607,7 +17646,7 @@ Templates:
 				MinColor: A1A44D
 				MaxColor: A3A450
 	Template@1179:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1179
 		Images: droncs44.tem
 		Size: 4, 4
@@ -21640,7 +17679,7 @@ Templates:
 				MinColor: A79545
 				MaxColor: A29B49
 	Template@1180:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1180
 		Images: droncs45.tem
 		Size: 2, 3
@@ -21664,7 +17703,7 @@ Templates:
 				MinColor: A99545
 				MaxColor: AB9F4D
 	Template@1181:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1181
 		Images: droncs46.tem
 		Size: 3, 3
@@ -21688,7 +17727,7 @@ Templates:
 				MinColor: AB9D4B
 				MaxColor: ADA34F
 	Template@1182:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1182
 		Images: droncs47.tem
 		Size: 5, 3
@@ -21727,7 +17766,7 @@ Templates:
 				MinColor: A99A47
 				MaxColor: A5A14E
 	Template@1183:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1183
 		Images: droncs48.tem
 		Size: 3, 5
@@ -21763,7 +17802,7 @@ Templates:
 				MinColor: AC9C49
 				MaxColor: ACA24F
 	Template@1184:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1184
 		Images: droncs49.tem
 		Size: 4, 4
@@ -21796,7 +17835,7 @@ Templates:
 				MinColor: A6A455
 				MaxColor: A9A656
 	Template@1185:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1185
 		Images: droncs50.tem
 		Size: 2, 4
@@ -21826,7 +17865,7 @@ Templates:
 				MinColor: B49846
 				MaxColor: A9A24B
 	Template@1186:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1186
 		Images: droncs51.tem
 		Size: 2, 4
@@ -21856,7 +17895,7 @@ Templates:
 				MinColor: B89F4A
 				MaxColor: A5A550
 	Template@1187:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1187
 		Images: droncs52.tem
 		Size: 2, 4
@@ -21886,7 +17925,7 @@ Templates:
 				MinColor: B19A4A
 				MaxColor: AEA652
 	Template@1188:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1188
 		Images: droncs53.tem
 		Size: 2, 4
@@ -21916,7 +17955,7 @@ Templates:
 				MinColor: AE974C
 				MaxColor: ABA655
 	Template@1189:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1189
 		Images: droncs54.tem
 		Size: 2, 3
@@ -21940,7 +17979,7 @@ Templates:
 				MinColor: B09F4D
 				MaxColor: AEA852
 	Template@1190:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1190
 		Images: droncs55.tem
 		Size: 2, 2
@@ -21958,7 +17997,7 @@ Templates:
 				MinColor: A99849
 				MaxColor: 9D9D4F
 	Template@1191:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1191
 		Images: droncs56.tem
 		Size: 2, 1
@@ -21970,7 +18009,7 @@ Templates:
 				MinColor: AE9140
 				MaxColor: A1A14C
 	Template@1192:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1192
 		Images: droncs57.tem
 		Size: 2, 1
@@ -21982,7 +18021,7 @@ Templates:
 				MinColor: B59B4B
 				MaxColor: AFA954
 	Template@1193:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1193
 		Images: droncs58.tem
 		Size: 2, 4
@@ -22012,7 +18051,7 @@ Templates:
 				MinColor: B09F4E
 				MaxColor: ABA652
 	Template@1194:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1194
 		Images: droncs59.tem
 		Size: 3, 3
@@ -22039,7 +18078,7 @@ Templates:
 				MinColor: A6994B
 				MaxColor: 9B9D4F
 	Template@1195:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1195
 		Images: droncs60.tem
 		Size: 2, 3
@@ -22060,7 +18099,7 @@ Templates:
 				MinColor: AA9645
 				MaxColor: 9F9F4A
 	Template@1196:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1196
 		Images: droncs61.tem
 		Size: 2, 4
@@ -22087,7 +18126,7 @@ Templates:
 				MinColor: A1A34E
 				MaxColor: 9A9D4C
 	Template@1197:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1197
 		Images: droncs62.tem
 		Size: 2, 4
@@ -22117,7 +18156,7 @@ Templates:
 				MinColor: A5A953
 				MaxColor: ABAA54
 	Template@1198:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1198
 		Images: droncs63.tem
 		Size: 2, 2
@@ -22135,7 +18174,7 @@ Templates:
 				MinColor: A2A24B
 				MaxColor: A5A04E
 	Template@1199:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1199
 		Images: droncs64.tem
 		Size: 3, 4
@@ -22165,7 +18204,7 @@ Templates:
 				MinColor: AA9F49
 				MaxColor: A3A34F
 	Template@1200:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1200
 		Images: droncs65.tem
 		Size: 3, 4
@@ -22195,7 +18234,7 @@ Templates:
 				MinColor: B0A14F
 				MaxColor: ACAA54
 	Template@1201:
-		Categories: Dirt Road on Concrete
+		Categories: Concrete DirtRoad
 		Id: 1201
 		Images: droncs66.tem
 		Size: 2, 3
@@ -22216,7 +18255,7 @@ Templates:
 				MinColor: A1A54F
 				MaxColor: 9B9B4B
 	Template@1202:
-		Categories: Baseball Field
+		Categories: Urban Features
 		Id: 1202
 		Images: baseb01.tem
 		Size: 6, 6
@@ -22690,7 +18729,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1243:
-		Categories: One Color Tiles B
+		Categories: One Color Tiles
 		Id: 1243
 		Images: soildcb01.tem
 		Size: 1, 1
@@ -22699,7 +18738,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1244:
-		Categories: One Color Tiles B
+		Categories: One Color Tiles
 		Id: 1244
 		Images: soildcb02.tem
 		Size: 1, 1
@@ -22708,7 +18747,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1245:
-		Categories: One Color Tiles B
+		Categories: One Color Tiles
 		Id: 1245
 		Images: soildcb03.tem
 		Size: 1, 1
@@ -22717,7 +18756,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1246:
-		Categories: One Color Tiles B
+		Categories: One Color Tiles
 		Id: 1246
 		Images: soildcb04.tem
 		Size: 1, 1
@@ -22726,7 +18765,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1247:
-		Categories: One Color Tiles B
+		Categories: One Color Tiles
 		Id: 1247
 		Images: soildcb05.tem
 		Size: 1, 1
@@ -22735,7 +18774,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1248:
-		Categories: One Color Tiles B
+		Categories: One Color Tiles
 		Id: 1248
 		Images: soildcb06.tem
 		Size: 1, 1
@@ -22744,7 +18783,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1249:
-		Categories: One Color Tiles B
+		Categories: One Color Tiles
 		Id: 1249
 		Images: soildcb07.tem
 		Size: 1, 1
@@ -22753,7 +18792,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1250:
-		Categories: One Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1250
 		Images: soildcb08.tem
 		Size: 1, 1
@@ -22762,7 +18801,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1251:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1251
 		Images: stwoclb01.tem
 		Size: 1, 1
@@ -22771,7 +18810,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1252:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1252
 		Images: stwoclb02.tem
 		Size: 1, 1
@@ -22780,7 +18819,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1253:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1253
 		Images: stwoclb03.tem
 		Size: 1, 1
@@ -22789,7 +18828,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1254:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1254
 		Images: stwoclb04.tem
 		Size: 1, 1
@@ -22798,7 +18837,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1255:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1255
 		Images: stwoclb05.tem
 		Size: 1, 1
@@ -22807,7 +18846,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1256:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1256
 		Images: stwoclb06.tem
 		Size: 1, 1
@@ -22816,7 +18855,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1257:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1257
 		Images: stwoclb07.tem
 		Size: 1, 1
@@ -22825,7 +18864,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1258:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1258
 		Images: stwoclb08.tem
 		Size: 1, 1
@@ -22834,7 +18873,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1259:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1259
 		Images: stwoclb09.tem
 		Size: 1, 1
@@ -22843,7 +18882,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1260:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1260
 		Images: stwoclb10.tem
 		Size: 1, 1
@@ -22852,7 +18891,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1261:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1261
 		Images: stwoclb11.tem
 		Size: 1, 1
@@ -22861,7 +18900,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1262:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1262
 		Images: stwoclb12.tem
 		Size: 1, 1
@@ -22870,7 +18909,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1263:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1263
 		Images: stwoclb13.tem
 		Size: 1, 1
@@ -22879,7 +18918,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1264:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1264
 		Images: stwoclb14.tem
 		Size: 1, 1
@@ -22888,7 +18927,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1265:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1265
 		Images: stwoclb15.tem
 		Size: 1, 1
@@ -22897,7 +18936,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1266:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1266
 		Images: stwoclb16.tem
 		Size: 1, 1
@@ -22906,7 +18945,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1267:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1267
 		Images: stwoclb17.tem
 		Size: 1, 1
@@ -22915,7 +18954,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1268:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1268
 		Images: stwoclb18.tem
 		Size: 1, 1
@@ -22924,7 +18963,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1269:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1269
 		Images: stwoclb19.tem
 		Size: 1, 1
@@ -22933,7 +18972,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1270:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1270
 		Images: stwoclb20.tem
 		Size: 1, 1
@@ -22942,7 +18981,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1271:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1271
 		Images: stwoclb21.tem
 		Size: 1, 1
@@ -22951,7 +18990,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1272:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1272
 		Images: stwoclb22.tem
 		Size: 1, 1
@@ -22960,7 +18999,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1273:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1273
 		Images: stwoclb23.tem
 		Size: 1, 1
@@ -22969,7 +19008,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1274:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1274
 		Images: stwoclb24.tem
 		Size: 1, 1
@@ -22978,7 +19017,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1275:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1275
 		Images: stwoclb25.tem
 		Size: 1, 1
@@ -22987,7 +19026,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1276:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1276
 		Images: stwoclb26.tem
 		Size: 1, 1
@@ -22996,7 +19035,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1277:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1277
 		Images: stwoclb27.tem
 		Size: 1, 1
@@ -23005,7 +19044,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1278:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1278
 		Images: stwoclb28.tem
 		Size: 1, 1
@@ -23014,7 +19053,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1279:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1279
 		Images: stwoclb29.tem
 		Size: 1, 1
@@ -23023,7 +19062,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1280:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1280
 		Images: stwoclb30.tem
 		Size: 1, 1
@@ -23032,7 +19071,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1281:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1281
 		Images: stwoclb31.tem
 		Size: 1, 1
@@ -23041,7 +19080,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1282:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1282
 		Images: stwoclb32.tem
 		Size: 1, 1
@@ -23050,7 +19089,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1283:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1283
 		Images: stwoclb33.tem
 		Size: 1, 1
@@ -23059,7 +19098,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1284:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1284
 		Images: stwoclb34.tem
 		Size: 1, 1
@@ -23068,7 +19107,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1285:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1285
 		Images: stwoclb35.tem
 		Size: 1, 1
@@ -23077,7 +19116,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1286:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1286
 		Images: stwoclb36.tem
 		Size: 1, 1
@@ -23086,7 +19125,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1287:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1287
 		Images: stwoclb37.tem
 		Size: 1, 1
@@ -23095,7 +19134,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1288:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1288
 		Images: stwoclb38.tem
 		Size: 1, 1
@@ -23104,7 +19143,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1289:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1289
 		Images: stwoclb39.tem
 		Size: 1, 1
@@ -23113,7 +19152,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1290:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1290
 		Images: stwoclb40.tem
 		Size: 1, 1
@@ -23122,7 +19161,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1291:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1291
 		Images: stwoclb41.tem
 		Size: 1, 1
@@ -23131,7 +19170,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1292:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1292
 		Images: stwoclb42.tem
 		Size: 1, 1
@@ -23140,7 +19179,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1293:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1293
 		Images: stwoclb43.tem
 		Size: 1, 1
@@ -23149,7 +19188,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1294:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1294
 		Images: stwoclb44.tem
 		Size: 1, 1
@@ -23158,7 +19197,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1295:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1295
 		Images: stwoclb45.tem
 		Size: 1, 1
@@ -23167,7 +19206,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1296:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1296
 		Images: stwoclb46.tem
 		Size: 1, 1
@@ -23176,7 +19215,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1297:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1297
 		Images: stwoclb47.tem
 		Size: 1, 1
@@ -23185,7 +19224,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1298:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1298
 		Images: stwoclb48.tem
 		Size: 1, 1
@@ -23194,7 +19233,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1299:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1299
 		Images: stwoclb49.tem
 		Size: 1, 1
@@ -23203,7 +19242,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1300:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1300
 		Images: stwoclb50.tem
 		Size: 1, 1
@@ -23212,7 +19251,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1301:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1301
 		Images: stwoclb51.tem
 		Size: 1, 1
@@ -23221,7 +19260,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1302:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1302
 		Images: stwoclb52.tem
 		Size: 1, 1
@@ -23230,7 +19269,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1303:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1303
 		Images: stwoclb53.tem
 		Size: 1, 1
@@ -23239,7 +19278,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1304:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1304
 		Images: stwoclb54.tem
 		Size: 1, 1
@@ -23248,7 +19287,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1305:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1305
 		Images: stwoclb55.tem
 		Size: 1, 1
@@ -23257,7 +19296,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1306:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1306
 		Images: stwoclb56.tem
 		Size: 1, 1
@@ -23266,7 +19305,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1307:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1307
 		Images: stwoclb57.tem
 		Size: 1, 1
@@ -23275,7 +19314,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1308:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1308
 		Images: stwoclb58.tem
 		Size: 1, 1
@@ -23284,7 +19323,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1309:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1309
 		Images: stwoclb59.tem
 		Size: 1, 1
@@ -23293,7 +19332,7 @@ Templates:
 				MinColor: E6E7E9
 				MaxColor: E5E5E8
 	Template@1310:
-		Categories: Two Color Tiles B
+		Categories: Two Color Tiles
 		Id: 1310
 		Images: stwoclb60.tem
 		Size: 1, 1
