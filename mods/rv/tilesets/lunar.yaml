@@ -3,7 +3,7 @@ General:
 	Id: LUNAR
 	Extensions: .lun, .shp
 	HeightDebugColors: 00000080, 00004480, 00008880, 0000CC80, 0000FF80, 4400CC80, 88008880, CC004480, FF110080, FF550080, FF990080, FFDD0080, DDFF0080, 99FF0080, 55FF0080, 11FF0080
-	EditorTemplateOrder: Lat Moon Dirt, Blank, ZMM Ramps, Ramps, LAT Moon Dirt Dark, Moon Dirt Dark Individual, LAT Grass Rough, GrassRough Individual, Pavement Individual, LAT Moon Dirt Light, Moon Dirt Light Individual, Ramp edge fixup, LAT Pavement, Sand (beach), Sand (beach) Transitions, Craters, LunarLander, Lunar Crevas # Obsolete Height Pieces, Cliff Set, Shore Pieces, Cliff/Water pieces, DirtRoads Bendy, DirtRoads Junctions, DirtRoads Straight, Bridges, Paved Roads, Water, ZMM Cliff Set, DirtRoads Slopes, ZMM Dirt Road Slopes, Slope Set Pieces, ZSlope Set Pieces, New MM Height Pieces, Waterfalls, Farm Crops, Paved Road Ends, Pavement, Paved road bits, Ramp edge fixup - Marble Madness, Paved Road Slopes, Waterfalls-B, Waterfalls-C, Waterfalls-D, Newest MM Height, Tunnel Floor, Tunnel Side, Destroyable Cliffs, Water Caves, ZMM Bendy Dirt Roads, ZMM Dirt Road Junctions, ZMM Straight Dirt Roads, ZMM Shore Pieces, ZMM Waterfalls, ZMM Waterfalls-B, ZMM Waterfalls-C, ZMM Waterfalls-D, ZMM Water Caves, ZMMCliff/Water pieces, ZMM Water, DirtTunnel Floor, Water bridge, RA2 rubble farm, RA2 rubble mobile, RA2 rubble mexican, Wood Bridges, RA2 uss arizona
+	EditorTemplateOrder: LAT Moon Dirt, LAT Moon Dirt Dark, LAT Moon Dirt Light, LAT Rocky Dirt, LAT Pavement, LAT Moon Dirt Dark Transitions, LAT Moon Dirt Light Transitions, LAT Rocky Dirt Transitions, LAT Pavement Transitions, Moon Ramps, Craters, Lunar Crevas, Lunar Lander, Ramp edge fixup, Sand (beach), Sand (beach) Transitions, Concrete
 	SheetSize: 4096
 	EnableDepth: true
 
@@ -74,7 +74,7 @@ Terrain:
 
 Templates:
 	Template@0:
-		Categories: Lat Moon Dirt
+		Categories: LAT Moon Dirt
 		Id: 0
 		Images: clear01.lun, clear01a.lun, clear01b.lun, clear01c.lun, clear01d.lun, clear01e.lun, clear01f.lun, clear01g.lun
 		Size: 1, 1
@@ -82,213 +82,8 @@ Templates:
 			0: Clear
 				MinColor: A0A4AD
 				MaxColor: A4A8B1
-	Template@1:
-		Categories: Blank
-		Id: 1
-		Images: blank01.lun
-		Size: 1, 1
-		Tiles:
-			0: Rough
-				MinColor: D2D2DC
-				MaxColor: D0D0DA
-	Template@2:
-		Categories: ZMM Ramps
-		Id: 2
-		Images: mslop01.lun, mslop01a.lun, mslop01b.lun, mslop01c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 1
-				MinColor: 935B98
-				MaxColor: 935C99
-	Template@3:
-		Categories: ZMM Ramps
-		Id: 3
-		Images: mslop02.lun, mslop02a.lun, mslop02b.lun, mslop02c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 2
-				MinColor: 5F586E
-				MaxColor: 5F576D
-	Template@4:
-		Categories: ZMM Ramps
-		Id: 4
-		Images: mslop03.lun, mslop03a.lun, mslop03b.lun, mslop03c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 3
-				MinColor: 4D735A
-				MaxColor: 526E60
-	Template@5:
-		Categories: ZMM Ramps
-		Id: 5
-		Images: mslop04.lun, mslop04a.lun, mslop04b.lun, mslop04c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 4
-				MinColor: 837186
-				MaxColor: 7B797E
-	Template@6:
-		Categories: ZMM Ramps
-		Id: 6
-		Images: mslop05.lun, mslop05a.lun, mslop05b.lun, mslop05c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 5
-				MinColor: 2ED72E
-				MaxColor: 2ED72E
-	Template@7:
-		Categories: ZMM Ramps
-		Id: 7
-		Images: mslop06.lun, mslop06a.lun, mslop06b.lun, mslop06c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 6
-				MinColor: 615970
-				MaxColor: 0DF90D
-	Template@8:
-		Categories: ZMM Ramps
-		Id: 8
-		Images: mslop07.lun, mslop07a.lun, mslop07b.lun, mslop07c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 7
-				MinColor: 389F41
-				MaxColor: 389F41
-	Template@9:
-		Categories: ZMM Ramps
-		Id: 9
-		Images: mslop08.lun, mslop08a.lun, mslop08b.lun, mslop08c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 8
-				MinColor: 0DF90D
-				MaxColor: 99589D
-	Template@10:
-		Categories: ZMM Ramps
-		Id: 10
-		Images: mslop09.lun, mslop09a.lun, mslop09b.lun, mslop09c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 9
-				MinColor: 0FF70F
-				MaxColor: 0FF70F
-	Template@11:
-		Categories: ZMM Ramps
-		Id: 11
-		Images: mslop10.lun, mslop10a.lun, mslop10b.lun, mslop10c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 10
-				MinColor: 0DF90D
-				MaxColor: 615970
-	Template@12:
-		Categories: ZMM Ramps
-		Id: 12
-		Images: mslop11.lun, mslop11a.lun, mslop11b.lun, mslop11c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 11
-				MinColor: 389F41
-				MaxColor: 389F41
-	Template@13:
-		Categories: ZMM Ramps
-		Id: 13
-		Images: mslop12.lun, mslop12a.lun, mslop12b.lun, mslop12c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 12
-				MinColor: 99589D
-				MaxColor: 0DF90D
-	Template@14:
-		Categories: ZMM Ramps
-		Id: 14
-		Images: mslop13.lun
-		Size: 1, 1
-		Tiles:
-	Template@15:
-		Categories: ZMM Ramps
-		Id: 15
-		Images: mslop14.lun, mslop14a.lun, mslop14b.lun, mslop14c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 14
-				MinColor: 625B72
-				MaxColor: 625B72
-	Template@16:
-		Categories: ZMM Ramps
-		Id: 16
-		Images: mslop15.lun, mslop15a.lun, mslop15b.lun, mslop15c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 15
-				MinColor: 546D63
-				MaxColor: 546D63
-	Template@17:
-		Categories: ZMM Ramps
-		Id: 17
-		Images: mslop16.lun, mslop16a.lun, mslop16b.lun, mslop16c.lun
-		Size: 1, 1
-		Tiles:
-			0: Clear
-				RampType: 16
-				MinColor: 9D56A0
-				MaxColor: 9D56A0
-	Template@18:
-		Categories: ZMM Ramps
-		Id: 18
-		Images: mslop17.lun, mslop17a.lun, mslop17b.lun, mslop17c.lun
-		Size: 1, 1
-		Tiles:
-			0: Rough
-				RampType: 17
-				MinColor: 615970
-				MaxColor: 99589D
-	Template@19:
-		Categories: ZMM Ramps
-		Id: 19
-		Images: mslop18.lun, mslop18a.lun, mslop18b.lun, mslop18c.lun
-		Size: 1, 1
-		Tiles:
-			0: Rough
-				RampType: 18
-				MinColor: 99589D
-				MaxColor: 615970
-	Template@20:
-		Categories: ZMM Ramps
-		Id: 20
-		Images: mslop19.lun
-		Size: 1, 1
-		Tiles:
-			0: Rough
-				RampType: 19
-				MinColor: 40734D
-				MaxColor: 837476
-	Template@21:
-		Categories: ZMM Ramps
-		Id: 21
-		Images: mslop20.lun
-		Size: 1, 1
-		Tiles:
-			0: Rough
-				RampType: 20
-				MinColor: 59486F
-				MaxColor: 5F876A
 	Template@29:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 29
 		Images: slope01.lun, slope01a.lun, slope01b.lun, slope01c.lun
 		Size: 1, 1
@@ -298,7 +93,7 @@ Templates:
 				MinColor: 848894
 				MaxColor: 838793
 	Template@30:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 30
 		Images: slope02.lun, slope02a.lun, slope02b.lun, slope02c.lun
 		Size: 1, 1
@@ -308,7 +103,7 @@ Templates:
 				MinColor: 7B808C
 				MaxColor: 787C88
 	Template@31:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 31
 		Images: slope03.lun, slope03a.lun, slope03b.lun, slope03c.lun
 		Size: 1, 1
@@ -318,7 +113,7 @@ Templates:
 				MinColor: A2A6AE
 				MaxColor: A2A6AE
 	Template@32:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 32
 		Images: slope04.lun, slope04a.lun, slope04b.lun, slope04c.lun
 		Size: 1, 1
@@ -328,7 +123,7 @@ Templates:
 				MinColor: B2B5BD
 				MaxColor: B8BAC1
 	Template@33:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 33
 		Images: slope05.lun, slope05a.lun, slope05b.lun, slope05c.lun
 		Size: 1, 1
@@ -338,7 +133,7 @@ Templates:
 				MinColor: 848893
 				MaxColor: 787D89
 	Template@34:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 34
 		Images: slope06.lun, slope06a.lun, slope06b.lun, slope06c.lun
 		Size: 1, 1
@@ -348,7 +143,7 @@ Templates:
 				MinColor: 818591
 				MaxColor: 9FA3AC
 	Template@35:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 35
 		Images: slope07.lun, slope07a.lun, slope07b.lun, slope07c.lun
 		Size: 1, 1
@@ -358,7 +153,7 @@ Templates:
 				MinColor: B5B8BF
 				MaxColor: A4A7B0
 	Template@36:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 36
 		Images: slope08.lun, slope08a.lun, slope08b.lun, slope08c.lun
 		Size: 1, 1
@@ -368,7 +163,7 @@ Templates:
 				MinColor: A4A8B0
 				MaxColor: A7AAB3
 	Template@37:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 37
 		Images: slope09.lun, slope09a.lun, slope09b.lun, slope09c.lun
 		Size: 1, 1
@@ -378,7 +173,7 @@ Templates:
 				MinColor: A3A7AF
 				MaxColor: A7ABB3
 	Template@38:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 38
 		Images: slope10.lun, slope10a.lun, slope10b.lun, slope10c.lun
 		Size: 1, 1
@@ -388,7 +183,7 @@ Templates:
 				MinColor: 9CA0A9
 				MaxColor: 7D818D
 	Template@39:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 39
 		Images: slope11.lun, slope11a.lun, slope11b.lun, slope11c.lun
 		Size: 1, 1
@@ -398,7 +193,7 @@ Templates:
 				MinColor: A4A8B0
 				MaxColor: B8BBC1
 	Template@40:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 40
 		Images: slope12.lun, slope12a.lun, slope12b.lun, slope12c.lun
 		Size: 1, 1
@@ -408,7 +203,7 @@ Templates:
 				MinColor: A0A3AC
 				MaxColor: A4A8B1
 	Template@41:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 41
 		Images: slope13.lun, slope13a.lun, slope13b.lun, slope13c.lun
 		Size: 1, 1
@@ -418,7 +213,7 @@ Templates:
 				MinColor: 484C60
 				MaxColor: 484C60
 	Template@42:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 42
 		Images: slope14.lun, slope14a.lun, slope14b.lun, slope14c.lun
 		Size: 1, 1
@@ -428,7 +223,7 @@ Templates:
 				MinColor: 808490
 				MaxColor: 7A7F8B
 	Template@43:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 43
 		Images: slope15.lun, slope15a.lun, slope15b.lun, slope15c.lun
 		Size: 1, 1
@@ -438,7 +233,7 @@ Templates:
 				MinColor: A9ADB5
 				MaxColor: A9ADB5
 	Template@44:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 44
 		Images: slope16.lun, slope16a.lun, slope16b.lun, slope16c.lun
 		Size: 1, 1
@@ -448,7 +243,7 @@ Templates:
 				MinColor: A0A3AC
 				MaxColor: A7AAB3
 	Template@45:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 45
 		Images: slope17.lun
 		Size: 1, 1
@@ -458,7 +253,7 @@ Templates:
 				MinColor: 818691
 				MaxColor: A3A6AF
 	Template@46:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 46
 		Images: slope18.lun
 		Size: 1, 1
@@ -468,7 +263,7 @@ Templates:
 				MinColor: 9EA2AB
 				MaxColor: 7D818D
 	Template@47:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 47
 		Images: slope19.lun
 		Size: 1, 1
@@ -478,7 +273,7 @@ Templates:
 				MinColor: 818691
 				MaxColor: A3A6AF
 	Template@48:
-		Categories: Ramps
+		Categories: Moon Ramps
 		Id: 48
 		Images: slope20.lun
 		Size: 1, 1
@@ -497,7 +292,7 @@ Templates:
 				MinColor: 777B88
 				MaxColor: 7B7F8B
 	Template@50:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 50
 		Images: clat01.lun, clat01a.lun
 		Size: 1, 1
@@ -506,7 +301,7 @@ Templates:
 				MinColor: 878B96
 				MaxColor: 838793
 	Template@51:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 51
 		Images: clat02.lun, clat02a.lun
 		Size: 1, 1
@@ -515,7 +310,7 @@ Templates:
 				MinColor: 838793
 				MaxColor: 9A9EA7
 	Template@52:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 52
 		Images: clat03.lun, clat03a.lun
 		Size: 1, 1
@@ -524,7 +319,7 @@ Templates:
 				MinColor: 818591
 				MaxColor: 8C909A
 	Template@53:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 53
 		Images: clat04.lun, clat04a.lun
 		Size: 1, 1
@@ -533,7 +328,7 @@ Templates:
 				MinColor: 8A8E99
 				MaxColor: A6AAB2
 	Template@54:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 54
 		Images: clat05.lun, clat05a.lun
 		Size: 1, 1
@@ -542,7 +337,7 @@ Templates:
 				MinColor: 888C97
 				MaxColor: 7C808C
 	Template@55:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 55
 		Images: clat06.lun, clat06a.lun
 		Size: 1, 1
@@ -551,7 +346,7 @@ Templates:
 				MinColor: 828792
 				MaxColor: 9397A1
 	Template@56:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 56
 		Images: clat07.lun, clat07a.lun
 		Size: 1, 1
@@ -560,7 +355,7 @@ Templates:
 				MinColor: 7B808C
 				MaxColor: 838793
 	Template@57:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 57
 		Images: clat08.lun, clat08a.lun
 		Size: 1, 1
@@ -569,7 +364,7 @@ Templates:
 				MinColor: 828692
 				MaxColor: A4A8B1
 	Template@58:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 58
 		Images: clat09.lun, clat09a.lun
 		Size: 1, 1
@@ -578,7 +373,7 @@ Templates:
 				MinColor: 9B9FA8
 				MaxColor: 848893
 	Template@59:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 59
 		Images: clat10.lun, clat10a.lun
 		Size: 1, 1
@@ -587,7 +382,7 @@ Templates:
 				MinColor: 9DA1AA
 				MaxColor: 9A9EA7
 	Template@60:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 60
 		Images: clat11.lun, clat11a.lun
 		Size: 1, 1
@@ -596,7 +391,7 @@ Templates:
 				MinColor: 989CA5
 				MaxColor: 8A8E99
 	Template@61:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 61
 		Images: clat12.lun, clat12a.lun
 		Size: 1, 1
@@ -605,7 +400,7 @@ Templates:
 				MinColor: 9296A0
 				MaxColor: A5A9B1
 	Template@62:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 62
 		Images: clat13.lun, clat13a.lun
 		Size: 1, 1
@@ -614,7 +409,7 @@ Templates:
 				MinColor: 9EA2AB
 				MaxColor: 838893
 	Template@63:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 63
 		Images: clat14.lun, clat14a.lun
 		Size: 1, 1
@@ -623,7 +418,7 @@ Templates:
 				MinColor: 989CA6
 				MaxColor: 9397A1
 	Template@64:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 64
 		Images: clat15.lun, clat15a.lun
 		Size: 1, 1
@@ -632,7 +427,7 @@ Templates:
 				MinColor: 989CA6
 				MaxColor: 838793
 	Template@65:
-		Categories: Moon Dirt Dark Individual
+		Categories: LAT Moon Dirt Dark Transitions
 		Id: 65
 		Images: clat16.lun, clat16a.lun
 		Size: 1, 1
@@ -641,7 +436,7 @@ Templates:
 				MinColor: 90949E
 				MaxColor: 9A9EA8
 	Template@76:
-		Categories: LAT Grass Rough
+		Categories: LAT Rocky Dirt
 		Id: 76
 		Images: sandy01.lun, sandy01a.lun, sandy01b.lun, sandy01c.lun, sandy01d.lun, sandy01e.lun, sandy01f.lun, sandy01g.lun
 		Size: 1, 1
@@ -650,7 +445,7 @@ Templates:
 				MinColor: 9F974B
 				MaxColor: 9C9147
 	Template@77:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 77
 		Images: dlat01.lun, dlat01a.lun
 		Size: 1, 1
@@ -659,7 +454,7 @@ Templates:
 				MinColor: A59849
 				MaxColor: A09147
 	Template@78:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 78
 		Images: dlat02.lun, dlat02a.lun
 		Size: 1, 1
@@ -668,7 +463,7 @@ Templates:
 				MinColor: 9F994B
 				MaxColor: A59846
 	Template@79:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 79
 		Images: dlat03.lun, dlat03a.lun
 		Size: 1, 1
@@ -677,7 +472,7 @@ Templates:
 				MinColor: B49F4A
 				MaxColor: A29647
 	Template@80:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 80
 		Images: dlat04.lun, dlat04a.lun
 		Size: 1, 1
@@ -686,7 +481,7 @@ Templates:
 				MinColor: BCA14B
 				MaxColor: A9A64F
 	Template@81:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 81
 		Images: dlat05.lun, dlat05a.lun
 		Size: 1, 1
@@ -695,7 +490,7 @@ Templates:
 				MinColor: A4994C
 				MaxColor: 9E8F49
 	Template@82:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 82
 		Images: dlat06.lun, dlat06a.lun
 		Size: 1, 1
@@ -704,7 +499,7 @@ Templates:
 				MinColor: AF9F49
 				MaxColor: AA9C4C
 	Template@83:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 83
 		Images: dlat07.lun, dlat07a.lun
 		Size: 1, 1
@@ -713,7 +508,7 @@ Templates:
 				MinColor: 908D46
 				MaxColor: AD9A49
 	Template@84:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 84
 		Images: dlat08.lun, dlat08a.lun
 		Size: 1, 1
@@ -722,7 +517,7 @@ Templates:
 				MinColor: B19C4C
 				MaxColor: A59B4D
 	Template@85:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 85
 		Images: dlat09.lun, dlat09a.lun
 		Size: 1, 1
@@ -731,7 +526,7 @@ Templates:
 				MinColor: AC9E4F
 				MaxColor: A2944C
 	Template@86:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 86
 		Images: dlat10.lun, dlat10a.lun
 		Size: 1, 1
@@ -740,7 +535,7 @@ Templates:
 				MinColor: B9A954
 				MaxColor: AE9E4D
 	Template@87:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 87
 		Images: dlat11.lun, dlat11a.lun
 		Size: 1, 1
@@ -749,7 +544,7 @@ Templates:
 				MinColor: A8A14E
 				MaxColor: ADA14E
 	Template@88:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 88
 		Images: dlat12.lun, dlat12a.lun
 		Size: 1, 1
@@ -758,7 +553,7 @@ Templates:
 				MinColor: A79A4C
 				MaxColor: 9FA04E
 	Template@89:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 89
 		Images: dlat13.lun, dlat13a.lun
 		Size: 1, 1
@@ -767,7 +562,7 @@ Templates:
 				MinColor: A3A050
 				MaxColor: B5974A
 	Template@90:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 90
 		Images: dlat14.lun, dlat14a.lun
 		Size: 1, 1
@@ -776,7 +571,7 @@ Templates:
 				MinColor: ADA350
 				MaxColor: A49947
 	Template@91:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 91
 		Images: dlat15.lun, dlat15a.lun
 		Size: 1, 1
@@ -785,7 +580,7 @@ Templates:
 				MinColor: 9DA148
 				MaxColor: A69A49
 	Template@92:
-		Categories: GrassRough Individual
+		Categories: LAT Rocky Dirt Transitions
 		Id: 92
 		Images: dlat16.lun, dlat16a.lun
 		Size: 1, 1
@@ -794,7 +589,7 @@ Templates:
 				MinColor: A69B4C
 				MaxColor: 9F994B
 	Template@93:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 93
 		Images: plat01.lun, plat01a.lun
 		Size: 1, 1
@@ -803,7 +598,7 @@ Templates:
 				MinColor: AEAA92
 				MaxColor: ABA78E
 	Template@94:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 94
 		Images: plat02.lun, plat02a.lun
 		Size: 1, 1
@@ -812,7 +607,7 @@ Templates:
 				MinColor: BBB4A8
 				MaxColor: B8B59D
 	Template@95:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 95
 		Images: plat03.lun, plat03a.lun
 		Size: 1, 1
@@ -821,7 +616,7 @@ Templates:
 				MinColor: B7AE9D
 				MaxColor: B4AE90
 	Template@96:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 96
 		Images: plat04.lun, plat04a.lun
 		Size: 1, 1
@@ -830,7 +625,7 @@ Templates:
 				MinColor: B2AA9E
 				MaxColor: 9FA45F
 	Template@97:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 97
 		Images: plat05.lun, plat05a.lun
 		Size: 1, 1
@@ -839,7 +634,7 @@ Templates:
 				MinColor: ACA58C
 				MaxColor: B5AC9D
 	Template@98:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 98
 		Images: plat06.lun, plat06a.lun
 		Size: 1, 1
@@ -848,7 +643,7 @@ Templates:
 				MinColor: ABA58A
 				MaxColor: B7B096
 	Template@99:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 99
 		Images: plat07.lun, plat07a.lun
 		Size: 1, 1
@@ -857,7 +652,7 @@ Templates:
 				MinColor: A2A179
 				MaxColor: ABA986
 	Template@100:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 100
 		Images: plat08.lun, plat08a.lun
 		Size: 1, 1
@@ -866,7 +661,7 @@ Templates:
 				MinColor: B4ADA2
 				MaxColor: B1AD90
 	Template@101:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 101
 		Images: plat09.lun, plat09a.lun
 		Size: 1, 1
@@ -875,7 +670,7 @@ Templates:
 				MinColor: B9B49E
 				MaxColor: B8B1A4
 	Template@102:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 102
 		Images: plat10.lun, plat10a.lun
 		Size: 1, 1
@@ -884,7 +679,7 @@ Templates:
 				MinColor: ACAA7B
 				MaxColor: ACAB80
 	Template@103:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 103
 		Images: plat11.lun, plat11a.lun
 		Size: 1, 1
@@ -893,7 +688,7 @@ Templates:
 				MinColor: B6B19D
 				MaxColor: B2AC98
 	Template@104:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 104
 		Images: plat12.lun, plat12a.lun
 		Size: 1, 1
@@ -902,7 +697,7 @@ Templates:
 				MinColor: B9B19C
 				MaxColor: B1AC81
 	Template@105:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 105
 		Images: plat13.lun, plat13a.lun
 		Size: 1, 1
@@ -911,7 +706,7 @@ Templates:
 				MinColor: 9AA355
 				MaxColor: B1AC9E
 	Template@106:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 106
 		Images: plat14.lun, plat14a.lun
 		Size: 1, 1
@@ -920,7 +715,7 @@ Templates:
 				MinColor: AAAA7C
 				MaxColor: B8B395
 	Template@107:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 107
 		Images: plat15.lun, plat15a.lun
 		Size: 1, 1
@@ -929,7 +724,7 @@ Templates:
 				MinColor: A9AA76
 				MaxColor: ADA88A
 	Template@108:
-		Categories: Pavement Individual
+		Categories: LAT Pavement Transitions
 		Id: 108
 		Images: plat16.lun, plat16a.lun
 		Size: 1, 1
@@ -947,7 +742,7 @@ Templates:
 				MinColor: 989BA5
 				MaxColor: A0A3AC
 	Template@110:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 110
 		Images: glat01.lun, glat01a.lun
 		Size: 1, 1
@@ -956,7 +751,7 @@ Templates:
 				MinColor: 9296A0
 				MaxColor: A2A5AE
 	Template@111:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 111
 		Images: glat02.lun, glat02a.lun
 		Size: 1, 1
@@ -965,7 +760,7 @@ Templates:
 				MinColor: 9599A3
 				MaxColor: 9599A3
 	Template@112:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 112
 		Images: glat03.lun, glat03a.lun
 		Size: 1, 1
@@ -974,7 +769,7 @@ Templates:
 				MinColor: 9A9DA7
 				MaxColor: A4A7B0
 	Template@113:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 113
 		Images: glat04.lun, glat04a.lun
 		Size: 1, 1
@@ -983,7 +778,7 @@ Templates:
 				MinColor: 90949E
 				MaxColor: A3A7B0
 	Template@114:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 114
 		Images: glat05.lun, glat05a.lun
 		Size: 1, 1
@@ -992,7 +787,7 @@ Templates:
 				MinColor: A6A9B1
 				MaxColor: A3A6AF
 	Template@115:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 115
 		Images: glat06.lun, glat06a.lun
 		Size: 1, 1
@@ -1001,7 +796,7 @@ Templates:
 				MinColor: A1A5AD
 				MaxColor: 90949E
 	Template@116:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 116
 		Images: glat07.lun, glat07a.lun
 		Size: 1, 1
@@ -1010,7 +805,7 @@ Templates:
 				MinColor: A6A9B1
 				MaxColor: A8ABB3
 	Template@117:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 117
 		Images: glat08.lun, glat08a.lun
 		Size: 1, 1
@@ -1019,7 +814,7 @@ Templates:
 				MinColor: A4A7B0
 				MaxColor: 9B9FA8
 	Template@118:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 118
 		Images: glat09.lun, glat09a.lun
 		Size: 1, 1
@@ -1028,7 +823,7 @@ Templates:
 				MinColor: 9599A3
 				MaxColor: A2A5AE
 	Template@119:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 119
 		Images: glat10.lun, glat10a.lun
 		Size: 1, 1
@@ -1037,7 +832,7 @@ Templates:
 				MinColor: 9599A3
 				MaxColor: 9195A0
 	Template@120:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 120
 		Images: glat11.lun, glat11a.lun
 		Size: 1, 1
@@ -1046,7 +841,7 @@ Templates:
 				MinColor: 989CA5
 				MaxColor: 9FA3AC
 	Template@121:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 121
 		Images: glat12.lun, glat12a.lun
 		Size: 1, 1
@@ -1055,7 +850,7 @@ Templates:
 				MinColor: 9397A1
 				MaxColor: 999DA6
 	Template@122:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 122
 		Images: glat13.lun, glat13a.lun
 		Size: 1, 1
@@ -1064,7 +859,7 @@ Templates:
 				MinColor: A3A7AF
 				MaxColor: A1A4AD
 	Template@123:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 123
 		Images: glat14.lun, glat14a.lun
 		Size: 1, 1
@@ -1073,7 +868,7 @@ Templates:
 				MinColor: A5A8B1
 				MaxColor: 9396A1
 	Template@124:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 124
 		Images: glat15.lun, glat15a.lun
 		Size: 1, 1
@@ -1082,7 +877,7 @@ Templates:
 				MinColor: A4A8B0
 				MaxColor: A6A9B2
 	Template@125:
-		Categories: Moon Dirt Light Individual
+		Categories: LAT Moon Dirt Light Transitions
 		Id: 125
 		Images: glat16.lun, glat16a.lun
 		Size: 1, 1
@@ -1745,7 +1540,7 @@ Templates:
 				MinColor: 979AA4
 				MaxColor: 9699A3
 	Template@191:
-		Categories: LunarLander
+		Categories: Lunar Lander
 		Id: 191
 		Images: eagle01.lun
 		Size: 4, 4
