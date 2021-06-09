@@ -69,6 +69,10 @@ josh:
 		RequiresCondition: !chronodisable && !webdisable
 	Armament:
 		Weapon: ChimpBite
+	Explodes@Corpse:
+		DeathTypes: NonTemporal, ExplosionDeath, BulletDeath
+		Weapon: CorpseSpawner
+		EmptyWeapon: CorpseSpawner
 	WithDeathAnimation@effect:
 		DeathSequencePalette: effect
 		DeathPaletteIsPlayerPalette: false

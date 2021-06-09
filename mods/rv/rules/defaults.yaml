@@ -1745,6 +1745,10 @@
 		DeathTypes:
 			ExplosionDeath: 1
 			BulletDeath: 2
+	Explodes@Corpse:
+		DeathTypes: NonTemporal, ExplosionDeath, BulletDeath
+		Weapon: CorpseSpawner
+		EmptyWeapon: CorpseSpawner
 	WithDeathAnimation@effect:
 		DeathSequencePalette: effect
 		DeathPaletteIsPlayerPalette: False
@@ -2055,6 +2059,7 @@
 			ElectroDeath: 2
 			VirusDeath: 2
 			BruteDeath: 1
+	-Explodes@Corpse:
 	-WithDeathAnimation@effect:
 	-SpawnActorOnDeath@flames:
 	-SpawnSmokeParticleOnDeath@virus:
