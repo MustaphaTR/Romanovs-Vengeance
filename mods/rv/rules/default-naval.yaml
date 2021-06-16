@@ -100,3 +100,87 @@
 		SoundFiles: vlanstaa.wav, vlanstab.wav, vlanstac.wav
 		Volume: 0.45
 		RequiresCondition: moving
+
+^SeaAnimal:
+	Inherits@1: ^ExistsInWorld
+	Inherits@2: ^SpriteActor
+	Inherits@3: ^ChronoDisable
+	Inherits@4: ^CrateStatModifiers
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@INVULNERABILITY: ^KilledByIronCurtain
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	OwnerLostAction:
+		Action: Kill
+		DeathTypes: BulletDeath
+	Buildable:
+		Queue: Ship
+		BuildPaletteOrder: 40
+		Prerequisites: radar, ~techlevel.3
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Tooltip:
+		Name: Sea Animal
+		GenericName: Sea Animal
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Sea Animal
+		GenericName: Sea Animal
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 1023
+		Speed: 120
+		Locomotor: naval
+		Voice: Move
+	SelectionDecorations:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+		Duration: 50
+	Cloak:
+		CloakTypes: Underwater
+		InitialDelay: 50
+		CloakDelay: 75
+		CloakSound: vnavupa.wav
+		UncloakSound: vnavupa.wav
+		UncloakOn: Damage
+		IsPlayerPalette: true
+	Targetable:
+		TargetTypes: Ground, Water, SeaAnimal, Underwater
+	DetectCloaked:
+		CloakTypes: Underwater
+		Range: 5c0
+	RenderDetectionCircle:
+	HiddenUnderFog:
+	ActorLostNotification:
+	Guard:
+		Voice: Attack
+	Guardable:
+	DeathSounds:
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	Chronoshiftable:
+		ExplodeInstead: true
+	RenderSprites:
+	RepairableNear:
+		Voice: Move
+		CloseEnough: 3c0
+		RepairActors: gayard, nayard, yayard
+	HitShape:

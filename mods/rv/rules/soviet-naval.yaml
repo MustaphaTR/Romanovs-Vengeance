@@ -179,41 +179,20 @@ hyd:
 		RequiresCondition: moving
 
 sqd:
-	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^SpriteActor
-	Inherits@4: ^ChronoDisable
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@INVULNERABILITY: ^KilledByIronCurtain
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	OwnerLostAction:
-		Action: Kill
-		DeathTypes: BulletDeath
+	Inherits: ^SeaAnimal
 	Buildable:
 		Queue: Ship.Soviets
-		BuildPaletteOrder: 40
 		Prerequisites: naradr, ~techlevel.3
 		Description: Large ocean creature capable of grabbing and sinking ships.\nCan be deployed to remove other squids from nearby ships.\n  Strong vs Ships
 		BuildDuration: 375
-		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
 	Valued:
 		Cost: 800
 	Tooltip:
 		Name: Giant Squid
 		GenericName: Squid
-		RequiresCondition: showownername
 	Tooltip@NoRow:
 		Name: Giant Squid
 		GenericName: Squid
-		ShowOwnerRow: false
-		RequiresCondition: !showownername
-	GrantConditionOnPrerequisite@SHOWOWNERNAME:
-		Condition: showownername
-		Prerequisites: global-showownername
-	Armor:
-		Type: Light
 	Health:
 		HP: 40000
 	ChangesHealth:
@@ -222,22 +201,10 @@ sqd:
 		Delay: 100
 		DamageCooldown: 100
 		StartIfBelow: 100
-	Mobile:
-		TurnSpeed: 1023
-		Speed: 120
-		Locomotor: naval
-		Voice: Move
-	SelectionDecorations:
 	Selectable:
 		Bounds: 1930, 1448
 	Voiced:
 		VoiceSet: GiantSquidVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	InfectorOld:
 		Types: SquidInfection
 		Damage: 1500
@@ -262,50 +229,14 @@ sqd:
 		Voice: Attack
 		FacingTolerance: 2
 		PauseOnCondition: chronodisable
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	RevealOnDeath:
-		Radius: 3c0
-		Duration: 50
 	Cloak:
-		CloakTypes: Underwater
-		InitialDelay: 50
-		CloakDelay: 75
-		CloakSound: vnavupa.wav
-		UncloakSound: vnavupa.wav
-		UncloakOn: Damage, Attack
-		IsPlayerPalette: true
 		PauseOnCondition: deployed
-	Targetable:
-		TargetTypes: Ground, Water, SeaAnimal, Underwater
-	DetectCloaked:
-		CloakTypes: Underwater
-		Range: 5c0
-	HiddenUnderFog:
-	ActorLostNotification:
-	Guard:
-		Voice: Attack
-	Guardable:
-	DeathSounds:
-	QuantizeFacingsFromSequence:
-		Sequence: stand
-	Chronoshiftable:
-		ExplodeInstead: true
-	RenderDetectionCircle:
 	WithInfantryBody:
 		MinIdleDelay: 1
 		MaxIdleDelay: 2
 		IdleSequences: idle
 		StandSequences: stand
 		DefaultAttackSequence: punch
-	RepairableNear:
-		Voice: Move
-		CloseEnough: 3c0
-		RepairActors: gayard, nayard, yayard
-	HitShape:
 	PeriodicExplosion:
 		Weapon: SquidSplash
 		RequiresCondition: deployed && !chronodisable

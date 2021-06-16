@@ -182,60 +182,28 @@ aegis:
 		RequiresCondition: moving
 
 dlph:
-	Inherits@1: ^ExistsInWorld
-	Inherits@2: ^SpriteActor
-	Inherits@4: ^ChronoDisable
-	Inherits@5: ^CrateStatModifiers
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@INVULNERABILITY: ^KilledByIronCurtain
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	OwnerLostAction:
-		Action: Kill
-		DeathTypes: BulletDeath
+	Inherits: ^SeaAnimal
 	Buildable:
 		Queue: Ship.Allies
-		BuildPaletteOrder: 40
 		Prerequisites: gaairc, ~techlevel.3
 		Description: Trained dolphin\narmed with sonic beams.\n  Strong vs Ships
 		BuildDuration: 250
-		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
 	Valued:
 		Cost: 400
 	Tooltip:
 		Name: Dolphin
 		GenericName: Dolphin
-		RequiresCondition: showownername
 	Tooltip@NoRow:
 		Name: Dolphin
 		GenericName: Dolphin
-		ShowOwnerRow: false
-		RequiresCondition: !showownername
-	GrantConditionOnPrerequisite@SHOWOWNERNAME:
-		Condition: showownername
-		Prerequisites: global-showownername
-	Armor:
-		Type: Light
 	Health:
 		HP: 20000
 	Mobile:
-		TurnSpeed: 1023
 		Speed: 150
-		Locomotor: naval
-		Voice: Move
-	SelectionDecorations:
 	Selectable:
 		Bounds: 965, 1930
 	Voiced:
 		VoiceSet: DolphinVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Armament@primary:
 		Weapon: SonicZap
 		RequiresCondition: !rank-elite
@@ -246,40 +214,10 @@ dlph:
 		Voice: Attack
 		FacingTolerance: 2
 		PauseOnCondition: chronodisable
-	AutoTarget:
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	RevealOnDeath:
-		Radius: 3c0
-		Duration: 50
-	Cloak:
-		CloakTypes: Underwater
-		InitialDelay: 50
-		CloakDelay: 75
-		CloakSound: vnavupa.wav
-		UncloakSound: vnavupa.wav
-		UncloakOn: Damage
-		IsPlayerPalette: true
 	Targetable:
 		TargetTypes: Ground, Water, SeaAnimal, Underwater, ImmuneToAllySonic
 	DetectCloaked:
-		CloakTypes: Underwater
 		Range: 4c0
-	HiddenUnderFog:
-	ActorLostNotification:
-	Guard:
-		Voice: Attack
-	Guardable:
-	DeathSounds:
-	QuantizeFacingsFromSequence:
-		Sequence: stand
-	Chronoshiftable:
-		ExplodeInstead: true
-	RenderDetectionCircle:
-	RenderSprites:
 	WithInfantryBody:
 		MinIdleDelay: 1
 		MaxIdleDelay: 2
@@ -288,11 +226,6 @@ dlph:
 		DefaultAttackSequence: shoot
 	WithDeathAnimation:
 		UseDeathTypeSuffix: false
-	RepairableNear:
-		Voice: Move
-		CloseEnough: 3c0
-		RepairActors: gayard, nayard, yayard
-	HitShape:
 
 carrier:
 	Inherits: ^Ship
