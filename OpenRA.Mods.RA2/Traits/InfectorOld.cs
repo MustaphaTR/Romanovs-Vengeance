@@ -31,6 +31,15 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("How often to deal the damage.")]
 		public readonly int DamageInterval;
 
+		[Desc("Sounds to play when damage is dealt.")]
+		public readonly string[] DamageSounds = { };
+
+		[Desc("Do the sounds play under shroud or fog.")]
+		public readonly bool AudibleThroughFog = false;
+
+		[Desc("Volume the sounds played at.")]
+		public readonly float Volume = 1f;
+
 		[Desc("If more than this outside damage is dealt to infected unit while this actor is in, it is killed when infected unit dies.",
 			"Use -1 to never kill the actor.")]
 		public readonly int SuppressionDamageThreshold = -1;

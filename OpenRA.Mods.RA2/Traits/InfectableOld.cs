@@ -175,6 +175,14 @@ namespace OpenRA.Mods.RA2.Traits
 					var damage = Util.ApplyPercentageModifiers(InfectorTrait.Info.Damage, FirepowerMultipliers);
 					health.InflictDamage(self, Infector, new Damage(damage, InfectorTrait.Info.DamageTypes), false);
 
+					if (InfectorTrait.Info.DamageSounds.Any())
+					{
+						var pos = self.CenterPosition;
+						var sound = InfectorTrait.Info.DamageSounds.RandomOrDefault(Game.CosmeticRandom);
+						if (InfectorTrait.Info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
+							Game.Sound.Play(SoundType.World, sound, pos, InfectorTrait.Info.Volume);
+					}
+
 					Ticks = InfectorTrait.Info.DamageInterval;
 				}
 			}
