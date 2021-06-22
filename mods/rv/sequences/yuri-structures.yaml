@@ -945,27 +945,20 @@ caeast02:
 # Custom Yuri Structures
 yasilo:
 	Defaults: ygsilo
-		Offset: 0, -30
-	idle: ygsilo_a
-	damaged-idle: ygsilo_a
-		Start: 4
-	stages: ygsilo_a
+		Offset: 0, -5
+	idle:
 		Length: 4
-	damaged-stages: ygsilo_a
+		ShadowStart: 8
+	damaged-idle:
 		Start: 4
 		Length: 4
-	idle-underlay:
-		ShadowStart: 3
-		ZOffset: -512
-	damaged-idle-underlay:
-		Start: 1
-		ShadowStart: 4
-		ZOffset: -512
-	make: ggsilomk
-		Length: 17
-		ShadowStart: 17
-	icon: cameo|xxicon
+		ShadowStart: 12
+	make: ygsilomk
+		Length: 14
+		ShadowStart: 14
+	icon: bits/cameos/ysilicon.png
 		Offset: 0, 0
+		AddExtension: false
 
 yagatea:
 	Defaults: yggatea

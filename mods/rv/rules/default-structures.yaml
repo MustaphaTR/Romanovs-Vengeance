@@ -482,11 +482,9 @@
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 4c0
-	WithResourceLevelOverlay@FILLSTAGE:
-		RequiresCondition: !build-incomplete
-		Sequence: stages
-	WithSpriteBody:
-		Sequence: idle-underlay
+	-WithSpriteBody:
+	WithResourceLevelSpriteBody:
+		Stages: 4
 	StoresResources:
 		Capacity: 2000
 	Power:
