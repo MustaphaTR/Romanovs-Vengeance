@@ -949,6 +949,7 @@ ccomand:
 		TargetCursor: chronosphere
 		TeleportCondition: chronoed
 		ConditionDuration: 120
+		RequiresCondition: !affectedbytemporal
 	GrantCondition@ChronoDisable:
 		RequiresCondition: affectedbytemporal || chronoed
 	Chronoshiftable:
@@ -1381,6 +1382,7 @@ cleg:
 		TargetCursor: chronosphere
 		TeleportCondition: chronoed
 		ConditionDuration: 120
+		RequiresCondition: !affectedbytemporal
 	Chronoshiftable:
 		ExplodeInstead: false
 	Voiced:

@@ -20,7 +20,7 @@ using OpenRA.Traits;
 
 namespace OpenRA.Mods.RA2.Traits
 {
-	class PortableChronoRA2Info : TraitInfo
+	class PortableChronoRA2Info : ConditionalTraitInfo
 	{
 		[Desc("Cooldown in ticks until the unit can teleport.")]
 		public readonly int ChargeDelay = 500;
@@ -77,7 +77,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public override object Create(ActorInitializer init) { return new PortableChronoRA2(this); }
 	}
 
-	class PortableChronoRA2 : IIssueOrder, IResolveOrder, ITick, ISelectionBar, IOrderVoice, ISync
+	class PortableChronoRA2 : ConditionalTrait<PortableChronoRA2Info>, IIssueOrder, IResolveOrder, ITick, ISelectionBar, IOrderVoice, ISync
 	{
 		[Sync]
 		int chargeTick = 0;
@@ -85,17 +85,16 @@ namespace OpenRA.Mods.RA2.Traits
 		[Sync]
 		int conditionTicks = 0;
 
-		public readonly PortableChronoRA2Info Info;
-
 		int token = Actor.InvalidConditionToken;
 
 		public PortableChronoRA2(PortableChronoRA2Info info)
-		{
-			Info = info;
-		}
+			: base(info) { }
 
 		void ITick.Tick(Actor self)
 		{
+			if (IsTraitDisabled)
+				return;
+
 			if (chargeTick > 0)
 				chargeTick--;
 
