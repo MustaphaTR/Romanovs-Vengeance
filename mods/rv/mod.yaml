@@ -1,6 +1,6 @@
 Metadata:
 	Title: Red Alert 2: Romanov's Vengeance
-	Version: playtest-20210716
+	Version: db879fe
 	Website: https://github.com/MustaphaTR/Romanovs-Vengeance
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Romanovs-Vengeance/master/packaging/artwork/icon_32x32.png
 
@@ -8,7 +8,6 @@ ModCredits:
 	ModTabTitle: Romanov's Vengeance
 	ModCreditsFile: rv|AUTHORS.RV
 
-# TODO: Rename to AudioBag once BagFile is gone from OpenRA/OpenRA
 PackageFormats: Mix, AudioBag
 
 Packages:
@@ -85,7 +84,7 @@ Packages:
 
 MapFolders:
 	rv|maps: System
-	~^SupportDir|maps/rv/playtest-20210716: User
+	~^SupportDir|maps/rv/db879fe: User
 
 Rules:
 	rv|rules/proxy-actors.yaml
@@ -166,7 +165,6 @@ Assemblies:
 
 ChromeLayout:
 	rv|chrome/assetbrowser.yaml
-	rv|chrome/color-picker.yaml
 	rv|chrome/credits.yaml
 	rv|chrome/ingame.yaml
 	rv|chrome/ingame-player.yaml
@@ -177,6 +175,7 @@ ChromeLayout:
 	rv|chrome/mainmenu.yaml
 	rv|chrome/mainmenu-prerelease-notification.yaml
 	rv|chrome/tooltips.yaml
+	common|chrome/color-picker.yaml
 	common|chrome/mainmenu-prompts.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/ingame-chat.yaml
@@ -271,6 +270,7 @@ Hotkeys:
 	common|hotkeys/production-peractor.yaml
 	common|hotkeys/supportpowers.yaml
 	common|hotkeys/viewport.yaml
+	common|hotkeys/chat.yaml
 	rv|hotkeys.yaml
 
 WorldViewportSizes:
@@ -394,9 +394,6 @@ GameSpeeds:
 			Name: Ludicrous
 			Timestep: 5
 			OrderLatency: 9
-
-ColorValidator:
-	TeamColorPresets: dee308, ff1818, 2973e7, 39d629, ffa518, 31d6e7, 9429bd, ff9cef, fefefe, 6f7104, 7f0c0c, 143973, 1c6b14, 7f520c, 186b73, 4a145e, 7f484e, 000000
 
 ModContent:
 	InstallPromptMessage: Red Alert 2 requires artwork and audio from the original game.

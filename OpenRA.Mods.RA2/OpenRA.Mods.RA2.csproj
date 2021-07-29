@@ -1,22 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <Import Project="../engine/Directory.Build.props" />
   <PropertyGroup>
-    <OutputPath>../engine/bin</OutputPath>
-    <CodeAnalysisRuleSet>../engine/OpenRA.ruleset</CodeAnalysisRuleSet>
+	<EngineRootPath>../engine</EngineRootPath>
   </PropertyGroup>
+  <Import Project="../engine/Directory.Build.props" />
   <ItemGroup>
-    <ProjectReference Include="../engine/OpenRA.Game/OpenRA.Game.csproj">
+    <ProjectReference Include="$(EngineRootPath)/OpenRA.Game/OpenRA.Game.csproj">
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="../engine/OpenRA.Mods.AS/OpenRA.Mods.AS.csproj">
+    <ProjectReference Include="$(EngineRootPath)/OpenRA.Mods.AS/OpenRA.Mods.AS.csproj">
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="../engine/OpenRA.Mods.Cnc/OpenRA.Mods.Cnc.csproj">
+    <ProjectReference Include="$(EngineRootPath)/OpenRA.Mods.Cnc/OpenRA.Mods.Cnc.csproj">
       <Private>False</Private>
     </ProjectReference>
-    <ProjectReference Include="../engine/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
+    <ProjectReference Include="$(EngineRootPath)/OpenRA.Mods.Common/OpenRA.Mods.Common.csproj">
       <Private>False</Private>
     </ProjectReference>
-    <AdditionalFiles Include="../engine/stylecop.json" />
+    <AdditionalFiles Include="$(EngineRootPath)/stylecop.json" />
   </ItemGroup>
 </Project>

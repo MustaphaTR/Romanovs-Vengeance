@@ -320,10 +320,7 @@ namespace OpenRA.Mods.RA2.Traits
 			// If there is no animation to play just grant the upgrades that are used while deployed.
 			// Alternatively, play the deploy animation and then grant the upgrades.
 			if (string.IsNullOrEmpty(Info.DeployAnimation) || wsb == null)
-			{
-				Game.Debug("wsb is null.");
 				OnDeployCompleted();
-			}
 			else
 				wsb.PlayCustomAnimation(self, Info.DeployAnimation, OnDeployCompleted);
 		}
