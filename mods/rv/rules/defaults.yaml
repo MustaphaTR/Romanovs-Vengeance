@@ -1184,8 +1184,12 @@
 	SpawnActorsOnSell@psicorps:
 		ActorTypes: init, init, init
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
+	GrantConditionOnPrerequisite@SUDDENDEATH:
+		Condition: suddendeath
+		Prerequisites: global-suddendeath
 	MustBeDestroyed:
 		RequiredForShortGame: true
+		RequiresCondition: !suddendeath
 	ShakeOnDeath:
 		DeathTypes: NonTemporal
 	ProximityCaptor:
@@ -1240,9 +1244,10 @@
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
 	-GrantConditionOnPrerequisite@INSTANTCAPTURE:
-	-MustBeDestroyed:
 	-ShakeOnDeath:
 	-GivesBuildableArea:
+	MustBeDestroyed:
+		RequiredForShortGame: false
 	Building:
 		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	RevealOnFire:
@@ -1819,7 +1824,11 @@
 	DeathSounds@virus:
 		Voice: Virus
 		DeathTypes: VirusDeath
+	GrantConditionOnPrerequisite@SUDDENDEATH:
+		Condition: suddendeath
+		Prerequisites: global-suddendeath
 	MustBeDestroyed:
+		RequiresCondition: !suddendeath
 	Cloneable:
 		Types: Infantry
 	Voiced:
@@ -2199,7 +2208,11 @@
 		LightPitch: 150
 		LightAmbientColor: -0.5,-0.5,-0.5
 		LightDiffuseColor: 1.3,1.3,1.3
+	GrantConditionOnPrerequisite@SUDDENDEATH:
+		Condition: suddendeath
+		Prerequisites: global-suddendeath
 	MustBeDestroyed:
+		RequiresCondition: !suddendeath
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
 	Chronoshiftable:
@@ -2278,7 +2291,11 @@
 	Guard:
 		Voice: Attack
 	Guardable:
+	GrantConditionOnPrerequisite@SUDDENDEATH:
+		Condition: suddendeath
+		Prerequisites: global-suddendeath
 	MustBeDestroyed:
+		RequiresCondition: !suddendeath
 	RenderVoxels:
 		Scale: 11.7
 		LightYaw: 800
@@ -2578,7 +2595,11 @@
 		LightPitch: 150
 		LightAmbientColor: -0.5,-0.5,-0.5
 		LightDiffuseColor: 1.3,1.3,1.3
+	GrantConditionOnPrerequisite@SUDDENDEATH:
+		Condition: suddendeath
+		Prerequisites: global-suddendeath
 	MustBeDestroyed:
+		RequiresCondition: !suddendeath
 	Voiced:
 		VoiceSet: SovietNavalVoice
 	Chronoshiftable:

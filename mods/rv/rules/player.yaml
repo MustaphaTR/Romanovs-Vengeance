@@ -55,7 +55,7 @@ Player:
 	ResourceStorageWarning:
 		Notification: InsufficientSilos
 	DeveloperMode:
-		CheckboxDisplayOrder: 14
+		CheckboxDisplayOrder: 18
 	GpsWatcher:
 	Shroud:
 		ExploredMapCheckboxEnabled: True
@@ -95,14 +95,14 @@ Player:
 		Enabled: False
 		DisplayOrder: 11
 		Prerequisites: global-instantcapture
-	LobbyPrerequisiteCheckbox@domination:
+	LobbyPrerequisiteCheckbox@DOMINATION:
 		ID: domination
 		Label: Domination
 		Description: Control the flags on the map to win
 		Enabled: False
 		DisplayOrder: 12
 		Prerequisites: global-domination
-	LobbyPrerequisiteCheckbox@megawealth:
+	LobbyPrerequisiteCheckbox@MEGAWEALTH:
 		ID: megawealth
 		Label: Megawealth
 		Description: Removes all the Ore on the map and makes the economy dependent on Oil Derricks
@@ -117,14 +117,21 @@ Player:
 		Visible: False # Too lazy to remove the setup for this.
 		DisplayOrder: 14
 		Prerequisites: global-showownername
-	LobbyPrerequisiteCheckbox@koth:
+	LobbyPrerequisiteCheckbox@SUDDENDEATH:
+		ID: suddendeath
+		Label: Sudden Death
+		Description: Players can't build another MCV and get defeated when they lose it
+		Enabled: False
+		DisplayOrder: 14
+		Prerequisites: global-suddendeath
+	LobbyPrerequisiteCheckbox@KOTH:
 		ID: koth
 		Label: King of the Hill
 		Description: Capture and hold the Psychic Beacon on the map to win
 		Enabled: False
 		DisplayOrder: 15
 		Prerequisites: global-koth
-	LobbyPrerequisiteCheckbox@regicide:
+	LobbyPrerequisiteCheckbox@REGICIDE:
 		ID: regicide
 		Label: Regicide
 		Description: Kill enemy leader to win the game
