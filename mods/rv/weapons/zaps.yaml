@@ -915,3 +915,86 @@ IonCannon:
 		Explosions: ionbeam6
 		ExplosionPalette: effect50alpha
 		ImpactActors: false
+
+BloodSuck:
+	Inherits: ^MG
+	ReloadDelay: 40
+	Range: 7c0
+	Projectile: TeslaZap
+		Image: scrlitning
+		Duration: 6
+		DimZaps: 1
+	Warhead@1Dam: TargetDamage
+		Damage: 4500
+		DamageTypes: Prone50Percent, TriggerProne, NonTemporal
+	Warhead@bloodback: BackFireShrapnel
+		Weapon: BloodBack
+		ValidTargets: Infantry, SeaAnimal
+	Warhead@materialback: BackFireShrapnel
+		Weapon: MaterialBack
+		ValidTargets: Vehicle, Structure, WaterStructure, Defence, Ship
+	-Warhead@2Eff: 
+
+BloodBack:
+	TargetActorCenter: true
+	Projectile: MissileTA
+		CruiseAltitude: 6000
+		Acceleration: 0
+		MinimumLaunchAngle: 200
+		MaximumLaunchAngle: 200
+		Image: explosion
+		Sequences: tissue
+		Shadow: true
+		Palette: player
+		HorizontalRateOfTurn: 60
+		RangeLimit: 15c0
+		Arm: 0
+		Speed: 300
+		Inaccuracy: 0c0
+		Blockable: false
+		TerrainHeightAware: true
+		AllowSnapping: true
+		ExplodeUnderThisAltitude: -3c0
+		RangeLimit: 40c0
+		Gravity: 0
+		ContrailDelay: 0
+		ContrailColor: CC000060
+		ContrailLength: 3
+		ContrailWidth: 32
+	Warhead@charge: GrantExternalCondition
+		Range: 1
+		Duration: 1
+		Condition: bloodsucked
+		ValidRelationships: Ally
+		AffectsParent: true
+		ValidTargets: Air
+
+
+MaterialBack:
+	TargetActorCenter: true
+	Projectile: MissileTA
+		CruiseAltitude: 6000
+		Acceleration: 0
+		MinimumLaunchAngle: 200
+		MaximumLaunchAngle: 200
+		Image: debris
+		Sequences: small1, small2, small3, small4, small5, small6, small7, small8, small9, large1, large2, large3, large4, large5, large6, large7, large8, large9, large10 
+		Shadow: true
+		Palette: effect
+		HorizontalRateOfTurn: 60
+		RangeLimit: 15c0
+		Arm: 0
+		Speed: 300
+		Inaccuracy: 0c0
+		Blockable: false
+		TerrainHeightAware: true
+		AllowSnapping: true
+		ExplodeUnderThisAltitude: -3c0
+		RangeLimit: 40c0
+		Gravity: 0
+	Warhead@1Dam: SpreadDamage
+		Damage: -750
+		Falloff: 100,100
+		ValidRelationships: Ally
+		AffectsParent: true
+		ValidTargets: Air

@@ -789,3 +789,23 @@ UCGrenade:
 UCGrenadeE:
 	Inherits: GrenadeE
 	Range: 7c0
+
+SpawnEgg:
+	ReloadDelay: 1
+	Range: 7c0
+	ValidTargets: Ground
+	InvalidTargets: Cliff, Water, Underwater, Air
+	Projectile: BulletAS
+		Speed: 200
+		Blockable: false
+		Image: vislrg
+		Sequences: stand
+		Palette: player
+		Shadow: true
+	Warhead@5Actor: SpawnActor
+		Actors: visc_lrg
+		FallRate: 5000
+		Range: 2
+		ForceGround: true
+		InvalidTargets: Water, Cliff
+		ValidTargets: Ground, Water, Air

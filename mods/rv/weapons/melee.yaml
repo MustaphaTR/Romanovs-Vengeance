@@ -283,3 +283,27 @@ CRGrind:
 			Concrete: 0
 			Rocket: 0
 		ValidTargets: Vehicle, TerrorDrone, Ship
+
+SlimeAttack:
+	Inherits@1: ^BreakPointDefenseDrones
+	ReloadDelay: 60
+	Range: 1c496
+	ValidTargets: Infantry, TerrorDrone, Structure, Barrel, Mine, Bridge, Wall, Fence, Tree
+	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+		ValidTargets: Infantry, TerrorDrone, Structure, Barrel, Mine, Bridge, Wall, Fence, Tree
+		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
+			Light: 0
+			Medium: 20
+			Heavy: 0
+			Wood: 25
+			Steel: 30
+			Concrete: 15
+			Drone: 50
+			Rocket: 50
+		DamageTypes: BulletDeath, SuppressTerrorDrone, NonTemporal

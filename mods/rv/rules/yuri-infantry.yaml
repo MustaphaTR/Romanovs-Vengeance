@@ -1160,3 +1160,31 @@ crkt:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1
 	-TakeCover:
+
+VISC_LRG:
+	Inherits: ^Animal
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Tooltip:
+		Name: Adult Visceroid
+	Health:
+		HP: 20000
+	RevealsShroud:
+		Range: 4c0
+	Armament:
+		Weapon: SlimeAttack
+		FireDelay: 10
+	AutoTarget:
+		ScanRadius: 5
+		InitialStance: AttackAnything
+	AttackFrontal:
+		Voice: Attack
+	WithAttackAnimation:
+		Sequence: attack
+	Mobile:
+		Speed: 120
+		TurnSpeed: 64
+	RenderSprites:
+		Image: vislrg
+	WithFacingSpriteBody:
+	-WithDeathAnimation@normal:
+	-WithInfantryBody:

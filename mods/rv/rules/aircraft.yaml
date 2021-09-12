@@ -2087,9 +2087,9 @@ txdx:
 	Valued:
 		Cost: 900
 	Tooltip:
-		Name: Mosquito Platform
+		Name: Lethocerus Platform
 	Tooltip@NoRow:
-		Name: Mosquito Platform
+		Name: Lethocerus Platform
 	Buildable:
 		Queue: Aircraft.Yuri, Aircraft.Lazarus
 		BuildPaletteOrder: 10
@@ -2177,9 +2177,9 @@ txdx:
 txdxhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Mosquito Platform
+		Name: Lethocerus Platform
 	Tooltip@NoRow:
-		Name: Mosquito Platform
+		Name: Lethocerus Platform
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180
@@ -2346,28 +2346,28 @@ magnedisk:
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
-		Cost: 1400
+		Cost: 900
 	Tooltip:
-		Name: Magnedisc
+		Name: Mosquito Platform
 	Tooltip@NoRow:
-		Name: Magnedisc
+		Name: Mosquito Platform
 	Buildable:
 		Queue: Aircraft.Lazarus
 		BuildPaletteOrder: 30
 		Prerequisites: yadome, ~techlevel.3
-		Description: Invisible Floating Disc armed with magnetic field generators.\n Strong vs Vehicles, Buildings\n Weak vs Infantry, Aircraft
-		BuildDuration: 625
+		Description: High-tech Disc armed with material drainer .\n\n Strong vs Ground\n Weak vs Aircraft
+		BuildDuration: 500
 		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
 	Aircraft:
+		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		TurnSpeed: 1023
-		Speed: 150
+		Speed: 180
 		AltitudeVelocity: 200
+		PauseOnCondition: emp || magnefreeze || chronodisable
 	Selectable:
-		Bounds: 1882, 2075, 0, -724
+		Bounds: 1641, 2075, 0, -241
 	Health:
-		HP: 20000
+		HP: 17500
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -2379,29 +2379,36 @@ magnedisk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	Armament@primary:
-		Weapon: DiskMagneShake
-		RequiresCondition: !rank-elite
-	Armament@elite:
-		Weapon: DiskMagneShakeE
-		RequiresCondition: rank-elite
-	Armament@secondary:
-		Weapon: DiskMagneFreeze
+		Weapon: BloodSuck
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
 		FacingTolerance: 128
-	AutoTarget:
-		InitialStance: ReturnFire
+		Armaments: primary, growth
+	ExternalCondition@bloodsucked:
+		Condition: bloodsucked
+	AmmoPool:
+		Armaments: growth
+		InitialAmmo: 0
+		Ammo: 1
+		AmmoCondition: cangrowth
+	ReloadAmmoPool@growth:
+		Delay: 3
+		PauseOnCondition: !bloodsucked
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+	Armament@growth:
+		Weapon: SpawnEgg
+		Name: growth
+		PauseOnCondition: !cangrowth
+		Delay: 20
 	Voiced:
 		VoiceSet: FloatingDiskVoice
-	Cloak:
-		RequiresCondition: !chronodisable && !emp
-		InitialDelay: 25
-		CloakDelay: 125
-		IsPlayerPalette: true
-		CloakSound: cloak5.aud
-		UncloakSound: cloak5.aud
-		UncloakOn: Attack, Damage, Dock
 	Turreted:
 		TurnSpeed: 1023
 	RenderSprites:
@@ -2414,20 +2421,33 @@ magnedisk:
 		RequiresCondition: produced
 		Voice: Build
 		ValidRelationships: None
-	HitShape:
+	Cloak:
+		RequiresCondition: !chronodisable && !emp
+		InitialDelay: 25
+		CloakDelay: 125
+		IsPlayerPalette: true
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
+		UncloakOn: Attack, Damage, Dock
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: magnediskhusk
+		RequiresCondition: airborne
+	Explodes:
+		DeathTypes: NonTemporal
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	HitShape:
 
 magnediskhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Magnedisc
+		Name: Mosquito Platform
 	Tooltip@NoRow:
-		Name: Magnedisc
+		Name: Mosquito Platform
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 150
