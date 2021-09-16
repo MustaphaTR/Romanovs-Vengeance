@@ -1,6 +1,6 @@
 Metadata:
 	Title: Red Alert 2: Romanov's Vengeance
-	Version: d9640d6
+	Version: 61d96bf
 	Website: https://github.com/MustaphaTR/Romanovs-Vengeance
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Romanovs-Vengeance/master/packaging/artwork/icon_32x32.png
 
@@ -84,7 +84,7 @@ Packages:
 
 MapFolders:
 	rv|maps: System
-	~^SupportDir|maps/rv/d9640d6: User
+	~^SupportDir|maps/rv/61d96bf: User
 
 Rules:
 	rv|rules/proxy-actors.yaml
@@ -174,6 +174,7 @@ ChromeLayout:
 	rv|chrome/lobby-players.yaml
 	rv|chrome/mainmenu.yaml
 	rv|chrome/mainmenu-prerelease-notification.yaml
+	rv|chrome/settings-hotkeys.yaml
 	rv|chrome/tooltips.yaml
 	common|chrome/color-picker.yaml
 	common|chrome/mainmenu-prompts.yaml
@@ -192,7 +193,6 @@ ChromeLayout:
 	common|chrome/settings-display.yaml
 	common|chrome/settings-audio.yaml
 	common|chrome/settings-input.yaml
-	common|chrome/settings-hotkeys.yaml
 	common|chrome/settings-advanced.yaml
 	common|chrome/lobby.yaml
 	common|chrome/lobby-options.yaml
@@ -369,31 +369,31 @@ GameSpeeds:
 		slowest:
 			Name: Slowest
 			Timestep: 80
-			OrderLatency: 2
+			OrderLatency: 6
 		slower:
 			Name: Slower
 			Timestep: 50
-			OrderLatency: 3
+			OrderLatency: 9
 		default:
 			Name: Normal
 			Timestep: 40
-			OrderLatency: 3
+			OrderLatency: 9
 		fast:
 			Name: Fast
 			Timestep: 35
-			OrderLatency: 4
+			OrderLatency: 12
 		faster:
 			Name: Faster
 			Timestep: 30
-			OrderLatency: 4
+			OrderLatency: 12
 		fastest:
 			Name: Fastest
 			Timestep: 20
-			OrderLatency: 6
+			OrderLatency: 18
 		ludicrous:
 			Name: Ludicrous
 			Timestep: 5
-			OrderLatency: 9
+			OrderLatency: 27
 
 ModContent:
 	InstallPromptMessage: Red Alert 2 requires artwork and audio from the original game.
