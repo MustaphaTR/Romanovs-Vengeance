@@ -1,6 +1,6 @@
 M1Carbine:
 	Inherits: ^MG
-	Range: 5c0
+	Range: 4c0
 	ReloadDelay: 25
 	Warhead@1Dam: SpreadDamage
 		Spread: 64
@@ -10,7 +10,7 @@ M1Carbine:
 M1CarbineE:
 	Inherits: M1Carbine
 	ReloadDelay: 20
-	Range: 6c0
+	Range: 5c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 	Warhead@2Eff: CreateEffect
@@ -31,7 +31,7 @@ UCM1CarbineE:
 M60:
 	Inherits: ^MG
 	ReloadDelay: 25
-	Range: 5c0
+	Range: 4c0
 	Warhead@1Dam: SpreadDamage
 		Spread: 64
 		Damage: 1500
@@ -39,24 +39,15 @@ M60:
 M60E:
 	Inherits: M60
 	ReloadDelay: 20
-	Range: 6c0
+	Range: 5c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
-CRM60:
-	Inherits: M60
-	ReloadDelay: 25
-	Burst: 2
-	Range: 6c0
-	Report: vifvat2a.wav, vifvat2b.wav, vifvat2c.wav
-	Warhead@1Dam: SpreadDamage
-		Damage: 2000
-
 para:
 	Inherits: ^MG
-	Range: 6c0
+	Range: 5c0
 	ReloadDelay: 20
 	Report: igiat2a.wav, igiat2b.wav, igiat2c.wav, igiat2d.wav, igiat2c.wav, igiat2d.wav
 	Warhead@1Dam: SpreadDamage
@@ -66,7 +57,7 @@ para:
 
 paraE:
 	Inherits: para
-	Range: 6c0
+	Range: 5c0
 	ReloadDelay: 15
 	Warhead@1Dam: SpreadDamage
 		Damage: 2500
@@ -107,14 +98,9 @@ MP5:
 
 MP5E:
 	Inherits: MP5
-	Range: 6c0
 	ReloadDelay: 10
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
-
-CRMP5:
-	Inherits: MP5
-	Range: 6c0
 
 UCMP5:
 	Inherits: MP5
@@ -131,7 +117,7 @@ UCMP5E:
 DoublePistols:
 	Inherits: ^MG
 	ReloadDelay: 10
-	Range: 6c0
+	Range: 5c0
 	Report: itanatta.wav, itanattb.wav
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
@@ -155,14 +141,10 @@ DoublePistols:
 
 DoublePistolsE:
 	Inherits: DoublePistols
-	Range: 8c0
+	Range: 7c0
 	ReloadDelay: 8
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
-
-CRDoublePistols:
-	Inherits: DoublePistols
-	ReloadDelay: 20
 
 UCDoublePistols:
 	Inherits: DoublePistols
@@ -230,19 +212,12 @@ UCAWPE:
 	Projectile: InstantHit
 		Blockable: false
 
-CRAWP:
-	Inherits: awp
-	ReloadDelay: 180
-	Range: 12c0
-	Warhead@2Eff: CreateEffect
-		Explosions: piffred
-
 MagneRifle:
 	Inherits: awp
 	ReloadDelay: 75
 	Burst: 2
-	BurstDelays: 10
-	Range: 9c0
+	BurstDelays: 5
+	Range: 5c0
 	InvalidTargets: Bridge, Wall, Fence
 	Report: tibrifle01.aud, tibrifle02.aud, tibrifle03.aud
 	-Projectile:
@@ -279,7 +254,7 @@ MagneRifle:
 MagneRifleE:
 	Inherits: MagneRifle
 	ReloadDelay: 60
-	Range: 11c0
+	Range: 6c0
 	Projectile: BulletAS
 		ContrailColor: FF0000
 	Warhead@1Dam: SpreadDamage
@@ -289,11 +264,13 @@ MagneRifleE:
 
 UCMagneRifle:
 	Inherits: MagneRifle
+	Range: 7c0
 	Projectile: BulletAS
 		Blockable: false
 
 UCMagneRifleE:
 	Inherits: MagneRifleE
+	Range: 7c0
 	Projectile: BulletAS
 		Blockable: false
 
@@ -349,7 +326,6 @@ robogun:
 
 robogunE:
 	Inherits: robogun
-	ReloadDelay: 30
 	Range: 6c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
@@ -398,7 +374,7 @@ vulcan2:
 BlackHawkCannon:
 	Inherits: ^MG
 	ReloadDelay: 40
-	Range: 6c0
+	Range: 5c0
 	Report: vblhatta.wav, vblhattb.wav
 	ValidTargets: Ground, Water
 	Projectile: InstantHit
@@ -517,7 +493,7 @@ SiegeChopperCannonAAE:
 AKM:
 	Inherits: ^MG
 	ReloadDelay: 15
-	Range: 8c0
+	Range: 7c0
 	Report: iboratta.wav, iborattb.wav
 	InvalidTargets: Bridge, Wall, Fence, Tree, Structure
 	Warhead@1Dam: SpreadDamage
@@ -541,7 +517,7 @@ AKM:
 
 AKME:
 	Inherits: AKM
-	Range: 9c0
+	Range: 8c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 9000
 	Warhead@2Eff: CreateEffect

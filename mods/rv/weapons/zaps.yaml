@@ -6,7 +6,7 @@ ElectricBolt:
 		Spread: 120
 		Damage: 5000
 		Versus:
-			Light: 50
+			Light: 100
 			Heavy: 75
 			Steel: 65
 	Warhead@3Smu: LeaveSmudge
@@ -23,13 +23,6 @@ ElectricBoltE:
 		AimTargetStances: Enemy, Neutral
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
 
-CRElectricBolt:
-	Inherits: ElectricBolt
-	Range: 6c0
-	ReloadDelay: 45
-	Warhead@1Dam: SpreadDamage
-		Damage: 6000
-
 UCElectricBolt:
 	Inherits: ElectricBolt
 	Range: 7c0
@@ -40,6 +33,7 @@ UCElectricBoltE:
 
 ElectricBoltCommando:
 	Inherits: ElectricBoltE
+	Range: 5c0
 	InvalidTargets: TeslaBomb, TeslaBombCleaner
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
@@ -62,6 +56,7 @@ UCElectricBoltCommandoE:
 
 ElectricBoltVolkov:
 	Inherits: ElectricBoltE
+	Range: 6c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 12500
 	Warhead@2Shr: FireShrapnel
@@ -426,13 +421,6 @@ RadBeamWeaponE:
 	Warhead@1Dam: SpreadDamage
 		Damage: 20000
 
-CRRadBeamWeapon:
-	Inherits: RadBeamWeapon
-	Range: 7c0
-	ReloadDelay: 30
-	Warhead@1Dam: SpreadDamage
-		Damage: 17500
-
 UCRadBeamWeapon:
 	Inherits: RadBeamWeapon
 	Range: 7c0
@@ -462,16 +450,6 @@ NeutronRifleE:
 	Inherits: NeutronRifle
 	Warhead@Damage: Temporal
 		Damage: 1600
-
-CRNeutronRifle:
-	Inherits: NeutronRifle
-	Range: 6c0
-	Warhead@Damage: Temporal
-		Damage: 1200
-
-CRNeutronRifleSound:
-	Inherits: NeutronRifleSound
-	Range: 6c0
 
 NeutronRifleSound:
 	ReloadDelay: 120
@@ -549,27 +527,6 @@ CurtainRifleAPE:
 	Range: 7c0
 	Warhead@Damage: SpreadDamage
 		Spread: 1c0
-
-CRCurtainRifle:
-	Inherits: CurtainRifle
-	ReloadDelay: 70
-	Projectile: TeslaZap
-		Image: litningredthicc
-	Warhead@Condition: GrantExternalCondition
-		Range: 1c512
-	Warhead@Damage: SpreadDamage
-		Spread: 1c512
-		Falloff: 100, 100
-		Damage: 12500
-		ValidTargets: Infantry
-		DamageTypes: FlameDeath, NonTemporal
-	Warhead@Stars: CreateEffect
-		Explosions: ironblast
-
-CRCurtainRifleAP:
-	Inherits: CRCurtainRifle
-	ValidTargets: Infantry
-	-InvalidTargets:
 
 UCCurtainRifle:
 	Inherits: CurtainRifle

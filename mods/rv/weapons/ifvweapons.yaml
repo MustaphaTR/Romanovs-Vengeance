@@ -1,0 +1,168 @@
+CRFlakGuyGun:
+	Inherits: FlakGuyGun
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+
+CRFlakGuyGunAA:
+	Inherits: ^AAFlak
+	Range: 8c0
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+
+CRM60:
+	Inherits: M60
+	ReloadDelay: 25
+	Burst: 2
+	Range: 5c0
+	Report: vifvat2a.wav, vifvat2b.wav, vifvat2c.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+
+CRMP5:
+	Inherits: MP5
+	Range: 5c0
+
+CRDoublePistols:
+	Inherits: DoublePistols
+	ReloadDelay: 20
+
+CRAWP:
+	Inherits: awp
+	ReloadDelay: 180
+	Range: 12c0
+	Warhead@2Eff: CreateEffect
+		Explosions: piffred
+
+CRGrenade:
+	Inherits: Grenade
+	Range: 6c0
+	Projectile: BulletAS
+		Speed: 384
+	Warhead@1Dam: SpreadDamage
+		Damage: 12000
+
+CRElectricBolt:
+	Inherits: ElectricBolt
+	Range: 5c0
+	ReloadDelay: 45
+	Warhead@1Dam: SpreadDamage
+		Damage: 6000
+
+CRRadBeamWeapon:
+	Inherits: RadBeamWeapon
+	Range: 7c0
+	ReloadDelay: 30
+	Warhead@1Dam: SpreadDamage
+		Damage: 17500
+
+CRNeutronRifle:
+	Inherits: NeutronRifle
+	Range: 6c0
+	Warhead@Damage: Temporal
+		Damage: 1200
+
+CRNeutronRifleSound:
+	Inherits: NeutronRifleSound
+	Range: 6c0
+
+CRCurtainRifle:
+	Inherits: CurtainRifle
+	ReloadDelay: 70
+	Projectile: TeslaZap
+		Image: litningredthicc
+	Warhead@Condition: GrantExternalCondition
+		Range: 1c512
+	Warhead@Damage: SpreadDamage
+		Spread: 1c512
+		Falloff: 100, 100
+		Damage: 12500
+		ValidTargets: Infantry
+		DamageTypes: FlameDeath, NonTemporal
+	Warhead@Stars: CreateEffect
+		Explosions: ironblast
+
+CRCurtainRifleAP:
+	Inherits: CRCurtainRifle
+	ValidTargets: Infantry
+	-InvalidTargets:
+
+CRFlamer:
+	Inherits: Flamer
+	ReloadDelay: 40
+	Burst: 8
+
+CRToxinSprayer:
+	Inherits: ToxinSprayer
+	ReloadDelay: 25
+	Burst: 15
+
+CRPsiWave:
+	Inherits: PsiWave
+	ReloadDelay: 20
+	Projectile: InstantExplode
+	Warhead@1Dam: SpreadDamage
+		Damage: 20000
+	Warhead@2Dam: SpreadDamage
+		Damage: 20000
+
+CRPsychicJab:
+	Inherits: PsychicJab
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+
+CRMagneRifle:
+	Inherits: MagneRifle
+	Range: 6c0
+	Burst: 3
+	Warhead@1Dam: SpreadDamage
+		Damage: 6000
+
+CRMissileLauncher:
+	Inherits: MissileLauncher
+	ReloadDelay: 80
+	Burst: 3
+	BurstDelays: 5
+	Projectile: Missile
+		RangeLimit: 11c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+
+CRMissileLauncherAA:
+	Inherits: MissileLauncherAA
+	ReloadDelay: 80
+	Burst: 3
+	BurstDelays: 5
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+
+CRChaosRocket:
+	Inherits: ChaosRocket
+	Burst: 2
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+
+CRChaosRocketAA:
+	Inherits: CRChaosRocket
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+CRGrind:
+	Inherits: TankGrind
+	ReloadDelay: 80
+	ValidTargets: Vehicle, TerrorDrone, Ship
+	Warhead@1Dam: SpreadDamage
+		Spread: 213
+		Damage: 5000
+		Versus:
+			None: 0
+			Flak: 0
+			Plate: 0
+			Wood: 0
+			Steel: 0
+			Concrete: 0
+			Rocket: 0
+		ValidTargets: Vehicle, TerrorDrone, Ship

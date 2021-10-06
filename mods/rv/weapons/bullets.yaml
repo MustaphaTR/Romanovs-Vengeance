@@ -53,12 +53,10 @@ sabot:
 
 sabotE:
 	Inherits: sabot
-	ReloadDelay: 85
 	Burst: 2
 	BurstDelays: 5
 	Projectile: BulletAS
 	Warhead@1Dam: SpreadDamage
-		Damage: 14000
 		Versus:
 			None: 50
 			Flak: 50
@@ -197,13 +195,9 @@ Sub70mm:
 
 Sub70mmE:
 	Inherits: Sub70mm
-	ReloadDelay: 60
 	Burst: 2
 	BurstDelays: 5
 	Warhead@1Dam: SpreadDamage
-		Damage: 4500
-	Warhead@1Dam: SpreadDamage
-		Damage: 5500
 		Versus:
 			None: 100
 			Flak: 100
@@ -230,13 +224,11 @@ Sub70mmE:
 
 105mmE:
 	Inherits: 105mm
-	ReloadDelay: 75
 	Burst: 2
 	BurstDelays: 5
 	Projectile: BulletAS
 		Speed: 682
 	Warhead@1Dam: SpreadDamage
-		Damage: 5500
 		Versus:
 			None: 100
 			Flak: 100
@@ -270,10 +262,8 @@ ATGUN:
 ATGUNE:
 	Inherits: 105mmE
 	Range: 6c0
-	ReloadDelay: 75
 	Report: vlasatta.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 5500
 		Versus:
 			None: 100
 			Flak: 100
@@ -297,13 +287,11 @@ ATGUNE:
 
 120mmE:
 	Inherits: 120mm
-	ReloadDelay: 80
 	Burst: 2
 	BurstDelays: 5
 	Projectile: BulletAS
 		Speed: 682
 	Warhead@1Dam: SpreadDamage
-		Damage: 8000
 		Versus:
 			None: 100
 			Flak: 100
@@ -334,13 +322,11 @@ ATGUNE:
 
 120mmxE:
 	Inherits: 120mmx
-	ReloadDelay: 80
 	Burst: 2
 	BurstDelays: 10
 	Projectile: BulletAS
 		Speed: 682
 	Warhead@1Dam: SpreadDamage
-		Damage: 9000
 		Versus:
 			None: 100
 			Flak: 100
@@ -375,11 +361,9 @@ ATGUNE:
 
 120mmxRadE:
 	Inherits: 120mmxRad
-	ReloadDelay: 80
 	Burst: 4
 	BurstDelays: 5
 	Warhead@1Dam: SpreadDamage
-		Damage: 9000
 		Versus:
 			None: 100
 			Flak: 100
@@ -418,10 +402,9 @@ ATGUNE:
 
 155mmE:
 	Inherits: 155mm
-	ReloadDelay: 85
 	Burst: 2
+	BurstDelays: 5
 	Warhead@1Dam: SpreadDamage
-		Damage: 5000
 		Versus:
 			Flak: 100
 			Plate: 100
@@ -454,14 +437,13 @@ ATGUNE:
 
 160mmE:
 	Inherits: 160mm
-	ReloadDelay: 115
 	Burst: 2
+	BurstDelays: 5
 	Projectile: BulletAS
 		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
 		Falloff: 100, 75, 50, 25, 0
-		Damage: 8000
 		Versus:
 			None: 100
 			Flak: 100
@@ -504,6 +486,7 @@ CycleMortar:
 CycleMortarE:
 	Inherits: CycleMortar
 	Burst: 2
+	BurstDelays: 5
 	Projectile: BulletAS
 		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
@@ -708,7 +691,7 @@ OrbitalDrop:
 Grenade:
 	Inherits: ^LargeBullet
 	ReloadDelay: 60
-	Range: 6c0
+	Range: 5c0
 	Report: grenade1.aud
 	Projectile: BulletAS
 		Speed: 250
@@ -773,14 +756,6 @@ GrenadeE:
 		Explosions: empulse30p
 		ExplosionPalette: tseffect
 		ImpactSounds: sempexpl.wav
-
-CRGrenade:
-	Inherits: Grenade
-	Range: 6c0
-	Projectile: BulletAS
-		Speed: 384
-	Warhead@1Dam: SpreadDamage
-		Damage: 12000
 
 UCGrenade:
 	Inherits: Grenade

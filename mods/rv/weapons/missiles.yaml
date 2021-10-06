@@ -396,7 +396,7 @@ MissileLauncher:
 			None: 15
 			Flak: 15
 			Plate: 10
-			Light: 50
+			Light: 100
 			Medium: 100
 			Heavy: 75
 			Wood: 55
@@ -444,24 +444,6 @@ MissileLauncherAAE:
 		ValidTargets: Air
 		Versus:
 			Light: 75
-
-CRMissileLauncher:
-	Inherits: MissileLauncher
-	ReloadDelay: 80
-	Burst: 3
-	BurstDelays: 5
-	Projectile: Missile
-		RangeLimit: 11c0
-	Warhead@1Dam: SpreadDamage
-		Damage: 4000
-
-CRMissileLauncherAA:
-	Inherits: MissileLauncherAA
-	ReloadDelay: 80
-	Burst: 3
-	BurstDelays: 5
-	Warhead@1Dam: SpreadDamage
-		Damage: 4000
 
 UCMissileLauncher:
 	Inherits: MissileLauncher
@@ -522,18 +504,6 @@ ChaosRocketAA:
 
 ChaosRocketAAE:
 	Inherits: ChaosRocketE
-	ValidTargets: Air
-	Warhead@1Dam: SpreadDamage
-		ValidTargets: Air
-
-CRChaosRocket:
-	Inherits: ChaosRocket
-	Burst: 2
-	Warhead@1Dam: SpreadDamage
-		Damage: 3000
-
-CRChaosRocketAA:
-	Inherits: CRChaosRocket
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
@@ -928,7 +898,7 @@ MosquitoMissile:
 			None: 15
 			Flak: 15
 			Plate: 10
-			Light: 50
+			Light: 100
 			Medium: 100
 			Heavy: 75
 			Wood: 55
@@ -945,7 +915,7 @@ MosquitoMissile:
 			None: 15
 			Flak: 15
 			Plate: 10
-			Light: 50
+			Light: 100
 			Medium: 100
 			Heavy: 75
 			Wood: 55

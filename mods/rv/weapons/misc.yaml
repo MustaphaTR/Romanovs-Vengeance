@@ -3,9 +3,10 @@ Flamer:
 	ReloadDelay: 50
 	Range: 5c0
 	Burst: 5
-	BurstDelays: 2
+	BurstDelays: 0
+	Report: flamtnk1.aud
 	Projectile: BulletAS
-		Speed: 170
+		Speed: 250
 		Image: fireball
 		TrailImage: fireball
 		TrailSequences: trailer
@@ -24,10 +25,6 @@ Flamer:
 		DamageTypes: FlameDeath, NonTemporal
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallScorch
-
-FlamerSound:
-	Inherits: Flamer
-	Report: flamtnk1.aud
 	Warhead@3Eff: CreateEffect
 		ImpactSounds: firebl3.aud
 
@@ -44,34 +41,11 @@ FlamerE:
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
-FlamerSoundE:
-	Inherits: FlamerE
-	Report: flamtnk1.aud
-	Warhead@3Eff: CreateEffect
-		ImpactSounds: firebl3.aud
-
-CRFlamer:
-	Inherits: Flamer
-	ReloadDelay: 40
-	Burst: 8
-
-CRFlamerSound:
-	Inherits: CRFlamer
-	Report: flamtnk1.aud
-	Warhead@3Eff: CreateEffect
-		ImpactSounds: firebl3.aud
-
 UCFlamer:
 	Inherits: Flamer
 	Range: 7c0
 	Projectile: BulletAS
 		Blockable: false
-
-UCFlamerSound:
-	Inherits: UCFlamer
-	Report: flamtnk1.aud
-	Warhead@3Eff: CreateEffect
-		ImpactSounds: firebl3.aud
 
 UCFlamerE:
 	Inherits: FlamerE
@@ -79,19 +53,13 @@ UCFlamerE:
 	Projectile: BulletAS
 		Blockable: false
 
-UCFlamerSoundE:
-	Inherits: UCFlamerE
-	Report: flamtnk1.aud
-	Warhead@3Eff: CreateEffect
-		ImpactSounds: firebl3.aud
-
 TankFlamer:
 	Inherits: Flamer
 	ReloadDelay: 40
 	Range: 5c0
 	Burst: 10
 	Projectile: BulletAS
-		Speed: 340
+		Speed: 250
 		LaunchAngle: 0
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c768
@@ -99,12 +67,6 @@ TankFlamer:
 	Warhead@1Gar: OpenToppedDamage
 		Spread: 0c768
 		Damage: 1000
-
-TankFlamerSound:
-	Inherits: TankFlamer
-	Report: flamtnk1.aud
-	Warhead@3Eff: CreateEffect
-		ImpactSounds: firebl3.aud
 
 TankFlamerE:
 	Inherits: TankFlamer
@@ -121,17 +83,11 @@ TankFlamerE:
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
-TankFlamerSoundE:
-	Inherits: TankFlamerE
-	Report: flamtnk1.aud
-	Warhead@3Eff: CreateEffect
-		ImpactSounds: firebl3.aud
-
 ToxinSprayer:
 	Inherits: Flamer
 	ReloadDelay: 30
 	Burst: 10
-	BurstDelays: 2
+	BurstDelays: 0
 	Report: itoxatta.wav, itoxattb.wav, itoxattc.wav, itoxattd.wav, itoxatte.wav
 	InvalidTargets: NonGarrisonableStructure, Wall, Fence, Tree, Bridge
 	Projectile: BulletAS
@@ -191,11 +147,6 @@ ToxinSprayerE:
 		Damage: 1400
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
-
-CRToxinSprayer:
-	Inherits: ToxinSprayer
-	ReloadDelay: 25
-	Burst: 15
 
 UCToxinSprayer:
 	Inherits: ToxinSprayer
@@ -351,15 +302,6 @@ PsiWave:
 	Warhead@2Eff: CreateEffect
 		Explosions: psi_wave
 		ValidTargets: Ground, Water, Air
-
-CRPsiWave:
-	Inherits: PsiWave
-	ReloadDelay: 20
-	Projectile: InstantExplode
-	Warhead@1Dam: SpreadDamage
-		Damage: 20000
-	Warhead@2Dam: SpreadDamage
-		Damage: 20000
 
 SuperPsiWave:
 	Inherits: PsiWave
@@ -845,7 +787,7 @@ PsychicDomination:
 PsychicJab:
 	Inherits: ^MG
 	ReloadDelay: 15
-	Range: 5c0
+	Range: 4c0
 	Report: iiniatta.wav
 	Warhead@1Dam: SpreadDamage
 		Damage: 1500
@@ -858,7 +800,7 @@ PsychicJab:
 
 PsychicJabE:
 	Inherits: PsychicJab
-	Range: 6c0
+	Range: 5c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 	Warhead@2Eff: CreateEffect
@@ -875,12 +817,6 @@ UCPsychicJabE:
 	Range: 7c0
 	Projectile: InstantHit
 		Blockable: false
-
-CRPsychicJab:
-	Inherits: PsychicJab
-	Range: 6c0
-	Warhead@1Dam: SpreadDamage
-		Damage: 2500
 
 ChaosAttack:
 	Range: 3c0

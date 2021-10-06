@@ -46,10 +46,10 @@ dron:
 	Inherits: ^Vehicle
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
-		Cost: 400
+		Cost: 500
 	DeliversCash:
-		Payload: 200
-		PlayerExperience: 20
+		Payload: 250
+		PlayerExperience: 25
 		Voice: Move
 	Tooltip:
 		Name: Terror Drone
@@ -1126,19 +1126,11 @@ ftnk:
 		TurnSpeed: 28
 	Armament@primary:
 		Weapon: TankFlamer
-		LocalOffset: 768,-384,640
-		RequiresCondition: !rank-elite
-	Armament@primary-sound:
-		Weapon: TankFlamerSound
-		LocalOffset: 768,384,640
+		LocalOffset: 768,-384,640, 768,384,640
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: TankFlamerE
-		LocalOffset: 768,-384,640
-		RequiresCondition: rank-elite
-	Armament@elite-sound:
-		Weapon: TankFlamerSoundE
-		LocalOffset: 768,384,640
+		LocalOffset: 768,-384,640, 768,384,640
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
