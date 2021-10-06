@@ -83,7 +83,10 @@
 	ProductionBar@Support:
 		ProductionType: Support
 		Color: 8A8A8A
-	-GrantConditionOnPrerequisite@SUDDENDEATH:
+	Capturable:
+		RequiresCondition: !suddendeath
+	Targetable@MC:
+		RequiresCondition: !controlled && !suddendeath
 	MustBeDestroyed:
 		-RequiresCondition:
 	SpawnActorsOnSell@allies:

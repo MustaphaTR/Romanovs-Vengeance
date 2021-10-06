@@ -121,7 +121,14 @@
 	-Crushable:
 	-Crushable@Cheater:
 	-Crushable@Vengeful:
-	-GrantConditionOnPrerequisite@SUDDENDEATH:
+	Capturable:
+		RequiresCondition: !suddendeath
+	Capturable@PERMAMC:
+		RequiresCondition: !controlled && !permamc && !suddendeath
+	WithIdleOverlay@mindcontrol:
+		RequiresCondition: (controlled || permamc) && !suddendeath
+	Targetable@MC:
+		RequiresCondition: !controlled && !permamc && !suddendeath
 	MustBeDestroyed:
 		RequiredForShortGame: true
 		-RequiresCondition:
