@@ -2184,6 +2184,17 @@
 		CancelActivity: True
 	CaptureSound:
 		Sound: ihijweaa.wav
+	Sellable:
+		SellSounds: cashturn.aud
+		Cursor: sell2
+		Notification: UnitSold
+		RequiresCondition: unit.sellable && !airborne
+	ProximityExternalCondition:
+		Condition: unit.docked
+		Range: 1c0
+		RequiresCondition: !airborne
+	ExternalCondition@Sellable:
+		Condition: unit.sellable
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
 	ActorLostNotification:
@@ -2387,6 +2398,17 @@
 		RequiresCondition: !airborne
 	CaptureSound:
 		Sound: ihijweaa.wav
+	Sellable:
+		SellSounds: cashturn.aud
+		Cursor: sell2
+		Notification: UnitSold
+		RequiresCondition: unit.sellable && !airborne
+	ProximityExternalCondition:
+		Condition: unit.docked
+		Range: 1c0
+		RequiresCondition: !airborne
+	ExternalCondition@Sellable:
+		Condition: unit.sellable
 
 ^Plane:
 	Inherits: ^Aircraft

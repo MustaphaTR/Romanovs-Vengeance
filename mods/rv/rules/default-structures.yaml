@@ -788,6 +788,13 @@
 		RepairDamageTypes: KillsDrone
 		StartRepairingNotification: Repairing
 		FinishRepairingNotification: UnitRepaired
+	ProximityExternalCondition:
+		Condition: unit.sellable
+		Range: 1c0
+	Sellable:
+		RequiresCondition: !unit.docked && !Building-Buildup
+	ExternalCondition@Docked:
+		Condition: unit.docked
 	WithIdleOverlay@bib:
 		Sequence: bib
 		PauseOnCondition: chronodisable
