@@ -231,6 +231,12 @@ RepairBullet:
 		ValidTargets: Repair
 		DamageTypes: KillsDrone, NonTemporal
 
+RepairBulletE:
+	Inherits: RepairBullet
+	ReloadDelay: 70
+	Warhead@1Dam: SpreadDamage
+		Damage: -7500
+
 MechRepair:
 	Inherits: RepairBullet
 	Range: 2c0

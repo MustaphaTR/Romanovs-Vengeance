@@ -1,8 +1,13 @@
 CRFlakGuyGun:
 	Inherits: FlakGuyGun
-	Range: 6c0
+	Range: 5c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
+
+CRFlakGuyGunE:
+	Inherits: CRFlakGuyGun
+	Burst: 2
+	Range: 6c0
 
 CRFlakGuyGunAA:
 	Inherits: ^AAFlak
@@ -10,6 +15,10 @@ CRFlakGuyGunAA:
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
+
+CRFlakGuyGunAAE:
+	Inherits: CRFlakGuyGunAA
+	Burst: 2
 
 CRM60:
 	Inherits: M60
@@ -20,20 +29,70 @@ CRM60:
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 
+CRM60E:
+	Inherits: CRM60
+	ReloadDelay: 20
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 2500
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiffred
+
 CRMP5:
 	Inherits: MP5
 	Range: 5c0
 
+CRMP5E:
+	Inherits: CRMP5
+	Range: 6c0
+	ReloadDelay: 10
+	Warhead@2Eff: CreateEffect
+		Explosions: piffred
+
 CRDoublePistols:
 	Inherits: DoublePistols
-	ReloadDelay: 20
+	ReloadDelay: 10
+	Range: 6c0
+
+CRDoublePistolsE:
+	Inherits: CRDoublePistols
+	Range: 8c0
+	ReloadDelay: 8
+	Warhead@2Eff: CreateEffect
+		Explosions: piffred
+
+CRAKM:
+	Inherits: AKM
+	ReloadDelay: 15
+	Range: 8c0
+
+CRAKME:
+	Inherits: CRAKM
+	Range: 9c0
+	Warhead@2Eff: CreateEffect
+		Explosions: piffred
 
 CRAWP:
 	Inherits: awp
 	ReloadDelay: 180
 	Range: 12c0
+
+CRAWPE:
+	Inherits: CRAWP
+	ReloadDelay: 120
+	Range: 14c0
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
+
+CRVirusgun:
+	Inherits: Virusgun
+	ReloadDelay: 180
+	Range: 10c0
+
+CRVirusgunE:
+	Inherits: CRVirusgun
+	ReloadDelay: 120
+	Range: 12c0
 
 CRGrenade:
 	Inherits: Grenade
@@ -41,7 +100,26 @@ CRGrenade:
 	Projectile: BulletAS
 		Speed: 384
 	Warhead@1Dam: SpreadDamage
-		Damage: 12000
+		Damage: 10000
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 10000
+
+CRGrenadeE:
+	Inherits: CRGrenade
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 15000
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 15000
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c768
+		Duration: 40
+		Condition: emp
+		ValidTargets: EMPulse
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse30p
+		ExplosionPalette: tseffect
+		ImpactSounds: sempexpl.wav
 
 CRElectricBolt:
 	Inherits: ElectricBolt
@@ -50,12 +128,31 @@ CRElectricBolt:
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
 
+CRElectricBoltE:
+	Inherits: CRElectricBolt
+	Range: 6c0
+	ReloadDelay: 30
+	Report: itesat2a.wav, itesat2b.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 8000
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragment
+		Amount: 2
+		AimChance: 100
+		AimTargetStances: Enemy, Neutral
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
+
 CRRadBeamWeapon:
 	Inherits: RadBeamWeapon
 	Range: 7c0
-	ReloadDelay: 30
+	ReloadDelay: 75
 	Warhead@1Dam: SpreadDamage
 		Damage: 17500
+
+CRRadBeamWeaponE:
+	Inherits: CRRadBeamWeapon
+	Range: 8c0
+	ReloadDelay: 60
 
 CRNeutronRifle:
 	Inherits: NeutronRifle
@@ -63,13 +160,24 @@ CRNeutronRifle:
 	Warhead@Damage: Temporal
 		Damage: 1200
 
+CRNeutronRifleE:
+	Inherits: CRNeutronRifle
+	Range: 8c0
+	Warhead@Damage: Temporal
+		Damage: 2000
+
 CRNeutronRifleSound:
 	Inherits: NeutronRifleSound
 	Range: 6c0
 
+CRNeutronRifleSoundE:
+	Inherits: CRNeutronRifleSound
+	Range: 8c0
+
 CRCurtainRifle:
 	Inherits: CurtainRifle
-	ReloadDelay: 70
+	ReloadDelay: 75
+	Range: 7c0
 	Projectile: TeslaZap
 		Image: litningredthicc
 	Warhead@Condition: GrantExternalCondition
@@ -83,20 +191,53 @@ CRCurtainRifle:
 	Warhead@Stars: CreateEffect
 		Explosions: ironblast
 
+CRCurtainRifleE:
+	Inherits: CRCurtainRifle
+	Range: 8c0
+
 CRCurtainRifleAP:
 	Inherits: CRCurtainRifle
 	ValidTargets: Infantry
 	-InvalidTargets:
+
+CRCurtainRifleAPE:
+	Inherits: CRCurtainRifleAP
+	Range: 8c0
+	Warhead@Damage: SpreadDamage
+		Spread: 1c512
 
 CRFlamer:
 	Inherits: Flamer
 	ReloadDelay: 40
 	Burst: 8
 
+CRFlamerE:
+	Inherits: CRFlamer
+	Burst: 16
+	Projectile: BulletAS
+		Image: fireballblue
+		TrailImage: fireballblue
+	Warhead@1Dam: SpreadDamage
+		Damage: 1400
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1400
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblue
+
 CRToxinSprayer:
 	Inherits: ToxinSprayer
+	Range: 6c0
 	ReloadDelay: 25
 	Burst: 15
+    
+CRToxinSprayerE:
+	Inherits: CRToxinSprayer
+	ReloadDelay: 20
+	Burst: 20
+	Warhead@1Dam: SpreadDamage
+		Damage: 1400
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1400
 
 CRPsiWave:
 	Inherits: PsiWave
@@ -107,18 +248,33 @@ CRPsiWave:
 	Warhead@2Dam: SpreadDamage
 		Damage: 20000
 
+CRPsiWaveE:
+	Inherits: CRPsiWave
+	ReloadDelay: 15
+
 CRPsychicJab:
 	Inherits: PsychicJab
 	Range: 5c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 2500
 
+CRPsychicJabE:
+	Inherits: CRPsychicJab
+	Range: 6c0
+	ReloadDelay: 10
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+	Warhead@2Eff: CreateEffect
+		Explosions: largefireblue
+
 CRMagneRifle:
 	Inherits: MagneRifle
 	Range: 6c0
 	Burst: 3
-	Warhead@1Dam: SpreadDamage
-		Damage: 6000
+        
+CRMagneRifleE:
+	Inherits: CRMagneRifle
+	Range: 8c0
 
 CRMissileLauncher:
 	Inherits: MissileLauncher
@@ -129,6 +285,15 @@ CRMissileLauncher:
 		RangeLimit: 11c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
+        
+CRMissileLauncherE:
+	Inherits: CRMissileLauncher
+	Burst: 6
+	Projectile: Missile
+		ContrailColor: EA0000
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav
 
 CRMissileLauncherAA:
 	Inherits: MissileLauncherAA
@@ -138,14 +303,36 @@ CRMissileLauncherAA:
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
 
+CRMissileLauncherAAE:
+	Inherits: CRMissileLauncherAA
+	Burst: 6
+	Projectile: Missile
+		ContrailColor: EA0000
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav
+
 CRChaosRocket:
 	Inherits: ChaosRocket
 	Burst: 2
 	Warhead@1Dam: SpreadDamage
 		Damage: 3000
 
+CRChaosRocketE:
+	Inherits: CRChaosRocket
+	Burst: 4
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav
+
 CRChaosRocketAA:
 	Inherits: CRChaosRocket
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+CRChaosRocketAAE:
+	Inherits: CRChaosRocketE
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
@@ -166,3 +353,8 @@ CRGrind:
 			Concrete: 0
 			Rocket: 0
 		ValidTargets: Vehicle, TerrorDrone, Ship
+
+CRGrindE:
+	Inherits: CRGrind
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
