@@ -2,8 +2,6 @@
     "mod": "rv",
     "modversion": "61d96bf",
     "map": "fdebf02984bb586ed6434aadb7214c8f67d4802e",
-    "timestep": 40,
-    "orderlatency": 3,
     "allowspectators": true,
 	"modtitle": "Red Alert 2: Romanov's Vengeance",
     "modwebsite": "https://github.com/MustaphaTR/Romanovs-Vengeance",
@@ -11,6 +9,7 @@
 	"dedicated": true,
     "allowversionmismatch": false,
     "enablesingleplayer": true,
+    "enablesyncreports": false,
     "options": {
         "startingcash": {
             "value": 10000,
@@ -141,6 +140,62 @@
             "value": false,
             "preferredvalue": false,
             "locked": false
+        },
+        "suddendeath": {
+            "value": false,
+            "preferredvalue": false,
+            "locked": false
+        }
+    },
+    "gamespeed": {
+        "slowest": {
+            "timestep": 80,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 6,
+            "legacyTimestep": 80
+        },
+        "slower": {
+            "timestep": 50,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 9,
+            "legacyTimestep": 50
+        },
+        "default": {
+            "timestep": 40,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 9,
+            "legacyTimestep": 40
+        },
+        "fast": {
+            "timestep": 35,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 12,
+            "legacyTimestep": 35
+        },
+        "faster": {
+            "timestep": 30,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 15,
+            "legacyOrderDelay": 12,
+            "legacyTimestep": 30
+        },
+        "fastest": {
+            "timestep": 20,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 18,
+            "legacyOrderDelay": 18,
+            "legacyTimestep": 20
+        },
+        "ludicrous": {
+            "timestep": 5,
+            "minOrderDelay": 0,
+            "maxOrderDelay": 30,
+            "legacyOrderDelay": 27,
+            "legacyTimestep": 5
         }
     }
 }
