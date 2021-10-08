@@ -402,9 +402,9 @@
 	SpeedMultiplier@PROPAGANDA:
 		Modifier: 70
 		RequiresCondition: propaganda1 || propaganda2 || propaganda3
-	WithColoredOverlay@PROPAGANDA:
-		Color: FF800080
-		RequiresCondition: propaganda1 || propaganda2 || propaganda3
+	# WithColoredOverlay@PROPAGANDA:
+	#	Color: FF800080
+	#	RequiresCondition: propaganda1 || propaganda2 || propaganda3
 	ExternalCondition@PROPAGANDA1:
 		Condition: propaganda1
 	ExternalCondition@PROPAGANDA2:
@@ -414,9 +414,15 @@
 	ReloadDelayMultiplier@PROPAGANDA_TOWER:
 		RequiresCondition: propaganda_tower
 		Modifier: 75
-	WithColoredOverlay@PROPAGANDA_TOWER:
-		Color: FF800040
-		RequiresCondition: propaganda_tower
+	# WithColoredOverlay@PROPAGANDA_TOWER:
+	#	Color: FF800040
+	#	RequiresCondition: propaganda_tower
+	WithDecoration@PROPAGANDA:
+		Image: propaganda
+		Sequence: icon
+		Palette: player
+		RequiresCondition: propaganda1 || propaganda2 || propaganda3 || propaganda_tower
+		ValidRelationships: Ally, Enemy, Neutral
 	ChangesHealth@PROPAGANDA_TOWER:
 		Step: 0
 		PercentageStep: 2
@@ -440,9 +446,15 @@
 	SpeedMultiplier@BOOST3:
 		Modifier: 200
 		RequiresCondition: boost3
-	WithColoredOverlay@BOOST:
-		Color: FFFFFF40
+	# WithColoredOverlay@BOOST:
+	#	Color: FFFFFF40
+	#	RequiresCondition: boost1 || boost2 || boost3
+	WithDecoration@BOOST:
+		Image: chronoboost
+		Sequence: icon
+		Palette: pips
 		RequiresCondition: boost1 || boost2 || boost3
+		ValidRelationships: Ally, Enemy, Neutral
 	ExternalCondition@BOOST1:
 		Condition: boost1
 	ExternalCondition@BOOST2:
