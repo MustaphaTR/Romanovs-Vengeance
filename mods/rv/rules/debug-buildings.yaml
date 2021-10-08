@@ -1,22 +1,24 @@
 cacnst:
 	Inherits: gacnst
 	Tooltip:
-		Name: Construction Yard Yard
+		Name: Debug Construction Yard
 	Tooltip@NoRow:
-		Name: Construction Yard Yard
+		Name: Debug Construction Yard
 	Buildable:
 		Queue: Building.Allies, Building.Soviets, Building.Yuri
 		Prerequisites: ~disabled
 		BuildPaletteOrder: 1000
 		Description: Debug structure to allow building Construction Yard of other (sub)factions.
 	Production:
-		Produces: Building.ConYards
+		Produces: Building.Debug
 	ProductionQueue@Building:
-		Type: Building.ConYards
+		Type: Building.Debug
 	-ProductionQueue@Support:
+	-ProductionQueue@SupportFrance:
 	ProductionBar@Building:
-		ProductionType: Building.ConYards
+		ProductionType: Building.Debug
 	-ProductionBar@Support:
+	-ProductionBar@SupportFrance:
 	-MapEditorData:
 	-Transforms:
 	-TransformsIntoMobile:
@@ -27,7 +29,7 @@ cacnst:
 	-TransferTimedExternalConditionOnTransform@INVISIBILITY:
 	-ExternalCondition@INVISIBILITY:
 
-# Allies
+# Allied ConYards
 gacnst.america:
 	Inherits: gacnst
 	Tooltip:
@@ -171,7 +173,7 @@ gacnst.canada:
 	#	ForceFaction: canada
 	-MapEditorData:
 
-#Soviets
+#Soviet ConYards
 nacnst.russia:
 	Inherits: nacnst
 	Tooltip:
@@ -260,7 +262,7 @@ nacnst.mongolia:
 	#	ForceFaction: mongolia
 	-MapEditorData:
 
-#Psi-Corps
+#Psi-Corps ConYards
 yacnst.psicorps:
 	Inherits: yacnst
 	Tooltip:
@@ -316,7 +318,7 @@ yacnst.psimoon:
 		ForceFaction: psimoon
 	-MapEditorData:
 
-#Baku Pact
+#Baku Pact ConYards
 nacnst.transcaucus:
 	Inherits: nacnst
 	Tooltip:
@@ -370,4 +372,87 @@ nacnst.serbia:
 	-Buildable:
 	#	BuildPaletteOrder: 340
 	#	ForceFaction: serbia
+	-MapEditorData:
+
+#Civilian ConYards
+gacnst.civilian:
+	Inherits: cacnst
+	Tooltip:
+		Name: Civilian Construction Yard
+	Tooltip@NoRow:
+		Name: Civilian Construction Yard
+	Buildable:
+		Queue: Building.Debug
+		BuildPaletteOrder: 350
+	Production:
+		Produces: Building.Civilian, Support.Civilian
+	ProductionQueue@Building:
+		Type: Building.Civilian
+	ProductionQueue@Support:
+		Type: Support.Civilian
+		Group: Support
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@Building:
+		ProductionType: Building.Civilian
+	ProductionBar@Support:
+		ProductionType: Support.Civilian
+
+gacnst.tech:
+	Inherits: cacnst
+	Tooltip:
+		Name: Tech Construction Yard
+	Tooltip@NoRow:
+		Name: Tech Construction Yard
+	Buildable:
+		Queue: Building.Debug
+		BuildPaletteOrder: 360
+	Production:
+		Produces: Building.Tech
+	ProductionQueue@Building:
+		Type: Building.Tech
+	ProductionBar@Building:
+		ProductionType: Building.Tech
+
+#Civilian Barracks
+cabrck:
+	Inherits: gapile
+	Tooltip:
+		Name: Civilian Barracks
+	Tooltip@NoRow:
+		Name: Civilian Barracks
+	Buildable:
+		Queue: Building.Debug
+		BuildPaletteOrder: 370
+	Production:
+		Produces: Infantry.Civilian
+	ProductionQueue:
+		Type: Infantry.Civilian
+	ProductionBar:
+		ProductionType: Infantry.Civilian
+	-PlaceBuildingVariants:
+	-MapEditorData:
+
+#Civilian Factory
+caweap:
+	Inherits: gaweap
+	Tooltip:
+		Name: Civilian Factory
+	Tooltip@NoRow:
+		Name: Civilian Factory
+	Buildable:
+		Queue: Building.Debug
+		BuildPaletteOrder: 380
+	Production:
+		Produces: Vehicle.Civilian
+	ProductionQueue:
+		Type: Vehicle.Civilian
+	ProductionBar:
+		ProductionType: Vehicle.Civilian
+	-PlaceBuildingVariants:
 	-MapEditorData:

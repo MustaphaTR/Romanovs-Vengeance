@@ -12,8 +12,8 @@
 		Payload: 700
 		PlayerExperience: 35
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Light Tank
 	Tooltip@NoRow:
@@ -53,8 +53,8 @@
 		Payload: 800
 		PlayerExperience: 40
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Medium Tank
 	Tooltip@NoRow:
@@ -94,8 +94,8 @@
 		Payload: 950
 		PlayerExperience: 48
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Heavy Tank
 	Tooltip@NoRow:
@@ -153,8 +153,8 @@
 		Payload: 1700
 		PlayerExperience: 85
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Mammoth Tank
 	Tooltip@NoRow:
@@ -195,8 +195,8 @@ arty:
 		Payload: 600
 		PlayerExperience: 30
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Artillery
 	Tooltip@NoRow:
@@ -234,8 +234,8 @@ ftnktd:
 		Payload: 800
 		PlayerExperience: 40
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Flame Tank
 	Tooltip@NoRow:
@@ -271,8 +271,8 @@ hmve:
 		Payload: 400
 		PlayerExperience: 20
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Humvee
 	Tooltip@NoRow:
@@ -309,8 +309,8 @@ m113:
 		Payload: 700
 		PlayerExperience: 35
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: APC
 	Tooltip@NoRow:
@@ -370,8 +370,8 @@ mlrs:
 		Payload: 800
 		PlayerExperience: 40
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Rocket Launcher
 	Tooltip@NoRow:
@@ -408,8 +408,8 @@ mnly:
 		Payload: 800
 		PlayerExperience: 40
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Minelayer
 	Tooltip@NoRow:
@@ -418,11 +418,29 @@ mnly:
 		HP: 40000
 	Armor:
 		Type: Heavy
+	Minelayer:
+		Mine: mine
+		TileUnknownName: build-valid
+		Voice: Attack
+	MineImmune:
+	AmmoPool:
+		Ammo: 5
+		RearmSound: minelay1.aud
+	Rearmable:
+		RearmActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
 	WithVoxelBody:
 	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 
 mrj:
 	Inherits: ^Vehicle
@@ -435,8 +453,8 @@ mrj:
 		Payload: 1000
 		PlayerExperience: 50
 		Voice: Move
-	#Buildable:
-	#	Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+	Buildable:
+		Queue: Vehicle.Civilian
 	Tooltip:
 		Name: Mobile Radar Jammer
 	Tooltip@NoRow:

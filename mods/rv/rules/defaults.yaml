@@ -1426,6 +1426,8 @@
 	-MustBeDestroyed:
 	-GivesExperience:
 	-UpdatesPlayerStatistics:
+	Buildable:
+		Queue: Building.Tech
 	OwnerLostAction:
 		Action: ChangeOwner
 	Health:
@@ -1463,6 +1465,8 @@
 		Action: ChangeOwner
 	IsometricSelectable:
 		DecorationHeight: 120
+	Buildable:
+		Queue: Building.Civilian
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1580,6 +1584,8 @@
 
 ^Fence:
 	Inherits: ^Wall
+	Buildable:
+		Queue: Support.Civilian
 	Valued:
 		Cost: 25
 	Health:
@@ -1996,6 +2002,8 @@
 		Payload: 5
 		PlayerExperience: 2
 		Voice: Move
+	Buildable:
+		Queue: Infantry.Civilian
 	Tooltip:
 		Name: Civilian
 		GenericName: Civilian
@@ -2034,6 +2042,7 @@
 	Valued:
 		Cost: 1000
 	-DeliversCash:
+	-Buildable:
 	Health:
 		HP: 15000
 	Armor:
@@ -2067,6 +2076,8 @@
 		Payload: 5
 		PlayerExperience: 2
 		Voice: Move
+	Buildable:
+		Queue: Infantry.Civilian
 	Armor:
 		Type: None
 	Health:
@@ -2284,6 +2295,8 @@
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
+	Buildable:
+		Queue: Vehicle.Civilian
 	OwnerLostAction:
 		Action: ChangeOwner
 	RenderSprites:
