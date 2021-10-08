@@ -1376,7 +1376,7 @@ schp:
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 40
-		Speed: 150
+		Speed: 165
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
 		PauseOnCondition: !undeployed || emp || magnefreeze || chronodisable
@@ -1458,7 +1458,7 @@ schphusk:
 		Name: Siege Chopper
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 150
+		Speed: 165
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -1605,7 +1605,7 @@ disk:
 		AddToArmyValue: true
 	Aircraft:
 		TurnSpeed: 1023
-		Speed: 150
+		Speed: 165
 		AltitudeVelocity: 200
 	Selectable:
 		Bounds: 1882, 2075, 0, -724
@@ -1695,7 +1695,7 @@ diskhusk:
 		Name: Leech Disc
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 150
+		Speed: 165
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -1772,7 +1772,7 @@ hind:
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 40
-		Speed: 150
+		Speed: 180
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
 		PauseOnCondition: emp || magnefreeze || chronodisable
@@ -1817,7 +1817,7 @@ hindhusk:
 		Name: Hind Carryall
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 150
+		Speed: 180
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -2303,7 +2303,7 @@ kite:
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 12
-		Speed: 120
+		Speed: 150
 		Repulsable: true
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
@@ -2339,7 +2339,7 @@ kitehusk:
 		Name: Black Kite
 	Aircraft:
 		TurnSpeed: 28
-		Speed: 120
+		Speed: 150
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -2385,32 +2385,32 @@ magnedisk:
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
-		Cost: 900
+		Cost: 1200
 	DeliversCash:
-		Payload: 900
-		PlayerExperience: 45
+		Payload: 1200
+		PlayerExperience: 60
 		Voice: Move
 	Tooltip:
-		Name: Mosquito Platform
+		Name: Mosquito Disc
 	Tooltip@NoRow:
-		Name: Mosquito Platform
+		Name: Mosquito Disc
 	Buildable:
 		Queue: Aircraft.Lazarus
 		BuildPaletteOrder: 30
 		Prerequisites: yadome, ~techlevel.3
-		Description: High-tech Disc armed with material drainer .\n\n Strong vs Ground\n Weak vs Aircraft
+		Description: High-tech Disc armed with material drainer.\nAfter attacking organic material 3 times a Blood Vessel will be spawned.\n\n Strong vs Infantry\n Weak vs Aircraft
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		TurnSpeed: 1023
-		Speed: 180
+		Speed: 165
 		AltitudeVelocity: 200
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Selectable:
 		Bounds: 1641, 2075, 0, -241
 	Health:
-		HP: 17500
+		HP: 40000
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -2423,6 +2423,10 @@ magnedisk:
 	#	Type: GroundPosition
 	Armament@primary:
 		Weapon: BloodSuck
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: BloodSuckE
+		RequiresCondition: rank-elite
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
@@ -2488,12 +2492,12 @@ magnedisk:
 magnediskhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Mosquito Platform
+		Name: Mosquito Disc
 	Tooltip@NoRow:
-		Name: Mosquito Platform
+		Name: Mosquito Disc
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 150
+		Speed: 165
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -2591,8 +2595,8 @@ havoc:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
-		TurnSpeed: 16
-		Speed: 150
+		TurnSpeed: 28
+		Speed: 165
 		Repulsable: true
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
@@ -2628,7 +2632,7 @@ havochusk:
 		Name: Havoc Attack Helicopter
 	Aircraft:
 		TurnSpeed: 28
-		Speed: 120
+		Speed: 165
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:

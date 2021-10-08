@@ -277,22 +277,29 @@ SlimeAttack:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 60
 	Range: 1c496
-	ValidTargets: Infantry, TerrorDrone, Structure, Barrel, Mine, Bridge, Wall, Fence, Tree
+	ValidTargets: Ground
 	Report: ibruatta.wav, ibruattb.wav, ibruattc.wav, ibruattd.wav, ibruatte.wav, ibruattf.wav
 	Projectile: InstantHit
 	Warhead@1Dam: SpreadDamage
 		Damage: 5000
-		ValidTargets: Infantry, TerrorDrone, Structure, Barrel, Mine, Bridge, Wall, Fence, Tree
+		ValidTargets: Ground
 		Versus:
 			None: 100
 			Flak: 90
 			Plate: 80
-			Light: 0
-			Medium: 20
-			Heavy: 0
+			Light: 70
+			Medium: 15
+			Heavy: 15
 			Wood: 25
 			Steel: 30
 			Concrete: 15
 			Drone: 50
 			Rocket: 50
-		DamageTypes: BulletDeath, SuppressTerrorDrone, NonTemporal
+		DamageTypes: BruteDeath, SuppressTerrorDrone, NonTemporal, Prone100Percent, TriggerProne
+
+SlimeAttackE:
+	Inherits@1: SlimeAttack
+	ReloadDelay: 30
+	Warhead@1Dam: SpreadDamage
+		Damage: 7500
+

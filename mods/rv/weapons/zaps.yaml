@@ -877,13 +877,14 @@ BloodSuck:
 	Inherits: ^MG
 	ReloadDelay: 40
 	Range: 7c0
+	Report: itesat2a.wav
 	Projectile: TeslaZap
 		Image: scrlitning
 		Duration: 6
 		DimZaps: 1
 	Warhead@1Dam: TargetDamage
 		Damage: 4500
-		DamageTypes: Prone50Percent, TriggerProne, NonTemporal
+		DamageTypes: Prone70Percent, TriggerProne, NonTemporal, ElectroDeath
 	Warhead@bloodback: BackFireShrapnel
 		Weapon: BloodBack
 		ValidTargets: Infantry, SeaAnimal
@@ -891,6 +892,12 @@ BloodSuck:
 		Weapon: MaterialBack
 		ValidTargets: Vehicle, Structure, WaterStructure, Defence, Ship
 	-Warhead@2Eff: 
+
+BloodSuckE:
+	Inherits: BloodSuck
+	ReloadDelay: 30
+	Warhead@1Dam: TargetDamage
+		Damage: 6000
 
 BloodBack:
 	TargetActorCenter: true

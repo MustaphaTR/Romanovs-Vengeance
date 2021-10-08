@@ -1162,12 +1162,15 @@ crkt:
 	-TakeCover:
 
 visc_lrg:
-	Inherits: ^Animal
+	Inherits: ^Infantry
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Tooltip:
-		Name: Adult Visceroid
+		Name: Blood Vessel
 	Tooltip@NoRow:
-		Name: Adult Visceroid
+		Name: Blood Vessel
+	Valued:
+		Cost: 200
 	Health:
 		HP: 20000
 	RevealsShroud:
@@ -1183,11 +1186,14 @@ visc_lrg:
 	WithAttackAnimation:
 		Sequence: attack
 	Mobile:
-		Speed: 120
-		TurnSpeed: 64
+		Speed: 90
 	RenderSprites:
 		Image: vislrg
 	WithFacingSpriteBody:
 	-WithDeathAnimation@normal:
 	-WithInfantryBody:
 	-Voiced:
+	-TakeCover:
+	-SpawnActorOnDeath@flames:
+	-SpawnSmokeParticleOnDeath@virus:
+	-Explodes@Corpse:
