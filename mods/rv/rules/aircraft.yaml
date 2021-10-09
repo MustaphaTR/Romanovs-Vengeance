@@ -1657,12 +1657,13 @@ disk:
 		VoiceSet: FloatingDiskVoice
 	WithMuzzleOverlay:
 	AutoTarget:
-	Turreted:
-		TurnSpeed: 1023
 	RenderSprites:
 	RenderVoxels:
-	WithVoxelBody:
-	WithVoxelTurret:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+	WithVoxelHelicopterBody@turret:
+		Sequence: turret
+		TickRate: 1
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -1707,8 +1708,12 @@ diskhusk:
 		Duration: 50
 	RenderVoxels:
 		Image: disk
-	WithVoxelBody@turret:
+	-WithVoxelBody:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+	WithVoxelHelicopterBody@turret:
 		Sequence: turret
+		TickRate: 1
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 
