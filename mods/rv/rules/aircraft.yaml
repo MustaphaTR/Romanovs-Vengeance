@@ -1577,6 +1577,8 @@ disk:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@EXPERIENCE: ^GainsExperience
+	BodyOrientation:
+		QuantizedFacings: 1
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
@@ -2108,6 +2110,8 @@ txdx:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@EXPERIENCE: ^GainsExperience
+	BodyOrientation:
+		QuantizedFacings: 1
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
@@ -2161,8 +2165,9 @@ txdx:
 		VoiceSet: FloatingDiskVoice
 	RenderSprites:
 	RenderVoxels:
-	WithVoxelBody:
 	WithVoxelHelicopterBody:
+		TickRate: 1
+	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1
 	ExternalCondition@PRODUCED:
@@ -2227,7 +2232,10 @@ txdxhusk:
 		Duration: 50
 	RenderVoxels:
 		Image: txdx
+	-WithVoxelBody:
 	WithVoxelHelicopterBody:
+		TickRate: 1
+	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1
 	BodyOrientation:
@@ -2378,6 +2386,8 @@ magnedisk:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@EXPERIENCE: ^GainsExperience
+	BodyOrientation:
+		QuantizedFacings: 1
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
