@@ -447,21 +447,21 @@ RadiationUmbrella:
 		Duration: 5
 		Width: 16
 		Color: 00FF00
-	ValidTargets: Ground, Air, Water
+	ValidTargets: Ground, Water, Air
 	Warhead@TargetValidation: SpreadDamage
 
 WeatherStormInit:
 	Projectile: InstantExplode
 	ReloadDelay: 1
 	Warhead@1: SpawnSmokeParticle
-		ValidTargets: Ground, Air, Water
+		ValidTargets: Ground, Water, Air
 		Sequences: inviso
 		Palette: effect
 		Weapon: WeatherCloudDirectInit
 		Duration: 210
 		Delay: 50
 	Warhead@2: SpawnSmokeParticle
-		ValidTargets: Ground, Air, Water
+		ValidTargets: Ground, Water, Air
 		Delay: 50
 		Sequences: inviso
 		Palette: effect
@@ -476,7 +476,8 @@ WeatherStormInit:
 	Warhead@4: CreateEffect
 		Delay: 50
 		ImpactSounds: sweaintr.wav
-		ValidTargets: Ground, Air, Water
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
 
 WeatherCloudDirectInit:
 	Projectile: InstantHit
@@ -532,6 +533,7 @@ WeatherCloud:
 	Warhead@4: CreateEffect
 		Explosions: weathercloud1, weathercloud2, weathercloud1f, weathercloud2f
 		ExplosionPalette: player
+		ImpactActors: false
 		ValidTargets: Ground, Air, Water
 
 WeatherBolt:
@@ -551,9 +553,11 @@ WeatherBolt:
 	Warhead@4: CreateEffect
 		Explosions: weatherbolt1, weatherbolt2, weatherbolt3, weatherbolt1f, weatherbolt2f, weatherbolt3f
 		ImpactSounds: sweastra.wav, sweastrb.wav, sweastrc.wav, sweastrd.wav
+		ImpactActors: false
 		ValidTargets: Ground, Air, Water
 	Warhead@5: CreateEffect
 		Explosions: weatherboltexplosion, weatherboltexplosionf
+		ImpactActors: false
 		ValidTargets: Ground, Water
 	# should be set up to only activate when nothing was hit
 	#Warhead@DebrisSpawn: FireShrapnel
@@ -751,12 +755,14 @@ PsychicControl:
 		Range: 1c512
 		Condition: permamc
 	Warhead@3Eff: CreateEffect
-		ImpactSounds: spsydom.wav
 		Explosions: yuriface
+		ImpactSounds: spsydom.wav
+		ImpactActors: false
 		ValidTargets: Ground, Air, Water
 	Warhead@4Eff: CreateEffect
 		Delay: 40
 		Explosions: controlwave
+		ImpactActors: false
 		ValidTargets: Ground, Air, Water
 
 PsychicDomination:

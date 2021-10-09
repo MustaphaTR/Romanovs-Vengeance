@@ -25,6 +25,7 @@ LargeBarrelExplode:
 		DamageTypes: Prone70Percent, TriggerProne, FlameDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: large_barrel_explosion
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
@@ -111,6 +112,7 @@ UnitExplode:
 	Warhead@1Eff: CreateEffect
 		Explosions: large_twlt, large_bang, large_brnl, large_tumu, verylarge_clsn
 		ImpactSounds: gexpifva.wav, gexpifvb.wav, gexpifvc.wav, gexp11a.wav, gexp14a.wav, gexp14b.wav, gexp14c.wav, gexp14d.wav, gexp15a.wav
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 	Warhead@DebrisSpawn: FireShrapnel
 		Weapon: SmallDebris
@@ -493,6 +495,7 @@ NukePayload:
 	Warhead@2Eff_impact: CreateEffect
 		Explosions: nuke_explosion
 		ImpactSounds: snukexpl.wav
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 	Warhead@3Radiation: CreateTintedCells
 		Spread: 10c0
@@ -507,6 +510,7 @@ atomic:
 	Warhead@0Eff_impact: CreateEffect
 		Explosions: nuke_ball
 		ImpactSounds: snukintr.wav
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 	Warhead@1Dam_impact: SpreadDamage
 		Damage: 200000 # 40000
@@ -557,8 +561,8 @@ ClusterMissile:
 	Warhead@2Eff: CreateEffect
 		Explosions: verylarge_clsn
 		ImpactSounds: gexpapoa.wav
-		ValidTargets: Air, Ground, Water
 		ImpactActors: false
+		ValidTargets: Air, Ground, Water
 	Warhead@21Shake: ShakeScreen
 		Duration: 20
 		Intensity: 3
@@ -595,6 +599,7 @@ ClusterMissileCluster:
 	Warhead@3Eff: CreateEffect
 		Explosions: large_twlt
 		ImpactSounds: gexpapoa.wav
+		ImpactActors: false
 
 Demolish:
 	Warhead@1Dam: SpreadDamage

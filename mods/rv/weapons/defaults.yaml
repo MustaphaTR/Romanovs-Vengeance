@@ -170,7 +170,8 @@
 		DamageTypes: Prone70Percent, TriggerProne, BulletDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiff
-		ValidTargets: Ground, Water
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
 
 ^TeslaZap:
 	Inherits@1: ^BreakPointDefenseDrones
@@ -197,7 +198,8 @@
 		DamageTypes: ElectroDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: tesla_impact
-		ValidTargets: Ground, Water
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
 	Warhead@spark: FireShrapnel
 		Weapon: TeslaSpark
 		Amount: 6
