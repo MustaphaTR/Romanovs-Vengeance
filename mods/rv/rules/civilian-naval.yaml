@@ -2,6 +2,8 @@ tug:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
 	Inherits@SQUID: ^SquidGrabbable
+	Buildable:
+		Queue: Ship.Civilian
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -35,6 +37,8 @@ cruise:
 	Inherits: ^Ship
 	Inherits@MC: ^MindControllable
 	Inherits@SQUID: ^SquidGrabbable
+	Buildable:
+		Queue: Ship.Civilian
 	Valued:
 		Cost: 500
 	Tooltip:
@@ -71,7 +75,8 @@ cruise:
 
 cdest:
 	Inherits: dest
-	-Buildable:
+	Buildable:
+		Queue: Ship.Civilian
 	Tooltip:
 		Name: Coast Guard Boat
 	Tooltip@NoRow:
@@ -82,7 +87,8 @@ cdest:
 
 vlad:
 	Inherits: dred
-	-Buildable:
+	Buildable:
+		Queue: Ship.Civilian
 	Tooltip:
 		Name: Vladamir's Dreadnought
 	Tooltip@NoRow:
