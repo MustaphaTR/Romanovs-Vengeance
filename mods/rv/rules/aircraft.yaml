@@ -2467,12 +2467,13 @@ magnedisk:
 		Delay: 20
 	Voiced:
 		VoiceSet: FloatingDiskVoice
-	Turreted:
-		TurnSpeed: 1023
 	RenderSprites:
 	RenderVoxels:
-	WithVoxelBody:
-	WithVoxelTurret:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+	WithVoxelHelicopterBody@turret:
+		Sequence: turret
+		TickRate: 1
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -2523,8 +2524,12 @@ magnediskhusk:
 		Duration: 50
 	RenderVoxels:
 		Image: magnedisk
-	WithVoxelBody@turret:
+	-WithVoxelBody:
+	WithVoxelHelicopterBody:
+		TickRate: 1
+	WithVoxelHelicopterBody@turret:
 		Sequence: turret
+		TickRate: 1
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 
