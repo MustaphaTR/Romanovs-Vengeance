@@ -427,6 +427,10 @@ orca:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+	AmbientSound@Ambient:
+		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+		Volume: 0.20
+		RequiresCondition: airborne
 	Contrail@1:
 		Offset: -100,-500,100
 		Color: 55555580
@@ -636,6 +640,15 @@ pdplane:
 	HitShape:
 	RenderVoxels:
 		Image: pdplane
+	AmbientSound@Ambient:
+		SoundFiles: sparlo2a.wav, sparlo2b.wav, sparlo2c.wav
+		Volume: 0.35
+		RequiresCondition: airborne
+	Voiced:
+		VoiceSet: CargoPlaneVoice
+		Volume: 0.45
+	DeathSounds:
+		DeathTypes: NonTemporal
 	Contrail@1:
 		Offset: -50,1200,400
 		TrailLength: 15
@@ -675,6 +688,10 @@ bplndrop:
 		Actor: bplnhusk
 	RenderVoxels:
 		Image: bpln
+	AmbientSound@Ambient:
+		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+	-Voiced:
+	-DeathSounds:
 	Contrail@1:
 		Offset: -600,100,100
 		TrailLength: 15
@@ -749,6 +766,11 @@ a10:
 		AmmoCondition: ammo
 	RenderVoxels:
 		Image: a10
+	AmbientSound@Ambient:
+		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+		Volume: 0.20
+	-Voiced:
+	-DeathSounds:
 	Contrail@1:
 		Offset: -900,171,250
 		TrailLength: 15
@@ -794,6 +816,11 @@ txbmb:
 		AmmoCondition: ammo
 	RenderVoxels:
 		Image: txbmb
+	AmbientSound@Ambient:
+		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+		Volume: 0.20
+	-Voiced:
+	-DeathSounds:
 	Contrail@1:
 		Offset: -600,0,100
 		TrailLength: 15
@@ -827,6 +854,10 @@ f22drop:
 		DropRange: 3c0
 	RenderVoxels:
 		Image: f22
+	AmbientSound@Ambient:
+		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+	-Voiced:
+	-DeathSounds:
 	Contrail@1:
 		Offset: -600,0,100
 		TrailLength: 15
@@ -1242,6 +1273,15 @@ spyp:
 	RenderSprites:
 	WithVoxelWalkerBody:
 		TickRate: 1
+	AmbientSound@Ambient:
+		SoundFiles: vspylo2a.wav, vspylo2b.wav, vspylo2c.wav
+		Volume: 0.60
+		RequiresCondition: airborne
+	Voiced:
+		VoiceSet: SpyPlaneVoice
+		Volume: 0.45
+	DeathSounds:
+		DeathTypes: NonTemporal
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: spyphusk
@@ -1531,6 +1571,9 @@ bpln:
 	RenderVoxels:
 		Image: bpln
 	HitShape:
+	AmbientSound@Ambient:
+		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+		Volume: 0.35
 	Contrail@1:
 		Offset: -600,100,100
 		TrailLength: 15
@@ -1973,6 +2016,10 @@ fortress:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+	AmbientSound@Ambient:
+		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+		Volume: 0.20
+		RequiresCondition: airborne
 	Contrail@1:
 		Offset: -400,-700,300
 		Color: 55555580
