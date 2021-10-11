@@ -1718,7 +1718,9 @@ disk:
 	VoiceAnnouncement:
 		RequiresCondition: produced
 		Voice: Build
-	AmbientSound@Walk:
+	DeathSounds:
+		DeathTypes: NonTemporal
+	AmbientSound@Steal:
 		SoundFiles: vflolo5a.wav, vflolo5b.wav
 		Volume: 0.65
 		RequiresCondition: stealing
@@ -1726,6 +1728,12 @@ disk:
 		Condition: stealing
 		RevokeDelay: 6
 		ArmamentNames: secondary
+	AmbientSound@Move:
+		SoundFiles: vflolo2a.wav, vflolo2b.wav
+		Volume: 0.40
+		RequiresCondition: moving
+	GrantConditionOnMovement:
+		Condition: moving
 	HitShape:
 	Repairable:
 		Voice: Move
@@ -2255,6 +2263,14 @@ txdx:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	DeathSounds:
+		DeathTypes: NonTemporal
+	AmbientSound@Move:
+		SoundFiles: vflolo2a.wav, vflolo2b.wav
+		Volume: 0.40
+		RequiresCondition: moving
+	GrantConditionOnMovement:
+		Condition: moving
 	HitShape:
 	WithCargoPipsDecoration:
 		Margin: 4, 3
@@ -2552,6 +2568,14 @@ magnedisk:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	DeathSounds:
+		DeathTypes: NonTemporal
+	AmbientSound@Move:
+		SoundFiles: vflolo2a.wav, vflolo2b.wav
+		Volume: 0.40
+		RequiresCondition: moving
+	GrantConditionOnMovement:
+		Condition: moving
 	HitShape:
 
 magnediskhusk:
