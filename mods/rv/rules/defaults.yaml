@@ -1282,7 +1282,7 @@
 	Building:
 		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	RevealOnFire:
-		Radius: 1c512
+		ArmamentNames: primary, secondary, gatling, support, garrisoned, garrisoned-secondary
 		Duration: 50
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, NonGarrisonableStructure
@@ -1754,7 +1754,7 @@
 	#	Types: SatelliteScan
 	#	Range: 4c0
 	RevealOnFire:
-		Radius: 1c512
+		ArmamentNames: primary, secondary, deployed, sapper
 		Duration: 50
 	RevealOnDeath:
 		Radius: 2c0
@@ -2160,7 +2160,7 @@
 		Action: Kill
 		DeathTypes: BulletDeath, NonTemporal
 	RevealOnFire:
-		Radius: 1c512
+		ArmamentNames: primary, primary2, secondary, opentopped, elite, gatling
 		Duration: 50
 	RevealOnDeath:
 		Duration: 50
@@ -2431,6 +2431,9 @@
 		MaxHeightDelta: 3
 		Type: GroundPosition
 		RequiresCondition: !airborne
+	RevealOnFire:
+		ArmamentNames: primary, secondary, deployed, growth
+		Duration: 50
 	CaptureManager:
 	Capturable:
 		Types: vehicle
@@ -2601,7 +2604,7 @@
 		Action: Kill
 		DeathTypes: BulletDeath, NonTemporal
 	RevealOnFire:
-		Radius: 1c512
+		ArmamentNames: primary, secondary, missile, asw
 		Duration: 50
 	RevealOnDeath:
 		Duration: 50
