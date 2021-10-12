@@ -153,9 +153,13 @@ dron:
 		Voice: Build
 		ValidRelationships: None
 	AmbientSound@Walk:
-		SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav, vterlo3.wav
+		SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav
 		Volume: 0.35
 		RequiresCondition: walking
+	SoundAnnouncement@end:
+		SoundFiles: vterlo3.wav
+		Volume: 0.35
+		RequiresCondition: !walking
 	GrantConditionOnMovement:
 		Condition: walking
 	ProducibleWithLevel:

@@ -264,10 +264,14 @@ zep:
 		Voice: Build
 	Voiced:
 		VoiceSet: KirovVoice
-	AmbientSound:
+	AmbientSound@Move:
 		SoundFiles: vkirlo2a.wav, vkirlo2b.wav, vkirlo2c.wav
 		Volume: 0.40
 		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vkirlo3.wav
+		Volume: 0.40
+		RequiresCondition: !moving
 	GrantConditionOnMovement:
 		Condition: moving
 	SpawnActorOnDeath:
@@ -1724,6 +1728,10 @@ disk:
 		SoundFiles: vflolo5a.wav, vflolo5b.wav
 		Volume: 0.65
 		RequiresCondition: stealing
+	SoundAnnouncement@end:
+		SoundFiles: vflolo6a.wav
+		Volume: 0.65
+		RequiresCondition: !stealing
 	GrantConditionOnAttack:
 		Condition: stealing
 		RevokeDelay: 6
@@ -1732,6 +1740,10 @@ disk:
 		SoundFiles: vflolo2a.wav, vflolo2b.wav
 		Volume: 0.40
 		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vflolo3a.wav
+		Volume: 0.40
+		RequiresCondition: !moving
 	GrantConditionOnMovement:
 		Condition: moving
 	HitShape:
@@ -2269,6 +2281,10 @@ txdx:
 		SoundFiles: vflolo2a.wav, vflolo2b.wav
 		Volume: 0.40
 		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vflolo3a.wav
+		Volume: 0.40
+		RequiresCondition: !moving
 	GrantConditionOnMovement:
 		Condition: moving
 	HitShape:
@@ -2574,6 +2590,10 @@ magnedisk:
 		SoundFiles: vflolo2a.wav, vflolo2b.wav
 		Volume: 0.40
 		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vflolo3a.wav
+		Volume: 0.40
+		RequiresCondition: !moving
 	GrantConditionOnMovement:
 		Condition: moving
 	HitShape:
