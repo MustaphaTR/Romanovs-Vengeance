@@ -49,7 +49,11 @@ slav:
 	#	Range: 5c0
 	RevealOnDeath:
 		Radius: 2c512
-	WithSpriteBody:
+	WithFacingSpriteBody:
+		Sequence: harvest
+		RequiresCondition: harvesting
+	GrantConditionOnHarvest:
+		Condition: harvesting
 	WithDockingAnimation:
 		DockSequence: idle
 		DockLoopSequence: idle
@@ -66,13 +70,13 @@ slav:
 	-TakeCover:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: no-ore
+		RequiresCondition: no-ore && !harvesting
 	WithInfantryBody@full:
 		IdleSequences: idle1,idle2
 		StandSequences: stand
 		MoveSequence: full-run
 		DefaultAttackSequence: shoot
-		RequiresCondition: !no-ore
+		RequiresCondition: !no-ore && !harvesting
 	AttackFrontal:
 		Voice: Attack
 	WithHarvesterPipsDecoration:
