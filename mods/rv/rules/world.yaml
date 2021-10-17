@@ -172,16 +172,9 @@
 	Faction@random:
 		Name: Random
 		InternalName: Random
-		RandomFactionMembers: random-allies, random-soviets
-		Side: Randoms
-		Description: Random Country\nA random country will be chosen when the game starts.
-	Faction@randomwithpsi:
-		Name: Random (with Psi-Corps)
-		InternalName: RandomWithPsi
 		RandomFactionMembers: random-allies, random-soviets, random-psicorps
 		Side: Randoms
 		Description: Random Country\nA random country will be chosen when the game starts.
-		Selectable: false
 	Faction@allies:
 		Name: Allies
 		InternalName: random-allies
@@ -200,7 +193,6 @@
 		RandomFactionMembers: psicorps, psinepal, psisouth, psitrans, psimoon
 		Side: Randoms
 		Description: Random Psi-Corps Faction\nA random Psi-Corps faction will be chosen when the game starts.
-		Selectable: false
 	Faction@baku:
 		Name: Baku Pact
 		InternalName: random-bakupact
@@ -263,31 +255,26 @@
 		InternalName: psicorps
 		Side: Psi-Corps
 		Description: Yurigrad\nCenter of Operations: Kuban Region\n\n\nSpecial Vehicle: Slave Miner\nSpecial Ability: Psi-Ops Drop
-		Selectable: false
 	Faction@12:
 		Name: Lazarus Corps
 		InternalName: psinepal
 		Side: Psi-Corps
 		Description: Lazarus Corps\nCenter of Operations: Himalayas\n\n\nSpecial Aircraft: Mosquito Disc\nSpecial Ability: Hologram Army
-		Selectable: false
 	Faction@13:
 		Name: Antarctica
 		InternalName: psisouth
 		Side: Psi-Corps
 		Description: Antarctica\nCenter of Operations: Antarctic Peninsula\n\n\nSpecial Building: Yuri Statue\nSpecial Ability: Point Defense Drones
-		Selectable: false
 	Faction@14:
 		Name: Fort. Transylvania
 		InternalName: psitrans
 		Side: Psi-Corps
 		Description: Fortress of Transylvania\nCenter of Operations: Transylvania\n\n\nSpecial Vehicle: Giant Tarantula\nSpecial Ability: Lethocerus Swarm
-		Selectable: false
 	Faction@15:
 		Name: Lunar Eclipse
 		InternalName: psimoon
 		Side: Psi-Corps
 		Description: Lunar Eclipse\nCenter of Operations: The Moon\n\n\nSpecial Infantry: Cosmonaut\nSpecial Ability: Ion Cannon
-		Selectable: false
 	Faction@16:
 		Name: Japan
 		InternalName: japan
@@ -575,7 +562,7 @@ World:
 		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
-		SupportActors: smcv #, pcv
+		SupportActors: smcv, pcv
 		SupportActorsFacing: 640
 		InnerSupportRadius: 4
 		OuterSupportRadius: 5
@@ -696,7 +683,7 @@ World:
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
-		SupportActors: amcv #, pcv
+		SupportActors: amcv, pcv
 		SupportActorsFacing: 640
 		InnerSupportRadius: 4
 		OuterSupportRadius: 5
