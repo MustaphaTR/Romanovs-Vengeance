@@ -10,8 +10,11 @@
 #endregion
 
 using System.Linq;
+using OpenRA.Graphics;
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Graphics;
 using OpenRA.Mods.Common.Traits;
+using OpenRA.Mods.Common.Traits.Render;
 using OpenRA.Mods.RA2.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -50,6 +53,20 @@ namespace OpenRA.Mods.RA2.Activities
 				infectable.Ticks = infector.Info.DamageInterval;
 				infectable.GrantCondition(targetActor);
 				infectable.RevokeCondition(targetActor, true);
+
+				infector.GrantCondition(self);
+				if (infector.Info.Sequence != null)
+				{
+					var rs = self.Trait<RenderSprites>();
+
+					var image = rs.GetImage(self);
+					infectable.Overlay = new Animation(self.World, image, () => targetActor.Trait<IFacing>().Facing);
+					if (infector.Info.StartSequence != null)
+						infectable.Overlay.PlayThen(RenderSprites.NormalizeSequence(infectable.Overlay, self.GetDamageState(), infector.Info.StartSequence),
+							() => infectable.Overlay.PlayRepeating(RenderSprites.NormalizeSequence(infectable.Overlay, self.GetDamageState(), infector.Info.Sequence)));
+					else
+						infectable.Overlay.PlayRepeating(RenderSprites.NormalizeSequence(infectable.Overlay, self.GetDamageState(), infector.Info.Sequence));
+				}
 			});
 		}
 

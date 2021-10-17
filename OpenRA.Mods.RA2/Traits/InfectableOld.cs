@@ -11,8 +11,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using OpenRA.Graphics;
 using OpenRA.Mods.Common;
 using OpenRA.Mods.Common.Activities;
+using OpenRA.Mods.Common.Effects;
+using OpenRA.Mods.Common.Graphics;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -50,7 +53,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public override object Create(ActorInitializer init) { return new InfectableOld(init.Self, this); }
 	}
 
-	public class InfectableOld : ConditionalTrait<InfectableOldInfo>, ISync, ITick, INotifyDamage, INotifyKilled, IRemoveInfector
+	public class InfectableOld : ConditionalTrait<InfectableOldInfo>, ISync, ITick, INotifyDamage, INotifyKilled, IRemoveInfector, IRender
 	{
 		readonly Health health;
 
@@ -66,6 +69,8 @@ namespace OpenRA.Mods.RA2.Traits
 		int infectedByToken = Actor.InvalidConditionToken;
 
 		int dealthDamage = 0;
+
+		public Animation Overlay;
 
 		public InfectableOld(Actor self, InfectableOldInfo info)
             : base(info)
@@ -116,6 +121,7 @@ namespace OpenRA.Mods.RA2.Traits
 				self.World.AddFrameEndTask(w =>
 				{
 					w.Add(Infector);
+					InfectorTrait.RevokeCondition(Infector);
 
 					if (kill)
 						Infector.Kill(e.Attacker, e.Damage.DamageTypes);
@@ -125,6 +131,7 @@ namespace OpenRA.Mods.RA2.Traits
 					RevokeCondition(self);
 					Infector = null;
 					InfectorTrait = null;
+					Overlay = null;
 					FirepowerMultipliers = new int[] { };
 					dealthDamage = 0;
 				});
@@ -170,9 +177,12 @@ namespace OpenRA.Mods.RA2.Traits
         {
             if (!IsTraitDisabled && Infector != null)
             {
+				if (Overlay != null)
+					Overlay.Tick();
+
 				if (--Ticks < 0)
 				{
-					var damage = Util.ApplyPercentageModifiers(InfectorTrait.Info.Damage, FirepowerMultipliers);
+					var damage = OpenRA.Mods.Common.Util.ApplyPercentageModifiers(InfectorTrait.Info.Damage, FirepowerMultipliers);
 					health.InflictDamage(self, Infector, new Damage(damage, InfectorTrait.Info.DamageTypes), false);
 
 					if (InfectorTrait.Info.DamageSounds.Any())
@@ -187,6 +197,18 @@ namespace OpenRA.Mods.RA2.Traits
 				}
 			}
 		}
+
+		IEnumerable<IRenderable> IRender.Render(Actor self, WorldRenderer wr)
+		{
+			if (Overlay != null)
+			{
+				foreach (var r in Overlay.Render(self.CenterPosition,
+					wr.Palette(InfectorTrait.Info.IsPlayerPalette ? InfectorTrait.Info.Palette + Infector.Owner.InternalName : InfectorTrait.Info.Palette)))
+						yield return r;
+			}
+		}
+
+		IEnumerable<Rectangle> IRender.ScreenBounds(Actor self, WorldRenderer wr) { yield break; }
 
 		void IRemoveInfector.RemoveInfector(Actor self, bool kill, AttackInfo e)
 		{

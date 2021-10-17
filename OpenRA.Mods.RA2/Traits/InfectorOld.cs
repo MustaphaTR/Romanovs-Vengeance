@@ -54,6 +54,21 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("Damage types for the infection damage.")]
 		public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
 
+		[SequenceReference]
+		[Desc("Sequence to use upon infection beginning.")]
+		public readonly string StartSequence = null;
+
+		[SequenceReference]
+		[Desc("Sequence name to play during infection.")]
+		public readonly string Sequence = null;
+
+		[PaletteReference(nameof(IsPlayerPalette))]
+		[Desc("Custom palette name")]
+		public readonly string Palette = null;
+
+		[Desc("Custom palette is a player palette BaseName")]
+		public readonly bool IsPlayerPalette = false;
+
 		[VoiceReference]
 		[Desc("Voice string when ordered to infect an actor.")]
 		public readonly string Voice = "Action";
@@ -63,11 +78,17 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public readonly string Cursor = "attack";
 
+		[GrantedConditionReference]
+		[Desc("The condition to grant to self while infecting any actor.")]
+		public readonly string InfectingCondition = null;
+
 		public override object Create(ActorInitializer init) { return new InfectorOld(this); }
 	}
 
 	public class InfectorOld : ConditionalTrait<InfectorOldInfo>, IIssueOrder, IResolveOrder, IOrderVoice
 	{
+		int token = Actor.InvalidConditionToken;
+
 		public InfectorOld(InfectorOldInfo info)
 			: base(info) { }
 
@@ -105,6 +126,18 @@ namespace OpenRA.Mods.RA2.Traits
 		public string VoicePhraseForOrder(Actor self, Order order)
 		{
 			return order.OrderString == "Infect" ? Info.Voice : null;
+		}
+
+		public void GrantCondition(Actor self)
+		{
+			if (token == Actor.InvalidConditionToken && !string.IsNullOrEmpty(Info.InfectingCondition))
+				token = self.GrantCondition(Info.InfectingCondition);
+		}
+
+		public void RevokeCondition(Actor self)
+		{
+			if (token != Actor.InvalidConditionToken)
+				token = self.RevokeCondition(token);
 		}
 
 		class InfectionOrderTargeter : UnitOrderTargeter
