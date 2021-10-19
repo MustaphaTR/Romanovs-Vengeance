@@ -95,6 +95,9 @@ bsub:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+	GrantExternalConditionToSpawnedMissile:
+		Condition: rank-elite
+		RequiresCondition: rank-elite
 	-MustBeDestroyed:
 	WithVoxelBody:
 	RenderSprites:
@@ -147,11 +150,17 @@ cmisl:
 	SpawnedExplodes:
 		Weapon: CruiseWeapon
 		EmptyWeapon: CruiseWeapon
-		RequiresCondition: !airborne
+		RequiresCondition: !airborne && !rank-elite
+	SpawnedExplodes@Elite:
+		Weapon: CruiseWeaponE
+		EmptyWeapon: CruiseWeaponE
+		RequiresCondition: !airborne && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
+	ExternalCondition@RANK-ELITE:
+		Condition: rank-elite
 	RenderVoxels:
 		Image: bsubmisl
 

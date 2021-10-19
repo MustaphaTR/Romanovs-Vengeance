@@ -686,6 +686,9 @@ v3:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+	GrantExternalConditionToSpawnedMissile:
+		Condition: rank-elite
+		RequiresCondition: rank-elite
 	RenderSprites:
 		Image: v3
 	RenderVoxels:
@@ -760,11 +763,17 @@ v3rocket:
 	SpawnedExplodes:
 		Weapon: V3Weapon
 		EmptyWeapon: V3Weapon
-		RequiresCondition: !airborne
+		RequiresCondition: !airborne && !rank-elite
+	SpawnedExplodes@Elite:
+		Weapon: V3WeaponE
+		EmptyWeapon: V3WeaponE
+		RequiresCondition: !airborne && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
+	ExternalCondition@RANK-ELITE:
+		Condition: rank-elite
 	RenderVoxels:
 		Image: v3rocket
 

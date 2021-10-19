@@ -642,14 +642,35 @@ V3Weapon:
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
+V3WeaponE:
+	Inherits: V3Weapon
+	Warhead@2Eff: CreateEffect
+		Explosions: terrorist_explosion
+		ImpactSounds: gexpapoa.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+	-Warhead@3EffWater: CreateEffect
+
 DredWeapon:
 	Inherits: V3Weapon
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
 		Damage: 20000
 
+DredWeaponE:
+	Inherits: V3WeaponE
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c0
+		Damage: 20000
+
 CruiseWeapon:
 	Inherits: DredWeapon
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c410
+		Damage: 15000
+
+CruiseWeaponE:
+	Inherits: DredWeaponE
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c410
 		Damage: 15000

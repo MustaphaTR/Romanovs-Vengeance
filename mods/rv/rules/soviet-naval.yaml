@@ -317,6 +317,9 @@ dred:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+	GrantExternalConditionToSpawnedMissile:
+		Condition: rank-elite
+		RequiresCondition: rank-elite
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody@FULL:
@@ -373,8 +376,14 @@ dmisl:
 	SpawnedExplodes:
 		Weapon: DredWeapon
 		EmptyWeapon: DredWeapon
-		RequiresCondition: !airborne
+		RequiresCondition: !airborne && !rank-elite
+	SpawnedExplodes@Elite:
+		Weapon: DredWeaponE
+		EmptyWeapon: DredWeaponE
+		RequiresCondition: !airborne && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
+	ExternalCondition@RANK-ELITE:
+		Condition: rank-elite
