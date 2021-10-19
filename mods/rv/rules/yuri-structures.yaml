@@ -220,6 +220,10 @@ yabrck:
 		ProductionType: Infantry.Yuri
 	ProductionBar@Moon:
 		ProductionType: Infantry.Moon
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
 	RallyPoint:
 		Path: 2,1
 	ProvidesPrerequisite@yabrck:
