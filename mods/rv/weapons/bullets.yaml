@@ -39,7 +39,7 @@ sabot:
 	ReloadDelay: 70
 	Report: vtadatta.wav, vtadattb.wav, vtadattc.wav
 	Projectile: BulletAS
-		Speed: 682
+		Speed: 1024
 	Warhead@1Dam: SpreadDamage
 		Spread: 190
 		Damage: 15000
@@ -216,7 +216,7 @@ Sub70mmE:
 	Range: 6c0
 	Report: vgriatta.wav, vgriattb.wav, vgriattc.wav
 	Projectile: BulletAS
-		Speed: 682
+		Speed: 1024
 	Warhead@1Dam: SpreadDamage
 		Damage: 6500
 	Warhead@4Smu: LeaveSmudge
@@ -227,7 +227,7 @@ Sub70mmE:
 	Burst: 2
 	BurstDelays: 5
 	Projectile: BulletAS
-		Speed: 682
+		Speed: 1024
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 100
@@ -244,12 +244,17 @@ Sub70mmE:
 
 90mm:
 	Inherits: 105mm
+	ReloadDelay: 55
 	Report: cannon1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
 
 105mmx:
 	Inherits: 90mm
 	ReloadDelay: 65
 	Report: cannon1.aud
+	Warhead@1Dam: SpreadDamage
+		Damage: 7500
 
 ATGUN:
 	Inherits: 105mm
@@ -279,7 +284,7 @@ ATGUNE:
 	Range: 6c0
 	Report: vrhiatta.wav, vrhiattb.wav, vrhiattc.wav, vrhiattd.wav
 	Projectile: BulletAS
-		Speed: 682
+		Speed: 1024
 	Warhead@1Dam: SpreadDamage
 		Damage: 9000
 	Warhead@4Smu: LeaveSmudge
@@ -290,7 +295,7 @@ ATGUNE:
 	Burst: 2
 	BurstDelays: 5
 	Projectile: BulletAS
-		Speed: 682
+		Speed: 1024
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 100
@@ -311,7 +316,7 @@ ATGUNE:
 	Report: vapoat1a.wav
 	Range: 6c0
 	Projectile: BulletAS
-		Speed: 682
+		Speed: 1024
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
 	Warhead@2Eff: CreateEffect
@@ -325,7 +330,7 @@ ATGUNE:
 	Burst: 2
 	BurstDelays: 10
 	Projectile: BulletAS
-		Speed: 682
+		Speed: 1024
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			None: 100
@@ -429,6 +434,9 @@ ATGUNE:
 		Falloff: 100, 75, 50, 25, 0
 		Damage: 9000
 		Versus:
+			None: 50
+			Flak: 50
+			Plate: 45
 			Wood: 100
 			Steel: 85
 			Concrete: 90
@@ -741,8 +749,6 @@ Grenade:
 
 GrenadeE:
 	Inherits: Grenade
-	Range: 6c0
-	ReloadDelay: 60
 	Warhead@1Dam: SpreadDamage
 		Damage: 10000
 	Warhead@1Gar: OpenToppedDamage
