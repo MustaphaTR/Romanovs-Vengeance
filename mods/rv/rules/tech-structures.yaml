@@ -30,16 +30,16 @@ caoild:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 1000,0,0
-	GrantConditionAfterDelay@Cash:
-		Delay: 1
-		ShowSelectionBar: false
-		Condition: cashgiven
-		RequiresCondition: captured
+	# GrantConditionAfterDelay@Cash:
+	#	Delay: 1
+	#	ShowSelectionBar: false
+	#	Condition: cashgiven
+	#	RequiresCondition: captured
 	GivesCashOnCapture:
 		Amount: 500
-		RequiresCondition: !cashgiven
-	GrantConditionOnCapture:
-		Condition: captured
+	#	RequiresCondition: !cashgiven
+	# GrantConditionOnCapture:
+	#	Condition: captured
 	Explodes:
 		Weapon: DerrickExplode
 	UpdatesDerrickCount:
