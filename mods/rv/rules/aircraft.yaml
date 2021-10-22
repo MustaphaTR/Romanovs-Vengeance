@@ -129,6 +129,16 @@ shad:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	AmbientSound@Move:
+		SoundFiles: vblhlo2a.wav, vblhlo2b.wav, vblhlo2c.wav
+		Volume: 0.5
+		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vblhlo3.wav
+		Volume: 0.5
+		RequiresCondition: !moving
+	GrantConditionOnMovement:
+		Condition: moving
 	HitShape:
 	WithCargoPipsDecoration:
 		Margin: 4, 3
@@ -1484,6 +1494,16 @@ schp:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	AmbientSound@Move:
+		SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
+		Volume: 0.45
+		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vcholo3a.wav
+		Volume: 0.45
+		RequiresCondition: !moving
+	GrantConditionOnMovement:
+		Condition: moving
 	HitShape:
 	AutoDeployer@AI:
 		RequiresCondition: ai-control
@@ -1878,6 +1898,16 @@ hind:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	AmbientSound@Move:
+		SoundFiles: vblhlo2a.wav, vblhlo2b.wav, vblhlo2c.wav
+		Volume: 0.5
+		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vblhlo3.wav
+		Volume: 0.5
+		RequiresCondition: !moving
+	GrantConditionOnMovement:
+		Condition: moving
 	HitShape:
 
 hindhusk:
@@ -2423,6 +2453,16 @@ kite:
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: kitehusk
+	AmbientSound@Move:
+		SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
+		Volume: 0.45
+		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vcholo3a.wav
+		Volume: 0.45
+		RequiresCondition: !moving
+	GrantConditionOnMovement:
+		Condition: moving
 	HitShape:
 
 kitehusk:
@@ -2734,6 +2774,16 @@ havoc:
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: havochusk
+	AmbientSound@Move:
+		SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
+		Volume: 0.45
+		RequiresCondition: moving
+	SoundAnnouncement@end:
+		SoundFiles: vcholo3a.wav
+		Volume: 0.45
+		RequiresCondition: !moving
+	GrantConditionOnMovement:
+		Condition: moving
 	HitShape:
 
 havochusk:
