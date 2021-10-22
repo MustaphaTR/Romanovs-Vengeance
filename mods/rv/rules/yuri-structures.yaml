@@ -1183,6 +1183,12 @@ natbnk:
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
+	WithColoredOverlay@ChronoDisable:
+		Color: 00204040
+		RequiresCondition: chronodisable && loaded
+	WithColoredOverlay@ChronoDisableEmpty:
+		Color: 0060C040
+		RequiresCondition: chronodisable && !loaded
 	Buildable:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 50

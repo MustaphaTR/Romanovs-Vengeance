@@ -837,6 +837,11 @@
 	AffectedByTemporal:
 		RequiresCondition: !invulnerability
 
+^ChronoDisableDisabledWithICorForceShield:
+	Inherits: ^ChronoDisable
+	AffectedByTemporal:
+		RequiresCondition: !invulnerability && !forceshield
+
 ^TankBunkerable:
 	FirepowerMultiplier@TANK_BUNKER:
 		Modifier: 130
@@ -881,6 +886,8 @@
 
 ^MindControllableBuilding:
 	Inherits: ^MindControllableDisabledWithIC
+	MindControllable:
+		PauseOnCondition: invulnerability || forceshield
 	Targetable@MC:
 		TargetTypes: MindControlBuilding
 		RequiresCondition: !controlled
@@ -1139,7 +1146,7 @@
 	Inherits@7: ^AcceptsSEALC4
 	Inherits@8: ^AcceptsCommandoC4
 	Inherits@9: ^BuildingParticles
-	Inherits@10: ^ChronoDisableDisabledWithIC
+	Inherits@10: ^ChronoDisableDisabledWithICorForceShield
 	Inherits@11: ^AffectedByStealthGenerator
 	Inherits@12: ^AcceptsTeslaBomb
 	Inherits@13: ^AcceptsToxinBomb
@@ -1514,6 +1521,8 @@
 		LightPitch: 150
 		LightAmbientColor: -0.5,-0.5,-0.5
 		LightDiffuseColor: 1.3,1.3,1.3
+	WithColoredOverlay@ChronoDisable:
+		Color: 00204040
 
 ^Wall:
 	Inherits@1: ^ExistsInWorld
@@ -2164,6 +2173,8 @@
 		Duration: 50
 	RevealOnDeath:
 		Duration: 50
+	WithColoredOverlay@ChronoDisable:
+		Color: 00204040
 	Mobile:
 		Voice: Move
 		Speed: 90
@@ -2407,6 +2418,8 @@
 	Inherits@16: ^AffectedBySpectreBullets
 	Inherits@17: ^AcceptsPointDefenseDrones
 	Inherits@19: ^AcceptsDeathBomb
+	WithColoredOverlay@ChronoDisable:
+		Color: 00204040
 	Aircraft:
 		AltitudeVelocity: 43
 	WithTextControlGroupDecoration:
@@ -2608,6 +2621,8 @@
 		Duration: 50
 	RevealOnDeath:
 		Duration: 50
+	WithColoredOverlay@ChronoDisable:
+		Color: 00204040
 	Mobile:
 		Voice: Move
 		Locomotor: naval
