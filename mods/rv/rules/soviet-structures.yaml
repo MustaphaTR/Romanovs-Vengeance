@@ -968,9 +968,9 @@ naclon:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Unused # Building.Soviets, Building.Baku
 		BuildPaletteOrder: 120
-		Prerequisites: ~disabled # natech
+		Prerequisites: natech
 		Description: Clones most trained infantry.\nMaximum 1 can be built.
 		BuildLimit: 1
 	Valued:
@@ -1057,9 +1057,9 @@ napsis:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
+		Queue: Support.Unused # Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
-		Prerequisites: ~disabled # natech, ~techlevel.4
+		Prerequisites: natech, ~techlevel.4
 		Description: Detects enemy units and structures.
 	Valued:
 		Cost: 1500
@@ -1463,9 +1463,9 @@ nabnkr:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
+		Queue: Support.Unused # Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
-		Prerequisites: ~disabled
+		Prerequisites: nahand, ~techlevel.1
 		Description: Static defense with fireports for 6 garrisoned soldiers.\nInfantry inside cannot be killed by garrison killers.\nComes with a Conscript inside.
 	Valued:
 		Cost: 500

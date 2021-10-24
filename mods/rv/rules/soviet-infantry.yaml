@@ -663,9 +663,9 @@ yuri:
 	Inherits@2: ^Parachutable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Queue: Infantry.Unused # Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 150
-		Prerequisites: ~disabled # natech, ~techlevel.4
+		Prerequisites: natech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -776,9 +776,10 @@ yuri:
 yuripr:
 	Inherits: yuri
 	Buildable:
+		Queue: Infantry.Unused
 		BuildLimit: 1
 		BuildPaletteOrder: 990
-		Prerequisites: ~disabled # ~soviets.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units from a great range.\nCan be deployed to unleash a powerful psychic wave.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\nMaximum 1 can be trained.
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -990,9 +991,9 @@ pyro:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Queue: Infantry.Unused # Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 75
-		Prerequisites: ~disabled # naradr, ~techlevel.2
+		Prerequisites: naradr, ~techlevel.2
 		Description: Advanced anti-infantry and anti-structure infantry.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
 		BuildDuration: 125
 		BuildDurationModifier: 100

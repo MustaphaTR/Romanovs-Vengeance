@@ -92,7 +92,7 @@ gacnst.japan:
 	Tooltip@NoRow:
 		Name: Japanese Construction Yard
 	Buildable:
-		BuildPaletteOrder: 290
+		BuildPaletteOrder: 320
 		ForceFaction: japan
 	-MapEditorData:
 
@@ -103,7 +103,7 @@ gacnst.belarus:
 	Tooltip@NoRow:
 		Name: Belarusian Construction Yard
 	Buildable:
-		BuildPaletteOrder: 300
+		BuildPaletteOrder: 330
 		ForceFaction: belarus
 	-MapEditorData:
 
@@ -114,7 +114,7 @@ gacnst.poland:
 	Tooltip@NoRow:
 		Name: Polish Construction Yard
 	Buildable:
-		BuildPaletteOrder: 310
+		BuildPaletteOrder: 340
 		ForceFaction: poland
 	-MapEditorData:
 
@@ -125,7 +125,7 @@ gacnst.ukraine:
 	Tooltip@NoRow:
 		Name: Ukrainian Construction Yard
 	Buildable:
-		BuildPaletteOrder: 320
+		BuildPaletteOrder: 350
 		ForceFaction: ukraine
 	-MapEditorData:
 
@@ -136,7 +136,7 @@ gacnst.aussie:
 	Tooltip@NoRow:
 		Name: Australian Construction Yard
 	Buildable:
-		BuildPaletteOrder: 330
+		BuildPaletteOrder: 360
 		ForceFaction: aussie
 	-MapEditorData:
 
@@ -147,7 +147,7 @@ gacnst.china:
 	Tooltip@NoRow:
 		Name: Chinese Construction Yard
 	Buildable:
-		BuildPaletteOrder: 340
+		BuildPaletteOrder: 370
 		ForceFaction: china
 	-MapEditorData:
 
@@ -158,7 +158,7 @@ gacnst.turkey:
 	Tooltip@NoRow:
 		Name: Turkish Construction Yard
 	Buildable:
-		BuildPaletteOrder: 350
+		BuildPaletteOrder: 380
 		ForceFaction: turkey
 	-MapEditorData:
 
@@ -169,7 +169,7 @@ gacnst.canada:
 	Tooltip@NoRow:
 		Name: Canadian Construction Yard
 	Buildable:
-		BuildPaletteOrder: 360
+		BuildPaletteOrder: 390
 		ForceFaction: canada
 	-MapEditorData:
 
@@ -236,7 +236,7 @@ nacnst.chile:
 	Tooltip@NoRow:
 		Name: Chilean Construction Yard
 	Buildable:
-		BuildPaletteOrder: 370
+		BuildPaletteOrder: 400
 		ForceFaction: chile
 	-MapEditorData:
 
@@ -247,7 +247,7 @@ nacnst.mexico:
 	Tooltip@NoRow:
 		Name: Mexican Construction Yard
 	Buildable:
-		BuildPaletteOrder: 380
+		BuildPaletteOrder: 410
 		ForceFaction: mexico
 	-MapEditorData:
 
@@ -258,7 +258,7 @@ nacnst.mongolia:
 	Tooltip@NoRow:
 		Name: Mongolian Construction Yard
 	Buildable:
-		BuildPaletteOrder: 390
+		BuildPaletteOrder: 420
 		ForceFaction: mongolia
 	-MapEditorData:
 
@@ -419,6 +419,34 @@ gacnst.tech:
 	ProductionBar@Building:
 		ProductionType: Building.Tech
 
+gacnst.unused:
+	Inherits: cacnst
+	Tooltip:
+		Name: Debug Construction Yard
+	Tooltip@NoRow:
+		Name: Debug Construction Yard
+	Buildable:
+		Queue: Building.Debug
+		BuildPaletteOrder: 260
+	Production:
+		Produces: Building.Unused, Support.Unused
+	ProductionQueue@Building:
+		Type: Building.Unused
+	ProductionQueue@Support:
+		Type: Support.Unused
+		Group: Support
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@Building:
+		ProductionType: Building.Unused
+	ProductionBar@Support:
+		ProductionType: Support.Unused
+
 #Civilian Barracks
 cabrck:
 	Inherits: gapile
@@ -428,7 +456,7 @@ cabrck:
 		Name: Civilian Barracks
 	Buildable:
 		Queue: Building.Debug
-		BuildPaletteOrder: 260
+		BuildPaletteOrder: 270
 	Production:
 		Produces: Infantry.Civilian
 	ProductionQueue:
@@ -445,6 +473,35 @@ cabrck:
 		Image: gapile
 	-MapEditorData:
 
+cabrck.unused:
+	Inherits: nahand
+	Tooltip:
+		Name: Debug Barracks
+	Tooltip@NoRow:
+		Name: Debug Barracks
+	Buildable:
+		Queue: Building.Debug
+		BuildPaletteOrder: 280
+		Description: For unused units.
+	Production:
+		Produces: Infantry.Unused
+	ProductionQueue:
+		Type: Infantry.Unused
+		-Factions:
+	-ProductionQueue@Cuba:
+	-ProductionQueue@Iraq:
+	-ProductionQueue@Baku:
+	-ProductionQueue@Tuva:
+	ProductionBar:
+		ProductionType: Infantry.Unused
+	-ProductionBar@Cuba:
+	-ProductionBar@Iraq:
+	-ProductionBar@Baku:
+	-ProductionBar@Tuva:
+	RenderSprites:
+		Image: nahand
+	-MapEditorData:
+
 #Civilian Factory
 caweap:
 	Inherits: gaweap
@@ -454,7 +511,7 @@ caweap:
 		Name: Civilian Factory
 	Buildable:
 		Queue: Building.Debug
-		BuildPaletteOrder: 270
+		BuildPaletteOrder: 290
 	Production:
 		Produces: Vehicle.Civilian
 	ProductionQueue:
@@ -473,6 +530,35 @@ caweap:
 		Image: gaweap
 	-MapEditorData:
 
+caweap.unused:
+	Inherits: naweap
+	Tooltip:
+		Name: Debug Factory
+	Tooltip@NoRow:
+		Name: Debug Factory
+	Buildable:
+		Queue: Building.Debug
+		BuildPaletteOrder: 300
+	Production:
+		Produces: Vehicle.Unused
+	ProductionQueue:
+		Type: Vehicle.Unused
+		-Factions:
+	-ProductionQueue@Iraq:
+	-ProductionQueue@Cuba:
+	-ProductionQueue@Libya:
+	-ProductionQueue@Baku:
+	ProductionBar:
+		ProductionType: Vehicle.Unused
+	-ProductionBar@Iraq:
+	-ProductionBar@Cuba:
+	-ProductionBar@Libya:
+	-ProductionBar@Baku:
+	-PlaceBuildingVariants:
+	RenderSprites:
+		Image: naweap
+	-MapEditorData:
+
 #Civilian Shipyard
 cayard:
 	Inherits: gayard
@@ -482,7 +568,7 @@ cayard:
 		Name: Civilian Shipyard
 	Buildable:
 		Queue: Building.Debug
-		BuildPaletteOrder: 280
+		BuildPaletteOrder: 310
 	Production:
 		Produces: Ship.Civilian
 	ProductionQueue:

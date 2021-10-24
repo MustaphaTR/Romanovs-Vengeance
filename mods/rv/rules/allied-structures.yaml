@@ -1044,9 +1044,9 @@ gtgcan:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Support.France
+		Queue: Support.Unused # Support.France
 		BuildPaletteOrder: 80
-		Prerequisites: ~disabled # gaairc, ~techlevel.3
+		Prerequisites: gaairc, ~techlevel.3
 		Description: Automated, long ranged anti-ground defense.
 	Valued:
 		Cost: 2500
@@ -1566,9 +1566,9 @@ garobo:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building.Allies
+		Queue: Building.Unused # Building.Allies
 		BuildPaletteOrder: 80
-		Prerequisites: ~disabled # gaweap
+		Prerequisites: gaweap
 		Description: Allows production of Robot Tanks.\nRequired for Robot Tanks to function.
 	Valued:
 		Cost: 600
@@ -1607,7 +1607,7 @@ gaapad:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
 	Buildable:
-		Queue: Building.Allies
+		Queue: Building.Unused # Building.Allies
 		BuildPaletteOrder: 100
 		Prerequisites: gaairc, ~prerequisite.airpad, ~techlevel.2
 		Description: Rearms up to 3 aircraft.
