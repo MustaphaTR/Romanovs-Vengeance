@@ -224,7 +224,7 @@ ytnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -457,7 +457,7 @@ caos:
 tele:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -721,7 +721,7 @@ mlyr:
 
 kamaz:
 	Inherits: ^Vehicle
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
@@ -806,7 +806,7 @@ yhtnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -890,7 +890,7 @@ yhtnk:
 grtk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -981,6 +981,8 @@ spider:
 	Inherits@LAZARUS: ^KilledByLazarusShield
 	WithColoredOverlay@ChronoDisable:
 		Color: 0060C040
+	WithColoredOverlay@MagneSlow:
+		Color: FF50F540
 	Valued:
 		Cost: 900
 	DeliversCash:

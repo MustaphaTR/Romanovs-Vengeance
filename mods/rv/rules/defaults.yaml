@@ -916,6 +916,11 @@
 	ExternalCondition@CHAOS:
 		Condition: chaos
 
+^BerserkableVoxel:
+	Inherits: ^Berserkable
+	WithColoredOverlay@CHAOS:
+		Color: 2A002A40
+
 ^TerrorDronable:
 	InfectableRV:
 		RequiresCondition: !chronodisable
@@ -1747,6 +1752,8 @@
 	Inherits@20: ^AcceptsDeathBomb
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
+	WithColoredOverlay@MagneSlow:
+		Color: FF50F540
 	Health:
 	OwnerLostAction:
 		Action: Kill
@@ -2302,7 +2309,7 @@
 
 ^CivVehicle:
 	Inherits: ^Vehicle
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Vehicle.Civilian
@@ -2951,7 +2958,7 @@
 
 ^DisabledByMagnetron:
 	WithColoredOverlay@MagneFreeze:
-		Color: FF50F580
+		Color: 551A5180 # FF50F580
 		RequiresCondition: magnefreeze
 	Targetable@MagneFreeze:
 		TargetTypes: MagneFreezable
@@ -2963,7 +2970,7 @@
 		Modifier: 33
 		RequiresCondition: magneslow
 	WithColoredOverlay@MagneSlow:
-		Color: FF50F540
+		Color: 551A5180 # FF50F540
 		RequiresCondition: magneslow
 	ExternalCondition@MagneSlow:
 		Condition: magneslow
