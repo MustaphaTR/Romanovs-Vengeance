@@ -2,8 +2,8 @@
 	Interactable:
 	AlwaysVisible:
 	Buildable:
+		Queue: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		BuildDurationModifier: 100
-		Queue: Power.Allies, Power.Soviets
 		BuildLimit: 1
 	RenderSprites:
 	ProvidesPrerequisite@powername:
@@ -12,11 +12,11 @@ commanders_power.medic:
 	Inherits: ^default.commanders_power
 	Tooltip:
 		Name: Medic
-	Buildable:
-		Queue: Power.Allies
-		BuildPaletteOrder: 10
-		Prerequisites: ~disabled # prerequisite.has_points
-		Description: Enables training of Medic from Barracks.
+	-Buildable:
+	#	Queue: Power.Allies
+	#	BuildPaletteOrder: 10
+	#	Prerequisites: ~disabled # prerequisite.has_points
+	#	Description: Enables training of Medic from Barracks.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.medic
 	RenderSprites:
@@ -40,11 +40,11 @@ commanders_power.mechanic:
 	Inherits: ^default.commanders_power
 	Tooltip:
 		Name: Mechanic
-	Buildable:
-		Queue: Power.Soviets
-		BuildPaletteOrder: 10
-		Prerequisites: ~disabled # prerequisite.has_points
-		Description: Enables training of Mechanic from Barracks.
+	-Buildable:
+	#	Queue: Power.Soviets
+	#	BuildPaletteOrder: 10
+	#	Prerequisites: ~disabled # prerequisite.has_points
+	#	Description: Enables training of Mechanic from Barracks.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.mechanic
 	RenderSprites:
@@ -54,11 +54,11 @@ commanders_power.hijacker:
 	Inherits: ^default.commanders_power
 	Tooltip:
 		Name: Hijacker
-	Buildable:
-		Queue: Power.Soviets
-		BuildPaletteOrder: 10
-		Prerequisites: ~disabled
-		Description: Enables training of Hijacker from Barracks.
+	-Buildable:
+	#	Queue: Power.Soviets
+	#	BuildPaletteOrder: 10
+	#	Prerequisites: ~disabled # prerequisite.has_points
+	#	Description: Enables training of Hijacker from Barracks.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.hijacker
 	RenderSprites:
@@ -112,11 +112,11 @@ commanders_power.airpad:
 	Inherits: ^default.commanders_power
 	Tooltip:
 		Name: Airpad
-	Buildable:
-		Queue: Power.Allies
-		BuildPaletteOrder: 20
-		Prerequisites: ~disabled # prerequisite.has_points
-		Description: Enables construction of Airpads from Construction Yard.
+	-Buildable:
+	#	Queue: Power.Allies
+	#	BuildPaletteOrder: 20
+	#	Prerequisites: ~disabled # prerequisite.has_points
+	#	Description: Enables construction of Airpads from Construction Yard.
 	ProvidesPrerequisite@powername:
 		Prerequisite: prerequisite.airpad
 	RenderSprites:
@@ -168,11 +168,11 @@ commanders_power.ifv_training:
 	Inherits: ^default.commanders_power
 	Tooltip:
 		Name: IFV Training
-	Buildable:
-		Queue: Power.Allies
-		BuildPaletteOrder: 30
-		Prerequisites: ~disabled # prerequisite.has_points
-		Description: Makes IFVs train as veteran.
+	-Buildable:
+	#	Queue: Power.Allies
+	#	BuildPaletteOrder: 30
+	#	Prerequisites: ~disabled # prerequisite.has_points
+	#	Description: Makes IFVs train as veteran.
 	ProvidesPrerequisite@powername:
 		Prerequisite: vetifv
 
@@ -350,7 +350,6 @@ commanders_power.emergency_repair.1:
 	Tooltip:
 		Name: Emergency Repair - Level 1
 	Buildable:
-		Queue: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Emergency Repair.
@@ -360,7 +359,6 @@ commanders_power.emergency_repair.2:
 	Tooltip:
 		Name: Emergency Repair - Level 2
 	Buildable:
-		Queue: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.1
 		Description: Upgrades Emergency Repair power to Level 2.
@@ -370,7 +368,6 @@ commanders_power.emergency_repair.3:
 	Tooltip:
 		Name: Emergency Repair - Level 3
 	Buildable:
-		Queue: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		BuildPaletteOrder: 90
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.2
 		Description: Upgrades Emergency Repair power to Level 3.
