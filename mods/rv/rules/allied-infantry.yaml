@@ -1451,66 +1451,6 @@ cleg:
 		RequiresCondition: affectedbytemporal || chronoed
 
 # Custom Allied Infantry:
-medi:
-	Inherits: ^Infantry
-	Inherits@CHAOS: ^Berserkable
-	Inherits@MC: ^MindControllable
-	Buildable:
-		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Baku, Infantry.Tuva
-		Prerequisites: ~prerequisite.medic, ~techlevel.1
-		BuildPaletteOrder: 50
-		Description: Heals infantry.\n  Unarmed
-		BuildDuration: 125
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 200
-	DeliversCash:
-		Payload: 100
-		Voice: Move
-	Tooltip:
-		Name: Medic
-	Tooltip@NoRow:
-		Name: Medic
-	Selectable:
-		Bounds: 482, 1448, 0, -530
-	Health:
-		HP: 12500
-	Garrisoner:
-		CustomPipType: yellow
-		GarrisonType: Garrisoner
-	Passenger:
-		CustomPipType: yellow
-	RevealsShroud:
-		Range: 5c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 5c0
-	RevealOnDeath:
-		Radius: 2c512
-	Armament:
-		Weapon: Heal
-		Cursor: heal
-		OutsideRangeCursor: heal
-		TargetRelationships: Ally
-		ForceTargetRelationships: None
-		PauseOnCondition: chronodisable
-	AttackFrontal:
-		Voice: Action
-		FacingTolerance: 2
-	Voiced:
-		VoiceSet: MedicVoice
-	Guard:
-		Voice: Action
-	AttackMove:
-		Voice: Action
-	AutoTarget:
-		ScanRadius: 5
-	AutoTargetPriority@DEFAULT:
-		ValidTargets: Heal
-	QuantizeFacingsFromSequence:
-		Sequence: stand
-	WithInfantryBody:
-		DefaultAttackSequence: shoot
-
 gren:
 	Inherits@1: ^Infantry
 	Inherits@2: ^Parachutable
