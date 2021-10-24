@@ -1003,7 +1003,7 @@ spider:
 		Speed: 105
 		TurnSpeed: 1023
 		Locomotor: heavytracked
-		RequiresCondition: !chronodisable && !magnefreeze
+		RequiresCondition: !chronodisable
 	Health:
 		HP: 50000
 	Armor:
@@ -1038,6 +1038,9 @@ spider:
 	-Targetable@EMP:
 	-TimedConditionBar@EMP:
 	-ExternalCondition@emp:
+	-WithColoredOverlay@MagneFreeze:
+	-Targetable@MagneFreeze:
+	-ExternalCondition@MagneFreeze:
 	-Explodes:
 	RevealsShroud:
 		Range: 6c0
