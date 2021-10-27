@@ -583,6 +583,7 @@ yagrnd:
 		Sound: bgrinda.wav
 	Power:
 		Amount: -50
+		RequiresCondition: !chronodisable
 	IsometricSelectable:
 		DecorationHeight: 75
 	Voiced:
@@ -793,6 +794,7 @@ yadome:
 		InfiltrationNotification: BuildingInfiltratedRadarSabotaged
 	Power:
 		Amount: -75
+		RequiresCondition: !chronodisable
 	IsometricSelectable:
 		DecorationHeight: 75
 	Voiced:
@@ -872,6 +874,7 @@ yadisk:
 		ProductionType: Aircraft.Lazarus
 	Power:
 		Amount: -50
+		RequiresCondition: !chronodisable
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	-WithMakeAnimation:
@@ -956,6 +959,7 @@ yapsis:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -200
+		RequiresCondition: !chronodisable
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -994,6 +998,7 @@ yaclon:
 	#	Range: 6c0
 	Power:
 		Amount: -200
+		RequiresCondition: !chronodisable
 	ExitsDebugOverlay:
 	Exit@1:
 		SpawnOffset: -640,640,0
@@ -1165,6 +1170,7 @@ yaggun:
 		Type: aa
 	Power:
 		Amount: -40
+		RequiresCondition: !chronodisable
 	IsometricSelectable:
 		Class: yaggun
 		DecorationHeight: 45
@@ -1291,6 +1297,7 @@ yapsyt:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
+		RequiresCondition: !chronodisable
 	Armament:
 		Weapon: TowerMindControl
 		MuzzleSequence: muzzle
@@ -1379,6 +1386,7 @@ yasgen:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	Power:
 		Amount: -100
+		RequiresCondition: !chronodisable
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	-Cloak@stealth-generator:
@@ -1606,6 +1614,7 @@ caeast02:
 		LightDiffuseColor: 1.3,1.3,1.3
 	Power:
 		Amount: -100
+		RequiresCondition: !chronodisable
 	SpawnActorOnDeath:
 		Actor: caeast02.rubble
 	IsometricSelectable:
@@ -1685,6 +1694,7 @@ yaeast02:
 		RequiresCondition: !chronodisable
 	Power:
 		Amount: -100
+		RequiresCondition: !chronodisable
 	IsometricSelectable:
 		DecorationHeight: 135
 	DetectCloaked:

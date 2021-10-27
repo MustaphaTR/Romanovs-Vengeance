@@ -584,6 +584,7 @@
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
+		RequiresCondition: !chronodisable
 	#InfiltrateForSupportPower:
 	#	Types: SpyInfiltrate
 	#	Proxy: warfactory.infiltrated
@@ -730,6 +731,7 @@
 		FinishRepairingNotification: UnitRepaired
 	Power:
 		Amount: -50
+		RequiresCondition: !chronodisable
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		PauseOnCondition: chronodisable
@@ -807,6 +809,7 @@
 		RequiresCondition: !build-incomplete && !chronodisable
 	Power:
 		Amount: -35
+		RequiresCondition: !chronodisable
 	Voiced:
 		VoiceSet: ServiceDepotVoice
 		Volume: 0.8
@@ -838,6 +841,7 @@
 	#	Range: 6c0
 	Power:
 		Amount: -100
+		RequiresCondition: !chronodisable
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate, HijackerInfiltrate
 		Proxy: allies.tech.infiltrated
@@ -879,6 +883,7 @@
 		CloakedCondition: cloaked
 	Power:
 		Amount: -200
+		RequiresCondition: !chronodisable
 	SupportPowerChargeBar:
 	WithSupportPowerChargedOverlay:
 	InfiltrateForSupportPowerReset:
@@ -928,6 +933,7 @@
 		CloakedCondition: cloaked
 	Power:
 		Amount: -200
+		RequiresCondition: !chronodisable
 	SupportPowerChargeBar:
 	WithSupportPowerChargedOverlay:
 		RequiresCondition: !build-incomplete

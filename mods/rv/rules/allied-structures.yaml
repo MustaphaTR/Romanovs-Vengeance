@@ -395,6 +395,7 @@ gaairc:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Power:
 		Amount: -75
+		RequiresCondition: !chronodisable
 	Reservable:
 	ExitsDebugOverlay:
 	Exit@1:
@@ -1020,6 +1021,7 @@ nasam:
 	AutoTarget:
 	Power:
 		Amount: -30
+		RequiresCondition: !chronodisable
 	RequiresBuildableArea:
 		Adjacent: 3
 	IsometricSelectable:
@@ -1099,6 +1101,7 @@ gtgcan:
 		Type: grandcannon
 	Power:
 		Amount: -100
+		RequiresCondition: !chronodisable
 	IsometricSelectable:
 		DecorationHeight: 45
 	Voiced:
@@ -1158,6 +1161,7 @@ gaorep:
 		Modifier: 25
 	Power:
 		Amount: -200
+		RequiresCondition: !chronodisable
 	GrantConditionOnResourcePurify:
 		Condition: resource-purify
 		Duration: 3
@@ -1224,6 +1228,7 @@ gaspysat:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -100
+		RequiresCondition: !chronodisable
 	ExternalCondition@disableradar:
 		Condition: disableradar
 	ProvidesRadar:
@@ -1302,6 +1307,7 @@ gagap:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	Power:
 		Amount: -50
+		RequiresCondition: !chronodisable
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	GpsDotAS:
@@ -1492,6 +1498,7 @@ atesla:
 	RenderDetectionCircle:
 	Power:
 		Amount: -75
+		RequiresCondition: !chronodisable
 	AutoTarget:
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
@@ -1599,6 +1606,7 @@ garobo:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -50
+		RequiresCondition: !chronodisable
 	IsometricSelectable:
 		DecorationHeight: 60
 
@@ -1649,6 +1657,7 @@ gaapad:
 		RequiresCondition: !build-incomplete
 	Power:
 		Amount: -10
+		RequiresCondition: !chronodisable
 	Reservable:
 	Exit@1:
 		Facing: 896
@@ -1790,6 +1799,7 @@ gamgun:
 		Type: mirageturret
 	Power:
 		Amount: -25
+		RequiresCondition: !chronodisable
 	RequiresBuildableArea:
 		Adjacent: 15
 	-Cloak@stealth-generator:
@@ -1864,6 +1874,7 @@ gagun:
 		Type: gunturret
 	Power:
 		Amount: -15
+		RequiresCondition: !chronodisable
 	RequiresBuildableArea:
 		Adjacent: 4
 	WithIdleOverlay@waves:
