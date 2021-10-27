@@ -810,6 +810,7 @@ gayard:
 	ProductionBar:
 		ProductionType: Ship.Allies
 	SpawnActorPower@sonar:
+		PauseOnCondition: chronodisable
 		Icons:
 			1: sonar
 		Cursor: reveal
@@ -1233,7 +1234,7 @@ gaspysat:
 	Exit:
 	SupportPowerChargeBar:
 	ProduceActorPower@SatelliteScan:
-		PauseOnCondition: disabled
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: gaspysat
 		Descriptions:
