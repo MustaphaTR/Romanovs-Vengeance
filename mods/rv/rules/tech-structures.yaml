@@ -13,6 +13,7 @@ caoild:
 		InitialDelay: 100
 		Interval: 250
 		Amount: 100
+		PauseOnCondition: chronodisable
 		RequiresCondition: enabled
 	Tooltip:
 		Name: Tech Oil Derrick
@@ -26,10 +27,11 @@ caoild:
 		Type: Wood
 	WithIdleOverlay@pump:
 		Sequence: idle-pump
-		PauseOnCondition: !enabled
+		PauseOnCondition: !enabled || chronodisable
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 1000,0,0
+		PauseOnCondition: chronodisable
 	# GrantConditionAfterDelay@Cash:
 	#	Delay: 1
 	#	ShowSelectionBar: false
@@ -244,8 +246,10 @@ caairp:
 		DirectionArrowPalette: mouse
 	SupportPowerChargeBar:
 	WithIdleOverlay@decoration:
+		PauseOnCondition: chronodisable
 	WithIdleOverlay@flag:
 		Sequence: flag
+		PauseOnCondition: chronodisable
 	GpsDotAS:
 		Range: 25c0
 		Sequence: Paradrop
@@ -279,9 +283,11 @@ cahosp:
 		Prerequisite: cahosp
 		RequiresCondition: enabled
 	WithIdleOverlay:
+		PauseOnCondition: chronodisable
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 0,-500,2520
+		PauseOnCondition: chronodisable
 	GpsDotAS:
 		Range: 25c0
 		Sequence: Hospital
@@ -359,6 +365,7 @@ caoutp:
 		Sequence: bib
 	WithIdleOverlay@flag:
 		Sequence: flag
+		PauseOnCondition: chronodisable
 	WithResupplyAnimation:
 		Sequence: active-crane
 	BodyOrientation:
@@ -418,6 +425,7 @@ capowr:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 1000,0,0
+		PauseOnCondition: chronodisable
 	Power:
 		Amount: 400
 		RequiresCondition: !chronodisable
@@ -451,6 +459,7 @@ camach:
 		RequiresCondition: enabled
 	WithIdleOverlay@flag:
 		Sequence: flag
+		PauseOnCondition: chronodisable
 	GpsDotAS:
 		Range: 25c0
 		Sequence: MachineShop
@@ -479,6 +488,7 @@ caslab:
 		Type: Concrete
 	WithIdleOverlay@flag:
 		Sequence: flag
+		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@buildingname:
 	GpsDotAS:
 		Range: 25c0
@@ -525,6 +535,7 @@ cacomm:
 		Type: Wood
 	WithIdleOverlay@flag:
 		Sequence: flag
+		PauseOnCondition: chronodisable
 	GpsDotAS:
 		Range: 25c0
 		Sequence: Communications
@@ -553,6 +564,7 @@ caarmr:
 		Type: Wood
 	WithIdleOverlay@flag:
 		Sequence: flag
+		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@buildingname:
 	GpsDotAS:
 		Range: 25c0
@@ -586,6 +598,7 @@ carpad:
 		Sequence: bib
 	WithIdleOverlay@flag:
 		Sequence: flag
+		PauseOnCondition: chronodisable
 	WithDeliveryAnimation:
 	RallyPoint:
 		Path: 0,3
@@ -694,9 +707,10 @@ capsyb:
 		RequiresCondition: emp || (disabled && enabled)
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
-		PauseOnCondition: !enabled || disabled
+		PauseOnCondition: !enabled || disabled || chronodisable
 	WithIdleOverlay@flag:
 		Sequence: flag
+		PauseOnCondition: chronodisable
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable
@@ -835,6 +849,7 @@ camisl:
 		RequiresCondition: emp || (disabled && enabled)
 	WithIdleOverlay@flag:
 		Sequence: flag
+		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@buildingname:
 	GpsDotAS:
 		Range: 25c0
