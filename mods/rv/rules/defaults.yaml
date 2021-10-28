@@ -1336,6 +1336,7 @@
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
 	-GrantConditionOnPrerequisite@INSTANTCAPTURE:
+	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-GivesExperience:
 	-UpdatesPlayerStatistics:
@@ -1436,6 +1437,7 @@
 
 ^TechBuilding:
 	Inherits: ^Building
+	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-GivesExperience:
 	-UpdatesPlayerStatistics:
@@ -1649,6 +1651,7 @@
 	-CapturableProgressBar:
 	-CapturableProgressBlink:
 	-GrantConditionOnPrerequisite@INSTANTCAPTURE:
+	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-WithSpriteBody:
 	WithGateSpriteBody:
@@ -2043,6 +2046,7 @@
 		Types: CivilianInfantry
 	ScaredyCat:
 	-GivesExperience:
+	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-TakeCover:
 	Voiced:
@@ -2248,11 +2252,10 @@
 		SellSounds: cashturn.aud
 		Cursor: sell2
 		Notification: UnitSold
-		RequiresCondition: unit.sellable && !airborne
+		RequiresCondition: unit.sellable
 	ProximityExternalCondition:
 		Condition: unit.docked
 		Range: 1c0
-		RequiresCondition: !airborne
 	ExternalCondition@Sellable:
 		Condition: unit.sellable
 	HiddenUnderFog:
