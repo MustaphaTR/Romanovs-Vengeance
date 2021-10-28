@@ -128,6 +128,27 @@ eins:
 	WithInfantryBody:
 		-DefaultAttackSequence:
 
+mumy:
+	Inherits: ^CivilianInfantry
+	Tooltip:
+		Name: Mummy
+	Tooltip@NoRow:
+		Name: Mummy
+	Health:
+		HP: 40000
+	Armor:
+		Type: Plate
+	Armament@primary:
+		Weapon: MummyPunch
+	Armament@second:
+		Weapon: MummySmash
+	WithInfantryBody:
+		IdleSequences: idle1, idle2
+	Voiced:
+		VoiceSet: MummyVoice
+	-ScaredyCat:
+	-Wanders:
+
 # Custom Civilians
 pentgen2:
 	Inherits: pentgen
