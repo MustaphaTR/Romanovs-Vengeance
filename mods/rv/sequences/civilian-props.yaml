@@ -117,68 +117,37 @@ trff01:
 		ShadowStart: 1
 
 camsc01:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
-		Offset: 0,-15
+	Inherits: ^CivProp
 
 camsc02:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
-		Offset: 0,-15
+	Inherits: ^CivProp
 
 camsc03:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
-		Offset: 0,-15
+	Inherits: ^CivProp
 
 camsc04:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
-		Offset: 0,-15
+	Inherits: ^CivProp
 
 camsc05:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
-		Offset: 0,-15
+	Inherits: ^CivProp
 
 camsc06:
-	Defaults:
-		UseTilesetCode: true
-		Offset: 0,-15
-	idle:
-		ShadowStart: 3
+	Inherits: ^CivProp
 	idle-fire: camsc06a
 		Length: 4
 		ShadowStart: 4
 		Tick: 80
 
 camsc11:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
+	Inherits: ^CivProp
 
 camsc12:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
+	Inherits: ^CivProp
 
 camsc13:
+	Inherits: ^CivProp
 	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
+		Offset: 15,-22
 
 trff02:
 	Defaults:
@@ -199,81 +168,63 @@ trff04:
 		ShadowStart: 1
 
 camisc01:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
+	Inherits: ^CivProp
 
 camisc02:
-	Defaults:
-		UseTilesetCode: true
-	idle:
+	Inherits: ^CivProp
 
 camisc03:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
+	Inherits: ^CivProp
 
 camisc04:
-	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
+	Inherits: ^CivProp
 
 camisc05:
+	Inherits: ^CivProp
 	Defaults:
-		UseTilesetCode: true
+		Offset: 0,-15
 	idle:
+		ShadowStart: 2
+	damaged-idle:
+		Start: 1
 		ShadowStart: 3
 
 camisc06:
+	Inherits: ^CivProp
 	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
+		Offset: -15,-22
 
 caeuro05:
+	Inherits: ^CivBuildingNoRubble
 	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
 		Offset: 0,-30
 
 capark01:
+	Inherits: ^CivProp
 	Defaults:
-		UseTilesetCode: true
 		TilesetOverrides:
 			NEWURBAN: TEMPERATE
-	idle:
-		ShadowStart: 3
-		Offset: 0,-15
 
 capark02:
+	Inherits: ^CivProp
 	Defaults:
-		UseTilesetCode: true
 		TilesetOverrides:
 			NEWURBAN: TEMPERATE
-	idle:
-		ShadowStart: 3
-		Offset: 0,-15
 
 capark03:
+	Inherits: ^CivProp
 	Defaults:
-		UseTilesetCode: true
-	idle:
-		ShadowStart: 3
 		Offset: 0,-30
 
 ammo01:
-	idle:
-		ShadowStart: 3
-		Offset: 0,-15
+	Inherits: ^CivProp
+	Defaults:
+		UseTilesetCode: false
 
 cabhut:
-	idle:
-		ShadowStart: 3
-		Offset: 0, -15
+	Inherits: ^CivProp
+	Defaults:
+		UseTilesetCode: false
 
 gagate_a:
 	Defaults:
@@ -297,59 +248,70 @@ spkr01:
 
 # Yuri's Revenge Props
 cabarr01:
-	idle:
-		ShadowStart: 3
-		Offset: 0, -15
+	Inherits: ^CivProp
+	Defaults:
+		UseTilesetCode: false
 
 cabarr02:
-	idle:
-		ShadowStart: 3
-		Offset: 0, -15
+	Inherits: ^CivProp
+	Defaults:
+		UseTilesetCode: false
 
 capark04:
-	idle: cgpark04
+	Inherits: ^CivProp
+	Defaults: cgpark04
+		UseTilesetCode: false
+	idle:
 		ShadowStart: 1
-		Offset: 0,-15
 
 capark05:
-	idle: cgpark05
+	Inherits: ^CivProp
+	Defaults: cgpark05
+		UseTilesetCode: false
+	idle:
 		ShadowStart: 1
-		Offset: 0,-15
 
 capark06:
-	idle: cgpark06
+	Inherits: ^CivProp
+	Defaults: cgpark06
+		UseTilesetCode: false
+	idle:
 		ShadowStart: 1
-		Offset: 0,-15
-
-capark06:
-	idle: cgpark06
-		ShadowStart: 1
-		Offset: 0,-15
 
 casin03e:
-	idle: cgsin03e
+	Inherits: ^CivProp
+	Defaults: cgsin03e
+		UseTilesetCode: false
+	idle:
 		ShadowStart: 1
-		Offset: 0,-15
 
 casin03s:
-	idle: cgsin03s
+	Inherits: ^CivProp
+	Defaults: cgsin03s
+		UseTilesetCode: false
+	idle:
 		ShadowStart: 1
-		Offset: 0,-15
 
 caurb01:
-	idle: cgurb01
+	Inherits: ^CivProp
+	Defaults: cgurb01
+		UseTilesetCode: false
+	idle:
 		ShadowStart: 1
-		Offset: 0,-15
 
 caurb02:
-	idle: cgurb02
+	Inherits: ^CivProp
+	Defaults: cgurb02
+		UseTilesetCode: false
+	idle:
 		ShadowStart: 1
-		Offset: 0,-15
 
 caurb03:
-	idle: cuurb03
+	Inherits: ^CivProp
+	Defaults: cuurb03
+		UseTilesetCode: false
+	idle:
 		ShadowStart: 1
-		Offset: 0,-15
 
 # Custom Props
 cagatene:
@@ -389,8 +351,8 @@ cagatesw:
 		Offset: 0,0
 
 capark07:
-	idle: cgpark07
-		UseTilesetCode: true
+	Inherits: ^CivProp
+	Defaults:
 		TilesetOverrides:
 			TEMPERATE: GENERIC
 			URBAN: GENERIC
@@ -398,5 +360,5 @@ capark07:
 			DESERT: GENERIC
 			LUNAR: GENERIC
 			DUNE: GENERIC
+	idle:
 		ShadowStart: 2
-		Offset: 0,-15

@@ -368,6 +368,7 @@ cawash01.rubble:
 		Dimensions: 4, 4
 	RenderSprites:
 		Image: cawash01
+		Palette: rubble-urban
 
 cawash03:
 	Inherits: ^GarrisonableBuilding
@@ -389,6 +390,8 @@ cawash03.rubble:
 		Dimensions: 4, 3
 	RenderSprites:
 		Image: cawash03
+		-Palette:
+		PlayerPalette: player
 
 cawash04:
 	Inherits: ^GarrisonableBuilding
@@ -590,6 +593,7 @@ cawsh12.rubble:
 		Dimensions: 3, 3
 	RenderSprites:
 		Image: cawsh12
+		Palette: rubble-urban
 
 cawash13:
 	Inherits: ^GarrisonableBuilding
@@ -640,6 +644,7 @@ cawash14.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: cawash14
+		Palette: rubble-urban
 
 cawash15:
 	Inherits: ^CivBuilding
@@ -669,6 +674,7 @@ cawash15.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: cawash15
+		Palette: rubble-urban
 
 cawash16:
 	Inherits: ^CivBuilding
@@ -838,6 +844,7 @@ canewy04.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: canewy04
+		Palette: rubble-urban
 
 canewy05:
 	Inherits: ^CivBuilding
@@ -856,7 +863,10 @@ canewy05:
 		Dimensions: 2,2
 		Footprint: xx xx
 	IsometricSelectable:
-		DecorationHeight: 120
+		DecorationHeight: 240
+	RenderSprites:
+		PlayerPalette:
+		Palette: city
 
 canewy06:
 	Inherits: ^GarrisonableBuilding
@@ -1343,6 +1353,8 @@ cafarm02.rubble:
 	Inherits: ^Rubble
 	RenderSprites:
 		Image: cafarm02
+		-Palette:
+		PlayerPalette: player
 
 cafarm06:
 	Inherits: ^GarrisonableBuilding
@@ -2489,6 +2501,7 @@ capars01.rubble:
 		Footprint: ____ ____ ____ ____
 	RenderSprites:
 		Image: capars01
+		Palette: rubble-urban
 
 capars02:
 	Inherits: ^GarrisonableBuilding
@@ -2696,6 +2709,7 @@ capars11.rubble:
 		Footprint: ___ ___ ___ ___
 	RenderSprites:
 		Image: capars11
+		Palette: rubble-urban
 
 capars12:
 	Inherits: ^GarrisonableBuilding
@@ -2778,9 +2792,9 @@ cafrma:
 	Inherits: ^GarrisonableBuilding
 	Inherits@shape: ^2x2Shape
 	Tooltip:
-		Name: Farmhouse
+		Name: Farm House
 	Tooltip@NoRow:
-		Name: Farmhouse
+		Name: Farm House
 	Health:
 		HP: 80000
 	Building:
@@ -2895,9 +2909,14 @@ carus01.rubble:
 		Footprint: ____ ____ ____ ____
 	RenderSprites:
 		Image: carus01
+		Palette: rubble-snow
 
 carus02a:
 	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Kremlin Walls
+	Tooltip@NoRow:
+		Name: Kremlin Walls
 	Armor:
 		Type: Concrete
 	Health:
@@ -2905,8 +2924,6 @@ carus02a:
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: carus02a.rubble
-	MapEditorData:
-		RequireTilesets: SNOW
 	IsometricSelectable:
 		DecorationHeight: 165
 
@@ -2917,11 +2934,14 @@ carus02a.rubble:
 		Footprint: _
 	RenderSprites:
 		Image: carus02a
-	MapEditorData:
-		RequireTilesets: SNOW
+		Palette: rubble-snow
 
 carus02b:
 	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Kremlin Walls
+	Tooltip@NoRow:
+		Name: Kremlin Walls
 	Armor:
 		Type: Concrete
 	Health:
@@ -2939,6 +2959,7 @@ carus02b.rubble:
 		Footprint: _
 	RenderSprites:
 		Image: carus02b
+		Palette: rubble-snow
 
 carus02g:
 	Inherits: ^GarrisonableBuilding
@@ -2951,8 +2972,6 @@ carus02g:
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: carus02g.rubble
-	MapEditorData:
-		RequireTilesets: SNOW
 	IsometricSelectable:
 		DecorationHeight: 180
 
@@ -2960,6 +2979,7 @@ carus02g.rubble:
 	Inherits: ^Rubble
 	RenderSprites:
 		Image: carus02g
+		Palette: rubble-snow
 
 carus03:
 	Inherits: ^GarrisonableBuilding
@@ -3788,6 +3808,7 @@ cachig04.rubble:
 		Footprint: __ __
 	RenderSprites:
 		Image: cachig04
+		Palette: rubble-urban
 
 cachig05:
 	Inherits: ^GarrisonableBuilding
@@ -3846,6 +3867,7 @@ cachig06.rubble:
 		Footprint: __ __
 	RenderSprites:
 		Image: cachig06
+		Palette: rubble-urban
 
 castl01:
 	Inherits: ^GarrisonableBuilding
@@ -3930,6 +3952,7 @@ castl04.rubble:
 		Footprint: __ __ __ __ __ __
 	RenderSprites:
 		Image: castl04
+		Palette: rubble-urban
 
 castl05a:
 	Inherits: ^CivBuilding
@@ -4354,6 +4377,7 @@ camorr01.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: camorr01
+		Palette: rubble-temperate
 
 camorr02:
 	Inherits: ^GarrisonableBuilding
@@ -4375,6 +4399,7 @@ camorr02.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: camorr02
+		Palette: rubble-temperate
 
 camorr03:
 	Inherits: ^GarrisonableBuilding
@@ -4396,6 +4421,7 @@ camorr03.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: camorr03
+		Palette: rubble-temperate
 
 camorr04:
 	Inherits: ^GarrisonableBuilding
@@ -4417,6 +4443,7 @@ camorr04.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: camorr04
+		Palette: rubble-temperate
 
 camorr05:
 	Inherits: ^GarrisonableBuilding
@@ -4438,6 +4465,7 @@ camorr05.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: camorr05
+		Palette: rubble-temperate
 
 camorr06:
 	Inherits: ^GarrisonableBuilding
@@ -4459,6 +4487,7 @@ camorr06.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: camorr06
+		Palette: rubble-temperate
 
 camorr07:
 	Inherits: ^GarrisonableBuilding
@@ -4480,6 +4509,7 @@ camorr07.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: camorr07
+		Palette: rubble-temperate
 
 camorr08:
 	Inherits: ^GarrisonableBuilding
@@ -4501,6 +4531,7 @@ camorr08.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: camorr08
+		Palette: rubble-temperate
 
 camorr09:
 	Inherits: ^GarrisonableBuilding
@@ -4522,6 +4553,7 @@ camorr09.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: camorr09
+		Palette: rubble-temperate
 
 camorr10:
 	Inherits: ^GarrisonableBuilding
@@ -4543,6 +4575,7 @@ camorr10.rubble:
 		Footprint: __ __
 	RenderSprites:
 		Image: camorr10
+		Palette: rubble-temperate
 
 cala01:
 	Inherits: ^GarrisonableBuilding
@@ -4934,7 +4967,7 @@ caegyp01:
 		DeathType: NonTemporal
 		Actor: caegyp01.rubble
 	IsometricSelectable:
-		DecorationHeight: 265
+		DecorationHeight: 210
 
 caegyp01.rubble:
 	Inherits: ^Rubble
@@ -4944,6 +4977,7 @@ caegyp01.rubble:
 		Footprint: ____ ____ ____ ____
 	RenderSprites:
 		Image: caegyp01
+		Palette: rubble-temperate
 
 caegyp02:
 	Inherits: ^GarrisonableBuilding
@@ -4969,6 +5003,7 @@ caegyp02.rubble:
 		Footprint: ____ ____ ____ ____
 	RenderSprites:
 		Image: caegyp02
+		Palette: rubble-temperate
 
 caegyp03:
 	Inherits: ^CivBuilding
@@ -4999,7 +5034,8 @@ caegyp03.rubble:
 		Dimensions: 4,2
 		Footprint: ____ ____
 	RenderSprites:
-		Image: caegyp02
+		Image: caegyp03
+		Palette: rubble-temperate
 
 caegyp04:
 	Inherits: ^CivBuilding
@@ -5021,7 +5057,7 @@ caegyp04:
 		DeathType: NonTemporal
 		Actor: caegyp04.rubble
 	IsometricSelectable:
-		DecorationHeight: 265
+		DecorationHeight: 210
 
 caegyp04.rubble:
 	Inherits: ^Rubble
@@ -5031,6 +5067,7 @@ caegyp04.rubble:
 		Footprint: ____ ____ ____ ____
 	RenderSprites:
 		Image: caegyp04
+		Palette: rubble-temperate
 
 caegyp05:
 	Inherits: ^CivBuilding
@@ -5052,7 +5089,7 @@ caegyp05:
 		DeathType: NonTemporal
 		Actor: caegyp05.rubble
 	IsometricSelectable:
-		DecorationHeight: 265
+		DecorationHeight: 210
 
 caegyp05.rubble:
 	Inherits: ^Rubble
@@ -5062,6 +5099,7 @@ caegyp05.rubble:
 		Footprint: ____ ____ ____ ____
 	RenderSprites:
 		Image: caegyp05
+		Palette: rubble-temperate
 
 caegyp06:
 	Inherits: ^CivBuilding
@@ -5093,6 +5131,7 @@ caegyp06.rubble:
 		Footprint: ____ ____ ____ ____
 	RenderSprites:
 		Image: caegyp06
+		Palette: rubble-temperate
 
 calond01:
 	Inherits: ^GarrisonableBuilding
@@ -5114,6 +5153,7 @@ calond01.rubble:
 		Footprint: __ __ __
 	RenderSprites:
 		Image: calond01
+		Palette: rubble-newurban
 
 calond03:
 	Inherits: ^GarrisonableBuilding
@@ -5135,6 +5175,7 @@ calond03.rubble:
 		Footprint: __ __ __
 	RenderSprites:
 		Image: calond03
+		Palette: rubble-temperate
 
 calond04:
 	Inherits: ^GarrisonableBuilding
@@ -5160,6 +5201,7 @@ calond04.rubble:
 		Footprint: ______ ______ ______ ______
 	RenderSprites:
 		Image: calond04
+		Palette: rubble-temperate
 
 calond05:
 	Inherits: ^GarrisonableBuilding
@@ -5184,6 +5226,7 @@ calond05.rubble:
 		Footprint: _
 	RenderSprites:
 		Image: calond05
+		Palette: rubble-newurban
 
 calond06:
 	Inherits: ^GarrisonableBuilding
@@ -5213,6 +5256,7 @@ calond06.rubble:
 		Footprint: ____ ____ ____ ____
 	RenderSprites:
 		Image: calond06
+		Palette: rubble-newurban
 
 casanf01:
 	Inherits: ^GarrisonableBuilding
@@ -5234,6 +5278,7 @@ casanf01.rubble:
 		Footprint: __ __ __
 	RenderSprites:
 		Image: casanf01
+		Palette: rubble-temperate
 
 casanf02:
 	Inherits: ^GarrisonableBuilding
@@ -5255,6 +5300,7 @@ casanf02.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: casanf02
+		Palette: rubble-temperate
 
 casanf03:
 	Inherits: ^GarrisonableBuilding
@@ -5276,6 +5322,7 @@ casanf03.rubble:
 		Footprint: __ __ __
 	RenderSprites:
 		Image: casanf03
+		Palette: rubble-temperate
 
 casanf05:
 	Inherits: ^GarrisonableBuilding
@@ -5324,6 +5371,7 @@ casanf06.rubble:
 		Footprint: ___ ___
 	RenderSprites:
 		Image: casanf06
+		Palette: rubble-newurban
 
 casanf07:
 	Inherits: ^GarrisonableBuilding
@@ -5345,6 +5393,7 @@ casanf07.rubble:
 		Footprint: ___ ___
 	RenderSprites:
 		Image: casanf07
+		Palette: rubble-temperate
 
 casanf08:
 	Inherits: ^GarrisonableBuilding
@@ -5366,6 +5415,7 @@ casanf08.rubble:
 		Footprint: ___ ___ ___
 	RenderSprites:
 		Image: casanf08
+		Palette: rubble-temperate
 
 casanf15:
 	Inherits: ^CivBuilding

@@ -1341,6 +1341,8 @@
 	-UpdatesPlayerStatistics:
 	-RepairableBuilding:
 	-WithBuildingRepairDecoration:
+	Buildable:
+		Queue: Building.Civilian
 	EngineerRepairable:
 		Types: civilian
 	Health:
@@ -1422,7 +1424,7 @@
 		Dimensions: 1,1
 		Footprint: _
 	RenderSprites:
-		Palette: terrain
+		Palette: rubble
 	WithSpriteBody:
 		Sequence: rubble
 	FrozenUnderFog:
@@ -1477,8 +1479,6 @@
 		Action: ChangeOwner
 	IsometricSelectable:
 		DecorationHeight: 120
-	Buildable:
-		Queue: Building.Civilian
 	Building:
 		Footprint: x
 		Dimensions: 1, 1

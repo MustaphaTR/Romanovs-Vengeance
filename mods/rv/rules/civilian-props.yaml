@@ -473,8 +473,20 @@ camov02:
 	WithIdleOverlay:
 	Garrisonable:
 		MaxWeight: 5
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: camov02.rubble
 	IsometricSelectable:
 		DecorationHeight: 60
+
+camov02.rubble:
+	Inherits: ^Rubble
+	Inherits@shape: ^2x2Shape
+	Building:
+		Dimensions: 2,2
+		Footprint: __ __
+	RenderSprites:
+		Image: camov02
 
 pole01:
 	Inherits: ^TelephonePole
@@ -572,17 +584,23 @@ spkr01:
 
 carus02c:
 	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Kremlin Walls
+	Tooltip@NoRow:
+		Name: Kremlin Walls
 	Armor:
 		Type: concrete
 	Health:
 		HP: 100000
 	MapEditorData:
 		Categories: Wall
-	IsometricSelectable:
-		DecorationHeight: 15
 
 carus02d:
 	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Kremlin Walls
+	Tooltip@NoRow:
+		Name: Kremlin Walls
 	Armor:
 		Type: concrete
 	Health:
@@ -592,6 +610,10 @@ carus02d:
 
 carus02e:
 	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Kremlin Walls
+	Tooltip@NoRow:
+		Name: Kremlin Walls
 	Armor:
 		Type: concrete
 	Health:
@@ -601,6 +623,10 @@ carus02e:
 
 carus02f:
 	Inherits: ^CivBuilding
+	Tooltip:
+		Name: Kremlin Walls
+	Tooltip@NoRow:
+		Name: Kremlin Walls
 	Armor:
 		Type: concrete
 	Health:

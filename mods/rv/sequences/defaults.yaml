@@ -113,6 +113,45 @@
 	cheer:
 		Start: 293
 
+^CivProp:
+	Defaults:
+		UseTilesetCode: true
+		Offset: 0,-15
+	idle:
+		ShadowStart: 3
+	icon: cameo|xxicon
+		UseTilesetCode: false
+		Offset: 0,0
+
+^CivBuilding:
+	Defaults:
+		UseTilesetCode: true
+	idle:
+		ShadowStart: 4
+	damaged-idle:
+		Start: 1
+		ShadowStart: 5
+	rubble:
+		Start: 3
+		ShadowStart: 7
+		ZOffset: -3c0
+	icon: cameo|xxicon
+		UseTilesetCode: false
+		Offset: 0,0
+
+^CivBuildingNoRubble:
+	Inherits: ^CivBuilding
+	idle:
+		ShadowStart: 3
+	damaged-idle:
+		ShadowStart: 4
+	-rubble:
+
+^GarrisonableBuilding:
+	garrisoned:
+		Start: 2
+		ShadowStart: 6
+
 ^Fence:
 	Defaults:
 		Offset: 0,-15
@@ -155,11 +194,6 @@
 	icon: cameo|xxicon
 		Offset: 0,0
 		UseTilesetCode: false
-
-^GarrisonableBuilding:
-	garrisoned:
-		Start: 2
-		ShadowStart: 6
 
 ^WithMachineGunMuzzle:
 	muzzle:
