@@ -32,9 +32,11 @@ nacnst:
 		IntoActor: smcv
 	WithIdleOverlay@top:
 		Sequence: idle-top
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
@@ -80,59 +82,73 @@ nacnst:
 	WithIdleOverlay@USSR:
 		Sequence: flag-russia
 		Palette: ussr
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && russia
 	WithIdleOverlay@Iraq:
 		Sequence: flag-iraq
 		Palette: iraq
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && iraq
 	WithIdleOverlay@Vietnam:
 		Sequence: flag-vietnam
 		Palette: vietnam
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && vietnam
 	WithIdleOverlay@Cuba:
 		Sequence: flag-cuba
 		Palette: cuba
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && cuba
 	WithIdleOverlay@Libya:
 		Sequence: flag-libya
 		Palette: libya
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && libya
 	WithIdleOverlay@Chile:
 		Sequence: flag-chile
 		Palette: chile
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && chile
 	WithIdleOverlay@Mexico:
 		Sequence: flag-mexico
 		Palette: mexico
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && mexico
 	WithIdleOverlay@Mongolia:
 		Sequence: flag-mongolia
 		Palette: mongolia
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && mongolia
 	WithIdleOverlay@Transcaucasia:
 		Sequence: flag-transcaucus
 		Palette: transcaucasia
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && transcaucus
 	WithIdleOverlay@Turkmenistan:
 		Sequence: flag-turkmen
 		Palette: turkmenistan
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && turkmen
 	WithIdleOverlay@Tuva:
 		Sequence: flag-tuva
 		Palette: tuva
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && tuva
 	WithIdleOverlay@Russia:
 		Sequence: flag-russianfed
 		Palette: russia
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && russianfed
 	WithIdleOverlay@Serbia:
 		Sequence: flag-serbia
 		Palette: serbia
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && serbia
 	WithIdleOverlay@FlagShadow:
 		Sequence: flag-shadow
 		Palette: shadow
 		IsPlayerPalette: false
+		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && (russia || iraq || vietnam || cuba || libya || chile || mexico || mongolia || transcaucus || turkmen || tuva || russianfed || serbia)
 	IsometricSelectable:
 		DecorationHeight: 90
