@@ -1,4 +1,4 @@
-mpspawn:
+^SystemActor:
 	Immobile:
 		OccupiesSpace: false
 	BodyOrientation:
@@ -8,6 +8,9 @@ mpspawn:
 	QuantizeFacingsFromSequence:
 	MapEditorData:
 		Categories: System
+
+mpspawn:
+	Inherits: ^SystemActor
 	GrantConditionOnPrerequisite@megawealth:
 		Condition: megawealth
 		Prerequisites: global-megawealth
@@ -16,15 +19,7 @@ mpspawn:
 		RequiresCondition: megawealth
 
 waypoint:
-	Immobile:
-		OccupiesSpace: false
-	BodyOrientation:
-	AlwaysVisible:
-	RenderSpritesEditorOnly:
-	WithSpriteBody:
-	QuantizeFacingsFromSequence:
-	MapEditorData:
-		Categories: System
+	Inherits: ^SystemActor
 
 oreclearer:
 	Immobile:
@@ -33,8 +28,7 @@ oreclearer:
 	ClearsResources:
 
 ^ambient:
-	Inherits: waypoint
-	-Immobile:
+	Inherits: ^SystemActor
 	Aircraft:
 		CruiseAltitude: 0c1
 		VTOL: true
