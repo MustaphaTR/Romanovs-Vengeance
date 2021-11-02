@@ -208,9 +208,13 @@ commanders_power.gatling_training:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
-		Description: Makes Gatling Tanks and Gatling Troopers train as veteran.
+		Description: Makes Gatling Tanks, Gatling Submarines and Gatling Troopers train as veteran.
 	ProvidesPrerequisite@powername:
 		Prerequisite: vetytnk
+	ProvidesPrerequisite@gtrp:
+		Prerequisite: vetgtrp
+	ProvidesPrerequisite@gatsub:
+		Prerequisite: vetgatsub
 
 commanders_power.intel_drop:
 	Inherits: ^default.commanders_power
