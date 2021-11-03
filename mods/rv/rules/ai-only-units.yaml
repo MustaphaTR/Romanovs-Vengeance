@@ -267,6 +267,36 @@ shad-squad-4:
 	Cargo:
 		InitialUnits: e1, ggi, ggi, ghost, ghost, dog, dog
 
+txdx-squad-1:
+	Inherits: txdx
+	Inherits@AI: ^AITransportControl
+	Selectable:
+		Class: txdx
+	Buildable:
+		Prerequisites: yabrck, ~prerequisite.aiplayer, yatech, ~techlevel.4, ~!LoadedExists, ~!yurix
+	Cargo:
+		InitialUnits: init, brute, brute, yurix, dog
+	ProductionCostMultiplier@1:
+		Multiplier: 125
+	RenderSprites:
+		Image: txdx
+	RenderVoxels:
+		Image: txdx
+
+txdx-squad-2:
+	Inherits: txdx-squad-1
+	Buildable:
+		Prerequisites: yabrck, ~prerequisite.aiplayer, yadome, ~techlevel.3, ~!LoadedExists
+	Cargo:
+		InitialUnits: init, brute, brute, yuripsi, dog
+
+txdx-squad-3:
+	Inherits: txdx-squad-1
+	Buildable:
+		Prerequisites: yabrck, ~prerequisite.aiplayer, ~techlevel.2, ~!LoadedExists
+	Cargo:
+		InitialUnits: brute, brute, brute, brute, brute
+
 schp-ai:
 	Inherits: schp
 	Buildable:
