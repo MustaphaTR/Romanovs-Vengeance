@@ -1356,6 +1356,9 @@ naflak:
 		Range: 5c0
 		RequiresCondition: !disabled
 	RenderDetectionCircle:
+	Voiced:
+		VoiceSet: FlakCannonVoice
+		Volume: 0.8
 
 tesla:
 	Inherits: ^SupportBuilding
@@ -1504,6 +1507,9 @@ nalasr:
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	Voiced:
+		VoiceSet: SentryGunVoice
+		Volume: 0.8
 
 # Yuri's Revenge Structures
 nabnkr:
@@ -1897,6 +1903,8 @@ naexpn:
 	#	IntoActor: exps
 	RenderSprites:
 		Image: gaexpn
+	Voiced:
+		VoiceSet: SovietExpansionNodeVoice
 
 napowb:
 	Inherits: napowr
