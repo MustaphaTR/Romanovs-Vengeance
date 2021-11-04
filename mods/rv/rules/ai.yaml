@@ -1230,7 +1230,7 @@ Player:
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		SuggestedLeaderLocomotor: foot, wheeled, tracked, heavytracked
-		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, kite, havoc, ltnk, ytnk, caos, yhtnk, disk, txdx, magnedisk
+		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
 	SquadManagerBotModule@no_bases:
 		RequiresCondition: enable-generic-ai && no_bases
 		SquadSize: 10
@@ -1246,7 +1246,7 @@ Player:
 		NavalUnitsTypes: dest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		SuggestedLeaderLocomotor: foot, wheeled, tracked, heavytracked
-		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, kite, havoc, ltnk, ytnk, caos, yhtnk, disk, txdx, magnedisk
+		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
 	McvManagerBotModule@generic:
 		RequiresCondition: enable-generic-ai
 		McvTypes: amcv, smcv, pcv
@@ -1255,7 +1255,7 @@ Player:
 		MinimumConstructionYardCount: 2
 	UnitBuilderBotModule@easy:
 		RequiresCondition: enable-easy-ai && !megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Libya, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1298,6 +1298,7 @@ Player:
 			ytnk: 40
 			dron: 2
 			robo: 2
+			smrj: 1
 			tric: 10
 			v3: 10
 			hwtz: 10
@@ -1313,6 +1314,7 @@ Player:
 			mind: 10
 			ctnk: 2
 			deva: 2
+			qyzyl: 1
 			grtk: 2
 			orca: 5
 			beag: 2
@@ -1353,6 +1355,7 @@ Player:
 			mech: 2
 			dron: 1
 			robo: 2
+			smrj: 1
 			expn: 1
 			exps: 1
 			expy: 1
@@ -1365,7 +1368,7 @@ Player:
 			havoc: 3
 	UnitBuilderBotModule@easy-megawealth:
 		RequiresCondition: enable-easy-ai && megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Libya, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1404,6 +1407,7 @@ Player:
 			ytnk: 40
 			dron: 2
 			robo: 2
+			smrj: 1
 			tric: 10
 			v3: 10
 			hwtz: 10
@@ -1419,6 +1423,7 @@ Player:
 			mind: 10
 			ctnk: 2
 			deva: 2
+			qyzyl: 1
 			grtk: 2
 			orca: 5
 			beag: 2
@@ -1459,6 +1464,7 @@ Player:
 			mech: 2
 			dron: 1
 			robo: 2
+			smrj: 1
 			orca: 3
 			beag: 1
 			txdx: 1
@@ -1468,7 +1474,7 @@ Player:
 			havoc: 3
 	UnitBuilderBotModule@cheater:
 		RequiresCondition: enable-cheater-ai && !megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Libya, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1514,6 +1520,7 @@ Player:
 			ytnk: 40
 			dron: 2
 			robo: 2
+			smrj: 1
 			tric: 10
 			v3: 10
 			hwtz: 10
@@ -1529,6 +1536,7 @@ Player:
 			mind: 10
 			ctnk: 2
 			deva: 2
+			qyzyl: 1
 			grtk: 2
 			orca: 5
 			beag: 2
@@ -1577,6 +1585,7 @@ Player:
 			itrp: 1
 			dron: 1
 			robo: 2
+			smrj: 1
 			expn: 1
 			exps: 1
 			expy: 1
@@ -1592,7 +1601,7 @@ Player:
 			zep: 1
 	UnitBuilderBotModule@cheater-megawealth:
 		RequiresCondition: enable-cheater-ai && megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Libya, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1634,6 +1643,7 @@ Player:
 			ytnk: 40
 			dron: 2
 			robo: 2
+			smrj: 1
 			tric: 10
 			v3: 10
 			hwtz: 10
@@ -1649,6 +1659,7 @@ Player:
 			mind: 10
 			ctnk: 2
 			deva: 2
+			qyzyl: 1
 			grtk: 2
 			orca: 5
 			beag: 2
@@ -1697,6 +1708,7 @@ Player:
 			itrp: 1
 			dron: 1
 			robo: 2
+			smrj: 1
 			orca: 3
 			beag: 1
 			fortress: 2
@@ -1709,7 +1721,7 @@ Player:
 			zep: 1
 	UnitBuilderBotModule@vengeful:
 		RequiresCondition: enable-vengeful-ai && !megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Libya, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1752,6 +1764,7 @@ Player:
 			htk: 1
 			htk-dron: 1
 			htk-squad-1: 1
+			kamaz-squad-1: 1
 			fv: 1
 			fv-e1: 1
 			fv-ggi: 1
@@ -1763,6 +1776,7 @@ Player:
 			ytnk: 40
 			dron: 2
 			robo: 2
+			smrj: 1
 			tric: 10
 			v3: 10
 			hwtz: 10
@@ -1778,6 +1792,7 @@ Player:
 			mind: 10
 			ctnk: 2
 			deva: 2
+			qyzyl: 1
 			grtk: 2
 			orca: 5
 			beag: 2
@@ -1799,9 +1814,11 @@ Player:
 			hind-htnk: 1
 			hind-ftnk: 1
 			hind-ttnk: 1
+			hind-dtruck: 1
 			hind-apoc: 1
 			hind-htk-squad-1: 1
 			hind-htk-squad-2: 1
+			hind-htk-squad-3: 1
 			expn: 1
 			exps: 1
 			expy: 1
@@ -1842,6 +1859,7 @@ Player:
 			itrp: 1
 			dron: 1
 			robo: 2
+			smrj: 1
 			orca: 3
 			beag: 1
 			fortress: 2
@@ -1854,7 +1872,7 @@ Player:
 			zep: 1
 	UnitBuilderBotModule@vengeful-megawealth:
 		RequiresCondition: enable-vengeful-ai && megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Libya, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1891,6 +1909,7 @@ Player:
 			htk: 1
 			htk-dron: 1
 			htk-squad-1: 1
+			kamaz-squad-1: 1
 			fv: 1
 			fv-e1: 1
 			fv-ggi: 1
@@ -1902,6 +1921,7 @@ Player:
 			ytnk: 40
 			dron: 2
 			robo: 2
+			smrj: 1
 			tric: 10
 			v3: 10
 			hwtz: 10
@@ -1917,6 +1937,7 @@ Player:
 			mind: 10
 			ctnk: 2
 			deva: 2
+			qyzyl: 1
 			grtk: 2
 			orca: 5
 			beag: 2
@@ -1938,9 +1959,11 @@ Player:
 			hind-htnk: 1
 			hind-ftnk: 1
 			hind-ttnk: 1
+			hind-dtruck: 1
 			hind-apoc: 1
 			hind-htk-squad-1: 1
 			hind-htk-squad-2: 1
+			hind-htk-squad-3: 1
 			expn: 1
 			exps: 1
 			expy: 1
@@ -1979,6 +2002,7 @@ Player:
 			mech: 2
 			dron: 1
 			robo: 2
+			smrj: 1
 			expn: 1
 			exps: 1
 			expy: 1
