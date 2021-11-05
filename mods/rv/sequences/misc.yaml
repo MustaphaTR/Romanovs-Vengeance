@@ -598,6 +598,36 @@ debris:
 	rock3: dbri-wm3
 	# was unused in vRA2
 	flyingbody: dbrs10sm
+	meteor1: bits/projectiles/meteor
+		Length: 8
+		Facings: 8
+	meteor2: bits/projectiles/meteor2
+		Length: 8
+		Facings: 8
+
+meteortrail:
+	Defaults: bits/projectiles/meteortrail
+	idle:
+		Length: *
+		Tick: 25
+		ZOffset: 3000
+		BlendMode: Additive
+	idle2:
+		Length: *
+		ZOffset: 3000
+		BlendMode: Additive
+	idle3:
+		Start: 10
+		Length: *
+		ZOffset: 3000
+		Tick: 75
+		BlendMode: Additive
+	idle4:
+		Start: 14
+		Length: *
+		ZOffset: 3000
+		Tick: 50
+		BlendMode: Additive
 
 dynamite:
 	idle: cache|bombcurs

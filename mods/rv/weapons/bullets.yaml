@@ -562,7 +562,7 @@ CruiserCloud:
 	Warhead@1: FireFragment
 		UseZOffsetAsAbsoluteHeight: true
 		Weapon: CruiserStrike
-		ValidTargets: Air, Ground, Water
+		ValidTargets: Ground, Water, Air
 		Delay: 15
 	Warhead@TargetValidation: SpreadDamage
 
@@ -655,7 +655,7 @@ OrbitalCloud:
 	Warhead@1: FireFragment
 		UseZOffsetAsAbsoluteHeight: true
 		Weapon: OrbitalDrop
-		ValidTargets: Air, Ground, Water
+		ValidTargets: Ground, Water, Air
 		Delay: 15
 	Warhead@TargetValidation: SpreadDamage
 
@@ -666,11 +666,16 @@ OrbitalDrop:
 	Report: vkiratta.wav
 	Projectile: BulletAS
 		Image: debris
-		Sequences: large1, large2, large3, large4, large5, large6, large7, large8, large9, large10, rock1, rock2, rock3
-		Speed: 768
+		Sequences: meteor2, meteor2, meteor2, large1, large2, large3, large4, large5, large6, large7, large8, large9, large10, rock1, rock2, rock3
+		Speed: 640
+		TrailImage: meteortrail
+		TrailPalette: tseffect50alpha
+		TrailInterval: 1
 		Blockable: false
-		ContrailLength: 10
-		ContrailWidth: 24
+		ContrailLength: 18
+		ContrailColor: 8888FF55
+		ContrailWidth: 250
+		ContrailDelay: 10
 		Shadow: true
 		Palette: effect
 	Warhead@1Dam: SpreadDamage
