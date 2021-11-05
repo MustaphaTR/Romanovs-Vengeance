@@ -398,10 +398,11 @@ ScoutDroneSpawner:
 	Warhead@1Spa: SpawnActor
 		Actors: sdrn.spawner
 		Range: 1
-		ValidTargets: Ground, Water, Air
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@2Eff: CreateEffect
 		Delay: 1
 		ImpactSounds: vdr2crea.wav
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 
 SpyCameraWeapon:
@@ -412,7 +413,7 @@ SpyCameraWeapon:
 	Warhead@1Spa: SpawnActor
 		Actors: camera.spyplane
 		Range: 1
-		ValidTargets: Ground, Water, Air
+		ValidTargets: Ground, OreDrill, Water, Air
 		ForceGround: true
 
 PsychicReveal:
@@ -421,10 +422,11 @@ PsychicReveal:
 	Warhead@1Spa: SpawnActor
 		Actors: camera.psychicreveal
 		Range: 1
-		ValidTargets: Ground, Water, Air
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: scananim
 		ExplosionPalette: tseffect
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 
 RadEruptionWeapon:
@@ -619,6 +621,7 @@ BunkerSpawner:
 	Warhead@1Spa: SpawnBuilding
 		Buildings: nabnkr
 		Sounds: uplace.wav
+		ValidTargets: Ground, OreDrill, Water, Air
 
 BarrelSpawner:
 	Warhead@1Spa: SpawnBuilding
@@ -626,21 +629,26 @@ BarrelSpawner:
 		Delay: 15
 		Range: 3
 		Sounds: uplace.wav
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: chronofd
 		ImpactSounds: schrmov.wav
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 
 AmbushSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: AmbushSpawnerE2
 		Amount: 9
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@2Sha: FireShrapnel
 		Weapon: AmbushSpawnerFlakt
 		Amount: 6
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@TargetValidation: TargetDamage
 	Warhead@3Eff: CreateEffect
 		ImpactSounds: sambusha.aud
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 
 AmbushSpawnerE2:
@@ -661,21 +669,27 @@ HologramSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: HologramSpawnerInit
 		Amount: 8
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@2Sha: FireShrapnel
 		Weapon: HologramSpawnerBrute
 		Amount: 4
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@3Sha: FireShrapnel
 		Weapon: HologramSpawnerGtrp
 		Amount: 2
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@4Sha: FireShrapnel
 		Weapon: HologramSpawnerLtnk
 		Amount: 3
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@5Sha: FireShrapnel
 		Weapon: HologramSpawnerYtnk
 		Amount: 1
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@TargetValidation: TargetDamage
 	Warhead@6Eff: CreateEffect
 		ImpactSounds: holoinit.aud
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 
 ^HologramSpawnerDefault:
@@ -684,7 +698,7 @@ HologramSpawner:
 	Warhead@2Eff: CreateEffect
 		Explosions: holosmoke1, holosmoke2, holosmoke3, holosmoke4
 		ExplosionPalette: cyanjascpal
-		ValidTargets: Ground, Water, Air
+		ValidTargets: Ground, OreDrill, Water, Air
 
 HologramSpawnerInit:
 	Inherits: ^HologramSpawnerDefault
@@ -715,6 +729,7 @@ LethocerusSpawnerSpawnerSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: LethocerusSpawnerSpawner
 		Amount: 3
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@TargetValidation: TargetDamage
 
 LethocerusSpawnerSpawner:
@@ -722,15 +737,18 @@ LethocerusSpawnerSpawner:
 	Projectile: InstantHit
 	Warhead@1Spa: SpawnActor
 		Actors: txdx.spawner
+		ValidTargets: Ground, OreDrill, Water, Air
 
 GrizzlySpawner:
 	Warhead@1Spa: SpawnActor
 		Actors: mtnk,mtnk,mtnk
 		Delay: 15
 		Range: 3
+		ValidTargets: Ground, OreDrill, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: chronofd
 		ImpactSounds: schrmov.wav
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 
 DemoTruckTargeting:
@@ -1043,7 +1061,7 @@ DroppodElevator:
 droppod:
 	ReloadDelay: 3
 	Range: 3c0
-	ValidTargets: Ground, Water, BlueTiberium, Tiberium, Air, Vehicle, Building, Infantry, Water
+	ValidTargets: Ground, Water, Air, Vehicle, Building, Infantry
 	Projectile: BulletAS
 		Speed: 350
 		Image: pod
@@ -1071,6 +1089,7 @@ droppod:
 	Warhead@5Effect: SpawnActor
 		Actors: brute
 		Range: 3
+		ValidTargets: Ground, OreDrill, Water, Air
 
 AirDummyAim:
 	Range: 8c0
