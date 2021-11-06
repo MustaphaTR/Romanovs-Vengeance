@@ -510,6 +510,7 @@ CruiserStrikeInit:
 		Volume: 6
 		AudibleThroughFog: true
 		ImpactSounds: scruweaa.wav
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 	Warhead@1Clu: FireCluster
 		Weapon: CruiserCloud
@@ -608,7 +609,8 @@ OrbitalDropInit:
 	Warhead@1Eff: CreateEffect
 		Volume: 6
 		AudibleThroughFog: true
-		ImpactSounds: scruweaa.wav
+		ImpactSounds: sorbsata.wav, sorbsatb.wav
+		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 	Warhead@1Clu: FireCluster
 		Weapon: OrbitalDrop
@@ -663,7 +665,8 @@ OrbitalDrop:
 	Inherits: ^LargeBullet
 	Range: 7c0
 	ReloadDelay: 10
-	Report: vkiratta.wav
+	Report: sorbfira.wav, sorbfirb.wav, sorbfirc.wav, sorbfird.wav, sorbfire.wav, sorbfirf.wav, sorbfirg.wav, sorbmeta.wav, sorbmetb.wav, sorbmetc.wav, sorbmetd.wav, sorbmete.wav, sorbmetf.wav, sorbmetg.wav, sorbmeth.wav
+	SoundVolume: 5
 	Projectile: BulletAS
 		Image: debris
 		Sequences: meteor2, meteor2, meteor2, large1, large2, large3, large4, large5, large6, large7, large8, large9, large10, rock1, rock2, rock3
