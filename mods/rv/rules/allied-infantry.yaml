@@ -381,6 +381,8 @@ e1:
 	RejectsOrders@deployment:
 		Reject: AttackMove, AssaultMove
 		RequiresCondition: !ai-control && deployed && !chaos
+	RejectsMoveToAttack:
+		RequiresCondition: !ai-control && deployed && !chaos
 	TakeCover:
 		RequiresCondition: undeployed
 	Voiced:
@@ -616,6 +618,8 @@ ggi:
 		ArmamentNames: deployed
 	RejectsOrders@deployment:
 		Reject: AttackMove, AssaultMove
+		RequiresCondition: !ai-control && deployed && !chaos
+	RejectsMoveToAttack:
 		RequiresCondition: !ai-control && deployed && !chaos
 	TakeCover:
 		RequiresCondition: undeployed
