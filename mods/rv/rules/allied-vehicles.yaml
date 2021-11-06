@@ -616,6 +616,15 @@ fv:
 		OutsideRangeCursor: goldwrench
 		TargetRelationships: Ally
 		ForceTargetRelationships: None
+	Armament@demo:
+		Weapon: DemoTruckTargeting
+		RequiresCondition: ifv-demo
+	GrantConditionOnAttack@demo:
+		Condition: triggered
+		RequiresCondition: ifv-demo
+	KillsSelf@demo:
+		DamageTypes: NonTemporal
+		RequiresCondition: triggered
 	Armament@hijack:
 		Weapon: CRGrind
 		LocalOffset: 164,0,864
