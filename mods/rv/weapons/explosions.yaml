@@ -405,21 +405,6 @@ ToxinTrooperBombE:
 		Speed: 0, 25
 		TurnRate: 10
 
-CRNuke:
-	Inherits: IvanBomber
-	Warhead@1Dam: SpreadDamage
-		Spread: 426
-		Damage: 20000
-		ValidTargets: Ground, Water
-		Versus:
-			Light: 90
-			Medium: 50
-			Heavy: 50
-			Wood: 60
-			Steel: 150
-	Warhead@2Eff: CreateEffect
-		Explosions: large_tumu
-
 TerrorBomb:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 20
@@ -451,11 +436,6 @@ TerrorBomb:
 		ValidTargets: Ground, Water, Air
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: SmallCrater
-
-CRTerrorBomb:
-	Inherits: TerrorBomb
-	Warhead@1Dam: SpreadDamage
-		Damage: 50000 # 25000
 
 DeathBombExplode:
 	Inherits: TerrorBomb

@@ -121,6 +121,26 @@ CRGrenadeE:
 		ExplosionPalette: tseffect
 		ImpactSounds: sempexpl.wav
 
+CRNuke:
+	Inherits: IvanBomber
+	Warhead@1Dam: SpreadDamage
+		Spread: 426
+		Damage: 40000 # 20000
+		ValidTargets: Ground, Water
+		Versus:
+			Light: 90
+			Medium: 50
+			Heavy: 50
+			Wood: 60
+			Steel: 150
+	Warhead@2Eff: CreateEffect
+		Explosions: large_tumu
+
+CRTerrorBomb:
+	Inherits: TerrorBomb
+	Warhead@1Dam: SpreadDamage
+		Damage: 50000 # 25000
+
 CRElectricBolt:
 	Inherits: ElectricBolt
 	Range: 5c0
