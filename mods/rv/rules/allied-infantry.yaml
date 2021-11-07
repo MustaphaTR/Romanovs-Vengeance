@@ -124,11 +124,11 @@ dog:
 	Tooltip:
 		Name: Attack Dog
 		GenericName: Dog
-		RequiresCondition: !allies && !soviet && showownername
+		RequiresCondition: !allies && !soviet && !psicorps && showownername
 	Tooltip@NoRow:
 		Name: Attack Dog
 		GenericName: Dog
-		RequiresCondition: !allies && !soviet && !showownername
+		RequiresCondition: !allies && !soviet && !psicorps && !showownername
 	Tooltip@Allies:
 		Name: German Shepherd
 		GenericName: Dog
@@ -147,12 +147,24 @@ dog:
 		GenericName: Dog
 		ShowOwnerRow: false
 		RequiresCondition: soviet && !showownername
+	Tooltip@PsiCorps:
+		Name: Rottweiler
+		GenericName: Dog
+		RequiresCondition: psicorps && showownername
+	Tooltip@PsiCorps-NoRow:
+		Name: Rottweiler
+		GenericName: Dog
+		ShowOwnerRow: false
+		RequiresCondition: psicorps && !showownername
 	GrantConditionOnFaction@Allies:
 		Condition: allies
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 	GrantConditionOnFaction@Soviet:
 		Condition: soviet
-		Factions: cuba, libya, iraq, russia, vietnam, chile, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+	GrantConditionOnFaction@PsiCorps:
+		Condition: psicorps
+		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 	Selectable:
 		Bounds: 724, 1158, 0, -241
 	Health:
