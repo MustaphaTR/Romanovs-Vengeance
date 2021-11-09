@@ -45,14 +45,14 @@ engineer:
 	RepairsBridges:
 		RepairNotification: BridgeRepaired
 	Captures@INSTANT:
-		CaptureTypes: building, husk
+		CaptureTypes: building, tech, husk
 		RequiresCondition: instantcapture
 	Captures@TIMED:
 		CaptureDelay: 75
 		CaptureTypes: building, husk
 		RequiresCondition: !instantcapture
-	Captures@TechBuilding:
-		CaptureTypes: TechBuilding
+	Captures@TECH:
+		CaptureTypes: tech
 		CaptureDelay: 250
 		RequiresCondition: !instantcapture
 	GrantConditionOnPrerequisite@INSTANTCAPTURE:
