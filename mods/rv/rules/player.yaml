@@ -12,24 +12,64 @@ EditorPlayer:
 Player:
 	Inherits: ^BasePlayer
 	TechTree:
-	ClassicProductionQueue@Allies:
+	ClassicProductionQueue@CPAllies:
 		Type: Power.Allies
 		Group: Power
 		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
-	ClassicProductionQueue@Soviets:
+	ClassicProductionQueue@CPSoviets:
 		Type: Power.Soviets
 		Group: Power
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia
-	ClassicProductionQueue@PsiCorps:
+	ClassicProductionQueue@CPPsiCorps:
 		Type: Power.Yuri
 		Group: Power
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
-	ClassicProductionQueue@BakuPact:
+	ClassicProductionQueue@CPBakuPact:
 		Type: Power.Baku
 		Group: Power
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+	ClassicProductionQueue@UpgAllies:
+		Type: Upgrade.Allies
+		Group: Upgrade
+		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		ReadyAudio: UpgradeComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: UpgradeInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ClassicProductionQueue@UpgSoviets:
+		Type: Upgrade.Soviets
+		Group: Upgrade
+		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia
+		ReadyAudio: UpgradeComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: UpgradeInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ClassicProductionQueue@UpgPsiCorps:
+		Type: Upgrade.Yuri
+		Group: Upgrade
+		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
+		ReadyAudio: UpgradeComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: UpgradeInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ClassicProductionQueue@UpgBakuPact:
+		Type: Upgrade.Baku
+		Group: Upgrade
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+		ReadyAudio: UpgradeComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: UpgradeInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	Production:
-		Produces: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
+		Produces: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 	PlaceBuilding:
 		ToggleVariantKey: ToggleVariant
 		NewOptionsNotification: NewOptions

@@ -173,6 +173,7 @@ fv:
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
@@ -700,7 +701,11 @@ fv:
 	Armament@flak:
 		Weapon: CRFlakGuyGun
 		LocalOffset: 256,0,1536
-		RequiresCondition: ifv-flak && !rank-elite
+		RequiresCondition: ifv-flak && !impflaks && !rank-elite
+	Armament@flak-insta:
+		Weapon: CRFlakGuyGunInsta
+		LocalOffset: 256,0,1536
+		RequiresCondition: ifv-flak && impflaks && !rank-elite
 	Armament@flak-aa:
 		Weapon: CRFlakGuyGunAA
 		LocalOffset: 256,0,1536
@@ -708,7 +713,11 @@ fv:
 	Armament@flak-elite:
 		Weapon: CRFlakGuyGunE
 		LocalOffset: 256,0,1536
-		RequiresCondition: ifv-flak && rank-elite
+		RequiresCondition: ifv-flak && !impflaks && rank-elite
+	Armament@flak-insta-elite:
+		Weapon: CRFlakGuyGunInstaE
+		LocalOffset: 256,0,1536
+		RequiresCondition: ifv-flak && impflaks && rank-elite
 	Armament@flak-aa-elite:
 		Weapon: CRFlakGuyGunAAE
 		LocalOffset: 256,0,1536

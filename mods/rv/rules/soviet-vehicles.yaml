@@ -180,6 +180,7 @@ htk:
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
@@ -240,7 +241,12 @@ htk:
 		Weapon: FlakTrackGun
 		LocalOffset: 256,0,1536
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite
+		RequiresCondition: !impflaks && !rank-elite
+	Armament@primary-insta:
+		Weapon: FlakTrackGunInsta
+		LocalOffset: 256,0,1536
+		MuzzleSequence: muzzle
+		RequiresCondition: impflaks && !rank-elite
 	Armament@secondary:
 		Weapon: FlakTrackAAGun
 		LocalOffset: 256,0,1536
@@ -250,7 +256,12 @@ htk:
 		Weapon: FlakTrackGunE
 		LocalOffset: 256,0,1536
 		MuzzleSequence: muzzle
-		RequiresCondition: rank-elite
+		RequiresCondition: !impflaks && rank-elite
+	Armament@primary-insta-elite:
+		Weapon: FlakTrackGunInstaE
+		LocalOffset: 256,0,1536
+		MuzzleSequence: muzzle
+		RequiresCondition: impflaks && rank-elite
 	Armament@secondary-elite:
 		Weapon: FlakTrackAAGunE
 		LocalOffset: 256,0,1536

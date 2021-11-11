@@ -12,6 +12,16 @@ FlakGuyGunE:
 	Burst: 2
 	Range: 5c0
 
+FlakGuyGunInsta:
+	Inherits: FlakGuyGun
+	-Projectile:
+	Projectile: InstantHit
+
+FlakGuyGunInstaE:
+	Inherits: FlakGuyGunE
+	-Projectile:
+	Projectile: InstantHit
+
 FlakGuyAAGun:
 	Inherits: ^AAFlak
 	Range: 8c0
@@ -35,6 +45,16 @@ UCFlakGuyGunE:
 	Projectile: BulletAS
 		Blockable: false
 
+UCFlakGuyGunInsta:
+	Inherits: UCFlakGuyGun
+	-Projectile:
+	Projectile: InstantHit
+
+UCFlakGuyGunInstaE:
+	Inherits: UCFlakGuyGunE
+	-Projectile:
+	Projectile: InstantHit
+
 UCFlakGuyAAGun:
 	Inherits: FlakGuyAAGun
 
@@ -54,6 +74,16 @@ FlakTrackGunE:
 	Inherits: FlakTrackGun
 	Burst: 2
 	Range: 6c0
+
+FlakTrackGunInsta:
+	Inherits: FlakTrackGun
+	-Projectile:
+	Projectile: InstantHit
+
+FlakTrackGunInstaE:
+	Inherits: FlakTrackGunE
+	-Projectile:
+	Projectile: InstantHit
 
 FlakTrackAAGun:
 	Inherits: ^AAFlak

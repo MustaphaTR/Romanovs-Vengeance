@@ -480,6 +480,27 @@
 	ExternalCondition@BOOST3:
 		Condition: boost3
 
+^AffectedByAdvancedTraining:
+	GainsExperienceMultiplier@ADVTRAINING:
+		Modifier: 150
+		RequiresCondition: advtraining
+	GrantConditionOnPrerequisite@ADVTRAINING:
+		Condition: advtraining
+		Prerequisites: upgrade.advanced_training
+
+^AffectedByImprovedFlaks:
+	GrantConditionOnPrerequisite@IMPFLAKS:
+		Condition: impflaks
+		Prerequisites: upgrade.improved_flaks
+
+^AffectedByChainguns:
+	FirepowerMultiplier@CHAINGUNS:
+		Modifier: 125
+		RequiresCondition: chainguns
+	GrantConditionOnPrerequisite@CHAINGUNS:
+		Condition: chainguns
+		Prerequisites: upgrade.chainguns
+
 ^HealsInAmbulance:
 	ChangesHealth@HOSPITAL:
 		PercentageStep: 50

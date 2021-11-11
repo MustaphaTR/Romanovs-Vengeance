@@ -87,6 +87,7 @@ flakt:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
@@ -129,7 +130,13 @@ flakt:
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !impflaks && !rank-elite
+	Armament@primary-insta:
+		Weapon: FlakGuyGunInsta
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		PauseOnCondition: chronodisable
+		RequiresCondition: impflaks && !rank-elite
 	Armament@secondary:
 		Weapon: FlakGuyAAGun
 		LocalOffset: 256,0,1024
@@ -141,7 +148,13 @@ flakt:
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !impflaks && rank-elite
+	Armament@primary-insta-elite:
+		Weapon: FlakGuyGunInstaE
+		LocalOffset: 256,0,1024
+		MuzzleSequence: muzzle
+		PauseOnCondition: chronodisable
+		RequiresCondition: impflaks && rank-elite
 	Armament@secondary-elite:
 		Weapon: FlakGuyAAGunE
 		LocalOffset: 256,0,1024
@@ -153,7 +166,13 @@ flakt:
 		Weapon: UCFlakGuyGun
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !impflaks && !rank-elite
+	Armament@primary-garrisoned-insta:
+		Name: garrisoned
+		Weapon: UCFlakGuyGunInsta
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: impflaks && !rank-elite
 	Armament@secondary-garrisoned:
 		Name: garrisoned
 		Weapon: UCFlakGuyAAGun
@@ -165,7 +184,13 @@ flakt:
 		Weapon: UCFlakGuyGunE
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !impflaks && rank-elite
+	Armament@primary-elite-garrisoned-insta:
+		Name: garrisoned
+		Weapon: UCFlakGuyGunInstaE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: impflaks && rank-elite
 	Armament@secondary-elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCFlakGuyAAGunE
@@ -177,7 +202,13 @@ flakt:
 		Weapon: FlakGuyGun
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !impflaks && !rank-elite
+	Armament@primary-opentopped-insta:
+		Name: opentopped
+		Weapon: FlakGuyGunInsta
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: impflaks && !rank-elite
 	Armament@secondary-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyAAGun
@@ -189,7 +220,13 @@ flakt:
 		Weapon: FlakGuyGunE
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !impflaks && rank-elite
+	Armament@primary-elite-opentopped-insta:
+		Name: opentopped
+		Weapon: FlakGuyGunInstaE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: impflaks && rank-elite
 	Armament@secondary-elite-opentopped:
 		Name: opentopped
 		Weapon: FlakGuyAAGunE
