@@ -327,6 +327,7 @@ zephusk:
 
 orca:
 	Inherits: ^Plane
+	Inherits@A2A: ^AffectedByA2AMissiles
 	Inherits@AI: ^AIMicroManagable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
@@ -387,6 +388,14 @@ orca:
 		Weapon: MaverickE
 		PauseOnCondition: !ammo
 		RequiresCondition: rank-elite
+	Armament@AA:
+		Weapon: MaverickAA
+		PauseOnCondition: !ammo
+		RequiresCondition: a2amissiles && !rank-elite
+	Armament@EliteAA:
+		Weapon: MaverickAAE
+		PauseOnCondition: !ammo
+		RequiresCondition: a2amissiles && rank-elite
 	AttackAircraft:
 		FacingTolerance: 20
 		Voice: Attack
@@ -550,6 +559,9 @@ beag:
 		Weapon: EMPulseBEagle
 	Armament@Elite:
 		Weapon: EMPulseBEagleE
+	-Armament@AA:
+	-Armament@EliteAA:
+	-GrantConditionOnPrerequisite@A2AMISSILES:
 	AmmoPool:
 		Ammo: 1
 		ReloadDelay: 200
@@ -1330,6 +1342,7 @@ spyphusk:
 
 schp:
 	Inherits: ^Helicopter
+	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1597,6 +1610,9 @@ bpln:
 		Weapon: Maverick3
 	Armament@Elite:
 		Weapon: Maverick3E
+	-Armament@AA:
+	-Armament@EliteAA:
+	-GrantConditionOnPrerequisite@A2AMISSILES:
 	AttackAircraft:
 		RequiresCondition: ammo
 	Health:

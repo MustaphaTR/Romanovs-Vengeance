@@ -480,6 +480,11 @@
 	ExternalCondition@BOOST3:
 		Condition: boost3
 
+^AffectedByA2AMissiles:
+	GrantConditionOnPrerequisite@A2AMISSILES:
+		Condition: a2amissiles
+		Prerequisites: upgrade.a2a_missiles
+
 ^AffectedByAdvancedTraining:
 	GainsExperienceMultiplier@ADVTRAINING:
 		Modifier: 150
@@ -492,6 +497,22 @@
 	GrantConditionOnPrerequisite@IMPFLAKS:
 		Condition: impflaks
 		Prerequisites: upgrade.improved_flaks
+
+^AffectedByAPBullets:
+	FirepowerMultiplier@APBULLETS:
+		Modifier: 125
+		RequiresCondition: apbullets
+	GrantConditionOnPrerequisite@APBULLETS:
+		Condition: apbullets
+		Prerequisites: upgrade.ap_bullets
+
+^AffectedByToxinSprayer:
+	GainsExperienceMultiplier@TOXINSPRAYER:
+		Modifier: 0
+		RequiresCondition: !toxinsprayer
+	GrantConditionOnPrerequisite@TOXINSPRAYER:
+		Condition: toxinsprayer
+		Prerequisites: upgrade.toxin_sprayer
 
 ^AffectedByChainguns:
 	FirepowerMultiplier@CHAINGUNS:

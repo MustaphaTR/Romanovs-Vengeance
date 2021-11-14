@@ -196,6 +196,27 @@ MaverickE:
 	Warhead@1Gar: OpenToppedDamage
 		Damage: 20000
 
+MaverickAA:
+	Inherits: Maverick
+	Range: 8c0
+	ValidTargets: Air
+	Projectile: Missile
+		Speed: 640
+		RangeLimit: 14c512
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+MaverickAAE:
+	Inherits: MaverickE
+	Range: 11c0
+	ValidTargets: Air
+	Projectile: Missile
+		Speed: 640
+		RangeLimit: 16c512
+		ContrailColor: EA0000
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
 Maverick2:
 	Inherits: Maverick
 	Report: vbleatta.wav, vbleattb.wav

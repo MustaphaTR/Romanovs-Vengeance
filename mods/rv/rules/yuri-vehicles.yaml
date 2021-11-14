@@ -726,8 +726,10 @@ mlyr:
 kamaz:
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@TOXIN: ^AffectedByToxinSprayer
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -764,6 +766,23 @@ kamaz:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
+	Turreted:
+		TurnSpeed: 28
+		Offset: 512,0,1152
+	Armament@primary:
+		Weapon: ToxinSprayerTruck
+		LocalOffset: 640,0,64
+		PauseOnCondition: chronodisable
+		RequiresCondition: toxinsprayer && !rank-elite
+	Armament@elite:
+		Weapon: ToxinSprayerTruckE
+		LocalOffset: 640,0,64
+		PauseOnCondition: chronodisable
+		RequiresCondition: toxinsprayer && rank-elite
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp || parachute
+		RequiresCondition: toxinsprayer
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
 		MaxWeight: 5
@@ -779,6 +798,8 @@ kamaz:
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
+	WithVoxelTurret:
+		RequiresCondition: toxinsprayer
 	Voiced:
 		VoiceSet: FlakTrackVoice
 	ExternalCondition@PRODUCED:

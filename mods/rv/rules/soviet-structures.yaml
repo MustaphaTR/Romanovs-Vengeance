@@ -356,6 +356,8 @@ naradr:
 	ProvidesPrerequisite@baku:
 		Prerequisite: radar.baku
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+	ProvidesPrerequisite@upgrade.soviets:
+		Prerequisite: upgrade.soviets
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -995,10 +997,12 @@ natech:
 		Queue: Building.Soviets
 		Prerequisites: naradr, ~techlevel.3, ~!ai.natech
 		Description: Allows deployment of advanced units.
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@upgrade.soviets:
+		Prerequisite: upgrade.soviets
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.natech
-	ProvidesPrerequisite@default:
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -1451,6 +1455,7 @@ tesla:
 
 nalasr:
 	Inherits: ^SupportBuilding
+	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
