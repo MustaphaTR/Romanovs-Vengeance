@@ -79,6 +79,9 @@ shad:
 	#	Range: 8c0
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
 	-AppearsOnRadar:
 	AttackAircraft:
 		Voice: Attack
@@ -150,8 +153,6 @@ shad:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
-	DetectCloaked:
-		Range: 5c0
 
 shadhusk:
 	Inherits: ^HelicopterHusk
@@ -1421,6 +1422,10 @@ schp:
 	#	Range: 10c0
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+		RenderOnGround: true
 	AmmoPool:
 		Ammo: 1
 		AmmoCondition: ammo
@@ -1520,8 +1525,6 @@ schp:
 	RejectsOrders@deploymentAI:
 		Reject: AttackMove, AssaultMove, Attack #HACK: Deployed Siege Chopper will try to aim orignal target set by squad if not block the Attack order
 		RequiresCondition: ai-control && !undeployed
-	DetectCloaked:
-		Range: 5c0
 
 schphusk:
 	Inherits: ^HelicopterHusk
@@ -2204,6 +2207,7 @@ sdrn:
 	DetectCloaked:
 		Range: 6c0
 	RenderDetectionCircle:
+		RenderOnGround: true
 	AutoTakesOff:
 	Health:
 		HP: 10000
@@ -2267,6 +2271,10 @@ txdx:
 	#	Range: 10c0
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+		RenderOnGround: true
 	Armament@primary:
 		Weapon: MosquitoMissile
 		RequiresCondition: !rank-elite
@@ -2336,8 +2344,6 @@ txdx:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
-	DetectCloaked:
-		Range: 5c0
 
 txdxhusk:
 	Inherits: ^HelicopterHusk
