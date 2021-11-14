@@ -420,7 +420,7 @@ fv:
 		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Multi-Purpose Vehicle.\nWithout passenger:\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\nSpecial Ability: Armament depends on passenger.
+		Description: Multi-Purpose Vehicle.\nWithout passenger:\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\nSpecial Ability: Armament depends on passenger.\nSpecial Ability: Detects stealthed assets.
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -438,7 +438,7 @@ fv:
 		RequiresCondition: !ifv-dog
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
-	#	Range: 8c0
+	#	Range: 9c0
 	#	RequiresCondition: !ifv-dog
 	RevealsShroud@DOG:
 		Range: 10c0
@@ -456,6 +456,9 @@ fv:
 		RequiresCondition: ifv-dog
 	DetectCloaked:
 		Range: 5c0
+		RequiresCondition: !ifv-dog
+	DetectCloaked@DOG:
+		Range: 6c0
 		RequiresCondition: ifv-dog
 	RenderDetectionCircle:
 	PeriodicExplosion@medi:

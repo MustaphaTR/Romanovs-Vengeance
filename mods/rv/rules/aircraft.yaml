@@ -61,7 +61,7 @@ shad:
 		Queue: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		BuildPaletteOrder: 20
 		Prerequisites: gapile, ~techlevel.2
-		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: Infantry Transport Helicopter\nUndetectable by radar.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Detects stealthed assets.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -150,6 +150,8 @@ shad:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
+	DetectCloaked:
+		Range: 5c0
 
 shadhusk:
 	Inherits: ^HelicopterHusk
@@ -345,7 +347,7 @@ orca:
 		Queue: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		Prerequisites: !prerequisite.enoughair, ~techlevel.3
 		BuildPaletteOrder: 10
-		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n  Strong vs Infantry, Buildings, Vehicles\n  Weak vs Aircraft
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -763,7 +765,7 @@ pdplane.parabomb:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 270
+		Speed: 300
 
 a10:
 	Inherits: alplane
@@ -849,7 +851,7 @@ txbmb:
 		UsePlayerColor: False
 	-Contrail@2:
 	Aircraft:
-		Speed: 270
+		Speed: 300
 
 txbmbhusk:
 	Inherits: pdplanehusk
@@ -860,7 +862,7 @@ txbmbhusk:
 	RenderVoxels:
 		Image: txbmb
 	Aircraft:
-		Speed: 270
+		Speed: 300
 
 f22drop:
 	Inherits: alplane
@@ -1401,7 +1403,7 @@ schp:
 		Queue: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.3
-		Description: Helicopter capable of deploying into a long range artillery.\n\nMobile:\n Strong vs Infantry\n Weak vs Vehicles\nDeployed:\n Strong vs Buildings, Vehicles\n Weak vs Aircraft
+		Description: Helicopter capable of deploying into a long range artillery.\n\nMobile:\n Strong vs Infantry\n Weak vs Vehicles\nDeployed:\n Strong vs Buildings, Vehicles\n Weak vs Aircraft\nSpecial Ability: Detects stealthed assets.
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1518,6 +1520,8 @@ schp:
 	RejectsOrders@deploymentAI:
 		Reject: AttackMove, AssaultMove, Attack #HACK: Deployed Siege Chopper will try to aim orignal target set by squad if not block the Attack order
 		RequiresCondition: ai-control && !undeployed
+	DetectCloaked:
+		Range: 5c0
 
 schphusk:
 	Inherits: ^HelicopterHusk
@@ -2240,7 +2244,7 @@ txdx:
 		Queue: Aircraft.Yuri, Aircraft.Lazarus
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.2
-		Description: Light Transport Disc armed with toxin missile launchers.\n\n Strong vs Infantry\n Weak vs Structures, Aircraft
+		Description: Light Transport Disc armed with toxin missile launchers.\n\n Strong vs Infantry\n Weak vs Structures, Aircraft\nSpecial Ability: Detects stealthed assets.
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	Aircraft:
@@ -2332,6 +2336,8 @@ txdx:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
+	DetectCloaked:
+		Range: 5c0
 
 txdxhusk:
 	Inherits: ^HelicopterHusk

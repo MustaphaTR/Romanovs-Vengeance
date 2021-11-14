@@ -102,14 +102,14 @@ init:
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.1
 		Description: Basic Yuri Infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
-		BuildDuration: 75
+		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 100
+		Cost: 150
 	DeliversCash:
-		Payload: 50
+		Payload: 75
 		Voice: Move
 	Tooltip:
 		Name: Initiate
@@ -118,7 +118,7 @@ init:
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
-		HP: 10000
+		HP: 12500
 	Mobile:
 		Speed: 60
 	Garrisoner:
@@ -371,12 +371,28 @@ yuripsi:
 		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 90
 		Prerequisites: yadome, ~techlevel.3
+		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1000
 	DeliversCash:
 		Payload: 500
+	 -PeriodicExplosion:
+		Weapon: PsiWave
+		LocalOffset: 0,0,128
+		RequiresCondition: deployed && !chronodisable
+	 -GrantTimedConditionOnDeploy:
+		DeployedTicks: 50
+		CooldownTicks: 0
+		Facing: 96
+		DeployedCondition: deployed
+		DeployingCondition: deploying
+		DeployAnimation: deploy
+		UndeployAnimation: undeploy
+		ShowSelectionBar: false
+		Voice:
+		PauseOnCondition: chronodisable
 
 yurix:
 	Inherits: yuripr
@@ -909,12 +925,12 @@ spct:
 		PauseOnCondition: chronodisable
 	ProximityExternalCondition@INVISIBILITY-GENERATOR:
 		Condition: invisibility-generator
-		Range: 5c0
+		Range: 3c0
 		RequiresCondition: deployed
 	-Cloak@stealth-generator:
 	-ExternalCondition@INVISIBILITY-GENERATOR:
 	WithRangeCircle:
-		Range: 5c0
+		Range: 3c0
 		Type: invisibility
 		RequiresCondition: deployed
 	Voiced:

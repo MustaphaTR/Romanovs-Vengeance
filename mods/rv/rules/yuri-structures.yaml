@@ -109,11 +109,17 @@ yapowr:
 		Amount: 50
 		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 3
 	Power@4:
+		Amount: 50
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 4
+	Power@5:
+		Amount: 50
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 5
+	Power@6:
 		Amount: 100
 		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loadedvehicle
 	Cargo:
 		Types: Infantry, Garrisoner, NaturalVehicle
-		MaxWeight: 3
+		MaxWeight: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0

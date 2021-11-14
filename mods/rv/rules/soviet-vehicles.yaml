@@ -199,7 +199,7 @@ htk:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Infantry Transport and Anti-Air/Anti-Infantry vehicle.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles
+		Description: Infantry Transport and Anti-Air/Anti-Infantry vehicle.\n  Strong vs Aircraft, Infantry\n  Weak vs Vehicles\nSpecial Ability: Detects stealthed assets.
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -303,6 +303,8 @@ htk:
 	#	SoundFiles: vflastaa.wav, vflastab.wav, vflastac.wav, vflastad.wav
 	#	Volume: 0.35
 	#	RequiresCondition: moving
+	DetectCloaked:
+		Range: 5c0
 
 htnk:
 	Inherits: ^MainBattleTank
