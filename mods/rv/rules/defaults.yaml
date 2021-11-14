@@ -493,6 +493,14 @@
 		Condition: advtraining
 		Prerequisites: upgrade.advanced_training
 
+^AffectedByCompositeArmor:
+	DamageMultiplier@COMPOSITE_ARMOR:
+		Modifier: 75
+		RequiresCondition: composite_armor
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: composite_armor
+		Prerequisites: upgrade.composite_armor
+
 ^AffectedByImprovedFlaks:
 	GrantConditionOnPrerequisite@IMPFLAKS:
 		Condition: impflaks
@@ -506,6 +514,19 @@
 		Condition: apbullets
 		Prerequisites: upgrade.ap_bullets
 
+^AffectedByNuclearEngines:
+	SpeedMultiplier@NUCLEAR_ENGINES:
+		Modifier: 133
+		RequiresCondition: nuclear_engines
+	Explodes@NUCLEAR_ENGINES:
+		DeathTypes: NonTemporal
+		Weapon: NuclearEngineExplode
+		EmptyWeapon: NuclearEngineExplode
+		RequiresCondition: nuclear_engines
+	GrantConditionOnPrerequisite@NUCLEAR_ENGINES:
+		Condition: nuclear_engines
+		Prerequisites: upgrade.nuclear_engines
+
 ^AffectedByToxinSprayer:
 	GainsExperienceMultiplier@TOXINSPRAYER:
 		Modifier: 0
@@ -513,6 +534,19 @@
 	GrantConditionOnPrerequisite@TOXINSPRAYER:
 		Condition: toxinsprayer
 		Prerequisites: upgrade.toxin_sprayer
+
+^AffectedByCamouflage:
+	Cloak@CAMOUFLAGE:
+		RequiresCondition: camouflage && !chronodisable
+		InitialDelay: 25
+		CloakDelay: 100
+		IsPlayerPalette: true
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
+		UncloakOn: Attack, Damage
+	GrantConditionOnPrerequisite@CAMOUFLAGE:
+		Condition: camouflage 
+		Prerequisites: upgrade.camouflage
 
 ^AffectedByChainguns:
 	FirepowerMultiplier@CHAINGUNS:

@@ -28,12 +28,25 @@ upgrade.advanced_training:
 		Name: Advanced Training
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 550
+		BuildPaletteOrder: 50
 		BuildDuration: 625
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
 		Description: Makes the following units gain experience 50% faster:\n - G.I.\n - Guardian G.I.\n - Grenadier\n - Rocketeer\n - Navy SEAL\n - Tanya Adams\n - Chrono Commando
 	Valued:
 		Cost: 1000
+
+upgrade.composite_armor:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Composite Armor
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 60
+		BuildDuration: 750
+		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
+		Description: Reduces damage taken by following units by 75%:\n - Grizzly Tank\n - Mirage Tank\n - Tank Destroyer
+	Valued:
+		Cost: 1500
 
 upgrade.improved_flaks:
 	Inherits: ^default.upgrade
@@ -61,6 +74,19 @@ upgrade.ap_bullets:
 	Valued:
 		Cost: 1250
 
+upgrade.nuclear_engines:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Nuclear Engines
+	Buildable:
+		Queue: Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 60
+		BuildDuration: 750
+		Prerequisites: ~upgrade.soviets, gatech, ~techlevel.3
+		Description: Makes Rhino and Apocalypse Tanks move 33% faster and explode when destroyed.
+	Valued:
+		Cost: 1500
+
 upgrade.toxin_sprayer:
 	Inherits: ^default.upgrade
 	Tooltip:
@@ -73,6 +99,19 @@ upgrade.toxin_sprayer:
 		Description: Gives Armored Trucks a toxin sprayer weapon.
 	Valued:
 		Cost: 1000
+
+upgrade.camouflage:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Camouflage
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 40
+		BuildDuration: 750
+		Prerequisites: ~upgrade.yuri, gatech, ~techlevel.3
+		Description: Makes Initiates and Viruses stealth.
+	Valued:
+		Cost: 1500
 
 upgrade.chainguns:
 	Inherits: ^default.upgrade

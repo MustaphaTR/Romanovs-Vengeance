@@ -215,6 +215,19 @@ FlameTankExplode:
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: MediumScorch
 
+NuclearEngineExplode:
+	Inherits: FlameTankExplode
+	Warhead@1Eff: CreateEffect
+		Explosions: demotruck_explosion
+		ImpactSounds: vdemdiea.wav
+	Warhead@2Dam: SpreadDamage
+		Damage: 12500
+	-Warhead@2Eff:
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 2c0
+		Falloff: 100, 100
+		Level: 100
+
 PlaneExplode:
 	Inherits: KirovExplode
 	Warhead@2Dam: SpreadDamage
