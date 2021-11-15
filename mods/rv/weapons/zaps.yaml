@@ -602,6 +602,44 @@ MagneFreeze:
 		ValidRelationships: Neutral, Enemy
 		ValidTargets: MagneFreezable
 
+MagneShakeAdv:
+	Inherits: MagneShake
+	Projectile: LaserZap
+		Width: 320
+		Color: FF50F545
+		SecondaryBeam: true
+		SecondaryBeamWidth: 384
+		SecondaryBeamColor: FF505045
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
+
+MagneShakeAdvE:
+	Inherits: MagneShakeAdv
+	Warhead@1Dam: SpreadDamage
+		Damage: 11250
+
+MagneFreezeAdv:
+	Inherits: MagneFreeze
+	Projectile: LaserZap
+		Width: 320
+		Color: FF50F545
+		SecondaryBeam: true
+		SecondaryBeamWidth: 384
+		SecondaryBeamColor: FF505045
+	Warhead@1Dam: SpreadDamage
+		Range: 0, 32
+		Falloff: 100, 100
+		Damage: 5000
+		AffectsParent: false
+		ValidTargets: MagneFreezable
+		ValidRelationships: Neutral, Enemy
+		DamageTypes: NonTemporal
+
+MagneFreezeAdvE:
+	Inherits: MagneFreezeAdv
+	Warhead@1Dam: SpreadDamage
+		Damage: 5625
+
 DiskMagneShake:
 	Inherits: MagneShake
 	ReloadDelay: 100

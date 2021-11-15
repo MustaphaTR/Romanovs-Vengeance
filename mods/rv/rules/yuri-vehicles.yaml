@@ -475,6 +475,7 @@ caos:
 
 tele:
 	Inherits: ^Vehicle
+	Inherits@ADVMAGNETS: ^AffectedByAdvancedMagnetics
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -518,14 +519,31 @@ tele:
 	Armament@primary:
 		Weapon: MagneShake
 		LocalOffset: 512,0,1024
-		RequiresCondition: !rank-elite
+		RequiresCondition: !advmagnets && !rank-elite
 	Armament@elite:
 		Weapon: MagneShakeE
 		LocalOffset: 512,0,1024
-		RequiresCondition: rank-elite
+		RequiresCondition: !advmagnets && rank-elite
 	Armament@secondary:
 		Weapon: MagneFreeze
 		LocalOffset: 512,0,1024
+		RequiresCondition: !advmagnets
+	Armament@primary-adv:
+		Weapon: MagneShakeAdv
+		LocalOffset: 512,0,1024
+		RequiresCondition: advmagnets && !rank-elite
+	Armament@elite-adv:
+		Weapon: MagneShakeAdvE
+		LocalOffset: 512,0,1024
+		RequiresCondition: advmagnets && rank-elite
+	Armament@secondary-adv:
+		Weapon: MagneFreezeAdv
+		LocalOffset: 512,0,1024
+		RequiresCondition: advmagnets && !rank-elite
+	Armament@secondary-elite-adv:
+		Weapon: MagneFreezeAdvE
+		LocalOffset: 512,0,1024
+		RequiresCondition: advmagnets && rank-elite
 	AttackTurreted:
 		Voice: Attack
 		TargetFrozenActors: true
