@@ -381,6 +381,7 @@
 		Condition: leaflet
 
 ^AffectedByPropaganda:
+	Inherits@PROPEFFORT: ^AffectedByPropagandaEffort
 	FirepowerMultiplier@PROPAGANDA1:
 		Modifier: 125
 		RequiresCondition: propaganda1
@@ -390,6 +391,9 @@
 	FirepowerMultiplier@PROPAGANDA3:
 		Modifier: 175
 		RequiresCondition: propaganda3
+	FirepowerMultiplier@PROPAGANDA_UPG:
+		RequiresCondition: (propaganda1 || propaganda2 || propaganda3) && propeffort
+		Modifier: 125
 	ReloadDelayMultiplier@PROPAGANDA1:
 		Modifier: 80
 		RequiresCondition: propaganda1
@@ -399,6 +403,9 @@
 	ReloadDelayMultiplier@PROPAGANDA3:
 		Modifier: 57
 		RequiresCondition: propaganda3
+	ReloadDelayMultiplier@PROPAGANDA_UPG:
+		RequiresCondition: (propaganda1 || propaganda2 || propaganda3) && propeffort
+		Modifier: 80
 	SpeedMultiplier@PROPAGANDA:
 		Modifier: 70
 		RequiresCondition: propaganda1 || propaganda2 || propaganda3
@@ -423,6 +430,9 @@
 	ReloadDelayMultiplier@PROPAGANDA_TOWER:
 		RequiresCondition: propaganda_tower
 		Modifier: 75
+	ReloadDelayMultiplier@PROPAGANDA_TOWER_UPG:
+		RequiresCondition: propaganda_tower && propeffort
+		Modifier: 80
 	# WithColoredOverlay@PROPAGANDA_TOWER:
 	#	Color: FF800040
 	#	RequiresCondition: propaganda_tower
@@ -438,7 +448,14 @@
 		Delay: 30
 		StartIfBelow: 100
 		DamageCooldown: 0
-		RequiresCondition: propaganda_tower
+		RequiresCondition: propaganda_tower && !propeffort
+	ChangesHealth@PROPAGANDA_TOWER_UPG:
+		Step: 0
+		PercentageStep: 2
+		Delay: 24
+		StartIfBelow: 100
+		DamageCooldown: 0
+		RequiresCondition: propaganda_tower && propeffort
 	ExternalCondition@PROPAGANDA_TOWER:
 		Condition: propaganda_tower
 
@@ -485,6 +502,19 @@
 		Condition: a2amissiles
 		Prerequisites: upgrade.a2a_missiles
 
+^AffectedByEnduranceTraining:
+	SpeedMultiplier@ENDURANCE_TRAINING:
+		Modifier: 125
+		RequiresCondition: endurance_training
+	GrantConditionOnPrerequisite@ENDURANCE_TRAINING:
+		Condition: endurance_training
+		Prerequisites: upgrade.endurance_training
+
+^AffectedByAdvancedCoolants:
+	GrantConditionOnPrerequisite@ADVCOOLANTS:
+		Condition: advcoolants
+		Prerequisites: upgrade.advanced_coolants
+
 ^AffectedByAdvancedTraining:
 	GainsExperienceMultiplier@ADVTRAINING:
 		Modifier: 150
@@ -506,6 +536,14 @@
 		Condition: impflaks
 		Prerequisites: upgrade.improved_flaks
 
+^AffectedByBulletProofCoats:
+	DamageMultiplier@BULLETPROOF:
+		Modifier: 75
+		RequiresCondition: bulletproof
+	GrantConditionOnPrerequisite@BULLETPROOF:
+		Condition: bulletproof
+		Prerequisites: upgrade.bullet_proof_coats
+
 ^AffectedByAPBullets:
 	FirepowerMultiplier@APBULLETS:
 		Modifier: 125
@@ -513,6 +551,11 @@
 	GrantConditionOnPrerequisite@APBULLETS:
 		Condition: apbullets
 		Prerequisites: upgrade.ap_bullets
+
+^AffectedByPropagandaEffort:
+	GrantConditionOnPrerequisite@PROPEFFORT:
+		Condition: propeffort
+		Prerequisites: upgrade.propaganda_effort
 
 ^AffectedByNuclearEngines:
 	SpeedMultiplier@NUCLEAR_ENGINES:
@@ -534,6 +577,11 @@
 	GrantConditionOnPrerequisite@TOXINSPRAYER:
 		Condition: toxinsprayer
 		Prerequisites: upgrade.toxin_sprayer
+
+^AffectedByAutoloaders:
+	GrantConditionOnPrerequisite@AUTOLOADERS:
+		Condition: autoloaders
+		Prerequisites: upgrade.autoloaders
 
 ^AffectedByCamouflage:
 	Cloak@CAMOUFLAGE:

@@ -136,7 +136,8 @@ gacnst:
 
 gapowr:
 	Inherits: ^PowerPlant
-	Inherits@shape: ^2x2Shape
+	Inherits@ADVCOOLANTS: ^AffectedByAdvancedCoolants
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Allies
 	ProvidesPrerequisite@no-plug:
@@ -174,13 +175,16 @@ gapowr:
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
 		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && !powrup
+		RequiresCondition: !build-incomplete && !powrup && !advcoolants
 	WithIdleOverlay@glow-coolant:
 		Sequence: idle-glow-coolant
 		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && powrup
-	Power@plug:
-		Amount: 300
+		RequiresCondition: !build-incomplete && (powrup || advcoolants)
+	Power@ADVCOOLANTS:
+		Amount: 150
+		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && advcoolants
+	Power@PLUG:
+		Amount: 150
 		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && powrup
 	IsometricSelectable:
 		DecorationHeight: 60
@@ -195,7 +199,7 @@ gapowrup:
 	Tooltip:
 		Name: Advanced Coolants
 	Buildable:
-		Queue: Support.Allies, Support.France
+		Queue: Support.Debug # Support.Allies, Support.France
 		BuildPaletteOrder: 80
 		Prerequisites: gapowr, gaairc, ~techlevel.2
 		Description: Better coolants allow power plants to work more efficently\nproviding 150 more power.
@@ -204,11 +208,11 @@ gapowrup:
 	Plug:
 		Type: powrup
 	Power:
-		Amount: 300
+		Amount: 150
 
 gapile:
 	Inherits: ^Barracks
-	Inherits@shape: ^3x2Shape
+	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
 	Building:
@@ -325,7 +329,7 @@ gaairc:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^DisabledByInfiltration
-	Inherits@shape: ^3x2Shape
+	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 60
@@ -837,7 +841,7 @@ gayard:
 
 gadept:
 	Inherits: ^ServiceDepot
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	HitShape:
 		TargetableOffsets: 0,0,0, -720,-720,0, 720,720,0, -720,720,0, 0,1440,0, -1440,0,0
 	Buildable:
@@ -865,7 +869,7 @@ gadept:
 
 gatech:
 	Inherits: ^BattleLab
-	Inherits@shape: ^3x2Shape
+	Inherits@SHAPE: ^3x2Shape
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Allies
@@ -1053,7 +1057,7 @@ gtgcan:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Unused # Support.France
 		BuildPaletteOrder: 80
@@ -1119,7 +1123,7 @@ gtgcan:
 gaorep:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Inherits@AICash: ^AICashCheat
 	Buildable:
 		Queue: Building.Allies
@@ -1195,7 +1199,7 @@ gaspysat:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Allies
 		BuildPaletteOrder: 110
@@ -1378,7 +1382,7 @@ gaweat:
 
 gacsph:
 	Inherits: ^SecondarySuperWeapon
-	Inherits@shape: ^4x3Shape
+	Inherits@SHAPE: ^4x3Shape
 	Buildable:
 		Queue: Support.Allies, Support.France
 		Prerequisites: gatech, !enoughchrono, ~techlevel.5
@@ -1583,7 +1587,7 @@ garobo:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Unused # Building.Allies
 		BuildPaletteOrder: 80
@@ -1625,7 +1629,7 @@ garobo:
 gaapad:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Unused # Building.Allies
 		BuildPaletteOrder: 100
@@ -1905,7 +1909,7 @@ gaexpn:
 
 gapilb:
 	Inherits: gapile
-	Inherits@shape: ^2x3Shape
+	Inherits@SHAPE: ^2x3Shape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -2003,7 +2007,7 @@ garefd:
 
 gaweab:
 	Inherits: gaweap
-	Inherits@shape: ^FlippedFactoryXShape
+	Inherits@SHAPE: ^FlippedFactoryXShape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -2016,7 +2020,7 @@ gaweab:
 
 gaweac:
 	Inherits: gaweap
-	Inherits@shape: ^FlippedFactoryShape
+	Inherits@SHAPE: ^FlippedFactoryShape
 	-Buildable:
 	-PlaceBuildingVariants:
 	-WithExitOverlay@front:
@@ -2032,7 +2036,7 @@ gaweac:
 
 gawead:
 	Inherits: gaweab
-	Inherits@shape: ^FlippedFactoryYShape
+	Inherits@SHAPE: ^FlippedFactoryYShape
 	-WithExitOverlay@front:
 	-WithExitOverlay@top:
 	-WithIdleOverlay@bib:
@@ -2046,7 +2050,7 @@ gawead:
 
 gaairb:
 	Inherits: gaairc
-	Inherits@shape: ^2x3Shape
+	Inherits@SHAPE: ^2x3Shape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -2067,7 +2071,7 @@ gaairb:
 
 gatecb:
 	Inherits: gatech
-	Inherits@shape: ^2x3Shape
+	Inherits@SHAPE: ^2x3Shape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -2076,7 +2080,7 @@ gatecb:
 
 gacspb:
 	Inherits: gacsph
-	Inherits@shape: ^3x4Shape
+	Inherits@SHAPE: ^3x4Shape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:

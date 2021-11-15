@@ -139,6 +139,7 @@ gmin:
 
 ltnk:
 	Inherits: ^MainBattleTank
+	Inherits@AUTOLOADERS: ^AffectedByAutoloaders
 	Valued:
 		Cost: 600
 	DeliversCash:
@@ -163,14 +164,28 @@ ltnk:
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !autoloaders
 	Armament@elite:
 		Weapon: ATGUNE
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle-2
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !autoloaders
+	Armament@primary-auto:
+		Weapon: ATGUNAuto
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 800,0,832
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite && autoloaders
+	Armament@elite-auto:
+		Weapon: ATGUNAutoE
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 800,0,832
+		MuzzleSequence: muzzle-2
+		RequiresCondition: rank-elite && autoloaders
 	WithMuzzleOverlay:
 	-WithVoxelBarrel:
 	Selectable:

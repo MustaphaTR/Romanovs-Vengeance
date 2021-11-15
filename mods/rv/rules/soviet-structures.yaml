@@ -159,7 +159,7 @@ nacnst:
 
 napowr:
 	Inherits: ^PowerPlant
-	Inherits@shape: ^3x2Shape
+	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Soviets
 		Description: Provides power for other structures.\nCan be rotated.
@@ -184,7 +184,7 @@ napowr:
 
 nahand:
 	Inherits: ^Barracks
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
 		Description: Trains infantry.
@@ -317,7 +317,7 @@ naradr:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Soviets
@@ -785,7 +785,7 @@ nmine:
 
 nadept:
 	Inherits: ^ServiceDepot
-	Inherits@shape: ^4x3Shape
+	Inherits@SHAPE: ^4x3Shape
 	HitShape:
 		TargetableOffsets: 0,0,0, -360,360,0, 360,-360,0, -1080,1080,0, -360,1800,0, -1800,360,0, 360,1080,0, -360,-1080,0, 1080,360,0, -1080,-360,0
 	Buildable:
@@ -814,7 +814,7 @@ naheli:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^DisabledByInfiltration
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 100
@@ -954,7 +954,7 @@ naheli:
 
 nanrct:
 	Inherits: ^PowerPlant
-	Inherits@shape: ^4x4Shape
+	Inherits@SHAPE: ^4x4Shape
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 110
@@ -991,7 +991,7 @@ nanrct:
 
 natech:
 	Inherits: ^BattleLab
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Soviets
@@ -1015,7 +1015,7 @@ natech:
 naclon:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Unused # Building.Soviets, Building.Baku
 		BuildPaletteOrder: 120
@@ -1105,7 +1105,7 @@ napsis:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Unused # Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
@@ -1521,7 +1521,7 @@ nabnkr:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Unused # Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
@@ -1601,7 +1601,7 @@ nabnkr:
 naindp:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Soviets
 		BuildPaletteOrder: 120
@@ -1913,7 +1913,7 @@ naexpn:
 
 napowb:
 	Inherits: napowr
-	Inherits@shape: ^2x3Shape
+	Inherits@SHAPE: ^2x3Shape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -1961,7 +1961,7 @@ narefd:
 
 naweab:
 	Inherits: naweap
-	Inherits@shape: ^FlippedFactoryXShape
+	Inherits@SHAPE: ^FlippedFactoryXShape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -1974,7 +1974,7 @@ naweab:
 
 naweac:
 	Inherits: naweap
-	Inherits@shape: ^FlippedFactoryShape
+	Inherits@SHAPE: ^FlippedFactoryShape
 	-Buildable:
 	-PlaceBuildingVariants:
 	-WithExitOverlay@front:
@@ -1991,7 +1991,7 @@ naweac:
 
 nawead:
 	Inherits: naweab
-	Inherits@shape: ^FlippedFactoryYShape
+	Inherits@SHAPE: ^FlippedFactoryYShape
 	-WithExitOverlay@front:
 	-WithExitOverlay@top:
 	-WithIdleOverlay@bib:
@@ -2006,7 +2006,7 @@ nawead:
 
 nadepb:
 	Inherits: nadept
-	Inherits@shape: ^3x4Shape
+	Inherits@SHAPE: ^3x4Shape
 	HitShape:
 		TargetableOffsets: 0,0,0, 360,360,0, -360,-360,0, -1080,-1080,0, -360,-1800,0, -1800,-360,0, 360,-1080,0, -360,1080,0, -1080,360,0, 1080,-360,0
 	-Buildable:

@@ -76,7 +76,7 @@ yacnst:
 
 yapowr:
 	Inherits: ^PowerPlant
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Yuri
 		Description: Provides power for other structures.\nCan be occupied with up to 3 infantry for 50 more power each.
@@ -156,7 +156,7 @@ yapowr:
 
 yabrck:
 	Inherits: ^Barracks
-	Inherits@shape: ^2x3Shape
+	Inherits@SHAPE: ^2x3Shape
 	Buildable:
 		Queue: Building.Yuri
 	Building:
@@ -245,7 +245,7 @@ yarefn:
 	Inherits: ^BaseBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@DISK: ^DiskStealable
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Unused # Building.Yuri
 		BuildPaletteOrder: 30
@@ -525,7 +525,7 @@ yayard:
 
 yadept:
 	Inherits: ^ServiceDepot
-	Inherits@shape: ^4x3Shape
+	Inherits@SHAPE: ^4x3Shape
 	HitShape:
 		TargetableOffsets: 0,0,0, -360,360,0, 360,-360,0, -1080,1080,0, -360,1800,0, -1800,360,0, 360,1080,0, -360,-1080,0, 1080,360,0, -1080,-360,0
 	Buildable:
@@ -551,7 +551,7 @@ yadept:
 yagrnd:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 110
@@ -601,7 +601,7 @@ yadome:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 60
@@ -813,7 +813,7 @@ yadisk:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^DisabledByInfiltration
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 100
@@ -900,7 +900,7 @@ yadisk:
 
 yatech:
 	Inherits: ^BattleLab
-	Inherits@shape: ^3x2Shape
+	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Yuri
 		Prerequisites: yadome, ~techlevel.3, ~!ai.yatech
@@ -931,7 +931,7 @@ yapsis:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 120
@@ -982,7 +982,7 @@ yapsis:
 yaclon:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 130
@@ -1203,7 +1203,7 @@ natbnk:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	WithColoredOverlay@ChronoDisable:
 		Color: 00204040
 		RequiresCondition: chronodisable && loaded
@@ -1523,7 +1523,7 @@ yappet:
 
 yacomd:
 	Inherits: ^CivBuilding
-	Inherits@shape: ^4x4Shape
+	Inherits@SHAPE: ^4x4Shape
 	Tooltip:
 		Name: Yuri's Command Center
 	Tooltip@NoRow:
@@ -1552,7 +1552,7 @@ yacomd.rubble:
 
 yapppt:
 	Inherits: ^CivBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Tooltip:
 		Name: Psychic Dominator
 	Tooltip@NoRow:
@@ -1571,7 +1571,7 @@ yapppt:
 
 yarock:
 	Inherits: ^CivBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Tooltip:
 		Name: Rocket Launch Pad
 	Tooltip@NoRow:
@@ -1595,7 +1595,7 @@ caeast02:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Tooltip:
 		Name: Yuri Statue
 	Tooltip@NoRow:
@@ -1661,7 +1661,7 @@ yaeast02:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Antarctica
 		BuildPaletteOrder: 70
@@ -1783,7 +1783,7 @@ yaexpn:
 
 yabrcb:
 	Inherits: yabrck
-	Inherits@shape: ^3x2Shape
+	Inherits@SHAPE: ^3x2Shape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -1884,7 +1884,7 @@ yarfnd:
 
 yaweab:
 	Inherits: yaweap
-	Inherits@shape: ^FlippedFactoryXShape
+	Inherits@SHAPE: ^FlippedFactoryXShape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
@@ -1897,7 +1897,7 @@ yaweab:
 
 yaweac:
 	Inherits: yaweap
-	Inherits@shape: ^FlippedFactoryShape
+	Inherits@SHAPE: ^FlippedFactoryShape
 	-Buildable:
 	-PlaceBuildingVariants:
 	-WithExitOverlay@front:
@@ -1912,7 +1912,7 @@ yaweac:
 
 yawead:
 	Inherits: yaweab
-	Inherits@shape: ^FlippedFactoryYShape
+	Inherits@SHAPE: ^FlippedFactoryYShape
 	-WithExitOverlay@front:
 	-WithExitOverlay@top:
 	-WithIdleOverlay@lights:
@@ -1925,7 +1925,7 @@ yawead:
 
 yadepb:
 	Inherits: yadept
-	Inherits@shape: ^3x4Shape
+	Inherits@SHAPE: ^3x4Shape
 	HitShape:
 		TargetableOffsets: 0,0,0, 360,360,0, -360,-360,0, -1080,-1080,0, -360,-1800,0, -1800,-360,0, 360,-1080,0, -360,1080,0, -1080,360,0, 1080,-360,0
 	-Buildable:
@@ -1938,7 +1938,7 @@ yadepb:
 
 yatecb:
 	Inherits: yatech
-	Inherits@shape: ^2x3Shape
+	Inherits@SHAPE: ^2x3Shape
 	-Buildable:
 	-PlaceBuildingVariants:
 	Building:
