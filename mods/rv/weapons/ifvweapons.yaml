@@ -254,6 +254,24 @@ CRFlamerE:
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
 
+CRFlamerBlack:
+	Inherits: FlamerBlack
+	ReloadDelay: 40
+	Burst: 8
+
+CRFlamerBlackE:
+	Inherits: CRFlamerBlack
+	Burst: 16
+	Projectile: BulletAS
+		Image: fireballblack
+		TrailImage: fireballblack
+	Warhead@1Dam: SpreadDamage
+		Damage: 1750
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1750
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblack
+
 CRToxinSprayer:
 	Inherits: ToxinSprayer
 	Range: 6c0

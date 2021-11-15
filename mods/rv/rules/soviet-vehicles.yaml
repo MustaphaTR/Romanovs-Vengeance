@@ -1039,6 +1039,7 @@ exps:
 ftnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxel
@@ -1082,11 +1083,19 @@ ftnk:
 	Armament@primary:
 		Weapon: TankFlamer
 		LocalOffset: 768,-384,640, 768,384,640
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !black_napalm
 	Armament@elite:
 		Weapon: TankFlamerE
 		LocalOffset: 768,-384,640, 768,384,640
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !black_napalm
+	Armament@primary-black:
+		Weapon: TankFlamerBlack
+		LocalOffset: 768,-384,640, 768,384,640
+		RequiresCondition: !rank-elite && black_napalm
+	Armament@elite-black:
+		Weapon: TankFlamerBlackE
+		LocalOffset: 768,-384,640, 768,384,640
+		RequiresCondition: rank-elite && black_napalm
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || parachute

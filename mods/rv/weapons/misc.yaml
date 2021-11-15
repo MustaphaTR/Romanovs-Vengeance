@@ -53,6 +53,42 @@ UCFlamerE:
 	Projectile: BulletAS
 		Blockable: false
 
+FlamerBlack:
+	Inherits: Flamer
+	Projectile: BulletAS
+		Image: fireballblue
+		TrailImage: fireballblue
+	Warhead@1Dam: SpreadDamage
+		Damage: 1250
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1250
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblue
+
+FlamerBlackE:
+	Inherits: Flamer
+	Projectile: BulletAS
+		Image: fireballblack
+		TrailImage: fireballblack
+	Warhead@1Dam: SpreadDamage
+		Damage: 1750
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1750
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblack
+
+UCFlamerBlack:
+	Inherits: FlamerBlack
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCFlamerBlackE:
+	Inherits: FlamerBlackE
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
 TankFlamer:
 	Inherits: Flamer
 	ReloadDelay: 40
@@ -82,6 +118,30 @@ TankFlamerE:
 		Spread: 0c768
 	Warhead@3Eff: CreateEffect
 		Explosions: largefireblue
+
+TankFlamerBlack:
+	Inherits: TankFlamer
+	Projectile: BulletAS
+		Image: fireballblue
+		TrailImage: fireballblue
+	Warhead@1Dam: SpreadDamage
+		Damage: 1250
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1250
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblue
+
+TankFlamerBlackE:
+	Inherits: TankFlamerE
+	Projectile: BulletAS
+		Image: fireballblack
+		TrailImage: fireballblack
+	Warhead@1Dam: SpreadDamage
+		Damage: 1750
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1750
+	Warhead@3Eff: CreateEffect
+		Explosions: largefireblack
 
 ToxinSprayer:
 	Inherits: Flamer
@@ -900,6 +960,21 @@ FireDamage:
 			Concrete: 30
 			Drone: 50
 			Rocket: 0
+
+FireDamageE:
+	Inherits: FireDamage
+	Warhead@1Dam: SpreadDamage
+		Damage: 450
+
+FireDamageBlack:
+	Inherits: FireDamage
+	Warhead@1Dam: SpreadDamage
+		Damage: 500
+
+FireDamageBlackE:
+	Inherits: FireDamage
+	Warhead@1Dam: SpreadDamage
+		Damage: 563
 
 ChaosCloud:
 	ReloadDelay: 1

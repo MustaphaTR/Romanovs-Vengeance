@@ -2397,6 +2397,7 @@ txdxhusk:
 kite:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
@@ -2415,10 +2416,16 @@ kite:
 		Type: Light
 	Armament@primary:
 		Weapon: NapalmBomb
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !black_napalm
 	Armament@elite:
 		Weapon: NapalmBombE
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !black_napalm
+	Armament@primary-black:
+		Weapon: NapalmBombBlack
+		RequiresCondition: !rank-elite && black_napalm
+	Armament@elite-black:
+		Weapon: NapalmBombBlackE
+		RequiresCondition: rank-elite && black_napalm
 	Voiced:
 		VoiceSet: BlackKiteVoice
 	ExternalCondition@PRODUCED:

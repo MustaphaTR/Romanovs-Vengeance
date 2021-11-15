@@ -172,6 +172,7 @@ tnkd:
 fv:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -698,11 +699,19 @@ fv:
 	Armament@pyro:
 		Weapon: CRFlamer
 		LocalOffset: 649,0,1152
-		RequiresCondition: ifv-pyro && !rank-elite
+		RequiresCondition: ifv-pyro && !rank-elite && !black_napalm
 	Armament@pyro-elite:
 		Weapon: CRFlamerE
 		LocalOffset: 649,0,1152
-		RequiresCondition: ifv-pyro && rank-elite
+		RequiresCondition: ifv-pyro && rank-elite && !black_napalm
+	Armament@pyro-black:
+		Weapon: CRFlamerBlack
+		LocalOffset: 649,0,1152
+		RequiresCondition: ifv-pyro && !rank-elite && black_napalm
+	Armament@pyro-black-elite:
+		Weapon: CRFlamerBlackE
+		LocalOffset: 649,0,1152
+		RequiresCondition: ifv-pyro && rank-elite && black_napalm
 	Armament@flak:
 		Weapon: CRFlakGuyGun
 		LocalOffset: 256,0,1536

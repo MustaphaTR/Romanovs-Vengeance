@@ -1028,6 +1028,7 @@ boris:
 pyro:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
@@ -1068,29 +1069,55 @@ pyro:
 	Armament@primary:
 		Weapon: Flamer
 		LocalOffset: 512,0,768
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !black_napalm
 	Armament@elite:
 		Weapon: FlamerE
 		LocalOffset: 512,0,768
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !black_napalm
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: Flamer
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !black_napalm
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: FlamerE
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !black_napalm
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCFlamer
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !black_napalm
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCFlamerE
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !black_napalm
+	Armament@primary-black:
+		Weapon: FlamerBlack
+		LocalOffset: 512,0,768
+		RequiresCondition: !rank-elite && black_napalm
+	Armament@elite_black:
+		Weapon: FlamerBlackE
+		LocalOffset: 512,0,768
+		RequiresCondition: rank-elite && black_napalm
+	Armament@opentopped-black:
+		Name: opentopped
+		Weapon: FlamerBlack
+		RequiresCondition: !rank-elite && black_napalm
+	Armament@elite-opentopped-black:
+		Name: opentopped
+		Weapon: FlamerBlackE
+		RequiresCondition: rank-elite && black_napalm
+	Armament@garrisoned-black:
+		Name: garrisoned
+		Weapon: UCFlamerBlack
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite && black_napalm
+	Armament@elite-garrisoned-black:
+		Name: garrisoned
+		Weapon: UCFlamerBlackE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite && black_napalm
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
