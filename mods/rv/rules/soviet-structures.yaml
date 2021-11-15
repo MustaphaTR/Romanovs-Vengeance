@@ -150,6 +150,14 @@ nacnst:
 		IsPlayerPalette: false
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && (russia || iraq || vietnam || cuba || libya || chile || mexico || mongolia || transcaucus || turkmen || tuva || russianfed || serbia)
+	WithIdleOverlay@HNS:
+		Sequence: idle-hns
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && (russia || iraq || vietnam || cuba || libya || chile || mexico || mongolia)
+	WithIdleOverlay@Star:
+		Sequence: idle-star
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && (transcaucus || turkmen || tuva || russianfed || serbia)
 	IsometricSelectable:
 		DecorationHeight: 90
 	Voiced:
