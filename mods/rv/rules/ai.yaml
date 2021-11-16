@@ -1192,14 +1192,14 @@ Player:
 			natbnk-ytnk-tr: 8
 			yapsyt-tr: 2
 			yaeast02-tr: 2
-	PlugSpawnerBotModule@generic:
-		RequiresCondition: enable-generic-ai && powerplug
-		Plug: gapowrup
-		Pluggables: gapowr
-		Interval: 750
-	GrantConditionOnPrerequisite@powerplug:
-		Condition: powerplug
-		Prerequisites: gacnst, gapowr.pluggable, gaairc, ~techlevel.2
+	# PlugSpawnerBotModule@generic:
+	#	RequiresCondition: enable-generic-ai && powerplug
+	#	Plug: gapowrup
+	#	Pluggables: gapowr
+	#	Interval: 750
+	# GrantConditionOnPrerequisite@powerplug:
+	#	Condition: powerplug
+	#	Prerequisites: gacnst, gapowr.pluggable, gaairc, ~techlevel.2
 	GrantConditionOnPrerequisite@megawealth:
 		Condition: megawealth
 		Prerequisites: global-megawealth
@@ -1255,7 +1255,7 @@ Player:
 		MinimumConstructionYardCount: 2
 	UnitBuilderBotModule@easy:
 		RequiresCondition: enable-easy-ai && !megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1345,6 +1345,24 @@ Player:
 			commanders_power.toxin_bombing.1: 1
 			commanders_power.toxin_bombing.2: 1
 			commanders_power.toxin_bombing.3: 1
+			upgrade.a2a_missiles: 1
+			upgrade.endurance_training: 3
+			upgrade.advanced_coolants: 10
+			upgrade.advanced_training: 5
+			upgrade.composite_armor: 10
+			upgrade.increased_payload: 2
+			upgrade.bullet_proof_coats: 10
+			upgrade.molotov_cocktails: 8
+			upgrade.smoke_grenades: 2
+			upgrade.black_napalm: 5
+			upgrade.propaganda_effort: 2
+			upgrade.ap_bullets: 10
+			upgrade.nuclear_engines: 5
+			upgrade.grinder_treads: 1
+			upgrade.autoloaders: 10
+			upgrade.camouflage: 5
+			upgrade.advanced_magnetics: 5
+			upgrade.chainguns: 10
 		UnitLimits:
 			cmin: 6
 			harv: 6
@@ -1368,7 +1386,7 @@ Player:
 			havoc: 3
 	UnitBuilderBotModule@easy-megawealth:
 		RequiresCondition: enable-easy-ai && megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1454,6 +1472,24 @@ Player:
 			commanders_power.toxin_bombing.1: 1
 			commanders_power.toxin_bombing.2: 1
 			commanders_power.toxin_bombing.3: 1
+			upgrade.a2a_missiles: 1
+			upgrade.endurance_training: 3
+			upgrade.advanced_coolants: 10
+			upgrade.advanced_training: 5
+			upgrade.composite_armor: 10
+			upgrade.increased_payload: 2
+			upgrade.bullet_proof_coats: 10
+			upgrade.molotov_cocktails: 8
+			upgrade.smoke_grenades: 2
+			upgrade.black_napalm: 5
+			upgrade.propaganda_effort: 2
+			upgrade.ap_bullets: 10
+			upgrade.nuclear_engines: 5
+			upgrade.grinder_treads: 1
+			upgrade.autoloaders: 10
+			upgrade.camouflage: 5
+			upgrade.advanced_magnetics: 5
+			upgrade.chainguns: 10
 		UnitLimits:
 			cmin: 6
 			harv: 6
@@ -1474,7 +1510,7 @@ Player:
 			havoc: 3
 	UnitBuilderBotModule@cheater:
 		RequiresCondition: enable-cheater-ai && !megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1573,6 +1609,24 @@ Player:
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
+			upgrade.a2a_missiles: 1
+			upgrade.endurance_training: 3
+			upgrade.advanced_coolants: 10
+			upgrade.advanced_training: 5
+			upgrade.composite_armor: 10
+			upgrade.increased_payload: 2
+			upgrade.bullet_proof_coats: 10
+			upgrade.molotov_cocktails: 8
+			upgrade.smoke_grenades: 2
+			upgrade.black_napalm: 5
+			upgrade.propaganda_effort: 2
+			upgrade.ap_bullets: 10
+			upgrade.nuclear_engines: 5
+			upgrade.grinder_treads: 1
+			upgrade.autoloaders: 10
+			upgrade.camouflage: 5
+			upgrade.advanced_magnetics: 5
+			upgrade.chainguns: 10
 		UnitLimits:
 			cmin: 6
 			harv: 6
@@ -1601,7 +1655,7 @@ Player:
 			zep: 1
 	UnitBuilderBotModule@cheater-megawealth:
 		RequiresCondition: enable-cheater-ai && megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1696,6 +1750,24 @@ Player:
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
+			upgrade.a2a_missiles: 1
+			upgrade.endurance_training: 3
+			upgrade.advanced_coolants: 10
+			upgrade.advanced_training: 5
+			upgrade.composite_armor: 10
+			upgrade.increased_payload: 2
+			upgrade.bullet_proof_coats: 10
+			upgrade.molotov_cocktails: 8
+			upgrade.smoke_grenades: 2
+			upgrade.black_napalm: 5
+			upgrade.propaganda_effort: 2
+			upgrade.ap_bullets: 10
+			upgrade.nuclear_engines: 5
+			upgrade.grinder_treads: 1
+			upgrade.autoloaders: 10
+			upgrade.camouflage: 5
+			upgrade.advanced_magnetics: 5
+			upgrade.chainguns: 10
 		UnitLimits:
 			cmin: 6
 			harv: 6
@@ -1721,7 +1793,7 @@ Player:
 			zep: 1
 	UnitBuilderBotModule@vengeful:
 		RequiresCondition: enable-vengeful-ai && !megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1847,6 +1919,25 @@ Player:
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
+			upgrade.a2a_missiles: 1
+			upgrade.endurance_training: 3
+			upgrade.advanced_coolants: 10
+			upgrade.advanced_training: 5
+			upgrade.composite_armor: 10
+			upgrade.increased_payload: 2
+			upgrade.bullet_proof_coats: 10
+			upgrade.molotov_cocktails: 8
+			upgrade.smoke_grenades: 2
+			upgrade.black_napalm: 5
+			upgrade.propaganda_effort: 2
+			upgrade.ap_bullets: 10
+			upgrade.nuclear_engines: 5
+			upgrade.grinder_treads: 1
+			upgrade.toxin_sprayer: 2
+			upgrade.autoloaders: 10
+			upgrade.camouflage: 5
+			upgrade.advanced_magnetics: 5
+			upgrade.chainguns: 10
 		UnitLimits:
 			cmin: 6
 			harv: 6
@@ -1872,7 +1963,7 @@ Player:
 			zep: 1
 	UnitBuilderBotModule@vengeful-megawealth:
 		RequiresCondition: enable-vengeful-ai && megawealth
-		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
+		UnitQueues: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1992,6 +2083,25 @@ Player:
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
+			upgrade.a2a_missiles: 1
+			upgrade.endurance_training: 3
+			upgrade.advanced_coolants: 10
+			upgrade.advanced_training: 5
+			upgrade.composite_armor: 10
+			upgrade.increased_payload: 2
+			upgrade.bullet_proof_coats: 10
+			upgrade.molotov_cocktails: 8
+			upgrade.smoke_grenades: 2
+			upgrade.black_napalm: 5
+			upgrade.propaganda_effort: 2
+			upgrade.ap_bullets: 10
+			upgrade.nuclear_engines: 5
+			upgrade.grinder_treads: 1
+			upgrade.toxin_sprayer: 2
+			upgrade.autoloaders: 10
+			upgrade.camouflage: 5
+			upgrade.advanced_magnetics: 5
+			upgrade.chainguns: 10
 		UnitLimits:
 			cmin: 6
 			harv: 6
