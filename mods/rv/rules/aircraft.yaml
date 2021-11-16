@@ -1982,6 +1982,7 @@ fortress:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
@@ -2017,7 +2018,7 @@ fortress:
 		RollSpeed: 14
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Selectable:
-		Bounds: 724, 1158
+		Bounds: 1158, 1158
 	Health:
 		HP: 40000
 	Armor:
@@ -2033,12 +2034,22 @@ fortress:
 	-AppearsOnRadar:
 	Armament:
 		Weapon: SpiritBomb
-		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite
+		PauseOnCondition: !ammo || increased_payload
+		RequiresCondition: !increased_payload && !rank-elite
 	Armament@Elite:
 		Weapon: SpiritBombE
-		PauseOnCondition: !ammo
-		RequiresCondition: rank-elite
+		PauseOnCondition: !ammo || increased_payload
+		RequiresCondition: !increased_payload && rank-elite
+	Armament@2:
+		Name: secondary
+		Weapon: SpiritBomb10
+		PauseOnCondition: !ammo2 || !increased_payload
+		RequiresCondition: increased_payload && !rank-elite
+	Armament@2Elite:
+		Name: secondary
+		Weapon: SpiritBomb10E
+		PauseOnCondition: !ammo2 || !increased_payload
+		RequiresCondition: increased_payload && rank-elite
 	AttackAircraft:
 		FacingTolerance: 20
 		Voice: Attack
@@ -2056,6 +2067,7 @@ fortress:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	Rearmable:
+		AmmoPools: primary, secondary
 		RearmActors: gaairc, gaairb, gaapad, gadock
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
@@ -2063,8 +2075,15 @@ fortress:
 		RequiresCondition: !airborne
 	AmmoPool:
 		Ammo: 5
+		Armaments: primary
 		ReloadDelay: 100
 		AmmoCondition: ammo
+	AmmoPool@2:
+		Name: secondary
+		Ammo: 10
+		Armaments: secondary
+		ReloadDelay: 100
+		AmmoCondition: ammo2
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
@@ -2094,12 +2113,23 @@ fortress:
 	ProducibleWithLevel:
 		Prerequisites: vetair
 	WithAmmoPipsDecoration:
+		AmmoPools: primary
 		Margin: 4, 3
 		FullSequence: pip-ammo
 		EmptySequence: pip-ammoempty
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+		RequiresCondition: !increased_payload
+	WithAmmoPipsDecoration@2:
+		AmmoPools: secondary
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		RequiresCondition: increased_payload
 	AmbientSound@Ambient:
 		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
 		Volume: 0.20
