@@ -1,5 +1,6 @@
 pcv:
 	Inherits: ^ConstructionVehicle
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 	Transforms:
@@ -10,6 +11,7 @@ pcv:
 smin:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
@@ -115,6 +117,7 @@ smin:
 
 gmin:
 	Inherits: ^Miner
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Description: Gathers Ore and Gems.\n  Unarmed.\nSpecial ability: Invisiblity
@@ -140,6 +143,7 @@ gmin:
 ltnk:
 	Inherits: ^MainBattleTank
 	Inherits@AUTOLOADERS: ^AffectedByAutoloaders
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Valued:
 		Cost: 600
 	DeliversCash:
@@ -576,6 +580,7 @@ tele:
 
 mind:
 	Inherits: ^Vehicle
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 1750
@@ -688,6 +693,8 @@ mind:
 # Custom Yuri Vehicles
 mlyr:
 	Inherits: ^Vehicle
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
@@ -760,6 +767,7 @@ kamaz:
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@TOXIN: ^AffectedByToxinSprayer
@@ -866,6 +874,7 @@ yhtnk:
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
@@ -950,6 +959,7 @@ grtk:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
@@ -1158,6 +1168,7 @@ spider:
 
 expy:
 	Inherits: ^ExpansionVehicle
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 	Selectable:

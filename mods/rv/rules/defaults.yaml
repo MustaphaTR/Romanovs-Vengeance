@@ -580,6 +580,20 @@
 		Condition: nuclear_engines
 		Prerequisites: upgrade.nuclear_engines
 
+^AffectedByGrinderTreads:
+	ChangesHealth@GRINDER_TREADS:
+		Step: 0
+		PercentageStep: 5
+		Delay: 2
+		StartIfBelow: 100
+		DamageCooldown: 0
+		RequiresCondition: grinder_treads && grinder_treads_active
+	ExternalCondition@GRINDER_TREADS:
+		Condition: grinder_treads_active
+	GrantConditionOnPrerequisite@GRINDER_TREADS:
+		Condition: grinder_treads
+		Prerequisites: upgrade.grinder_treads
+
 ^AffectedByToxinSprayer:
 	GainsExperienceMultiplier@TOXINSPRAYER:
 		Modifier: 0
@@ -606,6 +620,11 @@
 		Condition: camouflage 
 		Prerequisites: upgrade.camouflage
 
+^AffectedByAdvancedMagnetics:
+	GrantConditionOnPrerequisite@ADVMAGNETS:
+		Condition: advmagnets
+		Prerequisites: upgrade.advanced_magnetics
+
 ^AffectedByChainguns:
 	FirepowerMultiplier@CHAINGUNS:
 		Modifier: 125
@@ -613,11 +632,6 @@
 	GrantConditionOnPrerequisite@CHAINGUNS:
 		Condition: chainguns
 		Prerequisites: upgrade.chainguns
-
-^AffectedByAdvancedMagnetics:
-	GrantConditionOnPrerequisite@ADVMAGNETS:
-		Condition: advmagnets
-		Prerequisites: upgrade.advanced_magnetics
 
 ^HealsInAmbulance:
 	ChangesHealth@HOSPITAL:
@@ -1991,6 +2005,10 @@
 	ActorLostNotification:
 	ProximityCaptor:
 		Types: Infantry
+	GrantExternalConditionToKiller@GRINDER_TREADS:
+		Duration: 1
+		DeathTypes: Crush
+		Condition: grinder_treads_active
 	Crushable:
 		WarnProbability: 0
 		CrushSound: igensqua.wav
@@ -2365,6 +2383,10 @@
 		Voice: Move
 		CargoType: Vehicle
 		Weight: 3
+	GrantExternalConditionToKiller@GRINDER_TREADS:
+		Duration: 1
+		DeathTypes: Crush
+		Condition: grinder_treads_active
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
