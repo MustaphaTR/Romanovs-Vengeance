@@ -89,6 +89,79 @@ UCFlamerBlackE:
 	Projectile: BulletAS
 		Blockable: false
 
+MolotovCocktail:
+	Inherits: Flamer
+	Burst: 1
+	Range: 4c0
+	ReloadDelay: 100
+	Report: grenade1.aud
+	ValidTargets: Structure, Tree, Barrel, Mine
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Structure, Tree, Barrel, Mine
+
+MolotovCocktailE:
+	Inherits: FlamerE
+	Burst: 1
+	ReloadDelay: 80
+	Report: grenade1.aud
+	ValidTargets: Structure, Tree, Barrel, Mine
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Structure, Tree, Barrel, Mine
+
+UCMolotovCocktail:
+	Inherits: MolotovCocktail
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCMolotovCocktailE:
+	Inherits: MolotovCocktailE
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+SmokeGrenade:
+	Inherits: MolotovCocktail
+	ValidTargets: Ground, Water
+	InvalidTargets: NonGarrisonableStructure, Wall, Fence, Tree, Bridge
+	Projectile: BulletAS
+		Image: smokegren
+		Palette: effect75alpha
+		TrailPalette: effect75alpha
+		TrailImage: smokegren
+	-Warhead@1Dam:
+	Warhead@1Con: GrantExternalCondition
+		Condition: smoked
+		Range: 0c512
+		Duration: 75
+		ValidTargets: Ground, Water
+		ValidRelationships: Neutral, Enemy
+	Warhead@1Gar: OpenToppedDamage
+		DamageTypes: BulletDeath, NonTemporal
+	-Warhead@2Smu: LeaveSmudge
+	-Warhead@3Eff: CreateEffect
+		Explosions: largesmoke
+		-ImpactSounds:
+
+SmokeGrenadeE:
+	Inherits: SmokeGrenade
+	Range: 5c0
+	ReloadDelay: 80
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1400
+
+UCSmokeGrenade:
+	Inherits: SmokeGrenade
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCSmokeGrenadeE:
+	Inherits: SmokeGrenadeE
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
 TankFlamer:
 	Inherits: Flamer
 	ReloadDelay: 40

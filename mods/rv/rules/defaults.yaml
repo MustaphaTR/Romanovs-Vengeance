@@ -549,6 +549,16 @@
 		Condition: bulletproof
 		Prerequisites: upgrade.bullet_proof_coats
 
+^AffectedByMolotovCocktails:
+	GrantConditionOnPrerequisite@MOLOTOV:
+		Condition: molotov
+		Prerequisites: upgrade.molotov_cocktails
+
+^AffectedBySmokeGrenades:
+	GrantConditionOnPrerequisite@SMOKEGRENS:
+		Condition: smokegrens
+		Prerequisites: upgrade.smoke_grenades
+
 ^AffectedByAPBullets:
 	FirepowerMultiplier@APBULLETS:
 		Modifier: 125
@@ -632,6 +642,21 @@
 	GrantConditionOnPrerequisite@CHAINGUNS:
 		Condition: chainguns
 		Prerequisites: upgrade.chainguns
+
+^SmokeGrenadeModifiers:
+	RevealsShroudMultiplier@SMOKE:
+		Modifier: 50
+		RequiresCondition: smoked
+	FirepowerMultiplier@SMOKE:
+		Modifier: 80
+		RequiresCondition: smoked
+	WithIdleOverlay@SMOKE:
+		Image: particles
+		Sequence: smallsmoke
+		Palette: effect50alpha
+		RequiresCondition: smoked
+	ExternalCondition@SMOKE:
+		Condition: smoked
 
 ^HealsInAmbulance:
 	ChangesHealth@HOSPITAL:
@@ -1912,6 +1937,7 @@
 	Inherits@18: ^HealsInAmbulance
 	Inherits@19: ^AffectedBySpectreBullets
 	Inherits@20: ^AcceptsDeathBomb
+	Inherits@21: ^SmokeGrenadeModifiers
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	WithColoredOverlay@MagneSlow:
@@ -2337,6 +2363,7 @@
 	Inherits@21: ^AcceptsPointDefenseDrones
 	Inherits@22: ^LowHealthSpeedPenalty
 	Inherits@23: ^AcceptsDeathBomb
+	Inherits@24: ^SmokeGrenadeModifiers
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
@@ -2594,7 +2621,8 @@
 	Inherits@15: ^DisabledByMagnetron
 	Inherits@16: ^AffectedBySpectreBullets
 	Inherits@17: ^AcceptsPointDefenseDrones
-	Inherits@19: ^AcceptsDeathBomb
+	Inherits@18: ^AcceptsDeathBomb
+	Inherits@19: ^SmokeGrenadeModifiers
 	WithColoredOverlay@ChronoDisable:
 		Color: 00204040
 	Aircraft:
@@ -2788,6 +2816,7 @@
 	Inherits@18: ^AffectedBySpectreBullets
 	Inherits@19: ^AcceptsPointDefenseDrones
 	Inherits@20: ^AcceptsDeathBomb
+	Inherits@21: ^SmokeGrenadeModifiers
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:

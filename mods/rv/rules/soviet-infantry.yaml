@@ -7,6 +7,8 @@ e2:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@MOLOTOV: ^AffectedByMolotovCocktails
+	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
@@ -53,6 +55,26 @@ e2:
 		Weapon: M1CarbineE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@molotov:
+		Weapon: MolotovCocktail
+		LocalOffset: 512,0,768
+		PauseOnCondition: chronodisable
+		RequiresCondition: molotov && !rank-elite
+	Armament@molotov-elite:
+		Weapon: MolotovCocktailE
+		LocalOffset: 512,0,768
+		PauseOnCondition: chronodisable
+		RequiresCondition: molotov && rank-elite
+	Armament@smokegrens:
+		Weapon: SmokeGrenade
+		LocalOffset: 512,0,768
+		PauseOnCondition: chronodisable
+		RequiresCondition: smokegrens && !rank-elite
+	Armament@smokegrens-elite:
+		Weapon: SmokeGrenadeE
+		LocalOffset: 512,0,768
+		PauseOnCondition: chronodisable
+		RequiresCondition: smokegrens && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: M1Carbine
@@ -63,6 +85,26 @@ e2:
 		Weapon: M1CarbineE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@molotov-opentopped:
+		Name: opentopped
+		Weapon: MolotovCocktail
+		PauseOnCondition: chronodisable
+		RequiresCondition: molotov && !rank-elite
+	Armament@molotov-elite-opentopped:
+		Name: opentopped
+		Weapon: MolotovCocktailE
+		PauseOnCondition: chronodisable
+		RequiresCondition: molotov && rank-elite
+	Armament@smokegrens-opentopped:
+		Name: opentopped
+		Weapon: SmokeGrenade
+		PauseOnCondition: chronodisable
+		RequiresCondition: smokegrens && !rank-elite
+	Armament@smokegrens-elite-opentopped:
+		Name: opentopped
+		Weapon: SmokeGrenadeE
+		PauseOnCondition: chronodisable
+		RequiresCondition: smokegrens && rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCM1Carbine
@@ -73,6 +115,26 @@ e2:
 		Weapon: UCM1CarbineE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@molotov-garrisoned:
+		Name: garrisoned
+		Weapon: UCMolotovCocktail
+		PauseOnCondition: chronodisable
+		RequiresCondition: molotov && !rank-elite
+	Armament@molotov-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCMolotovCocktailE
+		PauseOnCondition: chronodisable
+		RequiresCondition: molotov && rank-elite
+	Armament@smokegrens-garrisoned:
+		Name: garrisoned
+		Weapon: UCSmokeGrenade
+		PauseOnCondition: chronodisable
+		RequiresCondition: smokegrens && !rank-elite
+	Armament@smokegrens-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCSmokeGrenadeE
+		PauseOnCondition: chronodisable
+		RequiresCondition: smokegrens && rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		RequiresCondition: !parachute && !webdisable
