@@ -177,6 +177,7 @@ fv:
 	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -589,7 +590,11 @@ fv:
 	Armament@gren:
 		Weapon: CRGrenade
 		LocalOffset: 200,0,800
-		RequiresCondition: ifv-gren && !rank-elite
+		RequiresCondition: ifv-gren && !empammo && !rank-elite
+	Armament@gren-emp:
+		Weapon: CRGrenadeEMP
+		LocalOffset: 200,0,800
+		RequiresCondition: ifv-gren && empammo && !rank-elite
 	Armament@gren-elite:
 		Weapon: CRGrenadeE
 		LocalOffset: 200,0,800
@@ -1573,6 +1578,7 @@ hwtz:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -1613,12 +1619,22 @@ hwtz:
 		Weapon: HowiCannon
 		LocalOffset: 736,0,1088
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite
+		RequiresCondition: !empammo && !rank-elite
 	Armament@elite:
 		Weapon: HowiCannonE
 		LocalOffset: 736,0,1088
 		MuzzleSequence: muzzle-2
-		RequiresCondition: rank-elite
+		RequiresCondition: !empammo && rank-elite
+	Armament@primary-emp:
+		Weapon: HowiCannonEMP
+		LocalOffset: 736,0,1088
+		MuzzleSequence: muzzle
+		RequiresCondition: empammo && !rank-elite
+	Armament@elite-emp:
+		Weapon: HowiCannonEMPE
+		LocalOffset: 736,0,1088
+		MuzzleSequence: muzzle-2
+		RequiresCondition: empammo && rank-elite
 	AttackFrontal:
 		Voice: Attack
 		TargetFrozenActors: True

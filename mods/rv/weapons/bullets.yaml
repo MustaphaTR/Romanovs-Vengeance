@@ -135,6 +135,30 @@ HowiCannonE:
 		Explosions: large_watersplash
 		ImpactSounds: gexpwala.wav
 
+HowiCannonEMP:
+	Inherits: HowiCannon
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse30p
+		ExplosionPalette: tseffect
+		ImpactSounds: sempexpl.wav
+
+HowiCannonEMPE:
+	Inherits: HowiCannonE
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c768
+		Duration: 40
+		Condition: emp
+		ValidTargets: EMPulse
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse30p
+		ExplosionPalette: tseffect
+		ImpactSounds: sempexpl.wav
+
 MirageGun:
 	Inherits: ^LargeBullet
 	ReloadDelay: 70
@@ -785,6 +809,22 @@ UCGrenade:
 
 UCGrenadeE:
 	Inherits: GrenadeE
+	Range: 7c0
+
+GrenadeEMP:
+	Inherits: Grenade
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse30p
+		ExplosionPalette: tseffect
+		ImpactSounds: sempexpl.wav
+
+UCGrenadeEMP:
+	Inherits: GrenadeEMP
 	Range: 7c0
 
 SpawnEgg:

@@ -80,7 +80,7 @@ upgrade.grand_cannon_protocols:
 		Name: Grand Cannon Protocols
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		BuildDuration: 1250
 		Prerequisites: ~upgrade.france, gatech, ~techlevel.3
 		Description: Enables construction of Grand Cannon from Construction Yard.
@@ -93,10 +93,23 @@ upgrade.advanced_gun_systems:
 		Name: Advanced Gun Systems
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		BuildDuration: 625
 		Prerequisites: ~upgrade.germany, gatech, ~techlevel.3
 		Description: Increases range of Grizzly Tank and Tank Destroyer by 25%.
+	Valued:
+		Cost: 1250
+
+upgrade.emp_munitions:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: EMP Munitions
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 100
+		BuildDuration: 625
+		Prerequisites: ~upgrade.korea, gatech, ~techlevel.3
+		Description: Arms Grenadiers and Howitzers with EMP munitions which disable vehicles.
 	Valued:
 		Cost: 1250
 

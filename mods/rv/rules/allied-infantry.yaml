@@ -1481,6 +1481,7 @@ gren:
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
+	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
@@ -1526,7 +1527,13 @@ gren:
 		FireDelay: 5
 		LocalOffset: 64,0,512
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !empammo && !rank-elite
+	Armament@primary-emp:
+		Weapon: GrenadeEMP
+		FireDelay: 5
+		LocalOffset: 64,0,512
+		PauseOnCondition: chronodisable
+		RequiresCondition: empammo && !rank-elite
 	Armament@elite:
 		Weapon: GrenadeE
 		FireDelay: 5
@@ -1537,7 +1544,12 @@ gren:
 		Name: opentopped
 		Weapon: Grenade
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !empammo && !rank-elite
+	Armament@opentopped-emp:
+		Name: opentopped
+		Weapon: GrenadeEMP
+		PauseOnCondition: chronodisable
+		RequiresCondition: empammo && !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: GrenadeE
@@ -1547,7 +1559,12 @@ gren:
 		Name: garrisoned
 		Weapon: UCGrenade
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !empammo && !rank-elite
+	Armament@garrisoned-emp:
+		Name: garrisoned
+		Weapon: UCGrenadeEMP
+		PauseOnCondition: chronodisable
+		RequiresCondition: empammo && !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCGrenadeE

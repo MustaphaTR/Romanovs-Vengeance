@@ -131,6 +131,18 @@ CRGrenadeE:
 		ExplosionPalette: tseffect
 		ImpactSounds: sempexpl.wav
 
+CRGrenadeEMP:
+	Inherits: CRGrenade
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse30p
+		ExplosionPalette: tseffect
+		ImpactSounds: sempexpl.wav
+
 CRNuke:
 	Inherits: IvanBomber
 	Warhead@1Dam: SpreadDamage
