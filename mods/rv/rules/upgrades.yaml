@@ -67,12 +67,25 @@ upgrade.composite_armor:
 		Name: Composite Armor
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 50
 		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
 		Description: Reduces damage taken by following units by 25%:\n - Grizzly Tank\n - Mirage Tank\n - Tank Destroyer
 	Valued:
 		Cost: 1500
+
+upgrade.grand_cannon_protocols:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Grand Cannon Protocols
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 70
+		BuildDuration: 1250
+		Prerequisites: ~upgrade.france, gatech, ~techlevel.4
+		Description: Enables construction of Grand Cannon from Construction Yard.
+	Valued:
+		Cost: 2500
 
 upgrade.increased_payload:
 	Inherits: ^default.upgrade
@@ -80,7 +93,7 @@ upgrade.increased_payload:
 		Name: Increased Payload
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 110
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.4
 		Description: Doubles maximum ammo B2 Spirits can carry to 10.

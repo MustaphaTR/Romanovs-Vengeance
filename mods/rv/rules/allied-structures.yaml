@@ -1089,9 +1089,9 @@ gtgcan:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Support.Unused # Support.France
-		BuildPaletteOrder: 80
-		Prerequisites: gaairc, ~techlevel.3
+		Queue: Support.France
+		BuildPaletteOrder: 90
+		Prerequisites: upgrade.grand_cannon_protocols, ~techlevel.3
 		Description: Automated, long ranged anti-ground defense.
 	Valued:
 		Cost: 2500
@@ -1315,7 +1315,7 @@ gagap:
 		Name: Gap Generator
 	Buildable:
 		Queue: Support.Allies, Support.France
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		Prerequisites: gatech, ~techlevel.3
 		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
 		BuildDuration: 125
