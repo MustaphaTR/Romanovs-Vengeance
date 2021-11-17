@@ -523,6 +523,14 @@
 		Condition: advtraining
 		Prerequisites: upgrade.advanced_training
 
+^AffectedByAdvancedGunSystems:
+	RangeMultiplier@ADVANCED_GUNS:
+		Modifier: 125
+		RequiresCondition: advanced_guns
+	GrantConditionOnPrerequisite@ADVANCED_GUNS:
+		Condition: advanced_guns
+		Prerequisites: upgrade.advanced_gun_systems
+
 ^AffectedByIncreasedPayload:
 	GrantConditionOnPrerequisite@INCREASED_PAYLOAD:
 		Condition: increased_payload

@@ -82,10 +82,23 @@ upgrade.grand_cannon_protocols:
 		Queue: Upgrade.Allies
 		BuildPaletteOrder: 70
 		BuildDuration: 1250
-		Prerequisites: ~upgrade.france, gatech, ~techlevel.4
+		Prerequisites: ~upgrade.france, gatech, ~techlevel.3
 		Description: Enables construction of Grand Cannon from Construction Yard.
 	Valued:
 		Cost: 2500
+
+upgrade.advanced_gun_systems:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Advanced Gun Systems
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 80
+		BuildDuration: 625
+		Prerequisites: ~upgrade.germany, gatech, ~techlevel.3
+		Description: Increases range of Grizzly Tank and Tank Destroyer by 25%.
+	Valued:
+		Cost: 1250
 
 upgrade.increased_payload:
 	Inherits: ^default.upgrade
