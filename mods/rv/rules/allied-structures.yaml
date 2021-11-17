@@ -1009,6 +1009,7 @@ gapill:
 nasam:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
+	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
@@ -1049,6 +1050,11 @@ nasam:
 	Armament:
 		Weapon: RedEye2
 		LocalOffset: 500,200,900, 500,-200,900
+		RequiresCondition: !boostgliding
+	Armament@boost:
+		Weapon: RedEye2Boosted
+		LocalOffset: 500,200,900, 500,-200,900
+		RequiresCondition: boostgliding
 	BodyOrientation:
 		QuantizedFacings: 16
 	RenderVoxels:

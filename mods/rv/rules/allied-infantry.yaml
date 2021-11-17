@@ -418,6 +418,7 @@ ggi:
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AI: ^AIMicroManagable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
 	Inherits@ENDURANCE: ^AffectedByEnduranceTraining
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
@@ -502,72 +503,144 @@ ggi:
 		Turret: deploy
 		LocalOffset: 480,63,992
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: !rank-elite && deployed
+		RequiresCondition: !rank-elite && deployed && !boostgliding
 	Armament@elite-deployed:
 		Weapon: MissileLauncherE
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,64,992
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: rank-elite && deployed
+		RequiresCondition: rank-elite && deployed && !boostgliding
 	Armament@deployed-aa:
 		Weapon: MissileLauncherAA
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,63,992
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: !rank-elite && deployed
+		RequiresCondition: !rank-elite && deployed && !boostgliding
 	Armament@elite-deployed-aa:
 		Weapon: MissileLauncherAAE
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,64,992
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: rank-elite && deployed
+		RequiresCondition: rank-elite && deployed && !boostgliding
+	Armament@deployed-boost:
+		Weapon: MissileLauncherBoosted
+		Name: deployed
+		Turret: deploy
+		LocalOffset: 480,63,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite && deployed && boostgliding
+	Armament@elite-deployed-boost:
+		Weapon: MissileLauncherBoostedE
+		Name: deployed
+		Turret: deploy
+		LocalOffset: 480,64,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite && deployed && boostgliding
+	Armament@deployed-aa-boost:
+		Weapon: MissileLauncherAABoosted
+		Name: deployed
+		Turret: deploy
+		LocalOffset: 480,63,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite && deployed && boostgliding
+	Armament@elite-deployed-aa-boost:
+		Weapon: MissileLauncherAABoostedE
+		Name: deployed
+		Turret: deploy
+		LocalOffset: 480,64,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite && deployed && boostgliding
 	Armament@opentopped:
 		Weapon: MissileLauncher
 		Name: opentopped
 		LocalOffset: 480,63,992
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-opentopped:
 		Weapon: MissileLauncherE
 		Name: opentopped
 		LocalOffset: 480,64,992
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !boostgliding
 	Armament@opentopped-aa:
 		Weapon: MissileLauncherAA
 		Name: opentopped
 		LocalOffset: 480,63,992
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-opentopped-aa:
 		Weapon: MissileLauncherAAE
 		Name: opentopped
 		LocalOffset: 480,64,992
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !boostgliding
+	Armament@opentopped-boost:
+		Weapon: MissileLauncherBoosted
+		Name: opentopped
+		LocalOffset: 480,63,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite && boostgliding
+	Armament@elite-opentopped-boost:
+		Weapon: MissileLauncherBoostedE
+		Name: opentopped
+		LocalOffset: 480,64,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite && boostgliding
+	Armament@opentopped-aa-boost:
+		Weapon: MissileLauncherAABoosted
+		Name: opentopped
+		LocalOffset: 480,63,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite && boostgliding
+	Armament@elite-opentopped-aa-boost:
+		Weapon: MissileLauncherAABoostedE
+		Name: opentopped
+		LocalOffset: 480,64,992
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite && boostgliding
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncher
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncherE
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !boostgliding
 	Armament@garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAA
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAAE
 		PauseOnCondition: chronodisable || !ammo
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !boostgliding
+	Armament@garrisoned-boost:
+		Name: garrisoned
+		Weapon: UCMissileLauncherBoosted
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite && boostgliding
+	Armament@elite-garrisoned-boost:
+		Name: garrisoned
+		Weapon: UCMissileLauncherBoostedE
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite && boostgliding
+	Armament@garrisoned-aa-boost:
+		Name: garrisoned
+		Weapon: UCMissileLauncherAABoosted
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: !rank-elite && boostgliding
+	Armament@elite-garrisoned-aa-boost:
+		Name: garrisoned
+		Weapon: UCMissileLauncherAABoostedE
+		PauseOnCondition: chronodisable || !ammo
+		RequiresCondition: rank-elite && boostgliding
 	Armament@AIDummyAiming: ## Hack: Make AI GGI deploy to attack air
 		PauseOnCondition: chronodisable
 		RequiresCondition: ai-control && !deployed
@@ -657,6 +730,7 @@ snipe:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HIGHCALIBER: ^AffectedByHighCaliberRounds
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Valued:

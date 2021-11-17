@@ -112,6 +112,7 @@ dest:
 aegis:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAirAssaultMove
+	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
 	Inherits@C4: ^AcceptsSEALC4
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -151,10 +152,16 @@ aegis:
 		Radius: 5c0
 	Armament@primary:
 		Weapon: Medusa
-		RequiresCondition: !rank-elite
+		RequiresCondition: !boostgliding && !rank-elite
 	Armament@elite:
 		Weapon: MedusaE
-		RequiresCondition: rank-elite
+		RequiresCondition: !boostgliding && rank-elite
+	Armament@primary-boost:
+		Weapon: MedusaBoosted
+		RequiresCondition: boostgliding && !rank-elite
+	Armament@elite-boost:
+		Weapon: MedusaBoostedE
+		RequiresCondition: boostgliding && rank-elite
 	Turreted:
 		TurnSpeed: 1023
 	AttackTurreted:

@@ -375,7 +375,7 @@ CRMissileLauncher:
 		RangeLimit: 11c0
 	Warhead@1Dam: SpreadDamage
 		Damage: 4000
-        
+
 CRMissileLauncherE:
 	Inherits: CRMissileLauncher
 	Burst: 6
@@ -401,6 +401,34 @@ CRMissileLauncherAAE:
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
+
+CRMissileLauncherBoosted:
+	Inherits: CRMissileLauncher
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+CRMissileLauncherBoostedE:
+	Inherits: CRMissileLauncherE
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+CRMissileLauncherAABoosted:
+	Inherits: CRMissileLauncherAA
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+CRMissileLauncherAABoostedE:
+	Inherits: CRMissileLauncherAAE
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
 
 CRChaosRocket:
 	Inherits: ChaosRocket

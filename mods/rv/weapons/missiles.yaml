@@ -28,6 +28,13 @@ RedEye2:
 			Concrete: 0
 			Drone: 100
 
+RedEye2Boosted:
+	Inherits: RedEye2
+	Projectile: Missile
+		Speed: 800
+	Warhead@1Dam: SpreadDamage
+		Damage: 3750
+
 MammothTusk:
 	Inherits: ^AAMissile
 	ReloadDelay: 80
@@ -284,6 +291,20 @@ MedusaE:
 	Projectile: Missile
 		ContrailColor: EA0000
 
+MedusaBoosted:
+	Inherits: Medusa
+	Projectile: Missile
+		Speed: 800
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+
+MedusaBoostedE:
+	Inherits: MedusaE
+	Projectile: Missile
+		Speed: 800
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+
 HoverMissile:
 	Inherits: ^Missile
 	ReloadDelay: 50
@@ -356,6 +377,34 @@ HoverMissileAAE:
 		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
+
+HoverMissileBoosted:
+	Inherits: HoverMissile
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 3125
+
+HoverMissileBoostedE:
+	Inherits: HoverMissileE
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 3125
+
+HoverMissileAABoosted:
+	Inherits: HoverMissileAA
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 3125
+
+HoverMissileAABoostedE:
+	Inherits: HoverMissileAAE
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 3125
 
 OutpostMissile:
 	Inherits: HoverMissile
@@ -483,6 +532,52 @@ UCMissileLauncherAA:
 
 UCMissileLauncherAAE:
 	Inherits: MissileLauncherAAE
+
+MissileLauncherBoosted:
+	Inherits: MissileLauncher
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+MissileLauncherBoostedE:
+	Inherits: MissileLauncherE
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+MissileLauncherAABoosted:
+	Inherits: MissileLauncherAA
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+MissileLauncherAABoostedE:
+	Inherits: MissileLauncherAAE
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+UCMissileLauncherBoosted:
+	Inherits: MissileLauncherBoosted
+	Range: 7c0
+	Projectile: Missile
+		Blockable: false
+
+UCMissileLauncherBoostedE:
+	Inherits: MissileLauncherBoostedE
+	Range: 7c0
+	Projectile: Missile
+		Blockable: false
+
+UCMissileLauncherAABoosted:
+	Inherits: MissileLauncherAABoosted
+
+UCMissileLauncherAABoostedE:
+	Inherits: MissileLauncherAABoostedE
 
 ChaosRocket:
 	Inherits: MissileLauncher

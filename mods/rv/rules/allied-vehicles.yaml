@@ -175,6 +175,7 @@ fv:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
+	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
@@ -553,24 +554,46 @@ fv:
 		Weapon: HoverMissile
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@elite:
 		Weapon: HoverMissileE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		Name: elite
 		PauseOnCondition: !ammo-elite
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@primary-aa:
 		Weapon: HoverMissileAA
 		LocalOffset: 128,-128,1024, 128,128,1024
 		PauseOnCondition: !ammo
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@elite-aa:
 		Weapon: HoverMissileAAE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		Name: elite
 		PauseOnCondition: !ammo-elite
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
+	Armament@primary-boost:
+		Weapon: HoverMissileBoosted
+		LocalOffset: 128,-128,1024, 128,128,1024
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
+	Armament@elite-boost:
+		Weapon: HoverMissileBoostedE
+		LocalOffset: 128,-128,1024, 128,128,1024
+		Name: elite
+		PauseOnCondition: !ammo-elite
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
+	Armament@primary-boost-aa:
+		Weapon: HoverMissileAABoosted
+		LocalOffset: 128,-128,1024, 128,128,1024
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
+	Armament@elite-boost-aa:
+		Weapon: HoverMissileAABoostedE
+		LocalOffset: 128,-128,1024, 128,128,1024
+		Name: elite
+		PauseOnCondition: !ammo-elite
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@mg:
 		Weapon: CRM60
 		LocalOffset: 188,32,600
@@ -602,19 +625,35 @@ fv:
 	Armament@rocket:
 		Weapon: CRMissileLauncher
 		LocalOffset: 128,-128,1408, 128,128,1408
-		RequiresCondition: ifv-rocket && !rank-elite
+		RequiresCondition: ifv-rocket && !rank-elite && !boostgliding
 	Armament@rocket-aa:
 		Weapon: CRMissileLauncherAA
 		LocalOffset: 128,-128,1408, 128,128,1408
-		RequiresCondition: ifv-rocket && !rank-elite
+		RequiresCondition: ifv-rocket && !rank-elite && !boostgliding
 	Armament@rocket-elite:
 		Weapon: CRMissileLauncherE
 		LocalOffset: 128,-128,1408, 128,128,1408
-		RequiresCondition: ifv-rocket && rank-elite
+		RequiresCondition: ifv-rocket && rank-elite && !boostgliding
 	Armament@rocket-aa-elite:
 		Weapon: CRMissileLauncherAAE
 		LocalOffset: 128,-128,1408, 128,128,1408
-		RequiresCondition: ifv-rocket && rank-elite
+		RequiresCondition: ifv-rocket && rank-elite && !boostgliding
+	Armament@rocket-boost:
+		Weapon: CRMissileLauncherBoosted
+		LocalOffset: 128,-128,1408, 128,128,1408
+		RequiresCondition: ifv-rocket && !rank-elite && boostgliding
+	Armament@rocket-boost-aa:
+		Weapon: CRMissileLauncherAABoosted
+		LocalOffset: 128,-128,1408, 128,128,1408
+		RequiresCondition: ifv-rocket && !rank-elite && boostgliding
+	Armament@rocket-boost-elite:
+		Weapon: CRMissileLauncherBoostedE
+		LocalOffset: 128,-128,1408, 128,128,1408
+		RequiresCondition: ifv-rocket && rank-elite && boostgliding
+	Armament@rocket-boost-aa-elite:
+		Weapon: CRMissileLauncherAABoostedE
+		LocalOffset: 128,-128,1408, 128,128,1408
+		RequiresCondition: ifv-rocket && rank-elite && boostgliding
 	Armament@repair:
 		Weapon: RepairBullet
 		LocalOffset: 164,0,864
