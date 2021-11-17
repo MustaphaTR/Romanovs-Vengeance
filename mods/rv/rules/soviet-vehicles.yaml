@@ -499,6 +499,7 @@ ttnk:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 1200
@@ -538,11 +539,19 @@ ttnk:
 	Armament@primary:
 		Weapon: TankBolt
 		LocalOffset: 280,196,640, 280,-196,640
-		RequiresCondition: !rank-elite
+		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite:
 		Weapon: TankBoltE
 		LocalOffset: 280,196,640, 280,-196,640
-		RequiresCondition: rank-elite
+		RequiresCondition: !overcharge && rank-elite
+	Armament@primary-overcharge:
+		Weapon: TankBoltCharged
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: overcharge && !rank-elite
+	Armament@elite-overcharge:
+		Weapon: TankBoltChargedE
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: overcharge && rank-elite
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || parachute

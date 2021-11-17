@@ -178,6 +178,7 @@ vlkv:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Buildable:
 		Queue: Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 190
@@ -238,29 +239,59 @@ vlkv:
 	Armament@primary:
 		Weapon: ElectricBoltVolkov
 		LocalOffset: 320,128,512
-		RequiresCondition: !rank-elite
+		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite:
 		Weapon: ElectricBoltVolkovE
 		LocalOffset: 320,128,512
-		RequiresCondition: rank-elite
+		RequiresCondition: !overcharge && rank-elite
+	Armament@primary-charged:
+		Weapon: ElectricBoltVolkovCharged
+		LocalOffset: 320,128,512
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && !rank-elite
+	Armament@elite-charged:
+		Weapon: ElectricBoltVolkovChargedE
+		LocalOffset: 320,128,512
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: ElectricBoltVolkov
-		RequiresCondition: !rank-elite
+		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: ElectricBoltVolkovE
-		RequiresCondition: rank-elite
+		RequiresCondition: !overcharge && rank-elite
+	Armament@opentopped-charged:
+		Name: opentopped
+		Weapon: ElectricBoltVolkovCharged
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && !rank-elite
+	Armament@elite-opentopped-charged:
+		Name: opentopped
+		Weapon: ElectricBoltVolkovChargedE
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCElectricBoltVolkov
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCElectricBoltVolkovE
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !overcharge && rank-elite
+	Armament@garrisoned-charged:
+		Name: garrisoned
+		Weapon: UCElectricBoltVolkovCharged
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && !rank-elite
+	Armament@elite-garrisoned-charged:
+		Name: garrisoned
+		Weapon: UCElectricBoltVolkovChargedE
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && rank-elite
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2

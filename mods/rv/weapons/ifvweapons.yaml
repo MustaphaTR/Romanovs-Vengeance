@@ -172,6 +172,26 @@ CRElectricBoltE:
 		AimTargetStances: Enemy, Neutral
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
 
+CRElectricBoltCharged:
+	Inherits: CRElectricBolt
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+
+CRElectricBoltChargedE:
+	Inherits: CRElectricBoltE
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 45
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragmentCharged
+
 CRRadBeamWeapon:
 	Inherits: RadBeamWeapon
 	Range: 7c0

@@ -1008,6 +1008,21 @@ natech:
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@upgrade.soviets:
 		Prerequisite: upgrade.soviets
+	ProvidesPrerequisite@russia:
+		Prerequisite: tech.russia
+		Factions: russia
+	ProvidesPrerequisite@iraq:
+		Prerequisite: tech.iraq
+		Factions: iraq
+	ProvidesPrerequisite@vietnam:
+		Prerequisite: tech.vietnam
+		Factions: vietnam
+	ProvidesPrerequisite@cuba:
+		Prerequisite: tech.cuba
+		Factions: cuba
+	ProvidesPrerequisite@libya:
+		Prerequisite: tech.libya
+		Factions: libya
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.natech
@@ -1378,6 +1393,7 @@ tesla:
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets, Support.Baku
@@ -1411,19 +1427,35 @@ tesla:
 	Armament:
 		Weapon: CoilBolt
 		LocalOffset: 0,0,3072
-		RequiresCondition: (!lowpower && !charged) || (lowpower && charged == 1)
+		RequiresCondition: ((!lowpower && !charged) || (lowpower && charged == 1)) && !overcharge
+	Armament@charged:
+		Weapon: CoilBoltCharged
+		LocalOffset: 0,0,3072
+		RequiresCondition: ((!lowpower && !charged) || (lowpower && charged == 1)) && overcharge
 	Armament@1:
 		Weapon: OPCoilBolt
 		LocalOffset: 0,0,3072
-		RequiresCondition: (!lowpower && charged == 1) || (lowpower && charged == 2)
+		RequiresCondition: ((!lowpower && charged == 1) || (lowpower && charged == 2)) && !overcharge
+	Armament@1charged:
+		Weapon: OPCoilBoltCharged
+		LocalOffset: 0,0,3072
+		RequiresCondition: ((!lowpower && charged == 1) || (lowpower && charged == 2)) && overcharge
 	Armament@2:
 		Weapon: OPerCoilBolt
 		LocalOffset: 0,0,3072
-		RequiresCondition: (!lowpower && charged == 2) || (lowpower && charged >= 3)
+		RequiresCondition: ((!lowpower && charged == 2) || (lowpower && charged >= 3)) && !overcharge
+	Armament@2charged:
+		Weapon: OPerCoilBoltCharged
+		LocalOffset: 0,0,3072
+		RequiresCondition: ((!lowpower && charged == 2) || (lowpower && charged >= 3)) && overcharge
 	Armament@3:
 		Weapon: OPestCoilBolt
 		LocalOffset: 0,0,3072
-		RequiresCondition: !lowpower && charged >= 3
+		RequiresCondition: !lowpower && charged >= 3 && !overcharge
+	Armament@3charged:
+		Weapon: OPestCoilBoltCharged
+		LocalOffset: 0,0,3072
+		RequiresCondition: !lowpower && charged >= 3 && overcharge
 	AttackTesla:
 		MaxCharges: 3
 		ReloadDelay: 80
@@ -1698,6 +1730,7 @@ napost:
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Buildable:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
@@ -1729,19 +1762,35 @@ napost:
 	Armament:
 		Weapon: PostBolt
 		LocalOffset: 0,0,30
-		RequiresCondition: (!lowpower && !charged) || (lowpower && charged == 1)
+		RequiresCondition: ((!lowpower && !charged) || (lowpower && charged == 1)) && !overcharge
+	Armament@charged:
+		Weapon: PostBoltCharged
+		LocalOffset: 0,0,30
+		RequiresCondition: ((!lowpower && !charged) || (lowpower && charged == 1)) && overcharge
 	Armament@1:
 		Weapon: OPPostBolt
 		LocalOffset: 0,0,30
-		RequiresCondition: (!lowpower && charged == 1) || (lowpower && charged == 2)
+		RequiresCondition: ((!lowpower && charged == 1) || (lowpower && charged == 2)) && !overcharge
+	Armament@1charged:
+		Weapon: OPPostBoltCharged
+		LocalOffset: 0,0,30
+		RequiresCondition: ((!lowpower && charged == 1) || (lowpower && charged == 2)) && overcharge
 	Armament@2:
 		Weapon: OPerPostBolt
 		LocalOffset: 0,0,30
-		RequiresCondition: (!lowpower && charged == 2) || (lowpower && charged >= 3)
+		RequiresCondition: ((!lowpower && charged == 2) || (lowpower && charged >= 3)) && !overcharge
+	Armament@2charged:
+		Weapon: OPerPostBoltCharged
+		LocalOffset: 0,0,30
+		RequiresCondition: ((!lowpower && charged == 2) || (lowpower && charged >= 3)) && overcharge
 	Armament@3:
 		Weapon: OPestPostBolt
 		LocalOffset: 0,0,30
-		RequiresCondition: !lowpower && charged >= 3
+		RequiresCondition: !lowpower && charged >= 3 && !overcharge
+	Armament@3charged:
+		Weapon: OPestPostBoltCharged
+		LocalOffset: 0,0,30
+		RequiresCondition: !lowpower && charged >= 3 && overcharge
 	AttackTesla:
 		MaxCharges: 1
 		ReloadDelay: 80

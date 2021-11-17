@@ -31,6 +31,34 @@ UCElectricBoltE:
 	Inherits: ElectricBoltE
 	Range: 7c0
 
+ElectricBoltCharged:
+	Inherits: ElectricBolt
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 15
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+
+ElectricBoltChargedE:
+	Inherits: ElectricBoltE
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragmentCharged
+
+UCElectricBoltCharged:
+	Inherits: ElectricBoltCharged
+	Range: 7c0
+
+UCElectricBoltChargedE:
+	Inherits: ElectricBoltChargedE
+	Range: 7c0
+
 ElectricBoltCommando:
 	Inherits: ElectricBoltE
 	Range: 5c0
@@ -54,6 +82,34 @@ UCElectricBoltCommandoE:
 	Inherits: ElectricBoltCommandoE
 	Range: 7c0
 
+ElectricBoltCommandoCharged:
+	Inherits: ElectricBoltCommando
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+
+ElectricBoltCommandoChargedE:
+	Inherits: ElectricBoltCommandoE
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 45
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragmentCommandoCharged
+
+UCElectricBoltCommandoCharged:
+	Inherits: ElectricBoltCommandoCharged
+	Range: 7c0
+
+UCElectricBoltCommandoChargedE:
+	Inherits: ElectricBoltCommandoChargedE
+	Range: 7c0
+
 ElectricBoltVolkov:
 	Inherits: ElectricBoltE
 	Range: 6c0
@@ -74,6 +130,36 @@ UCElectricBoltVolkov:
 
 UCElectricBoltVolkovE:
 	Inherits: ElectricBoltVolkovE
+	Range: 7c0
+
+ElectricBoltVolkovCharged:
+	Inherits: ElectricBoltVolkov
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 45
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragmentCommandoCharged
+
+ElectricBoltVolkovChargedE:
+	Inherits: ElectricBoltVolkovE
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 45
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragmentCommandoCharged
+
+UCElectricBoltVolkovCharged:
+	Inherits: ElectricBoltVolkovCharged
+	Range: 7c0
+
+UCElectricBoltVolkovChargedE:
+	Inherits: ElectricBoltVolkovChargedE
 	Range: 7c0
 
 AssaultBolt:
@@ -135,6 +221,36 @@ OPestCoilBolt:
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
 
+CoilBoltCharged:
+	Inherits: CoilBolt
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 75
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+
+OPCoilBoltCharged:
+	Inherits: CoilBoltCharged
+	Range: 8c512
+	Report: btesat2a.wav
+	Projectile: TeslaZap
+		Image: litningupg
+	Warhead@1Dam: SpreadDamage
+		Damage: 10000
+
+OPerCoilBoltCharged:
+	Inherits: OPCoilBolt
+	Range: 9c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 12500
+
+OPestCoilBoltCharged:
+	Inherits: OPerCoilBolt
+	Range: 9c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 15000
+
 PostBolt:
 	Inherits: ^TeslaZap
 	ReloadDelay: 3
@@ -179,6 +295,36 @@ OPestPostBolt:
 	Warhead@1Dam: SpreadDamage
 		Damage: 9500
 
+PostBoltCharged:
+	Inherits: PostBolt
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+
+OPPostBoltCharged:
+	Inherits: CoilBoltCharged
+	Range: 3c512
+	Report: btesat2a.wav
+	Projectile: TeslaZap
+		Image: litningupg
+	Warhead@1Dam: SpreadDamage
+		Damage: 6500
+
+OPerPostBoltCharged:
+	Inherits: OPCoilBolt
+	Range: 4c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 8000
+
+OPestPostBoltCharged:
+	Inherits: OPerCoilBolt
+	Range: 4c512
+	Warhead@1Dam: SpreadDamage
+		Damage: 9500
+
 TankBolt:
 	Inherits: ^TeslaZap
 	Range: 5c0
@@ -209,6 +355,26 @@ TankBoltE:
 		AimTargetStances: Enemy, Neutral
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
 
+TankBoltCharged:
+	Inherits: TankBolt
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+
+TankBoltChargedE:
+	Inherits: TankBoltE
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 45
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragmentCharged
+
 TeslaFragment:
 	Inherits: TankBolt
 	Range: 3c0
@@ -224,6 +390,24 @@ TeslaFragmentCommando:
 	Inherits: TeslaFragment
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
+
+TeslaFragmentCharged:
+	Inherits: TeslaFragment
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+
+TeslaFragmentCommandoCharged:
+	Inherits: TeslaFragmentCommando
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 45
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
 
 SonicZap:
 	Inherits@1: ^BreakPointDefenseDrones

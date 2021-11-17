@@ -178,6 +178,7 @@ fv:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 600
@@ -683,11 +684,19 @@ fv:
 	Armament@tesla:
 		Weapon: CRElectricBolt
 		LocalOffset: 280,196,1024, 280,-196,1024
-		RequiresCondition: ifv-tesla && !rank-elite
+		RequiresCondition: ifv-tesla && !overcharge && !rank-elite
 	Armament@tesla-elite:
 		Weapon: CRElectricBoltE
 		LocalOffset: 280,196,1024, 280,-196,1024
-		RequiresCondition: ifv-tesla && rank-elite
+		RequiresCondition: ifv-tesla && !overcharge && rank-elite
+	Armament@tesla-charged:
+		Weapon: CRElectricBolt
+		LocalOffset: 280,196,1024, 280,-196,1024
+		RequiresCondition: ifv-tesla && overcharge && !rank-elite
+	Armament@tesla-charged-elite:
+		Weapon: CRElectricBoltE
+		LocalOffset: 280,196,1024, 280,-196,1024
+		RequiresCondition: ifv-tesla && overcharge && rank-elite
 	Armament@desolator:
 		Weapon: CRRadBeamWeapon
 		LocalOffset: 256,-256,1280

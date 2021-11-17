@@ -178,15 +178,28 @@ upgrade.ap_bullets:
 	Valued:
 		Cost: 1250
 
+upgrade.overcharge:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Overcharge
+	Buildable:
+		Queue: Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 60
+		BuildDuration: 750
+		Prerequisites: ~upgrade.soviets, ~tech.russia, natech, ~techlevel.3
+		Description: Makes Tesla weapons stop enemy vehicles for a short time.
+	Valued:
+		Cost: 1500
+
 upgrade.nuclear_engines:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Nuclear Engines
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		BuildDuration: 750
-		Prerequisites: ~upgrade.soviets, gatech, ~techlevel.4
+		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
 		Description: Makes Rhino and Apocalypse Tanks move 33% faster and explode when destroyed.
 	Valued:
 		Cost: 1500
@@ -238,7 +251,7 @@ upgrade.camouflage:
 		Queue: Upgrade.Yuri
 		BuildPaletteOrder: 40
 		BuildDuration: 750
-		Prerequisites: ~upgrade.yuri, gatech, ~techlevel.3
+		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
 		Description: Makes Initiates and Viruses stealth.
 	Valued:
 		Cost: 1500

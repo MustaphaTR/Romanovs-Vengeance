@@ -316,6 +316,7 @@ shk:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	AutoTargetPriority@DEFAULT:
 		InvalidTargets: NoAutoTarget, WaterStructure, TeslaBoost
@@ -379,32 +380,62 @@ shk:
 		Weapon: ElectricBolt
 		LocalOffset: 320,128,1024
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite:
 		Weapon: ElectricBoltE
 		LocalOffset: 320,128,1024
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !overcharge && rank-elite
+	Armament@primary-charged:
+		Weapon: ElectricBoltCharged
+		LocalOffset: 320,128,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && !rank-elite
+	Armament@elite-charged:
+		Weapon: ElectricBoltChargedE
+		LocalOffset: 320,128,1024
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: ElectricBolt
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: ElectricBoltE
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !overcharge && rank-elite
+	Armament@opentopped-charged:
+		Name: opentopped
+		Weapon: ElectricBoltCharged
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && !rank-elite
+	Armament@elite-opentopped-charged:
+		Name: opentopped
+		Weapon: ElectricBoltChargedE
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCElectricBolt
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite
+		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCElectricBoltE
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !overcharge && rank-elite
+	Armament@garrisoned-charged:
+		Name: garrisoned
+		Weapon: UCElectricBoltCharged
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && !rank-elite
+	Armament@elite-garrisoned-charged:
+		Name: garrisoned
+		Weapon: UCElectricBoltChargedE
+		PauseOnCondition: chronodisable
+		RequiresCondition: overcharge && rank-elite
 	Armament@charge:
 		Name: secondary
 		Weapon: AssaultBolt
@@ -1443,6 +1474,26 @@ shkc:
 		Weapon: ElectricBoltCommando
 	Armament@elite:
 		Weapon: ElectricBoltCommandoE
+	Armament@primary-charged:
+		Weapon: ElectricBoltCommandoCharged
+	Armament@elite-charged:
+		Weapon: ElectricBoltCommandoChargedE
+	Armament@opentopped:
+		Weapon: ElectricBoltCommando
+	Armament@elite-opentopped:
+		Weapon: ElectricBoltCommandoE
+	Armament@opentopped-charged:
+		Weapon: ElectricBoltCommandoCharged
+	Armament@elite-opentopped-charged:
+		Weapon: ElectricBoltCommandoChargedE
+	Armament@garrisoned:
+		Weapon: UCElectricBoltCommando
+	Armament@elite-garrisoned:
+		Weapon: UCElectricBoltCommandoE
+	Armament@garrisoned-charged:
+		Weapon: UCElectricBoltCommandoCharged
+	Armament@elite-garrisoned-charged:
+		Weapon: UCElectricBoltCommandoChargedE
 	Armament@tesla-bomb:
 		Weapon: TeslaBombAttacher
 		Cursor: c4
@@ -1455,15 +1506,6 @@ shkc:
 		OutsideRangeCursor: c4
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
-	Armament@opentopped:
-		Weapon: ElectricBoltCommando
-	Armament@elite-opentopped:
-		Name: opentopped
-		Weapon: ElectricBoltCommandoE
-	Armament@garrisoned:
-		Weapon: UCElectricBoltCommando
-	Armament@elite-garrisoned:
-		Weapon: UCElectricBoltCommandoE
 	WithInfantryBody:
 		AttackSequences:
 			secondary: shoot
