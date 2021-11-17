@@ -595,6 +595,39 @@
 		Condition: overcharge
 		Prerequisites: upgrade.overcharge
 
+^AffectedByRadioactiveBombs:
+	GrantConditionOnPrerequisite@RADBOMBS:
+		Condition: radbombs
+		Prerequisites: upgrade.radioactive_bombs
+
+^AffectedByAerialPropaganda:
+	ProximityExternalCondition@AIRPROP:
+		Condition: propaganda_tower
+		Range: 6c0
+		RequiresCondition: airprop && !chronodisable
+	WithRangeCircle@AIRPROP:
+		Range: 6c0
+		Type: propaganda
+		AffectsParent: true
+		RenderOnGround: true
+		RequiresCondition: airprop
+	GrantConditionOnPrerequisite@AIRPROP:
+		Condition: airprop
+		Prerequisites: upgrade.aerial_propaganda
+
+^AffectedByTargetedExplosives:
+	GrantConditionOnPrerequisite@TARGETEDEXP:
+		Condition: targetedexp
+		Prerequisites: upgrade.targeted_explosives
+
+^AffectedByHighExplosiveBombs:
+	FirepowerMultiplier@HIEXPLOSIVE:
+		Modifier: 125
+		RequiresCondition: hiexplosive
+	GrantConditionOnPrerequisite@HIEXPLOSIVE:
+		Condition: hiexplosive
+		Prerequisites: upgrade.high_explosive_bombs
+
 ^AffectedByGrinderTreads:
 	ChangesHealth@GRINDER_TREADS:
 		Step: 0
@@ -701,6 +734,7 @@
 		DamageTypes: RadiationDeath, NonTemporal
 
 ^AcceptsDeathBomb:
+	Inherits@TARGETEDEXP: ^AffectedByTargetedExplosives
 	WithDecoration@DEATHBOMBS:
 		RequiresSelection: false
 		Image: dynamite
@@ -712,7 +746,12 @@
 		DeathTypes: NonTemporal
 		Weapon: DeathBombExplode
 		EmptyWeapon: DeathBombExplode
-		RequiresCondition: deathbombs
+		RequiresCondition: deathbombs && !targetedexp
+	Explodes@DEATHBOMBSTARGETED:
+		DeathTypes: NonTemporal
+		Weapon: TargetedDeathBombExplode
+		EmptyWeapon: TargetedDeathBombExplode
+		RequiresCondition: deathbombs && targetedexp
 	ExternalCondition@DEATHBOMBS:
 		Condition: deathbombs
 

@@ -146,8 +146,18 @@ CRNuke:
 	Warhead@2Eff: CreateEffect
 		Explosions: large_tumu
 
+CRTargetedNuke:
+	Inherits: CRNuke
+	Warhead@1Dam: SpreadDamage
+		ValidRelationships: Neutral, Enemy
+
 CRTerrorBomb:
 	Inherits: TerrorBomb
+	Warhead@1Dam: SpreadDamage
+		Damage: 50000 # 25000
+
+CRTargetedTerrorBomb:
+	Inherits: TargetedTerrorBomb
 	Warhead@1Dam: SpreadDamage
 		Damage: 50000 # 25000
 

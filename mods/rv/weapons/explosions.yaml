@@ -309,6 +309,16 @@ IvanBomberE:
 	Warhead@2Eff: CreateEffect
 		Explosions: ivan_explosionE
 
+TargetedIvanBomber:
+	Inherits: IvanBomber
+	Warhead@1Dam: SpreadDamage
+		ValidRelationships: Neutral, Enemy
+
+TargetedIvanBomberE:
+	Inherits: IvanBomberE
+	Warhead@1Dam: SpreadDamage
+		ValidRelationships: Neutral, Enemy
+
 TanyaC4:
 	Inherits: IvanBomber
 	Warhead@1Dam: SpreadDamage
@@ -450,8 +460,18 @@ TerrorBomb:
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: SmallCrater
 
+TargetedTerrorBomb:
+	Inherits: TerrorBomb
+	Warhead@1Dam: SpreadDamage
+		ValidRelationships: Enemy, Neutral
+
 DeathBombExplode:
 	Inherits: TerrorBomb
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground, Water, Air
+
+TargetedDeathBombExplode:
+	Inherits: TargetedTerrorBomb
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Ground, Water, Air
 
@@ -646,6 +666,24 @@ V3WeaponE:
 		ValidTargets: Ground, Water, Air
 	-Warhead@3EffWater:
 
+V3WeaponRad:
+	Inherits: V3Weapon
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 2c0
+		Falloff: 100, 100
+		Level: 500
+		MaxLevel: 500
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion
+
+V3WeaponRadE:
+	Inherits: V3WeaponE
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 3c0
+		Falloff: 100, 100
+		Level: 750
+		MaxLevel: 750
+
 DredWeapon:
 	Inherits: V3Weapon
 	Warhead@1Dam: SpreadDamage
@@ -657,6 +695,24 @@ DredWeaponE:
 	Warhead@1Dam: SpreadDamage
 		Spread: 1c0
 		Damage: 20000
+
+DredWeaponRad:
+	Inherits: DredWeapon
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 2c0
+		Falloff: 100, 100
+		Level: 500
+		MaxLevel: 500
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion
+
+DredWeaponRadE:
+	Inherits: DredWeaponE
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 3c0
+		Falloff: 100, 100
+		Level: 750
+		MaxLevel: 750
 
 CruiseWeapon:
 	Inherits: DredWeapon

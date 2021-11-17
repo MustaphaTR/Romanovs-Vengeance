@@ -585,6 +585,7 @@ dtruck:
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Libya
@@ -664,6 +665,7 @@ v3:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
@@ -768,6 +770,7 @@ m3:
 
 v3rocket:
 	Inherits: ^ShootableMissile
+	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Valued:
 		Cost: 50
 	Tooltip:
@@ -796,11 +799,19 @@ v3rocket:
 	SpawnedExplodes:
 		Weapon: V3Weapon
 		EmptyWeapon: V3Weapon
-		RequiresCondition: !airborne && !rank-elite
+		RequiresCondition: !airborne && !radbombs && !rank-elite
 	SpawnedExplodes@Elite:
 		Weapon: V3WeaponE
 		EmptyWeapon: V3WeaponE
-		RequiresCondition: !airborne && rank-elite
+		RequiresCondition: !airborne && !radbombs && rank-elite
+	SpawnedExplodes@Rad:
+		Weapon: V3WeaponRad
+		EmptyWeapon: V3WeaponRad
+		RequiresCondition: !airborne && radbombs && !rank-elite
+	SpawnedExplodes@EliteRad:
+		Weapon: V3WeaponRadE
+		EmptyWeapon: V3WeaponRadE
+		RequiresCondition: !airborne && radbombs && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
@@ -836,6 +847,7 @@ tric:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:

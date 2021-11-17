@@ -273,6 +273,7 @@ dred:
 	Inherits@C4: ^AcceptsSEALC4
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
@@ -360,6 +361,7 @@ dred:
 
 dmisl:
 	Inherits: ^ShootableMissile
+	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Valued:
 		Cost: 50
 	Tooltip:
@@ -387,11 +389,19 @@ dmisl:
 	SpawnedExplodes:
 		Weapon: DredWeapon
 		EmptyWeapon: DredWeapon
-		RequiresCondition: !airborne && !rank-elite
+		RequiresCondition: !airborne && !radbombs && !rank-elite
 	SpawnedExplodes@Elite:
 		Weapon: DredWeaponE
 		EmptyWeapon: DredWeaponE
-		RequiresCondition: !airborne && rank-elite
+		RequiresCondition: !airborne && !radbombs && rank-elite
+	SpawnedExplodes@Rad:
+		Weapon: DredWeaponRad
+		EmptyWeapon: DredWeaponRad
+		RequiresCondition: !airborne && radbombs && !rank-elite
+	SpawnedExplodes@EliteRad:
+		Weapon: DredWeaponRadE
+		EmptyWeapon: DredWeaponRadE
+		RequiresCondition: !airborne && radbombs && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode

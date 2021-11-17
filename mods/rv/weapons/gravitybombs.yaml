@@ -48,6 +48,24 @@ BlimpBombE:
 	Warhead@2Eff: CreateEffect
 		Explosions: kirovtesla
 
+BlimpBombRad:
+	Inherits: BlimpBomb
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 2c0
+		Falloff: 100, 100
+		Level: 500
+		MaxLevel: 500
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion
+
+BlimpBombRadE:
+	Inherits: BlimpBombE
+	Warhead@4Radiation: CreateTintedCells
+		Spread: 3c0
+		Falloff: 100, 100
+		Level: 750
+		MaxLevel: 750
+
 NapalmBomb:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 50

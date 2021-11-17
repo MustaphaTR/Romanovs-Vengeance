@@ -507,6 +507,12 @@ terror:
 		DeathTypes: NonTemporal
 		Weapon: TerrorBomb
 		EmptyWeapon: TerrorBomb
+		RequiresCondition: !targetedexp
+	Explodes@Targeted:
+		DeathTypes: NonTemporal
+		Weapon: TargetedTerrorBomb
+		EmptyWeapon: TargetedTerrorBomb
+		RequiresCondition: targetedexp
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 128
@@ -667,6 +673,7 @@ ivan:
 	Inherits: ^Infantry
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
@@ -709,6 +716,11 @@ ivan:
 	Explodes:
 		Weapon: IvanBomber
 		EmptyWeapon: IvanBomber
+		RequiresCondition: !targetedexp
+	Explodes@Targeted:
+		Weapon: TargetedIvanBomber
+		EmptyWeapon: TargetedIvanBomber
+		RequiresCondition: targetedexp
 	Armament@primary:
 		Weapon: IvanBombAttacher
 		PauseOnCondition: chronodisable
@@ -786,6 +798,7 @@ civan:
 	Chronoshiftable:
 		ExplodeInstead: false
 	-Explodes:
+	-Explodes@Targeted:
 	Selectable:
 		Class: civan
 	RenderSprites:

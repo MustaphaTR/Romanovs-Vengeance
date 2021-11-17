@@ -192,9 +192,11 @@ shadhusk:
 
 zep:
 	Inherits: ^Aircraft
+	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Inherits@AI: ^AIMicroManagable
 	Valued:
 		Cost: 2000
@@ -249,6 +251,12 @@ zep:
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: BlimpBombE
+		RequiresCondition: rank-elite
+	Armament@rad:
+		Weapon: BlimpBombRad
+		RequiresCondition: !rank-elite
+	Armament@eliterad:
+		Weapon: BlimpBombRadE
 		RequiresCondition: rank-elite
 	AttackAircraft:
 		Voice: Attack
@@ -2426,6 +2434,7 @@ txdxhusk:
 
 kite:
 	Inherits: ^Helicopter
+	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@CHAOS: ^BerserkableVoxel

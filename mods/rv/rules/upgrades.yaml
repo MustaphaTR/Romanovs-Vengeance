@@ -186,8 +186,60 @@ upgrade.overcharge:
 		Queue: Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 60
 		BuildDuration: 750
-		Prerequisites: ~upgrade.soviets, ~tech.russia, natech, ~techlevel.3
+		Prerequisites: ~upgrade.russia, natech, ~techlevel.3
 		Description: Makes Tesla weapons stop enemy vehicles for a short time.
+	Valued:
+		Cost: 1500
+
+upgrade.radioactive_bombs:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Radioactive Bombs
+	Buildable:
+		Queue: Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 70
+		BuildDuration: 750
+		Prerequisites: ~upgrade.iraq, natech, ~techlevel.3
+		Description: Makes Kirov bombs and V3 and Dreadnought Rockets leave radiation.
+	Valued:
+		Cost: 1500
+
+upgrade.aerial_propaganda:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Aerial Propaganda
+	Buildable:
+		Queue: Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 80
+		BuildDuration: 750
+		Prerequisites: ~upgrade.vietnam, natech, ~techlevel.3
+		Description: Gives Black Kites and Kirov Airships speakers that buff nearby units.
+	Valued:
+		Cost: 1500
+
+upgrade.targeted_explosives:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Targeted Explosives
+	Buildable:
+		Queue: Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 90
+		BuildDuration: 750
+		Prerequisites: ~upgrade.cuba, natech, ~techlevel.3
+		Description: Explosions from Terrorists, Death Bombs and Crazy Ivans when they die no longer damage friendly units.
+	Valued:
+		Cost: 1500
+
+upgrade.high_explosive_bombs:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: High Explosive Bombs
+	Buildable:
+		Queue: Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 100
+		BuildDuration: 750
+		Prerequisites: ~upgrade.libya, natech, ~techlevel.3
+		Description: Increases the damage of following units by 25%:\n - Crazy Ivan\n - Chrono Ivan\n - Mortar Cycle\n - Demolition Truck\n - V3 Launcher\n - Dreadnought
 	Valued:
 		Cost: 1500
 
@@ -197,7 +249,7 @@ upgrade.nuclear_engines:
 		Name: Nuclear Engines
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 110
 		BuildDuration: 750
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
 		Description: Makes Rhino and Apocalypse Tanks move 33% faster and explode when destroyed.
