@@ -465,21 +465,25 @@ BlackHawkCannonAAE:
 
 SiegeChopperCannon:
 	Inherits: ^MG
-	ReloadDelay: 40
+	ReloadDelay: 5
 	Range: 6c0
 	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	ValidTargets: Ground, Water
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 7000
+		Damage: 1000
 		Versus:
+			None: 100
+			Flak: 90
+			Plate: 80
 			Light: 50
 			Medium: 10
 			Heavy: 10
 			Wood: 15
 			Steel: 5
 			Concrete: 10
+			Drone: 100
 			Rocket: 25
 		ValidTargets: Ground, Water
 		InvalidTargets: Bridge, Wall, Fence, Tree, LoadedTankBunker
@@ -487,7 +491,7 @@ SiegeChopperCannon:
 		ValidTargets: LoadedTankBunker
 		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 64
-		Damage: 7000
+		Damage: 1000
 		Versus:
 			None: 100
 			Flak: 90
@@ -505,9 +509,9 @@ SiegeChopperCannon:
 SiegeChopperCannonE:
 	Inherits: SiegeChopperCannon
 	Warhead@1Dam: SpreadDamage
-		Damage: 10000
+		Damage: 1500
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 10000
+		Damage: 1500
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -515,13 +519,14 @@ SiegeChopperCannonAA:
 	Inherits: SiegeChopperCannon
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
+		Damage: 1000
 		ValidTargets: Air
 	-Warhead@1Gar:
 
 SiegeChopperCannonAAE:
 	Inherits: SiegeChopperCannonAA
 	Warhead@1Dam: SpreadDamage
-		Damage: 10000
+		Damage: 1500
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 

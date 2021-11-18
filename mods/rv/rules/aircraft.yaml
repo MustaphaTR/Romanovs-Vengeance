@@ -1385,19 +1385,23 @@ schp:
 		Type: Light
 	Armament@primary:
 		Weapon: SiegeChopperCannon
-		PauseOnCondition: !undeployed || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: !undeployed || reload-air
 		RequiresCondition: !rank-elite
 	Armament@primary-aa:
 		Weapon: SiegeChopperCannonAA
-		PauseOnCondition: !undeployed || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: !undeployed || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: SiegeChopperCannonE
-		PauseOnCondition: !undeployed || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: !undeployed || reload-air
 		RequiresCondition: rank-elite
 	Armament@elite-aa:
 		Weapon: SiegeChopperCannonAAE
-		PauseOnCondition: !undeployed || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: !undeployed || reload-ground
 		RequiresCondition: rank-elite
 	Armament@deployed:
 		Weapon: 160mm
@@ -1448,12 +1452,6 @@ schp:
 		Range: 5c0
 	RenderDetectionCircle:
 		RenderOnGround: true
-	AmmoPool:
-		Ammo: 1
-		AmmoCondition: ammo
-	ReloadAmmoPool:
-		Delay: 40
-		Count: 1
 	AttackTurreted:
 		Armaments: primary, deployed
 		Voice: DeployedAttack
