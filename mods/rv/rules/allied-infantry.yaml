@@ -771,32 +771,72 @@ snipe:
 		Type: None
 	Armament@primary:
 		Weapon: awp
-		PauseOnCondition: chronodisable
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || reload-at
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: AWPE
-		PauseOnCondition: chronodisable
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || reload-at
 		RequiresCondition: rank-elite
+	Armament@secondary:
+		Weapon: awpat
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || reload-ap
+		RequiresCondition: !rank-elite && highcaliber
+	Armament@secondary-elite:
+		Weapon: awpatE
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || reload-ap
+		RequiresCondition: rank-elite && highcaliber
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: awp
-		PauseOnCondition: chronodisable
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || reload-at
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: AWPE
-		PauseOnCondition: chronodisable
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || reload-at
 		RequiresCondition: rank-elite
+	Armament@secondary-opentopped:
+		Name: opentopped
+		Weapon: awpat
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || reload-ap
+		RequiresCondition: !rank-elite && highcaliber
+	Armament@secondary-elite-opentopped:
+		Name: opentopped
+		Weapon: awpatE
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || reload-ap
+		RequiresCondition: rank-elite && highcaliber
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCawp
-		PauseOnCondition: chronodisable
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || reload-at
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCAWPE
-		PauseOnCondition: chronodisable
+		ReloadingCondition: reload-ap
+		PauseOnCondition: chronodisable || reload-at
 		RequiresCondition: rank-elite
+	Armament@secondary-garrisoned:
+		Name: garrisoned
+		Weapon: UCawpat
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || reload-ap
+		RequiresCondition: !rank-elite && highcaliber
+	Armament@secondary-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCawpatE
+		ReloadingCondition: reload-at
+		PauseOnCondition: chronodisable || reload-ap
+		RequiresCondition: rank-elite && highcaliber
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2

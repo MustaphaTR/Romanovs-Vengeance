@@ -202,6 +202,32 @@ AWPE:
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
 
+awpat:
+	Inherits: ^MG
+	ReloadDelay: 120
+	Range: 12c0
+	Report: isniatta.wav
+	ValidTargets: Vehicle
+	Warhead@1Dam: SpreadDamage
+		Light: 5
+		Medium: 5
+		Heavy: 5
+	Warhead@1Con: GrantExternalCondition
+		Condition: nogunner
+		Duration: 75
+		Range: 0c128
+	Warhead@2Eff: CreateEffect
+		Explosions: piff
+
+awpatE:
+	Inherits: awpat
+	ReloadDelay: 90
+	Range: 14c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+	Warhead@2Eff: CreateEffect
+		Explosions: piffred
+
 UCawp:
 	Inherits: awp
 	Projectile: InstantHit
@@ -209,6 +235,16 @@ UCawp:
 
 UCAWPE:
 	Inherits: AWPE
+	Projectile: InstantHit
+		Blockable: false
+
+UCawpat:
+	Inherits: awpat
+	Projectile: InstantHit
+		Blockable: false
+
+UCawpatE:
+	Inherits: awpatE
 	Projectile: InstantHit
 		Blockable: false
 

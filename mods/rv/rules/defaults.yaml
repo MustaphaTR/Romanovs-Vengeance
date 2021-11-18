@@ -704,6 +704,22 @@
 		Condition: chainguns
 		Prerequisites: upgrade.chainguns
 
+^GunnerKillable:
+	WithDecoration@NOGUNNER:
+		Image: nogunner
+		Sequence: icon
+		Palette: pips
+		Position: TopLeft
+		RequiresCondition: nogunner
+		ValidRelationships: Enemy, Neutral, Ally
+	Targetable@GUNNER:
+		TargetTypes: GunnerKillable
+	TimedConditionBar@NOGUNNER:
+		Condition: nogunner
+		Color: FD2828
+	ExternalCondition@NOGUNNER:
+		Condition: nogunner
+
 ^SmokeGrenadeModifiers:
 	RevealsShroudMultiplier@SMOKE:
 		Modifier: 50
@@ -720,7 +736,7 @@
 		Condition: smoked
 
 ^HealsInAmbulance:
-	ChangesHealth@HOSPITAL:
+	ChangesHealth@AMBULANCE:
 		PercentageStep: 50
 		Delay: 25
 		StartIfBelow: 100

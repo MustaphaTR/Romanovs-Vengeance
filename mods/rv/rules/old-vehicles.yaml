@@ -5,6 +5,7 @@
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 700
@@ -31,6 +32,7 @@
 		Weapon: 75mm
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
@@ -46,6 +48,7 @@
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 800
@@ -72,6 +75,7 @@
 		Weapon: 90mm
 	AttackTurreted:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
@@ -87,6 +91,7 @@
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 950
@@ -126,7 +131,7 @@
 	AttackTurreted:
 		Voice: Attack
 		Armaments: primary, primary2
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithMuzzleOverlay:
 	WithVoxelBody:
 	WithVoxelTurret:
@@ -148,6 +153,7 @@
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 1700
@@ -174,7 +180,7 @@
 		Weapon: 120mm
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
@@ -191,6 +197,7 @@ arty:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 600
@@ -216,6 +223,7 @@ arty:
 		Weapon: HowiCannon
 	AttackFrontal:
 		Voice: Attack
+		PauseOnCondition: chronodisable || emp || nogunner
 	WithVoxelBody:
 	WithVoxelTurret:
 	RenderSprites:
@@ -229,6 +237,7 @@ ftnktd:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 800
@@ -251,7 +260,7 @@ ftnktd:
 		RequiresCondition: !rank-elite
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable || emp || nogunner
 	WithVoxelBody:
 	RenderSprites:
 	RenderVoxels:
@@ -267,6 +276,7 @@ hmve:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 400
@@ -289,7 +299,7 @@ hmve:
 		Weapon: M1Carbine
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	RenderSprites:
@@ -304,6 +314,7 @@ m113:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 700
@@ -328,7 +339,7 @@ m113:
 		Weapon: M1Carbine
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	Cargo:
@@ -364,6 +375,7 @@ mlrs:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 800
@@ -389,7 +401,7 @@ mlrs:
 	AttackTurreted:
 		Voice: Attack
 		TargetFrozenActors: true
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithVoxelBody:
 	WithVoxelTurret:
 	RenderSprites:

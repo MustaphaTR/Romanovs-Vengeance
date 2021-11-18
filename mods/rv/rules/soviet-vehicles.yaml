@@ -13,6 +13,7 @@ harv:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@NOGUNNER: ^GunnerKillable
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		Description: Gathers Ore and Gems.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
@@ -32,7 +33,7 @@ harv:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithMuzzleOverlay:
 	Turreted:
 		TurnSpeed: 40
@@ -183,6 +184,7 @@ htk:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 500
@@ -239,7 +241,7 @@ htk:
 		ExitSound: gexit1a.wav
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	AutoTarget:
 	Armament@primary:
 		Weapon: FlakTrackGun
@@ -369,6 +371,7 @@ apoc:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@NUKEENGINES: ^AffectedByNuclearEngines
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
@@ -456,7 +459,7 @@ apoc:
 	AttackTurreted:
 		Voice: Attack
 		Armaments: primary, primary2
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithMuzzleOverlay:
 	AutoTarget:
 	RenderSprites:
@@ -499,6 +502,7 @@ ttnk:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
@@ -554,7 +558,7 @@ ttnk:
 		RequiresCondition: overcharge && rank-elite
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -667,6 +671,7 @@ v3:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
@@ -710,7 +715,7 @@ v3:
 	AttackFrontal:
 		Voice: Attack
 		TargetFrozenActors: True
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable || emp || nogunner
 	MissileSpawnerMaster:
 		Actors: v3rocket
 		RespawnTicks: 200
@@ -849,6 +854,7 @@ tric:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 500
@@ -888,7 +894,7 @@ tric:
 		Voice: Attack
 		FacingTolerance: 2
 		TargetFrozenActors: true
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable || emp || nogunner
 	Armament@primary:
 		Weapon: CycleMortar
 		LocalOffset: 128,128,768
@@ -931,6 +937,7 @@ deva:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Valued:
 		Cost: 2200
 	DeliversCash:
@@ -990,7 +997,7 @@ deva:
 		Voice: Attack
 		FacingTolerance: 2
 		RequiresCondition: !overload
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable || emp || nogunner
 	WithMuzzleOverlay:
 	AutoTarget:
 	RenderSprites:
@@ -1065,6 +1072,7 @@ ftnk:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 900
@@ -1119,7 +1127,7 @@ ftnk:
 		RequiresCondition: rank-elite && black_napalm
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	AutoTarget:
 	RenderSprites:
 	Selectable:

@@ -12,6 +12,7 @@ smin:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@GRINDER: ^AffectedByGrinderTreads
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
@@ -64,7 +65,7 @@ smin:
 	#	RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithMuzzleOverlay:
 	RevealsShroud:
 		Range: 6c0
@@ -247,6 +248,7 @@ ytnk:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 700
@@ -336,7 +338,7 @@ ytnk:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -484,6 +486,7 @@ tele:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 800
@@ -551,7 +554,7 @@ tele:
 	AttackTurreted:
 		Voice: Attack
 		TargetFrozenActors: true
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	AutoTarget:
 	RenderSprites:
 	Selectable:
@@ -769,6 +772,7 @@ kamaz:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@TOXIN: ^AffectedByToxinSprayer
 	Valued:
@@ -822,7 +826,10 @@ kamaz:
 		RequiresCondition: toxinsprayer && rank-elite
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
+		RequiresCondition: toxinsprayer
+	Targetable@GUNNER:
+		TargetTypes: GunnerKillable
 		RequiresCondition: toxinsprayer
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
@@ -876,6 +883,7 @@ yhtnk:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 1400
@@ -932,7 +940,7 @@ yhtnk:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	AutoTarget:
 		InitialStance: ReturnFire
 	RenderSprites:
@@ -961,6 +969,7 @@ grtk:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 2200
@@ -1011,8 +1020,8 @@ grtk:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
 		FacingTolerance: 2
+		PauseOnCondition: chronodisable || emp || nogunner
 	AutoTarget:
 		ScanRadius: 5
 		InitialStance: AttackAnything

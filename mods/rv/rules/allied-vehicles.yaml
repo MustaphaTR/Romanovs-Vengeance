@@ -97,6 +97,7 @@ tnkd:
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 900
@@ -142,7 +143,7 @@ tnkd:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable || emp || nogunner
 		FacingTolerance: 2
 	WithMuzzleOverlay:
 	AutoTarget:
@@ -180,8 +181,10 @@ fv:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HIGHCALIBER: ^AffectedByHighCaliberRounds
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
@@ -695,6 +698,14 @@ fv:
 		Weapon: CRAWPE
 		LocalOffset: 188,0,600
 		RequiresCondition: ifv-sniper && rank-elite
+	Armament@sniper-at:
+		Weapon: CRAWPAT
+		LocalOffset: 188,0,600
+		RequiresCondition: ifv-sniper && !rank-elite && highcaliber
+	Armament@sniper-at-elite:
+		Weapon: CRAWPATE
+		LocalOffset: 188,0,600
+		RequiresCondition: ifv-sniper && rank-elite && highcaliber
 	Armament@virus:
 		Weapon: CRVirusgun
 		LocalOffset: 188,0,600
@@ -920,7 +931,7 @@ fv:
 	AttackTurreted:
 		Voice: Attack
 		Armaments: primary, elite, gatling
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-sniper && !ifv-virus && !ifv-tesla && !ifv-deso && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-demo && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-lazarus
 	AutoTargetPriority@ATTACKANYTHING:
@@ -966,7 +977,11 @@ fv:
 	Explodes@demo:
 		Weapon: CRTerrorBomb
 		EmptyWeapon: CRTerrorBomb
-		RequiresCondition: ifv-demo
+		RequiresCondition: ifv-demo && !targetedexp
+	Explodes@demo-targeted:
+		Weapon: CRTargetedTerrorBomb
+		EmptyWeapon: CRTargetedTerrorBomb
+		RequiresCondition: ifv-demo && targetedexp
 	WithVoxelTurret@default:
 		Sequence: turret-missile
 		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-lazarus && !ifv-crkt
@@ -1057,6 +1072,7 @@ sref:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
@@ -1108,7 +1124,7 @@ sref:
 		Voice: Attack
 		OpportunityFire: true
 		TargetFrozenActors: true
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	AutoTarget:
 	RenderSprites:
 	RenderVoxels:
@@ -1159,6 +1175,7 @@ mgtk:
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
@@ -1228,8 +1245,8 @@ mgtk:
 		DefaultTargetTypes: tree01, tree02, tree03, tree04
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
 		FacingTolerance: 2
+		PauseOnCondition: chronodisable || emp || nogunner
 	AutoTarget:
 		AllowMovement: false
 	RenderSprites:
@@ -1620,6 +1637,7 @@ hwtz:
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:
 		Cost: 900
@@ -1676,9 +1694,9 @@ hwtz:
 		RequiresCondition: empammo && rank-elite
 	AttackFrontal:
 		Voice: Attack
-		TargetFrozenActors: True
-		PauseOnCondition: chronodisable || emp
 		FacingTolerance: 2
+		TargetFrozenActors: True
+		PauseOnCondition: chronodisable || emp || nogunner
 	WithMuzzleOverlay:
 	AutoTarget:
 	RenderSprites:
@@ -1712,6 +1730,7 @@ ctnk:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
@@ -1764,8 +1783,8 @@ ctnk:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp
 		FacingTolerance: 2
+		PauseOnCondition: chronodisable || emp || nogunner
 	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav
 		DeployCursor: chronosphere
