@@ -386,13 +386,65 @@ upgrade.advanced_magnetics:
 	Valued:
 		Cost: 1250
 
+upgrade.chaos_tank_compensators:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Chaos Tank Compensators
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 60
+		BuildDuration: 750
+		Prerequisites: ~upgrade.psicorps, yatech, ~techlevel.3
+		Description: Vehicles emit chaos gas when they are destroyed.\nIncreases area of effect of Chaos Drones.
+	Valued:
+		Cost: 1250
+
+upgrade.laser_capacitors:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Laser Capacitors
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 70
+		BuildDuration: 1000
+		Prerequisites: ~upgrade.psinepal, yatech, ~techlevel.3
+		Description: Replaces Lasher Tanks' weapons with a laser cannon.\nIncreases damage output of Lazarus Tanks and Leech Discs by 25%.
+	Valued:
+		Cost: 1500
+
+upgrade.mastery_of_mind:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Mastery of Mind
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 70
+		BuildDuration: 1000
+		Prerequisites: ~upgrade.psisouth, yatech, ~techlevel.3
+		Description: Enables Yuri Clones to use Psi-Waves.\nMakes Psi-Wave weapons not effect friendly units.\nYuri Clone and Yuri Prime can control 2 units at the same time.
+	Valued:
+		Cost: 1500
+
+upgrade.dna_boosters:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: DNA Boosters
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 70
+		BuildDuration: 1000
+		Prerequisites: ~upgrade.psitrans, yatech, ~techlevel.3
+		Description: Enables Genetic Mutator ability.\nIncreases movement speed of following units by 10%:\n - Brute\n - Mutant Tarantula\n - Mutant Crab
+	Valued:
+		Cost: 1500
+
 upgrade.chainguns:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Chainguns
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 1100
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.4
 		Description: Increases Gatling weapons' damage by 25%.

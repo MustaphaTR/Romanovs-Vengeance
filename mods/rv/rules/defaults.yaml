@@ -696,6 +696,22 @@
 		Condition: advmagnets
 		Prerequisites: upgrade.advanced_magnetics
 
+^AffectedByLaserCapacitors:
+	FirepowerMultiplier@CAPACITORS:
+		Modifier: 125
+		RequiresCondition: capacitors
+	GrantConditionOnPrerequisite@CAPACITORS:
+		Condition: capacitors
+		Prerequisites: upgrade.laser_capacitors
+
+^AffectedByDNABoosters:
+	SpeedMultiplier@DNABOOST:
+		Modifier: 110
+		RequiresCondition: dnaboost
+	GrantConditionOnPrerequisite@DNABOOST:
+		Condition: dnaboost
+		Prerequisites: upgrade.dna_boosters
+
 ^AffectedByChainguns:
 	FirepowerMultiplier@CHAINGUNS:
 		Modifier: 125

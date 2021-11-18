@@ -144,6 +144,7 @@ gmin:
 ltnk:
 	Inherits: ^MainBattleTank
 	Inherits@AUTOLOADERS: ^AffectedByAutoloaders
+	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Valued:
 		Cost: 600
@@ -169,28 +170,48 @@ ltnk:
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite && !autoloaders
+		RequiresCondition: !rank-elite && !autoloaders && !capacitors
 	Armament@elite:
 		Weapon: ATGUNE
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle-2
-		RequiresCondition: rank-elite && !autoloaders
+		RequiresCondition: rank-elite && !autoloaders && !capacitors
 	Armament@primary-auto:
 		Weapon: ATGUNAuto
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite && autoloaders
+		RequiresCondition: !rank-elite && autoloaders && !capacitors
 	Armament@elite-auto:
 		Weapon: ATGUNAutoE
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle-2
-		RequiresCondition: rank-elite && autoloaders
+		RequiresCondition: rank-elite && autoloaders && !capacitors
+	Armament@primary-laser:
+		Weapon: ATLASER
+		LocalOffset: 800,0,832
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite && !autoloaders && capacitors
+	Armament@elite-laser:
+		Weapon: ATLASERE
+		LocalOffset: 800,0,832
+		MuzzleSequence: muzzle-2
+		RequiresCondition: rank-elite && !autoloaders && capacitors
+	Armament@primary-laser-auto:
+		Weapon: ATLASERAuto
+		LocalOffset: 800,0,832
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite && autoloaders && capacitors
+	Armament@elite-laser-auto:
+		Weapon: ATLASERAutoE
+		LocalOffset: 800,0,832
+		MuzzleSequence: muzzle-2
+		RequiresCondition: rank-elite && autoloaders && capacitors
 	WithMuzzleOverlay:
 	-WithVoxelBarrel:
 	Selectable:
@@ -879,6 +900,7 @@ yhtnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
+	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
@@ -1052,8 +1074,9 @@ grtk:
 spider:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
+	Inherits@DNABOOST: ^AffectedByDNABoosters
+	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@IRON: ^KilledByIronCurtain
 	Inherits@LAZARUS: ^KilledByLazarusShield
 	WithColoredOverlay@ChronoDisable:

@@ -963,6 +963,72 @@ DoomLaserE:
 		Explosions: laser_explosion_red
 		ExplosionPalette: player
 
+ATLASER:
+	Inherits: ATGUN
+	Report: vlazatta.aud
+	-Projectile:
+	Projectile: LaserZap
+		Duration: 15
+		Width: 100
+		ZOffset: 2047
+		Color: AA799080
+		SecondaryBeam: true
+		SecondaryBeamWidth: 25
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: FFFFFF80
+		UsePlayerColor: false
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 40
+			Flak: 40
+			Plate: 30
+	Warhead@2Eff: CreateEffect
+		Explosions: laser_explosion
+		ExplosionPalette: effect
+		UsePlayerPalette: false
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+	-Warhead@3EffWater: CreateEffect
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallScorch
+
+ATLASERE:
+	Inherits: ATGUNE
+	Report: vlazatta.aud
+	-Projectile:
+	Projectile: LaserZap
+		Duration: 15
+		Width: 100
+		ZOffset: 2047
+		Color: FF000080
+		SecondaryBeam: true
+		SecondaryBeamWidth: 25
+		SecondaryBeamZOffset: 2047
+		SecondaryBeamColor: FFFFFF80
+		UsePlayerColor: false
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 120
+			Flak: 120
+			Plate: 115
+	Warhead@2Eff: CreateEffect
+		Explosions: laser_explosion_red
+		ExplosionPalette: player
+		-ImpactSounds:
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+	-Warhead@3EffWater: CreateEffect
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumScorch
+
+ATLASERAuto:
+	Inherits: ATLASER
+	Burst: 2
+
+ATLASERAutoE:
+	Inherits: ATLASERE
+	Burst: 4
+
 LunarLaser:
 	Inherits: Comet
 	ReloadDelay: 20
