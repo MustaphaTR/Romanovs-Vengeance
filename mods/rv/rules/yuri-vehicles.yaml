@@ -1,5 +1,6 @@
 pcv:
 	Inherits: ^ConstructionVehicle
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
@@ -11,6 +12,7 @@ pcv:
 smin:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -118,6 +120,7 @@ smin:
 
 gmin:
 	Inherits: ^Miner
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
@@ -145,6 +148,7 @@ ltnk:
 	Inherits: ^MainBattleTank
 	Inherits@AUTOLOADERS: ^AffectedByAutoloaders
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Valued:
 		Cost: 600
@@ -240,6 +244,8 @@ ltnk.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
+	-Explodes@COMPENSATORS:
+	-GrantConditionOnPrerequisite@COMPENSATORS:
 	-FirepowerMultiplier@TANK_BUNKER:
 	-ReloadDelayMultiplier@TANK_BUNKER:
 	-RangeMultiplier@TANK_BUNKER:
@@ -267,6 +273,7 @@ ytnk:
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAINGUNS: ^AffectedByChainguns
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
@@ -395,6 +402,8 @@ ytnk.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
+	-Explodes@COMPENSATORS:
+	-GrantConditionOnPrerequisite@COMPENSATORS:
 	-FirepowerMultiplier@TANK_BUNKER:
 	-ReloadDelayMultiplier@TANK_BUNKER:
 	-RangeMultiplier@TANK_BUNKER:
@@ -419,6 +428,7 @@ ytnk.holo:
 caos:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Valued:
 		Cost: 800
 	DeliversCash:
@@ -457,11 +467,21 @@ caos:
 	Armament@primary:
 		Weapon: ChaosAttack
 		LocalOffset: 0,0,64
+		RequiresCondition: !compensators
+	Armament@primary-big:
+		Weapon: ChaosAttackBig
+		LocalOffset: 0,0,64
+		RequiresCondition: compensators
 	PeriodicExplosion:
 		Weapon: ChaosAttack
 		LocalOffset: 0,0,64
 		ResetReloadWhenEnabled: false
-		RequiresCondition: deployed && !chronodisable && !emp
+		RequiresCondition: deployed && !chronodisable && !emp && !compensators
+	PeriodicExplosion@Big:
+		Weapon: ChaosAttackBig
+		LocalOffset: 0,0,64
+		ResetReloadWhenEnabled: false
+		RequiresCondition: deployed && !chronodisable && !emp && compensators
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 128
@@ -505,6 +525,7 @@ tele:
 	Inherits@ADVMAGNETS: ^AffectedByAdvancedMagnetics
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
@@ -604,6 +625,7 @@ tele:
 
 mind:
 	Inherits: ^Vehicle
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
@@ -718,6 +740,7 @@ mind:
 mlyr:
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -790,6 +813,7 @@ mlyr:
 kamaz:
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -902,6 +926,7 @@ yhtnk:
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -988,6 +1013,7 @@ grtk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -1200,6 +1226,7 @@ spider:
 
 expy:
 	Inherits: ^ExpansionVehicle
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans

@@ -993,6 +993,21 @@ ChaosAttack:
 	Warhead@3Eff: CreateEffect
 		Explosions: chaosgas
 
+ChaosAttackBig:
+	Inherits: ChaosAttack
+	Range: 4c0
+	Warhead@1Con: GrantExternalCondition
+		Range: 4c0
+	Warhead@3Eff: CreateEffect
+		Explosions: chaosgasbig
+
+ChaosGasExplode:
+	Inherits: ChaosAttack
+	Warhead@1Con: GrantExternalCondition
+		Range: 1c256
+	Warhead@3Eff: CreateEffect
+		Explosions: chaosgas50p
+
 CloudDamage:
 	ReloadDelay: 7
 	Projectile: InstantExplode

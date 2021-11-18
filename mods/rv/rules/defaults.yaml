@@ -696,6 +696,16 @@
 		Condition: advmagnets
 		Prerequisites: upgrade.advanced_magnetics
 
+^AffectedByChaosTankCompensators:
+	Explodes@COMPENSATORS:
+		DeathTypes: NonTemporal
+		Weapon: ChaosGasExplode
+		EmptyWeapon: ChaosGasExplode
+		RequiresCondition: compensators
+	GrantConditionOnPrerequisite@COMPENSATORS:
+		Condition: compensators
+		Prerequisites: upgrade.chaos_tank_compensators
+
 ^AffectedByLaserCapacitors:
 	FirepowerMultiplier@CAPACITORS:
 		Modifier: 125
