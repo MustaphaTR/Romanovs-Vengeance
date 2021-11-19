@@ -580,6 +580,21 @@ sdrn.spawner:
 	SpawnActorOnDeath:
 		Actor: sdrn
 
+brute.spawner:
+	Inherits: txdx.spawner
+	-Immobile:
+	Mobile:
+		Locomotor: foot
+	SpeedMultiplier:
+		Modifier: 0
+	RejectsOrders:
+	-RenderSpritesEditorOnly:
+	RenderSprites:
+	KillsSelf:
+		Delay: 50
+	SpawnActorOnDeath:
+		Actor: brute
+
 magnetic_beam.1:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor

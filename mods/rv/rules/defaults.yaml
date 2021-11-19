@@ -2125,6 +2125,10 @@
 	SpawnActorOnDeath@flames:
 		Actor: FLAMEGUY
 		DeathType: FlameDeath
+	SpawnActorOnDeath@brute:
+		Actor: brute.spawner
+		DeathType: MutationDeath
+		OwnerType: Killer
 	SpawnSmokeParticleOnDeath@virus:
 		Amount: 1
 		Image: txgasg
@@ -2441,6 +2445,7 @@
 			BruteDeath: 1
 	-Explodes@Corpse:
 	-WithDeathAnimation@effect:
+	-SpawnActorOnDeath@brute:
 	-SpawnActorOnDeath@flames:
 	-SpawnSmokeParticleOnDeath@virus:
 	-TimedConditionBar@WebDisable:

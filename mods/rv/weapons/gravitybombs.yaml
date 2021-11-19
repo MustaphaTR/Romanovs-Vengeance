@@ -422,6 +422,27 @@ FalloutBomb:
 	Warhead@5Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
+MutatorBomb:
+	ReloadDelay: 10
+	Range: 1c0
+	Report: vkiratta.wav
+	Projectile: GravityBomb
+		Velocity: 0, 0, -50
+		Acceleration: 0, 0, -10
+		Image: parabomb
+		Palette: player
+		IsPlayerPalette: true
+	Warhead@1Dam: SpreadDamage
+		Spread: 4c0
+		Damage: 50000
+		ValidTargets: Infantry, SeaAnimal
+		DamageTypes: Prone100Percent, TriggerProne, MutationDeath, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: psi_wave
+		ImpactSounds: sgenon.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
 CarpetBomb:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 6

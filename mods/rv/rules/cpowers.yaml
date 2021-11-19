@@ -1406,5 +1406,35 @@ prerequisite.grinder:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
+	AirstrikePower@GeneticMutator:
+		OrderName: TransylvaniaGeneticMutator
+		RequiresCondition: !lost
+		Prerequisites:
+			1: upgrade.dna_boosters
+		Icons:
+			1: mutator
+		ChargeInterval: 7500
+		StartFullyCharged: true
+		Descriptions:
+			1: Genetic Mutator
+		LongDescs:
+			1: A Cargo Plane drops a Mutator bomb that\nturns infantry to Brutes anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		UnitTypes:
+			1: pdplane.mutator
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: muteicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
 	GrantConditionOnOwnerLost:
 		Condition: lost

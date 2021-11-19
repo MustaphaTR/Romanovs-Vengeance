@@ -1032,6 +1032,18 @@ pdplane.chaos:
 	Aircraft:
 		Speed: 375
 
+pdplane.mutator:
+	Inherits: pcplane
+	Armament@1:
+		Weapon: MutatorBomb
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 1
+		AmmoCondition: ammo
+	AttackBomber:
+	Aircraft:
+		Speed: 375
+
 pdplane.crate:
 	Inherits: ^NeutralAircraft
 	-Selectable:
