@@ -392,7 +392,7 @@ upgrade.chaos_tank_compensators:
 		Name: Chaos Tank Compensators
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 60
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psicorps, yatech, ~techlevel.3
 		Description: Vehicles emit chaos gas when they are destroyed.\nIncreases area of effect of Chaos Drones.
@@ -418,7 +418,7 @@ upgrade.mastery_of_mind:
 		Name: Mastery of Mind
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psisouth, yatech, ~techlevel.3
 		Description: Enables Yuri Clones to use Psi-Waves.\nMakes Psi-Wave weapons not effect friendly units.\nYuri Clone and Yuri Prime can control 2 assets at the same time.
@@ -431,12 +431,25 @@ upgrade.dna_boosters:
 		Name: DNA Boosters
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 90
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psitrans, yatech, ~techlevel.3
 		Description: Enables Genetic Mutator ability.\nIncreases movement speed of following units by 33%:\n - Brute\n - Mutant Tarantula\n - Mutant Crab
 	Valued:
 		Cost: 2500
+
+upgrade.disc_armor:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Disc Armor
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 100
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.psimoon, yatech, ~techlevel.3
+		Description: Reduces damage taken by Discs by 33%. 
+	Valued:
+		Cost: 2000
 
 upgrade.chainguns:
 	Inherits: ^default.upgrade
@@ -444,7 +457,7 @@ upgrade.chainguns:
 		Name: Chainguns
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.4
 		Description: Increases Gatling weapons' damage by 25%.
