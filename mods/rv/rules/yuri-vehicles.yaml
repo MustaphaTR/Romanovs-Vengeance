@@ -659,17 +659,19 @@ mind:
 		StartIfBelow: 100
 		RequiresCondition: controlling < 4
 	ChangesHealth@OVERLOAD-1:
-		Step: -25
+		Step: -2500
 		Delay: 30
 		StartIfBelow: 101
+		DamageTypes: NonTemporal
 		RequiresCondition: controlling >= 4 && controlling < 7
 	ChangesHealth@OVERLOAD-2:
-		Step: -50
+		Step: -5000
 		Delay: 30
 		StartIfBelow: 101
+		DamageTypes: NonTemporal
 		RequiresCondition: controlling >= 7 && controlling < 11
 	ChangesHealth@OVERLOAD-3:
-		Step: -100
+		Step: -10000
 		Delay: 30
 		StartIfBelow: 101
 		RequiresCondition: controlling >= 11
@@ -677,6 +679,10 @@ mind:
 		RequiresCondition: controlling >= 4
 		Weapon: DisabledSparkSpawner
 		LocalOffset: 0,0,384
+	VoiceAnnouncement@OVERLOAD:
+		RequiresCondition: controlling >= 4
+		Voice: Overload
+		ValidRelationships: None
 	Health:
 		HP: 50000
 	Armor:
