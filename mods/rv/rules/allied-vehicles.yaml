@@ -183,6 +183,7 @@ fv:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@HIGHCALIBER: ^AffectedByHighCaliberRounds
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
+	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
@@ -881,11 +882,19 @@ fv:
 	Armament@yuri:
 		Weapon: CRPsiWave
 		LocalOffset: 0,0,1024
-		RequiresCondition: ifv-yuri && !rank-elite
+		RequiresCondition: ifv-yuri && !rank-elite && !masteryofmind
 	Armament@yuri-elite:
 		Weapon: CRPsiWaveE
 		LocalOffset: 0,0,1024
-		RequiresCondition: ifv-yuri && rank-elite
+		RequiresCondition: ifv-yuri && rank-elite && !masteryofmind
+	Armament@yuri-mastery:
+		Weapon: CRPsiWaveMastery
+		LocalOffset: 0,0,1024
+		RequiresCondition: ifv-yuri && !rank-elite && masteryofmind
+	Armament@yuri-mastery-elite:
+		Weapon: CRPsiWaveMasteryE
+		LocalOffset: 0,0,1024
+		RequiresCondition: ifv-yuri && rank-elite && masteryofmind
 	Armament@lazarus:
 		Weapon: CRMagneRifle
 		LocalOffset: 188,0,600

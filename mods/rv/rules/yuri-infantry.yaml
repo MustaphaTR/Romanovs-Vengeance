@@ -382,6 +382,7 @@ virus:
 
 yuripsi:
 	Inherits: yuri
+	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 90
@@ -393,24 +394,16 @@ yuripsi:
 		Cost: 1000
 	DeliversCash:
 		Payload: 500
-	 -PeriodicExplosion:
-		Weapon: PsiWave
-		LocalOffset: 0,0,128
-		RequiresCondition: deployed && !chronodisable
-	 -GrantTimedConditionOnDeploy:
-		DeployedTicks: 50
-		CooldownTicks: 0
-		Facing: 96
-		DeployedCondition: deployed
-		DeployingCondition: deploying
-		DeployAnimation: deploy
-		UndeployAnimation: undeploy
-		ShowSelectionBar: false
-		Voice:
-		PauseOnCondition: chronodisable
+	PeriodicExplosion:
+		Weapon: PsiWaveMastery
+		RequiresCondition: deployed && masteryofmind && !chronodisable
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 100
+		RequiresCondition: masteryofmind
 
 yurix:
 	Inherits: yuripr
+	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 110
@@ -465,6 +458,11 @@ yurix:
 		RequiresCondition: rank-elite
 	PeriodicExplosion:
 		Weapon: SuperPsiWave
+		RequiresCondition: deployed && !masteryofmind && !chronodisable
+	PeriodicExplosion@Mastery:
+		Weapon: SuperPsiWaveMastery
+		LocalOffset: 0,0,128
+		RequiresCondition: deployed && masteryofmind && !chronodisable
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:

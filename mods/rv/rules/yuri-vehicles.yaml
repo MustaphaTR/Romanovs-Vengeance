@@ -627,6 +627,7 @@ mind:
 	Inherits: ^Vehicle
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
+	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 1750
@@ -650,6 +651,7 @@ mind:
 		Speed: 60
 		TurnSpeed: 32
 		Locomotor: omnicrusher
+		RequiresCondition: !deployed && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	-Crushable:
 	ChangesHealth@HEAL:
 		PercentageStep: 1
@@ -694,6 +696,18 @@ mind:
 	#	Range: 9c0
 	RevealOnDeath:
 		Radius: 4c512
+	PeriodicExplosion:
+		Weapon: SuperPsiWaveMastery
+		LocalOffset: 0,0,128
+		RequiresCondition: deployed && masteryofmind && !chronodisable
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 100
+		CooldownTicks: 0
+		DeployedCondition: deployed
+		ShowSelectionBar: false
+		Voice:
+		PauseOnCondition: chronodisable
+		RequiresCondition: masteryofmind
 	Armament:
 		Weapon: MasterMindControl
 		LocalOffset: 0,0,960
@@ -713,7 +727,7 @@ mind:
 		TurnSpeed: 1023
 	AttackTurreted:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || parachute
+		PauseOnCondition: deployed || chronodisable || emp || parachute
 	AttackMove:
 		Voice: Move
 	AutoTarget:

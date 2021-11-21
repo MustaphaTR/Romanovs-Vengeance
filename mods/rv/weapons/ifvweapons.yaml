@@ -354,6 +354,22 @@ CRPsiWaveE:
 	Inherits: CRPsiWave
 	ReloadDelay: 15
 
+CRPsiWaveMastery:
+	Inherits: CRPsiWave
+	ValidTargets: Infantry, Vehicle, Ship, TerrorDrone
+	Warhead@1Dam: SpreadDamage
+		Damage: 20000
+		ValidTargets: Infantry, Vehicle, Ship, TerrorDrone
+		Versus:
+			Light: 10
+			Medium: 10
+			Heavy: 10
+	-Warhead@2Dam:
+
+CRPsiWaveMasteryE:
+	Inherits: CRPsiWave
+	ReloadDelay: 15
+
 CRPsychicJab:
 	Inherits: PsychicJab
 	Range: 5c0

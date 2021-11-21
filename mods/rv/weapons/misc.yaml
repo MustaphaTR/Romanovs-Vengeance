@@ -412,7 +412,7 @@ MasterMindControl:
 	ReloadDelay: 100
 
 PsiWave:
-	ReloadDelay: 100
+	ReloadDelay: 110
 	Range: 1c819
 	Report: iyurat2a.wav
 	ValidTargets: Infantry
@@ -435,12 +435,43 @@ PsiWave:
 		Explosions: psi_wave
 		ValidTargets: Ground, Water, Air
 
+PsiWaveMastery:
+	Inherits: PsiWave
+	ValidTargets: Infantry, Vehicle, Ship, TerrorDrone
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Infantry, Vehicle, Ship, TerrorDrone
+		Versus:
+			Light: 10
+			Medium: 10
+			Heavy: 10
+	-Warhead@2Dam: SpreadDamage
+
 SuperPsiWave:
 	Inherits: PsiWave
+	ReloadDelay: 55
 	Warhead@1Dam: SpreadDamage
 		Spread: 5c0
 	Warhead@2Dam: SpreadDamage
 		Spread: 5c0
+	Warhead@2Eff: CreateEffect
+		Explosions: psi_wave_big
+
+SuperPsiWaveMastery:
+	Inherits: PsiWaveMastery
+	ReloadDelay: 55
+	Warhead@1Dam: SpreadDamage
+		Spread: 5c0
+		Damage: 37500
+	Warhead@2Eff: CreateEffect
+		Explosions: psi_wave_big
+
+MastermindPsiWave:
+	Inherits: SuperPsiWave
+	ReloadDelay: 110
+
+MastermindPsiWaveMastery:
+	Inherits: SuperPsiWaveMastery
+	ReloadDelay: 110
 
 HornetLauncher:
 	ReloadDelay: 175
