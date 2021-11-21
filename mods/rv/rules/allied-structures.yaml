@@ -345,6 +345,8 @@ gaairc:
 		Name: Airforce Command Headquarters
 	ProvidesPrerequisite:
 		Prerequisite: radar
+	ProvidesPrerequisite@production:
+		Prerequisite: production
 	ProvidesPrerequisite@gaairc:
 		Prerequisite: gaairc
 	ProvidesPrerequisite@america:
@@ -888,7 +890,7 @@ gatech:
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Allies
-		Prerequisites: gaairc, ~techlevel.3, ~!ai.gatech
+		Prerequisites: production, gaairc, ~techlevel.3, ~!ai.gatech
 	ProvidesPrerequisite@gatech:
 		Prerequisite: gatech
 	ProvidesPrerequisite@upgrade.allies:
@@ -1611,6 +1613,12 @@ warfactory:
 	Interactable:
 	Tooltip:
 		Name: Vehicle Production
+
+production:
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: Unit Production
 
 repairpad:
 	AlwaysVisible:

@@ -843,6 +843,8 @@ yadisk:
 	Tooltip@NoRow:
 		Name: Disc Pad
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@production:
+		Prerequisite: production
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
@@ -918,7 +920,7 @@ yatech:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Yuri
-		Prerequisites: yadome, ~techlevel.3, ~!ai.yatech
+		Prerequisites: production, yadome, ~techlevel.3, ~!ai.yatech
 	ProvidesPrerequisite@yatech:
 		Prerequisite: yatech
 	ProvidesPrerequisite@upgrade.yuri:

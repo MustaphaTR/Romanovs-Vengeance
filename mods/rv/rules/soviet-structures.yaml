@@ -852,6 +852,8 @@ naheli:
 	Tooltip@NoRow:
 		Name: Helipad
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@production:
+		Prerequisite: production
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -1018,7 +1020,7 @@ natech:
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Soviets
-		Prerequisites: naradr, ~techlevel.3, ~!ai.natech
+		Prerequisites: production, naradr, ~techlevel.3, ~!ai.natech
 		Description: Allows deployment of advanced units.
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@upgrade.soviets:
