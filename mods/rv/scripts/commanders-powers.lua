@@ -69,8 +69,8 @@ Ranks =
 RankXPs = { 0, 300, 1300, 2500, 5000 }
 
 ReducePoints = function(player)
-	Trigger.OnProduction(player.GetActorsByType("player")[1], function()
-		if Points[player.InternalName] > 0 then
+	Trigger.OnProduction(player.GetActorsByType("player")[1], function(_, actor)
+		if Points[player.InternalName] > 0 and Actor.Cost(actor.Type) == 0 then
 			Points[player.InternalName] = Points[player.InternalName] - 1
 		end
 	end)
