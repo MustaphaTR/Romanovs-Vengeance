@@ -2614,9 +2614,9 @@ magnedisk:
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	Valued:
-		Cost: 1200
+		Cost: 1100
 	DeliversCash:
-		Payload: 1200
+		Payload: 1100
 		PlayerExperience: 60
 		Voice: Move
 	Tooltip:
@@ -2633,13 +2633,13 @@ magnedisk:
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		TurnSpeed: 1023
-		Speed: 165
+		Speed: 180
 		AltitudeVelocity: 200
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Selectable:
 		Bounds: 1641, 2075, 0, -241
 	Health:
-		HP: 40000
+		HP: 17500
 	Armor:
 		Type: Light
 	RevealsShroud:
@@ -2698,14 +2698,6 @@ magnedisk:
 		RequiresCondition: produced
 		Voice: Build
 		ValidRelationships: None
-	Cloak:
-		RequiresCondition: !chronodisable && !emp
-		InitialDelay: 25
-		CloakDelay: 125
-		IsPlayerPalette: true
-		CloakSound: cloak5.aud
-		UncloakSound: cloak5.aud
-		UncloakOn: Attack, Damage, Dock
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
@@ -2739,7 +2731,7 @@ magnediskhusk:
 		Name: Mosquito Disc
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 165
+		Speed: 180
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:

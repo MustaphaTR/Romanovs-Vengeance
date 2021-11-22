@@ -1165,8 +1165,8 @@ IonCannon:
 
 BloodSuck:
 	Inherits: ^MG
-	ReloadDelay: 40
-	Range: 7c0
+	ReloadDelay: 120
+	Range: 5c0
 	Report: itesat2a.wav
 	Projectile: TeslaZap
 		Image: scrlitning
@@ -1174,6 +1174,10 @@ BloodSuck:
 		DimZaps: 1
 	Warhead@1Dam: TargetDamage
 		Damage: 4500
+		Versus:
+			None: 1000
+			Flak: 1000
+			Plate: 1000
 		DamageTypes: Prone70Percent, TriggerProne, NonTemporal, ElectroDeath
 	Warhead@bloodback: BackFireShrapnel
 		Weapon: BloodBack
@@ -1185,7 +1189,7 @@ BloodSuck:
 
 BloodSuckE:
 	Inherits: BloodSuck
-	ReloadDelay: 30
+	Range: 7c0
 	Warhead@1Dam: TargetDamage
 		Damage: 6000
 
