@@ -527,33 +527,31 @@ lunr:
 	Armament@primary:
 		Weapon: LunarLaser
 		LocalOffset: 128,196,512, 128,-196,512
-		PauseOnCondition: !ammo || chronodisable
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
 	Armament@primary-aa:
 		Weapon: LunarLaserAA
 		LocalOffset: 128,196,512, 128,-196,512
-		PauseOnCondition: !ammo || chronodisable
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: LunarLaserE
 		LocalOffset: 128,196,512, 128,-196,512
-		PauseOnCondition: !ammo || chronodisable
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite
 	Armament@elite-aa:
 		Weapon: LunarLaserAAE
 		LocalOffset: 128,196,512, 128,-196,512
-		PauseOnCondition: !ammo || chronodisable
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite
 	AttackAircraft:
 		Voice: Attack
 		FacingTolerance: 2
 		AttackType: Hover
-	AmmoPool:
-		Ammo: 1
-		AmmoCondition: ammo
-	ReloadAmmoPool:
-		Delay: 30
-		Count: 1
 	Aircraft:
 		CruiseAltitude: 3c852
 		InitialFacing: 80
@@ -1118,73 +1116,79 @@ crkt:
 	Armament@primary:
 		Weapon: ChaosRocket
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: ChaosRocketE
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite
 	Armament@aa:
 		Weapon: ChaosRocketAA
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite-aa:
 		Weapon: ChaosRocketAAE
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: ChaosRocket
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: ChaosRocketE
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite
 	Armament@opentopped-aa:
 		Name: opentopped
 		Weapon: ChaosRocketAA
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped-aa:
 		Name: opentopped
 		Weapon: ChaosRocketAAE
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCChaosRocket
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCChaosRocketE
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite
 	Armament@garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCChaosRocketAA
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCChaosRocketAAE
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
 		TargetFrozenActors: true
-	AmmoPool:
-		Ammo: 1
-		AmmoCondition: ammo
-	ReloadAmmoPool:
-		Delay: 40
-		Count: 1
 	Voiced:
 		VoiceSet: SniperVoice
 	ProducibleWithLevel:

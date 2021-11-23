@@ -503,155 +503,173 @@ ggi:
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite && deployed && !boostgliding
 	Armament@elite-deployed:
 		Weapon: MissileLauncherE
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite && deployed && !boostgliding
 	Armament@deployed-aa:
 		Weapon: MissileLauncherAA
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite && deployed && !boostgliding
 	Armament@elite-deployed-aa:
 		Weapon: MissileLauncherAAE
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite && deployed && !boostgliding
 	Armament@deployed-boost:
 		Weapon: MissileLauncherBoosted
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite && deployed && boostgliding
 	Armament@elite-deployed-boost:
 		Weapon: MissileLauncherBoostedE
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite && deployed && boostgliding
 	Armament@deployed-aa-boost:
 		Weapon: MissileLauncherAABoosted
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite && deployed && boostgliding
 	Armament@elite-deployed-aa-boost:
 		Weapon: MissileLauncherAABoostedE
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite && deployed && boostgliding
 	Armament@opentopped:
 		Weapon: MissileLauncher
 		Name: opentopped
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-opentopped:
 		Weapon: MissileLauncherE
 		Name: opentopped
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@opentopped-aa:
 		Weapon: MissileLauncherAA
 		Name: opentopped
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-opentopped-aa:
 		Weapon: MissileLauncherAAE
 		Name: opentopped
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@opentopped-boost:
 		Weapon: MissileLauncherBoosted
 		Name: opentopped
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@elite-opentopped-boost:
 		Weapon: MissileLauncherBoostedE
 		Name: opentopped
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite && boostgliding
 	Armament@opentopped-aa-boost:
 		Weapon: MissileLauncherAABoosted
 		Name: opentopped
 		LocalOffset: 480,63,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@elite-opentopped-aa-boost:
 		Weapon: MissileLauncherAABoostedE
 		Name: opentopped
 		LocalOffset: 480,64,992
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite && boostgliding
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncher
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncherE
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAA
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAAE
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@garrisoned-boost:
 		Name: garrisoned
 		Weapon: UCMissileLauncherBoosted
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@elite-garrisoned-boost:
 		Name: garrisoned
 		Weapon: UCMissileLauncherBoostedE
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite && boostgliding
 	Armament@garrisoned-aa-boost:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAABoosted
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@elite-garrisoned-aa-boost:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAABoostedE
-		PauseOnCondition: chronodisable || !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite && boostgliding
 	Armament@AIDummyAiming: ## Hack: Make AI GGI deploy to attack air
 		PauseOnCondition: chronodisable
 		RequiresCondition: ai-control && !deployed
 		Weapon: AirDummyAim
-	AmmoPool:
-		Ammo: 1
-		AmmoCondition: ammo
-	ReloadAmmoPool:
-		Delay: 40
-		Count: 1
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed
@@ -1335,30 +1353,28 @@ jumpjet:
 		Type: Light
 	Armament@primary:
 		Weapon: 20mm
-		PauseOnCondition: !ammo || chronodisable
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
 	Armament@primary-aa:
 		Weapon: 20mmAA
-		PauseOnCondition: !ammo || chronodisable
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 20mmE
-		PauseOnCondition: !ammo || chronodisable
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite
 	Armament@elite-aa:
 		Weapon: 20mmAAE
-		PauseOnCondition: !ammo || chronodisable
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite
 	AttackAircraft:
 		Voice: Attack
 		FacingTolerance: 2
 		AttackType: Hover
-	AmmoPool:
-		Ammo: 1
-		AmmoCondition: ammo
-	ReloadAmmoPool:
-		Delay: 30
-		Count: 1
 	Aircraft:
 		CruiseAltitude: 3c852
 		InitialFacing: 80
