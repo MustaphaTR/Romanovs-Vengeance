@@ -1491,6 +1491,19 @@ tesla:
 	WithRangeCircle:
 		Range: 8c0
 		Type: teslacoil
+		RequiresCondition: (!lowpower && !charged) || (lowpower && charged == 1)
+	WithRangeCircle@1:
+		Range: 8c512
+		Type: teslacoil
+		RequiresCondition: (!lowpower && charged == 1) || (lowpower && charged == 2)
+	WithRangeCircle@2:
+		Range: 9c0
+		Type: teslacoil
+		RequiresCondition: (!lowpower && charged == 2) || (lowpower && charged >= 3)
+	WithRangeCircle@3:
+		Range: 9c512
+		Type: teslacoil
+		RequiresCondition: !lowpower && charged >= 3
 	Power:
 		Amount: -75
 		RequiresCondition: !chronodisable
@@ -1842,6 +1855,19 @@ napost:
 	WithRangeCircle:
 		Range: 3c0
 		Type: teslacoil
+		RequiresCondition: (!lowpower && !charged) || (lowpower && charged == 1)
+	WithRangeCircle@1:
+		Range: 3c512
+		Type: teslacoil
+		RequiresCondition: (!lowpower && charged == 1) || (lowpower && charged == 2)
+	WithRangeCircle@2:
+		Range: 4c0
+		Type: teslacoil
+		RequiresCondition: (!lowpower && charged == 2) || (lowpower && charged >= 3)
+	WithRangeCircle@3:
+		Range: 4c512
+		Type: teslacoil
+		RequiresCondition: !lowpower && charged >= 3
 	ExternalCondition@CHARGED:
 		Condition: charged
 		SourceCap: 1
