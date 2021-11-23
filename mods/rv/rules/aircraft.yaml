@@ -1801,6 +1801,11 @@ disk:
 	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1
+		RequiresCondition: !discarmor
+	WithVoxelHelicopterBody@turret-armored:
+		Sequence: turret-armored
+		TickRate: 1
+		RequiresCondition: discarmor
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -1840,6 +1845,7 @@ disk:
 
 diskhusk:
 	Inherits: ^HelicopterHusk
+	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Tooltip:
 		Name: Leech Disc
 	Tooltip@NoRow:
@@ -1867,6 +1873,11 @@ diskhusk:
 	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1
+		RequiresCondition: !discarmor
+	WithVoxelHelicopterBody@turret-armored:
+		Sequence: turret-armored
+		TickRate: 1
+		RequiresCondition: discarmor
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 
@@ -2378,6 +2389,11 @@ txdx:
 	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1
+		RequiresCondition: !discarmor
+	WithVoxelHelicopterBody@turret-armored:
+		Sequence: turret-armored
+		TickRate: 1
+		RequiresCondition: discarmor
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -2431,6 +2447,7 @@ txdx:
 
 txdxhusk:
 	Inherits: ^HelicopterHusk
+	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Tooltip:
 		Name: Lethocerus Platform
 	Tooltip@NoRow:
@@ -2458,6 +2475,11 @@ txdxhusk:
 	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1
+		RequiresCondition: !discarmor
+	WithVoxelHelicopterBody@turret-armored:
+		Sequence: turret-armored
+		TickRate: 1
+		RequiresCondition: discarmor
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 
@@ -2705,6 +2727,11 @@ magnedisk:
 	RenderVoxels:
 	WithVoxelHelicopterBody:
 		TickRate: 1
+		RequiresCondition: !discarmor
+	WithVoxelHelicopterBody@armored:
+		Sequence: idle-armored
+		TickRate: 1
+		RequiresCondition: discarmor
 	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1
@@ -2741,6 +2768,7 @@ magnedisk:
 
 magnediskhusk:
 	Inherits: ^HelicopterHusk
+	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Tooltip:
 		Name: Mosquito Disc
 	Tooltip@NoRow:
@@ -2765,6 +2793,11 @@ magnediskhusk:
 	-WithVoxelBody:
 	WithVoxelHelicopterBody:
 		TickRate: 1
+		RequiresCondition: !discarmor
+	WithVoxelHelicopterBody@armored:
+		Sequence: idle-armored
+		TickRate: 1
+		RequiresCondition: discarmor
 	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1

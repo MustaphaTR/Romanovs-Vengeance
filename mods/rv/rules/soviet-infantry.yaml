@@ -136,8 +136,28 @@ e2:
 		PauseOnCondition: chronodisable
 		RequiresCondition: smokegrens && rank-elite
 	WithInfantryBody:
-		DefaultAttackSequence: shoot
-		RequiresCondition: !parachute && !webdisable
+		RequiresCondition: !parachute && !webdisable && !bulletproof
+	WithInfantryBody@BULLETPROOF:
+		IdleSequences: idle1-bulletproof, idle2-bulletproof
+		MoveSequence: run-bulletproof
+		StandSequences: stand-bulletproof
+		DefaultAttackSequence: shoot-bulletproof
+		RequiresCondition: !parachute && !webdisable && bulletproof
+	WithSpriteBody@Parachute:
+		RequiresCondition: parachute && !bulletproof
+	WithSpriteBody@Parachute-BULLETPROOF:
+		Name: parachute
+		Sequence: paradrop-bulletproof
+		RequiresCondition: parachute && bulletproof
+	WithDeathAnimation@normal:
+		RequiresCondition: !bulletproof
+	WithDeathAnimation@BULLETPROOF:
+		DeathSequence: die-bulletproof
+		DeathSequencePalette: infantry
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+		RequiresCondition: bulletproof
 	Voiced:
 		VoiceSet: ConscriptVoice
 	ProducibleWithLevel:
@@ -300,8 +320,28 @@ flakt:
 		RequiresCondition: rank-elite
 	WithMuzzleOverlay:
 	WithInfantryBody:
-		DefaultAttackSequence: shoot
-		RequiresCondition: !parachute && !webdisable
+		RequiresCondition: !parachute && !webdisable && !bulletproof
+	WithInfantryBody@BULLETPROOF:
+		IdleSequences: idle1-bulletproof, idle2-bulletproof
+		MoveSequence: run-bulletproof
+		StandSequences: stand-bulletproof
+		DefaultAttackSequence: shoot-bulletproof
+		RequiresCondition: !parachute && !webdisable && bulletproof
+	WithSpriteBody@Parachute:
+		RequiresCondition: parachute && !bulletproof
+	WithSpriteBody@Parachute-BULLETPROOF:
+		Name: parachute
+		Sequence: paradrop-bulletproof
+		RequiresCondition: parachute && bulletproof
+	WithDeathAnimation@normal:
+		RequiresCondition: !bulletproof
+	WithDeathAnimation@BULLETPROOF:
+		DeathSequence: die-bulletproof
+		DeathSequencePalette: infantry
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+		RequiresCondition: bulletproof
 	Voiced:
 		VoiceSet: FlakTrooperVoice
 	ProducibleWithLevel:
