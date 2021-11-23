@@ -845,7 +845,6 @@ yuri:
 		Radius: 4c0
 	Armor:
 		Type: None
-	Passenger:
 	PeriodicExplosion:
 		Weapon: PsiWave
 		LocalOffset: 0,0,128
@@ -861,7 +860,6 @@ yuri:
 		ShowSelectionBar: false
 		Voice:
 		PauseOnCondition: chronodisable
-	TakeCover:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2
@@ -1333,6 +1331,7 @@ itrp:
 		Voice: Move
 	Mobile:
 		Speed: 45
+		RequiresCondition: !deployed && !deploying && !chronodisable && !webdisable
 	Health:
 		HP: 20000
 	Armor:
@@ -1346,7 +1345,6 @@ itrp:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
-	Passenger:
 	Crushable:
 		CrushClasses: vehicle
 	Crushable@Cheater:
@@ -1453,6 +1451,20 @@ itrp:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune, IronCurtainImmune
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	PeriodicExplosion:
+		Weapon: IronTrooperCurtain
+		RequiresCondition: deployed && !chronodisable
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 1
+		CooldownTicks: 3000
+		DeployedCondition: deployed
+		DeployingCondition: deploying
+		DeployAnimation: idle1
+		UndeployAnimation: idle1
+		StartsFullyCharged: true
+		Facing: 96
+		Voice:
+		PauseOnCondition: chronodisable
 	-Targetable@ironcurtain:
 	-KillsSelf@ironcurtain:
 	-ExternalCondition@INVULNERABILITY:

@@ -366,6 +366,22 @@ RedStarCurtain:
 		ValidTargets: IronCurtainable
 		InvalidTargets: Infantry, Air, Structure, Barrel, Mine
 
+IronTrooperCurtain:
+	Inherits: RedStarCurtain
+	Report: siroon.wav
+	Warhead@1Dam: SpreadDamage
+		Spread: 1c384
+		Damage: 50000
+		InvalidTargets: IronCurtainImmune
+		ValidRelationships: Enemy, Neutral, Ally
+	Warhead@Condition: GrantExternalCondition
+		Range: 1c384
+		Duration: 250
+	Warhead@2Eff: CreateEffect
+		Explosions: ironblast
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
 MindControl:
 	ReloadDelay: 200
 	Range: 7c0
