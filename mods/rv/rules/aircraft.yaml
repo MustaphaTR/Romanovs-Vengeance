@@ -22,33 +22,31 @@ shad:
 		Weapon: BlackHawkCannon
 		LocalOffset: 928,0,128
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 		RequiresCondition: !rank-elite
 	Armament@primary-aa:
 		Weapon: BlackHawkCannonAA
 		LocalOffset: 928,0,128
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: BlackHawkCannonE
 		LocalOffset: 928,0,128
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 		RequiresCondition: rank-elite
 	Armament@elite-aa:
 		Weapon: BlackHawkCannonAAE
 		LocalOffset: 928,0,128
 		MuzzleSequence: muzzle
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 		RequiresCondition: rank-elite
 	WithMuzzleOverlay:
-	AmmoPool:
-		Ammo: 1
-		AmmoCondition: ammo
-	ReloadAmmoPool:
-		Delay: 40
-		Count: 1
 	Voiced:
 		VoiceSet: NighthawkVoice
 	ExternalCondition@PRODUCED:
@@ -1762,19 +1760,23 @@ disk:
 	#	Type: GroundPosition
 	Armament@primary:
 		Weapon: DiskLaser
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: DiskLaserE
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 		RequiresCondition: rank-elite
 	Armament@primary-aa:
 		Weapon: DiskLaserAA
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite-aa:
 		Weapon: DiskLaserAAE
-		PauseOnCondition: !ammo
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 		RequiresCondition: rank-elite
 	Armament@drain:
 		Name: secondary
@@ -1784,13 +1786,6 @@ disk:
 		Name: secondary
 		Weapon: DiskSteal
 		MuzzleSequence: muzzle
-	AmmoPool:
-		Armaments: primary
-		Ammo: 1
-		AmmoCondition: ammo
-	ReloadAmmoPool:
-		Delay: 80
-		Count: 1
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
