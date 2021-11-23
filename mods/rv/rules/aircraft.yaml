@@ -1395,26 +1395,47 @@ schp:
 		HP: 30000
 	Armor:
 		Type: Light
+	-FirepowerMultiplier@APBULLETS:
 	Armament@primary:
 		Weapon: SiegeChopperCannon
 		ReloadingCondition: reload-ground
 		PauseOnCondition: !undeployed || reload-air
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !apbullets
 	Armament@primary-aa:
 		Weapon: SiegeChopperCannonAA
 		ReloadingCondition: reload-air
 		PauseOnCondition: !undeployed || reload-ground
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !apbullets
 	Armament@elite:
 		Weapon: SiegeChopperCannonE
 		ReloadingCondition: reload-ground
 		PauseOnCondition: !undeployed || reload-air
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !apbullets
 	Armament@elite-aa:
 		Weapon: SiegeChopperCannonAAE
 		ReloadingCondition: reload-air
 		PauseOnCondition: !undeployed || reload-ground
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !apbullets
+	Armament@primary-ap:
+		Weapon: SiegeChopperCannonAP
+		ReloadingCondition: reload-ground
+		PauseOnCondition: !undeployed || reload-air
+		RequiresCondition: !rank-elite && apbullets
+	Armament@primary-aa-ap:
+		Weapon: SiegeChopperCannonAAAP
+		ReloadingCondition: reload-air
+		PauseOnCondition: !undeployed || reload-ground
+		RequiresCondition: !rank-elite && apbullets
+	Armament@elite-ap:
+		Weapon: SiegeChopperCannonAPE
+		ReloadingCondition: reload-ground
+		PauseOnCondition: !undeployed || reload-air
+		RequiresCondition: rank-elite && apbullets
+	Armament@elite-aa-ap:
+		Weapon: SiegeChopperCannonAAAPE
+		ReloadingCondition: reload-air
+		PauseOnCondition: !undeployed || reload-ground
+		RequiresCondition: rank-elite && apbullets
 	Armament@deployed:
 		Weapon: 160mm
 		Name: deployed

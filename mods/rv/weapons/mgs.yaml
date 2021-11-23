@@ -519,7 +519,6 @@ SiegeChopperCannonAA:
 	Inherits: SiegeChopperCannon
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
-		Damage: 1000
 		ValidTargets: Air
 	-Warhead@1Gar:
 
@@ -527,8 +526,38 @@ SiegeChopperCannonAAE:
 	Inherits: SiegeChopperCannonAA
 	Warhead@1Dam: SpreadDamage
 		Damage: 1500
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1500
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
+
+SiegeChopperCannonAP:
+	Inherits: SiegeChopperCannon
+	Warhead@1Dam: SpreadDamage
+		Damage: 1250
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1250
+
+SiegeChopperCannonAPE:
+	Inherits: SiegeChopperCannonE
+	Warhead@1Dam: SpreadDamage
+		Damage: 1562
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1562
+
+SiegeChopperCannonAAAP:
+	Inherits: SiegeChopperCannonAA
+	Warhead@1Dam: SpreadDamage
+		Damage: 1250
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1250
+
+SiegeChopperCannonAAAPE:
+	Inherits: SiegeChopperCannonAAE
+	Warhead@1Dam: SpreadDamage
+		Damage: 1562
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 1562
 
 # Yuri's Revenge Bullets:
 AKM:
