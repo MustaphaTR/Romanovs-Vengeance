@@ -189,7 +189,7 @@ shadhusk:
 		UseClassicPerspectiveFudge: false
 
 zep:
-	Inherits: ^Aircraft
+	Inherits: ^Helicopter
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
@@ -224,8 +224,9 @@ zep:
 		Repulsable: false
 		AltitudeVelocity: 200
 		AirborneCondition: airborne
-		CanSlide: true
-		CanHover: true
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	Health:
 		HP: 200000
 	Armor:
@@ -2553,7 +2554,6 @@ kite:
 		AttackType: Hover
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Aircraft:
-		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 12
@@ -2669,7 +2669,6 @@ magnedisk:
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	Aircraft:
-		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		TurnSpeed: 1023
 		Speed: 180
 		AltitudeVelocity: 200
@@ -2878,7 +2877,6 @@ havoc:
 		AttackType: Hover
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Aircraft:
-		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 28
