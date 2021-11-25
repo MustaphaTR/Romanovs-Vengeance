@@ -345,6 +345,11 @@ htnk:
 		LocalOffset: 896,0,640
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
+	WithVoxelBody:
+		RequiresCondition: !nuclear_engines
+	WithVoxelBody@NUCLEAR_ENGINES:
+		Sequence: idle-nuke
+		RequiresCondition: nuclear_engines
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	RenderVoxels:
@@ -468,6 +473,10 @@ apoc:
 	RenderVoxels:
 		Scale: 10.5
 	WithVoxelBody:
+		RequiresCondition: !nuclear_engines
+	WithVoxelBody@NUCLEAR_ENGINES:
+		Sequence: idle-nuke
+		RequiresCondition: nuclear_engines
 	WithVoxelTurret:
 	WithVoxelBarrel:
 	WithVoxelBarrel@2:
