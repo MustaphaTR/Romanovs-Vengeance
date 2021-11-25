@@ -1000,11 +1000,19 @@ yhtnk:
 	Armament@primary:
 		Weapon: DoomLaser
 		LocalOffset: 800,0,512
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !capacitors
 	Armament@elite:
 		Weapon: DoomLaserE
 		LocalOffset: 800,0,512
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !capacitors
+	Armament@primary-capacitors:
+		Weapon: DoomLaserUpg
+		LocalOffset: 800,0,512
+		RequiresCondition: !rank-elite && capacitors
+	Armament@elite-capacitors:
+		Weapon: DoomLaserUpgE
+		LocalOffset: 800,0,512
+		RequiresCondition: rank-elite && capacitors
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || nogunner || parachute

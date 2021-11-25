@@ -1645,6 +1645,11 @@ caeast02:
 	Armament:
 		Weapon: LaserShot
 		LocalOffset: 512,-256,1024, 512,256,1024
+		RequiresCondition: !capacitors
+	Armament@CAPACITORS:
+		Weapon: LaserShotUpg
+		LocalOffset: 512,-256,1024, 512,256,1024
+		RequiresCondition: capacitors
 	AttackTurreted:
 		PauseOnCondition: disabled || chronodisable
 	Turreted:
@@ -1732,6 +1737,11 @@ yaeast02:
 	Armament:
 		Weapon: LaserShot
 		LocalOffset: 512,-256,1024, 512,256,1024
+		RequiresCondition: !capacitors
+	Armament@CAPACITORS:
+		Weapon: LaserShotUpg
+		LocalOffset: 512,-256,1024, 512,256,1024
+		RequiresCondition: capacitors
 	RenderVoxels:
 		Image: cahead
 		Scale: 1.17

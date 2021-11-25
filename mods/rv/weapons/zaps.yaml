@@ -852,11 +852,11 @@ DiskLaser:
 	Report: vfloatta.wav
 	InvalidTargets: DiskDrain, DiskSteal
 	Projectile: LaserZap
-		Width: 50
+		Width: 75
 		Duration: 15
 		Color: AA799080
 		SecondaryBeam: true
-		SecondaryBeamWidth: 25
+		SecondaryBeamWidth: 20
 		SecondaryBeamZOffset: 2047
 		SecondaryBeamColor: FFFFFF80
 		UsePlayerColor: false
@@ -915,6 +915,38 @@ DiskLaserAAE:
 		ValidTargets: Air
 	-Warhead@1Gar:
 
+DiskLaserUpg:
+	Inherits: DiskLaser
+	Projectile: LaserZap
+		Width: 100
+		Color: DD666680
+		SecondaryBeamWidth: 40
+		SecondaryBeamColor: AA799080
+
+DiskLaserUpgE:
+	Inherits: DiskLaserE
+	Projectile: LaserZap
+		Width: 100
+		Color: FFDD0080
+		SecondaryBeamWidth: 40
+		SecondaryBeamColor: FF000080
+
+DiskLaserAAUpg:
+	Inherits: DiskLaserAA
+	Projectile: LaserZap
+		Width: 100
+		Color: DD666680
+		SecondaryBeamWidth: 40
+		SecondaryBeamColor: AA799080
+
+DiskLaserAAUpgE:
+	Inherits: DiskLaserAAE
+	Projectile: LaserZap
+		Width: 100
+		Color: FFDD0080
+		SecondaryBeamWidth: 40
+		SecondaryBeamColor: FF000080
+
 DoomLaser:
 	Inherits: Comet
 	ReloadDelay: 80
@@ -963,19 +995,35 @@ DoomLaserE:
 		Explosions: laser_explosion_red
 		ExplosionPalette: player
 
+DoomLaserUpg:
+	Inherits: DiskLaser
+	Projectile: LaserZap
+		Width: 125
+		Color: DD666680
+		SecondaryBeamWidth: 50
+		SecondaryBeamColor: AA799080
+
+DoomLaserUpgE:
+	Inherits: DiskLaserE
+	Projectile: LaserZap
+		Width: 125
+		Color: FFDD0080
+		SecondaryBeamWidth: 50
+		SecondaryBeamColor: FF000080
+
 ATLASER:
 	Inherits: ATGUN
 	Report: vlazatta.aud
 	-Projectile:
 	Projectile: LaserZap
 		Duration: 15
-		Width: 100
+		Width: 125
 		ZOffset: 2047
-		Color: AA799080
+		Color: DD666680
 		SecondaryBeam: true
-		SecondaryBeamWidth: 25
+		SecondaryBeamWidth: 50
 		SecondaryBeamZOffset: 2047
-		SecondaryBeamColor: FFFFFF80
+		SecondaryBeamColor: AA799080
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Versus:
@@ -998,13 +1046,13 @@ ATLASERE:
 	-Projectile:
 	Projectile: LaserZap
 		Duration: 15
-		Width: 100
+		Width: 125
 		ZOffset: 2047
-		Color: FF000080
+		Color: FFDD0080
 		SecondaryBeam: true
-		SecondaryBeamWidth: 25
+		SecondaryBeamWidth: 50
 		SecondaryBeamZOffset: 2047
-		SecondaryBeamColor: FFFFFF80
+		SecondaryBeamColor: FF000080
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Versus:
@@ -1089,6 +1137,38 @@ LunarLaserAAE:
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
+LunarLaserUpg:
+	Inherits: LunarLaser
+	Projectile: LaserZap
+		Width: 100
+		Color: DD666680
+		SecondaryBeamWidth: 40
+		SecondaryBeamColor: AA799080
+
+LunarLaserUpgE:
+	Inherits: LunarLaserE
+	Projectile: LaserZap
+		Width: 100
+		Color: FFDD0080
+		SecondaryBeamWidth: 40
+		SecondaryBeamColor: FF000080
+
+LunarLaserAAUpg:
+	Inherits: LunarLaserAA
+	Projectile: LaserZap
+		Width: 100
+		Color: DD666680
+		SecondaryBeamWidth: 40
+		SecondaryBeamColor: AA799080
+
+LunarLaserAAUpgE:
+	Inherits: LunarLaserAAE
+	Projectile: LaserZap
+		Width: 100
+		Color: FFDD0080
+		SecondaryBeamWidth: 40
+		SecondaryBeamColor: FF000080
+
 LaserShot:
 	Inherits: DoomLaser
 	ReloadDelay: 80
@@ -1102,6 +1182,14 @@ LaserShot:
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c128
 		Damage: 30000
+
+LaserShotUpg:
+	Inherits: LaserShot
+	Projectile: LaserZap
+		Width: 250
+		Color: DD666680
+		SecondaryBeamWidth: 100
+		SecondaryBeamColor: AA799080
 
 IonCannon:
 	Inherits@1: ^BreakPointDefenseDrones

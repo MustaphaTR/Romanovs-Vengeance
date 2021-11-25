@@ -1763,22 +1763,42 @@ disk:
 		Weapon: DiskLaser
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !capacitors
 	Armament@elite:
 		Weapon: DiskLaserE
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !capacitors
 	Armament@primary-aa:
 		Weapon: DiskLaserAA
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !capacitors
 	Armament@elite-aa:
 		Weapon: DiskLaserAAE
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !capacitors
+	Armament@primary-capacitors:
+		Weapon: DiskLaserUpg
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: !rank-elite && capacitors
+	Armament@elite-capacitors:
+		Weapon: DiskLaserUpgE
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: rank-elite && capacitors
+	Armament@primary-aa-capacitors:
+		Weapon: DiskLaserAAUpg
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: !rank-elite && capacitors
+	Armament@elite-aa-capacitors:
+		Weapon: DiskLaserAAUpgE
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: rank-elite && capacitors
 	Armament@drain:
 		Name: secondary
 		Weapon: DiskDrain
