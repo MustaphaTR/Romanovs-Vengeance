@@ -217,6 +217,11 @@ ltnk:
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && autoloaders && capacitors
 	WithMuzzleOverlay:
+	WithVoxelTurret:
+		RequiresCondition: !autoloaders
+	WithVoxelTurret@AUTOLOADERS:
+		Sequence: turret-autoloaders
+		RequiresCondition: autoloaders
 	-WithVoxelBarrel:
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
