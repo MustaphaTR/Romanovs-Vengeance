@@ -247,16 +247,16 @@ zep:
 	#	Type: GroundPosition
 	Armament:
 		Weapon: BlimpBomb
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !radbombs
 	Armament@elite:
 		Weapon: BlimpBombE
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !radbombs
 	Armament@rad:
 		Weapon: BlimpBombRad
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && radbombs
 	Armament@eliterad:
 		Weapon: BlimpBombRadE
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && radbombs
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
