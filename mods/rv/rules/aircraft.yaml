@@ -266,6 +266,11 @@ zep:
 	RenderVoxels:
 	WithVoxelBody:
 		ShowShadow: false
+		RequiresCondition: !airprop
+	WithVoxelBody@propaganda:
+		ShowShadow: false
+		Sequence: idle-propaganda
+		RequiresCondition: airprop
 	WithFacingSpriteBody:
 		Sequence: shadow
 		ForceToGround: true
@@ -2593,6 +2598,12 @@ kite:
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
+		RequiresCondition: !airprop
+	WithVoxelHelicopterBody@propaganda:
+		TickRate: 1
+		ShowShadow: false
+		Sequence: idle-propaganda
+		RequiresCondition: airprop
 	WithFacingSpriteBody:
 		Sequence: shadow
 		ForceToGround: true
