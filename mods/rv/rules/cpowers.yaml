@@ -1378,7 +1378,8 @@ prerequisite.grinder:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
-	AirstrikePower@chaosgas:
+	AirstrikePowerRV@chaosgas:
+		ActivationDelay: 125
 		OrderName: PsiCorpsChaosDrop
 		RequiresCondition: !lost
 		Prerequisites:
@@ -1408,19 +1409,20 @@ prerequisite.grinder:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
-	AirstrikePower@GeneticMutator:
+	AirstrikePowerRV@GeneticMutator:
+		ActivationDelay: 125
 		OrderName: TransylvaniaGeneticMutator
 		RequiresCondition: !lost
 		Prerequisites:
 			1: upgrade.dna_boosters
 		Icons:
 			1: mutator
-		ChargeInterval: 7500
+		ChargeInterval: 4500
 		StartFullyCharged: true
 		Descriptions:
 			1: Genetic Mutator
 		LongDescs:
-			1: A Cargo Plane drops a Mutator bomb that\nturns infantry to Brutes anywhere on the map.
+			1: A Cargo Plane that drops a Mutator bomb that\nturns infantry into Brutes.
 		SelectTargetSpeechNotification: SelectTarget
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
 		UnitTypes:
