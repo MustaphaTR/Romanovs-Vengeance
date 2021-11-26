@@ -414,6 +414,11 @@ orca:
 		Voice: Attack
 		TargetFrozenActors: True
 		PauseOnCondition: emp || magnefreeze || chronodisable
+	WithVoxelBody:
+		RequiresCondition: !a2amissiles
+	WithVoxelBody@A2A:
+		Sequence: idle-a2a
+		RequiresCondition: a2amissiles
 	Voiced:
 		VoiceSet: HarrierVoice
 	ExternalCondition@PRODUCED:
@@ -575,6 +580,9 @@ beag:
 	-Armament@AA:
 	-Armament@EliteAA:
 	-GrantConditionOnPrerequisite@A2AMISSILES:
+	WithVoxelBody:
+		-RequiresCondition:
+	-WithVoxelBody@A2A:
 	AmmoPool:
 		Ammo: 1
 		ReloadDelay: 200
@@ -1657,6 +1665,9 @@ bpln:
 	-Armament@AA:
 	-Armament@EliteAA:
 	-GrantConditionOnPrerequisite@A2AMISSILES:
+	WithVoxelBody:
+		-RequiresCondition:
+	-WithVoxelBody@A2A:
 	AttackAircraft:
 		RequiresCondition: ammo
 	Health:
