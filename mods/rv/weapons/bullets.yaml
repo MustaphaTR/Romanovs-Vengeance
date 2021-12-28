@@ -790,18 +790,11 @@ Grenade:
 GrenadeE:
 	Inherits: Grenade
 	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
 		Damage: 10000
 	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c512
 		Damage: 10000
-	Warhead@1Dis: GrantExternalCondition
-		Range: 1c512
-		Duration: 50
-		Condition: emp
-		ValidTargets: EMPulse
-	Warhead@2Eff: CreateEffect
-		Explosions: empulse30p
-		ExplosionPalette: tseffect
-		ImpactSounds: sempexpl.wav
 
 UCGrenade:
 	Inherits: Grenade
@@ -823,8 +816,23 @@ GrenadeEMP:
 		ExplosionPalette: tseffect
 		ImpactSounds: sempexpl.wav
 
+GrenadeEMPE:
+	Inherits: GrenadeEMP
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+		Damage: 10000
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c512
+		Damage: 10000
+	Warhead@1Dis: GrantExternalCondition
+		Range: 1c512
+
 UCGrenadeEMP:
 	Inherits: GrenadeEMP
+	Range: 7c0
+
+UCGrenadeEMPE:
+	Inherits: GrenadeEMPE
 	Range: 7c0
 
 SpawnEgg:

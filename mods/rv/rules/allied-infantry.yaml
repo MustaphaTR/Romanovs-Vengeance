@@ -1670,7 +1670,13 @@ gren:
 		FireDelay: 5
 		LocalOffset: 64,0,512
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !empammo && rank-elite
+	Armament@elite-emp:
+		Weapon: GrenadeEMPE
+		FireDelay: 5
+		LocalOffset: 64,0,512
+		PauseOnCondition: chronodisable
+		RequiresCondition: empammo && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: Grenade
@@ -1685,7 +1691,12 @@ gren:
 		Name: opentopped
 		Weapon: GrenadeE
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !empammo && rank-elite
+	Armament@elite-opentopped-emp:
+		Name: opentopped
+		Weapon: GrenadeEMPE
+		PauseOnCondition: chronodisable
+		RequiresCondition: empammo && rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCGrenade
@@ -1700,7 +1711,12 @@ gren:
 		Name: garrisoned
 		Weapon: UCGrenadeE
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite
+		RequiresCondition: !empammo && rank-elite
+	Armament@elite-garrisoned-emp:
+		Name: garrisoned
+		Weapon: UCGrenadeEMPE
+		PauseOnCondition: chronodisable
+		RequiresCondition: empammo && rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		RequiresCondition: !parachute && !webdisable
