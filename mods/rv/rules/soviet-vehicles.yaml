@@ -681,6 +681,7 @@ v3:
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
+	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
@@ -743,7 +744,10 @@ v3:
 	RenderVoxels:
 		Image: v3
 	WithVoxelBody@FULL:
-		RequiresCondition: loaded
+		RequiresCondition: loaded && !radbombs
+	WithVoxelBody@FULL-RADBOMBS:
+		Sequence: idle-rad
+		RequiresCondition: loaded && radbombs
 	WithVoxelBody@EMPTY:
 		Sequence: empty
 		RequiresCondition: !loaded
@@ -832,6 +836,11 @@ v3rocket:
 		RequiresCondition: airborne
 	ExternalCondition@RANK-ELITE:
 		Condition: rank-elite
+	WithVoxelBody:
+		RequiresCondition: !radbombs
+	WithVoxelBody@RADBOMBS:
+		Sequence: idle-rad
+		RequiresCondition: radbombs
 	RenderVoxels:
 		Image: v3rocket
 
