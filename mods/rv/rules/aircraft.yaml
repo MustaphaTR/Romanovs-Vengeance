@@ -503,6 +503,7 @@ orca:
 
 orcahusk:
 	Inherits: ^PlaneHusk
+	Inherits@A2A: ^AffectedByA2AMissiles
 	Tooltip:
 		Name: Harrier
 	Tooltip@NoRow:
@@ -523,11 +524,17 @@ orcahusk:
 	RevealOnDeath:
 		Radius: 6c0
 		Duration: 50
+	WithVoxelBody:
+		RequiresCondition: !a2amissiles
+	WithVoxelBody@A2A:
+		Sequence: idle-a2a
+		RequiresCondition: a2amissiles
 	RenderVoxels:
 		Image: falc
 
 orcahusk.VTOL:
 	Inherits: ^HelicopterHusk
+	Inherits@A2A: ^AffectedByA2AMissiles
 	Tooltip:
 		Name: Harrier
 	Tooltip@NoRow:
@@ -548,6 +555,11 @@ orcahusk.VTOL:
 	RevealOnDeath:
 		Radius: 6c0
 		Duration: 50
+	WithVoxelBody:
+		RequiresCondition: !a2amissiles
+	WithVoxelBody@A2A:
+		Sequence: idle-a2a
+		RequiresCondition: a2amissiles
 	RenderVoxels:
 		Image: falc
 
@@ -2140,6 +2152,11 @@ fortress:
 		Voice: Attack
 		TargetFrozenActors: True
 		PauseOnCondition: emp || magnefreeze || chronodisable
+	WithVoxelBody:
+		RequiresCondition: !increased_payload
+	WithVoxelBody@2:
+		Sequence: idle-payload
+		RequiresCondition: increased_payload
 	Voiced:
 		VoiceSet: B2Voice
 	ExternalCondition@PRODUCED:
@@ -2257,6 +2274,7 @@ fortress:
 
 fortresshusk:
 	Inherits: ^PlaneHusk
+	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
 	Tooltip:
 		Name: B2 Spirit
 	Tooltip@NoRow:
@@ -2277,12 +2295,18 @@ fortresshusk:
 	RevealOnDeath:
 		Radius: 5c0
 		Duration: 50
+	WithVoxelBody:
+		RequiresCondition: !increased_payload
+	WithVoxelBody@2:
+		Sequence: idle-payload
+		RequiresCondition: increased_payload
 	RenderVoxels:
 		Image: fortress
 		NormalsPalette: ts-normals
 
 fortresshusk.VTOL:
 	Inherits: ^HelicopterHusk
+	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
 	Tooltip:
 		Name: B2 Spirit
 	Tooltip@NoRow:
@@ -2303,6 +2327,11 @@ fortresshusk.VTOL:
 	RevealOnDeath:
 		Radius: 5c0
 		Duration: 50
+	WithVoxelBody:
+		RequiresCondition: !increased_payload
+	WithVoxelBody@2:
+		Sequence: idle-payload
+		RequiresCondition: increased_payload
 	RenderVoxels:
 		Image: fortress
 		NormalsPalette: ts-normals
