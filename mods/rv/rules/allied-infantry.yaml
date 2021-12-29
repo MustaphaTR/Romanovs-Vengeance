@@ -104,8 +104,8 @@ engineer:
 
 dog:
 	Inherits: ^Infantry
-	Inherits@2: ^Parachutable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
@@ -254,7 +254,6 @@ dog:
 
 e1:
 	Inherits@1: ^Infantry
-	Inherits@2: ^Parachutable
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AI: ^AIMicroManagable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -262,6 +261,7 @@ e1:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
+	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
@@ -415,7 +415,6 @@ e1:
 
 ggi:
 	Inherits@1: ^Infantry
-	Inherits@2: ^Parachutable
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AI: ^AIMicroManagable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -424,6 +423,7 @@ ggi:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
+	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && undeployed && !ai-control
@@ -869,7 +869,7 @@ snipe:
 
 spy:
 	Inherits: ^Infantry
-	Inherits@2: ^Parachutable
+	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
@@ -1606,14 +1606,14 @@ cleg:
 
 # Custom Allied Infantry:
 gren:
-	Inherits@1: ^Infantry
-	Inherits@2: ^Parachutable
+	Inherits: ^Infantry
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@PARACHUTE: ^Parachutable
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		Prerequisites: gaairc, ~techlevel.2
@@ -1717,8 +1717,28 @@ gren:
 		PauseOnCondition: chronodisable
 		RequiresCondition: empammo && rank-elite
 	WithInfantryBody:
-		DefaultAttackSequence: shoot
-		RequiresCondition: !parachute && !webdisable
+		RequiresCondition: !parachute && !webdisable && !empammo
+	WithInfantryBody@EMPAMMO:
+		IdleSequences: idle1-empammo, idle2-empammo
+		MoveSequence: run-empammo
+		StandSequences: stand-empammo
+		DefaultAttackSequence: shoot-empammo
+		RequiresCondition: !parachute && !webdisable && empammo
+	WithSpriteBody@Parachute:
+		RequiresCondition: parachute && !empammo
+	WithSpriteBody@Parachute-EMPAMMO:
+		Name: parachute
+		Sequence: paradrop-empammo
+		RequiresCondition: parachute && empammo
+	WithDeathAnimation@normal:
+		RequiresCondition: !empammo
+	WithDeathAnimation@EMPAMMO:
+		DeathSequence: die-empammo
+		DeathSequencePalette: infantry
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+		RequiresCondition: empammo
 	Voiced:
 		VoiceSet: GrenadierVoice
 		Volume: 6

@@ -91,12 +91,12 @@ slav:
 
 init:
 	Inherits: ^Infantry
-	Inherits@2: ^Parachutable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CAMOUFLAGE: ^AffectedByCamouflage
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
@@ -204,11 +204,11 @@ init.holo:
 
 brute:
 	Inherits: ^Infantry
-	Inherits@2: ^Parachutable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@DNABOOST: ^AffectedByDNABoosters
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon
@@ -696,13 +696,13 @@ lunr.spawner:
 
 # Custom Infantry
 gtrp:
-	Inherits@1: ^Infantry
-	Inherits@2: ^Parachutable
+	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAINGUNS: ^AffectedByChainguns
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Yuri, Infantry.Moon

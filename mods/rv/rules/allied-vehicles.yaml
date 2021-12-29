@@ -1712,13 +1712,16 @@ hwtz:
 		TargetFrozenActors: True
 		PauseOnCondition: chronodisable || emp || nogunner
 	WithMuzzleOverlay:
-	AutoTarget:
 	RenderSprites:
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	RenderVoxels:
 		NormalsPalette: ts-normals
 	WithVoxelBody:
+		RequiresCondition: !empammo
+	WithVoxelBody@EMPAMMO:
+		Sequence: idle-empammo
+		RequiresCondition: empammo
 	Voiced:
 		VoiceSet: HowitzerVoice
 	ExternalCondition@PRODUCED:
