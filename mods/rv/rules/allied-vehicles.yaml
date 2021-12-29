@@ -77,6 +77,21 @@ mtnk:
 		LocalOffset: 896,0,512
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
+	WithVoxelBody:
+		RequiresCondition: !composite_armor
+	WithVoxelBody@COMPOSITE_ARMOR:
+		Sequence: idle-armor
+		RequiresCondition: composite_armor
+	WithVoxelTurret:
+		RequiresCondition: !composite_armor
+	WithVoxelTurret@COMPOSITE_ARMOR:
+		Sequence: turret-armor
+		RequiresCondition: composite_armor
+	WithVoxelBarrel:
+		RequiresCondition: !advanced_guns
+	WithVoxelBarrel@ADVANCED_GUNS:
+		Sequence: barrel-advanced
+		RequiresCondition: advanced_guns
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	Voiced:
@@ -153,6 +168,16 @@ tnkd:
 	RenderVoxels:
 		Scale: 13
 	WithVoxelBody:
+		RequiresCondition: !composite_armor && !advanced_guns
+	WithVoxelBody@COMPOSITE_ARMOR:
+		Sequence: idle-armor
+		RequiresCondition: composite_armor && !advanced_guns
+	WithVoxelBody@ADVANCED_GUNS:
+		Sequence: idle-advanced
+		RequiresCondition: !composite_armor && advanced_guns
+	WithVoxelBody@COMPOSITE_ARMOR_ADVANCED_GUNS:
+		Sequence: idle-armor-advanced
+		RequiresCondition: composite_armor && advanced_guns
 	Voiced:
 		VoiceSet: TankDestroyerVoice
 	ExternalCondition@PRODUCED:
@@ -1269,7 +1294,10 @@ mgtk:
 		RequiresCondition: tree
 	RenderVoxels:
 	WithVoxelBody:
-		RequiresCondition: !tree
+		RequiresCondition: !tree && !composite_armor
+	WithVoxelBody@COMPOSITE_ARMOR:
+		Sequence: idle-armor
+		RequiresCondition: !tree && composite_armor
 	Voiced:
 		VoiceSet: MirageTankVoice
 	ExternalCondition@PRODUCED:
