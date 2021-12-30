@@ -1,7 +1,7 @@
 caoild:
 	Inherits: ^TechBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 10
@@ -70,7 +70,7 @@ caoild:
 		Modifier: 0
 
 caoild.mwspawner:
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Interactable:
 	EditorOnlyTooltip:
 		Name: Megawealth Only Oil Derrick
@@ -119,7 +119,7 @@ caoild.nonmwspawner:
 caairp:
 	Inherits: ^TechBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 20
@@ -262,7 +262,7 @@ caairp:
 cahosp:
 	Inherits: ^TechBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^6x4Shape
+	Inherits@SHAPE: ^6x4Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 30
@@ -304,7 +304,7 @@ cathosp:
 
 cashosp:
 	Inherits: cahosp
-	Inherits@shape: ^4x4Shape
+	Inherits@SHAPE: ^4x4Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 40
@@ -320,7 +320,7 @@ caoutp:
 	Inherits: ^TechBuilding
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^4x3Shape
+	Inherits@SHAPE: ^4x3Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 50
@@ -401,8 +401,9 @@ caoutp:
 # Yuri's Revenge Tech Structures
 capowr:
 	Inherits: ^TechBuilding
+	Inherits@DRAIN: ^DiskDrainable
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 60
@@ -429,6 +430,8 @@ capowr:
 	Power:
 		Amount: 400
 		RequiresCondition: !disabled && !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp || diskdrain
 	GpsDotAS:
 		Range: 25c0
 		Sequence: Power
@@ -438,7 +441,7 @@ capowr:
 camach:
 	Inherits: ^TechBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 70
@@ -469,7 +472,7 @@ camach:
 caslab:
 	Inherits: ^TechBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 80
@@ -500,7 +503,7 @@ caslab:
 cacomm:
 	Inherits: ^TechBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 90
@@ -542,7 +545,7 @@ cacomm:
 caarmr:
 	Inherits: ^TechBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^3x3Shape
+	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 100
@@ -573,7 +576,7 @@ caarmr:
 carpad:
 	Inherits: ^TechBuilding
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^1x3Shape
+	Inherits@SHAPE: ^1x3Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 110
@@ -663,7 +666,7 @@ capsyb:
 	Inherits: ^TechBuilding
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 120
@@ -729,7 +732,7 @@ capsyb:
 
 capsyb.koth:
 	Inherits: ^TechBuilding
-	Inherits@shape: ^2x2Shape
+	Inherits@SHAPE: ^2x2Shape
 	-Buildable:
 	Tooltip:
 		Name: Psychic Beacon
@@ -784,7 +787,7 @@ camisl:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
-	Inherits@shape: ^4x3Shape
+	Inherits@SHAPE: ^4x3Shape
 	Buildable:
 		Queue: Building.Tech
 		BuildPaletteOrder: 130
