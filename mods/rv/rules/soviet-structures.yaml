@@ -834,49 +834,17 @@ nadept:
 		DecorationHeight: 90
 
 naheli:
-	Inherits: ^BaseBuilding
-	Inherits@MC: ^MindControllableBuilding
-	Inherits@SPY: ^DisabledByInfiltration
-	Inherits@SHAPE: ^3x3Shape
+	Inherits: ^Helipad
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 100
 		Prerequisites: naradr, ~techlevel.2
 		Description: Produces Soviet aircraft.
-		BuildDuration: 250
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 500
 	Tooltip:
 		Name: Helipad
 	Tooltip@NoRow:
 		Name: Helipad
-	ProvidesPrerequisite@default:
-	ProvidesPrerequisite@production:
-		Prerequisite: production
-	Building:
-		Footprint: xxx xxx xxx
-		Dimensions: 3,3
-	Health:
-		HP: 75000
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	Armor:
-		Type: Wood
-	Reservable:
-	RallyPoint:
-		Path: 3,1
-		Palette: mouse
-		IsPlayerPalette: false
 	Exit@1:
-		Facing: 640
-		ExitCell: 1,1
 		SpawnOffset: -384,128,0
-	GrantExternalConditionToProduced:
-		Condition: produced
 	Production:
 		Produces: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
 		PauseOnCondition: chronodisable || infiltrated
@@ -958,11 +926,6 @@ naheli:
 		ProductionType: Aircraft.Libya
 	ProductionBar@Baku:
 		ProductionType: Aircraft.Baku
-	Power:
-		Amount: -50
-		RequiresCondition: !chronodisable
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -973,9 +936,6 @@ naheli:
 		RequiresCondition: !build-incomplete
 	IsometricSelectable:
 		DecorationHeight: 60
-	Voiced:
-		VoiceSet: AirfieldVoice
-		Volume: 0.8
 
 nanrct:
 	Inherits: ^PowerPlant

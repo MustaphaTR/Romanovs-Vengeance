@@ -825,49 +825,15 @@ yadome:
 		Volume: 0.8
 
 yadisk:
-	Inherits: ^BaseBuilding
-	Inherits@MC: ^MindControllableBuilding
-	Inherits@SPY: ^DisabledByInfiltration
-	Inherits@SHAPE: ^3x3Shape
+	Inherits: ^Helipad
 	Buildable:
 		Queue: Building.Yuri
-		BuildPaletteOrder: 100
 		Prerequisites: yadome, ~techlevel.2
 		Description: Produces Psi-Corps aircraft.
-		BuildDuration: 250
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 500
 	Tooltip:
 		Name: Disc Pad
 	Tooltip@NoRow:
 		Name: Disc Pad
-	ProvidesPrerequisite@default:
-	ProvidesPrerequisite@production:
-		Prerequisite: production
-	Building:
-		Dimensions: 3,3
-		Footprint: xxx xxx xxx
-	Health:
-		HP: 75000
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 6c0
-	Armor:
-		Type: Wood
-	Reservable:
-	RallyPoint:
-		Path: 3,1
-		Palette: mouse
-		IsPlayerPalette: false
-	Exit@1:
-		Facing: 640
-		ExitCell: 1,1
-		SpawnOffset: 0,0,0
-	GrantExternalConditionToProduced:
-		Condition: produced
 	Production:
 		Produces: Aircraft.Yuri, Aircraft.Lazarus
 		PauseOnCondition: chronodisable || infiltrated
@@ -897,11 +863,6 @@ yadisk:
 		ProductionType: Aircraft.Yuri
 	ProductionBar@Lazarus:
 		ProductionType: Aircraft.Lazarus
-	Power:
-		Amount: -50
-		RequiresCondition: !chronodisable
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	-WithMakeAnimation:
 	Capturable:
 		RequiresCondition: !invulnerability && !forceshield
@@ -911,9 +872,6 @@ yadisk:
 		Image: yarock
 	IsometricSelectable:
 		DecorationHeight: 30
-	Voiced:
-		VoiceSet: AirfieldVoice
-		Volume: 0.8
 
 yatech:
 	Inherits: ^BattleLab

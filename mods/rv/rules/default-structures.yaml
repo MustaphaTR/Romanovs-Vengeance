@@ -828,6 +828,55 @@
 		VoiceSet: ServiceDepotVoice
 		Volume: 0.8
 
+^Helipad:
+	Inherits: ^BaseBuilding
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^DisabledByInfiltration
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 100
+		Prerequisites: radar, ~techlevel.2
+		Description: Produces aircraft.
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 500
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@production:
+		Prerequisite: production
+	Building:
+		Dimensions: 3,3
+		Footprint: xxx xxx xxx
+	Health:
+		HP: 75000
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	Armor:
+		Type: Wood
+	Reservable:
+	RallyPoint:
+		Path: 3,1
+		Palette: mouse
+		IsPlayerPalette: false
+	Exit@1:
+		Facing: 640
+		ExitCell: 1,1
+		SpawnOffset: 0,0,0
+	GrantExternalConditionToProduced:
+		Condition: produced
+	Power:
+		Amount: -50
+		RequiresCondition: !chronodisable
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Voiced:
+		VoiceSet: AirfieldVoice
+		Volume: 0.8
+
 ^BattleLab:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
