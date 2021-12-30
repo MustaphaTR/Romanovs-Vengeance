@@ -1,5 +1,6 @@
 ^ConstructionYard:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^4x4Shape
@@ -26,7 +27,7 @@
 		Cost: 4000
 	Production:
 		Produces: Building, Support
-		PauseOnCondition: chronodisable || infiltrated
+		PauseOnCondition: chronodisable || disabled
 	ProductionQueue@Building:
 		Type: Building
 		Group: Building
@@ -58,7 +59,7 @@
 		Facing: 384
 		Voice: Move
 		DeployCursor: undeploy
-		PauseOnCondition: chronodisable || controlled || infiltrated
+		PauseOnCondition: chronodisable || controlled || disabled
 		RequiresCondition: factundeploy && !build-incomplete
 	TransformsIntoMobile:
 		RequiresCondition: factundeploy && !build-incomplete && !chronodisable && !controlled
@@ -104,6 +105,8 @@
 		Condition: invisibility
 	ExternalCondition@INVISIBILITY:
 		Condition: invisibility
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp || infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Voiced:
@@ -179,6 +182,7 @@
 
 ^PowerPlant:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
@@ -209,9 +213,9 @@
 	#	Range: 6c0
 	Power:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled
 	GrantCondition@IDISABLE:
-		RequiresCondition: power-outage || diskdrain
+		RequiresCondition: emp || power-outage || diskdrain
 	GrantConditionOnPrerequisite@forceshield:
 		Condition: forceshieldnopower
 		Prerequisites: forceshield
@@ -226,6 +230,7 @@
 
 ^Barracks:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Buildable:
@@ -262,7 +267,7 @@
 		Condition: produced
 	Production:
 		Produces: Infantry
-		PauseOnCondition: chronodisable || infiltrated
+		PauseOnCondition: chronodisable || disabled
 	ProductionQueue:
 		Type: Infantry
 		Group: Infantry
@@ -277,6 +282,8 @@
 		ProductionType: Infantry
 	Power:
 		Amount: -35
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp || infiltrated
 	#InfiltrateForSupportPower:
 	#	Types: SpyInfiltrate
 	#	Proxy: barracks.infiltrated
@@ -500,6 +507,7 @@
 		Capacity: 2000
 	Power:
 		Amount: -10
+		RequiresCondition: !chronodisable
 	Explodes:
 		RequiresCondition: !spawn-ore
 	Explodes@Ore:
@@ -524,6 +532,7 @@
 
 ^WarFactory:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^NormalFactoryShape
@@ -566,7 +575,7 @@
 		Condition: produced
 	Production:
 		Produces: Vehicle
-		PauseOnCondition: chronodisable || infiltrated
+		PauseOnCondition: chronodisable || disabled
 	ProductionQueue:
 		Type: Vehicle
 		Group: Vehicle
@@ -592,6 +601,8 @@
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp || infiltrated
 	#InfiltrateForSupportPower:
 	#	Types: SpyInfiltrate
 	#	Proxy: warfactory.infiltrated
@@ -605,6 +616,7 @@
 
 ^Shipyard:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^4x4Shape
 	Valued:
@@ -716,7 +728,7 @@
 		Condition: produced
 	Production:
 		Produces: Ship
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || disabled
 	ProductionQueue:
 		Type: Ship
 		Group: Ship
@@ -734,7 +746,7 @@
 		Palette: mouse
 		IsPlayerPalette: false
 	RepairsUnits:
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || disabled
 		HpPerStep: 2000
 		Interval: 15
 		RepairDamageTypes: KillsDrone
@@ -770,6 +782,7 @@
 
 ^ServiceDepot:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Building
@@ -801,7 +814,7 @@
 		Palette: mouse
 		IsPlayerPalette: false
 	RepairsUnits:
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || disabled
 		HpPerStep: 2000
 		Interval: 15
 		RepairDamageTypes: KillsDrone
@@ -830,6 +843,7 @@
 
 ^Helipad:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^3x3Shape
@@ -868,9 +882,26 @@
 		SpawnOffset: 0,0,0
 	GrantExternalConditionToProduced:
 		Condition: produced
+	Production:
+		Produces: Aircraft
+		PauseOnCondition: chronodisable || disabled
+	ProductionQueue:
+		Type: Aircraft
+		Group: Aircraft
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Aircraft
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: emp || infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Voiced:
@@ -915,8 +946,8 @@
 
 ^PrimarySuperWeapon:
 	Inherits: ^BaseBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
@@ -947,6 +978,8 @@
 	Power:
 		Amount: -200
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	SupportPowerChargeBar:
 	WithSupportPowerChargedOverlay:
 	InfiltrateForSupportPowerReset:
@@ -965,8 +998,8 @@
 
 ^SecondarySuperWeapon:
 	Inherits: ^BaseBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
@@ -997,6 +1030,8 @@
 	Power:
 		Amount: -200
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	SupportPowerChargeBar:
 	WithSupportPowerChargedOverlay:
 		RequiresCondition: !build-incomplete

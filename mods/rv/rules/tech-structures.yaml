@@ -13,7 +13,7 @@ caoild:
 		InitialDelay: 100
 		Interval: 250
 		Amount: 100
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: enabled
 	Tooltip:
 		Name: Tech Oil Derrick
@@ -27,7 +27,7 @@ caoild:
 		Type: Wood
 	WithIdleOverlay@pump:
 		Sequence: idle-pump
-		PauseOnCondition: !enabled || chronodisable
+		PauseOnCondition: !enabled || disabled || chronodisable
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 1000,0,0
@@ -150,7 +150,7 @@ caairp:
 		ResetOnOwnerChange: true
 	ParatroopersPower@Allies:
 		RequiresCondition: enabled
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		OrderName: AlliedParatroopers
 		Icons:
 			1: paradrop
@@ -182,7 +182,7 @@ caairp:
 		DirectionArrowPalette: mouse
 	ParatroopersPower@Soviets:
 		RequiresCondition: enabled
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		OrderName: SovietParatroopers
 		Icons:
 			1: paradrop
@@ -214,7 +214,7 @@ caairp:
 		DirectionArrowPalette: mouse
 	ParatroopersPower@PsiCorps:
 		RequiresCondition: enabled
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		OrderName: PsiCorpsParatroopers
 		Icons:
 			1: paradrop
@@ -281,9 +281,10 @@ cahosp:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: cahosp
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: enabled
 	WithIdleOverlay:
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 	WithIdleOverlay@flag:
 		Sequence: flag
 		Offset: 0,-500,2520
@@ -353,7 +354,7 @@ caoutp:
 		Palette: mouse
 		IsPlayerPalette: false
 	RepairsUnits:
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		HpPerStep: 2000
 		Interval: 7
 		RepairDamageTypes: KillsDrone
@@ -388,7 +389,7 @@ caoutp:
 		InitialFacing: 896
 		Offset: 700,-1000,1500
 	AttackTurreted:
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 	Armament:
 		Weapon: OutpostMissile
 		LocalOffset: 500,0,900
@@ -428,7 +429,7 @@ capowr:
 		PauseOnCondition: chronodisable
 	Power:
 		Amount: 400
-		RequiresCondition: !chronodisable
+		RequiresCondition: !disabled && !chronodisable
 	GpsDotAS:
 		Range: 25c0
 		Sequence: Power
@@ -456,6 +457,7 @@ camach:
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: enabled
 	WithIdleOverlay@flag:
 		Sequence: flag
@@ -499,7 +501,6 @@ caslab:
 # Custom Tech Structures
 cacomm:
 	Inherits: ^TechBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^3x3Shape
 	Buildable:
@@ -518,19 +519,17 @@ cacomm:
 		HP: 75000
 	RevealsShroud:
 		Range: 20c0
-		RequiresCondition: !emp
+		RequiresCondition: !disabled
 	RevealsShroud@DISABLED:
 		Range: 4c0
-		RequiresCondition: emp
+		RequiresCondition: disabled
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 20c0
-	#	RequiresCondition: !emp && enabled
+	#	RequiresCondition: !disabled && enabled
 	# RevealsShroudToIntelligenceOwner@DISABLED:
 	#	Range: 4c0
 	#	Types: SatelliteScan
-	#	RequiresCondition: emp && enabled
-	GrantCondition@IDISABLE:
-		RequiresCondition: emp
+	#	RequiresCondition: disabled && enabled
 	Armor:
 		Type: Wood
 	WithIdleOverlay@flag:
@@ -566,6 +565,7 @@ caarmr:
 		Sequence: flag
 		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@buildingname:
+		PauseOnCondition: disabled || chronodisable
 	GpsDotAS:
 		Range: 25c0
 		Sequence: Armory
@@ -625,6 +625,7 @@ carpad:
 		Type: ReinforcementsPad.Allies
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: enabled && allies
 	PeriodicProducer@Soviets:
 		Actors: htnk
@@ -632,6 +633,7 @@ carpad:
 		Type: ReinforcementsPad.Soviets
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: enabled && soviets
 	PeriodicProducer@PsiCorps:
 		Actors: ltnk
@@ -639,6 +641,7 @@ carpad:
 		Type: ReinforcementsPad.Yuri
 		ShowSelectionBar: true
 		ChargeColor: FF00FF
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: enabled && psicorps
 	GrantConditionOnFaction@Allies:
 		Condition: allies
@@ -660,7 +663,6 @@ carpad:
 
 capsyb:
 	Inherits: ^TechBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@shape: ^2x2Shape
@@ -703,8 +705,10 @@ capsyb:
 			1: 1c512
 		ActivationSequence:
 	SupportPowerChargeBar:
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	WithColoredOverlay@IDISABLE:
-		RequiresCondition: emp || (disabled && enabled)
+		RequiresCondition: emp || ((lowpower || powerdown) && enabled)
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: !enabled || disabled || chronodisable
@@ -801,6 +805,8 @@ camisl:
 		Footprint: xxx xxx xxx xxx
 	NukePower:
 		OrderName: TechClusterMissile
+		RequiresCondition: enabled
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: camisl
 		Cursor: nuke
@@ -829,8 +835,6 @@ camisl:
 		ClockSequence: clock
 		CameraRange: 10c0
 		CameraRemoveDelay: 200
-		RequiresCondition: enabled
-		PauseOnCondition: disabled || chronodisable
 		FlightDelay: 250
 		FlightVelocity: 0c768
 		TrailInterval: 1
@@ -845,8 +849,10 @@ camisl:
 		RequiresCondition: !chronodisable
 	SupportPowerChargeBar:
 	WithSupportPowerChargedOverlay:
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	WithColoredOverlay@IDISABLE:
-		RequiresCondition: emp || (disabled && enabled)
+		RequiresCondition: emp || ((lowpower || powerdown) && enabled)
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable

@@ -418,6 +418,8 @@ gaairc:
 	Power:
 		Amount: -75
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || infiltrated
 	Reservable:
 	ExitsDebugOverlay:
 	Exit@1:
@@ -442,7 +444,7 @@ gaairc:
 		Condition: produced
 	Production:
 		Produces: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
-		PauseOnCondition: powerdown || chronodisable || infiltrated
+		PauseOnCondition: powerdown || infiltrated || emp || chronodisable
 	ProductionQueue:
 		Type: Aircraft.Allies
 		Factions: germany, france, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
@@ -501,8 +503,6 @@ gaairc:
 		Types: SpyInfiltrate
 		InfiltratedNotification: RadarSabotaged
 		InfiltrationNotification: BuildingInfiltratedRadarSabotaged
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || infiltrated
 	SupportPowerChargeBar:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
@@ -1063,8 +1063,6 @@ nasam:
 		NormalsPalette: ts-normals
 	WithVoxelTurret:
 		RequiresCondition: !build-incomplete
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 12c0
 		Type: aa
@@ -1072,6 +1070,8 @@ nasam:
 	Power:
 		Amount: -30
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	RequiresBuildableArea:
 		Adjacent: 3
 	IsometricSelectable:
@@ -1092,8 +1092,8 @@ gtgcan:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@DRAIN: ^DiskDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -1143,8 +1143,6 @@ gtgcan:
 		RequiresCondition: !build-incomplete
 	WithVoxelBarrel:
 		RequiresCondition: !build-incomplete
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	AutoTarget:
 	WithMuzzleOverlay:
 	WithRangeCircle:
@@ -1153,6 +1151,8 @@ gtgcan:
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	IsometricSelectable:
 		DecorationHeight: 45
 	Voiced:
@@ -1235,8 +1235,8 @@ gaorep:
 
 gaspysat:
 	Inherits: ^BaseBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -1280,6 +1280,8 @@ gaspysat:
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	ExternalCondition@disableradar:
 		Condition: disableradar
 	ProvidesRadar:
@@ -1354,11 +1356,11 @@ gagap:
 		Sequence: idle-head
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	GpsDotAS:
@@ -1499,8 +1501,8 @@ atesla:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@DRAIN: ^DiskDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies, Support.France
@@ -1553,6 +1555,8 @@ atesla:
 	Power:
 		Amount: -75
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	AutoTarget:
 	WithIdleOverlay@normal:
 		Sequence: idle-normal
@@ -1572,8 +1576,6 @@ atesla:
 	FirepowerMultiplier@3:
 		Modifier: 400
 		RequiresCondition: prism-stack >= 3
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	IsometricSelectable:
 		Class: atesla
 		DecorationHeight: 90
@@ -1629,8 +1631,8 @@ repairpad:
 # Yuri's Revenge Structures
 garobo:
 	Inherits: ^BaseBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -1667,6 +1669,8 @@ garobo:
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	IsometricSelectable:
 		DecorationHeight: 60
 
@@ -1799,8 +1803,8 @@ gamgun:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@DRAIN: ^DiskDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.France
@@ -1847,8 +1851,6 @@ gamgun:
 		UncloakOn: Attack, Damage
 	WithSpriteTurret:
 		RequiresCondition: !build-incomplete
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	DetectCloaked:
 		Range: 6c0
 	RenderDetectionCircle:
@@ -1860,6 +1862,8 @@ gamgun:
 	Power:
 		Amount: -25
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	RequiresBuildableArea:
 		Adjacent: 15
 	-Cloak@stealth-generator:
@@ -1878,8 +1882,8 @@ gagun:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@DRAIN: ^DiskDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Allies, Support.France
@@ -1922,8 +1926,6 @@ gagun:
 		RealignDelay: -1
 	WithSpriteTurret:
 		RequiresCondition: !build-incomplete
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	DetectCloaked:
 		Range: 5c0
 	RenderDetectionCircle:
@@ -1935,6 +1937,8 @@ gagun:
 	Power:
 		Amount: -15
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	RequiresBuildableArea:
 		Adjacent: 4
 	WithIdleOverlay@waves:

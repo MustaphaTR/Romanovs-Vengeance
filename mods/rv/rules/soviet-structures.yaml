@@ -322,8 +322,8 @@ narefn:
 
 naradr:
 	Inherits: ^BaseBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@AI: ^AIMicroManagable
@@ -591,6 +591,8 @@ naradr:
 	Power:
 		Amount: -75
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	IsometricSelectable:
 		DecorationHeight: 90
 	Voiced:
@@ -847,18 +849,9 @@ naheli:
 		SpawnOffset: -384,128,0
 	Production:
 		Produces: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
-		PauseOnCondition: chronodisable || infiltrated
 	ProductionQueue:
 		Type: Aircraft.Soviets
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, iraq, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
-		Group: Aircraft
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionQueue@USSR:
 		Type: Aircraft.USSR
 		Factions: russia
@@ -1104,8 +1097,8 @@ naclon:
 
 napsis:
 	Inherits: ^BaseBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -1132,7 +1125,7 @@ napsis:
 	#	Types: SatelliteScan
 	#	Range: 6c0
 	GpsASProvider:
-		RequiresCondition: !disabled && !build-incomplete && !chronodisable
+		RequiresCondition: !build-incomplete && !disabled && !chronodisable
 	RenderDetectionCircle:
 	WithRangeCircle:
 		Range: 25c0
@@ -1147,6 +1140,8 @@ napsis:
 	Power:
 		Amount: -200
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -1296,8 +1291,8 @@ naflak:
 	Inherits: ^VoxelLighting
 	Inherits@AUTOTARGET: ^AutoTargetAir
 	Inherits@DRAIN: ^DiskDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Soviets, Support.Baku
@@ -1341,8 +1336,6 @@ naflak:
 	RenderVoxels:
 	WithVoxelTurret:
 		RequiresCondition: !build-incomplete
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 12c0
 		Type: aa
@@ -1350,6 +1343,8 @@ naflak:
 	Power:
 		Amount: -30
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	RequiresBuildableArea:
 		Adjacent: 3
 	IsometricSelectable:
@@ -1446,10 +1441,6 @@ tesla:
 		RequiresCondition: !disabled
 	RenderDetectionCircle:
 	AutoTarget:
-	GrantConditionOnPowerState@LOWPOWER:
-		RequiresCondition: !charged
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 8c0
 		Type: teslacoil
@@ -1469,6 +1460,10 @@ tesla:
 	Power:
 		Amount: -75
 		RequiresCondition: !chronodisable
+	GrantConditionOnPowerState@LOWPOWER:
+		RequiresCondition: !charged
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithIdleOverlay@powered:
 		Sequence: idle-powered
 		PauseOnCondition: chronodisable
@@ -1721,8 +1716,8 @@ napost:
 	Inherits: ^BaseBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@DRAIN: ^DiskDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Buildable:
 		Queue: Support.Soviets, Support.Baku
@@ -1793,6 +1788,10 @@ napost:
 	Power:
 		Amount: -10
 		RequiresCondition: !chronodisable
+	GrantConditionOnPowerState@LOWPOWER:
+		RequiresCondition: !charged
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	RevealsShroud:
 		Range: 4c0
 	WithIdleOverlay@LIGHTS:
@@ -1810,10 +1809,6 @@ napost:
 		Adjacent: 6
 	IsometricSelectable:
 		DecorationHeight: 30
-	GrantConditionOnPowerState@LOWPOWER:
-		RequiresCondition: !charged
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 3c0
 		Type: teslacoil
@@ -1950,8 +1945,6 @@ naprop:
 	WithRangeCircle:
 		Range: 8c0
 		Type: propaganda
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	Capturable:
 		Types: building
 		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
@@ -1961,6 +1954,8 @@ naprop:
 	Power:
 		Amount: -25
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	GpsDotAS:
 		Sequence: Structure
 	IsometricSelectable:

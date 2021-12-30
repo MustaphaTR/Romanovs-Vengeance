@@ -598,8 +598,8 @@ yagrnd:
 
 yadome:
 	Inherits: ^BaseBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -818,6 +818,8 @@ yadome:
 	Power:
 		Amount: -75
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	IsometricSelectable:
 		DecorationHeight: 75
 	Voiced:
@@ -836,18 +838,9 @@ yadisk:
 		Name: Disc Pad
 	Production:
 		Produces: Aircraft.Yuri, Aircraft.Lazarus
-		PauseOnCondition: chronodisable || infiltrated
 	ProductionQueue:
 		Type: Aircraft.Yuri
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
-		Group: Aircraft
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionQueue@Lazarus:
 		Type: Aircraft.Lazarus
 		Factions: psinepal
@@ -920,8 +913,8 @@ yatech:
 
 yapsis:
 	Inherits: ^BaseBuilding
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -950,7 +943,7 @@ yapsis:
 	#	Types: SatelliteScan
 	#	Range: 6c0
 	GpsASProvider:
-		RequiresCondition: !disabled && !build-incomplete && !chronodisable
+		RequiresCondition: !build-incomplete && !disabled && !chronodisable
 	RenderDetectionCircle:
 	WithRangeCircle:
 		Range: 25c0
@@ -965,6 +958,8 @@ yapsis:
 	Power:
 		Amount: -200
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -1085,8 +1080,8 @@ yaggun:
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@CHAINGUNS: ^AffectedByChainguns
 	Inherits@DRAIN: ^DiskDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Yuri, Support.Antarctica
@@ -1165,8 +1160,6 @@ yaggun:
 	WithMuzzleOverlay:
 	WithVoxelTurret:
 		RequiresCondition: !build-incomplete
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 5c0
 		Type: pillbox
@@ -1176,6 +1169,8 @@ yaggun:
 	Power:
 		Amount: -40
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	IsometricSelectable:
 		Class: yaggun
 		DecorationHeight: 45
@@ -1303,9 +1298,6 @@ yapsyt:
 		Sequence: idle-top
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
-	Power:
-		Amount: -100
-		RequiresCondition: !chronodisable
 	Armament:
 		Weapon: TowerMindControl
 		MuzzleSequence: muzzle
@@ -1331,6 +1323,9 @@ yapsyt:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: MindControl
 		RequiresCondition: controlling < 3
+	Power:
+		Amount: -100
+		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	IsometricSelectable:
@@ -1393,11 +1388,11 @@ yasgen:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	WithSpriteBody:
 		PauseOnCondition: disabled || chronodisable
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	-Cloak@stealth-generator:
@@ -1615,8 +1610,6 @@ caeast02:
 		Offset: 0,0,3096
 		InitialFacing: 640
 		RealignDelay: -1
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Heavy, Critical
@@ -1635,6 +1628,8 @@ caeast02:
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	SpawnActorOnDeath:
 		Actor: caeast02.rubble
 	IsometricSelectable:
@@ -1656,8 +1651,8 @@ yaeast02:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@DRAIN: ^DiskDrainable
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -1714,8 +1709,6 @@ yaeast02:
 	WithVoxelTurret@damaged:
 		Sequence: turret-damaged
 		RequiresCondition: damaged
-	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	WithRangeCircle:
 		Range: 9c0
 		Type: yuristatue
@@ -1724,6 +1717,8 @@ yaeast02:
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	IsometricSelectable:
 		DecorationHeight: 135
 	DetectCloaked:

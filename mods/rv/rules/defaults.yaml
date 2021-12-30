@@ -1737,6 +1737,7 @@
 
 ^TechBuilding:
 	Inherits: ^Building
+	Inherits@EMPULSE: ^DisabledByEMP
 	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-GivesExperience:
@@ -3254,7 +3255,7 @@
 		Color: 00000080
 		RequiresCondition: disabled
 	GrantCondition@IDISABLE:
-		RequiresCondition: lowpower || powerdown || emp
+		RequiresCondition: emp
 		Condition: disabled
 	WithIdleOverlay@EMP:
 		Image: emp
