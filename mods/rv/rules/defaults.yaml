@@ -1935,6 +1935,7 @@
 
 ^Gate:
 	Inherits: ^Building
+	Inherits@EMPULSE: ^DisabledByEMP
 	IsometricSelectable:
 		DecorationHeight: 30
 	AppearsOnMapPreview:
@@ -1968,7 +1969,7 @@
 	MapEditorData:
 		Categories: Wall
 	Gate:
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		OpeningSound: gateup1.aud
 		ClosingSound: gatedwn1.aud
 		CloseDelay: 100

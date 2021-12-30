@@ -101,22 +101,22 @@ yapowr:
 		RequiresCondition: !build-incomplete
 	Power@1:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 1
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 1
 	Power@2:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 2
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 2
 	Power@3:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 3
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 3
 	Power@4:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 4
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 4
 	Power@5:
 		Amount: 50
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loaded >= 5
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 5
 	Power@6:
 		Amount: 100
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && loadedvehicle
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loadedvehicle
 	Cargo:
 		Types: Infantry, Garrisoner, NaturalVehicle
 		MaxWeight: 5
@@ -491,7 +491,7 @@ yayard:
 		ProductionType: Ship.Yuri
 	ParatroopersPower@sensorbuoy:
 		OrderName: PsiCorpsSensorBuoy
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: yayard
 		Icons:
@@ -968,6 +968,7 @@ yapsis:
 
 yaclon:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -1042,6 +1043,7 @@ yaclon:
 		PauseOnCondition: chronodisable
 	Production:
 		Produces: Clone.Yuri
+		PauseOnCondition: chronodisable || disabled
 	RallyPoint:
 		Path: 3,3
 		Palette: mouse

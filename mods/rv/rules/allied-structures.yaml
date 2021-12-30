@@ -182,10 +182,10 @@ gapowr:
 		RequiresCondition: !build-incomplete && (powrup || advcoolants)
 	Power@ADVCOOLANTS:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && advcoolants
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && advcoolants
 	Power@PLUG:
 		Amount: 150
-		RequiresCondition: !chronodisable && !forceshieldnopower && !diskdrain && !power-outage && powrup
+		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && powrup
 	IsometricSelectable:
 		DecorationHeight: 60
 	Voiced:
@@ -835,7 +835,7 @@ gayard:
 	ProductionBar:
 		ProductionType: Ship.Allies
 	SpawnActorPower@sonar:
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		Icons:
 			1: sonar
 		Cursor: reveal
@@ -1161,6 +1161,7 @@ gtgcan:
 
 gaorep:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Inherits@AICash: ^AICashCheat
@@ -1206,10 +1207,11 @@ gaorep:
 	#	Range: 6c0
 	WithIdleOverlay@glow:
 		Sequence: idle-glow
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	ResourcePurifier:
 		Modifier: 25
+		RequiresCondition: !disabled && !chronodisable
 	Power:
 		Amount: -200
 		RequiresCondition: !chronodisable
@@ -1217,7 +1219,7 @@ gaorep:
 		Condition: resource-purify
 		Duration: 3
 	SmokeParticleEmitter@purifiersmoke:
-		RequiresCondition: resource-purify && !chronodisable
+		RequiresCondition: resource-purify && !disabled && !chronodisable
 		Image: smallsmoke
 		Sequences: idle
 		Palette: effect50alpha
@@ -1227,6 +1229,7 @@ gaorep:
 		Duration: 39
 		Offset: -128,0,3560
 	ProvidesPrerequisite@default:
+		RequiresCondition: !disabled && !chronodisable
 	IsometricSelectable:
 		DecorationHeight: 60
 	Voiced:

@@ -753,7 +753,7 @@ nayard:
 		RequiresCondition: !build-incomplete
 	AirstrikePower@navalmines:
 		OrderName: SovietNavalMines
-		PauseOnCondition: chronodisable
+		PauseOnCondition: disabled || chronodisable
 		Icons:
 			1: navalmines
 		Prerequisites:
@@ -1009,6 +1009,7 @@ natech:
 
 naclon:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
@@ -1081,6 +1082,7 @@ naclon:
 		PauseOnCondition: chronodisable
 	Production:
 		Produces: Clone.Soviets
+		PauseOnCondition: chronodisable || disabled
 	RallyPoint:
 		Path: 3,3
 		Palette: mouse
@@ -1628,6 +1630,7 @@ nabnkr:
 
 naindp:
 	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
@@ -1645,19 +1648,21 @@ naindp:
 	Tooltip@NoRow:
 		Name: Industrial Plant
 	ProvidesPrerequisite@default:
+		RequiresCondition: !disabled && !chronodisable
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
 	WithIdleOverlay@pistons:
 		Sequence: idle-pistons
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || disabled
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || disabled
 		RequiresCondition: !build-incomplete
 	GrantExternalConditionToOwner:
 		Condition: naindp
+		RequiresCondition: !disabled && !chronodisable
 	Health:
 		HP: 75000
 	Armor:

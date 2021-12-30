@@ -281,8 +281,7 @@ cahosp:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: cahosp
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: enabled
+		RequiresCondition: enabled && !disabled && !chronodisable
 	WithIdleOverlay:
 		PauseOnCondition: disabled || chronodisable
 	WithIdleOverlay@flag:
@@ -457,8 +456,7 @@ camach:
 	Armor:
 		Type: Wood
 	ProvidesPrerequisite@buildingname:
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: enabled
+		RequiresCondition: enabled && !disabled && !chronodisable
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
@@ -565,7 +563,7 @@ caarmr:
 		Sequence: flag
 		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@buildingname:
-		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !disabled && !chronodisable
 	GpsDotAS:
 		Range: 25c0
 		Sequence: Armory
