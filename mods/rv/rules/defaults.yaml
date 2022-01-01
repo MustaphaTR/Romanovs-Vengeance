@@ -2547,15 +2547,15 @@
 	Crushable:
 		WarnProbability: 0
 		CrushClasses: vehicle
-		RequiresCondition: !cheater-ai && !vengeful-ai
+		RequiresCondition: !invulnerability && !cheater-ai && !vengeful-ai
 	Crushable@Cheater:
 		WarnProbability: 50
 		CrushClasses: vehicle
-		RequiresCondition: cheater-ai
+		RequiresCondition: !invulnerability && cheater-ai
 	Crushable@Vengeful:
 		WarnProbability: 100
 		CrushClasses: vehicle
-		RequiresCondition: vengeful-ai
+		RequiresCondition: !invulnerability && vengeful-ai
 	GrantConditionOnBotOwner@Cheater:
 		Condition: cheater-ai
 		Bots: cheater
