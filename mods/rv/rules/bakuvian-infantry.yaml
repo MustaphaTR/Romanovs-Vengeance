@@ -305,7 +305,6 @@ vlkv:
 		PauseOnCondition: chronodisable || emp
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
-	-TakeCover:
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -319,6 +318,10 @@ vlkv:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	-TakeCover:
+	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:
 
 chit:
 	Inherits: ^Infantry
@@ -330,7 +333,7 @@ chit:
 		Prerequisites: natech, ~techlevel.4
 		BuildPaletteOrder: 200
 		BuildLimit: 1
-		Description: Cybernatic canine capable of destroying infantry and vehicles in seconds.\nCan detect cloaked units and spies.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nMaximum 1 can be trained.
+		Description: Cybernatic canine capable of destroying infantry and vehicles in seconds.\nCan detect cloaked units and spies.\nCan be deployed to stun nearby infantry for a while.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nMaximum 1 can be trained.
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -352,6 +355,7 @@ chit:
 		HP: 22500
 	Mobile:
 		Speed: 105
+		RequiresCondition: !deployed && !chronodisable && !webdisable && !dogstun
 	Passenger:
 		CustomPipType: red
 		CargoType: Infantry
@@ -420,6 +424,18 @@ chit:
 	IgnoresDisguise:
 	DetectCloaked:
 		Range: 6c0
+	PeriodicExplosion:
+		Weapon: ChitzBark
+		RequiresCondition: deployed && !chronodisable
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 25
+		CooldownTicks: 100
+		DeployedCondition: deployed
+		Voice: Attack
+		StartsFullyCharged: true
+		ChargingColor: FF0000
+		DischargingColor: FF00FF
+		PauseOnCondition: chronodisable
 	Voiced:
 		VoiceSet: DogVoice
 	ProducibleWithLevel:
@@ -446,3 +462,6 @@ chit:
 	-DeathSounds@radiation:
 	-DeathSounds@psycrush:
 	-DeathSounds@virus:
+	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:

@@ -475,6 +475,11 @@ yurix:
 	WithMindControlArc:
 		Offset: 0,0,1024
 	-TakeCover:
+	-WithColoredOverlay@IDISABLE:
+	-GrantCondition@IDISABLE:
+	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:
 
 ptroop.yuri:
 	Inherits: ptroop
@@ -605,6 +610,11 @@ lunr:
 	-WithIdleOverlay@web:
 	-Targetable@webdisable:
 	-ExternalCondition@webdisable:
+	-WithColoredOverlay@IDISABLE:
+	-GrantCondition@IDISABLE:
+	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:
 	-InfectableRV:
 	-Targetable@DRONE:
 	-SpeedMultiplier@DRONE:
@@ -950,7 +960,7 @@ spct:
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
 	Cloak:
-		RequiresCondition: !chronodisable && !webdisable && !deployed
+		RequiresCondition: !chronodisable && !webdisable && !dogstun && !deployed
 		InitialDelay: 25
 		CloakDelay: 100
 		IsPlayerPalette: true

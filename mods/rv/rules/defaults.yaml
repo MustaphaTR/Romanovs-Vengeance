@@ -2045,24 +2045,25 @@
 ^Infantry:
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
-	Inherits@4: ^ChronoDisable
-	Inherits@5: ^CrateStatModifiers
-	Inherits@6: ^HospitalHealing
-	Inherits@7: ^KilledByIronCurtain
-	Inherits@8: ^KilledByLazarusShield
-	Inherits@9: ^DamagedByRadiation100Percent
-	Inherits@10: ^AcceptsIvanBomb
-	Inherits@11: ^AffectedByLeaflets
-	Inherits@12: ^AffectedByPropaganda
-	Inherits@13: ^AffectedByChronoBoost
-	Inherits@14: ^AffectedByStealthGenerator
-	Inherits@15: ^TerrorDronable
-	Inherits@16: ^AffectedByCashBounty
-	Inherits@17: ^WebDisable
-	Inherits@18: ^HealsInAmbulance
-	Inherits@19: ^AffectedBySpectreBullets
-	Inherits@20: ^AcceptsDeathBomb
-	Inherits@21: ^SmokeGrenadeModifiers
+	Inherits@3: ^ChronoDisable
+	Inherits@4: ^CrateStatModifiers
+	Inherits@5: ^HospitalHealing
+	Inherits@6: ^KilledByIronCurtain
+	Inherits@7: ^KilledByLazarusShield
+	Inherits@8: ^DamagedByRadiation100Percent
+	Inherits@9: ^AcceptsIvanBomb
+	Inherits@10: ^AffectedByLeaflets
+	Inherits@11: ^AffectedByPropaganda
+	Inherits@12: ^AffectedByChronoBoost
+	Inherits@13: ^AffectedByStealthGenerator
+	Inherits@14: ^TerrorDronable
+	Inherits@15: ^AffectedByCashBounty
+	Inherits@16: ^WebDisable
+	Inherits@17: ^HealsInAmbulance
+	Inherits@18: ^AffectedBySpectreBullets
+	Inherits@19: ^AcceptsDeathBomb
+	Inherits@20: ^SmokeGrenadeModifiers
+	Inherits@21: ^DisabledByBarking
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	WithColoredOverlay@MagneSlow:
@@ -2093,7 +2094,7 @@
 		Voice: Move
 		Locomotor: foot
 		AlwaysTurnInPlace: true
-		RequiresCondition: !chronodisable && !webdisable
+		RequiresCondition: !chronodisable && !webdisable && !dogstun
 	WithTextControlGroupDecoration:
 	SelectionDecorations:
 	Selectable:
@@ -3271,6 +3272,24 @@
 		Color: 0088FF
 	ExternalCondition@emp:
 		Condition: emp
+
+^DisabledByBarking:
+	WithColoredOverlay@IDISABLE:
+		Color: 00000080
+		RequiresCondition: disabled
+	GrantCondition@IDISABLE:
+		RequiresCondition: dogstun
+		Condition: disabled
+	SpeedMultiplier@DOGSTUN:
+		RequiresCondition: dogstun
+		Modifier: 0
+	Targetable@DOGSTUN:
+		TargetTypes: DogStun
+	TimedConditionBar@DOGSTUN:
+		Condition: dogstun
+		Color: 8800FF
+	ExternalCondition@dogstun:
+		Condition: dogstun
 
 ^DisabledByInfiltration:
 	GrantConditionOnInfiltration:

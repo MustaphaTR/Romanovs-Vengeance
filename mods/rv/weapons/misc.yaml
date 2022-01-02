@@ -427,6 +427,26 @@ MasterMindControl:
 	Inherits: MindControl
 	ReloadDelay: 100
 
+DogBark:
+	ReloadDelay: 60
+	Range: 1c819
+	Report: idogbaa.wav, idogbab.wav
+	ValidTargets: DogStun
+	Projectile: InstantExplode
+	Warhead@1Con: GrantExternalCondition
+		ValidTargets: DogStun
+		ValidRelationships: Enemy, Neutral
+		Condition: dogstun
+		Range: 1c512
+		Duration: 50
+
+ChitzBark:
+	Inherits: DogBark
+	Report: idogbaa.wav, idogbab.wav
+	Warhead@1Con: GrantExternalCondition
+		Range: 2c512
+		Duration: 75
+
 PsiWave:
 	ReloadDelay: 110
 	Range: 1c819

@@ -876,7 +876,7 @@ yuri:
 		Voice: Move
 		GarrisonType: Garrisoner
 	Mobile:
-		RequiresCondition: !deployed && !deploying && !chronodisable && !webdisable
+		RequiresCondition: !deployed && !deploying && !chronodisable && !webdisable && !dogstun
 	RevealsShroud:
 		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1166,6 +1166,11 @@ boris:
 		AttackSequences:
 			secondary: swim-shoot-flare
 	-TakeCover:
+	-WithColoredOverlay@IDISABLE:
+	-GrantCondition@IDISABLE:
+	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:
 
 # Custom Revenge Infantry
 pyro:
@@ -1370,7 +1375,7 @@ itrp:
 		Voice: Move
 	Mobile:
 		Speed: 45
-		RequiresCondition: !deployed && !deploying && !chronodisable && !webdisable
+		RequiresCondition: !deployed && !deploying && !chronodisable && !webdisable && !dogstun
 	Health:
 		HP: 20000
 	Armor:

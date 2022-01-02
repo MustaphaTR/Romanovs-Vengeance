@@ -111,7 +111,7 @@ dog:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
-		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\nCan be deployed to stun nearby infantry for a short while.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 		BuildDuration: 50
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -171,6 +171,7 @@ dog:
 		HP: 9000
 	Mobile:
 		Speed: 105
+		RequiresCondition: !deployed && !chronodisable && !webdisable && !dogstun
 	Passenger:
 		CargoType: Infantry
 	RevealsShroud:
@@ -184,7 +185,7 @@ dog:
 	AttackLeap:
 		Voice: Attack
 		Speed: 105
-		PauseOnCondition: chronodisable || webdisable
+		PauseOnCondition: chronodisable || webdisable || dogstun || deployed
 	AttackMove:
 		Voice: Move
 	AutoTarget:
@@ -223,6 +224,18 @@ dog:
 	IgnoresDisguise:
 	DetectCloaked:
 		Range: 5c0
+	PeriodicExplosion:
+		Weapon: DogBark
+		RequiresCondition: deployed && !chronodisable
+	GrantTimedConditionOnDeploy:
+		DeployedTicks: 25
+		CooldownTicks: 100
+		DeployedCondition: deployed
+		Voice: Attack
+		StartsFullyCharged: true
+		ChargingColor: FF0000
+		DischargingColor: FF00FF
+		PauseOnCondition: chronodisable
 	Voiced:
 		VoiceSet: DogVoice
 	ProducibleWithLevel:
@@ -350,7 +363,7 @@ e1:
 		DeploySounds: igidepa.wav
 		UndeploySounds: igidepb.wav
 		PauseOnCondition: chronodisable
-		RequiresCondition: !parachute && !webdisable
+		RequiresCondition: !parachute && !webdisable && !dogstun
 	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
@@ -681,7 +694,7 @@ ggi:
 		DeploySounds: iggidepa.wav
 		UndeploySounds: iggidepa.wav
 		PauseOnCondition: chronodisable
-		RequiresCondition: !parachute && !webdisable
+		RequiresCondition: !parachute && !webdisable && !dogstun
 	GrantCondition:
 		Condition: editorhack
 	WithInfantryBody@Editor: # HACK: negative conditions don't count in EnabledByDefault, we can use this duplicate WIB to render it on map editor
@@ -1308,6 +1321,11 @@ tany:
 		Condition: snow
 		TileSets: SNOW
 	-TakeCover:
+	-WithColoredOverlay@IDISABLE:
+	-GrantCondition@IDISABLE:
+	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:
 
 jumpjet:
 	Inherits: ^Infantry
@@ -1402,6 +1420,11 @@ jumpjet:
 	-WithIdleOverlay@web:
 	-Targetable@webdisable:
 	-ExternalCondition@webdisable:
+	-WithColoredOverlay@IDISABLE:
+	-GrantCondition@IDISABLE:
+	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:
 	-InfectableRV:
 	-Targetable@DRONE:
 	-SpeedMultiplier@DRONE:
