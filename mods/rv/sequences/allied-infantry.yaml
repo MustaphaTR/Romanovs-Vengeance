@@ -456,6 +456,8 @@ ggi:
 	Defaults: conqmd|ggi
 	dot: dot
 		ZOffset: -9999
+	run:
+		Tick: 120
 	liedown:
 		Start: 164
 	standup:
@@ -464,8 +466,6 @@ ggi:
 		Start: 204
 	prone-shoot:
 		Start: 252
-	run:
-		Tick: 120
 	deployed:
 		Start: 315
 		Facings: 8
@@ -480,6 +480,59 @@ ggi:
 		Start: 371
 	cheer:
 		Start: 196
+	stand-portable: bits/infantry/ggir
+		Facings: 8
+	run-portable: bits/infantry/ggir
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 120
+	idle1-portable: bits/infantry/ggir
+		Start: 56
+		Length: 15
+		Tick: 120
+	idle2-portable: bits/infantry/ggir
+		Start: 71
+		Length: 15
+		Tick: 120
+	die-portable1: bits/infantry/ggir
+		Start: 134
+		Length: 15
+	die-portable2: bits/infantry/ggir
+		Start: 149
+		Length: 15
+	liedown-portable: bits/infantry/ggir
+		Start: 164
+		Length: 2
+		Facings: 8
+	prone-stand-portable: bits/infantry/ggir
+		Frames: 86, 92, 98, 104, 110, 116, 122, 128
+		Facings: 8
+	prone-run-portable: bits/infantry/ggir
+		Start: 86
+		Length: 6
+		Facings: 8
+		Tick: 100
+	standup-portable: bits/infantry/ggir
+		Start: 182
+		Length: 2
+		Facings: 8
+	shoot-portable: bits/infantry/ggir
+		Start: 204
+		Length: 6
+		Facings: 8
+		Tick: 80
+	prone-shoot-portable: bits/infantry/ggir
+		Start: 252
+		Length: 6
+		Facings: 8
+		Tick: 80
+	paradrop-portable: bits/infantry/ggir
+		Start: 300
+	cheer-portable: bits/infantry/ggir
+		Start: 196
+		Length: 8
+		Tick: 120
 	icon: cameomd|gdgiicon
 
 # Custom Allied Infantry

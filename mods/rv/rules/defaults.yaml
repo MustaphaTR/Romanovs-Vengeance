@@ -533,6 +533,14 @@
 		Condition: highcaliber
 		Prerequisites: upgrade.high_caliber_rounds
 
+^AffectedByPortableWeaponry:
+	ReloadDelayMultiplier@PORTABLE:
+		Modifier: 80
+		RequiresCondition: portable && deployed
+	GrantConditionOnPrerequisite@PORTABLE:
+		Condition: portable
+		Prerequisites: upgrade.portable_weaponry
+
 ^AffectedByAdvancedGunSystems:
 	RangeMultiplier@ADVANCED_GUNS:
 		Modifier: 125

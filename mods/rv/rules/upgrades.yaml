@@ -97,8 +97,21 @@ upgrade.high_caliber_rounds:
 		Queue: Upgrade.Allies
 		BuildPaletteOrder: 70
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.england, gatech, ~techlevel.3
+		Prerequisites: ~disabled # ~upgrade.england, gatech, ~techlevel.3
 		Description: Enables Snipers to damage vehicles and kill gunners to disable them from firing for a while.
+	Valued:
+		Cost: 3000
+
+upgrade.portable_weaponry:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Portable Weaponry
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 70
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.england, gatech, ~techlevel.3
+		Description: Makes G.I. and Guardian G.I.s use their deployed weapon while undeployed too.\nWhile deployed they fire 25% faster.
 	Valued:
 		Cost: 3000
 

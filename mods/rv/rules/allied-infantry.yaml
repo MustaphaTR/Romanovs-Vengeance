@@ -275,6 +275,7 @@ e1:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
+	Inherits@PORTABLE: ^AffectedByPortableWeaponry
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
@@ -315,11 +316,19 @@ e1:
 	Armament@primary:
 		Weapon: M60
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite && !deployed
+		RequiresCondition: !rank-elite && !deployed && !portable
 	Armament@elite:
 		Weapon: M60E
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite && !deployed
+		RequiresCondition: rank-elite && !deployed && !portable
+	Armament@portable:
+		Weapon: para
+		PauseOnCondition: chronodisable
+		RequiresCondition: !rank-elite && !deployed && portable
+	Armament@elite-portable:
+		Weapon: paraE
+		PauseOnCondition: chronodisable
+		RequiresCondition: rank-elite && !deployed && portable
 	Armament@deployed:
 		Weapon: para
 		Name: deployed
@@ -437,21 +446,22 @@ ggi:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
+	Inherits@PORTABLE: ^AffectedByPortableWeaponry
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !assault-move && undeployed && !ai-control
+		RequiresCondition: !stance-attackanything && !assault-move && undeployed && !portable && !ai-control
 	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: (stance-attackanything || assault-move) && undeployed && !ai-control
+		RequiresCondition: (stance-attackanything || assault-move) && undeployed && !portable && !ai-control
 	AutoTargetPriority@AI:
-		RequiresCondition: ai-control && undeployed
+		RequiresCondition: ai-control && undeployed && !portable
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@DEFAULT_ALL:
-		RequiresCondition: (!stance-attackanything && !assault-move) && deployed
+		RequiresCondition: (!stance-attackanything && !assault-move) && (deployed || portable)
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING_ALL:
-		RequiresCondition: (stance-attackanything || assault-move) && deployed
+		RequiresCondition: (stance-attackanything || assault-move) && (deployed || portable)
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Air, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	Buildable:
@@ -506,11 +516,59 @@ ggi:
 	Armament@primary:
 		Weapon: M60
 		PauseOnCondition: chronodisable
-		RequiresCondition: !rank-elite && !deployed
+		RequiresCondition: !rank-elite && !deployed && !portable
 	Armament@elite:
 		Weapon: M60E
 		PauseOnCondition: chronodisable
-		RequiresCondition: rank-elite && !deployed
+		RequiresCondition: rank-elite && !deployed && !portable
+	Armament@portable:
+		Weapon: MissileLauncher
+		LocalOffset: 480,63,992
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: !rank-elite && portable && !deployed && !boostgliding
+	Armament@elite-portable:
+		Weapon: MissileLauncherE
+		LocalOffset: 480,64,992
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: rank-elite && portable && !deployed && !boostgliding
+	Armament@portable-aa:
+		Weapon: MissileLauncherAA
+		LocalOffset: 480,63,992
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: !rank-elite && portable && !deployed && !boostgliding
+	Armament@elite-portable-aa:
+		Weapon: MissileLauncherAAE
+		LocalOffset: 480,64,992
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: rank-elite && portable && !deployed && !boostgliding
+	Armament@portable-boost:
+		Weapon: MissileLauncherBoosted
+		LocalOffset: 480,63,992
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: !rank-elite && portable && !deployed && boostgliding
+	Armament@elite-portable-boost:
+		Weapon: MissileLauncherBoostedE
+		LocalOffset: 480,64,992
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || reload-air
+		RequiresCondition: rank-elite && portable && !deployed && boostgliding
+	Armament@portable-aa-boost:
+		Weapon: MissileLauncherAABoosted
+		LocalOffset: 480,63,992
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: !rank-elite && portable && !deployed && boostgliding
+	Armament@elite-portable-aa-boost:
+		Weapon: MissileLauncherAABoostedE
+		LocalOffset: 480,64,992
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: rank-elite && portable && !deployed && boostgliding
 	Armament@deployed:
 		Weapon: MissileLauncher
 		Name: deployed
@@ -702,7 +760,28 @@ ggi:
 		RequiresCondition: !editorhack
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: undeployed && !parachute && !webdisable
+		RequiresCondition: undeployed && !parachute && !webdisable && !portable
+	WithInfantryBody@PORTABLE:
+		IdleSequences: idle1-portable, idle2-portable
+		MoveSequence: run-portable
+		StandSequences: stand-portable
+		DefaultAttackSequence: shoot-portable
+		RequiresCondition: undeployed && !parachute && !webdisable && portable
+	WithSpriteBody@Parachute:
+		RequiresCondition: parachute && !portable
+	WithSpriteBody@Parachute-PORTABLE:
+		Name: parachute
+		Sequence: paradrop-portable
+		RequiresCondition: parachute && portable
+	WithDeathAnimation@normal:
+		RequiresCondition: !portable
+	WithDeathAnimation@PORTABLE:
+		DeathSequence: die-portable
+		DeathSequencePalette: infantry
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+		RequiresCondition: portable
 	WithMakeAnimation:
 		Sequence: deploy
 		BodyNames: dot
