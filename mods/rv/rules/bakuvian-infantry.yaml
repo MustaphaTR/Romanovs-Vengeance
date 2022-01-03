@@ -355,7 +355,7 @@ chit:
 		HP: 22500
 	Mobile:
 		Speed: 105
-		RequiresCondition: !deployed && !chronodisable && !webdisable && !dogstun
+		RequiresCondition: !deployed && !deploying && !chronodisable && !webdisable && !dogstun
 	Passenger:
 		CustomPipType: red
 		CargoType: Infantry
@@ -414,10 +414,14 @@ chit:
 		ValidTargets: TerrorDronable
 	WithInfantryBody:
 		DefaultAttackSequence: jump
-		RequiresCondition: !parachute && !webdisable && !jousting
+		RequiresCondition: !parachute && !webdisable && !jousting && !deployed && !deploying
 	WithFacingSpriteBody:
 		Sequence: shoot
 		RequiresCondition: jousting
+	WithSpriteBody@DEPLOYED:
+		Sequence: deployed
+		Name: deployed
+		RequiresCondition: !parachute && !webdisable && !jousting && (deployed || deploying) 
 	Targetable:
 		TargetTypes: Ground, TerrorDrone, DetonateAttack, ImmuneToRadiation
 		RequiresCondition: !parachute && !chronodisable && !jousting
@@ -428,9 +432,13 @@ chit:
 		Weapon: ChitzBark
 		RequiresCondition: deployed && !chronodisable
 	GrantTimedConditionOnDeploy:
-		DeployedTicks: 25
+		DeployedTicks: 1
 		CooldownTicks: 100
 		DeployedCondition: deployed
+		DeployingCondition: deploying
+		BodyNames: deployed
+		DeployAnimation: deploy
+		UndeployAnimation: undeploy
 		Voice: Attack
 		StartsFullyCharged: true
 		ChargingColor: FF0000

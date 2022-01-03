@@ -171,7 +171,7 @@ dog:
 		HP: 9000
 	Mobile:
 		Speed: 105
-		RequiresCondition: !deployed && !chronodisable && !webdisable && !dogstun
+		RequiresCondition: !deploying && !deployed && !chronodisable && !webdisable && !dogstun
 	Passenger:
 		CargoType: Infantry
 	RevealsShroud:
@@ -185,7 +185,7 @@ dog:
 	AttackLeap:
 		Voice: Attack
 		Speed: 105
-		PauseOnCondition: chronodisable || webdisable || dogstun || deployed
+		PauseOnCondition: chronodisable || webdisable || dogstun || deployed || deploying
 	AttackMove:
 		Voice: Move
 	AutoTarget:
@@ -195,10 +195,14 @@ dog:
 		ValidTargets: Infantry
 	WithInfantryBody:
 		DefaultAttackSequence: jump
-		RequiresCondition: !parachute && !webdisable && !attacking
+		RequiresCondition: !parachute && !webdisable && !attacking && !deployed && !deploying
 	WithFacingSpriteBody:
 		Sequence: shoot
 		RequiresCondition: attacking
+	WithSpriteBody@DEPLOYED:
+		Sequence: deployed
+		Name: deployed
+		RequiresCondition: !parachute && !webdisable && !attacking && (deployed || deploying) 
 	RenderSprites:
 		Image: adog
 		FactionImages:
@@ -228,9 +232,13 @@ dog:
 		Weapon: DogBark
 		RequiresCondition: deployed && !chronodisable
 	GrantTimedConditionOnDeploy:
-		DeployedTicks: 25
+		DeployedTicks: 1
 		CooldownTicks: 100
 		DeployedCondition: deployed
+		DeployingCondition: deploying
+		BodyNames: deployed
+		DeployAnimation: deploy
+		UndeployAnimation: undeploy
 		Voice: Attack
 		StartsFullyCharged: true
 		ChargingColor: FF0000

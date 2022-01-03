@@ -1495,16 +1495,22 @@ itrp:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune, IronCurtainImmune
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+		RequiresCondition: !webdisable && !deployed && !deploying
+	WithSpriteBody@DEPLOYED:
+		Sequence: deployed
+		Name: deployed
+		RequiresCondition: !webdisable && (deployed || deploying) 
 	PeriodicExplosion:
 		Weapon: IronTrooperCurtain
 		RequiresCondition: deployed && !chronodisable
 	GrantTimedConditionOnDeploy:
 		DeployedTicks: 1
-		CooldownTicks: 3000
+		CooldownTicks: 1500
 		DeployedCondition: deployed
 		DeployingCondition: deploying
-		DeployAnimation: idle1
-		UndeployAnimation: idle1
+		BodyNames: deployed
+		DeployAnimation: deploy
+		UndeployAnimation: undeploy
 		Facing: 96
 		Voice:
 		PauseOnCondition: chronodisable || webdisable || dogstun
