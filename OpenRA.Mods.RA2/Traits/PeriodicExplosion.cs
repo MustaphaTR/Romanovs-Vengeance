@@ -119,14 +119,14 @@ namespace OpenRA.Mods.RA2.Traits
 				{
 					var pos = self.CenterPosition;
 					if (weapon.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
-						Game.Sound.Play(SoundType.World, weapon.Report.Random(self.World.SharedRandom), pos, weapon.SoundVolume);
+						Game.Sound.Play(SoundType.World, weapon.Report, self.World, pos, null, weapon.SoundVolume);
 				}
 
 				if (burst == weapon.Burst && weapon.StartBurstReport != null && weapon.StartBurstReport.Any())
 				{
 					var pos = self.CenterPosition;
 					if (weapon.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
-						Game.Sound.Play(SoundType.World, weapon.StartBurstReport.Random(self.World.SharedRandom), pos, weapon.SoundVolume);
+						Game.Sound.Play(SoundType.World, weapon.StartBurstReport, self.World, pos, null, weapon.SoundVolume);
 				}
 
 				if (--burst > 0)
@@ -149,7 +149,7 @@ namespace OpenRA.Mods.RA2.Traits
 						{
 							var pos = self.CenterPosition;
 							if (weapon.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
-								Game.Sound.Play(SoundType.World, weapon.AfterFireSound.Random(self.World.SharedRandom), pos, weapon.SoundVolume);
+								Game.Sound.Play(SoundType.World, weapon.AfterFireSound, self.World, pos, null, weapon.SoundVolume);
 						});
 					}
 				}
