@@ -112,7 +112,7 @@ dog:
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
 		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\nCan be deployed to stun nearby infantry for a short while.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
-		BuildDuration: 50
+		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -232,8 +232,8 @@ dog:
 		Weapon: DogBark
 		RequiresCondition: deployed && !chronodisable
 	GrantTimedConditionOnDeploy:
-		DeployedTicks: 1
-		CooldownTicks: 100
+		DeployedTicks: 25
+		CooldownTicks: 1500
 		DeployedCondition: deployed
 		DeployingCondition: deploying
 		BodyNames: deployed

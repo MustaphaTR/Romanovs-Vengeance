@@ -48,7 +48,7 @@ upgrade.advanced_coolants:
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
 		Description: Double power output of all Power Plants.
 	Valued:
-		Cost: 2500
+		Cost: 1500
 
 upgrade.advanced_training:
 	Inherits: ^default.upgrade
@@ -113,7 +113,7 @@ upgrade.portable_weaponry:
 		Prerequisites: ~upgrade.england, gatech, ~techlevel.3
 		Description: Makes G.I. and Guardian G.I.s use their deployed weapon while undeployed too.\nWhile deployed they fire 25% faster.
 	Valued:
-		Cost: 3000
+		Cost: 2000
 
 upgrade.grand_cannon_protocols:
 	Inherits: ^default.upgrade
@@ -230,7 +230,7 @@ upgrade.black_napalm:
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
 		Description: Flame Tanks and Black Kites use Black Napalm, which deals double the damage.
 	Valued:
-		Cost: 2500
+		Cost: 1500
 
 upgrade.propaganda_effort:
 	Inherits: ^default.upgrade
@@ -332,7 +332,7 @@ upgrade.nuclear_engines:
 		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
-		Description: Makes Rhino and Apocalypse Tanks move 33% faster and explode when destroyed.
+		Description: Makes Rhino and Apocalypse Tanks move 50% faster and explode when destroyed.
 	Valued:
 		Cost: 2000
 
@@ -362,29 +362,29 @@ upgrade.toxin_sprayer:
 	Valued:
 		Cost: 1000
 
-upgrade.autoloaders:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Autoloaders
-	Buildable:
-		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 30
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
-		Description: Lasher Tanks fire 2 shells at once.
-	Valued:
-		Cost: 2500
-
 upgrade.camouflage:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Camouflage
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 40
-		BuildDuration: 1000
-		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
+		BuildPaletteOrder: 30
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
 		Description: Grants Initiates and Viruses stealth.
+	Valued:
+		Cost: 2000
+
+upgrade.autoloaders:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Autoloaders
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 40
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
+		Description: Lasher Tanks fire 2 shells at once.
 	Valued:
 		Cost: 1500
 
@@ -475,6 +475,6 @@ upgrade.chainguns:
 		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.4
-		Description: Increases Gatling weapons' damage by 25%.
+		Description: Increases Gatling weapon's damage by 25%.
 	Valued:
 		Cost: 2000
