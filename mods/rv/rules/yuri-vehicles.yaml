@@ -324,31 +324,43 @@ ytnk:
 		Weapon: AGGatling
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 		RequiresCondition: !gatling
 	Armament@ag-1:
 		Weapon: AGGatling2
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-1
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 		RequiresCondition: gatling == 1
 	Armament@ag-2:
 		Weapon: AGGatling3
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-2
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
 		RequiresCondition: gatling >= 2
 	Armament@aa-0:
 		Weapon: AAGatling
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 		RequiresCondition: !gatling
 	Armament@aa-1:
 		Weapon: AAGatling2
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-1
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 		RequiresCondition: gatling == 1
 	Armament@aa-2:
 		Weapon: AAGatling3
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-2
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
 		RequiresCondition: gatling >= 2
 	GrantConditionOnAttack:
 		Condition: gatling
