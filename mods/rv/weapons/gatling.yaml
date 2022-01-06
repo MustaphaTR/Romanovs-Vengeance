@@ -50,6 +50,28 @@ AGGatling3:
 	BurstDelays: 1
 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
 
+AGGatlingLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 10
+	BurstDelays: 5
+	Burst: 2
+	Range: 5c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Air
+
+AGGatlingLine2:
+	Inherits: AGGatlingLine
+	ReloadDelay: 6
+	BurstDelays: 3
+
+AGGatlingLine3:
+	Inherits: AGGatlingLine
+	ReloadDelay: 2
+	BurstDelays: 1
+
 #Gatling Tank AA Weapon:
 
 AAGatling:
@@ -80,6 +102,27 @@ AAGatling3:
 	BurstDelays: 1
 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
 
+AAGatlingLine:
+	Inherits: AGGatlingLine
+	Range: 8c0
+	ValidTargets: Air
+	InvalidTargets: Ground, Water
+	Projectile: BulletAS
+		Blockable: false
+	Warhead@Line: TargetDamage
+		ValidTargets: Air
+		InvalidTargets: Ground, Water
+
+AAGatlingLine2:
+	Inherits: AAGatlingLine
+	ReloadDelay: 6
+	BurstDelays: 3
+
+AAGatlingLine3:
+	Inherits: AAGatlingLine
+	ReloadDelay: 2
+	BurstDelays: 1
+
 #Gatling Cannon AG Weapon:
 
 AGGattCann:
@@ -104,6 +147,21 @@ AGGattCann3:
 	ReloadDelay: 2
 	BurstDelays: 1
 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+
+AGGattCannLine:
+	Inherits: AGGatlingLine
+	Range: 7c0
+	ValidTargets: Structure, Barrel, Mine, Infantry, Vehicle, TerrorDrone, Ship, SeaAnimal
+
+AGGattCannLine2:
+	Inherits: AGGatlingLine2
+	Range: 7c0
+	ValidTargets: Structure, Barrel, Mine, Infantry, Vehicle, TerrorDrone, Ship, SeaAnimal
+
+AGGattCannLine3:
+	Inherits: AGGatlingLine3
+	Range: 7c0
+	ValidTargets: Structure, Barrel, Mine, Infantry, Vehicle, TerrorDrone, Ship, SeaAnimal
 
 #Gatling Cannon AA Weapon:
 
@@ -135,6 +193,18 @@ AAGattCann3:
 	BurstDelays: 1
 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
 
+AAGattCannLine:
+	Inherits: AAGatlingLine
+	Range: 12c0
+
+AAGattCannLine2:
+	Inherits: AAGatlingLine2
+	Range: 12c0
+
+AAGattCannLine3:
+	Inherits: AAGatlingLine3
+	Range: 12c0
+
 #Gatling Trooper AG Weapon:
 
 AGGattTrop:
@@ -156,6 +226,24 @@ AGGattTrop3:
 	Inherits: AGGattTrop
 	ReloadDelay: 3
 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+
+AGGattTropLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 10
+	Range: 4c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Warhead@Line: TargetDamage
+		ValidTargets: Air
+		InvalidTargets: Ground, Water
+
+AGGattTropLine2:
+	Inherits: AGGattTropLine
+	ReloadDelay: 6
+
+AGGattTropLine3:
+	Inherits: AGGattTropLine
+	ReloadDelay: 3
 
 #Gatling Trooper AA Weapon:
 
@@ -184,6 +272,25 @@ AAGattTrop3:
 	ReloadDelay: 3
 	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
 
+AAGattTropLine:
+	Inherits: AGGattTropLine
+	Range: 8c0
+	ValidTargets: Air
+	InvalidTargets: Ground, Water
+	Projectile: BulletAS
+		Blockable: false
+	Warhead@Line: TargetDamage
+		ValidTargets: Air
+		InvalidTargets: Ground, Water
+
+AAGattTropLine2:
+	Inherits: AAGattTropLine
+	ReloadDelay: 6
+
+AAGattTropLine3:
+	Inherits: AAGattTropLine
+	ReloadDelay: 3
+
 #Gatling Trooper AG Garrison Weapon:
 
 UCAGGattTrop:
@@ -202,6 +309,24 @@ UCAGGattTrop3:
 	Inherits: AGGattTrop3
 	Range: 7c0
 	Projectile: InstantHit
+		Blockable: false
+
+UCAGGattTropLine:
+	Inherits: AGGattTropLine
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCAGGattTropLine2:
+	Inherits: AGGattTropLine2
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCAGGattTropLine3:
+	Inherits: AGGattTropLine3
+	Range: 7c0
+	Projectile: BulletAS
 		Blockable: false
 
 #Gatling Trooper AA Garrison Weapon:
@@ -232,6 +357,18 @@ AGGatling3E:
 	Inherits: AGGatling2
 	Burst: 4
 
+AGGatlingLineE:
+	Inherits: AGGatlingLine
+	Burst: 4
+
+AGGatlingLine2E:
+	Inherits: AGGatlingLine2
+	Burst: 4
+
+AGGatlingLine3E:
+	Inherits: AGGatlingLine3
+	Burst: 4
+
 #Gatling Tank AA Heroic Weapon:
 
 AAGatlingE:
@@ -246,6 +383,18 @@ AAGatling3E:
 	Inherits: AAGatling2
 	Burst: 4
 
+AAGatlingLineE:
+	Inherits: AAGatlingLine
+	Burst: 4
+
+AAGatlingLine2E:
+	Inherits: AAGatlingLine2
+	Burst: 4
+
+AAGatlingLine3E:
+	Inherits: AAGatlingLine3
+	Burst: 4
+
 #Gatling Trooper AG Heroic Weapon:
 
 AGGattTropE:
@@ -254,12 +403,27 @@ AGGattTropE:
 	BurstDelays: 5
 
 AGGattTrop2E:
-	Inherits: AGGattTrop
+	Inherits: AGGattTrop2
 	Burst: 2
 	BurstDelays: 3
 
 AGGattTrop3E:
-	Inherits: AGGattTrop
+	Inherits: AGGattTrop3
+	Burst: 2
+	BurstDelays: 1
+
+AGGattTropLineE:
+	Inherits: AGGattTropLine
+	Burst: 2
+	BurstDelays: 5
+
+AGGattTropLine2E:
+	Inherits: AGGattTropLine2
+	Burst: 2
+	BurstDelays: 3
+
+AGGattTropLine3E:
+	Inherits: AGGattTropLine3
 	Burst: 2
 	BurstDelays: 1
 
@@ -271,12 +435,27 @@ AAGattTropE:
 	BurstDelays: 5
 
 AAGattTrop2E:
-	Inherits: AAGattTrop
+	Inherits: AAGattTrop2
 	Burst: 2
 	BurstDelays: 3
 
 AAGattTrop3E:
-	Inherits: AAGattTrop
+	Inherits: AAGattTrop3
+	Burst: 2
+	BurstDelays: 1
+
+AAGattTropLineE:
+	Inherits: AAGattTropLine
+	Burst: 2
+	BurstDelays: 5
+
+AAGattTropLine2E:
+	Inherits: AAGattTropLine2
+	Burst: 2
+	BurstDelays: 3
+
+AAGattTropLine3E:
+	Inherits: AAGattTropLine3
 	Burst: 2
 	BurstDelays: 1
 
@@ -288,12 +467,27 @@ UCAGGattTropE:
 	BurstDelays: 5
 
 UCAGGattTrop2E:
-	Inherits: UCAGGattTrop
+	Inherits: UCAGGattTrop2
 	Burst: 2
 	BurstDelays: 3
 
 UCAGGattTrop3E:
-	Inherits: UCAGGattTrop
+	Inherits: UCAGGattTrop3
+	Burst: 2
+	BurstDelays: 1
+
+UCAGGattTropLineE:
+	Inherits: UCAGGattTropLine
+	Burst: 2
+	BurstDelays: 5
+
+UCAGGattTropLine2E:
+	Inherits: UCAGGattTropLine2
+	Burst: 2
+	BurstDelays: 3
+
+UCAGGattTropLine3E:
+	Inherits: UCAGGattTropLine3
 	Burst: 2
 	BurstDelays: 1
 
@@ -305,11 +499,11 @@ UCAAGattTropE:
 	BurstDelays: 5
 
 UCAAGattTrop2E:
-	Inherits: UCAAGattTrop
+	Inherits: UCAAGattTrop2
 	Burst: 2
 	BurstDelays: 3
 
 UCAAGattTrop3E:
-	Inherits: UCAAGattTrop
+	Inherits: UCAAGattTrop3
 	Burst: 2
 	BurstDelays: 1

@@ -341,6 +341,27 @@ ytnk:
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
 		RequiresCondition: gatling >= 2
+	Armament@ag-line-0:
+		Name: secondary
+		Weapon: AGGatlingLine
+		LocalOffset: 544,100,1024, 544,-100,1024
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: reload-line-air
+		RequiresCondition: !gatling && chainguns
+	Armament@ag-line-1:
+		Name: secondary
+		Weapon: AGGatlingLine2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: reload-line-air
+		RequiresCondition: gatling == 1 && chainguns
+	Armament@ag-line-2:
+		Name: secondary
+		Weapon: AGGatlingLine3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: reload-line-air
+		RequiresCondition: gatling >= 2 && chainguns
 	Armament@aa-0:
 		Weapon: AAGatling
 		LocalOffset: 544,100,1024, 544,-100,1024
@@ -362,6 +383,27 @@ ytnk:
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: gatling >= 2
+	Armament@aa-line-0:
+		Name: secondary
+		Weapon: AAGatlingLine
+		LocalOffset: 544,100,1024, 544,-100,1024
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: reload-line-ground
+		RequiresCondition: !gatling && chainguns
+	Armament@aa-line-1:
+		Name: secondary
+		Weapon: AAGatlingLine2
+		LocalOffset: 544,100,1024, 544,-100,1024
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: reload-line-ground
+		RequiresCondition: gatling == 1 && chainguns
+	Armament@aa-line-2:
+		Name: secondary
+		Weapon: AAGatlingLine3
+		LocalOffset: 544,100,1024, 544,-100,1024
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: reload-line-ground
+		RequiresCondition: gatling >= 2 && chainguns
 	GrantConditionOnAttack:
 		Condition: gatling
 		RequiredShotsPerInstance: 12, 24

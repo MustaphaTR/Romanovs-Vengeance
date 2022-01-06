@@ -5,6 +5,20 @@
 		Duration: 500
 		ValidTargets: Ground, Water, Air
 
+^LineProjectile:
+	ValidTargets: Ground, Water, Air
+	Projectile: BulletAS
+		Speed: 0c800
+		Inaccuracy: 0c512
+		Palette: effect
+		Blockable: true
+		ContrailDelay: 0
+		ContrailColor: FFDD00
+		ContrailLength: 2
+		ContrailWidth: 26
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water, Air
+
 ^Flak:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 25

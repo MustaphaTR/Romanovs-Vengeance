@@ -752,44 +752,85 @@ gtrp:
 		FacingTolerance: 2
 	Armament@ag-0:
 		Weapon: AGGattTrop
-		LocalOffset: 544,100,1024, 544,-100,1024
+		LocalOffset: 544,100,768
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !gatling
 	Armament@ag-1:
 		Weapon: AGGattTrop2
-		LocalOffset: 544,100,1024, 544,-100,1024
+		LocalOffset: 544,100,768
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: gatling == 1
 	Armament@ag-2:
 		Weapon: AGGattTrop3
-		LocalOffset: 544,100,1024, 544,-100,1024
+		LocalOffset: 544,100,768
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: gatling >= 2
+	Armament@ag-line-0:
+		Name: secondary
+		Weapon: AGGattTropLine
+		LocalOffset: 544,100,768
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: chronodisable || reload-line-air
+		RequiresCondition: !gatling && chainguns
+	Armament@ag-line-1:
+		Name: secondary
+		Weapon: AGGattTropLine2
+		LocalOffset: 544,100,768
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: chronodisable || reload-line-air
+		RequiresCondition: gatling == 1 && chainguns
+	Armament@ag-line-2:
+		Name: secondary
+		Weapon: AGGattTropLine3
+		LocalOffset: 544,100,768
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: chronodisable || reload-line-air
+		RequiresCondition: gatling >= 2 && chainguns
 	Armament@aa-0:
 		Weapon: AAGattTrop
-		LocalOffset: 544,100,1024, 544,-100,1024
+		LocalOffset: 544,100,768
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !gatling
 	Armament@aa-1:
 		Weapon: AAGattTrop2
-		LocalOffset: 544,100,1024, 544,-100,1024
+		LocalOffset: 544,100,768
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: gatling == 1
 	Armament@aa-2:
 		Weapon: AAGattTrop3
-		LocalOffset: 544,100,1024, 544,-100,1024
+		LocalOffset: 544,100,768
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: gatling >= 2
+	Armament@aa-line-0:
+		Name: secondary
+		Weapon: AAGattTropLine
+		LocalOffset: 544,100,768
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: chronodisable || reload-line-ground
+		RequiresCondition: !gatling && chainguns
+	Armament@aa-line-1:
+		Name: secondary
+		Weapon: AAGattTropLine2
+		LocalOffset: 544,100,768
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: chronodisable || reload-line-ground
+		RequiresCondition: gatling == 1 && chainguns
+	Armament@aa-line-2:
+		Name: secondary
+		Weapon: AAGattTropLine3
+		LocalOffset: 544,100,768
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: chronodisable || reload-line-ground
+		RequiresCondition: gatling >= 2 && chainguns
 	Armament@opentopped-ag-0:
 		Name: opentopped
 		Weapon: AGGattTrop
-		LocalOffset: 544,100,1024, 544,-100,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !gatling
@@ -805,6 +846,24 @@ gtrp:
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: gatling >= 2
+	Armament@opentopped-ag-line-0:
+		Name: opentopped-secondary
+		Weapon: AGGattTropLine
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: chronodisable || reload-line-air
+		RequiresCondition: !gatling && chainguns
+	Armament@opentopped-ag-line-1:
+		Name: opentopped-secondary
+		Weapon: AGGattTropLine2
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: chronodisable || reload-line-air
+		RequiresCondition: gatling == 1 && chainguns
+	Armament@opentopped-ag-line-2:
+		Name: opentopped-secondary
+		Weapon: AGGattTropLine3
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: chronodisable || reload-line-air
+		RequiresCondition: gatling >= 2 && chainguns
 	Armament@opentopped-aa-0:
 		Name: opentopped
 		Weapon: AAGattTrop
@@ -823,6 +882,24 @@ gtrp:
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: gatling >= 2
+	Armament@opentopped-aa-line-0:
+		Name: opentopped-secondary
+		Weapon: AAGattTropLine
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: chronodisable || reload-line-ground
+		RequiresCondition: !gatling && chainguns
+	Armament@opentopped-aa-line-1:
+		Name: opentopped-secondary
+		Weapon: AAGattTropLine2
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: chronodisable || reload-line-ground
+		RequiresCondition: gatling == 1 && chainguns
+	Armament@opentopped-aa-line-2:
+		Name: opentopped-secondary
+		Weapon: AAGattTropLine3
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: chronodisable || reload-line-ground
+		RequiresCondition: gatling >= 2 && chainguns
 	Armament@garrisoned-ag-0:
 		Name: garrisoned
 		Weapon: UCAGGattTrop
@@ -841,6 +918,24 @@ gtrp:
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: gatling >= 2
+	Armament@garrisoned-ag-line-0:
+		Name: garrisoned-secondary
+		Weapon: UCAGGattTropLine
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: chronodisable || reload-line-air
+		RequiresCondition: !gatling && chainguns
+	Armament@garrisoned-ag-line-1:
+		Name: garrisoned-secondary
+		Weapon: UCAGGattTropLine2
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: chronodisable || reload-line-air
+		RequiresCondition: gatling == 1 && chainguns
+	Armament@garrisoned-ag-line-2:
+		Name: garrisoned-secondary
+		Weapon: UCAGGattTropLine3
+		ReloadingCondition: reload-line-ground
+		PauseOnCondition: chronodisable || reload-line-air
+		RequiresCondition: gatling >= 2 && chainguns
 	Armament@garrisoned-aa-0:
 		Name: garrisoned
 		Weapon: UCAAGattTrop
@@ -858,6 +953,24 @@ gtrp:
 		Weapon: UCAAGattTrop3
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || reload-ground
+		RequiresCondition: gatling >= 2
+	Armament@garrisoned-aa-line-0:
+		Name: garrisoned-secondary
+		Weapon: AAGattTropLine
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: chronodisable || reload-line-ground
+		RequiresCondition: !gatling
+	Armament@garrisoned-aa-line-1:
+		Name: garrisoned-secondary
+		Weapon: AAGattTropLine2
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: chronodisable || reload-line-ground
+		RequiresCondition: gatling == 1
+	Armament@garrisoned-aa-line-2:
+		Name: garrisoned-secondary
+		Weapon: AAGattTropLine3
+		ReloadingCondition: reload-line-air
+		PauseOnCondition: chronodisable || reload-line-ground
 		RequiresCondition: gatling >= 2
 	GrantConditionOnAttack:
 		Condition: gatling
