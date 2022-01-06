@@ -266,11 +266,19 @@ zep:
 	RenderVoxels:
 	WithVoxelBody:
 		ShowShadow: false
-		RequiresCondition: !airprop
+		RequiresCondition: !airprop && !radbombs
 	WithVoxelBody@propaganda:
 		ShowShadow: false
 		Sequence: idle-propaganda
-		RequiresCondition: airprop
+		RequiresCondition: airprop && !radbombs
+	WithVoxelBody@rad:
+		ShowShadow: false
+		Sequence: idle-rad
+		RequiresCondition: !airprop && radbombs
+	WithVoxelBody@propaganda:
+		ShowShadow: false
+		Sequence: idle-propaganda-rad
+		RequiresCondition: airprop && radbombs
 	WithFacingSpriteBody:
 		Sequence: shadow
 		ForceToGround: true
@@ -312,6 +320,8 @@ zep:
 
 zephusk:
 	Inherits: ^HelicopterHusk
+	Inherits@AIRPROP: ^AffectedByAerialPropaganda
+	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Tooltip:
 		Name: Kirov Airship
 	Tooltip@NoRow:
@@ -333,8 +343,28 @@ zephusk:
 	RevealOnDeath:
 		Radius: 5c0
 		Duration: 50
+	WithVoxelBody:
+		ShowShadow: false
+		RequiresCondition: !airprop && !radbombs
+	WithVoxelBody@propaganda:
+		ShowShadow: false
+		Sequence: idle-propaganda
+		RequiresCondition: airprop && !radbombs
+	WithVoxelBody@rad:
+		ShowShadow: false
+		Sequence: idle-rad
+		RequiresCondition: !airprop && radbombs
+	WithVoxelBody@propaganda:
+		ShowShadow: false
+		Sequence: idle-propaganda-rad
+		RequiresCondition: airprop && radbombs
 	RenderVoxels:
 		Image: zep
+	RenderSprites:
+		Image: zep
+	WithFacingSpriteBody:
+		Sequence: shadow
+		ForceToGround: true
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
 
