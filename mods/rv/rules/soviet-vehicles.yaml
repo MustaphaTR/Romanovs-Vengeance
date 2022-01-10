@@ -31,6 +31,16 @@ harv:
 		LocalOffset: 384,0,1024
 		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
+	Armament@primary-line:
+		Weapon: 20mmrapidLine
+		LocalOffset: 384,0,1024
+		MuzzleSequence: muzzle
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-line:
+		Weapon: 20mmrapidLineE
+		LocalOffset: 384,0,1024
+		MuzzleSequence: muzzle
+		RequiresCondition: apbullets && rank-elite
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || nogunner || parachute

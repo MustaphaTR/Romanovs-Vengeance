@@ -28,6 +28,35 @@ UCM1CarbineE:
 	Projectile: InstantHit
 		Blockable: false
 
+M1CarbineLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 25
+	Range: 4c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Air
+
+M1CarbineLineE:
+	Inherits: M1CarbineLine
+	ReloadDelay: 20
+	Range: 5c0
+	Projectile: BulletAS
+		ContrailColor: FF2200
+
+UCM1CarbineLine:
+	Inherits: M1CarbineLine
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCM1CarbineLineE:
+	Inherits: M1CarbineLineE
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
 M60:
 	Inherits: ^MG
 	ReloadDelay: 25
@@ -256,14 +285,6 @@ MagneRifle:
 	Range: 5c0
 	InvalidTargets: Bridge, Wall, Fence
 	Report: tibrifle01.aud, tibrifle02.aud, tibrifle03.aud
-	-Projectile:
-	Projectile: BulletAS
-		Speed: 1c0
-		Image: dot
-		ContrailDelay: 0
-		ContrailLength: 5
-		ContrailWidth: 20
-		ContrailColor: FFDD00
 	Warhead@1Dam: SpreadDamage
 		InvalidTargets: Bridge, Wall, Fence
 		Spread: 128
@@ -291,8 +312,6 @@ MagneRifleE:
 	Inherits: MagneRifle
 	ReloadDelay: 60
 	Range: 6c0
-	Projectile: BulletAS
-		ContrailColor: FF0000
 	Warhead@1Dam: SpreadDamage
 		Damage: 9000
 	Warhead@2Eff: CreateEffect
@@ -301,11 +320,47 @@ MagneRifleE:
 UCMagneRifle:
 	Inherits: MagneRifle
 	Range: 7c0
-	Projectile: BulletAS
+	Projectile: InstantHit
 		Blockable: false
 
 UCMagneRifleE:
 	Inherits: MagneRifleE
+	Range: 7c0
+	Projectile: InstantHit
+		Blockable: false
+
+MagneRifleLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 75
+	Burst: 2
+	BurstDelays: 5
+	Range: 5c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Bridge, Wall, Fence
+	Projectile: BulletAS
+		Speed: 1c0
+		Inaccuracy: 0
+		ContrailLength: 5
+		ContrailWidth: 20
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Bridge, Wall, Fence
+
+MagneRifleLineE:
+	Inherits: MagneRifleLine
+	ReloadDelay: 60
+	Range: 6c0
+	Projectile: BulletAS
+		ContrailColor: FF2200
+
+UCMagneRifleLine:
+	Inherits: MagneRifleLine
+	Range: 7c0
+	Projectile: BulletAS
+		Blockable: false
+
+UCMagneRifleLineE:
+	Inherits: MagneRifleLineE
 	Range: 7c0
 	Projectile: BulletAS
 		Blockable: false
@@ -391,6 +446,22 @@ robogunE:
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
+20mmrapidLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 20
+	Range: 6c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Air
+
+20mmrapidLineE:
+	Inherits: 20mmrapidLine
+	ReloadDelay: 15
+	Projectile: BulletAS
+		ContrailColor: FF2200
+
 vulcan:
 	Inherits: ^MG
 	ReloadDelay: 35
@@ -402,6 +473,16 @@ vulcan:
 			None: 120
 			Flak: 110
 			Plate: 100
+
+vulcanLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 35
+	Range: 6c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Air
 
 vulcan2:
 	Inherits: vulcan
@@ -559,6 +640,36 @@ SiegeChopperCannonAAAPE:
 	Warhead@1Gar: OpenToppedDamage
 		Damage: 1562
 
+SiegeChopperCannonLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 5
+	Range: 6c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Air
+	Projectile: BulletAS
+		Blockable: false
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Air
+
+SiegeChopperCannonLineE:
+	Inherits: SiegeChopperCannonLine
+	Projectile: BulletAS
+		ContrailColor: FF2200
+
+SiegeChopperCannonAALine:
+	Inherits: SiegeChopperCannonLine
+	ValidTargets: Air
+	InvalidTargets: Ground, Water
+	Warhead@Line: TargetDamage
+		ValidTargets: Air
+		InvalidTargets: Ground, Water
+
+SiegeChopperCannonAALineE:
+	Inherits: SiegeChopperCannonAALine
+	Projectile: BulletAS
+		ContrailColor: FF2200
+
 # Yuri's Revenge Bullets:
 AKM:
 	Inherits: ^MG
@@ -601,6 +712,32 @@ UCAKM:
 UCAKME:
 	Inherits: AKME
 	Projectile: InstantHit
+		Blockable: false
+
+AKMLine:
+	Inherits: ^LineProjectile
+	ReloadDelay: 15
+	Range: 7c0
+	ValidTargets: Ground, Water
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure
+	Warhead@Line: TargetDamage
+		ValidTargets: Ground, Water
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure
+
+AKMLineE:
+	Inherits: AKMLine
+	Range: 8c0
+	Projectile: BulletAS
+		ContrailColor: FF2200
+
+UCAKMLine:
+	Inherits: AKMLine
+	Projectile: BulletAS
+		Blockable: false
+
+UCAKMLineE:
+	Inherits: AKMLineE
+	Projectile: BulletAS
 		Blockable: false
 
 Virusgun:

@@ -49,12 +49,24 @@ e2:
 		FacingTolerance: 2
 	Armament@primary:
 		Weapon: M1Carbine
+		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: M1CarbineE
+		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@primary-line:
+		Weapon: M1CarbineLine
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-line:
+		Weapon: M1CarbineLineE
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && rank-elite
 	Armament@molotov:
 		Weapon: MolotovCocktail
 		LocalOffset: 512,0,768
@@ -85,6 +97,16 @@ e2:
 		Weapon: M1CarbineE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@opentopped-line:
+		Name: opentopped
+		Weapon: M1CarbineLine
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-opentopped-line:
+		Name: opentopped
+		Weapon: M1CarbineLineE
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && rank-elite
 	Armament@molotov-opentopped:
 		Name: opentopped
 		Weapon: MolotovCocktail
@@ -115,6 +137,16 @@ e2:
 		Weapon: UCM1CarbineE
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@garrisoned-line:
+		Name: garrisoned
+		Weapon: UCM1CarbineLine
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-garrisoned-line:
+		Name: garrisoned
+		Weapon: UCM1CarbineLineE
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && rank-elite
 	Armament@molotov-garrisoned:
 		Name: garrisoned
 		Weapon: UCMolotovCocktail
@@ -1074,24 +1106,51 @@ boris:
 		StartIfBelow: 100
 	Armament@primary:
 		Weapon: AKM
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: AKME
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@primary-line:
+		Weapon: AKMLine
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-line:
+		Weapon: AKMLineE
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: AKM
+		PauseOnCondition: chronodisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: AKME
+		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@opentopped-line:
+		Name: opentopped
+		Weapon: AKMLine
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-opentopped-line:
+		Name: opentopped
+		Weapon: AKMLineE
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && rank-elite
 	Armament@flare:
 		Name: secondary
 		Weapon: Flare
 		LocalOffset: 320,128,768
 		Cursor: airstrike
 		OutsideRangeCursor: airstrike
+		PauseOnCondition: chronodisable
 		RequiresCondition: !airstrike
 	Armament@flare-saw:
 		Name: secondary
@@ -1099,6 +1158,7 @@ boris:
 		LocalOffset: 320,128,768
 		Cursor: airstrike
 		OutsideRangeCursor: airstrike
+		PauseOnCondition: chronodisable
 		RequiresCondition: airstrike
 	Armament@garrisoned:
 		Name: garrisoned
@@ -1110,6 +1170,16 @@ boris:
 		Weapon: UCAKME
 		PauseOnCondition: chronodisable
 		RequiresCondition: rank-elite
+	Armament@garrisoned-line:
+		Name: garrisoned
+		Weapon: UCAKMLine
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-garrisoned-line:
+		Name: garrisoned
+		Weapon: UCAKMLineE
+		PauseOnCondition: chronodisable
+		RequiresCondition: apbullets && rank-elite
 	Armament@flare-garrisoned:
 		Name: garrisoned-secondary
 		Weapon: UCFlare
