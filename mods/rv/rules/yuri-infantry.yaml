@@ -959,19 +959,19 @@ gtrp:
 		Weapon: AAGattTropLine
 		ReloadingCondition: reload-line-air
 		PauseOnCondition: chronodisable || reload-line-ground
-		RequiresCondition: !gatling
+		RequiresCondition: !gatling && chainguns
 	Armament@garrisoned-aa-line-1:
 		Name: garrisoned-secondary
 		Weapon: AAGattTropLine2
 		ReloadingCondition: reload-line-air
 		PauseOnCondition: chronodisable || reload-line-ground
-		RequiresCondition: gatling == 1
+		RequiresCondition: gatling == 1 && chainguns
 	Armament@garrisoned-aa-line-2:
 		Name: garrisoned-secondary
 		Weapon: AAGattTropLine3
 		ReloadingCondition: reload-line-air
 		PauseOnCondition: chronodisable || reload-line-ground
-		RequiresCondition: gatling >= 2
+		RequiresCondition: gatling >= 2 && chainguns
 	GrantConditionOnAttack:
 		Condition: gatling
 		ArmamentNames: primary, opentopped, garrisoned
