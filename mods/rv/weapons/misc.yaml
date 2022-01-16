@@ -294,17 +294,15 @@ UCToxinSprayerE:
 
 ToxinSprayerTruck:
 	Inherits: ToxinSprayer
-	ReloadDelay: 40
-	Burst: 8
-	BurstDelays: 2
+	ReloadDelay: 60
+	Burst: 4
+	BurstDelays: 0
 	Warhead@1Dam: SpreadDamage
 		Damage: 800
 
 ToxinSprayerTruckE:
 	Inherits: ToxinSprayerTruck
-	Burst: 20
-	Warhead@1Dam: SpreadDamage
-		Damage: 1600
+	Burst: 10
 
 EmergencyRepair1:
 	ReloadDelay: 80
@@ -438,7 +436,7 @@ DogBark:
 		ValidTargets: DogStun
 		ValidRelationships: Enemy, Neutral
 		Condition: dogstun
-		Range: 1c512
+		Range: 2c512
 		Duration: 125
 
 ChitzBark:
