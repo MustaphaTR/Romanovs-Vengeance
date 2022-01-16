@@ -59,11 +59,11 @@ slav:
 		DockLoopSequence: idle
 	Armament@primary:
 		Weapon: Shovel
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: ShovelE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: SlaveVoice
@@ -137,31 +137,31 @@ init:
 		FacingTolerance: 2
 	Armament@primary:
 		Weapon: PsychicJab
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: PsychicJabE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: PsychicJab
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: PsychicJabE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCPsychicJab
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCPsychicJabE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: InitiateVoice
@@ -362,19 +362,21 @@ virus:
 		TargetFrozenActors: true
 	Armament@primary:
 		Weapon: Virusgun
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: VirusgunE
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCVirusgun
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCVirusgunE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: VirusVoice
@@ -450,12 +452,12 @@ yurix:
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: SuperMindControlX
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: SuperMindControlXE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: rank-elite
 	PeriodicExplosion:
 		Weapon: SuperPsiWave
@@ -535,49 +537,49 @@ lunr:
 		Weapon: LunarLaser
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && !capacitors
 	Armament@primary-aa:
 		Weapon: LunarLaserAA
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && !capacitors
 	Armament@elite:
 		Weapon: LunarLaserE
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && !capacitors
 	Armament@elite-aa:
 		Weapon: LunarLaserAAE
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && !capacitors
 	Armament@primary-capacitors:
 		Weapon: LunarLaserUpg
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && capacitors
 	Armament@primary-aa-capacitors:
 		Weapon: LunarLaserAAUpg
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && capacitors
 	Armament@elite-capacitors:
 		Weapon: LunarLaserUpgE
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && capacitors
 	Armament@elite-aa-capacitors:
 		Weapon: LunarLaserAAUpgE
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && capacitors
 	AttackAircraft:
 		Voice: Attack
@@ -754,223 +756,223 @@ gtrp:
 		Weapon: AGGattTrop
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !gatling
 	Armament@ag-1:
 		Weapon: AGGattTrop2
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: gatling == 1
 	Armament@ag-2:
 		Weapon: AGGattTrop3
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: gatling >= 2
 	Armament@ag-line-0:
 		Name: secondary
 		Weapon: AGGattTropLine
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-line-ground
-		PauseOnCondition: chronodisable || reload-line-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-air
 		RequiresCondition: !gatling && chainguns
 	Armament@ag-line-1:
 		Name: secondary
 		Weapon: AGGattTropLine2
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-line-ground
-		PauseOnCondition: chronodisable || reload-line-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-air
 		RequiresCondition: gatling == 1 && chainguns
 	Armament@ag-line-2:
 		Name: secondary
 		Weapon: AGGattTropLine3
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-line-ground
-		PauseOnCondition: chronodisable || reload-line-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-air
 		RequiresCondition: gatling >= 2 && chainguns
 	Armament@aa-0:
 		Weapon: AAGattTrop
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !gatling
 	Armament@aa-1:
 		Weapon: AAGattTrop2
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: gatling == 1
 	Armament@aa-2:
 		Weapon: AAGattTrop3
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: gatling >= 2
 	Armament@aa-line-0:
 		Name: secondary
 		Weapon: AAGattTropLine
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-line-air
-		PauseOnCondition: chronodisable || reload-line-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-ground
 		RequiresCondition: !gatling && chainguns
 	Armament@aa-line-1:
 		Name: secondary
 		Weapon: AAGattTropLine2
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-line-air
-		PauseOnCondition: chronodisable || reload-line-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-ground
 		RequiresCondition: gatling == 1 && chainguns
 	Armament@aa-line-2:
 		Name: secondary
 		Weapon: AAGattTropLine3
 		LocalOffset: 544,100,768
 		ReloadingCondition: reload-line-air
-		PauseOnCondition: chronodisable || reload-line-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-ground
 		RequiresCondition: gatling >= 2 && chainguns
 	Armament@opentopped-ag-0:
 		Name: opentopped
 		Weapon: AGGattTrop
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !gatling
 	Armament@opentopped-ag-1:
 		Name: opentopped
 		Weapon: AGGattTrop2
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: gatling == 1
 	Armament@opentopped-ag-2:
 		Name: opentopped
 		Weapon: AGGattTrop3
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: gatling >= 2
 	Armament@opentopped-ag-line-0:
 		Name: opentopped-secondary
 		Weapon: AGGattTropLine
 		ReloadingCondition: reload-line-ground
-		PauseOnCondition: chronodisable || reload-line-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-air
 		RequiresCondition: !gatling && chainguns
 	Armament@opentopped-ag-line-1:
 		Name: opentopped-secondary
 		Weapon: AGGattTropLine2
 		ReloadingCondition: reload-line-ground
-		PauseOnCondition: chronodisable || reload-line-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-air
 		RequiresCondition: gatling == 1 && chainguns
 	Armament@opentopped-ag-line-2:
 		Name: opentopped-secondary
 		Weapon: AGGattTropLine3
 		ReloadingCondition: reload-line-ground
-		PauseOnCondition: chronodisable || reload-line-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-air
 		RequiresCondition: gatling >= 2 && chainguns
 	Armament@opentopped-aa-0:
 		Name: opentopped
 		Weapon: AAGattTrop
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !gatling
 	Armament@opentopped-aa-1:
 		Name: opentopped
 		Weapon: AAGattTrop2
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: gatling == 1
 	Armament@opentopped-aa-2:
 		Name: opentopped
 		Weapon: AAGattTrop3
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: gatling >= 2
 	Armament@opentopped-aa-line-0:
 		Name: opentopped-secondary
 		Weapon: AAGattTropLine
 		ReloadingCondition: reload-line-air
-		PauseOnCondition: chronodisable || reload-line-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-ground
 		RequiresCondition: !gatling && chainguns
 	Armament@opentopped-aa-line-1:
 		Name: opentopped-secondary
 		Weapon: AAGattTropLine2
 		ReloadingCondition: reload-line-air
-		PauseOnCondition: chronodisable || reload-line-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-ground
 		RequiresCondition: gatling == 1 && chainguns
 	Armament@opentopped-aa-line-2:
 		Name: opentopped-secondary
 		Weapon: AAGattTropLine3
 		ReloadingCondition: reload-line-air
-		PauseOnCondition: chronodisable || reload-line-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-ground
 		RequiresCondition: gatling >= 2 && chainguns
 	Armament@garrisoned-ag-0:
 		Name: garrisoned
 		Weapon: UCAGGattTrop
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !gatling
 	Armament@garrisoned-ag-1:
 		Name: garrisoned
 		Weapon: UCAGGattTrop2
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: gatling == 1
 	Armament@garrisoned-ag-2:
 		Name: garrisoned
 		Weapon: UCAGGattTrop3
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: gatling >= 2
 	Armament@garrisoned-ag-line-0:
 		Name: garrisoned-secondary
 		Weapon: UCAGGattTropLine
 		ReloadingCondition: reload-line-ground
-		PauseOnCondition: chronodisable || reload-line-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-air
 		RequiresCondition: !gatling && chainguns
 	Armament@garrisoned-ag-line-1:
 		Name: garrisoned-secondary
 		Weapon: UCAGGattTropLine2
 		ReloadingCondition: reload-line-ground
-		PauseOnCondition: chronodisable || reload-line-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-air
 		RequiresCondition: gatling == 1 && chainguns
 	Armament@garrisoned-ag-line-2:
 		Name: garrisoned-secondary
 		Weapon: UCAGGattTropLine3
 		ReloadingCondition: reload-line-ground
-		PauseOnCondition: chronodisable || reload-line-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-air
 		RequiresCondition: gatling >= 2 && chainguns
 	Armament@garrisoned-aa-0:
 		Name: garrisoned
 		Weapon: UCAAGattTrop
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !gatling
 	Armament@garrisoned-aa-1:
 		Name: garrisoned
 		Weapon: UCAAGattTrop2
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: gatling == 1
 	Armament@garrisoned-aa-2:
 		Name: garrisoned
 		Weapon: UCAAGattTrop3
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: gatling >= 2
 	Armament@garrisoned-aa-line-0:
 		Name: garrisoned-secondary
 		Weapon: AAGattTropLine
 		ReloadingCondition: reload-line-air
-		PauseOnCondition: chronodisable || reload-line-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-ground
 		RequiresCondition: !gatling && chainguns
 	Armament@garrisoned-aa-line-1:
 		Name: garrisoned-secondary
 		Weapon: AAGattTropLine2
 		ReloadingCondition: reload-line-air
-		PauseOnCondition: chronodisable || reload-line-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-ground
 		RequiresCondition: gatling == 1 && chainguns
 	Armament@garrisoned-aa-line-2:
 		Name: garrisoned-secondary
 		Weapon: AAGattTropLine3
 		ReloadingCondition: reload-line-air
-		PauseOnCondition: chronodisable || reload-line-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-line-ground
 		RequiresCondition: gatling >= 2 && chainguns
 	GrantConditionOnAttack:
 		Condition: gatling
@@ -1082,62 +1084,62 @@ spct:
 	Armament@primary:
 		Weapon: MagneRifle
 		LocalOffset: 0,0,768
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: MagneRifleE
 		LocalOffset: 0,0,768
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@primary-line:
 		Weapon: MagneRifleLine
 		LocalOffset: 0,0,768
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-line:
 		Weapon: MagneRifleLineE
 		LocalOffset: 0,0,768
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: MagneRifle
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: MagneRifleE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@opentopped-line:
 		Name: opentopped
 		Weapon: MagneRifleLine
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped-line:
 		Name: opentopped
 		Weapon: MagneRifleLineE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMagneRifle
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCMagneRifleE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@garrisoned-line:
 		Name: garrisoned
 		Weapon: UCMagneRifleLine
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned-line:
 		Name: garrisoned
 		Weapon: UCMagneRifleLineE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Cloak:
 		RequiresCondition: !chronodisable && !webdisable && !dogstun && !deployed
@@ -1230,44 +1232,44 @@ ttrp:
 	Armament@primary:
 		Weapon: ToxinSprayer
 		LocalOffset: 320,-128,1024
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: ToxinSprayerE
 		LocalOffset: 320,-128,1024
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@sapper:
 		Weapon: ToxinBombAttacher
 		Cursor: toxinbomb
 		OutsideRangeCursor: toxinbomb
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@sapper-elite:
 		Weapon: ToxinBombAttacherE
 		Cursor: toxinbomb
 		OutsideRangeCursor: toxinbomb
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: ToxinSprayer
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: ToxinSprayerE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCToxinSprayer
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCToxinSprayerE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
@@ -1332,73 +1334,73 @@ crkt:
 		Weapon: ChaosRocket
 		LocalOffset: 256,0,1024
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: ChaosRocketE
 		LocalOffset: 256,0,1024
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite
 	Armament@aa:
 		Weapon: ChaosRocketAA
 		LocalOffset: 256,0,1024
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite-aa:
 		Weapon: ChaosRocketAAE
 		LocalOffset: 256,0,1024
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: ChaosRocket
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: ChaosRocketE
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite
 	Armament@opentopped-aa:
 		Name: opentopped
 		Weapon: ChaosRocketAA
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped-aa:
 		Name: opentopped
 		Weapon: ChaosRocketAAE
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCChaosRocket
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCChaosRocketE
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite
 	Armament@garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCChaosRocketAA
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCChaosRocketAAE
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack

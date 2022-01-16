@@ -64,7 +64,7 @@ engineer:
 		OutsideRangeCursor: remove-bomb
 		TargetRelationships: Ally
 		ForceTargetRelationships: None
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 	AttackFrontal:
 		Voice: Action
 		FacingTolerance: 2
@@ -323,51 +323,51 @@ e1:
 		Radius: 3c0
 	Armament@primary:
 		Weapon: M60
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && !deployed && !portable
 	Armament@elite:
 		Weapon: M60E
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && !deployed && !portable
 	Armament@portable:
 		Weapon: para
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && !deployed && portable
 	Armament@elite-portable:
 		Weapon: paraE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && !deployed && portable
 	Armament@deployed:
 		Weapon: para
 		Name: deployed
 		Turret: deploy
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
 		Weapon: paraE
 		Name: deployed
 		Turret: deploy
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && deployed
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: para
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: paraE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Weapon: UCpara
 		Name: garrisoned
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Weapon: UCparaE
 		Name: garrisoned
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
@@ -523,59 +523,59 @@ ggi:
 		RequiresCondition: !undeployed
 	Armament@primary:
 		Weapon: M60
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && !deployed && !portable
 	Armament@elite:
 		Weapon: M60E
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && !deployed && !portable
 	Armament@portable:
 		Weapon: MissileLauncher
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && portable && !deployed && !boostgliding
 	Armament@elite-portable:
 		Weapon: MissileLauncherE
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && portable && !deployed && !boostgliding
 	Armament@portable-aa:
 		Weapon: MissileLauncherAA
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && portable && !deployed && !boostgliding
 	Armament@elite-portable-aa:
 		Weapon: MissileLauncherAAE
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && portable && !deployed && !boostgliding
 	Armament@portable-boost:
 		Weapon: MissileLauncherBoosted
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && portable && !deployed && boostgliding
 	Armament@elite-portable-boost:
 		Weapon: MissileLauncherBoostedE
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && portable && !deployed && boostgliding
 	Armament@portable-aa-boost:
 		Weapon: MissileLauncherAABoosted
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && portable && !deployed && boostgliding
 	Armament@elite-portable-aa-boost:
 		Weapon: MissileLauncherAABoostedE
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && portable && !deployed && boostgliding
 	Armament@deployed:
 		Weapon: MissileLauncher
@@ -583,7 +583,7 @@ ggi:
 		Turret: deploy
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && deployed && !boostgliding
 	Armament@elite-deployed:
 		Weapon: MissileLauncherE
@@ -591,7 +591,7 @@ ggi:
 		Turret: deploy
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && deployed && !boostgliding
 	Armament@deployed-aa:
 		Weapon: MissileLauncherAA
@@ -599,7 +599,7 @@ ggi:
 		Turret: deploy
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && deployed && !boostgliding
 	Armament@elite-deployed-aa:
 		Weapon: MissileLauncherAAE
@@ -607,7 +607,7 @@ ggi:
 		Turret: deploy
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && deployed && !boostgliding
 	Armament@deployed-boost:
 		Weapon: MissileLauncherBoosted
@@ -615,7 +615,7 @@ ggi:
 		Turret: deploy
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && deployed && boostgliding
 	Armament@elite-deployed-boost:
 		Weapon: MissileLauncherBoostedE
@@ -623,7 +623,7 @@ ggi:
 		Turret: deploy
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && deployed && boostgliding
 	Armament@deployed-aa-boost:
 		Weapon: MissileLauncherAABoosted
@@ -631,7 +631,7 @@ ggi:
 		Turret: deploy
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && deployed && boostgliding
 	Armament@elite-deployed-aa-boost:
 		Weapon: MissileLauncherAABoostedE
@@ -639,114 +639,114 @@ ggi:
 		Turret: deploy
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && deployed && boostgliding
 	Armament@opentopped:
 		Weapon: MissileLauncher
 		Name: opentopped
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-opentopped:
 		Weapon: MissileLauncherE
 		Name: opentopped
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@opentopped-aa:
 		Weapon: MissileLauncherAA
 		Name: opentopped
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-opentopped-aa:
 		Weapon: MissileLauncherAAE
 		Name: opentopped
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@opentopped-boost:
 		Weapon: MissileLauncherBoosted
 		Name: opentopped
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@elite-opentopped-boost:
 		Weapon: MissileLauncherBoostedE
 		Name: opentopped
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && boostgliding
 	Armament@opentopped-aa-boost:
 		Weapon: MissileLauncherAABoosted
 		Name: opentopped
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@elite-opentopped-aa-boost:
 		Weapon: MissileLauncherAABoostedE
 		Name: opentopped
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && boostgliding
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncher
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncherE
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAA
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@elite-garrisoned-aa:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAAE
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@garrisoned-boost:
 		Name: garrisoned
 		Weapon: UCMissileLauncherBoosted
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@elite-garrisoned-boost:
 		Name: garrisoned
 		Weapon: UCMissileLauncherBoostedE
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && boostgliding
 	Armament@garrisoned-aa-boost:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAABoosted
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@elite-garrisoned-aa-boost:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAABoostedE
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && boostgliding
 	Armament@AIDummyAiming: ## Hack: Make AI GGI deploy to attack air
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: ai-control && !deployed
 		Weapon: AirDummyAim
 	GrantConditionOnDeploy:
@@ -891,70 +891,70 @@ snipe:
 	Armament@primary:
 		Weapon: awp
 		ReloadingCondition: reload-ap
-		PauseOnCondition: chronodisable || reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: AWPE
 		ReloadingCondition: reload-ap
-		PauseOnCondition: chronodisable || reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
 		RequiresCondition: rank-elite
 	Armament@secondary:
 		Weapon: awpat
 		ReloadingCondition: reload-at
-		PauseOnCondition: chronodisable || reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
 		RequiresCondition: !rank-elite && highcaliber
 	Armament@secondary-elite:
 		Weapon: awpatE
 		ReloadingCondition: reload-at
-		PauseOnCondition: chronodisable || reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
 		RequiresCondition: rank-elite && highcaliber
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: awp
 		ReloadingCondition: reload-ap
-		PauseOnCondition: chronodisable || reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: AWPE
 		ReloadingCondition: reload-ap
-		PauseOnCondition: chronodisable || reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
 		RequiresCondition: rank-elite
 	Armament@secondary-opentopped:
 		Name: opentopped
 		Weapon: awpat
 		ReloadingCondition: reload-at
-		PauseOnCondition: chronodisable || reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
 		RequiresCondition: !rank-elite && highcaliber
 	Armament@secondary-elite-opentopped:
 		Name: opentopped
 		Weapon: awpatE
 		ReloadingCondition: reload-at
-		PauseOnCondition: chronodisable || reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
 		RequiresCondition: rank-elite && highcaliber
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCawp
 		ReloadingCondition: reload-ap
-		PauseOnCondition: chronodisable || reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCAWPE
 		ReloadingCondition: reload-ap
-		PauseOnCondition: chronodisable || reload-at
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-at
 		RequiresCondition: rank-elite
 	Armament@secondary-garrisoned:
 		Name: garrisoned
 		Weapon: UCawpat
 		ReloadingCondition: reload-at
-		PauseOnCondition: chronodisable || reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
 		RequiresCondition: !rank-elite && highcaliber
 	Armament@secondary-elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCawpatE
 		ReloadingCondition: reload-at
-		PauseOnCondition: chronodisable || reload-ap
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ap
 		RequiresCondition: rank-elite && highcaliber
 	AttackFrontal:
 		Voice: Attack
@@ -1084,48 +1084,48 @@ ghost:
 		Type: Flak
 	Armament@primary:
 		Weapon: MP5
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: MP5E
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: MP5
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: MP5E
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@sapper:
 		Weapon: SealC4Attacher
 		Cursor: c4
 		OutsideRangeCursor: c4
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@sapper-elite:
 		Weapon: SealC4AttacherE
 		Cursor: c4
 		OutsideRangeCursor: c4
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMP5
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCMP5E
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 	RenderSprites:
 		Image: seal
 	Voiced:
@@ -1251,14 +1251,14 @@ ptroop:
 		Weapon: CommandoC4Attacher
 		Cursor: c4
 		OutsideRangeCursor: c4
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@sapper-elite:
 		Name: sapper
 		Weapon: CommandoC4AttacherE
 		Cursor: c4
 		OutsideRangeCursor: c4
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Armaments: primary, sapper
@@ -1341,36 +1341,36 @@ tany:
 	ProvidesPrerequisite@default:
 	Armament@primary:
 		Weapon: DoublePistols
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: DoublePistolsE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: DoublePistols
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: DoublePistolsE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: rank-elite
 	Armament@sapper:
 		Weapon: TanyaC4Attacher
 		Cursor: c4
 		OutsideRangeCursor: c4
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCDoublePistols
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCDoublePistolsE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
@@ -1667,45 +1667,45 @@ cleg:
 	Armament@primary:
 		Weapon: NeutronRifle
 		LocalOffset: 512,0,384
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: NeutronRifleE
 		LocalOffset: 512,0,384
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@sound:
 		Weapon: NeutronRifleSound
 		LocalOffset: 512,0,384
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: NeutronRifle
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: NeutronRifleE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@sound-opentopped:
 		Name: opentopped
 		Weapon: NeutronRifleSound
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCNeutronRifle
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCNeutronRifleE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@sound-garrisoned:
 		Name: garrisoned
 		Weapon: UCNeutronRifleSound
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -1766,65 +1766,65 @@ gren:
 		Weapon: Grenade
 		FireDelay: 5
 		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !empammo && !rank-elite
 	Armament@primary-emp:
 		Weapon: GrenadeEMP
 		FireDelay: 5
 		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: empammo && !rank-elite
 	Armament@elite:
 		Weapon: GrenadeE
 		FireDelay: 5
 		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !empammo && rank-elite
 	Armament@elite-emp:
 		Weapon: GrenadeEMPE
 		FireDelay: 5
 		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: empammo && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: Grenade
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !empammo && !rank-elite
 	Armament@opentopped-emp:
 		Name: opentopped
 		Weapon: GrenadeEMP
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: empammo && !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: GrenadeE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !empammo && rank-elite
 	Armament@elite-opentopped-emp:
 		Name: opentopped
 		Weapon: GrenadeEMPE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: empammo && rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCGrenade
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !empammo && !rank-elite
 	Armament@garrisoned-emp:
 		Name: garrisoned
 		Weapon: UCGrenadeEMP
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: empammo && !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCGrenadeE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !empammo && rank-elite
 	Armament@elite-garrisoned-emp:
 		Name: garrisoned
 		Weapon: UCGrenadeEMPE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: empammo && rank-elite
 	WithInfantryBody:
 		RequiresCondition: !parachute && !webdisable && !empammo

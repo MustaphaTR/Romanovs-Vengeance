@@ -39,7 +39,7 @@ medi:
 		OutsideRangeCursor: heal
 		TargetRelationships: Ally
 		ForceTargetRelationships: None
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 	AttackFrontal:
 		Voice: Action
 		FacingTolerance: 2
@@ -100,7 +100,7 @@ mech:
 	AttackFrontal:
 		Voice: Action
 		FacingTolerance: 2
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable || dogstun
 	Voiced:
 		VoiceSet: EngineerVoice
 	Guard:
@@ -245,58 +245,62 @@ vlkv:
 	Armament@primary:
 		Weapon: ElectricBoltVolkov
 		LocalOffset: 320,128,512
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite:
 		Weapon: ElectricBoltVolkovE
 		LocalOffset: 320,128,512
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !overcharge && rank-elite
 	Armament@primary-charged:
 		Weapon: ElectricBoltVolkovCharged
 		LocalOffset: 320,128,512
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: overcharge && !rank-elite
 	Armament@elite-charged:
 		Weapon: ElectricBoltVolkovChargedE
 		LocalOffset: 320,128,512
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: overcharge && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: ElectricBoltVolkov
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: ElectricBoltVolkovE
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !overcharge && rank-elite
 	Armament@opentopped-charged:
 		Name: opentopped
 		Weapon: ElectricBoltVolkovCharged
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: overcharge && !rank-elite
 	Armament@elite-opentopped-charged:
 		Name: opentopped
 		Weapon: ElectricBoltVolkovChargedE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: overcharge && rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCElectricBoltVolkov
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCElectricBoltVolkovE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !overcharge && rank-elite
 	Armament@garrisoned-charged:
 		Name: garrisoned
 		Weapon: UCElectricBoltVolkovCharged
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: overcharge && !rank-elite
 	Armament@elite-garrisoned-charged:
 		Name: garrisoned
 		Weapon: UCElectricBoltVolkovChargedE
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: overcharge && rank-elite
 	AttackFrontal:
 		Voice: Attack
@@ -355,7 +359,7 @@ chit:
 		HP: 22500
 	Mobile:
 		Speed: 105
-		RequiresCondition: !deployed && !deploying && !chronodisable && !webdisable && !dogstun
+		RequiresCondition: !deployed && !deploying && !chronodisable && !webdisable
 	Passenger:
 		CustomPipType: red
 		CargoType: Infantry
@@ -402,7 +406,7 @@ chit:
 		DamageInterval: 25
 		DamageTypes: DroneInfection, BulletDeath, NonTemporal
 		JoustRange: 1c768
-		PauseOnCondition: chronodisable || emp
+		PauseOnCondition: chronodisable || webdisable || emp
 	RejectsOrders:
 		RequiresCondition: jousting
 	AttackMove:
