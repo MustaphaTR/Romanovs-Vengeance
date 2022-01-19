@@ -1126,7 +1126,8 @@ napsis:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 6c0
-	GpsASProvider:
+	RangedGpsProvider:
+		Range: 25c0
 		RequiresCondition: !build-incomplete && !disabled && !chronodisable
 	RenderDetectionCircle:
 	WithRangeCircle:
@@ -1966,7 +1967,7 @@ naprop:
 		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
-	GpsDotAS:
+	RangedGpsDot:
 		Sequence: Structure
 	IsometricSelectable:
 		DecorationHeight: 75

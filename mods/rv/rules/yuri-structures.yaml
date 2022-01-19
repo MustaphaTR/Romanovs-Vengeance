@@ -395,7 +395,7 @@ yarefn:
 		RequiresCondition: spawn-ore
 	GrantConditionOnPlayerResources:
 		Condition: spawn-ore
-	GpsDotAS:
+	RangedGpsDot:
 		Sequence: Harvester
 	WithResourceStoragePipsDecoration:
 		FullSequence: pip-building-yellow
@@ -942,7 +942,8 @@ yapsis:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 6c0
-	GpsASProvider:
+	RangedGpsProvider:
+		Range: 25c0
 		RequiresCondition: !build-incomplete && !disabled && !chronodisable
 	RenderDetectionCircle:
 	WithRangeCircle:
@@ -1456,7 +1457,7 @@ yasgen:
 		RequiredForShortGame: false
 	-Cloak@stealth-generator:
 	-ExternalCondition@INVISIBILITY-GENERATOR:
-	GpsDotAS:
+	RangedGpsDot:
 		Sequence: Structure
 	IsometricSelectable:
 		DecorationHeight: 60

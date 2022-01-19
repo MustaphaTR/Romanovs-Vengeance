@@ -49,8 +49,7 @@ caoild:
 		SoundFiles: boillo2a.wav, boillo2b.wav, boillo2c.wav
 		Volume: 0.30
 		RequiresCondition: enabled
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Oil
 	CashTricklerMultiplier:
 		Modifier: 125
@@ -250,8 +249,7 @@ caairp:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Paradrop
 	IsometricSelectable:
 		DecorationHeight: 90
@@ -288,8 +286,7 @@ cahosp:
 		Sequence: flag
 		Offset: 0,-500,2520
 		PauseOnCondition: chronodisable
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Hospital
 	IsometricSelectable:
 		DecorationHeight: 105
@@ -392,8 +389,7 @@ caoutp:
 	Armament:
 		Weapon: OutpostMissile
 		LocalOffset: 500,0,900
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Outpost
 	IsometricSelectable:
 		DecorationHeight: 90
@@ -432,8 +428,7 @@ capowr:
 		RequiresCondition: !disabled && !chronodisable
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp || diskdrain
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Power
 	IsometricSelectable:
 		DecorationHeight: 90
@@ -463,8 +458,7 @@ camach:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: MachineShop
 	IsometricSelectable:
 		DecorationHeight: 75
@@ -493,8 +487,7 @@ caslab:
 		Sequence: flag
 		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@buildingname:
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: SecretLab
 	IsometricSelectable:
 		DecorationHeight: 90
@@ -536,8 +529,7 @@ cacomm:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Communications
 	IsometricSelectable:
 		DecorationHeight: 75
@@ -567,8 +559,7 @@ caarmr:
 		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !disabled && !chronodisable
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Armory
 	IsometricSelectable:
 		DecorationHeight: 75
@@ -656,8 +647,7 @@ carpad:
 		Condition: psicorps
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		ResetOnOwnerChange: true
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: ParaVehicle
 	IsometricSelectable:
 		DecorationHeight: 60
@@ -724,8 +714,7 @@ capsyb:
 		SoundFiles: gpsyampa.wav, gpsyampb.wav, gpsyampc.wav
 		Volume: 0.5
 		RequiresCondition: enabled && !disabled
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Psi
 	IsometricSelectable:
 		DecorationHeight: 120
@@ -776,8 +765,7 @@ capsyb.koth:
 		RequiresCondition: activated
 	RenderSprites:
 		Image: capsyb
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Psi
 	IsometricSelectable:
 		DecorationHeight: 120
@@ -858,8 +846,7 @@ camisl:
 		Sequence: flag
 		PauseOnCondition: chronodisable
 	ProvidesPrerequisite@buildingname:
-	GpsDotAS:
-		Range: 25c0
+	RangedGpsDot:
 		Sequence: Missile
 	IsometricSelectable:
 		DecorationHeight: 45
