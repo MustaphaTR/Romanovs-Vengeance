@@ -94,6 +94,10 @@ bfrt-squad-3:
 		InitialUnits: ggi, ggi, ggi, ggi, tany
 	ProductionCostMultiplier@1:
 		Multiplier: 200
+	-VoiceAnnouncement:
+	NotificationAnnouncement:
+		RequiresCondition: produced
+		Notification: LetsRockAndRoll
 
 ^AITransportControl: ## For Cargo trait
 	Inherits@AI: ^AIMicroManagable
@@ -166,6 +170,10 @@ hind-dtruck:
 	Buildable:
 		Queue: Aircraft.Libya
 		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+	-VoiceAnnouncement:
+	NotificationAnnouncement:
+		RequiresCondition: produced
+		Notification: MyTruckIsLoaded
 
 hind-apoc:
 	Inherits: hind-htnk
@@ -295,6 +303,10 @@ shad-squad-3:
 		Prerequisites: gapile, ~prerequisite.aiplayer, gatech, ~techlevel.4, ~!LoadedExists, ~!tany
 	Cargo:
 		InitialUnits: e1, ggi, ggi, tany, dog, dog
+	-VoiceAnnouncement:
+	NotificationAnnouncement:
+		RequiresCondition: produced
+		Notification: LetsRockAndRoll
 
 shad-squad-4:
 	Inherits: shad-squad-1
@@ -319,6 +331,10 @@ txdx-squad-1:
 		Image: txdx
 	RenderVoxels:
 		Image: txdx
+	-VoiceAnnouncement:
+	NotificationAnnouncement:
+		RequiresCondition: produced
+		Notification: TheresOnlyOneTrueYuri
 
 txdx-squad-2:
 	Inherits: txdx-squad-1

@@ -293,9 +293,9 @@ zep:
 		InitialStance: ReturnFire
 	ExternalCondition@PRODUCED:
 		Condition: produced
-	VoiceAnnouncement:
+	NotificationAnnouncement:
 		RequiresCondition: produced
-		Voice: Build
+		Notification: KirovReporting
 	Voiced:
 		VoiceSet: KirovVoice
 	AmbientSound@Move:
@@ -1920,9 +1920,9 @@ disk:
 		RequiresCondition: discarmor
 	ExternalCondition@PRODUCED:
 		Condition: produced
-	VoiceAnnouncement:
+	NotificationAnnouncement:
 		RequiresCondition: produced
-		Voice: Build
+		Notification: DiscInFlight
 	DeathSounds:
 		DeathTypes: NonTemporal
 	AmbientSound@Steal:
