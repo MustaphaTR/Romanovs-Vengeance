@@ -249,10 +249,6 @@ gaairc:
 	damaged-idle: ggairc
 		Start: 1
 		Length: 2
-	idle-top: gaairc_c
-		Length: 16
-		ShadowStart: 16
-		Tick: 320
 	idle-bottom: ggaircbb
 		Length: 1
 		ZOffset: -512
@@ -260,13 +256,15 @@ gaairc:
 		Start: 1
 		Length: 1
 		ZOffset: -512
-	idle-dish: ggairc_a
+	idle-bottom-pad-lights: ggairc_a
 		Length: 4
 		Tick: 120
-	damaged-idle-dish: ggairc_a
+		ZOffset: -512
+	damaged-idle-pad-lights: ggairc_a
 		Start: 5
 		Length: 4
 		Tick: 120
+		ZOffset: -512
 	idle-mid: ggairc_b1
 		Length: 6
 		Tick: 120
@@ -283,6 +281,10 @@ gaairc:
 		Length: 6
 		Tick: 120
 		ZOffset: -512
+	idle-dish: gaairc_c
+		Length: 16
+		ShadowStart: 16
+		Tick: 320
 	make: gtaircmk
 		Length: 25
 		ShadowStart: 25

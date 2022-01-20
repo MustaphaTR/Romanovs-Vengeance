@@ -397,12 +397,12 @@ gaairc:
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 10c0
-	WithIdleOverlay@top:
-		Sequence: idle-top
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
 	WithIdleOverlay@bottom:
 		Sequence: idle-bottom
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@idle-pad-lights:
+		Sequence: idle-pad-lights
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
 	WithIdleOverlay@mid:
