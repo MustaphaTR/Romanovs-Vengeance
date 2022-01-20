@@ -322,19 +322,15 @@ txdx-squad-1:
 	Selectable:
 		Class: txdx
 	Buildable:
-		Prerequisites: yabrck, ~prerequisite.aiplayer, yatech, ~techlevel.4, ~!LoadedExists, ~!yurix
+		Prerequisites: yabrck, ~prerequisite.aiplayer, ~techlevel.2, ~!LoadedExists
 	Cargo:
-		InitialUnits: init, brute, brute, yurix, dog
+		InitialUnits: brute, brute, brute, brute, brute
 	ProductionCostMultiplier@1:
 		Multiplier: 125
 	RenderSprites:
 		Image: txdx
 	RenderVoxels:
 		Image: txdx
-	-VoiceAnnouncement:
-	NotificationAnnouncement:
-		RequiresCondition: produced
-		Notification: TheresOnlyOneTrueYuri
 
 txdx-squad-2:
 	Inherits: txdx-squad-1
@@ -346,9 +342,13 @@ txdx-squad-2:
 txdx-squad-3:
 	Inherits: txdx-squad-1
 	Buildable:
-		Prerequisites: yabrck, ~prerequisite.aiplayer, ~techlevel.2, ~!LoadedExists
+		Prerequisites: yabrck, ~prerequisite.aiplayer, yatech, ~techlevel.4, ~!LoadedExists, ~!yurix
 	Cargo:
-		InitialUnits: brute, brute, brute, brute, brute
+		InitialUnits: init, brute, brute, yurix, dog
+	-VoiceAnnouncement:
+	NotificationAnnouncement:
+		RequiresCondition: produced
+		Notification: TheresOnlyOneTrueYuri
 
 schp-ai:
 	Inherits: schp
