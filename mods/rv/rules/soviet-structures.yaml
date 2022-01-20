@@ -321,31 +321,19 @@ narefn:
 		DecorationHeight: 90
 
 naradr:
-	Inherits: ^BaseBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^Radar
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Soviets
-		BuildPaletteOrder: 60
 		Prerequisites: power, narefn, ~techlevel.2, ~!ai.naradr
-		Description: Provides radar
-		BuildDuration: 750
-		BuildDurationModifier: 100
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.naradr
-	Valued:
-		Cost: 1500
 	Tooltip:
 		Name: Radar Tower
 	Tooltip@NoRow:
 		Name: Radar Tower
-	ProvidesPrerequisite:
-		Prerequisite: radar
-	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@russia:
 		Prerequisite: radar.russia
 		Factions: russia
@@ -384,20 +372,6 @@ naradr:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-	Health:
-		HP: 100000
-	Armor:
-		Type: Wood
-	ExternalCondition@disableradar:
-		Condition: disableradar
-	ProvidesRadar:
-		RequiresCondition: !disabled && !chronodisable && !disableradar
-	RevealsShroud:
-		Range: 10c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 10c0
-	SupportPowerChargeBar:
 	ParatroopersPower@tesladrop:
 		OrderName: RussianTeslaDrop
 		PauseOnCondition: disabled || chronodisable
@@ -580,24 +554,10 @@ naradr:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
-	InfiltrateForSupportPowerReset:
-		Types: SpyInfiltrate
-	InfiltrateForExploration:
-		Types: SpyInfiltrate
-		InfiltratedNotification: RadarSabotaged
-		InfiltrationNotification: BuildingInfiltratedRadarSabotaged
-	Power:
-		Amount: -75
-		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp
 	IsometricSelectable:
 		DecorationHeight: 90
-	Voiced:
-		VoiceSet: RadarVoice
-		Volume: 0.8
 
 mine:
 	Inherits@1: ^SpriteActor

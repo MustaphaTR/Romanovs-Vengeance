@@ -841,6 +841,53 @@
 		VoiceSet: ServiceDepotVoice
 		Volume: 0.8
 
+^Radar:
+	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 60
+		Description: Provides radar.\nProvides a different support power depening on the subfaction.
+		BuildDuration: 750
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 1500
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@radar:
+		Prerequisite: radar
+	Health:
+		HP: 100000
+	Armor:
+		Type: Wood
+	ExternalCondition@disableradar:
+		Condition: disableradar
+	ProvidesRadar:
+		RequiresCondition: !disabled && !chronodisable && !disableradar
+	RevealsShroud:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 10c0
+	SupportPowerChargeBar:
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	InfiltrateForSupportPowerReset:
+		Types: SpyInfiltrate
+	InfiltrateForExploration:
+		Types: SpyInfiltrate
+		InfiltratedNotification: RadarSabotaged
+		InfiltrationNotification: BuildingInfiltratedRadarSabotaged
+	Power:
+		Amount: -75
+		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
+	Voiced:
+		VoiceSet: RadarVoice
+		Volume: 0.8
+
 ^Helipad:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP

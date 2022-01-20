@@ -324,27 +324,17 @@ garefn:
 		DecorationHeight: 60
 
 gaairc:
-	Inherits: ^BaseBuilding
-	Inherits@EMPULSE: ^DisabledByEMP
-	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
-	Inherits@MC: ^MindControllableBuilding
+	Inherits: ^Radar
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
-		BuildPaletteOrder: 60
 		Prerequisites: power, garefn, ~techlevel.2
-		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.
-		BuildDuration: 750
-		BuildDurationModifier: 100
-	Valued:
-		Cost: 1500
+		Description: Provides radar.\nProvides a different support power depening on the subfaction.\n\nProduces Allied aircraft.\nSupports 4 aircraft.
 	Tooltip:
 		Name: Airforce Command Headquarters
 	Tooltip@NoRow:
 		Name: Airforce Command Headquarters
-	ProvidesPrerequisite:
-		Prerequisite: radar
 	ProvidesPrerequisite@production:
 		Prerequisite: production
 	ProvidesPrerequisite@gaairc:
@@ -384,19 +374,6 @@ gaairc:
 	Building:
 		Footprint: x=x x==
 		Dimensions: 3,2
-	Health:
-		HP: 100000
-	Armor:
-		Type: Wood
-	ExternalCondition@disableradar:
-		Condition: disableradar
-	ProvidesRadar:
-		RequiresCondition: !disabled && !chronodisable && !disableradar
-	RevealsShroud:
-		Range: 10c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Types: SatelliteScan
-	#	Range: 10c0
 	WithIdleOverlay@bottom:
 		Sequence: idle-bottom
 		PauseOnCondition: disabled || chronodisable
@@ -417,11 +394,6 @@ gaairc:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
-	Targetable:
-		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
-	Power:
-		Amount: -75
-		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp || infiltrated
 	Reservable:
@@ -501,13 +473,6 @@ gaairc:
 		ProductionType: Aircraft.UK
 	ProductionBar@Korea:
 		ProductionType: Aircraft.Korea
-	InfiltrateForSupportPowerReset:
-		Types: SpyInfiltrate
-	InfiltrateForExploration:
-		Types: SpyInfiltrate
-		InfiltratedNotification: RadarSabotaged
-		InfiltrationNotification: BuildingInfiltratedRadarSabotaged
-	SupportPowerChargeBar:
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
 		PauseOnCondition: disabled || chronodisable
