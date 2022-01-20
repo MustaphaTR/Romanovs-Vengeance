@@ -31,15 +31,10 @@ Flamer:
 FlamerE:
 	Inherits: Flamer
 	Burst: 10
-	Projectile: BulletAS
-		Image: fireballblue
-		TrailImage: fireballblue
 	Warhead@1Dam: SpreadDamage
 		Damage: 1400
 	Warhead@1Gar: OpenToppedDamage
 		Damage: 1400
-	Warhead@3Eff: CreateEffect
-		Explosions: largefireblue
 
 UCFlamer:
 	Inherits: Flamer
@@ -66,16 +61,16 @@ FlamerBlack:
 		Explosions: largefireblue
 
 FlamerBlackE:
-	Inherits: Flamer
+	Inherits: FlamerE
 	Projectile: BulletAS
-		Image: fireballblack
-		TrailImage: fireballblack
+		Image: fireballblue
+		TrailImage: fireballblue
 	Warhead@1Dam: SpreadDamage
 		Damage: 2800
 	Warhead@1Gar: OpenToppedDamage
 		Damage: 2800
 	Warhead@3Eff: CreateEffect
-		Explosions: largefireblack
+		Explosions: largefireblue
 
 UCFlamerBlack:
 	Inherits: FlamerBlack
@@ -181,17 +176,12 @@ TankFlamer:
 TankFlamerE:
 	Inherits: TankFlamer
 	Burst: 20
-	Projectile: BulletAS
-		Image: fireballblue
-		TrailImage: fireballblue
 	Warhead@1Dam: SpreadDamage
 		Damage: 1400
 		Spread: 0c768
 	Warhead@1Gar: OpenToppedDamage
 		Damage: 1400
 		Spread: 0c768
-	Warhead@3Eff: CreateEffect
-		Explosions: largefireblue
 
 TankFlamerBlack:
 	Inherits: TankFlamer
@@ -208,14 +198,14 @@ TankFlamerBlack:
 TankFlamerBlackE:
 	Inherits: TankFlamerE
 	Projectile: BulletAS
-		Image: fireballblack
-		TrailImage: fireballblack
+		Image: fireballblue
+		TrailImage: fireballblue
 	Warhead@1Dam: SpreadDamage
 		Damage: 2800
 	Warhead@1Gar: OpenToppedDamage
 		Damage: 2800
 	Warhead@3Eff: CreateEffect
-		Explosions: largefireblack
+		Explosions: largefireblue
 
 ToxinSprayer:
 	Inherits: Flamer
@@ -1027,7 +1017,7 @@ PsychicJabE:
 	Warhead@1Dam: SpreadDamage
 		Damage: 2000
 	Warhead@2Eff: CreateEffect
-		Explosions: largefireblue
+		Explosions: largefirepink
 
 UCPsychicJab:
 	Inherits: PsychicJab
