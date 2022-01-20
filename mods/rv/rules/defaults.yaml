@@ -515,6 +515,14 @@
 		Condition: advcoolants
 		Prerequisites: upgrade.advanced_coolants
 
+^AffectedByPredatorMissiles:
+	FirepowerMultiplier@PREDATOR_MISSILES:
+		Modifier: 125
+		RequiresCondition: predator_missiles
+	GrantConditionOnPrerequisite@PREDATOR_MISSILES:
+		Condition: predator_missiles
+		Prerequisites: upgrade.predator_missiles
+
 ^AffectedByAdvancedTraining:
 	GainsExperienceMultiplier@ADVTRAINING:
 		Modifier: 150
@@ -598,19 +606,9 @@
 		Condition: apbullets
 		Prerequisites: upgrade.ap_bullets
 
-^AffectedByBlackNapalm:
-	GrantConditionOnPrerequisite@BLACK_NAPALM:
-		Condition: black_napalm
-		Prerequisites: upgrade.black_napalm
-
-^AffectedByPropagandaEffort:
-	GrantConditionOnPrerequisite@PROPEFFORT:
-		Condition: propeffort
-		Prerequisites: upgrade.propaganda_effort
-
 ^AffectedByNuclearEngines:
 	SpeedMultiplier@NUCLEAR_ENGINES:
-		Modifier: 150
+		Modifier: 133
 		RequiresCondition: nuclear_engines
 	Explodes@NUCLEAR_ENGINES:
 		DeathTypes: NonTemporal
@@ -620,6 +618,16 @@
 	GrantConditionOnPrerequisite@NUCLEAR_ENGINES:
 		Condition: nuclear_engines
 		Prerequisites: upgrade.nuclear_engines
+
+^AffectedByBlackNapalm:
+	GrantConditionOnPrerequisite@BLACK_NAPALM:
+		Condition: black_napalm
+		Prerequisites: upgrade.black_napalm
+
+^AffectedByPropagandaEffort:
+	GrantConditionOnPrerequisite@PROPEFFORT:
+		Condition: propeffort
+		Prerequisites: upgrade.propaganda_effort
 
 ^AffectedByOvercharge:
 	GrantConditionOnPrerequisite@OVERCHARGE:
@@ -659,6 +667,14 @@
 		Condition: hiexplosive
 		Prerequisites: upgrade.high_explosive_bombs
 
+^AffectedByUraniumShells:
+	FirepowerMultiplier@URANIUM_SHELLS:
+		Modifier: 125
+		RequiresCondition: uranium_shells
+	GrantConditionOnPrerequisite@URANIUM_SHELLS:
+		Condition: uranium_shells
+		Prerequisites: upgrade.uranium_shells
+
 ^AffectedByGrinderTreads:
 	ChangesHealth@GRINDER_TREADS:
 		Step: 0
@@ -681,11 +697,6 @@
 		Condition: toxinsprayer
 		Prerequisites: upgrade.toxin_sprayer
 
-^AffectedByAutoloaders:
-	GrantConditionOnPrerequisite@AUTOLOADERS:
-		Condition: autoloaders
-		Prerequisites: upgrade.autoloaders
-
 ^AffectedByCamouflage:
 	Cloak@CAMOUFLAGE:
 		RequiresCondition: camouflage && !chronodisable
@@ -698,6 +709,19 @@
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage 
 		Prerequisites: upgrade.camouflage
+
+^AffectedByFocusedMind:
+	ReloadDelayMultiplier@FOCUSED_MIND:
+		Modifier: 80
+		RequiresCondition: focused_mind
+	GrantConditionOnPrerequisite@FOCUSED_MIND:
+		Condition: focused_mind
+		Prerequisites: upgrade.focused_mind
+
+^AffectedByAutoloaders:
+	GrantConditionOnPrerequisite@AUTOLOADERS:
+		Condition: autoloaders
+		Prerequisites: upgrade.autoloaders
 
 ^AffectedByAdvancedMagnetics:
 	GrantConditionOnPrerequisite@ADVMAGNETS:

@@ -376,6 +376,7 @@ orca:
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@PREDATOR: ^AffectedByPredatorMissiles
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
@@ -622,6 +623,8 @@ beag:
 	-Armament@AA:
 	-Armament@EliteAA:
 	-GrantConditionOnPrerequisite@A2AMISSILES:
+	-FirepowerMultiplier@PREDATOR_MISSILES:
+	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
 	WithVoxelBody:
 		-RequiresCondition:
 	-WithVoxelBody@A2A:
@@ -1740,6 +1743,8 @@ bpln:
 	-Armament@AA:
 	-Armament@EliteAA:
 	-GrantConditionOnPrerequisite@A2AMISSILES:
+	-FirepowerMultiplier@PREDATOR_MISSILES:
+	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
 	WithVoxelBody:
 		-RequiresCondition:
 	-WithVoxelBody@A2A:
