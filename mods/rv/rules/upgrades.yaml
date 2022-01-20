@@ -57,7 +57,7 @@ upgrade.predator_missiles:
 	Buildable:
 		Queue: Upgrade.Allies
 		BuildPaletteOrder: 40
-		BuildDuration: 1500
+		BuildDuration: 1000
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
 		Description: Increases harrier damage by 25%.
 	Valued:
@@ -293,7 +293,7 @@ upgrade.overcharge:
 		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.russia, natech, ~techlevel.3
-		Description: Makes Tesla weapons stop enemy vehicles for a short time.
+		Description: Tesla weapons disable enemy vehicles for a short time.
 	Valued:
 		Cost: 2500
 
@@ -306,7 +306,7 @@ upgrade.radioactive_bombs:
 		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.iraq, natech, ~techlevel.3
-		Description: Makes Kirov bombs and V3 and Dreadnought Rockets leave radiation.
+		Description: Kirov bombs, V3 and Dreadnought Rockets will leave radiation.
 	Valued:
 		Cost: 2000
 
@@ -358,9 +358,9 @@ upgrade.uranium_shells:
 		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
-		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nBoth units leave radiation at the target location.
+		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units leave radiation at the target location.
 	Valued:
-		Cost: 2000
+		Cost: 2500
 
 upgrade.grinder_treads:
 	Inherits: ^default.upgrade
@@ -408,11 +408,11 @@ upgrade.focused_mind:
 	Buildable:
 		Queue: Upgrade.Yuri
 		BuildPaletteOrder: 40
-		BuildDuration: 1000
-		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
-		Description: Initiate fire 25% faster.
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
+		Description: Initiates fire 25% faster.
 	Valued:
-		Cost: 1500
+		Cost: 2500
 
 upgrade.autoloaders:
 	Inherits: ^default.upgrade
