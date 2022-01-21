@@ -544,13 +544,26 @@ upgrade.disc_armor:
 	Valued:
 		Cost: 2000
 
+upgrade.lazarus_prime:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Lazarus Prime
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 130
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
+		Description: Stealth Generators can stealth themselves.
+	Valued:
+		Cost: 1000
+
 upgrade.chainguns:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Chainguns
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 130
+		BuildPaletteOrder: 140
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.4
 		Description: Increases Gatling weapon's damage by 25%.

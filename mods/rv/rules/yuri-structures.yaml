@@ -1368,6 +1368,7 @@ yasgen:
 	Inherits: ^SupportBuilding
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@LAZARUSPRIME: ^AffectedByLazarusPrime
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Valued:
@@ -1417,7 +1418,8 @@ yasgen:
 		RequiresCondition: lowpower || powerdown || emp || diskdrain
 	MustBeDestroyed:
 		RequiredForShortGame: false
-	-Cloak@stealth-generator:
+	Cloak@stealth-generator:
+		RequiresCondition: lazarus_prime && !disabled && !chronodisable
 	-ExternalCondition@INVISIBILITY-GENERATOR:
 	RangedGpsDot:
 		Sequence: Structure
