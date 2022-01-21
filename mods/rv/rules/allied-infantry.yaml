@@ -280,6 +280,7 @@ e1:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ENDURANCE: ^AffectedByEnduranceTraining
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@FORTIFICATIONS: ^AffectedByGIFortifications
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
@@ -321,6 +322,17 @@ e1:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
+	Crushable:
+		RequiresCondition: !cheater-ai && !vengeful-ai && (undeployed || !fortifications)
+	Crushable@Cheater:
+		RequiresCondition: cheater-ai && (undeployed || !fortifications)
+	Crushable@Vengeful:
+		RequiresCondition: vengeful-ai && (undeployed || !fortifications)
+	Crushable@deployed:
+		WarnProbability: 0
+		CrushClasses: vehicle
+		CrushSound: igensqua.wav
+		RequiresCondition: !undeployed && fortifications
 	Armament@primary:
 		Weapon: M60
 		PauseOnCondition: chronodisable || webdisable || dogstun

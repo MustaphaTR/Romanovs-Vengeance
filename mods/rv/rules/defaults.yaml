@@ -497,10 +497,13 @@
 	ExternalCondition@BOOST3:
 		Condition: boost3
 
-^AffectedByA2AMissiles:
-	GrantConditionOnPrerequisite@A2AMISSILES:
-		Condition: a2amissiles
-		Prerequisites: upgrade.a2a_missiles
+^AffectedByGIFortifications:
+	DamageMultiplier@FORTIFICATIONS:
+		Modifier: 75
+		RequiresCondition: fortifications && deployed
+	GrantConditionOnPrerequisite@FORTIFICATIONS:
+		Condition: fortifications
+		Prerequisites: upgrade.gi_fortifications
 
 ^AffectedByEnduranceTraining:
 	SpeedMultiplier@ENDURANCE_TRAINING:
@@ -510,18 +513,15 @@
 		Condition: endurance_training
 		Prerequisites: upgrade.endurance_training
 
+^AffectedByA2AMissiles:
+	GrantConditionOnPrerequisite@A2AMISSILES:
+		Condition: a2amissiles
+		Prerequisites: upgrade.a2a_missiles
+
 ^AffectedByAdvancedCoolants:
 	GrantConditionOnPrerequisite@ADVCOOLANTS:
 		Condition: advcoolants
 		Prerequisites: upgrade.advanced_coolants
-
-^AffectedByPredatorMissiles:
-	FirepowerMultiplier@PREDATOR_MISSILES:
-		Modifier: 125
-		RequiresCondition: predator_missiles
-	GrantConditionOnPrerequisite@PREDATOR_MISSILES:
-		Condition: predator_missiles
-		Prerequisites: upgrade.predator_missiles
 
 ^AffectedByAdvancedTraining:
 	GainsExperienceMultiplier@ADVTRAINING:
@@ -530,6 +530,14 @@
 	GrantConditionOnPrerequisite@ADVTRAINING:
 		Condition: advtraining
 		Prerequisites: upgrade.advanced_training
+
+^AffectedByPredatorMissiles:
+	FirepowerMultiplier@PREDATOR_MISSILES:
+		Modifier: 125
+		RequiresCondition: predator_missiles
+	GrantConditionOnPrerequisite@PREDATOR_MISSILES:
+		Condition: predator_missiles
+		Prerequisites: upgrade.predator_missiles
 
 ^AffectedByBoostGlidingSystems:
 	GrantConditionOnPrerequisite@BOOSTGLIDING:

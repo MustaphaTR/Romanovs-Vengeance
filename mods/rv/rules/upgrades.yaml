@@ -11,31 +11,44 @@
 	Valued:
 		Cost: 0
 
-upgrade.a2a_missiles:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Air-to-Air Missile Systems
-	Buildable:
-		Queue: Upgrade.Allies
-		BuildPaletteOrder: 10
-		BuildDuration: 750
-		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
-		Description: Makes Harriers capable of attacking air targets.
-	Valued:
-		Cost: 2000
-
 upgrade.endurance_training:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Endurance Training
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 10
 		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
 		Description: Increases movement speed of G.I.s and Guardian G.I.s by 25%.
 	Valued:
 		Cost: 1000
+
+upgrade.gi_fortifications:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: G.I. Fortifications
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 20
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.allies, gatech, ~techlevel.2
+		Description: G.I.s become uncrushable and take 25% less damage when deployed.
+	Valued:
+		Cost: 2000
+
+upgrade.a2a_missiles:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Air-to-Air Missile Systems
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 30
+		BuildDuration: 750
+		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
+		Description: Makes Harriers capable of attacking air targets.
+	Valued:
+		Cost: 2000
 
 upgrade.advanced_coolants:
 	Inherits: ^default.upgrade
@@ -43,23 +56,10 @@ upgrade.advanced_coolants:
 		Name: Advanced Coolants
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 30
+		BuildPaletteOrder: 40
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
 		Description: Double power output of all Power Plants.
-	Valued:
-		Cost: 1500
-
-upgrade.predator_missiles:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Predator Missiles
-	Buildable:
-		Queue: Upgrade.Allies
-		BuildPaletteOrder: 40
-		BuildDuration: 1000
-		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
-		Description: Increases harrier damage by 25%.
 	Valued:
 		Cost: 1500
 
@@ -76,13 +76,26 @@ upgrade.advanced_training:
 	Valued:
 		Cost: 1500
 
+upgrade.predator_missiles:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Predator Missiles
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 60
+		BuildDuration: 1000
+		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
+		Description: Increases harrier damage by 25%.
+	Valued:
+		Cost: 1500
+
 upgrade.composite_armor:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Composite Armor
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
 		Description: Reduces damage taken by following units by 25%:\n - Grizzly Tank\n - Mirage Tank\n - Tank Destroyer
@@ -95,7 +108,7 @@ upgrade.boost_gliding_systems:
 		Name: Boost-Gliding Systems
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.america, gatech, ~techlevel.3
 		Description: Increases projectile speed and damage of following units by 25%.\n - Patriot Missile System\n - Guardian G.I.\n - Infantry Fighting Vehicle\n - Aegis Cruiser
@@ -108,7 +121,7 @@ upgrade.high_caliber_rounds:
 		Name: High Caliber Rounds
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		BuildDuration: 1500
 		Prerequisites: ~disabled # ~upgrade.england, gatech, ~techlevel.3
 		Description: Enables Snipers to damage vehicles and kill gunners to disable them from firing for a while.
@@ -121,7 +134,7 @@ upgrade.portable_weaponry:
 		Name: Portable Weaponry
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.england, gatech, ~techlevel.3
 		Description: Makes G.I. and Guardian G.I.s use their deployed weapon while undeployed too.\nWhile deployed they fire 25% faster.
@@ -134,7 +147,7 @@ upgrade.grand_cannon_protocols:
 		Name: Grand Cannon Protocols
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.france, gatech, ~techlevel.3
 		Description: Enables construction of Grand Cannon from Construction Yard.
@@ -147,7 +160,7 @@ upgrade.advanced_gun_systems:
 		Name: Advanced Gun Systems
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.germany, gatech, ~techlevel.3
 		Description: Increases range of Grizzly Tank and Tank Destroyer by 25%.
@@ -160,7 +173,7 @@ upgrade.emp_munitions:
 		Name: EMP Munitions
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.korea, gatech, ~techlevel.3
 		Description: Arms Grenadiers and Howitzers with EMP munitions which disable vehicles.
@@ -173,7 +186,7 @@ upgrade.increased_payload:
 		Name: Increased Payload
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 120
+		BuildPaletteOrder: 130
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.4
 		Description: Doubles maximum ammo B2 Spirits can carry to 10.
