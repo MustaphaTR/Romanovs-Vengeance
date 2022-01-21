@@ -190,6 +190,7 @@ shadhusk:
 
 zep:
 	Inherits: ^Helicopter
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
@@ -253,10 +254,16 @@ zep:
 		RequiresCondition: rank-elite && !radbombs
 	Armament@rad:
 		Weapon: BlimpBombRad
-		RequiresCondition: !rank-elite && radbombs
+		RequiresCondition: !rank-elite && radbombs && !advirrad
 	Armament@eliterad:
 		Weapon: BlimpBombRadE
-		RequiresCondition: rank-elite && radbombs
+		RequiresCondition: rank-elite && radbombs && !advirrad
+	Armament@rad-orange:
+		Weapon: BlimpBombRadOrange
+		RequiresCondition: !rank-elite && radbombs && advirrad
+	Armament@eliterad-orange:
+		Weapon: BlimpBombRadOrangeE
+		RequiresCondition: rank-elite && radbombs && advirrad
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
@@ -1063,9 +1070,15 @@ pdplane.cluster_mines:
 
 pdplane.fallout_bomb:
 	Inherits: pdplane
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Armament:
 		Weapon: FalloutBomb
 		PauseOnCondition: !ammo
+		RequiresCondition: !advirrad
+	Armament@Orange:
+		Weapon: FalloutBombOrange
+		PauseOnCondition: !ammo
+		RequiresCondition: advirrad
 	AmmoPool:
 		Ammo: 1
 		AmmoCondition: ammo

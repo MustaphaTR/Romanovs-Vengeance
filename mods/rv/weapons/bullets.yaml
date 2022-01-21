@@ -358,6 +358,16 @@ ATGUNAutoE:
 		Falloff: 100, 100
 		Level: 100
 
+120mmUOrange:
+	Inherits: 120mmU
+	Warhead@5Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
+120mmUOrangeE:
+	Inherits: 120mmUE
+	Warhead@5Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
 120mmx:
 	Inherits: 120mm
 	ReloadDelay: 65
@@ -406,6 +416,16 @@ ATGUNAutoE:
 		Falloff: 100, 100
 		Level: 100
 
+120mmxUOrange:
+	Inherits: 120mmxU
+	Warhead@5Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
+120mmxUOrangeE:
+	Inherits: 120mmxUE
+	Warhead@5Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
 120mmxRad:
 	Inherits: 120mmx
 	ReloadDelay: 65
@@ -440,6 +460,20 @@ ATGUNAutoE:
 		ImpactSounds: gexpwala.wav
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
+
+120mmxRadOrange:
+	Inherits: 120mmxRad
+	Warhead@2Eff: CreateEffect
+		Explosions: devastator_explosion_orange
+	Warhead@5Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
+120mmxRadOrangeE:
+	Inherits: 120mmxRadE
+	Warhead@2Eff: CreateEffect
+		Explosions: devastator_explosion_orange
+	Warhead@5Radiation: CreateTintedCells
+		LayerName: radioactivityorange
 
 155mm:
 	Inherits: ^LargeBullet

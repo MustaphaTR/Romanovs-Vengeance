@@ -610,6 +610,7 @@ terror:
 
 deso:
 	Inherits: ^Infantry
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -669,35 +670,68 @@ deso:
 		Weapon: RadBeamWeapon
 		LocalOffset: 320,-128,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !advirrad
 	Armament@elite:
 		Weapon: RadBeamWeaponE
 		LocalOffset: 320,-128,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !advirrad
+	Armament@primary-orange:
+		Weapon: RadBeamWeaponOrange
+		LocalOffset: 320,-128,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && advirrad
+	Armament@elitey-orange:
+		Weapon: RadBeamWeaponOrangeE
+		LocalOffset: 320,-128,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && advirrad
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: RadBeamWeapon
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !advirrad
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: RadBeamWeaponE
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !advirrad
+	Armament@opentopped-orange:
+		Name: opentopped
+		Weapon: RadBeamWeaponOrange
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && advirrad
+	Armament@elite-opentopped-orange:
+		Name: opentopped
+		Weapon: RadBeamWeaponOrangeE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && advirrad
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCRadBeamWeapon
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !advirrad
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCRadBeamWeaponE
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !advirrad
+	Armament@garrisoned-orange:
+		Name: garrisoned
+		Weapon: UCRadBeamWeaponOrange
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && advirrad
+	Armament@elite-garrisoned-orange:
+		Name: garrisoned
+		Weapon: UCRadBeamWeaponOrangeE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && advirrad
 	PeriodicExplosion@deploy:
 		Weapon: RadEruptionWeapon
-		RequiresCondition: deployed && !chronodisable
+		RequiresCondition: deployed && !chronodisable && !advirrad
+	PeriodicExplosion@deployorange:
+		Weapon: RadEruptionWeaponOrange
+		RequiresCondition: deployed && !chronodisable && advirrad
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -740,6 +774,7 @@ deso:
 		Sequence: stand
 	-TakeCover:
 	-DamagedByTintedCells:
+	-DamagedByTintedCells@ORANGE:
 
 ivan:
 	Inherits: ^Infantry

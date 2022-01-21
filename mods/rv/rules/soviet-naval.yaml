@@ -361,6 +361,7 @@ dred:
 
 dmisl:
 	Inherits: ^ShootableMissile
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Valued:
 		Cost: 50
@@ -397,11 +398,19 @@ dmisl:
 	SpawnedExplodes@Rad:
 		Weapon: DredWeaponRad
 		EmptyWeapon: DredWeaponRad
-		RequiresCondition: !airborne && radbombs && !rank-elite
+		RequiresCondition: !airborne && radbombs && !advirrad && !rank-elite
 	SpawnedExplodes@EliteRad:
 		Weapon: DredWeaponRadE
 		EmptyWeapon: DredWeaponRadE
-		RequiresCondition: !airborne && radbombs && rank-elite
+		RequiresCondition: !airborne && radbombs && !advirrad && rank-elite
+	SpawnedExplodes@RadOrange:
+		Weapon: DredWeaponRadOrange
+		EmptyWeapon: DredWeaponRadOrange
+		RequiresCondition: !airborne && radbombs && advirrad && !rank-elite
+	SpawnedExplodes@EliteRadOrange:
+		Weapon: DredWeaponRadOrangeE
+		EmptyWeapon: DredWeaponRadOrangeE
+		RequiresCondition: !airborne && radbombs && advirrad && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode

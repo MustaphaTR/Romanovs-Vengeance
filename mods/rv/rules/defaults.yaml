@@ -615,6 +615,7 @@
 		Prerequisites: upgrade.ap_bullets
 
 ^AffectedByNuclearEngines:
+	Inherits: ^AffectedByAdvancedIrradiators
 	SpeedMultiplier@NUCLEAR_ENGINES:
 		Modifier: 133
 		RequiresCondition: nuclear_engines
@@ -622,10 +623,20 @@
 		DeathTypes: NonTemporal
 		Weapon: NuclearEngineExplode
 		EmptyWeapon: NuclearEngineExplode
-		RequiresCondition: nuclear_engines
+		RequiresCondition: nuclear_engines && !advirrad
+	Explodes@NUCLEAR_ENGINES_ORANGE:
+		DeathTypes: NonTemporal
+		Weapon: NuclearEngineExplodeOrange
+		EmptyWeapon: NuclearEngineExplodeOrange
+		RequiresCondition: nuclear_engines && advirrad
 	GrantConditionOnPrerequisite@NUCLEAR_ENGINES:
 		Condition: nuclear_engines
 		Prerequisites: upgrade.nuclear_engines
+
+^AffectedByAdvancedIrradiators:
+	GrantConditionOnPrerequisite@ADVIRRAD:
+		Condition: advirrad
+		Prerequisites: upgrade.advanced_irradiators
 
 ^AffectedByBlackNapalm:
 	GrantConditionOnPrerequisite@BLACK_NAPALM:
@@ -843,16 +854,31 @@
 		Damage: 100
 		DamageLevel: 10
 		DamageTypes: RadiationDeath, NonTemporal
+	DamagedByTintedCells@ORANGE:
+		LayerName: radioactivityorange
+		Damage: 150
+		DamageLevel: 10
+		DamageTypes: RadiationDeath, NonTemporal
 
 ^DamagedByRadiation50Percent:
 	DamagedByTintedCells:
 		Damage: 50
 		DamageLevel: 10
 		DamageTypes: RadiationDeath, NonTemporal
+	DamagedByTintedCells@ORANGE:
+		LayerName: radioactivityorange
+		Damage: 75
+		DamageLevel: 10
+		DamageTypes: RadiationDeath, NonTemporal
 
 ^DamagedByRadiation10Percent:
 	DamagedByTintedCells:
 		Damage: 10
+		DamageLevel: 10
+		DamageTypes: RadiationDeath, NonTemporal
+	DamagedByTintedCells@ORANGE:
+		LayerName: radioactivityorange
+		Damage: 15
 		DamageLevel: 10
 		DamageTypes: RadiationDeath, NonTemporal
 

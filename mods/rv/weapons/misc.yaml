@@ -633,6 +633,13 @@ RadEruptionWeapon:
 		Amount: 6
 		AffectsParent: true
 
+RadEruptionWeaponOrange:
+	Inherits: RadEruptionWeapon
+	Warhead@1Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+	Warhead@2RadiationUmbrella: FireRadius
+		Weapon: RadiationUmbrellaOrange
+
 RadiationUmbrella:
 	ReloadDelay: 1
 	Range: 6c0
@@ -642,6 +649,11 @@ RadiationUmbrella:
 		Color: 00FF00
 	ValidTargets: Ground, Water, Air
 	Warhead@TargetValidation: SpreadDamage
+
+RadiationUmbrellaOrange:
+	Inherits: RadiationUmbrella
+	Projectile: ArcLaserZap
+		Color: FF7F00
 
 WeatherStormInit:
 	Projectile: InstantExplode

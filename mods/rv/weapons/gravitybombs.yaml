@@ -70,6 +70,18 @@ BlimpBombRadE:
 		Level: 750
 		MaxLevel: 750
 
+BlimpBombRadOrange:
+	Inherits: BlimpBombRad
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@4Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
+BlimpBombRadOrangeE:
+	Inherits: BlimpBombRadE
+	Warhead@4Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
 NapalmBomb:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 50
@@ -419,6 +431,13 @@ FalloutBomb:
 		MaxLevel: 1500
 	Warhead@5Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
+
+FalloutBombOrange:
+	Inherits: FalloutBomb
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@4Radiation: CreateTintedCells
+		LayerName: radioactivityorange
 
 MutatorBomb:
 	ReloadDelay: 10

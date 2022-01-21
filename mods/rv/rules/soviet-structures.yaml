@@ -408,16 +408,23 @@ naradr:
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.iraq
+			2: upgrade.advanced_irradiators
 		Icons:
 			1: radmissile
+			2: radmissile
 		ChargeInterval: 6000
 		Descriptions:
 			1: Radiation Missile
+			2: Radiation Missile
 		LongDescs:
 			1: Fires a missile that deals low damage\nand leaves radiation.
+			2: Fires a missile that deals low damage\nand leaves radiation.
 		LaunchSound: sradlaun.wav
 		SelectTargetSpeechNotification: SelectTarget
-		MissileWeapon: RadiationMissile
+		MissileWeapons:
+			1: RadiationMissile
+			2: RadiationMissileOrange
+		MissileImage: RadiationMissile
 		MissilePalette: player
 		IsPlayerPalette: true
 		CameraRange: 8c0
@@ -427,6 +434,7 @@ naradr:
 		DisplayBeacon: True
 		BeaconPosters:
 			1: radmicon
+			2: radmicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		TrailInterval: 0
@@ -434,6 +442,7 @@ naradr:
 		TrailSequences: idle
 		CircleRanges:
 			1: 4c0
+			2: 4c0
 		CircleColor: FFFFFFFF
 		CircleBorderColor: 00000060
 	DetonateWeaponPower@instanbunker:
@@ -892,6 +901,7 @@ naheli:
 
 nanrct:
 	Inherits: ^PowerPlant
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@SHAPE: ^4x4Shape
 	Buildable:
 		Queue: Building.Soviets
@@ -919,6 +929,12 @@ nanrct:
 		Type: CenterPosition
 		Weapon: NukePayload
 		EmptyWeapon: NukePayload
+		RequiresCondition: !advirrad
+	Explodes@Orange:
+		Type: CenterPosition
+		Weapon: NukePayloadOrange
+		EmptyWeapon: NukePayloadOrange
+		RequiresCondition: advirrad
 	Power:
 		Amount: 1000
 	IsometricSelectable:
@@ -1179,14 +1195,18 @@ namisl:
 	NukePower:
 		Prerequisites:
 			1: namisl
+			2: upgrade.advanced_irradiators
 		Cursor: nuke
 		Icons:
 			1: abomb
+			2: abomb
 		ChargeInterval: 9000
 		Descriptions:
 			1: Nuclear Missile
+			2: Nuclear Missile
 		LongDescs:
 			1: Launches a devastating nuclear missile\nat a target location.
+			2: Launches a devastating nuclear missile\nat a target location.
 		AllowMultiple: true
 		EndChargeSound: snukread.wav
 		LaunchSound: snuklaun.wav
@@ -1194,7 +1214,10 @@ namisl:
 		EndChargeSpeechNotification: NuclearMissileReady
 		LaunchSpeechNotification: NuclearMissileLaunched
 		IncomingSpeechNotification: NuclearMissileLaunched
-		MissileWeapon: atomic
+		MissileWeapons:
+			1: atomic
+			2: atomicOrange
+		MissileImage: atomic
 		MissilePalette: player
 		SpawnOffset: 0,0,-1c0
 		IsPlayerPalette: true
@@ -1203,6 +1226,7 @@ namisl:
 		DisplayRadarPing: True
 		BeaconPosters:
 			1: nukeicon
+			2: nukeicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		CameraRange: 10c0
@@ -1215,6 +1239,7 @@ namisl:
 		TrailSequences: idle
 		CircleRanges:
 			1: 10c0
+			2: 10c0
 		CircleColor: FFFFFFFF
 		CircleBorderColor: 00000060
 	ProvidesPrerequisite@swlimit:

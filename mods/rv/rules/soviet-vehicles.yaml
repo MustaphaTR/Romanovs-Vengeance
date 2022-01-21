@@ -362,14 +362,28 @@ htnk:
 		RecoilRecovery: 12
 		LocalOffset: 896,0,640
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite && uranium_shells
+		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	Armament@elite-uranium:
 		Weapon: 120mmUE
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 896,0,640
 		MuzzleSequence: muzzle-2
-		RequiresCondition: rank-elite && uranium_shells
+		RequiresCondition: rank-elite && uranium_shells && !advirrad
+	Armament@primary-uranium-orange:
+		Weapon: 120mmUOrange
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 896,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite && uranium_shells && advirrad
+	Armament@elite-uranium:
+		Weapon: 120mmUOrangeE
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 896,0,640
+		MuzzleSequence: muzzle-2
+		RequiresCondition: rank-elite && uranium_shells && advirrad
 	WithVoxelBody:
 		RequiresCondition: !nuclear_engines
 	WithVoxelBody@NUCLEAR_ENGINES:
@@ -485,7 +499,7 @@ apoc:
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle
 		LocalOffset: 1280,-100,768
-		RequiresCondition: !rank-elite && uranium_shells
+		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	Armament@primary2-uranium:
 		Name: primary2
 		Weapon: 120mmxU
@@ -494,14 +508,14 @@ apoc:
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle
 		LocalOffset: 1280,100,768
-		RequiresCondition: !rank-elite && uranium_shells
+		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	Armament@elite-uranium:
 		Weapon: 120mmxUE
 		Recoil: 87
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle-2
 		LocalOffset: 1280,-100,768
-		RequiresCondition: rank-elite && uranium_shells
+		RequiresCondition: rank-elite && uranium_shells && !advirrad
 	Armament@elite2-uranium:
 		Name: primary2
 		Weapon: 120mmxUE
@@ -510,7 +524,39 @@ apoc:
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle-2
 		LocalOffset: 1280,100,768
-		RequiresCondition: rank-elite && uranium_shells
+		RequiresCondition: rank-elite && uranium_shells && !advirrad
+	Armament@primary-uranium-orange:
+		Weapon: 120mmxUOrange
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle
+		LocalOffset: 1280,-100,768
+		RequiresCondition: !rank-elite && uranium_shells && advirrad
+	Armament@primary2-uranium-orange:
+		Name: primary2
+		Weapon: 120mmxUOrange
+		FireDelay: 5
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle
+		LocalOffset: 1280,100,768
+		RequiresCondition: !rank-elite && uranium_shells && advirrad
+	Armament@elite-uranium-orange:
+		Weapon: 120mmxUOrangeE
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle-2
+		LocalOffset: 1280,-100,768
+		RequiresCondition: rank-elite && uranium_shells && advirrad
+	Armament@elite2-uranium-orange:
+		Name: primary2
+		Weapon: 120mmxUOrangeE
+		FireDelay: 5
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle-2
+		LocalOffset: 1280,100,768
+		RequiresCondition: rank-elite && uranium_shells && advirrad
 	Armament@antiair:
 		Weapon: MammothTusk
 		LocalOffset: 80,200,768, 80,-200,768
@@ -654,6 +700,7 @@ ttnk:
 
 dtruck:
 	Inherits: ^Vehicle
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
@@ -696,6 +743,11 @@ dtruck:
 	Explodes:
 		Weapon: demobomb
 		EmptyWeapon: demobomb
+		RequiresCondition: !advirrad
+	Explodes@Orange:
+		Weapon: demobombOrange
+		EmptyWeapon: demobombOrange
+		RequiresCondition: advirrad
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 128
@@ -850,6 +902,7 @@ m3:
 
 v3rocket:
 	Inherits: ^ShootableMissile
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Valued:
 		Cost: 50
@@ -887,11 +940,19 @@ v3rocket:
 	SpawnedExplodes@Rad:
 		Weapon: V3WeaponRad
 		EmptyWeapon: V3WeaponRad
-		RequiresCondition: !airborne && radbombs && !rank-elite
+		RequiresCondition: !airborne && radbombs && !advirrad && !rank-elite
 	SpawnedExplodes@EliteRad:
 		Weapon: V3WeaponRadE
 		EmptyWeapon: V3WeaponRadE
-		RequiresCondition: !airborne && radbombs && rank-elite
+		RequiresCondition: !airborne && radbombs && !advirrad && rank-elite
+	SpawnedExplodes@RadOrange:
+		Weapon: V3WeaponRadOrange
+		EmptyWeapon: V3WeaponRadOrange
+		RequiresCondition: !airborne && radbombs && advirrad && !rank-elite
+	SpawnedExplodes@EliteRadOrange:
+		Weapon: V3WeaponRadOrangeE
+		EmptyWeapon: V3WeaponRadOrangeE
+		RequiresCondition: !airborne && radbombs && advirrad && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
@@ -1013,6 +1074,7 @@ tric:
 
 deva:
 	Inherits: ^Vehicle
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1067,12 +1129,22 @@ deva:
 		Weapon: 120mmxRad
 		LocalOffset: 896,100,768, 896,-100,768
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !advirrad
 	Armament@elite:
 		Weapon: 120mmxRadE
 		LocalOffset: 896,100,768, 896,-100,768
 		MuzzleSequence: muzzle-2
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !advirrad
+	Armament@primary-orange:
+		Weapon: 120mmxRadOrange
+		LocalOffset: 896,100,768, 896,-100,768
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite && advirrad
+	Armament@elite-orange:
+		Weapon: 120mmxRadOrangeE
+		LocalOffset: 896,100,768, 896,-100,768
+		MuzzleSequence: muzzle-2
+		RequiresCondition: rank-elite && advirrad
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -1090,11 +1162,19 @@ deva:
 	Explodes:
 		Weapon: DevastatorExplosion
 		EmptyWeapon: DevastatorExplosion
-		RequiresCondition: !meltdown
+		RequiresCondition: !meltdown && !advirrad
+	Explodes@ORANGE:
+		Weapon: DevastatorExplosionOrange
+		EmptyWeapon: DevastatorExplosionOrange
+		RequiresCondition: !meltdown && advirrad
 	Explodes@OVERLOAD:
 		Weapon: demobomb
 		EmptyWeapon: demobomb
-		RequiresCondition: meltdown
+		RequiresCondition: meltdown && !advirrad
+	Explodes@OVERLOADORANGE:
+		Weapon: demobombOrange
+		EmptyWeapon: demobombOrange
+		RequiresCondition: meltdown && advirrad
 	GrantConditionOnDeploy@REACTOR:
 		Voice: Attack
 		DeployedCondition: overload

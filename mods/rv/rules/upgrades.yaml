@@ -271,13 +271,26 @@ upgrade.nuclear_engines:
 	Valued:
 		Cost: 2000
 
+upgrade.advanced_irradiators:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Advanced Irradiators
+	Buildable:
+		Queue: Upgrade.Soviets
+		BuildPaletteOrder: 60
+		BuildDuration: 1000
+		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
+		Description: Increases damage from radiation by 50%.
+	Valued:
+		Cost: 1500
+
 upgrade.black_napalm:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Black Napalm
 	Buildable:
 		Queue: Upgrade.Soviets
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
 		Description: Flame Tanks and Black Kites use Black Napalm, which deals double the damage.
@@ -290,7 +303,7 @@ upgrade.propaganda_effort:
 		Name: Propaganda Effort
 	Buildable:
 		Queue: Upgrade.Baku
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		BuildDuration: 750
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
 		Description: Increases effectiveness of Propaganda Towers and Propaganda Commander's Power by 25%.
@@ -303,7 +316,7 @@ upgrade.overcharge:
 		Name: Overcharge
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.russia, natech, ~techlevel.3
 		Description: Tesla weapons disable enemy vehicles for a short time.
@@ -316,7 +329,7 @@ upgrade.radioactive_bombs:
 		Name: Radioactive Warheads
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.iraq, natech, ~techlevel.3
 		Description: Kirov bombs, V3 and Dreadnought Rockets will leave radiation.
@@ -329,7 +342,7 @@ upgrade.aerial_propaganda:
 		Name: Aerial Propaganda
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.vietnam, natech, ~techlevel.3
 		Description: Gives Black Kites and Kirov Airships speakers that buff nearby units.
@@ -342,7 +355,7 @@ upgrade.targeted_explosives:
 		Name: Targeted Explosives
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.cuba, natech, ~techlevel.3
 		Description: Explosions from Terrorists, Death Bombs and Crazy Ivans when they die no longer damage friendly units.\nIncreases Terrorist and Death Bombs area of effect by 50%.
@@ -355,7 +368,7 @@ upgrade.high_explosive_bombs:
 		Name: High Explosive Bombs
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.libya, natech, ~techlevel.3
 		Description: Increases the damage of following units by 25%:\n - Crazy Ivan\n - Chrono Ivan\n - Mortar Cycle\n - Demolition Truck\n - V3 Launcher\n - Dreadnought
@@ -368,7 +381,7 @@ upgrade.uranium_shells:
 		Name: Uranium Shells
 	Buildable:
 		Queue: Upgrade.Soviets
-		BuildPaletteOrder: 120
+		BuildPaletteOrder: 130
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
 		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units leave radiation at the target location.

@@ -225,10 +225,17 @@ NuclearEngineExplode:
 			Medium: 20
 			Heavy: 20
 	-Warhead@2Eff:
-	Warhead@4Radiation: CreateTintedCells
+	Warhead@3Radiation: CreateTintedCells
 		Spread: 2c0
 		Falloff: 100, 100
 		Level: 100
+
+NuclearEngineExplodeOrange:
+	Inherits: NuclearEngineExplode
+	Warhead@1Eff: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@3Radiation: CreateTintedCells
+		LayerName: radioactivityorange
 
 PlaneExplode:
 	Inherits: KirovExplode
@@ -490,6 +497,11 @@ DevastatorExplosion:
 	Warhead@3Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
 
+DevastatorExplosionOrange:
+	Inherits: DevastatorExplosion
+	Warhead@4Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
 NukePayload:
 	Inherits@1: ^BreakPointDefenseDrones
 	ValidTargets: Ground, Water
@@ -524,6 +536,11 @@ NukePayload:
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: LargeCrater, LargeScorch
 
+NukePayloadOrange:
+	Inherits: NukePayload
+	Warhead@3Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
 atomic:
 	Inherits: NukePayload
 	ValidTargets: Ground, Water, Air
@@ -549,6 +566,11 @@ atomic:
 		Intensity: 5
 		Multiplier: 1,1
 
+atomicOrange:
+	Inherits: atomic
+	Warhead@3Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
 demobomb:
 	Inherits: NukePayload
 	ValidTargets: Ground, Water
@@ -572,6 +594,13 @@ demobomb:
 		Level: 100
 	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
+
+demobombOrange:
+	Inherits: demobomb
+	Warhead@2Eff_impact: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@3Radiation: CreateTintedCells
+		LayerName: radioactivityorange
 
 ClusterMissile:
 	Warhead@Cluster: FireCluster
@@ -687,6 +716,20 @@ V3WeaponRadE:
 		Level: 750
 		MaxLevel: 750
 
+V3WeaponRadOrange:
+	Inherits: V3WeaponRad
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@4Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
+V3WeaponRadOrangeE:
+	Inherits: V3WeaponRadE
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@4Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
 DredWeapon:
 	Inherits: V3Weapon
 	Warhead@1Dam: SpreadDamage
@@ -716,6 +759,20 @@ DredWeaponRadE:
 		Falloff: 100, 100
 		Level: 750
 		MaxLevel: 750
+
+DredWeaponRadOrange:
+	Inherits: DredWeaponRad
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@4Radiation: CreateTintedCells
+		LayerName: radioactivityorange
+
+DredWeaponRadOrangeE:
+	Inherits: DredWeaponRadE
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@4Radiation: CreateTintedCells
+		LayerName: radioactivityorange
 
 CruiseWeapon:
 	Inherits: DredWeapon
@@ -750,13 +807,20 @@ RadiationMissile:
 	Warhead@2Eff: CreateEffect
 		Explosions: demotruck_explosion
 		ImpactSounds: vdemdiea.wav
-	Warhead@4Radiation: CreateTintedCells
+	Warhead@3Radiation: CreateTintedCells
 		Spread: 4c0
 		Falloff: 100, 100
 		Level: 1500
 		MaxLevel: 1500
-	Warhead@5Smu: LeaveSmudge
+	Warhead@4Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
+
+RadiationMissileOrange:
+	Inherits: RadiationMissile
+	Warhead@2Eff: CreateEffect
+		Explosions: demotruck_explosion_orange
+	Warhead@3Radiation: CreateTintedCells
+		LayerName: radioactivityorange
 
 MineExplosion:
 	Inherits@1: ^BreakPointDefenseDrones
