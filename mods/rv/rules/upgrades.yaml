@@ -427,13 +427,26 @@ upgrade.autoloaders:
 	Valued:
 		Cost: 1500
 
+upgrade.rocket_barrage:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Rocket Barrage
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 60
+		BuildDuration: 1000
+		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
+		Description: Lethocerus Platforms can fire 6 missiles quickly before needing to reload.
+	Valued:
+		Cost: 1500
+
 upgrade.advanced_magnetics:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Advanced Magnetics
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 70
 		BuildDuration: 750
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
 		Description: Magnetrons now deal 25% more damage, 50% of their damage to vehicles and gain more attack range.
@@ -446,7 +459,7 @@ upgrade.chaos_tank_compensators:
 		Name: Chaos Tank Compensators
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psicorps, yatech, ~techlevel.3
 		Description: Vehicles emit chaos gas when they are destroyed.\nIncreases area of effect of Chaos Drones.
@@ -459,7 +472,7 @@ upgrade.laser_capacitors:
 		Name: Laser Capacitors
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 90
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psinepal, yatech, ~techlevel.3
 		Description: Replaces Lasher Tank's weapon with a laser cannon.\nIncreases damage output of Lazarus Tanks and Leech Discs by 25%.
@@ -472,7 +485,7 @@ upgrade.mastery_of_mind:
 		Name: Mastery of Mind
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 100
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psisouth, yatech, ~techlevel.3
 		Description: Enables Yuri Clones and Masterminds to use Psi-Waves.\nMakes Psi-Wave weapons not effect friendly units and damage vehicles. # \nYuri Clone and Yuri Prime can control 2 assets at the same time.
@@ -485,7 +498,7 @@ upgrade.dna_boosters:
 		Name: DNA Boosters
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psitrans, yatech, ~techlevel.3
 		Description: Enables Genetic Mutator ability.\nIncreases movement speed of the following units by 33%:\n - Brute\n - Mutant Tarantula\n - Mutant Crab
@@ -498,7 +511,7 @@ upgrade.disc_armor:
 		Name: Disc Armor
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psimoon, yatech, ~techlevel.3
 		Description: Reduces damage taken by Discs by 33%. 
@@ -511,7 +524,7 @@ upgrade.chainguns:
 		Name: Chainguns
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 120
+		BuildPaletteOrder: 130
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.4
 		Description: Increases Gatling weapon's damage by 25%.

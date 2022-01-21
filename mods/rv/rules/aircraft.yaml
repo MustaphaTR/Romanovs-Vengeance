@@ -2457,8 +2457,9 @@ txdx:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@ROCKETBARRAGE: ^AffectedByRocketBarrage
 	BodyOrientation:
 		QuantizedFacings: 1
 	DamagedByTintedCells:
@@ -2506,14 +2507,48 @@ txdx:
 		RenderOnGround: true
 	Armament@primary:
 		Weapon: MosquitoMissile
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !rocket_barrage
 	Armament@elite:
 		Weapon: MosquitoMissileE
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !rocket_barrage
+	Armament@primary-ammo:
+		Name: barrage
+		Weapon: MosquitoBarrage
+		LocalOffset: 0,384,0, 384,0,0, 0,0,0, 0,-384,0, -384,0,0
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite && rocket_barrage
+	Armament@elite-ammo:
+		Name: barrage
+		Weapon: MosquitoBarrageE
+		PauseOnCondition: !ammo
+		LocalOffset: 0,384,0, 384,0,0, 0,0,0, 0,-384,0, -384,0,0
+		RequiresCondition: rank-elite && rocket_barrage
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
 		FacingTolerance: 128
+		Armaments: primary, barrage
+		PauseOnCondition: emp || magnefreeze || chronodisable
+	AmmoPool:
+		Ammo: 6
+		Armaments: barrage
+		AmmoCondition: ammo
+	ReloadAmmoPool:
+		Count: 2
+		Delay: 60
+		RequiresCondition: !rank-elite
+	ReloadAmmoPool@elite:
+		Count: 2
+		Delay: 30
+		RequiresCondition: rank-elite
+	WithAmmoPipsDecoration:
+		Margin: 4, 9
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		RequiresCondition: rocket_barrage
 	Voiced:
 		VoiceSet: FloatingDiskVoice
 	RenderSprites:
