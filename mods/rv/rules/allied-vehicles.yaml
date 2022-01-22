@@ -1783,6 +1783,7 @@ hwtz:
 ctnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -1824,19 +1825,35 @@ ctnk:
 	Armament@PRIMARY:
 		Weapon: APTusk
 		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !boostgliding
 	Armament@SECONDARY:
 		Weapon: APTusk
 		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !boostgliding
 	Armament@PRIMARY_ELITE:
 		Weapon: APTuskE
 		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !boostgliding
 	Armament@SECONDARY_ELITE:
 		Weapon: APTuskE
 		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !boostgliding
+	Armament@PRIMARY_BOOST:
+		Weapon: APTuskBoosted
+		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
+		RequiresCondition: !rank-elite && boostgliding
+	Armament@SECONDARY_BOOST:
+		Weapon: APTuskBoosted
+		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
+		RequiresCondition: !rank-elite && boostgliding
+	Armament@PRIMARY_ELITE_BOOST:
+		Weapon: APTuskBoostedE
+		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
+		RequiresCondition: rank-elite && boostgliding
+	Armament@SECONDARY_ELITE_BOOST:
+		Weapon: APTuskBoostedE
+		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
+		RequiresCondition: rank-elite && boostgliding
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2

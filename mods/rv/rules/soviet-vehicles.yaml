@@ -388,7 +388,18 @@ htnk:
 		RequiresCondition: !nuclear_engines
 	WithVoxelBody@NUCLEAR_ENGINES:
 		Sequence: idle-nuke
-		RequiresCondition: nuclear_engines
+		RequiresCondition: nuclear_engines && !advirrad
+	WithVoxelBody@NUCLEAR_ENGINES_ORANGE:
+		Sequence: idle-nuke-orange
+		RequiresCondition: nuclear_engines && advirrad
+	WithVoxelBarrel:
+		RequiresCondition: !uranium_shells
+	WithVoxelBarrel@URANIUM_SHELLS:
+		Sequence: barrel-uranium
+		RequiresCondition: uranium_shells && !advirrad
+	WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
+		Sequence: barrel-uranium-orange
+		RequiresCondition: uranium_shells && advirrad
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	RenderVoxels:
@@ -580,12 +591,31 @@ apoc:
 		RequiresCondition: !nuclear_engines
 	WithVoxelBody@NUCLEAR_ENGINES:
 		Sequence: idle-nuke
-		RequiresCondition: nuclear_engines
+		RequiresCondition: nuclear_engines && !advirrad
+	WithVoxelBody@NUCLEAR_ENGINES_ORANGE:
+		Sequence: idle-nuke-orange
+		RequiresCondition: nuclear_engines && advirrad
 	WithVoxelTurret:
 	WithVoxelBarrel:
+		RequiresCondition: !uranium_shells
 	WithVoxelBarrel@2:
 		Sequence: barrel2
 		Armament: primary2
+		RequiresCondition: !uranium_shells
+	WithVoxelBarrel@URANIUM_SHELLS:
+		Sequence: barrel-uranium
+		RequiresCondition: uranium_shells && !advirrad
+	WithVoxelBarrel@2URANIUM_SHELLS:
+		Sequence: barrel2-uranium
+		Armament: primary2
+		RequiresCondition: uranium_shells && !advirrad
+	WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
+		Sequence: barrel-uranium-orange
+		RequiresCondition: uranium_shells && advirrad
+	WithVoxelBarrel@2URANIUM_SHELLS_ORANGE:
+		Sequence: barrel2-uranium-orange
+		Armament: primary2
+		RequiresCondition: uranium_shells && advirrad
 	Explodes:
 		Weapon: ApocExplode
 		EmptyWeapon: ApocExplode
