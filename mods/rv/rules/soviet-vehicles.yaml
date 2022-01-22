@@ -789,6 +789,7 @@ dtruck:
 
 v3:
 	Inherits: ^Vehicle
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxel
@@ -861,7 +862,10 @@ v3:
 		RequiresCondition: loaded && !radbombs
 	WithVoxelBody@FULL-RADBOMBS:
 		Sequence: idle-rad
-		RequiresCondition: loaded && radbombs
+		RequiresCondition: loaded && radbombs && !advirrad
+	WithVoxelBody@FULL-RADBOMBS-ORANGE:
+		Sequence: idle-rad-orange
+		RequiresCondition: loaded && radbombs && advirrad
 	WithVoxelBody@EMPTY:
 		Sequence: empty
 		RequiresCondition: !loaded
@@ -963,7 +967,10 @@ v3rocket:
 		RequiresCondition: !radbombs
 	WithVoxelBody@RADBOMBS:
 		Sequence: idle-rad
-		RequiresCondition: radbombs
+		RequiresCondition: radbombs && !advirrad
+	WithVoxelBody@RADBOMBS-ORANGE:
+		Sequence: idle-rad-orange
+		RequiresCondition: radbombs && advirrad
 	RenderVoxels:
 		Image: v3rocket
 

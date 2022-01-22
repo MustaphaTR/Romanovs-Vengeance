@@ -281,11 +281,19 @@ zep:
 	WithVoxelBody@rad:
 		ShowShadow: false
 		Sequence: idle-rad
-		RequiresCondition: !airprop && radbombs
+		RequiresCondition: !airprop && radbombs && !advirrad
+	WithVoxelBody@rad-orange:
+		ShowShadow: false
+		Sequence: idle-rad-orange
+		RequiresCondition: !airprop && radbombs && advirrad
 	WithVoxelBody@propaganda-rad:
 		ShowShadow: false
 		Sequence: idle-propaganda-rad
-		RequiresCondition: airprop && radbombs
+		RequiresCondition: airprop && radbombs && !advirrad
+	WithVoxelBody@propaganda-rad-orange:
+		ShowShadow: false
+		Sequence: idle-propaganda-rad-orange
+		RequiresCondition: airprop && radbombs && advirrad
 	WithFacingSpriteBody:
 		Sequence: shadow
 		ForceToGround: true
@@ -327,6 +335,7 @@ zep:
 
 zephusk:
 	Inherits: ^HelicopterHusk
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Tooltip:
@@ -360,11 +369,19 @@ zephusk:
 	WithVoxelBody@rad:
 		ShowShadow: false
 		Sequence: idle-rad
-		RequiresCondition: !airprop && radbombs
+		RequiresCondition: !airprop && radbombs && !advirrad
+	WithVoxelBody@rad-orange:
+		ShowShadow: false
+		Sequence: idle-rad-orange
+		RequiresCondition: !airprop && radbombs && advirrad
 	WithVoxelBody@propaganda-rad:
 		ShowShadow: false
 		Sequence: idle-propaganda-rad
-		RequiresCondition: airprop && radbombs
+		RequiresCondition: airprop && radbombs && !advirrad
+	WithVoxelBody@propaganda-rad-orange:
+		ShowShadow: false
+		Sequence: idle-propaganda-rad-orange
+		RequiresCondition: airprop && radbombs && advirrad
 	RenderVoxels:
 		Image: zep
 	RenderSprites:
