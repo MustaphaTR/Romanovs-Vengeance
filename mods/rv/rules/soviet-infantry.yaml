@@ -614,6 +614,7 @@ deso:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PARACHUTE: ^Parachutable
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Iraq
@@ -742,19 +743,50 @@ deso:
 		DefaultAttackSequence: shoot
 		RequiresCondition: !editorhack
 	WithInfantryBody:
-		DefaultAttackSequence: shoot
-		RequiresCondition: undeployed
+		RequiresCondition: undeployed && !parachute && !webdisable && !advirrad
 	WithInfantryBody@Deployed:
 		StandSequences: deployed
 		DefaultAttackSequence: deployed-shoot
-		RequiresCondition: deployed
+		RequiresCondition: deployed && !parachute && !webdisable && !advirrad
+	WithInfantryBody@ORANGE:
+		IdleSequences: idle1-orange, idle2-orange
+		MoveSequence: run-orange
+		StandSequences: stand-orange
+		DefaultAttackSequence: shoot-orange
+		RequiresCondition: undeployed && !parachute && !webdisable && advirrad
+	WithInfantryBody@DeployedORANGE:
+		StandSequences: deployed-orange
+		DefaultAttackSequence: deployed-shoot-orange
+		RequiresCondition: deployed && !parachute && !webdisable && advirrad
+	WithSpriteBody@Parachute:
+		RequiresCondition: parachute && !advirrad
+	WithSpriteBody@Parachute-ORANGE:
+		Name: parachute
+		Sequence: paradrop-orange
+		RequiresCondition: parachute && advirrad
+	WithDeathAnimation@normal:
+		RequiresCondition: !advirrad
+	WithDeathAnimation@ORANGE:
+		DeathSequence: die-orange
+		DeathSequencePalette: infantry
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+		RequiresCondition: advirrad
 	WithSpriteBody:
 		Sequence: dot
 		Name: dot
-		RequiresCondition: !undeployed
+		RequiresCondition: !undeployed && !advirrad
+	WithSpriteBody@Orange:
+		Sequence: dot
+		Name: dot-orange
+		RequiresCondition: !undeployed && advirrad
 	WithMakeAnimation:
 		Sequence: deploy
 		BodyNames: dot
+	WithMakeAnimation@orange:
+		Sequence: deploy-orange
+		BodyNames: dot-orange
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
 		UndeployedCondition: undeployed
@@ -764,6 +796,7 @@ deso:
 		Voice: Deploy
 		UndeployOnMove: true
 		PauseOnCondition: chronodisable
+		RequiresCondition: !parachute && !webdisable && !dogstun
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, ImmuneToRadiation
 	Voiced:
