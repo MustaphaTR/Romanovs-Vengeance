@@ -11,31 +11,31 @@
 	Valued:
 		Cost: 0
 
-upgrade.endurance_training:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Endurance Training
-	Buildable:
-		Queue: Upgrade.Allies
-		BuildPaletteOrder: 10
-		BuildDuration: 750
-		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
-		Description: Increases movement speed of G.I.s and Guardian G.I.s by 25%.
-	Valued:
-		Cost: 1000
-
 upgrade.gi_fortifications:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: G.I. Fortifications
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
 		Description: G.I.s become uncrushable and take 25% less damage when deployed.
 	Valued:
 		Cost: 2000
+
+upgrade.endurance_training:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Endurance Training
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 20
+		BuildDuration: 750
+		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
+		Description: Increases movement speed of G.I.s and Guardian G.I.s by 25%.
+	Valued:
+		Cost: 1000
 
 upgrade.a2a_missiles:
 	Inherits: ^default.upgrade
@@ -57,7 +57,7 @@ upgrade.advanced_coolants:
 	Buildable:
 		Queue: Upgrade.Allies
 		BuildPaletteOrder: 40
-		BuildDuration: 1500
+		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
 		Description: Double power output of all Power Plants.
 	Valued:
@@ -89,29 +89,16 @@ upgrade.predator_missiles:
 	Valued:
 		Cost: 1500
 
-upgrade.composite_armor:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Composite Armor
-	Buildable:
-		Queue: Upgrade.Allies
-		BuildPaletteOrder: 70
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
-		Description: Reduces damage taken by following units by 25%:\n - Grizzly Tank\n - Mirage Tank\n - Tank Destroyer
-	Valued:
-		Cost: 2000
-
 upgrade.boost_gliding_systems:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Boost-Gliding Systems
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.america, gatech, ~techlevel.3
-		Description: Increases projectile speed and damage of following units by 25%.\n - Patriot Missile System\n - Guardian G.I.\n - Infantry Fighting Vehicle\n - Aegis Cruiser
+		Description: Americas technology increases the projectile speed and damage of the following units by 25%:\n - Patriot Missile System\n - Guardian G.I.\n - Infantry Fighting Vehicle\n - Aegis Cruiser\n - Chrono Dragon
 	Valued:
 		Cost: 2000
 
@@ -121,7 +108,7 @@ upgrade.high_caliber_rounds:
 		Name: High Caliber Rounds
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~disabled # ~upgrade.england, gatech, ~techlevel.3
 		Description: Enables Snipers to damage vehicles and kill gunners to disable them from firing for a while.
@@ -134,10 +121,10 @@ upgrade.portable_weaponry:
 		Name: Portable Weaponry
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.england, gatech, ~techlevel.3
-		Description: Makes G.I. and Guardian G.I.s use their deployed weapon while undeployed too.\nWhile deployed they fire 25% faster.
+		Description: Through tough british training G.I.s and Guardian G.I.s are able to use their deployed weapon while undeployed as well.\nWhile deployed they fire 25% faster.
 	Valued:
 		Cost: 2000
 
@@ -147,10 +134,10 @@ upgrade.grand_cannon_protocols:
 		Name: Grand Cannon Protocols
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 90
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.france, gatech, ~techlevel.3
-		Description: Enables construction of Grand Cannon from Construction Yard.
+		Description: Enables construction of the French Grand Cannon.
 	Valued:
 		Cost: 1500
 
@@ -160,10 +147,10 @@ upgrade.advanced_gun_systems:
 		Name: Advanced Gun Systems
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 100
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.germany, gatech, ~techlevel.3
-		Description: Increases range of Grizzly Tank and Tank Destroyer by 25%.
+		Description: Germanys superior weapon design increases attack range of Grizzly Tanks and Tank Destroyers by 25%.
 	Valued:
 		Cost: 1500
 
@@ -173,10 +160,23 @@ upgrade.emp_munitions:
 		Name: EMP Munitions
 	Buildable:
 		Queue: Upgrade.Allies
-		BuildPaletteOrder: 120
+		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.korea, gatech, ~techlevel.3
-		Description: Arms Grenadiers and Howitzers with EMP munitions which disable vehicles.
+		Description: Koreas invention arms Grenadiers and Howitzers with EMP munitions which disable vehicles and buildings.
+	Valued:
+		Cost: 2000
+
+upgrade.composite_armor:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Composite Armor
+	Buildable:
+		Queue: Upgrade.Allies
+		BuildPaletteOrder: 120
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
+		Description: Increases the durability of the following units by 33%:\n - Grizzly Tank\n - Mirage Tank\n - Tank Destroyer
 	Valued:
 		Cost: 2000
 
@@ -213,11 +213,11 @@ upgrade.bullet_proof_coats:
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 20
-		BuildDuration: 1000
+		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
-		Description: Reduces damage taken by Conscripts and Flak Troopers by 25%.
+		Description: Conscripts and Flak Troopers take 25% less damage.
 	Valued:
-		Cost: 1500
+		Cost: 2000
 
 upgrade.molotov_cocktails:
 	Inherits: ^default.upgrade
@@ -226,7 +226,7 @@ upgrade.molotov_cocktails:
 	Buildable:
 		Queue: Upgrade.Soviets
 		BuildPaletteOrder: 30
-		BuildDuration: 750
+		BuildDuration: 1000
 		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
 		Description: Gives Conscripts Molotov Coctails to use against structures.
 	Valued:
@@ -254,35 +254,9 @@ upgrade.ap_bullets:
 		BuildPaletteOrder: 40
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: Makes the following units deal 25% more damage:\n - Sentry Gun\n - Conscript\n - Boris Bukov\n - War Miner\n - Siege Chopper
+		Description: Improves the damage of the following units by 25%:\n - Sentry Gun\n - Conscript\n - Boris Bukov\n - War Miner\n - Siege Chopper
 	Valued:
 		Cost: 2000
-
-upgrade.nuclear_engines:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Nuclear Engines
-	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 50
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: Makes Rhino and Apocalypse Tanks move 33% faster and explode when destroyed.
-	Valued:
-		Cost: 2000
-
-upgrade.advanced_irradiators:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Advanced Irradiators
-	Buildable:
-		Queue: Upgrade.Soviets
-		BuildPaletteOrder: 60
-		BuildDuration: 1000
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: Increases damage from radiation by 50%.
-	Valued:
-		Cost: 1500
 
 upgrade.black_napalm:
 	Inherits: ^default.upgrade
@@ -290,10 +264,10 @@ upgrade.black_napalm:
 		Name: Black Napalm
 	Buildable:
 		Queue: Upgrade.Soviets
-		BuildPaletteOrder: 70
-		BuildDuration: 1500
+		BuildPaletteOrder: 50
+		BuildDuration: 1000
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: Flame Tanks and Black Kites use Black Napalm, which deals double the damage.
+		Description: Flame Tanks and Black Kites use Black Napalm, which doubles their damage.
 	Valued:
 		Cost: 1500
 
@@ -303,25 +277,12 @@ upgrade.propaganda_effort:
 		Name: Propaganda Effort
 	Buildable:
 		Queue: Upgrade.Baku
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 50
 		BuildDuration: 750
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
 		Description: Increases effectiveness of Propaganda Towers and Propaganda Commander's Power by 25%.
 	Valued:
 		Cost: 1500
-
-upgrade.overcharge:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Overcharge
-	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 80
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.russia, natech, ~techlevel.3
-		Description: Tesla weapons disable enemy vehicles for a short time.
-	Valued:
-		Cost: 2500
 
 upgrade.radioactive_bombs:
 	Inherits: ^default.upgrade
@@ -329,12 +290,38 @@ upgrade.radioactive_bombs:
 		Name: Radioactive Warheads
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 60
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.iraq, natech, ~techlevel.3
+		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
 		Description: Kirov bombs, V3 and Dreadnought Rockets will leave radiation.
 	Valued:
 		Cost: 2000
+
+upgrade.overcharge:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Overcharge
+	Buildable:
+		Queue: Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 70
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.russia, natech, ~techlevel.3
+		Description: Russias formidable technology enables Tesla weapons to disable enemy vehicles for a short time.
+	Valued:
+		Cost: 2500
+
+upgrade.advanced_irradiators:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Advanced Irradiators
+	Buildable:
+		Queue: Upgrade.Soviets
+		BuildPaletteOrder: 80
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.iraq, natech, ~techlevel.3
+		Description: Iraqs devastating fallout programm increases damage dealt by radiation by 50%.
+	Valued:
+		Cost: 2500
 
 upgrade.aerial_propaganda:
 	Inherits: ^default.upgrade
@@ -342,10 +329,10 @@ upgrade.aerial_propaganda:
 		Name: Aerial Propaganda
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 90
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.vietnam, natech, ~techlevel.3
-		Description: Gives Black Kites and Kirov Airships speakers that buff nearby units.
+		Description: Vietnams propaganda must be spread world wide. With this upgrade they equip Black Kites and Kirov Airships with speakers to buff nearby units.
 	Valued:
 		Cost: 2000
 
@@ -355,10 +342,10 @@ upgrade.targeted_explosives:
 		Name: Targeted Explosives
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 100
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.cuba, natech, ~techlevel.3
-		Description: Explosions from Terrorists, Death Bombs and Crazy Ivans when they die no longer damage friendly units.\nIncreases Terrorist and Death Bombs area of effect by 50%.
+		Description: Cubas safety protocols minimize any damage caused by explosions to your own army.\nExplosions from Terrorists, Death Bombs and Crazy Ivans when they die no longer damage friendly units.\nIncreases Terrorist and Death Bombs area of effect by 50%.
 	Valued:
 		Cost: 1500
 
@@ -368,12 +355,25 @@ upgrade.high_explosive_bombs:
 		Name: High Explosive Bombs
 	Buildable:
 		Queue: Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 120
+		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.libya, natech, ~techlevel.3
-		Description: Increases the damage of following units by 25%:\n - Crazy Ivan\n - Chrono Ivan\n - Mortar Cycle\n - Demolition Truck\n - V3 Launcher\n - Dreadnought
+		Description: Libyas special mixture increases the damage of the following units by 25%:\n - Crazy Ivan\n - Chrono Ivan\n - Mortar Cycle\n - Demolition Truck\n - V3 Launcher\n - Dreadnought
 	Valued:
 		Cost: 2500
+
+upgrade.nuclear_engines:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Nuclear Engines
+	Buildable:
+		Queue: Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 120
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
+		Description: Makes Rhino and Apocalypse Tanks move 33% faster and explode when destroyed.
+	Valued:
+		Cost: 1500
 
 upgrade.uranium_shells:
 	Inherits: ^default.upgrade
@@ -388,13 +388,26 @@ upgrade.uranium_shells:
 	Valued:
 		Cost: 2500
 
+upgrade.focused_mind:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Focused Mind
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 10
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
+		Description: Initiates fire 25% faster.
+	Valued:
+		Cost: 2500
+
 upgrade.grinder_treads:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Grinder Treads
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 10
+		BuildPaletteOrder: 20
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
 		Description: Vehicles heal themselves by crushing infantry.
@@ -407,7 +420,7 @@ upgrade.toxin_sprayer:
 		Name: Toxin Sprayer
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 30
 		BuildDuration: 750
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
 		Description: Gives Armored Trucks a toxin sprayer weapon.
@@ -420,25 +433,12 @@ upgrade.camouflage:
 		Name: Camouflage
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 30
+		BuildPaletteOrder: 40
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
 		Description: Grants Initiates and Viruses stealth.
 	Valued:
 		Cost: 2000
-
-upgrade.focused_mind:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Focused Mind
-	Buildable:
-		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 40
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
-		Description: Initiates fire 25% faster.
-	Valued:
-		Cost: 2500
 
 upgrade.autoloaders:
 	Inherits: ^default.upgrade
@@ -453,29 +453,16 @@ upgrade.autoloaders:
 	Valued:
 		Cost: 1500
 
-upgrade.rocket_barrage:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Rocket Barrage
-	Buildable:
-		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 60
-		BuildDuration: 1000
-		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
-		Description: Lethocerus Platforms can fire 6 missiles quickly before needing to reload.
-	Valued:
-		Cost: 1500
-
 upgrade.advanced_magnetics:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Advanced Magnetics
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 60
 		BuildDuration: 750
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
-		Description: Magnetrons now deal 25% more damage, 50% of their damage to vehicles and gain more attack range.
+		Description: Magnetrons gain more attack range and deal 25% more damage. They also deal 50% of their damage to vehicles now.
 	Valued:
 		Cost: 1500
 
@@ -485,10 +472,10 @@ upgrade.chaos_tank_compensators:
 		Name: Chaos Tank Compensators
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psicorps, yatech, ~techlevel.3
-		Description: Vehicles emit chaos gas when they are destroyed.\nIncreases area of effect of Chaos Drones.
+		Description: Yurigrad developed gas pressure tubes causing vehicles to emit chaos gas as soon as they are destroyed.\nIncreases area of effect of Chaos Drones.
 	Valued:
 		Cost: 2500
 
@@ -498,10 +485,10 @@ upgrade.laser_capacitors:
 		Name: Laser Capacitors
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psinepal, yatech, ~techlevel.3
-		Description: Replaces Lasher Tank's weapon with a laser cannon.\nIncreases damage output of Lazarus Tanks and Leech Discs by 25%.
+		Description: Lazarus Corps advanced laser technology increases the damage output of Lazarus Tanks and Leech Discs by 25%.\nThe upgrade also replaces the weapon of Lasher Tanks  with a laser cannon.
 	Valued:
 		Cost: 2000
 
@@ -511,10 +498,10 @@ upgrade.mastery_of_mind:
 		Name: Mastery of Mind
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 100
+		BuildPaletteOrder: 90
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psisouth, yatech, ~techlevel.3
-		Description: Enables Yuri Clones and Masterminds to use Psi-Waves.\nMakes Psi-Wave weapons not effect friendly units and damage vehicles. # \nYuri Clone and Yuri Prime can control 2 assets at the same time.
+		Description: Antarcticas calm minds improved Yuri Clones and Masterminds to use Psi-Waves.\nPsi-Wave weapons no longer effect friendly units. They also now damage enemy vehicles. # \nYuri Clone and Yuri Prime can control 2 assets at the same time.
 	Valued:
 		Cost: 2000
 
@@ -524,10 +511,10 @@ upgrade.dna_boosters:
 		Name: DNA Boosters
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 100
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psitrans, yatech, ~techlevel.3
-		Description: Enables Genetic Mutator ability.\nIncreases movement speed of the following units by 33%:\n - Brute\n - Mutant Tarantula\n - Mutant Crab
+		Description: Transylvanias technology allows you to use the Genetic Mutator ability.\nThe upgrade also increases the movement speed of the following units by 33%:\n - Brute\n - Mutant Tarantula\n - Mutant Crab
 	Valued:
 		Cost: 2500
 
@@ -537,10 +524,10 @@ upgrade.disc_armor:
 		Name: Disc Armor
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 120
+		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psimoon, yatech, ~techlevel.3
-		Description: Reduces damage taken by Discs by 33%. 
+		Description: Lunar Eclipse Discs are impenetrable. The upgrade increases the durability of Discs by 33%. 
 	Valued:
 		Cost: 2000
 
@@ -550,12 +537,25 @@ upgrade.lazarus_prime:
 		Name: Lazarus Prime
 	Buildable:
 		Queue: Upgrade.Yuri
-		BuildPaletteOrder: 130
+		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
-		Description: Stealth Generators can stealth themselves.
+		Description: Enables Stealth Generators to cloak themselves.
 	Valued:
 		Cost: 1000
+
+upgrade.rocket_barrage:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Rocket Barrage
+	Buildable:
+		Queue: Upgrade.Yuri
+		BuildPaletteOrder: 130
+		BuildDuration: 1000
+		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
+		Description: Lethocerus Platforms can fire 6 missiles quickly before needing to reload.
+	Valued:
+		Cost: 1500
 
 upgrade.chainguns:
 	Inherits: ^default.upgrade
@@ -566,6 +566,6 @@ upgrade.chainguns:
 		BuildPaletteOrder: 140
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.4
-		Description: Increases Gatling weapon's damage by 25%.
+		Description: Increases damage of Gatling weapons by 25%.
 	Valued:
 		Cost: 2000
