@@ -250,6 +250,7 @@ brute:
 	-TakeCover:
 	Mobile:
 		Speed: 90
+		RequiresCondition: !chronodisable && !webdisable
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -290,7 +291,10 @@ brute:
 		RequiresCondition: !parachute && !webdisable
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
+	-SpeedMultiplier@DOGSTUN:
 	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:
 
 brute.holo:
 	Inherits: brute
@@ -431,6 +435,7 @@ yurix:
 		CustomPipType: red
 	Mobile:
 		Locomotor: swimsuit
+		RequiresCondition: !chronodisable && !webdisable
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha
@@ -481,6 +486,7 @@ yurix:
 	-TakeCover:
 	-WithColoredOverlay@IDISABLE:
 	-GrantCondition@IDISABLE:
+	-SpeedMultiplier@DOGSTUN:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
@@ -616,6 +622,7 @@ lunr:
 	-ExternalCondition@webdisable:
 	-WithColoredOverlay@IDISABLE:
 	-GrantCondition@IDISABLE:
+	-SpeedMultiplier@DOGSTUN:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:

@@ -359,6 +359,7 @@ zephusk:
 	RevealOnDeath:
 		Radius: 5c0
 		Duration: 50
+	-ProximityExternalCondition@AIRPROP:
 	WithVoxelBody:
 		ShowShadow: false
 		RequiresCondition: !airprop && !radbombs
@@ -2801,6 +2802,7 @@ kite:
 
 kitehusk:
 	Inherits: ^HelicopterHusk
+	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Tooltip:
 		Name: Black Kite
 	Tooltip@NoRow:
@@ -2824,10 +2826,17 @@ kitehusk:
 		Image: kite
 	RenderVoxels:
 		Image: kite
+	-ProximityExternalCondition@AIRPROP:
 	-WithVoxelBody:
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
+		RequiresCondition: !airprop
+	WithVoxelHelicopterBody@propaganda:
+		TickRate: 1
+		ShowShadow: false
+		Sequence: idle-propaganda
+		RequiresCondition: airprop
 	WithFacingSpriteBody:
 		Sequence: shadow
 		ForceToGround: true

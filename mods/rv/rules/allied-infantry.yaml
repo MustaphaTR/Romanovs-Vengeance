@@ -1326,6 +1326,7 @@ tany:
 	Mobile:
 		Speed: 75
 		Locomotor: swimsuit
+		RequiresCondition: !chronodisable && !webdisable
 	RevealsShroud:
 		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1422,6 +1423,7 @@ tany:
 	-TakeCover:
 	-WithColoredOverlay@IDISABLE:
 	-GrantCondition@IDISABLE:
+	-SpeedMultiplier@DOGSTUN:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
@@ -1521,6 +1523,7 @@ jumpjet:
 	-ExternalCondition@webdisable:
 	-WithColoredOverlay@IDISABLE:
 	-GrantCondition@IDISABLE:
+	-SpeedMultiplier@DOGSTUN:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
