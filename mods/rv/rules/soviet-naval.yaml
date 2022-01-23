@@ -269,12 +269,14 @@ sqd:
 
 dred:
 	Inherits: ^Ship
+	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@C4: ^AcceptsSEALC4
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
@@ -335,10 +337,22 @@ dred:
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody@FULL:
-		RequiresCondition: loaded >= 2
+		RequiresCondition: loaded >= 2 && !radbombs
+	WithVoxelBody@FULL-RADBOMBS:
+		Sequence: idle-rad
+		RequiresCondition: loaded >= 2 && radbombs && !advirrad
+	WithVoxelBody@FULL-RADBOMBS-ORANGE:
+		Sequence: idle-rad-orange
+		RequiresCondition: loaded >= 2 && radbombs && advirrad
 	WithVoxelBody@HALF:
 		Sequence: half
-		RequiresCondition: loaded == 1
+		RequiresCondition: loaded == 1 && !radbombs
+	WithVoxelBody@HALF-RADBOMBS:
+		Sequence: half-rad
+		RequiresCondition: loaded == 1 && radbombs && !advirrad
+	WithVoxelBody@HALF-RADBOMBS-ORANGE:
+		Sequence: half-rad-orange
+		RequiresCondition: loaded == 1 && radbombs && advirrad
 	WithVoxelBody@EMPTY:
 		Sequence: empty
 		RequiresCondition: !loaded
@@ -415,5 +429,13 @@ dmisl:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
+	WithVoxelBody:
+		RequiresCondition: !radbombs
+	WithVoxelBody@RADBOMBS:
+		Sequence: idle-rad
+		RequiresCondition: radbombs && !advirrad
+	WithVoxelBody@RADBOMBS-ORANGE:
+		Sequence: idle-rad-orange
+		RequiresCondition: radbombs && advirrad
 	ExternalCondition@RANK-ELITE:
 		Condition: rank-elite
