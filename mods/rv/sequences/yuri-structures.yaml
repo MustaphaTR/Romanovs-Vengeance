@@ -921,6 +921,38 @@ yarock:
 		UseTilesetCode: false
 		AddExtension: false
 
+yapsyb:
+	Defaults:
+		Offset: 0, -30
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+			DUNE: GENERIC
+	idle: ygpsyb
+		ShadowStart: 3
+	damaged-idle: ygpsyb
+		Start: 1
+		ShadowStart: 4
+	idle-spin: ygpsyb_a
+		Length: 15
+		ShadowStart: 30
+		Tick: 150
+	damaged-idle-spin: ygpsyb_a
+		Start: 15
+		Length: 15
+		ShadowStart: 45
+		Tick: 150
+	make: ygpsybmk
+		Length: 25
+		ShadowStart: 25
+	icon: cameo|xxicon
+		Offset: 0, 0
+		UseTilesetCode: false
+
 caeast02:
 	Inherits: ^CivBuilding
 	Defaults:

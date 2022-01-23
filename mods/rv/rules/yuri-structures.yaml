@@ -1598,6 +1598,33 @@ yarock:
 	IsometricSelectable:
 		DecorationHeight: 120
 
+yapsyb:
+	Inherits: ^CivBuilding
+	Inherits@SHAPE: ^2x2Shape
+	Tooltip:
+		Name: Psychic Beacon
+	Tooltip@NoRow:
+		Name: Psychic Beacon
+	Armor:
+		Type: Wood
+	Health:
+		HP: 75000
+	Building:
+		Dimensions: 2,2
+		Footprint: xx xx
+	WithIdleOverlay@spin:
+		Sequence: idle-spin
+		PauseOnCondition: chronodisable
+	Power:
+		Amount: -100
+		RequiresCondition: !chronodisable
+	AmbientSound@Ambient:
+		SoundFiles: gpsyampa.wav, gpsyampb.wav, gpsyampc.wav
+		Volume: 0.5
+		RequiresCondition: !chronodisable
+	IsometricSelectable:
+		DecorationHeight: 120
+
 caeast02:
 	Inherits: ^CivBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
