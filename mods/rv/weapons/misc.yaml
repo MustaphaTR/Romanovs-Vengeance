@@ -428,13 +428,19 @@ DogBark:
 		Condition: dogstun
 		Range: 3c0
 		Duration: 125
+	Warhead@2Eff: CreateEffect
+		Explosions: barkflash
+		ExplosionPalette: jascredalpha
+		ValidTargets: Ground, Water, Air
+		ImpactActors: false
 
 ChitzBark:
 	Inherits: DogBark
-	Report: idogbaa.wav, idogbab.wav
 	Warhead@1Con: GrantExternalCondition
-		Range: 2c512
-		Duration: 75
+		Range: 3c512
+		Duration: 175
+	Warhead@2Eff: CreateEffect
+		Explosions: barkflashchitz
 
 PsiWave:
 	ReloadDelay: 110
