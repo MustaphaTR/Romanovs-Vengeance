@@ -924,7 +924,11 @@ nanrct:
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		RequiresCondition: !build-incomplete && !advirrad
+	WithIdleOverlay@lights-orange:
+		Sequence: idle-lights-orange
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete && advirrad
 	Explodes:
 		Type: CenterPosition
 		Weapon: NukePayload
