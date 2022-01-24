@@ -471,10 +471,16 @@ orca:
 		TargetFrozenActors: True
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	WithVoxelBody:
-		RequiresCondition: !a2amissiles
+		RequiresCondition: !a2amissiles && !predator_missiles
 	WithVoxelBody@A2A:
 		Sequence: idle-a2a
-		RequiresCondition: a2amissiles
+		RequiresCondition: a2amissiles && !predator_missiles
+	WithVoxelBody@PREDATOR:
+		Sequence: idle-predator
+		RequiresCondition: !a2amissiles && predator_missiles
+	WithVoxelBody@A2A_PREDATOR:
+		Sequence: idle-a2a-predator
+		RequiresCondition: a2amissiles && predator_missiles
 	Voiced:
 		VoiceSet: HarrierVoice
 	ExternalCondition@PRODUCED:
@@ -560,6 +566,7 @@ orca:
 orcahusk:
 	Inherits: ^PlaneHusk
 	Inherits@A2A: ^AffectedByA2AMissiles
+	Inherits@PREDATOR: ^AffectedByPredatorMissiles
 	Tooltip:
 		Name: Harrier
 	Tooltip@NoRow:
@@ -581,16 +588,23 @@ orcahusk:
 		Radius: 6c0
 		Duration: 50
 	WithVoxelBody:
-		RequiresCondition: !a2amissiles
+		RequiresCondition: !a2amissiles && !predator_missiles
 	WithVoxelBody@A2A:
 		Sequence: idle-a2a
-		RequiresCondition: a2amissiles
+		RequiresCondition: a2amissiles && !predator_missiles
+	WithVoxelBody@PREDATOR:
+		Sequence: idle-predator
+		RequiresCondition: !a2amissiles && predator_missiles
+	WithVoxelBody@A2A_PREDATOR:
+		Sequence: idle-a2a-predator
+		RequiresCondition: a2amissiles && predator_missiles
 	RenderVoxels:
 		Image: falc
 
 orcahusk.VTOL:
 	Inherits: ^HelicopterHusk
 	Inherits@A2A: ^AffectedByA2AMissiles
+	Inherits@PREDATOR: ^AffectedByPredatorMissiles
 	Tooltip:
 		Name: Harrier
 	Tooltip@NoRow:
@@ -612,10 +626,16 @@ orcahusk.VTOL:
 		Radius: 6c0
 		Duration: 50
 	WithVoxelBody:
-		RequiresCondition: !a2amissiles
+		RequiresCondition: !a2amissiles && !predator_missiles
 	WithVoxelBody@A2A:
 		Sequence: idle-a2a
-		RequiresCondition: a2amissiles
+		RequiresCondition: a2amissiles && !predator_missiles
+	WithVoxelBody@PREDATOR:
+		Sequence: idle-predator
+		RequiresCondition: !a2amissiles && predator_missiles
+	WithVoxelBody@A2A_PREDATOR:
+		Sequence: idle-a2a-predator
+		RequiresCondition: a2amissiles && predator_missiles
 	RenderVoxels:
 		Image: falc
 
@@ -653,6 +673,8 @@ beag:
 	WithVoxelBody:
 		-RequiresCondition:
 	-WithVoxelBody@A2A:
+	-WithVoxelBody@PREDATOR:
+	-WithVoxelBody@A2A_PREDATOR:
 	AmmoPool:
 		Ammo: 1
 		ReloadDelay: 200
@@ -1779,6 +1801,8 @@ bpln:
 	WithVoxelBody:
 		-RequiresCondition:
 	-WithVoxelBody@A2A:
+	-WithVoxelBody@PREDATOR:
+	-WithVoxelBody@A2A_PREDATOR:
 	AttackAircraft:
 		RequiresCondition: ammo
 	Health:
