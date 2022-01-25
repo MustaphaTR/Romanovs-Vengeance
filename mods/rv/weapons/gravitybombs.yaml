@@ -86,6 +86,30 @@ BlimpBombRadOrangeE:
 	Warhead@4Radiation: CreateTintedCells
 		LayerName: radioactivityorange
 
+BlimpBombCryo:
+	Inherits: BlimpBomb
+	Projectile: GravityBomb
+		Image: zbombuc
+	Warhead@2Eff: CreateEffect
+		Explosions: kirovtesla
+	Warhead@5Con: GrantExternalCondition
+		Range: 2c0
+		Duration: 250
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+BlimpBombCryoE:
+	Inherits: BlimpBombE
+	Projectile: GravityBomb
+		Image: zbombuc
+	Warhead@5Con: GrantExternalCondition
+		Range: 3c0
+		Duration: 375
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
 NapalmBomb:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 50

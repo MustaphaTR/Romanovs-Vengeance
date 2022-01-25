@@ -725,10 +725,28 @@ V3WeaponRadOrange:
 
 V3WeaponRadOrangeE:
 	Inherits: V3WeaponRadE
-	Warhead@2Eff: CreateEffect
-		Explosions: demotruck_explosion_orange
 	Warhead@4Radiation: CreateTintedCells
 		LayerName: radioactivityorange
+
+V3WeaponCryo:
+	Inherits: V3Weapon
+	Warhead@5Con: GrantExternalCondition
+		Range: 2c0
+		Duration: 250
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+	Warhead@2Eff: CreateEffect
+		Explosions: kirovtesla
+
+V3WeaponCryoE:
+	Inherits: V3WeaponE
+	Warhead@5Con: GrantExternalCondition
+		Range: 3c0
+		Duration: 375
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
 
 DredWeapon:
 	Inherits: V3Weapon
@@ -769,10 +787,28 @@ DredWeaponRadOrange:
 
 DredWeaponRadOrangeE:
 	Inherits: DredWeaponRadE
-	Warhead@2Eff: CreateEffect
-		Explosions: demotruck_explosion_orange
 	Warhead@4Radiation: CreateTintedCells
 		LayerName: radioactivityorange
+
+DredWeaponCryo:
+	Inherits: DredWeapon
+	Warhead@5Con: GrantExternalCondition
+		Range: 2c0
+		Duration: 250
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+	Warhead@2Eff: CreateEffect
+		Explosions: kirovtesla
+
+DredWeaponCryoE:
+	Inherits: DredWeaponE
+	Warhead@5Con: GrantExternalCondition
+		Range: 3c0
+		Duration: 375
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
 
 CruiseWeapon:
 	Inherits: DredWeapon

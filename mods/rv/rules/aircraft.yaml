@@ -194,6 +194,7 @@ zep:
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CRYO: ^AffectedByCryoWarheads
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Inherits@AI: ^AIMicroManagable
@@ -248,10 +249,10 @@ zep:
 	#	Type: GroundPosition
 	Armament:
 		Weapon: BlimpBomb
-		RequiresCondition: !rank-elite && !radbombs
+		RequiresCondition: !rank-elite && !radbombs && !cryowarheads
 	Armament@elite:
 		Weapon: BlimpBombE
-		RequiresCondition: rank-elite && !radbombs
+		RequiresCondition: rank-elite && !radbombs && !cryowarheads
 	Armament@rad:
 		Weapon: BlimpBombRad
 		RequiresCondition: !rank-elite && radbombs && !advirrad
@@ -264,6 +265,12 @@ zep:
 	Armament@eliterad-orange:
 		Weapon: BlimpBombRadOrangeE
 		RequiresCondition: rank-elite && radbombs && advirrad
+	Armament@cryo:
+		Weapon: BlimpBombCryo
+		RequiresCondition: !rank-elite && cryowarheads
+	Armament@elitecryo:
+		Weapon: BlimpBombCryoE
+		RequiresCondition: rank-elite && cryowarheads
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover

@@ -658,6 +658,11 @@
 		Condition: radbombs
 		Prerequisites: upgrade.radioactive_bombs
 
+^AffectedByCryoWarheads:
+	GrantConditionOnPrerequisite@CRYOWARHEADS:
+		Condition: cryowarheads
+		Prerequisites: upgrade.cryo_warheads
+
 ^AffectedByAerialPropaganda:
 	ProximityExternalCondition@AIRPROP:
 		Condition: propaganda_tower
@@ -2137,10 +2142,19 @@
 	Inherits@19: ^AcceptsDeathBomb
 	Inherits@20: ^SmokeGrenadeModifiers
 	Inherits@21: ^DisabledByBarking
+	Inherits@22: ^AffectedByCryoSlowdown
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	WithColoredOverlay@MagneSlow:
 		Color: FF50F540
+	WithColoredOverlay@Cryo1:
+		Color: 00F5FF40
+	WithColoredOverlay@Cryo2:
+		Color: 00F5FF60
+	WithColoredOverlay@Cryo3:
+		Color: 00F5FF80
+	WithColoredOverlay@Cryo4:
+		Color: 00F5FFA0
 	Health:
 	OwnerLostAction:
 		Action: Kill
@@ -2567,6 +2581,7 @@
 	Inherits@22: ^LowHealthSpeedPenalty
 	Inherits@23: ^AcceptsDeathBomb
 	Inherits@24: ^SmokeGrenadeModifiers
+	Inherits@25: ^AffectedByCryoSlowdown
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
@@ -2824,6 +2839,7 @@
 	Inherits@17: ^AcceptsPointDefenseDrones
 	Inherits@18: ^AcceptsDeathBomb
 	Inherits@19: ^SmokeGrenadeModifiers
+	Inherits@20: ^AffectedByCryoSlowdown
 	WithColoredOverlay@ChronoDisable:
 		Color: 00204040
 	Aircraft:
@@ -3015,6 +3031,7 @@
 	Inherits@19: ^AcceptsPointDefenseDrones
 	Inherits@20: ^AcceptsDeathBomb
 	Inherits@21: ^SmokeGrenadeModifiers
+	Inherits@22: ^AffectedByCryoSlowdown
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	OwnerLostAction:
@@ -3392,10 +3409,50 @@
 		Modifier: 33
 		RequiresCondition: magneslow
 	WithColoredOverlay@MagneSlow:
-		Color: 551A5180 # FF50F540
+		Color: 551A5140 # FF50F540
 		RequiresCondition: magneslow
 	ExternalCondition@MagneSlow:
 		Condition: magneslow
+
+^AffectedByCryoSlowdown:
+	SpeedMultiplier@Cryo1:
+		Modifier: 80
+		RequiresCondition: cryo == 1
+	SpeedMultiplier@Cryo2:
+		Modifier: 67
+		RequiresCondition: cryo == 2
+	SpeedMultiplier@Cryo3:
+		Modifier: 57
+		RequiresCondition: cryo == 3
+	SpeedMultiplier@Cryo4:
+		Modifier: 50
+		RequiresCondition: cryo >= 3
+	DamageMultiplier@Cryo1:
+		Modifier: 125
+		RequiresCondition: cryo == 1
+	DamageMultiplier@Cryo2:
+		Modifier: 150
+		RequiresCondition: cryo == 2
+	DamageMultiplier@Cryo3:
+		Modifier: 175
+		RequiresCondition: cryo == 3
+	DamageMultiplier@Cryo4:
+		Modifier: 200
+		RequiresCondition: cryo >= 3
+	WithColoredOverlay@Cryo1:
+		Color: 00515540 # 00F5FF40
+		RequiresCondition: cryo == 1
+	WithColoredOverlay@Cryo2:
+		Color: 00515560 # 00F5FF60
+		RequiresCondition: cryo == 2
+	WithColoredOverlay@Cryo3:
+		Color: 00515580 # 00F5FF80
+		RequiresCondition: cryo == 3
+	WithColoredOverlay@Cryo4:
+		Color: 005155A0 # 00F5FFA0
+		RequiresCondition: cryo == 4
+	ExternalCondition@Cryo:
+		Condition: cryo
 
 ^WebDisable:
 	TimedConditionBar@WebDisable:

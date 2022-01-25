@@ -63,6 +63,14 @@ dron:
 		Color: FF50F580
 	WithColoredOverlay@MagneSlow:
 		Color: FF50F540
+	WithColoredOverlay@Cryo1:
+		Color: 00F5FF40
+	WithColoredOverlay@Cryo2:
+		Color: 00F5FF60
+	WithColoredOverlay@Cryo3:
+		Color: 00F5FF80
+	WithColoredOverlay@Cryo4:
+		Color: 00F5FFA0
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -937,6 +945,7 @@ m3:
 v3rocket:
 	Inherits: ^ShootableMissile
 	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
+	Inherits@CRYO: ^AffectedByCryoWarheads
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Valued:
 		Cost: 50
@@ -966,11 +975,11 @@ v3rocket:
 	SpawnedExplodes:
 		Weapon: V3Weapon
 		EmptyWeapon: V3Weapon
-		RequiresCondition: !airborne && !radbombs && !rank-elite
+		RequiresCondition: !airborne && !radbombs && !cryowarheads && !rank-elite
 	SpawnedExplodes@Elite:
 		Weapon: V3WeaponE
 		EmptyWeapon: V3WeaponE
-		RequiresCondition: !airborne && !radbombs && rank-elite
+		RequiresCondition: !airborne && !radbombs && !cryowarheads && rank-elite
 	SpawnedExplodes@Rad:
 		Weapon: V3WeaponRad
 		EmptyWeapon: V3WeaponRad
@@ -987,6 +996,14 @@ v3rocket:
 		Weapon: V3WeaponRadOrangeE
 		EmptyWeapon: V3WeaponRadOrangeE
 		RequiresCondition: !airborne && radbombs && advirrad && rank-elite
+	SpawnedExplodes@Cryo:
+		Weapon: V3WeaponCryo
+		EmptyWeapon: V3WeaponCryo
+		RequiresCondition: !airborne && cryowarheads && !rank-elite
+	SpawnedExplodes@Elite:
+		Weapon: V3WeaponCryoE
+		EmptyWeapon: V3WeaponCryoE
+		RequiresCondition: !airborne && cryowarheads && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
