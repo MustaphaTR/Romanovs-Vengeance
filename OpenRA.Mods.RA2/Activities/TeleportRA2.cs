@@ -86,7 +86,7 @@ namespace OpenRA.Mods.RA2.Activities
 				var cargo = self.TraitOrDefault<Cargo>();
 				if (cargo != null && teleporter != null)
 				{
-					while (!cargo.IsEmpty(self))
+					while (!cargo.IsEmpty())
 					{
 						var a = cargo.Unload(self);
 

@@ -3,6 +3,7 @@ Metadata:
 	Version: {DEV_VERSION}
 	Website: https://github.com/MustaphaTR/Romanovs-Vengeance
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Romanovs-Vengeance/master/packaging/artwork/icon_32x32.png
+	WindowTitle: OpenRA - Romanov's Vengeance
 
 ModCredits:
 	ModTabTitle: Romanov's Vengeance
@@ -170,7 +171,6 @@ Assemblies:
 	^BinDir|OpenRA.Mods.AS.dll
 
 ChromeLayout:
-	rv|chrome/assetbrowser.yaml
 	rv|chrome/credits.yaml
 	rv|chrome/ingame.yaml
 	rv|chrome/ingame-player.yaml
@@ -182,10 +182,12 @@ ChromeLayout:
 	rv|chrome/mainmenu-prerelease-notification.yaml
 	rv|chrome/settings-hotkeys.yaml
 	rv|chrome/tooltips.yaml
+	common|chrome/assetbrowser.yaml
 	common|chrome/color-picker.yaml
 	common|chrome/mainmenu-prompts.yaml
 	common|chrome/musicplayer.yaml
 	common|chrome/ingame-chat.yaml
+	common|chrome/ingame-transients.yaml
 	common|chrome/ingame-fmvplayer.yaml
 	common|chrome/ingame-menu.yaml
 	common|chrome/ingame-info.yaml
@@ -195,6 +197,7 @@ ChromeLayout:
 	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-infochat.yaml
+	common|chrome/ingame-info-lobby-options.yaml
 	common|chrome/settings.yaml
 	common|chrome/settings-display.yaml
 	common|chrome/settings-audio.yaml
@@ -220,6 +223,7 @@ ChromeLayout:
 	common|chrome/dropdowns.yaml
 	common|chrome/editor.yaml
 	common|chrome/playerprofile.yaml
+	common|chrome/text-notifications.yaml
 
 Weapons:
 	rv|weapons/bullets.yaml
@@ -363,7 +367,10 @@ SpriteSequenceFormat: TilesetSpecificSpriteSequence
 ModelSequenceFormat: VoxelModelSequence
 
 AssetBrowser:
-	SupportedExtensions: .shp, .tmp, .tem, .des, .sno, .int, .vqa, .png
+	SpriteExtensions: .shp, .tmp, .tem, .des, .sno, .int, .png
+	ModelExtensions: .vxl
+	AudioExtensions: .aud, .wav
+	VideoExtensions: .vqa
 
 GameSpeeds:
 	DefaultSpeed: default

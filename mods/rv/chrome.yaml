@@ -2681,10 +2681,10 @@ slider-thumb-pressed:
 	Image: dialog.png
 	PanelRegion: 640, 0, 1, 1, 126, 126, 1, 1
 
-# A copy of dialog2 (normal button)
+# A copy of dialog2 (disabled button)
 slider-thumb-disabled:
 	Image: dialog.png
-	PanelRegion: 512, 0, 1, 1, 126, 126, 1, 1
+	PanelRegion: 512, 256, 1, 1, 126, 126, 1, 1
 
 # A copy of dialog3 (pressed button)
 checkbox:
@@ -2735,7 +2735,11 @@ scrollheader-selected:
 	PanelRegion: 512, 0, 1, 1, 126, 126, 1, 1
 
 scrollitem-nohover:
-	Image: dialog.png
+
+scrollitem-nohover-hover:
+
+separator:
+	Inherits: button
 
 logos:
 	Image: loadscreen.png
