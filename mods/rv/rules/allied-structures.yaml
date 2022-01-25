@@ -952,8 +952,7 @@ gapill:
 		MuzzleSequence: muzzle
 	WithMuzzleOverlay:
 	AttackTurreted:
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || chronodisable
 	Turreted:
 		TurnSpeed: 1023
 	DetectCloaked:
@@ -1016,8 +1015,7 @@ nasam:
 		Offset: 550,0,0
 		RealignDelay: -1
 	AttackTurreted:
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Armament:
 		Weapon: RedEye2
 		LocalOffset: 500,200,900, 500,-200,900
@@ -1096,8 +1094,7 @@ gtgcan:
 		Offset: 400,0,0
 		RealignDelay: -1
 	AttackTurreted:
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Armament:
 		Weapon: GrandCannonWeapon
 		Recoil: 127
@@ -1518,8 +1515,7 @@ atesla:
 		SupportArmament: support
 		BuffCondition: prism-stack
 		MaxSupportersPerAttacker: 3
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	DetectCloaked:
 		Range: 7c0
 		RequiresCondition: !disabled
@@ -1808,8 +1804,7 @@ gamgun:
 		LocalOffset: 768,0,980
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	WithMuzzleOverlay:
 	Turreted:
 		TurnSpeed: 40
@@ -1889,8 +1884,7 @@ gagun:
 		LocalOffset: 874,0,640
 		MuzzleSequence: muzzle
 	AttackTurreted:
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	WithMuzzleOverlay:
 	Turreted:
 		TurnSpeed: 40

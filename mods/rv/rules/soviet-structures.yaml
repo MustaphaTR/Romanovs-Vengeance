@@ -1316,8 +1316,7 @@ naflak:
 		Offset: 450,0,0
 		RealignDelay: -1
 	AttackTurreted:
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Armament:
 		Weapon: FlakWeapon
 		LocalOffset: 640,0,1536
@@ -1426,8 +1425,7 @@ tesla:
 		MaxCharges: 3
 		ReloadDelay: 80
 		ChargeAudio: btespow.wav
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	DetectCloaked:
 		Range: 7c0
 		RequiresCondition: !disabled
@@ -1506,8 +1504,7 @@ nalasr:
 		Offset: 0,0,0
 		RealignDelay: -1
 	AttackTurreted:
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || chronodisable
 	Armament:
 		Weapon: vulcan
 		LocalOffset: 702,128,768, 702,-128,768
@@ -1592,8 +1589,7 @@ nabnkr:
 	AttackOpenTopped:
 		Armaments: garrisoned, garrisoned-secondary
 		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || chronodisable
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1783,8 +1779,7 @@ napost:
 		MaxCharges: 1
 		ReloadDelay: 80
 		ChargeAudio: btespow.wav
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Power:
 		Amount: -10
 		RequiresCondition: !chronodisable

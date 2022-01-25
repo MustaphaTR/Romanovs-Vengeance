@@ -1078,8 +1078,7 @@ yaggun:
 		InitialFacing: 896
 		RealignDelay: -1
 	AttackTurreted:
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Armament@ag-0:
 		Weapon: AGGattCann
 		LocalOffset: 640,240,1024, 640,-240,1024
@@ -1271,8 +1270,7 @@ natbnk:
 		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || chronodisable
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1312,8 +1310,7 @@ yapsyt:
 	Tooltip@NoRow:
 		Name: Psychic Tower
 	AttackTurreted:
-		PauseOnCondition: disabled || chronodisable
-		RequiresCondition: !build-incomplete
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Turreted:
 		TurnSpeed: 1023
 	WithIdleOverlay@top:
