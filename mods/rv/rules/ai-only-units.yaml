@@ -7,6 +7,8 @@ fv-e1:
 	Buildable:
 		BuildPaletteOrder: 31
 		Prerequisites: ~prerequisite.aiplayer, ~techlevel.1
+	UpdatesPlayerStatistics:
+		OverrideActor: fv
 	ProductionCostMultiplier:
 		Multiplier: 125
 	Cargo:
@@ -70,6 +72,8 @@ bfrt-squad-1:
 		Class: bfrt
 	Buildable:
 		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.4
+	UpdatesPlayerStatistics:
+		OverrideActor: bfrt
 	Cargo:
 		InitialUnits: ggi, ggi, ggi, gren, gren
 	ProductionCostMultiplier@1:
@@ -138,6 +142,8 @@ hind-htnk:
 		Class: hind
 	Buildable:
 		Prerequisites: naweap, ~techlevel.2, ~prerequisite.aiplayer, ~!LoadedExists
+	UpdatesPlayerStatistics:
+		OverrideActor: hind
 	ProductionCostMultiplier@1:
 		Multiplier: 200
 	Carryall:
@@ -219,6 +225,8 @@ htk-dron:
 		Class: htk
 	Buildable:
 		Prerequisites: ~prerequisite.aiplayer
+	UpdatesPlayerStatistics:
+		OverrideActor: htk
 	ProductionCostMultiplier@1:
 		Multiplier: 180
 	Cargo:
@@ -263,6 +271,8 @@ kamaz-squad-1:
 		Class: kamaz
 	Buildable:
 		Prerequisites: yabrck, ~prerequisite.aiplayer, ~techlevel.1
+	UpdatesPlayerStatistics:
+		OverrideActor: kamaz
 	ProductionCostMultiplier@1:
 		Multiplier: 475
 	Cargo:
@@ -279,6 +289,8 @@ shad-squad-1:
 		Class: shad
 	Buildable:
 		Prerequisites: gapile, ~prerequisite.aiplayer, ~techlevel.1, ~!LoadedExists
+	UpdatesPlayerStatistics:
+		OverrideActor: shad
 	Cargo:
 		InitialUnits: ggi, dog, ggi, dog, e1, e1, e1
 	ProductionCostMultiplier@1:
