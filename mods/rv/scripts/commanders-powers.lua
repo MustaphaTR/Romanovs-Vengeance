@@ -171,6 +171,8 @@ WorldLoadedCommandersPowers = function()
 	if CPModifier ~= "disabled" then
 		for _,player in pairs(players) do
 			ReducePoints(player)
+
+			player.GetActorsByType("player")[1].GrantCondition("cps_enabled")
 		end
 
 		Second()
