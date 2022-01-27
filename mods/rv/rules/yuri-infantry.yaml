@@ -171,6 +171,9 @@ init:
 		RequiresCondition: !parachute && !webdisable
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
+	WithProductionIconOverlay:
+		Prerequisites: barracks.infiltrated
+		Types: chevron-veteran
 
 init.holo:
 	Inherits: init
@@ -291,6 +294,9 @@ brute:
 		RequiresCondition: !parachute && !webdisable
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
+	WithProductionIconOverlay:
+		Prerequisites: barracks.infiltrated
+		Types: chevron-veteran
 	-SpeedMultiplier@DOGSTUN:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
@@ -669,6 +675,9 @@ lunr:
 		Condition: moving
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
+	WithProductionIconOverlay:
+		Prerequisites: barracks.infiltrated
+		Types: chevron-veteran
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-Passenger:
@@ -1012,6 +1021,9 @@ gtrp:
 		VoiceSet: InitiateVoice
 	ProducibleWithLevel:
 		Prerequisites: vetgtrp
+	WithProductionIconOverlay:
+		Prerequisites: vetgtrp
+		Types: chevron-veteran
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 
@@ -1182,6 +1194,9 @@ spct:
 		DefaultAttackSequence: shoot
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
+	WithProductionIconOverlay:
+		Prerequisites: barracks.infiltrated
+		Types: chevron-veteran
 
 ttrp:
 	Inherits: ^Infantry
@@ -1293,6 +1308,9 @@ ttrp:
 		VoiceSet: DesolatorVoice
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
+	WithProductionIconOverlay:
+		Prerequisites: barracks.infiltrated
+		Types: chevron-veteran
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-TakeCover:
@@ -1421,6 +1439,9 @@ crkt:
 		VoiceSet: SniperVoice
 	ProducibleWithLevel:
 		Prerequisites: barracks.infiltrated
+	WithProductionIconOverlay:
+		Prerequisites: barracks.infiltrated
+		Types: chevron-veteran
 	WithDeathAnimation@normal:
 		DeathTypes:
 			BulletDeath: 1
