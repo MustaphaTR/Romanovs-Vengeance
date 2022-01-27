@@ -104,19 +104,6 @@ upgrade.boost_gliding_systems:
 	Valued:
 		Cost: 2000
 
-upgrade.high_caliber_rounds:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: High Caliber Rounds
-	Buildable:
-		Queue: Upgrade.Allies
-		BuildPaletteOrder: 80
-		BuildDuration: 1500
-		Prerequisites: ~disabled # ~upgrade.england, gatech, ~techlevel.3
-		Description: Enables Snipers to damage vehicles and kill gunners to disable them from firing for a while.
-	Valued:
-		Cost: 3000
-
 upgrade.portable_weaponry:
 	Inherits: ^default.upgrade
 	Tooltip:
@@ -308,7 +295,7 @@ upgrade.cryo_warheads:
 		BuildPaletteOrder: 60
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: Kirov bombs, V3 and Dreadnought Rockets gain cryro warheads, which slow down enemy units make them take more damage.
+		Description: Kirov bombs, V3 and Dreadnought Rockets gain cryo warheads, which slow down enemy units make them take more damage.
 	Valued:
 		Cost: 2000
 
@@ -377,6 +364,19 @@ upgrade.high_explosive_bombs:
 	Valued:
 		Cost: 2500
 
+upgrade.high_caliber_rounds:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: High Caliber Rounds
+	Buildable:
+		Queue: Upgrade.Baku
+		BuildPaletteOrder: 80
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
+		Description: Enables Snipers to damage vehicles and kill gunners to disable them from firing for a while.
+	Valued:
+		Cost: 3000
+
 upgrade.nuclear_engines:
 	Inherits: ^default.upgrade
 	Tooltip:
@@ -400,6 +400,19 @@ upgrade.uranium_shells:
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
 		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units leave radiation at the target location.
+	Valued:
+		Cost: 2500
+
+upgrade.cryo_shells:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Cryo Shells
+	Buildable:
+		Queue: Upgrade.Baku
+		BuildPaletteOrder: 130
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
+		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units freeze enemy units, slowing them down and making them take more damage.
 	Valued:
 		Cost: 2500
 

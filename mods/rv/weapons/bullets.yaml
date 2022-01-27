@@ -368,6 +368,24 @@ ATGUNAutoE:
 	Warhead@5Radiation: CreateTintedCells
 		LayerName: radioactivityorange
 
+120mmCryo:
+	Inherits: 120mm
+	Warhead@5Con: GrantExternalCondition
+		Range: 0c512
+		Duration: 250
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+120mmCryoE:
+	Inherits: 120mmE
+	Warhead@5Con: GrantExternalCondition
+		Range: 0c512
+		Duration: 250
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
 120mmx:
 	Inherits: 120mm
 	ReloadDelay: 65
@@ -425,6 +443,24 @@ ATGUNAutoE:
 	Inherits: 120mmxUE
 	Warhead@5Radiation: CreateTintedCells
 		LayerName: radioactivityorange
+
+120mmxCryo:
+	Inherits: 120mmx
+	Warhead@5Con: GrantExternalCondition
+		Range: 0c512
+		Duration: 250
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+120mmxCryoE:
+	Inherits: 120mmxE
+	Warhead@5Con: GrantExternalCondition
+		Range: 0c512
+		Duration: 250
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
 
 120mmxRad:
 	Inherits: 120mmx

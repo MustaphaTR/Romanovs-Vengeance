@@ -544,11 +544,6 @@
 		Condition: boostgliding
 		Prerequisites: upgrade.boost_gliding_systems
 
-^AffectedByHighCaliberRounds:
-	GrantConditionOnPrerequisite@HIGHCALIBER:
-		Condition: highcaliber
-		Prerequisites: upgrade.high_caliber_rounds
-
 ^AffectedByPortableWeaponry:
 	ReloadDelayMultiplier@PORTABLE:
 		Modifier: 80
@@ -614,30 +609,6 @@
 		Condition: apbullets
 		Prerequisites: upgrade.ap_bullets
 
-^AffectedByNuclearEngines:
-	Inherits: ^AffectedByAdvancedIrradiators
-	SpeedMultiplier@NUCLEAR_ENGINES:
-		Modifier: 133
-		RequiresCondition: nuclear_engines
-	Explodes@NUCLEAR_ENGINES:
-		DeathTypes: NonTemporal
-		Weapon: NuclearEngineExplode
-		EmptyWeapon: NuclearEngineExplode
-		RequiresCondition: nuclear_engines && !advirrad
-	Explodes@NUCLEAR_ENGINES_ORANGE:
-		DeathTypes: NonTemporal
-		Weapon: NuclearEngineExplodeOrange
-		EmptyWeapon: NuclearEngineExplodeOrange
-		RequiresCondition: nuclear_engines && advirrad
-	GrantConditionOnPrerequisite@NUCLEAR_ENGINES:
-		Condition: nuclear_engines
-		Prerequisites: upgrade.nuclear_engines
-
-^AffectedByAdvancedIrradiators:
-	GrantConditionOnPrerequisite@ADVIRRAD:
-		Condition: advirrad
-		Prerequisites: upgrade.advanced_irradiators
-
 ^AffectedByBlackNapalm:
 	GrantConditionOnPrerequisite@BLACK_NAPALM:
 		Condition: black_napalm
@@ -648,11 +619,6 @@
 		Condition: propeffort
 		Prerequisites: upgrade.propaganda_effort
 
-^AffectedByOvercharge:
-	GrantConditionOnPrerequisite@OVERCHARGE:
-		Condition: overcharge
-		Prerequisites: upgrade.overcharge
-
 ^AffectedByRadioactiveBombs:
 	GrantConditionOnPrerequisite@RADBOMBS:
 		Condition: radbombs
@@ -662,6 +628,16 @@
 	GrantConditionOnPrerequisite@CRYOWARHEADS:
 		Condition: cryowarheads
 		Prerequisites: upgrade.cryo_warheads
+
+^AffectedByOvercharge:
+	GrantConditionOnPrerequisite@OVERCHARGE:
+		Condition: overcharge
+		Prerequisites: upgrade.overcharge
+
+^AffectedByAdvancedIrradiators:
+	GrantConditionOnPrerequisite@ADVIRRAD:
+		Condition: advirrad
+		Prerequisites: upgrade.advanced_irradiators
 
 ^AffectedByAerialPropaganda:
 	ProximityExternalCondition@AIRPROP:
@@ -691,6 +667,30 @@
 		Condition: hiexplosive
 		Prerequisites: upgrade.high_explosive_bombs
 
+^AffectedByHighCaliberRounds:
+	GrantConditionOnPrerequisite@HIGHCALIBER:
+		Condition: highcaliber
+		Prerequisites: upgrade.high_caliber_rounds
+
+^AffectedByNuclearEngines:
+	Inherits: ^AffectedByAdvancedIrradiators
+	SpeedMultiplier@NUCLEAR_ENGINES:
+		Modifier: 133
+		RequiresCondition: nuclear_engines
+	Explodes@NUCLEAR_ENGINES:
+		DeathTypes: NonTemporal
+		Weapon: NuclearEngineExplode
+		EmptyWeapon: NuclearEngineExplode
+		RequiresCondition: nuclear_engines && !advirrad
+	Explodes@NUCLEAR_ENGINES_ORANGE:
+		DeathTypes: NonTemporal
+		Weapon: NuclearEngineExplodeOrange
+		EmptyWeapon: NuclearEngineExplodeOrange
+		RequiresCondition: nuclear_engines && advirrad
+	GrantConditionOnPrerequisite@NUCLEAR_ENGINES:
+		Condition: nuclear_engines
+		Prerequisites: upgrade.nuclear_engines
+
 ^AffectedByUraniumShells:
 	FirepowerMultiplier@URANIUM_SHELLS:
 		Modifier: 125
@@ -698,6 +698,14 @@
 	GrantConditionOnPrerequisite@URANIUM_SHELLS:
 		Condition: uranium_shells
 		Prerequisites: upgrade.uranium_shells
+
+^AffectedByCryoShells:
+	FirepowerMultiplier@CRYO_SHELLS:
+		Modifier: 125
+		RequiresCondition: cryo_shells
+	GrantConditionOnPrerequisite@CRYO_SHELLS:
+		Condition: cryo_shells
+		Prerequisites: upgrade.cryo_shells
 
 ^AffectedByGrinderTreads:
 	ChangesHealth@GRINDER_TREADS:
