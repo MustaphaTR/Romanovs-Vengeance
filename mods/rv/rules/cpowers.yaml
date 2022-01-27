@@ -11,6 +11,9 @@
 		Cost: 0
 	UpdatesPlayerStatistics:
 		AddToUpgradesTab: true
+	WithProductionIconOverlay:
+		Prerequisites: default.commanders_power
+		Types: stripe-taken
 
 commanders_power.medic:
 	Inherits: ^default.commanders_power
@@ -21,8 +24,10 @@ commanders_power.medic:
 	#	BuildPaletteOrder: 10
 	#	Prerequisites: ~disabled # prerequisite.has_points
 	#	Description: Enables training of Medic from Barracks.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@medic:
 		Prerequisite: prerequisite.medic
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.medic
 	RenderSprites:
 		Image: medi
 
@@ -35,8 +40,10 @@ commanders_power.ambulance:
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
 		Description: Enables production of Combat Ambulance from War Factory.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@ambulance:
 		Prerequisite: prerequisite.ambulance
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.ambulance
 	RenderSprites:
 		Image: aambu
 
@@ -49,8 +56,10 @@ commanders_power.mechanic:
 	#	BuildPaletteOrder: 10
 	#	Prerequisites: ~disabled # prerequisite.has_points
 	#	Description: Enables training of Mechanic from Barracks.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@mechanic:
 		Prerequisite: prerequisite.mechanic
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.mechanic
 	RenderSprites:
 		Image: mech
 
@@ -63,8 +72,10 @@ commanders_power.hijacker:
 	#	BuildPaletteOrder: 10
 	#	Prerequisites: ~disabled # prerequisite.has_points
 	#	Description: Enables training of Hijacker from Barracks.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@hijacker:
 		Prerequisite: prerequisite.hijacker
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.hijacker
 	RenderSprites:
 		Image: hjck
 
@@ -77,8 +88,10 @@ commanders_power.havoc:
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
 		Description: Enables training of Havoc Attack Helicopter from Helipad.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@havoc:
 		Prerequisite: prerequisite.havoc
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.havoc
 	RenderSprites:
 		Image: havoc
 
@@ -91,8 +104,10 @@ commanders_power.minelayer:
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
 		Description: Enables production of Minelayer from War Factory.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@minelayer:
 		Prerequisite: prerequisite.minelayer
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.minelayer
 	RenderSprites:
 		Image: mlyr
 
@@ -109,6 +124,8 @@ commanders_power.support_infantry:
 		Prerequisite: prerequisite.medic
 	ProvidesPrerequisite@mechanic:
 		Prerequisite: prerequisite.mechanic
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.support_infantry
 	RenderSprites:
 		Image: mech
 
@@ -121,8 +138,10 @@ commanders_power.airpad:
 	#	BuildPaletteOrder: 20
 	#	Prerequisites: ~disabled # prerequisite.has_points
 	#	Description: Enables construction of Airpads from Construction Yard.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@airpad:
 		Prerequisite: prerequisite.airpad
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.airpad
 	RenderSprites:
 		Image: gaapad
 
@@ -135,8 +154,10 @@ commanders_power.gun_turret:
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.has_points
 		Description: Enables construction of Gun Turret from Construction Yard.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@gun_turret:
 		Prerequisite: prerequisite.gun_turret
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.gun_turret
 	RenderSprites:
 		Image: gagun
 
@@ -149,8 +170,10 @@ commanders_power.tesla_fence:
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.has_points
 		Description: Enables construction of Tesla Fence from Construction Yard.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@tesla_fence:
 		Prerequisite: prerequisite.tesla_fence
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.tesla_fence
 	RenderSprites:
 		Image: napost
 
@@ -163,8 +186,10 @@ commanders_power.grinder:
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.has_points
 		Description: Enables construction of Grinder from Construction Yard.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@grinder:
 		Prerequisite: prerequisite.grinder
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.grinder
 	RenderSprites:
 		Image: yagrnd
 
@@ -177,8 +202,10 @@ commanders_power.ifv_training:
 	#	BuildPaletteOrder: 30
 	#	Prerequisites: ~disabled # prerequisite.has_points
 	#	Description: Makes IFVs train as veteran.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@vetifv:
 		Prerequisite: vetifv
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.ifv_training
 
 commanders_power.harrier_training:
 	Inherits: ^default.commanders_power
@@ -189,8 +216,10 @@ commanders_power.harrier_training:
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
 		Description: Makes Harriers train as elite and other Allied Planes train as veteran.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@vetair:
 		Prerequisite: vetair
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.harrier_training
 
 commanders_power.inf_training:
 	Inherits: ^default.commanders_power
@@ -201,8 +230,10 @@ commanders_power.inf_training:
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
 		Description: Makes Conscripts and Flak Troopers train as veteran.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@vete2flakt:
 		Prerequisite: vete2flakt
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.inf_training
 
 commanders_power.gatling_training:
 	Inherits: ^default.commanders_power
@@ -213,12 +244,14 @@ commanders_power.gatling_training:
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
 		Description: Makes Gatling Tanks, Gatling Submarines and Gatling Troopers train as veteran.
-	ProvidesPrerequisite@powername:
+	ProvidesPrerequisite@ytnk:
 		Prerequisite: vetytnk
 	ProvidesPrerequisite@gtrp:
 		Prerequisite: vetgtrp
 	ProvidesPrerequisite@gatsub:
 		Prerequisite: vetgatsub
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.gatling_training
 
 commanders_power.intel_drop:
 	Inherits: ^default.commanders_power
@@ -229,6 +262,8 @@ commanders_power.intel_drop:
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Intel Drop power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.intel_drop
 	RenderSprites:
 		Image: commanders_power.intel_drop
 
@@ -241,6 +276,8 @@ commanders_power.drone_drop:
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Drone Drop power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.drone_drop
 	RenderSprites:
 		Image: dron
 
@@ -253,11 +290,15 @@ commanders_power.cash_bounty:
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Cash Bounty power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.cash_bounty
 
 commanders_power.intel_drop.baku:
 	Inherits: commanders_power.intel_drop
 	Buildable:
 		Queue: Power.Baku
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.intel_drop.baku
 
 commanders_power.scout_drone:
 	Inherits: ^default.commanders_power
@@ -268,6 +309,8 @@ commanders_power.scout_drone:
 		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points
 		Description: Enables Scout Drone power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.scout_drone
 	RenderSprites:
 		Image: sdrn
 
@@ -280,6 +323,8 @@ commanders_power.spy_plane:
 		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points
 		Description: Enables Spy Plane power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.spy_plane
 	RenderSprites:
 		Image: spyp
 
@@ -292,6 +337,8 @@ commanders_power.psychic_reveal:
 		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points
 		Description: Enables Psychic Reveal power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.psychic_reveal
 
 #commanders_power.sonar_pulse:
 #	Inherits: ^default.commanders_power
@@ -302,6 +349,8 @@ commanders_power.psychic_reveal:
 #		BuildPaletteOrder: 60
 #		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
 #		Description: Enables Sonar Pulse power.
+#	WithProductionIconOverlay:
+#		Prerequisites: commanders_power.sonar_pulse
 #
 #commanders_power.naval_mines:
 #	Inherits: ^default.commanders_power
@@ -312,6 +361,8 @@ commanders_power.psychic_reveal:
 #		BuildPaletteOrder: 60
 #		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
 #		Description: Enables Naval Mines power.
+#	WithProductionIconOverlay:
+#		Prerequisites: commanders_power.naval_mines
 #
 #commanders_power.sensor_buoy:
 #	Inherits: ^default.commanders_power
@@ -322,6 +373,8 @@ commanders_power.psychic_reveal:
 #		BuildPaletteOrder: 60
 #		Prerequisites: ~disabled, prerequisite.has_points, prerequisite.3_stars
 #		Description: Enables Sensor Buoy power.
+#	WithProductionIconOverlay:
+#		Prerequisites: commanders_power.sensor_buoy
 
 commanders_power.leaflet_drop:
 	Inherits: ^default.commanders_power
@@ -332,6 +385,8 @@ commanders_power.leaflet_drop:
 		BuildPaletteOrder: 60
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Leaflet Drop power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.leaflet_drop
 
 commanders_power.cluster_mines:
 	Inherits: ^default.commanders_power
@@ -342,6 +397,8 @@ commanders_power.cluster_mines:
 		BuildPaletteOrder: 60
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Cluster Mines power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.cluster_mines
 
 commanders_power.brute_drop:
 	Inherits: ^default.commanders_power
@@ -352,6 +409,8 @@ commanders_power.brute_drop:
 		BuildPaletteOrder: 60
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Brute Drop power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.brute_drop
 
 commanders_power.emergency_repair.1:
 	Inherits: ^default.commanders_power
@@ -361,6 +420,8 @@ commanders_power.emergency_repair.1:
 		BuildPaletteOrder: 70
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Emergency Repair.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.emergency_repair.1
 
 commanders_power.emergency_repair.2:
 	Inherits: ^default.commanders_power
@@ -370,6 +431,8 @@ commanders_power.emergency_repair.2:
 		BuildPaletteOrder: 80
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.1
 		Description: Upgrades Emergency Repair power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.emergency_repair.2
 
 commanders_power.emergency_repair.3:
 	Inherits: ^default.commanders_power
@@ -379,6 +442,8 @@ commanders_power.emergency_repair.3:
 		BuildPaletteOrder: 90
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.2
 		Description: Upgrades Emergency Repair power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.emergency_repair.3
 
 commanders_power.a10_strike.1:
 	Inherits: ^default.commanders_power
@@ -389,6 +454,8 @@ commanders_power.a10_strike.1:
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables A-10 Strike power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.a10_strike.1
 
 commanders_power.a10_strike.2:
 	Inherits: ^default.commanders_power
@@ -399,6 +466,8 @@ commanders_power.a10_strike.2:
 		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.a10_strike.1
 		Description: Upgrades A-10 Strike power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.a10_strike.2
 
 commanders_power.a10_strike.3:
 	Inherits: ^default.commanders_power
@@ -409,6 +478,8 @@ commanders_power.a10_strike.3:
 		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.a10_strike.2
 		Description: Upgrades A-10 Strike power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.a10_strike.3
 
 commanders_power.parabombs.1:
 	Inherits: ^default.commanders_power
@@ -419,6 +490,8 @@ commanders_power.parabombs.1:
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Parabombs power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.parabombs.1
 
 commanders_power.parabombs.2:
 	Inherits: ^default.commanders_power
@@ -429,6 +502,8 @@ commanders_power.parabombs.2:
 		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.1
 		Description: Upgrades Parabombs power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.parabombs.2
 
 commanders_power.parabombs.3:
 	Inherits: ^default.commanders_power
@@ -439,6 +514,8 @@ commanders_power.parabombs.3:
 		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.2
 		Description: Upgrades Parabombs power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.parabombs.3
 
 commanders_power.toxin_bombing.1:
 	Inherits: ^default.commanders_power
@@ -449,6 +526,8 @@ commanders_power.toxin_bombing.1:
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Toxin Bombing power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.toxin_bombing.1
 
 commanders_power.toxin_bombing.2:
 	Inherits: ^default.commanders_power
@@ -459,6 +538,8 @@ commanders_power.toxin_bombing.2:
 		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.toxin_bombing.1
 		Description: Upgrades Toxin Bombing power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.toxin_bombing.2
 
 commanders_power.toxin_bombing.3:
 	Inherits: ^default.commanders_power
@@ -469,6 +550,8 @@ commanders_power.toxin_bombing.3:
 		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.toxin_bombing.2
 		Description: Upgrades Toxin Bombing power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.toxin_bombing.3
 
 commanders_power.chrono_boost.1:
 	Inherits: ^default.commanders_power
@@ -479,6 +562,8 @@ commanders_power.chrono_boost.1:
 		BuildPaletteOrder: 130
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Chrono Boost power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.chrono_boost.1
 
 commanders_power.chrono_boost.2:
 	Inherits: ^default.commanders_power
@@ -489,6 +574,8 @@ commanders_power.chrono_boost.2:
 		BuildPaletteOrder: 140
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.chrono_boost.1
 		Description: Upgrades Chrono Boost power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.chrono_boost.2
 
 commanders_power.chrono_boost.3:
 	Inherits: ^default.commanders_power
@@ -499,6 +586,8 @@ commanders_power.chrono_boost.3:
 		BuildPaletteOrder: 150
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.chrono_boost.2
 		Description: Upgrades Chrono Boost power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.chrono_boost.3
 
 commanders_power.propaganda.1:
 	Inherits: ^default.commanders_power
@@ -509,6 +598,8 @@ commanders_power.propaganda.1:
 		BuildPaletteOrder: 130
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Propaganda power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.propaganda.1
 
 commanders_power.propaganda.2:
 	Inherits: ^default.commanders_power
@@ -519,6 +610,8 @@ commanders_power.propaganda.2:
 		BuildPaletteOrder: 140
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.propaganda.1
 		Description: Upgrades Propaganda power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.propaganda.2
 
 commanders_power.propaganda.3:
 	Inherits: ^default.commanders_power
@@ -529,6 +622,8 @@ commanders_power.propaganda.3:
 		BuildPaletteOrder: 150
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.propaganda.2
 		Description: Upgrades Propaganda power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.propaganda.3
 
 commanders_power.magnetic_beam.1:
 	Inherits: ^default.commanders_power
@@ -540,6 +635,8 @@ commanders_power.magnetic_beam.1:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Magnetic Beam power.
 		IconPalette: mgnbicon
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.magnetic_beam.1
 
 commanders_power.magnetic_beam.2:
 	Inherits: ^default.commanders_power
@@ -551,6 +648,8 @@ commanders_power.magnetic_beam.2:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.magnetic_beam.1
 		Description: Upgrades Magnetic Beam power to Level 2.
 		IconPalette: mgnbicon
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.magnetic_beam.2
 
 commanders_power.magnetic_beam.3:
 	Inherits: ^default.commanders_power
@@ -562,6 +661,8 @@ commanders_power.magnetic_beam.3:
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.magnetic_beam.2
 		Description: Upgrades Magnetic Beam power to Level 3.
 		IconPalette: mgnbicon
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.magnetic_beam.3
 
 commanders_power.cruiser_strike:
 	Inherits: ^default.commanders_power
@@ -572,6 +673,8 @@ commanders_power.cruiser_strike:
 		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Crusiser Strike power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.cruiser_strike
 
 commanders_power.v3_storm:
 	Inherits: ^default.commanders_power
@@ -582,6 +685,8 @@ commanders_power.v3_storm:
 		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables V3 Storm power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.v3_storm
 
 commanders_power.orbital_drop:
 	Inherits: ^default.commanders_power
@@ -592,6 +697,8 @@ commanders_power.orbital_drop:
 		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Orbital Drop power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.orbital_drop
 
 commanders_power.em_pulse_strike:
 	Inherits: ^default.commanders_power
@@ -602,6 +709,8 @@ commanders_power.em_pulse_strike:
 		BuildPaletteOrder: 170
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables E.M. Pulse Strike power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.em_pulse_strike
 
 commanders_power.fallout_bomb:
 	Inherits: ^default.commanders_power
@@ -612,6 +721,8 @@ commanders_power.fallout_bomb:
 		BuildPaletteOrder: 170
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Fallout Bomb power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.fallout_bomb
 
 commanders_power.chaos_gas_drop:
 	Inherits: ^default.commanders_power
@@ -622,6 +733,8 @@ commanders_power.chaos_gas_drop:
 		BuildPaletteOrder: 170
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
 		Description: Enables Chaos Gas Drop power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.chaos_gas_drop
 
 hack.has_points:
 	AlwaysVisible:
@@ -646,32 +759,24 @@ prerequisite.has_points:
 	Interactable:
 	Tooltip:
 		Name: 1 Commander's Points
-	Buildable:
-		Description: 1 Commander's Points
 
 prerequisite.3_stars:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: Major or Higher Rank
-	Buildable:
-		Description: Major or Higher Rank
 
 prerequisite.5_stars:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: General Rank
-	Buildable:
-		Description: General Rank
 
 ^default.commanders_power_prerequisite:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
 		Name: Commander's Power
-	Buildable:
-		Description: Commander's Power
 
 prerequisite.medic:
 	Inherits: ^default.commanders_power_prerequisite

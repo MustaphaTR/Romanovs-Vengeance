@@ -12,6 +12,9 @@
 		Cost: 0
 	UpdatesPlayerStatistics:
 		AddToUpgradesTab: true
+	WithProductionIconOverlay:
+		Prerequisites: default.upgrade
+		Types: stripe-upgraded
 
 upgrade.gi_fortifications:
 	Inherits: ^default.upgrade
@@ -25,6 +28,8 @@ upgrade.gi_fortifications:
 		Description: While deployed G.I.s become uncrushable and become 33% more durable.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.gi_fortifications
 
 upgrade.endurance_training:
 	Inherits: ^default.upgrade
@@ -38,6 +43,8 @@ upgrade.endurance_training:
 		Description: Increases movement speed of G.I.s and Guardian G.I.s by 25%.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.endurance_training
 
 upgrade.a2a_missiles:
 	Inherits: ^default.upgrade
@@ -51,6 +58,8 @@ upgrade.a2a_missiles:
 		Description: Makes Harriers capable of attacking air targets.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.a2a_missiles
 
 upgrade.advanced_coolants:
 	Inherits: ^default.upgrade
@@ -64,6 +73,8 @@ upgrade.advanced_coolants:
 		Description: Double power output of all Power Plants.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.advanced_coolants
 
 upgrade.advanced_training:
 	Inherits: ^default.upgrade
@@ -77,6 +88,8 @@ upgrade.advanced_training:
 		Description: Makes the following units gain experience 50% faster:\n - G.I.\n - Guardian G.I.\n - Grenadier\n - Rocketeer\n - Navy SEAL\n - Tanya Adams\n - Chrono Commando
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.advanced_training
 
 upgrade.predator_missiles:
 	Inherits: ^default.upgrade
@@ -90,6 +103,8 @@ upgrade.predator_missiles:
 		Description: Increases harrier damage by 25%.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.predator_missiles
 
 upgrade.boost_gliding_systems:
 	Inherits: ^default.upgrade
@@ -103,6 +118,8 @@ upgrade.boost_gliding_systems:
 		Description: American technology increases the projectile speed and damage of the following units by 25%:\n - Patriot Missile System\n - Guardian G.I.\n - Infantry Fighting Vehicle\n - Aegis Cruiser\n - Chrono Dragon
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.boost_gliding_systems
 
 upgrade.portable_weaponry:
 	Inherits: ^default.upgrade
@@ -116,6 +133,8 @@ upgrade.portable_weaponry:
 		Description: Through tough British training G.I.s and Guardian G.I.s are able to use their deployed weapon while undeployed as well.\nWhile deployed they fire 25% faster.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.portable_weaponry
 
 upgrade.grand_cannon_protocols:
 	Inherits: ^default.upgrade
@@ -129,6 +148,8 @@ upgrade.grand_cannon_protocols:
 		Description: Enables construction of the French Grand Cannon.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.grand_cannon_protocols
 
 upgrade.advanced_gun_systems:
 	Inherits: ^default.upgrade
@@ -142,6 +163,8 @@ upgrade.advanced_gun_systems:
 		Description: Superior German weapon design increases attack range of Grizzly Tanks and Tank Destroyers by 25%.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.advanced_gun_systems
 
 upgrade.emp_munitions:
 	Inherits: ^default.upgrade
@@ -155,6 +178,8 @@ upgrade.emp_munitions:
 		Description: Korean invention arms Grenadiers and Howitzers with EMP munitions which disable vehicles and buildings.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.emp_munitions
 
 upgrade.composite_armor:
 	Inherits: ^default.upgrade
@@ -168,6 +193,8 @@ upgrade.composite_armor:
 		Description: Increases the durability of the following units by 33%:\n - Grizzly Tank\n - Mirage Tank\n - Tank Destroyer
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.composite_armor
 
 upgrade.increased_payload:
 	Inherits: ^default.upgrade
@@ -181,6 +208,8 @@ upgrade.increased_payload:
 		Description: Doubles maximum ammo B2 Spirits can carry to 10.
 	Valued:
 		Cost: 3000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.increased_payload
 
 upgrade.improved_flaks:
 	Inherits: ^default.upgrade
@@ -194,6 +223,8 @@ upgrade.improved_flaks:
 		Description: Anti-ground weapons of flak units become instant hit.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.improved_flaks
 
 upgrade.bullet_proof_coats:
 	Inherits: ^default.upgrade
@@ -207,6 +238,8 @@ upgrade.bullet_proof_coats:
 		Description: Increases durability of Conscripts and Flak Troopers by 33%.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.bullet_proof_coats
 
 upgrade.molotov_cocktails:
 	Inherits: ^default.upgrade
@@ -220,6 +253,8 @@ upgrade.molotov_cocktails:
 		Description: Gives Conscripts Molotov Coctails to use against structures.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.molotov_cocktails
 
 upgrade.smoke_grenades:
 	Inherits: ^default.upgrade
@@ -233,6 +268,8 @@ upgrade.smoke_grenades:
 		Description: Gives Conscripts Smoke Grenades which halve vision of enemy units and reduce their damage by 20%.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.smoke_grenades
 
 upgrade.ap_bullets:
 	Inherits: ^default.upgrade
@@ -246,6 +283,8 @@ upgrade.ap_bullets:
 		Description: Improves the damage of the following units by 25%:\n - Sentry Gun\n - Conscript\n - Boris Bukov\n - War Miner\n - Siege Chopper
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.ap_bullets
 
 upgrade.black_napalm:
 	Inherits: ^default.upgrade
@@ -259,6 +298,8 @@ upgrade.black_napalm:
 		Description: Flame Tanks and Black Kites use Black Napalm, which doubles their damage.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.black_napalm
 
 upgrade.propaganda_effort:
 	Inherits: ^default.upgrade
@@ -272,6 +313,8 @@ upgrade.propaganda_effort:
 		Description: Increases effectiveness of Propaganda Towers and Propaganda Commander's Power by 25%.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.propaganda_effort
 
 upgrade.radioactive_bombs:
 	Inherits: ^default.upgrade
@@ -285,6 +328,8 @@ upgrade.radioactive_bombs:
 		Description: Kirov bombs, V3 and Dreadnought Rockets will leave radiation.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.radioactive_bombs
 
 upgrade.cryo_warheads:
 	Inherits: ^default.upgrade
@@ -298,6 +343,8 @@ upgrade.cryo_warheads:
 		Description: Kirov bombs, V3 and Dreadnought Rockets gain cryo warheads, which slow down enemy units make them take more damage.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.cryo_warheads
 
 upgrade.overcharge:
 	Inherits: ^default.upgrade
@@ -311,6 +358,8 @@ upgrade.overcharge:
 		Description: Formidable Russian technology enables Tesla weapons to disable enemy vehicles for a short time.
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.overcharge
 
 upgrade.advanced_irradiators:
 	Inherits: ^default.upgrade
@@ -324,6 +373,8 @@ upgrade.advanced_irradiators:
 		Description: Devastating Iraqi fallout programme increases damage dealt by radiation by 50%.
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.advanced_irradiators
 
 upgrade.aerial_propaganda:
 	Inherits: ^default.upgrade
@@ -337,6 +388,8 @@ upgrade.aerial_propaganda:
 		Description: Vietnamese propaganda must be spread world wide. With this upgrade they equip Black Kites and Kirov Airships with speakers to buff nearby units.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.aerial_propaganda
 
 upgrade.targeted_explosives:
 	Inherits: ^default.upgrade
@@ -350,6 +403,8 @@ upgrade.targeted_explosives:
 		Description: Cuban safety protocols minimize any damage caused by explosions to your own army.\nExplosions from Terrorists, Death Bombs and Crazy Ivans when they die no longer damage friendly units.\nIncreases Terrorist and Death Bombs area of effect by 50%.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.targeted_explosives
 
 upgrade.high_explosive_bombs:
 	Inherits: ^default.upgrade
@@ -363,6 +418,8 @@ upgrade.high_explosive_bombs:
 		Description: Libyan special mixture increases the damage of the following units by 25%:\n - Crazy Ivan\n - Chrono Ivan\n - Mortar Cycle\n - Demolition Truck\n - V3 Launcher\n - Dreadnought
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.high_explosive_bombs
 
 upgrade.high_caliber_rounds:
 	Inherits: ^default.upgrade
@@ -376,6 +433,8 @@ upgrade.high_caliber_rounds:
 		Description: Enables Snipers to damage vehicles and kill gunners to disable them from firing for a while.
 	Valued:
 		Cost: 3000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.high_caliber_rounds
 
 upgrade.nuclear_engines:
 	Inherits: ^default.upgrade
@@ -389,6 +448,8 @@ upgrade.nuclear_engines:
 		Description: Makes Rhino and Apocalypse Tanks move 33% faster and explode when destroyed.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.nuclear_engines
 
 upgrade.uranium_shells:
 	Inherits: ^default.upgrade
@@ -402,6 +463,8 @@ upgrade.uranium_shells:
 		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units leave radiation at the target location.
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.uranium_shells
 
 upgrade.cryo_shells:
 	Inherits: ^default.upgrade
@@ -415,6 +478,8 @@ upgrade.cryo_shells:
 		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units freeze enemy units, slowing them down and making them take more damage.
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.cryo_shells
 
 upgrade.focused_mind:
 	Inherits: ^default.upgrade
@@ -428,6 +493,8 @@ upgrade.focused_mind:
 		Description: Initiates fire 25% faster.
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.focused_mind
 
 upgrade.grinder_treads:
 	Inherits: ^default.upgrade
@@ -441,6 +508,8 @@ upgrade.grinder_treads:
 		Description: Vehicles heal themselves by crushing infantry.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.grinder_treads
 
 upgrade.toxin_sprayer:
 	Inherits: ^default.upgrade
@@ -454,6 +523,8 @@ upgrade.toxin_sprayer:
 		Description: Gives Armored Trucks a toxin sprayer weapon.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.toxin_sprayer
 
 upgrade.camouflage:
 	Inherits: ^default.upgrade
@@ -467,6 +538,8 @@ upgrade.camouflage:
 		Description: Grants Initiates and Viruses stealth.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.camouflage
 
 upgrade.autoloaders:
 	Inherits: ^default.upgrade
@@ -480,6 +553,8 @@ upgrade.autoloaders:
 		Description: Lasher Tanks fire 2 shells at once.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.autoloaders
 
 upgrade.advanced_magnetics:
 	Inherits: ^default.upgrade
@@ -493,6 +568,8 @@ upgrade.advanced_magnetics:
 		Description: Magnetrons gain more attack range and deal 25% more damage. They also deal 50% of their damage to vehicles now.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.advanced_magnetics
 
 upgrade.chaos_tank_compensators:
 	Inherits: ^default.upgrade
@@ -506,6 +583,8 @@ upgrade.chaos_tank_compensators:
 		Description: Yurigrad developed gas pressure tubes causing vehicles to emit chaos gas as soon as they are destroyed.\nIncreases area of effect of Chaos Drones.
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.chaos_tank_compensators
 
 upgrade.laser_capacitors:
 	Inherits: ^default.upgrade
@@ -519,6 +598,8 @@ upgrade.laser_capacitors:
 		Description: Lazarus Corps' advanced laser technology increases the damage output of Lazarus Tanks and Leech Discs by 25%.\nThe upgrade also replaces the weapon of Lasher Tanks  with a laser cannon.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.laser_capacitors
 
 upgrade.mastery_of_mind:
 	Inherits: ^default.upgrade
@@ -532,6 +613,8 @@ upgrade.mastery_of_mind:
 		Description: Antarctica's calm minds improved Yuri Clones and Masterminds to use Psi-Waves.\nPsi-Wave weapons no longer effect friendly units. They also now damage enemy vehicles. # \nYuri Clone and Yuri Prime can control 2 assets at the same time.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.mastery_of_mind
 
 upgrade.dna_boosters:
 	Inherits: ^default.upgrade
@@ -545,6 +628,8 @@ upgrade.dna_boosters:
 		Description: Transylvanian technology allows you to use the Genetic Mutator ability.\nThe upgrade also increases the movement speed of the following units by 33%:\n - Brute\n - Mutant Tarantula\n - Mutant Crab
 	Valued:
 		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.dna_boosters
 
 upgrade.disc_armor:
 	Inherits: ^default.upgrade
@@ -558,6 +643,8 @@ upgrade.disc_armor:
 		Description: Lunar Eclipse Discs are impenetrable. The upgrade increases the durability of Discs by 33%. 
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.disc_armor
 
 upgrade.lazarus_prime:
 	Inherits: ^default.upgrade
@@ -571,6 +658,8 @@ upgrade.lazarus_prime:
 		Description: Enables Stealth Generators to cloak themselves.
 	Valued:
 		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.lazarus_prime
 
 upgrade.rocket_barrage:
 	Inherits: ^default.upgrade
@@ -584,6 +673,8 @@ upgrade.rocket_barrage:
 		Description: Lethocerus Platforms can fire 6 missiles quickly before needing to reload.
 	Valued:
 		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.rocket_barrage
 
 upgrade.chainguns:
 	Inherits: ^default.upgrade
@@ -597,3 +688,5 @@ upgrade.chainguns:
 		Description: Increases damage of Gatling weapons by 25%.
 	Valued:
 		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.chainguns
