@@ -368,6 +368,7 @@ htnk:
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite && !uranium_shells && !cryo_shells
 	Armament@elite:
+		Name: elite
 		Weapon: 120mmE
 		Recoil: 87
 		RecoilRecovery: 12
@@ -375,6 +376,7 @@ htnk:
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && !uranium_shells && !cryo_shells
 	Armament@primary-uranium:
+		Name: primary-uranium
 		Weapon: 120mmU
 		Recoil: 87
 		RecoilRecovery: 12
@@ -382,6 +384,7 @@ htnk:
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	Armament@elite-uranium:
+		Name: elite-uranium
 		Weapon: 120mmUE
 		Recoil: 87
 		RecoilRecovery: 12
@@ -389,6 +392,7 @@ htnk:
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && uranium_shells && !advirrad
 	Armament@primary-uranium-orange:
+		Name: primary-uranium-orange
 		Weapon: 120mmUOrange
 		Recoil: 87
 		RecoilRecovery: 12
@@ -396,6 +400,7 @@ htnk:
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite && uranium_shells && advirrad
 	Armament@elite-uranium-orange:
+		Name: elite-uranium-orange
 		Weapon: 120mmUOrangeE
 		Recoil: 87
 		RecoilRecovery: 12
@@ -403,6 +408,7 @@ htnk:
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && uranium_shells && advirrad
 	Armament@primary-cryo:
+		Name: primary-cryo
 		Weapon: 120mmCryo
 		Recoil: 87
 		RecoilRecovery: 12
@@ -410,12 +416,15 @@ htnk:
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite && cryo_shells
 	Armament@elite-cryo:
+		Name: elite-cryo
 		Weapon: 120mmCryoE
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 896,0,640
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && cryo_shells
+	AttackTurreted:
+		Armaments: primary, elite, primary-uranium, elite-uranium, primary-uranium-orange, elite-uranium-orange, primary-cryo, elite-cryo
 	WithVoxelBody:
 		RequiresCondition: !nuclear_engines
 	WithVoxelBody@NUCLEAR_ENGINES:
@@ -425,16 +434,34 @@ htnk:
 		Sequence: idle-nuke-orange
 		RequiresCondition: nuclear_engines && advirrad
 	WithVoxelBarrel:
-		RequiresCondition: !uranium_shells && !cryo_shells
+		RequiresCondition: !rank-elite && !uranium_shells && !cryo_shells
+	WithVoxelBarrel@ELITE:
+		Armament: elite
+		RequiresCondition: rank-elite && !uranium_shells && !cryo_shells
 	WithVoxelBarrel@URANIUM_SHELLS:
 		Sequence: barrel-uranium
-		RequiresCondition: uranium_shells && !advirrad
+		Armament: primary-uranium
+		RequiresCondition: !rank-elite && uranium_shells && !advirrad
+	WithVoxelBarrel@ELITE_URANIUM_SHELLS:
+		Sequence: barrel-uranium
+		Armament: elite-uranium
+		RequiresCondition: rank-elite && uranium_shells && !advirrad
 	WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
 		Sequence: barrel-uranium-orange
-		RequiresCondition: uranium_shells && advirrad
+		Armament: primary-uranium-orange
+		RequiresCondition: !rank-elite && uranium_shells && advirrad
+	WithVoxelBarrel@ELITE_URANIUM_SHELLS_ORANGE:
+		Sequence: barrel-uranium-orange
+		Armament: elite-uranium-orange
+		RequiresCondition: rank-elite && uranium_shells && advirrad
 	WithVoxelBarrel@CRYO_SHELLS:
 		Sequence: barrel-cryo
-		RequiresCondition: cryo_shells
+		Armament: primary-cryo
+		RequiresCondition: !rank-elite && cryo_shells
+	WithVoxelBarrel@ELITE_CRYO_SHELLS:
+		Sequence: barrel-cryo
+		Armament: elite-cryo
+		RequiresCondition: rank-elite && cryo_shells
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	RenderVoxels:
@@ -525,6 +552,7 @@ apoc:
 		LocalOffset: 1280,100,768
 		RequiresCondition: !rank-elite && !uranium_shells && !cryo_shells
 	Armament@elite:
+		Name: elite
 		Weapon: 120mmxE
 		Recoil: 87
 		RecoilRecovery: 12
@@ -532,7 +560,7 @@ apoc:
 		LocalOffset: 1280,-100,768
 		RequiresCondition: rank-elite && !uranium_shells && !cryo_shells
 	Armament@elite2:
-		Name: primary2
+		Name: elite2
 		Weapon: 120mmxE
 		FireDelay: 5
 		Recoil: 87
@@ -541,6 +569,7 @@ apoc:
 		LocalOffset: 1280,100,768
 		RequiresCondition: rank-elite && !uranium_shells && !cryo_shells
 	Armament@primary-uranium:
+		Name: primary-uranium
 		Weapon: 120mmxU
 		Recoil: 87
 		RecoilRecovery: 12
@@ -548,7 +577,7 @@ apoc:
 		LocalOffset: 1280,-100,768
 		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	Armament@primary2-uranium:
-		Name: primary2
+		Name: primary2-uranium
 		Weapon: 120mmxU
 		FireDelay: 5
 		Recoil: 87
@@ -557,6 +586,7 @@ apoc:
 		LocalOffset: 1280,100,768
 		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	Armament@elite-uranium:
+		Name: elite-uranium
 		Weapon: 120mmxUE
 		Recoil: 87
 		RecoilRecovery: 12
@@ -564,7 +594,7 @@ apoc:
 		LocalOffset: 1280,-100,768
 		RequiresCondition: rank-elite && uranium_shells && !advirrad
 	Armament@elite2-uranium:
-		Name: primary2
+		Name: elite2-uranium
 		Weapon: 120mmxUE
 		FireDelay: 5
 		Recoil: 87
@@ -573,6 +603,7 @@ apoc:
 		LocalOffset: 1280,100,768
 		RequiresCondition: rank-elite && uranium_shells && !advirrad
 	Armament@primary-uranium-orange:
+		Name: primary-uranium-orange
 		Weapon: 120mmxUOrange
 		Recoil: 87
 		RecoilRecovery: 12
@@ -580,7 +611,7 @@ apoc:
 		LocalOffset: 1280,-100,768
 		RequiresCondition: !rank-elite && uranium_shells && advirrad
 	Armament@primary2-uranium-orange:
-		Name: primary2
+		Name: primary2-uranium-orange
 		Weapon: 120mmxUOrange
 		FireDelay: 5
 		Recoil: 87
@@ -589,6 +620,7 @@ apoc:
 		LocalOffset: 1280,100,768
 		RequiresCondition: !rank-elite && uranium_shells && advirrad
 	Armament@elite-uranium-orange:
+		Name: elite-uranium-orange
 		Weapon: 120mmxUOrangeE
 		Recoil: 87
 		RecoilRecovery: 12
@@ -596,7 +628,7 @@ apoc:
 		LocalOffset: 1280,-100,768
 		RequiresCondition: rank-elite && uranium_shells && advirrad
 	Armament@elite2-uranium-orange:
-		Name: primary2
+		Name: elite2-uranium-orange
 		Weapon: 120mmxUOrangeE
 		FireDelay: 5
 		Recoil: 87
@@ -605,6 +637,7 @@ apoc:
 		LocalOffset: 1280,100,768
 		RequiresCondition: rank-elite && uranium_shells && advirrad
 	Armament@primary-cryo:
+		Name: primary-cryo
 		Weapon: 120mmxCryo
 		Recoil: 87
 		RecoilRecovery: 12
@@ -612,7 +645,7 @@ apoc:
 		LocalOffset: 1280,-100,768
 		RequiresCondition: !rank-elite && cryo_shells
 	Armament@primary2-cryo:
-		Name: primary2
+		Name: primary2-cryo
 		Weapon: 120mmxCryo
 		FireDelay: 5
 		Recoil: 87
@@ -621,6 +654,7 @@ apoc:
 		LocalOffset: 1280,100,768
 		RequiresCondition: !rank-elite && cryo_shells
 	Armament@elite-cryo:
+		Name: elite-cryo
 		Weapon: 120mmxCryoE
 		Recoil: 87
 		RecoilRecovery: 12
@@ -628,7 +662,7 @@ apoc:
 		LocalOffset: 1280,-100,768
 		RequiresCondition: rank-elite && cryo_shells
 	Armament@elite2-cryo:
-		Name: primary2
+		Name: elite2-cryo
 		Weapon: 120mmxCryoE
 		FireDelay: 5
 		Recoil: 87
@@ -646,7 +680,7 @@ apoc:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		Armaments: primary, primary2
+		Armaments: primary, primary2, elite, elite2, primary-uranium, primary2-uranium, elite-uranium, elite2-uranium, primary-uranium-orange, primary2-uranium-orange, elite-uranium-orange, elite2-uranium-orange, primary-cryo, primary2-cryo, elite-cryo, elite2-cryo
 		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithMuzzleOverlay:
 	AutoTarget:
@@ -665,32 +699,66 @@ apoc:
 		RequiresCondition: nuclear_engines && advirrad
 	WithVoxelTurret:
 	WithVoxelBarrel:
-		RequiresCondition: !uranium_shells && !cryo_shells
+		RequiresCondition: !rank-elite && !uranium_shells && !cryo_shells
 	WithVoxelBarrel@2:
 		Sequence: barrel2
 		Armament: primary2
-		RequiresCondition: !uranium_shells && !cryo_shells
+		RequiresCondition: !rank-elite && !uranium_shells && !cryo_shells
+	WithVoxelBarrel@ELITE:
+		Armament: elite
+		RequiresCondition: rank-elite && !uranium_shells && !cryo_shells
+	WithVoxelBarrel@ELITE_2:
+		Sequence: barrel2
+		Armament: elite2
+		RequiresCondition:rank-elite && !uranium_shells && !cryo_shells
 	WithVoxelBarrel@URANIUM_SHELLS:
 		Sequence: barrel-uranium
-		RequiresCondition: uranium_shells && !advirrad
+		Armament: primary-uranium
+		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	WithVoxelBarrel@2URANIUM_SHELLS:
 		Sequence: barrel2-uranium
-		Armament: primary2
-		RequiresCondition: uranium_shells && !advirrad
+		Armament: primary2-uranium
+		RequiresCondition: !rank-elite && uranium_shells && !advirrad
+	WithVoxelBarrel@ELITE_URANIUM_SHELLS:
+		Sequence: barrel-uranium
+		Armament: elite-uranium
+		RequiresCondition: rank-elite && uranium_shells && !advirrad
+	WithVoxelBarrel@ELITE_2URANIUM_SHELLS:
+		Sequence: barrel2-uranium
+		Armament: elite2-uranium
+		RequiresCondition: rank-elite && uranium_shells && !advirrad
 	WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
 		Sequence: barrel-uranium-orange
-		RequiresCondition: uranium_shells && advirrad
+		Armament: primary-uranium-orange
+		RequiresCondition: !rank-elite && uranium_shells && advirrad
 	WithVoxelBarrel@2URANIUM_SHELLS_ORANGE:
 		Sequence: barrel2-uranium-orange
-		Armament: primary2
-		RequiresCondition: uranium_shells && advirrad
+		Armament: primary2-uranium-orange
+		RequiresCondition: !rank-elite && uranium_shells && advirrad
+	WithVoxelBarrel@ELITE_URANIUM_SHELLS_ORANGE:
+		Sequence: barrel-uranium-orange
+		Armament: elite-uranium-orange
+		RequiresCondition: rank-elite && uranium_shells && advirrad
+	WithVoxelBarrel@ELITE_2URANIUM_SHELLS_ORANGE:
+		Sequence: barrel2-uranium-orange
+		Armament: elite2-uranium-orange
+		RequiresCondition: rank-elite && uranium_shells && advirrad
 	WithVoxelBarrel@CRYO_SHELLS:
 		Sequence: barrel-cryo
-		RequiresCondition: cryo_shells
-	WithVoxelBarrel@CRYO_SHELLS:
+		Armament: primary-cryo
+		RequiresCondition: !rank-elite && cryo_shells
+	WithVoxelBarrel@2CRYO_SHELLS:
 		Sequence: barrel2-cryo
-		Armament: primary2
-		RequiresCondition: cryo_shells
+		Armament: primary2-cryo
+		RequiresCondition: !rank-elite && cryo_shells
+	WithVoxelBarrel@ELITE_CRYO_SHELLS:
+		Sequence: barrel-cryo
+		Armament: elite-cryo
+		RequiresCondition: rank-elite && cryo_shells
+	WithVoxelBarrel@ELITE_2CRYO_SHELLS:
+		Sequence: barrel2-cryo
+		Armament: elite2-cryo
+		RequiresCondition: rank-elite && cryo_shells
 	Explodes:
 		Weapon: ApocExplode
 		EmptyWeapon: ApocExplode

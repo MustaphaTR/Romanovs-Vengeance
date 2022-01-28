@@ -71,12 +71,15 @@ mtnk:
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
+		Name: elite
 		Weapon: 105mmE
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 896,0,512
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
+	AttackTurreted:
+		Armaments: primary, elite
 	WithVoxelBody:
 		RequiresCondition: !composite_armor
 	WithVoxelBody@COMPOSITE_ARMOR:
@@ -88,10 +91,17 @@ mtnk:
 		Sequence: turret-armor
 		RequiresCondition: composite_armor
 	WithVoxelBarrel:
-		RequiresCondition: !advanced_guns
+		RequiresCondition: !rank-elite && !advanced_guns
+	WithVoxelBarrel@ELITE:
+		Armament: elite
+		RequiresCondition: rank-elite && !advanced_guns
 	WithVoxelBarrel@ADVANCED_GUNS:
 		Sequence: barrel-advanced
-		RequiresCondition: advanced_guns
+		RequiresCondition: !rank-elite && advanced_guns
+	WithVoxelBarrel@ELITE_ADVANCED_GUNS:
+		Sequence: barrel-advanced
+		Armament: elite
+		RequiresCondition: rank-elite && advanced_guns
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	Voiced:
