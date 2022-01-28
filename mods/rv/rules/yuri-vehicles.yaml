@@ -763,14 +763,14 @@ mind:
 	PeriodicExplosion:
 		Weapon: SuperPsiWaveMastery
 		LocalOffset: 0,0,128
-		RequiresCondition: deployed && masteryofmind && !chronodisable
+		RequiresCondition: deployed && masteryofmind && !chronodisable && !emp
 	GrantTimedConditionOnDeploy:
 		DeployedTicks: 100
 		CooldownTicks: 0
 		DeployedCondition: deployed
 		ShowSelectionBar: false
 		Voice:
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || (emp && !deployed)
 		RequiresCondition: masteryofmind
 	Armament:
 		Weapon: MasterMindControl

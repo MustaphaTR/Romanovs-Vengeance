@@ -439,7 +439,7 @@ chit:
 		Range: 6c0
 	PeriodicExplosion:
 		Weapon: ChitzBark
-		RequiresCondition: deployed && !chronodisable
+		RequiresCondition: deployed && !chronodisable && !webdisable && !emp
 	GrantTimedConditionOnDeploy:
 		DeployedTicks: 1
 		CooldownTicks: 750
@@ -452,7 +452,7 @@ chit:
 		StartsFullyCharged: true
 		ChargingColor: FF0000
 		DischargingColor: FF00FF
-		PauseOnCondition: chronodisable
+		PauseOnCondition: chronodisable || ((webdisable || emp) && !deployed)
 	Voiced:
 		VoiceSet: DogVoice
 	ProducibleWithLevel:

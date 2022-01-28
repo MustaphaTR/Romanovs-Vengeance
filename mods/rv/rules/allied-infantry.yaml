@@ -230,7 +230,7 @@ dog:
 		Range: 5c0
 	PeriodicExplosion:
 		Weapon: DogBark
-		RequiresCondition: deployed && !chronodisable
+		RequiresCondition: deployed && !chronodisable && !webdisable && !dogstun
 	GrantTimedConditionOnDeploy:
 		DeployedTicks: 1
 		CooldownTicks: 1500
@@ -243,7 +243,7 @@ dog:
 		StartsFullyCharged: true
 		ChargingColor: FF0000
 		DischargingColor: FF00FF
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		PauseOnCondition: chronodisable || ((webdisable || dogstun) && !deployed)
 	Voiced:
 		VoiceSet: DogVoice
 	ProducibleWithLevel:

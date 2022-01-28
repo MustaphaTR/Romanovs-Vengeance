@@ -1000,7 +1000,7 @@ yuri:
 	PeriodicExplosion:
 		Weapon: PsiWave
 		LocalOffset: 0,0,128
-		RequiresCondition: deployed && !chronodisable
+		RequiresCondition: deployed && !chronodisable && !webdisable && !dogstun
 	GrantTimedConditionOnDeploy:
 		DeployedTicks: 50
 		CooldownTicks: 0
@@ -1011,7 +1011,7 @@ yuri:
 		UndeployAnimation: undeploy
 		ShowSelectionBar: false
 		Voice:
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		PauseOnCondition: chronodisable || ((webdisable || dogstun) && !deployed)
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1,idle2
@@ -1671,7 +1671,7 @@ itrp:
 		RequiresCondition: !webdisable && (deployed || deploying) 
 	PeriodicExplosion:
 		Weapon: IronTrooperCurtain
-		RequiresCondition: deployed && !chronodisable
+		RequiresCondition: deployed && !chronodisable && !webdisable && !dogstun
 	GrantTimedConditionOnDeploy:
 		DeployedTicks: 1
 		CooldownTicks: 1500
@@ -1682,7 +1682,7 @@ itrp:
 		UndeployAnimation: undeploy
 		Facing: 96
 		Voice:
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		PauseOnCondition: chronodisable || ((webdisable || dogstun) && !deployed)
 	-Targetable@ironcurtain:
 	-KillsSelf@ironcurtain:
 	-ExternalCondition@INVULNERABILITY:

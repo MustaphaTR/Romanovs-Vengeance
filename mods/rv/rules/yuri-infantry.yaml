@@ -410,7 +410,7 @@ yuripsi:
 		Payload: 500
 	PeriodicExplosion:
 		Weapon: PsiWaveMastery
-		RequiresCondition: deployed && masteryofmind && !chronodisable
+		RequiresCondition: deployed && masteryofmind && !chronodisable && !webdisable && !dogstun
 	GrantTimedConditionOnDeploy:
 		DeployedTicks: 100
 		RequiresCondition: masteryofmind
@@ -473,11 +473,13 @@ yurix:
 		RequiresCondition: rank-elite
 	PeriodicExplosion:
 		Weapon: SuperPsiWave
-		RequiresCondition: deployed && !masteryofmind && !chronodisable
+		RequiresCondition: deployed && !masteryofmind && !chronodisable && !webdisable
 	PeriodicExplosion@Mastery:
 		Weapon: SuperPsiWaveMastery
 		LocalOffset: 0,0,128
-		RequiresCondition: deployed && masteryofmind && !chronodisable
+		RequiresCondition: deployed && masteryofmind && !chronodisable && !webdisable
+	GrantTimedConditionOnDeploy:
+		PauseOnCondition: chronodisable || (webdisable && !deployed)
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	NotificationAnnouncement:
