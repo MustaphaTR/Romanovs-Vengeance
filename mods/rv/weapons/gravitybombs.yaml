@@ -467,6 +467,41 @@ FalloutBombOrange:
 	Warhead@4Radiation: CreateTintedCells
 		LayerName: radioactivityorange
 
+CryoBomb:
+	Inherits: FalloutBomb
+	Projectile: GravityBomb
+		Image: parabomb
+	Warhead@1Dam: SpreadDamage
+		DamageTypes: Prone70Percent, TriggerProne, BulletDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: kirovtesla
+		ImpactSounds: gexp14a.wav
+	-Warhead@4Radiation:
+	Warhead@4Con: GrantExternalCondition
+		Range: 10c0
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+	Warhead@5Con: GrantExternalCondition
+		Range: 10c0
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+	Warhead@6Con: GrantExternalCondition
+		Range: 10c0
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+	Warhead@7Con: GrantExternalCondition
+		Range: 10c0
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
 MutatorBomb:
 	ReloadDelay: 10
 	Range: 1c0

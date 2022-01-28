@@ -736,6 +736,18 @@ commanders_power.chaos_gas_drop:
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.chaos_gas_drop
 
+commanders_power.cryo_bomb:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Cryo Bomb
+	Buildable:
+		Queue: Power.Baku
+		BuildPaletteOrder: 170
+		Prerequisites: prerequisite.has_points, prerequisite.5_stars
+		Description: Enables Cryo Bomb power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.cryo_bomb
+
 hack.has_points:
 	AlwaysVisible:
 	Interactable:
@@ -1517,6 +1529,36 @@ prerequisite.grinder:
 		DisplayBeacon: True
 		BeaconPosters:
 			1: chdpicon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	AirstrikePowerRV@cryobomb:
+		ActivationDelay: 125
+		OrderName: BakuCryoBomb
+		RequiresCondition: !lost
+		Prerequisites:
+			1: commanders_power.cryo_bomb
+		Icons:
+			1: xxicon
+		ChargeInterval: 7500
+		StartFullyCharged: true
+		Names:
+			1: Cryo Bomb
+		Descriptions:
+			1: A Cargo plane drops a bomb that freezes\nunits within a large area anywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		UnitTypes:
+			1: pdplane.cryo_bomb
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: camera.5c0
+		DisplayBeacon: True
+		BeaconPosters:
+			1: xxicon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		UseDirectionalTarget: True

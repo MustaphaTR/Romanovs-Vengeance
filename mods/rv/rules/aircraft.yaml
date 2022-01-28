@@ -1140,6 +1140,18 @@ pdplane.fallout_bomb:
 	Aircraft:
 		Speed: 270
 
+pdplane.cryo_bomb:
+	Inherits: pdplane
+	Armament:
+		Weapon: CryoBomb
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 1
+		AmmoCondition: ammo
+	AttackBomber:
+	Aircraft:
+		Speed: 270
+
 pdplane.chaos:
 	Inherits: pcplane
 	Armament@1:
