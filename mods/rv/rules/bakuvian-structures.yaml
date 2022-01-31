@@ -1,0 +1,129 @@
+babarr:
+	Inherits: ^Barracks
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		Queue: Building.Baku
+		Description: Trains infantry.
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 3,2
+	RallyPoint:
+		Path: 2,3
+	Exit@1:
+		SpawnOffset: 0,768,0
+		ExitCell: 2,2
+		Priority: 2
+	Exit@2:
+		SpawnOffset: -694,-196,0
+		ExitCell: 0,2
+		Priority: 2
+	Exit@fallback1:
+		SpawnOffset: -384,512,0
+		ExitCell: 1,2
+	Exit@fallback2:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,1
+	Exit@fallback3:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,0
+	Exit@fallback4:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+	Exit@fallback5:
+		SpawnOffset: 1086,362,0
+		ExitCell: 2,-1
+	Exit@fallback6:
+		SpawnOffset: 362,-362,0
+		ExitCell: 1,-1
+	Exit@fallback7:
+		SpawnOffset: -362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback8:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback10:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,1
+	Exit@fallback11:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,2
+	Exit@fallback12:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,2
+	Production:
+		Produces: Infantry.Baku, Infantry.Tuva
+	ProductionQueue:
+		Type: Infantry.Baku
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, russianfed, serbia
+	ProductionQueue@Tuva:
+		Type: Infantry.Tuva
+		Factions: tuva
+		Group: Infantry
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Infantry.Baku
+	ProductionBar@Tuva:
+		ProductionType: Infantry.Tuva
+	ProvidesPrerequisite@babarr:
+		Prerequisite: babarr
+	ProvidesPrerequisite@nahand:
+		Prerequisite: nahand
+	ProvidesPrerequisite@mwfacref:
+		Prerequisite: narefn
+	WithIdleOverlay@light:
+		Sequence: idle-light
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	IsometricSelectable:
+		DecorationHeight: 45
+
+baairf:
+	Inherits: ^Helipad
+	Inherits@SHAPE: ^3x5Shape
+	Buildable:
+		Queue: Building.Baku
+		Prerequisites: naradr, ~techlevel.2
+		Description: Produces Bakuvian aircraft.
+	Building:
+		Footprint: xxx xxx xxx _xx _xx
+		Dimensions: 3,5
+	Tooltip:
+		Name: Airfield
+	Tooltip@NoRow:
+		Name: Airfield
+	RallyPoint:
+		Path: 1,5
+		Palette: mouse
+		IsPlayerPalette: false
+	Exit@1:
+		Facing: 384
+		ExitCell: 1,2
+		SpawnOffset: 512,256,0
+	Production:
+		Produces: Aircraft.Baku
+	ProductionQueue:
+		Type: Aircraft.Baku
+	ProductionBar:
+		ProductionType: Aircraft.Baku
+	WithIdleOverlay@lights:
+		Sequence: idle-lights
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@fans:
+		Sequence: idle-fans
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@bib:
+		Sequence: idle-bib
+		RequiresCondition: !build-incomplete
+	IsometricSelectable:
+		DecorationHeight: 105

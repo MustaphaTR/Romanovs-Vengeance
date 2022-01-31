@@ -231,6 +231,44 @@ nahand:
 		Offset: 0,0
 		UseTilesetCode: false
 
+babarr:
+	Defaults:
+		Offset: -15, -38
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+			DUNE: GENERIC
+	idle: bgbarr
+		ShadowStart: 2
+	damaged-idle: bgbarr
+		Start: 1
+		ShadowStart: 3
+	idle-light: bgbarr_a
+		Length: 6
+		ShadowStart: 12
+		Tick: 150
+		TilesetOverrides:
+			SNOW: GENERIC
+	damaged-idle-light: bgbarr_a
+		Start: 6
+		Length: 6
+		ShadowStart: 18
+		Tick: 150
+		TilesetOverrides:
+			SNOW: GENERIC
+	make: bgbarrmk
+		Length: 31
+		ShadowStart: 31
+		TilesetOverrides:
+			SNOW: GENERIC
+	icon: bits/cameos/bbaricon
+		Offset: 0,0
+		UseTilesetCode: false
+
 narefn:
 	Defaults:
 		Offset: -13, -53
@@ -539,6 +577,44 @@ naheli:
 		TilesetOverrides:
 			SNOW: GENERIC
 	icon: bits/cameos/nhelicon
+		Offset: 0,0
+		UseTilesetCode: false
+
+baairf:
+	Defaults:
+		Offset: 30, -60
+		UseTilesetCode: true
+		TilesetOverrides:
+			SNOW: GENERIC
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+			DUNE: GENERIC
+	idle: bgairf
+		ShadowStart: 3
+	damaged-idle: bgairf
+		Start: 1
+		ShadowStart: 4
+	idle-lights: bgairf_a
+		Length: 6
+		Tick: 150
+	idle-fans: bgairf_b
+		Length: 8
+		Tick: 150
+	idle-bib: bgairfbb
+		ShadowStart: 3
+		ZOffset: -512
+	idle-bib-damaged: bgairfbb
+		Start: 1
+		ShadowStart: 4
+		ZOffset: -512
+	make: bgairfmk
+		Length: 21
+		TilesetOverrides:
+			SNOW: GENERIC
+	icon: bits/cameos/bairicon
 		Offset: 0,0
 		UseTilesetCode: false
 

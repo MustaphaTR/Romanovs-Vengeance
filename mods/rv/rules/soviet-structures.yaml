@@ -5,9 +5,21 @@ nacnst:
 	ProvidesPrerequisite@soviets:
 		Prerequisite: structures.soviets
 	Production:
-		Produces: Building.Soviets, Support.Soviets, Support.Baku
+		Produces: Building.Soviets, Building.Baku, Support.Soviets, Support.Baku
 	ProductionQueue@Building:
 		Type: Building.Soviets
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProductionQueue@BuildingBaku:
+		Type: Building.Baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+		Group: Building
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		BlockedAudio: NoBuild
+		LimitedAudio: BuildingInProgress
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionQueue@Support:
 		Type: Support.Soviets
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
@@ -24,6 +36,8 @@ nacnst:
 		CancelledAudio: Cancelled
 	ProductionBar@Building:
 		ProductionType: Building.Soviets
+	ProductionBar@BuildingBaku:
+		ProductionType: Building.Baku
 	ProductionBar@Support:
 		ProductionType: Support.Soviets
 	ProductionBar@SupportBaku:
@@ -170,7 +184,7 @@ napowr:
 	Inherits: ^PowerPlant
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Soviets, Building.Baku
 		Description: Provides power for other structures.\nCan be rotated.
 	Tooltip:
 		Name: Tesla Reactor
@@ -239,10 +253,10 @@ nahand:
 		SpawnOffset: -724,0,0
 		ExitCell: -1,2
 	Production:
-		Produces: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		Produces: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 	ProductionQueue:
 		Type: Infantry.Soviets
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
 	ProductionQueue@Cuba:
 		Type: Infantry.Cuba
 		Factions: cuba
@@ -265,38 +279,12 @@ nahand:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@Baku:
-		Type: Infantry.Baku
-		Factions: transcaucus, turkmen, russianfed, serbia
-		Group: Infantry
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Tuva:
-		Type: Infantry.Tuva
-		Factions: tuva
-		Group: Infantry
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Soviets
 	ProductionBar@Cuba:
 		ProductionType: Infantry.Cuba
 	ProductionBar@Iraq:
 		ProductionType: Infantry.Iraq
-	ProductionBar@Baku:
-		ProductionType: Infantry.Baku
-	ProductionBar@Tuva:
-		ProductionType: Infantry.Tuva
 	RallyPoint:
 		Path: 3,3
 	ProvidesPrerequisite@nahand:
@@ -309,7 +297,7 @@ nahand:
 narefn:
 	Inherits: ^Refinery
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Soviets, Building.Baku
 	FreeActor:
 		Actor: harv
 	SmokeParticleEmitter@refinerysmoke1:
@@ -326,7 +314,7 @@ naradr:
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Soviets, Building.Baku
 		Prerequisites: power, narefn, ~techlevel.2, ~!ai.naradr
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
@@ -623,7 +611,7 @@ mine:
 naweap:
 	Inherits: ^WarFactory
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Soviets, Building.Baku
 	ProvidesPrerequisite@naweap:
 		Prerequisite: naweap
 	Production:
@@ -710,7 +698,7 @@ naweap:
 nayard:
 	Inherits: ^Shipyard
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Soviets, Building.Baku
 	Production:
 		Produces: Ship.Soviets
 	ProductionQueue:
@@ -784,7 +772,7 @@ nadept:
 	HitShape:
 		TargetableOffsets: 0,0,0, -360,360,0, 360,-360,0, -1080,1080,0, -360,1800,0, -1800,360,0, 360,1080,0, -360,-1080,0, 1080,360,0, -1080,-360,0
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Soviets, Building.Baku
 		Prerequisites: naweap, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.\nCan be rotated.
 	ProvidesPrerequisite@default:
@@ -818,10 +806,10 @@ naheli:
 	Exit@1:
 		SpawnOffset: -384,128,0
 	Production:
-		Produces: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
+		Produces: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 	ProductionQueue:
 		Type: Aircraft.Soviets
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, iraq, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, iraq, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
 	ProductionQueue@USSR:
 		Type: Aircraft.USSR
 		Factions: russia
@@ -866,17 +854,6 @@ naheli:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	ProductionQueue@Baku:
-		Type: Aircraft.Baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
-		Group: Aircraft
-		LowPowerModifier: 200
-		ReadyAudio: UnitReady
-		BlockedAudio: NoBuild
-		LimitedAudio: BuildingInProgress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Aircraft.Soviets
 	ProductionBar@USSR:
@@ -887,8 +864,6 @@ naheli:
 		ProductionType: Aircraft.Cuba
 	ProductionBar@Libya:
 		ProductionType: Aircraft.Libya
-	ProductionBar@Baku:
-		ProductionType: Aircraft.Baku
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -905,7 +880,7 @@ nanrct:
 	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@SHAPE: ^4x4Shape
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Soviets, Building.Baku
 		BuildPaletteOrder: 110
 		Prerequisites: natech, ~techlevel.3
 		BuildDuration: 1000
@@ -953,7 +928,7 @@ natech:
 	Inherits@SHAPE: ^3x3Shape
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Soviets, Building.Baku
 		Prerequisites: production, naradr, ~techlevel.3, ~!ai.natech
 		Description: Allows deployment of advanced units.
 	ProvidesPrerequisite@default:
@@ -1626,7 +1601,7 @@ naindp:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Soviets, Building.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: narefn, natech, ~techlevel.4
 		Description: Decreases vehicle costs by 25%.\nMaximum 1 can be built.
