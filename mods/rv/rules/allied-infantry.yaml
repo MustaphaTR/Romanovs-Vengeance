@@ -7,7 +7,7 @@ engineer:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\nUnarmed.
+		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\n  Unarmed
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -111,7 +111,7 @@ dog:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
-		Description: Anti-infantry unit.\nCan detect cloaked units and spies.\nCan be deployed to stun nearby infantry for a short while.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: Anti-infantry unit.\nCan be deployed to stun nearby infantry for a short while.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilties:\n- Can detect Stealth units\n- Can detect Spies
 		BuildDuration: 50
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -293,7 +293,7 @@ e1:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: General-purpose infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\nCan deploy to gain more range and damage.
+		Description: General-purpose infantry.\nCan deploy to gain more range and damage.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- G.I. Fortifications\n- Endurance Training\n- Advanced Training\n- Portable Weaponry (United Kingdom)
 		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -494,7 +494,7 @@ ggi:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Anti-tank/anti-air infantry.\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\nCan deploy to gain more range.
+		Description: Anti-tank and anti-air infantry.\nCan deploy to gain more range.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\n\nUpgradeable with:\n- Endurance Training\n- Advanced Training\n- Boost-Gliding Systems (United States)\n- Portable Weaponry (United Kingdom)
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -886,7 +886,7 @@ snipe:
 		Queue: Infantry.UK
 		BuildPaletteOrder: 100
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Special anti-infantry unit.\nCan kill garrisoned infantry.\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: Special anti-infantry unit.\nCan kill garrisoned infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -999,7 +999,7 @@ spy:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Infiltrates enemy structures for intel or\nsabotage. Exact effect depends on the\nbuilding infiltrated.\n  Unarmed\nSpecial Ability: Disguises
+		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\n\n  Unarmed\n\nAbilities:\n- Can disguise as an enemy infantry
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1071,7 +1071,7 @@ ghost:
 		Queue: Infantry.USA
 		BuildPaletteOrder: 100
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Elite commando infantry, armed with a sub machine gun\nand C4 that damages Buildings and Ships.\nCan swim.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		Description: Elite commando infantry, armed with a sub machine gun\nand charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings and ships\n\nUpgradeable with:\n- Advanced Training
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1191,7 +1191,7 @@ ccomand:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 960
 		Prerequisites: ~allies.tech.infiltrated, ~techlevel.4
-		Description: Elite commando infantry, armed with\na sub machine gun and C4.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\nSpecial Ability: Can C4 Buildings
+		Description: Elite commando infantry, armed with\na sub machine gun and C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- Advanced Training
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Tooltip:
@@ -1262,7 +1262,7 @@ ptroop:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 990
 		Prerequisites: ~yuri.tech.infiltrated, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\nSpecial Ability: Can C4 Buildings
+		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\n\nAbilities:\n- Can place C4 on buildings
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1316,7 +1316,7 @@ tany:
 		BuildPaletteOrder: 160
 		Prerequisites: gatech, ~techlevel.4
 		BuildLimit: 1
-		Description: Elite commando infantry, armed with \ndual pistols and C4.\nCan swim.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\nSpecial Ability: Can C4 Buildings and Vehicles.\n\nMaximum 1 can be trained.
+		Description: Elite commando infantry, armed with\ndual pistols and C4 charges.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can place C4 on buildings and vehicles\n\nUpgradeable with:\n- Advanced Training\n\n  Maximum 1 can be trained
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1460,7 +1460,7 @@ jumpjet:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.2
-		Description: Airborne soldier.\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
+		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Advanced Training
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1656,7 +1656,7 @@ cleg:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 140
 		Prerequisites: gatech, ~techlevel.4
-		Description: High-tech soldier capable of erasing enemy units.\n Strong vs Infantry, Vehicles, Structures\n Weak vs Aircraft
+		Description: High-tech soldier capable of erasing enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can teleport anywhere on the map
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1770,7 +1770,7 @@ gren:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		Prerequisites: gaairc, ~techlevel.2
 		BuildPaletteOrder: 70
-		Description: Infantry armed with grenades.\nCan kill garrisoned infantry.\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft
+		Description: Infantry armed with grenades.\nCan kill garrisoned infantry.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Advanced Training\n- EMP Munitions (Korea)
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
