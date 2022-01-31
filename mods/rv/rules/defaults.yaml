@@ -531,6 +531,14 @@
 		Condition: advtraining
 		Prerequisites: upgrade.advanced_training
 
+^AffectedByCompositeArmor:
+	DamageMultiplier@COMPOSITE_ARMOR:
+		Modifier: 75
+		RequiresCondition: composite_armor
+	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
+		Condition: composite_armor
+		Prerequisites: upgrade.composite_armor
+
 ^AffectedByPredatorMissiles:
 	FirepowerMultiplier@PREDATOR_MISSILES:
 		Modifier: 125
@@ -552,6 +560,14 @@
 		Condition: portable
 		Prerequisites: upgrade.portable_weaponry
 
+^AffectedByGrandCannonProtocols:
+	DamageMultiplier@GTGCAN_PROTOCOLS:
+		Modifier: 87
+		RequiresCondition: gtgcan_protocols
+	GrantConditionOnPrerequisite@GTGCAN_PROTOCOLS:
+		Condition: gtgcan_protocols
+		Prerequisites: upgrade.grand_cannon_protocols
+
 ^AffectedByAdvancedGunSystems:
 	RangeMultiplier@ADVANCED_GUNS:
 		Modifier: 125
@@ -569,14 +585,6 @@
 	GrantConditionOnPrerequisite@INCREASED_PAYLOAD:
 		Condition: increased_payload
 		Prerequisites: upgrade.increased_payload
-
-^AffectedByCompositeArmor:
-	DamageMultiplier@COMPOSITE_ARMOR:
-		Modifier: 75
-		RequiresCondition: composite_armor
-	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
-		Condition: composite_armor
-		Prerequisites: upgrade.composite_armor
 
 ^AffectedByImprovedFlaks:
 	GrantConditionOnPrerequisite@IMPFLAKS:
