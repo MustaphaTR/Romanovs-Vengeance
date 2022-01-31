@@ -884,24 +884,24 @@ DiskLaser:
 		SecondaryBeamColor: FFFFFF80
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 9000
+		Damage: 7500
 		InvalidTargets: LoadedTankBunker
 		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@1Gar: OpenToppedDamage
 		ValidTargets: LoadedTankBunker
 		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 0c128
-		Damage: 9000
+		Damage: 7500
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 75
-			Medium: 35
-			Heavy: 35
+			Light: 100
+			Medium: 100
+			Heavy: 100
 			Wood: 100
 			Steel: 100
-			Concrete: 90
+			Concrete: 100
 			Drone: 100
 			Rocket: 100
 		DamageTypes: Prone50Percent, TriggerProne, ElectroDeath, SuppressTerrorDrone, NonTemporal
@@ -917,9 +917,9 @@ DiskLaserE:
 	Projectile: LaserZap
 		Color: FF000080
 	Warhead@1Dam: SpreadDamage
-		Damage: 15000
+		Damage: 10000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 15000
+		Damage: 10000
 	Warhead@2Eff: CreateEffect
 		Explosions: laser_explosion_red
 		ExplosionPalette: player
@@ -987,17 +987,17 @@ DoomLaser:
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c48
-		Damage: 12000
+		Damage: 10000
 		Versus:
-			None: 40
-			Flak: 40
-			Plate: 30
+			None: 100
+			Flak: 100
+			Plate: 100
 			Light: 100
 			Medium: 100
-			Heavy: 75
-			Wood: 55
-			Steel: 65
-			Concrete: 50
+			Heavy: 100
+			Wood: 100
+			Steel: 100
+			Concrete: 100
 			Drone: 100
 			Rocket: 100
 		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
@@ -1013,7 +1013,7 @@ DoomLaserE:
 	Projectile: LaserZap
 		Color: FF000080
 	Warhead@1Dam: SpreadDamage
-		Damage: 20000
+		Damage: 15000
 	Warhead@2Eff: CreateEffect
 		Explosions: laser_explosion_red
 		ExplosionPalette: player
@@ -1049,10 +1049,16 @@ ATLASER:
 		SecondaryBeamColor: AA799080
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
+		Damage: 6500
 		Versus:
-			None: 40
-			Flak: 40
-			Plate: 30
+			None: 100
+			Flak: 100
+			Plate: 100
+			Heavy: 100
+			Wood: 100
+			Steel: 100
+			Concrete: 100
+			Drone: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: laser_explosion
 		ExplosionPalette: effect
@@ -1078,10 +1084,16 @@ ATLASERE:
 		SecondaryBeamColor: FF000080
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
+		Damage: 6500
 		Versus:
-			None: 120
-			Flak: 120
-			Plate: 115
+			None: 100
+			Flak: 100
+			Plate: 100
+			Heavy: 100
+			Wood: 100
+			Steel: 100
+			Concrete: 100
+			Drone: 100
 	Warhead@2Eff: CreateEffect
 		Explosions: laser_explosion_red
 		ExplosionPalette: player
@@ -1117,17 +1129,17 @@ LunarLaser:
 		UsePlayerColor: false
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c48
-		Damage: 3000
+		Damage: 2000
 		Versus:
 			None: 100
 			Flak: 100
 			Plate: 100
-			Light: 75
-			Medium: 50
-			Heavy: 50
-			Wood: 75
-			Steel: 50
-			Concrete: 65
+			Light: 100
+			Medium: 100
+			Heavy: 100
+			Wood: 100
+			Steel: 100
+			Concrete: 100
 			Drone: 100
 			Rocket: 100
 		DamageTypes: RadiationDeath, SuppressTerrorDrone, NonTemporal
@@ -1143,7 +1155,7 @@ LunarLaserE:
 	Projectile: LaserZap
 		Color: FF000080
 	Warhead@1Dam: SpreadDamage
-		Damage: 3500
+		Damage: 2500
 	Warhead@2Eff: CreateEffect
 		Explosions: laser_explosion_red
 		ExplosionPalette: player

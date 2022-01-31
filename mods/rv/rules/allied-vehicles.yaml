@@ -1353,6 +1353,7 @@ bfrt:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -1366,9 +1367,9 @@ bfrt:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 2000
+		Cost: 1750
 	DeliversCash:
-		Payload: 2000
+		Payload: 1750
 		Voice: Move
 	Tooltip:
 		Name: Battle Fortress
@@ -1383,7 +1384,7 @@ bfrt:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 32
-		Speed: 60
+		Speed: 75
 		Locomotor: omnicrusher
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	-Crushable:
@@ -1464,6 +1465,10 @@ bfrt:
 	RenderVoxels:
 		Scale: 12
 	WithVoxelBody:
+		RequiresCondition: !composite_armor
+	WithVoxelBody@COMPOSITE_ARMOR:
+		Sequence: idle-armor
+		RequiresCondition: composite_armor
 	Voiced:
 		VoiceSet: BattleFortressVoice
 	ExternalCondition@PRODUCED:
@@ -1625,19 +1630,20 @@ robo:
 aambu:
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 70
 		Prerequisites: ~prerequisite.ambulance, ~techlevel.2
-		Description: Light vehicle capable of healing nearby infantry.\nCan carry up to 5 infantry and heal them faster inside.\n\n Unarmed
+		Description: Heavy armored vehicle capable of healing nearby infantry.\nCan carry up to 5 infantry and heal them faster inside.\n\n  Unarmed
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
-		Cost: 400
+		Cost: 500
 	DeliversCash:
-		Payload: 400
+		Payload: 500
 		Voice: Move
 	Tooltip:
 		Name: Combat Ambulance
@@ -1646,12 +1652,13 @@ aambu:
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	Health:
-		HP: 40000
+		HP: 35000
 	Armor:
-		Type: Light
+		Type: Heavy
 	Mobile:
 		TurnSpeed: 40
-		Speed: 135
+		Speed: 120
+		Locomotor: heavytracked
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	PeriodicExplosion:
 		Weapon: AmbulanceHeal
@@ -1670,6 +1677,10 @@ aambu:
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
+		RequiresCondition: !composite_armor
+	WithVoxelBody@COMPOSITE_ARMOR:
+		Sequence: idle-armor
+		RequiresCondition: composite_armor
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
 		MaxWeight: 5
