@@ -646,14 +646,18 @@ fv:
 		Weapon: CRGrenade
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-gren && !empammo && !rank-elite
+	Armament@gren-elite:
+		Weapon: CRGrenadeE
+		LocalOffset: 200,0,800
+		RequiresCondition: ifv-gren && !empammo && rank-elite
 	Armament@gren-emp:
 		Weapon: CRGrenadeEMP
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-gren && empammo && !rank-elite
-	Armament@gren-elite:
-		Weapon: CRGrenadeE
+	Armament@gren-emp-elite:
+		Weapon: CRGrenadeEMPE
 		LocalOffset: 200,0,800
-		RequiresCondition: ifv-gren && rank-elite
+		RequiresCondition: ifv-gren && empammo && rank-elite
 	Armament@rocket:
 		Weapon: CRMissileLauncher
 		LocalOffset: 128,-128,1408, 128,128,1408

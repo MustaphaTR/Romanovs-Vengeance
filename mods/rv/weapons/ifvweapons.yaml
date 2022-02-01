@@ -130,18 +130,11 @@ CRGrenadeE:
 	Inherits: CRGrenade
 	Range: 6c0
 	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
 		Damage: 15000
 	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c512
 		Damage: 15000
-	Warhead@1Dis: GrantExternalCondition
-		Range: 0c768
-		Duration: 40
-		Condition: emp
-		ValidTargets: EMPulse
-	Warhead@2Eff: CreateEffect
-		Explosions: empulse30p
-		ExplosionPalette: tseffect
-		ImpactSounds: sempexpl.wav
 
 CRGrenadeEMP:
 	Inherits: CRGrenade
@@ -150,6 +143,20 @@ CRGrenadeEMP:
 		Duration: 30
 		Condition: emp
 		ValidTargets: EMPulse
+		InvalidTargets: IronCurtained, ForceShielded
+	Warhead@2Eff: CreateEffect
+		Explosions: empulse30p
+		ExplosionPalette: tseffect
+		ImpactSounds: sempexpl.wav
+
+CRGrenadeEMPE:
+	Inherits: CRGrenadeE
+	Warhead@1Dis: GrantExternalCondition
+		Range: 1c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: IronCurtained, ForceShielded
 	Warhead@2Eff: CreateEffect
 		Explosions: empulse30p
 		ExplosionPalette: tseffect
