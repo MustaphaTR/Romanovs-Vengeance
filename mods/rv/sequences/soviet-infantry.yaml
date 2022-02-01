@@ -467,19 +467,6 @@ pyro:
 		Length: 15
 	icon: bits/cameos/pyroicon
 
-mech:
-	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/mech
-	run:
-		Tick: 120
-	prone-shoot:
-		Start: 164
-	paradrop:
-		Start: 244
-	cheer:
-		Start: 245
-	icon: bits/cameos/mechicon
-
 itrp:
 	Inherits: cleg
 	Defaults: bits/infantry/itrp
@@ -535,41 +522,3 @@ shkc:
 	charge: bits/infantry/shkc
 	prone-charge: bits/infantry/shkc
 	icon: bits/cameos/shkcicon
-
-# Baku Pact Infantry
-mengineer:
-	idle: bits/infantry/mengineer
-		ShadowStart: 8
-		Facings: 8
-	stand: bits/infantry/mengineer
-		ShadowStart: 8
-		Facings: 8
-	icon: cameo|xxicon
-
-sspy:
-	Inherits: spy
-	Defaults: spy
-	icon: bits/cameos/raspyicon.png
-		AddExtension: false
-
-vlkv:
-	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/vlkv
-	die1:
-		Start: 86
-	die2:
-		Start: 86
-	shoot:
-		Start: 101
-	paradrop:
-		Start: 149
-	cheer:
-		Start: 150
-		Length: 8
-	icon: bits/cameos/vlkvicon
-
-chit:
-	Inherits: dog
-	Defaults: bits/infantry/chit
-	shoot: bits/infantry/chitp
-	icon: bits/cameos/chiticon
