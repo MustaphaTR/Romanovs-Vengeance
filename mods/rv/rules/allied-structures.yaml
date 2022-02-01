@@ -330,7 +330,7 @@ gaairc:
 	Buildable:
 		Queue: Building.Allies
 		Prerequisites: power, garefn, ~techlevel.2
-		Description: Provides radar.\nProvides a different support power depening on the subfaction.\n\nProduces Allied aircraft.\nSupports 4 aircraft.
+		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.\n\nProvides a different support power depening on the subfaction:\n- Airborne (United States)\n- Carpet Bombing (United Kingdom)\n- Force Shield (France)\n- Chrono Grizzly (Germany)\n- Chronobomb (Korea)
 	Tooltip:
 		Name: Airforce Command Headquarters
 	Tooltip@NoRow:
@@ -904,7 +904,7 @@ gawall:
 		Queue: Support.Allies, Support.France
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Heavy wall capable of blocking units and projectiles.
+		Description: Heavy wall capable of blocking units and projectiles.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
 	Tooltip:
 		Name: Allied Wall
 	Tooltip@NoRow:
@@ -927,7 +927,7 @@ gapill:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 40
 		Prerequisites: gapile, ~techlevel.1
-		Description: Automated anti-infantry defense.\nCan detect cloaked units.\nCan be placed on water.
+		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -991,7 +991,7 @@ nasam:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.2
-		Description: Automated anti-aircraft defense.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.
+		Description: Automated anti-aircraft defense.\nRequires power to operate.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)\n- Grand Cannon Protocols (France)
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1070,7 +1070,7 @@ gtgcan:
 		Queue: Support.France
 		BuildPaletteOrder: 90
 		Prerequisites: upgrade.grand_cannon_protocols, ~techlevel.3
-		Description: Automated, long ranged anti-ground defense.
+		Description: Automated, long ranged anti-ground defense.\nRequires power to operate.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	Valued:
@@ -1139,7 +1139,7 @@ gaorep:
 		Queue: Building.Allies
 		BuildPaletteOrder: 120
 		Prerequisites: garefn, gatech, ~techlevel.4
-		Description: Refines income from ores and gems by 25%.\nMaximum 1 can be built.
+		Description: Refines income from ores and gems by 25%.\n\n  Maximum 1 can be built.
 		BuildLimit: 1
 		BuildDuration: 1250
 		BuildDurationModifier: 100
@@ -1482,7 +1482,7 @@ atesla:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 70
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -1737,6 +1737,7 @@ gagatea:
 		Queue: Support.Allies, Support.France
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
+		Description: Automated barrier that opens for allied units.\nCan be rotated.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Tooltip:
@@ -1786,7 +1787,7 @@ gamgun:
 		Queue: Support.France
 		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Defensive structure that is invisible while not firing.\nRequires power to operate.\nCan be placed further than any structure.\nCan be placed on water.
+		Description: Defensive structure that is invisible while not firing.\nRequires power to operate.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can be placed further than other buildings\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1865,7 +1866,7 @@ gagun:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 50
 		Prerequisites: gapile, ~prerequisite.gun_turret, ~techlevel.1
-		Description: Anti-tank defense structure.\nRequires power to operate.\nCan be placed on water.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		Description: Anti-tank defense structure.\nRequires power to operate.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:

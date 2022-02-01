@@ -604,6 +604,7 @@ yadome:
 	Buildable:
 		Queue: Building.Yuri
 		Prerequisites: power, psirefn, ~techlevel.2, ~!ai.yadome
+		Description: Provides radar.\n\nProvides a different support power depening on the subfaction:\n- Psi-Ops Drop (Yurigrad)\n- Hologram Army (Lazarus Corps)\n- Point Defense Drones (Antarctica)\n- Lethocerus Swarm (Transylvania)\n- Ion Cannon (Lunar Eclipse)
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.yadome
@@ -939,7 +940,7 @@ yaclon:
 		Queue: Building.Yuri
 		BuildPaletteOrder: 130
 		Prerequisites: yatech, ~techlevel.4
-		Description: Clones most trained infantry.\nMaximum 1 can be built.
+		Description: Clones most trained infantry.\n\n  Maximum 1 can be built.
 		BuildLimit: 1
 		BuildDuration: 1250
 		BuildDurationModifier: 100
@@ -1053,7 +1054,7 @@ yaggun:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 40
 		Prerequisites: yabrck, ~techlevel.1
-		Description: Automated anti-infantry and anti-air defense.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.
+		Description: Automated anti-infantry and anti-air defense.\nRequires power to operate.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Chainguns
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Health:
@@ -1222,7 +1223,7 @@ natbnk:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 50
 		Prerequisites: yaweap, ~techlevel.1
-		Description: Static defense with fireports for a vehicle to garrison.\n\nProvides increased firepower, fire speed and range to the vehicle.
+		Description: Static defense with fireports for a vehicle to garrison.\nProvides increased firepower, fire speed and range to the vehicle.
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1295,7 +1296,7 @@ yapsyt:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 60
 		Prerequisites: yadome, ~techlevel.3
-		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.
+		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Health:
@@ -1379,7 +1380,7 @@ yasgen:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 80
 		Prerequisites: yatech, ~techlevel.3
-		Description: Makes nearby units and structures invisibile while not firing.\nRequires power to operate.
+		Description: Makes nearby units and structures invisibile while not firing.\nRequires power to operate.\n\nUpgradeable with:\n- Lazarus Prime
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Building:
@@ -1432,7 +1433,7 @@ yagntc:
 	Buildable:
 		Queue: Support.Yuri, Support.Antarctica
 		Prerequisites: yatech, !enoughlazarus, ~techlevel.5
-		Description: Makes units invisible.
+		Description: Makes vehicles invisible.\nKills infantry.
 	Tooltip:
 		Name: Lazarus Shield Generator
 	Tooltip@NoRow:
@@ -1489,7 +1490,7 @@ yappet:
 	Buildable:
 		Queue: Support.Yuri, Support.Antarctica
 		Prerequisites: yatech, !enoughdominator, ~techlevel.5
-		Description: Release powerful energy that damages structures and mind controls units.\nRequires power to operate.\n  Special Ability: Psychic Domination
+		Description: Release powerful energy that damages structures and mind controls units.\nRequires power to operate.
 	Tooltip:
 		Name: Psychic Dominator
 	Tooltip@NoRow:
@@ -1708,7 +1709,7 @@ yaeast02:
 		Queue: Support.Antarctica
 		BuildPaletteOrder: 70
 		Prerequisites: yadome, ~techlevel.2
-		Description: Big defense structure armed with lasers.\nCan detect cloaked units.
+		Description: Big defense structure armed with lasers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	Health:

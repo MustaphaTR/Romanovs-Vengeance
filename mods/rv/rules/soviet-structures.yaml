@@ -316,6 +316,7 @@ naradr:
 	Buildable:
 		Queue: Building.Soviets, Building.Baku
 		Prerequisites: power, narefn, ~techlevel.2, ~!ai.naradr
+		Description: Provides radar.\n\nProvides a different support power depening on the subfaction:\n- Tesla Drop (Soviet Union)\n- Radiation Missile (Iraq)\n- Instant Bunker (Vietnam)\n- Death Bombs (Cuba)\n- Ambush (Libya)
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.naradr
@@ -972,7 +973,7 @@ naclon:
 		Queue: Building.Unused # Building.Soviets, Building.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: natech
-		Description: Clones most trained infantry.\nMaximum 1 can be built.
+		Description: Clones most trained infantry.\n\n  Maximum 1 can be built.
 		BuildLimit: 1
 	Valued:
 		Cost: 2000
@@ -1167,7 +1168,7 @@ namisl:
 	Buildable:
 		Queue: Support.Soviets
 		Prerequisites: natech, !enoughnuke, ~techlevel.5
-		Description: Provides an atomic bomb.\nRequires power to operate.\n  Special Ability: Atom Bomb
+		Description: Provides an atomic bomb.\nRequires power to operate.
 	Tooltip:
 		Name: Nuclear Missile Silo
 	Tooltip@NoRow:
@@ -1266,7 +1267,7 @@ naflak:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 60
 		Prerequisites: naradr, ~techlevel.2
-		Description: Automated anti-aircraft defense.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.
+		Description: Automated anti-aircraft defense.\nRequires power to operate.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1340,7 +1341,7 @@ tesla:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: naradr, ~techlevel.3
-		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\nCan detect cloaked units.\nCan be placed on water.\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Overcharge (Russia)
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -1456,7 +1457,7 @@ nalasr:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 50
 		Prerequisites: nahand, ~techlevel.1
-		Description: Automated anti-infantry defense.\nCan detect cloaked units.\nCan be placed on water.
+		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Armor-Piercing Bullets
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1604,7 +1605,7 @@ naindp:
 		Queue: Building.Soviets, Building.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: narefn, natech, ~techlevel.4
-		Description: Decreases vehicle costs by 25%.\nMaximum 1 can be built.
+		Description: Decreases vehicle costs by 25%.\n\n  Maximum 1 can be built.
 		BuildLimit: 1
 		BuildDuration: 1250
 		BuildDurationModifier: 100
@@ -1695,7 +1696,7 @@ napost:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: power, ~prerequisite.tesla_fence, ~techlevel.1
-		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\n\nRequires power to operate.
+		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\n\nUpgradeable with:\n- Overcharge (Russia)
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
@@ -1886,7 +1887,7 @@ naprop:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: natech, ~techlevel.4
-		Description: Buffs fire speed of nearby units and heals them.
+		Description: Buffs fire speed of nearby units and heals them.\nRequires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Building:
