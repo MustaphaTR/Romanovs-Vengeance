@@ -440,8 +440,17 @@
 		Image: propaganda
 		Sequence: icon
 		Palette: player
-		RequiresCondition: propaganda1 || propaganda2 || propaganda3 || propaganda_tower
+		RequiresCondition: (propaganda1 || propaganda2 || propaganda3 || propaganda_tower) && !baku
 		ValidRelationships: Ally, Enemy, Neutral
+	WithDecoration@PROPAGANDA-BAKU:
+		Image: propaganda-baku
+		Sequence: icon
+		Palette: player
+		RequiresCondition: (propaganda1 || propaganda2 || propaganda3 || propaganda_tower) && baku
+		ValidRelationships: Ally, Enemy, Neutral
+	GrantConditionOnFaction@BAKU:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ChangesHealth@PROPAGANDA_TOWER:
 		Step: 0
 		PercentageStep: 2
