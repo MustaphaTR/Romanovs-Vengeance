@@ -404,9 +404,6 @@ e1:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		RequiresCondition: undeployed && !parachute && !webdisable
-	WithMakeAnimation:
-		Sequence: deploy
-		BodyNames: dot
 	Turreted:
 		Turret: deploy
 		RealignDelay: -1
@@ -415,15 +412,33 @@ e1:
 	WithSpriteTurret@idle:
 		Turret: deploy
 		Sequence: deployed
-		RequiresCondition: deployed && !animate-turret && !parachute && !webdisable
+		RequiresCondition: deployed && !animate-turret && !parachute && !webdisable && !fortifications
 	WithSpriteTurret@animated:
 		Turret: deploy
 		Sequence: shoot-deployed
-		RequiresCondition: deployed && animate-turret && !parachute && !webdisable
+		RequiresCondition: deployed && animate-turret && !parachute && !webdisable && !fortifications
+	WithSpriteTurret@idle-fortifications:
+		Turret: deploy
+		Sequence: deployed-fortifications
+		RequiresCondition: deployed && !animate-turret && !parachute && !webdisable && fortifications
+	WithSpriteTurret@animated-fortifications:
+		Turret: deploy
+		Sequence: shoot-deployed-fortifications
+		RequiresCondition: deployed && animate-turret && !parachute && !webdisable && fortifications
 	WithSpriteBody:
 		Sequence: dot
 		Name: dot
-		RequiresCondition: !undeployed
+		RequiresCondition: !undeployed && !fortifications
+	WithSpriteBody@fortifications:
+		Sequence: dot
+		Name: dot-fortifications
+		RequiresCondition: !undeployed && fortifications
+	WithMakeAnimation:
+		Sequence: deploy
+		BodyNames: dot
+	WithMakeAnimation@fortifications:
+		Sequence: deploy-fortifications
+		BodyNames: dot-fortifications
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -808,9 +823,6 @@ ggi:
 			ExplosionDeath: 1
 			BulletDeath: 2
 		RequiresCondition: portable
-	WithMakeAnimation:
-		Sequence: deploy
-		BodyNames: dot
 	Turreted:
 		Turret: deploy
 		RealignDelay: -1
@@ -828,6 +840,9 @@ ggi:
 		Sequence: dot
 		Name: dot
 		RequiresCondition: !undeployed
+	WithMakeAnimation:
+		Sequence: deploy
+		BodyNames: dot
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
