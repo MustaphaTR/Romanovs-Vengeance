@@ -50,11 +50,11 @@ engineer:
 	Captures@TIMED:
 		CaptureDelay: 75
 		CaptureTypes: building, husk
-		RequiresCondition: !instantcapture
+		RequiresCondition: !instantcapture && !chronodisable && !webdisable && !dogstun
 	Captures@TECH:
 		CaptureTypes: tech
 		CaptureDelay: 250
-		RequiresCondition: !instantcapture
+		RequiresCondition: !instantcapture && !chronodisable && !webdisable && !dogstun
 	GrantConditionOnPrerequisite@INSTANTCAPTURE:
 		Condition: instantcapture
 		Prerequisites: global-instantcapture
