@@ -236,26 +236,52 @@ MaverickAAE:
 	ValidTargets: Air
 	Projectile: Missile
 		Speed: 640
-		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
 Maverick2:
 	Inherits: Maverick
-	Report: vbleatta.wav, vbleattb.wav
+	Report: vmigatta.wav
+	Projectile: Missile
+		Image: ra1patriot
 	Warhead@1Dam: SpreadDamage
-		Damage: 20000
+		Damage: 22500
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 20000
+		Damage: 22500
+	Warhead@2Eff: CreateEffect
+		Explosions: ra1_atomic
+		ExplosionPalette: ra
+		ImpactSounds: gexpbara.wav, gexpbarb.wav, gexpbarc.wav
 
 Maverick2E:
 	Inherits: Maverick2
-	Range: 9c0
+	Range: 7c0
 	ReloadDelay: 10
+	Projectile: Missile
+		RangeLimit: 22c204
+		ContrailColor: EA0000
 	Warhead@1Dam: SpreadDamage
-		Damage: 40000
+		Damage: 45000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 40000
+		Damage: 45000
+
+Maverick2AA:
+	Inherits: Maverick2
+	Range: 8c0
+	ValidTargets: Air
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+
+Maverick2AAE:
+	Inherits: Maverick2E
+	Range: 9c0
+	ValidTargets: Air
+	Projectile: Missile
+		Speed: 640
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
 
 Maverick3:
 	Inherits: Maverick

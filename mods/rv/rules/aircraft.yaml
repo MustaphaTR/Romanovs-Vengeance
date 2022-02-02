@@ -425,7 +425,7 @@ orca:
 		Queue: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		Prerequisites: !prerequisite.enoughair, ~techlevel.3
 		BuildPaletteOrder: 10
-		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n\n  Strong vs Infantry, Buildings, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Air-to-Air Missile Systems\n- Predator Missiles
+		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n\n  Strong vs Buildings, Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Air-to-Air Missile Systems\n- Predator Missiles
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -533,6 +533,7 @@ orca:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	ProvidesPrerequisite@actorname:
 	GrantExternalConditionToOwner:
 		Condition: padaircraft
 	HitShape:
@@ -1785,6 +1786,10 @@ schphusk:
 
 bpln:
 	Inherits: orca
+	Valued:
+		Cost: 1250
+	DeliversCash:
+		Payload: 1250
 	Tooltip:
 		Name: MiG
 	Tooltip@NoRow:
@@ -1866,6 +1871,7 @@ bpln.buildable:
 		Name: MiG
 	Buildable:
 		Queue: Aircraft.Baku
+		Description: Fast assault fighter.\nCannot be built more than landing strips available.\n\n  Strong vs Buildings, Vehicles, Aircraft\n  Weak vs Infantry
 	VoiceAnnouncement:
 		Voice: Attack
 	Aircraft:
@@ -1879,12 +1885,14 @@ bpln.buildable:
 	SpawnActorOnDeath@VTOL:
 		Actor: bplnhusk.VTOL
 	Armament:
-		Weapon: Maverick3
+		Weapon: Maverick2
 	Armament@Elite:
-		Weapon: Maverick3E
+		Weapon: Maverick2E
 	Armament@AA:
+		Weapon: Maverick2AA
 		RequiresCondition: !rank-elite
 	Armament@EliteAA:
+		Weapon: Maverick2AAE
 		RequiresCondition: rank-elite
 	-GrantConditionOnPrerequisite@A2AMISSILES:
 	-FirepowerMultiplier@PREDATOR_MISSILES:
@@ -2415,6 +2423,7 @@ fortress:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
+	ProvidesPrerequisite@actorname:
 	GrantExternalConditionToOwner:
 		Condition: padaircraft
 	HitShape:
