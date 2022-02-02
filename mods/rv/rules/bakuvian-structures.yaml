@@ -93,9 +93,9 @@ baairf:
 	Buildable:
 		Queue: Building.Baku
 		Prerequisites: naradr, ~techlevel.2
-		Description: Produces Bakuvian aircraft.
+		Description: Produces Bakuvian aircraft.\nCan be rotated.
 	Building:
-		Footprint: xxx xxx xxx _xx _xx
+		Footprint: xx= xxx xxx _xx _xx
 		Dimensions: 3,5
 	Tooltip:
 		Name: Airfield
@@ -105,16 +105,26 @@ baairf:
 		Path: 1,5
 		Palette: mouse
 		IsPlayerPalette: false
+	Reservable:
 	Exit@1:
 		Facing: 384
-		ExitCell: 1,2
-		SpawnOffset: 512,256,0
+		ExitCell: 1,5
+		SpawnOffset: 1472,-1472,0
+	Exit@2:
+		Facing: 384
+		ExitCell: 2,5
+		SpawnOffset: 2048,512,0
+	LaysMinefield:
+		Mines: badock
+		Locations: 2,0
 	Production:
 		Produces: Aircraft.Baku
 	ProductionQueue:
 		Type: Aircraft.Baku
 	ProductionBar:
 		ProductionType: Aircraft.Baku
+	PlaceBuildingVariants:
+		Actors: baairb
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -128,6 +138,11 @@ baairf:
 		RequiresCondition: !build-incomplete
 	IsometricSelectable:
 		DecorationHeight: 105
+
+badock:
+	Inherits: gadock
+	Exit@1:
+		Facing: 384
 
 babarb:
 	Inherits: babarr
@@ -186,3 +201,30 @@ babarb:
 	Exit@fallback12:
 		SpawnOffset: 384,512,0
 		ExitCell: 2,1
+
+baairb:
+	Inherits: baairf
+	Inherits@SHAPE: ^5x3Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx__ xxxxx =xxxx
+		Dimensions: 5,3
+	RallyPoint:
+		Path: 5,1
+	Exit@1:
+		Facing: 640
+		ExitCell: 5,1
+		SpawnOffset: -1472,-1472,0
+	Exit@2:
+		Facing: 640
+		ExitCell: 5,2
+		SpawnOffset: -2048,512,0
+	LaysMinefield:
+		Mines: badocb
+		Locations: 0,2
+
+badocb:
+	Inherits: badock
+	Exit@1:
+		Facing: 640

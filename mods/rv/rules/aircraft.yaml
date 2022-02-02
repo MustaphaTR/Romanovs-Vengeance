@@ -500,7 +500,7 @@ orca:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	Rearmable:
-		RearmActors: gaairc, gaairb, gaapad, gadock
+		RearmActors: gaairc, gaairb, gaapad, gadock, baairf, baairb, badock, badocb
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
 	Targetable@CHAOS:
@@ -1629,7 +1629,7 @@ schp:
 		Voice: Build
 		ValidRelationships: None
 	Buildable:
-		Queue: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
+		Queue: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 10
 		Prerequisites: ~techlevel.3
 		Description: Helicopter capable of deploying into a long range artillery.\n\nMobile:\n  Strong vs Infantry\n  Weak vs Vehicles\nDeployed:\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Armor-Piercing Bullets
@@ -1857,6 +1857,64 @@ bpln:
 		UsePlayerColor: False
 	Rearmable:
 		RearmActors: boris
+
+bpln.buildable:
+	Inherits: orca
+	Tooltip:
+		Name: MiG
+	Tooltip@NoRow:
+		Name: MiG
+	Buildable:
+		Queue: Aircraft.Baku
+	VoiceAnnouncement:
+		Voice: Attack
+	Aircraft:
+		VTOL: false
+		Speed: 240
+		-TakeoffSounds:
+		-LandingSounds:
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: bplnhusk
+	SpawnActorOnDeath@VTOL:
+		Actor: bplnhusk.VTOL
+	Armament:
+		Weapon: Maverick3
+	Armament@Elite:
+		Weapon: Maverick3E
+	Armament@AA:
+		RequiresCondition: !rank-elite
+	Armament@EliteAA:
+		RequiresCondition: rank-elite
+	-GrantConditionOnPrerequisite@A2AMISSILES:
+	-FirepowerMultiplier@PREDATOR_MISSILES:
+	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
+	WithVoxelBody:
+		-RequiresCondition:
+	-WithVoxelBody@A2A:
+	-WithVoxelBody@PREDATOR:
+	-WithVoxelBody@A2A_PREDATOR:
+	Health:
+		HP: 10000
+	AmmoPool:
+		Ammo: 2
+	Voiced:
+		VoiceSet: MiGVoice
+	RenderSprites:
+		Image: bpln
+	RenderVoxels:
+		Image: bpln
+	AmbientSound@Ambient:
+		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+		Volume: 0.35
+	Contrail@1:
+		Offset: -600,100,100
+		TrailLength: 15
+		UsePlayerColor: False
+	Contrail@2:
+		Offset: -600,-100,100
+		TrailLength: 15
+		UsePlayerColor: False
 
 bplnhusk:
 	Inherits: ^PlaneHusk
@@ -2318,7 +2376,7 @@ fortress:
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
 	Rearmable:
 		AmmoPools: primary, secondary
-		RearmActors: gaairc, gaairb, gaapad, gadock
+		RearmActors: gaairc, gaairb, gaapad, gadock, baairf, baairb, badock, badocb
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
 	Targetable@CHAOS:
