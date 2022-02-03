@@ -1211,6 +1211,7 @@ yaggun:
 natbnk:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetAll
+	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	WithColoredOverlay@ChronoDisable:
@@ -1272,7 +1273,7 @@ natbnk:
 		PortOffsets: 768,0,1024, 448,-682,1024, -448,-682,1024, -768,0,1024, -448,682,1024, 448,682,1024
 		PortYaws: 0, 176, 341, 512, 682, 853
 		PortCones: 88, 88, 88, 88, 88, 88
-		PauseOnCondition: build-incomplete || chronodisable
+		PauseOnCondition: build-incomplete || chronodisable || disabled
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
