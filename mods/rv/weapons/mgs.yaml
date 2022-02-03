@@ -546,14 +546,14 @@ BlackHawkCannonAAE:
 
 SiegeChopperCannon:
 	Inherits: ^MG
-	ReloadDelay: 3
+	ReloadDelay: 30
 	Range: 6c0
-	Report: vchowe3a.wav, vchowe3b.wav, vchowe3c.wav, vchowe3d.wav
+	Report: bsenatta.wav, bsenattb.wav, bsenattc.wav, bsenattd.wav
 	ValidTargets: Ground, Water
 	Projectile: InstantHit
 		Blockable: false
 	Warhead@1Dam: SpreadDamage
-		Damage: 600
+		Damage: 6000
 		Versus:
 			None: 100
 			Flak: 90
@@ -572,7 +572,7 @@ SiegeChopperCannon:
 		ValidTargets: LoadedTankBunker
 		InvalidTargets: IronCurtained, ForceShielded
 		Spread: 64
-		Damage: 600
+		Damage: 6000
 		Versus:
 			None: 100
 			Flak: 90
@@ -590,9 +590,9 @@ SiegeChopperCannon:
 SiegeChopperCannonE:
 	Inherits: SiegeChopperCannon
 	Warhead@1Dam: SpreadDamage
-		Damage: 1500
+		Damage: 9000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 1500
+		Damage: 9000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
@@ -606,43 +606,43 @@ SiegeChopperCannonAA:
 SiegeChopperCannonAAE:
 	Inherits: SiegeChopperCannonAA
 	Warhead@1Dam: SpreadDamage
-		Damage: 1500
+		Damage: 9000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 1500
+		Damage: 9000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffpiffred
 
 SiegeChopperCannonAP:
 	Inherits: SiegeChopperCannon
 	Warhead@1Dam: SpreadDamage
-		Damage: 1250
+		Damage: 7500
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 1250
+		Damage: 7500
 
 SiegeChopperCannonAPE:
 	Inherits: SiegeChopperCannonE
 	Warhead@1Dam: SpreadDamage
-		Damage: 1562
+		Damage: 11250
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 1562
+		Damage: 11250
 
 SiegeChopperCannonAAAP:
 	Inherits: SiegeChopperCannonAA
 	Warhead@1Dam: SpreadDamage
-		Damage: 1250
+		Damage: 7500
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 1250
+		Damage: 7500
 
 SiegeChopperCannonAAAPE:
 	Inherits: SiegeChopperCannonAAE
 	Warhead@1Dam: SpreadDamage
-		Damage: 1562
+		Damage: 11250
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 1562
+		Damage: 11250
 
 SiegeChopperCannonLine:
 	Inherits: ^LineProjectile
-	ReloadDelay: 5
+	ReloadDelay: 30
 	Range: 6c0
 	ValidTargets: Ground, Water
 	InvalidTargets: Air
