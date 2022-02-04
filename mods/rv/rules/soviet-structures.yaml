@@ -185,7 +185,7 @@ napowr:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Soviets, Building.Baku
-		Description: Provides power for other structures.\nCan be rotated.
+		Description: Provides power for other structures.\n\n  Can be rotated.
 	Tooltip:
 		Name: Tesla Reactor
 	Tooltip@NoRow:
@@ -210,7 +210,7 @@ nahand:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Soviets
-		Description: Trains infantry.
+		Description: Trains Soviet infantry.\n\n  Can be rotated.
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -316,7 +316,7 @@ naradr:
 	Buildable:
 		Queue: Building.Soviets, Building.Baku
 		Prerequisites: power, narefn, ~techlevel.2, ~!ai.naradr
-		Description: Provides radar.\n\nProvides a different support power depening on the subfaction:\n- Tesla Drop (Soviet Union)\n- Radiation Missile (Iraq)\n- Instant Bunker (Vietnam)\n- Death Bombs (Cuba)\n- Ambush (Libya)
+		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Tesla Drop (Soviet Union)\n- Radiation Missile (Iraq)\n- Instant Bunker (Vietnam)\n- Death Bombs (Cuba)\n- Ambush (Libya)
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.naradr
@@ -613,6 +613,7 @@ naweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Soviets, Building.Baku
+		Description: Produces Soviet vehicles.\n\n  Can be rotated.
 	ProvidesPrerequisite@naweap:
 		Prerequisite: naweap
 	Production:
@@ -775,7 +776,7 @@ nadept:
 	Buildable:
 		Queue: Building.Soviets, Building.Baku
 		Prerequisites: naweap, ~techlevel.1
-		Description: Repairs vehicles and removes Terror Drones for a price.\nCan be rotated.
+		Description: Repairs vehicles and removes Terror Drones for a price.\n\n  Can be rotated.
 	ProvidesPrerequisite@default:
 		Prerequisite: nadept
 	Building:
@@ -1113,7 +1114,7 @@ nairon:
 	Buildable:
 		Queue: Support.Soviets, Support.Baku
 		Prerequisites: natech, !enoughiron, ~techlevel.5
-		Description: Grants invulnerability to vehicles and structures.\nKills infantry.
+		Description: Grants invulnerability to vehicles and structures.\nKills infantry.\n\n  Requires power to operate.
 	Tooltip:
 		Name: Iron Curtain Device
 	Tooltip@NoRow:
@@ -1168,7 +1169,7 @@ namisl:
 	Buildable:
 		Queue: Support.Soviets
 		Prerequisites: natech, !enoughnuke, ~techlevel.5
-		Description: Provides an atomic bomb.\nRequires power to operate.
+		Description: Provides an atomic bomb.\n\n  Requires power to operate.
 	Tooltip:
 		Name: Nuclear Missile Silo
 	Tooltip@NoRow:
@@ -1267,7 +1268,7 @@ naflak:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 60
 		Prerequisites: naradr, ~techlevel.2
-		Description: Automated anti-aircraft defense.\nRequires power to operate.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water
+		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\n  Requires power to operate.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1341,7 +1342,7 @@ tesla:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: naradr, ~techlevel.3
-		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Overcharge (Russia)
+		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -1696,7 +1697,7 @@ napost:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: power, ~prerequisite.tesla_fence, ~techlevel.1
-		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\nRequires power to operate.\n\nUpgradeable with:\n- Overcharge (Russia)
+		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
@@ -1887,7 +1888,7 @@ naprop:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: natech, ~techlevel.4
-		Description: Buffs fire speed of nearby units and heals them.\nRequires power to operate.
+		Description: Buffs fire speed of nearby units and heals them.\n\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Building:

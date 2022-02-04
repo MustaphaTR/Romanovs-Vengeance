@@ -160,6 +160,7 @@ yabrck:
 	Inherits@SHAPE: ^2x3Shape
 	Buildable:
 		Queue: Building.Yuri
+		Description: Trains Psi-Corps infantry.\n\n  Can be rotated.
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
@@ -432,6 +433,7 @@ yaweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Yuri
+		Description: Produces Psi-Corps vehicles.\n\n  Can be rotated.
 	ProvidesPrerequisite@yaweap:
 		Prerequisite: yaweap
 	Production:
@@ -532,7 +534,7 @@ yadept:
 	Buildable:
 		Queue: Building.Yuri
 		Prerequisites: yaweap, ~techlevel.1
-		Description: Repairs vehicles and removes Terror Drones for a price.\nCan be rotated.
+		Description: Repairs vehicles and removes Terror Drones for a price.\n\n  Can be rotated.
 	ProvidesPrerequisite@default:
 		Prerequisite: yadept
 	Building:
@@ -604,7 +606,7 @@ yadome:
 	Buildable:
 		Queue: Building.Yuri
 		Prerequisites: power, psirefn, ~techlevel.2, ~!ai.yadome
-		Description: Provides radar.\n\nProvides a different support power depening on the subfaction:\n- Psi-Ops Drop (Yurigrad)\n- Hologram Army (Lazarus Corps)\n- Point Defense Drones (Antarctica)\n- Lethocerus Swarm (Transylvania)\n- Ion Cannon (Lunar Eclipse)
+		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Psi-Ops Drop (Yurigrad)\n- Hologram Army (Lazarus Corps)\n- Point Defense Drones (Antarctica)\n- Lethocerus Swarm (Transylvania)\n- Ion Cannon (Lunar Eclipse)
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.yadome
@@ -1054,7 +1056,7 @@ yaggun:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 40
 		Prerequisites: yabrck, ~techlevel.1
-		Description: Automated anti-infantry and anti-air defense.\nRequires power to operate.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Chainguns
+		Description: Automated anti-infantry and anti-air defense.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Chainguns\n\n  Requires power to operate.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Health:
@@ -1297,7 +1299,7 @@ yapsyt:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 60
 		Prerequisites: yadome, ~techlevel.3
-		Description: Tower capable of mind controlling up to 3 enemy units.\nRequires power to operate.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water
+		Description: Tower capable of mind controlling up to 3 enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\n  Requires power to operate.
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Health:
@@ -1381,7 +1383,7 @@ yasgen:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 80
 		Prerequisites: yatech, ~techlevel.3
-		Description: Makes nearby units and structures invisibile while not firing.\nRequires power to operate.\n\nUpgradeable with:\n- Lazarus Prime
+		Description: Makes nearby units and structures invisibile while not firing.\n\nUpgradeable with:\n- Lazarus Prime\n\n  Requires power to operate.
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Building:
@@ -1434,7 +1436,7 @@ yagntc:
 	Buildable:
 		Queue: Support.Yuri, Support.Antarctica
 		Prerequisites: yatech, !enoughlazarus, ~techlevel.5
-		Description: Makes vehicles invisible.\nKills infantry.
+		Description: Makes vehicles invisible.\nKills infantry.\n\n  Requires power to operate.
 	Tooltip:
 		Name: Lazarus Shield Generator
 	Tooltip@NoRow:
@@ -1491,7 +1493,7 @@ yappet:
 	Buildable:
 		Queue: Support.Yuri, Support.Antarctica
 		Prerequisites: yatech, !enoughdominator, ~techlevel.5
-		Description: Release powerful energy that damages structures and mind controls units.\nRequires power to operate.
+		Description: Release powerful energy that damages structures and mind controls units.\n\n  Requires power to operate.
 	Tooltip:
 		Name: Psychic Dominator
 	Tooltip@NoRow:

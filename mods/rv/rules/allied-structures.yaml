@@ -215,6 +215,7 @@ gapile:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Allies
+		Description: Trains Allied infantry.\n\n  Can be rotated.
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -330,7 +331,7 @@ gaairc:
 	Buildable:
 		Queue: Building.Allies
 		Prerequisites: power, garefn, ~techlevel.2
-		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.\n\nProvides a different support power depening on the subfaction:\n- Airborne (United States)\n- Carpet Bombing (United Kingdom)\n- Force Shield (France)\n- Chrono Grizzly (Germany)\n- Chronobomb (Korea)
+		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Airborne (United States)\n- Carpet Bombing (United Kingdom)\n- Force Shield (France)\n- Chrono Grizzly (Germany)\n- Chronobomb (Korea)
 	Tooltip:
 		Name: Airforce Command Headquarters
 	Tooltip@NoRow:
@@ -729,6 +730,7 @@ gaweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Allies
+		Description: Produces Allied vehicles.\n\n  Can be rotated.
 	ProvidesPrerequisite@gaweap:
 		Prerequisite: gaweap
 	ProvidesPrerequisite@powered:
@@ -991,7 +993,7 @@ nasam:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 60
 		Prerequisites: gaairc, ~techlevel.2
-		Description: Automated anti-aircraft defense.\nRequires power to operate.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)\n- Grand Cannon Protocols (France)
+		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1070,7 +1072,7 @@ gtgcan:
 		Queue: Support.France
 		BuildPaletteOrder: 90
 		Prerequisites: upgrade.grand_cannon_protocols, ~techlevel.3
-		Description: Automated, long ranged anti-ground defense.\nRequires power to operate.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft
+		Description: Automated, long ranged anti-ground defense.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\n  Requires power to operate.
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	Valued:
@@ -1301,7 +1303,7 @@ gagap:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 100
 		Prerequisites: gatech, ~techlevel.3
-		Description: Obscures the enemy's view with shroud.\nRequires power to operate.
+		Description: Obscures the enemy's view with shroud.\n\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Building:
@@ -1349,7 +1351,7 @@ gaweat:
 	Buildable:
 		Queue: Support.Allies, Support.France
 		Prerequisites: gatech, !enoughweather, ~techlevel.5
-		Description: Play God with deadly weather!
+		Description: Play God with deadly weather!\n\n  Requires power to operate.
 	Tooltip:
 		Name: Weather Controller
 	Tooltip@NoRow:
@@ -1400,7 +1402,7 @@ gacsph:
 	Buildable:
 		Queue: Support.Allies, Support.France
 		Prerequisites: gatech, !enoughchrono, ~techlevel.5
-		Description: Allows teleportation of vehicles.\nKills infantry.\nCan be rotated.
+		Description: Allows teleportation of vehicles.\nKills infantry.\n\n  Requires power to operate.\n  Can be rotated.
 	Tooltip:
 		Name: Chronosphere
 	Tooltip@NoRow:
@@ -1482,7 +1484,7 @@ atesla:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 70
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\nRequires power to operate.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
+		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -1737,7 +1739,7 @@ gagatea:
 		Queue: Support.Allies, Support.France
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Automated barrier that opens for allied units.\nCan be rotated.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
+		Description: Automated barrier that opens for allied units.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Can be rotated.
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Tooltip:
@@ -1787,7 +1789,7 @@ gamgun:
 		Queue: Support.France
 		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Defensive structure that is invisible while not firing.\nRequires power to operate.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can be placed further than other buildings\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
+		Description: Defensive structure that is invisible while not firing.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can be placed further than other buildings\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.\n  Can be rotated.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1866,7 +1868,7 @@ gagun:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 50
 		Prerequisites: gapile, ~prerequisite.gun_turret, ~techlevel.1
-		Description: Anti-tank defense structure.\nRequires power to operate.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
+		Description: Anti-tank defense structure.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
