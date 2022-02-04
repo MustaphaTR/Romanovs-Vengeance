@@ -437,21 +437,21 @@ htnk:
 		Armament: elite
 		RequiresCondition: rank-elite && !uranium_shells && !cryo_shells
 	WithVoxelBarrel@URANIUM_SHELLS:
-		Sequence: barrel-uranium-red
+		Sequence: barrel-uranium
 		Armament: primary #-uranium
-		RequiresCondition: !rank-elite && uranium_shells # && !advirrad
+		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	WithVoxelBarrel@ELITE_URANIUM_SHELLS:
-		Sequence: barrel-uranium-red
+		Sequence: barrel-uranium
 		Armament: elite #-uranium
-		RequiresCondition: rank-elite && uranium_shells # && !advirrad
-	#WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
-	#	Sequence: barrel-uranium-orange
-	#	Armament: primary-uranium-orange
-	#	RequiresCondition: !rank-elite && uranium_shells && advirrad
-	#WithVoxelBarrel@ELITE_URANIUM_SHELLS_ORANGE:
-	#	Sequence: barrel-uranium-orange
-	#	Armament: elite-uranium-orange
-	#	RequiresCondition: rank-elite && uranium_shells && advirrad
+		RequiresCondition: rank-elite && uranium_shells && !advirrad
+	WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
+		Sequence: barrel-uranium-orange
+		Armament: primary-uranium-orange
+		RequiresCondition: !rank-elite && uranium_shells && advirrad
+	WithVoxelBarrel@ELITE_URANIUM_SHELLS_ORANGE:
+		Sequence: barrel-uranium-orange
+		Armament: elite-uranium-orange
+		RequiresCondition: rank-elite && uranium_shells && advirrad
 	WithVoxelBarrel@CRYO_SHELLS:
 		Sequence: barrel-cryo
 		Armament: primary-cryo
@@ -710,37 +710,37 @@ apoc:
 		Armament: elite2
 		RequiresCondition:rank-elite && !uranium_shells && !cryo_shells
 	WithVoxelBarrel@URANIUM_SHELLS:
-		Sequence: barrel-uranium-red
+		Sequence: barrel-uranium
 		Armament: primary #-uranium
-		RequiresCondition: !rank-elite && uranium_shells # && !advirrad
+		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	WithVoxelBarrel@2URANIUM_SHELLS:
-		Sequence: barrel2-uranium-red
+		Sequence: barrel2-uranium
 		Armament: primary2 #-uranium
-		RequiresCondition: !rank-elite && uranium_shells # && !advirrad
+		RequiresCondition: !rank-elite && uranium_shells && !advirrad
 	WithVoxelBarrel@ELITE_URANIUM_SHELLS:
-		Sequence: barrel-uranium-red
+		Sequence: barrel-uranium
 		Armament: elite #-uranium
-		RequiresCondition: rank-elite && uranium_shells # && !advirrad
+		RequiresCondition: rank-elite && uranium_shells && !advirrad
 	WithVoxelBarrel@ELITE_2URANIUM_SHELLS:
-		Sequence: barrel2-uranium-red
+		Sequence: barrel2-uranium
 		Armament: elite2 #-uranium
-		RequiresCondition: rank-elite && uranium_shells # && !advirrad
-	#WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
-	#	Sequence: barrel-uranium-orange
-	#	Armament: primary #-uranium-orange
-	#	RequiresCondition: !rank-elite && uranium_shells && advirrad
-	#WithVoxelBarrel@2URANIUM_SHELLS_ORANGE:
-	#	Sequence: barrel2-uranium-orange
-	#	Armament: primary2 #-uranium-orange
-	#	RequiresCondition: !rank-elite && uranium_shells && advirrad
-	#WithVoxelBarrel@ELITE_URANIUM_SHELLS_ORANGE:
-	#	Sequence: barrel-uranium-orange
-	#	Armament: elite #-uranium-orange
-	#	RequiresCondition: rank-elite && uranium_shells && advirrad
-	#WithVoxelBarrel@ELITE_2URANIUM_SHELLS_ORANGE:
-	#	Sequence: barrel2-uranium-orange
-	#	Armament: elite2 #-uranium-orange
-	#	RequiresCondition: rank-elite && uranium_shells && advirrad
+		RequiresCondition: rank-elite && uranium_shells && !advirrad
+	WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
+		Sequence: barrel-uranium-orange
+		Armament: primary #-uranium-orange
+		RequiresCondition: !rank-elite && uranium_shells && advirrad
+	WithVoxelBarrel@2URANIUM_SHELLS_ORANGE:
+		Sequence: barrel2-uranium-orange
+		Armament: primary2 #-uranium-orange
+		RequiresCondition: !rank-elite && uranium_shells && advirrad
+	WithVoxelBarrel@ELITE_URANIUM_SHELLS_ORANGE:
+		Sequence: barrel-uranium-orange
+		Armament: elite #-uranium-orange
+		RequiresCondition: rank-elite && uranium_shells && advirrad
+	WithVoxelBarrel@ELITE_2URANIUM_SHELLS_ORANGE:
+		Sequence: barrel2-uranium-orange
+		Armament: elite2 #-uranium-orange
+		RequiresCondition: rank-elite && uranium_shells && advirrad
 	WithVoxelBarrel@CRYO_SHELLS:
 		Sequence: barrel-cryo
 		Armament: primary-cryo
