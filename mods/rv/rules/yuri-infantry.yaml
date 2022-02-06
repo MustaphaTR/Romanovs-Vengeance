@@ -183,6 +183,7 @@ init.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
+	-ChangesHealth@AMBULANCE:
 	-ChangesHealth@HOSPITAL:
 	-MapEditorData:
 	-MindControllable:
@@ -310,6 +311,7 @@ brute.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
+	-ChangesHealth@AMBULANCE:
 	-ChangesHealth@HOSPITAL:
 	-MapEditorData:
 	-Explodes@Corpse:
@@ -464,9 +466,11 @@ yurix:
 	Armament:
 		Weapon: SuperMindControlX
 		LocalOffset: 0,0,1024
+		PauseOnCondition: deployed || chronodisable || webdisable
 	Armament@elite:
 		Weapon: SuperMindControlXE
 		LocalOffset: 0,0,1024
+		PauseOnCondition: deployed || chronodisable || webdisable
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: SuperMindControlX
@@ -689,7 +693,7 @@ lunr:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-Passenger:
-	-ChangesHealth@HOSPITAL:
+	-ChangesHealth@AMBULANCE:
 	SpawnActorOnDeath:
 		Actor: lunr.husk
 
@@ -1043,6 +1047,7 @@ gtrp.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
+	-ChangesHealth@AMBULANCE:
 	-ChangesHealth@HOSPITAL:
 	-MapEditorData:
 	-MindControllable:

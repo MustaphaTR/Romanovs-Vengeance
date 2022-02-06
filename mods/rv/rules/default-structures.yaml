@@ -957,11 +957,12 @@
 
 ^BattleLab:
 	Inherits: ^BaseBuilding
+	Inherits@AI: ^AIMicroManagable
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Building
 		BuildPaletteOrder: 90
-		Prerequisites: radar, ~techlevel.3
+		Prerequisites: production, radar, ~techlevel.3
 		Description: Allows deployment of advanced units.\nResearches advanced upgrades.\n\n  Can be rotated.
 		BuildDuration: 1000
 		BuildDurationModifier: 100
