@@ -1205,6 +1205,7 @@ spider:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@DNABOOST: ^AffectedByDNABoosters
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HOSPITAL: ^HospitalHealing
 	Inherits@IRON: ^KilledByIronCurtain
 	Inherits@LAZARUS: ^KilledByLazarusShield
 	WithColoredOverlay@ChronoDisable:
@@ -1282,6 +1283,9 @@ spider:
 	-Targetable@MagneFreeze:
 	-ExternalCondition@MagneFreeze:
 	-Explodes:
+	-ChangesHealth@MACHINESHOP:
+	-WithDecoration@MACHINESHOP:
+	-GrantConditionOnPrerequisite@MACHINESHOP:
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1310,6 +1314,8 @@ spider:
 		Bounds: 965, 1930, 0, -482
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack
+	Targetable@REPAIR:
+		TargetTypes: Heal
 	Voiced:
 		VoiceSet: AntVoice
 	ExternalCondition@PRODUCED:
