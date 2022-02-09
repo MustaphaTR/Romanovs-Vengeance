@@ -15,6 +15,131 @@
 		Prerequisites: default.commanders_power
 		Types: stripe-taken
 
+commanders_power.ifv_training:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: IFV Training
+	-Buildable:
+	#	Queue: Power.Allies
+	#	BuildPaletteOrder: 10
+	#	Prerequisites: ~disabled # prerequisite.has_points
+	#	Description: Makes IFVs train as veteran.
+	ProvidesPrerequisite@vetifv:
+		Prerequisite: vetifv
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.ifv_training
+
+commanders_power.harrier_training:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Aircraft Training
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Makes Harriers train as elite and other Allied Planes train as veteran.
+	ProvidesPrerequisite@vetair:
+		Prerequisite: vetair
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.harrier_training
+
+commanders_power.inf_training:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Infantry Training
+	Buildable:
+		Queue: Power.Soviets, Power.Baku
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Makes Conscripts and Flak Troopers train as veteran.
+	ProvidesPrerequisite@vete2flakt:
+		Prerequisite: vete2flakt
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.inf_training
+
+commanders_power.gatling_training:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Gatling Training
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Makes Gatling Tanks, Gatling Submarines and Gatling Troopers train as veteran.
+	ProvidesPrerequisite@ytnk:
+		Prerequisite: vetytnk
+	ProvidesPrerequisite@gtrp:
+		Prerequisite: vetgtrp
+	ProvidesPrerequisite@gatsub:
+		Prerequisite: vetgatsub
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.gatling_training
+
+commanders_power.airpad:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Airpad
+	-Buildable:
+	#	Queue: Power.Allies
+	#	BuildPaletteOrder: 20
+	#	Prerequisites: ~disabled # prerequisite.has_points
+	#	Description: Enables construction of Airpads from Construction Yard.
+	ProvidesPrerequisite@airpad:
+		Prerequisite: prerequisite.airpad
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.airpad
+	RenderSprites:
+		Image: gaapad
+
+commanders_power.gun_turret:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Gun Turret
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 20
+		Prerequisites: prerequisite.has_points
+		Description: Enables construction of Gun Turret from Construction Yard.
+	ProvidesPrerequisite@gun_turret:
+		Prerequisite: prerequisite.gun_turret
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.gun_turret
+	RenderSprites:
+		Image: gagun
+
+commanders_power.tesla_fence:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Tesla Fence
+	Buildable:
+		Queue: Power.Soviets, Power.Baku
+		BuildPaletteOrder: 20
+		Prerequisites: prerequisite.has_points
+		Description: Enables construction of Tesla Fence from Construction Yard.
+	ProvidesPrerequisite@tesla_fence:
+		Prerequisite: prerequisite.tesla_fence
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.tesla_fence
+	RenderSprites:
+		Image: napost
+
+commanders_power.grinder:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Grinder
+	Buildable:
+		Queue: Power.Yuri
+		BuildPaletteOrder: 20
+		Prerequisites: prerequisite.has_points
+		Description: Enables construction of Grinder from Construction Yard.
+	ProvidesPrerequisite@grinder:
+		Prerequisite: prerequisite.grinder
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.grinder
+	RenderSprites:
+		Image: yagrnd
+
+
 commanders_power.medic:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -128,130 +253,6 @@ commanders_power.support_infantry:
 		Prerequisites: commanders_power.support_infantry
 	RenderSprites:
 		Image: mech
-
-commanders_power.airpad:
-	Inherits: ^default.commanders_power
-	Tooltip:
-		Name: Airpad
-	-Buildable:
-	#	Queue: Power.Allies
-	#	BuildPaletteOrder: 20
-	#	Prerequisites: ~disabled # prerequisite.has_points
-	#	Description: Enables construction of Airpads from Construction Yard.
-	ProvidesPrerequisite@airpad:
-		Prerequisite: prerequisite.airpad
-	WithProductionIconOverlay:
-		Prerequisites: commanders_power.airpad
-	RenderSprites:
-		Image: gaapad
-
-commanders_power.gun_turret:
-	Inherits: ^default.commanders_power
-	Tooltip:
-		Name: Gun Turret
-	Buildable:
-		Queue: Power.Allies
-		BuildPaletteOrder: 20
-		Prerequisites: prerequisite.has_points
-		Description: Enables construction of Gun Turret from Construction Yard.
-	ProvidesPrerequisite@gun_turret:
-		Prerequisite: prerequisite.gun_turret
-	WithProductionIconOverlay:
-		Prerequisites: commanders_power.gun_turret
-	RenderSprites:
-		Image: gagun
-
-commanders_power.tesla_fence:
-	Inherits: ^default.commanders_power
-	Tooltip:
-		Name: Tesla Fence
-	Buildable:
-		Queue: Power.Soviets, Power.Baku
-		BuildPaletteOrder: 20
-		Prerequisites: prerequisite.has_points
-		Description: Enables construction of Tesla Fence from Construction Yard.
-	ProvidesPrerequisite@tesla_fence:
-		Prerequisite: prerequisite.tesla_fence
-	WithProductionIconOverlay:
-		Prerequisites: commanders_power.tesla_fence
-	RenderSprites:
-		Image: napost
-
-commanders_power.grinder:
-	Inherits: ^default.commanders_power
-	Tooltip:
-		Name: Grinder
-	Buildable:
-		Queue: Power.Yuri
-		BuildPaletteOrder: 20
-		Prerequisites: prerequisite.has_points
-		Description: Enables construction of Grinder from Construction Yard.
-	ProvidesPrerequisite@grinder:
-		Prerequisite: prerequisite.grinder
-	WithProductionIconOverlay:
-		Prerequisites: commanders_power.grinder
-	RenderSprites:
-		Image: yagrnd
-
-commanders_power.ifv_training:
-	Inherits: ^default.commanders_power
-	Tooltip:
-		Name: IFV Training
-	-Buildable:
-	#	Queue: Power.Allies
-	#	BuildPaletteOrder: 10
-	#	Prerequisites: ~disabled # prerequisite.has_points
-	#	Description: Makes IFVs train as veteran.
-	ProvidesPrerequisite@vetifv:
-		Prerequisite: vetifv
-	WithProductionIconOverlay:
-		Prerequisites: commanders_power.ifv_training
-
-commanders_power.harrier_training:
-	Inherits: ^default.commanders_power
-	Tooltip:
-		Name: Aircraft Training
-	Buildable:
-		Queue: Power.Allies
-		BuildPaletteOrder: 10
-		Prerequisites: prerequisite.has_points
-		Description: Makes Harriers train as elite and other Allied Planes train as veteran.
-	ProvidesPrerequisite@vetair:
-		Prerequisite: vetair
-	WithProductionIconOverlay:
-		Prerequisites: commanders_power.harrier_training
-
-commanders_power.inf_training:
-	Inherits: ^default.commanders_power
-	Tooltip:
-		Name: Infantry Training
-	Buildable:
-		Queue: Power.Soviets, Power.Baku
-		BuildPaletteOrder: 10
-		Prerequisites: prerequisite.has_points
-		Description: Makes Conscripts and Flak Troopers train as veteran.
-	ProvidesPrerequisite@vete2flakt:
-		Prerequisite: vete2flakt
-	WithProductionIconOverlay:
-		Prerequisites: commanders_power.inf_training
-
-commanders_power.gatling_training:
-	Inherits: ^default.commanders_power
-	Tooltip:
-		Name: Gatling Training
-	Buildable:
-		Queue: Power.Yuri
-		BuildPaletteOrder: 10
-		Prerequisites: prerequisite.has_points
-		Description: Makes Gatling Tanks, Gatling Submarines and Gatling Troopers train as veteran.
-	ProvidesPrerequisite@ytnk:
-		Prerequisite: vetytnk
-	ProvidesPrerequisite@gtrp:
-		Prerequisite: vetgtrp
-	ProvidesPrerequisite@gatsub:
-		Prerequisite: vetgatsub
-	WithProductionIconOverlay:
-		Prerequisites: commanders_power.gatling_training
 
 commanders_power.intel_drop:
 	Inherits: ^default.commanders_power
