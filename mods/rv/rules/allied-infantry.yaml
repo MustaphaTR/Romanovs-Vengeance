@@ -2,6 +2,8 @@ engineer:
 	Inherits: ^Infantry
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
+	Inherits@PARACHUTE: ^Parachutable
+	Inherits@SWIMSUIT: ^WithSwimSuit
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
@@ -23,6 +25,8 @@ engineer:
 		Bounds: 482, 1448, 0, -530
 	Health:
 		HP: 7500
+	Mobile:
+		Locomotor: swimsuit
 	Garrisoner:
 		Voice: Move
 		CustomPipType: yellow
@@ -76,8 +80,8 @@ engineer:
 		Voice: Action
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	WithInfantryBody:
-		DefaultAttackSequence: shoot
+	WithInfantryBody@Water:
+		-IdleSequences:
 	CaptureManager:
 	RenderSprites:
 		Image: engineer
