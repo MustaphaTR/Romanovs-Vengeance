@@ -1887,20 +1887,15 @@ naprop:
 		Queue: Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: natech, ~techlevel.4
-		Description: Buffs fire speed of nearby units and heals them.\n\n  Requires power to operate.
+		Description: Buffs fire speed of nearby units and heals them.\n\nAbilities:\n- Can be placed on water\n\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
-	Building:
-		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Valued:
 		Cost: 500
 	Tooltip:
 		Name: Propaganda Tower
 	Tooltip@NoRow:
 		Name: Propaganda Tower
-	Building:
-		Footprint: x
-		Dimensions: 1, 1
 	Health:
 		HP: 60000
 	Armor:
@@ -1921,6 +1916,9 @@ naprop:
 		Types: building
 		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
 	CaptureNotification:
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	Power:

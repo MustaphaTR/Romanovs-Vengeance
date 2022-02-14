@@ -1383,11 +1383,9 @@ yasgen:
 		Queue: Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 80
 		Prerequisites: yatech, ~techlevel.3
-		Description: Makes nearby units and structures invisibile while not firing.\n\nUpgradeable with:\n- Lazarus Prime\n\n  Requires power to operate.
+		Description: Makes nearby units and structures invisibile while not firing.\n\nAbilities:\n- Can be placed on water\n\nUpgradeable with:\n- Lazarus Prime\n\n  Requires power to operate.
 		BuildDuration: 250
 		BuildDurationModifier: 100
-	Building:
-		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 60000
 	Armor:
@@ -1413,6 +1411,9 @@ yasgen:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
 	WithSpriteBody:
 		PauseOnCondition: disabled || chronodisable
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable

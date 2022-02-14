@@ -1302,11 +1302,9 @@ gagap:
 		Queue: Support.Allies, Support.France
 		BuildPaletteOrder: 100
 		Prerequisites: gatech, ~techlevel.3
-		Description: Obscures the enemy's view with shroud.\n\n  Requires power to operate.
+		Description: Obscures the enemy's view with shroud.\n\nAbilities:\n- Can be placed on water\n\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
-	Building:
-		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 60000
 	Armor:
@@ -1330,6 +1328,9 @@ gagap:
 		Sequence: idle-head
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
