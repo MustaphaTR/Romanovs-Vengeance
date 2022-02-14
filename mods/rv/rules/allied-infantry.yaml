@@ -106,6 +106,7 @@ dog:
 	Inherits: ^Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PARACHUTE: ^Parachutable
+	Inherits@SWIMSUIT: ^WithSwimSuit
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
@@ -171,6 +172,7 @@ dog:
 		HP: 9000
 	Mobile:
 		Speed: 105
+		Locomotor: swimsuit
 		RequiresCondition: !deploying && !deployed && !chronodisable && !webdisable && !dogstun
 	Passenger:
 		CargoType: Infantry
@@ -195,7 +197,13 @@ dog:
 		ValidTargets: Infantry
 	WithInfantryBody:
 		DefaultAttackSequence: jump
-		RequiresCondition: !parachute && !webdisable && !attacking && !deployed && !deploying
+		RequiresCondition: !parachute && !webdisable && !attacking && !deployed && !deploying && !swimming
+	WithInfantryBody@Water:
+		-IdleSequences:
+		MoveSequence: swim-run
+		StandSequences: swim-stand
+		DefaultAttackSequence: swim-jump
+		RequiresCondition: !parachute && !webdisable && !attacking && !deployed && !deploying && swimming
 	WithFacingSpriteBody:
 		Sequence: shoot
 		RequiresCondition: attacking
@@ -269,6 +277,9 @@ dog:
 			VirusDeath: 2
 			BruteDeath: 1
 	-WithDeathAnimation@effect:
+	WithDeathAnimation@Water:
+		DeathTypes:
+			FlameDeath: 1
 	DeathSounds@normal:
 		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
 	-DeathSounds@zapped:
