@@ -893,7 +893,7 @@
 		LayerName: radioactivityorange
 		Damage: 150
 		DamageLevel: 10
-		DamageTypes: RadiationDeath, NonTemporal
+		DamageTypes: OrangeRadiationDeath, NonTemporal
 
 ^DamagedByRadiation50Percent:
 	DamagedByTintedCells:
@@ -904,7 +904,7 @@
 		LayerName: radioactivityorange
 		Damage: 75
 		DamageLevel: 10
-		DamageTypes: RadiationDeath, NonTemporal
+		DamageTypes: OrangeRadiationDeath, NonTemporal
 
 ^DamagedByRadiation10Percent:
 	DamagedByTintedCells:
@@ -915,7 +915,7 @@
 		LayerName: radioactivityorange
 		Damage: 15
 		DamageLevel: 10
-		DamageTypes: RadiationDeath, NonTemporal
+		DamageTypes: OrangeRadiationDeath, NonTemporal
 
 ^AcceptsDeathBomb:
 	Inherits@TARGETEDEXP: ^AffectedByTargetedExplosives
@@ -2243,6 +2243,7 @@
 			ElectroDeath: 6
 			VirusDeath: 7
 			BruteDeath: 8
+			OrangeRadiationDeath: 10
 	SpawnActorOnDeath@flames:
 		Actor: FLAMEGUY
 		DeathType: FlameDeath
@@ -2305,7 +2306,7 @@
 		DeathTypes: ElectroDeath
 	DeathSounds@radiation:
 		Voice: Melted
-		DeathTypes: RadiationDeath
+		DeathTypes: RadiationDeath, OrangeRadiationDeath
 	DeathSounds@psycrush:
 		Voice: PsyCrush
 		DeathTypes: PsychicDeath, BruteDeath
@@ -2436,6 +2437,7 @@
 			ElectroDeath: 1
 			VirusDeath: 2
 			BruteDeath: 1
+			OrangeRadiationDeath: 1
 	Targetable@WaterBorne:
 		TargetTypes: Water
 		RequiresCondition: swimming
@@ -2565,6 +2567,7 @@
 			ElectroDeath: 2
 			VirusDeath: 2
 			BruteDeath: 1
+			OrangeRadiationDeath: 1
 	-Explodes@Corpse:
 	-WithDeathAnimation@effect:
 	-SpawnActorOnDeath@brute:

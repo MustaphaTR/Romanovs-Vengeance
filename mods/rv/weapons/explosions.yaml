@@ -538,6 +538,8 @@ NukePayload:
 
 NukePayloadOrange:
 	Inherits: NukePayload
+	Warhead@1Dam_impact: SpreadDamage
+		DamageTypes: Prone50Percent, TriggerProne, OrangeRadiationDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@3Radiation: CreateTintedCells
 		LayerName: radioactivityorange
 
@@ -568,6 +570,8 @@ atomic:
 
 atomicOrange:
 	Inherits: atomic
+	Warhead@1Dam_impact: SpreadDamage
+		DamageTypes: OrangeRadiationDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@3Radiation: CreateTintedCells
 		LayerName: radioactivityorange
 
@@ -597,6 +601,8 @@ demobomb:
 
 demobombOrange:
 	Inherits: demobomb
+	Warhead@1Dam_impact: SpreadDamage
+		DamageTypes: OrangeRadiationDeath, SuppressTerrorDrone, NonTemporal
 	Warhead@2Eff_impact: CreateEffect
 		Explosions: demotruck_explosion_orange
 	Warhead@3Radiation: CreateTintedCells
@@ -853,6 +859,8 @@ RadiationMissile:
 
 RadiationMissileOrange:
 	Inherits: RadiationMissile
+		DamageTypes: Prone70Percent, TriggerProne, OrangeRadiationDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@1Dam: SpreadDamage
 	Warhead@2Eff: CreateEffect
 		Explosions: demotruck_explosion_orange
 	Warhead@3Radiation: CreateTintedCells
