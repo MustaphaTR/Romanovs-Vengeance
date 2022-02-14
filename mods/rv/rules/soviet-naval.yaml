@@ -16,8 +16,8 @@ sub:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Soviets
-		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 20
+		Prerequisites: naradr, ~techlevel.2
+		BuildPaletteOrder: 40
 		Description: Submerged anti-ship unit armed with torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Submerged\n- Can detect submerged units
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -37,7 +37,7 @@ sub:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 24
-		Speed: 105
+		Speed: 75
 	-LeavesTrails:
 	RevealsShroud:
 		Range: 7c0
@@ -102,12 +102,12 @@ hyd:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
-	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Soviets
-		BuildPaletteOrder: 30
-		Prerequisites: naradr, ~techlevel.2
+		BuildPaletteOrder: 20
+		Prerequisites: ~techlevel.1
 		Description: Anti-Air and Anti-Infantry naval unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Naval units\n\nUpgradeable with:\n- Improved Flaks
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -124,10 +124,10 @@ hyd:
 	Health:
 		HP: 30000
 	Armor:
-		Type: Heavy
+		Type: Light
 	Mobile:
 		TurnSpeed: 32
-		Speed: 150
+		Speed: 105
 	RevealsShroud:
 		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
@@ -299,7 +299,7 @@ dred:
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 90
+		Speed: 60
 		TurnSpeed: 12
 	RevealsShroud:
 		Range: 7c0
@@ -448,3 +448,108 @@ dmisl:
 		RequiresCondition: radbombs && advirrad
 	ExternalCondition@RANK-ELITE:
 		Condition: rank-elite
+
+# Custom Soviet Vessels
+sray:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@C4: ^AcceptsSEALC4
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@OVERCHARGE: ^AffectedByOvercharge
+	Inherits@SQUID: ^SquidGrabbable
+	Buildable:
+		Queue: Ship.Soviets
+		BuildPaletteOrder: 20
+		Prerequisites: ~techlevel.1
+		Description: Light ship armed with dual Tesla Coils.\nCan move on land.\n\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 800
+	DeliversCash:
+		Payload: 800
+		Voice: Move
+	Tooltip:
+		Name: Stingray
+	Tooltip@NoRow:
+		Name: Stingray
+	Selectable:
+		Bounds: 1206, 1448, 0, -289
+	Health:
+		HP: 35000
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 90
+		Locomotor: heavyamphibious
+	SpeedMultiplier:
+		Modifier: 67
+		RequiresCondition: !in_water
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Turreted:
+		TurnSpeed: 20
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp || squid
+	Armament@primary:
+		Weapon: TankBolt
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: !overcharge && !rank-elite
+	Armament@elite:
+		Weapon: TankBoltE
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: !overcharge && rank-elite
+	Armament@primary-overcharge:
+		Weapon: TankBoltCharged
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: overcharge && !rank-elite
+	Armament@elite-overcharge:
+		Weapon: TankBoltChargedE
+		LocalOffset: 280,196,640, 280,-196,640
+		RequiresCondition: overcharge && rank-elite
+	WithVoxelBody:
+		RequiresCondition: in_water
+	WithVoxelTurret:
+		RequiresCondition: in_water
+	WithVoxelBody@land:
+		Sequence: idle-land
+		RequiresCondition: !in_water
+	WithVoxelTurret@land:
+		Sequence: turret-land
+		RequiresCondition: !in_water
+	RenderSprites:
+	Targetable:
+		RequiresCondition: in_water
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection
+		RequiresCondition: !in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
+	Voiced:
+		VoiceSet: SovietNavalVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal
+	SoundAnnouncement:
+		SoundFiles: vseastaa.wav, vseastab.wav, vseastac.wav, vseastad.wav
+		Volume: 0.4
+		RequiresCondition: moving

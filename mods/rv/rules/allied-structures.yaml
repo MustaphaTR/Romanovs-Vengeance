@@ -799,6 +799,9 @@ gayard:
 	Inherits: ^Shipyard
 	Buildable:
 		Queue: Building.Allies
+	ProvidesPrerequisite@powered:
+		Prerequisite: powered_robo
+		RequiresCondition: !chronodisable
 	Production:
 		Produces: Ship.Allies
 	ProductionQueue:
