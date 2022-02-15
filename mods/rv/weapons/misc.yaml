@@ -297,14 +297,14 @@ ToxinSprayerTruckE:
 EmergencyRepair1:
 	ReloadDelay: 80
 	Range: 1c819
-	ValidTargets: Repair, Structure, Barrel, Mine, Wall
+	ValidTargets: Repair, Structure, WaterStructure, Barrel, Mine, Wall
 	Projectile: InstantExplode
 	Warhead@1Dam: HealthPercentageDamage
 		Spread: 5c0
 		Damage: -30
 		AffectsParent: true
 		ValidRelationships: Neutral, Ally
-		ValidTargets: Repair, Structure, Barrel, Mine, Wall
+		ValidTargets: Repair, Structure, WaterStructure, Barrel, Mine, Wall
 		DamageTypes: KillsDrone, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: wrench
@@ -1145,6 +1145,7 @@ ChaosCloud:
 	Warhead@1Con: GrantExternalCondition
 		ValidTargets: ChaosGasable
 		ValidRelationships: Enemy, Neutral
+		RValidRelationships: Enemy, Neutral
 		Condition: chaos
 		Range: 1c0
 		Duration: 200
