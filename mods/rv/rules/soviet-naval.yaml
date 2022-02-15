@@ -18,7 +18,7 @@ sub:
 		Queue: Ship.Soviets
 		Prerequisites: naradr, ~techlevel.2
 		BuildPaletteOrder: 80
-		Description: Submerged anti-ship unit armed with torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Submerged\n- Can detect submerged units
+		Description: Submerged anti-ship unit armed with torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -48,14 +48,14 @@ sub:
 		Radius: 3c512
 	Targetable:
 		TargetTypes: Ground, Water, Ship, Underwater
-	Cloak:
-		CloakTypes: Underwater
-		InitialDelay: 50
-		CloakDelay: 75
-		CloakSound: vnavupa.wav
-		UncloakSound: vnavupa.wav
-		UncloakOn: Damage
-		IsPlayerPalette: true
+	# Cloak:
+	#	CloakTypes: Underwater
+	#	InitialDelay: 50
+	#	CloakDelay: 75
+	#	CloakSound: vnavupa.wav
+	#	UncloakSound: vnavupa.wav
+	#	UncloakOn: Damage
+	#	IsPlayerPalette: true
 	Armament:
 		Weapon: SubTorpedo
 		LocalOffset: 768,0,0
@@ -71,7 +71,7 @@ sub:
 		FacingTolerance: 2
 		PauseOnCondition: chronodisable || emp
 	DetectCloaked:
-		CloakTypes: Underwater
+		# CloakTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
 	-MustBeDestroyed:
@@ -194,7 +194,7 @@ sqd:
 	Buildable:
 		Queue: Ship.Soviets
 		Prerequisites: naradr, ~techlevel.3
-		Description: Large ocean creature capable of grabbing and sinking ships.\nCan be deployed to remove other squids from nearby ships.\n\n  Strong vs Ships\n\nAbilities:\n- Submerged\n- Can detect submerged units
+		Description: Large ocean creature capable of grabbing and sinking ships.\nCan be deployed to remove other squids from nearby ships.\n\n  Strong vs Ships\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 375
 	Valued:
 		Cost: 1000
@@ -248,8 +248,8 @@ sqd:
 		Voice: Attack
 		FacingTolerance: 2
 		PauseOnCondition: chronodisable
-	Cloak:
-		PauseOnCondition: deployed
+	# Cloak:
+	#	PauseOnCondition: deployed
 	WithInfantryBody:
 		MinIdleDelay: 1
 		MaxIdleDelay: 2

@@ -18,7 +18,7 @@ bsub:
 		Queue: Ship.Yuri
 		Prerequisites: yatech, ~techlevel.3
 		BuildPaletteOrder: 90
-		Description: Submerged anti-ship and anti-structure armed with\ndouble torpedo and missile launchers.\n\n  Strong vs Ships, Buildings\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Submerged\n- Can detect submerged units
+		Description: Submerged anti-ship and anti-structure armed with\ndouble torpedo and missile launchers.\n\n  Strong vs Ships, Buildings\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -48,15 +48,15 @@ bsub:
 		Radius: 4c0
 	Targetable:
 		TargetTypes: Ground, Water, Ship, Underwater
-	Cloak:
-		CloakTypes: Underwater
-		InitialDelay: 50
-		CloakDelay: 75
-		CloakSound: vnavupa.wav
-		UncloakSound: vnavupa.wav
-		UncloakOn: Damage
-		IsPlayerPalette: true
-		PauseOnCondition: uncloak
+	# Cloak:
+	#	CloakTypes: Underwater
+	#	InitialDelay: 50
+	#	CloakDelay: 75
+	#	CloakSound: vnavupa.wav
+	#	UncloakSound: vnavupa.wav
+	#	UncloakOn: Damage
+	#	IsPlayerPalette: true
+	#	PauseOnCondition: uncloak
 	GrantConditionOnAttack:
 		Condition: uncloak
 		RevokeDelay: 75
@@ -81,7 +81,7 @@ bsub:
 		Armaments: primary, missile
 		PauseOnCondition: chronodisable || emp
 	DetectCloaked:
-		CloakTypes: Underwater
+		# CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
 	MissileSpawnerMaster:
@@ -178,7 +178,7 @@ piranha:
 		Queue: Ship.Yuri
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Submerged unit armed with fast firing torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Submerged\n- Can detect submerged units
+		Description: Submerged unit armed with fast firing torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -206,14 +206,14 @@ piranha:
 		Radius: 4c512
 	Targetable:
 		TargetTypes: Ground, Water, Ship, Underwater
-	Cloak:
-		CloakTypes: Underwater
-		InitialDelay: 50
-		CloakDelay: 75
-		CloakSound: vnavupa.wav
-		UncloakSound: vnavupa.wav
-		UncloakOn: Attack, Damage
-		IsPlayerPalette: true
+	# Cloak:
+	#	CloakTypes: Underwater
+	#	InitialDelay: 50
+	#	CloakDelay: 75
+	#	CloakSound: vnavupa.wav
+	#	UncloakSound: vnavupa.wav
+	#	UncloakOn: Attack, Damage
+	#	IsPlayerPalette: true
 	Armament:
 		Weapon: PiraTorpedo
 		LocalOffset: 768,0,0
@@ -230,8 +230,8 @@ piranha:
 		PauseOnCondition: chronodisable || emp
 	WithMuzzleOverlay:
 	DetectCloaked:
-		CloakTypes: Underwater
-		Range: 4c0
+		# CloakTypes: Underwater
+		Range: 6c0
 	RenderDetectionCircle:
 	-MustBeDestroyed:
 	WithVoxelBody:
@@ -267,7 +267,7 @@ gatsub:
 		Queue: Ship.Yuri
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Submerged anti-air unit armed with gatling cannon.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\n\nAbilities:\n- Submerged\n- Can detect submerged units\n\nUpgradeable with:\n- Chainguns
+		Description: Submerged anti-air unit armed with gatling cannon.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Chainguns
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -295,14 +295,14 @@ gatsub:
 		Radius: 5c0
 	Targetable:
 		TargetTypes: Ground, Water, Ship, Underwater
-	Cloak:
-		CloakTypes: Underwater
-		InitialDelay: 50
-		CloakDelay: 75
-		CloakSound: vnavupa.wav
-		UncloakSound: vnavupa.wav
-		UncloakOn: Attack, Damage
-		IsPlayerPalette: true
+	# Cloak:
+	#	CloakTypes: Underwater
+	#	InitialDelay: 50
+	#	CloakDelay: 75
+	#	CloakSound: vnavupa.wav
+	#	UncloakSound: vnavupa.wav
+	#	UncloakOn: Attack, Damage
+	#	IsPlayerPalette: true
 	Turreted:
 		Offset: -256,0,0
 		TurnSpeed: 40
@@ -411,7 +411,7 @@ gatsub:
 	AttackTurreted:
 		Voice: Attack
 	DetectCloaked:
-		CloakTypes: Underwater
+		# CloakTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
 	-MustBeDestroyed:
@@ -447,7 +447,7 @@ floater:
 	Buildable:
 		Queue: Ship.Yuri
 		Prerequisites: yadome, ~techlevel.3
-		Description: Large ocean creature capable of dealing heavy damage in close combat.\nCan move to land.\n\n  Strong vs Ships\n\nAbilities:\n- Submerged while in water\n- Can detect submerged units\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+		Description: Large ocean creature capable of dealing heavy damage in close combat.\nCan move to land.\n\n  Strong vs Ships\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
 		BuildDuration: 375
 	Valued:
 		Cost: 1000
@@ -486,8 +486,8 @@ floater:
 		Voice: Attack
 		FacingTolerance: 512
 		PauseOnCondition: chronodisable
-	Cloak:
-		RequiresCondition: in_water
+	# Cloak:
+	#	RequiresCondition: in_water
 	Targetable:
 		RequiresCondition: in_water
 	Targetable@GROUND:
@@ -537,7 +537,7 @@ buoy:
 		Radius: 3c0
 	-LeavesTrails:
 	DetectCloaked:
-		CloakTypes: Underwater
+		# CloakTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
 	RenderVoxels:

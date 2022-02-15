@@ -19,7 +19,7 @@ dest:
 		Queue: Ship.Allies
 		Prerequisites: gaairc, ~techlevel.3
 		BuildPaletteOrder: 80
-		Description: Allied Main Battle Ship armed with cannons and\nan Osprey helicopter.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect submerged units
+		Description: Allied Main Battle Ship armed with cannons and\nan Osprey helicopter.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -81,8 +81,8 @@ dest:
 		PauseOnCondition: chronodisable || emp
 	WithMuzzleOverlay:
 	DetectCloaked:
-		CloakTypes: Underwater
-		Range: 8c0
+		# CloakTypes: Underwater
+		Range: 6c0
 	RenderDetectionCircle:
 	Explodes:
 		Weapon: UnitExplode
@@ -196,7 +196,7 @@ dlph:
 	Buildable:
 		Queue: Ship.Allies
 		Prerequisites: ~techlevel.1
-		Description: Trained dolphin armed with sonic beams.\n\n  Strong vs Ships\n\nAbilities:\n- Submerged\n- Can detect submerged units
+		Description: Trained dolphin armed with sonic beams.\n\n  Strong vs Ships\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 250
 	Valued:
 		Cost: 700
@@ -226,8 +226,6 @@ dlph:
 		PauseOnCondition: chronodisable
 	Targetable:
 		TargetTypes: Ground, Water, SeaAnimal, Underwater, ImmuneToAllySonic
-	DetectCloaked:
-		Range: 4c0
 	WithInfantryBody:
 		MinIdleDelay: 1
 		MaxIdleDelay: 2
