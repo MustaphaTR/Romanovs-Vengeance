@@ -375,6 +375,56 @@ TankBoltChargedE:
 	Warhead@2Shr: FireShrapnel
 		Weapon: TeslaFragmentCharged
 
+BoatBolt:
+	Inherits: ^TeslaZap
+	Range: 5c0
+	ReloadDelay: 75
+	Burst: 2
+	BurstDelays: 10
+	Report: vtesatta.wav, vtesattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 3500
+		Versus:
+			None: 1000
+			Flak: 1000
+			Plate: 1000
+			Heavy: 75
+	Warhead@3Smu: LeaveSmudge
+		SmudgeType: SmallScorch
+
+BoatBoltE:
+	Inherits: BoatBolt
+	Range: 6c0
+	ReloadDelay: 60
+	Warhead@1Dam: SpreadDamage
+		Damage: 4000
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragment
+		Amount: 2
+		AimChance: 100
+		AimTargetStances: Enemy, Neutral
+		ValidTargets: Infantry, Vehicle, TerrorDrone, Ship, Tree
+
+BoatBoltCharged:
+	Inherits: BoatBolt
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 30
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+
+BoatBoltChargedE:
+	Inherits: BoatBoltE
+	Warhead@1Dis: GrantExternalCondition
+		Range: 0c512
+		Duration: 45
+		Condition: emp
+		ValidTargets: EMPulse
+		InvalidTargets: Structure
+	Warhead@2Shr: FireShrapnel
+		Weapon: TeslaFragmentCharged
+
 TeslaFragment:
 	Inherits: TankBolt
 	Range: 3c0
@@ -411,8 +461,8 @@ TeslaFragmentCommandoCharged:
 
 SonicZap:
 	Inherits@1: ^BreakPointDefenseDrones
-	ReloadDelay: 90
-	Range: 6c0
+	ReloadDelay: 40
+	Range: 4c0
 	Report: vdolatta.wav
 	ValidTargets: Water, Underwater
 	Projectile: AreaBeam
@@ -428,22 +478,22 @@ SonicZap:
 	Warhead@1Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 100, 100
-		Damage: 750
+		Damage: 350
 		AffectsParent: false
 		ValidRelationships: Neutral, Enemy
 		Versus:
-			Heavy: 80
+			Heavy: 75
 			Concrete: 60
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid, NonTemporal
 		ValidTargets: Water, Underwater
 	Warhead@2Dam: SpreadDamage
 		Range: 0, 32
 		Falloff: 50, 50
-		Damage: 750
+		Damage: 350
 		AffectsParent: false
 		ValidRelationships: Ally
 		Versus:
-			Heavy: 80
+			Heavy: 75
 			Concrete: 60
 		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, RemovesSquid, NonTemporal
 		ValidTargets: Water, Underwater
@@ -451,9 +501,8 @@ SonicZap:
 
 SonicZapE:
 	Inherits: SonicZap
-	ReloadDelay: 60
 	Warhead@1Dam: SpreadDamage
-		Damage: 1250
+		Damage: 500
 
 PrismShot:
 	Inherits@1: ^BreakPointDefenseDrones
@@ -975,7 +1024,7 @@ DiskLaserAAUpgE:
 DoomLaser:
 	Inherits: Comet
 	ReloadDelay: 80
-	Range: 7c0
+	Range: 7c512
 	Report: vlazatta.aud
 	Projectile: LaserZap
 		Duration: 15
@@ -1011,7 +1060,7 @@ DoomLaser:
 
 DoomLaserE:
 	Inherits: DoomLaser
-	Range: 8c0
+	Range: 8c512
 	Projectile: LaserZap
 		Color: FF000080
 	Warhead@1Dam: SpreadDamage

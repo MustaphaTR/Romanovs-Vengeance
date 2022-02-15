@@ -20,23 +20,23 @@ dest:
 		Prerequisites: gaairc, ~techlevel.3
 		BuildPaletteOrder: 60
 		Description: Allied Main Battle Ship armed with cannons and\nan Osprey helicopter.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect submerged units
-		BuildDuration: 375
+		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 1200
+		Cost: 1400
 	Tooltip:
 		Name: Destroyer
 	Tooltip@NoRow:
 		Name: Destroyer
 	Health:
-		HP: 60000
+		HP: 80000
 	Armor:
 		Type: Heavy
 	Mobile:
 		TurnSpeed: 32
-		Speed: 75
+		Speed: 90
 	RevealsShroud:
 		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
@@ -122,15 +122,15 @@ aegis:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Allies
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 30
 		Prerequisites: ~techlevel.1
 		Description: Anti-Air naval unit.\n\n  Strong vs Aircraft\n  Weak vs Grounds units, Ships\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
-		BuildDuration: 500
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 1000
+		Cost: 900
 	Tooltip:
 		Name: Aegis Cruiser
 	Tooltip@NoRow:
@@ -138,7 +138,7 @@ aegis:
 	Selectable:
 		Bounds: 1448, 3861, 0, -289
 	Health:
-		HP: 80000
+		HP: 30000
 	Armor:
 		Type: Light
 	Mobile:
@@ -195,12 +195,12 @@ dlph:
 	Inherits: ^SeaAnimal
 	Buildable:
 		Queue: Ship.Allies
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 20
 		Prerequisites: ~techlevel.1
 		Description: Trained dolphin armed with sonic beams.\n\n  Strong vs Ships\n\nAbilities:\n- Submerged\n- Can detect submerged units
 		BuildDuration: 250
 	Valued:
-		Cost: 800
+		Cost: 700
 	Tooltip:
 		Name: Dolphin
 		GenericName: Dolphin
@@ -210,7 +210,7 @@ dlph:
 	Health:
 		HP: 20000
 	Mobile:
-		Speed: 105
+		Speed: 120
 	Selectable:
 		Bounds: 965, 1930
 	Voiced:

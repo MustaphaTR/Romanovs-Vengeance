@@ -17,14 +17,14 @@ sub:
 	Buildable:
 		Queue: Ship.Soviets
 		Prerequisites: naradr, ~techlevel.2
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 50
 		Description: Submerged anti-ship unit armed with torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Submerged\n- Can detect submerged units
-		BuildDuration: 375
+		BuildDuration: 750
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 800
+		Cost: 1600
 	Tooltip:
 		Name: Typhoon Attack Submarine
 		GenericName: Submarine
@@ -32,7 +32,7 @@ sub:
 		Name: Typhoon Attack Submarine
 		GenericName: Submarine
 	Health:
-		HP: 60000
+		HP: 80000
 	Armor:
 		Type: Heavy
 	Mobile:
@@ -106,15 +106,15 @@ hyd:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Soviets
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 30
 		Prerequisites: ~techlevel.1
 		Description: Anti-Air and Anti-Infantry naval unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Naval units\n\nUpgradeable with:\n- Improved Flaks
-		BuildDuration: 250
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 700
+		Cost: 900
 	Tooltip:
 		Name: Sea Scorpion
 	Tooltip@NoRow:
@@ -122,12 +122,12 @@ hyd:
 	Selectable:
 		Bounds: 1206, 1448, 0, -289
 	Health:
-		HP: 30000
+		HP: 15000
 	Armor:
 		Type: Light
 	Mobile:
 		TurnSpeed: 32
-		Speed: 105
+		Speed: 90
 	RevealsShroud:
 		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
@@ -193,11 +193,12 @@ sqd:
 	Inherits: ^SeaAnimal
 	Buildable:
 		Queue: Ship.Soviets
+		BuildPaletteOrder: 40
 		Prerequisites: naradr, ~techlevel.3
 		Description: Large ocean creature capable of grabbing and sinking ships.\nCan be deployed to remove other squids from nearby ships.\n\n  Strong vs Ships\n\nAbilities:\n- Submerged\n- Can detect submerged units
 		BuildDuration: 375
 	Valued:
-		Cost: 800
+		Cost: 1000
 	Tooltip:
 		Name: Giant Squid
 		GenericName: Squid
@@ -465,14 +466,14 @@ sray:
 		BuildPaletteOrder: 20
 		Prerequisites: ~techlevel.1
 		Description: Light ship armed with dual Tesla Coils.\nCan move on land.\n\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
-		BuildDuration: 250
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 800
+		Cost: 900
 	DeliversCash:
-		Payload: 800
+		Payload: 900
 		Voice: Move
 	Tooltip:
 		Name: Stingray
@@ -481,11 +482,12 @@ sray:
 	Selectable:
 		Bounds: 1206, 1448, 0, -289
 	Health:
-		HP: 35000
+		HP: 25000
 	Armor:
 		Type: Light
 	Mobile:
 		Speed: 90
+		TurnSpeed: 32
 		Locomotor: heavyamphibious
 	SpeedMultiplier:
 		Modifier: 67
@@ -503,19 +505,19 @@ sray:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || squid
 	Armament@primary:
-		Weapon: TankBolt
+		Weapon: BoatBolt
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite:
-		Weapon: TankBoltE
+		Weapon: BoatBoltE
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: !overcharge && rank-elite
 	Armament@primary-overcharge:
-		Weapon: TankBoltCharged
+		Weapon: BoatBoltCharged
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: overcharge && !rank-elite
 	Armament@elite-overcharge:
-		Weapon: TankBoltChargedE
+		Weapon: BoatBoltChargedE
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: overcharge && rank-elite
 	WithVoxelBody:
