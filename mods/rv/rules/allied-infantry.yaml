@@ -1071,6 +1071,16 @@ spy:
 	TakeCover:
 	Disguise:
 		DisguisedCondition: disguise
+		DisguisedAsConditions:
+			dog: swim-disguise
+			engineer: swim-disguise
+			ghost: swim-disguise
+			spy: swim-disguise
+			sspy: swim-disguise
+			hjck: swim-disguise
+			tany: swim-disguise
+			boris: swim-disguise
+			yurix: swim-disguise-yuri
 	Infiltrates:
 		Types: SpyInfiltrate
 	-WithInfantryBody:
@@ -1078,14 +1088,27 @@ spy:
 		IdleSequences: idle1,idle2
 		StandSequences: stand
 		RequiresCondition: !parachute && !webdisable && !swimming
-	WithInfantryBody@Water: # Should be WithDisguisingInfantryBody, but seems like it is only using swim anim as defined for stand, not for idle or run.
-		RequiresCondition: !parachute && !webdisable && swimming
+	WithInfantryBody@Water:
+		RequiresCondition: !parachute && !webdisable && swimming && !swim-disguise && !swim-disguise-yuri
+	WithDisguisingInfantryBody@water:
+		Name: swim
+		IdleSequences: swim-idle1,swim-idle2
+		MoveSequences: swim-run
+		StandSequences: swim-stand
+		RequiresCondition: !parachute && !webdisable && swimming && (swim-disguise || swim-disguise-yuri)
 	WithDecoration@disguise:
 		Image: pips
 		Sequence: pip-disguise
 		Palette: pips
 		Position: TopRight
 		RequiresCondition: disguise
+	LeavesTrails:
+		Image: wake
+		Palette: effect50alpha
+		TerrainTypes: Water
+		StationaryInterval: 18
+		MovingInterval: 6
+		RequiresCondition: !parachute && !webdisable && swimming && swim-disguise-yuri
 	Voiced:
 		VoiceSet: SpyVoice
 	Guard:

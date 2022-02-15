@@ -156,6 +156,7 @@ snipe:
 
 spy:
 	Inherits: ^Infantry
+	Inherits@SWIMSUIT: ^WithSwimsuit
 	Defaults: conquer|spy
 	liedown:
 		Start: 164
@@ -169,44 +170,12 @@ spy:
 
 seal:
 	Inherits: ^ArmedInfantry
+	Inherits@SWIMSUIT: ^WithSwimsuit
 	Defaults: conquer|seal
 	run:
 		Tick: 120
-	swim-stand:
-		Start: 340
-		Facings: 8
-		Length: 6
-		Tick: 160
-	swim-idle1:
-		Start: 484
-		Length: 15
-		Tick: 160
-	swim-idle2:
-		Start: 499
-		Length: 15
-		Tick: 160
-	swim-run:
-		Start: 388
-		Facings: 8
-		Length: 6
-		Tick: 120
-	swim-die1:
-		Start: 512
-		Length: 22
-	swim-die2:
-		Start: 534
-		Length: 20
-	swim-shoot:
-		Start: 436
-		Length: 6
-		Facings: 8
-		Tick: 80
 	cheer:
 		Start: 603
-	swim-cheer:
-		Start: 611
-		Length: 8
-		Tick: 120
 	paradrop:
 		Start: 602
 	snow-stand: conquer|seala
@@ -267,16 +236,8 @@ seal:
 ccomand:
 	Inherits: seal
 	Defaults: conquer|ccomand
-	-swim-stand:
-	-swim-idle1:
-	-swim-idle2:
-	-swim-run:
-	-swim-die1:
-	-swim-die2:
-	-swim-shoot:
 	cheer:
 		Start: 340
-	-swim-cheer:
 	-paradrop:
 	icon: cameo|ccomicon
 
