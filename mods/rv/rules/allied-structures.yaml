@@ -180,6 +180,9 @@ gapowr:
 		Sequence: idle-glow-coolant
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && (powrup || advcoolants)
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power@ADVCOOLANTS:
 		Amount: 150
 		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && advcoolants
@@ -1086,7 +1089,6 @@ gtgcan:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
-		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 90000
 	Armor:
@@ -1117,6 +1119,9 @@ gtgcan:
 		RequiresCondition: !build-incomplete
 	WithVoxelBarrel:
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	AutoTarget:
 	WithMuzzleOverlay:
 	WithRangeCircle:
@@ -1183,6 +1188,9 @@ gaorep:
 		Sequence: idle-glow
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	ResourcePurifier:
 		Modifier: 25
 		RequiresCondition: !disabled && !chronodisable
@@ -1359,6 +1367,9 @@ gaweat:
 		Name: Weather Controller
 	Tooltip@NoRow:
 		Name: Weather Controller
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	DetonateWeaponPower@WeatherStorm:
 		OrderName: WeatherStormInfoOrder
 		Prerequisites:
@@ -1729,7 +1740,7 @@ gadock:
 		Condition: dontmove
 	Mobile:
 		Speed: 1
-		Locomotor: wheeled
+		Locomotor: amphibious
 		PauseOnCondition: dontmove
 	Exit@1:
 		Facing: 896
@@ -1777,6 +1788,9 @@ gasilo:
 	Inherits: ^Silo
 	Buildable:
 		Queue: Support.Allies, Support.France
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 45
 

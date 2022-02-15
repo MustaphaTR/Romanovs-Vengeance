@@ -100,6 +100,9 @@ yapowr:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power@1:
 		Amount: 50
 		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 1
@@ -823,6 +826,9 @@ yadisk:
 	ProductionBar@Lazarus:
 		ProductionType: Aircraft.Lazarus
 	-WithMakeAnimation:
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Capturable:
 		RequiresCondition: !invulnerability && !forceshield
 	Sellable:
@@ -922,6 +928,9 @@ yapsis:
 		Sequence: idle-spin
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power:
 		Amount: -200
 		RequiresCondition: !chronodisable
@@ -1499,6 +1508,9 @@ yappet:
 		Name: Psychic Dominator
 	Tooltip@NoRow:
 		Name: Psychic Dominator
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	DetonateWeaponPower:
 		OrderName: PsiPsychicDomination
 		PauseOnCondition: disabled || chronodisable
@@ -1648,7 +1660,6 @@ caeast02:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
-		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Armament:
 		Weapon: LaserShot
 		LocalOffset: 512,-256,1024, 512,256,1024

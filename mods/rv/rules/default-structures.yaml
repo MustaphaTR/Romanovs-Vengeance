@@ -176,6 +176,9 @@
 	ProvidesPrerequisite@AITowerRush:
 		RequiresCondition: ai-control
 		Prerequisite: AITowerRush
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: ExpansionNodeVoice
 		Volume: 0.8
@@ -250,6 +253,8 @@
 		Prerequisite: barracks
 	ProvidesPrerequisite@production:
 		Prerequisite: production
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	ExitsDebugOverlay:
 	Health:
 		HP: 50000
@@ -556,6 +561,7 @@
 	Building:
 		Footprint: xxxx+ xxxx+ xxxx+
 		Dimensions: 5,3
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 120000
 	Armor:

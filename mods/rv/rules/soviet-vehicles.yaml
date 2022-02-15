@@ -1,7 +1,7 @@
 smcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Soviets
 	Transforms:
 		IntoActor: nacnst
 	Voiced:
@@ -15,8 +15,8 @@ harv:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@NOGUNNER: ^GunnerKillable
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
-		Description: Gathers Ore and Gems.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Soviets
+		Description: Gathers Ore and Gems.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Armor-Piercing Bullets
 	Tooltip:
 		Name: War Miner
 	Tooltip@NoRow:
@@ -1414,15 +1414,13 @@ deva:
 exps:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Soviets
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
 	Transforms:
 		IntoActor: naexpn
 	Voiced:
 		VoiceSet: SovietConstructionVehicleVoice
-	Hovers:
-		InitialHeight: 128
 	RenderSprites:
 		Image: expn
 	RenderVoxels:

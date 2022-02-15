@@ -1584,7 +1584,6 @@
 		BuildSounds: uplace.wav
 		RequiresBaseProvider: True
 		UndeploySounds: uselbuil.wav
-		TerrainTypes: Clear, Rough, Road, DirtRoad
 	ActorPreviewPlaceBuildingPreview:
 		PreviewAlpha: 0.55
 		Palette: placefootprint
@@ -1674,10 +1673,26 @@
 	Inherits: ^Building
 	WithMakeAnimation:
 		Condition: build-incomplete
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	Sellable:
 		SellSounds: uselbuil.wav
 		Notification: StructureSold
 		RequiresCondition: !build-incomplete && !chronodisable
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, Defense, C4
+		RequiresCondition: in_water
+	SpawnActorsOnSell@allies:
+		RequiresCondition: !in_water
+	SpawnActorsOnSell@soviets:
+		RequiresCondition: !in_water
+	SpawnActorsOnSell@psicorps:
+		RequiresCondition: !in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	RequiresBuildableArea:
 		AreaTypes: building
 		Adjacent: 3
@@ -1702,21 +1717,10 @@
 		Duration: 50
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, NonGarrisonableStructure
-		RequiresCondition: !in_water
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, Defense, C4
-		RequiresCondition: in_water
-	SpawnActorsOnSell@allies:
-		RequiresCondition: !in_water
-	SpawnActorsOnSell@soviets:
-		RequiresCondition: !in_water
-	SpawnActorsOnSell@psicorps:
-		RequiresCondition: !in_water
 	RangedGpsDot:
 		Sequence: Defense
-	GrantConditionOnTerrain@Water:
-		TerrainTypes: Water
-		Condition: in_water
 	RequiresBuildableArea:
 		AreaTypes: defense
 

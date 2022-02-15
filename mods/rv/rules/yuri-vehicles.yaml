@@ -3,8 +3,8 @@ pcv:
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
-		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Yuri
+		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
 	Transforms:
 		IntoActor: yacnst
 	Voiced:
@@ -124,8 +124,8 @@ gmin:
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
-		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Stealth while not docked\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Yuri
+		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Stealth while not docked\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
 	Tooltip:
 		Name: Lazarus Miner
 	Tooltip@NoRow:
@@ -1348,16 +1348,14 @@ expy:
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
-		Description: Deploys into an Expansion Node.\nCannot be undeployed back.\n\n  Unarmed\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Yuri
+		Description: Deploys into an Expansion Node.\nCannot be undeployed back.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
 	Transforms:
 		IntoActor: yaexpn
 	Voiced:
 		VoiceSet: YuriConstructionVehicleVoice
-	Hovers:
-		InitialHeight: 128
 	RenderSprites:
 		Image: expn
 	RenderVoxels:

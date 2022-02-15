@@ -2,11 +2,12 @@
 	Inherits: ^Vehicle
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Ship
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
-		Description: Gathers Ore and Gems.\n\n  Unarmed
+		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -49,7 +50,8 @@
 	Mobile:
 		Speed: 60
 		TurnSpeed: 32
-		Locomotor: heavytracked
+		Locomotor: heavyamphibious
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -57,6 +59,13 @@
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 3c0
+	LeavesTrails:
+		Image: wake
+		Palette: effect50alpha
+		TerrainTypes: Water
+		Type: CenterPosition
+		StationaryInterval: 18
+		MovingInterval: 6
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect
@@ -70,6 +79,14 @@
 		Voice: Build
 		ValidRelationships: None
 	HitShape:
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@WATER:
+		TargetTypes: Ground, Water, Ship
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	RangedGpsDot:
 		Sequence: Harvester
 	WithHarvesterPipsDecoration:
@@ -89,10 +106,11 @@
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Ship
 		BuildPaletteOrder: 50
-		Description: Deploys into a Construction Yard.\n\n  Unarmed
+		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water
 		Prerequisites: ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -115,7 +133,8 @@
 	Mobile:
 		Speed: 60
 		TurnSpeed: 20
-		Locomotor: heavytracked
+		Locomotor: heavyamphibious
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
 	-Crushable:
 	-Crushable@Cheater:
 	-Crushable@Vengeful:
@@ -149,15 +168,30 @@
 		Facing: 384
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		PauseOnCondition: chronodisable || emp || terrordroned || controlled
+		PauseOnCondition: chronodisable || emp || terrordroned || squid || controlled
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
 	TransferTimedExternalConditionOnTransform@INVISIBILITY:
 		Condition: invisibility
+	LeavesTrails:
+		Image: wake
+		Palette: effect50alpha
+		TerrainTypes: Water
+		Type: CenterPosition
+		StationaryInterval: 18
+		MovingInterval: 6
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
 	HitShape:
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@WATER:
+		TargetTypes: Ground, Water, Ship
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -183,10 +217,11 @@
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle, Ship
 		BuildPaletteOrder: 60
-		Description: Deploys into an Expansion Node.\nCannot be undeployed back.\n\n  Unarmed
+		Description: Deploys into an Expansion Node.\nCannot be undeployed back.\n\n  Unarmed\n\nAbilities:\n- Can move over water
 		Prerequisites: repairpad, ~techlevel.2, ~!ai.ev
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -209,7 +244,8 @@
 	Mobile:
 		Speed: 90
 		TurnSpeed: 32
-		Locomotor: heavytracked
+		Locomotor: heavyamphibious
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
 	Guard:
 		Voice: Move
 	Passenger:
@@ -229,15 +265,30 @@
 		Facing: 384
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		PauseOnCondition: chronodisable || emp || terrordroned || controlled
+		PauseOnCondition: chronodisable || emp || terrordroned || squid || controlled
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
 	TransferTimedExternalConditionOnTransform@INVISIBILITY:
 		Condition: invisibility
+	LeavesTrails:
+		Image: wake
+		Palette: effect50alpha
+		TerrainTypes: Water
+		Type: CenterPosition
+		StationaryInterval: 18
+		MovingInterval: 6
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
 	HitShape:
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@WATER:
+		TargetTypes: Ground, Water, Ship
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -257,6 +308,12 @@
 		DeployChance: 100
 		DeployTicks: 5
 		UndeployTicks: 50
+	Hovers:
+		Ticks: 10
+		BobDistance: -64
+		InitialHeight: 384
+		# PauseOnCondition: chronodisable
+		RequiresCondition: !emp && !magnefreeze && !squid
 	Armament@AIDummyAiming: ## Hack: Make AI ExpansionVehicle deploy
 		RequiresCondition: ai-control
 		Weapon: GroundDummyAim

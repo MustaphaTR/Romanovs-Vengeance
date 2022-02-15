@@ -1,7 +1,7 @@
 amcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Allies
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
 	Transforms:
@@ -12,8 +12,8 @@ amcv:
 cmin:
 	Inherits: ^Miner
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
-		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can teleport back to refineries
+		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Allies
+		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Can teleport back to refineries
 	Tooltip:
 		Name: Chrono Miner
 	Tooltip@NoRow:
@@ -1955,15 +1955,13 @@ ctnk:
 expn:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Allies
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
 	Transforms:
 		IntoActor: gaexpn
 	Voiced:
 		VoiceSet: AlliedConstructionVehicleVoice
-	Hovers:
-		InitialHeight: 128
 
 mrcv:
 	Inherits: ^Vehicle

@@ -8,7 +8,7 @@
 	Buildable:
 		Queue: Ship
 		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 10
+		BuildPaletteOrder: 45
 		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -57,9 +57,6 @@
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water
 		Condition: in_water
-	KillsSelf@LowPowerOnWater:
-		DamageTypes: NonTemporal
-		RequiresCondition: (emp || magnefreeze) && in_water
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
@@ -118,7 +115,7 @@
 		DeathTypes: BulletDeath
 	Buildable:
 		Queue: Ship
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 70
 		Prerequisites: radar, ~techlevel.3
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:

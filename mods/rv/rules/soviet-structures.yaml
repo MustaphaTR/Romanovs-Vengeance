@@ -553,6 +553,9 @@ naradr:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp
 	IsometricSelectable:
@@ -1097,6 +1100,9 @@ napsis:
 		Sequence: idle-spin
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power:
 		Amount: -200
 		RequiresCondition: !chronodisable
@@ -1120,6 +1126,9 @@ nairon:
 		Name: Iron Curtain Device
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	GrantExternalConditionPower@IRONCURTAIN:
 		Icons:
 			1: invuln
@@ -1705,6 +1714,8 @@ napost:
 		Name: Tesla Fence Post
 	Tooltip@NoRow:
 		Name: Tesla Fence Post
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Health:
 		HP: 50000
 	Armor:
