@@ -18,6 +18,24 @@ TIBTRE04:
 	SeedsResource:
 		ResourceType: Gems
 		Interval: 100
+	WithIdleAnimation:
+		Interval: 500
+
+TIBTRE05:
+	Inherits: ^OreDrill
+	WithSpriteBody@2:
+		Name: body2
+		Sequence: idle-flipped
+	Tooltip:
+		Name: Fast Ore Drill
+	SeedsResource:
+		Interval: 25
+	WithIdleAnimation:
+		Interval: 125
+	WithIdleAnimation@2:
+		Sequences: active-flipped
+		Interval: 125
+		Body: body2
 
 TREE01:
 	Inherits: ^Tree
