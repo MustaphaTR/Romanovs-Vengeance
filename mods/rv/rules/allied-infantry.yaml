@@ -9,7 +9,7 @@ engineer:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\n  Unarmed
+		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\nAbilities:\n- Can swim\n\n  Unarmed
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -116,7 +116,7 @@ dog:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
-		Description: Anti-infantry unit.\nCan be deployed to stun nearby infantry for a short while.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilties:\n- Can detect Stealth units\n- Can detect Spies
+		Description: Anti-infantry unit.\nCan be deployed to stun nearby infantry for a short while.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can detect Stealth units\n- Can detect Spies
 		BuildDuration: 50
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1025,12 +1025,13 @@ snipe:
 spy:
 	Inherits: ^Infantry
 	Inherits@PARACHUTE: ^Parachutable
+	Inherits@SWIMSUIT: ^WithSwimSuit
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 80
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\n\n  Unarmed\n\nAbilities:\n- Can disguise as an enemy infantry
+		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Can disguise as an enemy infantry
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1053,6 +1054,8 @@ spy:
 		Bounds: 579, 1351, -24, -386
 	Health:
 		HP: 10000
+	Mobile:
+		Locomotor: swimsuit
 	Garrisoner:
 		Voice: Move
 		CustomPipType: yellow
@@ -1074,7 +1077,9 @@ spy:
 	WithDisguisingInfantryBody:
 		IdleSequences: idle1,idle2
 		StandSequences: stand
-		RequiresCondition: !parachute && !webdisable
+		RequiresCondition: !parachute && !webdisable && !swimming
+	WithInfantryBody@Water: # Should be WithDisguisingInfantryBody, but seems like it is only using swim anim as defined for stand, not for idle or run.
+		RequiresCondition: !parachute && !webdisable && swimming
 	WithDecoration@disguise:
 		Image: pips
 		Sequence: pip-disguise

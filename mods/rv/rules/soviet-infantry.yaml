@@ -1451,11 +1451,12 @@ hjck:
 	Inherits: ^Infantry
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
+	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		Prerequisites: naradr, ~techlevel.3
 		BuildPaletteOrder: 70
-		Description: Steals enemy vehicles.\nCan infiltrate enemy Battle Labs to gain access to new infantry.\n\n  Unarmed\n\nAbilities:\n- Stealth while not moving
+		Description: Steals enemy vehicles.\nCan infiltrate enemy Battle Labs to gain access to new infantry.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Stealth while not moving
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1479,6 +1480,7 @@ hjck:
 		CustomPipType: yellow
 	Mobile:
 		Speed: 90
+		Locomotor: swimsuit
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:

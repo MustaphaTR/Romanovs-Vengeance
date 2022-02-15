@@ -618,6 +618,7 @@
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^4x4Shape
 	Valued:
 		Cost: 1000
@@ -633,7 +634,7 @@
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	Targetable:
-		TargetTypes: Ground, Water, WaterStructure, C4
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@production:
 		Prerequisite: production
