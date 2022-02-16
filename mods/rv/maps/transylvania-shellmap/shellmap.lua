@@ -26,7 +26,7 @@ CivilianTypes = { "civ1", "civ2", "civ3", "civa", "civb", "civc", "civsfm", "civ
 CivilianHousesEast = { EastHouse1, EastHouse2, EastHouse3, EastHouse4, EastHouse5, EastHouse6, EastHouse7, EastHouse8 }
 CivilianHousesWest = { WestHouse1, WestHouse2, WestHouse3, WestHouse4, WestHouse5 }
 
-IFVTypes = { "fv.flamer", "fv.virus", "fv.init", "fv.hijacker", "fv.ivan", "fv.tesla", "fv.iron", "fv.yuri", "fv.gatling" }
+IFVTypes = { "fv.flamer", "fv.virus", "fv.init", "fv.hijacker", "fv.ivan", "fv.tesla", "fv.iron", "fv.yuri", "fv.gatling", "fv.dog" }
 
 ProduceCivilians = function(house)
 	local delay = Utils.RandomInteger(0, 200)
