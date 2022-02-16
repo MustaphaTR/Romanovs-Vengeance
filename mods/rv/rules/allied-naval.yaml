@@ -16,7 +16,7 @@ dest:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship.Allies
+		Queue: Ship.Civilian
 		Prerequisites: gaairc, ~techlevel.3
 		BuildPaletteOrder: 80
 		Description: Allied Main Battle Ship armed with cannons and\nan Osprey helicopter.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
@@ -315,3 +315,108 @@ carrier:
 		SoundFiles: vaccstaa.wav, vaccstab.wav
 		Volume: 0.5
 		RequiresCondition: moving
+
+# Custom Allied Vessels
+adest:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@C4: ^AcceptsSEALC4
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@SQUID: ^SquidGrabbable
+	Buildable:
+		Queue: Ship.Allies
+		Prerequisites: gaairc, ~techlevel.3
+		BuildPaletteOrder: 80
+		Description: Heavy vehicle armed with a cannon that can move over both land and water.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can crush enemy land vehicles\n- Can detect Stealth units
+		BuildDuration: 625
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 1400
+	Tooltip:
+		Name: Destroyer
+	Tooltip@NoRow:
+		Name: Destroyer
+	Health:
+		HP: 80000
+	Armor:
+		Type: Heavy
+	Mobile:
+		TurnSpeed: 32
+		Speed: 90
+	Mobile:
+		Speed: 90
+		TurnSpeed: 32
+		Locomotor: omniamphibious
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+	SpeedMultiplier:
+		Modifier: 67
+		RequiresCondition: !in_water
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Selectable:
+		Bounds: 2000, 3800, 0, -350
+	Armament@primary:
+		Weapon: 155mmAssault
+		LocalOffset: 1280,0,896
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: 155mmAssaultE
+		LocalOffset: 1280,0,896
+		MuzzleSequence: muzzle-2
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		PauseOnCondition: chronodisable || emp
+	WithMuzzleOverlay:
+	DetectCloaked:
+		# CloakTypes: Underwater
+		Range: 6c0
+	RenderDetectionCircle:
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	WithVoxelBody:
+		RequiresCondition: in_water
+	WithVoxelBody@land:
+		Sequence: idle-land
+		RequiresCondition: !in_water
+	RenderSprites:
+	RenderVoxels:
+		Scale: 10
+	Targetable:
+		RequiresCondition: in_water
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection
+		RequiresCondition: !in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
+	Voiced:
+		VoiceSet: AlliedNavalVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vdesstaa.wav, vdesstab.wav
+		Volume: 0.3
+		RequiresCondition: moving && in_water
