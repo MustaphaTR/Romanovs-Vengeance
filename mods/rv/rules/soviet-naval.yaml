@@ -90,7 +90,7 @@ sub:
 	HitShape:
 	GrantConditionOnMovement@MoveStart:
 		Condition: moving
-		ValidMovementTypes: Horizontal
+		ValidMovementTypes: Horizontal, Turn
 	SoundAnnouncement:
 		SoundFiles: vsqumova.wav, vsqumovb.wav
 		Volume: 0.45
@@ -185,7 +185,7 @@ hyd:
 	HitShape:
 	GrantConditionOnMovement@MoveStart:
 		Condition: moving
-		ValidMovementTypes: Horizontal
+		ValidMovementTypes: Horizontal, Turn
 	SoundAnnouncement:
 		SoundFiles: vseastaa.wav, vseastab.wav, vseastac.wav, vseastad.wav
 		Volume: 0.4
@@ -543,7 +543,7 @@ sray:
 		TerrainTypes: Water
 		Condition: in_water
 	Voiced:
-		VoiceSet: SovietNavalVoice
+		VoiceSet: StingerVoice
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:
@@ -553,8 +553,15 @@ sray:
 	HitShape:
 	GrantConditionOnMovement@MoveStart:
 		Condition: moving
-		ValidMovementTypes: Horizontal
+		ValidMovementTypes: Horizontal, Turn
+	GrantConditionOnMovement@walk:
+		Condition: walking
 	SoundAnnouncement:
-		SoundFiles: vseastaa.wav, vseastab.wav, vseastac.wav, vseastad.wav
+		SoundFiles: vstistaa.wav, vstistab.wav, vstistac.wav, vstistad.wav
 		Volume: 0.4
-		RequiresCondition: moving
+		RequiresCondition: moving && in_water
+	AmbientSound@land:
+		SoundFiles: vstista.wav, vstistb.wav, vstistc.wav, vstistd.wav, vstiste.wav, vstistf.wav, vstistg.wav, vstisth.wav
+		Volume: 0.4
+		Interval: 20
+		RequiresCondition: walking && !in_water
