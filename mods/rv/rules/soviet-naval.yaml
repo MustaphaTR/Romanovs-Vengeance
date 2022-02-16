@@ -14,6 +14,7 @@ sub:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
+	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
 		Queue: Ship.Soviets
 		Prerequisites: naradr, ~techlevel.2
@@ -38,7 +39,7 @@ sub:
 	Mobile:
 		TurnSpeed: 24
 		Speed: 75
-	-LeavesTrails:
+	# -LeavesTrails:
 	RevealsShroud:
 		Range: 7c0
 	# RevealsShroudToIntelligenceOwner:
@@ -76,6 +77,7 @@ sub:
 	RenderDetectionCircle:
 	-MustBeDestroyed:
 	WithVoxelBody:
+		ShowShadow: false
 	RenderSprites:
 	Voiced:
 		VoiceSet: TyphoonVoice
@@ -191,6 +193,8 @@ hyd:
 
 sqd:
 	Inherits: ^SeaAnimal
+	WithColoredOverlay@SUBMERGE:
+		RequiresCondition: !surfaced && !deployed
 	Buildable:
 		Queue: Ship.Soviets
 		Prerequisites: naradr, ~techlevel.3

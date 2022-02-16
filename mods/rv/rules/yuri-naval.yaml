@@ -14,6 +14,7 @@ bsub:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
+	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
 		Queue: Ship.Yuri
 		Prerequisites: yatech, ~techlevel.3
@@ -38,7 +39,7 @@ bsub:
 	Mobile:
 		TurnSpeed: 24
 		Speed: 60
-	-LeavesTrails:
+	# -LeavesTrails:
 	RevealsShroud:
 		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
@@ -100,6 +101,7 @@ bsub:
 		RequiresCondition: rank-elite
 	-MustBeDestroyed:
 	WithVoxelBody:
+		ShowShadow: false
 	RenderSprites:
 	Voiced:
 		VoiceSet: BoomerVoice
@@ -174,6 +176,7 @@ piranha:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
+	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
 		Queue: Ship.Yuri
 		Prerequisites: ~techlevel.1
@@ -196,7 +199,7 @@ piranha:
 	Mobile:
 		TurnSpeed: 36
 		Speed: 105
-	-LeavesTrails:
+	# -LeavesTrails:
 	RevealsShroud:
 		Range: 9c0
 	# RevealsShroudToIntelligenceOwner:
@@ -235,6 +238,7 @@ piranha:
 	RenderDetectionCircle:
 	-MustBeDestroyed:
 	WithVoxelBody:
+		ShowShadow: false
 	RenderSprites:
 	Voiced:
 		VoiceSet: TyphoonVoice
@@ -263,6 +267,7 @@ gatsub:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
+	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
 		Queue: Ship.Yuri
 		Prerequisites: ~techlevel.1
@@ -285,7 +290,7 @@ gatsub:
 	Mobile:
 		TurnSpeed: 24
 		Speed: 75
-	-LeavesTrails:
+	# -LeavesTrails:
 	RevealsShroud:
 		Range: 10c0
 	# RevealsShroudToIntelligenceOwner:
@@ -417,7 +422,9 @@ gatsub:
 	-MustBeDestroyed:
 	WithMuzzleOverlay:
 	WithVoxelBody:
+		ShowShadow: false
 	WithVoxelTurret:
+		ShowShadow: false
 	RenderSprites:
 	Voiced:
 		VoiceSet: GatlingTankVoice
@@ -444,6 +451,8 @@ gatsub:
 floater:
 	Inherits: ^SeaAnimal
 	Inherits@DNABOOST: ^AffectedByDNABoosters
+	WithColoredOverlay@SUBMERGE:
+		RequiresCondition: !surfaced && in_water
 	Buildable:
 		Queue: Ship.Yuri
 		Prerequisites: yadome, ~techlevel.3
@@ -499,8 +508,16 @@ floater:
 	QuantizeFacingsFromSequence:
 		Sequence: idle
 	WithSpriteBody:
+		RequiresCondition: in_water
+	WithSpriteBody@land:
+		Name: bodyLand
+		Sequence: idle-land
+		RequiresCondition: !in_water
 	WithAttackAnimation:
 		Sequence: attack
+	WithAttackAnimation@land:
+		Sequence: attack-land
+		Body: bodyLand
 	RenderSprites:
 		PlayerPalette: infantry
 

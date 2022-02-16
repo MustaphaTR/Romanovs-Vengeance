@@ -110,9 +110,13 @@
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@INVULNERABILITY: ^KilledByIronCurtain
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	OwnerLostAction:
 		Action: Kill
 		DeathTypes: BulletDeath
+	WithColoredOverlay@SUBMERGE:
+		Color: 24262D80
+		RequiresCondition: !surfaced
 	Buildable:
 		Queue: Ship
 		BuildPaletteOrder: 70
