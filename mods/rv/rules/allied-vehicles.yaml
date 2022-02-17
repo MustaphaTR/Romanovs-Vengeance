@@ -1509,6 +1509,7 @@ robo:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@SQUID: ^SquidGrabbable
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -1534,13 +1535,13 @@ robo:
 		CanMoveBackward: true
 		Locomotor: amphibious
 		PauseOnCondition: !powered
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !squid
 	Hovers:
 		Ticks: 10
 		BobDistance: -64
 		InitialHeight: 384
 		# PauseOnCondition: chronodisable
-		RequiresCondition: !emp && !magnefreeze && powered
+		RequiresCondition: !emp && !magnefreeze && !squid && powered
 	Health:
 		HP: 20000
 	Armor:

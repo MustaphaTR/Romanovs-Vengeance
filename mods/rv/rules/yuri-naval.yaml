@@ -521,6 +521,104 @@ floater:
 	RenderSprites:
 		PlayerPalette: infantry
 
+strt:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
+	Inherits@RADIATON: ^DamagedByRadiation10Percent
+	Inherits@SQUID: ^SquidGrabbable
+	Buildable:
+		Queue: Ship.Yuri
+		Prerequisites: yadome, ~techlevel.3
+		BuildPaletteOrder: 80
+		Description: Light amphibious tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 900
+	DeliversCash:
+		Payload: 900
+		Voice: Move
+	Tooltip:
+		Name: Strider Tank
+	Tooltip@NoRow:
+		Name: Strider Tank
+	Health:
+		HP: 30000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 75
+		TurnSpeed: 32
+		Locomotor: heavyamphibious
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+	SpeedMultiplier:
+		Modifier: 140
+		RequiresCondition: !in_water
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
+	RevealOnDeath:
+		Radius: 4c0
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
+	Turreted:
+		TurnSpeed: 32
+	Armament@primary:
+		Weapon: StriderGun
+		LocalOffset: 1280,0,800
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: StriderGunE
+		LocalOffset: 1280,0,800
+		MuzzleSequence: muzzle-2
+		RequiresCondition: rank-elite
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp
+	WithMuzzleOverlay:
+	Explodes:
+		Weapon: UnitExplode
+		EmptyWeapon: UnitExplode
+	WithVoxelBody:
+		RequiresCondition: in_water
+	WithVoxelBody@land:
+		Sequence: idle-land
+		RequiresCondition: !in_water
+	WithVoxelTurret:
+		RequiresCondition: in_water
+	WithVoxelTurret@land:
+		Sequence: turret-land
+		RequiresCondition: !in_water
+	RenderSprites:
+	RenderVoxels:
+		Scale: 10
+	Targetable:
+		RequiresCondition: in_water
+	Targetable@GROUND:
+		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection
+		RequiresCondition: !in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
+	Voiced:
+		VoiceSet: LasherTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+
 buoy:
 	Inherits: ^Ship
 	Inherits@C4: ^AcceptsSEALC4

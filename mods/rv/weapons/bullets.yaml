@@ -294,11 +294,6 @@ ATGUNE:
 	Inherits: 105mmE
 	Range: 6c0
 	Report: vlasatta.wav
-	Warhead@1Dam: SpreadDamage
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 100
 
 ATGUNAuto:
 	Inherits: ATGUN
@@ -311,6 +306,18 @@ ATGUNAutoE:
 75mm:
 	Inherits: ATGUN
 	Report: cannon2.aud
+
+StriderGun:
+	Inherits: ATGUN
+	ReloadDelay: 45
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+
+StriderGunE:
+	Inherits: ATGUNE
+	ReloadDelay: 45
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
 
 120mm:
 	Inherits: ^LargeBullet
