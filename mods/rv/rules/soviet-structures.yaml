@@ -8,12 +8,14 @@ nacnst:
 		Produces: Building.Soviets, Building.Baku, Support.Soviets, Support.Baku
 	ProductionQueue@Building:
 		Type: Building.Soviets
+		DisplayOrder: 2
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
 	ProductionQueue@BuildingBaku:
 		Type: Building.Baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		Group: Building
+		DisplayOrder: 4
 		LowPowerModifier: 200
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		ReadyAudio: ConstructionComplete
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -22,12 +24,14 @@ nacnst:
 		CancelledAudio: Cancelled
 	ProductionQueue@Support:
 		Type: Support.Soviets
+		DisplayOrder: 6
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
 	ProductionQueue@SupportBaku:
 		Type: Support.Baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		Group: Support
+		DisplayOrder: 8
 		LowPowerModifier: 200
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		ReadyAudio: ConstructionComplete
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -256,12 +260,14 @@ nahand:
 		Produces: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 	ProductionQueue:
 		Type: Infantry.Soviets
+		DisplayOrder: 14
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
 	ProductionQueue@Cuba:
 		Type: Infantry.Cuba
-		Factions: cuba
 		Group: Infantry
+		DisplayOrder: 14
 		LowPowerModifier: 200
+		Factions: cuba
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -270,9 +276,10 @@ nahand:
 		CancelledAudio: Cancelled
 	ProductionQueue@Iraq:
 		Type: Infantry.Iraq
-		Factions: iraq
 		Group: Infantry
+		DisplayOrder: 14
 		LowPowerModifier: 200
+		Factions: iraq
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -623,12 +630,14 @@ naweap:
 		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	ProductionQueue:
 		Type: Vehicle.Soviets
+		DisplayOrder: 18
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
 	ProductionQueue@USSR:
 		Type: Vehicle.USSR
-		Factions: russia
 		Group: Vehicle
+		DisplayOrder: 18
 		LowPowerModifier: 200
+		Factions: russia
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -637,9 +646,10 @@ naweap:
 		CancelledAudio: Cancelled
 	ProductionQueue@Iraq:
 		Type: Vehicle.Iraq
-		Factions: iraq
 		Group: Vehicle
+		DisplayOrder: 18
 		LowPowerModifier: 200
+		Factions: iraq
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -648,9 +658,10 @@ naweap:
 		CancelledAudio: Cancelled
 	ProductionQueue@Cuba:
 		Type: Vehicle.Cuba
-		Factions: cuba
 		Group: Vehicle
+		DisplayOrder: 18
 		LowPowerModifier: 200
+		Factions: cuba
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -659,9 +670,10 @@ naweap:
 		CancelledAudio: Cancelled
 	ProductionQueue@Libya:
 		Type: Vehicle.Libya
-		Factions: libya
 		Group: Vehicle
+		DisplayOrder: 18
 		LowPowerModifier: 200
+		Factions: libya
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -670,9 +682,10 @@ naweap:
 		CancelledAudio: Cancelled
 	ProductionQueue@Baku:
 		Type: Vehicle.Baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		Group: Vehicle
+		DisplayOrder: 20
 		LowPowerModifier: 200
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -708,6 +721,7 @@ nayard:
 		Produces: Ship.Soviets
 	ProductionQueue:
 		Type: Ship.Soviets
+		DisplayOrder: 22
 	ProductionBar:
 		ProductionType: Ship.Soviets
 	WithIdleOverlay@lights:
@@ -815,9 +829,10 @@ naheli:
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, iraq, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
 	ProductionQueue@USSR:
 		Type: Aircraft.USSR
-		Factions: russia
 		Group: Aircraft
+		DisplayOrder: 26
 		LowPowerModifier: 200
+		Factions: russia
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -826,9 +841,10 @@ naheli:
 		CancelledAudio: Cancelled
 	ProductionQueue@Vietnam:
 		Type: Aircraft.Vietnam
-		Factions: vietnam
 		Group: Aircraft
+		DisplayOrder: 26
 		LowPowerModifier: 200
+		Factions: vietnam
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -837,9 +853,10 @@ naheli:
 		CancelledAudio: Cancelled
 	ProductionQueue@Cuba:
 		Type: Aircraft.Cuba
-		Factions: cuba
 		Group: Aircraft
+		DisplayOrder: 26
 		LowPowerModifier: 200
+		Factions: cuba
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -848,9 +865,10 @@ naheli:
 		CancelledAudio: Cancelled
 	ProductionQueue@Libya:
 		Type: Aircraft.Libya
-		Factions: libya
 		Group: Aircraft
+		DisplayOrder: 26
 		LowPowerModifier: 200
+		Factions: libya
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress

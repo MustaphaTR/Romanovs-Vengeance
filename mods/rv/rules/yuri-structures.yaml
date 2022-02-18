@@ -8,14 +8,17 @@ yacnst:
 		Produces: Building.Yuri, Support.Yuri, Support.Antarctica
 	ProductionQueue@Building:
 		Type: Building.Yuri
+		DisplayOrder: 3
 	ProductionQueue@Support:
 		Type: Support.Yuri
+		DisplayOrder: 7
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
-	ProductionQueue@SupportFrance:
+	ProductionQueue@SupportAntarctica:
 		Type: Support.Antarctica
-		Factions: psisouth
 		Group: Support
+		DisplayOrder: 7
 		LowPowerModifier: 200
+		Factions: psisouth
 		ReadyAudio: ConstructionComplete
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -215,12 +218,14 @@ yabrck:
 		Produces: Infantry.Yuri, Infantry.Moon
 	ProductionQueue:
 		Type: Infantry.Yuri
+		DisplayOrder: 15
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, transcaucus, turkmen, tuva, russianfed, serbia
 	ProductionQueue@Moon:
 		Type: Infantry.Moon
-		Factions: psimoon
 		Group: Infantry
+		DisplayOrder: 15
 		LowPowerModifier: 200
+		Factions: psimoon
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -443,12 +448,14 @@ yaweap:
 		Produces: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 	ProductionQueue:
 		Type: Vehicle.Yuri
+		DisplayOrder: 19
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, libya, russia, vietnam, chile, mexico, mongolia, psinepal, psisouth, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
 	ProductionQueue@Psi:
 		Type: Vehicle.Psi
-		Factions: psicorps
 		Group: Vehicle
+		DisplayOrder: 19
 		LowPowerModifier: 200
+		Factions: psicorps
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -457,9 +464,10 @@ yaweap:
 		CancelledAudio: Cancelled
 	ProductionQueue@Trans:
 		Type: Vehicle.Trans
-		Factions: psitrans
 		Group: Vehicle
+		DisplayOrder: 19
 		LowPowerModifier: 200
+		Factions: psitrans
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
@@ -493,6 +501,7 @@ yayard:
 		Produces: Ship.Yuri
 	ProductionQueue:
 		Type: Ship.Yuri
+		DisplayOrder: 23
 	ProductionBar:
 		ProductionType: Ship.Yuri
 	ParatroopersPower@sensorbuoy:
@@ -809,12 +818,14 @@ yadisk:
 		Produces: Aircraft.Yuri, Aircraft.Lazarus
 	ProductionQueue:
 		Type: Aircraft.Yuri
+		DisplayOrder: 27
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
 	ProductionQueue@Lazarus:
 		Type: Aircraft.Lazarus
-		Factions: psinepal
 		Group: Aircraft
+		DisplayOrder: 27
 		LowPowerModifier: 200
+		Factions: psinepal
 		ReadyAudio: UnitReady
 		BlockedAudio: NoBuild
 		LimitedAudio: BuildingInProgress
