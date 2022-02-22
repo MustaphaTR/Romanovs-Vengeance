@@ -134,6 +134,7 @@ gmin:
 		Voice: Move
 	Cloak:
 		RequiresCondition: !chronodisable && !emp
+		CloakedCondition: cloaked
 		InitialDelay: 25
 		CloakDelay: 100
 		IsPlayerPalette: true
@@ -142,6 +143,8 @@ gmin:
 		UncloakOn: Attack, Damage, Dock
 	-Cloak@lazarus:
 	-ExternalCondition@INVISIBILITY:
+	LeavesTrails:
+		RequiresCondition: !cloaked
 	Voiced:
 		VoiceSet: SlaveMinerVoice
 
