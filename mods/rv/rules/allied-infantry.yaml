@@ -1130,7 +1130,7 @@ ghost:
 		Queue: Infantry.USA
 		BuildPaletteOrder: 100
 		Prerequisites: gaairc, ~techlevel.3
-		Description: Elite commando infantry, armed with a sub machine gun\nand charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings and ships\n\nUpgradeable with:\n- Advanced Training
+		Description: Elite commando infantry, armed with a sub machine gun\nand C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings\n\nUpgradeable with:\n- Advanced Training
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1183,18 +1183,18 @@ ghost:
 		Weapon: MP5E
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@sapper:
-		Weapon: SealC4Attacher
-		Cursor: c4
-		OutsideRangeCursor: c4
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
-	Armament@sapper-elite:
-		Weapon: SealC4AttacherE
-		Cursor: c4
-		OutsideRangeCursor: c4
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+	# Armament@sapper:
+	#	Weapon: SealC4Attacher
+	#	Cursor: c4
+	#	OutsideRangeCursor: c4
+	#	PauseOnCondition: chronodisable || webdisable || dogstun
+	#	RequiresCondition: !rank-elite
+	# Armament@sapper-elite:
+	#	Weapon: SealC4AttacherE
+	#	Cursor: c4
+	#	OutsideRangeCursor: c4
+	#	PauseOnCondition: chronodisable || webdisable || dogstun
+	#	RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMP5
