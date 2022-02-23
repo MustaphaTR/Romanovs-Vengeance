@@ -996,6 +996,12 @@
 		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate, HijackerInfiltrate
+	ExternalCondition@diskinfiltrate
+		Condition: diskinfiltrate
+	NotificationAnnouncement:
+		Notification: TechnologyStolen
+		ValidRelationships: None
+		RequiresCondition: diskinfiltrate
 
 ^PrimarySuperWeapon:
 	Inherits: ^BaseBuilding

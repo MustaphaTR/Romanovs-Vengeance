@@ -1987,7 +1987,7 @@ disk:
 		Queue: Aircraft.Yuri, Aircraft.Lazarus
 		BuildPaletteOrder: 40
 		Prerequisites: yatech, ~techlevel.4
-		Description: Floating Disc armed with lasers.\nCan disable power plants and powered defenses.\nCan steal resources from enemy refineries.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)\n- Laser Capacitors (Lazarus Corps)
+		Description: Floating Disc armed with lasers.\nCan disable Power Plants and powered Defenses.\nCan steal resources from enemy Refineries.\nCan steal technology from enemy Battle Labs.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)\n- Laser Capacitors (Lazarus Corps)
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -2058,10 +2058,62 @@ disk:
 		Name: secondary
 		Weapon: DiskSteal
 		MuzzleSequence: muzzle
+	Armament@infiltrateAllied:
+		Name: infiltrate
+		Weapon: DiskInfiltrateAllied
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-infiltrate
+		PauseOnCondition: reload-infiltrated
+		RequiresCondition: !infiltrated
+	Armament@infiltrateAlliedC:
+		Name: secondary
+		Weapon: DiskInfiltrateAlliedComplete
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-infiltrated
+		PauseOnCondition: reload-infiltrate
+		RequiresCondition: infiltrated
+	Armament@infiltrateSoviet:
+		Name: infiltrate
+		Weapon: DiskInfiltrateSoviet
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-infiltrate
+		PauseOnCondition: reload-infiltrated
+		RequiresCondition: !infiltrated
+	Armament@infiltrateSovietC:
+		Name: secondary
+		Weapon: DiskInfiltrateSovietComplete
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-infiltrated
+		PauseOnCondition: reload-infiltrate
+		RequiresCondition: infiltrated
+	Armament@infiltrateYuri:
+		Name: infiltrate
+		Weapon: DiskInfiltrateYuri
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-infiltrate
+		PauseOnCondition: reload-infiltrated
+		RequiresCondition: !infiltrated
+	Armament@infiltrateYuriC:
+		Name: secondary
+		Weapon: DiskInfiltrateYuriComplete
+		MuzzleSequence: muzzle
+		ReloadingCondition: reload-infiltrated
+		PauseOnCondition: reload-infiltrate
+		RequiresCondition: infiltrated
+	GrantConditionOnAttack@infiltrated:
+		Condition: infiltrated
+		ArmamentNames: infiltrate
+		RequiredShotsPerInstance: 100
+		MaximumInstances: 1
+		RevokeDelay: 6
+		RevokeAll: true
+		IsCyclic: false
+		RevokeOnNewTarget: true
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
 		FacingTolerance: 128
+		Armaments: primary, secondary, infiltrate
 	Voiced:
 		VoiceSet: FloatingDiskVoice
 	WithMuzzleOverlay:
@@ -2096,7 +2148,7 @@ disk:
 	GrantConditionOnAttack:
 		Condition: stealing
 		RevokeDelay: 6
-		ArmamentNames: secondary
+		ArmamentNames: secondary, infiltrate
 	AmbientSound@Move:
 		SoundFiles: vflolo2a.wav, vflolo2b.wav
 		Volume: 0.40

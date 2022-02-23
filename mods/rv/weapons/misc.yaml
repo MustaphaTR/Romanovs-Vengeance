@@ -1156,7 +1156,7 @@ DiskDrain:
 	TargetActorCenter: true
 	ValidTargets: DiskDrain
 	Projectile: InstantHit
-	Warhead@1Dam: GrantExternalCondition
+	Warhead@1Con: GrantExternalCondition
 		Condition: diskdrain
 		Duration: 6
 		Range: 0c256
@@ -1178,6 +1178,65 @@ DiskSteal:
 		ValidRelationships: Neutral, Enemy
 	Warhead@2Dam: TargetDamage
 		ValidTargets: DiskSteal
+		ValidRelationships: Neutral, Enemy
+
+DiskInfiltrateAllied:
+	ReloadDelay: 5
+	Range: 0c256
+	MinRange: 0c1
+	TargetActorCenter: true
+	ValidTargets: DiskInfiltrateAllied
+	Projectile: InstantHit
+	Warhead@2Dam: TargetDamage
+		ValidTargets: DiskInfiltrateAllied
+		ValidRelationships: Neutral, Enemy
+
+DiskInfiltrateAlliedComplete:
+	Inherits: DiskInfiltrateAllied
+	Warhead@1Spa: SpawnActor
+		Actors: allies.tech.infiltrated.immobile
+		ValidTargets: DiskInfiltrateAllied
+		ValidRelationships: Neutral, Enemy
+	Warhead@2Con: GrantExternalCondition
+		Condition: diskinfiltrate
+		Duration: 6
+		Range: 0c256
+		ValidRelationships: Neutral, Enemy
+
+DiskInfiltrateSoviet:
+	Inherits: DiskInfiltrateAllied
+	ValidTargets: DiskInfiltrateSoviet
+	Warhead@2Dam: TargetDamage
+		ValidTargets: DiskInfiltrateSoviet
+
+DiskInfiltrateSovietComplete:
+	Inherits: DiskInfiltrateSoviet
+	Warhead@1Spa: SpawnActor
+		Actors: soviets.tech.infiltrated.immobile
+		ValidTargets: DiskInfiltrateSoviet
+		ValidRelationships: Neutral, Enemy
+	Warhead@2Con: GrantExternalCondition
+		Condition: diskinfiltrate
+		Duration: 6
+		Range: 0c256
+		ValidRelationships: Neutral, Enemy
+
+DiskInfiltrateYuri:
+	Inherits: DiskInfiltrateAllied
+	ValidTargets: DiskInfiltrateYuri
+	Warhead@2Dam: TargetDamage
+		ValidTargets: DiskInfiltrateYuri
+
+DiskInfiltrateYuriComplete:
+	Inherits: DiskInfiltrateYuri
+	Warhead@1Spa: SpawnActor
+		Actors: yuri.tech.infiltrated.immobile
+		ValidTargets: DiskInfiltrateYuri
+		ValidRelationships: Neutral, Enemy
+	Warhead@2Con: GrantExternalCondition
+		Condition: diskinfiltrate
+		Duration: 6
+		Range: 0c256
 		ValidRelationships: Neutral, Enemy
 
 MagneBeamSpawner:

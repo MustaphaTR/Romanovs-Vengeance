@@ -17,11 +17,38 @@ warfactory.infiltrated:
 allies.tech.infiltrated:
 	AlwaysVisible:
 	ProvidesPrerequisite:
+		Prerequisite: allies.tech.infiltrated
+
+allies.tech.infiltrated.immobile:
+	Inherits: allies.tech.infiltrated
+	NotificationAnnouncement:
+		Notification: BuildingInfiltratedTechnologyStolen
+		ValidRelationships: None
+	Immobile:
+		OccupiesSpace: false
 
 soviets.tech.infiltrated:
 	AlwaysVisible:
 	ProvidesPrerequisite:
+		Prerequisite: soviets.tech.infiltrated
+
+soviets.tech.infiltrated.immobile:
+	Inherits: soviets.tech.infiltrated
+	NotificationAnnouncement:
+		Notification: BuildingInfiltratedTechnologyStolen
+		ValidRelationships: None
+	Immobile:
+		OccupiesSpace: false
 
 yuri.tech.infiltrated:
 	AlwaysVisible:
 	ProvidesPrerequisite:
+		Prerequisite: yuri.tech.infiltrated
+
+yuri.tech.infiltrated.immobile:
+	Inherits: yuri.tech.infiltrated
+	NotificationAnnouncement:
+		Notification: BuildingInfiltratedTechnologyStolen
+		ValidRelationships: None
+	Immobile:
+		OccupiesSpace: false
