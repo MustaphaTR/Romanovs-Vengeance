@@ -709,7 +709,7 @@ mind:
 		Name: Master Mind
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
-		BuildPaletteOrder: 120
+		BuildPaletteOrder: 130
 		Prerequisites: yatech, ~techlevel.4
 		Description: Heavy vehicle capable of mind controlling multipile enemy units.\nStarts taking damage if controlling more than 3.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Mastery of Mind (Antarctica)
 		BuildDuration: 875
@@ -845,7 +845,7 @@ mlyr:
 	Selectable:
 		Bounds: 1206, 1930, 0, -289
 	Buildable:
-		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
+		Queue: Vehicle.Debug # Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Prerequisites: ~prerequisite.minelayer, repairpad, ~techlevel.1
 		BuildPaletteOrder: 80
 		Description: Lays mines to destroy unwary enemy units.\n  Unarmed\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
@@ -1011,6 +1011,98 @@ kamaz:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 
+lart:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@GRINDER: ^AffectedByGrinderTreads
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 1200
+	DeliversCash:
+		Payload: 1200
+		Voice: Move
+	Tooltip:
+		Name: Annihilator Artillery
+	Tooltip@NoRow:
+		Name: Annihilator Artillery
+	Buildable:
+		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
+		BuildPaletteOrder: 110
+		Prerequisites:  ~prerequisite.annihilator_artillery, yatech, ~techlevel.3
+		Description: Long range laser artillery.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
+		BuildDuration: 750
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 60
+		TurnSpeed: 20
+		Locomotor: heavytracked
+	Health:
+		HP: 40000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armament@primary:
+		Weapon: AnniLaser
+		LocalOffset: 672,0,832
+		RequiresCondition: !rank-elite && !capacitors
+	Armament@elite:
+		Weapon: AnniLaserE
+		LocalOffset: 672,0,832
+		RequiresCondition: rank-elite && !capacitors
+	Armament@primary-capacitors:
+		Weapon: AnniLaserUpg
+		LocalOffset: 672,0,832
+		RequiresCondition: !rank-elite && capacitors
+	Armament@elite-capacitors:
+		Weapon: AnniLaserUpgE
+		LocalOffset: 672,0,832
+		RequiresCondition: rank-elite && capacitors
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		TargetFrozenActors: True
+		PauseOnCondition: chronodisable || emp || nogunner
+	RenderSprites:
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
+	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: LasherTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	ProducibleWithLevel:
+		Prerequisites: warfactory.infiltrated
+	WithProductionIconOverlay:
+		Prerequisites: warfactory.infiltrated
+		Types: chevron-veteran
+	HitShape:
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal
+	# SoundAnnouncement:
+	#	SoundFiles: vtadstaa.wav, vtadstab.wav
+	#	Volume: 0.4
+	#	RequiresCondition: moving
+
 yhtnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
@@ -1034,7 +1126,7 @@ yhtnk:
 		Name: Lazarus Tank
 	Buildable:
 		Queue: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
-		BuildPaletteOrder: 110
+		BuildPaletteOrder: 120
 		Prerequisites: yatech, ~techlevel.4
 		Description: Fast invisible tank designed for ambushes.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
 		BuildDuration: 500

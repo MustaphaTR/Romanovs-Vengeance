@@ -1161,6 +1161,48 @@ ATLASERAutoE:
 	Inherits: ATLASERE
 	Burst: 4
 
+AnniLaser:
+	Inherits: DoomLaser
+	ReloadDelay: 120
+	Range: 11c0
+	MinRange: 1c768
+	SoundVolume: 2
+	Projectile: LaserZap
+		Duration: 45
+		Width: 300
+		SecondaryBeam: true
+		SecondaryBeamWidth: 60
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c768
+		Damage: 15000
+
+AnniLaserE:
+	Inherits: AnniLaser
+	Range: 12c0
+	Projectile: LaserZap
+		Color: FF000080
+	Warhead@1Dam: SpreadDamage
+		Damage: 20000
+	Warhead@2Eff: CreateEffect
+		Explosions: laser_explosion_red
+		ExplosionPalette: player
+
+AnniLaserUpg:
+	Inherits: AnniLaser
+	Projectile: LaserZap
+		Width: 375
+		Color: DD666680
+		SecondaryBeamWidth: 150
+		SecondaryBeamColor: AA799080
+
+AnniLaserUpgE:
+	Inherits: AnniLaserE
+	Projectile: LaserZap
+		Width: 375
+		Color: FFDD0080
+		SecondaryBeamWidth: 150
+		SecondaryBeamColor: FF000080
+
 LunarLaser:
 	Inherits: Comet
 	ReloadDelay: 30

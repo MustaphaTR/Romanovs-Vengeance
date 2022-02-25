@@ -220,21 +220,37 @@ commanders_power.havoc:
 	RenderSprites:
 		Image: havoc
 
-commanders_power.minelayer:
+#commanders_power.minelayer:
+#	Inherits: ^default.commanders_power
+#	Tooltip:
+#		Name: Minelayer
+#	Buildable:
+#		Queue: Power.Yuri
+#		BuildPaletteOrder: 30
+#		Prerequisites: prerequisite.has_points
+#		Description: Enables production of Minelayer from War Factory.
+#	ProvidesPrerequisite@minelayer:
+#		Prerequisite: prerequisite.minelayer
+#	WithProductionIconOverlay:
+#		Prerequisites: commanders_power.minelayer
+#	RenderSprites:
+#		Image: mlyr
+
+commanders_power.annihilator_artillery:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Minelayer
+		Name: Annihilator Artillery
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
-		Description: Enables production of Minelayer from War Factory.
-	ProvidesPrerequisite@minelayer:
-		Prerequisite: prerequisite.minelayer
+		Description: Enables production of Annihilator Artillery from War Factory.
+	ProvidesPrerequisite@annihilator_artillery:
+		Prerequisite: prerequisite.annihilator_artillery
 	WithProductionIconOverlay:
-		Prerequisites: commanders_power.minelayer
+		Prerequisites: commanders_power.annihilator_artillery
 	RenderSprites:
-		Image: mlyr
+		Image: lart
 
 commanders_power.support_infantry:
 	Inherits: ^default.commanders_power
