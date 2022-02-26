@@ -111,6 +111,8 @@
 		RequiresCondition: emp || infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 	Voiced:
 		VoiceSet: ConstructionYardVoice
 		Volume: 0.8
@@ -232,6 +234,8 @@
 		Weapon: ReactorExplode
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 
 ^Barracks:
 	Inherits: ^BaseBuilding
@@ -299,6 +303,8 @@
 	#	InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 	GrantConditionOnPrerequisite@megawealth:
 		Condition: megawealth
 		Prerequisites: global-megawealth
@@ -381,6 +387,8 @@
 		Amount: -40
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 	SpawnActorsOnSell@allies:
 		ActorTypes: e1
 	SpawnActorsOnSell@soviets:
@@ -620,6 +628,8 @@
 	#	InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 	Voiced:
 		VoiceSet: WarFactoryVoice
 		Volume: 0.8
@@ -877,6 +887,8 @@
 	SupportPowerChargeBar:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 	InfiltrateForSupportPowerReset:
 		Types: SpyInfiltrate
 	InfiltrateForExploration:
@@ -956,6 +968,8 @@
 		RequiresCondition: emp || infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
@@ -996,6 +1010,8 @@
 		InfiltrationNotification: BuildingInfiltratedTechnologyStolen
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate, HijackerInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate, HijackerInfiltrate
 	ExternalCondition@diskinfiltrate
 		Condition: diskinfiltrate
 	NotificationAnnouncement:
@@ -1047,6 +1063,8 @@
 		InfiltrationNotification: BuildingInfiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@swlimit:
 		RequiresPrerequisites: global-swlimit
@@ -1100,6 +1118,8 @@
 		InfiltrationNotification: BuildingInfiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@swlimit:
 		RequiresPrerequisites: global-swlimit

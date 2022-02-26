@@ -909,6 +909,8 @@ gatech:
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateAllied
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateAllied
 	PlaceBuildingVariants:
 		Actors: gatecb
 	IsometricSelectable:
@@ -1347,6 +1349,8 @@ gagap:
 	CaptureNotification:
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4
 	RenderShroudCircle:
 	WithIdleOverlay@head:
 		Sequence: idle-head

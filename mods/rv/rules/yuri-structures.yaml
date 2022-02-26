@@ -390,6 +390,8 @@ yarefn:
 		RequiresCondition: !build-incomplete
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, NonGarrisonableStructure, SpyInfiltrate
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, Defense, C4, SpyInfiltrate
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
 	-SpawnActorsOnSell@psicorps:
@@ -889,6 +891,8 @@ yatech:
 		Proxy: yuri.tech.infiltrated
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateYuri
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateYuri
 	PlaceBuildingVariants:
 		Actors: yatecb
 	IsometricSelectable:
@@ -1432,6 +1436,8 @@ yasgen:
 		RequiresCondition: !disabled
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4
 	WithSpriteBody:
 		PauseOnCondition: disabled || chronodisable
 	WithIdleOverlay@waves:
