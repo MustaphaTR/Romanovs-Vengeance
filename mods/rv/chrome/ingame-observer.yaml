@@ -196,6 +196,7 @@ Container@OBSERVER_WIDGETS:
 			Logic: ObserverStatsRVLogic
 				StatisticsNoneKey: StatisticsNone
 				StatisticsBasicKey: StatisticsBasic
+				StatisticsMinimalKey: StatisticsMinimal
 				StatisticsEconomyKey: StatisticsEconomy
 				StatisticsProductionKey: StatisticsProduction
 				StatisticsSupportPowersKey: StatisticsSupportPowers
@@ -223,6 +224,60 @@ Container@OBSERVER_WIDGETS:
 					Width: PARENT_RIGHT
 					Height: 24
 					Children:
+						Container@MINIMAL_STATS_HEADERS:
+							X: 0
+							Y: 0
+							Width: 355
+							Height: PARENT_BOTTOM
+							Children:
+								ColorBlock@HEADER_COLOR:
+									X: 0
+									Y: 0
+									Color: 00000090
+									Width: PARENT_RIGHT - 200
+									Height: PARENT_BOTTOM
+								GradientColorBlock@HEADER_GRADIENT:
+									X: PARENT_RIGHT - 200
+									Y: 0
+									TopLeftColor: 00000090
+									BottomLeftColor: 00000090
+									Width: 200
+									Height: PARENT_BOTTOM
+								Label@PLAYER_HEADER:
+									X: 40
+									Y: 0
+									Width: 120
+									Height: PARENT_BOTTOM
+									Font: Bold
+									Text: Player
+									Align: Left
+									Shadow: True
+								Label@CASH_HEADER:
+									X: 160
+									Y: 0
+									Width: 80
+									Height: PARENT_BOTTOM
+									Font: Bold
+									Text: Cash
+									Align: Right
+									Shadow: True
+								Label@POWER_HEADER:
+									X: 240
+									Y: 0
+									Width: 80
+									Height: PARENT_BOTTOM
+									Font: Bold
+									Text: Power
+									Align: Center
+									Shadow: True
+								Label@HARVESTERS_HEADER:
+									X: 270
+									Width: 80
+									Height: PARENT_BOTTOM
+									Font: Bold
+									Text: Harv.
+									Align: Right
+									Shadow: True
 						Container@BASIC_STATS_HEADERS:
 							X: 0
 							Y: 0
@@ -678,6 +733,58 @@ Container@OBSERVER_WIDGETS:
 									Width: PARENT_RIGHT
 									Height: PARENT_BOTTOM
 									Font: Bold
+									Shadow: True
+						ScrollItem@MINIMAL_PLAYER_TEMPLATE:
+							X: 0
+							Y: 0
+							Width: 355
+							Height: 24
+							BaseName: scrollitem-nohover
+							Children:
+								ColorBlock@PLAYER_COLOR:
+									X: 0
+									Y: 0
+									Width: PARENT_RIGHT - 200
+									Height: PARENT_BOTTOM
+								GradientColorBlock@PLAYER_GRADIENT:
+									X: PARENT_RIGHT - 200
+									Y: 0
+									Width: 200
+									Height: PARENT_BOTTOM
+								Image@FLAG:
+									X: 5
+									Y: 2
+									Width: 35
+									Height: PARENT_BOTTOM - 4
+									ImageName: random
+									ImageCollection: flags
+								Label@PLAYER:
+									X: 40
+									Y: 0
+									Width: 120
+									Height: PARENT_BOTTOM
+									Font: Bold
+									Shadow: True
+								Label@CASH:
+									X: 160
+									Y: 0
+									Width: 80
+									Height: PARENT_BOTTOM
+									Align: Right
+									Shadow: True
+								Label@POWER:
+									X: 240
+									Y: 0
+									Width: 80
+									Height: PARENT_BOTTOM
+									Align: Center
+									Shadow: True
+								Label@HARVESTERS:
+									X: 270
+									Y: 0
+									Width: 80
+									Height: PARENT_BOTTOM
+									Align: Right
 									Shadow: True
 						ScrollItem@BASIC_PLAYER_TEMPLATE:
 							X: 0

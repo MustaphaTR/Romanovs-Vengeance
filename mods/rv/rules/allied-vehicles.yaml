@@ -168,8 +168,8 @@ tnkd:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable || emp || nogunner
 		FacingTolerance: 2
+		PauseOnCondition: chronodisable || emp || nogunner
 	WithMuzzleOverlay:
 	AutoTarget:
 	RenderSprites:
@@ -1408,7 +1408,7 @@ bfrt:
 	# AttackFrontal:
 	#	Voice: Attack
 	#	FacingTolerance: 2
-	#	PauseOnCondition: chronodisable || emp
+	#	PauseOnCondition: chronodisable || emp || nogunner
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
 		MaxWeight: 5
@@ -1915,7 +1915,7 @@ ctnk:
 		TargetCursor: chronosphere
 		TeleportCondition: chronoed
 		ConditionDuration: 120
-		RequiresCondition: !affectedbytemporal
+		PauseOnCondition: affectedbytemporal
 	Contrail@Teleport: ##HACK: add a trace for teleport. 
 		Offset: 0, 0, 700
 		Color: 00F0F8AA

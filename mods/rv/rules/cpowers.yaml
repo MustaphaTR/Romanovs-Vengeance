@@ -850,6 +850,7 @@ prerequisite.grinder:
 		Descriptions:
 			1: Spawns a Scout Drone anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		Weapons:
 			1: ScoutDroneSpawner
 		ActivationSequence:
@@ -870,7 +871,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: Reveals an area of the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		EndChargeSpeechNotification: SpyPlaneReady
+		EndChargeTextNotification: Spy Plane ready.
 		UnitTypes:
 			1: spyp
 		SquadSizes:
@@ -899,6 +902,7 @@ prerequisite.grinder:
 		Descriptions:
 			1: Reveals an area of 8 cell radius circle for 15 seconds.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		Weapons:
 			1: PsychicReveal
 		ActivationSequence:
@@ -918,7 +922,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: An F-22 Raptor paradrops a spy\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		EndChargeSpeechNotification: ParatroopersReady
+		EndChargeTextNotification: Paratroopers ready.
 		DropItems:
 			1: spy
 		SquadSizes:
@@ -950,7 +956,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: A MiG paradrops 3 Terror Drones\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		EndChargeSpeechNotification: ParatroopersReady
+		EndChargeTextNotification: Paratroopers ready.
 		DropItems:
 			1: dron, dron, dron
 		SquadSizes:
@@ -993,6 +1001,7 @@ prerequisite.grinder:
 		OnFireSound: ubonus.wav
 		ValidRelationships: Ally, Neutral, Enemy
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 	ParatroopersPower@inteldropbaku:
 		OrderName: BakuIntelDrop
 		RequiresCondition: !lost
@@ -1007,7 +1016,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: A MiG paradrops a spy\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		EndChargeSpeechNotification: ParatroopersReady
+		EndChargeTextNotification: Paratroopers ready.
 		DropItems:
 			1: sspy
 		SquadSizes:
@@ -1039,7 +1050,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: A Cargo Plane drops leaflets\nanywhere on the map.\nLeaflets slow enemy infantry\nand vehicle movement and\nfire speed.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: pdplane.leaflet
 		SquadSizes:
@@ -1070,7 +1083,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: A Cargo plane drops 13 mines\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: pdplane.cluster_mines
 		SquadSizes:
@@ -1096,6 +1111,8 @@ prerequisite.grinder:
 			1: Brute Drop
 		Descriptions:
 			1: Drops 5 Brutes with drop pods\nanywhere on the map.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		Weapons:
 			1: DroppodSpawner
 		ChargeInterval: 4500
@@ -1129,6 +1146,7 @@ prerequisite.grinder:
 			2: Repairs 60% health of vehicles and structures in 6 cell range.
 			3: Fully repairs vehicles and structures in 7 cell range.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		Weapons:
 			1: EmergencyRepair1
 			2: EmergencyRepair2
@@ -1161,7 +1179,9 @@ prerequisite.grinder:
 			2: 2 A-10 Thunderbolts strike anywhere on the map.
 			3: 3 A-10 Thunderbolts strike anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: a10
 			2: a10
@@ -1207,7 +1227,9 @@ prerequisite.grinder:
 			2: 2 Cargo Planes drop parachuted\nbombs on your target.
 			3: 3 Cargo Planes drop parachuted\nbombs on your target.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: pdplane.parabomb
 			2: pdplane.parabomb
@@ -1253,7 +1275,9 @@ prerequisite.grinder:
 			2: 2 Bomber Planes drop toxin\nbombs on your target.
 			3: 3 Bomber Planes drop toxin\nbombs on your target.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: txbmb
 			2: txbmb
@@ -1316,6 +1340,7 @@ prerequisite.grinder:
 		Sequence:
 		OnFireSound: gcraspee.wav
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 	GrantExternalConditionPower@propaganda:
 		OrderName: SovietPropaganda
 		RequiresCondition: !lost
@@ -1356,6 +1381,7 @@ prerequisite.grinder:
 		Sequence:
 		OnFireSound: sfrenzya.wav
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 	SpawnActorPower@MANGETIC_BEAM:
 		OrderName: PsiCorpsMagneticBeam
 		RequiresCondition: !lost
@@ -1384,6 +1410,7 @@ prerequisite.grinder:
 			2: Fires a magnetic beam that slows down enemy vehicles within 2 cells around it.\nThe beam lasts 25 seconds.
 			3: Fires a magnetic beam that slows down enemy vehicles within 3 cells around it.\nThe beam lasts 35 seconds.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 	DetonateWeaponPower@cruiserstrike:
 		OrderName: AlliedCruiserStrike
 		RequiresCondition: !lost
@@ -1401,6 +1428,7 @@ prerequisite.grinder:
 		Descriptions:
 			1: Cruisers from out of the map bombards\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		Weapons:
 			1: CruiserStrikeInit
 		AirburstAltitude: 25c0
@@ -1426,6 +1454,7 @@ prerequisite.grinder:
 		Descriptions:
 			1: V3 Launchers from out of the map bombards\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		Weapons:
 			1: V3StormInit
 		AirburstAltitude: 25c0
@@ -1451,6 +1480,7 @@ prerequisite.grinder:
 		Descriptions:
 			1: Launches Space Junk from the Orbit\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		Weapons:
 			1: OrbitalDropInit
 		AirburstAltitude: 25c0
@@ -1474,7 +1504,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: A Cargo Plane drops an Electromagnetic Pulse\nbomb anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: pdplane.emp
 		SquadSizes:
@@ -1505,7 +1537,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: A Cargo plane drops a bomb that coveres\narea with radiation anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: pdplane.fallout_bomb
 		SquadSizes:
@@ -1535,7 +1569,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: A Cargo Plane drops a trail of Chaos\nGas anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: pdplane.chaos
 		SquadSizes:
@@ -1566,7 +1602,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: A Cargo plane drops a bomb that freezes\nunits within a large area anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: pdplane.cryo_bomb
 		SquadSizes:
@@ -1596,7 +1634,9 @@ prerequisite.grinder:
 		Descriptions:
 			1: A Cargo Plane that drops a Mutator bomb that\nturns infantry into Brutes.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
 		UnitTypes:
 			1: pdplane.mutator
 		SquadSizes:

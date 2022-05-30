@@ -42,6 +42,7 @@ smin:
 		IntoActor: yarefn
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
+		NoTransformTextNotification: Cannot deploy here.
 		Voice: Deploy
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
@@ -1402,8 +1403,8 @@ spider:
 		LocalOffset: -512,0,1024
 	AttackFrontal:
 		Voice: Attack
-		PauseOnCondition: chronodisable
 		FacingTolerance: 2
+		PauseOnCondition: chronodisable
 	AutoTarget:
 	Selectable:
 		Bounds: 965, 1930, 0, -482

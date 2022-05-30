@@ -20,8 +20,11 @@ yacnst:
 		LowPowerModifier: 200
 		Factions: psisouth
 		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 	Transforms:
@@ -227,8 +230,11 @@ yabrck:
 		LowPowerModifier: 200
 		Factions: psimoon
 		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -305,8 +311,11 @@ yarefn:
 		Group: Infantry
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -460,8 +469,11 @@ yaweap:
 		LowPowerModifier: 200
 		Factions: psicorps
 		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -472,8 +484,11 @@ yaweap:
 		LowPowerModifier: 200
 		Factions: psitrans
 		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -520,7 +535,9 @@ yayard:
 		Descriptions:
 			1: A Toxin Bomber paradrops a Sensor Buoy\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		EndChargeSpeechNotification: ParatroopersReady
+		EndChargeTextNotification: Paratroopers ready.
 		DropItems:
 			1: buoy
 		SquadSizes:
@@ -677,7 +694,9 @@ yadome:
 		Descriptions:
 			1: A Cargo Plane drops 3 Yuri Clones\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		EndChargeSpeechNotification: ParatroopersReady
+		EndChargeTextNotification: Paratroopers ready.
 		DropItems:
 			1: yuripsi, yuripsi, yuripsi
 		SquadSizes:
@@ -707,6 +726,7 @@ yadome:
 		Descriptions:
 			1: A Cargo Plane drops a trail of Chaos\nGas anywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		UnitTypes:
 			1: pdplane.chaos
 		SquadSizes:
@@ -735,6 +755,7 @@ yadome:
 		Descriptions:
 			1: Spawns a large group of hologram infantry and vehicles\nanywhere on the map.\n\nHolograms stay for 20 seconds.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		Weapons:
 			1: HologramSpawner
 		ActivationSequence:
@@ -751,6 +772,7 @@ yadome:
 		Descriptions:
 			1: Gives a group of vehicles Point Defense Drones which reduces the taken damage.\nDrones regenerate over time.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		OnFireSound: ironcur9.aud
 		Durations:
 			1: -1
@@ -773,6 +795,7 @@ yadome:
 		Descriptions:
 			1: Spawns 3 Lethocerus Platforms\nanywhere on the map.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		Weapons:
 			1: LethocerusSpawnerSpawnerSpawner
 		ActivationSequence:
@@ -792,6 +815,7 @@ yadome:
 		Descriptions:
 			1: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		DisplayRadarPing: True
 		CameraActor: camera
 		CameraRemoveDelay: 100
@@ -830,8 +854,11 @@ yadisk:
 		LowPowerModifier: 200
 		Factions: psinepal
 		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -940,7 +967,7 @@ yapsis:
 		Range: 25c0
 		Type: sensor
 	DetectCloaked:
-		CloakTypes: Cloak, Underwater
+		DetectionTypes: Cloak, Underwater
 		Range: 25c0
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
@@ -1493,9 +1520,13 @@ yagntc:
 			1: xxx xxx xxx
 		ValidRelationships: Ally, Neutral, Enemy
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		EndChargeSpeechNotification: GeneticMutatorReady # LazarusShieldReady
+		EndChargeTextNotification: Lazarus Shield ready.
 		LaunchSpeechNotification: GeneticMutatorActivated # LazarusShieldActivated
+		LaunchTextNotification: Warning: Lazarus Shield activated.
 		IncomingSpeechNotification: GeneticMutatorActivated # LazarusShieldActivated
+		IncomingTextNotification: Warning: Lazarus Shield activated.
 		EndChargeSound: sgenopen.wav
 		OnFireSound: slazarus.wav
 		EffectImage: explosion
@@ -1508,6 +1539,7 @@ yagntc:
 		Prerequisite: enoughlazarus
 	NotificationAnnouncement:
 		Notification: GeneticMutatorDetected # LazarusShieldDetected
+		TextNotification: Warning: Lazarus Shield Generator detected.
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		PauseOnCondition: chronodisable
@@ -1547,9 +1579,13 @@ yappet:
 		Descriptions:
 			1: Release powerful energy that damages structures and mind controls units.\n\nCan be applied on ally units to\nmake them immune to mind control.
 		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
 		EndChargeSpeechNotification: PsychicDominatorReady
+		EndChargeTextNotification: Psychic Dominator ready.
 		# LaunchSpeechNotification: PsychicDominatorActivated
+		LaunchTextNotification: Warning: Psychic Dominator activated.
 		# IncomingSpeechNotification: PsychicDominatorActivated # doesn't exist
+		IncomingTextNotification: Warning: Psychic Dominator activated.
 		EndChargeSound: spsyopen.wav
 		Weapons:
 			1: PsychicDomination
@@ -1560,6 +1596,7 @@ yappet:
 		Prerequisite: enoughdominator
 	NotificationAnnouncement:
 		Notification: PsychicDominatorDetected
+		TextNotification: Warning: Psychic Dominator detected.
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:

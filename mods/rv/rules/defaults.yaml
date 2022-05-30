@@ -237,6 +237,7 @@
 ^GainsExperience:
 	GainsExperience:
 		LevelUpNotification: LevelUp
+		LevelUpTextNotification: Unit promoted.
 		Conditions:
 			200: rank-veteran
 			400: rank-veteran
@@ -1231,6 +1232,9 @@
 	SpeedMultiplier@ChronoDisable:
 		Modifier: 0
 		RequiresCondition: chronodisable
+	TurnSpeedMultiplier@ChronoDisable:
+		Modifier: 0
+		RequiresCondition: chronodisable
 	WithColoredOverlay@ChronoDisable:
 		Color: 0060C040
 		RequiresCondition: chronodisable
@@ -1596,6 +1600,7 @@
 		Types: building
 		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
 	CaptureNotification:
+		TextNotification: Building captured.
 	CapturableProgressBar:
 		RequiresCondition: !instantcapture
 	CapturableProgressBlink:
@@ -1873,7 +1878,9 @@
 		RequiresCondition: !invulnerability
 	CaptureNotification:
 		Notification: TechBuildingCaptured
+		TextNotification: Tech building captured.
 		LoseNotification: TechBuildingLost
+		LoseTextNotification: Tech building lost.
 	GivesBuildableArea:
 		AreaTypes: building, defense
 		RequiresCondition: techbuild
@@ -2278,6 +2285,7 @@
 		CargoType: Garrisoner
 	HiddenUnderFog:
 	ActorLostNotification:
+		TextNotification: Unit lost.
 	ProximityCaptor:
 		Types: Infantry
 	GrantExternalConditionToKiller@GRINDER_TREADS:
@@ -2351,7 +2359,6 @@
 	RenderSprites:
 		PlayerPalette: infantry
 	DetectCloaked:
-		CloakTypes: Cloak
 		Range: 1c0
 	RangedGpsDot:
 		Sequence: Infantry
@@ -2480,6 +2487,7 @@
 		Radius: 1c0
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 	ProximityCaptor:
 		Types: CivilianInfantry
 	ScaredyCat:
@@ -2554,6 +2562,7 @@
 		Bounds: 1086, 1206, 0, -386
 	AttackFrontal:
 		Voice: Attack
+		FacingTolerance: 2
 	DeathSounds@zapped:
 		Voice: Die
 	DeathSounds@radiation:
@@ -2708,6 +2717,7 @@
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
 	ActorLostNotification:
+		TextNotification: Unit lost.
 	ProximityCaptor:
 		Types: Vehicle
 	Guard:
@@ -2808,6 +2818,7 @@
 	HiddenUnderFog:
 		Type: CenterPosition
 	ActorLostNotification:
+		TextNotification: Unit lost.
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 85
@@ -3122,6 +3133,7 @@
 		Sound: ihijweaa.wav
 	HiddenUnderFog:
 	ActorLostNotification:
+		TextNotification: Unit lost.
 	ProximityCaptor:
 		Types: Ship
 	Guard:

@@ -43,8 +43,11 @@ Player:
 		LowPowerModifier: 200
 		AlwaysShowForFactions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		ReadyAudio: UpgradeComplete
+		ReadyTextNotification: Upgrade complete.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: UpgradeInProgress
+		LimitedTextNotification: Upgrade in progress.
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -56,8 +59,11 @@ Player:
 		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
 		AlwaysShowForFactions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia
 		ReadyAudio: UpgradeComplete
+		ReadyTextNotification: Upgrade complete.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: UpgradeInProgress
+		LimitedTextNotification: Upgrade in progress.
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -68,8 +74,11 @@ Player:
 		LowPowerModifier: 200
 		AlwaysShowForFactions: psicorps, psinepal, psisouth, psitrans, psimoon
 		ReadyAudio: UpgradeComplete
+		ReadyTextNotification: Upgrade complete.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: UpgradeInProgress
+		LimitedTextNotification: Upgrade in progress.
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -81,8 +90,11 @@ Player:
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		AlwaysShowForFactions: transcaucus, turkmen, tuva, russianfed, serbia
 		ReadyAudio: UpgradeComplete
+		ReadyTextNotification: Upgrade complete.
 		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
 		LimitedAudio: UpgradeInProgress
+		LimitedTextNotification: Upgrade in progress.
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -151,8 +163,11 @@ Player:
 		ToggleVariantKey: ToggleVariant
 		NewOptionsNotification: NewOptions
 		CannotPlaceNotification: BuildingCannotPlaceAudio
+		NewOptionsTextNotification: New construction options.
+		CannotPlaceTextNotification: Cannot deploy here.
 	SupportPowerManager:
 	ScriptTriggers:
+	CellTriggerOverlay:
 	MissionObjectives:
 		WinNotification: Win
 		LoseNotification: Lose
@@ -160,6 +175,7 @@ Player:
 	ConquestVictoryConditions:
 	PowerManager:
 		SpeechNotification: LowPower
+		TextNotification: Low power.
 	AllyRepair:
 	Taunts:
 		CheckboxVisible: false
@@ -169,8 +185,10 @@ Player:
 		CashTickUpNotification: CashTickUp
 		CashTickDownNotification: CashTickDown
 		InsufficientFundsNotification: InsufficientFunds
+		InsufficientFundsTextNotification: Insufficient funds.
 	ResourceStorageWarning:
 		Notification: InsufficientSilos
+		TextNotification: Insufficient silos.
 	DeveloperMode:
 		CheckboxDisplayOrder: 18
 	GpsWatcher:
@@ -263,6 +281,8 @@ Player:
 	FrozenActorLayer:
 	BaseAttackNotifier:
 		AllyNotification: OurAllyIsUnderAttack
+		TextNotification: Our base is under attack.
+		AllyTextNotification: Our ally is under attack.
 	BaseAttackNotifier@Warning:
 		NotifyInterval: 10000
 		Notification: BaseAttackWarning
@@ -273,6 +293,7 @@ Player:
 		Notification:
 	HarvesterAttackNotifier:
 		Notification: OreMinerUnderAttack
+		TextNotification: Ore miner under attack.
 	PlayerStatistics:
 	PlaceBeacon:
 		BeaconSequence: idle
