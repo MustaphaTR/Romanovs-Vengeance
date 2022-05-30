@@ -199,6 +199,8 @@ e2:
 		Types: chevron-veteran
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	ActorStatValues:
+		Upgrades: upgrade.bullet_proof_coats, upgrade.molotov_cocktails, upgrade.ap_bullets
 
 flakt:
 	Inherits: ^Infantry
@@ -386,6 +388,9 @@ flakt:
 		Types: chevron-veteran
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	ActorStatValues:
+		SplitRanges: true
+		Upgrades: upgrade.improved_flaks, upgrade.bullet_proof_coats
 
 shk:
 	Inherits: ^Infantry
@@ -616,6 +621,8 @@ terror:
 	-TakeCover:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	ActorStatValues:
+		Upgrades: upgrade.targeted_explosives
 
 deso:
 	Inherits: ^Infantry
@@ -831,7 +838,7 @@ ivan:
 		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 80
 		Prerequisites: naradr, ~techlevel.3
-		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.
+		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nUpgradeable with:\n- Targeted Explosives (Cuba)\n- High Explosive Bombs (Libya)
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -896,13 +903,15 @@ ivan:
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 	-TakeCover:
+	ActorStatValues:
+		Upgrades: upgrade.targeted_explosives, upgrade.high_explosive_bombs
 
 civan:
 	Inherits: ivan
 	Buildable:
 		BuildPaletteOrder: 970
 		Prerequisites: ~allies.tech.infiltrated, ~techlevel.4
-		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nAbilities:\n- Can teleport anywhere on the map
+		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Tooltip:
@@ -955,6 +964,8 @@ civan:
 		Class: civan
 	RenderSprites:
 		Image: civan
+	ActorStatValues:
+		Upgrades: upgrade.high_explosive_bombs
 
 yuri:
 	Inherits: ^Infantry

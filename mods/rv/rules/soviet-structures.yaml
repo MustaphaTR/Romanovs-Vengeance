@@ -955,6 +955,7 @@ nanrct:
 		Queue: Building.Soviets, Building.Baku
 		BuildPaletteOrder: 110
 		Prerequisites: natech, ~techlevel.3
+		Description: Provides a large amount of power for other structures.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
 		BuildDuration: 1000
 	Valued:
 		Cost: 1500
@@ -1253,7 +1254,7 @@ namisl:
 	Buildable:
 		Queue: Support.Soviets
 		Prerequisites: natech, !enoughnuke, ~techlevel.5
-		Description: Provides an atomic bomb.\n\n  Requires power to operate.
+		Description: Provides an atomic bomb.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Requires power to operate.
 	Tooltip:
 		Name: Nuclear Missile Silo
 	Tooltip@NoRow:
@@ -1325,6 +1326,8 @@ namisl:
 	Voiced:
 		VoiceSet: NuclearSiloVoice
 		Volume: 0.8
+	ActorStatValues:
+		Upgrades: upgrade.advanced_irradiators
 
 nawall:
 	Inherits: ^Wall
@@ -2033,6 +2036,10 @@ naexpn:
 		Image: gaexpn
 	Voiced:
 		VoiceSet: SovietExpansionNodeVoice
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: exps
 
 napowb:
 	Inherits: napowr
@@ -2042,6 +2049,10 @@ napowb:
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: napowr
 
 narefb:
 	Inherits: ^RefineryB
@@ -2055,6 +2066,10 @@ narefb:
 		Offset: -128,-1408,4096
 	IsometricSelectable:
 		DecorationHeight: 90
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: narefn
 
 narefc:
 	Inherits: ^RefineryC
@@ -2068,6 +2083,10 @@ narefc:
 		Offset: -128,1408,4096
 	IsometricSelectable:
 		DecorationHeight: 90
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: narefn
 
 narefd:
 	Inherits: ^RefineryD
@@ -2081,6 +2100,10 @@ narefd:
 		Offset: 128,1408,4096
 	IsometricSelectable:
 		DecorationHeight: 90
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: narefn
 
 naweab:
 	Inherits: naweap
@@ -2094,6 +2117,10 @@ naweab:
 		Path: 1,6
 	Exit@1:
 		ExitCell: 1,4
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: naweap
 
 naweac:
 	Inherits: naweap
@@ -2111,6 +2138,10 @@ naweac:
 		Path: -2,1
 	Exit@1:
 		ExitCell: 0,1
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: naweap
 
 nawead:
 	Inherits: naweab
@@ -2139,3 +2170,7 @@ nadepb:
 		Dimensions: 3,4
 	RallyPoint:
 		Path: 1,4
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: nadept

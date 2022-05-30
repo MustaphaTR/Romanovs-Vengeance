@@ -154,6 +154,8 @@ shad:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
+	ActorStatValues:
+		SplitRanges: true
 
 shadhusk:
 	Inherits: ^HelicopterHusk
@@ -341,6 +343,8 @@ zep:
 	RejectsOrders@AI: ## Make AI zep more offensive when attack
 		Reject: Move, Attack, ReturnToBase
 		RequiresCondition: ai-control && AIattack
+	ActorStatValues:
+		Upgrades: upgrade.radioactive_bombs, upgrade.aerial_propaganda
 
 zephusk:
 	Inherits: ^HelicopterHusk
@@ -470,10 +474,12 @@ orca:
 		RequiresCondition: rank-elite
 	Armament@AA:
 		Weapon: MaverickAA
+		EnableSplitRanges: true
 		PauseOnCondition: !ammo
 		RequiresCondition: a2amissiles && !rank-elite
 	Armament@EliteAA:
 		Weapon: MaverickAAE
+		EnableSplitRanges: true
 		PauseOnCondition: !ammo
 		RequiresCondition: a2amissiles && rank-elite
 	AttackAircraft:
@@ -577,6 +583,8 @@ orca:
 	ProductionCostMultiplier@AI:
 		Prerequisites: prerequisite.aiplayer
 		Multiplier: 40
+	ActorStatValues:
+		Upgrades: upgrade.a2a_missiles, upgrade.predator_missiles
 
 orcahusk:
 	Inherits: ^PlaneHusk
@@ -719,6 +727,8 @@ beag:
 		Offset: 0,500,100
 	Contrail@FlameTrail:
 		Offset: -700,0,50
+	ActorStatValues:
+		-Upgrades:
 
 beaghusk:
 	Inherits: ^PlaneHusk
@@ -1544,74 +1554,76 @@ schp:
 		Weapon: SiegeChopperCannon
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
-		PauseOnCondition: !undeployed || reload-air
-		RequiresCondition: !rank-elite && !apbullets
+		PauseOnCondition: deployed || reload-air
+		RequiresCondition: !rank-elite && undeployed && !apbullets
 	Armament@primary-aa:
 		Weapon: SiegeChopperCannonAA
 		LocalOffset: 640,-256,0, 640,256,0
+		EnableSplitRanges: true
 		ReloadingCondition: reload-air
-		PauseOnCondition: !undeployed || reload-ground
-		RequiresCondition: !rank-elite && !apbullets
+		PauseOnCondition: deployed || reload-ground
+		RequiresCondition: !rank-elite && undeployed && !apbullets
 	Armament@elite:
 		Weapon: SiegeChopperCannonE
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
-		PauseOnCondition: !undeployed || reload-air
-		RequiresCondition: rank-elite && !apbullets
+		PauseOnCondition: deployed || reload-air
+		RequiresCondition: rank-elite && undeployed && !apbullets
 	Armament@elite-aa:
 		Weapon: SiegeChopperCannonAAE
 		LocalOffset: 640,-256,0, 640,256,0
+		EnableSplitRanges: true
 		ReloadingCondition: reload-air
-		PauseOnCondition: !undeployed || reload-ground
-		RequiresCondition: rank-elite && !apbullets
+		PauseOnCondition: deployed || reload-ground
+		RequiresCondition: rank-elite && undeployed && !apbullets
 	Armament@primary-ap:
 		Weapon: SiegeChopperCannonAP
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
-		PauseOnCondition: !undeployed || reload-air
-		RequiresCondition: !rank-elite && apbullets
+		PauseOnCondition: deployed || reload-air
+		RequiresCondition: !rank-elite && undeployed && apbullets
 	Armament@primary-aa-ap:
 		Weapon: SiegeChopperCannonAAAP
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-air
-		PauseOnCondition: !undeployed || reload-ground
-		RequiresCondition: !rank-elite && apbullets
+		PauseOnCondition: deployed || reload-ground
+		RequiresCondition: !rank-elite && undeployed && apbullets
 	Armament@elite-ap:
 		Weapon: SiegeChopperCannonAPE
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
-		PauseOnCondition: !undeployed || reload-air
-		RequiresCondition: rank-elite && apbullets
+		PauseOnCondition: deployed || reload-air
+		RequiresCondition: rank-elite && undeployed && apbullets
 	Armament@elite-aa-ap:
 		Weapon: SiegeChopperCannonAAAPE
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-air
-		PauseOnCondition: !undeployed || reload-ground
-		RequiresCondition: rank-elite && apbullets
+		PauseOnCondition: deployed || reload-ground
+		RequiresCondition: rank-elite && undeployed && apbullets
 	Armament@primary-line:
 		Weapon: SiegeChopperCannonLine
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
-		PauseOnCondition: !undeployed || reload-air
-		RequiresCondition: !rank-elite && apbullets
+		PauseOnCondition: deployed || reload-air
+		RequiresCondition: !rank-elite && undeployed && apbullets
 	Armament@primary-aa-line:
 		Weapon: SiegeChopperCannonAALine
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-air
-		PauseOnCondition: !undeployed || reload-ground
-		RequiresCondition: !rank-elite && apbullets
+		PauseOnCondition: deployed || reload-ground
+		RequiresCondition: !rank-elite && undeployed && apbullets
 	Armament@elite-line:
 		Weapon: SiegeChopperCannonLineE
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
-		PauseOnCondition: !undeployed || reload-air
-		RequiresCondition: rank-elite && apbullets
+		PauseOnCondition: deployed || reload-air
+		RequiresCondition: rank-elite && undeployed && apbullets
 	Armament@elite-aa-line:
 		Weapon: SiegeChopperCannonAALineE
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-air
-		PauseOnCondition: !undeployed || reload-ground
-		RequiresCondition: rank-elite && apbullets
+		PauseOnCondition: deployed || reload-ground
+		RequiresCondition: rank-elite && undeployed && apbullets
 	Armament@deployed:
 		Weapon: 160mm
 		Name: deployed
@@ -1868,6 +1880,8 @@ bpln:
 		UsePlayerColor: False
 	Rearmable:
 		RearmActors: boris
+	ActorStatValues:
+		-Upgrades:
 
 bpln.buildable:
 	Inherits: orca
@@ -1929,6 +1943,9 @@ bpln.buildable:
 		Offset: -600,-100,100
 		TrailLength: 15
 		UsePlayerColor: False
+	ActorStatValues:
+		SplitRanges: true
+		-Upgrades:
 
 bplnhusk:
 	Inherits: ^PlaneHusk
@@ -2166,6 +2183,9 @@ disk:
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: diskhusk
+	ActorStatValues:
+		SplitRanges: true
+		Upgrades: upgrade.disc_armor, upgrade.laser_capacitors
 
 diskhusk:
 	Inherits: ^HelicopterHusk
@@ -2830,6 +2850,8 @@ txdx:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
+	ActorStatValues:
+		Upgrades: upgrade.disc_armor, upgrade.rocket_barrage
 
 txdxhusk:
 	Inherits: ^HelicopterHusk

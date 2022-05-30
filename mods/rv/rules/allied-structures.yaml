@@ -1126,6 +1126,8 @@ nasam:
 	Voiced:
 		VoiceSet: PatriotMissileVoice
 		Volume: 0.8
+	ActorStatValues:
+		Upgrades: upgrade.boost_gliding_systems, upgrade.grand_cannon_protocols
 
 gtgcan:
 	Inherits: ^VoxelLighting
@@ -2024,6 +2026,10 @@ gaexpn:
 	Inherits: ^ExpansionNode
 	Voiced:
 		VoiceSet: AlliedExpansionNodeVoice
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: expn
 
 gapilb:
 	Inherits: gapile
@@ -2082,6 +2088,10 @@ gapilb:
 	Exit@fallback12:
 		SpawnOffset: 384,512,0
 		ExitCell: 2,1
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: gapile
 
 garefb:
 	Inherits: ^RefineryB
@@ -2096,6 +2106,10 @@ garefb:
 		Offset: 64,-1280,3456
 	IsometricSelectable:
 		DecorationHeight: 60
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: garefn
 
 garefc:
 	Inherits: ^RefineryC
@@ -2109,6 +2123,10 @@ garefc:
 		Offset: 64,1280,3456
 	IsometricSelectable:
 		DecorationHeight: 60
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: garefn
 
 garefd:
 	Inherits: ^RefineryD
@@ -2122,6 +2140,10 @@ garefd:
 		Offset: -64,1280,3456
 	IsometricSelectable:
 		DecorationHeight: 60
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: garefn
 
 gaweab:
 	Inherits: gaweap
@@ -2135,6 +2157,10 @@ gaweab:
 		Path: 1,6
 	Exit@1:
 		ExitCell: 1,4
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: gaweap
 
 gaweac:
 	Inherits: gaweap
@@ -2151,6 +2177,10 @@ gaweac:
 		Path: -2,1
 	Exit@1:
 		ExitCell: 0,1
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: gaweap
 
 gawead:
 	Inherits: gaweab
@@ -2186,6 +2216,10 @@ gaairb:
 		SpawnOffset: -512,-512,0
 	LaysMinefield:
 		Locations: 0,1, 1,1, 1,2
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: gaairc
 
 gatecb:
 	Inherits: gatech
@@ -2195,6 +2229,10 @@ gatecb:
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: gatech
 
 gacspb:
 	Inherits: gacsph
@@ -2208,3 +2246,7 @@ gacspb:
 		OrderName: ChronoshiftB
 		Prerequisites:
 			1: gacspb
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: gacsph

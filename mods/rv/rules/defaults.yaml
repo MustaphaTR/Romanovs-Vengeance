@@ -285,6 +285,21 @@
 		Position: BottomRight
 		RequiresCondition: rank-elite
 		ValidRelationships: Ally, Enemy, Neutral
+	WithStatIconOverlay@RANK-1:
+		Image: rank
+		Sequence: rank-veteran-cameo-1
+		Palette: pips
+		RequiresCondition: rank-veteran == 1
+	WithStatIconOverlay@RANK-2:
+		Image: rank
+		Sequence: rank-veteran-cameo-2
+		Palette: pips
+		RequiresCondition: rank-veteran == 2
+	WithStatIconOverlay@RANK-ELITE:
+		Image: rank
+		Sequence: rank-elite-cameo
+		Palette: pips
+		RequiresCondition: rank-elite
 	GainsExperienceMultiplier@ARMORY:
 		Modifier: 150
 		RequiresCondition: armory
@@ -511,6 +526,8 @@
 	DamageMultiplier@FORTIFICATIONS:
 		Modifier: 75
 		RequiresCondition: fortifications && deployed
+	ActorStatValues:
+		Upgrades: upgrade.gi_fortifications
 	GrantConditionOnPrerequisite@FORTIFICATIONS:
 		Condition: fortifications
 		Prerequisites: upgrade.gi_fortifications
@@ -519,16 +536,22 @@
 	SpeedMultiplier@ENDURANCE_TRAINING:
 		Modifier: 125
 		RequiresCondition: endurance_training
+	ActorStatValues:
+		Upgrades: upgrade.endurance_training
 	GrantConditionOnPrerequisite@ENDURANCE_TRAINING:
 		Condition: endurance_training
 		Prerequisites: upgrade.endurance_training
 
 ^AffectedByA2AMissiles:
+	ActorStatValues:
+		Upgrades: upgrade.a2a_missiles
 	GrantConditionOnPrerequisite@A2AMISSILES:
 		Condition: a2amissiles
 		Prerequisites: upgrade.a2a_missiles
 
 ^AffectedByAdvancedCoolants:
+	ActorStatValues:
+		Upgrades: upgrade.advanced_coolants
 	GrantConditionOnPrerequisite@ADVCOOLANTS:
 		Condition: advcoolants
 		Prerequisites: upgrade.advanced_coolants
@@ -537,6 +560,8 @@
 	GainsExperienceMultiplier@ADVTRAINING:
 		Modifier: 150
 		RequiresCondition: advtraining
+	ActorStatValues:
+		Upgrades: upgrade.advanced_training
 	GrantConditionOnPrerequisite@ADVTRAINING:
 		Condition: advtraining
 		Prerequisites: upgrade.advanced_training
@@ -545,6 +570,8 @@
 	DamageMultiplier@COMPOSITE_ARMOR:
 		Modifier: 75
 		RequiresCondition: composite_armor
+	ActorStatValues:
+		Upgrades: upgrade.composite_armor
 	GrantConditionOnPrerequisite@COMPOSITE_ARMOR:
 		Condition: composite_armor
 		Prerequisites: upgrade.composite_armor
@@ -553,11 +580,15 @@
 	FirepowerMultiplier@PREDATOR_MISSILES:
 		Modifier: 125
 		RequiresCondition: predator_missiles
+	ActorStatValues:
+		Upgrades: upgrade.predator_missiles
 	GrantConditionOnPrerequisite@PREDATOR_MISSILES:
 		Condition: predator_missiles
 		Prerequisites: upgrade.predator_missiles
 
 ^AffectedByBoostGlidingSystems:
+	ActorStatValues:
+		Upgrades: upgrade.boost_gliding_systems
 	GrantConditionOnPrerequisite@BOOSTGLIDING:
 		Condition: boostgliding
 		Prerequisites: upgrade.boost_gliding_systems
@@ -566,6 +597,8 @@
 	ReloadDelayMultiplier@PORTABLE:
 		Modifier: 80
 		RequiresCondition: portable && deployed
+	ActorStatValues:
+		Upgrades: upgrade.portable_weaponry
 	GrantConditionOnPrerequisite@PORTABLE:
 		Condition: portable
 		Prerequisites: upgrade.portable_weaponry
@@ -574,6 +607,8 @@
 	DamageMultiplier@GTGCAN_PROTOCOLS:
 		Modifier: 87
 		RequiresCondition: gtgcan_protocols
+	ActorStatValues:
+		Upgrades: upgrade.grand_cannon_protocols
 	GrantConditionOnPrerequisite@GTGCAN_PROTOCOLS:
 		Condition: gtgcan_protocols
 		Prerequisites: upgrade.grand_cannon_protocols
@@ -582,21 +617,29 @@
 	RangeMultiplier@ADVANCED_GUNS:
 		Modifier: 125
 		RequiresCondition: advanced_guns
+	ActorStatValues:
+		Upgrades: upgrade.advanced_gun_systems
 	GrantConditionOnPrerequisite@ADVANCED_GUNS:
 		Condition: advanced_guns
 		Prerequisites: upgrade.advanced_gun_systems
 
 ^AffectedByEMPMunitions:
+	ActorStatValues:
+		Upgrades: upgrade.emp_munitions
 	GrantConditionOnPrerequisite@EMPAMMO:
 		Condition: empammo
 		Prerequisites: upgrade.emp_munitions
 
 ^AffectedByIncreasedPayload:
+	ActorStatValues:
+		Upgrades: upgrade.increased_payload
 	GrantConditionOnPrerequisite@INCREASED_PAYLOAD:
 		Condition: increased_payload
 		Prerequisites: upgrade.increased_payload
 
 ^AffectedByImprovedFlaks:
+	ActorStatValues:
+		Upgrades: upgrade.improved_flaks
 	GrantConditionOnPrerequisite@IMPFLAKS:
 		Condition: impflaks
 		Prerequisites: upgrade.improved_flaks
@@ -605,16 +648,22 @@
 	DamageMultiplier@BULLETPROOF:
 		Modifier: 75
 		RequiresCondition: bulletproof
+	ActorStatValues:
+		Upgrades: upgrade.bullet_proof_coats
 	GrantConditionOnPrerequisite@BULLETPROOF:
 		Condition: bulletproof
 		Prerequisites: upgrade.bullet_proof_coats
 
 ^AffectedByMolotovCocktails:
+	ActorStatValues:
+		Upgrades: upgrade.molotov_cocktails
 	GrantConditionOnPrerequisite@MOLOTOV:
 		Condition: molotov
 		Prerequisites: upgrade.molotov_cocktails
 
 ^AffectedBySmokeGrenades:
+	# ActorStatValues:
+	#	Upgrades: upgrade.smoke_grenades
 	GrantConditionOnPrerequisite@SMOKEGRENS:
 		Condition: smokegrens
 		Prerequisites: upgrade.smoke_grenades
@@ -623,36 +672,50 @@
 	FirepowerMultiplier@APBULLETS:
 		Modifier: 125
 		RequiresCondition: apbullets
+	ActorStatValues:
+		Upgrades: upgrade.ap_bullets
 	GrantConditionOnPrerequisite@APBULLETS:
 		Condition: apbullets
 		Prerequisites: upgrade.ap_bullets
 
 ^AffectedByBlackNapalm:
+	ActorStatValues:
+		Upgrades: upgrade.black_napalm
 	GrantConditionOnPrerequisite@BLACK_NAPALM:
 		Condition: black_napalm
 		Prerequisites: upgrade.black_napalm
 
 ^AffectedByPropagandaEffort:
+	# ActorStatValues:
+	#	Upgrades: upgrade.propaganda_effort
 	GrantConditionOnPrerequisite@PROPEFFORT:
 		Condition: propeffort
 		Prerequisites: upgrade.propaganda_effort
 
 ^AffectedByRadioactiveBombs:
+	ActorStatValues:
+		Upgrades: upgrade.radioactive_bombs
 	GrantConditionOnPrerequisite@RADBOMBS:
 		Condition: radbombs
 		Prerequisites: upgrade.radioactive_bombs
 
 ^AffectedByCryoWarheads:
+	# ActorStatValues:
+	#	Upgrades: upgrade.cryo_warheads
 	GrantConditionOnPrerequisite@CRYOWARHEADS:
 		Condition: cryowarheads
 		Prerequisites: upgrade.cryo_warheads
 
 ^AffectedByOvercharge:
+	ActorStatValues:
+		Upgrades: upgrade.overcharge
 	GrantConditionOnPrerequisite@OVERCHARGE:
 		Condition: overcharge
 		Prerequisites: upgrade.overcharge
 
 ^AffectedByAdvancedIrradiators:
+	ActorStatValues:
+		Upgrades: upgrade.advanced_irradiators
 	GrantConditionOnPrerequisite@ADVIRRAD:
 		Condition: advirrad
 		Prerequisites: upgrade.advanced_irradiators
@@ -668,6 +731,8 @@
 		Type: propaganda
 		RenderOnGround: true
 		RequiresCondition: airprop
+	ActorStatValues:
+		Upgrades: upgrade.aerial_propaganda
 	GrantConditionOnPrerequisite@AIRPROP:
 		Condition: airprop
 		Prerequisites: upgrade.aerial_propaganda
@@ -681,11 +746,15 @@
 	FirepowerMultiplier@HIEXPLOSIVE:
 		Modifier: 125
 		RequiresCondition: hiexplosive
+	ActorStatValues:
+		Upgrades: upgrade.high_explosive_bombs
 	GrantConditionOnPrerequisite@HIEXPLOSIVE:
 		Condition: hiexplosive
 		Prerequisites: upgrade.high_explosive_bombs
 
 ^AffectedByHighCaliberRounds:
+	# ActorStatValues:
+	#	Upgrades: upgrade.high_caliber_rounds
 	GrantConditionOnPrerequisite@HIGHCALIBER:
 		Condition: highcaliber
 		Prerequisites: upgrade.high_caliber_rounds
@@ -705,6 +774,8 @@
 		Weapon: NuclearEngineExplodeOrange
 		EmptyWeapon: NuclearEngineExplodeOrange
 		RequiresCondition: nuclear_engines && advirrad
+	ActorStatValues:
+		Upgrades: upgrade.nuclear_engines
 	GrantConditionOnPrerequisite@NUCLEAR_ENGINES:
 		Condition: nuclear_engines
 		Prerequisites: upgrade.nuclear_engines
@@ -713,6 +784,8 @@
 	FirepowerMultiplier@URANIUM_SHELLS:
 		Modifier: 125
 		RequiresCondition: uranium_shells
+	ActorStatValues:
+		Upgrades: upgrade.uranium_shells
 	GrantConditionOnPrerequisite@URANIUM_SHELLS:
 		Condition: uranium_shells
 		Prerequisites: upgrade.uranium_shells
@@ -721,6 +794,8 @@
 	FirepowerMultiplier@CRYO_SHELLS:
 		Modifier: 125
 		RequiresCondition: cryo_shells
+	# ActorStatValues:
+	#	Upgrades: upgrade.cryo_shells
 	GrantConditionOnPrerequisite@CRYO_SHELLS:
 		Condition: cryo_shells
 		Prerequisites: upgrade.cryo_shells
@@ -743,6 +818,8 @@
 	GainsExperienceMultiplier@TOXINSPRAYER:
 		Modifier: 0
 		RequiresCondition: !toxinsprayer
+	ActorStatValues:
+		Upgrades: upgrade.toxin_sprayer
 	GrantConditionOnPrerequisite@TOXINSPRAYER:
 		Condition: toxinsprayer
 		Prerequisites: upgrade.toxin_sprayer
@@ -756,6 +833,8 @@
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
 		UncloakOn: Attack, Damage
+	ActorStatValues:
+		Upgrades: upgrade.camouflage
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
 		Condition: camouflage 
 		Prerequisites: upgrade.camouflage
@@ -764,21 +843,29 @@
 	ReloadDelayMultiplier@FOCUSED_MIND:
 		Modifier: 80
 		RequiresCondition: focused_mind
+	ActorStatValues:
+		Upgrades: upgrade.focused_mind
 	GrantConditionOnPrerequisite@FOCUSED_MIND:
 		Condition: focused_mind
 		Prerequisites: upgrade.focused_mind
 
 ^AffectedByAutoloaders:
+	ActorStatValues:
+		Upgrades: upgrade.autoloaders
 	GrantConditionOnPrerequisite@AUTOLOADERS:
 		Condition: autoloaders
 		Prerequisites: upgrade.autoloaders
 
 ^AffectedByAdvancedMagnetics:
+	ActorStatValues:
+		Upgrades: upgrade.advanced_magnetics
 	GrantConditionOnPrerequisite@ADVMAGNETS:
 		Condition: advmagnets
 		Prerequisites: upgrade.advanced_magnetics
 
 ^AffectedByRocketBarrage:
+	ActorStatValues:
+		Upgrades: upgrade.rocket_barrage
 	GrantConditionOnPrerequisite@ROCKET_BARRAGE:
 		Condition: rocket_barrage
 		Prerequisites: upgrade.rocket_barrage
@@ -789,6 +876,8 @@
 		Weapon: ChaosGasExplode
 		EmptyWeapon: ChaosGasExplode
 		RequiresCondition: compensators
+	ActorStatValues:
+		Upgrades: upgrade.chaos_tank_compensators
 	GrantConditionOnPrerequisite@COMPENSATORS:
 		Condition: compensators
 		Prerequisites: upgrade.chaos_tank_compensators
@@ -797,6 +886,8 @@
 	FirepowerMultiplier@CAPACITORS:
 		Modifier: 125
 		RequiresCondition: capacitors
+	ActorStatValues:
+		Upgrades: upgrade.laser_capacitors
 	GrantConditionOnPrerequisite@CAPACITORS:
 		Condition: capacitors
 		Prerequisites: upgrade.laser_capacitors
@@ -805,6 +896,8 @@
 	SpeedMultiplier@DNABOOST:
 		Modifier: 133
 		RequiresCondition: dnaboost
+	ActorStatValues:
+		Upgrades: upgrade.dna_boosters
 	GrantConditionOnPrerequisite@DNABOOST:
 		Condition: dnaboost
 		Prerequisites: upgrade.dna_boosters
@@ -813,16 +906,22 @@
 	DamageMultiplier@DISCARMOR:
 		Modifier: 67
 		RequiresCondition: discarmor
+	ActorStatValues:
+		Upgrades: upgrade.disc_armor
 	GrantConditionOnPrerequisite@DISCARMOR:
 		Condition: discarmor
 		Prerequisites: upgrade.disc_armor
 
 ^AffectedByMasteryOfMind:
+	ActorStatValues:
+		Upgrades: upgrade.mastery_of_mind
 	GrantConditionOnPrerequisite@MASTERYOFMIND:
 		Condition: masteryofmind
 		Prerequisites: upgrade.mastery_of_mind
 
 ^AffectedByLazarusPrime:
+	ActorStatValues:
+		Upgrades: upgrade.lazarus_prime
 	GrantConditionOnPrerequisite@LAZARUS_PRIME:
 		Condition: lazarus_prime
 		Prerequisites: upgrade.lazarus_prime
@@ -831,6 +930,8 @@
 	FirepowerMultiplier@CHAINGUNS:
 		Modifier: 125
 		RequiresCondition: chainguns
+	ActorStatValues:
+		Upgrades: upgrade.chainguns
 	GrantConditionOnPrerequisite@CHAINGUNS:
 		Condition: chainguns
 		Prerequisites: upgrade.chainguns
@@ -2223,6 +2324,7 @@
 	SelectionDecorations:
 		MinimumZoom: 0
 	Selectable:
+	ActorStatValues:
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
 	Targetable@HEAL:
@@ -2657,6 +2759,7 @@
 		MinimumZoom: 0
 	Selectable:
 		Bounds: 772, 1544
+	ActorStatValues:
 	Targetable:
 		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
 	Targetable@REPAIR:
@@ -2808,6 +2911,7 @@
 	SelectionDecorations:
 		MinimumZoom: 0
 	Selectable:
+	ActorStatValues:
 	Aircraft:
 		Voice: Move
 		MaximumPitch: 128
@@ -3110,6 +3214,7 @@
 		MinimumZoom: 0
 	Selectable:
 		Bounds: 772, 1544
+	ActorStatValues:
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 	Targetable@REPAIR:
@@ -3564,6 +3669,7 @@
 		MinimumZoom: 0
 	WithTextControlGroupDecoration:
 		Margin: 1, 1
+	ActorStatValues:
 
 ^AIMicroManagable:
 	GrantConditionOnBotOwner@ai-control:

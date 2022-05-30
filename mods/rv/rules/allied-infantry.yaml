@@ -491,6 +491,8 @@ e1:
 		DeployChance: 100
 		DeployTicks: 5
 		UndeployTicks: 50
+	ActorStatValues:
+		Upgrades: upgrade.gi_fortifications, upgrade.endurance_training, upgrade.advanced_training, upgrade.portable_weaponry
 
 ggi:
 	Inherits: ^Infantry
@@ -593,12 +595,14 @@ ggi:
 	Armament@portable-aa:
 		Weapon: MissileLauncherAA
 		LocalOffset: 480,63,992
+		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && portable && !deployed && !boostgliding
 	Armament@elite-portable-aa:
 		Weapon: MissileLauncherAAE
 		LocalOffset: 480,64,992
+		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && portable && !deployed && !boostgliding
@@ -611,12 +615,14 @@ ggi:
 	Armament@elite-portable-boost:
 		Weapon: MissileLauncherBoostedE
 		LocalOffset: 480,64,992
+		EnableSplitRanges: true
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && portable && !deployed && boostgliding
 	Armament@portable-aa-boost:
 		Weapon: MissileLauncherAABoosted
 		LocalOffset: 480,63,992
+		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && portable && !deployed && boostgliding
@@ -647,6 +653,7 @@ ggi:
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,63,992
+		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && deployed && !boostgliding
@@ -655,6 +662,7 @@ ggi:
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,64,992
+		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && deployed && !boostgliding
@@ -679,6 +687,7 @@ ggi:
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,63,992
+		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && deployed && boostgliding
@@ -687,6 +696,7 @@ ggi:
 		Name: deployed
 		Turret: deploy
 		LocalOffset: 480,64,992
+		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && deployed && boostgliding
@@ -895,6 +905,8 @@ ggi:
 		DeployTrigger: Attack
 		DeployTicks: 5
 		UndeployTicks: 50
+	ActorStatValues:
+		Upgrades: upgrade.endurance_training, upgrade.advanced_training, upgrade.boost_gliding_systems, upgrade.portable_weaponry
 
 snipe:
 	Inherits: ^Infantry
@@ -1317,11 +1329,12 @@ ccomand:
 
 ptroop:
 	Inherits: yuri
+	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
 	Buildable:
 		Queue: Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 990
 		Prerequisites: ~yuri.tech.infiltrated, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\n\nAbilities:\n- Can place C4 on buildings
+		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1348,6 +1361,11 @@ ptroop:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Armaments: primary, sapper
+	PeriodicExplosion:
+		RequiresCondition: deployed && !masteryofmind && !chronodisable && !webdisable && !dogstun
+	PeriodicExplosion@Mastery:
+		Weapon: PsiWaveMastery
+		RequiresCondition: deployed && masteryofmind && !chronodisable && !webdisable && !dogstun
 	Selectable:
 		Class: ptroop
 	RenderSprites:
@@ -1656,6 +1674,8 @@ jumpjet:
 	-ChangesHealth@AMBULANCE:
 	SpawnActorOnDeath:
 		Actor: jumpjet.husk
+	ActorStatValues:
+		SplitRanges: true
 
 jumpjet.husk:
 	Inherits: ^HelicopterHusk
@@ -1960,3 +1980,5 @@ gren:
 		Types: chevron-veteran
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	ActorStatValues:
+		Upgrades: upgrade.advanced_training, upgrade.emp_munitions

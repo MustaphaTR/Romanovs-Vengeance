@@ -9,6 +9,8 @@ pcv:
 		IntoActor: yacnst
 	Voiced:
 		VoiceSet: YuriConstructionVehicleVoice
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 smin:
 	Inherits: ^Vehicle
@@ -119,6 +121,8 @@ smin:
 		Position: BottomLeft
 		RequiresSelection: true
 		PipCount: 10
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 gmin:
 	Inherits: ^Miner
@@ -148,6 +152,8 @@ gmin:
 		RequiresCondition: !cloaked
 	Voiced:
 		VoiceSet: SlaveMinerVoice
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 ltnk:
 	Inherits: ^MainBattleTank
@@ -245,6 +251,8 @@ ltnk:
 	#	SoundFiles: vlasstaa.wav, vlasstab.wav, vlasstac.wav
 	#	Volume: 0.35
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.autoloaders, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
 
 ltnk.holo:
 	Inherits: ltnk
@@ -460,6 +468,9 @@ ytnk:
 	#	SoundFiles: vgatstaa.wav, vgatstab.wav, vgatstac.wav
 	#	Volume: 0.35
 	#	RequiresCondition: moving
+	ActorStatValues:
+		SplitRanges: true
+		Upgrades: upgrade.chaos_tank_compensators, upgrade.chainguns
 
 ytnk.holo:
 	Inherits: ytnk
@@ -692,6 +703,8 @@ tele:
 	#	SoundFiles: vmagstaa.wav, vmagstab.wav, vmagstac.wav
 	#	Volume: 0.65
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Upgrades: upgrade.advanced_magnetics, upgrade.chaos_tank_compensators
 
 mind:
 	Inherits: ^Vehicle
@@ -825,6 +838,8 @@ mind:
 	#	SoundFiles: vmasstaa.wav, vmasstab.wav, vmasstac.wav
 	#	Volume: 0.65
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.mastery_of_mind
 
 # Custom Yuri Vehicles
 mlyr:
@@ -899,6 +914,8 @@ mlyr:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 kamaz:
 	Inherits: ^Vehicle
@@ -1011,6 +1028,8 @@ kamaz:
 	#	SoundFiles: vdemstaa.wav, vdemstab.wav, vdemstac.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.toxin_sprayer, upgrade.chaos_tank_compensators
 
 lart:
 	Inherits: ^Vehicle
@@ -1103,6 +1122,8 @@ lart:
 	#	SoundFiles: vtadstaa.wav, vtadstab.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
 
 yhtnk:
 	Inherits: ^Vehicle
@@ -1203,6 +1224,8 @@ yhtnk:
 		Prerequisites: warfactory.infiltrated
 		Types: chevron-veteran
 	HitShape:
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
 
 grtk:
 	Inherits: ^Vehicle
@@ -1294,6 +1317,8 @@ grtk:
 	#	SoundFiles: vmagstaa.wav, vmagstab.wav, vmagstac.wav
 	#	Volume: 0.65
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 spider:
 	Inherits: ^Vehicle
@@ -1456,3 +1481,5 @@ expy:
 		Image: expn
 	RenderVoxels:
 		Image: expn
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators

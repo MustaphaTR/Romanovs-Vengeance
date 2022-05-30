@@ -175,6 +175,8 @@ init:
 	WithProductionIconOverlay:
 		Prerequisites: barracks.infiltrated
 		Types: chevron-veteran
+	ActorStatValues:
+		Upgrades: upgrade.focused_mind, upgrade.camouflage
 
 init.holo:
 	Inherits: init
@@ -1040,6 +1042,8 @@ gtrp:
 		Types: chevron-veteran
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	ActorStatValues:
+		SplitRanges: true
 
 gtrp.holo:
 	Inherits: gtrp
@@ -1464,6 +1468,8 @@ crkt:
 		DefaultAttackSequence: shoot
 		IdleSequences: idle1
 	-TakeCover:
+	ActorStatValues:
+		SplitRanges: true
 
 visc_lrg:
 	Inherits: ^Infantry

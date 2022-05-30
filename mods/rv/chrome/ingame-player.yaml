@@ -48,6 +48,217 @@ Container@PLAYER_WIDGETS:
 			Align: Right
 			Format: {1} : {0}
 			Order: Descending
+		Container@ACTOR_STATS:
+			Logic: CollapsableWidgetLogic
+			X: 19
+			Y: WINDOW_BOTTOM - HEIGHT - 30
+			Width: 241
+			Height: 148
+			Children:
+				Background@CLOSED_BACKGROUND:
+					# Logic: AddFactionSuffixLogic
+					Y: 119
+					Width: 241
+					Height: 30
+					Visible: false
+				Background@OPENED_BACKGROUND:
+					Logic: IngameActorStatsLogic #, AddFactionSuffixLogic
+						LargeIconCount: 3
+						LargeIconSpacing: 16, 2
+						SmallIconCount: 18
+						SmallIconRows: 7
+						SmallIconSpacing: 2, 5
+						UpgradeIconCount: 4
+						UpgradeIconSpacing: 19, 0
+					Width: 241
+					Height: 148
+					Children:
+						Label@STAT_NAME:
+							X: 120
+							Y: 11
+							Font: Bold
+							Align: Center
+							VAlign: Top
+							Contrast: true
+						ActorIcon@STAT_ICON:
+							X: 10
+							Y: 25
+							Width: 60
+							Height: 48
+							IconSize: 60, 48
+							DefaultIconSequence: xxicon
+							TooltipContainer: TOOLTIP_CONTAINER
+						ActorIcon@STAT_ICON_SMALL:
+							X: 10
+							Y: 25
+							Width: 30
+							Height: 24
+							IconSize: 30, 24
+							IconScale: 0.5
+							DefaultIconSequence: xxicon
+							TooltipContainer: TOOLTIP_CONTAINER
+						ActorIcon@STAT_ICON_UPGRADE:
+							X: 12
+							Y: 98
+							Width: 40
+							Height: 36
+							IconSize: 40, 36
+							IconScale: 0.75
+							ClickSound:
+							ClickDisabledSound:
+							DefaultIconSequence: xxicon
+							TooltipContainer: TOOLTIP_CONTAINER
+						HealthBar@STAT_HEALTH_BAR:
+							X: 10
+							Y: 73
+							Width: 60
+							Height: 5
+							BarMargin: 1,1
+							HealthDivisor: 100
+							Children:
+								Label@HEALTH_LABEL:
+									X: 30
+									Y: 5
+									Font: TinyBold
+									Align: Center
+									VAlign: Top
+									Contrast: true
+						HealthBar@STAT_HEALTH_BAR_SMALL:
+							X: 10
+							Y: 49
+							Width: 30
+							Height: 5
+							BarMargin: 1,1
+						Label@STAT_MORE:
+							X: 228
+							Y: 123
+							Contrast: true
+							Align: Right
+						Label@STAT_LABEL_1:
+							X: 91
+							Y: 31
+							Contrast: true
+							Text: :
+							Children:
+								Image@STAT_ICON_1:
+									X: 0 - 16
+									Y: 0 - 6
+									Width: 16
+									Height: 16
+									ImageCollection: actor-stats-bits
+									ImageName: actor-stats-armor
+						Label@STAT_LABEL_2:
+							X: 91
+							Y: 49
+							Contrast: true
+							Text: :
+							Children:
+								Image@STAT_ICON_2:
+									X: 0 - 16
+									Y: 0 - 6
+									Width: 16
+									Height: 16
+									ImageCollection: actor-stats-bits
+									ImageName: actor-stats-sight
+						Label@STAT_LABEL_3:
+							X: 91
+							Y: 67
+							Contrast: true
+							Text: :
+							Children:
+								Image@STAT_ICON_3:
+									X: 0 - 16
+									Y: 0 - 6
+									Width: 16
+									Height: 16
+									ImageCollection: actor-stats-bits
+									ImageName: actor-stats-speed
+						Label@STAT_LABEL_4:
+							X: 180
+							Y: 31
+							Contrast: true
+							Text: :
+							Children:
+								Image@STAT_ICON_4:
+									X: 0 - 16
+									Y: 0 - 6
+									Width: 16
+									Height: 16
+									ImageCollection: actor-stats-bits
+									ImageName: actor-stats-damage
+						Label@STAT_LABEL_5:
+							X: 180
+							Y: 49
+							Contrast: true
+							Text: :
+							Children:
+								Image@STAT_ICON_5:
+									X: 0 - 16
+									Y: 0 - 6
+									Width: 16
+									Height: 16
+									ImageCollection: actor-stats-bits
+									ImageName: actor-stats-rof
+						Label@STAT_LABEL_6:
+							X: 180
+							Y: 67
+							Contrast: true
+							Text: :
+							Children:
+								Image@STAT_ICON_6:
+									X: 0 - 16
+									Y: 0 - 6
+									Width: 16
+									Height: 16
+									ImageCollection: actor-stats-bits
+									ImageName: actor-stats-range
+						Label@STAT_LABEL_7:
+							X: 91
+							Y: 85
+							Contrast: true
+							Text: :
+							Children:
+								Image@STAT_ICON_7:
+									X: 0 - 16
+									Y: 0 - 6
+									Width: 16
+									Height: 16
+									ImageCollection: actor-stats-bits
+									ImageName: actor-stats-resources
+						Label@STAT_LABEL_8:
+							X: 180
+							Y: 85
+							Contrast: true
+							Text: :
+							Children:
+								Image@STAT_ICON_8:
+									X: 0 - 16
+									Y: 0 - 6
+									Width: 16
+									Height: 16
+									ImageCollection: actor-stats-bits
+									ImageName: actor-stats-longrange
+				Button@CLOSE_BUTTON:
+					Logic: AddFactionSuffixLogic
+					X: 22
+					Y: 0 - 8
+					Width: 26
+					Height: 18
+					VisualHeight: 0
+					Background: scrolldown-buttons
+					TooltipText: Collapse
+					TooltipContainer: TOOLTIP_CONTAINER
+				Button@OPEN_BUTTON:
+					Logic: AddFactionSuffixLogic
+					X: 22
+					Y: PARENT_BOTTOM - 36
+					Width: 26
+					Height: 18
+					VisualHeight: 0
+					Visible: false
+					Background: scrollup-buttons
+					TooltipText: Expand
+					TooltipContainer: TOOLTIP_CONTAINER
 		Image@COMMAND_BAR_BACKGROUND:
 			Logic: AddFactionSuffixLogic
 			X: 5
