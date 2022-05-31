@@ -51,18 +51,18 @@ Container@PLAYER_WIDGETS:
 		Container@ACTOR_STATS:
 			Logic: CollapsableWidgetLogic
 			X: 19
-			Y: WINDOW_BOTTOM - HEIGHT - 30
+			Y: WINDOW_BOTTOM - HEIGHT - 27
 			Width: 241
 			Height: 148
 			Children:
 				Background@CLOSED_BACKGROUND:
-					# Logic: AddFactionSuffixLogic
+					Logic: AddFactionSuffixLogic
 					Y: 119
 					Width: 241
 					Height: 30
 					Visible: false
 				Background@OPENED_BACKGROUND:
-					Logic: IngameActorStatsLogic #, AddFactionSuffixLogic
+					Logic: IngameActorStatsLogic, AddFactionSuffixLogic
 						LargeIconCount: 3
 						LargeIconSpacing: 16, 2
 						SmallIconCount: 18
@@ -86,7 +86,7 @@ Container@PLAYER_WIDGETS:
 							Width: 60
 							Height: 48
 							IconSize: 60, 48
-							DefaultIconSequence: xxicon
+							NoIconSequence: emptyicon
 							TooltipContainer: TOOLTIP_CONTAINER
 						ActorIcon@STAT_ICON_SMALL:
 							X: 10
@@ -95,7 +95,7 @@ Container@PLAYER_WIDGETS:
 							Height: 24
 							IconSize: 30, 24
 							IconScale: 0.5
-							DefaultIconSequence: xxicon
+							NoIconSequence: emptyicon
 							TooltipContainer: TOOLTIP_CONTAINER
 						ActorIcon@STAT_ICON_UPGRADE:
 							X: 12
@@ -106,7 +106,7 @@ Container@PLAYER_WIDGETS:
 							IconScale: 0.75
 							ClickSound:
 							ClickDisabledSound:
-							DefaultIconSequence: xxicon
+							NoIconSequence: emptyicon
 							TooltipContainer: TOOLTIP_CONTAINER
 						HealthBar@STAT_HEALTH_BAR:
 							X: 10
@@ -115,6 +115,7 @@ Container@PLAYER_WIDGETS:
 							Height: 5
 							BarMargin: 1,1
 							HealthDivisor: 100
+							Background: progressbar-bg-black
 							Children:
 								Label@HEALTH_LABEL:
 									X: 30
@@ -129,6 +130,7 @@ Container@PLAYER_WIDGETS:
 							Width: 30
 							Height: 5
 							BarMargin: 1,1
+							Background: progressbar-bg-black
 						Label@STAT_MORE:
 							X: 228
 							Y: 123
@@ -240,28 +242,28 @@ Container@PLAYER_WIDGETS:
 									ImageName: actor-stats-longrange
 				Button@CLOSE_BUTTON:
 					Logic: AddFactionSuffixLogic
-					X: 22
-					Y: 0 - 8
-					Width: 26
-					Height: 18
+					X: 0 - 14
+					Y: PARENT_BOTTOM - 9
+					Width: 28
+					Height: 31
 					VisualHeight: 0
-					Background: scrolldown-buttons
+					Background: stats-buttons
 					TooltipText: Collapse
 					TooltipContainer: TOOLTIP_CONTAINER
 				Button@OPEN_BUTTON:
 					Logic: AddFactionSuffixLogic
-					X: 22
-					Y: PARENT_BOTTOM - 36
-					Width: 26
-					Height: 18
+					X: 0 - 14
+					Y: PARENT_BOTTOM - 9
+					Width: 28
+					Height: 31
 					VisualHeight: 0
 					Visible: false
-					Background: scrollup-buttons
+					Background: stats-buttons
 					TooltipText: Expand
 					TooltipContainer: TOOLTIP_CONTAINER
 		Image@COMMAND_BAR_BACKGROUND:
 			Logic: AddFactionSuffixLogic
-			X: 5
+			X: 33
 			Y: WINDOW_BOTTOM - HEIGHT - 5
 			Width: 459
 			Height: 31
