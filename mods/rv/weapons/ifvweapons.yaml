@@ -79,6 +79,8 @@ CRAKM:
 CRAKME:
 	Inherits: CRAKM
 	Range: 9c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 9000
 	Warhead@2Eff: CreateEffect
 		Explosions: piffred
 
@@ -244,6 +246,8 @@ CRRadBeamWeaponE:
 	Inherits: CRRadBeamWeapon
 	Range: 8c0
 	ReloadDelay: 60
+	Warhead@1Dam: SpreadDamage
+		Damage: 25000
 
 CRRadBeamWeaponOrange:
 	Inherits: CRRadBeamWeapon
@@ -256,6 +260,8 @@ CRRadBeamWeaponOrangeE:
 	Inherits: CRRadBeamWeaponOrange
 	Range: 8c0
 	ReloadDelay: 60
+	Warhead@1Dam: SpreadDamage
+		Damage: 25000
 
 CRNeutronRifle:
 	Inherits: NeutronRifle
@@ -404,7 +410,12 @@ CRMagneRifle:
         
 CRMagneRifleE:
 	Inherits: CRMagneRifle
-	Range: 8c0
+	ReloadDelay: 60
+	Range: 7c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 9000
+	Warhead@2Eff: CreateEffect
+		Explosions: piffred
 
 CRMissileLauncher:
 	Inherits: MissileLauncher

@@ -48,11 +48,13 @@ dest:
 		Bounds: 1930, 3861, 0, -289
 	Armament@primary:
 		Weapon: 155mm
+		Damage: 90
 		LocalOffset: 1152,0,800
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 155mmE
+		Damage: 180
 		LocalOffset: 1152,0,800
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
@@ -153,15 +155,19 @@ aegis:
 		Radius: 5c0
 	Armament@primary:
 		Weapon: Medusa
+		Damage: 300
 		RequiresCondition: !boostgliding && !rank-elite
 	Armament@elite:
 		Weapon: MedusaE
+		Damage: 800
 		RequiresCondition: !boostgliding && rank-elite
 	Armament@primary-boost:
 		Weapon: MedusaBoosted
+		Damage: 375
 		RequiresCondition: boostgliding && !rank-elite
 	Armament@elite-boost:
 		Weapon: MedusaBoostedE
+		Damage: 1000
 		RequiresCondition: boostgliding && rank-elite
 	Turreted:
 		TurnSpeed: 1023
@@ -216,9 +222,11 @@ dlph:
 		VoiceSet: DolphinVoice
 	Armament@primary:
 		Weapon: SonicZap
+		Damage: 17
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: SonicZapE
+		Damage: 25
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		Voice: Attack
@@ -315,6 +323,8 @@ carrier:
 		SoundFiles: vaccstaa.wav, vaccstab.wav
 		Volume: 0.5
 		RequiresCondition: moving
+	ActorStatValues:
+		Damage: 80
 
 # Custom Allied Vessels
 adest:
@@ -368,11 +378,13 @@ adest:
 		Bounds: 2000, 3800, 0, -350
 	Armament@primary:
 		Weapon: 155mmAssault
+		Damage: 90
 		LocalOffset: 1280,0,896
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 155mmAssaultE
+		Damage: 180
 		LocalOffset: 1280,0,896
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite

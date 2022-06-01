@@ -22,6 +22,7 @@ shad:
 		Type: Light
 	Armament@primary:
 		Weapon: BlackHawkCannon
+		Damage: 35
 		LocalOffset: 928,0,128
 		MuzzleSequence: muzzle
 		ReloadingCondition: reload-ground
@@ -36,6 +37,7 @@ shad:
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: BlackHawkCannonE
+		Damage: 50
 		LocalOffset: 928,0,128
 		MuzzleSequence: muzzle
 		ReloadingCondition: reload-ground
@@ -253,27 +255,35 @@ zep:
 	#	Type: GroundPosition
 	Armament:
 		Weapon: BlimpBomb
+		Damage: 750
 		RequiresCondition: !rank-elite && !radbombs && !cryowarheads
 	Armament@elite:
 		Weapon: BlimpBombE
+		Damage: 825
 		RequiresCondition: rank-elite && !radbombs && !cryowarheads
 	Armament@rad:
 		Weapon: BlimpBombRad
+		Damage: 750
 		RequiresCondition: !rank-elite && radbombs && !advirrad
 	Armament@eliterad:
 		Weapon: BlimpBombRadE
+		Damage: 825
 		RequiresCondition: rank-elite && radbombs && !advirrad
 	Armament@rad-orange:
 		Weapon: BlimpBombRadOrange
+		Damage: 750
 		RequiresCondition: !rank-elite && radbombs && advirrad
 	Armament@eliterad-orange:
 		Weapon: BlimpBombRadOrangeE
+		Damage: 825
 		RequiresCondition: rank-elite && radbombs && advirrad
 	Armament@cryo:
 		Weapon: BlimpBombCryo
+		Damage: 750
 		RequiresCondition: !rank-elite && cryowarheads
 	Armament@elitecryo:
 		Weapon: BlimpBombCryoE
+		Damage: 825
 		RequiresCondition: rank-elite && cryowarheads
 	AttackAircraft:
 		Voice: Attack
@@ -466,10 +476,12 @@ orca:
 	#	Type: GroundPosition
 	Armament:
 		Weapon: Maverick
+		Damage: 100
 		PauseOnCondition: !ammo
 		RequiresCondition: !rank-elite
 	Armament@Elite:
 		Weapon: MaverickE
+		Damage: 150
 		PauseOnCondition: !ammo
 		RequiresCondition: rank-elite
 	Armament@AA:
@@ -686,8 +698,10 @@ beag:
 		Actor: beaghusk.VTOL
 	Armament:
 		Weapon: EMPulseBEagle
+		Damage: 150
 	Armament@Elite:
 		Weapon: EMPulseBEagleE
+		Damage: 200
 	-Armament@AA:
 	-Armament@EliteAA:
 	-GrantConditionOnPrerequisite@A2AMISSILES:
@@ -1552,6 +1566,7 @@ schp:
 	-FirepowerMultiplier@APBULLETS:
 	Armament@primary:
 		Weapon: SiegeChopperCannon
+		Damage: 60
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
 		PauseOnCondition: deployed || reload-air
@@ -1565,6 +1580,7 @@ schp:
 		RequiresCondition: !rank-elite && undeployed && !apbullets
 	Armament@elite:
 		Weapon: SiegeChopperCannonE
+		Damage: 90
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
 		PauseOnCondition: deployed || reload-air
@@ -1578,6 +1594,7 @@ schp:
 		RequiresCondition: rank-elite && undeployed && !apbullets
 	Armament@primary-ap:
 		Weapon: SiegeChopperCannonAP
+		Damage: 75
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
 		PauseOnCondition: deployed || reload-air
@@ -1590,6 +1607,7 @@ schp:
 		RequiresCondition: !rank-elite && undeployed && apbullets
 	Armament@elite-ap:
 		Weapon: SiegeChopperCannonAPE
+		Damage: 112
 		LocalOffset: 640,-256,0, 640,256,0
 		ReloadingCondition: reload-ground
 		PauseOnCondition: deployed || reload-air
@@ -1625,14 +1643,16 @@ schp:
 		PauseOnCondition: deployed || reload-ground
 		RequiresCondition: rank-elite && undeployed && apbullets
 	Armament@deployed:
-		Weapon: 160mm
 		Name: deployed
+		Weapon: 160mm
+		Damage: 90
 		MuzzleSequence: muzzle
 		LocalOffset: 768,0,2048
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
-		Weapon: 160mmE
 		Name: deployed
+		Weapon: 160mmE
+		Damage: 180
 		MuzzleSequence: muzzle
 		LocalOffset: 768,0,2048
 		RequiresCondition: rank-elite && deployed
@@ -1906,8 +1926,10 @@ bpln.buildable:
 		Actor: bplnhusk.VTOL
 	Armament:
 		Weapon: Maverick2
+		Damage: 225
 	Armament@Elite:
 		Weapon: Maverick2E
+		Damage: 450
 	Armament@AA:
 		Weapon: Maverick2AA
 		RequiresCondition: !rank-elite
@@ -2029,11 +2051,13 @@ disk:
 	#	Type: GroundPosition
 	Armament@primary:
 		Weapon: DiskLaser
+		Damage: 75
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
 		RequiresCondition: !rank-elite && !capacitors
 	Armament@elite:
 		Weapon: DiskLaserE
+		Damage: 100
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
 		RequiresCondition: rank-elite && !capacitors
@@ -2049,11 +2073,13 @@ disk:
 		RequiresCondition: rank-elite && !capacitors
 	Armament@primary-capacitors:
 		Weapon: DiskLaserUpg
+		Damage: 75
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
 		RequiresCondition: !rank-elite && capacitors
 	Armament@elite-capacitors:
 		Weapon: DiskLaserUpgE
+		Damage: 100
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
 		RequiresCondition: rank-elite && capacitors
@@ -2430,20 +2456,24 @@ fortress:
 	-AppearsOnRadar:
 	Armament:
 		Weapon: SpiritBomb
+		Damage: 500
 		PauseOnCondition: !ammo || increased_payload
 		RequiresCondition: !increased_payload && !rank-elite
 	Armament@Elite:
 		Weapon: SpiritBombE
+		Damage: 750
 		PauseOnCondition: !ammo || increased_payload
 		RequiresCondition: !increased_payload && rank-elite
 	Armament@2:
 		Name: secondary
 		Weapon: SpiritBomb10
+		Damage: 1000
 		PauseOnCondition: !ammo2 || !increased_payload
 		RequiresCondition: increased_payload && !rank-elite
 	Armament@2Elite:
 		Name: secondary
 		Weapon: SpiritBomb10E
+		Damage: 1500
 		PauseOnCondition: !ammo2 || !increased_payload
 		RequiresCondition: increased_payload && rank-elite
 	AttackAircraft:
@@ -2745,19 +2775,23 @@ txdx:
 		RenderOnGround: true
 	Armament@primary:
 		Weapon: MosquitoMissile
+		Damage: 80
 		RequiresCondition: !rank-elite && !rocket_barrage
 	Armament@elite:
 		Weapon: MosquitoMissileE
+		Damage: 160
 		RequiresCondition: rank-elite && !rocket_barrage
 	Armament@primary-ammo:
 		Name: barrage
 		Weapon: MosquitoBarrage
+		Damage: 40
 		LocalOffset: 0,384,0, 384,0,0, 0,0,0, 0,-384,0, -384,0,0
 		PauseOnCondition: !ammo
 		RequiresCondition: !rank-elite && rocket_barrage
 	Armament@elite-ammo:
 		Name: barrage
 		Weapon: MosquitoBarrageE
+		Damage: 40
 		PauseOnCondition: !ammo
 		LocalOffset: 0,384,0, 384,0,0, 0,0,0, 0,-384,0, -384,0,0
 		RequiresCondition: rank-elite && rocket_barrage
@@ -2917,15 +2951,19 @@ kite:
 		Type: Light
 	Armament@primary:
 		Weapon: NapalmBomb
+		Damage: 150
 		RequiresCondition: !rank-elite && !black_napalm
 	Armament@elite:
 		Weapon: NapalmBombE
+		Damage: 200
 		RequiresCondition: rank-elite && !black_napalm
 	Armament@primary-black:
 		Weapon: NapalmBombBlack
+		Damage: 300
 		RequiresCondition: !rank-elite && black_napalm
 	Armament@elite-black:
 		Weapon: NapalmBombBlackE
+		Damage: 400
 		RequiresCondition: rank-elite && black_napalm
 	Voiced:
 		VoiceSet: BlackKiteVoice
@@ -3115,9 +3153,11 @@ magnedisk:
 	#	Type: GroundPosition
 	Armament@primary:
 		Weapon: BloodSuck
+		Damage: 45
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: BloodSuckE
+		Damage: 60
 		RequiresCondition: rank-elite
 	AttackAircraft:
 		Voice: Attack
@@ -3263,10 +3303,12 @@ havoc:
 		Type: Light
 	Armament@primary:
 		Weapon: HeliRocket
+		Damage: 200
 		LocalOffset: 0,512,256, 0,-512,256
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: HeliRocketE
+		Damage: 400
 		LocalOffset: 0,512,256, 0,-512,256
 		RequiresCondition: rank-elite
 	Voiced:

@@ -23,11 +23,13 @@ harv:
 		Name: War Miner
 	Armament@primary:
 		Weapon: 20mmrapid
+		Damage: 30
 		LocalOffset: 384,0,1024
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 20mmrapidE
+		Damage: 50
 		LocalOffset: 384,0,1024
 		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
@@ -197,6 +199,9 @@ dron:
 	DeathSounds:
 		DeathTypes: NonTemporal
 	HitShape:
+	ActorStatValues:
+		Damage: 40
+		ReloadDelay: 45
 
 htk:
 	Inherits: ^Vehicle
@@ -267,11 +272,13 @@ htk:
 	AutoTarget:
 	Armament@primary:
 		Weapon: FlakTrackGun
+		Damage: 25
 		LocalOffset: 256,0,1536
 		MuzzleSequence: muzzle
 		RequiresCondition: !impflaks && !rank-elite
 	Armament@primary-insta:
 		Weapon: FlakTrackGunInsta
+		Damage: 25
 		LocalOffset: 256,0,1536
 		MuzzleSequence: muzzle
 		RequiresCondition: impflaks && !rank-elite
@@ -282,11 +289,13 @@ htk:
 		RequiresCondition: !rank-elite
 	Armament@primary-elite:
 		Weapon: FlakTrackGunE
+		Damage: 50
 		LocalOffset: 256,0,1536
 		MuzzleSequence: muzzle
 		RequiresCondition: !impflaks && rank-elite
 	Armament@primary-insta-elite:
 		Weapon: FlakTrackGunInstaE
+		Damage: 50
 		LocalOffset: 256,0,1536
 		MuzzleSequence: muzzle
 		RequiresCondition: impflaks && rank-elite
@@ -362,6 +371,7 @@ htnk:
 		HP: 40000
 	Armament@primary:
 		Weapon: 120mm
+		Damage: 90
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 896,0,640
@@ -370,6 +380,7 @@ htnk:
 	Armament@elite:
 		Name: elite
 		Weapon: 120mmE
+		Damage: 180
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 896,0,640
@@ -378,6 +389,7 @@ htnk:
 	#Armament@primary-uranium:
 	#	Name: primary-uranium
 	#	Weapon: 120mmU
+	#	Damage: 90
 	#	Recoil: 87
 	#	RecoilRecovery: 12
 	#	LocalOffset: 896,0,640
@@ -386,6 +398,7 @@ htnk:
 	#Armament@elite-uranium:
 	#	Name: elite-uranium
 	#	Weapon: 120mmUE
+	#	Damage: 180
 	#	Recoil: 87
 	#	RecoilRecovery: 12
 	#	LocalOffset: 896,0,640
@@ -394,6 +407,7 @@ htnk:
 	#Armament@primary-uranium-orange:
 	#	Name: primary-uranium-orange
 	#	Weapon: 120mmUOrange
+	#	Damage: 90
 	#	Recoil: 87
 	#	RecoilRecovery: 12
 	#	LocalOffset: 896,0,640
@@ -402,6 +416,7 @@ htnk:
 	#Armament@elite-uranium-orange:
 	#	Name: elite-uranium-orange
 	#	Weapon: 120mmUOrangeE
+	#	Damage: 180
 	#	Recoil: 87
 	#	RecoilRecovery: 12
 	#	LocalOffset: 896,0,640
@@ -410,6 +425,7 @@ htnk:
 	Armament@primary-cryo:
 		Name: primary-cryo
 		Weapon: 120mmCryo
+		Damage: 90
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 896,0,640
@@ -418,6 +434,7 @@ htnk:
 	Armament@elite-cryo:
 		Name: elite-cryo
 		Weapon: 120mmCryoE
+		Damage: 180
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 896,0,640
@@ -541,6 +558,7 @@ apoc:
 		TurnSpeed: 16
 	Armament@primary:
 		Weapon: 120mmx
+		Damage: 100
 		Recoil: 87
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle
@@ -549,6 +567,7 @@ apoc:
 	Armament@primary2:
 		Name: primary2
 		Weapon: 120mmx
+		Damage: 100
 		FireDelay: 5
 		Recoil: 87
 		RecoilRecovery: 12
@@ -558,6 +577,7 @@ apoc:
 	Armament@elite:
 		Name: elite
 		Weapon: 120mmxE
+		Damage: 200
 		Recoil: 87
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle-2
@@ -566,6 +586,7 @@ apoc:
 	Armament@elite2:
 		Name: elite2
 		Weapon: 120mmxE
+		Damage: 200
 		FireDelay: 5
 		Recoil: 87
 		RecoilRecovery: 12
@@ -575,6 +596,7 @@ apoc:
 	#Armament@primary-uranium:
 	#	Name: primary-uranium
 	#	Weapon: 120mmxU
+	#	Damage: 100
 	#	Recoil: 87
 	#	RecoilRecovery: 12
 	#	MuzzleSequence: muzzle
@@ -583,6 +605,7 @@ apoc:
 	#Armament@primary2-uranium:
 	#	Name: primary2-uranium
 	#	Weapon: 120mmxU
+	#	Damage: 100
 	#	FireDelay: 5
 	#	Recoil: 87
 	#	RecoilRecovery: 12
@@ -592,6 +615,7 @@ apoc:
 	#Armament@elite-uranium:
 	#	Name: elite-uranium
 	#	Weapon: 120mmxUE
+	#	Damage: 200
 	#	Recoil: 87
 	#	RecoilRecovery: 12
 	#	MuzzleSequence: muzzle-2
@@ -600,6 +624,7 @@ apoc:
 	#Armament@elite2-uranium:
 	#	Name: elite2-uranium
 	#	Weapon: 120mmxUE
+	#	Damage: 200
 	#	FireDelay: 5
 	#	Recoil: 87
 	#	RecoilRecovery: 12
@@ -609,6 +634,7 @@ apoc:
 	#Armament@primary-uranium-orange:
 	#	Name: primary-uranium-orange
 	#	Weapon: 120mmxUOrange
+	#	Damage: 100
 	#	Recoil: 87
 	#	RecoilRecovery: 12
 	#	MuzzleSequence: muzzle
@@ -617,6 +643,7 @@ apoc:
 	#Armament@primary2-uranium-orange:
 	#	Name: primary2-uranium-orange
 	#	Weapon: 120mmxUOrange
+	#	Damage: 100
 	#	FireDelay: 5
 	#	Recoil: 87
 	#	RecoilRecovery: 12
@@ -626,6 +653,7 @@ apoc:
 	#Armament@elite-uranium-orange:
 	#	Name: elite-uranium-orange
 	#	Weapon: 120mmxUOrangeE
+	#	Damage: 200
 	#	Recoil: 87
 	#	RecoilRecovery: 12
 	#	MuzzleSequence: muzzle-2
@@ -634,6 +662,7 @@ apoc:
 	#Armament@elite2-uranium-orange:
 	#	Name: elite2-uranium-orange
 	#	Weapon: 120mmxUOrangeE
+	#	Damage: 200
 	#	FireDelay: 5
 	#	Recoil: 87
 	#	RecoilRecovery: 12
@@ -643,6 +672,7 @@ apoc:
 	Armament@primary-cryo:
 		Name: primary-cryo
 		Weapon: 120mmxCryo
+		Damage: 100
 		Recoil: 87
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle
@@ -651,6 +681,7 @@ apoc:
 	Armament@primary2-cryo:
 		Name: primary2-cryo
 		Weapon: 120mmxCryo
+		Damage: 100
 		FireDelay: 5
 		Recoil: 87
 		RecoilRecovery: 12
@@ -660,6 +691,7 @@ apoc:
 	Armament@elite-cryo:
 		Name: elite-cryo
 		Weapon: 120mmxCryoE
+		Damage: 200
 		Recoil: 87
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle-2
@@ -668,6 +700,7 @@ apoc:
 	Armament@elite2-cryo:
 		Name: elite2-cryo
 		Weapon: 120mmxCryoE
+		Damage: 200
 		FireDelay: 5
 		Recoil: 87
 		RecoilRecovery: 12
@@ -676,10 +709,12 @@ apoc:
 		RequiresCondition: rank-elite && cryo_shells
 	Armament@antiair:
 		Weapon: MammothTusk
+		Damage: 160
 		LocalOffset: 80,200,768, 80,-200,768
 		RequiresCondition: !rank-elite
 	Armament@antiairelite:
 		Weapon: MammothTuskE
+		Damage: 280
 		LocalOffset: 80,200,768, 80,-200,768
 		RequiresCondition: rank-elite
 	AttackTurreted:
@@ -838,18 +873,22 @@ ttnk:
 		TurnSpeed: 28
 	Armament@primary:
 		Weapon: TankBolt
+		Damage: 140
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite:
 		Weapon: TankBoltE
+		Damage: 160
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: !overcharge && rank-elite
 	Armament@primary-overcharge:
 		Weapon: TankBoltCharged
+		Damage: 140
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: overcharge && !rank-elite
 	Armament@elite-overcharge:
 		Weapon: TankBoltChargedE
+		Damage: 160
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: overcharge && rank-elite
 	AttackTurreted:
@@ -972,6 +1011,10 @@ dtruck:
 	#	SoundFiles: vdemstaa.wav, vdemstab.wav, vdemstac.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Damage: 1200
+		Spread: 8c0
+		ExplosionWeapon: true
 
 v3:
 	Inherits: ^Vehicle
@@ -1078,6 +1121,7 @@ v3:
 	#	Volume: 0.35
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Damage: 200
 		Upgrades: upgrade.radioactive_bombs, upgrade.advanced_irradiators, upgrade.high_explosive_bombs
 
 m3:
@@ -1246,11 +1290,13 @@ tric:
 		PauseOnCondition: chronodisable || emp || nogunner
 	Armament@primary:
 		Weapon: CycleMortar
+		Damage: 50
 		LocalOffset: 128,128,768
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: CycleMortarE
+		Damage: 100
 		LocalOffset: 128,128,768
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
@@ -1338,21 +1384,25 @@ deva:
 		TurnSpeed: 32
 	Armament@primary:
 		Weapon: 120mmxRad
+		Damage: 200
 		LocalOffset: 896,100,768, 896,-100,768
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite && !advirrad
 	Armament@elite:
 		Weapon: 120mmxRadE
+		Damage: 400
 		LocalOffset: 896,100,768, 896,-100,768
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && !advirrad
 	Armament@primary-orange:
 		Weapon: 120mmxRadOrange
+		Damage: 200
 		LocalOffset: 896,100,768, 896,-100,768
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite && advirrad
 	Armament@elite-orange:
 		Weapon: 120mmxRadOrangeE
+		Damage: 400
 		LocalOffset: 896,100,768, 896,-100,768
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && advirrad
@@ -1483,18 +1533,22 @@ ftnk:
 		TurnSpeed: 28
 	Armament@primary:
 		Weapon: TankFlamer
+		Damage: 100
 		LocalOffset: 768,-384,640, 768,384,640
 		RequiresCondition: !rank-elite && !black_napalm
 	Armament@elite:
 		Weapon: TankFlamerE
+		Damage: 280
 		LocalOffset: 768,-384,640, 768,384,640
 		RequiresCondition: rank-elite && !black_napalm
 	Armament@primary-black:
 		Weapon: TankFlamerBlack
+		Damage: 200
 		LocalOffset: 768,-384,640, 768,384,640
 		RequiresCondition: !rank-elite && black_napalm
 	Armament@elite-black:
 		Weapon: TankFlamerBlackE
+		Damage: 560
 		LocalOffset: 768,-384,640, 768,384,640
 		RequiresCondition: rank-elite && black_napalm
 	AttackTurreted:

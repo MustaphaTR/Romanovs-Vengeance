@@ -49,11 +49,13 @@ e2:
 		FacingTolerance: 2
 	Armament@primary:
 		Weapon: M1Carbine
+		Damage: 15
 		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: M1CarbineE
+		Damage: 20
 		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
@@ -69,11 +71,13 @@ e2:
 		RequiresCondition: apbullets && rank-elite
 	Armament@molotov:
 		Weapon: MolotovCocktail
+		Damage: 10
 		LocalOffset: 512,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: molotov && !rank-elite
 	Armament@molotov-elite:
 		Weapon: MolotovCocktailE
+		Damage: 14
 		LocalOffset: 512,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: molotov && rank-elite
@@ -249,12 +253,14 @@ flakt:
 		FacingTolerance: 2
 	Armament@primary:
 		Weapon: FlakGuyGun
+		Damage: 20
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !impflaks && !rank-elite
 	Armament@primary-insta:
 		Weapon: FlakGuyGunInsta
+		Damage: 20
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
 		PauseOnCondition: chronodisable || webdisable || dogstun
@@ -267,12 +273,14 @@ flakt:
 		RequiresCondition: !rank-elite
 	Armament@primary-elite:
 		Weapon: FlakGuyGunE
+		Damage: 40
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !impflaks && rank-elite
 	Armament@primary-insta-elite:
 		Weapon: FlakGuyGunInstaE
+		Damage: 40
 		LocalOffset: 256,0,1024
 		MuzzleSequence: muzzle
 		PauseOnCondition: chronodisable || webdisable || dogstun
@@ -545,6 +553,8 @@ shk:
 		Types: chevron-veteran
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	ActorStatValues:
+		Damage: 50
 
 terror:
 	Inherits: ^Infantry
@@ -685,21 +695,25 @@ deso:
 		CrushClasses: vehicle
 	Armament@primary:
 		Weapon: RadBeamWeapon
+		Damage: 125
 		LocalOffset: 320,-128,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && !advirrad
 	Armament@elite:
 		Weapon: RadBeamWeaponE
+		Damage: 200
 		LocalOffset: 320,-128,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && !advirrad
 	Armament@primary-orange:
 		Weapon: RadBeamWeaponOrange
+		Damage: 125
 		LocalOffset: 320,-128,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && advirrad
 	Armament@elitey-orange:
 		Weapon: RadBeamWeaponOrangeE
+		Damage: 200
 		LocalOffset: 320,-128,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && advirrad
@@ -1198,11 +1212,13 @@ boris:
 		StartIfBelow: 100
 	Armament@primary:
 		Weapon: AKM
+		Damage: 65
 		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: AKME
+		Damage: 90
 		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: rank-elite
@@ -1382,11 +1398,13 @@ pyro:
 		Radius: 3c0
 	Armament@primary:
 		Weapon: Flamer
+		Damage: 50
 		LocalOffset: 512,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && !black_napalm
 	Armament@elite:
 		Weapon: FlamerE
+		Damage: 140
 		LocalOffset: 512,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && !black_napalm
@@ -1412,11 +1430,13 @@ pyro:
 		RequiresCondition: rank-elite && !black_napalm
 	Armament@primary-black:
 		Weapon: FlamerBlack
+		Damage: 100
 		LocalOffset: 512,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && black_napalm
 	Armament@elite_black:
 		Weapon: FlamerBlackE
+		Damage: 280
 		LocalOffset: 512,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && black_napalm
@@ -1699,6 +1719,8 @@ itrp:
 	-Targetable@ironcurtain:
 	-KillsSelf@ironcurtain:
 	-ExternalCondition@INVULNERABILITY:
+	ActorStatValues:
+		Damage: 500
 
 shkc:
 	Inherits: shk
@@ -1728,12 +1750,16 @@ shkc:
 		Radius: 3c0
 	Armament@primary:
 		Weapon: ElectricBoltCommando
+		Damage: 100
 	Armament@elite:
 		Weapon: ElectricBoltCommandoE
+		Damage: 150
 	Armament@primary-charged:
 		Weapon: ElectricBoltCommandoCharged
+		Damage: 100
 	Armament@elite-charged:
 		Weapon: ElectricBoltCommandoChargedE
+		Damage: 150
 	Armament@opentopped:
 		Weapon: ElectricBoltCommando
 	Armament@elite-opentopped:

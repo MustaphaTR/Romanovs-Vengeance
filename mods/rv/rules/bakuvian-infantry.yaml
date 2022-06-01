@@ -182,6 +182,8 @@ ssnipe:
 		Prerequisites: naradr, ~techlevel.3
 	RenderSprites:
 		Image: snipe
+	ActorStatValues:
+		Upgrades: upgrade.ap_bullets, upgrade.high_caliber_rounds
 
 vlkv:
 	Inherits: ^Infantry
@@ -248,21 +250,25 @@ vlkv:
 		RequiresCondition: disabled
 	Armament@primary:
 		Weapon: ElectricBoltVolkov
+		Damage: 125
 		LocalOffset: 320,128,512
 		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite:
 		Weapon: ElectricBoltVolkovE
+		Damage: 175
 		LocalOffset: 320,128,512
 		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: !overcharge && rank-elite
 	Armament@primary-charged:
 		Weapon: ElectricBoltVolkovCharged
+		Damage: 125
 		LocalOffset: 320,128,512
 		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: overcharge && !rank-elite
 	Armament@elite-charged:
 		Weapon: ElectricBoltVolkovChargedE
+		Damage: 175
 		LocalOffset: 320,128,512
 		PauseOnCondition: chronodisable || webdisable
 		RequiresCondition: overcharge && rank-elite

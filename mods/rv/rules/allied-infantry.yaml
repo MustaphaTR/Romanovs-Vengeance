@@ -1033,6 +1033,8 @@ snipe:
 		Types: chevron-veteran
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	ActorStatValues:
+		Damage: 200
 
 spy:
 	Inherits: ^Infantry
@@ -1255,6 +1257,8 @@ ghost:
 		TileSets: SNOW
 	TakeCover:
 		RequiresCondition: !swimming
+	ActorStatValues:
+		Damage: 70
 
 ccomand:
 	Inherits: ghost
@@ -1524,6 +1528,8 @@ tany:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
+	ActorStatValues:
+		Damage: 125
 
 jumpjet:
 	Inherits: ^Infantry

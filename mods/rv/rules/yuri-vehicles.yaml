@@ -61,11 +61,13 @@ smin:
 		TurnSpeed: 20
 	Armament@primary:
 		Weapon: 20mmrapid
+		Damage: 30
 		LocalOffset: 512,0,1388
 		MuzzleSequence: muzzle
 	#	RequiresCondition: !rank-elite
 	# Armament@elite:
 	#	Weapon: 20mmrapidE
+	#	Damage: 50
 	#	LocalOffset: 512,0,1388
 	#	MuzzleSequence: muzzle
 	#	RequiresCondition: rank-elite
@@ -182,6 +184,7 @@ ltnk:
 	-FirepowerMultiplier@CAPACITORS:
 	Armament@primary:
 		Weapon: ATGUN
+		Damage: 65
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
@@ -189,6 +192,7 @@ ltnk:
 		RequiresCondition: !rank-elite && !autoloaders && !capacitors
 	Armament@elite:
 		Weapon: ATGUNE
+		Damage: 130
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
@@ -196,6 +200,7 @@ ltnk:
 		RequiresCondition: rank-elite && !autoloaders && !capacitors
 	Armament@primary-auto:
 		Weapon: ATGUNAuto
+		Damage: 130
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
@@ -203,6 +208,7 @@ ltnk:
 		RequiresCondition: !rank-elite && autoloaders && !capacitors
 	Armament@elite-auto:
 		Weapon: ATGUNAutoE
+		Damage: 260
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 800,0,832
@@ -210,21 +216,25 @@ ltnk:
 		RequiresCondition: rank-elite && autoloaders && !capacitors
 	Armament@primary-laser:
 		Weapon: ATLASER
+		Damage: 65
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite && !autoloaders && capacitors
 	Armament@elite-laser:
 		Weapon: ATLASERE
+		Damage: 130
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && !autoloaders && capacitors
 	Armament@primary-laser-auto:
 		Weapon: ATLASERAuto
+		Damage: 130
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite && autoloaders && capacitors
 	Armament@elite-laser-auto:
 		Weapon: ATLASERAutoE
+		Damage: 260
 		LocalOffset: 800,0,832
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && autoloaders && capacitors
@@ -336,6 +346,7 @@ ytnk:
 		TurnSpeed: 40
 	Armament@ag-0:
 		Weapon: AGGatling
+		Damage: 10
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle
 		ReloadingCondition: reload-ground
@@ -343,6 +354,7 @@ ytnk:
 		RequiresCondition: !gatling
 	Armament@ag-1:
 		Weapon: AGGatling2
+		Damage: 10
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-1
 		ReloadingCondition: reload-ground
@@ -350,6 +362,7 @@ ytnk:
 		RequiresCondition: gatling == 1
 	Armament@ag-2:
 		Weapon: AGGatling3
+		Damage: 10
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-2
 		ReloadingCondition: reload-ground
@@ -1077,18 +1090,22 @@ lart:
 		Radius: 3c0
 	Armament@primary:
 		Weapon: AnniLaser
+		Damage: 150
 		LocalOffset: 672,0,832
 		RequiresCondition: !rank-elite && !capacitors
 	Armament@elite:
 		Weapon: AnniLaserE
+		Damage: 200
 		LocalOffset: 672,0,832
 		RequiresCondition: rank-elite && !capacitors
 	Armament@primary-capacitors:
 		Weapon: AnniLaserUpg
+		Damage: 150
 		LocalOffset: 672,0,832
 		RequiresCondition: !rank-elite && capacitors
 	Armament@elite-capacitors:
 		Weapon: AnniLaserUpgE
+		Damage: 200
 		LocalOffset: 672,0,832
 		RequiresCondition: rank-elite && capacitors
 	AttackFrontal:
@@ -1184,18 +1201,22 @@ yhtnk:
 	-ExternalCondition@INVISIBILITY:
 	Armament@primary:
 		Weapon: DoomLaser
+		Damage: 100
 		LocalOffset: 800,0,512
 		RequiresCondition: !rank-elite && !capacitors
 	Armament@elite:
 		Weapon: DoomLaserE
+		Damage: 150
 		LocalOffset: 800,0,512
 		RequiresCondition: rank-elite && !capacitors
 	Armament@primary-capacitors:
 		Weapon: DoomLaserUpg
+		Damage: 100
 		LocalOffset: 800,0,512
 		RequiresCondition: !rank-elite && capacitors
 	Armament@elite-capacitors:
 		Weapon: DoomLaserUpgE
+		Damage: 150
 		LocalOffset: 800,0,512
 		RequiresCondition: rank-elite && capacitors
 	AttackTurreted:
@@ -1318,6 +1339,7 @@ grtk:
 	#	Volume: 0.65
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Damage: 150
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 spider:
@@ -1416,10 +1438,12 @@ spider:
 		Radius: 3c0
 	Armament@primary:
 		Weapon: PoisonSting
+		Damage: 80
 		LocalOffset: 128,-96,768, 128,96,768
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: PoisonStingE
+		Damage: 160
 		LocalOffset: 128,-96,768, 128,96,768
 		RequiresCondition: rank-elite
 	Armament@secondary:

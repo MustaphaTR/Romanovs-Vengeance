@@ -65,6 +65,7 @@ mtnk:
 		HP: 30000
 	Armament@primary:
 		Weapon: 105mm
+		Damage: 65
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 896,0,512
@@ -73,6 +74,7 @@ mtnk:
 	Armament@elite:
 		Name: elite
 		Weapon: 105mmE
+		Damage: 130
 		Recoil: 87
 		RecoilRecovery: 12
 		LocalOffset: 896,0,512
@@ -160,11 +162,13 @@ tnkd:
 		Radius: 3c512
 	Armament@primary:
 		Weapon: sabot
+		Damage: 150
 		LocalOffset: 896,0,704
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: sabotE
+		Damage: 300
 		LocalOffset: 896,0,704
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
@@ -584,12 +588,14 @@ fv:
 		ExitSound: vifvtran.wav
 	Armament@primary:
 		Weapon: HoverMissile
+		Damage: 60
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
 		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@elite:
 		Weapon: HoverMissileE
+		Damage: 120
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
@@ -610,12 +616,14 @@ fv:
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@primary-boost:
 		Weapon: HoverMissileBoosted
+		Damage: 75
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
 		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@elite-boost:
 		Weapon: HoverMissileBoostedE
+		Damage: 150
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
@@ -636,38 +644,47 @@ fv:
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@mg:
 		Weapon: CRM60
+		Damage: 40
 		LocalOffset: 188,32,600
 		RequiresCondition: ifv-mg && !rank-elite
 	Armament@mg-elite:
 		Weapon: CRM60E
+		Damage: 50
 		LocalOffset: 188,32,600
 		RequiresCondition: ifv-mg && rank-elite
 	Armament@init:
 		Weapon: CRPsychicJab
+		Damage: 25
 		LocalOffset: 128,0,1024
 		RequiresCondition: ifv-init && !rank-elite
 	Armament@init-elite:
 		Weapon: CRPsychicJabE
+		Damage: 30
 		LocalOffset: 128,0,1024
 		RequiresCondition: ifv-init && rank-elite
 	Armament@gren:
 		Weapon: CRGrenade
+		Damage: 100
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-gren && !empammo && !rank-elite
 	Armament@gren-elite:
 		Weapon: CRGrenadeE
+		Damage: 150
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-gren && !empammo && rank-elite
 	Armament@gren-emp:
 		Weapon: CRGrenadeEMP
+		Damage: 100
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-gren && empammo && !rank-elite
 	Armament@gren-emp-elite:
 		Weapon: CRGrenadeEMPE
+		Damage: 150
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-gren && empammo && rank-elite
 	Armament@rocket:
 		Weapon: CRMissileLauncher
+		Damage: 120
 		LocalOffset: 128,-128,1408, 128,128,1408
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
@@ -681,6 +698,7 @@ fv:
 		RequiresCondition: ifv-rocket && !rank-elite && !boostgliding
 	Armament@rocket-elite:
 		Weapon: CRMissileLauncherE
+		Damage: 240
 		LocalOffset: 128,-128,1408, 128,128,1408
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
@@ -694,6 +712,7 @@ fv:
 		RequiresCondition: ifv-rocket && rank-elite && !boostgliding
 	Armament@rocket-boost:
 		Weapon: CRMissileLauncherBoosted
+		Damage: 150
 		LocalOffset: 128,-128,1408, 128,128,1408
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
@@ -707,6 +726,7 @@ fv:
 		RequiresCondition: ifv-rocket && !rank-elite && boostgliding
 	Armament@rocket-boost-elite:
 		Weapon: CRMissileLauncherBoostedE
+		Damage: 300
 		LocalOffset: 128,-128,1408, 128,128,1408
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
@@ -720,6 +740,7 @@ fv:
 		RequiresCondition: ifv-rocket && rank-elite && boostgliding
 	Armament@repair:
 		Weapon: RepairBullet
+		Damage: -50
 		LocalOffset: 164,0,864
 		RequiresCondition: ifv-repair && !rank-elite
 		Cursor: goldwrench
@@ -728,6 +749,7 @@ fv:
 		ForceTargetRelationships: None
 	Armament@repair-elite:
 		Weapon: RepairBulletE
+		Damage: -75
 		LocalOffset: 164,0,864
 		RequiresCondition: ifv-repair && rank-elite
 		Cursor: goldwrench
@@ -745,18 +767,22 @@ fv:
 		RequiresCondition: triggered
 	Armament@hijack:
 		Weapon: CRGrind
+		Damage: 50
 		LocalOffset: 164,0,864
 		RequiresCondition: ifv-hijack && !rank-elite
 	Armament@hijack-elite:
 		Weapon: CRGrindE
+		Damage: 100
 		LocalOffset: 164,0,864
 		RequiresCondition: ifv-hijack && rank-elite
 	Armament@sniper:
 		Weapon: CRAWP
+		Damage: 200
 		LocalOffset: 188,0,600
 		RequiresCondition: ifv-sniper && !rank-elite
 	Armament@sniper-elite:
 		Weapon: CRAWPE
+		Damage: 200
 		LocalOffset: 188,0,600
 		RequiresCondition: ifv-sniper && rank-elite
 	Armament@sniper-at:
@@ -769,90 +795,112 @@ fv:
 		RequiresCondition: ifv-sniper && rank-elite && highcaliber
 	Armament@virus:
 		Weapon: CRVirusgun
+		Damage: 200
 		LocalOffset: 188,0,600
 		RequiresCondition: ifv-virus && !rank-elite
 	Armament@virus-elite:
 		Weapon: CRVirusgunE
+		Damage: 200
 		LocalOffset: 188,0,600
 		RequiresCondition: ifv-virus && rank-elite
 	Armament@seal:
 		Weapon: CRMP5
+		Damage: 70
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-seal && !rank-elite
 	Armament@seal-elite:
 		Weapon: CRMP5E
+		Damage: 70
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-seal && rank-elite
 	Armament@tanya:
 		Weapon: CRDoublePistols
+		Damage: 125
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-tanya && !rank-elite
 	Armament@tanya-elite:
 		Weapon: CRDoublePistolsE
+		Damage: 125
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-tanya && rank-elite
 	Armament@boris:
 		Weapon: CRAKM
+		Damage: 65
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-boris && !rank-elite
 	Armament@boris-elite:
 		Weapon: CRAKME
+		Damage: 90
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-boris && rank-elite
 	Armament@tesla:
 		Weapon: CRElectricBolt
+		Damage: 60
 		LocalOffset: 280,196,1024, 280,-196,1024
 		RequiresCondition: ifv-tesla && !overcharge && !rank-elite
 	Armament@tesla-elite:
 		Weapon: CRElectricBoltE
+		Damage: 80
 		LocalOffset: 280,196,1024, 280,-196,1024
 		RequiresCondition: ifv-tesla && !overcharge && rank-elite
 	Armament@tesla-charged:
-		Weapon: CRElectricBolt
+		Weapon: CRElectricBoltCharged
+		Damage: 60
 		LocalOffset: 280,196,1024, 280,-196,1024
 		RequiresCondition: ifv-tesla && overcharge && !rank-elite
 	Armament@tesla-charged-elite:
-		Weapon: CRElectricBoltE
+		Weapon: CRElectricBoltChargedE
+		Damage: 80
 		LocalOffset: 280,196,1024, 280,-196,1024
 		RequiresCondition: ifv-tesla && overcharge && rank-elite
 	Armament@desolator:
 		Weapon: CRRadBeamWeapon
+		Damage: 175
 		LocalOffset: 256,-256,1280
 		RequiresCondition: ifv-deso && !advirrad && !rank-elite
 	Armament@desolator-elite:
 		Weapon: CRRadBeamWeaponE
+		Damage: 250
 		LocalOffset: 256,-256,1280
 		RequiresCondition: ifv-deso && !advirrad && rank-elite
 	Armament@desolator-orange:
 		Weapon: CRRadBeamWeaponOrange
+		Damage: 175
 		LocalOffset: 256,-256,1280
 		RequiresCondition: ifv-deso && advirrad && !rank-elite
 	Armament@desolator-elite-orange:
 		Weapon: CRRadBeamWeaponOrangeE
+		Damage: 250
 		LocalOffset: 256,-256,1280
 		RequiresCondition: ifv-deso && advirrad && rank-elite
 	Armament@pyro:
 		Weapon: CRFlamer
+		Damage: 50
 		LocalOffset: 649,0,1152
 		RequiresCondition: ifv-pyro && !rank-elite && !black_napalm
 	Armament@pyro-elite:
 		Weapon: CRFlamerE
+		Damage: 140
 		LocalOffset: 649,0,1152
 		RequiresCondition: ifv-pyro && rank-elite && !black_napalm
 	Armament@pyro-black:
 		Weapon: CRFlamerBlack
+		Damage: 100
 		LocalOffset: 649,0,1152
 		RequiresCondition: ifv-pyro && !rank-elite && black_napalm
 	Armament@pyro-black-elite:
 		Weapon: CRFlamerBlackE
+		Damage: 280
 		LocalOffset: 649,0,1152
 		RequiresCondition: ifv-pyro && rank-elite && black_napalm
 	Armament@flak:
 		Weapon: CRFlakGuyGun
+		Damage: 30
 		LocalOffset: 256,0,1536
 		RequiresCondition: ifv-flak && !impflaks && !rank-elite
 	Armament@flak-insta:
 		Weapon: CRFlakGuyGunInsta
+		Damage: 30
 		LocalOffset: 256,0,1536
 		RequiresCondition: ifv-flak && impflaks && !rank-elite
 	Armament@flak-aa:
@@ -862,10 +910,12 @@ fv:
 		RequiresCondition: ifv-flak && !rank-elite
 	Armament@flak-elite:
 		Weapon: CRFlakGuyGunE
+		Damage: 60
 		LocalOffset: 256,0,1536
 		RequiresCondition: ifv-flak && !impflaks && rank-elite
 	Armament@flak-insta-elite:
 		Weapon: CRFlakGuyGunInstaE
+		Damage: 60
 		LocalOffset: 256,0,1536
 		RequiresCondition: ifv-flak && impflaks && rank-elite
 	Armament@flak-aa-elite:
@@ -876,18 +926,21 @@ fv:
 	Armament@gatling-ag-0:
 		Name: gatling
 		Weapon: AGGatling
+		Damage: 10
 		LocalOffset: 544,100,1024, 544,-100,1024
 		RequiresCondition: ifv-gatling && !gatling
 		MuzzleSequence: muzzle
 	Armament@gatling-ag-1:
 		Name: gatling
 		Weapon: AGGatling2
+		Damage: 10
 		LocalOffset: 544,100,1024, 544,-100,1024
 		RequiresCondition: ifv-gatling && gatling == 1
 		MuzzleSequence: muzzle-1
 	Armament@gatling-ag-2:
 		Name: gatling
 		Weapon: AGGatling3
+		Damage: 10
 		LocalOffset: 544,100,1024, 544,-100,1024
 		RequiresCondition: ifv-gatling && gatling >= 2
 		MuzzleSequence: muzzle-2
@@ -938,6 +991,7 @@ fv:
 		RequiresCondition: ifv-iron && !rank-elite
 	Armament@ironap:
 		Weapon: CRCurtainRifleAP
+		Damage: 500
 		LocalOffset: 128,0,1024
 		RequiresCondition: ifv-iron && !rank-elite
 	Armament@iron-elite:
@@ -950,42 +1004,52 @@ fv:
 		RequiresCondition: ifv-iron && rank-elite
 	Armament@ironap-elite:
 		Weapon: CRCurtainRifleAPE
+		Damage: 500
 		LocalOffset: 128,0,1024
 		RequiresCondition: ifv-iron && rank-elite
 	Armament@yuri:
 		Weapon: CRPsiWave
+		Damage: 200
 		LocalOffset: 0,0,1024
 		RequiresCondition: ifv-yuri && !rank-elite && !masteryofmind
 	Armament@yuri-elite:
 		Weapon: CRPsiWaveE
+		Damage: 200
 		LocalOffset: 0,0,1024
 		RequiresCondition: ifv-yuri && rank-elite && !masteryofmind
 	Armament@yuri-mastery:
 		Weapon: CRPsiWaveMastery
+		Damage: 200
 		LocalOffset: 0,0,1024
 		RequiresCondition: ifv-yuri && !rank-elite && masteryofmind
 	Armament@yuri-mastery-elite:
 		Weapon: CRPsiWaveMasteryE
+		Damage: 200
 		LocalOffset: 0,0,1024
 		RequiresCondition: ifv-yuri && rank-elite && masteryofmind
 	Armament@lazarus:
 		Weapon: CRMagneRifle
+		Damage: 240
 		LocalOffset: 188,0,600
 		RequiresCondition: ifv-lazarus && !rank-elite
 	Armament@lazarus-elite:
 		Weapon: CRMagneRifleE
+		Damage: 270
 		LocalOffset: 188,0,600
 		RequiresCondition: ifv-lazarus && rank-elite
 	Armament@toxin:
 		Weapon: CRToxinSprayer
+		Damage: 150
 		LocalOffset: 649,0,1152
 		RequiresCondition: ifv-toxin && !rank-elite
 	Armament@toxin-elite:
 		Weapon: CRToxinSprayerE
+		Damage: 280
 		LocalOffset: 649,0,1152
 		RequiresCondition: ifv-toxin && rank-elite
 	Armament@crkt:
 		Weapon: CRChaosRocket
+		Damage: 60
 		LocalOffset: 128,-128,1408, 128,128,1408
 		RequiresCondition: ifv-crkt && !rank-elite
 	Armament@crkt-aa:
@@ -995,6 +1059,7 @@ fv:
 		RequiresCondition: ifv-crkt && !rank-elite
 	Armament@crkt-elite:
 		Weapon: CRChaosRocketE
+		Damage: 120
 		LocalOffset: 128,-128,1408, 128,128,1408
 		RequiresCondition: ifv-crkt && rank-elite
 	Armament@crkt-aa-elite:
@@ -1203,10 +1268,12 @@ sref:
 		Offset: -30,0,85
 	Armament@primary:
 		Weapon: Comet
+		Damage: 100
 		LocalOffset: 240,0,1280
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: SuperComet
+		Damage: 150
 		LocalOffset: 240,0,1280
 		RequiresCondition: rank-elite
 	AttackTurreted:
@@ -1319,11 +1386,13 @@ mgtk:
 		Radius: 4c512
 	Armament@primary:
 		Weapon: MirageGun
+		Damage: 100
 		LocalOffset: 640,0,640
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: MirageGunE
+		Damage: 150
 		LocalOffset: 640,0,640
 		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
@@ -1422,9 +1491,11 @@ bfrt:
 		Radius: 3c0
 	# Armament@primary:
 	#	Weapon: 20mmrapid
+	#	Damage: 30
 	#	RequiresCondition: !rank-elite
 	# Armament@elite:
 	#	Weapon: 20mmrapidE
+	#	Damage: 50
 	#	RequiresCondition: rank-elite
 	# AttackFrontal:
 	#	Voice: Attack
@@ -1579,12 +1650,14 @@ robo:
 	Turreted:
 		TurnSpeed: 36
 	Armament:
-		LocalOffset: 640,0,640
 		Weapon: robogun
+		Damage: 25
+		LocalOffset: 640,0,640
 		MuzzleSequence: muzzle
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: robogunE
+		Damage: 30
 		LocalOffset: 640,0,640
 		MuzzleSequence: muzzle
 		RequiresCondition: rank-elite
@@ -1792,21 +1865,25 @@ hwtz:
 		Radius: 3c0
 	Armament@primary:
 		Weapon: HowiCannon
+		Damage: 175
 		LocalOffset: 736,0,1088
 		MuzzleSequence: muzzle
 		RequiresCondition: !empammo && !rank-elite
 	Armament@elite:
 		Weapon: HowiCannonE
+		Damage: 200
 		LocalOffset: 736,0,1088
 		MuzzleSequence: muzzle-2
 		RequiresCondition: !empammo && rank-elite
 	Armament@primary-emp:
 		Weapon: HowiCannonEMP
+		Damage: 175
 		LocalOffset: 736,0,1088
 		MuzzleSequence: muzzle
 		RequiresCondition: empammo && !rank-elite
 	Armament@elite-emp:
 		Weapon: HowiCannonEMPE
+		Damage: 200
 		LocalOffset: 736,0,1088
 		MuzzleSequence: muzzle-2
 		RequiresCondition: empammo && rank-elite
@@ -1892,34 +1969,42 @@ ctnk:
 		Radius: 3c0
 	Armament@PRIMARY:
 		Weapon: APTusk
+		Damage: 200
 		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@SECONDARY:
 		Weapon: APTusk
+		Damage: 200
 		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
 		RequiresCondition: !rank-elite && !boostgliding
 	Armament@PRIMARY_ELITE:
 		Weapon: APTuskE
+		Damage: 400
 		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@SECONDARY_ELITE:
 		Weapon: APTuskE
+		Damage: 400
 		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@PRIMARY_BOOST:
 		Weapon: APTuskBoosted
+		Damage: 250
 		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@SECONDARY_BOOST:
 		Weapon: APTuskBoosted
+		Damage: 250
 		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@PRIMARY_ELITE_BOOST:
 		Weapon: APTuskBoostedE
+		Damage: 500
 		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
 		RequiresCondition: rank-elite && boostgliding
 	Armament@SECONDARY_ELITE_BOOST:
 		Weapon: APTuskBoostedE
+		Damage: 500
 		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
 		RequiresCondition: rank-elite && boostgliding
 	AttackFrontal:

@@ -400,6 +400,8 @@ virus:
 		VoiceSet: VirusVoice
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	ActorStatValues:
+		Damage: 200
 
 yuripsi:
 	Inherits: yuri
@@ -1127,11 +1129,13 @@ spct:
 		InitialStance: ReturnFire
 	Armament@primary:
 		Weapon: MagneRifle
+		Damage: 120
 		LocalOffset: 0,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: MagneRifleE
+		Damage: 180
 		LocalOffset: 0,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
@@ -1278,11 +1282,13 @@ ttrp:
 		CrushClasses: vehicle
 	Armament@primary:
 		Weapon: ToxinSprayer
+		Damage: 100
 		LocalOffset: 320,-128,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: ToxinSprayerE
+		Damage: 280
 		LocalOffset: 320,-128,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
@@ -1382,12 +1388,14 @@ crkt:
 		Type: None
 	Armament@primary:
 		Weapon: ChaosRocket
+		Damage: 40
 		LocalOffset: 256,0,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: ChaosRocketE
+		Damage: 80
 		LocalOffset: 256,0,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
