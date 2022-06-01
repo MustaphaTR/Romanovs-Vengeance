@@ -57,6 +57,8 @@ medi:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	ActorStatValues:
+		Damage: -50
 
 mech:
 	Inherits: ^Infantry
@@ -115,6 +117,8 @@ mech:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
+	ActorStatValues:
+		Damage: -40
 
 mengineer:
 	Inherits: engineer
@@ -496,3 +500,6 @@ chit:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
+	ActorStatValues:
+		Damage: 60
+		ReloadDelay: 30

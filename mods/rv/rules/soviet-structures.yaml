@@ -1421,6 +1421,8 @@ naflak:
 	Voiced:
 		VoiceSet: FlakCannonVoice
 		Volume: 0.8
+	ActorStatValues:
+		Damage: 40
 
 tesla:
 	Inherits: ^SupportBuilding
@@ -1461,34 +1463,42 @@ tesla:
 	WithTeslaChargeOverlay:
 	Armament:
 		Weapon: CoilBolt
+		Damage: 75
 		LocalOffset: 0,0,3072
 		RequiresCondition: ((!lowpower && !charged) || (lowpower && charged == 1)) && !overcharge
 	Armament@charged:
 		Weapon: CoilBoltCharged
+		Damage: 75
 		LocalOffset: 0,0,3072
 		RequiresCondition: ((!lowpower && !charged) || (lowpower && charged == 1)) && overcharge
 	Armament@1:
 		Weapon: OPCoilBolt
+		Damage: 100
 		LocalOffset: 0,0,3072
 		RequiresCondition: ((!lowpower && charged == 1) || (lowpower && charged == 2)) && !overcharge
 	Armament@1charged:
 		Weapon: OPCoilBoltCharged
+		Damage: 100
 		LocalOffset: 0,0,3072
 		RequiresCondition: ((!lowpower && charged == 1) || (lowpower && charged == 2)) && overcharge
 	Armament@2:
 		Weapon: OPerCoilBolt
+		Damage: 125
 		LocalOffset: 0,0,3072
 		RequiresCondition: ((!lowpower && charged == 2) || (lowpower && charged >= 3)) && !overcharge
 	Armament@2charged:
 		Weapon: OPerCoilBoltCharged
+		Damage: 125
 		LocalOffset: 0,0,3072
 		RequiresCondition: ((!lowpower && charged == 2) || (lowpower && charged >= 3)) && overcharge
 	Armament@3:
 		Weapon: OPestCoilBolt
+		Damage: 150
 		LocalOffset: 0,0,3072
 		RequiresCondition: !lowpower && charged >= 3 && !overcharge
 	Armament@3charged:
 		Weapon: OPestCoilBoltCharged
+		Damage: 150
 		LocalOffset: 0,0,3072
 		RequiresCondition: !lowpower && charged >= 3 && overcharge
 	AttackTesla:
@@ -1607,6 +1617,8 @@ nalasr:
 	Voiced:
 		VoiceSet: SentryGunVoice
 		Volume: 0.8
+	ActorStatValues:
+		Damage: 65
 
 # Yuri's Revenge Structures
 nabnkr:
@@ -1817,34 +1829,42 @@ napost:
 	WithTeslaChargeOverlay:
 	Armament:
 		Weapon: PostBolt
+		Damage: 50
 		LocalOffset: 0,0,30
 		RequiresCondition: ((!lowpower && !charged) || (lowpower && charged == 1)) && !overcharge
 	Armament@charged:
 		Weapon: PostBoltCharged
+		Damage: 50
 		LocalOffset: 0,0,30
 		RequiresCondition: ((!lowpower && !charged) || (lowpower && charged == 1)) && overcharge
 	Armament@1:
 		Weapon: OPPostBolt
+		Damage: 65
 		LocalOffset: 0,0,30
 		RequiresCondition: ((!lowpower && charged == 1) || (lowpower && charged == 2)) && !overcharge
 	Armament@1charged:
 		Weapon: OPPostBoltCharged
+		Damage: 65
 		LocalOffset: 0,0,30
 		RequiresCondition: ((!lowpower && charged == 1) || (lowpower && charged == 2)) && overcharge
 	Armament@2:
 		Weapon: OPerPostBolt
+		Damage: 80
 		LocalOffset: 0,0,30
 		RequiresCondition: ((!lowpower && charged == 2) || (lowpower && charged >= 3)) && !overcharge
 	Armament@2charged:
 		Weapon: OPerPostBoltCharged
+		Damage: 80
 		LocalOffset: 0,0,30
 		RequiresCondition: ((!lowpower && charged == 2) || (lowpower && charged >= 3)) && overcharge
 	Armament@3:
 		Weapon: OPestPostBolt
+		Damage: 95
 		LocalOffset: 0,0,30
 		RequiresCondition: !lowpower && charged >= 3 && !overcharge
 	Armament@3charged:
 		Weapon: OPestPostBoltCharged
+		Damage: 95
 		LocalOffset: 0,0,30
 		RequiresCondition: !lowpower && charged >= 3 && overcharge
 	AttackTesla:

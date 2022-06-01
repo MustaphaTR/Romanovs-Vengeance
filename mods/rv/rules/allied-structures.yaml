@@ -1046,6 +1046,8 @@ gapill:
 	Voiced:
 		VoiceSet: PillBoxVoice
 		Volume: 0.8
+	ActorStatValues:
+		Damage: 65
 
 nasam:
 	Inherits: ^VoxelLighting
@@ -1090,10 +1092,12 @@ nasam:
 		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Armament:
 		Weapon: RedEye2
+		Damage: 60
 		LocalOffset: 500,200,900, 500,-200,900
 		RequiresCondition: !boostgliding
 	Armament@boost:
 		Weapon: RedEye2Boosted
+		Damage: 75
 		LocalOffset: 500,200,900, 500,-200,900
 		RequiresCondition: boostgliding
 	BodyOrientation:
@@ -1171,6 +1175,7 @@ gtgcan:
 		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Armament:
 		Weapon: GrandCannonWeapon
+		Damage: 150
 		Recoil: 127
 		RecoilRecovery: 26
 		MuzzleSequence: muzzle
@@ -1650,48 +1655,8 @@ atesla:
 	Voiced:
 		VoiceSet: PrismTowerVoice
 		Volume: 0.8
-
-power:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Power Plant
-
-refinery:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Ore Refinery
-
-barracks:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Infantry Production
-
-radar:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Radar
-
-warfactory:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Vehicle Production
-
-production:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Unit Production
-
-repairpad:
-	AlwaysVisible:
-	Interactable:
-	Tooltip:
-		Name: Service Depot
+	ActorStatValues:
+		Damage: 150
 
 # Yuri's Revenge Structures
 garobo:
@@ -1948,6 +1913,8 @@ gamgun:
 	Voiced:
 		VoiceSet: MirageTurretVoice
 		Volume: 0.8
+	ActorStatValues:
+		Damage: 100
 
 gagun:
 	Inherits: ^SupportBuilding
@@ -2021,6 +1988,8 @@ gagun:
 	Voiced:
 		VoiceSet: GunTurretVoice
 		Volume: 0.8
+	ActorStatValues:
+		Damage: 150
 
 gaexpn:
 	Inherits: ^ExpansionNode

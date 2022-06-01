@@ -632,6 +632,9 @@ terror:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
+		Damage: 450
+		Spread: 2c0
+		ExplosionWeapon: true
 		Upgrades: upgrade.targeted_explosives
 
 deso:
@@ -896,10 +899,12 @@ ivan:
 		RequiresCondition: targetedexp
 	Armament@primary:
 		Weapon: IvanBombAttacher
+		Damage: 600
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: IvanBombAttacherE
+		Damage: 1500
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	AttackFrontal:

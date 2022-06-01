@@ -59,10 +59,12 @@ slav:
 		DockLoopSequence: idle
 	Armament@primary:
 		Weapon: Shovel
+		Damage: 30
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: ShovelE
+		Damage: 35
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Voiced:
@@ -280,14 +282,16 @@ brute:
 		# FireDelay: 5
 		RequiresCondition: rank-elite
 	Armament@second:
-		Weapon: Smash
-		FireDelay: 4
 		Name: secondary
+		Weapon: Smash
+		Damage: 100
+		FireDelay: 4
 		RequiresCondition: !rank-elite
 	Armament@second-elite:
-		Weapon: SmashE
-		FireDelay: 4
 		Name: secondary
+		Weapon: SmashE
+		Damage: 150
+		FireDelay: 4
 		RequiresCondition: rank-elite
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
@@ -570,6 +574,7 @@ lunr:
 		Type: Light
 	Armament@primary:
 		Weapon: LunarLaser
+		Damage: 20
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
@@ -582,6 +587,7 @@ lunr:
 		RequiresCondition: !rank-elite && !capacitors
 	Armament@elite:
 		Weapon: LunarLaserE
+		Damage: 25
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
@@ -1047,6 +1053,7 @@ gtrp:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
+		Damage: 10
 		SplitRanges: true
 
 gtrp.holo:
@@ -1519,3 +1526,5 @@ visc_lrg:
 	-SpawnActorOnDeath@flames:
 	-SpawnSmokeParticleOnDeath@virus:
 	-Explodes@Corpse:
+	ActorStatValues:
+		Damage: 50
