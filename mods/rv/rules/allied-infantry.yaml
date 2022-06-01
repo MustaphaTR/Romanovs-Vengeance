@@ -188,6 +188,7 @@ dog:
 		Radius: 4c0
 	Armament:
 		Weapon: DogJaw
+		Damage: 1000
 	AttackLeap:
 		Voice: Attack
 		Speed: 105
@@ -354,18 +355,22 @@ e1:
 		RequiresCondition: !undeployed && fortifications
 	Armament@primary:
 		Weapon: M60
+		Damage: 15
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && !deployed && !portable
 	Armament@elite:
 		Weapon: M60E
+		Damage: 20
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && !deployed && !portable
 	Armament@portable:
 		Weapon: para
+		Damage: 20
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && !deployed && portable
 	Armament@elite-portable:
 		Weapon: paraE
+		Damage: 25
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && !deployed && portable
 	Armament@deployed:
@@ -574,20 +579,24 @@ ggi:
 		RequiresCondition: !undeployed
 	Armament@primary:
 		Weapon: M60
+		Damage: 15
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && !deployed && !portable
 	Armament@elite:
 		Weapon: M60E
+		Damage: 20
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && !deployed && !portable
 	Armament@portable:
 		Weapon: MissileLauncher
+		Damage: 40
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && portable && !deployed && !boostgliding
 	Armament@elite-portable:
 		Weapon: MissileLauncherE
+		Damage: 80
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
@@ -608,12 +617,14 @@ ggi:
 		RequiresCondition: rank-elite && portable && !deployed && !boostgliding
 	Armament@portable-boost:
 		Weapon: MissileLauncherBoosted
+		Damage: 50
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && portable && !deployed && boostgliding
 	Armament@elite-portable-boost:
 		Weapon: MissileLauncherBoostedE
+		Damage: 100
 		LocalOffset: 480,64,992
 		EnableSplitRanges: true
 		ReloadingCondition: reload-ground
@@ -1197,18 +1208,18 @@ ghost:
 		Weapon: MP5E
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	# Armament@sapper:
-	#	Weapon: SealC4Attacher
-	#	Cursor: c4
-	#	OutsideRangeCursor: c4
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: !rank-elite
-	# Armament@sapper-elite:
-	#	Weapon: SealC4AttacherE
-	#	Cursor: c4
-	#	OutsideRangeCursor: c4
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: rank-elite
+	Armament@sapper:
+		Weapon: SealC4Attacher
+		Cursor: c4
+		OutsideRangeCursor: c4
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@sapper-elite:
+		Weapon: SealC4AttacherE
+		Cursor: c4
+		OutsideRangeCursor: c4
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCMP5
@@ -1258,6 +1269,7 @@ ghost:
 	TakeCover:
 		RequiresCondition: !swimming
 	ActorStatValues:
+		Armaments: primary
 		Damage: 70
 
 ccomand:
@@ -1374,6 +1386,8 @@ ptroop:
 		Class: ptroop
 	RenderSprites:
 		Image: ptroop
+	ActorStatValues:
+		Armaments: primary
 
 civan.allied:
 	Inherits: civan
@@ -1574,6 +1588,7 @@ jumpjet:
 		Type: Light
 	Armament@primary:
 		Weapon: 20mm
+		Damage: 25
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite
@@ -1584,6 +1599,7 @@ jumpjet:
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: 20mmE
+		Damage: 50
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite

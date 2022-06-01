@@ -346,7 +346,6 @@ ytnk:
 		TurnSpeed: 40
 	Armament@ag-0:
 		Weapon: AGGatling
-		Damage: 10
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle
 		ReloadingCondition: reload-ground
@@ -354,7 +353,6 @@ ytnk:
 		RequiresCondition: !gatling
 	Armament@ag-1:
 		Weapon: AGGatling2
-		Damage: 10
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-1
 		ReloadingCondition: reload-ground
@@ -362,7 +360,6 @@ ytnk:
 		RequiresCondition: gatling == 1
 	Armament@ag-2:
 		Weapon: AGGatling3
-		Damage: 10
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-2
 		ReloadingCondition: reload-ground
@@ -482,6 +479,7 @@ ytnk:
 	#	Volume: 0.35
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Damage: 10
 		SplitRanges: true
 		Upgrades: upgrade.chaos_tank_compensators, upgrade.chainguns
 

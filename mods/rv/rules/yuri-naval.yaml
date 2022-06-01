@@ -8,7 +8,7 @@ yhvr:
 bsub:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@C4: ^AcceptsSEALC4
+	# Inherits@C4: ^AcceptsSEALC4
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -64,11 +64,13 @@ bsub:
 		ArmamentNames: missile
 	Armament:
 		Weapon: BoomerTorpedo
+		Damage: 90
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: BoomerTorpedoE
+		Damage: 180
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: rank-elite
@@ -170,7 +172,7 @@ cmisl:
 piranha:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@C4: ^AcceptsSEALC4
+	# Inherits@C4: ^AcceptsSEALC4
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -219,11 +221,13 @@ piranha:
 	#	IsPlayerPalette: true
 	Armament:
 		Weapon: PiraTorpedo
+		Damage: 35
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: PiraTorpedoE
+		Damage: 70
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: rank-elite
@@ -260,7 +264,7 @@ piranha:
 gatsub:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@C4: ^AcceptsSEALC4
+	# Inherits@C4: ^AcceptsSEALC4
 	Inherits@CHAINGUNS: ^AffectedByChainguns
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -448,6 +452,7 @@ gatsub:
 		Volume: 0.6
 		RequiresCondition: moving
 	ActorStatValues:
+		Damage: 10
 		SplitRanges: true
 
 floater:
@@ -522,6 +527,8 @@ floater:
 		Body: bodyLand
 	RenderSprites:
 		PlayerPalette: infantry
+	ActorStatValues:
+		Damage: 60
 
 strt:
 	Inherits: ^Ship
@@ -620,10 +627,12 @@ strt:
 		Voice: Build
 		ValidRelationships: None
 	HitShape:
+	ActorStatValues:
+		Damage: 50
 
 buoy:
 	Inherits: ^Ship
-	Inherits@C4: ^AcceptsSEALC4
+	# Inherits@C4: ^AcceptsSEALC4
 	Inherits@PARACHUTE: ^ParachutableVehicle
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Valued:

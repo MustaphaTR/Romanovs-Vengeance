@@ -110,9 +110,9 @@ MP5:
 	ReloadDelay: 15
 	Range: 5c0
 	Report: iseaatta.wav, iseaattb.wav
-	InvalidTargets: Bridge, Wall, Fence, Tree, Structure #, Ship
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure #, Ship
 	Warhead@1Dam: SpreadDamage
-		InvalidTargets: Bridge, Wall, Fence, Tree, Structure #, Ship
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure #, Ship
 		Damage: 7000
 		Versus:
 			None: 200
@@ -148,9 +148,9 @@ DoublePistols:
 	ReloadDelay: 10
 	Range: 5c0
 	Report: itanatta.wav, itanattb.wav
-	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure, Vehicle, Ship
 	Warhead@1Dam: SpreadDamage
-		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure, Vehicle, Ship
 		Damage: 12500
 		Versus:
 			None: 200
@@ -188,12 +188,12 @@ UCDoublePistolsE:
 
 awp:
 	Inherits: DoublePistols
-	InvalidTargets: Bridge, Wall, Fence, Tree, NonGarrisonableStructure, Vehicle, Ship
+	InvalidTargets: Bridge, Wall, Fence, Tree, NonGarrisonableStructure, WaterStructure, Vehicle, Ship
 	ReloadDelay: 120
 	Range: 12c0
 	Report: isniatta.wav
 	Warhead@1Dam: SpreadDamage
-		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, Vehicle, Ship
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure, Vehicle, Ship
 		Spread: 42
 		Damage: 20000
 		DamageTypes: BulletDeath, NonTemporal
@@ -676,9 +676,9 @@ AKM:
 	ReloadDelay: 15
 	Range: 7c0
 	Report: iboratta.wav, iborattb.wav
-	InvalidTargets: Bridge, Wall, Fence, Tree, Structure
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
 	Warhead@1Dam: SpreadDamage
-		InvalidTargets: Bridge, Wall, Fence, Tree, Structure
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
 		Damage: 6500
 		Versus:
 			None: 200
@@ -719,10 +719,10 @@ AKMLine:
 	ReloadDelay: 15
 	Range: 7c0
 	ValidTargets: Ground, Water
-	InvalidTargets: Bridge, Wall, Fence, Tree, Structure
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
 	Warhead@Line: TargetDamage
 		ValidTargets: Ground, Water
-		InvalidTargets: Bridge, Wall, Fence, Tree, Structure
+		InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure
 
 AKMLineE:
 	Inherits: AKMLine
