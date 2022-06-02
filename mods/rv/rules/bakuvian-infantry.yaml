@@ -3,8 +3,8 @@ medi:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Baku, Infantry.Tuva
-		Prerequisites: ~prerequisite.medic, ~techlevel.1
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Prerequisites: ~infantry.baku, ~prerequisite.medic, ~techlevel.1
 		BuildPaletteOrder: 50
 		Description: Heals infantry.\n\n  Unarmed
 		BuildDuration: 125
@@ -66,8 +66,8 @@ mech:
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Baku, Infantry.Tuva
-		Prerequisites: ~prerequisite.mechanic, repairpad, ~techlevel.2
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Prerequisites: ~infantry.baku, ~prerequisite.mechanic, repairpad, ~techlevel.2
 		BuildPaletteOrder: 60
 		Description: Repairs friendly vehicles.\n\n  Unarmed
 		BuildDuration: 250
@@ -123,9 +123,10 @@ mech:
 mengineer:
 	Inherits: engineer
 	Buildable:
-		Queue: Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Tuva
 		BuildPaletteOrder: 35
 		Description: Fast unit capable of capturing enemy structures (slower than regular engineers), repairing damaged buildings and bridges.\nDisarms explosives.\n\n  Unarmed.\n\nAbilities:\n- Cannot be eaten by Attack Dogs
+		Prerequisites: ~infantry.tuva
 		BuildDuration: 300
 	Valued:
 		Cost: 600
@@ -168,8 +169,8 @@ mengineer:
 sspy:
 	Inherits: spy
 	Buildable:
-		Queue: Infantry.Baku, Infantry.Tuva
-		Prerequisites: naradr, ~techlevel.3
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
 		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\nSteals enemy vehicles.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Can disguise as an enemy infantry
 	CaptureManager:
 	Captures:
@@ -181,9 +182,9 @@ ssnipe:
 	Inherits: snipe
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Buildable:
-		Queue: Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
 		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- AP Bullets\n- High Caliber Rounds
-		Prerequisites: naradr, ~techlevel.3
+		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
 	RenderSprites:
 		Image: snipe
 	ActorStatValues:
@@ -196,9 +197,9 @@ vlkv:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Buildable:
-		Queue: Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 190
-		Prerequisites: natech, ~techlevel.4
+		Prerequisites: ~infantry.baku, natech, ~techlevel.4
 		BuildLimit: 1
 		Description: Elite cybernatic commando, armed with\na tesla rifle.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\n  Maximum 1 can be trained.
 		BuildDuration: 1250
@@ -351,8 +352,8 @@ chit:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
-		Queue: Infantry.Baku, Infantry.Tuva
-		Prerequisites: natech, ~techlevel.4
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Prerequisites: ~infantry.baku, natech, ~techlevel.4
 		BuildPaletteOrder: 200
 		BuildLimit: 1
 		Description: Cybernatic canine capable of destroying infantry and vehicles in seconds.\nCan be deployed to stun nearby infantry for a while.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Stealth units\n- Can detect Spies\n- Cannot be eaten by Attack Dogs\n\n  Maximum 1 can be trained.

@@ -1,9 +1,9 @@
 smrj:
 	Inherits: mrj
 	Buildable:
-		Queue: Vehicle.Baku
+		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 80
-		Prerequisites: naradr, ~techlevel.3
+		Prerequisites: ~vehicle.baku, naradr, ~techlevel.3
 		Description: Jams nearby enemy radar domes and deflects incoming missiles.\n\n  Unarmed\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -25,9 +25,9 @@ qyzyl:
 	Tooltip@NoRow:
 		Name: Qızıl Ulduz Defense Platform
 	Buildable:
-		Queue: Vehicle.Baku
+		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 990
-		Prerequisites: natech, ~caslab, ~techlevel.4
+		Prerequisites: ~vehicle.baku, natech, ~caslab, ~techlevel.4
 		Description: Heavy armored vehicle capable of making other nearby vehicles invulnerable.\nDamages nearby enemy infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
 		BuildDuration: 1125
 		BuildDurationModifier: 100

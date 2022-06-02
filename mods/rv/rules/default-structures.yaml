@@ -13,7 +13,11 @@
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4,4
-	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@buildingname:
+	Tooltip:
+		Name: Construction Yard
+	Tooltip@NoRow:
+		Name: Construction Yard
 	Health:
 		HP: 160000
 	Armor:
@@ -25,9 +29,14 @@
 	#	Range: 6c0
 	Valued:
 		Cost: 4000
+	Production@Shared:
+		Produces: Building.Shared, Support.Shared
+		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: !multiqueue
 	Production:
 		Produces: Building, Support
 		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: multiqueue
 	ProductionQueue@Building:
 		Type: Building
 		Group: Building
@@ -56,10 +65,26 @@
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
-	Tooltip:
-		Name: Construction Yard
-	Tooltip@NoRow:
-		Name: Construction Yard
+	ProductionBar@Building.Shared:
+		ProductionType: Building.Shared
+	ProductionBar@Building:
+		ProductionType: Building
+	ProductionBar@Support.Shared:
+		ProductionType: Support.Shared
+		Color: 8A8A8A
+	ProductionBar@Support:
+		ProductionType: Support
+		Color: 8A8A8A
+	GrantConditionOnPrerequisite@multiqueue:
+		Condition: multiqueue
+		Prerequisites: global-multiqueue
+	FreeActor@Dummy:
+		Actor: QueueUpdaterDummy
+		RequiresCondition: updatequeue
+	GrantConditionAfterDelay:
+		Delay: 1
+		Condition: updatequeue
+		ShowSelectionBar: false
 	BaseBuilding:
 	Transforms:
 		IntoActor: mcv
@@ -87,11 +112,6 @@
 	GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 		Condition: factundeploy
 		Prerequisites: global-factundeploy
-	ProductionBar@Building:
-		ProductionType: Building
-	ProductionBar@Support:
-		ProductionType: Support
-		Color: 8A8A8A
 	Capturable:
 		RequiresCondition: !suddendeath
 	Targetable@MC:
@@ -200,7 +220,7 @@
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
-		Queue: Building
+		Queue: Building.Shared, Building
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Provides power for other structures.
@@ -247,9 +267,10 @@
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Buildable:
-		Queue: Building
+		Queue: Building.Shared, Building
 		BuildPaletteOrder: 20
 		Prerequisites: power, ~techlevel.1
 		Description: Trains infantry.\n\n  Can be rotated.
@@ -282,9 +303,14 @@
 		IsPlayerPalette: false
 	GrantExternalConditionToProduced:
 		Condition: produced
+	Production@Shared:
+		Produces: Infantry.Shared
+		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: !multiqueue
 	Production:
 		Produces: Infantry
 		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: multiqueue
 	ProductionQueue:
 		Type: Infantry
 		Group: Infantry
@@ -299,6 +325,8 @@
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionBar@Shared:
+		ProductionType: Infantry.Shared
 	ProductionBar:
 		ProductionType: Infantry
 	Power:
@@ -334,7 +362,7 @@
 	Inherits@SHAPE: ^NormalRefineryShape
 	Inherits@AICash: ^AICashCheat
 	Buildable:
-		Queue: Building
+		Queue: Building.Shared, Building
 		BuildPaletteOrder: 30
 		Prerequisites: power, ~!global-megawealth, ~techlevel.1
 		Description: Processes ore into credits.\n\n  Can be rotated.
@@ -559,10 +587,11 @@
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^NormalFactoryShape
 	Buildable:
-		Queue: Building
+		Queue: Building.Shared, Building
 		BuildPaletteOrder: 40
 		Prerequisites: refinery, ~techlevel.1
 		Description: Produces vehicles.\n\n  Can be rotated.
@@ -599,9 +628,14 @@
 		ExitCell: 4,1
 	GrantExternalConditionToProduced:
 		Condition: produced
+	Production@Shared:
+		Produces: Vehicle.Shared
+		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: !multiqueue
 	Production:
 		Produces: Vehicle
 		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: multiqueue
 	ProductionQueue:
 		Type: Vehicle
 		Group: Vehicle
@@ -616,6 +650,8 @@
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionBar@Shared:
+		ProductionType: Vehicle.Shared
 	ProductionBar:
 		ProductionType: Vehicle
 	WithExitOverlay@front:
@@ -650,6 +686,7 @@
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^4x4Shape
 	Valued:
@@ -659,7 +696,7 @@
 	Tooltip@NoRow:
 		Name: Naval Yard
 	Buildable:
-		Queue: Building
+		Queue: Building.Shared, Building
 		BuildPaletteOrder: 50
 		Prerequisites: refinery, ~techlevel.1
 		Description: Produces and repairs ships, submarines,\ntransports, and other naval units.
@@ -754,9 +791,14 @@
 		ExitCell: 5,5
 	GrantExternalConditionToProduced:
 		Condition: produced
+	Production@Shared:
+		Produces: Ship.Shared
+		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: !multiqueue
 	Production:
 		Produces: Ship
 		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: multiqueue
 	ProductionQueue:
 		Type: Ship
 		Group: Ship
@@ -771,6 +813,8 @@
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionBar@Shared:
+		ProductionType: Ship.Shared
 	ProductionBar:
 		ProductionType: Ship
 	RallyPoint:
@@ -816,7 +860,7 @@
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Building
+		Queue: Building.Shared, Building
 		BuildPaletteOrder: 70
 		Prerequisites: warfactory, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.
@@ -880,7 +924,7 @@
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Building
+		Queue: Building.Shared, Building
 		BuildPaletteOrder: 60
 		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction.
 		BuildDuration: 750
@@ -927,10 +971,11 @@
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building
+		Queue: Building.Shared, Building
 		BuildPaletteOrder: 100
 		Prerequisites: radar, ~techlevel.2
 		Description: Produces aircraft.
@@ -964,9 +1009,14 @@
 		SpawnOffset: 0,0,0
 	GrantExternalConditionToProduced:
 		Condition: produced
+	Production@Shared:
+		Produces: Aircraft.Shared
+		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: !multiqueue
 	Production:
 		Produces: Aircraft
 		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: multiqueue
 	ProductionQueue:
 		Type: Aircraft
 		Group: Aircraft
@@ -981,6 +1031,8 @@
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionBar@Shared:
+		ProductionType: Aircraft.Shared
 	ProductionBar:
 		ProductionType: Aircraft
 	Power:
@@ -1001,7 +1053,7 @@
 	Inherits@AI: ^AIMicroManagable
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Building
+		Queue: Building.Shared, Building
 		BuildPaletteOrder: 90
 		Prerequisites: production, radar, ~techlevel.3
 		Description: Allows deployment of advanced units.\nResearches advanced upgrades.\n\n  Can be rotated.

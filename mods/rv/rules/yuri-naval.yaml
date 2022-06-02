@@ -1,7 +1,8 @@
 yhvr:
 	Inherits: ^AmphibiousTransport
 	Buildable:
-		Queue: Ship.Yuri
+		Queue: Ship.Shared, Ship.Yuri
+		Prerequisites: ~ship.yuri, ~techlevel.1
 	Voiced:
 		VoiceSet: YuriAmphibiousTransportVoice
 
@@ -16,8 +17,8 @@ bsub:
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
-		Queue: Ship.Yuri
-		Prerequisites: yatech, ~techlevel.3
+		Queue: Ship.Shared, Ship.Yuri
+		Prerequisites: ~ship.yuri, yatech, ~techlevel.3
 		BuildPaletteOrder: 90
 		Description: Submerged anti-ship and anti-structure armed with\ndouble torpedo and missile launchers.\n\n  Strong vs Ships, Buildings\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 1000
@@ -180,8 +181,8 @@ piranha:
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
-		Queue: Ship.Yuri
-		Prerequisites: ~techlevel.1
+		Queue: Ship.Shared, Ship.Yuri
+		Prerequisites: ~ship.yuri, ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Submerged unit armed with fast firing torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 250
@@ -273,8 +274,8 @@ gatsub:
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
-		Queue: Ship.Yuri
-		Prerequisites: ~techlevel.1
+		Queue: Ship.Shared, Ship.Yuri
+		Prerequisites: ~ship.yuri, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Submerged anti-air unit armed with gatling cannon.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Chainguns
 		BuildDuration: 375
@@ -461,8 +462,8 @@ floater:
 	WithColoredOverlay@SUBMERGE:
 		RequiresCondition: !surfaced && in_water
 	Buildable:
-		Queue: Ship.Yuri
-		Prerequisites: yadome, ~techlevel.3
+		Queue: Ship.Shared, Ship.Yuri
+		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
 		Description: Large ocean creature capable of dealing heavy damage in close combat.\nCan move to land.\n\n  Strong vs Ships\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
 		BuildDuration: 375
 	Valued:
@@ -540,8 +541,8 @@ strt:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship.Yuri
-		Prerequisites: yadome, ~techlevel.3
+		Queue: Ship.Shared, Ship.Yuri
+		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
 		BuildPaletteOrder: 80
 		Description: Light amphibious tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
 		BuildDuration: 375

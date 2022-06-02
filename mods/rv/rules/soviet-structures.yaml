@@ -2,8 +2,14 @@ nacnst:
 	Inherits: ^ConstructionYard
 	Buildable:
 		BuildPaletteOrder: 20
-	ProvidesPrerequisite@soviets:
-		Prerequisite: structures.soviets
+	ProvidesPrerequisite@building.soviets:
+		Prerequisite: building.soviets
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProvidesPrerequisite@building.sovietsorbaku:
+		Prerequisite: building.sovietsorbaku
+	ProvidesPrerequisite@building.baku:
+		Prerequisite: building.baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	Production:
 		Produces: Building.Soviets, Building.Baku, Support.Soviets, Support.Baku
 	ProductionQueue@Building:
@@ -194,8 +200,9 @@ napowr:
 	Inherits: ^PowerPlant
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Soviets, Building.Baku
+		Queue: Building.Shared, Building.Soviets, Building.Baku
 		Description: Provides power for other structures.\n\n  Can be rotated.
+		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
 	Tooltip:
 		Name: Tesla Reactor
 	Tooltip@NoRow:
@@ -219,8 +226,9 @@ nahand:
 	Inherits: ^Barracks
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building.Soviets
+		Queue: Building.Shared, Building.Soviets
 		Description: Trains Soviet infantry.
+		Prerequisites: ~building.soviets, power, ~techlevel.1
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -306,8 +314,18 @@ nahand:
 		ProductionType: Infantry.Iraq
 	RallyPoint:
 		Path: 3,3
-	ProvidesPrerequisite@nahand:
+	ProvidesPrerequisite@buildingname:
 		Prerequisite: nahand
+	ProvidesPrerequisite@infantry.soviets:
+		Prerequisite: infantry.soviets
+	ProvidesPrerequisite@infantry.iraq:
+		Prerequisite: infantry.iraq
+		Factions: iraq
+	ProvidesPrerequisite@infantry.cuba:
+		Prerequisite: infantry.cuba
+		Factions: cuba
+	ProvidesPrerequisite@infantry.sovietsorbaku:
+		Prerequisite: infantry.sovietsorbaku
 	ProvidesPrerequisite@mwfacref:
 		Prerequisite: narefn
 	IsometricSelectable:
@@ -316,7 +334,8 @@ nahand:
 narefn:
 	Inherits: ^Refinery
 	Buildable:
-		Queue: Building.Soviets, Building.Baku
+		Queue: Building.Shared, Building.Soviets, Building.Baku
+		Prerequisites: ~building.sovietsorbaku, power, ~!global-megawealth, ~techlevel.1
 	FreeActor:
 		Actor: harv
 	SmokeParticleEmitter@refinerysmoke1:
@@ -334,8 +353,8 @@ naradr:
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
-		Queue: Building.Soviets, Building.Baku
-		Prerequisites: power, narefn, ~techlevel.2, ~!ai.naradr
+		Queue: Building.Shared, Building.Soviets, Building.Baku
+		Prerequisites: ~building.sovietsorbaku, power, narefn, ~techlevel.2, ~!ai.naradr
 		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Tesla Drop (Soviet Union)\n- Radiation Missile (Iraq)\n- Instant Bunker (Vietnam)\n- Death Bombs (Cuba)\n- Ambush (Libya)
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
@@ -379,6 +398,12 @@ naradr:
 		Factions: libya
 	ProvidesPrerequisite@upgrade.soviets:
 		Prerequisite: upgrade.soviets
+		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProvidesPrerequisite@upgrade.sovietsorbaku:
+		Prerequisite: upgrade.sovietsorbaku
+	ProvidesPrerequisite@upgrade.baku:
+		Prerequisite: upgrade.baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -645,10 +670,33 @@ mine:
 naweap:
 	Inherits: ^WarFactory
 	Buildable:
-		Queue: Building.Soviets, Building.Baku
+		Queue: Building.Shared, Building.Soviets, Building.Baku
 		Description: Produces Soviet vehicles.\n\n  Can be rotated.
-	ProvidesPrerequisite@naweap:
+		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
+	ProvidesPrerequisite@buildingname:
 		Prerequisite: naweap
+	ProvidesPrerequisite@vehicle.soviets:
+		Prerequisite: vehicle.soviets
+		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProvidesPrerequisite@vehicle.russia:
+		Prerequisite: vehicle.russia
+		Factions: russia
+	ProvidesPrerequisite@vehicle.iraq:
+		Prerequisite: vehicle.iraq
+		Factions: iraq
+	ProvidesPrerequisite@vehicle.cuba:
+		Prerequisite: vehicle.cuba
+		Factions: cuba
+	ProvidesPrerequisite@vehicle.libya:
+		Prerequisite: vehicle.libya
+		Factions: libya
+	ProvidesPrerequisite@vehicle.baku:
+		Prerequisite: vehicle.baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+	ProvidesPrerequisite@vehicle.sovietsorbaku:
+		Prerequisite: vehicle.sovietsorbaku
+	ProvidesPrerequisite@vehicleorship.sovietsorbaku:
+		Prerequisite: vehicleorship.sovietsorbaku
 	Production:
 		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 	ProductionQueue:
@@ -754,7 +802,13 @@ naweap:
 nayard:
 	Inherits: ^Shipyard
 	Buildable:
-		Queue: Building.Soviets, Building.Baku
+		Queue: Building.Shared, Building.Soviets, Building.Baku
+		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@ship.sovietsorbaku:
+		Prerequisite: ship.sovietsorbaku
+	ProvidesPrerequisite@vehicleorship.sovietsorbaku:
+		Prerequisite: vehicleorship.sovietsorbaku
 	Production:
 		Produces: Ship.Soviets
 	ProductionQueue:
@@ -828,8 +882,8 @@ nadept:
 	HitShape:
 		TargetableOffsets: 0,0,0, -360,360,0, 360,-360,0, -1080,1080,0, -360,1800,0, -1800,360,0, 360,1080,0, -360,-1080,0, 1080,360,0, -1080,-360,0
 	Buildable:
-		Queue: Building.Soviets, Building.Baku
-		Prerequisites: naweap, ~techlevel.1
+		Queue: Building.Shared, Building.Soviets, Building.Baku
+		Prerequisites: ~building.sovietsorbaku, naweap, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.\n\n  Can be rotated.
 	ProvidesPrerequisite@default:
 		Prerequisite: nadept
@@ -852,9 +906,9 @@ nadept:
 naheli:
 	Inherits: ^Helipad
 	Buildable:
-		Queue: Building.Soviets
-		Prerequisites: naradr, ~techlevel.2
+		Queue: Building.Shared, Building.Soviets
 		Description: Produces Soviet aircraft.
+		Prerequisites: ~building.soviets, naradr, ~techlevel.2
 	Tooltip:
 		Name: Helipad
 	Tooltip@NoRow:
@@ -936,6 +990,22 @@ naheli:
 		ProductionType: Aircraft.Cuba
 	ProductionBar@Libya:
 		ProductionType: Aircraft.Libya
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@aircraft.soviets:
+		Prerequisite: aircraft.soviets
+	ProvidesPrerequisite@aircraft.russia:
+		Prerequisite: aircraft.russia
+	ProvidesPrerequisite@aircraft.vietnam:
+		Prerequisite: aircraft.vietnam
+		Factions: vietnam
+	ProvidesPrerequisite@aircraft.cuba:
+		Prerequisite: aircraft.cuba
+		Factions: cuba
+	ProvidesPrerequisite@aircraft.libya:
+		Prerequisite: aircraft.libya
+		Factions: libya
+	ProvidesPrerequisite@aircraft.sovietsorbaku:
+		Prerequisite: aircraft.sovietsorbaku
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -952,9 +1022,9 @@ nanrct:
 	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@SHAPE: ^4x4Shape
 	Buildable:
-		Queue: Building.Soviets, Building.Baku
+		Queue: Building.Shared, Building.Soviets, Building.Baku
 		BuildPaletteOrder: 110
-		Prerequisites: natech, ~techlevel.3
+		Prerequisites: ~building.sovietsorbaku, natech, ~techlevel.3
 		Description: Provides a large amount of power for other structures.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
 		BuildDuration: 1000
 	Valued:
@@ -1000,12 +1070,10 @@ natech:
 	Inherits: ^BattleLab
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building.Soviets, Building.Baku
-		Prerequisites: production, naradr, ~techlevel.3, ~!ai.natech
+		Queue: Building.Shared, Building.Soviets, Building.Baku
+		Prerequisites: ~building.sovietsorbaku, production, naradr, ~techlevel.3, ~!ai.natech
 		Description: Allows deployment of advanced units.
 	ProvidesPrerequisite@default:
-	ProvidesPrerequisite@upgrade.soviets:
-		Prerequisite: upgrade.soviets
 	ProvidesPrerequisite@upgrade.russia:
 		Prerequisite: upgrade.russia
 		Factions: russia
@@ -1021,6 +1089,14 @@ natech:
 	ProvidesPrerequisite@upgrade.libya:
 		Prerequisite: upgrade.libya
 		Factions: libya
+	ProvidesPrerequisite@upgrade.soviets:
+		Prerequisite: upgrade.soviets
+		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProvidesPrerequisite@upgrade.sovietsorbaku:
+		Prerequisite: upgrade.sovietsorbaku
+	ProvidesPrerequisite@upgrade.baku:
+		Prerequisite: upgrade.baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.natech
@@ -1189,8 +1265,8 @@ napsis:
 nairon:
 	Inherits: ^SecondarySuperWeapon
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
-		Prerequisites: natech, !enoughiron, ~techlevel.5
+		Queue: Support.Shared, Support.Soviets, Support.Baku
+		Prerequisites: ~building.sovietsorbaku, natech, !enoughiron, ~techlevel.5
 		Description: Grants invulnerability to vehicles and structures.\nKills infantry.\n\n  Requires power to operate.
 	Tooltip:
 		Name: Iron Curtain Device
@@ -1252,8 +1328,8 @@ nairon:
 namisl:
 	Inherits: ^PrimarySuperWeapon
 	Buildable:
-		Queue: Support.Soviets
-		Prerequisites: natech, !enoughnuke, ~techlevel.5
+		Queue: Support.Shared, Support.Soviets
+		Prerequisites: ~building.soviets, natech, !enoughnuke, ~techlevel.5
 		Description: Provides an atomic bomb.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Requires power to operate.
 	Tooltip:
 		Name: Nuclear Missile Silo
@@ -1332,8 +1408,8 @@ namisl:
 nawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
-		Prerequisites: ~techlevel.1
+		Queue: Support.Shared, Support.Soviets, Support.Baku
+		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Heavy wall capable of blocking units and projectiles.
 	Tooltip:
@@ -1357,9 +1433,9 @@ naflak:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
+		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 60
-		Prerequisites: naradr, ~techlevel.2
+		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.2
 		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\n  Requires power to operate.
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1433,9 +1509,9 @@ tesla:
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
+		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
-		Prerequisites: naradr, ~techlevel.3
+		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.3
 		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1557,9 +1633,9 @@ nalasr:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
+		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 50
-		Prerequisites: nahand, ~techlevel.1
+		Prerequisites: ~building.sovietsorbaku, nahand, ~techlevel.1
 		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Armor-Piercing Bullets
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1707,9 +1783,9 @@ naindp:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building.Soviets, Building.Baku
+		Queue: Building.Shared, Building.Soviets, Building.Baku
 		BuildPaletteOrder: 120
-		Prerequisites: narefn, natech, ~techlevel.4
+		Prerequisites: ~building.sovietsorbaku, narefn, natech, ~techlevel.4
 		Description: Decreases vehicle costs by 25%.\n\n  Maximum 1 can be built.
 		BuildLimit: 1
 		BuildDuration: 1250
@@ -1758,8 +1834,8 @@ naindp:
 nagatea:
 	Inherits: ^Gate_A
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
-		Prerequisites: ~techlevel.1
+		Queue: Support.Shared, Support.Soviets, Support.Baku
+		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 20
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -1798,9 +1874,9 @@ napost:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
+		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
-		Prerequisites: power, ~prerequisite.tesla_fence, ~techlevel.1
+		Prerequisites: ~building.sovietsorbaku, power, ~prerequisite.tesla_fence, ~techlevel.1
 		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -1976,7 +2052,8 @@ nafnce:
 nasilo:
 	Inherits: ^Silo
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
+		Queue: Support.Shared, Support.Soviets, Support.Baku
+		Prerequisites: ~building.sovietsorbaku, refinery, ~!global-megawealth, ~techlevel.1
 	GrantConditionOnFaction@Soviets:
 		Condition: soviets
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia
@@ -1999,9 +2076,9 @@ naprop:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Soviets, Support.Baku
+		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
-		Prerequisites: natech, ~techlevel.4
+		Prerequisites: ~building.sovietsorbaku, natech, ~techlevel.4
 		Description: Buffs fire speed of nearby units and heals them.\n\nAbilities:\n- Can be placed on water\n\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100

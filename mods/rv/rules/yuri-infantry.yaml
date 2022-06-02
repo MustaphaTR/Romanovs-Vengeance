@@ -103,9 +103,9 @@ init:
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 10
-		Prerequisites: ~techlevel.1
+		Prerequisites: ~infantry.yuri, ~techlevel.1
 		Description: Basic Yuri Infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Focused Mind\n- Camouflage
 		BuildDuration: 100
 		BuildDurationModifier: 100
@@ -223,9 +223,9 @@ brute:
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 20
-		Prerequisites: ~techlevel.1
+		Prerequisites: ~infantry.yuri, ~techlevel.1
 		Description: Powerful soldiers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
 		BuildDuration: 175
 		BuildDurationModifier: 100
@@ -347,9 +347,9 @@ virus:
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 80
-		Prerequisites: yadome, ~techlevel.2
+		Prerequisites: ~infantry.yuri, yadome, ~techlevel.2
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Camouflage
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -411,9 +411,9 @@ yuripsi:
 	Inherits: yuri
 	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 90
-		Prerequisites: yadome, ~techlevel.3
+		Prerequisites: ~infantry.yuri, yadome, ~techlevel.3
 		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -433,9 +433,9 @@ yurix:
 	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 110
-		Prerequisites: yatech, ~techlevel.4
+		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n- Can move over water\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)\n\n  Maximum 1 can be trained.
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -524,9 +524,9 @@ yurix:
 ptroop.yuri:
 	Inherits: ptroop
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 970
-		Prerequisites: ~allies.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~infantry.yuri, ~allies.tech.infiltrated, ~techlevel.4
 	UpdatesPlayerStatistics:
 		OverrideActor: ptroop
 	-MapEditorData:
@@ -540,9 +540,9 @@ lunr:
 	HiddenUnderFog:
 		Type: CenterPosition
 	Buildable:
-		Queue: Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Moon
 		BuildPaletteOrder: 70
-		Prerequisites: yadome, ~techlevel.3
+		Prerequisites: ~infantry.psimoon, yadome, ~techlevel.3
 		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -764,8 +764,8 @@ gtrp:
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
-		Prerequisites: ~techlevel.1
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
+		Prerequisites: ~infantry.yuri, ~techlevel.1
 		BuildPaletteOrder: 60
 		Description: Infantry armed with a heavy gatling cannon.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Chainguns
 		BuildDuration: 175
@@ -1096,9 +1096,9 @@ spct:
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 100
-		Prerequisites: yatech, ~techlevel.4
+		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
 		Description: Invisible infantry armed with AP rifles with bullets capable of slowing enemy units.\nCan be deployed to make nearby units invisible but itself becomes visible.\n\n  Strong vs Vehicles\n  Weak vs Buildings, Aircraft
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1237,9 +1237,9 @@ ttrp:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 980
-		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~infantry.yuri, ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Infantry armed with a toxin sprayer and toxin bombs.\nImmune to toxic clouds.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can place Toxin Bombs on buildings
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1367,9 +1367,9 @@ crkt:
 	Tooltip@NoRow:
 		Name: Chaos Trooper
 	Buildable:
-		Queue: Infantry.Yuri, Infantry.Moon
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 990
-		Prerequisites: ~yuri.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~infantry.yuri, ~yuri.tech.infiltrated, ~techlevel.4
 		Description: Long range rocket infantry armed with chaos warheads.\n\n  Strong vs Infantry, Vehicles, Aircraft\n  Weak vs Buildings\n\nAbilities:\n- Immune to Chaos Gas
 		BuildDuration: 375
 		BuildDurationModifier: 100

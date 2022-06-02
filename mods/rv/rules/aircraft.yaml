@@ -60,9 +60,9 @@ shad:
 		Voice: Build
 		ValidRelationships: None
 	Buildable:
-		Queue: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
+		Queue: Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		BuildPaletteOrder: 20
-		Prerequisites: gapile, ~techlevel.2
+		Prerequisites: ~aircraft.allies, gapile, ~techlevel.2
 		Description: Infantry Transport Helicopter.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilties:\n- Can detect Stealth units\n- Invisible on radar
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -214,9 +214,9 @@ zep:
 	Tooltip@NoRow:
 		Name: Kirov Airship
 	Buildable:
-		Queue: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
+		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
 		BuildPaletteOrder: 50
-		Prerequisites: natech, ~techlevel.4
+		Prerequisites: ~aircraft.sovietsorbaku, natech, ~techlevel.4
 		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- Aerial Propaganda (Vietnam)
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -440,8 +440,8 @@ orca:
 	Tooltip@NoRow:
 		Name: Harrier
 	Buildable:
-		Queue: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
-		Prerequisites: !prerequisite.enoughair, ~techlevel.3
+		Queue: Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
+		Prerequisites: ~aircraft.allies, !prerequisite.enoughair, ~techlevel.3
 		BuildPaletteOrder: 10
 		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n\n  Strong vs Buildings, Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Air-to-Air Missile Systems\n- Predator Missiles
 		BuildDuration: 500
@@ -685,9 +685,9 @@ beag:
 	Tooltip@NoRow:
 		Name: Black Eagle
 	Buildable:
-		Queue: Aircraft.Korea
+		Queue: Aircraft.Shared, Aircraft.Korea
 		BuildPaletteOrder: 30
-		Prerequisites: !prerequisite.enoughair, ~techlevel.3
+		Prerequisites: ~aircraft.korea, !prerequisite.enoughair, ~techlevel.3
 		Description: Aircraft armed with EMP bomb.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -1668,9 +1668,9 @@ schp:
 		Voice: Build
 		ValidRelationships: None
 	Buildable:
-		Queue: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
+		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 10
-		Prerequisites: ~techlevel.3
+		Prerequisites: ~aircraft.soviets, ~techlevel.3
 		Description: Helicopter capable of deploying into a long range artillery.\n\nMobile:\n  Strong vs Infantry\n  Weak vs Vehicles\nDeployed:\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Armor-Piercing Bullets
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1910,8 +1910,9 @@ bpln.buildable:
 	Tooltip@NoRow:
 		Name: MiG
 	Buildable:
-		Queue: Aircraft.Baku
+		Queue: Aircraft.Shared, Aircraft.Baku
 		Description: Fast assault fighter.\nCannot be built more than landing strips available.\n\n  Strong vs Buildings, Vehicles, Aircraft\n  Weak vs Infantry
+		Prerequisites: ~aircraft.baku, !prerequisite.enoughair, ~techlevel.3
 	VoiceAnnouncement:
 		Voice: Attack
 	Aircraft:
@@ -2023,9 +2024,9 @@ disk:
 	Tooltip@NoRow:
 		Name: Leech Disc
 	Buildable:
-		Queue: Aircraft.Yuri, Aircraft.Lazarus
+		Queue: Aircraft.Shared, Aircraft.Yuri, Aircraft.Lazarus
 		BuildPaletteOrder: 40
-		Prerequisites: yatech, ~techlevel.4
+		Prerequisites: ~aircraft.yuri, yatech, ~techlevel.4
 		Description: Floating Disc armed with lasers.\nCan disable Power Plants and powered Defenses.\nCan steal resources from enemy Refineries.\nCan steal technology from enemy Battle Labs.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)\n- Laser Capacitors (Lazarus Corps)
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -2283,9 +2284,9 @@ hind:
 		Voice: Build
 		ValidRelationships: None
 	Buildable:
-		Queue: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
+		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
 		BuildPaletteOrder: 20
-		Prerequisites: naweap, ~techlevel.2
+		Prerequisites: ~aircraft.sovietsorbaku, naweap, ~techlevel.2
 		Description: Vehicle Transport Helicopter\n\n  Unarmed
 		IconPalette: ts-chrome
 		BuildDuration: 250
@@ -2419,10 +2420,10 @@ fortress:
 	Tooltip@NoRow:
 		Name: B2 Spirit
 	Buildable:
-		Queue: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
+		Queue: Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		BuildPaletteOrder: 40
 		Description: Carpet bomber plane.\nCannot be built more than landing pads available.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\nAbilties:\n- Invisible on radar\n\nUpgradeable with:\n- Increased Payload
-		Prerequisites: gatech, !prerequisite.enoughair, ~techlevel.4
+		Prerequisites: ~aircraft.allies, gatech, !prerequisite.enoughair, ~techlevel.4
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -2743,9 +2744,9 @@ txdx:
 	Tooltip@NoRow:
 		Name: Lethocerus Platform
 	Buildable:
-		Queue: Aircraft.Yuri, Aircraft.Lazarus
+		Queue: Aircraft.Shared, Aircraft.Yuri, Aircraft.Lazarus
 		BuildPaletteOrder: 10
-		Prerequisites: ~techlevel.2
+		Prerequisites: ~aircraft.yuri, ~techlevel.2
 		Description: Light Transport Disc armed with toxin missile launchers.\n\n  Strong vs Infantry\n  Weak vs Structures, Aircraft\n\nAbilties:\n- Can detect Stealth units\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)\n- Rocket Barrage
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -2974,9 +2975,9 @@ kite:
 		Voice: Build
 		ValidRelationships: None
 	Buildable:
-		Queue: Aircraft.Vietnam
+		Queue: Aircraft.Shared, Aircraft.Vietnam
 		BuildPaletteOrder: 40
-		Prerequisites: naradr, ~techlevel.3
+		Prerequisites: ~aircraft.vietnam, naradr, ~techlevel.3
 		Description: Helicopter armed with napalm bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles\n\nUpgradeable with:\n- Black Napalm\n- Aerial Propaganda (Vietnam)
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -3126,9 +3127,9 @@ magnedisk:
 	Tooltip@NoRow:
 		Name: Mosquito Disc
 	Buildable:
-		Queue: Aircraft.Lazarus
+		Queue: Aircraft.Shared, Aircraft.Lazarus
 		BuildPaletteOrder: 30
-		Prerequisites: yadome, ~techlevel.3
+		Prerequisites: ~aircraft.psinepal, yadome, ~techlevel.3
 		Description: High-tech Disc armed with material drainer.\nAfter attacking organic material 3 times a Blood Vessel will be spawned.\n\n  Strong vs Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -3320,9 +3321,9 @@ havoc:
 		Voice: Build
 		ValidRelationships: None
 	Buildable:
-		Queue: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
+		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 30
-		Prerequisites: ~prerequisite.havoc, naradr, ~techlevel.3
+		Prerequisites: ~aircraft.soviets, ~prerequisite.havoc, naradr, ~techlevel.3
 		Description: Armored helicopter armed with anti-tank rockets.\n\n  Strong vs Vehicles\n\n  Weak vs Infantry, Aircraft
 		BuildDuration: 625
 		BuildDurationModifier: 100

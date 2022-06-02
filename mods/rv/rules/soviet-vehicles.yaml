@@ -1,7 +1,8 @@
 smcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Soviets
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets
+		Prerequisites: ~vehicleorship.sovietsorbaku, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 	Transforms:
 		IntoActor: nacnst
 	Voiced:
@@ -15,8 +16,9 @@ harv:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@NOGUNNER: ^GunnerKillable
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Soviets
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets
 		Description: Gathers Ore and Gems.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Prerequisites: ~vehicleorship.sovietsorbaku, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
 		Name: War Miner
 	Tooltip@NoRow:
@@ -86,8 +88,8 @@ dron:
 	Tooltip@NoRow:
 		Name: Terror Drone
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
-		Prerequisites: ~techlevel.2
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Prerequisites: ~vehicle.sovietsorbaku, ~techlevel.2
 		BuildPaletteOrder: 40
 		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Cannot be mind controlled
 		BuildDuration: 175
@@ -226,8 +228,8 @@ htk:
 		Class: htk
 		Bounds: 1206, 1930, 0, -289
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
-		Prerequisites: ~techlevel.1
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Prerequisites: ~vehicle.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Anti-Air and Anti-Infantry vehicle capable of transporting Infantry.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Improved Flaks
 		BuildDuration: 250
@@ -361,8 +363,9 @@ htnk:
 	Tooltip@NoRow:
 		Name: Rhino Heavy Tank
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		Description: Soviet Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
+		Prerequisites: ~vehicle.sovietsorbaku, ~techlevel.1
 		BuildDuration: 450
 		BuildDurationModifier: 100
 	Mobile:
@@ -522,9 +525,9 @@ apoc:
 	Tooltip@NoRow:
 		Name: Apocalypse Tank
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		BuildPaletteOrder: 120
-		Prerequisites: natech, ~techlevel.4
+		Prerequisites: ~vehicle.sovietsorbaku, natech, ~techlevel.4
 		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
 		BuildDuration: 875
 		BuildDurationModifier: 100
@@ -846,9 +849,9 @@ ttnk:
 	Tooltip@NoRow:
 		Name: Tesla Tank
 	Buildable:
-		Queue: Vehicle.USSR
+		Queue: Vehicle.Shared, Vehicle.USSR
 		BuildPaletteOrder: 90
-		Prerequisites: naradr, ~techlevel.3
+		Prerequisites: ~vehicle.russia, naradr, ~techlevel.3
 		Description: Russian special tank armed with dual small Tesla Coils.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -931,9 +934,9 @@ dtruck:
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Libya
+		Queue: Vehicle.Shared, Vehicle.Libya
 		BuildPaletteOrder: 90
-		Prerequisites: naradr, ~techlevel.3
+		Prerequisites: ~vehicle.libya, naradr, ~techlevel.3
 		Description: Demolition Truck, actively armed with nuclear explosives.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -1028,9 +1031,9 @@ v3:
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		BuildPaletteOrder: 100
-		Prerequisites: natech, ~techlevel.3
+		Prerequisites: ~vehicle.sovietsorbaku, natech, ~techlevel.3
 		Description: Long-range rocket artillery.\n\n  Strong vs Buildings, Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1261,8 +1264,8 @@ tric:
 	Selectable:
 		Bounds: 965, 1930, 0, -482
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
-		Prerequisites: naradr, ~techlevel.2
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Prerequisites: ~vehicle.sovietsorbaku, naradr, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: Fast medium range unit.\n\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
 		BuildDuration: 175
@@ -1347,9 +1350,9 @@ deva:
 	Tooltip@NoRow:
 		Name: Devastator
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 990
-		Prerequisites: natech, ~caslab, ~techlevel.4
+		Prerequisites: ~vehicle.soviets, natech, ~caslab, ~techlevel.4
 		Description: Soviet Advanced Battle Tank with Double Barrel\narmed with nuclear warheads\n\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Can be deployed to self-destruct and explode violently\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -1474,7 +1477,8 @@ deva:
 exps:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Soviets
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets
+		Prerequisites: ~vehicleorship.sovietsorbaku, repairpad, ~techlevel.2, ~!ai.ev
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
 	Transforms:
@@ -1506,9 +1510,9 @@ ftnk:
 	Tooltip@NoRow:
 		Name: Flame Tank
 	Buildable:
-		Queue: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 80
-		Prerequisites: naradr, ~techlevel.3
+		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.3
 		Description: Soviet tank armed with dual flamethrowers.\n\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Black Napalm
 		BuildDuration: 375
 		BuildDurationModifier: 100

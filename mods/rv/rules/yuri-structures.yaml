@@ -2,8 +2,11 @@ yacnst:
 	Inherits: ^ConstructionYard
 	Buildable:
 		BuildPaletteOrder: 30
-	ProvidesPrerequisite@yuri:
-		Prerequisite: structures.yuri
+	ProvidesPrerequisite@building.yuri:
+		Prerequisite: building.yuri
+	ProvidesPrerequisite@building.psisouth:
+		Prerequisite: building.psisouth
+		Factions: psisouth
 	Production:
 		Produces: Building.Yuri, Support.Yuri, Support.Antarctica
 	ProductionQueue@Building:
@@ -85,8 +88,9 @@ yapowr:
 	Inherits: ^PowerPlant
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building.Yuri
+		Queue: Building.Shared, Building.Yuri
 		Description: Provides power for other structures.\nCan be occupied with up to 5 infantry for 50 more power each.
+		Prerequisites: ~building.yuri, ~techlevel.1
 	Tooltip:
 		Name: Bio Reactor
 	Tooltip@NoRow:
@@ -168,8 +172,9 @@ yabrck:
 	Inherits: ^Barracks
 	Inherits@SHAPE: ^2x3Shape
 	Buildable:
-		Queue: Building.Yuri
+		Queue: Building.Shared, Building.Yuri
 		Description: Trains Psi-Corps infantry.\n\n  Can be rotated.
+		Prerequisites: ~building.yuri, power, ~techlevel.1
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
@@ -248,8 +253,13 @@ yabrck:
 		RequiresCondition: !build-incomplete
 	RallyPoint:
 		Path: 2,1
-	ProvidesPrerequisite@yabrck:
+	ProvidesPrerequisite@buildingname:
 		Prerequisite: yabrck
+	ProvidesPrerequisite@infantry.yuri:
+		Prerequisite: infantry.yuri
+	ProvidesPrerequisite@infantry.psimoon:
+		Prerequisite: infantry.psimoon
+		Factions: psimoon
 	ProvidesPrerequisite@mwfacref:
 		Prerequisite: psirefn
 	PlaceBuildingVariants:
@@ -437,7 +447,8 @@ yarefn:
 yarfn2:
 	Inherits: ^Refinery
 	Buildable:
-		Queue: Building.Yuri
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, power, ~!global-megawealth, ~techlevel.1
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
 	FreeActor:
@@ -456,10 +467,21 @@ yarfn2:
 yaweap:
 	Inherits: ^WarFactory
 	Buildable:
-		Queue: Building.Yuri
+		Queue: Building.Shared, Building.Yuri
 		Description: Produces Psi-Corps vehicles.\n\n  Can be rotated.
-	ProvidesPrerequisite@yaweap:
+		Prerequisites: ~building.yuri, refinery, ~techlevel.1
+	ProvidesPrerequisite@buildingname:
 		Prerequisite: yaweap
+	ProvidesPrerequisite@vehicle.yuri:
+		Prerequisite: vehicle.yuri
+	ProvidesPrerequisite@vehicle.psicorps:
+		Prerequisite: vehicle.psicorps
+		Factions: psicorps
+	ProvidesPrerequisite@vehicle.psitrans:
+		Prerequisite: vehicle.psitrans
+		Factions: psitrans
+	ProvidesPrerequisite@vehicleorship.yuri:
+		Prerequisite: vehicleorship.yuri
 	Production:
 		Produces: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 	ProductionQueue:
@@ -518,7 +540,13 @@ yayard:
 	Tooltip@NoRow:
 		Name: Submarine Pen
 	Buildable:
-		Queue: Building.Yuri
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, refinery, ~techlevel.1
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@ship.yuri:
+		Prerequisite: ship.yuri
+	ProvidesPrerequisite@vehicleorship.yuri:
+		Prerequisite: vehicleorship.yuri
 	Production:
 		Produces: Ship.Yuri
 	ProductionQueue:
@@ -568,8 +596,8 @@ yadept:
 	HitShape:
 		TargetableOffsets: 0,0,0, -360,360,0, 360,-360,0, -1080,1080,0, -360,1800,0, -1800,360,0, 360,1080,0, -360,-1080,0, 1080,360,0, -1080,-360,0
 	Buildable:
-		Queue: Building.Yuri
-		Prerequisites: yaweap, ~techlevel.1
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, yaweap, ~techlevel.1
 		Description: Repairs vehicles and removes Terror Drones for a price.\n\n  Can be rotated.
 	ProvidesPrerequisite@default:
 		Prerequisite: yadept
@@ -592,9 +620,9 @@ yagrnd:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
-		Queue: Building.Yuri
+		Queue: Building.Shared, Building.Yuri
 		BuildPaletteOrder: 110
-		Prerequisites: yaweap, ~prerequisite.grinder, ~techlevel.1
+		Prerequisites: ~building.yuri, yaweap, ~prerequisite.grinder, ~techlevel.1
 		Description: Converts Infantry and Vehicles back to credits.
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -640,8 +668,8 @@ yadome:
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
-		Queue: Building.Yuri
-		Prerequisites: power, psirefn, ~techlevel.2, ~!ai.yadome
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, power, psirefn, ~techlevel.2, ~!ai.yadome
 		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Psi-Ops Drop (Yurigrad)\n- Hologram Army (Lazarus Corps)\n- Point Defense Drones (Antarctica)\n- Lethocerus Swarm (Transylvania)\n- Ion Cannon (Lunar Eclipse)
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
@@ -838,8 +866,8 @@ yadome:
 yadisk:
 	Inherits: ^Helipad
 	Buildable:
-		Queue: Building.Yuri
-		Prerequisites: yadome, ~techlevel.2
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, yadome, ~techlevel.2
 		Description: Produces Psi-Corps aircraft.
 	Tooltip:
 		Name: Disc Pad
@@ -870,6 +898,12 @@ yadisk:
 		ProductionType: Aircraft.Yuri
 	ProductionBar@Lazarus:
 		ProductionType: Aircraft.Lazarus
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@aircraft.yuri:
+		Prerequisite: aircraft.yuri
+	ProvidesPrerequisite@aircraft.psinepal:
+		Prerequisite: aircraft.psinepal
+		Factions: psinepal
 	-WithMakeAnimation:
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
@@ -887,8 +921,8 @@ yatech:
 	Inherits: ^BattleLab
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Yuri
-		Prerequisites: production, yadome, ~techlevel.3, ~!ai.yatech
+		Queue: Building.Shared, Building.Yuri
+		Prerequisites: ~building.yuri, production, yadome, ~techlevel.3, ~!ai.yatech
 	ProvidesPrerequisite@yatech:
 		Prerequisite: yatech
 	ProvidesPrerequisite@upgrade.yuri:
@@ -939,9 +973,9 @@ yapsis:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building.Yuri
+		Queue: Building.Shared, Building.Yuri
 		BuildPaletteOrder: 120
-		Prerequisites: yatech, ~techlevel.4
+		Prerequisites: ~building.yuri, yatech, ~techlevel.4
 		Description: Detects enemy units and structures.\n\n  Requires power to operate.
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -997,9 +1031,9 @@ yaclon:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building.Yuri
+		Queue: Building.Shared, Building.Yuri
 		BuildPaletteOrder: 130
-		Prerequisites: yatech, ~techlevel.4
+		Prerequisites: ~building.yuri, yatech, ~techlevel.4
 		Description: Clones most trained infantry.\n\n  Maximum 1 can be built.
 		BuildLimit: 1
 		BuildDuration: 1250
@@ -1085,8 +1119,8 @@ yaclon:
 yawall:
 	Inherits: ^Wall
 	Buildable:
-		Queue: Support.Yuri, Support.Antarctica
-		Prerequisites: ~techlevel.1
+		Queue: Support.Shared, Support.Yuri, Support.Antarctica
+		Prerequisites: ~building.yuri, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Heavy wall capable of blocking units and projectiles.
 	Tooltip:
@@ -1111,9 +1145,9 @@ yaggun:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Yuri, Support.Antarctica
+		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 40
-		Prerequisites: yabrck, ~techlevel.1
+		Prerequisites: ~building.yuri, yabrck, ~techlevel.1
 		Description: Automated anti-infantry and anti-air defense.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Chainguns\n\n  Requires power to operate.
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1283,9 +1317,9 @@ natbnk:
 		Color: 0060C040
 		RequiresCondition: chronodisable && !loaded
 	Buildable:
-		Queue: Support.Yuri, Support.Antarctica
+		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 50
-		Prerequisites: yaweap, ~techlevel.1
+		Prerequisites: ~building.yuri, yaweap, ~techlevel.1
 		Description: Static defense with fireports for a vehicle to garrison.\nProvides increased firepower, fire speed and range to the vehicle.
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1356,9 +1390,9 @@ yapsyt:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Buildable:
-		Queue: Support.Yuri, Support.Antarctica
+		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 60
-		Prerequisites: yadome, ~techlevel.3
+		Prerequisites: ~building.yuri, yadome, ~techlevel.3
 		Description: Tower capable of mind controlling up to 3 enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\n  Requires power to operate.
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1440,9 +1474,9 @@ yasgen:
 	Tooltip@NoRow:
 		Name: Stealth Generator
 	Buildable:
-		Queue: Support.Yuri, Support.Antarctica
+		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 80
-		Prerequisites: yatech, ~techlevel.3
+		Prerequisites: ~building.yuri, yatech, ~techlevel.3
 		Description: Makes nearby units and structures invisibile while not firing.\n\nAbilities:\n- Can be placed on water\n\nUpgradeable with:\n- Lazarus Prime\n\n  Requires power to operate.
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1497,8 +1531,8 @@ yasgen:
 yagntc:
 	Inherits: ^SecondarySuperWeapon
 	Buildable:
-		Queue: Support.Yuri, Support.Antarctica
-		Prerequisites: yatech, !enoughlazarus, ~techlevel.5
+		Queue: Support.Shared, Support.Yuri, Support.Antarctica
+		Prerequisites: ~building.yuri, yatech, !enoughlazarus, ~techlevel.5
 		Description: Makes vehicles invisible.\nKills infantry.\n\n  Requires power to operate.
 	Tooltip:
 		Name: Lazarus Shield Generator
@@ -1559,8 +1593,8 @@ yagntc:
 yappet:
 	Inherits: ^PrimarySuperWeapon
 	Buildable:
-		Queue: Support.Yuri, Support.Antarctica
-		Prerequisites: yatech, !enoughdominator, ~techlevel.5
+		Queue: Support.Shared, Support.Yuri, Support.Antarctica
+		Prerequisites: ~building.yuri, yatech, !enoughdominator, ~techlevel.5
 		Description: Release powerful energy that damages structures and mind controls units.\n\n  Requires power to operate.
 	Tooltip:
 		Name: Psychic Dominator
@@ -1786,9 +1820,9 @@ yaeast02:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Support.Antarctica
+		Queue: Support.Shared, Support.Antarctica
 		BuildPaletteOrder: 70
-		Prerequisites: yadome, ~techlevel.2
+		Prerequisites: ~building.yuri, yadome, ~techlevel.2
 		Description: Big defense structure armed with lasers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -1865,8 +1899,8 @@ yaeast02:
 yagatea:
 	Inherits: ^Gate_A
 	Buildable:
-		Queue: Support.Yuri, Support.Antarctica
-		Prerequisites: ~techlevel.1
+		Queue: Support.Shared, Support.Yuri, Support.Antarctica
+		Prerequisites: ~building.yuri, ~techlevel.1
 		BuildPaletteOrder: 20
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -1900,7 +1934,8 @@ yagateb:
 yasilo:
 	Inherits: ^Silo
 	Buildable:
-		Queue: Support.Yuri, Support.Antarctica
+		Queue: Support.Shared, Support.Yuri, Support.Antarctica
+		Prerequisites: ~building.yuri, refinery, ~!global-megawealth, ~techlevel.1
 
 yaexpn:
 	Inherits: ^ExpansionNode

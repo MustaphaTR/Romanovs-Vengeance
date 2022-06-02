@@ -1,7 +1,8 @@
 lcrf:
 	Inherits: ^AmphibiousTransport
 	Buildable:
-		Queue: Ship.Allies
+		Queue: Ship.Shared, Ship.Allies
+		Prerequisites: ~ship.allies, ~techlevel.1
 	Voiced:
 		VoiceSet: AlliedAmphibiousTransportVoice
 
@@ -123,9 +124,9 @@ aegis:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship.Allies
+		Queue: Ship.Shared, Ship.Allies
 		BuildPaletteOrder: 41
-		Prerequisites: ~techlevel.1
+		Prerequisites: ~ship.allies, ~techlevel.1
 		Description: Anti-Air naval unit.\n\n  Strong vs Aircraft\n  Weak vs Grounds units, Ships\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -200,8 +201,8 @@ aegis:
 dlph:
 	Inherits: ^SeaAnimal
 	Buildable:
-		Queue: Ship.Allies
-		Prerequisites: ~techlevel.1
+		Queue: Ship.Shared, Ship.Allies
+		Prerequisites: ~ship.allies, ~techlevel.1
 		Description: Trained dolphin armed with sonic beams.\n\n  Strong vs Ships\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 250
 	Valued:
@@ -252,9 +253,9 @@ carrier:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship.Allies
+		Queue: Ship.Shared, Ship.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: gatech, ~techlevel.4
+		Prerequisites: ~ship.allies, gatech, ~techlevel.4
 		Description: Aircraft carrier ship.\n\n  Strong vs Tanks, Structures\n  Weak vs Infantry
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -338,8 +339,8 @@ adest:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship.Allies
-		Prerequisites: gaairc, ~techlevel.3
+		Queue: Ship.Shared, Ship.Allies
+		Prerequisites: ~ship.allies, gaairc, ~techlevel.3
 		BuildPaletteOrder: 80
 		Description: Heavy vehicle armed with a cannon that can move over both land and water.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can crush enemy land vehicles\n- Can detect Stealth units
 		BuildDuration: 625

@@ -6,7 +6,7 @@
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Shared, Ship
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 45
 		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed
@@ -118,7 +118,7 @@
 		Color: 24262D80
 		RequiresCondition: !surfaced
 	Buildable:
-		Queue: Ship
+		Queue: Ship.Shared, Ship
 		BuildPaletteOrder: 70
 		Prerequisites: radar, ~techlevel.3
 		BuildDurationModifier: 100

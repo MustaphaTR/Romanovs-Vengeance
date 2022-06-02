@@ -36,6 +36,118 @@ Player:
 		DisplayOrder: 0
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		AlwaysShowForFactions: transcaucus, turkmen, tuva, russianfed, serbia
+	ClassicProductionQueue@Building:
+		Type: Building.Shared
+		Group: Building
+		DisplayOrder: 1
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Support:
+		Type: Support.Shared
+		Group: Support
+		DisplayOrder: 2
+		LowPowerModifier: 200
+		ReadyAudio: ConstructionComplete
+		ReadyTextNotification: Construction complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Infantry:
+		Type: Infantry.Shared
+		Group: Infantry
+		DisplayOrder: 4
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Vehicle:
+		Type: Vehicle.Shared
+		Group: Vehicle
+		DisplayOrder: 5
+		BuildDurationModifier: 100
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 80, 65, 50
+	ClassicProductionQueue@Aircraft:
+		Type: Aircraft.Shared
+		Group: Aircraft
+		DisplayOrder: 6
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@Ship:
+		Type: Ship.Shared
+		Group: Ship
+		DisplayOrder: 7
+		LowPowerModifier: 200
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+		SpeedUp: true
+		BuildTimeSpeedReduction: 100, 91, 82, 73, 64, 55, 50
+	ClassicProductionQueue@UpgShared:
+		Type: Upgrade.Shared
+		Group: Upgrade
+		DisplayOrder: 3
+		LowPowerModifier: 200
+		AlwaysShowForFactions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		ReadyAudio: UpgradeComplete
+		ReadyTextNotification: Upgrade complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: UpgradeInProgress
+		LimitedTextNotification: Upgrade in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ClassicProductionQueue@UpgAllies:
 		Type: Upgrade.Allies
 		Group: Upgrade
@@ -103,8 +215,12 @@ Player:
 		RequiresCondition: cps_enabled
 	ExternalCondition@cps_enabled:
 		Condition: cps_enabled
+	Production@Upgrade.Shared:
+		Produces: Upgrade.Shared
+		RequiresCondition: upgrades_enabled && !multiqueue
 	Production@Upgrade:
 		Produces: Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		RequiresCondition: upgrades_enabled && multiqueue
 	ProvidesPrerequisite@upgrade.allies:
 		Prerequisite: upgrade.allies
 		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
@@ -125,7 +241,7 @@ Player:
 		Factions: korea
 	ProvidesPrerequisite@upgrade.soviets:
 		Prerequisite: upgrade.soviets
-		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia
 	ProvidesPrerequisite@upgrade.russia:
 		Prerequisite: upgrade.russia
 		Factions: russia
@@ -141,6 +257,12 @@ Player:
 	ProvidesPrerequisite@upgrade.libya:
 		Prerequisite: upgrade.libya
 		Factions: libya
+	ProvidesPrerequisite@upgrade.sovietsorbaku:
+		Prerequisite: upgrade.sovietsorbaku
+		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+	ProvidesPrerequisite@upgrade.baku:
+		Prerequisite: upgrade.baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ProvidesPrerequisite@upgrade.yuri:
 		Prerequisite: upgrade.yuri
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
@@ -159,6 +281,12 @@ Player:
 	ProvidesPrerequisite@upgrade.psimoon:
 		Prerequisite: upgrade.psimoon
 		Factions: psimoon
+	GrantConditionOnPrerequisite@upgrades_enabled:
+		Condition: upgrades_enabled
+		Prerequisites: global-upgrades
+	GrantConditionOnPrerequisite@multiqueue:
+		Condition: multiqueue
+		Prerequisites: global-multiqueue
 	PlaceBuilding:
 		ToggleVariantKey: ToggleVariant
 		NewOptionsNotification: NewOptions
@@ -190,7 +318,7 @@ Player:
 		Notification: InsufficientSilos
 		TextNotification: Insufficient silos.
 	DeveloperMode:
-		CheckboxDisplayOrder: 18
+		CheckboxDisplayOrder: 14
 	GpsWatcher:
 	Shroud:
 		ExploredMapCheckboxEnabled: True
@@ -230,19 +358,33 @@ Player:
 		Enabled: False
 		DisplayOrder: 11
 		Prerequisites: global-instantcapture
+	LobbyPrerequisiteCheckbox@GLOBALMULTIQUEUE:
+		ID: multiqueue
+		Label: MultiQueue
+		Description: Each production facility can produce individually
+		Enabled: True
+		DisplayOrder: 12
+		Prerequisites: global-multiqueue
+	LobbyPrerequisiteCheckbox@GLOBALUPGRADES:
+		ID: upgrades
+		Label: Upgrades
+		Description: Enables researching upgrades that improve existing units
+		Enabled: True
+		DisplayOrder: 13
+		Prerequisites: global-upgrades
 	LobbyPrerequisiteCheckbox@DOMINATION:
 		ID: domination
 		Label: Domination
 		Description: Control the flags on the map to win
 		Enabled: False
-		DisplayOrder: 12
+		DisplayOrder: 15
 		Prerequisites: global-domination
 	LobbyPrerequisiteCheckbox@MEGAWEALTH:
 		ID: megawealth
 		Label: Megawealth
 		Description: Removes all the Ore on the map and makes the economy dependent on Oil Derricks
 		Enabled: False
-		DisplayOrder: 13
+		DisplayOrder: 16
 		Prerequisites: global-megawealth
 	LobbyPrerequisiteCheckbox@SHOWOWNERNAME:
 		ID: showownername
@@ -250,28 +392,28 @@ Player:
 		Description: Show name and flag of the owner of a unit on its tooltip
 		Enabled: True
 		Visible: False # Too lazy to remove the setup for this.
-		DisplayOrder: 14
+		DisplayOrder: 17
 		Prerequisites: global-showownername
 	LobbyPrerequisiteCheckbox@SUDDENDEATH:
 		ID: suddendeath
 		Label: Sudden Death
 		Description: Players can't build another MCV and get defeated when they lose it
 		Enabled: False
-		DisplayOrder: 14
+		DisplayOrder: 17
 		Prerequisites: global-suddendeath
 	LobbyPrerequisiteCheckbox@KOTH:
 		ID: koth
 		Label: King of the Hill
 		Description: Capture and hold the Psychic Beacon on the map to win
 		Enabled: False
-		DisplayOrder: 15
+		DisplayOrder: 18
 		Prerequisites: global-koth
 	LobbyPrerequisiteCheckbox@REGICIDE:
 		ID: regicide
 		Label: Regicide
 		Description: Kill enemy leader to win the game
 		Enabled: False
-		DisplayOrder: 16
+		DisplayOrder: 19
 		Prerequisites: global-regicide
 	ProvidesRadar:
 		RequiresCondition: freeminimap

@@ -11,8 +11,8 @@ e2:
 	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
-		Prerequisites: ~techlevel.1
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Cheap rifle infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Bullet-Proof Coats\n- Molotov Cocktails\n- Armor-Piercing Bullets
 		BuildDuration: 75
@@ -217,10 +217,10 @@ flakt:
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
-		Prerequisites: ~techlevel.1
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 60
 		Description: Anti-Air and anti-Infantry unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Improved Flaks\n- Bullet-Proof Coats
+		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -423,10 +423,10 @@ shk:
 	AttackMove:
 		AttackMoveCondition: attack-move
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
-		Prerequisites: ~techlevel.1
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 20
 		Description: Special armored unit using electricity.\n\n  Strong vs Infantry, Tanks\n  Weak vs Aircraft\n\nAbilities:\n- Can charge Tesla Coils\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -562,10 +562,10 @@ terror:
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Cuba
+		Queue: Infantry.Shared, Infantry.Cuba
 		BuildPaletteOrder: 90
-		Prerequisites: naradr, ~techlevel.3
 		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n\n  Strong vs Ground units\n  Weak vs Aircraft\n\nUpgradeable with:\n- Targeted Explosives (Cuba)
+		Prerequisites: ~infantry.cuba, naradr, ~techlevel.3
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -646,10 +646,10 @@ deso:
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Iraq
+		Queue: Infantry.Shared, Infantry.Iraq
 		BuildPaletteOrder: 100
-		Prerequisites: naradr, ~techlevel.3
 		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n\n  Strong vs Infantry, Light vehicles\n  Weak vs Tanks, Aircraft\n\nAbilities:\n- Immune to Radiation\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
+		Prerequisites: ~infantry.iraq, naradr, ~techlevel.3
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -852,10 +852,10 @@ ivan:
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 80
-		Prerequisites: naradr, ~techlevel.3
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nUpgradeable with:\n- Targeted Explosives (Cuba)\n- High Explosive Bombs (Libya)
+		Prerequisites: ~infantry.sovietsorbaku, naradr, ~techlevel.3
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -929,7 +929,7 @@ civan:
 	Inherits: ivan
 	Buildable:
 		BuildPaletteOrder: 970
-		Prerequisites: ~allies.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~infantry.sovietsorbaku, ~allies.tech.infiltrated, ~techlevel.4
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1163,9 +1163,9 @@ boris:
 		Modifier: 33
 		RequiresCondition: leaflet
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildPaletteOrder: 180
-		Prerequisites: natech, ~techlevel.4
+		Prerequisites: ~infantry.soviets, natech, ~techlevel.4
 		BuildLimit: 1
 		Description: Elite commando infantry, armed with\nAKM rifle and signal flare.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can call airstrike against Buildings\n- Can move over water\n\nUpgradeable with:\n- Armor-Piercing Bullets\n\n  Maximum 1 can be trained.
 		BuildDuration: 1125
@@ -1489,8 +1489,8 @@ hjck:
 	Inherits@MC: ^MindControllable
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
-		Prerequisites: naradr, ~techlevel.3
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
 		BuildPaletteOrder: 70
 		Description: Steals enemy vehicles.\nCan infiltrate enemy Battle Labs to gain access to new infantry.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Stealth while not moving
 		BuildDuration: 250
@@ -1562,9 +1562,9 @@ itrp:
 	Tooltip@NoRow:
 		Name: Iron Trooper
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 140
-		Prerequisites: natech, ~techlevel.4
+		Prerequisites: ~infantry.sovietsorbaku, natech, ~techlevel.4
 		Description: High-tech soldier capable of making friendly vehicles invulnerabile and\ndamage enemy infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1731,7 +1731,7 @@ shkc:
 	Inherits: shk
 	Buildable:
 		BuildPaletteOrder: 980
-		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~infantry.sovietsorbaku, ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Advanced armored unit with a Tesla Suit and Tesla Bombs.\n\n  Strong vs Infantry, Tanks, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can charge Tesla Coils\n- Can place Tesla Bombs on buildings\n\nUpgradeable with:\n- Overcharge (Soviet Union)
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1800,9 +1800,9 @@ shkc:
 ttrp.soviet:
 	Inherits: ttrp
 	Buildable:
-		Queue: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
 		BuildPaletteOrder: 990
-		Prerequisites: ~yuri.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~infantry.sovietsorbaku, ~yuri.tech.infiltrated, ~techlevel.4
 	UpdatesPlayerStatistics:
 		OverrideActor: ttrp
 	-MapEditorData:

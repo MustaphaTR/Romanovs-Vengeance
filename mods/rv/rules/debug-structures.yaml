@@ -5,18 +5,22 @@ cacnst:
 	Tooltip@NoRow:
 		Name: Debug Construction Yard
 	Buildable:
-		Queue: Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
+		Queue: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
 		Prerequisites: ~disabled
 		BuildPaletteOrder: 1000
 		Description: Debug structure to allow building Construction Yard of other (sub)factions.
+	-Production@Shared:
 	Production:
 		Produces: Building.Debug
+		-RequiresCondition:
 	ProductionQueue@Building:
 		Type: Building.Debug
 	-ProductionQueue@Support:
 	-ProductionQueue@SupportFrance:
 	ProductionBar@Building:
 		ProductionType: Building.Debug
+	-ProductionBar@Building.Shared:
+	-ProductionBar@Support.Shared:
 	-ProductionBar@Support:
 	-ProductionBar@SupportFrance:
 	-MapEditorData:
@@ -463,13 +467,16 @@ cabrck:
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 270
+	-Production@Shared:
 	Production:
 		Produces: Infantry.Civilian
+		-RequiresCondition:
 	ProductionQueue:
 		Type: Infantry.Civilian
 		-Factions:
 	-ProductionQueue@USA:
 	-ProductionQueue@UK:
+	-ProductionBar@Shared:
 	ProductionBar:
 		ProductionType: Infantry.Civilian
 	-ProductionBar@USA:
@@ -489,13 +496,16 @@ cabrck.unused:
 		Queue: Building.Debug
 		BuildPaletteOrder: 280
 		Description: For unused units.
+	-Production@Shared:
 	Production:
 		Produces: Infantry.Unused
+		-RequiresCondition:
 	ProductionQueue:
 		Type: Infantry.Unused
 		-Factions:
 	-ProductionQueue@Cuba:
 	-ProductionQueue@Iraq:
+	-ProductionBar@Shared:
 	ProductionBar:
 		ProductionType: Infantry.Unused
 	-ProductionBar@Cuba:
@@ -514,14 +524,17 @@ caweap:
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 290
+	-Production@Shared:
 	Production:
 		Produces: Vehicle.Civilian
+		-RequiresCondition:
 	ProductionQueue:
 		Type: Vehicle.Civilian
 		-Factions:
 	-ProductionQueue@USA:
 	-ProductionQueue@UK:
 	-ProductionQueue@Germany:
+	-ProductionBar@Shared:
 	ProductionBar:
 		ProductionType: Vehicle.Civilian
 	-ProductionBar@USA:
@@ -541,8 +554,10 @@ caweap.unused:
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 300
+	-Production@Shared:
 	Production:
 		Produces: Vehicle.Unused
+		-RequiresCondition:
 	ProductionQueue:
 		Type: Vehicle.Unused
 		-Factions:
@@ -550,6 +565,7 @@ caweap.unused:
 	-ProductionQueue@Cuba:
 	-ProductionQueue@Libya:
 	-ProductionQueue@Baku:
+	-ProductionBar@Shared:
 	ProductionBar:
 		ProductionType: Vehicle.Unused
 	-ProductionBar@Iraq:
@@ -571,10 +587,13 @@ cayard:
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 310
+	-Production@Shared:
 	Production:
 		Produces: Ship.Civilian
+		-RequiresCondition:
 	ProductionQueue:
 		Type: Ship.Civilian
+	-ProductionBar@Shared:
 	ProductionBar:
 		ProductionType: Ship.Civilian
 	RenderSprites:

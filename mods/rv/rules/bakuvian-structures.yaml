@@ -2,8 +2,9 @@ babarr:
 	Inherits: ^Barracks
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Baku
+		Queue: Building.Shared, Building.Baku
 		Description: Trains Bakuvian infantry.\n\n  Can be rotated.
+		Prerequisites: ~building.baku, power, ~techlevel.1
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -78,10 +79,17 @@ babarr:
 		ProductionType: Infantry.Baku
 	ProductionBar@Tuva:
 		ProductionType: Infantry.Tuva
-	ProvidesPrerequisite@babarr:
+	ProvidesPrerequisite@buildingname:
 		Prerequisite: babarr
 	ProvidesPrerequisite@nahand:
 		Prerequisite: nahand
+	ProvidesPrerequisite@infantry.baku:
+		Prerequisite: infantry.baku
+	ProvidesPrerequisite@infantry.tuva:
+		Prerequisite: infantry.tuva
+		Factions: tuva
+	ProvidesPrerequisite@infantry.sovietsorbaku:
+		Prerequisite: infantry.sovietsorbaku
 	ProvidesPrerequisite@mwfacref:
 		Prerequisite: narefn
 	PlaceBuildingVariants:
@@ -97,9 +105,9 @@ baairf:
 	Inherits: ^Helipad
 	Inherits@SHAPE: ^3x5Shape
 	Buildable:
-		Queue: Building.Baku
-		Prerequisites: naradr, ~techlevel.2
+		Queue: Building.Shared, Building.Baku
 		Description: Produces Bakuvian aircraft.\nSupports 2 aircraft.\n\n  Can be rotated.
+		Prerequisites: ~building.baku, naradr, ~techlevel.2
 	Building:
 		Footprint: xx= xxx xxx _xx _xx
 		Dimensions: 3,5
@@ -132,6 +140,12 @@ baairf:
 		DisplayOrder: 28
 	ProductionBar:
 		ProductionType: Aircraft.Baku
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: baairf
+	ProvidesPrerequisite@aircraft.baku:
+		Prerequisite: aircraft.baku
+	ProvidesPrerequisite@aircraft.sovietsorbaku:
+		Prerequisite: aircraft.sovietsorbaku
 	PlaceBuildingVariants:
 		Actors: baairb
 	WithIdleOverlay@lights:
@@ -163,9 +177,6 @@ babarb:
 		Dimensions: 2,3
 	RallyPoint:
 		Path: 3,2
-	Building:
-		Footprint: xx xx xx
-		Dimensions: 2,3
 	Exit@1:
 		SpawnOffset: 0,768,0
 		ExitCell: 2,2

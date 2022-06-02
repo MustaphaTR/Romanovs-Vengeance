@@ -2,6 +2,11 @@ gacnst:
 	Inherits: ^ConstructionYard
 	Buildable:
 		BuildPaletteOrder: 10
+	ProvidesPrerequisite@building.allies:
+		Prerequisite: building.allies
+	ProvidesPrerequisite@building.france:
+		Prerequisite: building.france
+		Factions: france
 	Production:
 		Produces: Building.Allies, Support.Allies, Support.France
 	ProductionQueue@Building:
@@ -143,7 +148,8 @@ gapowr:
 	Inherits@ADVCOOLANTS: ^AffectedByAdvancedCoolants
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building.Allies
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, ~techlevel.1
 	ProvidesPrerequisite@no-plug:
 		Prerequisite: gapowr.pluggable
 		RequiresCondition: !powrup
@@ -206,9 +212,9 @@ gapowrup:
 	Tooltip:
 		Name: Advanced Coolants
 	Buildable:
-		Queue: Support.Unused # Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 80
-		Prerequisites: gapowr, gaairc, ~techlevel.2
+		Prerequisites: ~building.allies, gapowr, gaairc, ~!global.upgrades, ~techlevel.2
 		Description: Better coolants allow power plants to work more efficently\nproviding 150 more power.
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -221,8 +227,9 @@ gapile:
 	Inherits: ^Barracks
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Allies
+		Queue: Building.Shared, Building.Allies
 		Description: Trains Allied infantry.\n\n  Can be rotated.
+		Prerequisites: ~building.allies, power, ~techlevel.1
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -317,8 +324,16 @@ gapile:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	ProvidesPrerequisite@gapile:
+	ProvidesPrerequisite@buildingname:
 		Prerequisite: gapile
+	ProvidesPrerequisite@infantry.allies:
+		Prerequisite: infantry.allies
+	ProvidesPrerequisite@infantry.usa:
+		Prerequisite: infantry.usa
+		Factions: america
+	ProvidesPrerequisite@infantry.uk:
+		Prerequisite: infantry.uk
+		Factions: england
 	PlaceBuildingVariants:
 		Actors: gapilb
 	IsometricSelectable:
@@ -327,7 +342,8 @@ gapile:
 garefn:
 	Inherits: ^Refinery
 	Buildable:
-		Queue: Building.Allies
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, power, ~!global-megawealth, ~techlevel.1
 	FreeActor:
 		Actor: cmin
 	SmokeParticleEmitter@refinerysmoke1:
@@ -342,11 +358,12 @@ garefn:
 
 gaairc:
 	Inherits: ^Radar
+	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Allies
-		Prerequisites: power, garefn, ~techlevel.2
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, power, garefn, ~techlevel.2
 		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Airborne (United States)\n- Carpet Bombing (United Kingdom)\n- Force Shield (France)\n- Chrono Grizzly (Germany)\n- Chronobomb (Korea)
 	Tooltip:
 		Name: Airforce Command Headquarters
@@ -354,8 +371,19 @@ gaairc:
 		Name: Airforce Command Headquarters
 	ProvidesPrerequisite@production:
 		Prerequisite: production
-	ProvidesPrerequisite@gaairc:
+	ProvidesPrerequisite@buildingname:
 		Prerequisite: gaairc
+	ProvidesPrerequisite@aircraft.allies:
+		Prerequisite: aircraft.allies
+	ProvidesPrerequisite@aircraft.america:
+		Prerequisite: aircraft.america
+		Factions: america
+	ProvidesPrerequisite@aircraft.england:
+		Prerequisite: aircraft.england
+		Factions: england
+	ProvidesPrerequisite@aircraft.korea:
+		Prerequisite: aircraft.korea
+		Factions: korea
 	ProvidesPrerequisite@america:
 		Prerequisite: radar.america
 		Factions: america
@@ -435,9 +463,14 @@ gaairc:
 		Condition: airdock
 	GrantExternalConditionToProduced:
 		Condition: produced
+	Production@Shared:
+		Produces: Aircraft.Shared
+		PauseOnCondition: powerdown || infiltrated || emp || chronodisable
+		RequiresCondition: !multiqueue
 	Production:
 		Produces: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		PauseOnCondition: powerdown || infiltrated || emp || chronodisable
+		RequiresCondition: multiqueue
 	ProductionQueue:
 		Type: Aircraft.Allies
 		Group: Aircraft
@@ -498,6 +531,8 @@ gaairc:
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ProductionBar@Shared:
+		ProductionType: Aircraft.Shared
 	ProductionBar:
 		ProductionType: Aircraft.Allies
 	ProductionBar@USA:
@@ -777,10 +812,24 @@ gabarls:
 gaweap:
 	Inherits: ^WarFactory
 	Buildable:
-		Queue: Building.Allies
+		Queue: Building.Shared, Building.Allies
 		Description: Produces Allied vehicles.\n\n  Can be rotated.
-	ProvidesPrerequisite@gaweap:
+		Prerequisites: ~building.allies, refinery, ~techlevel.1
+	ProvidesPrerequisite@buildingname:
 		Prerequisite: gaweap
+	ProvidesPrerequisite@vehicle.allies:
+		Prerequisite: vehicle.allies
+	ProvidesPrerequisite@vehicle.america:
+		Prerequisite: vehicle.america
+		Factions: america
+	ProvidesPrerequisite@vehicle.england:
+		Prerequisite: vehicle.england
+		Factions: england
+	ProvidesPrerequisite@vehicle.germany:
+		Prerequisite: vehicle.germany
+		Factions: germany
+	ProvidesPrerequisite@vehicleorship.allies:
+		Prerequisite: vehicleorship.allies
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_robo
 		RequiresCondition: !chronodisable
@@ -858,7 +907,13 @@ gaweap:
 gayard:
 	Inherits: ^Shipyard
 	Buildable:
-		Queue: Building.Allies
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, refinery, ~techlevel.1
+	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@ship.allies:
+		Prerequisite: ship.allies
+	ProvidesPrerequisite@vehicleorship.allies:
+		Prerequisite: vehicleorship.allies
 	ProvidesPrerequisite@powered:
 		Prerequisite: powered_robo
 		RequiresCondition: !chronodisable
@@ -897,8 +952,8 @@ gadept:
 	HitShape:
 		TargetableOffsets: 0,0,0, -720,-720,0, 720,720,0, -720,720,0, 0,1440,0, -1440,0,0
 	Buildable:
-		Queue: Building.Allies
-		Prerequisites: gaweap, ~techlevel.1
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, gaweap, ~techlevel.1
 	Building:
 		Footprint: x++ x++ x++
 		Dimensions: 3,3
@@ -923,8 +978,8 @@ gatech:
 	Inherits: ^BattleLab
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Allies
-		Prerequisites: production, gaairc, ~techlevel.3, ~!ai.gatech
+		Queue: Building.Shared, Building.Allies
+		Prerequisites: ~building.allies, production, gaairc, ~techlevel.3, ~!ai.gatech
 	ProvidesPrerequisite@gatech:
 		Prerequisite: gatech
 	ProvidesPrerequisite@upgrade.allies:
@@ -970,8 +1025,8 @@ gawall:
 	Inherits: ^Wall
 	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Buildable:
-		Queue: Support.Allies, Support.France
-		Prerequisites: ~techlevel.1
+		Queue: Support.Shared, Support.Allies, Support.France
+		Prerequisites: ~building.allies, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Heavy wall capable of blocking units and projectiles.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
 	Tooltip:
@@ -993,9 +1048,9 @@ gapill:
 	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 40
-		Prerequisites: gapile, ~techlevel.1
+		Prerequisites: ~building.allies, gapile, ~techlevel.1
 		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1059,9 +1114,9 @@ nasam:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 60
-		Prerequisites: gaairc, ~techlevel.2
+		Prerequisites: ~building.allies, gaairc, ~techlevel.2
 		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1142,9 +1197,9 @@ gtgcan:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Support.France
+		Queue: Support.Shared, Support.France
 		BuildPaletteOrder: 90
-		Prerequisites: upgrade.grand_cannon_protocols, ~techlevel.3
+		Prerequisites: ~building.france, upgrade.grand_cannon_protocols, ~techlevel.3
 		Description: Automated, long ranged anti-ground defense.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\n  Requires power to operate.
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -1214,9 +1269,9 @@ gaorep:
 	Inherits@SHAPE: ^3x3Shape
 	Inherits@AICash: ^AICashCheat
 	Buildable:
-		Queue: Building.Allies
+		Queue: Building.Shared, Building.Allies
 		BuildPaletteOrder: 120
-		Prerequisites: garefn, gatech, ~techlevel.4
+		Prerequisites: ~building.allies, garefn, gatech, ~techlevel.4
 		Description: Refines income from ores and gems by 25%.\n\n  Maximum 1 can be built.
 		BuildLimit: 1
 		BuildDuration: 1250
@@ -1294,9 +1349,9 @@ gaspysat:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Building.Allies
+		Queue: Building.Shared, Building.Allies
 		BuildPaletteOrder: 110
-		Prerequisites: gatech, ~techlevel.4
+		Prerequisites: ~building.allies, gatech, ~techlevel.4
 		Description: Provides Satellite Scan power, which reveals the map for a while.\nProvides Radar.\n\n  Requires power to operate.
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -1379,9 +1434,9 @@ gagap:
 	Tooltip@NoRow:
 		Name: Gap Generator
 	Buildable:
-		Queue: Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 100
-		Prerequisites: gatech, ~techlevel.3
+		Prerequisites: ~building.allies, gatech, ~techlevel.3
 		Description: Obscures the enemy's view with shroud.\n\nAbilities:\n- Can be placed on water\n\n  Requires power to operate.
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1431,8 +1486,8 @@ gagap:
 gaweat:
 	Inherits: ^PrimarySuperWeapon
 	Buildable:
-		Queue: Support.Allies, Support.France
-		Prerequisites: gatech, !enoughweather, ~techlevel.5
+		Queue: Support.Shared, Support.Allies, Support.France
+		Prerequisites: ~building.allies, gatech, !enoughweather, ~techlevel.5
 		Description: Play God with deadly weather!\n\n  Requires power to operate.
 	Tooltip:
 		Name: Weather Controller
@@ -1490,8 +1545,8 @@ gacsph:
 	Inherits: ^SecondarySuperWeapon
 	Inherits@SHAPE: ^4x3Shape
 	Buildable:
-		Queue: Support.Allies, Support.France
-		Prerequisites: gatech, !enoughchrono, ~techlevel.5
+		Queue: Support.Shared, Support.Allies, Support.France
+		Prerequisites: ~building.allies, gatech, !enoughchrono, ~techlevel.5
 		Description: Allows teleportation of vehicles.\nKills infantry.\n\n  Requires power to operate.\n  Can be rotated.
 	Tooltip:
 		Name: Chronosphere
@@ -1576,9 +1631,9 @@ atesla:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 70
-		Prerequisites: gaairc, ~techlevel.3
+		Prerequisites: ~building.allies, gaairc, ~techlevel.3
 		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1791,8 +1846,8 @@ gagatea:
 	Inherits: ^Gate_A
 	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Buildable:
-		Queue: Support.Allies, Support.France
-		Prerequisites: ~techlevel.1
+		Queue: Support.Shared, Support.Allies, Support.France
+		Prerequisites: ~building.allies, ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Automated barrier that opens for allied units.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Can be rotated.
 		BuildDuration: 125
@@ -1828,7 +1883,8 @@ gagateb:
 gasilo:
 	Inherits: ^Silo
 	Buildable:
-		Queue: Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies, Support.France
+		Prerequisites: ~building.allies, refinery, ~!global-megawealth, ~techlevel.1
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
@@ -1844,9 +1900,9 @@ gamgun:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.France
+		Queue: Support.Shared, Support.France
 		BuildPaletteOrder: 80
-		Prerequisites: gaairc, ~techlevel.3
+		Prerequisites: ~building.france, gaairc, ~techlevel.3
 		Description: Defensive structure that is invisible while not firing.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can be placed further than other buildings\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.\n  Can be rotated.
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1925,9 +1981,9 @@ gagun:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 50
-		Prerequisites: gapile, ~prerequisite.gun_turret, ~techlevel.1
+		Prerequisites: ~building.allies, gapile, ~prerequisite.gun_turret, ~techlevel.1
 		Description: Anti-tank defense structure.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
 		BuildDuration: 250
 		BuildDurationModifier: 100

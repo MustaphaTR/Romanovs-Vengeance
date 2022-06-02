@@ -1,7 +1,8 @@
 sapc:
 	Inherits: ^AmphibiousTransport
 	Buildable:
-		Queue: Ship.Soviets
+		Queue: Ship.Shared, Ship.Soviets
+		Prerequisites: ~ship.sovietsorbaku, ~techlevel.1
 	Voiced:
 		VoiceSet: SovietAmphibiousTransportVoice
 
@@ -16,8 +17,8 @@ sub:
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
-		Queue: Ship.Soviets
-		Prerequisites: naradr, ~techlevel.2
+		Queue: Ship.Shared, Ship.Soviets
+		Prerequisites: ~ship.sovietsorbaku, naradr, ~techlevel.2
 		BuildPaletteOrder: 80
 		Description: Submerged anti-ship unit armed with torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 750
@@ -109,9 +110,9 @@ hyd:
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship.Soviets
+		Queue: Ship.Shared, Ship.Soviets
 		BuildPaletteOrder: 30
-		Prerequisites: ~techlevel.1
+		Prerequisites: ~ship.sovietsorbaku, ~techlevel.1
 		Description: Anti-Air and Anti-Infantry naval unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Naval units\n\nUpgradeable with:\n- Improved Flaks
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -204,8 +205,8 @@ sqd:
 	WithColoredOverlay@SUBMERGE:
 		RequiresCondition: !surfaced && !deployed
 	Buildable:
-		Queue: Ship.Soviets
-		Prerequisites: naradr, ~techlevel.3
+		Queue: Ship.Shared, Ship.Soviets
+		Prerequisites: ~ship.sovietsorbaku, naradr, ~techlevel.3
 		Description: Large ocean creature capable of grabbing and sinking ships.\nCan be deployed to remove other squids from nearby ships.\n\n  Strong vs Ships\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 375
 	Valued:
@@ -295,9 +296,9 @@ dred:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship.Soviets
+		Queue: Ship.Shared, Ship.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: natech, ~techlevel.4
+		Prerequisites: ~ship.sovietsorbaku, natech, ~techlevel.4
 		Description: Long-range rocket artillery ship.\n\n  Strong vs Buildings, Infantry\n  Weak vs Ships, Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -388,6 +389,7 @@ dred:
 		Volume: 0.5
 		RequiresCondition: moving
 	ActorStatValues:
+		Damage: 400
 		Upgrades: upgrade.radioactive_bombs, upgrade.advanced_irradiators, upgrade.high_explosive_bombs
 
 dmisl:
@@ -465,8 +467,6 @@ dmisl:
 		RequiresCondition: radbombs && advirrad
 	ExternalCondition@RANK-ELITE:
 		Condition: rank-elite
-	ActorStatValues:
-		Damage: 400
 
 # Custom Soviet Vessels
 sray:
@@ -480,9 +480,9 @@ sray:
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship.Soviets
+		Queue: Ship.Shared, Ship.Soviets
 		BuildPaletteOrder: 20
-		Prerequisites: ~techlevel.1
+		Prerequisites: ~ship.sovietsorbaku, ~techlevel.1
 		Description: Light ship armed with dual Tesla Coils.\nCan move on land.\n\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
 		BuildDuration: 375
 		BuildDurationModifier: 100

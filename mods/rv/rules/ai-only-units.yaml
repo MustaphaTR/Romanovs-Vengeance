@@ -6,7 +6,7 @@ fv-e1:
 	Inherits: fv
 	Buildable:
 		BuildPaletteOrder: 31
-		Prerequisites: ~prerequisite.aiplayer, ~techlevel.1
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.allies, ~techlevel.1
 	UpdatesPlayerStatistics:
 		OverrideActor: fv
 	ProductionCostMultiplier:
@@ -18,7 +18,7 @@ fv-ggi:
 	Inherits: fv-e1
 	Buildable:
 		BuildPaletteOrder: 32
-		Prerequisites: ~prerequisite.aiplayer, ~techlevel.1
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.allies, ~techlevel.1
 	ProductionCostMultiplier:
 		Multiplier: 150
 	Cargo:
@@ -28,7 +28,7 @@ fv-gren:
 	Inherits: fv-e1
 	Buildable:
 		BuildPaletteOrder: 33
-		Prerequisites: ~prerequisite.aiplayer, gaairc, ~techlevel.2
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.allies, gaairc, ~techlevel.2
 	ProductionCostMultiplier@1:
 		Multiplier: 150
 	Cargo:
@@ -39,7 +39,7 @@ fv-ghost:
 	Buildable:
 		Queue: Vehicle.USA
 		BuildPaletteOrder: 34
-		Prerequisites: ~prerequisite.aiplayer, gaairc, ~techlevel.3
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.america, gaairc, ~techlevel.3
 	ProductionCostMultiplier@1:
 		Multiplier: 150
 	Cargo:
@@ -50,7 +50,7 @@ fv-snipe:
 	Buildable:
 		Queue: Vehicle.UK
 		BuildPaletteOrder: 34
-		Prerequisites: ~prerequisite.aiplayer, gaairc, ~techlevel.3
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.england, gaairc, ~techlevel.3
 	ProductionCostMultiplier@1:
 		Multiplier: 150
 	Cargo:
@@ -60,7 +60,7 @@ fv-cleg:
 	Inherits: fv-e1
 	Buildable:
 		BuildPaletteOrder: 35
-		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.4
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.allies, gatech, ~techlevel.4
 	ProductionCostMultiplier@1:
 		Multiplier: 150
 	Cargo:
@@ -71,7 +71,7 @@ bfrt-squad-1:
 	Selectable:
 		Class: bfrt
 	Buildable:
-		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.4
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.allies, gatech, ~techlevel.4
 	UpdatesPlayerStatistics:
 		OverrideActor: bfrt
 	Cargo:
@@ -93,7 +93,7 @@ bfrt-squad-2:
 bfrt-squad-3:
 	Inherits: bfrt-squad-1
 	Buildable:
-		Prerequisites: ~prerequisite.aiplayer, gatech, ~techlevel.4, ~!tany
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.allies, gatech, ~techlevel.4, ~!tany
 	Cargo:
 		InitialUnits: ggi, ggi, ggi, ggi, tany
 	ProductionCostMultiplier@1:
@@ -141,7 +141,7 @@ hind-htnk:
 	Selectable:
 		Class: hind
 	Buildable:
-		Prerequisites: naweap, ~techlevel.2, ~prerequisite.aiplayer, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.sovietsorbaku, ~techlevel.2, ~!LoadedExists
 	UpdatesPlayerStatistics:
 		OverrideActor: hind
 	ProductionCostMultiplier@1:
@@ -158,24 +158,21 @@ hind-ftnk:
 	Carryall:
 		InitialActor: ftnk
 	Buildable:
-		Queue: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
-		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.soviets, naradr, ~techlevel.3, ~!LoadedExists
 
 hind-ttnk:
 	Inherits: hind-htnk
 	Carryall:
 		InitialActor: ttnk
 	Buildable:
-		Queue: Aircraft.USSR
-		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.russia, naradr, ~techlevel.3, ~!LoadedExists
 
 hind-dtruck:
 	Inherits: hind-htnk
 	Carryall:
 		InitialActor: dtruck
 	Buildable:
-		Queue: Aircraft.Libya
-		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.libya, naradr, ~techlevel.3, ~!LoadedExists
 	-VoiceAnnouncement:
 	NotificationAnnouncement:
 		RequiresCondition: produced
@@ -186,7 +183,7 @@ hind-apoc:
 	Carryall:
 		InitialActor: apoc
 	Buildable:
-		Prerequisites: naweap, natech, ~techlevel.4, ~prerequisite.aiplayer, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.sovietsorbaku, natech, ~techlevel.4, ~!LoadedExists
 	ProductionCostMultiplier@1:
 		Multiplier: 300
 
@@ -195,7 +192,7 @@ hind-htk-squad-1:
 	Carryall:
 		InitialActor: htk-squad-1
 	Buildable:
-		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.sovietsorbaku, naradr, ~techlevel.3, ~!LoadedExists
 	ProductionCostMultiplier@1:
 		Multiplier: 300
 
@@ -204,7 +201,7 @@ hind-htk-squad-2:
 	Carryall:
 		InitialActor: htk-squad-2
 	Buildable:
-		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.sovietsorbaku, naradr, ~techlevel.3, ~!LoadedExists
 	ProductionCostMultiplier@1:
 		Multiplier: 500
 
@@ -213,8 +210,7 @@ hind-htk-squad-3:
 	Carryall:
 		InitialActor: htk-squad-3
 	Buildable:
-		Queue: Aircraft.Cuba
-		Prerequisites: naweap, naradr, ~techlevel.3, ~prerequisite.aiplayer, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.sovietsorbaku, infantry.cuba, naradr, ~techlevel.3,  ~!LoadedExists
 	ProductionCostMultiplier@1:
 		Multiplier: 285
 
@@ -224,7 +220,7 @@ htk-dron:
 	Selectable:
 		Class: htk
 	Buildable:
-		Prerequisites: ~prerequisite.aiplayer
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.sovietsorbaku, ~techlevel.2
 	UpdatesPlayerStatistics:
 		OverrideActor: htk
 	ProductionCostMultiplier@1:
@@ -239,7 +235,7 @@ htk-dron:
 htk-squad-1:
 	Inherits: htk-dron
 	Buildable:
-		Prerequisites: ~prerequisite.aiplayer
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.sovietsorbaku, infantry.sovietsorbaku, ~techlevel.1
 	Cargo:
 		InitialUnits: e2, e2, flakt, flakt, shk
 	ProductionCostMultiplier@1:
@@ -248,7 +244,7 @@ htk-squad-1:
 htk-squad-2:
 	Inherits: htk-dron
 	Buildable:
-		Prerequisites: ~prerequisite.aiplayer
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.sovietsorbaku, infantry.sovietsorbaku, naradr, ~techlevel.3
 	Cargo:
 		InitialUnits: ivan, ivan, ivan, ivan, ivan
 	ProductionCostMultiplier@1:
@@ -257,8 +253,7 @@ htk-squad-2:
 htk-squad-3:
 	Inherits: htk-dron
 	Buildable:
-		Queue: Vehicle.Cuba
-		Prerequisites: nahand, ~prerequisite.aiplayer
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.sovietsorbaku, infantry.cuba, naradr, ~techlevel.3
 	Cargo:
 		InitialUnits: terror, terror, terror, terror, terror
 	ProductionCostMultiplier@1:
@@ -270,7 +265,7 @@ kamaz-squad-1:
 	Selectable:
 		Class: kamaz
 	Buildable:
-		Prerequisites: yabrck, ~prerequisite.aiplayer, ~techlevel.1
+		Prerequisites: ~prerequisite.aiplayer, ~vehicle.yuri, infantry.yuri, ~techlevel.1
 	UpdatesPlayerStatistics:
 		OverrideActor: kamaz
 	ProductionCostMultiplier@1:
@@ -288,7 +283,7 @@ shad-squad-1:
 	Selectable:
 		Class: shad
 	Buildable:
-		Prerequisites: gapile, ~prerequisite.aiplayer, ~techlevel.1, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.allies, infantry.allies, ~techlevel.1, ~!LoadedExists
 	UpdatesPlayerStatistics:
 		OverrideActor: shad
 	Cargo:
@@ -303,7 +298,7 @@ shad-squad-1:
 shad-squad-2:
 	Inherits: shad-squad-1
 	Buildable:
-		Prerequisites: gapile, ~prerequisite.aiplayer, gaairc, ~techlevel.2, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.allies, infantry.allies, gaairc, ~techlevel.2, ~!LoadedExists
 	ProductionCostMultiplier@1:
 		Multiplier: 150
 	Cargo:
@@ -312,7 +307,7 @@ shad-squad-2:
 shad-squad-3:
 	Inherits: shad-squad-1
 	Buildable:
-		Prerequisites: gapile, ~prerequisite.aiplayer, gatech, ~techlevel.4, ~!LoadedExists, ~!tany
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.allies, infantry.allies, gatech, ~techlevel.4, ~!LoadedExists, ~!tany
 	Cargo:
 		InitialUnits: e1, ggi, ggi, tany, dog, dog
 	-VoiceAnnouncement:
@@ -323,8 +318,7 @@ shad-squad-3:
 shad-squad-4:
 	Inherits: shad-squad-1
 	Buildable:
-		Queue: Aircraft.USA
-		Prerequisites: gapile, ~prerequisite.aiplayer, gaairc, ~techlevel.3, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.allies, infantry.usa, gaairc, ~techlevel.3, ~!LoadedExists
 	Cargo:
 		InitialUnits: e1, ggi, ggi, ghost, ghost, dog, dog
 
@@ -334,7 +328,7 @@ txdx-squad-1:
 	Selectable:
 		Class: txdx
 	Buildable:
-		Prerequisites: yabrck, ~prerequisite.aiplayer, ~techlevel.2, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.yuri, infantry.yuri, ~techlevel.2, ~!LoadedExists
 	Cargo:
 		InitialUnits: brute, brute, brute, brute, brute
 	ProductionCostMultiplier@1:
@@ -347,14 +341,14 @@ txdx-squad-1:
 txdx-squad-2:
 	Inherits: txdx-squad-1
 	Buildable:
-		Prerequisites: yabrck, ~prerequisite.aiplayer, yadome, ~techlevel.3, ~!LoadedExists
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.yuri, infantry.yuri, yadome, ~techlevel.3, ~!LoadedExists
 	Cargo:
 		InitialUnits: init, brute, brute, yuripsi, dog
 
 txdx-squad-3:
 	Inherits: txdx-squad-1
 	Buildable:
-		Prerequisites: yabrck, ~prerequisite.aiplayer, yatech, ~techlevel.4, ~!LoadedExists, ~!yurix
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.yuri, infantry.yuri, yatech, ~techlevel.4, ~!LoadedExists, ~!yurix
 	Cargo:
 		InitialUnits: init, brute, brute, yurix, dog
 	-VoiceAnnouncement:
@@ -365,7 +359,7 @@ txdx-squad-3:
 schp-ai:
 	Inherits: schp
 	Buildable:
-		Prerequisites: ~prerequisite.aiplayer, ~techlevel.3
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.soviets, ~techlevel.3
 	ProductionCostMultiplier@1:
 		Multiplier: 25
 
@@ -373,7 +367,7 @@ yapowr-full:
 	Inherits: yapowr
 	Buildable:
 		BuildPaletteOrder: 11
-		Prerequisites: yabrck, ~prerequisite.aiplayer, ~techlevel.1
+		Prerequisites: ~prerequisite.aiplayer, ~building.yuri, infantry.yuri, ~techlevel.1
 	ProductionCostMultiplier:
 		Multiplier: 200
 	Cargo:
@@ -383,7 +377,7 @@ natbnk-ltnk:
 	Inherits: natbnk
 	Buildable:
 		BuildPaletteOrder: 51
-		Prerequisites: yaweap, ~prerequisite.aiplayer, ~techlevel.1
+		Prerequisites: ~prerequisite.aiplayer, ~building.yuri, vehicle.yuri, ~techlevel.1
 	ProductionCostMultiplier:
 		Multiplier: 220
 	Cargo:
@@ -393,7 +387,7 @@ natbnk-ytnk:
 	Inherits: natbnk
 	Buildable:
 		BuildPaletteOrder: 52
-		Prerequisites: yaweap, ~prerequisite.aiplayer, ~techlevel.1
+		Prerequisites: ~prerequisite.aiplayer, ~building.yuri, vehicle.yuri, ~techlevel.1
 	ProductionCostMultiplier:
 		Multiplier: 260
 	Cargo:
@@ -402,7 +396,7 @@ natbnk-ytnk:
 nalasr-tr:
 	Inherits: nalasr
 	Buildable:
-		Prerequisites: nahand, ~techlevel.1, ~AITowerRush
+		Prerequisites: ~building.soviets, nahand, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderVoxels:
@@ -413,7 +407,7 @@ nalasr-tr:
 tesla-tr:
 	Inherits: tesla
 	Buildable:
-		Prerequisites: naradr, ~techlevel.3 , ~AITowerRush
+		Prerequisites: ~building.soviets, naradr, ~techlevel.3 , ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderSprites:
@@ -422,7 +416,7 @@ tesla-tr:
 naflak-tr:
 	Inherits: naflak
 	Buildable:
-		Prerequisites: naradr, ~techlevel.2, ~AITowerRush
+		Prerequisites: ~building.soviets, naradr, ~techlevel.2, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderVoxels:
@@ -433,7 +427,7 @@ naflak-tr:
 gapill-tr:
 	Inherits: naflak
 	Buildable:
-		Prerequisites: gapile, ~techlevel.1, ~AITowerRush
+		Prerequisites: ~building.allies, gapile, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderVoxels:
@@ -444,7 +438,7 @@ gapill-tr:
 nasam-tr:
 	Inherits: nasam
 	Buildable:
-		Prerequisites: gaairc, ~techlevel.2, ~AITowerRush
+		Prerequisites: ~building.allies, gaairc, ~techlevel.2, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderVoxels:
@@ -455,7 +449,7 @@ nasam-tr:
 atesla-tr:
 	Inherits: atesla
 	Buildable:
-		Prerequisites: gaairc, ~techlevel.3, ~AITowerRush
+		Prerequisites: ~building.allies, gaairc, ~techlevel.3, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderSprites:
@@ -464,7 +458,7 @@ atesla-tr:
 gagun-tr:
 	Inherits: gagun
 	Buildable:
-		Prerequisites: gapile, ~prerequisite.gun_turret, ~techlevel.1, ~AITowerRush
+		Prerequisites: ~building.allies, gapile, ~prerequisite.gun_turret, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderSprites:
@@ -473,7 +467,7 @@ gagun-tr:
 gamgun-tr:
 	Inherits: gamgun
 	Buildable:
-		Prerequisites: gaairc, ~techlevel.3, ~AITowerRush
+		Prerequisites: ~building.france, gaairc, ~techlevel.3, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderSprites:
@@ -482,7 +476,7 @@ gamgun-tr:
 yaggun-tr:
 	Inherits: yaggun
 	Buildable:
-		Prerequisites: yabrck, ~techlevel.1, ~AITowerRush
+		Prerequisites: ~building.yuri, yabrck, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderVoxels:
@@ -493,21 +487,21 @@ yaggun-tr:
 natbnk-ltnk-tr:
 	Inherits: natbnk-ltnk
 	Buildable:
-		Prerequisites: yaweap, ~techlevel.1, ~AITowerRush
+		Prerequisites: ~building.yuri, yaweap, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 
 natbnk-ytnk-tr:
 	Inherits: natbnk-ytnk
 	Buildable:
-		Prerequisites: yaweap, ~techlevel.1, ~AITowerRush
+		Prerequisites: ~building.yuri, yaweap, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 
 yapsyt-tr:
 	Inherits: yapsyt
 	Buildable:
-		Prerequisites: yadome, ~techlevel.3, ~AITowerRush
+		Prerequisites: ~building.yuri, yadome, ~techlevel.3, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50
 	RenderSprites:
@@ -516,6 +510,6 @@ yapsyt-tr:
 yaeast02-tr:
 	Inherits: yaeast02
 	Buildable:
-		Prerequisites: yadome, ~techlevel.2, ~AITowerRush
+		Prerequisites: ~building.psisouth, yadome, ~techlevel.2, ~AITowerRush
 	ProductionCostMultiplier@1:
 		Multiplier: 50

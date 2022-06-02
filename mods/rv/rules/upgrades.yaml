@@ -3,7 +3,7 @@
 	Interactable:
 	ScriptTriggers:
 	Buildable:
-		Queue: Upgrade
+		Queue: Upgrade.Shared, Upgrade
 		BuildLimit: 1
 		BuildDurationModifier: 100
 	RenderSprites:
@@ -21,7 +21,7 @@ upgrade.gi_fortifications:
 	Tooltip:
 		Name: G.I. Fortifications
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
@@ -36,7 +36,7 @@ upgrade.endurance_training:
 	Tooltip:
 		Name: Endurance Training
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 20
 		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
@@ -51,7 +51,7 @@ upgrade.a2a_missiles:
 	Tooltip:
 		Name: Air-to-Air Missile Systems
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 30
 		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
@@ -66,7 +66,7 @@ upgrade.advanced_coolants:
 	Tooltip:
 		Name: Advanced Coolants
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 40
 		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
@@ -81,7 +81,7 @@ upgrade.advanced_training:
 	Tooltip:
 		Name: Advanced Training
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 50
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
@@ -96,7 +96,7 @@ upgrade.predator_missiles:
 	Tooltip:
 		Name: Predator Missiles
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 60
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
@@ -111,7 +111,7 @@ upgrade.boost_gliding_systems:
 	Tooltip:
 		Name: Boost-Gliding Systems
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.america, gatech, ~techlevel.3
@@ -126,7 +126,7 @@ upgrade.portable_weaponry:
 	Tooltip:
 		Name: Portable Weaponry
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.england, gatech, ~techlevel.3
@@ -141,7 +141,7 @@ upgrade.grand_cannon_protocols:
 	Tooltip:
 		Name: Grand Cannon Protocols
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 90
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.france, gatech, ~techlevel.3
@@ -156,7 +156,7 @@ upgrade.advanced_gun_systems:
 	Tooltip:
 		Name: Advanced Gun Systems
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 100
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.germany, gatech, ~techlevel.3
@@ -171,7 +171,7 @@ upgrade.emp_munitions:
 	Tooltip:
 		Name: EMP Munitions
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.korea, gatech, ~techlevel.3
@@ -186,7 +186,7 @@ upgrade.composite_armor:
 	Tooltip:
 		Name: Composite Armor
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
@@ -201,7 +201,7 @@ upgrade.increased_payload:
 	Tooltip:
 		Name: Increased Payload
 	Buildable:
-		Queue: Upgrade.Allies
+		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 130
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.4
@@ -216,10 +216,10 @@ upgrade.improved_flaks:
 	Tooltip:
 		Name: Improved Flaks
 	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 10
 		BuildDuration: 750
-		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
+		Prerequisites: ~upgrade.sovietsorbaku, naradr, ~techlevel.2
 		Description: Anti-ground weapons of flak units become instant hit.
 	Valued:
 		Cost: 1000
@@ -231,10 +231,10 @@ upgrade.bullet_proof_coats:
 	Tooltip:
 		Name: Bullet-Proof Coats
 	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 20
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
+		Prerequisites: ~upgrade.sovietsorbaku, naradr, ~techlevel.2
 		Description: Increases durability of Conscripts and Flak Troopers by 33%.
 	Valued:
 		Cost: 2000
@@ -246,7 +246,7 @@ upgrade.molotov_cocktails:
 	Tooltip:
 		Name: Molotov Cocktails
 	Buildable:
-		Queue: Upgrade.Soviets
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 30
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
@@ -261,10 +261,10 @@ upgrade.smoke_grenades:
 	Tooltip:
 		Name: Smoke Grenades
 	Buildable:
-		Queue: Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Baku
 		BuildPaletteOrder: 30
 		BuildDuration: 750
-		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
+		Prerequisites: ~upgrade.baku, naradr, ~techlevel.2
 		Description: Gives Conscripts Smoke Grenades which halve vision of enemy units and reduce their damage by 20%.
 	Valued:
 		Cost: 1000
@@ -276,10 +276,10 @@ upgrade.ap_bullets:
 	Tooltip:
 		Name: Armor-Piercing Bullets
 	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 40
 		BuildDuration: 3000
-		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
+		Prerequisites: ~upgrade.sovietsorbaku, naradr, ~techlevel.2
 		Description: Improves the damage of the following units by 25%:\n - Sentry Gun\n - Conscript\n - Boris Bukov\n - War Miner\n - Siege Chopper
 	Valued:
 		Cost: 2000
@@ -291,7 +291,7 @@ upgrade.black_napalm:
 	Tooltip:
 		Name: Black Napalm
 	Buildable:
-		Queue: Upgrade.Soviets
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 50
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
@@ -306,10 +306,10 @@ upgrade.propaganda_effort:
 	Tooltip:
 		Name: Propaganda Effort
 	Buildable:
-		Queue: Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Baku
 		BuildPaletteOrder: 50
 		BuildDuration: 750
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
+		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
 		Description: Increases effectiveness of Propaganda Towers and Propaganda Commander's Power by 25%.
 	Valued:
 		Cost: 1500
@@ -321,7 +321,7 @@ upgrade.radioactive_bombs:
 	Tooltip:
 		Name: Radioactive Warheads
 	Buildable:
-		Queue: Upgrade.Soviets
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 60
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
@@ -336,10 +336,10 @@ upgrade.cryo_warheads:
 	Tooltip:
 		Name: Cryo Warheads
 	Buildable:
-		Queue: Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Baku
 		BuildPaletteOrder: 60
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
+		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
 		Description: Kirov bombs, V3 and Dreadnought Rockets gain cryo warheads, which slow down enemy units make them take more damage.
 	Valued:
 		Cost: 2000
@@ -351,7 +351,7 @@ upgrade.overcharge:
 	Tooltip:
 		Name: Overcharge
 	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.russia, natech, ~techlevel.3
@@ -366,7 +366,7 @@ upgrade.advanced_irradiators:
 	Tooltip:
 		Name: Advanced Irradiators
 	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.iraq, natech, ~techlevel.3
@@ -381,7 +381,7 @@ upgrade.aerial_propaganda:
 	Tooltip:
 		Name: Aerial Propaganda
 	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 90
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.vietnam, natech, ~techlevel.3
@@ -396,7 +396,7 @@ upgrade.targeted_explosives:
 	Tooltip:
 		Name: Targeted Explosives
 	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 100
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.cuba, natech, ~techlevel.3
@@ -411,7 +411,7 @@ upgrade.high_explosive_bombs:
 	Tooltip:
 		Name: High Explosive Bombs
 	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.libya, natech, ~techlevel.3
@@ -426,10 +426,10 @@ upgrade.high_caliber_rounds:
 	Tooltip:
 		Name: High Caliber Rounds
 	Buildable:
-		Queue: Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Baku
 		BuildPaletteOrder: 80
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
+		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
 		Description: Enables Snipers to damage vehicles and kill gunners to disable them from firing for a while.
 	Valued:
 		Cost: 3000
@@ -441,10 +441,10 @@ upgrade.nuclear_engines:
 	Tooltip:
 		Name: Nuclear Engines
 	Buildable:
-		Queue: Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 120
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
+		Prerequisites: ~upgrade.sovietsorbaku, natech, ~techlevel.3
 		Description: Increases movement speed of Rhino and Apocalypse Tanks by 33% and 50% respectively.\nBoth units explode when destroyed.
 	Valued:
 		Cost: 2000
@@ -456,7 +456,7 @@ upgrade.uranium_shells:
 	Tooltip:
 		Name: Depleted Uranium Shells
 	Buildable:
-		Queue: Upgrade.Soviets
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 130
 		BuildDuration: 2250
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
@@ -471,10 +471,10 @@ upgrade.cryo_shells:
 	Tooltip:
 		Name: Cryo Shells
 	Buildable:
-		Queue: Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Baku
 		BuildPaletteOrder: 130
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
+		Prerequisites: ~upgrade.baku, natech, ~techlevel.4
 		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units freeze enemy units, slowing them down and making them take more damage.
 	Valued:
 		Cost: 2500
@@ -486,7 +486,7 @@ upgrade.focused_mind:
 	Tooltip:
 		Name: Focused Mind
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 10
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
@@ -501,7 +501,7 @@ upgrade.grinder_treads:
 	Tooltip:
 		Name: Grinder Treads
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 20
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
@@ -516,7 +516,7 @@ upgrade.toxin_sprayer:
 	Tooltip:
 		Name: Toxin Sprayer
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 30
 		BuildDuration: 750
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
@@ -531,7 +531,7 @@ upgrade.camouflage:
 	Tooltip:
 		Name: Camouflage
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 40
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
@@ -546,7 +546,7 @@ upgrade.autoloaders:
 	Tooltip:
 		Name: Autoloaders
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 50
 		BuildDuration: 2250
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
@@ -561,7 +561,7 @@ upgrade.advanced_magnetics:
 	Tooltip:
 		Name: Advanced Magnetics
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 60
 		BuildDuration: 750
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
@@ -576,7 +576,7 @@ upgrade.chaos_tank_compensators:
 	Tooltip:
 		Name: Chaos Tank Compensators
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psicorps, yatech, ~techlevel.3
@@ -591,7 +591,7 @@ upgrade.laser_capacitors:
 	Tooltip:
 		Name: Laser Capacitors
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 80
 		BuildDuration: 2250
 		Prerequisites: ~upgrade.psinepal, yatech, ~techlevel.3
@@ -606,7 +606,7 @@ upgrade.mastery_of_mind:
 	Tooltip:
 		Name: Mastery of Mind
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 90
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psisouth, yatech, ~techlevel.3
@@ -621,7 +621,7 @@ upgrade.dna_boosters:
 	Tooltip:
 		Name: DNA Boosters
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 100
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psitrans, yatech, ~techlevel.3
@@ -636,7 +636,7 @@ upgrade.disc_armor:
 	Tooltip:
 		Name: Disc Armor
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.psimoon, yatech, ~techlevel.3
@@ -651,7 +651,7 @@ upgrade.lazarus_prime:
 	Tooltip:
 		Name: Lazarus Prime
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
@@ -666,7 +666,7 @@ upgrade.rocket_barrage:
 	Tooltip:
 		Name: Rocket Barrage
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 130
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
@@ -681,7 +681,7 @@ upgrade.chainguns:
 	Tooltip:
 		Name: Chainguns
 	Buildable:
-		Queue: Upgrade.Yuri
+		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 140
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.4

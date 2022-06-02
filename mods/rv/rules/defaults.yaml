@@ -1843,6 +1843,28 @@
 		RemoveInstead: true
 	RenderSprites:
 
+^PrimaryBuilding:
+	WithTextDecoration@primary:
+		RequiresSelection: true
+		Text: PRIMARY
+		Position: Top
+		RequiresCondition: primary && !multiqueue
+	PrimaryBuilding:
+		PrimaryCondition: primary
+		SelectionNotification: PrimaryBuildingSelected
+		SelectionTextNotification: Primary building selected.
+		RequiresCondition: !multiqueue
+	GrantConditionOnPrerequisite@multiqueue:
+		Condition: multiqueue
+		Prerequisites: global-multiqueue
+	FreeActor@Dummy:
+		Actor: QueueUpdaterDummy
+		RequiresCondition: updatequeue
+	GrantConditionAfterDelay:
+		Delay: 1
+		Condition: updatequeue
+		ShowSelectionBar: false
+
 ^CivBuilding:
 	Inherits: ^Building
 	-OwnerLostAction:
@@ -2325,6 +2347,7 @@
 		MinimumZoom: 0
 	Selectable:
 	ActorStatValues:
+		UpgradePrerequisites: global-upgrades
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
 	Targetable@HEAL:
@@ -2760,6 +2783,7 @@
 	Selectable:
 		Bounds: 772, 1544
 	ActorStatValues:
+		UpgradePrerequisites: global-upgrades
 	Targetable:
 		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
 	Targetable@REPAIR:
@@ -2912,6 +2936,7 @@
 		MinimumZoom: 0
 	Selectable:
 	ActorStatValues:
+		UpgradePrerequisites: global-upgrades
 	Aircraft:
 		Voice: Move
 		MaximumPitch: 128
@@ -3215,6 +3240,7 @@
 	Selectable:
 		Bounds: 772, 1544
 	ActorStatValues:
+		UpgradePrerequisites: global-upgrades
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 	Targetable@REPAIR:
@@ -3670,6 +3696,7 @@
 	WithTextControlGroupDecoration:
 		Margin: 1, 1
 	ActorStatValues:
+		UpgradePrerequisites: global-upgrades
 
 ^AIMicroManagable:
 	GrantConditionOnBotOwner@ai-control:

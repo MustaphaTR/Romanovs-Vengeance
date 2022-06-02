@@ -4,7 +4,7 @@
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Vehicle, Ship
+		Queue: Vehicle.Shared, Vehicle, Ship.Shared, Ship
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
 		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
@@ -108,7 +108,7 @@
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Vehicle, Ship
+		Queue: Vehicle.Shared, Vehicle, Ship.Shared, Ship
 		BuildPaletteOrder: 50
 		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water
 		Prerequisites: ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
@@ -220,7 +220,7 @@
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Vehicle, Ship
+		Queue: Vehicle.Shared, Vehicle, Ship.Shared, Ship
 		BuildPaletteOrder: 60
 		Description: Deploys into an Expansion Node.\nCannot be undeployed back.\n\n  Unarmed\n\nAbilities:\n- Can move over water
 		Prerequisites: repairpad, ~techlevel.2, ~!ai.ev
@@ -341,7 +341,7 @@
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
-		Queue: Vehicle
+		Queue: Vehicle.Shared, Vehicle
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft

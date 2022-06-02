@@ -1,7 +1,8 @@
 amcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Allies
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Shared, Ship.Allies
+		Prerequisites: ~vehicleorship.allies, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
 	Transforms:
@@ -12,8 +13,9 @@ amcv:
 cmin:
 	Inherits: ^Miner
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Allies
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Shared, Ship.Allies
 		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Can teleport back to refineries
+		Prerequisites: ~vehicleorship.allies, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
 		Name: Chrono Miner
 	Tooltip@NoRow:
@@ -55,8 +57,9 @@ mtnk:
 	Tooltip@NoRow:
 		Name: Grizzly Battle Tank
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		Description: Allied Main Battle Tank.\n\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Composite Armor\n- Advanced Gun Systems (Germany)
+		Prerequisites: ~vehicle.allies, ~techlevel.1
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Mobile:
@@ -138,9 +141,9 @@ tnkd:
 	Tooltip@NoRow:
 		Name: Tank Destroyer
 	Buildable:
-		Queue: Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Germany
 		BuildPaletteOrder: 90
-		Prerequisites: gaairc, ~techlevel.3
+		Prerequisites: ~vehicle.germany, gaairc, ~techlevel.3
 		Description: Special anti-armor unit.\n\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Composite Armor\n- Advanced Gun Systems (Germany)
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -476,8 +479,8 @@ fv:
 	DamageMultiplier@ironcurtain:
 		RequiresCondition: invulnerability && !ifv-iron
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
-		Prerequisites: ~techlevel.1
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Prerequisites: ~vehicle.allies, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Multi-Purpose Vehicle.\n\nWithout passenger:\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\n\nAbilities:\n- Armament changes depending on passenger\n- Can detect Stealth units\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
 		BuildDuration: 250
@@ -1229,9 +1232,9 @@ sref:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 100
-		Prerequisites: gatech, ~techlevel.4
+		Prerequisites: ~vehicle.allies, gatech, ~techlevel.4
 		Description: Fires deadly beams of light.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1337,9 +1340,9 @@ mgtk:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 110
-		Prerequisites: gatech, ~techlevel.3
+		Prerequisites: ~vehicle.allies, gatech, ~techlevel.3
 		Description: Tank that appears as a tree while immobile.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Composite Armor
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1452,9 +1455,9 @@ bfrt:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 120
-		Prerequisites: gatech, ~techlevel.4
+		Prerequisites: ~vehicle.allies, gatech, ~techlevel.4
 		Description: Large vehicle with 5 fireports for infantry in to fire.\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Composite Armor
 		BuildDuration: 875
 		BuildDurationModifier: 100
@@ -1612,8 +1615,8 @@ robo:
 	Tooltip@NoRow:
 		Name: Robot Tank
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Allies
-		Prerequisites: ~techlevel.2
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Shared, Ship.Allies
+		Prerequisites: ~vehicleorship.allies, ~techlevel.2
 		BuildPaletteOrder: 40
 		Description: Remote controlled vehicle.\nRequires an Allied War Factory or Shipyard to operate.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
 		BuildDuration: 175
@@ -1733,9 +1736,9 @@ aambu:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 70
-		Prerequisites: ~prerequisite.ambulance, ~techlevel.2
+		Prerequisites: ~vehicle.allies, ~prerequisite.ambulance, ~techlevel.2
 		Description: Heavy armored vehicle capable of healing nearby infantry.\nCan carry up to 5 infantry and heal them faster inside.\n\n  Unarmed\n\nUpgradeable with:\n- Composite Armor
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -1840,9 +1843,9 @@ hwtz:
 	Tooltip@NoRow:
 		Name: Howitzer
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 80
-		Prerequisites: gaairc, ~techlevel.3
+		Prerequisites: ~vehicle.allies, gaairc, ~techlevel.3
 		Description: Long range vehicle.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nUpgradeable with:\n- EMP Munitions (Korea)
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1935,9 +1938,9 @@ ctnk:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 990
-		Prerequisites: gatech, ~caslab, ~techlevel.4
+		Prerequisites: ~vehicle.allies, gatech, ~caslab, ~techlevel.4
 		Description: Armed with anti-ground missiles.\nTeleports to areas within range.\n\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -2062,7 +2065,8 @@ ctnk:
 expn:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Allies
+		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Shared, Ship.Allies
+		Prerequisites: ~vehicleorship.allies, repairpad, ~techlevel.2, ~!ai.ev
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
 	Transforms:
