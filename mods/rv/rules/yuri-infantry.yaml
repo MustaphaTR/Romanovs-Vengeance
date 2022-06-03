@@ -6,9 +6,10 @@ slav:
 	Inherits@MC: ^MindControllable
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Buildable:
-		Queue: Infantry.Slave
-		BuildPaletteOrder: 50
-		Prerequisites: ~techlevel.1
+		Queue: Infantry.Shared, Infantry.Slave
+		BuildAtProductionType: Slave
+		BuildPaletteOrder: 60
+		Prerequisites: ~showslave, yarefn, ~techlevel.1
 		Description: Gathers Ore and Gems.
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -104,6 +105,7 @@ init:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
 		Prerequisites: ~infantry.yuri, ~techlevel.1
 		Description: Basic Yuri Infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Focused Mind\n- Camouflage
@@ -224,6 +226,7 @@ brute:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 20
 		Prerequisites: ~infantry.yuri, ~techlevel.1
 		Description: Powerful soldiers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
@@ -348,6 +351,7 @@ virus:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
 		Prerequisites: ~infantry.yuri, yadome, ~techlevel.2
 		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Camouflage
@@ -541,6 +545,7 @@ lunr:
 		Type: CenterPosition
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Moon
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
 		Prerequisites: ~infantry.psimoon, yadome, ~techlevel.3
 		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
@@ -765,8 +770,9 @@ gtrp:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
+		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.yuri, ~techlevel.1
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 50
 		Description: Infantry armed with a heavy gatling cannon.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Chainguns
 		BuildDuration: 175
 		BuildDurationModifier: 100
@@ -1097,6 +1103,7 @@ spct:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
 		Description: Invisible infantry armed with AP rifles with bullets capable of slowing enemy units.\nCan be deployed to make nearby units invisible but itself becomes visible.\n\n  Strong vs Vehicles\n  Weak vs Buildings, Aircraft
@@ -1238,6 +1245,7 @@ ttrp:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 980
 		Prerequisites: ~infantry.yuri, ~soviets.tech.infiltrated, ~techlevel.4
 		Description: Infantry armed with a toxin sprayer and toxin bombs.\nImmune to toxic clouds.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can place Toxin Bombs on buildings
@@ -1368,6 +1376,7 @@ crkt:
 		Name: Chaos Trooper
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 990
 		Prerequisites: ~infantry.yuri, ~yuri.tech.infiltrated, ~techlevel.4
 		Description: Long range rocket infantry armed with chaos warheads.\n\n  Strong vs Infantry, Vehicles, Aircraft\n  Weak vs Buildings\n\nAbilities:\n- Immune to Chaos Gas

@@ -232,44 +232,118 @@ nahand:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+	Exit@1Shared:
+		SpawnOffset: -512,768,0
+		ExitCell: 1,2
+		Priority: 2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@2Shared:
+		SpawnOffset: -512,768,0
+		ExitCell: 0,2
+		Priority: 2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback1Shared:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback2Shared:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback3Shared:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,0
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback4Shared:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback5Shared:
+		SpawnOffset: 724,0,0
+		ExitCell: 1,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback6Shared:
+		SpawnOffset: 0,-724,0
+		ExitCell: 0,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback7Shared:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback8Shared:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,0
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback9Shared:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback10Shared:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
 	Exit@1:
 		SpawnOffset: -512,768,0
 		ExitCell: 1,2
 		Priority: 2
+		RequiresCondition: multiqueue
 	Exit@2:
 		SpawnOffset: -512,768,0
 		ExitCell: 0,2
 		Priority: 2
+		RequiresCondition: multiqueue
 	Exit@fallback1:
 		SpawnOffset: 0,724,0
 		ExitCell: 2,2
+		RequiresCondition: multiqueue
 	Exit@fallback2:
 		SpawnOffset: 0,724,0
 		ExitCell: 2,1
+		RequiresCondition: multiqueue
 	Exit@fallback3:
 		SpawnOffset: 724,0,0
 		ExitCell: 2,0
+		RequiresCondition: multiqueue
 	Exit@fallback4:
 		SpawnOffset: 724,0,0
 		ExitCell: 2,-1
+		RequiresCondition: multiqueue
 	Exit@fallback5:
 		SpawnOffset: 724,0,0
 		ExitCell: 1,-1
+		RequiresCondition: multiqueue
 	Exit@fallback6:
 		SpawnOffset: 0,-724,0
 		ExitCell: 0,-1
+		RequiresCondition: multiqueue
 	Exit@fallback7:
 		SpawnOffset: 0,-724,0
 		ExitCell: -1,-1
+		RequiresCondition: multiqueue
 	Exit@fallback8:
 		SpawnOffset: 0,-724,0
 		ExitCell: -1,0
+		RequiresCondition: multiqueue
 	Exit@fallback9:
 		SpawnOffset: -724,0,0
 		ExitCell: -1,1
+		RequiresCondition: multiqueue
 	Exit@fallback10:
 		SpawnOffset: -724,0,0
 		ExitCell: -1,2
+		RequiresCondition: multiqueue
 	Production:
 		Produces: Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 	ProductionQueue:

@@ -10,50 +10,136 @@ babarr:
 		Dimensions: 3,2
 	RallyPoint:
 		Path: 2,3
+	Exit@1Shared:
+		SpawnOffset: 0,768,0
+		ExitCell: 2,2
+		Priority: 2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@2Shared:
+		SpawnOffset: -694,-196,0
+		ExitCell: 0,2
+		Priority: 2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback1Shared:
+		SpawnOffset: -384,512,0
+		ExitCell: 1,2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback2Shared:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback3Shared:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,0
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback4Shared:
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback5Shared:
+		SpawnOffset: 1086,362,0
+		ExitCell: 2,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback6Shared:
+		SpawnOffset: 362,-362,0
+		ExitCell: 1,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback7Shared:
+		SpawnOffset: -362,-1086,0
+		ExitCell: 0,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback8Shared:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback9Shared:
+		SpawnOffset: -362,-1086,0
+		ExitCell: -1,0
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback10Shared:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback11Shared:
+		SpawnOffset: -1086,-362,0
+		ExitCell: -1,2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback12Shared:
+		SpawnOffset: 384,768,0
+		ExitCell: 3,2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
 	Exit@1:
 		SpawnOffset: 0,768,0
 		ExitCell: 2,2
 		Priority: 2
+		RequiresCondition: multiqueue
 	Exit@2:
 		SpawnOffset: -694,-196,0
 		ExitCell: 0,2
 		Priority: 2
+		RequiresCondition: multiqueue
 	Exit@fallback1:
 		SpawnOffset: -384,512,0
 		ExitCell: 1,2
+		RequiresCondition: multiqueue
 	Exit@fallback2:
 		SpawnOffset: 384,768,0
 		ExitCell: 3,1
+		RequiresCondition: multiqueue
 	Exit@fallback3:
 		SpawnOffset: 1086,362,0
 		ExitCell: 3,0
+		RequiresCondition: multiqueue
 	Exit@fallback4:
 		SpawnOffset: 1086,362,0
 		ExitCell: 3,-1
+		RequiresCondition: multiqueue
 	Exit@fallback5:
 		SpawnOffset: 1086,362,0
 		ExitCell: 2,-1
+		RequiresCondition: multiqueue
 	Exit@fallback6:
 		SpawnOffset: 362,-362,0
 		ExitCell: 1,-1
+		RequiresCondition: multiqueue
 	Exit@fallback7:
 		SpawnOffset: -362,-1086,0
 		ExitCell: 0,-1
+		RequiresCondition: multiqueue
 	Exit@fallback8:
 		SpawnOffset: -362,-1086,0
 		ExitCell: -1,-1
+		RequiresCondition: multiqueue
 	Exit@fallback9:
 		SpawnOffset: -362,-1086,0
 		ExitCell: -1,0
+		RequiresCondition: multiqueue
 	Exit@fallback10:
 		SpawnOffset: -1086,-362,0
 		ExitCell: -1,1
+		RequiresCondition: multiqueue
 	Exit@fallback11:
 		SpawnOffset: -1086,-362,0
 		ExitCell: -1,2
+		RequiresCondition: multiqueue
 	Exit@fallback12:
 		SpawnOffset: 384,768,0
 		ExitCell: 3,2
+		RequiresCondition: multiqueue
 	Production:
 		Produces: Infantry.Baku, Infantry.Tuva
 	ProductionQueue:
@@ -177,14 +263,54 @@ babarb:
 		Dimensions: 2,3
 	RallyPoint:
 		Path: 3,2
+	Exit@1Shared:
+		SpawnOffset: 0,768,0
+		ExitCell: 2,2
+	Exit@2Shared:
+		SpawnOffset: 694,-196,0
+		ExitCell: 2,0
+	Exit@fallback1Shared:
+		SpawnOffset: -362,1086,0
+		ExitCell: 2,3
+	Exit@fallback2Shared:
+		SpawnOffset: -362,1086,0
+		ExitCell: 1,3
+	Exit@fallback3Shared:
+		SpawnOffset: -1086,362,0
+		ExitCell: 0,3
+	Exit@fallback4Shared:
+		SpawnOffset: -1086,362,0
+		ExitCell: -1,3
+	Exit@fallback5Shared:
+		SpawnOffset: -1086,362,0
+		ExitCell: -1,2
+	Exit@fallback6Shared:
+		SpawnOffset: -362,-362,0
+		ExitCell: -1,1
+	Exit@fallback7Shared:
+		SpawnOffset: 362,-1086,0
+		ExitCell: -1,0
+	Exit@fallback8Shared:
+		SpawnOffset: 362,-1086,0
+		ExitCell: -1,-1
+	Exit@fallback9Shared:
+		SpawnOffset: 362,-1086,0
+		ExitCell: 0,-1
+	Exit@fallback10Shared:
+		SpawnOffset: 1086,-362,0
+		ExitCell: 1,-1
+	Exit@fallback11Shared:
+		SpawnOffset: 1086,-362,0
+		ExitCell: 2,-1
+	Exit@fallback12Shared:
+		SpawnOffset: 384,512,0
+		ExitCell: 2,1
 	Exit@1:
 		SpawnOffset: 0,768,0
 		ExitCell: 2,2
-		Priority: 2
 	Exit@2:
 		SpawnOffset: 694,-196,0
 		ExitCell: 2,0
-		Priority: 2
 	Exit@fallback1:
 		SpawnOffset: -362,1086,0
 		ExitCell: 2,3

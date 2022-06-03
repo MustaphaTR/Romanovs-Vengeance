@@ -7,7 +7,8 @@ engineer:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
-		Prerequisites: ~techlevel.1
+		BuildAtProductionType: Soldier
+		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\nAbilities:\n- Can swim\n\n  Unarmed
 		BuildDuration: 250
@@ -114,7 +115,8 @@ dog:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva
-		Prerequisites: ~techlevel.1
+		BuildAtProductionType: Soldier
+		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
 		Description: Anti-infantry unit.\nCan be deployed to stun nearby infantry for a short while.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can detect Stealth units\n- Can detect Spies
 		BuildDuration: 50
@@ -308,6 +310,7 @@ e1:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
+		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: General-purpose infantry.\nCan deploy to gain more range and damage.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- G.I. Fortifications\n- Endurance Training\n- Advanced Training\n- Portable Weaponry (United Kingdom)
@@ -530,6 +533,7 @@ ggi:
 		InvalidTargets: NoAutoTarget
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
+		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Anti-tank and anti-air infantry.\nCan deploy to gain more range.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\n\nUpgradeable with:\n- Endurance Training\n- Advanced Training\n- Boost-Gliding Systems (United States)\n- Portable Weaponry (United Kingdom)
@@ -938,6 +942,7 @@ snipe:
 		Name: Sniper
 	Buildable:
 		Queue: Infantry.Shared, Infantry.UK
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.england, gaairc, ~techlevel.3
 		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry
@@ -1054,6 +1059,7 @@ spy:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
 		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Can disguise as an enemy infantry
@@ -1153,6 +1159,7 @@ ghost:
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
 		Queue: Infantry.Shared, Infantry.USA
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.america, gaairc, ~techlevel.3
 		Description: Elite commando infantry, armed with a sub machine gun\nand C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings\n\nUpgradeable with:\n- Advanced Training
@@ -1408,6 +1415,7 @@ tany:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 160
 		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
 		BuildLimit: 1
@@ -1555,6 +1563,7 @@ jumpjet:
 		Type: CenterPosition
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
 		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Advanced Training
@@ -1755,6 +1764,7 @@ cleg:
 		Name: Chrono Legionnaire
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 140
 		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
 		Description: High-tech soldier capable of erasing enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can teleport anywhere on the map
@@ -1869,6 +1879,7 @@ gren:
 	Inherits@PARACHUTE: ^Parachutable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
+		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: Infantry armed with grenades.\nCan kill garrisoned infantry.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Advanced Training\n- EMP Munitions (Korea)

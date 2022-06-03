@@ -4,6 +4,7 @@ medi:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, ~prerequisite.medic, ~techlevel.1
 		BuildPaletteOrder: 50
 		Description: Heals infantry.\n\n  Unarmed
@@ -67,6 +68,7 @@ mech:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, ~prerequisite.mechanic, repairpad, ~techlevel.2
 		BuildPaletteOrder: 60
 		Description: Repairs friendly vehicles.\n\n  Unarmed
@@ -198,6 +200,7 @@ vlkv:
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 190
 		Prerequisites: ~infantry.baku, natech, ~techlevel.4
 		BuildLimit: 1
@@ -353,6 +356,7 @@ chit:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, natech, ~techlevel.4
 		BuildPaletteOrder: 200
 		BuildLimit: 1

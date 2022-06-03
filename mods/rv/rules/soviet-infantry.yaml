@@ -12,6 +12,7 @@ e2:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: Cheap rifle infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Bullet-Proof Coats\n- Molotov Cocktails\n- Armor-Piercing Bullets
@@ -218,6 +219,7 @@ flakt:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
 		Description: Anti-Air and anti-Infantry unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Improved Flaks\n- Bullet-Proof Coats
 		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
@@ -424,6 +426,7 @@ shk:
 		AttackMoveCondition: attack-move
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 20
 		Description: Special armored unit using electricity.\n\n  Strong vs Infantry, Tanks\n  Weak vs Aircraft\n\nAbilities:\n- Can charge Tesla Coils\n\nUpgradeable with:\n- Overcharge (Soviet Union)
 		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
@@ -563,6 +566,7 @@ terror:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Cuba
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 90
 		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n\n  Strong vs Ground units\n  Weak vs Aircraft\n\nUpgradeable with:\n- Targeted Explosives (Cuba)
 		Prerequisites: ~infantry.cuba, naradr, ~techlevel.3
@@ -647,6 +651,7 @@ deso:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Iraq
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n\n  Strong vs Infantry, Light vehicles\n  Weak vs Tanks, Aircraft\n\nAbilities:\n- Immune to Radiation\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
 		Prerequisites: ~infantry.iraq, naradr, ~techlevel.3
@@ -853,6 +858,7 @@ ivan:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nUpgradeable with:\n- Targeted Explosives (Cuba)\n- High Explosive Bombs (Libya)
 		Prerequisites: ~infantry.sovietsorbaku, naradr, ~techlevel.3
@@ -992,6 +998,7 @@ yuri:
 	Inherits@PARACHUTE: ^Parachutable
 	Buildable:
 		Queue: Infantry.Unused # Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 150
 		Prerequisites: natech, ~techlevel.4
 		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
@@ -1103,6 +1110,7 @@ yuripr:
 	Inherits: yuri
 	Buildable:
 		Queue: Infantry.Unused
+		BuildAtProductionType: Soldier
 		BuildLimit: 1
 		BuildPaletteOrder: 990
 		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
@@ -1164,6 +1172,7 @@ boris:
 		RequiresCondition: leaflet
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 180
 		Prerequisites: ~infantry.soviets, natech, ~techlevel.4
 		BuildLimit: 1
@@ -1369,6 +1378,7 @@ pyro:
 	Inherits@MC: ^MindControllable
 	Buildable:
 		Queue: Infantry.Unused # Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 75
 		Prerequisites: naradr, ~techlevel.2
 		Description: Advanced anti-infantry and anti-structure infantry.\n\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry
@@ -1490,6 +1500,7 @@ hjck:
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
+		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
 		BuildPaletteOrder: 70
 		Description: Steals enemy vehicles.\nCan infiltrate enemy Battle Labs to gain access to new infantry.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Stealth while not moving
@@ -1563,6 +1574,7 @@ itrp:
 		Name: Iron Trooper
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 140
 		Prerequisites: ~infantry.sovietsorbaku, natech, ~techlevel.4
 		Description: High-tech soldier capable of making friendly vehicles invulnerabile and\ndamage enemy infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs
