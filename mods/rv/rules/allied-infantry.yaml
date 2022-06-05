@@ -377,14 +377,16 @@ e1:
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && !deployed && portable
 	Armament@deployed:
-		Weapon: para
 		Name: deployed
+		Weapon: para
+		Damage: 20
 		Turret: deploy
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite && deployed
 	Armament@elite-deployed:
-		Weapon: paraE
 		Name: deployed
+		Weapon: paraE
+		Damage: 25
 		Turret: deploy
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite && deployed
@@ -648,24 +650,26 @@ ggi:
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && portable && !deployed && boostgliding
 	Armament@deployed:
-		Weapon: MissileLauncher
 		Name: deployed
+		Weapon: MissileLauncher
+		Damage: 40
 		Turret: deploy
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && deployed && !boostgliding
 	Armament@elite-deployed:
-		Weapon: MissileLauncherE
 		Name: deployed
+		Weapon: MissileLauncherE
+		Damage: 80
 		Turret: deploy
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && deployed && !boostgliding
 	Armament@deployed-aa:
-		Weapon: MissileLauncherAA
 		Name: deployed
+		Weapon: MissileLauncherAA
 		Turret: deploy
 		LocalOffset: 480,63,992
 		EnableSplitRanges: true
@@ -673,8 +677,8 @@ ggi:
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && deployed && !boostgliding
 	Armament@elite-deployed-aa:
-		Weapon: MissileLauncherAAE
 		Name: deployed
+		Weapon: MissileLauncherAAE
 		Turret: deploy
 		LocalOffset: 480,64,992
 		EnableSplitRanges: true
@@ -682,24 +686,26 @@ ggi:
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && deployed && !boostgliding
 	Armament@deployed-boost:
-		Weapon: MissileLauncherBoosted
 		Name: deployed
+		Weapon: MissileLauncherBoosted
+		Damage: 50
 		Turret: deploy
 		LocalOffset: 480,63,992
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite && deployed && boostgliding
 	Armament@elite-deployed-boost:
-		Weapon: MissileLauncherBoostedE
 		Name: deployed
+		Weapon: MissileLauncherBoostedE
+		Damage: 100
 		Turret: deploy
 		LocalOffset: 480,64,992
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && deployed && boostgliding
 	Armament@deployed-aa-boost:
-		Weapon: MissileLauncherAABoosted
 		Name: deployed
+		Weapon: MissileLauncherAABoosted
 		Turret: deploy
 		LocalOffset: 480,63,992
 		EnableSplitRanges: true
@@ -707,8 +713,8 @@ ggi:
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && deployed && boostgliding
 	Armament@elite-deployed-aa-boost:
-		Weapon: MissileLauncherAABoostedE
 		Name: deployed
+		Weapon: MissileLauncherAABoostedE
 		Turret: deploy
 		LocalOffset: 480,64,992
 		EnableSplitRanges: true
