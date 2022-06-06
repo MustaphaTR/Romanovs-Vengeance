@@ -51,6 +51,10 @@ nacnst:
 		Length: 21
 		Tick: 150
 		ZOffset: 1c0
+	idle-waves: bits/structures/water/ngcnst_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	flag-russia: bits/structures/flags/cgrufgl_a.png
 		Length: 81
 		Tick: 120
@@ -187,6 +191,10 @@ napowr:
 		Start: 19
 		Length: 19
 		Tick: 150
+	idle-waves: bits/structures/water/ngpowr_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ntpowrmk
 		Length: 26
 		ShadowStart: 26
@@ -247,6 +255,10 @@ narefn:
 	damaged-idle: ngrefn
 		Start: 1
 		ShadowStart: 4
+	idle-waves: bits/structures/water/ngrefn_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ntrefnmk
 		Length: 26
 		ShadowStart: 26
@@ -299,6 +311,10 @@ naradr:
 		ShadowStart: 138
 		Length: 45
 		Tick: 150
+	idle-waves: bits/structures/water/ngradr_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ntradrmk
 		Length: 30
 		ShadowStart: 30
@@ -311,13 +327,6 @@ naradr:
 			DUNE: DUNE
 	active: dot
 		ZOffset: -9999
-		UseTilesetCode: false
-	idle-waves: gauwat
-		Offset: 0, -15
-		Length: 15
-		Tick: 200
-		ZOffset: -1c0
-		Scale: 1.75
 		UseTilesetCode: false
 	icon: cameo|nradicon
 		Offset: 0,0
@@ -489,6 +498,10 @@ nadept:
 	damaged-bib: ngdeptbb
 		Start: 1
 		ShadowStart: 3
+	idle-waves: bits/structures/water/ngdept_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ntdeptmk
 		Length: 25
 		ShadowStart: 25
@@ -541,6 +554,10 @@ naheli:
 	damaged-idle-lights: ngheli_bd
 		Length: 3
 		Tick: 150
+	idle-waves: bits/structures/water/ngheli_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: nghelimk
 		Length: 19
 		TilesetOverrides:
@@ -579,6 +596,10 @@ nanrct:
 		Start: 11
 		Length: 11
 		Tick: 150
+	idle-waves: bits/structures/water/ngnrct_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ntnrctmk
 		Length: 25
 		ShadowStart: 25
@@ -609,6 +630,15 @@ natech:
 	damaged-idle: ngtech
 		Start: 1
 		ShadowStart: 4
+	idle-waves: bits/structures/water/ngtech_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
+	damaged-idle-waves: bits/structures/water/ngtech_w
+		Start: 1
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: nttechmk
 		Length: 25
 		ShadowStart: 25
@@ -666,10 +696,8 @@ napsis:
 			LUNAR: GENERIC
 			DUNE: GENERIC
 	idle: ngpsis
-		ShadowStart: 3
 	damaged-idle: ngpsis
 		Start: 1
-		ShadowStart: 4
 	idle-spin: ngpsis_a
 		Length: 40
 		Tick: 150
@@ -679,6 +707,10 @@ napsis:
 		Length: 40
 		Tick: 150
 		ShadowStart: 120
+	idle-waves: bits/structures/water/ngpsis_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ntpsismk
 		Length: 24
 		ShadowStart: 24
@@ -687,13 +719,6 @@ napsis:
 			URBAN: URBAN
 			NEWURBAN: URBAN
 			DESERT: URBAN # YR tilesets don't have Soviet version.
-	idle-waves: gauwat
-		Offset: 0, -15
-		Length: 15
-		Tick: 200
-		ZOffset: -1c0
-		Scale: 1.9
-		UseTilesetCode: false
 	icon: cameo|psisicon
 		Offset: 0,0
 		UseTilesetCode: false
@@ -738,6 +763,10 @@ namisl:
 	steam: nukestm # TODO: unused
 		Length: *
 		Tick: 120
+	idle-waves: bits/structures/water/ngmisl_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ntmislmk
 		UseTilesetCode: true
 		Length: 26
@@ -796,6 +825,10 @@ nairon:
 		Length: 12
 		ShadowStart: 36
 		Tick: 120
+	idle-waves: bits/structures/water/ngiron_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ntironmk
 		Length: 25
 		ShadowStart: 25
@@ -808,13 +841,6 @@ nairon:
 			DUNE: DUNE
 	active: dot
 		ZOffset: -9999
-		UseTilesetCode: false
-	idle-waves: gauwat
-		Offset: 0, -15
-		Length: 15
-		Tick: 200
-		ZOffset: -1c0
-		Scale: 2.5
 		UseTilesetCode: false
 	icon: cameo|ironicon
 		Offset: 0,0
@@ -1030,6 +1056,10 @@ naindp:
 		Start: 13
 		Length: 13
 		ShadowStart: 39
+	idle-waves: bits/structures/water/ngindp_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ntindpmk
 		Length: 25
 		ShadowStart: 25
@@ -1180,6 +1210,10 @@ nasilo:
 	idle-hns: ngsilo_a
 	idle-star: ngsilo_a
 		Start: 1
+	idle-waves: bits/structures/water/ngsilo_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
 	make: ngsilomk
 		Length: 12
 		ShadowStart: 12

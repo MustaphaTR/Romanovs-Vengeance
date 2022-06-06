@@ -189,6 +189,9 @@ nacnst:
 		Sequence: idle-star
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && (transcaucus || turkmen || tuva || russianfed || serbia)
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 90
 	Voiced:
@@ -214,6 +217,9 @@ napowr:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	PlaceBuildingVariants:
 		Actors: napowb
 	IsometricSelectable:
@@ -416,6 +422,9 @@ narefn:
 		Offset: -1024,-384,4096
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: 128,-1408,4096
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	PlaceBuildingVariants:
 		Actors: narefb #, narefc, narefd
 		Facings: 640, 384 #, 128, 896
@@ -972,6 +981,9 @@ nadept:
 		Sequence: idle-normal
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	PlaceBuildingVariants:
 		Actors: nadepb
 	IsometricSelectable:
@@ -1088,6 +1100,9 @@ naheli:
 		Sequence: idle-dish
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 60
 
@@ -1122,6 +1137,9 @@ nanrct:
 		Sequence: idle-lights-orange
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && advirrad
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Explodes:
 		Type: CenterPosition
 		Weapon: NukePayload
@@ -1183,6 +1201,9 @@ natech:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateSoviet
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateSoviet
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -1471,6 +1492,9 @@ namisl:
 	WithSupportPowerActivationOverlay:
 		Sequence: smoke
 		Palette: effect50alpha
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -1883,6 +1907,9 @@ naindp:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable || disabled
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	GrantExternalConditionToOwner:
 		Condition: naindp
 		RequiresCondition: !disabled && !chronodisable
@@ -2140,6 +2167,9 @@ nasilo:
 	WithIdleOverlay@Baku:
 		Sequence: idle-star
 		RequiresCondition: !build-incomplete && baku
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 45
 
@@ -2235,6 +2265,9 @@ narefb:
 		Offset: 1024,-384,4096
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: -128,-1408,4096
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 90
 	ActorStatValues:
