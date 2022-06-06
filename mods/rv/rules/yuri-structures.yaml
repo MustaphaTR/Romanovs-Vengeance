@@ -77,6 +77,9 @@ yacnst:
 	WithIdleOverlay@Luna:
 		Sequence: flag-psimoon
 		RequiresCondition: !build-incomplete && psimoon
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 60
 	Voiced:
@@ -582,6 +585,9 @@ yarfn2:
 		Offset: -416,-416,3648
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: -960,-960,3648
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	PlaceBuildingVariants:
 		Actors: yarfnb #, yarfnc, yarfnd
 		Facings: 640, 384 #, 128, 896
@@ -734,6 +740,9 @@ yadept:
 		Sequence: idle-normal
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	PlaceBuildingVariants:
 		Actors: yadepb
 	IsometricSelectable:
@@ -778,6 +787,9 @@ yagrnd:
 		Sequence: grind
 	WithAcceptDeliveredCashSound:
 		Sound: bgrinda.wav
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
@@ -984,6 +996,9 @@ yadome:
 		Sequence: idle-panels
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 75
 
@@ -1076,6 +1091,9 @@ yatech:
 		Sequence: idle-lift
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	InfiltrateForSupportPower:
 		Proxy: yuri.tech.infiltrated
 	Targetable:
@@ -1708,6 +1726,9 @@ yagntc:
 		Sequence: idle-top
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -1724,9 +1745,6 @@ yappet:
 		Name: Psychic Dominator
 	Tooltip@NoRow:
 		Name: Psychic Dominator
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	DetonateWeaponPower:
 		OrderName: PsiPsychicDomination
 		PauseOnCondition: disabled || chronodisable
@@ -1761,6 +1779,9 @@ yappet:
 	NotificationAnnouncement:
 		Notification: PsychicDominatorDetected
 		TextNotification: Warning: Psychic Dominator detected.
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -1831,6 +1852,18 @@ yarock:
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
+		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	IsometricSelectable:
 		DecorationHeight: 120
 
@@ -1848,9 +1881,21 @@ yapsyb:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: chronodisable
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable
@@ -1881,6 +1926,7 @@ caeast02:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
+		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	Armament:
 		Weapon: LaserShot
 		LocalOffset: 512,-256,1024, 512,256,1024
@@ -1904,6 +1950,17 @@ caeast02:
 	WithVoxelTurret@damaged:
 		Sequence: turret-damaged
 		RequiresCondition: damaged
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
 	RenderVoxels:
 		Image: cahead
 		Scale: 1.17
@@ -1997,6 +2054,9 @@ yaeast02:
 	WithVoxelTurret@damaged:
 		Sequence: turret-damaged
 		RequiresCondition: damaged
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	WithRangeCircle:
 		Range: 9c0
 		Type: yuristatue
@@ -2060,6 +2120,9 @@ yasilo:
 	Buildable:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		Prerequisites: ~building.yuri, refinery, ~!global-megawealth, ~techlevel.1
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 
 yaexpn:
 	Inherits: ^ExpansionNode
@@ -2186,6 +2249,9 @@ yarfnb:
 		Offset: 416,-416,3648
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: 960,-960,3648
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 105
 	ActorStatValues:
