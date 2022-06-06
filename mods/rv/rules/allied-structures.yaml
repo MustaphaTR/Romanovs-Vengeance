@@ -190,9 +190,6 @@ gapowr:
 		Sequence: idle-glow-coolant
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && (powrup || advcoolants)
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Power@ADVCOOLANTS:
 		Amount: 150
 		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && advcoolants
@@ -1472,6 +1469,9 @@ gaspysat:
 		Sequence: idle-dish
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable
@@ -1579,9 +1579,6 @@ gaweat:
 		Name: Weather Controller
 	Tooltip@NoRow:
 		Name: Weather Controller
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	DetonateWeaponPower@WeatherStorm:
 		OrderName: WeatherStormInfoOrder
 		Prerequisites:
@@ -1893,6 +1890,9 @@ gaapad:
 		Sequence: idle-pad
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power:
 		Amount: -10
 		RequiresCondition: !chronodisable

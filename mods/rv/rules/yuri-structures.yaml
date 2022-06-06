@@ -77,9 +77,6 @@ yacnst:
 	WithIdleOverlay@Luna:
 		Sequence: flag-psimoon
 		RequiresCondition: !build-incomplete && psimoon
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 60
 	Voiced:
@@ -113,9 +110,6 @@ yapowr:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Power@1:
 		Amount: 50
 		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loaded >= 1
@@ -585,9 +579,6 @@ yarfn2:
 		Offset: -416,-416,3648
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: -960,-960,3648
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	PlaceBuildingVariants:
 		Actors: yarfnb #, yarfnc, yarfnd
 		Facings: 640, 384 #, 128, 896
@@ -740,9 +731,6 @@ yadept:
 		Sequence: idle-normal
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	PlaceBuildingVariants:
 		Actors: yadepb
 	IsometricSelectable:
@@ -996,9 +984,6 @@ yadome:
 		Sequence: idle-panels
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 75
 
@@ -1044,9 +1029,6 @@ yadisk:
 		Prerequisite: aircraft.psinepal
 		Factions: psinepal
 	-WithMakeAnimation:
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Capturable:
 		RequiresCondition: !invulnerability && !forceshield
 	Sellable:
@@ -1091,9 +1073,6 @@ yatech:
 		Sequence: idle-lift
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	InfiltrateForSupportPower:
 		Proxy: yuri.tech.infiltrated
 	Targetable:
@@ -1727,9 +1706,6 @@ yagntc:
 		Sequence: idle-top
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -1780,9 +1756,6 @@ yappet:
 	NotificationAnnouncement:
 		Notification: PsychicDominatorDetected
 		TextNotification: Warning: Psychic Dominator detected.
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -2121,9 +2094,6 @@ yasilo:
 	Buildable:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		Prerequisites: ~building.yuri, refinery, ~!global-megawealth, ~techlevel.1
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 
 yaexpn:
 	Inherits: ^ExpansionNode
@@ -2250,9 +2220,6 @@ yarfnb:
 		Offset: 416,-416,3648
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: 960,-960,3648
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	IsometricSelectable:
 		DecorationHeight: 105
 	ActorStatValues:

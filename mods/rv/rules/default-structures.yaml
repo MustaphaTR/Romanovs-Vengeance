@@ -139,6 +139,9 @@
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: ConstructionYardVoice
 		Volume: 0.8
@@ -262,6 +265,9 @@
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 
 ^Barracks:
 	Inherits: ^BaseBuilding
@@ -420,6 +426,9 @@
 		Sequence: idle-drill
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power:
 		Amount: -40
 	Targetable:
@@ -505,6 +514,7 @@
 		Facing: 128
 	-WithDockedOverlay:
 	-WithIdleOverlay@drill:
+	-WithIdleOverlay@waves:
 
 ^RefineryD:
 	Inherits: ^Refinery
@@ -521,6 +531,7 @@
 		Facing: 896
 	-WithDockedOverlay:
 	-WithIdleOverlay@drill:
+	-WithIdleOverlay@waves:
 
 ^Silo:
 	Inherits: ^BaseBuilding
@@ -558,6 +569,9 @@
 		Stages: 4
 	StoresResources:
 		Capacity: 2000
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Power:
 		Amount: -10
 		RequiresCondition: !chronodisable
@@ -908,6 +922,9 @@
 		Sequence: bib
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	WithResupplyAnimation:
 		Sequence: repair
 		RequiresCondition: !build-incomplete && !chronodisable
@@ -963,6 +980,9 @@
 		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: RadarVoice
 		Volume: 0.8
@@ -1044,6 +1064,9 @@
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
@@ -1092,6 +1115,9 @@
 		Notification: TechnologyStolen
 		ValidRelationships: None
 		RequiresCondition: diskinfiltrate
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 
 ^PrimarySuperWeapon:
 	Inherits: ^BaseBuilding
@@ -1146,6 +1172,9 @@
 		ValidRelationships: Neutral, Enemy
 		PlayToOwner: False
 		PingRadar: True
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 
 ^SecondarySuperWeapon:
 	Inherits: ^BaseBuilding
@@ -1201,6 +1230,9 @@
 		ValidRelationships: Neutral, Enemy
 		PlayToOwner: False
 		PingRadar: True
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
 
 power:
 	AlwaysVisible:
