@@ -25,7 +25,7 @@ upgrade.gi_fortifications:
 		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
-		Description: While deployed G.I.s become uncrushable and become 33% more durable.
+		Description: Deployed G.I.s become uncrushable and 33% more durable.
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -55,7 +55,7 @@ upgrade.a2a_missiles:
 		BuildPaletteOrder: 30
 		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
-		Description: Makes Harriers capable of attacking air targets.
+		Description: Enables Harriers to target enemy aircraft.
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -70,7 +70,7 @@ upgrade.advanced_coolants:
 		BuildPaletteOrder: 40
 		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
-		Description: Double power output of all Power Plants.
+		Description: Doubles power output of all Power Plants.
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -85,7 +85,7 @@ upgrade.advanced_training:
 		BuildPaletteOrder: 50
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
-		Description: Makes the following units gain experience 50% faster:\n - G.I.\n - Guardian G.I.\n - Grenadier\n - Rocketeer\n - Navy SEAL\n - Tanya Adams\n - Chrono Commando
+		Description: The following units gain experience 50% faster:\n - G.I.\n - Guardian G.I.\n - Grenadier\n - Rocketeer\n - Navy SEAL\n - Tanya Adams\n - Chrono Commando
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -115,7 +115,7 @@ upgrade.boost_gliding_systems:
 		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.america, gatech, ~techlevel.3
-		Description: American technology increases the projectile speed and damage of the following units by 25%:\n - Patriot Missile System\n - Guardian G.I.\n - Infantry Fighting Vehicle\n - Aegis Cruiser\n - Chrono Dragon
+		Description: American technology that increases the projectile speed and damage of the following units by 25%:\n - Patriot Missile System\n - Guardian G.I.\n - Infantry Fighting Vehicle\n - Aegis Cruiser\n - Chrono Dragon
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -130,7 +130,7 @@ upgrade.portable_weaponry:
 		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.england, gatech, ~techlevel.3
-		Description: Through tough British training G.I.s and Guardian G.I.s are able to use their deployed weapon while undeployed as well.\nWhile deployed they fire 25% faster.
+		Description: Through tough British drilling G.I.s and Guardian G.I.s are capable of\nusing their deployed weapon when mobile.\nWhile deployed they fire 25% faster.
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -175,7 +175,7 @@ upgrade.emp_munitions:
 		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.korea, gatech, ~techlevel.3
-		Description: Korean invention arms Grenadiers and Howitzers with EMP munitions which disable vehicles and buildings.
+		Description: Korean invention that arms Grenadiers and Howitzers with EMP munitions which disable vehicles and buildings.
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -205,7 +205,7 @@ upgrade.increased_payload:
 		BuildPaletteOrder: 130
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.4
-		Description: Doubles maximum ammo B2 Spirits can carry to 10.
+		Description: Doubles the payload of B2 Spirits from 5 to 10.
 	Valued:
 		Cost: 3000
 	WithProductionIconOverlay:
@@ -250,7 +250,7 @@ upgrade.molotov_cocktails:
 		BuildPaletteOrder: 30
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
-		Description: Gives Conscripts Molotov Coctails to use against structures.
+		Description: Provides Conscripts with Molotov Coctails to use against structures.
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -265,7 +265,7 @@ upgrade.smoke_grenades:
 		BuildPaletteOrder: 30
 		BuildDuration: 750
 		Prerequisites: ~upgrade.baku, naradr, ~techlevel.2
-		Description: Gives Conscripts Smoke Grenades which halve vision of enemy units and reduce their damage by 20%.
+		Description: Provides Conscripts with Smoke Grenades which halves the vision of enemy units and reduces their damage by 20%.
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
@@ -278,13 +278,28 @@ upgrade.ap_bullets:
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 40
-		BuildDuration: 3000
+		BuildDuration: 2250
 		Prerequisites: ~upgrade.sovietsorbaku, naradr, ~techlevel.2
 		Description: Improves the damage of the following units by 25%:\n - Sentry Gun\n - Conscript\n - Boris Bukov\n - War Miner\n - Siege Chopper
 	Valued:
-		Cost: 2000
+		Cost: 2500
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.ap_bullets
+
+upgrade.nuclear_engines:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Nuclear Engines
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 50
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.sovietsorbaku, natech, ~techlevel.3
+		Description: Increases movement speed of Rhino and Apocalypse Tanks by 33% and 50% respectively.\nBoth units explode when destroyed.
+	Valued:
+		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.nuclear_engines
 
 upgrade.black_napalm:
 	Inherits: ^default.upgrade
@@ -292,10 +307,10 @@ upgrade.black_napalm:
 		Name: Black Napalm
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Soviets
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 60
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: Flame Tanks and Black Kites use Black Napalm, which doubles their damage.
+		Description: Doubles the damage of the following units:\n - Flame Tank\n - Black Kite
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
@@ -307,7 +322,7 @@ upgrade.propaganda_effort:
 		Name: Propaganda Effort
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 60
 		BuildDuration: 750
 		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
 		Description: Increases effectiveness of Propaganda Towers and Propaganda Commander's Power by 25%.
@@ -315,36 +330,6 @@ upgrade.propaganda_effort:
 		Cost: 1500
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.propaganda_effort
-
-upgrade.radioactive_bombs:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Radioactive Warheads
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets
-		BuildPaletteOrder: 60
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: Kirov bombs, V3 and Dreadnought Rockets will leave radiation.
-	Valued:
-		Cost: 2000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.radioactive_bombs
-
-upgrade.cryo_warheads:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Cryo Warheads
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 60
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
-		Description: Kirov bombs, V3 and Dreadnought Rockets gain cryo warheads, which slow down enemy units make them take more damage.
-	Valued:
-		Cost: 2000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.cryo_warheads
 
 upgrade.overcharge:
 	Inherits: ^default.upgrade
@@ -370,7 +355,7 @@ upgrade.advanced_irradiators:
 		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.iraq, natech, ~techlevel.3
-		Description: Devastating Iraqi fallout programme increases damage dealt by radiation by 50%.
+		Description: Devastating Iraqi fallout program that increases the damage dealt by radiation by 50%.
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -385,7 +370,7 @@ upgrade.aerial_propaganda:
 		BuildPaletteOrder: 90
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.vietnam, natech, ~techlevel.3
-		Description: Vietnamese propaganda must be spread world wide. With this upgrade they equip Black Kites and Kirov Airships with speakers to buff nearby units.
+		Description: Vietnamese propaganda must be spread world wide.\nThis upgrade equips Black Kites and Kirov Airships with speakers to buff nearby friendly units.
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -415,7 +400,7 @@ upgrade.high_explosive_bombs:
 		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.libya, natech, ~techlevel.3
-		Description: Libyan special mixture increases the damage of the following units by 25%:\n - Crazy Ivan\n - Chrono Ivan\n - Mortar Cycle\n - Demolition Truck\n - V3 Launcher\n - Dreadnought
+		Description: Libyan chemical mixture increases the damage of the following units by 25%:\n - Crazy Ivan\n - Chrono Ivan\n - Mortar Cycle\n - Demolition Truck\n - V3 Launcher\n - Dreadnought
 	Valued:
 		Cost: 2500
 	WithProductionIconOverlay:
@@ -436,30 +421,15 @@ upgrade.high_caliber_rounds:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.high_caliber_rounds
 
-upgrade.nuclear_engines:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Nuclear Engines
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 120
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.sovietsorbaku, natech, ~techlevel.3
-		Description: Increases movement speed of Rhino and Apocalypse Tanks by 33% and 50% respectively.\nBoth units explode when destroyed.
-	Valued:
-		Cost: 2000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.nuclear_engines
-
 upgrade.uranium_shells:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Depleted Uranium Shells
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Soviets
-		BuildPaletteOrder: 130
+		BuildPaletteOrder: 120
 		BuildDuration: 2250
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.4
+		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
 		Description: Increases damage of Rhino and Apocalypse Tanks by 25%. # \nShells of both units leave radiation at the target location.
 	Valued:
 		Cost: 2500
@@ -472,14 +442,44 @@ upgrade.cryo_shells:
 		Name: Cryo Shells
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 130
+		BuildPaletteOrder: 120
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.baku, natech, ~techlevel.4
+		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
 		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units freeze enemy units, slowing them down and making them take more damage.
 	Valued:
 		Cost: 2500
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.cryo_shells
+
+upgrade.radioactive_bombs:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Fallout Warheads
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Soviets
+		BuildPaletteOrder: 130
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.soviets, namisl, ~techlevel.5
+		Description: Kirov bombs, V3 Launcher and Dreadnought Rockets will leave radiation.
+	Valued:
+		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.radioactive_bombs
+
+upgrade.cryo_warheads:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Cryo Warheads
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 130
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.baku, natech, ~techlevel.4
+		Description: Kirov bombs, V3 Launcher and Dreadnought Rockets gain cryo warheads\nwhich slows down enemy units and causes them to take more damage.
+	Valued:
+		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.cryo_warheads
 
 upgrade.focused_mind:
 	Inherits: ^default.upgrade
@@ -503,11 +503,11 @@ upgrade.grinder_treads:
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 20
-		BuildDuration: 1500
+		BuildDuration: 1000
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
 		Description: Vehicles heal themselves by crushing infantry.
 	Valued:
-		Cost: 1500
+		Cost: 1000
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.grinder_treads
 
@@ -520,7 +520,7 @@ upgrade.toxin_sprayer:
 		BuildPaletteOrder: 30
 		BuildDuration: 750
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
-		Description: Gives Armored Trucks a toxin sprayer weapon.
+		Description: Provides Armored Trucks with a toxin sprayer cannon.
 	Valued:
 		Cost: 1000
 	WithProductionIconOverlay:
