@@ -367,15 +367,18 @@ caoutp:
 		StartRepairingTextNotification: Repairing.
 		FinishRepairingNotification: UnitRepaired
 		FinishRepairingTextNotification: Unit repaired.
-	WithIdleOverlay@tower:
-		Sequence: idle-tower
 	WithIdleOverlay@bib:
 		Sequence: bib
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
-	WithResupplyAnimation:
-		Sequence: active-crane
+	WithIdleRepairOverlay:
+		IdleSequence: idle-crane
+		StartSequence: repair-start
+		Sequence: repair
+		EndSequence: repair-end
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
 	BodyOrientation:
 		QuantizedFacings: 16
 		CameraPitch: 85
