@@ -1096,7 +1096,7 @@ nanrct:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		BuildPaletteOrder: 110
 		Prerequisites: ~building.sovietsorbaku, natech, ~techlevel.3
-		Description: Provides a large amount of power for other structures.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
+		Description: Provides a large amount of power for other structures.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Can be rotated.
 		BuildDuration: 1000
 	Valued:
 		Cost: 1500
@@ -1132,7 +1132,10 @@ nanrct:
 	Power:
 		Amount: 1000
 	IsometricSelectable:
+		Class: nanrcb
 		DecorationHeight: 60
+	PlaceBuildingVariants:
+		Actors: nanrcb
 	Voiced:
 		VoiceSet: NuclearReactorVoice
 		Volume: 0.8
@@ -2343,3 +2346,14 @@ nadepb:
 		Icon: icon
 		IconPalette: chrome
 		TooltipActor: nadept
+
+nanrcb:
+	Inherits: nanrct
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxx_ xxxx xxxx xxx_
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: nanrct
