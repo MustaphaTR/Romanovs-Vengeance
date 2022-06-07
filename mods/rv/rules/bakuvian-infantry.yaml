@@ -152,12 +152,18 @@ mengineer:
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, DogImmune
 	-WithInfantryBody:
+	-WithInfantryBody@Water:
 	WithFacingSpriteBody:
+		RequiresCondition: !swimming
+	WithFacingSpriteBody@Water:
+		Sequence: swim-stand
+		RequiresCondition: swimming
 	-TakeCover:
 	-SpawnActorOnDeath@flames:
 	-SpawnSmokeParticleOnDeath@virus:
 	-WithDeathAnimation@effect:
 	-WithDeathAnimation@normal:
+	-WithDeathAnimation@Water:
 	DeathSounds@normal:
 		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, OrangeRadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
 	-DeathSounds@zapped:
