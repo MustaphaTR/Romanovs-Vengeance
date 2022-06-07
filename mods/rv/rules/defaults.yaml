@@ -150,6 +150,14 @@
 			TopLeft: -2048, -2048
 			BottomRight: 2048, 2048
 
+^4x6Shape:
+	HitShape:
+		UseTargetableCellsOffsets: true
+		Type: Rectangle
+			LocalYaw: -128
+			TopLeft: -2048, -3072
+			BottomRight: 2048, 3072
+
 ^5x3Shape:
 	HitShape:
 		UseTargetableCellsOffsets: true
@@ -2808,7 +2816,7 @@
 		ValidDamageStates: Light, Medium, Heavy, Critical
 	Repairable:
 		Voice: Move
-		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp
 	Carryable:

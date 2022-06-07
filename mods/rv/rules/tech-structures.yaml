@@ -294,8 +294,24 @@ cahosp:
 		PauseOnCondition: chronodisable
 	RangedGpsDot:
 		Sequence: Hospital
+	PlaceBuildingVariants:
+		Actors: cahosb
 	IsometricSelectable:
+		Class: cahosp
 		DecorationHeight: 105
+
+cahosb:
+	Inherits: cahosp
+	Inherits@SHAPE: ^4x6Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xxxxxx xxxxxx xxxxxx xxxxxx
+		Dimensions: 4, 6
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: cahosp
 
 cashosp:
 	Inherits: cahosp
@@ -375,6 +391,7 @@ caoutp:
 		QuantizedFacings: 16
 		CameraPitch: 85
 	RenderVoxels:
+		Image: caoutp
 		Scale: 11.7
 		LightYaw: 800
 		LightPitch: 150
@@ -397,10 +414,29 @@ caoutp:
 		LocalOffset: 128,-256,3328, 128,256,3328
 	RangedGpsDot:
 		Sequence: Outpost
+	PlaceBuildingVariants:
+		Actors: caoutb
 	IsometricSelectable:
+		Class: caoutp
 		DecorationHeight: 90
 	ActorStatValues:
 		Damage: 120
+
+caoutb:
+	Inherits: caoutp
+	Inherits@SHAPE: ^3x4Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Dimensions: 3,4
+		Footprint: xxx x+x +++ +++
+	Turreted:
+		InitialFacing: 128
+		Offset: 544,1088,1408
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: caoutp
 
 # Yuri's Revenge Tech Structures
 capowr:
@@ -663,8 +699,29 @@ carpad:
 		ResetOnOwnerChange: true
 	RangedGpsDot:
 		Sequence: ParaVehicle
+	PlaceBuildingVariants:
+		Actors: carpab
 	IsometricSelectable:
+		Class: carpad
 		DecorationHeight: 60
+
+carpab:
+	Inherits: carpad
+	Inherits@SHAPE: ^3x1Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Footprint: xx=
+		Dimensions: 3, 1
+	RallyPoint:
+		Path: 3,0
+	Exit:
+		Facing: 640
+		ExitCell: 1,0
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: carpad
 
 capsyb:
 	Inherits: ^TechBuilding
@@ -873,5 +930,23 @@ camisl:
 	ProvidesPrerequisite@buildingname:
 	RangedGpsDot:
 		Sequence: Missile
+	PlaceBuildingVariants:
+		Actors: camisb
 	IsometricSelectable:
+		Class: camisl
 		DecorationHeight: 45
+
+camisb:
+	Inherits: camisl
+	Inherits@SHAPE: ^3x4Shape
+	-Buildable:
+	-PlaceBuildingVariants:
+	Building:
+		Dimensions: 3,4
+		Footprint: xxxx xxxx xxxx
+	NukePower:
+		SpawnOffset: -512,512,0
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+		TooltipActor: camisl
