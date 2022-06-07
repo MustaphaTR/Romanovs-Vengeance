@@ -1804,7 +1804,7 @@
 	SpawnActorsOnSell@psicorps:
 		RequiresCondition: !in_water
 	GrantConditionOnTerrain@Water:
-		TerrainTypes: Water
+		TerrainTypes: Water, Beach
 		Condition: in_water
 	RequiresBuildableArea:
 		AreaTypes: building
@@ -2008,7 +2008,7 @@
 		TargetTypes: Ground, Water, WaterStructure, C4
 		RequiresCondition: in_water
 	GrantConditionOnTerrain@Water:
-		TerrainTypes: Water
+		TerrainTypes: Water, Beach
 		Condition: in_water
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
@@ -2062,7 +2062,7 @@
 		TargetTypes: Ground, Water, WaterStructure, C4
 		RequiresCondition: in_water
 	GrantConditionOnTerrain@Water:
-		TerrainTypes: Water
+		TerrainTypes: Water, Beach
 		Condition: in_water
 	WithIdleOverlay@flag:
 		Sequence: flag
@@ -2576,7 +2576,7 @@
 	WithDeathAnimation@effect:
 		RequiresCondition: !swimming
 	GrantConditionOnTerrain@Water:
-		TerrainTypes: Water
+		TerrainTypes: Water, Beach
 		Condition: swimming
 	WithInfantryBody@Water:
 		Name: swim
@@ -3253,7 +3253,7 @@
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha
-		TerrainTypes: Water
+		TerrainTypes: Water, Beach
 		Type: CenterPosition
 		StationaryInterval: 18
 		MovingInterval: 6
