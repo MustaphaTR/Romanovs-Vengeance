@@ -1,3 +1,154 @@
+rctt:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BULLETPROOF: ^AffectedByBulletProofCoats
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@PARACHUTE: ^Parachutable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 20
+		Description: Anti-Air and anti-Vehicle unit.\n\n  Strong vs Vehicle, Aircraft\n  Weak vs Infantry\n\nUpgradeable with:\n- Bullet-Proof Coats
+		Prerequisites: ~infantry.baku, ~techlevel.1
+		BuildDuration: 175
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 350
+	DeliversCash:
+		Payload: 175
+		Voice: Move
+	Tooltip:
+		Name: Rocket Soldier
+	Tooltip@NoRow:
+		Name: Rocket Soldier
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Health:
+		HP: 12000
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+	Passenger:
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: MissileLauncher
+		Damage: 40
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@secondary:
+		Weapon: MissileLauncherAA
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: MissileLauncherE
+		Damage: 80
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@secondary-elite:
+		Weapon: MissileLauncherAAE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@primary-garrisoned:
+		Name: garrisoned
+		Weapon: UCMissileLauncher
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@secondary-garrisoned:
+		Name: garrisoned
+		Weapon: UCMissileLauncherAA
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@primary-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCMissileLauncherE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@secondary-elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCMissileLauncherAAE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@primary-opentopped:
+		Name: opentopped
+		Weapon: MissileLauncher
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@secondary-opentopped:
+		Name: opentopped
+		Weapon: MissileLauncherAA
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@primary-elite-opentopped:
+		Name: opentopped
+		Weapon: MissileLauncherE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@secondary-elite-opentopped:
+		Name: opentopped
+		Weapon: MissileLauncherAAE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	WithInfantryBody:
+		RequiresCondition: !parachute && !webdisable && !bulletproof
+	WithInfantryBody@BULLETPROOF:
+		IdleSequences: idle1-bulletproof, idle2-bulletproof
+		MoveSequence: run-bulletproof
+		StandSequences: stand-bulletproof
+		DefaultAttackSequence: shoot-bulletproof
+		RequiresCondition: !parachute && !webdisable && bulletproof
+	WithSpriteBody@Parachute:
+		RequiresCondition: parachute && !bulletproof
+	WithSpriteBody@Parachute-BULLETPROOF:
+		Name: parachute
+		Sequence: paradrop-bulletproof
+		RequiresCondition: parachute && bulletproof
+	WithDeathAnimation@normal:
+		RequiresCondition: !bulletproof
+	WithDeathAnimation@BULLETPROOF:
+		DeathSequence: die-bulletproof
+		DeathSequencePalette: infantry
+		DeathTypes:
+			ExplosionDeath: 1
+			BulletDeath: 2
+		RequiresCondition: bulletproof
+	Voiced:
+		VoiceSet: FlakTrooperVoice
+	ProducibleWithLevel:
+		Prerequisites: barracks.infiltrated
+	WithProductionIconOverlay:
+		Prerequisites: barracks.infiltrated
+		Types: chevron-veteran
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	ActorStatValues:
+		SplitRanges: true
+		Upgrades: upgrade.bullet_proof_coats
+
 medi:
 	Inherits: ^Infantry
 	Inherits@CHAOS: ^Berserkable

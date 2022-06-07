@@ -218,11 +218,11 @@ flakt:
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
 		Description: Anti-Air and anti-Infantry unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Improved Flaks\n- Bullet-Proof Coats
-		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
+		Prerequisites: ~infantry.soviets, ~techlevel.1
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -425,11 +425,11 @@ shk:
 	AttackMove:
 		AttackMoveCondition: attack-move
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 20
 		Description: Special armored unit using electricity.\n\n  Strong vs Infantry, Tanks\n  Weak vs Aircraft\n\nAbilities:\n- Can charge Tesla Coils\n\nUpgradeable with:\n- Overcharge (Soviet Union)
-		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
+		Prerequisites: ~infantry.soviets, ~techlevel.1
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
