@@ -48,7 +48,7 @@ commanders_power.inf_training:
 	Tooltip:
 		Name: Infantry Training
 	Buildable:
-		Queue: Power.Soviets, Power.Baku
+		Queue: Power.Soviets
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
 		Description: Makes Conscripts and Flak Troopers train as veteran.
@@ -74,6 +74,20 @@ commanders_power.gatling_training:
 		Prerequisite: vetgatsub
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.gatling_training
+
+commanders_power.arty_training:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Artillery Training
+	Buildable:
+		Queue: Power.Baku
+		BuildPaletteOrder: 10
+		Prerequisites: prerequisite.has_points
+		Description: Makes Mortar Tricycles and V3 Launchers train as veteran.
+	ProvidesPrerequisite@vettricv3:
+		Prerequisite: vettricv3
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.arty_training
 
 commanders_power.airpad:
 	Inherits: ^default.commanders_power
