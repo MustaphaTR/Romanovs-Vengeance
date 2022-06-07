@@ -36,6 +36,49 @@ babarr:
 		Offset: 0,0
 		UseTilesetCode: false
 
+basops:
+	Defaults:
+		Offset: 0, -35
+		UseTilesetCode: true
+		TilesetOverrides:
+			TEMPERATE: GENERIC
+			URBAN: GENERIC
+			NEWURBAN: GENERIC
+			DESERT: GENERIC
+			LUNAR: GENERIC
+			DUNE: GENERIC
+	idle: bgsops
+		ShadowStart: 3
+		Tick: 180
+	damaged-idle: bgsops
+		Start: 1
+		ShadowStart: 4
+		Tick: 180
+	idle-dish: bgsops_a
+		Length: 16
+		Tick: 180
+	damaged-idle-dish: bgsops_a
+		Start: 16
+		Length: 16
+		Tick: 180
+	idle-waves: bits/structures/water/bgsops_w
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
+	damaged-idle-waves: bits/structures/water/bgsops_w
+		Start: 1
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
+	make: bgsopsmk
+		Length: 16
+		ShadowStart: 16
+		Tick: 90
+	icon: bits/cameos/sopsicon.png
+		Offset: 0,0
+		AddExtension: false
+		UseTilesetCode: false
+
 baairf:
 	Defaults:
 		Offset: 30, -60

@@ -187,13 +187,110 @@ babarr:
 	IsometricSelectable:
 		DecorationHeight: 45
 
+basops:
+	Inherits: ^Radar
+	Inherits@SHAPE: ^2x2Shape
+	Inherits@AI: ^AIMicroManagable
+	Buildable:
+		Queue: Building.Shared, Building.Baku
+		Prerequisites: ~building.baku, power, narefn, ~techlevel.2, ~!ai.sops
+		Description: Provides radar.\nResearches basic upgrades.\n\nProvides Leaflet Drop support power.
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.sops
+	Tooltip:
+		Name: Special Operations Center
+	Tooltip@NoRow:
+		Name: Special Operations Center
+	ProvidesPrerequisite@naradr:
+		Prerequisite: naradr
+	ProvidesPrerequisite@transcaucus:
+		Prerequisite: radar.transcaucus
+		Factions: transcaucus
+	ProvidesPrerequisite@turkmen:
+		Prerequisite: radar.turkmen
+		Factions: turkmen
+	ProvidesPrerequisite@tuva:
+		Prerequisite: radar.tuva
+		Factions: tuva
+	ProvidesPrerequisite@russianfed:
+		Prerequisite: radar.russianfed
+		Factions: russianfed
+	ProvidesPrerequisite@serbia:
+		Prerequisite: radar.serbia
+		Factions: serbia
+	ProvidesPrerequisite@baku:
+		Prerequisite: radar.baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+	ProvidesPrerequisite@upgrade.transcaucus:
+		Prerequisite: upgrade.transcaucus
+		Factions: transcaucus
+	ProvidesPrerequisite@upgrade.turkmen:
+		Prerequisite: upgrade.turkmen
+		Factions: turkmen
+	ProvidesPrerequisite@upgrade.tuva:
+		Prerequisite: upgrade.tuva
+		Factions: tuva
+	ProvidesPrerequisite@upgrade.russianfed:
+		Prerequisite: upgrade.russianfed
+		Factions: russianfed
+	ProvidesPrerequisite@upgrade.serbia:
+		Prerequisite: upgrade.serbia
+		Factions: serbia
+	ProvidesPrerequisite@upgrade.baku:
+		Prerequisite: upgrade.baku
+	ProvidesPrerequisite@upgrade.sovietsorbaku:
+		Prerequisite: upgrade.sovietsorbaku
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	AirstrikePower@leafletdrop:
+		OrderName: BakuPactLeafletDrop
+		PauseOnCondition: disabled || chronodisable
+		Prerequisites:
+			1: basops
+		Icons:
+			1: leaflet
+		ChargeInterval: 3750
+		Names:
+			1: Leaflet Drop
+		Descriptions:
+			1: A Cargo Plane drops leaflets\nanywhere on the map.\nLeaflets slow enemy infantry\nand vehicle movement and\nfire speed.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
+		UnitTypes:
+			1: pdplane.leaflet.baku
+		SquadSizes:
+			1: 1
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: leaficon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	WithIdleOverlay@dish:
+		Sequence: idle-dish
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !build-incomplete
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
+	IsometricSelectable:
+		DecorationHeight: 60
+
 baairf:
 	Inherits: ^Helipad
 	Inherits@SHAPE: ^3x5Shape
 	Buildable:
 		Queue: Building.Shared, Building.Baku
 		Description: Produces Bakuvian aircraft.\nSupports 2 aircraft.\n\n  Can be rotated.
-		Prerequisites: ~building.baku, naradr, ~techlevel.2
+		Prerequisites: ~building.baku, basops, ~techlevel.2
 	Building:
 		Footprint: xx= xxx xxx _xx _xx
 		Dimensions: 3,5

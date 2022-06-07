@@ -427,8 +427,8 @@ naradr:
 	Inherits@SHAPE: ^2x2Shape
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
-		Queue: Building.Shared, Building.Soviets, Building.Baku
-		Prerequisites: ~building.sovietsorbaku, power, narefn, ~techlevel.2, ~!ai.naradr
+		Queue: Building.Shared, Building.Soviets
+		Prerequisites: ~building.soviets, power, narefn, ~techlevel.2, ~!ai.naradr
 		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Tesla Drop (Soviet Union)\n- Radiation Missile (Iraq)\n- Instant Bunker (Vietnam)\n- Death Bombs (Cuba)\n- Ambush (Libya)
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
@@ -452,9 +452,6 @@ naradr:
 	ProvidesPrerequisite@libya:
 		Prerequisite: radar.libya
 		Factions: libya
-	ProvidesPrerequisite@baku:
-		Prerequisite: radar.baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ProvidesPrerequisite@upgrade.russia:
 		Prerequisite: upgrade.russia
 		Factions: russia
@@ -472,12 +469,8 @@ naradr:
 		Factions: libya
 	ProvidesPrerequisite@upgrade.soviets:
 		Prerequisite: upgrade.soviets
-		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
 	ProvidesPrerequisite@upgrade.sovietsorbaku:
 		Prerequisite: upgrade.sovietsorbaku
-	ProvidesPrerequisite@upgrade.baku:
-		Prerequisite: upgrade.baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -642,37 +635,6 @@ naradr:
 		DisplayBeacon: True
 		BeaconPosters:
 			1: mineicon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		UseDirectionalTarget: True
-		DirectionArrowAnimation: swdirection
-		DirectionArrowPalette: mouse
-	AirstrikePower@leafletdrop:
-		OrderName: BakuPactLeafletDrop
-		PauseOnCondition: disabled || chronodisable
-		Prerequisites:
-			1: radar.baku
-		Icons:
-			1: leaflet
-		ChargeInterval: 3750
-		Names:
-			1: Leaflet Drop
-		Descriptions:
-			1: A Cargo Plane drops leaflets\nanywhere on the map.\nLeaflets slow enemy infantry\nand vehicle movement and\nfire speed.
-		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
-		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
-		IncomingTextNotification: Warning: Enemy airstrike initiated.
-		UnitTypes:
-			1: pdplane.leaflet.baku
-		SquadSizes:
-			1: 1
-		QuantizedFacings: 8
-		CameraActor: CAMERA
-		CameraRemoveDelay: 100
-		DisplayBeacon: True
-		BeaconPosters:
-			1: leaficon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		UseDirectionalTarget: True
