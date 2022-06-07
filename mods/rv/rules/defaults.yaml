@@ -1978,10 +1978,12 @@
 	-MustBeDestroyed:
 	-GivesExperience:
 	-UpdatesPlayerStatistics:
-	Buildable:
-		Queue: Building.Tech
 	OwnerLostAction:
 		Action: ChangeOwner
+	Buildable:
+		Queue: Building.Tech
+	Building:
+		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	Health:
 		HP: 90000
 	Armor:
@@ -1992,6 +1994,18 @@
 	#	Types: SatelliteScan
 	#	Range: 5c0
 	#	RequiresCondition: enabled
+	Targetable:
+		RequiresCondition: !in_water
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4
+		RequiresCondition: in_water
+	GrantConditionOnTerrain@Water:
+		TerrainTypes: Water
+		Condition: in_water
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		PauseOnCondition: chronodisable
+		RequiresCondition: in_water
 	GrantConditionOnCombatantOwner:
 		Condition: enabled
 	Capturable:
