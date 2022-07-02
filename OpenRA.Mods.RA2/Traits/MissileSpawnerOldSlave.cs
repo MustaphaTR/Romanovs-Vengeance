@@ -26,12 +26,12 @@ namespace OpenRA.Mods.RA2.Traits
 	[Desc("This unit is \"slaved\" to a missile spawner old master.")]
 	public class MissileSpawnerOldSlaveInfo : BaseSpawnerSlaveInfo
 	{
-		public override object Create(ActorInitializer init) { return new MissileSpawnerOldSlave(init, this); }
+		public override object Create(ActorInitializer init) { return new MissileSpawnerOldSlave(this); }
 	}
 
 	public class MissileSpawnerOldSlave : BaseSpawnerSlave
 	{
-		public MissileSpawnerOldSlave(ActorInitializer init, MissileSpawnerOldSlaveInfo info)
-			: base(init, info) { }
+		public MissileSpawnerOldSlave(MissileSpawnerOldSlaveInfo info)
+			: base(info) { }
 	}
 }
