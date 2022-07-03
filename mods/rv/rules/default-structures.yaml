@@ -415,6 +415,9 @@
 		Actor: cmin
 		SpawnOffset: 3,1
 		Facing: 640
+	SpawnNeighboringActors:
+		ActorTypes: refdock
+		Locations: 3,1
 	WithDockedOverlay:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
@@ -499,6 +502,8 @@
 	FreeActor:
 		SpawnOffset: 1,3
 		Facing: 384
+	SpawnNeighboringActors:
+		Locations: 1,3
 
 ^RefineryC:
 	Inherits: ^Refinery
@@ -512,6 +517,8 @@
 	FreeActor:
 		SpawnOffset: 0,1
 		Facing: 128
+	SpawnNeighboringActors:
+		Locations: 0,1
 	-WithDockedOverlay:
 	-WithIdleOverlay@drill:
 	-WithIdleOverlay@waves:
@@ -529,9 +536,23 @@
 	FreeActor:
 		SpawnOffset: 1,0
 		Facing: 896
+	SpawnNeighboringActors:
+		Locations: 1,0
 	-WithDockedOverlay:
 	-WithIdleOverlay@drill:
 	-WithIdleOverlay@waves:
+
+refdock:
+	Interactable:
+	AlwaysVisible:
+	Reservable:
+	ProximityExternalCondition:
+		Condition: on_dock
+		Range: 0c640
+	Building:
+		Footprint: _
+		AllowInvalidPlacement: true
+	RejectsOrders:
 
 ^Silo:
 	Inherits: ^BaseBuilding

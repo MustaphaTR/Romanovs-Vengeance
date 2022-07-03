@@ -73,9 +73,9 @@ namespace OpenRA.Mods.RA2.Traits
 					foreach (var actor in Info.Mines)
 					{
 						var ai = self.World.Map.Rules.Actors[actor];
-						var ip = ai.TraitInfo<IPositionableInfo>();
+						var ip = ai.TraitInfoOrDefault<IPositionableInfo>();
 
-						if (!ip.CanEnterCell(self.World, null, cell))
+						if (ip != null && !ip.CanEnterCell(self.World, null, cell))
 							continue;
 
 						var mine = self.World.CreateActor(actor.ToLowerInvariant(), new TypeDictionary
