@@ -6,13 +6,6 @@ pcv:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
 		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
 		Prerequisites: ~vehicleorship.yuri, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
-	Transforms:
-		IntoActor: yacnst
-	WithVoxelBody:
-		RequiresCondition: !in_water
-	WithVoxelBody@Water:
-		Sequence: water
-		RequiresCondition: in_water
 	Hovers:
 		Ticks: 10
 		FallTicks: 5
@@ -20,6 +13,8 @@ pcv:
 		InitialHeight: 48
 		# PauseOnCondition: chronodisable
 		RequiresCondition: in_water && !emp && !magnefreeze
+	Transforms:
+		IntoActor: yacnst
 	Voiced:
 		VoiceSet: YuriConstructionVehicleVoice
 	ActorStatValues:

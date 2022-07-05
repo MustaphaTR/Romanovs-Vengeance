@@ -190,6 +190,10 @@
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
+		RequiresCondition: !in_water
+	WithVoxelBody@Water:
+		Sequence: water
+		RequiresCondition: in_water
 	HitShape:
 	Targetable:
 		RequiresCondition: !in_water

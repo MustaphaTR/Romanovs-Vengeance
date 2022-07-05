@@ -3,11 +3,6 @@ smcv:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets
 		Prerequisites: ~vehicleorship.sovietsorbaku, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
-	WithVoxelBody:
-		RequiresCondition: !in_water
-	WithVoxelBody@Water:
-		Sequence: water
-		RequiresCondition: in_water
 	Transforms:
 		IntoActor: nacnst
 	Voiced:
