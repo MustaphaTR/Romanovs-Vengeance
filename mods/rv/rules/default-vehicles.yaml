@@ -72,6 +72,12 @@
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelUnloadBody:
+		RequiresCondition: !in_water || on_dock
+	WithVoxelUnloadBody@Water:
+		IdleSequence: water
+		RequiresCondition: in_water && !on_dock
+	ExternalCondition@on_dock:
+		Condition: on_dock
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	VoiceAnnouncement:

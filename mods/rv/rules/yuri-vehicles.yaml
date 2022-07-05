@@ -170,13 +170,6 @@ gmin:
 	-ExternalCondition@INVISIBILITY:
 	LeavesTrails:
 		RequiresCondition: !cloaked
-	WithVoxelUnloadBody:
-		RequiresCondition: !in_water || on_dock
-	WithVoxelUnloadBody@Water:
-		IdleSequence: water
-		RequiresCondition: in_water && !on_dock
-	ExternalCondition@on_dock:
-		Condition: on_dock
 	Voiced:
 		VoiceSet: SlaveMinerVoice
 	ActorStatValues:

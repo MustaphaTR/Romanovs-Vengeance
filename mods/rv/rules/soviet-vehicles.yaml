@@ -57,13 +57,6 @@ harv:
 	Turreted:
 		TurnSpeed: 40
 		Offset: 196,0,-24
-	WithVoxelUnloadBody:
-		RequiresCondition: !in_water || on_dock
-	WithVoxelUnloadBody@Water:
-		IdleSequence: water
-		RequiresCondition: in_water && !on_dock
-	ExternalCondition@on_dock:
-		Condition: on_dock
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: WarMinerVoice
