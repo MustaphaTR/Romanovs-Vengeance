@@ -1444,14 +1444,17 @@ deva:
 		DeployedCondition: overload
 		PauseOnCondition: overload || chronodisable || emp
 		CanDeployOnRamps: true
-	WithColoredOverlay@OVERLOAD:
-		Color: 00000080
-		RequiresCondition: overload
 	KillsSelf@MELTDOWN:
 		Delay: 75
 		DamageTypes: NonTemporal
 		RequiresCondition: overload && !chronodisable && !emp
 		GrantsCondition: meltdown
+	WithIdleOverlay@MELTDOWN:
+		Image: rac4countdown
+		Sequence: idle
+		Palette: mouse
+		PauseOnCondition: !overload
+		RequiresCondition: overload
 	Voiced:
 		VoiceSet: DevastatorVoice
 	ExternalCondition@PRODUCED:
