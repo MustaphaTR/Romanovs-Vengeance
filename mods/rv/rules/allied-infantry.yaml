@@ -313,7 +313,7 @@ e1:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: General-purpose infantry.\nCan deploy to gain more range and damage.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- G.I. Fortifications\n- Endurance Training\n- Advanced Training\n- Portable Weaponry (United Kingdom)
+		Description: General-purpose infantry.\nCan deploy to gain more range and damage.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n- Advanced Training\n- Portable Weaponry (United Kingdom)
 		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -502,7 +502,7 @@ e1:
 		DeployTicks: 5
 		UndeployTicks: 50
 	ActorStatValues:
-		Upgrades: upgrade.gi_fortifications, upgrade.endurance_training, upgrade.advanced_training, upgrade.portable_weaponry
+		Upgrades: upgrade.gi_fortifications, upgrade.advanced_training, upgrade.portable_weaponry
 
 ggi:
 	Inherits: ^Infantry
@@ -538,7 +538,7 @@ ggi:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Anti-tank and anti-air infantry.\nCan deploy to gain more range.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\n\nUpgradeable with:\n- Endurance Training\n- Advanced Training\n- Boost-Gliding Systems (United States)\n- Portable Weaponry (United Kingdom)
+		Description: Anti-tank and anti-air infantry.\nCan deploy to gain more range.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n-\n- Advanced Training\n- Boost-Gliding Systems (United States)\n- Portable Weaponry (United Kingdom)
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -927,7 +927,7 @@ ggi:
 		DeployTicks: 5
 		UndeployTicks: 50
 	ActorStatValues:
-		Upgrades: upgrade.endurance_training, upgrade.advanced_training, upgrade.boost_gliding_systems, upgrade.portable_weaponry
+		Upgrades: upgrade.gi_fortifications, upgrade.advanced_training, upgrade.boost_gliding_systems, upgrade.portable_weaponry
 
 snipe:
 	Inherits: ^Infantry

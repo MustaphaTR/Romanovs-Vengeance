@@ -16,35 +16,23 @@
 		Prerequisites: default.upgrade
 		Types: stripe-upgraded
 
+### Allies ###
 upgrade.gi_fortifications:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: G.I. Fortifications
+		Name: Fiber-Reinforced Fortifications
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Allies
 		BuildPaletteOrder: 10
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
-		Description: Deployed G.I.s become uncrushable and gain 33% more durability.
+		Description: Increases movement speed of G.I.s and Guardian G.I.s by 25%.\nDeployed G.I.s become uncrushable and gain 33% more durability.
 	Valued:
 		Cost: 2000
+	ProvidesPrerequisite@endurance_training:
+		Prerequisite: upgrade.endurance_training
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.gi_fortifications
-
-upgrade.endurance_training:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Endurance Training
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Allies
-		BuildPaletteOrder: 20
-		BuildDuration: 750
-		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
-		Description: Increases movement speed of G.I.s and Guardian G.I.s by 25%.
-	Valued:
-		Cost: 1000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.endurance_training
 
 upgrade.a2a_missiles:
 	Inherits: ^default.upgrade
@@ -52,7 +40,7 @@ upgrade.a2a_missiles:
 		Name: Air-to-Air Missile Systems
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Allies
-		BuildPaletteOrder: 30
+		BuildPaletteOrder: 20
 		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
 		Description: Enables Harriers to target enemy aircraft.
@@ -67,7 +55,7 @@ upgrade.advanced_coolants:
 		Name: Advanced Coolants
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Allies
-		BuildPaletteOrder: 40
+		BuildPaletteOrder: 30
 		BuildDuration: 750
 		Prerequisites: ~upgrade.allies, gaairc, ~techlevel.2
 		Description: Doubles the power output of Power Plants.
@@ -82,7 +70,7 @@ upgrade.advanced_training:
 		Name: Advanced Training
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Allies
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 40
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
 		Description: The following units gain experience 50% faster:\n - G.I.\n - Guardian G.I.\n - Grenadier\n - Rocketeer\n - Navy SEAL\n - Tanya Adams\n - Chrono Commando
@@ -97,7 +85,7 @@ upgrade.predator_missiles:
 		Name: Predator Missiles
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Allies
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 50
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
 		Description: Increases the damage of Harriers by 25%.
@@ -105,6 +93,21 @@ upgrade.predator_missiles:
 		Cost: 1500
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.predator_missiles
+
+upgrade.composite_armor:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Composite Armor
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Allies
+		BuildPaletteOrder: 60
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
+		Description: Increases the durability of the following units by 33%:\n - Grizzly Tank\n - Ambulance\n - Tank Destroyer\n - Mirage Tank\n - Battle Fortress
+	Valued:
+		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.composite_armor
 
 upgrade.boost_gliding_systems:
 	Inherits: ^default.upgrade
@@ -181,28 +184,13 @@ upgrade.emp_munitions:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.emp_munitions
 
-upgrade.composite_armor:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Composite Armor
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Allies
-		BuildPaletteOrder: 120
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.allies, gatech, ~techlevel.3
-		Description: Increases the durability of the following units by 33%:\n - Grizzly Tank\n - Ambulance\n - Tank Destroyer\n - Mirage Tank\n - Battle Fortress
-	Valued:
-		Cost: 2000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.composite_armor
-
 upgrade.increased_payload:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Increased Payload
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Allies
-		BuildPaletteOrder: 130
+		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.allies, gaweat, ~techlevel.4
 		Description: Doubles the payload of B2 Spirits from 5 to 10.
@@ -211,20 +199,21 @@ upgrade.increased_payload:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.increased_payload
 
-upgrade.improved_flaks:
+### Soviets ###
+upgrade.ap_bullets:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Improved Flaks
+		Name: Armor-Piercing Bullets
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
 		BuildPaletteOrder: 10
-		BuildDuration: 750
+		BuildDuration: 2250
 		Prerequisites: ~upgrade.sovietsorbaku, naradr, ~techlevel.2
-		Description: Anti-ground flak weapons become instant hit.
+		Description: Improves the damage of the following units by 25%:\n - Sentry Gun\n - Conscript\n - Boris Bukov\n - War Miner\n - Siege Chopper
 	Valued:
-		Cost: 1000
+		Cost: 2500
 	WithProductionIconOverlay:
-		Prerequisites: upgrade.improved_flaks
+		Prerequisites: upgrade.ap_bullets
 
 upgrade.bullet_proof_coats:
 	Inherits: ^default.upgrade
@@ -271,28 +260,13 @@ upgrade.smoke_grenades:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.smoke_grenades
 
-upgrade.ap_bullets:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Armor-Piercing Bullets
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 40
-		BuildDuration: 2250
-		Prerequisites: ~upgrade.sovietsorbaku, naradr, ~techlevel.2
-		Description: Improves the damage of the following units by 25%:\n - Sentry Gun\n - Conscript\n - Boris Bukov\n - War Miner\n - Siege Chopper
-	Valued:
-		Cost: 2500
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.ap_bullets
-
 upgrade.nuclear_engines:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Nuclear Engines
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 40
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.sovietsorbaku, natech, ~techlevel.3
 		Description: Increases the movement speed of the following units:\n - Rhino Tanks by 17%\n - Apocalypse Tanks by 25%\nBoth units will explode violently and leave radiation when destroyed.
@@ -300,6 +274,36 @@ upgrade.nuclear_engines:
 		Cost: 1500
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.nuclear_engines
+
+upgrade.uranium_shells:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Depleted Uranium Shells
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Soviets
+		BuildPaletteOrder: 50
+		BuildDuration: 2250
+		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
+		Description: Increases the damage of Rhino and Apocalypse Tanks by 25%. # \nShells of both units leave radiation at the target location.
+	Valued:
+		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.uranium_shells
+
+upgrade.cryo_shells:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Cryo Shells
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 50
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
+		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units freeze enemy units, slowing them down and making them take more damage.
+	Valued:
+		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.cryo_shells
 
 upgrade.black_napalm:
 	Inherits: ^default.upgrade
@@ -421,43 +425,13 @@ upgrade.high_caliber_rounds:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.high_caliber_rounds
 
-upgrade.uranium_shells:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Depleted Uranium Shells
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets
-		BuildPaletteOrder: 120
-		BuildDuration: 2250
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: Increases the damage of Rhino and Apocalypse Tanks by 25%. # \nShells of both units leave radiation at the target location.
-	Valued:
-		Cost: 2500
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.uranium_shells
-
-upgrade.cryo_shells:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Cryo Shells
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 120
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
-		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units freeze enemy units, slowing them down and making them take more damage.
-	Valued:
-		Cost: 2500
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.cryo_shells
-
 upgrade.radioactive_bombs:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: Fallout Warheads
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Soviets
-		BuildPaletteOrder: 130
+		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, namisl, ~techlevel.5
 		Description: Makes Kirov, V3 Launcher and Dreadnought projectiles leave radiation.
@@ -472,7 +446,7 @@ upgrade.cryo_warheads:
 		Name: Cryo Warheads
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 130
+		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.baku, natech, ~techlevel.4
 		Description: Kirov bombs, V3 Launcher and Dreadnought rockets gain cryo warheads\nwhich slow down enemy units and cause them to take more damage.
@@ -481,20 +455,21 @@ upgrade.cryo_warheads:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.cryo_warheads
 
-upgrade.focused_mind:
+### Psi-Corps ###
+upgrade.camouflage:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Focused Mind
+		Name: Camouflage
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 10
-		BuildDuration: 1000
+		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
-		Description: Increases attack speed of Initiates by 25%.
+		Description: Provides Initiates and Viruses with camouflage.
 	Valued:
-		Cost: 1500
+		Cost: 2000
 	WithProductionIconOverlay:
-		Prerequisites: upgrade.focused_mind
+		Prerequisites: upgrade.camouflage
 
 upgrade.grinder_treads:
 	Inherits: ^default.upgrade
@@ -526,20 +501,20 @@ upgrade.toxin_sprayer:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.toxin_sprayer
 
-upgrade.camouflage:
+upgrade.lazarus_prime:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Camouflage
+		Name: Lazarus Prime
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 40
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
-		Description: Provides Initiates and Viruses with camouflage.
+		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
+		Description: Enables Stealth Generators to cloak themselves.
 	Valued:
-		Cost: 2000
+		Cost: 1000
 	WithProductionIconOverlay:
-		Prerequisites: upgrade.camouflage
+		Prerequisites: upgrade.lazarus_prime
 
 upgrade.autoloaders:
 	Inherits: ^default.upgrade
@@ -556,20 +531,20 @@ upgrade.autoloaders:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.autoloaders
 
-upgrade.advanced_magnetics:
+upgrade.rocket_barrage:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Advanced Magnetics
+		Name: Rocket Barrage
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 60
-		BuildDuration: 750
+		BuildDuration: 1000
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
-		Description: Magnetrons gain more attack range and deal 25% more damage. They also deal 50% of their damage to vehicles now.
+		Description: Equips Lethocerus Platforms with a rocket pod that quickly fires 6 missiles at once.
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
-		Prerequisites: upgrade.advanced_magnetics
+		Prerequisites: upgrade.rocket_barrage
 
 upgrade.chaos_tank_compensators:
 	Inherits: ^default.upgrade
@@ -646,35 +621,20 @@ upgrade.disc_armor:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.disc_armor
 
-upgrade.lazarus_prime:
+upgrade.advanced_magnetics:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Lazarus Prime
+		Name: Advanced Magnetics
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Yuri
 		BuildPaletteOrder: 120
-		BuildDuration: 1500
+		BuildDuration: 750
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
-		Description: Enables Stealth Generators to cloak themselves.
-	Valued:
-		Cost: 1000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.lazarus_prime
-
-upgrade.rocket_barrage:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: Rocket Barrage
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Yuri
-		BuildPaletteOrder: 130
-		BuildDuration: 1000
-		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
-		Description: Equips Lethocerus Platforms with a rocket pod that quickly fires 6 missiles at once.
+		Description: Magnetrons gain more attack range and deal 25% more damage. They also deal 50% of their damage to vehicles now.
 	Valued:
 		Cost: 1500
 	WithProductionIconOverlay:
-		Prerequisites: upgrade.rocket_barrage
+		Prerequisites: upgrade.advanced_magnetics
 
 upgrade.chainguns:
 	Inherits: ^default.upgrade
@@ -682,7 +642,7 @@ upgrade.chainguns:
 		Name: Chainguns
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Yuri
-		BuildPaletteOrder: 140
+		BuildPaletteOrder: 130
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.4
 		Description: Increases the damage of Gatling weapons by 25%.
@@ -690,3 +650,49 @@ upgrade.chainguns:
 		Cost: 2000
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.chainguns
+
+### Unused ###
+upgrade.endurance_training:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Endurance Training
+	Buildable:
+		Queue: Upgrade.Unused # Upgrade.Shared, Upgrade.Allies
+		BuildPaletteOrder: 10
+		BuildDuration: 750
+		Prerequisites: ~disabled # ~upgrade.allies, gaairc, ~techlevel.2
+		Description: Increases movement speed of G.I.s and Guardian G.I.s by 25%.
+	Valued:
+		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.endurance_training
+
+upgrade.improved_flaks:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Improved Flaks
+	Buildable:
+		Queue: Upgrade.Unused # Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		BuildPaletteOrder: 20
+		BuildDuration: 750
+		Prerequisites: ~disabled # ~upgrade.sovietsorbaku, naradr, ~techlevel.2
+		Description: Anti-ground flak weapons become instant hit.
+	Valued:
+		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.improved_flaks
+
+upgrade.focused_mind:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Focused Mind
+	Buildable:
+		Queue: Upgrade.Unused # Upgrade.Shared, Upgrade.Yuri
+		BuildPaletteOrder: 30
+		BuildDuration: 1000
+		Prerequisites: ~disabled # ~upgrade.yuri, yadome, ~techlevel.2
+		Description: Increases attack speed of Initiates by 25%.
+	Valued:
+		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.focused_mind

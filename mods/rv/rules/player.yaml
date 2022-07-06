@@ -210,16 +210,30 @@ Player:
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
+	ClassicProductionQueue@UpgUnused:
+		Type: Upgrade.Unused
+		Group: Upgrade
+		DisplayOrder: 3
+		LowPowerModifier: 200
+		ReadyAudio: UpgradeComplete
+		ReadyTextNotification: Upgrade complete.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: UpgradeInProgress
+		LimitedTextNotification: Upgrade in progress.
+		QueuedAudio: Building
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	Production@CP:
 		Produces: Power.Allies, Power.Soviets, Power.Yuri, Power.Baku
 		RequiresCondition: cps_enabled
 	ExternalCondition@cps_enabled:
 		Condition: cps_enabled
 	Production@Upgrade.Shared:
-		Produces: Upgrade.Shared
+		Produces: Upgrade.Shared, Upgrade.Unused
 		RequiresCondition: upgrades_enabled && !multiqueue
 	Production@Upgrade:
-		Produces: Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		Produces: Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku, Upgrade.Unused
 		RequiresCondition: upgrades_enabled && multiqueue
 	ProvidesPrerequisite@upgrade.allies:
 		Prerequisite: upgrade.allies
