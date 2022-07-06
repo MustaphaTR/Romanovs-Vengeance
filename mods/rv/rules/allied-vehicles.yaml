@@ -619,14 +619,14 @@ fv:
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@primary-boost:
 		Weapon: HoverMissileBoosted
-		Damage: 75
+		Damage: 90
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
 		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@elite-boost:
 		Weapon: HoverMissileBoostedE
-		Damage: 150
+		Damage: 180
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
@@ -715,7 +715,7 @@ fv:
 		RequiresCondition: ifv-rocket && rank-elite && !boostgliding
 	Armament@rocket-boost:
 		Weapon: CRMissileLauncherBoosted
-		Damage: 150
+		Damage: 180
 		LocalOffset: 128,-128,1408, 128,128,1408
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
@@ -729,7 +729,7 @@ fv:
 		RequiresCondition: ifv-rocket && !rank-elite && boostgliding
 	Armament@rocket-boost-elite:
 		Weapon: CRMissileLauncherBoostedE
-		Damage: 300
+		Damage: 360
 		LocalOffset: 128,-128,1408, 128,128,1408
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
@@ -1992,22 +1992,22 @@ ctnk:
 		RequiresCondition: rank-elite && !boostgliding
 	Armament@PRIMARY_BOOST:
 		Weapon: APTuskBoosted
-		Damage: 250
+		Damage: 300
 		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@SECONDARY_BOOST:
 		Weapon: APTuskBoosted
-		Damage: 250
+		Damage: 300
 		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
 		RequiresCondition: !rank-elite && boostgliding
 	Armament@PRIMARY_ELITE_BOOST:
 		Weapon: APTuskBoostedE
-		Damage: 500
+		Damage: 600
 		LocalOffset: -256,-384,1024, -256,-192,1024, -128,-384,768, -128,-192,768
 		RequiresCondition: rank-elite && boostgliding
 	Armament@SECONDARY_ELITE_BOOST:
 		Weapon: APTuskBoostedE
-		Damage: 500
+		Damage: 600
 		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
 		RequiresCondition: rank-elite && boostgliding
 	AttackFrontal:
