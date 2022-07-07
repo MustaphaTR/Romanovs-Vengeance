@@ -1073,6 +1073,8 @@ yatech:
 		Sequence: idle-lift
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		RequiresCondition: !build-incomplete && in_water
 	InfiltrateForSupportPower:
 		Proxy: yuri.tech.infiltrated
 	Targetable:

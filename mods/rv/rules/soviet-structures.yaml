@@ -416,6 +416,8 @@ narefn:
 		Offset: -1024,-384,4096
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: 128,-1408,4096
+	WithIdleOverlay@waves:
+		RequiresCondition: !build-incomplete && in_water
 	PlaceBuildingVariants:
 		Actors: narefb #, narefc, narefd
 		Facings: 640, 384 #, 128, 896
@@ -1081,6 +1083,8 @@ nanrct:
 		Sequence: idle-lights-orange
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && advirrad
+	WithIdleOverlay@waves:
+		RequiresCondition: !build-incomplete && in_water
 	Explodes:
 		Type: CenterPosition
 		Weapon: NukePayload

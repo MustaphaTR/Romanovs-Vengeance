@@ -42,6 +42,8 @@ gacnst:
 		Sequence: idle-fans
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		RequiresCondition: !build-incomplete && in_water
 	WithBuildingPlacedOverlay:
 		RequiresCondition: !build-incomplete && !chronodisable
 	GrantConditionOnFaction@America:
@@ -1056,6 +1058,8 @@ gadept:
 		EndSequence: repair-end
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		RequiresCondition: !build-incomplete && in_water
 	IsometricSelectable:
 		DecorationHeight: 45
 
@@ -1581,6 +1585,8 @@ gaweat:
 		Name: Weather Controller
 	Tooltip@NoRow:
 		Name: Weather Controller
+	WithIdleOverlay@waves:
+		RequiresCondition: !build-incomplete && in_water
 	DetonateWeaponPower@WeatherStorm:
 		OrderName: WeatherStormInfoOrder
 		Prerequisites:
