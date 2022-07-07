@@ -227,7 +227,7 @@ nahand:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Description: Trains Soviet infantry.
+		Description: Trains Soviet infantry.\n\n  Cannot be placed on water.
 		Prerequisites: ~building.soviets, power, ~techlevel.1
 	Building:
 		Footprint: xx xx
@@ -706,7 +706,7 @@ naweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
-		Description: Produces Soviet vehicles.\n\n  Can be rotated.
+		Description: Produces Soviet vehicles.\n\n  Cannot be placed on water.\n  Can be rotated.
 		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: naweap
@@ -1164,7 +1164,7 @@ naclon:
 		Queue: Building.Unused # Building.Soviets, Building.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: natech
-		Description: Clones most trained infantry.\n\n  Maximum 1 can be built.
+		Description: Clones most trained infantry.\n\n  Cannot be placed on water.\n  Maximum 1 can be built.
 		BuildLimit: 1
 	Valued:
 		Cost: 2000
@@ -1449,7 +1449,7 @@ nawall:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Heavy wall capable of blocking units and projectiles.
+		Description: Heavy wall capable of blocking units and projectiles.\n\n  Cannot be placed on water.
 	Tooltip:
 		Name: Soviet Wall
 	Tooltip@NoRow:
@@ -1474,7 +1474,7 @@ naflak:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 60
 		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.2
-		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\n  Requires power to operate.
+		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1550,7 +1550,7 @@ tesla:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.3
-		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
+		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -1674,7 +1674,7 @@ nalasr:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 50
 		Prerequisites: ~building.sovietsorbaku, nahand, ~techlevel.1
-		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Armor-Piercing Bullets
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1744,7 +1744,7 @@ nabnkr:
 		Queue: Support.Unused # Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: nahand, ~techlevel.1
-		Description: Static defense with fireports for 6 garrisoned soldiers.\nInfantry inside cannot be killed by garrison killers.\nComes with a Conscript inside.
+		Description: Static defense with fireports for 6 garrisoned soldiers.\nInfantry inside cannot be killed by garrison killers.\nComes with a Conscript inside.\n\n  Cannot be placed on water.
 	Valued:
 		Cost: 500
 	CustomSellValue:
@@ -1918,7 +1918,7 @@ napost:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: ~building.sovietsorbaku, power, ~prerequisite.tesla_fence, ~techlevel.1
-		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
+		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Cannot be placed on water.\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
@@ -2120,7 +2120,7 @@ naprop:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: ~building.sovietsorbaku, natech, ~techlevel.4
-		Description: Buffs fire speed of nearby units and heals them.\n\nAbilities:\n- Can be placed on water\n\n  Requires power to operate.
+		Description: Buffs fire speed of nearby units and heals them.\n\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:

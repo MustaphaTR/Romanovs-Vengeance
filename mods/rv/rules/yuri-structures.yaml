@@ -170,7 +170,7 @@ yabrck:
 	Inherits@SHAPE: ^2x3Shape
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Description: Trains Psi-Corps infantry.\n\n  Can be rotated.
+		Description: Trains Psi-Corps infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
 		Prerequisites: ~building.yuri, power, ~techlevel.1
 	Building:
 		Footprint: xx xx xx
@@ -589,7 +589,7 @@ yaweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Description: Produces Psi-Corps vehicles.\n\n  Can be rotated.
+		Description: Produces Psi-Corps vehicles.\n\n  Cannot be placed on water.\n  Can be rotated.
 		Prerequisites: ~building.yuri, refinery, ~techlevel.1
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: yaweap
@@ -1157,7 +1157,7 @@ yaclon:
 		Queue: Building.Shared, Building.Yuri
 		BuildPaletteOrder: 130
 		Prerequisites: ~building.yuri, yatech, ~techlevel.4
-		Description: Clones most trained infantry.\n\n  Maximum 1 can be built.
+		Description: Clones most trained infantry.\n\n  Cannot be placed on water.\n  Maximum 1 can be built.
 		BuildLimit: 1
 		BuildDuration: 1250
 		BuildDurationModifier: 100
@@ -1246,7 +1246,7 @@ yawall:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		Prerequisites: ~building.yuri, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Heavy wall capable of blocking units and projectiles.
+		Description: Heavy wall capable of blocking units and projectiles.\n\n  Cannot be placed on water.
 	Tooltip:
 		Name: Citadel Wall
 	Tooltip@NoRow:
@@ -1272,7 +1272,7 @@ yaggun:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 40
 		Prerequisites: ~building.yuri, yabrck, ~techlevel.1
-		Description: Automated anti-infantry and anti-air defense.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\nUpgradeable with:\n- Chainguns\n\n  Requires power to operate.
+		Description: Automated anti-infantry and anti-air defense.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Chainguns\n\n  Requires power to operate.
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Health:
@@ -1517,7 +1517,7 @@ yapsyt:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 60
 		Prerequisites: ~building.yuri, yadome, ~techlevel.3
-		Description: Tower capable of mind controlling up to 3 enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n- Can be placed on water\n\n  Requires power to operate.
+		Description: Tower capable of mind controlling up to 3 enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Health:
@@ -1601,7 +1601,7 @@ yasgen:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 80
 		Prerequisites: ~building.yuri, yatech, ~techlevel.3
-		Description: Makes nearby units and structures invisibile while not firing.\n\nAbilities:\n- Can be placed on water\n\nUpgradeable with:\n- Lazarus Prime\n\n  Requires power to operate.
+		Description: Makes nearby units and structures invisibile while not firing.\n\nUpgradeable with:\n- Lazarus Prime\n\n  Requires power to operate.
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Health:
