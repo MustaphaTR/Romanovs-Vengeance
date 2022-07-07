@@ -1201,7 +1201,7 @@ v3rocket:
 		Weapon: V3WeaponCryo
 		EmptyWeapon: V3WeaponCryo
 		RequiresCondition: !airborne && cryowarheads && !rank-elite
-	SpawnedExplodes@Elite:
+	SpawnedExplodes@EliteCryo:
 		Weapon: V3WeaponCryoE
 		EmptyWeapon: V3WeaponCryoE
 		RequiresCondition: !airborne && cryowarheads && rank-elite
@@ -1238,8 +1238,17 @@ m3rocket:
 	-MissileSpawnerSlave:
 	MissileSpawnerOldSlave:
 	SpawnedExplodes:
-		RequiresCondition: !airborne
+		RequiresCondition: !airborne && !radbombs && !cryowarheads
 	-SpawnedExplodes@Elite:
+	SpawnedExplodes@Rad:
+		RequiresCondition: !airborne && radbombs && !advirrad
+	-SpawnedExplodes@EliteRad:
+	SpawnedExplodes@RadOrange:
+		RequiresCondition: !airborne && radbombs && advirrad
+	-SpawnedExplodes@EliteRadOrange:
+	SpawnedExplodes@Cryo:
+		RequiresCondition: !airborne && cryowarheads
+	-SpawnedExplodes@EliteCryo:
 	-ExternalCondition@RANK-ELITE:
 
 # Custom Soviet Vehicles

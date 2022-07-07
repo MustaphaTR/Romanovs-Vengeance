@@ -308,6 +308,8 @@ brute:
 	WithProductionIconOverlay:
 		Prerequisites: barracks.infiltrated
 		Types: chevron-veteran
+	-WithColoredOverlay@IDISABLE:
+	-GrantCondition@IDISABLE:
 	-SpeedMultiplier@DOGSTUN:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
@@ -580,50 +582,50 @@ lunr:
 		Damage: 20
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite && !capacitors
 	Armament@primary-aa:
 		Weapon: LunarLaserAA
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite && !capacitors
 	Armament@elite:
 		Weapon: LunarLaserE
 		Damage: 25
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite && !capacitors
 	Armament@elite-aa:
 		Weapon: LunarLaserAAE
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite && !capacitors
 	Armament@primary-capacitors:
 		Weapon: LunarLaserUpg
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: !rank-elite && capacitors
 	Armament@primary-aa-capacitors:
 		Weapon: LunarLaserAAUpg
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: !rank-elite && capacitors
 	Armament@elite-capacitors:
 		Weapon: LunarLaserUpgE
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-ground
-		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
+		PauseOnCondition: chronodisable || reload-air
 		RequiresCondition: rank-elite && capacitors
 	Armament@elite-aa-capacitors:
 		Weapon: LunarLaserAAUpgE
 		LocalOffset: 128,196,512, 128,-196,512
 		ReloadingCondition: reload-air
-		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
+		PauseOnCondition: chronodisable || reload-ground
 		RequiresCondition: rank-elite && capacitors
 	AttackAircraft:
 		Voice: Attack
