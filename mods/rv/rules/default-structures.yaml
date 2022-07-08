@@ -548,7 +548,7 @@ refdock:
 	Reservable:
 	ProximityExternalCondition:
 		Condition: on_dock
-		Range: 0c640
+		Range: 0c768
 	Building:
 		Footprint: _
 		AllowInvalidPlacement: true
@@ -894,6 +894,7 @@ refdock:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^4x3Shape
 	Buildable:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 70
@@ -910,6 +911,14 @@ refdock:
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite:
 		Prerequisite: repairpad
+	Building:
+		Footprint: x+++ x+++ x+++
+		Dimensions: 4,3
+	RallyPoint:
+		Path: 4,1
+	SpawnNeighboringActors:
+		ActorTypes: refdock
+		Locations: 1,0, 1,1, 1,2, 2,0, 2,1, 2,2, 3,0, 3,1, 3,2
 	Health:
 		HP: 75000
 	Armor:

@@ -66,6 +66,7 @@
 		Type: CenterPosition
 		StationaryInterval: 18
 		MovingInterval: 6
+		RequiresCondition: !on_dock
 	WithHarvestOverlay:
 		LocalOffset: 121,0,0
 		Palette: effect
@@ -187,13 +188,16 @@
 		Type: CenterPosition
 		StationaryInterval: 18
 		MovingInterval: 6
+		RequiresCondition: !on_dock
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
-		RequiresCondition: !in_water
+		RequiresCondition: !in_water || on_dock
 	WithVoxelBody@Water:
 		Sequence: water
-		RequiresCondition: in_water
+		RequiresCondition: in_water && !on_dock
+	ExternalCondition@on_dock:
+		Condition: on_dock
 	HitShape:
 	Targetable:
 		RequiresCondition: !in_water
