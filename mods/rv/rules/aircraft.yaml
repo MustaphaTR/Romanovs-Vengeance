@@ -878,7 +878,6 @@ bplndrop:
 		DropRange: 3c0
 		DropInterval: 1
 	SpawnActorOnDeath:
-		DeathType: NonTemporal
 		Actor: bplnhusk
 	RenderVoxels:
 		Image: bpln
@@ -898,7 +897,6 @@ bplndrop:
 alplane:
 	Inherits: pdplane
 	SpawnActorOnDeath:
-		DeathType: NonTemporal
 		Actor: alplanehusk
 	RenderVoxels:
 		Image: alplane
@@ -915,7 +913,6 @@ alplanehusk:
 pcplane:
 	Inherits: pdplane
 	SpawnActorOnDeath:
-		DeathType: NonTemporal
 		Actor: pcplanehusk
 	RenderVoxels:
 		Image: pcplane
@@ -953,7 +950,6 @@ a10:
 		PauseOnCondition: !ammo
 	AttackBomber:
 	SpawnActorOnDeath:
-		DeathType: NonTemporal
 		Actor: a10husk
 	AmmoPool:
 		Ammo: 6
@@ -1003,7 +999,6 @@ txbmb:
 		PauseOnCondition: !ammo
 	AttackBomber:
 	SpawnActorOnDeath:
-		DeathType: NonTemporal
 		Actor: txbmbhusk
 	AmmoPool:
 		Ammo: 6
@@ -1098,10 +1093,23 @@ b52:
 		Ammo: 11
 		AmmoCondition: ammo
 	AttackBomber:
+	SpawnActorOnDeath:
+		Actor: b52husk
 	Aircraft:
 		Speed: 240
 	RenderVoxels:
 		Image: b52
+
+b52husk:
+	Inherits: alplanehusk
+	Tooltip:
+		Name: B-52
+	Tooltip@NoRow:
+		Name: B-52
+	RenderVoxels:
+		Image: b52
+	Aircraft:
+		Speed: 240
 
 pdplane.leaflet:
 	Inherits: alplane
