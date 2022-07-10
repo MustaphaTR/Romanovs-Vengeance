@@ -88,8 +88,8 @@ shad:
 	-AppearsOnRadar:
 	AttackAircraft:
 		Voice: Attack
-		FacingTolerance: 2
 		AttackType: Hover
+		FacingTolerance: 2
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Aircraft:
 		LandableTerrainTypes: Clear, Rough, Road, DirtRoad, Ore, Gems
@@ -288,7 +288,7 @@ zep:
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
-		FacingTolerance: 128
+		FacingTolerance: 512
 	AutoTarget:
 	RenderSprites:
 	RenderVoxels:
@@ -495,8 +495,8 @@ orca:
 		PauseOnCondition: !ammo
 		RequiresCondition: a2amissiles && rank-elite
 	AttackAircraft:
-		FacingTolerance: 20
 		Voice: Attack
+		FacingTolerance: 20
 		TargetFrozenActors: True
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	WithVoxelBody:
@@ -2164,7 +2164,7 @@ disk:
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
-		FacingTolerance: 128
+		FacingTolerance: 512
 		Armaments: primary, secondary, infiltrate
 	Voiced:
 		VoiceSet: FloatingDiskVoice
@@ -2807,7 +2807,7 @@ txdx:
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
-		FacingTolerance: 128
+		FacingTolerance: 512
 		Armaments: primary, barrage
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	AmmoPool:
@@ -3007,8 +3007,8 @@ kite:
 	#	Type: GroundPosition
 	AttackAircraft:
 		Voice: Attack
-		FacingTolerance: 128
 		AttackType: Hover
+		FacingTolerance: 512
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Aircraft:
 		Crushes: crate
@@ -3171,7 +3171,7 @@ magnedisk:
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
-		FacingTolerance: 128
+		FacingTolerance: 512
 		Armaments: primary, growth
 	ExternalCondition@bloodsucked:
 		Condition: bloodsucked
@@ -3352,8 +3352,8 @@ havoc:
 	#	Type: GroundPosition
 	AttackAircraft:
 		Voice: Attack
-		FacingTolerance: 2
 		AttackType: Hover
+		FacingTolerance: 2
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Aircraft:
 		Crushes: crate
