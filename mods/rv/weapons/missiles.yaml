@@ -32,7 +32,7 @@ RedEye2Boosted:
 	Inherits: RedEye2
 	Projectile: Missile
 		Speed: 960
-		ContrailColor: 158888
+		ContrailStartColor: 158888
 	Warhead@1Dam: SpreadDamage
 		Damage: 4500
 
@@ -136,7 +136,7 @@ APTuskBoosted:
 	Inherits: APTusk
 	Projectile: BulletAS
 		Speed: 768
-		ContrailColor: 158888
+		ContrailStartColor: 158888
 	Warhead@1Dam: SpreadDamage
 		Damage: 3750
 
@@ -144,7 +144,7 @@ APTuskBoostedE:
 	Inherits: APTuskE
 	Projectile: BulletAS
 		Speed: 768
-		ContrailColor: 158888
+		ContrailStartColor: 158888
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 
@@ -158,7 +158,7 @@ Maverick:
 		Speed: 512
 		Arm: 3
 		RangeLimit: 20c204
-		ContrailColor: D8D8FF
+		ContrailStartColor: D8D8FF
 		MinimumLaunchAngle: 255
 		MaximumLaunchAngle: 255
 		MaximumLaunchSpeed: 384
@@ -215,7 +215,7 @@ MaverickE:
 	Range: 7c0
 	Projectile: Missile
 		RangeLimit: 22c204
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
 	Warhead@1Gar: OpenToppedDamage
@@ -259,7 +259,7 @@ Maverick2E:
 	ReloadDelay: 10
 	Projectile: Missile
 		RangeLimit: 22c204
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Damage: 45000
 	Warhead@1Gar: OpenToppedDamage
@@ -331,13 +331,13 @@ MedusaE:
 	Burst: 8
 	BurstDelays: 7
 	Projectile: Missile
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 
 MedusaBoosted:
 	Inherits: Medusa
 	Projectile: Missile
 		Speed: 960
-		ContrailColor: 158888
+		ContrailStartColor: 158888
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
 
@@ -345,7 +345,7 @@ MedusaBoostedE:
 	Inherits: MedusaE
 	Projectile: Missile
 		Speed: 960
-		ContrailColor: FF8888
+		ContrailStartColor: FF8888
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
 
@@ -360,7 +360,7 @@ HoverMissile:
 		Speed: 512
 		Arm: 2
 		RangeLimit: 11c0
-		ContrailColor: D8D8FF
+		ContrailStartColor: D8D8FF
 		MinimumLaunchAngle: 255
 		MaximumLaunchAngle: 255
 		MaximumLaunchSpeed: 384
@@ -398,7 +398,7 @@ HoverMissileE:
 	Inherits: HoverMissile
 	Burst: 4
 	Projectile: Missile
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
@@ -418,7 +418,7 @@ HoverMissileAAE:
 	ValidTargets: Air
 	Projectile: Missile
 		RangeLimit: 14c512
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
@@ -426,7 +426,7 @@ HoverMissileBoosted:
 	Inherits: HoverMissile
 	Projectile: Missile
 		Speed: 768
-		ContrailColor: 158888
+		ContrailStartColor: 158888
 	Warhead@1Dam: SpreadDamage
 		Damage: 4500
 
@@ -434,7 +434,7 @@ HoverMissileBoostedE:
 	Inherits: HoverMissileE
 	Projectile: Missile
 		Speed: 768
-		ContrailColor: FF8888
+		ContrailStartColor: FF8888
 	Warhead@1Dam: SpreadDamage
 		Damage: 4500
 
@@ -442,7 +442,7 @@ HoverMissileAABoosted:
 	Inherits: HoverMissileAA
 	Projectile: Missile
 		Speed: 768
-		ContrailColor: 158888
+		ContrailStartColor: 158888
 	Warhead@1Dam: SpreadDamage
 		Damage: 4500
 
@@ -450,7 +450,7 @@ HoverMissileAABoostedE:
 	Inherits: HoverMissileAAE
 	Projectile: Missile
 		Speed: 768
-		ContrailColor: FF8888
+		ContrailStartColor: FF8888
 	Warhead@1Dam: SpreadDamage
 		Damage: 4500
 
@@ -465,7 +465,7 @@ OutpostMissile:
 		Speed: 512
 		Arm: 2
 		RangeLimit: 14c512
-		ContrailColor: D8D8FF
+		ContrailStartColor: D8D8FF
 		MinimumLaunchAngle: 255
 		MaximumLaunchAngle: 255
 		MaximumLaunchSpeed: 384
@@ -500,7 +500,7 @@ MissileLauncher:
 		Speed: 512
 		Arm: 2
 		RangeLimit: 14c512
-		ContrailColor: D8D8FF
+		ContrailStartColor: D8D8FF
 		MinimumLaunchAngle: 255
 		MaximumLaunchAngle: 255
 		MaximumLaunchSpeed: 384
@@ -538,7 +538,7 @@ MissileLauncherE:
 	Inherits: MissileLauncher
 	Burst: 2
 	Projectile: Missile
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
@@ -557,7 +557,7 @@ MissileLauncherAAE:
 	Range: 8c0
 	ValidTargets: Air
 	Projectile: Missile
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 		Versus:
@@ -585,7 +585,7 @@ MissileLauncherBoosted:
 	Inherits: MissileLauncher
 	Projectile: Missile
 		Speed: 768
-		ContrailColor: 158888
+		ContrailStartColor: 158888
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
 
@@ -593,7 +593,7 @@ MissileLauncherBoostedE:
 	Inherits: MissileLauncherE
 	Projectile: Missile
 		Speed: 768
-		ContrailColor: FF8888
+		ContrailStartColor: FF8888
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
 
@@ -601,7 +601,7 @@ MissileLauncherAABoosted:
 	Inherits: MissileLauncherAA
 	Projectile: Missile
 		Speed: 768
-		ContrailColor: 158888
+		ContrailStartColor: 158888
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
 
@@ -609,7 +609,7 @@ MissileLauncherAABoostedE:
 	Inherits: MissileLauncherAAE
 	Projectile: Missile
 		Speed: 768
-		ContrailColor: FF8888
+		ContrailStartColor: FF8888
 	Warhead@1Dam: SpreadDamage
 		Damage: 6000
 
@@ -636,7 +636,7 @@ ChaosRocket:
 	Range: 9c0
 	Projectile: Missile
 		RangeLimit: 16c512
-		ContrailColor: FFA8FF
+		ContrailStartColor: FFA8FF
 	Warhead@1Dam: SpreadDamage
 		Versus:
 			Light: 65
@@ -707,7 +707,7 @@ HeliRocket:
 		Image: subt
 		RangeLimit: 14c512
 		ContrailLength: 35
-		ContrailColor: D8D8FF
+		ContrailStartColor: D8D8FF
 		MinimumLaunchAngle: 255
 		MaximumLaunchAngle: 255
 		MaximumLaunchSpeed: 384
@@ -746,7 +746,7 @@ HeliRocketE:
 	ReloadDelay: 85
 	Burst: 8
 	Projectile: Missile
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@2Eff: CreateEffect
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
@@ -829,7 +829,7 @@ HornetBomb:
 		Arm: 2
 		HorizontalRateOfTurn: 32
 		RangeLimit: 11c512
-		ContrailColor: D8D8FF
+		ContrailStartColor: D8D8FF
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c410
 		Falloff: 100, 0
@@ -862,7 +862,7 @@ HornetBomb:
 HornetBombE:
 	Inherits: HornetBomb
 	Projectile: Missile
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
 		Falloff: 100, 0
@@ -900,7 +900,7 @@ ASWBomb:
 ASWBombE:
 	Inherits: ASWBomb
 	Projectile: Missile
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Damage: 8000
 
@@ -1050,7 +1050,7 @@ MosquitoMissile:
 		Speed: 512
 		Arm: 2
 		RangeLimit: 14c512
-		ContrailColor: A8FFA8
+		ContrailStartColor: A8FFA8
 		MinimumLaunchAngle: 255
 		MaximumLaunchAngle: 255
 		MaximumLaunchSpeed: 384

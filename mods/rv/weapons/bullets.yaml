@@ -9,8 +9,9 @@ GrandCannonWeapon:
 		Blockable: false
 		Speed: 1024
 		ContrailLength: 10
-		ContrailColor: FFFFFF
-		ContrailWidth: 0c30
+		ContrailStartColor: FFFFFF
+		ContrailWidth: 0c48
+		ContrailWidthFadeRate: 1
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
 		Spread: 0c512
@@ -95,9 +96,10 @@ HowiCannon:
 		Speed: 446
 		Blockable: false
 		ContrailLength: 10
-		ContrailColor: FFFFFF
-		ContrailWidth: 0c20
+		ContrailStartColor: FFFFFF
+		ContrailWidth: 0c50
 		Inaccuracy: 0c512
+		ContrailWidthFadeRate: 1
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c384
 		Damage: 17500
@@ -123,7 +125,7 @@ HowiCannonE:
 	Inherits: HowiCannon
 	Range: 14c0
 	Projectile: BulletAS
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 		Inaccuracy: 0c256
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c512
@@ -565,8 +567,8 @@ StriderGunE:
 		Speed: 682
 		LaunchAngle: 128
 		ContrailLength: 10
-		ContrailColor: FFFFFF
-		ContrailWidth: 0c20
+		ContrailStartColor: FFFFFF
+		ContrailWidth: 0c30
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
 		Falloff: 100, 75, 50, 25, 0
@@ -586,7 +588,7 @@ StriderGunE:
 	Burst: 2
 	BurstDelays: 5
 	Projectile: BulletAS
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
 		Falloff: 100, 75, 50, 25, 0
@@ -608,7 +610,7 @@ CycleMortar:
 		Speed: 224
 		LaunchAngle: 196
 		ContrailLength: 10
-		ContrailColor: FFFFFF
+		ContrailStartColor: FFFFFF
 		ContrailWidth: 0c21
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
@@ -634,7 +636,7 @@ CycleMortarE:
 	Burst: 2
 	BurstDelays: 5
 	Projectile: BulletAS
-		ContrailColor: EA0000
+		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
 		Falloff: 100, 75, 50, 25, 0
 		Spread: 0c384
@@ -814,7 +816,7 @@ OrbitalDrop:
 		TrailInterval: 1
 		Blockable: false
 		ContrailLength: 18
-		ContrailColor: 8888FF55
+		ContrailStartColor: 8888FF55
 		ContrailWidth: 250
 		ContrailDelay: 10
 		Shadow: true
