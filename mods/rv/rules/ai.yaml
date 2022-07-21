@@ -620,6 +620,7 @@ Player:
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 3
+		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
@@ -633,7 +634,7 @@ Player:
 			narefn: 2
 			yarefn: 2
 			yarfn2: 2
-			gapowr: 8
+			gapowr: 16
 			napowr: 8
 			nanrct: 1
 			yapowr: 4
@@ -729,6 +730,7 @@ Player:
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 3
+		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
@@ -736,7 +738,7 @@ Player:
 		NavalProductionTypes: gayard, nayard, yayard
 		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
 		BuildingLimits:
-			gapowr: 8
+			gapowr: 16
 			napowr: 8
 			nanrct: 1
 			yapowr: 4
@@ -828,6 +830,7 @@ Player:
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 3
+		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
@@ -841,7 +844,7 @@ Player:
 			narefn: 2
 			yarefn: 2
 			yarfn2: 2
-			gapowr: 8
+			gapowr: 16
 			napowr: 8
 			nanrct: 1
 			yapowr: 4
@@ -943,6 +946,7 @@ Player:
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 3
+		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
@@ -950,7 +954,7 @@ Player:
 		NavalProductionTypes: gayard, nayard, yayard
 		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
 		BuildingLimits:
-			gapowr: 8
+			gapowr: 16
 			napowr: 8
 			nanrct: 1
 			yapowr: 4
@@ -1048,6 +1052,7 @@ Player:
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 3
+		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
@@ -1061,7 +1066,7 @@ Player:
 			narefn: 2
 			yarefn: 2
 			yarfn2: 2
-			gapowr: 8
+			gapowr: 16
 			napowr: 8
 			nanrct: 1
 			yapowr: 4
@@ -1177,6 +1182,7 @@ Player:
 		MaximumExcessPower: 160
 		ExcessPowerIncrement: 40
 		ExcessPowerIncreaseThreshold: 3
+		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
@@ -1184,7 +1190,7 @@ Player:
 		NavalProductionTypes: gayard, nayard, yayard
 		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
 		BuildingLimits:
-			gapowr: 8
+			gapowr: 16
 			napowr: 8
 			nanrct: 1
 			yapowr: 4
@@ -1353,12 +1359,14 @@ Player:
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		McvFactoryTypes: gaweap, naweap, yaweap
 		MinimumConstructionYardCount: 2
+		MaxBaseRadius: 30
 	McvManagerBotModule@vengeful:
 		RequiresCondition: enable-vengeful-ai 
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		McvFactoryTypes: gaweap, naweap, yaweap
 		MinimumConstructionYardCount: 4
+		MaxBaseRadius: 30
 		
 	UnitBuilderBotModule@easy:
 		RequiresCondition: enable-easy-ai && !megawealth
