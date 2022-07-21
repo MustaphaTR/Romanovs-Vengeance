@@ -578,20 +578,26 @@ orca:
 		RequiresCondition: airborne
 	Contrail@1:
 		Offset: -100,-500,100
-		Color: 55555580
-		UsePlayerColor: false
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: false
+		EndColorUsePlayerColor: true
 		TrailWidth: 32
 	Contrail@2:
 		Offset: -100,500,100
-		Color: 55555580
-		UsePlayerColor: false
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: false
+		EndColorUsePlayerColor: true
 		TrailWidth: 32
 	Contrail@FlameTrail:
 		Offset: -500,0,50
-		Color: FFEA0080
-		UsePlayerColor: false
+		StartColor: FFEA0080
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: false
 		TrailWidth: 96
 		TrailLength: 7
+		WidthFadeRate: 0.8
 	ProductionCostMultiplier@AI:
 		Prerequisites: prerequisite.aiplayer
 		Multiplier: 40
@@ -846,11 +852,17 @@ pdplane:
 	Contrail@1:
 		Offset: -50,1200,400
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 	Contrail@2:
 		Offset: -50,-1200,400
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 
 pdplanehusk:
 	Inherits: ^PlaneHusk
@@ -888,11 +900,17 @@ bplndrop:
 	Contrail@1:
 		Offset: -600,100,100
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 	Contrail@2:
 		Offset: -600,-100,100
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 
 alplane:
 	Inherits: pdplane
@@ -964,11 +982,17 @@ a10:
 	Contrail@1:
 		Offset: -900,171,250
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 	Contrail@2:
 		Offset: -900,-171,250
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 	Aircraft:
 		Speed: 300
 
@@ -1013,7 +1037,11 @@ txbmb:
 	Contrail@1:
 		Offset: -600,0,100
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 66DD0080
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
+		WidthFadeRate: 1
 	-Contrail@2:
 	Aircraft:
 		Speed: 300
@@ -1050,7 +1078,10 @@ f22drop:
 	Contrail@1:
 		Offset: -600,0,100
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 	-Contrail@2:
 
 txbmbdrop:
@@ -1901,11 +1932,17 @@ bpln:
 	Contrail@1:
 		Offset: -600,100,100
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 	Contrail@2:
 		Offset: -600,-100,100
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 	Rearmable:
 		RearmActors: boris
 	ActorStatValues:
@@ -1969,11 +2006,17 @@ bpln.buildable:
 	Contrail@1:
 		Offset: -600,100,100
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 	Contrail@2:
 		Offset: -600,-100,100
 		TrailLength: 15
-		UsePlayerColor: False
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 	ActorStatValues:
 		SplitRanges: true
 		-Upgrades:
@@ -2580,34 +2623,46 @@ fortress:
 		RequiresCondition: airborne
 	Contrail@1:
 		Offset: -400,-700,300
-		Color: 55555580
-		UsePlayerColor: false
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 		TrailWidth: 32
 	Contrail@2:
 		Offset: -400,700,300
-		Color: 55555580
-		UsePlayerColor: false
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 		TrailWidth: 32
 	Contrail@3:
 		Offset: -200,-400,300
-		Color: 55555580
-		UsePlayerColor: false
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 		TrailWidth: 32
 	Contrail@4:
 		Offset: -200,400,300
-		Color: 55555580
-		UsePlayerColor: false
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: False
+		EndColorUsePlayerColor: true
 		TrailWidth: 32
 	Contrail@FlameTrail1:
 		Offset: -500,-100,200
-		Color: FFEA0080
-		UsePlayerColor: false
+		StartColor: FFEA0080
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: false
+		WidthFadeRate: 0.8
 		TrailWidth: 96
 		TrailLength: 7
 	Contrail@FlameTrail2:
 		Offset: -500,100,200
-		Color: FFEA0080
-		UsePlayerColor: false
+		StartColor: FFEA0080
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: false
+		WidthFadeRate: 0.8
 		TrailWidth: 96
 		TrailLength: 7
 	ProductionCostMultiplier@AI:
