@@ -1319,9 +1319,9 @@ Player:
 		DangerScanRadius: 18
 		AttackForceInterval: 59
 		AssignRolesInterval: 73
-		IdleScanRadius: 15
-		AttackScanRadius: 14
-		ProtectionScanRadius: 15
+		IdleScanRadius: 10
+		AttackScanRadius: 11
+		ProtectionScanRadius: 20
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
 		ConstructionYardTypes: gacnst, nacnst, yacnst
@@ -1337,9 +1337,9 @@ Player:
 		DangerScanRadius: 18
 		AttackForceInterval: 59
 		AssignRolesInterval: 73
-		IdleScanRadius: 15
-		AttackScanRadius: 14
-		ProtectionScanRadius: 15
+		IdleScanRadius: 10
+		AttackScanRadius: 11
+		ProtectionScanRadius: 20
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
 		ConstructionYardTypes: gacnst, nacnst, yacnst
@@ -1348,11 +1348,18 @@ Player:
 		SuggestedLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
 	McvManagerBotModule@generic:
-		RequiresCondition: enable-generic-ai
+		RequiresCondition: enable-generic-ai && !enable-vengeful-ai 
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		McvFactoryTypes: gaweap, naweap, yaweap
 		MinimumConstructionYardCount: 2
+	McvManagerBotModule@vengeful:
+		RequiresCondition: enable-vengeful-ai 
+		McvTypes: amcv, smcv, pcv
+		ConstructionYardTypes: gacnst, nacnst, yacnst
+		McvFactoryTypes: gaweap, naweap, yaweap
+		MinimumConstructionYardCount: 4
+		
 	UnitBuilderBotModule@easy:
 		RequiresCondition: enable-easy-ai && !megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
