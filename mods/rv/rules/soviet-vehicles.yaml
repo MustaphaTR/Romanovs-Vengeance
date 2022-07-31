@@ -933,6 +933,7 @@ dtruck:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Libya
 		BuildPaletteOrder: 90
@@ -1014,6 +1015,10 @@ dtruck:
 	#	SoundFiles: vdemstaa.wav, vdemstab.wav, vdemstac.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	AutoTarget:
+		ScanRadius: 8
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
 	ActorStatValues:
 		Damage: 1200
 		Spread: 8c0
