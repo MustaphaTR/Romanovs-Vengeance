@@ -229,9 +229,10 @@ arty:
 	Armament:
 		Weapon: HowiCannon
 		Damage: 175
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp || nogunner
 	WithVoxelBody:
 	WithVoxelTurret:
@@ -268,9 +269,10 @@ ftnktd:
 		Damage: 100
 		LocalOffset: 768,-128,384, 768,128,384
 		RequiresCondition: !rank-elite
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp || nogunner
 	WithVoxelBody:
 	RenderSprites:

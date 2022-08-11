@@ -587,7 +587,7 @@ caos:
 		RequiresCondition: deployed && !chronodisable && !emp && compensators
 	AttackFrontal:
 		Voice: Attack
-		FacingTolerance: 128
+		FacingTolerance: 512
 		PauseOnCondition: chronodisable || emp || deployed
 	GrantConditionOnDeploy:
 		DeployedCondition: deployed
@@ -1120,9 +1120,10 @@ lart:
 		Damage: 200
 		LocalOffset: 672,0,832
 		RequiresCondition: rank-elite && capacitors
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		TargetFrozenActors: True
 		PauseOnCondition: chronodisable || emp || nogunner
 	RenderSprites:
@@ -1317,9 +1318,10 @@ grtk:
 		Weapon: TankGrindE
 		LocalOffset: 1024,0,128
 		RequiresCondition: rank-elite
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp || nogunner
 	AutoTarget:
 		ScanRadius: 5
@@ -1462,9 +1464,10 @@ spider:
 		Name: secondary
 		Weapon: SpiderWeb
 		LocalOffset: -512,0,1024
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable
 	AutoTarget:
 	Selectable:

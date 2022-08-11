@@ -979,7 +979,7 @@ dtruck:
 		RequiresCondition: advirrad
 	AttackFrontal:
 		Voice: Attack
-		FacingTolerance: 128
+		FacingTolerance: 512
 		RequiresCondition: !chronodisable && !emp
 	Armament@PRIMARY:
 		Weapon: DemoTruckTargeting
@@ -1074,9 +1074,10 @@ v3:
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
 		Modifier: 220
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		TargetFrozenActors: True
 		PauseOnCondition: chronodisable || emp || nogunner
 	MissileSpawnerMaster:
@@ -1300,9 +1301,10 @@ tric:
 	#	Range: 8c0
 	RevealOnDeath:
 		Radius: 4c0
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		TargetFrozenActors: true
 		PauseOnCondition: chronodisable || emp || nogunner
 	Armament@primary:
@@ -1423,9 +1425,10 @@ deva:
 		LocalOffset: 896,100,768, 896,-100,768
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite && advirrad
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		RequiresCondition: !overload
 		PauseOnCondition: chronodisable || emp || nogunner
 	WithMuzzleOverlay:

@@ -176,9 +176,10 @@ tnkd:
 		LocalOffset: 896,0,704
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp || nogunner
 	WithMuzzleOverlay:
 	AutoTarget:
@@ -1408,9 +1409,10 @@ mgtk:
 		RevealOn: Attack, Move
 		MirageCondition: tree
 		DefaultTargetTypes: tree01, tree02, tree03, tree04
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp || nogunner
 	AutoTarget:
 		AllowMovement: false
@@ -1501,9 +1503,10 @@ bfrt:
 	#	Weapon: 20mmrapidE
 	#	Damage: 50
 	#	RequiresCondition: rank-elite
-	# AttackFrontal:
+	# AttackFollowFrontal:
 	#	Voice: Attack
 	#	FacingTolerance: 2
+	#	MustFaceTarget: true
 	#	PauseOnCondition: chronodisable || emp || nogunner
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
@@ -1891,9 +1894,10 @@ hwtz:
 		LocalOffset: 736,0,1088
 		MuzzleSequence: muzzle-2
 		RequiresCondition: empammo && rank-elite
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		TargetFrozenActors: True
 		PauseOnCondition: chronodisable || emp || nogunner
 	WithMuzzleOverlay:
@@ -2011,9 +2015,10 @@ ctnk:
 		Damage: 600
 		LocalOffset: -256,384,1024, -256,192,1024, -128,384,768, -128,192,768
 		RequiresCondition: rank-elite && boostgliding
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp || nogunner
 	PortableChronoRA2:
 		ChronoshiftSound: ichrmova.wav

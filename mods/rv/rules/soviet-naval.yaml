@@ -70,9 +70,10 @@ sub:
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: rank-elite
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp
 	DetectCloaked:
 		# DetectionTypes: Underwater
@@ -140,9 +141,10 @@ hyd:
 	#	Range: 10c0
 	RevealOnDeath:
 		Radius: 5c0
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp
 	Armament@primary:
 		Weapon: FlakTrackGun
@@ -257,9 +259,10 @@ sqd:
 		RequiresCondition: rank-elite
 	Armament:
 		Weapon: SquidPunch
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable
 	# Cloak:
 	#	PauseOnCondition: deployed
@@ -331,7 +334,7 @@ dred:
 	FirepowerMultiplier@RANK-ELITE:
 		RequiresCondition: rank-elite
 		Modifier: 225
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 512
 		TargetFrozenActors: True

@@ -77,9 +77,10 @@ dest:
 	Exit@0:
 		SpawnOffset: 0,0,256
 		Facing: 0
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		Armaments: primary, asw
 		PauseOnCondition: chronodisable || emp
 	WithMuzzleOverlay:
@@ -229,9 +230,10 @@ dlph:
 		Weapon: SonicZapE
 		Damage: 25
 		RequiresCondition: rank-elite
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable
 	Targetable:
 		TargetTypes: Ground, Water, SeaAnimal, Underwater, ImmuneToAllySonic
@@ -283,7 +285,7 @@ carrier:
 	#	Range: 7c0
 	RevealOnDeath:
 		Radius: 3c512
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 512
 		TargetFrozenActors: True
@@ -389,9 +391,10 @@ adest:
 		LocalOffset: 1280,0,896
 		MuzzleSequence: muzzle-2
 		RequiresCondition: rank-elite
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp
 	WithMuzzleOverlay:
 	DetectCloaked:

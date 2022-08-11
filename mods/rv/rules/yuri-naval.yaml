@@ -78,9 +78,10 @@ bsub:
 	Armament@missile:
 		Name: missile
 		Weapon: CruiseLauncher
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		TargetFrozenActors: True
 		Armaments: primary, missile
 		PauseOnCondition: chronodisable || emp
@@ -232,9 +233,10 @@ piranha:
 		LocalOffset: 768,0,0
 		FireDelay: 2
 		RequiresCondition: rank-elite
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
+		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp
 	WithMuzzleOverlay:
 	DetectCloaked:
@@ -499,7 +501,7 @@ floater:
 		VoiceSet: GiantSquidVoice
 	Armament:
 		Weapon: CrabPunch
-	AttackFrontal:
+	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 512
 		PauseOnCondition: chronodisable
