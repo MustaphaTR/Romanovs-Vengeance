@@ -148,8 +148,8 @@ init:
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
-		Damage: 20
 		Weapon: PsychicJabE
+		Damage: 20
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
 	Armament@opentopped:
@@ -191,6 +191,7 @@ init.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
+	-Garrisoner:
 	-ChangesHealth@AMBULANCE:
 	-ChangesHealth@HOSPITAL:
 	-MapEditorData:
@@ -210,6 +211,14 @@ init.holo:
 	-DeathSounds@radiation:
 	-DeathSounds@psycrush:
 	-DeathSounds@virus:
+	Armament@primary:
+		Weapon: PsychicJabHolo
+	Armament@elite:
+		Weapon: PsychicJabHoloE
+	-Armament@opentopped:
+	-Armament@elite-opentopped:
+	-Armament@garrisoned:
+	-Armament@elite-garrisoned:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: false
 	RenderSprites:
@@ -324,6 +333,7 @@ brute.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
+	-Garrisoner:
 	-ChangesHealth@AMBULANCE:
 	-ChangesHealth@HOSPITAL:
 	-MapEditorData:
@@ -337,6 +347,14 @@ brute.holo:
 	-DeathSounds@radiation:
 	-DeathSounds@psycrush:
 	-DeathSounds@virus:
+	Armament@primary:
+		Weapon: PunchHolo
+	Armament@elite:
+		Weapon: PunchHoloE
+	Armament@second:
+		Weapon: SmashHolo
+	Armament@second-elite:
+		Weapon: SmashHoloE
 	UpdatesPlayerStatistics:
 		AddToArmyValue: false
 	RenderSprites:
@@ -1071,6 +1089,7 @@ gtrp.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
+	-Garrisoner:
 	-ChangesHealth@AMBULANCE:
 	-ChangesHealth@HOSPITAL:
 	-MapEditorData:
@@ -1090,6 +1109,42 @@ gtrp.holo:
 	-DeathSounds@radiation:
 	-DeathSounds@psycrush:
 	-DeathSounds@virus:
+	Armament@ag-0:
+		Weapon: AGGattTropHolo
+	Armament@ag-1:
+		Weapon: AGGattTropHolo2
+	Armament@ag-2:
+		Weapon: AGGattTropHolo3
+	Armament@aa-0:
+		Weapon: AAGattTropHolo
+	Armament@aa-1:
+		Weapon: AAGattTropHolo2
+	Armament@aa-2:
+		Weapon: AAGattTropHolo3
+	-Armament@opentopped-ag-0:
+	-Armament@opentopped-ag-1:
+	-Armament@opentopped-ag-2:
+	-Armament@opentopped-ag-line-0:
+	-Armament@opentopped-ag-line-1:
+	-Armament@opentopped-ag-line-2:
+	-Armament@opentopped-aa-0:
+	-Armament@opentopped-aa-1:
+	-Armament@opentopped-aa-2:
+	-Armament@opentopped-aa-line-0:
+	-Armament@opentopped-aa-line-1:
+	-Armament@opentopped-aa-line-2:
+	-Armament@garrisoned-ag-0:
+	-Armament@garrisoned-ag-1:
+	-Armament@garrisoned-ag-2:
+	-Armament@garrisoned-ag-line-0:
+	-Armament@garrisoned-ag-line-1:
+	-Armament@garrisoned-ag-line-2:
+	-Armament@garrisoned-aa-0:
+	-Armament@garrisoned-aa-1:
+	-Armament@garrisoned-aa-2:
+	-Armament@garrisoned-aa-line-0:
+	-Armament@garrisoned-aa-line-1:
+	-Armament@garrisoned-aa-line-2:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: false
 	RenderSprites:

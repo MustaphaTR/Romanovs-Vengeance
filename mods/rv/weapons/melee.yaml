@@ -180,6 +180,16 @@ PunchE:
 	Burst: 2
 	BurstDelays: 10
 
+PunchHolo:
+	Inherits: Punch
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
+PunchHoloE:
+	Inherits: PunchE
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
 MummyPunch:
 	Inherits: Punch
 	Report: gmumatta.wav, gmumattb.wav, gmumattc.wav
@@ -212,6 +222,16 @@ SmashE:
 	Inherits: Smash
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
+
+SmashHolo:
+	Inherits: Smash
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
+
+SmashHoloE:
+	Inherits: SmashE
+	Warhead@1Dam: SpreadDamage
+		Damage: 0
 
 MummySmash:
 	Inherits: Smash
