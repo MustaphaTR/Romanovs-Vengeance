@@ -555,7 +555,7 @@ CruiseLauncher:
 Flare:
 	ReloadDelay: 1
 	Range: 12c0
-	ValidTargets: Structure
+	ValidTargets: Structure, WaterStructure
 	InvalidTargets: Barrel, Mine
 	TargetActorCenter: true
 	Projectile: LaserZap
@@ -565,9 +565,9 @@ Flare:
 		SecondaryBeamWidth: 94
 		SecondaryBeamColor: FF000030
 	Warhead@1Dam: TargetDamage
-		ValidTargets: Structure
+		ValidTargets: Structure, WaterStructure
 	Warhead@2Con: GrantExternalCondition
-		ValidTargets: Structure
+		ValidTargets: Structure, WaterStructure
 		Range: 0c32
 		Duration: 8
 		Condition: flare
