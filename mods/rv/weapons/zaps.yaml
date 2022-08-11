@@ -379,11 +379,9 @@ BoatBolt:
 	Inherits: ^TeslaZap
 	Range: 5c0
 	ReloadDelay: 75
-	Burst: 2
-	BurstDelays: 10
 	Report: vtesatta.wav, vtesattb.wav
 	Warhead@1Dam: SpreadDamage
-		Damage: 7000
+		Damage: 15000
 		Versus:
 			None: 1000
 			Flak: 1000
@@ -396,8 +394,6 @@ BoatBoltE:
 	Inherits: BoatBolt
 	Range: 6c0
 	ReloadDelay: 60
-	Warhead@1Dam: SpreadDamage
-		Damage: 8000
 	Warhead@2Shr: FireShrapnel
 		Weapon: TeslaFragment
 		Amount: 2
@@ -1226,7 +1222,7 @@ AnniLaserUpgE:
 LunarLaser:
 	Inherits: Comet
 	ReloadDelay: 30
-	Range: 5c0
+	Range: 4c0
 	Report: ilasatta.wav
 	Projectile: LaserZap
 		Duration: 15
@@ -1262,23 +1258,23 @@ LunarLaser:
 
 LunarLaserE:
 	Inherits: LunarLaser
-	Range: 6c0
 	Projectile: LaserZap
 		Color: FF000080
-	Warhead@1Dam: SpreadDamage
-		Damage: 2500
+	Burst: 2
 	Warhead@2Eff: CreateEffect
 		Explosions: laser_explosion_red
 		ExplosionPalette: player
 
 LunarLaserAA:
 	Inherits: LunarLaser
+	Range: 5c0
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
 
 LunarLaserAAE:
 	Inherits: LunarLaserE
+	Range: 5c0
 	ValidTargets: Air
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air

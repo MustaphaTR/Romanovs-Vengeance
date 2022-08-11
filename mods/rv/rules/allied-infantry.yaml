@@ -11,7 +11,7 @@ engineer:
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\nAbilities:\n- Can swim\n\n  Unarmed
-		BuildDuration: 250
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
@@ -25,7 +25,7 @@ engineer:
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
-		HP: 7500
+		HP: 10000
 	Mobile:
 		Locomotor: swimsuit
 	Garrisoner:
@@ -555,7 +555,7 @@ ggi:
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
-		HP: 10000
+		HP: 12500
 	Mobile:
 		Speed: 60
 		RequireForceMoveCondition: !undeployed
@@ -1574,12 +1574,12 @@ jumpjet:
 		BuildPaletteOrder: 60
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
 		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Advanced Training
-		BuildDuration: 250
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 600
+		Cost: 450
 	Tooltip:
 		Name: Rocketeer
 	Tooltip@NoRow:
@@ -1587,7 +1587,7 @@ jumpjet:
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
-		HP: 15000
+		HP: 12500
 	-Mobile:
 	RevealsShroud:
 		Range: 8c0
@@ -1632,7 +1632,7 @@ jumpjet:
 		CruiseAltitude: 3c852
 		InitialFacing: 80
 		TurnSpeed: 787
-		Speed: 180
+		Speed: 150
 		AltitudeVelocity: 240
 		MaximumPitch: 128
 		Voice: Move

@@ -492,7 +492,7 @@ sray:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 1200
+		Cost: 900
 	DeliversCash:
 		Payload: 900
 		Voice: Move
@@ -503,7 +503,7 @@ sray:
 	Selectable:
 		Bounds: 1206, 1448, 0, -289
 	Health:
-		HP: 35000
+		HP: 30000
 	Armor:
 		Type: Light
 	Mobile:
@@ -512,7 +512,7 @@ sray:
 		Locomotor: heavyamphibious
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
 	SpeedMultiplier:
-		Modifier: 67
+		Modifier: 83
 		RequiresCondition: !in_water
 	RevealsShroud:
 		Range: 8c0
@@ -528,22 +528,22 @@ sray:
 		PauseOnCondition: chronodisable || emp || squid
 	Armament@primary:
 		Weapon: BoatBolt
-		Damage: 140
+		Damage: 150
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite:
 		Weapon: BoatBoltE
-		Damage: 160
+		Damage: 150
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: !overcharge && rank-elite
 	Armament@primary-overcharge:
 		Weapon: BoatBoltCharged
-		Damage: 140
+		Damage: 150
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: overcharge && !rank-elite
 	Armament@elite-overcharge:
 		Weapon: BoatBoltChargedE
-		Damage: 160
+		Damage: 150
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: overcharge && rank-elite
 	WithVoxelBody:

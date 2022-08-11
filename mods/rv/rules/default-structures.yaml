@@ -974,7 +974,7 @@ refdock:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 60
 		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction.
-		BuildDuration: 750
+		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
@@ -990,7 +990,7 @@ refdock:
 	ProvidesRadar:
 		RequiresCondition: !disabled && !chronodisable && !disableradar
 	RevealsShroud:
-		Range: 10c0
+		Range: 14c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
 	#	Range: 10c0
@@ -1029,7 +1029,7 @@ refdock:
 		BuildPaletteOrder: 100
 		Prerequisites: radar, ~techlevel.2
 		Description: Produces aircraft.
-		BuildDuration: 250
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
@@ -1110,10 +1110,10 @@ refdock:
 		BuildPaletteOrder: 90
 		Prerequisites: production, radar, ~techlevel.3
 		Description: Allows deployment of advanced units.\nResearches advanced upgrades.\n\n  Can be rotated.
-		BuildDuration: 1000
+		BuildDuration: 1500
 		BuildDurationModifier: 100
 	Valued:
-		Cost: 2000
+		Cost: 3000
 	Tooltip:
 		Name: Battle Lab
 	Tooltip@NoRow:
@@ -1128,7 +1128,7 @@ refdock:
 	#	Types: SatelliteScan
 	#	Range: 6c0
 	Power:
-		Amount: -100
+		Amount: -150
 		RequiresCondition: !chronodisable
 	InfiltrateForSupportPower:
 		Types: SpyInfiltrate, HijackerInfiltrate
