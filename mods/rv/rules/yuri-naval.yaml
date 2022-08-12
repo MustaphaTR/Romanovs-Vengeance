@@ -534,7 +534,7 @@ floater:
 		Damage: 60
 
 strt:
-	Inherits: ^Ship
+	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -569,6 +569,12 @@ strt:
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+	Crushable:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
+	Crushable@Cheater:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && cheater-ai
+	Crushable@Vengeful:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && vengeful-ai
 	SpeedMultiplier:
 		Modifier: 140
 		RequiresCondition: !in_water
@@ -614,13 +620,20 @@ strt:
 	RenderVoxels:
 		Scale: 10
 	Targetable:
-		RequiresCondition: in_water
-	Targetable@GROUND:
-		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection
 		RequiresCondition: !in_water
+	Targetable@WATER:
+		TargetTypes: Ground, Water, Vehicle, DetonateAttack
+		RequiresCondition: in_water
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water, Beach
 		Condition: in_water
+	LeavesTrails:
+		Image: wake
+		Palette: effect50alpha
+		TerrainTypes: Water, Beach
+		Type: CenterPosition
+		StationaryInterval: 18
+		MovingInterval: 6
 	Voiced:
 		VoiceSet: LasherTankVoice
 	ExternalCondition@PRODUCED:

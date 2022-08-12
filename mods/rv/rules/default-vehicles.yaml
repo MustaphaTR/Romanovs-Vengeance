@@ -53,6 +53,12 @@
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+	Crushable:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
+	Crushable@Cheater:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && cheater-ai
+	Crushable@Vengeful:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && vengeful-ai
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -262,6 +268,12 @@
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+	Crushable:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
+	Crushable@Cheater:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && cheater-ai
+	Crushable@Vengeful:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && vengeful-ai
 	Guard:
 		Voice: Move
 	Passenger:

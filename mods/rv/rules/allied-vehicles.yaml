@@ -1635,6 +1635,12 @@ robo:
 		Locomotor: amphibious
 		PauseOnCondition: !powered
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !squid
+	Crushable:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
+	Crushable@Cheater:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && cheater-ai
+	Crushable@Vengeful:
+		RequiresCondition: !invulnerability && (!in_water || on_dock) && vengeful-ai
 	Hovers:
 		Ticks: 10
 		BobDistance: -64
