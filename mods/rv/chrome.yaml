@@ -3775,17 +3775,31 @@ checkbox:
 	Image: dialog.png
 	PanelRegion: 640, 0, 1, 1, 126, 126, 1, 1
 
-checkbox-bits:
+checkmark-tick:
 	Image: buttons.png
 	Regions:
 		checked: 100, 157, 16, 16
-		checked-disabled: 100, 173, 16, 16
-		crossed: 116, 157, 16, 16
-		crossed-disabled: 116, 173, 16, 16
+		checked-pressed: 100, 173, 16, 16
+		unchecked: 0, 0, 0, 0
+		unchecked-pressed: 100, 173, 16, 16
+
+checkmark-highlighted-tick:
+	Inherits: checkmark-tick
+
+checkmark-cross:
+	Image: buttons.png
+	Regions:
+		checked: 116, 157, 16, 16
+		checked-pressed: 116, 173, 16, 16
+		unchecked: 0, 0, 0, 0
+		unchecked-pressed: 116, 173, 16, 16
 
 checkbox-hover:
 	Image: dialog.png
 	PanelRegion: 640, 128, 1, 1, 126, 126, 1, 1
+
+checkbox-pressed:
+	Inherits: checkbox-hover
 
 # Same as button-disabled-pressed
 checkbox-disabled:
@@ -3798,6 +3812,9 @@ checkbox-highlighted:
 	PanelRegion: 896, 0, 1, 1, 126, 126, 1, 1
 
 checkbox-highlighted-hover:
+	Inherits: checkbox-highlighted
+
+checkbox-highlighted-pressed:
 	Inherits: checkbox-highlighted
 
 checkbox-highlighted-disabled:
