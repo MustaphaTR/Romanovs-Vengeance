@@ -1490,7 +1490,7 @@ naflak:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 50
 		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.2
 		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
 		BuildDuration: 375
@@ -1566,7 +1566,7 @@ tesla:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 60
 		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.3
 		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
 		BuildDuration: 625
@@ -1690,7 +1690,7 @@ nalasr:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
-		BuildPaletteOrder: 50
+		BuildPaletteOrder: 40
 		Prerequisites: ~building.sovietsorbaku, nahand, ~techlevel.1
 		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Armor-Piercing Bullets
 		BuildDuration: 250
@@ -1934,8 +1934,8 @@ napost:
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
-		BuildPaletteOrder: 40
-		Prerequisites: ~building.sovietsorbaku, power, ~prerequisite.tesla_fence, ~techlevel.1
+		BuildPaletteOrder: 70
+		Prerequisites: ~building.sovietsorbaku, power, prerequisite.tesla_fence, ~techlevel.1
 		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Cannot be placed on water.\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100

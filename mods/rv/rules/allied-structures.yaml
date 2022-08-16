@@ -1206,7 +1206,7 @@ nasam:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
-		BuildPaletteOrder: 60
+		BuildPaletteOrder: 50
 		Prerequisites: ~building.allies, gaairc, ~techlevel.2
 		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
 		BuildDuration: 375
@@ -1725,7 +1725,7 @@ atesla:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 60
 		Prerequisites: ~building.allies, gaairc, ~techlevel.3
 		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
 		BuildDuration: 625
@@ -1863,7 +1863,7 @@ gaapad:
 	Buildable:
 		Queue: Building.Unused # Building.Allies
 		BuildPaletteOrder: 100
-		Prerequisites: gaairc, ~prerequisite.airpad, ~techlevel.2
+		Prerequisites: gaairc, prerequisite.airpad, ~techlevel.2
 		Description: Rearms up to 3 aircraft.
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -2081,8 +2081,8 @@ gagun:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
-		BuildPaletteOrder: 50
-		Prerequisites: ~building.allies, gapile, ~prerequisite.gun_turret, ~techlevel.1
+		BuildPaletteOrder: 70
+		Prerequisites: ~building.allies, gapile, prerequisite.gun_turret, ~techlevel.1
 		Description: Anti-tank defense structure.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
 		BuildDuration: 250
 		BuildDurationModifier: 100
