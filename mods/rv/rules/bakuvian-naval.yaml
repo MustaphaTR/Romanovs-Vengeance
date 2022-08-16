@@ -1,0 +1,94 @@
+hydf:
+	Inherits: ^Ship
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	# Inherits@C4: ^AcceptsSEALC4
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@SQUID: ^SquidGrabbable
+	Buildable:
+		Queue: Ship.Shared, Ship.Baku
+		BuildPaletteOrder: 30
+		Prerequisites: ~ship.baku, ~techlevel.1
+		Description: Anti-Air and Anti-Infantry naval unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Naval units
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 700
+	Tooltip:
+		Name: Hydrofoil
+	Tooltip@NoRow:
+		Name: Hydrofoil
+	Selectable:
+		Bounds: 1206, 1448, 0, -289
+	Health:
+		HP: 15000
+	Armor:
+		Type: Light
+	Mobile:
+		TurnSpeed: 32
+		Speed: 90
+	RevealsShroud:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 10c0
+	RevealOnDeath:
+		Radius: 5c0
+	AttackFollowFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		MustFaceTarget: true
+		PauseOnCondition: chronodisable || emp
+	Armament@primary:
+		Weapon: HoverMissile
+		Damage: 60
+		LocalOffset: 0,-128,512, 0,128,512
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: HoverMissileE
+		Damage: 120
+		LocalOffset: 0,-128,512, 0,128,512
+		ReloadingCondition: reload-ground
+		PauseOnCondition: reload-air
+		RequiresCondition: rank-elite
+	Armament@primary-aa:
+		Weapon: CRMissileLauncherAA
+		LocalOffset: 0,-128,512, 0,128,512
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: !rank-elite
+	Armament@elite-aa:
+		Weapon: CRMissileLauncherAAE
+		LocalOffset: 0,-128,512, 0,128,512
+		ReloadingCondition: reload-air
+		PauseOnCondition: reload-ground
+		RequiresCondition: rank-elite
+	WithMuzzleOverlay:
+	WithVoxelBody:
+	RenderSprites:
+	RenderVoxels:
+		NormalsPalette: ts-normals
+	Voiced:
+		VoiceSet: SeaScorpionVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	GrantConditionOnMovement@MoveStart:
+		Condition: moving
+		ValidMovementTypes: Horizontal, Turn
+	SoundAnnouncement:
+		SoundFiles: vseastaa.wav, vseastab.wav, vseastac.wav, vseastad.wav
+		Volume: 0.4
+		RequiresCondition: moving
+	ActorStatValues:
+		SplitRanges: true

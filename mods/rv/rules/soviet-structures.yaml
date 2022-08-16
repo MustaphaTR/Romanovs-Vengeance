@@ -840,17 +840,41 @@ nayard:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
 	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@ship.soviets:
+		Prerequisite: ship.soviets
+		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProvidesPrerequisite@ship.baku:
+		Prerequisite: ship.baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ProvidesPrerequisite@ship.sovietsorbaku:
 		Prerequisite: ship.sovietsorbaku
 	ProvidesPrerequisite@vehicleorship.sovietsorbaku:
 		Prerequisite: vehicleorship.sovietsorbaku
 	Production:
-		Produces: Ship.Soviets
+		Produces: Ship.Soviets, Ship.Baku
 	ProductionQueue:
 		Type: Ship.Soviets
 		DisplayOrder: 22
+		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
+	ProductionQueue@Baku:
+		Type: Ship.Baku
+		Group: Ship
+		DisplayOrder: 24
+		LowPowerModifier: 200
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Ship.Soviets
+	ProductionBar@Baku:
+		ProductionType: Ship.Baku
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable

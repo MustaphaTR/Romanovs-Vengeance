@@ -1,7 +1,7 @@
 smcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
 		Prerequisites: ~vehicleorship.sovietsorbaku, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 	Transforms:
 		IntoActor: nacnst
@@ -16,7 +16,7 @@ harv:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@NOGUNNER: ^GunnerKillable
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
 		Description: Gathers Ore and Gems.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n\nUpgradeable with:\n- Armor-Piercing Bullets
 		Prerequisites: ~vehicleorship.sovietsorbaku, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
@@ -1036,9 +1036,9 @@ v3:
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 100
-		Prerequisites: ~vehicle.sovietsorbaku, natech, ~techlevel.3
+		Prerequisites: ~vehicle.soviets, natech, ~techlevel.3
 		Description: Long-range rocket artillery.\n\n  Strong vs Buildings, Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1118,9 +1118,9 @@ v3:
 		Voice: Build
 		ValidRelationships: None
 	ProducibleWithLevel:
-		Prerequisites: vettricv3
+		Prerequisites: warfactory.infiltrated
 	WithProductionIconOverlay:
-		Prerequisites: vettricv3
+		Prerequisites: warfactory.infiltrated
 		Types: chevron-veteran
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -1342,9 +1342,9 @@ tric:
 		Voice: Build
 		ValidRelationships: None
 	ProducibleWithLevel:
-		Prerequisites: vettricv3
+		Prerequisites: vettricgrad
 	WithProductionIconOverlay:
-		Prerequisites: vettricv3
+		Prerequisites: vettricgrad
 		Types: chevron-veteran
 	HitShape:
 
@@ -1497,7 +1497,7 @@ deva:
 exps:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
 		Prerequisites: ~vehicleorship.sovietsorbaku, ~techlevel.1, ~!ai.ev
 	Selectable:
 		Bounds: 1641, 2702, 0, -337

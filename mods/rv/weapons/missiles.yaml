@@ -148,6 +148,58 @@ APTuskBoostedE:
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 
+GradTusk:
+	Inherits: APTusk
+	Burst: 10
+	Range: 12c0
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 80
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 50
+			Heavy: 40
+			Wood: 100
+			Steel: 85
+			Concrete: 60
+			Drone: 60
+
+GradTuskE:
+	Inherits: APTuskE
+	Burst: 10
+	Range: 12c0
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 80
+			Flak: 80
+			Plate: 70
+			Light: 50
+			Medium: 50
+			Heavy: 40
+			Wood: 100
+			Steel: 85
+			Concrete: 60
+			Drone: 60
+
+GradTuskCryo:
+	Inherits: GradTusk
+	Warhead@4Con: GrantExternalCondition
+		Range: 172
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+GradTuskCryoE:
+	Inherits: GradTuskE
+	Warhead@4Con: GrantExternalCondition
+		Range: 172
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
 Maverick:
 	Inherits: ^Missile
 	ReloadDelay: 3
@@ -355,11 +407,11 @@ HoverMissile:
 	Burst: 2
 	Range: 6c0
 	Report: vifvatta.wav
-	ValidTargets: Ground
+	ValidTargets: Ground, Water
 	Projectile: Missile
 		Speed: 512
 		Arm: 2
-		RangeLimit: 11c0
+		RangeLimit: 12c0
 		ContrailStartColor: D8D8FF
 		MinimumLaunchAngle: 255
 		MaximumLaunchAngle: 255
@@ -369,7 +421,7 @@ HoverMissile:
 		Spread: 0c128
 		Falloff: 100, 83, 67, 50, 0
 		Damage: 3000
-		ValidTargets: Ground
+		ValidTargets: Ground, Water
 		Versus:
 			None: 100
 			Flak: 100

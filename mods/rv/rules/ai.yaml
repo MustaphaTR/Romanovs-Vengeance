@@ -1361,7 +1361,7 @@ Player:
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
-		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
+		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable
 		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, yapowr-full, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, natbnk-ltnk, natbnk-ltnk-tr, natbnk-ytnk, natbnk-ytnk-tr, gagap, napsis, naprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
@@ -1379,7 +1379,7 @@ Player:
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
-		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater
+		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable
 		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, yapowr-full, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, natbnk-ltnk, natbnk-ltnk-tr, natbnk-ytnk, natbnk-ytnk-tr, gagap, napsis, naprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
@@ -1399,10 +1399,9 @@ Player:
 		McvFactoryTypes: gaweap, naweap, yaweap
 		MinimumConstructionYardCount: 4
 		MaxBaseRadius: 30
-		
 	UnitBuilderBotModule@easy:
 		RequiresCondition: enable-easy-ai && !megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1451,6 +1450,7 @@ Player:
 			tric: 10
 			v3: 10
 			hwtz: 10
+			grad: 10
 			sref: 20
 			mgtk: 20
 			apoc: 20
@@ -1475,6 +1475,7 @@ Player:
 			piranha: 5
 			aegis: 1
 			hyd: 5
+			hydf: 5
 			gatsub: 5
 			carrier: 2
 			dred: 2
@@ -1578,7 +1579,7 @@ Player:
 			bpln.buildable: 2
 	UnitBuilderBotModule@easy-megawealth:
 		RequiresCondition: enable-easy-ai && megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1623,6 +1624,7 @@ Player:
 			tric: 10
 			v3: 10
 			hwtz: 10
+			grad: 10
 			sref: 20
 			mgtk: 20
 			apoc: 20
@@ -1647,6 +1649,7 @@ Player:
 			piranha: 5
 			aegis: 1
 			hyd: 5
+			hydf: 5
 			gatsub: 5
 			carrier: 2
 			dred: 2
@@ -1747,7 +1750,7 @@ Player:
 			bpln.buildable: 2
 	UnitBuilderBotModule@cheater:
 		RequiresCondition: enable-cheater-ai && !megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1799,6 +1802,7 @@ Player:
 			tric: 10
 			v3: 10
 			hwtz: 10
+			grad: 10
 			sref: 20
 			mgtk: 20
 			apoc: 20
@@ -1823,6 +1827,7 @@ Player:
 			piranha: 5
 			aegis: 1
 			hyd: 5
+			hydf: 5
 			gatsub: 5
 			carrier: 2
 			dred: 2
@@ -1937,7 +1942,7 @@ Player:
 			zep: 1
 	UnitBuilderBotModule@cheater-megawealth:
 		RequiresCondition: enable-cheater-ai && megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1985,6 +1990,7 @@ Player:
 			tric: 10
 			v3: 10
 			hwtz: 10
+			grad: 10
 			sref: 20
 			mgtk: 20
 			apoc: 20
@@ -2009,6 +2015,7 @@ Player:
 			piranha: 5
 			aegis: 1
 			hyd: 5
+			hydf: 5
 			gatsub: 5
 			carrier: 2
 			dred: 2
@@ -2120,7 +2127,7 @@ Player:
 			zep: 1
 	UnitBuilderBotModule@vengeful:
 		RequiresCondition: enable-vengeful-ai && !megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -2181,6 +2188,7 @@ Player:
 			tric: 10
 			v3: 10
 			hwtz: 10
+			grad: 10
 			sref: 20
 			mgtk: 20
 			apoc: 20
@@ -2205,6 +2213,7 @@ Player:
 			piranha: 5
 			aegis: 1
 			hyd: 5
+			hydf: 5
 			gatsub: 5
 			carrier: 2
 			dred: 2
@@ -2335,7 +2344,7 @@ Player:
 			zep: 1
 	UnitBuilderBotModule@vengeful-megawealth:
 		RequiresCondition: enable-vengeful-ai && megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -2390,6 +2399,7 @@ Player:
 			tric: 10
 			v3: 10
 			hwtz: 10
+			grad: 10
 			sref: 20
 			mgtk: 20
 			apoc: 20
@@ -2414,6 +2424,7 @@ Player:
 			piranha: 5
 			aegis: 1
 			hyd: 5
+			hydf: 5
 			gatsub: 5
 			carrier: 2
 			dred: 2

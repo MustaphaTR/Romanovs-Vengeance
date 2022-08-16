@@ -10,6 +10,94 @@ smrj:
 	Voiced:
 		VoiceSet: SovietVehicleVoice
 
+grad:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CRYO: ^AffectedByCryoWarheads
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@NOGUNNER: ^GunnerKillable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 900
+	DeliversCash:
+		Payload: 900
+		Voice: Move
+	Tooltip:
+		Name: Grad MLRS
+	Tooltip@NoRow:
+		Name: Grad MLRS
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Baku
+		BuildPaletteOrder: 100
+		Prerequisites: ~vehicle.baku, natech, ~techlevel.3
+		Description: Long-range rocket artillery.\n\n  Strong vs Buildings, Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Cryo Warheads
+		BuildDuration: 500
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 90
+		TurnSpeed: 32
+	Health:
+		HP: 15000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 3c0
+	Armament:
+		Weapon: GradTusk
+		Damage: 250
+		LocalOffset: 384,160,1280, 384,-160,1280
+		RequiresCondition: !rank-elite && !cryowarheads
+	Armament@Cryo:
+		Weapon: GradTuskCryo
+		Damage: 250
+		LocalOffset: 384,160,1280, 384,-160,1280
+		RequiresCondition: !rank-elite && cryowarheads
+	Armament@Elite:
+		Weapon: GradTuskE
+		Damage: 500
+		LocalOffset: 384,160,1280, 384,-160,1280
+		RequiresCondition: rank-elite && !cryowarheads
+	Armament@EliteCryo:
+		Weapon: GradTuskCryoE
+		Damage: 500
+		LocalOffset: 384,160,1280, 384,-160,1280
+		RequiresCondition: rank-elite && cryowarheads
+	Turreted:
+		TurnSpeed: 28
+		Offset: -448,0,0
+	AttackTurreted:
+		Voice: Attack
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
+	RenderSprites:
+	Selectable:
+		Bounds: 1544, 2509, 0, -289
+	WithVoxelBody:
+	WithVoxelTurret:
+	Voiced:
+		VoiceSet: V3LauncherVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	ProducibleWithLevel:
+		Prerequisites: vettricgrad
+	WithProductionIconOverlay:
+		Prerequisites: vettricgrad
+		Types: chevron-veteran
+	ActorStatValues:
+		Upgrades: upgrade.cryo_warheads
+
 qyzyl:
 	Inherits: ^Vehicle
 	Inherits@CHAOS: ^BerserkableVoxel
