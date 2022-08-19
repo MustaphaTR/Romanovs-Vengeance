@@ -178,8 +178,8 @@ shadhusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
-		Duration: 50
+		Radius: 8c0
+		Duration: 125
 	RenderSprites:
 		Image: shad
 	RenderVoxels:
@@ -380,8 +380,8 @@ zephusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
-		Duration: 50
+		Radius: 10c0
+		Duration: 125
 	-ProximityExternalCondition@AIRPROP:
 	WithVoxelBody:
 		ShowShadow: false
@@ -626,8 +626,8 @@ orcahusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 6c0
-		Duration: 50
+		Radius: 12c0
+		Duration: 125
 	WithVoxelBody:
 		RequiresCondition: !a2amissiles && !predator_missiles
 	WithVoxelBody@A2A:
@@ -664,8 +664,8 @@ orcahusk.VTOL:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 6c0
-		Duration: 50
+		Radius: 12c0
+		Duration: 125
 	WithVoxelBody:
 		RequiresCondition: !a2amissiles && !predator_missiles
 	WithVoxelBody@A2A:
@@ -770,8 +770,8 @@ beaghusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 6c0
-		Duration: 50
+		Radius: 12c0
+		Duration: 125
 	RenderVoxels:
 		Image: beag
 		NormalsPalette: ts-normals
@@ -796,8 +796,8 @@ beaghusk.VTOL:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 6c0
-		Duration: 50
+		Radius: 12c0
+		Duration: 125
 	RenderVoxels:
 		Image: beag
 		NormalsPalette: ts-normals
@@ -1845,8 +1845,8 @@ schphusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
-		Duration: 50
+		Radius: 10c0
+		Duration: 125
 	RenderSprites:
 		Image: schp
 	RenderVoxels:
@@ -1967,9 +1967,9 @@ bpln.buildable:
 		-LandingSounds:
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
-		Actor: bplnhusk
+		Actor: bpln.buildablehusk
 	SpawnActorOnDeath@VTOL:
-		Actor: bplnhusk.VTOL
+		Actor: bpln.buildablehusk.VTOL
 	Armament:
 		Weapon: Maverick2
 		Damage: 225
@@ -2050,6 +2050,32 @@ bplnhusk.VTOL:
 		Image: bpln
 	FallsToEarth:
 		Explosion: UnitExplode
+
+bpln.buildablehusk:
+	Inherits: bplnhusk
+	RevealsShroud:
+		Range: 12c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 12c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 12c0
+		Duration: 125
+
+bpln.buildablehusk.VTOL:
+	Inherits: bplnhusk.VTOL
+	RevealsShroud:
+		Range: 12c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 12c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 12c0
+		Duration: 125
 
 disk:
 	Inherits: ^Helicopter
@@ -2286,8 +2312,8 @@ diskhusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
-		Duration: 50
+		Radius: 10c0
+		Duration: 125
 	RenderVoxels:
 		Image: disk
 	-WithVoxelBody:
@@ -2429,8 +2455,8 @@ hindhusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
-		Duration: 50
+		Radius: 8c0
+		Duration: 125
 	RenderSprites:
 		Image: hind
 	RenderVoxels:
@@ -2690,8 +2716,8 @@ fortresshusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
-		Duration: 50
+		Radius: 10c0
+		Duration: 125
 	WithVoxelBody:
 		RequiresCondition: !increased_payload
 	WithVoxelBody@2:
@@ -2722,8 +2748,8 @@ fortresshusk.VTOL:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
-		Duration: 50
+		Radius: 10c0
+		Duration: 125
 	WithVoxelBody:
 		RequiresCondition: !increased_payload
 	WithVoxelBody@2:
@@ -2760,8 +2786,8 @@ sdrn:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
-		Duration: 50
+		Radius: 10c0
+		Duration: 125
 	DetectCloaked:
 		Range: 10c0
 	RenderDetectionCircle:
@@ -2972,8 +2998,8 @@ txdxhusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
-		Duration: 50
+		Radius: 10c0
+		Duration: 125
 	RenderVoxels:
 		Image: txdx
 	-WithVoxelBody:
@@ -3133,8 +3159,8 @@ kitehusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
-		Duration: 50
+		Radius: 8c0
+		Duration: 125
 	RenderSprites:
 		Image: kite
 	RenderVoxels:
@@ -3317,8 +3343,8 @@ magnediskhusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 5c0
-		Duration: 50
+		Radius: 10c0
+		Duration: 125
 	RenderVoxels:
 		Image: magnedisk
 	-WithVoxelBody:
@@ -3473,8 +3499,8 @@ havochusk:
 	#	Types: SatelliteScan
 	#	Type: GroundPosition
 	RevealOnDeath:
-		Radius: 4c0
-		Duration: 50
+		Radius: 8c0
+		Duration: 125
 	RenderSprites:
 		Image: havoc
 	RenderVoxels:
