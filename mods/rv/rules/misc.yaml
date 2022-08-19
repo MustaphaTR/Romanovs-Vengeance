@@ -549,10 +549,16 @@ camera.8c0:
 		Range: 8c0
 		Type: CenterPosition
 
+camera.10c0:
+	Inherits: CAMERA
+	RevealsShroud:
+		Range: 10c0
+		Type: CenterPosition
+
 camera.spyplane:
-	Inherits: camera.8c0
+	Inherits: camera.10c0
 	DetectCloaked:
-		Range: 8c0
+		Range: 10c0
 	KillsSelf:
 		RemoveInstead: true
 		Delay: 250
