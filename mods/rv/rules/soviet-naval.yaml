@@ -528,22 +528,18 @@ sray:
 		PauseOnCondition: chronodisable || emp || squid
 	Armament@primary:
 		Weapon: BoatBolt
-		Damage: 150
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: !overcharge && !rank-elite
 	Armament@elite:
 		Weapon: BoatBoltE
-		Damage: 150
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: !overcharge && rank-elite
 	Armament@primary-overcharge:
 		Weapon: BoatBoltCharged
-		Damage: 150
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: overcharge && !rank-elite
 	Armament@elite-overcharge:
 		Weapon: BoatBoltChargedE
-		Damage: 150
 		LocalOffset: 280,196,640, 280,-196,640
 		RequiresCondition: overcharge && rank-elite
 	WithVoxelBody:
@@ -593,3 +589,5 @@ sray:
 		Volume: 0.4
 		Interval: 20
 		RequiresCondition: walking && !in_water
+	ActorStatValues:
+		Damage: 140
