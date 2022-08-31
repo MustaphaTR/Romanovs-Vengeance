@@ -3217,8 +3217,7 @@ observer-scrollpanel-button:
 	PanelRegion: 768, 256, 1, 1, 126, 126, 1, 1
 
 observer-scrollpanel-button-hover:
-	Image: dialog.png
-	PanelRegion: 768, 256, 1, 1, 126, 126, 1, 1
+	Inherits: observer-scrollpanel-button
 
 observer-scrollpanel-button-pressed:
 	Image: dialog.png
@@ -3237,26 +3236,17 @@ observer-scrollpanel-button-disabled:
 		corner-bl: 768, 511, 1, 1
 		corner-br: 895, 511, 1, 1
 
-observer-scrollheader-selected:
-	Image: dialog.png
-	Regions:
-		background: 769, 897, 126, 126
-		border-r: 895, 897, 1, 126
-		border-l: 768, 897, 1, 126
-		border-b: 769, 511, 126, 1
-		border-t: 769, 384, 126, 1
-		corner-tl: 768, 384, 1, 1
-		corner-tr: 895, 384, 1, 1
-		corner-bl: 768, 511, 1, 1
-		corner-br: 895, 511, 1, 1
+observer-scrollheader:
+	Inherits: observer-scrollpanel-button-disabled
 
-observer-scrollitem-selected:
-	Image: dialog.png
-	PanelRegion: 896, 256, 1, 1, 126, 126, 1, 1
+observer-scrollheader-highlighted:
+	Inherits: observer-scrollpanel-button-disabled
+
+observer-scrollitem-highlighted:
+	Inherits: observer-scrollpanel-button-pressed
 
 observer-scrollitem-hover:
-	Image: dialog.png
-	PanelRegion: 768, 256, 1, 1, 126, 126, 1, 1
+	Inherits: observer-scrollpanel-button
 
 # -----------------------------------------------------------------------------------
 # REST OF THE UI
@@ -3794,6 +3784,17 @@ checkmark-cross:
 		unchecked: 0, 0, 0, 0
 		unchecked-pressed: 116, 173, 16, 16
 
+checkmark-mute:
+	Image: buttons.png
+	Regions:
+		unchecked: 222, 239, 16, 16
+		unchecked-pressed: 239, 239, 16, 16
+		checked: 239, 239, 16, 16
+		checked-pressed: 222, 239, 16, 16
+
+checkmark-highlighted-mute:
+	Inherits: checkmark-mute
+
 checkbox-hover:
 	Image: dialog.png
 	PanelRegion: 640, 128, 1, 1, 126, 126, 1, 1
@@ -3820,24 +3821,39 @@ checkbox-highlighted-pressed:
 checkbox-highlighted-disabled:
 	Inherits: checkbox-disabled
 
-# A copy of dialog3 (pressed button)
-scrollitem-selected:
-	Image: dialog.png
-	PanelRegion: 640, 0, 1, 1, 126, 126, 1, 1
+checkbox-toggle:
 
-# A copy of dialog2 (normal button)
+checkbox-toggle-hover:
+	Inherits: button
+
+checkbox-toggle-pressed:
+	Inherits: checkbox-pressed
+
+checkbox-toggle-highlighted:
+
+checkbox-toggle-highlighted-hover:
+	Inherits: button-highlighted
+
+checkbox-toggle-highlighted-pressed:
+	Inherits: checkbox-highlighted-pressed
+
+scrollitem:
+
 scrollitem-hover:
-	Image: dialog.png
-	PanelRegion: 512, 0, 1, 1, 126, 126, 1, 1
+	Inherits: button
 
-# A copy of dialog2 (normal button)
-scrollheader-selected:
-	Image: dialog.png
-	PanelRegion: 512, 0, 1, 1, 126, 126, 1, 1
+scrollitem-highlighted:
+	Inherits: button-pressed
 
 scrollitem-nohover:
 
-scrollitem-nohover-hover:
+scrollitem-nohover-highlighted:
+
+scrollheader:
+	Inherits: button
+
+scrollheader-highlighted:
+	Inherits: button
 
 separator:
 	Inherits: button
