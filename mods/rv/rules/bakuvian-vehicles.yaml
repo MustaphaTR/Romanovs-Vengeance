@@ -1,3 +1,108 @@
+send:
+	Inherits: ^Vehicle
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@EXPERIENCE: ^GainsExperience
+	Valued:
+		Cost: 800
+	DeliversCash:
+		Payload: 800
+		Voice: Move
+	Tooltip:
+		Name: Sentry Drone
+	Tooltip@NoRow:
+		Name: Sentry Drone
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Baku
+		BuildPaletteOrder: 40
+		Prerequisites: ~vehicle.baku, ~techlevel.2
+		Description: Stealth drone armed with a heavy machine gun.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Stealth units\n- Stealth while not moving or firing\n- Immune to Radiation\n- Cannot be mind controlled\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 105
+		TurnSpeed: 60
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
+	RevealOnDeath:
+		Radius: 8c0
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	Targetable:
+		TargetTypes: Ground, Vehicle, DetonateAttack, DroneInfection, ImmuneToRadiation
+	Armament:
+		Weapon: sendgun
+		Damage: 40
+		LocalOffset: 384,0,512
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: sendgunE
+		Damage: 48
+		LocalOffset: 384,0,512
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	Armament@primary-line:
+		Weapon: sendgunLine
+		LocalOffset: 384,0,512
+		MuzzleSequence: muzzle
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-line:
+		Weapon: sendgunLineE
+		LocalOffset: 384,0,512
+		MuzzleSequence: muzzle
+		RequiresCondition: apbullets && rank-elite
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+		MustFaceTarget: true
+		PauseOnCondition: chronodisable || emp
+	AutoTarget:
+		InitialStance: ReturnFire
+	WithMuzzleOverlay:
+	-CaptureManager:
+	-Capturable:
+	Cloak:
+		RequiresCondition: !chronodisable && !emp
+		InitialDelay: 25
+		CloakDelay: 110
+		IsPlayerPalette: true
+		CloakSound: cloak5.aud
+		UncloakSound: cloak5.aud
+		UncloakOn: Attack, Damage, Move
+	RenderSprites:
+	Selectable:
+		Bounds: 1254, 2316, 0, -193
+	RenderVoxels:
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: RobotTankVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	HitShape:
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vchastaa.wav, vchastab.wav, vchastac.wav
+	#	Volume: 0.5
+	#	RequiresCondition: moving
+
 smrj:
 	Inherits: mrj
 	Buildable:
