@@ -8,7 +8,6 @@ no-start-until-required-slots-full = Gerekli miktarda slot dolana kadar oyun ba�
 no-start-without-players = Oyun hiçbir oyuncu olmadan başlatılamıyor.
 insufficient-enabled-spawnPoints = Oyun daha fazla başlangıç noktası etkinleştirilene kadar başlatılamıyor.
 malformed-command = Bozuk { $command } komutu
-chat-disabled = Sohbet devre dışı. Lütfen { $remaining } saniye sonra tekrar deneyin.
 state-unchanged-ready = Hazır olarak işaretlenmişken durum değiştirilemiyor.
 invalid-faction-selected = Geçersiz taraf seçimi: { $faction }
 supported-factions = Desteklenen değerler: { $factions }
@@ -18,11 +17,8 @@ invalid-bot-slot = Başka bir istemciye sahip slota bot eklenemiyor.
 invalid-bot-type = Geçersiz bot türü.
 only-host-change-map = Sadece sunucu haritayı değiştirebilir.
 lobby-disconnected = { $player } ayrıldı.
-player-disconnected =
-    { $team ->
-        [0] { $player } adlı oyuncunun bağlantısı kesildi.
-       *[other] { $player } (Takım { $team }) adlı oyuncunun bağlantısı kesildi.
-    }
+player-disconnected = { $player } adlı oyuncunun bağlantısı kesildi.
+player-team-disconnected = { $player } (Takım { $team }) adlı oyuncunun bağlantısı kesildi.
 observer-disconnected = { $player } (İzleyici) adlı oyuncunun bağlantısı kesildi.
 unknown-map = Harita sunucuda bulunamadı.
 searching-map = Harita Kaynak Merkezinde aranıyor...
@@ -80,8 +76,8 @@ slot-closed = Slotunuz sunucu tarafından kapatıldı.
 ## Server
 game-started = Oyun başladı
 
-## Server also LobbyUtils
-bots-disabled = Botlar Devre Dışı
+## PlayerMessageTracker
+chat-temp-disabled = Sohbet devre dışı. Lütfen { $remaining } saniye sonra tekrar deneyin.
 
 ## ActorEditLogic
 duplicate-actor-id = Kopya Aktör ID'si
@@ -95,6 +91,23 @@ type = Tür
 search-results = Arama Sonuçları
 multiple = Çok
 
+## SaveMapLogic
+unpacked = paketlenmemiş
+
+save-map-failed-title = Harita kaydedilemedi
+save-map-failed-prompt = Ayrıntılar için debug.log dosyasına bakınız.
+save-map-failed-accept = Tamam
+
+overwrite-map-failed-title = Uyarı
+overwrite-map-failed-prompt = Kaydederseniz var olan bir
+    haritanın üzerine yazacaksınız.
+overwrite-map-failed-confirm = Kaydet
+
+overwrite-map-outside-edit-title = Uyarı
+overwrite-map-outside-edit-prompt = "Bu harita düzenleyicinin dışında değiştirilmiş.
+    Kaydederseniz bu değişikliklerin üzerine yazacaksınız.
+overwrite-map-outside-edit-confirm = Kaydet
+
 ## GameInfoLogic
 objectives = Hedefler
 briefing = Brifing
@@ -102,10 +115,21 @@ options = Seçenekler
 debug = Hata Bulma
 chat = Sohbet
 
-## GameInfoObjectivesLogic also GameInfoStatsLogic
+## GameInfoObjectivesLogic, GameInfoStatsLogic
 in-progress = Devam ediyor
 accomplished = Tamamlandı
 failed = Başarısız oldu
+
+## GameInfoStatsLogic
+mute = Bu oyuncuyu sustur
+unmute = Bu oyuncunun sesini aç
+
+## GameInfoStatsLogic
+gone = Ayrıldı
+
+kick-title = { $player } adlı oyuncuyu at?
+kick-prompt = Oyuna geri katılamayacaklar.
+kick-accept = At
 
 ## GameTimerLogic
 paused = Duraklatıldı
@@ -114,11 +138,55 @@ speed = %{ $percentage } Hız
 complete = %{ $percentage } tamamlandı
 
 ## LobbyLogic, InGameChatLogic
-chat-availability =
-    { $seconds ->
-        [zero] Sohbet devre dışı
-        *[other] Sohbet { $seconds } saniye içinde etkinleşecek...
-    }
+chat-disabled = Sohbet devre dışı
+chat-availability = Sohbet { $seconds } saniye içinde etkinleşecek...
+
+## IngameMenuLogic
+leave = Ayrıl
+abort-mission = Görevden Ayrıl
+
+leave-mission-title = Görevden Ayrıl
+leave-mission-prompt = Görevden ayrılıp menüye geri dönülsün mü?
+leave-mission-accept = Ayrıl
+leave-mission-cancel = Kal
+
+restart-button = Yeniden Başlat
+
+restart-mission-title = Yeniden Başlat
+restart-mission-prompt = Yeniden başlatmak istediğinize emin misiniz?
+restart-mission-accept = Yeniden Başlat
+restart-mission-cancel = Kal
+
+surrender-button = Teslim Ol
+
+surrender-title = Teslim Ol
+surrender-prompt = Teslim olmak istediğinize emin misiniz?
+surrender-accept = Teslim Ol
+surrender-cancel = Kal
+
+load-game-button = Oyun Yükle
+save-game-button = Oyunu Kaydet
+
+music-button = Müzik
+
+settings-button = Ayarlar
+
+return-to-map = Haritaya geri dön
+resume = Devam Et
+
+save-map-button = Haritayı Kaydet
+
+error-max-player-title = Hata: Maks oyuncu sayısı aşıldı
+error-max-player-prompt = Çok fazda oyuncu tanımlanmış ({ $players }/{ $max }).
+error-max-player-accept = Geri Dön
+
+exit-map-button = Düzenleyiciden Çık
+
+exit-map-editor-title = Harita Düzenleyiciden Çık
+exit-map-editor-prompt-unsaved = Çıkarsanız kaydedilmeyen değişiklier kaybolacaktır.
+exit-map-editor-prompt-deleted = Bu harita düzenleyicinin dışından silinmiş.
+exit-map-editor-confirm-anyway = Yine de çık
+exit-map-editor-confirm = Çık
 
 ## IngamePowerBarLogic
 ## IngamePowerCounterLogic
@@ -149,12 +217,68 @@ army-graph = Ordu (grafik)
 ## WorldTooltipLogic
 unrevealed-terrain = Keşfedilmemiş Arazi
 
-## ServerlistLogic, GameInfoStatsLogic, ObserverShroudSelectorLogic, SpawnSelectorTooltipLogic
-team-no-team =
-    { $team ->
-        [zero] Takım Yok
-       *[other] Takım { $team }
+## DownloadPackageLogic
+downloading = { $title } indiriliyor
+fetching-mirror-list = Aynaların listesi alınıyor...
+downloading-from = { $host } adresinden indiriliyor { $received } { $suffix }
+downloading-from-progress = { $host } adresinden indiriliyor { $received } / { $total } { $suffix } ({ $progress }%)
+unknown-host = bilinmeyen sunucu
+verifying-archive = Arşiv doğrulanıyor...
+archive-validation-failed = Arşiv doğrulanmabaşarısız oldu
+extracting = Çıkarılıyor...
+extracting-entry = { $entry } çıkarılıyor
+archive-extraction-failed = Arşivden çıkarma başarısız oldu
+mirror-selection-failed = Çevrimiçi ayna kullanılabilir değil. Lütfen orijinal bir diskten yükleyin.
+
+## InstallFromDiscLogic
+detecting-drives = Sürücüler tespit ediliyor
+checking-discs = Diskler kontrol ediliyor
+searching-disc-for = { $title } aranıyor
+content-package-installation = Aşağıdaki içerik paketleri yüklenecek:
+game-discs = Oyun Diskleri
+digital-installs = Dijital Yüklemeler
+game-content-not-found = Oyun İçeriği Bulunamadı
+alternative-content-sources = Lütfen aşağıdaki içerik kaynaklarından birini takın ya da yükleyin:
+installing-content = İçerik Yükleniyor
+copying-filename = { $filename } kopyalanıyor
+copying-filename-progress = { $filename } kopyalanıyor ({ $progress }%)
+installation-failed = Yükleme Başarısız Oldu
+check-install-log = Ayrıntılar için günlük dizinindeki install.log dosyasına bakın.
+extracting-filename = { $filename } çıkarılıyor
+extracting-filename-progress = { $filename } çıkarılıyor ({ $progress }%)
+cancel = İptal Et
+retry = Yeniden Dene
+
+## InstallFromDiscLogic, LobbyLogic
+back = Geri Dön
+
+# InstallFromDiscLogic, ModContentPromptLogic
+continue = Devam Et
+
+## ModContentLogic
+manual-install = Elle Yükleme
+
+## ModContentPromptLogic
+quit = Çık
+
+## KickClientLogic
+kick-client = { $player } atılsın mı?
+
+## KickSpectatorsLogic
+kick-spectators =
+    { $count ->
+        [one] Bir izleyiciyi atmak istediğinize emin misiniz?
+       *[other] { $count } izleyiciyi atmak istediğinize emin misiniz?
     }
+
+## LobbyLogic
+add = Ekle
+remove = Kaldır
+configure-bots = Botları Ayarla
+n-teams = { $count } Takım
+humans-vs-bots = İnsanlar Botlara Karşı
+free-for-all = Herkes Tek
+configure-teams = Takımları Ayarla
 
 ## LobbyLogic, CommonSelectorLogic, InGameChatLogic
 all = Tümü
@@ -165,5 +289,270 @@ none = Hiçbiri
 ## LobbyLogic, IngameChatLogic
 team = Takım
 
-## ServerListLogic, ReplayBrowserLogic also ObserverShroudSelectorLogic
+## LobbyOptionsLogic
+not-available = Mevcut Değil
+
+## LobbyUtils
+slot = Slot
+open = Açık
+closed = Kapalı
+bots = Botlar
+
+# LobbyUtils, Server
+bots-disabled = Bots Disabled
+
+## MapPreviewLogic
+connecting = Bağlanılıyor...
+downloading-map = İndiriliyor { $size } kB
+downloading-map-progress = İndiriliyor { $size } kB ({ $progress }%)
+retry-install = Yüklemeyi Tekrar Dene
+retry-search = Aramayı Tekrar Dene
+## also MapChooserLogic
+created-by = Yapımcı: { $author }
+
+## SpawnSelectorTooltipLogic
+disabled-spawn = Kapalı başlangıç noktası
+available-spawn = Kullanılabilir başlangıç noktası
+
+## DisplaySettingsLogic
+close = Yakın
+medium = Orta
+far = Uzak
+furthest = En Uzak
+
+windowed = Pencere
+legacy-fullscreen = Tam Ekran (Eski)
+fullscreen = Tam Ekran
+
+display = Display { $number }
+
+show-on-damage = Hasarlı ise Göster
+always-show = Her Zaman Göster
+
+automatic = Otomatik
+manual = Elle
+
+## DisplaySettingsLogic, InputSettingsLogic
+disabled = Devre Dışı
+
+## DisplaySettingsLogic, InputSettingsLogic, IntroductionPromptLogic
+classic = Klasik
+modern = Modern
+standard = Standart
+
+## DisplaySettingsLogic, IntroductionPromptLogic
+inverted = Ters
+joystick = Joystick
+
+alt = Alt
+ctrl = Ctrl
+meta = Meta
+shift = Shift
+
+## SettingsLogic
+settings-save-title = Yeniden Başlatma Gerekli
+settings-save-prompt = Bazı değişiklikler oyun yeniden başlatılana
+    kadar uygulanmayacak.
+settings-save-cancel = Devam Et
+
+restart-title = Şimdi Yeniden Başlatılsın Mı?
+restart-prompt = Bazı değişiklikler oyun yeniden başlatılana
+    kadar uygulanmayacak. Şimdi yeniden başlatılsın mı?
+restart-accept = Şimdi Yeniden Başlat
+restart-cancel = Daha Sonra Yeniden Başlat
+
+reset-title = { $panel } Panelini Sıfırla
+reset-prompt = Bu paneldeki tüm ayarları sıfırlamak
+    istediğinize emin misiniz?
+reset-accept = Sıfırla
+reset-cancel = İptal Et
+
+## AssetBrowserLogic
+all-packages = Tüm Paketler
+length-in-seconds = { $length } sn
+
+## ConnectionLogic
+connecting-to-endpoint = { $endpoint } adresine bağlanılıyor...
+could-not-connect-to-target = { $target } suncusuna bağlanılamadı
+unknown-error = Bilinmeyen hata
+password-required = Şifre Gerekli
+connection-failed = Bağlantı Başarısız Oldu
+mod-switch-failed = Mod değiştirme başarısız oldu.
+
+## GameSaveBrowserLogic
+rename-save-title = Kaydı Yeniden Adlandır
+rename-save-prompt = Yeni bir dosya adı girin:
+rename-save-accept = Yeniden Adlandır
+
+delete-save-title = Seçili oyun kaydı silinsin mi?
+delete-save-prompt = '{ $save }' silinsin mi
+delete-save-accept = Sil
+
+delete-all-saves-title = Tüm oyun kayıtları silinsin mi?
+delete-all-saves-prompt = { $count } kayıt silinecek.
+delete-all-saves-accept = Tümünü Sil
+
+save-deletion-failed = Kayıt dosyası '{ $savePath }' silinemedi. Ayrıntılar için günlüklere bakın.
+
+overwrite-save-title = Kayıtlı oyunun üzerine yazılsın mı?
+overwrite-save-prompt = { $file } kaydının üzerine yazılsın mı?
+overwrite-save-accept = Üzerine Yaz
+
+## MainMenuLogic
+loading-news = Haberler yükleniyor
+news-retrival-failed = Haberler alınamadı: { $message }
+news-parsing-failed = Haberler işlenemedi: { $message }
+
+## MapChooserLogic
+all-maps = Tüm Haritalar
+no-matches = Eşleşme yok
+player-players = { $players } Oyuncu
+map-size-huge = (Dev)
+map-size-large = (Büyük)
+map-size-medium = (Orta)
+map-size-small = (Küçük)
+
+map-deletion-failed = Harita '{ $map }' silinemedi. Ayrıntılar için debug.log dosyasına bakın.
+
+delete-map-title = Haritayı sil
+delete-map-prompt = Harita '{ $title }' silinsin mi?
+delete-map-accept = Sil
+
+delete-all-maps-title = Haritaları sil
+delete-all-maps-prompt = Bu sayfadaki tüm haritalar silinsin mi?
+delete-all-maps-accept = Sil
+
+## MissionBrowserLogic
+no-video-title = Video yüklenmemiş
+no-video-text = Oyunun videoları ana menüdeki "İçerikleri
+    Yönet" kısmından yüklenebilir.
+no-video-cancel = Geri Dön
+
+cant-play-title = Video oynatılamıyor
+cant-play-prompt = Videoyu oynatırken bir şeyler ters gitti.
+cant-play-cancel = Geri Dön
+
+## MusicPlayerLogic
+sound-muted = Ses ayarlardan kapatılmış.
+no-song-playing = Hiçbir şarkı oynatılmıyor
+
+## MuteHotkeyLogic
+audio-muted = Ses kapatıldı.
+audio-unmuted = Ses açıldı.
+
+## PlayerProfileLogic
+loading-player-profile = Oyuncu profili yükleniyor...
+loading-player-profile-failed = Oyuncu profilini yükleme başarısız oldu.
+
+## ReplayBrowserLogic
+duration = Süre: { $time }
+singleplayer = Tek Oyunculu
+multiplayer = Çok Oyunculu
+
+today = Bugün
+last-week = Son 7 günde
+last-fortnight = Son 14 günde
+last-month = Son 30 günde
+
+replay-duration-very-short = 5 dk altında
+replay-duration-short = Kısa (10 dk)
+replay-duration-medium = Orta (30 dk)
+replay-duration-long = Uzun (60+ dk)
+
+rename-replay-title = Geri Oynatmayı Yeniden Adlandır
+rename-replay-prompt = Yeni bir dosya adı girin:
+rename-replay-accept = Yeniden Adlandır
+
+delete-replay-title = Seçili geri oynatma silinsin mi?
+delete-replay-prompt = Geri oynatma { $replay } silinsin mi?
+delete-replay-accept = Sil
+
+delete-all-replays-title = Seçili geri oynatmaların tümü silinsin mi?
+delete-all-replays-prompt = { $count } geri oynatma silinecek.
+delete-all-replays-accept = Tümünü Sil
+
+replay-deletion-failed = Geri oynatma dosyası '{ $file }' silinemedi. Ayrıntılar için debug.log dosyasına bakın.
+
+## ReplayUtils
+incompatible-replay-title = Uyumsuz Geri Oynatma
+incompatible-replay-prompt = Geri oynatma meta verileri okunamadı.
+-incompatible-replay-recorded = kaydedilmiş
+incompatible-replay-unknown-version = Bilinmeyen bir sürümde { -incompatible-replay-recorded }: { $version }.
+incompatible-replay-unknown-mod = Bilinmeyen bir modda { -incompatible-replay-recorded }: { $mod }.
+incompatible-replay-unavailable-mod = Mevcut olmayan bir modda { -incompatible-replay-recorded }: { $mod }.
+incompatible-replay-incompatible-version = Uyumsuz bir sürümde { -incompatible-replay-recorded }: { $version }.
+incompatible-replay-unavailable-map = Mevcut olmayan bir haritada { -incompatible-replay-recorded }: { $map }.
+
+## ServerCreationLogic
+internet-server-nat-A = İnternet Sunucusu (UPnP/NAT-PMP
+internet-server-nat-B-enabled = Etkin
+internet-server-nat-B-not-supported = Desteklenmiyor
+internet-server-nat-B-disabled = Devre Dışı
+internet-server-nat-C = ):
+
+local-server = Yerel Sunucu:
+
+server-creation-failed-prompt = Bağlantı noktası { $port } dinlenemedi
+server-creation-failed-port-used = Bağlantı noktasının zaten kullanılmadığından emin olun.
+server-creation-failed-error = Hata: "{ $message }" ({ $code })
+server-creation-failed-title = Sunucu Oluşturma Başarısız Oldu
+server-creation-failed-cancel = Geri Dön
+
+## ServerListLogic
+players-online = { $players } Oyuncu Çevrimiçi
+
+search-status-failed = Sunucu listesi alınamadı.
+search-status-no-games = Hiçbir oyun bulunamadı. Filtreleri değiştirmeyi deneyin.
+no-server-selected = Hiçbir Sunucu Seçili Değil
+
+map-status-searching = Aranıyor...
+map-classification-unknown = Bilinmeyen Harita
+
+players-label =
+    { $players ->
+        [0] Oyuncu Yok
+        [one] Bir Oyuncu
+       *[other] { $players } Oyuncu
+    }
+
+bots-label =
+    { $bots ->
+        [0] Bot Yok
+        [one] Bir Bot
+       *[other] { $bots } Bot
+    }
+
+## ServerListLogic, ReplayBrowserLogic, ObserverShroudSelectorLogic
 players = Oyuncular
+
+## ServerListLogic, GameInfoStatsLogic
+spectators = İzleyiciler
+spectators-label =
+    { $spectators ->
+        [0] İzleyici Yok
+        [one] Bir İzleyici
+       *[other] { $spectators } İzleyici
+    }
+
+## ServerlistLogic, GameInfoStatsLogic, ObserverShroudSelectorLogic, SpawnSelectorTooltipLogic, ReplayBrowserLogic
+team-number = Takım { $team }
+no-team = Takım Yok
+
+playing = Oyunda
+waiting = Beklemede
+
+n-other-players =
+    { $players ->
+        [one] Bir diğer oyuncu
+       *[other] { $players } diğer oyuncu
+    }
+
+in-progress-for =
+    { $minutes ->
+        [0] Devam ediyor
+       *[other] { $minutes } dakikadır devam ediyor.
+    }
+password-protected = Şifre korumalı
+waiting-for-players = Oyuncu bekliyor
+server-shutting-down = Sunucu kapatılıyor
+unknown-server-state = Bilinmeyen sunucu durumu
