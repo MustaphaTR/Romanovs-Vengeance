@@ -2006,7 +2006,7 @@ yaeast02:
 		InitialFacing: 640
 		RealignDelay: -1
 	AttackTurreted:
-		PauseOnCondition: disabled || chronodisable
+		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Armament:
 		Weapon: LaserShot
 		LocalOffset: 512,-256,1024, 512,256,1024
@@ -2020,15 +2020,14 @@ yaeast02:
 		Scale: 1.17
 	RenderSprites:
 		Image: caeast02
-	-WithMakeAnimation:
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Heavy, Critical
 	WithVoxelTurret:
-		RequiresCondition: !damaged
+		RequiresCondition: !damaged && !build-incomplete
 	WithVoxelTurret@damaged:
 		Sequence: turret-damaged
-		RequiresCondition: damaged
+		RequiresCondition: damaged && !build-incomplete
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
