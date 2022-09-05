@@ -163,7 +163,6 @@ commanders_power.grinder:
 	RenderSprites:
 		Image: yagrnd
 
-
 commanders_power.medic:
 	Inherits: ^default.commanders_power
 	Tooltip:
@@ -195,22 +194,6 @@ commanders_power.ambulance:
 		Prerequisites: commanders_power.ambulance
 	RenderSprites:
 		Image: aambu
-
-commanders_power.mechanic:
-	Inherits: ^default.commanders_power
-	Tooltip:
-		Name: Mechanic
-	-Buildable:
-	#	Queue: Power.Soviets
-	#	BuildPaletteOrder: 30
-	#	Prerequisites: ~disabled # prerequisite.has_points
-	#	Description: Enables training of Mechanic from Barracks.
-	ProvidesPrerequisite@mechanic:
-		Prerequisite: prerequisite.mechanic
-	WithProductionIconOverlay:
-		Prerequisites: commanders_power.mechanic
-	RenderSprites:
-		Image: mech
 
 commanders_power.hijacker:
 	Inherits: ^default.commanders_power
@@ -276,21 +259,19 @@ commanders_power.annihilator_artillery:
 	RenderSprites:
 		Image: lart
 
-commanders_power.support_infantry:
+commanders_power.mechanic:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Support Infantry
+		Name: Mechanic
 	Buildable:
 		Queue: Power.Baku
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
-		Description: Enables training of Medic and Mechanic from Barracks.
-	ProvidesPrerequisite@medic:
-		Prerequisite: prerequisite.medic
+		Description: Enables training of Mechanic from Barracks.
 	ProvidesPrerequisite@mechanic:
 		Prerequisite: prerequisite.mechanic
 	WithProductionIconOverlay:
-		Prerequisites: commanders_power.support_infantry
+		Prerequisites: commanders_power.mechanic
 	RenderSprites:
 		Image: mech
 
