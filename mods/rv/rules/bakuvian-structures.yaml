@@ -353,6 +353,82 @@ badock:
 	Exit@1:
 		Facing: 384
 
+bamort:
+	Inherits: ^SupportBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@DRAIN: ^DiskDrainable
+	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Shared, Support.Baku
+		BuildPaletteOrder: 60
+		Prerequisites: ~building.baku, basops, ~techlevel.3
+		Description: Long range defense structure armed with smoke bombs.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Reduces damage and sight of enemy units\n- Can kill garrisoned infantry\n\n  Requires power to operate.
+		BuildDuration: 625
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 1500
+	Tooltip:
+		Name: Mortar Turret
+	Tooltip@NoRow:
+		Name: Mortar Turret
+	Health:
+		HP: 60000
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 8c0
+	Turreted:
+		TurnSpeed: 40
+		Offset: 0,0,0
+		RealignDelay: -1
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || chronodisable || disabled
+	Armament:
+		Weapon: TurretMortar
+		LocalOffset: 896,0,2048
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
+	DetectCloaked:
+		Range: 7c0
+		RequiresCondition: !disabled
+	RenderDetectionCircle:
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+	WithRangeCircle:
+		Range: 10c0
+		Type: mortar
+	Power:
+		Amount: -75
+		RequiresCondition: !chronodisable
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || diskdrain
+	IsometricSelectable:
+		Class: bamort
+		DecorationHeight: 45
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water
+	Voiced:
+		VoiceSet: SentryGunVoice
+		Volume: 0.8
+	ActorStatValues:
+		Damage: 130
+
+baprop:
+	Inherits: naprop
+	Buildable:
+		Queue: Support.Shared, Support.Baku
+		BuildPaletteOrder: 70
+		Prerequisites: ~building.baku, nahand, ~techlevel.1
+		Description: Buffs fire speed of nearby units and heals them.\n\n  Requires power to operate.
+		BuildDuration: 125
+		BuildDurationModifier: 100
+
 babarb:
 	Inherits: babarr
 	Inherits@SHAPE: ^2x3Shape

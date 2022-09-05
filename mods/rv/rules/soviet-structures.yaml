@@ -1567,9 +1567,9 @@ tesla:
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Soviets, Support.Baku
+		Queue: Support.Shared, Support.Soviets
 		BuildPaletteOrder: 60
-		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.3
+		Prerequisites: ~building.soviets, naradr, ~techlevel.3
 		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -2139,9 +2139,9 @@ naprop:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Soviets, Support.Baku
+		Queue: Support.Shared, Support.Soviets
 		BuildPaletteOrder: 80
-		Prerequisites: ~building.sovietsorbaku, natech, ~techlevel.4
+		Prerequisites: ~building.soviets, natech, ~techlevel.4
 		Description: Buffs fire speed of nearby units and heals them.\n\n  Requires power to operate.
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -2186,7 +2186,10 @@ naprop:
 	RangedGpsDot:
 		Sequence: Structure
 	IsometricSelectable:
+		Class: naprop
 		DecorationHeight: 75
+	RenderSprites:
+		Image: naprop
 
 naexpn:
 	Inherits: ^ExpansionNode

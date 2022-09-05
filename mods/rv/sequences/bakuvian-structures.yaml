@@ -122,6 +122,31 @@ baairf:
 		AddExtension: false
 		UseTilesetCode: false
 
+bamort:
+	Inherits@MUZZLE: ^WithCannonMuzzle
+	Defaults:
+		Offset: 0, -10
+	idle: dot
+		ZOffset: -9999
+	turret: bgmort
+		Facings: 32
+		ShadowStart: 64
+	damaged-turret: bgmort
+		Facings: 32
+		Start: 32
+		ShadowStart: 96
+	make: bgmortmk
+		Length: 14
+		ShadowStart: 14
+	idle-waves: gauwat
+		Length: 15
+		Tick: 200
+		ZOffset: -1c0
+		UseTilesetCode: false
+	icon: cameo|xxicon
+		Offset: 0, 0
+		UseTilesetCode: false
+
 babarb:
 	Inherits: babarr
 	Defaults:
