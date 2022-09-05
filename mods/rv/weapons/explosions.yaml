@@ -170,7 +170,13 @@ BuildingExplode:
 ReactorExplode:
 	Inherits: BuildingExplode
 	Warhead@1Eff: CreateEffect
+		Explosions: powerplant_explosion
 		ImpactSounds: bpowdiea.wav, bpowdieb.wav
+
+TeslaReactorExplode:
+	Inherits: ReactorExplode
+	Warhead@1Eff: CreateEffect
+		Explosions: tesla_explosion
 
 KirovExplode:
 	Inherits: UnitExplode
