@@ -459,6 +459,24 @@ sendgunLineE:
 	Projectile: BulletAS
 		ContrailStartColor: FF2200
 
+hydragun:
+	Inherits: robogun
+	ReloadDelay: 25
+	Range: 6c0
+	Report: vwaratta.wav, vwarattb.wav
+	Warhead@1Dam: SpreadDamage
+		Damage: 3000
+		Versus:
+			Drone: 200
+
+hydragunE:
+	Inherits: sendgun
+	Range: 6c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 3600
+	Warhead@2Eff: CreateEffect
+		Explosions: piffpiffred
+
 20mmrapid:
 	Inherits: ^MG
 	ReloadDelay: 20

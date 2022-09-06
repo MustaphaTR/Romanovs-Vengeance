@@ -363,9 +363,9 @@ htnk:
 	Tooltip@NoRow:
 		Name: Rhino Heavy Tank
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		Description: Soviet Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
-		Prerequisites: ~vehicle.sovietsorbaku, ~techlevel.1
+		Prerequisites: ~vehicle.soviets, ~techlevel.1
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	Mobile:
@@ -1152,7 +1152,6 @@ m3:
 v3rocket:
 	Inherits: ^ShootableMissile
 	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
-	Inherits@CRYO: ^AffectedByCryoWarheads
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Valued:
 		Cost: 50
@@ -1182,11 +1181,11 @@ v3rocket:
 	SpawnedExplodes:
 		Weapon: V3Weapon
 		EmptyWeapon: V3Weapon
-		RequiresCondition: !airborne && !radbombs && !cryowarheads && !rank-elite
+		RequiresCondition: !airborne && !radbombs && !rank-elite
 	SpawnedExplodes@Elite:
 		Weapon: V3WeaponE
 		EmptyWeapon: V3WeaponE
-		RequiresCondition: !airborne && !radbombs && !cryowarheads && rank-elite
+		RequiresCondition: !airborne && !radbombs && rank-elite
 	SpawnedExplodes@Rad:
 		Weapon: V3WeaponRad
 		EmptyWeapon: V3WeaponRad
@@ -1203,14 +1202,6 @@ v3rocket:
 		Weapon: V3WeaponRadOrangeE
 		EmptyWeapon: V3WeaponRadOrangeE
 		RequiresCondition: !airborne && radbombs && advirrad && rank-elite
-	SpawnedExplodes@Cryo:
-		Weapon: V3WeaponCryo
-		EmptyWeapon: V3WeaponCryo
-		RequiresCondition: !airborne && cryowarheads && !rank-elite
-	SpawnedExplodes@EliteCryo:
-		Weapon: V3WeaponCryoE
-		EmptyWeapon: V3WeaponCryoE
-		RequiresCondition: !airborne && cryowarheads && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
@@ -1244,7 +1235,7 @@ m3rocket:
 	-MissileSpawnerSlave:
 	MissileSpawnerOldSlave:
 	SpawnedExplodes:
-		RequiresCondition: !airborne && !radbombs && !cryowarheads
+		RequiresCondition: !airborne && !radbombs
 	-SpawnedExplodes@Elite:
 	SpawnedExplodes@Rad:
 		RequiresCondition: !airborne && radbombs && !advirrad
@@ -1252,9 +1243,6 @@ m3rocket:
 	SpawnedExplodes@RadOrange:
 		RequiresCondition: !airborne && radbombs && advirrad
 	-SpawnedExplodes@EliteRadOrange:
-	SpawnedExplodes@Cryo:
-		RequiresCondition: !airborne && cryowarheads
-	-SpawnedExplodes@EliteCryo:
 	-ExternalCondition@RANK-ELITE:
 
 # Custom Soviet Vehicles

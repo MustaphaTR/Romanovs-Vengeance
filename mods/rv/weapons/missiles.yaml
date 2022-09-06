@@ -313,9 +313,9 @@ Maverick2E:
 		RangeLimit: 22c204
 		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
-		Damage: 45000
+		Damage: 35000
 	Warhead@1Gar: OpenToppedDamage
-		Damage: 45000
+		Damage: 35000
 
 Maverick2AA:
 	Inherits: Maverick2
@@ -334,6 +334,42 @@ Maverick2AAE:
 		Speed: 640
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Air
+
+Maverick2Cryo:
+	Inherits: Maverick2
+	Warhead@4Con: GrantExternalCondition
+		Range: 172
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+Maverick2CryoE:
+	Inherits: Maverick2E
+	Warhead@4Con: GrantExternalCondition
+		Range: 172
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+Maverick2AACryo:
+	Inherits: Maverick2AA
+	Warhead@4Con: GrantExternalCondition
+		Range: 172
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Air
+		InvalidTargets: IronCurtained, ForceShielded
+
+Maverick2AACryoE:
+	Inherits: Maverick2AAE
+	Warhead@4Con: GrantExternalCondition
+		Range: 172
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Air
+		InvalidTargets: IronCurtained, ForceShielded
 
 Maverick3:
 	Inherits: Maverick

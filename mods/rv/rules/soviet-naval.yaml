@@ -398,7 +398,6 @@ dred:
 dmisl:
 	Inherits: ^ShootableMissile
 	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
-	Inherits@CRYO: ^AffectedByCryoWarheads
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Valued:
 		Cost: 50
@@ -427,11 +426,11 @@ dmisl:
 	SpawnedExplodes:
 		Weapon: DredWeapon
 		EmptyWeapon: DredWeapon
-		RequiresCondition: !airborne && !radbombs && !cryowarheads && !rank-elite
+		RequiresCondition: !airborne && !radbombs && !rank-elite
 	SpawnedExplodes@Elite:
 		Weapon: DredWeaponE
 		EmptyWeapon: DredWeaponE
-		RequiresCondition: !airborne && !radbombs && !cryowarheads && rank-elite
+		RequiresCondition: !airborne && !radbombs && rank-elite
 	SpawnedExplodes@Rad:
 		Weapon: DredWeaponRad
 		EmptyWeapon: DredWeaponRad
@@ -448,14 +447,6 @@ dmisl:
 		Weapon: DredWeaponRadOrangeE
 		EmptyWeapon: DredWeaponRadOrangeE
 		RequiresCondition: !airborne && radbombs && advirrad && rank-elite
-	SpawnedExplodes@Cryo:
-		Weapon: DredWeaponCryo
-		EmptyWeapon: DredWeaponCryo
-		RequiresCondition: !airborne && cryowarheads && !rank-elite
-	SpawnedExplodes@EliteCryo:
-		Weapon: DredWeaponCryoE
-		EmptyWeapon: DredWeaponCryoE
-		RequiresCondition: !airborne && cryowarheads && rank-elite
 	SpawnedExplodes@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode

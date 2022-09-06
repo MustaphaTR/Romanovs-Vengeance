@@ -290,20 +290,20 @@ upgrade.uranium_shells:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.uranium_shells
 
-upgrade.cryo_shells:
+upgrade.mounted_mg:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Cryo Shells
+		Name: Mounted Machine Guns
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Baku
 		BuildPaletteOrder: 50
-		BuildDuration: 1500
+		BuildDuration: 2250
 		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
-		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units freeze enemy units, slowing them down and making them take more damage.
+		Description: Arms Hydra Tanks with machine guns.
 	Valued:
-		Cost: 2500
+		Cost: 2000
 	WithProductionIconOverlay:
-		Prerequisites: upgrade.cryo_shells
+		Prerequisites: upgrade.mounted_mg
 
 upgrade.black_napalm:
 	Inherits: ^default.upgrade
@@ -443,13 +443,13 @@ upgrade.radioactive_bombs:
 upgrade.cryo_warheads:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: Cryo Warheads
+		Name: Cryo Missiles
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Baku
 		BuildPaletteOrder: 120
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.baku, natech, ~techlevel.4
-		Description: Grad MLRS and Dreadnought rockets gain cryo warheads\nwhich slow down enemy units and cause them to take more damage.
+		Description: Grad MLRS and MiG rockets gain cryo warheads\nwhich slow down enemy units and cause them to take more damage.
 	Valued:
 		Cost: 2000
 	WithProductionIconOverlay:
@@ -696,3 +696,18 @@ upgrade.advanced_magnetics:
 		Cost: 1500
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.advanced_magnetics
+
+upgrade.cryo_shells:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: Cryo Shells
+	Buildable:
+		Queue: Upgrade.Unused # Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 50
+		BuildDuration: 1500
+		Prerequisites: ~disabled # ~upgrade.baku, natech, ~techlevel.3
+		Description: Increases damage of Rhino and Apocalypse Tanks by 25%.\nShells of both units freeze enemy units, slowing them down and making them take more damage.
+	Valued:
+		Cost: 2500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.cryo_shells

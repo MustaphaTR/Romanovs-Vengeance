@@ -215,7 +215,7 @@ zep:
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 50
-		Prerequisites: ~aircraft.sovietsorbaku, natech, ~techlevel.4
+		Prerequisites: ~aircraft.soviets, natech, ~techlevel.4
 		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- Aerial Propaganda (Vietnam)
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -1919,8 +1919,10 @@ bpln:
 		Actor: bplnhusk.VTOL
 	Armament:
 		Weapon: Maverick3
+		Damage: 300
 	Armament@Elite:
 		Weapon: Maverick3E
+		Damage: 1000
 	-Armament@AA:
 	-Armament@EliteAA:
 	-GrantConditionOnPrerequisite@A2AMISSILES:
@@ -1970,6 +1972,7 @@ bpln:
 
 bpln.buildable:
 	Inherits: orca
+	Inherits@CRYO: ^AffectedByCryoWarheads
 	Tooltip:
 		Name: MiG
 	Tooltip@NoRow:
@@ -1993,15 +1996,37 @@ bpln.buildable:
 	Armament:
 		Weapon: Maverick2
 		Damage: 225
+		RequiresCondition: !rank-elite && !cryowarheads
 	Armament@Elite:
 		Weapon: Maverick2E
-		Damage: 450
+		Damage: 350
+		RequiresCondition: rank-elite && !cryowarheads
 	Armament@AA:
 		Weapon: Maverick2AA
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !cryowarheads
 	Armament@EliteAA:
 		Weapon: Maverick2AAE
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !cryowarheads
+	Armament@Cryo:
+		Weapon: Maverick2Cryo
+		Damage: 225
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite && cryowarheads
+	Armament@CryoE:
+		Weapon: Maverick2CryoE
+		Damage: 350
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite && cryowarheads
+	Armament@CryoAA:
+		Weapon: Maverick2AACryo
+		PauseOnCondition: !ammo
+		EnableSplitRanges: true
+		RequiresCondition: !rank-elite && cryowarheads
+	Armament@CryoAAE:
+		Weapon: Maverick2AACryoE
+		PauseOnCondition: !ammo
+		EnableSplitRanges: true
+		RequiresCondition: rank-elite && cryowarheads
 	-GrantConditionOnPrerequisite@A2AMISSILES:
 	-FirepowerMultiplier@PREDATOR_MISSILES:
 	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
@@ -2039,7 +2064,6 @@ bpln.buildable:
 		EndColorUsePlayerColor: true
 	ActorStatValues:
 		SplitRanges: true
-		-Upgrades:
 
 bplnhusk:
 	Inherits: ^PlaneHusk

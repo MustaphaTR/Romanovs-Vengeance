@@ -1,3 +1,113 @@
+hytk:
+	Inherits: ^MainBattleTank
+	Inherits@MACHINEGUN: ^AffectedByMountedMG
+	Inherits@NUKEENGINES: ^AffectedByNuclearEngines
+	Valued:
+		Cost: 950
+	DeliversCash:
+		Payload: 950
+		Voice: Move
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.Baku
+		Description: Bakuvian Main Battle Tank with double barrel.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Mounted MG
+		Prerequisites: ~vehicle.baku, ~techlevel.1
+		BuildDuration: 500
+		BuildDurationModifier: 100
+		Icon: icon-hydra
+	Tooltip:
+		Name: Hydra Heavy Tank
+	Tooltip@NoRow:
+		Name: Hydra Heavy Tank
+	Health:
+		HP: 40000
+	Mobile:
+		Speed: 90
+	Armament@primary:
+		Weapon: 105mmx
+		Damage: 50
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle
+		LocalOffset: 1024,-128,640
+		RequiresCondition: !rank-elite
+	Armament@primary2:
+		Name: primary2
+		Weapon: 105mmx
+		Damage: 50
+		FireDelay: 5
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle
+		LocalOffset: 1024,128,640
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Name: elite
+		Weapon: 105mmxE
+		Damage: 100
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle-2
+		LocalOffset: 1024,-128,640
+		RequiresCondition: rank-elite
+	Armament@elite2:
+		Name: elite2
+		Weapon: 105mmxE
+		Damage: 100
+		FireDelay: 5
+		Recoil: 87
+		RecoilRecovery: 12
+		MuzzleSequence: muzzle-2
+		LocalOffset: 1024,128,640
+		RequiresCondition: rank-elite
+	Armament@mg:
+		Name: secondary
+		Weapon: hydragun
+		Damage: 30
+		MuzzleSequence: muzzle-mg
+		LocalOffset: 355,100,1024
+		RequiresCondition: !rank-elite && machinegun
+	Armament@elite-mg:
+		Name: secondary
+		Weapon: hydragunE
+		Damage: 36
+		MuzzleSequence: muzzle-mg
+		LocalOffset: 355,100,1024
+		RequiresCondition: rank-elite && machinegun
+	AttackTurreted:
+		Voice: Attack
+		Armaments: primary, primary2, elite, elite2, secondary
+		PauseOnCondition: chronodisable || emp || nogunner || parachute
+	WithMuzzleOverlay:
+	WithVoxelBody:
+	WithVoxelTurret:
+		RequiresCondition: !machinegun
+	WithVoxelTurret@MG:
+		Sequence: turret-mg
+		RequiresCondition: machinegun
+	WithVoxelBarrel:
+		RequiresCondition: !rank-elite
+	WithVoxelBarrel@2:
+		Sequence: barrel2
+		Armament: primary2
+		RequiresCondition: !rank-elite
+	WithVoxelBarrel@elite:
+		Armament: elite
+		RequiresCondition: rank-elite
+	WithVoxelBarrel@elite2:
+		Sequence: barrel2
+		Armament: elite2
+		RequiresCondition: rank-elite
+	RenderSprites:
+		Image: 3tnk
+	RenderVoxels:
+		Image: 3tnk
+		NormalsPalette: ts-normals
+		Scale: 13
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+	ActorStatValues:
+		Upgrades: upgrade.nuclear_engines, upgrade.mounted_mg
+
 send:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove

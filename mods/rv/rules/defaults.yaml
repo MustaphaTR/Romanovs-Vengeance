@@ -296,17 +296,17 @@
 	WithStatIconOverlay@RANK-1:
 		Image: cameo-chevron
 		Sequence: veteran
-		Palette: ra
+		Palette: pips
 		RequiresCondition: rank-veteran == 1
 	WithStatIconOverlay@RANK-2:
 		Image: cameo-chevron
 		Sequence: elite
-		Palette: ra
+		Palette: pips
 		RequiresCondition: rank-veteran == 2
 	WithStatIconOverlay@RANK-ELITE:
 		Image: cameo-chevron
 		Sequence: heroic
-		Palette: ra
+		Palette: pips
 		RequiresCondition: rank-elite
 	GainsExperienceMultiplier@ARMORY:
 		Modifier: 150
@@ -698,6 +698,13 @@
 		Condition: propeffort
 		Prerequisites: upgrade.propaganda_effort
 
+^AffectedByMountedMG:
+	ActorStatValues:
+		Upgrades: upgrade.mounted_mg
+	GrantConditionOnPrerequisite@MACHINEGUN:
+		Condition: machinegun
+		Prerequisites: upgrade.mounted_mg
+
 ^AffectedByRadioactiveBombs:
 	ActorStatValues:
 		Upgrades: upgrade.radioactive_bombs
@@ -706,8 +713,8 @@
 		Prerequisites: upgrade.radioactive_bombs
 
 ^AffectedByCryoWarheads:
-	# ActorStatValues:
-	#	Upgrades: upgrade.cryo_warheads
+	ActorStatValues:
+		Upgrades: upgrade.cryo_warheads
 	GrantConditionOnPrerequisite@CRYOWARHEADS:
 		Condition: cryowarheads
 		Prerequisites: upgrade.cryo_warheads
