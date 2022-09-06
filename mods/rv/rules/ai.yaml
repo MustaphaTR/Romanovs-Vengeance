@@ -250,6 +250,21 @@ Player:
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
+			fuelairbomb:
+				OrderName: BakuFuelAirBomb
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 			radmissile:
 				OrderName: IraqiRadMissile
 				MinimumAttractiveness: 3000
@@ -1385,7 +1400,7 @@ Player:
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable
+		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable, badgr
 		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, yapowr-full, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, natbnk-ltnk, natbnk-ltnk-tr, natbnk-ytnk, natbnk-ytnk-tr, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
 		SuggestedLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
@@ -1403,7 +1418,7 @@ Player:
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable
+		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable, badgr
 		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, yapowr-full, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, natbnk-ltnk, natbnk-ltnk-tr, natbnk-ytnk, natbnk-ytnk-tr, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
 		SuggestedLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
@@ -1534,6 +1549,9 @@ Player:
 			commanders_power.toxin_bombing.1: 1
 			commanders_power.toxin_bombing.2: 1
 			commanders_power.toxin_bombing.3: 1
+			commanders_power.fuel_air_bomb.1: 1
+			commanders_power.fuel_air_bomb.2: 1
+			commanders_power.fuel_air_bomb.3: 1
 			upgrade.endurance_training: 3
 			upgrade.gi_fortifications: 5
 			upgrade.a2a_missiles: 1
@@ -1710,6 +1728,9 @@ Player:
 			commanders_power.toxin_bombing.1: 1
 			commanders_power.toxin_bombing.2: 1
 			commanders_power.toxin_bombing.3: 1
+			commanders_power.fuel_air_bomb.1: 1
+			commanders_power.fuel_air_bomb.2: 1
+			commanders_power.fuel_air_bomb.3: 1
 			upgrade.endurance_training: 3
 			upgrade.gi_fortifications: 5
 			upgrade.a2a_missiles: 1
@@ -1869,6 +1890,7 @@ Player:
 			kite: 1
 			havoc: 1
 			zep: 1
+			badgr: 1
 			bpln.buildable: 1
 			commanders_power.gun_turret: 1
 			commanders_power.harrier_training: 1
@@ -1893,6 +1915,9 @@ Player:
 			commanders_power.toxin_bombing.1: 1
 			commanders_power.toxin_bombing.2: 1
 			commanders_power.toxin_bombing.3: 1
+			commanders_power.fuel_air_bomb.1: 1
+			commanders_power.fuel_air_bomb.2: 1
+			commanders_power.fuel_air_bomb.3: 1
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
@@ -1968,6 +1993,7 @@ Player:
 			havoc: 3
 			bpln.buildable: 2
 			zep: 1
+			badgr: 1
 	UnitBuilderBotModule@cheater-megawealth:
 		RequiresCondition: enable-cheater-ai && megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
@@ -2060,6 +2086,7 @@ Player:
 			havoc: 1
 			bpln.buildable: 1
 			zep: 1
+			badgr: 1
 			commanders_power.gun_turret: 1
 			commanders_power.harrier_training: 1
 			commanders_power.inf_training: 1
@@ -2083,6 +2110,9 @@ Player:
 			commanders_power.toxin_bombing.1: 1
 			commanders_power.toxin_bombing.2: 1
 			commanders_power.toxin_bombing.3: 1
+			commanders_power.fuel_air_bomb.1: 1
+			commanders_power.fuel_air_bomb.2: 1
+			commanders_power.fuel_air_bomb.3: 1
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
@@ -2155,6 +2185,7 @@ Player:
 			havoc: 3
 			bpln.buildable: 2
 			zep: 1
+			badgr: 1
 	UnitBuilderBotModule@vengeful:
 		RequiresCondition: enable-vengeful-ai && !megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
@@ -2259,6 +2290,7 @@ Player:
 			kite: 1
 			havoc: 1
 			zep: 1
+			badgr: 1
 			bpln.buildable: 1
 			shad-squad-1: 1
 			shad-squad-2: 1
@@ -2301,6 +2333,9 @@ Player:
 			commanders_power.toxin_bombing.1: 1
 			commanders_power.toxin_bombing.2: 1
 			commanders_power.toxin_bombing.3: 1
+			commanders_power.fuel_air_bomb.1: 1
+			commanders_power.fuel_air_bomb.2: 1
+			commanders_power.fuel_air_bomb.3: 1
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
@@ -2374,6 +2409,7 @@ Player:
 			havoc: 3
 			bpln.buildable: 2
 			zep: 1
+			badgr: 1
 	UnitBuilderBotModule@vengeful-megawealth:
 		RequiresCondition: enable-vengeful-ai && megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
@@ -2473,6 +2509,7 @@ Player:
 			havoc: 1
 			bpln.buildable: 1
 			zep: 1
+			badgr: 1
 			shad-squad-1: 1
 			shad-squad-2: 1
 			shad-squad-3: 1
@@ -2514,6 +2551,9 @@ Player:
 			commanders_power.toxin_bombing.1: 1
 			commanders_power.toxin_bombing.2: 1
 			commanders_power.toxin_bombing.3: 1
+			commanders_power.fuel_air_bomb.1: 1
+			commanders_power.fuel_air_bomb.2: 1
+			commanders_power.fuel_air_bomb.3: 1
 			commanders_power.cruiser_strike: 1
 			commanders_power.v3_strorm: 1
 			commanders_power.orbital_drop: 1
@@ -2588,6 +2628,7 @@ Player:
 			havoc: 3
 			bpln.buildable: 2
 			zep: 1
+			badgr: 1
 	CaptureManagerBotASModule@generic:
 		RequiresCondition: enable-generic-ai
 		CapturingActorTypes: engineer, mengineer

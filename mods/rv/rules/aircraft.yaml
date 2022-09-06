@@ -200,7 +200,6 @@ zep:
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxel
-	Inherits@CRYO: ^AffectedByCryoWarheads
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Inherits@AI: ^AIMicroManagable
@@ -214,7 +213,7 @@ zep:
 	Tooltip@NoRow:
 		Name: Kirov Airship
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
+		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 50
 		Prerequisites: ~aircraft.sovietsorbaku, natech, ~techlevel.4
 		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- Aerial Propaganda (Vietnam)
@@ -256,11 +255,11 @@ zep:
 	Armament:
 		Weapon: BlimpBomb
 		Damage: 750
-		RequiresCondition: !rank-elite && !radbombs && !cryowarheads
+		RequiresCondition: !rank-elite && !radbombs
 	Armament@elite:
 		Weapon: BlimpBombE
 		Damage: 825
-		RequiresCondition: rank-elite && !radbombs && !cryowarheads
+		RequiresCondition: rank-elite && !radbombs
 	Armament@rad:
 		Weapon: BlimpBombRad
 		Damage: 750
@@ -277,14 +276,6 @@ zep:
 		Weapon: BlimpBombRadOrangeE
 		Damage: 825
 		RequiresCondition: rank-elite && radbombs && advirrad
-	Armament@cryo:
-		Weapon: BlimpBombCryo
-		Damage: 750
-		RequiresCondition: !rank-elite && cryowarheads
-	Armament@elitecryo:
-		Weapon: BlimpBombCryoE
-		Damage: 825
-		RequiresCondition: rank-elite && cryowarheads
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
@@ -1002,10 +993,39 @@ a10husk:
 		Name: A-10 Thunderbolt
 	Tooltip@NoRow:
 		Name: A-10 Thunderbolt
-	RenderVoxels:
-		Image: a10
 	Aircraft:
 		Speed: 300
+	RenderVoxels:
+		Image: a10
+
+badgr.airstrike:
+	Inherits: pdplane
+	Tooltip:
+		Name: Tu-16 Badger
+	Tooltip@NoRow:
+		Name: Tu-16 Badger
+	Armament:
+		Weapon: BadgerBomb
+		PauseOnCondition: !ammo
+	AmmoPool:
+		Ammo: 1
+		AmmoCondition: ammo
+	AttackBomber:
+	Aircraft:
+		Speed: 300
+	RenderVoxels:
+		Image: badgr
+
+badgr.airstrikehusk:
+	Inherits: pdplanehusk
+	Tooltip:
+		Name: Tu-16 Badger
+	Tooltip@NoRow:
+		Name: Tu-16 Badger
+	Aircraft:
+		Speed: 300
+	RenderVoxels:
+		Image: badgr
 
 txbmb:
 	Inherits: pcplane
@@ -1052,10 +1072,10 @@ txbmbhusk:
 		Name: Toxin Bomber
 	Tooltip@NoRow:
 		Name: Toxin Bomber
-	RenderVoxels:
-		Image: txbmb
 	Aircraft:
 		Speed: 300
+	RenderVoxels:
+		Image: txbmb
 
 f22drop:
 	Inherits: alplane
@@ -2707,7 +2727,7 @@ fortresshusk:
 		Explosion: B2Explode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 180
+		Speed: 165
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 10c0
@@ -2739,7 +2759,7 @@ fortresshusk.VTOL:
 		Explosion: B2Explode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 180
+		Speed: 165
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 10c0
@@ -3515,3 +3535,190 @@ havochusk:
 		ForceToGround: true
 	BodyOrientation:
 		UseClassicPerspectiveFudge: false
+
+badgr:
+	Inherits: ^Plane
+	Inherits@AI: ^AIMicroManagable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
+	DamagedByTintedCells@ORANGE:
+		RequiresCondition: !airborne
+	Valued:
+		Cost: 2500
+	DeliversCash:
+		Payload: 2500
+		PlayerExperience: 125
+		Voice: Move
+	Tooltip:
+		Name: Tu-16 Badger
+	Tooltip@NoRow:
+		Name: Tu-16 Badger
+	Buildable:
+		Queue: Aircraft.Shared, Aircraft.Baku
+		BuildPaletteOrder: 40
+		Description: Heavy bomber plane armed with a fuel air bomb.\nCannot be built more than landing pads available.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft
+		Prerequisites: ~aircraft.baku, natech, !prerequisite.enoughair, ~techlevel.4
+		BuildDuration: 1250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Aircraft:
+		AltitudeVelocity: 240
+		IdleTurnSpeed: 10
+		IdleSpeed: 90
+		TurnSpeed: 20
+		Speed: 150
+		Roll: 28
+		RollSpeed: 7
+		VTOL: false
+		PauseOnCondition: emp || magnefreeze || chronodisable
+	Selectable:
+		Bounds: 1158, 1158
+	Health:
+		HP: 40000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	RevealsShroud@Ground:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	Armament:
+		Weapon: BadgerBomb
+		Damage: 750
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
+	Armament@Elite:
+		Weapon: BadgerBombE
+		Damage: 1000
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	AttackAircraft:
+		FacingTolerance: 20
+		Voice: Attack
+		TargetFrozenActors: True
+		PauseOnCondition: emp || magnefreeze || chronodisable
+	WithVoxelBody:
+	Voiced:
+		VoiceSet: KirovVoice
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
+	Rearmable:
+		AmmoPools: primary, secondary
+		RearmActors: gaairc, gaairb, gaapad, gadock, baairf, baairb, badock, badocb
+	Targetable@MC:
+		RequiresCondition: !controlled && !permamc && !airborne
+	Targetable@CHAOS:
+		RequiresCondition: !airborne
+	AmmoPool:
+		Ammo: 1
+		ReloadDelay: 250
+		AmmoCondition: ammo
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
+	RenderSprites:
+	RenderVoxels:
+	GrantConditionOnMovement@V:
+		Condition: vmove
+		ValidMovementTypes: Vertical
+	GrantConditionOnMovement@H:
+		Condition: hmove
+		ValidMovementTypes: Horizontal
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: badgr
+		RequiresCondition: airborne && (!vmove || hmove)
+	SpawnActorOnDeath@VTOL:
+		Actor: badgrhusk.VTOL
+		RequiresCondition: airborne && vmove && !hmove
+	Explodes:
+		DeathTypes: NonTemporal
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	ProvidesPrerequisite@actorname:
+	GrantExternalConditionToOwner:
+		Condition: padaircraft
+	HitShape:
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+	AmbientSound@Ambient:
+		SoundFiles: sparlo2a.wav, sparlo2b.wav, sparlo2c.wav
+		Volume: 0.35
+		RequiresCondition: airborne
+	ProductionCostMultiplier@AI:
+		Prerequisites: prerequisite.aiplayer
+		Multiplier: 20
+
+badgrhusk:
+	Inherits: ^PlaneHusk
+	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
+	Tooltip:
+		Name: Tu-16 Badger
+	Tooltip@NoRow:
+		Name: Tu-16 Badger
+	FallsToEarth:
+		Explosion: B2Explode
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 150
+		AltitudeVelocity: 240
+	RevealsShroud:
+		Range: 10c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 10c0
+		Duration: 125
+	WithVoxelBody:
+	RenderVoxels:
+		Image: badgr
+
+badgr.VTOL:
+	Inherits: ^HelicopterHusk
+	Tooltip:
+		Name: Tu-16 Badger
+	Tooltip@NoRow:
+		Name: Tu-16 Badger
+	FallsToEarth:
+		Explosion: B2Explode
+	Aircraft:
+		TurnSpeed: 20
+		Speed: 150
+		AltitudeVelocity: 240
+	RevealsShroud:
+		Range: 10c0
+		Type: GroundPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 10c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
+	RevealOnDeath:
+		Radius: 10c0
+		Duration: 125
+	WithVoxelBody:
+	RenderVoxels:
+		Image: badgr

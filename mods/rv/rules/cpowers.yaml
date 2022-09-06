@@ -508,7 +508,7 @@ commanders_power.parabombs.1:
 	Tooltip:
 		Name: Parabombs - Level 1
 	Buildable:
-		Queue: Power.Soviets, Power.Baku
+		Queue: Power.Soviets
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
 		Description: Enables Parabombs power.
@@ -520,7 +520,7 @@ commanders_power.parabombs.2:
 	Tooltip:
 		Name: Parabombs - Level 2
 	Buildable:
-		Queue: Power.Soviets, Power.Baku
+		Queue: Power.Soviets
 		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.1
 		Description: Upgrades Parabombs power to Level 2.
@@ -532,7 +532,7 @@ commanders_power.parabombs.3:
 	Tooltip:
 		Name: Parabombs - Level 3
 	Buildable:
-		Queue: Power.Soviets, Power.Baku
+		Queue: Power.Soviets
 		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.2
 		Description: Upgrades Parabombs power to Level 3.
@@ -574,6 +574,42 @@ commanders_power.toxin_bombing.3:
 		Description: Upgrades Toxin Bombing power to Level 3.
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.toxin_bombing.3
+
+commanders_power.fuel_air_bomb.1:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Fuel Air Bomb - Level 1
+	Buildable:
+		Queue: Power.Baku
+		BuildPaletteOrder: 100
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars
+		Description: Enables Fuel Air Bomb power.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.fuel_air_bomb.1
+
+commanders_power.fuel_air_bomb.2:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Fuel Air Bomb - Level 2
+	Buildable:
+		Queue: Power.Baku
+		BuildPaletteOrder: 110
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.fuel_air_bomb.1
+		Description: Upgrades Fuel Air Bomb power to Level 2.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.fuel_air_bomb.2
+
+commanders_power.fuel_air_bomb.3:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: Fuel Air Bomb - Level 3
+	Buildable:
+		Queue: Power.Baku
+		BuildPaletteOrder: 120
+		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.fuel_air_bomb.2
+		Description: Upgrades Fuel Air Bomb power to Level 3.
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.fuel_air_bomb.3
 
 commanders_power.chrono_boost.1:
 	Inherits: ^default.commanders_power
@@ -1306,6 +1342,54 @@ prerequisite.havoc:
 			1: txdrop1icon
 			2: txdrop2icon
 			3: txdrop3icon
+		ArrowSequence: arrow
+		ClockSequence: clock
+		UseDirectionalTarget: True
+		DirectionArrowAnimation: swdirection
+		DirectionArrowPalette: mouse
+	AirstrikePowerRV@fuelairbomb:
+		ActivationDelay: 125
+		OrderName: BakuFuelAirBomb
+		RequiresCondition: !lost
+		Prerequisites:
+			1: commanders_power.fuel_air_bomb.1
+			2: commanders_power.fuel_air_bomb.2
+			3: commanders_power.fuel_air_bomb.3
+		Icons:
+			1: fuelairbomb1
+			2: fuelairbomb2
+			3: fuelairbomb3
+		ChargeInterval: 6000
+		StartFullyCharged: true
+		Names:
+			1: Fuel Air Bomb
+			2: Fuel Air Bomb
+			3: Fuel Air Bomb
+		Descriptions:
+			1: A Tu-16 Badger drops a fuel air\nbomb on your target.
+			2: 2 Tu-16 Badgers drop a fuel air\nbomb on your target.
+			3: 3 Tu-16 Badgers drop a fuel air\nbomb on your target.
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: Select target.
+		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
+		IncomingTextNotification: Warning: Enemy airstrike initiated.
+		UnitTypes:
+			1: badgr.airstrike
+			2: badgr.airstrike
+			3: badgr.airstrike
+		SquadSizes:
+			1: 1
+			2: 2
+			3: 3
+		SquadOffset: -2048, 2048, 0
+		QuantizedFacings: 8
+		CameraActor: CAMERA
+		CameraRemoveDelay: 100
+		DisplayBeacon: True
+		BeaconPosters:
+			1: fab1icon
+			2: fab2icon
+			3: fab3icon
 		ArrowSequence: arrow
 		ClockSequence: clock
 		UseDirectionalTarget: True
