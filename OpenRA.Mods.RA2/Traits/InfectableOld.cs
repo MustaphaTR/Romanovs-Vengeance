@@ -120,6 +120,9 @@ namespace OpenRA.Mods.RA2.Traits
 				Infector.TraitOrDefault<IPositionable>().SetPosition(Infector, self.CenterPosition);
 				self.World.AddFrameEndTask(w =>
 				{
+					if (Infector == null || Infector.IsDead)
+						return;
+
 					w.Add(Infector);
 					InfectorTrait.RevokeCondition(Infector);
 
