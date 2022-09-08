@@ -247,10 +247,10 @@ fv:
 		Voice: Move
 	Tooltip:
 		Name: Infantry Fighting Vehicle
-		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && showownername
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && showownername
 	Tooltip@NoRow:
 		Name: Infantry Fighting Vehicle
-		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !showownername
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !showownername
 	Tooltip@mg:
 		Name: Machine Gun IFV
 		GenericName: Vehicle
@@ -287,6 +287,15 @@ fv:
 		GenericName: Vehicle
 		ShowOwnerRow: false
 		RequiresCondition: ifv-gren && !showownername
+	Tooltip@mortar:
+		Name: Mortar IFV
+		GenericName: Vehicle
+		RequiresCondition: ifv-mortar && showownername
+	Tooltip@mortar-norow:
+		Name: Mortar IFV
+		GenericName: Vehicle
+		ShowOwnerRow: false
+		RequiresCondition: ifv-mortar && !showownername
 	Tooltip@engineer:
 		Name: Repair IFV
 		GenericName: Vehicle
@@ -547,10 +556,12 @@ fv:
 			e2: ifv-mg
 			init: ifv-init
 			gren: ifv-gren
+			mtrp: ifv-mortar
 			engineer: ifv-repair
 			medi: ifv-medic
 			dog: ifv-dog
 			ggi: ifv-rocket
+			rctt: ifv-rocket
 			flakt: ifv-flak
 			gtrp: ifv-gatling
 			shk: ifv-tesla
@@ -597,56 +608,56 @@ fv:
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@elite:
 		Weapon: HoverMissileE
 		Damage: 120
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@primary-aa:
 		Weapon: HoverMissileAA
 		LocalOffset: 128,-128,1024, 128,128,1024
 		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@elite-aa:
 		Weapon: HoverMissileAAE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@primary-boost:
 		Weapon: HoverMissileBoosted
 		Damage: 90
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@elite-boost:
 		Weapon: HoverMissileBoostedE
 		Damage: 180
 		LocalOffset: 128,-128,1024, 128,128,1024
 		ReloadingCondition: reload-ground
 		PauseOnCondition: reload-air
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@primary-boost-aa:
 		Weapon: HoverMissileAABoosted
 		LocalOffset: 128,-128,1024, 128,128,1024
 		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
-		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
+		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@elite-boost-aa:
 		Weapon: HoverMissileAABoostedE
 		LocalOffset: 128,-128,1024, 128,128,1024
 		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
-		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
+		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@mg:
 		Weapon: CRM60
 		Damage: 40
@@ -687,6 +698,16 @@ fv:
 		Damage: 150
 		LocalOffset: 200,0,800
 		RequiresCondition: ifv-gren && empammo && rank-elite
+	Armament@mortar:
+		Weapon: CRTrooperMortar
+		Damage: 50
+		LocalOffset: 256,0,1536
+		RequiresCondition: ifv-mortar && !rank-elite
+	Armament@mortar-elite:
+		Weapon: CRTrooperMortarE
+		Damage: 100
+		LocalOffset: 256,0,1536
+		RequiresCondition: ifv-mortar && rank-elite
 	Armament@rocket:
 		Weapon: CRMissileLauncher
 		Damage: 120
@@ -1087,15 +1108,15 @@ fv:
 		Armaments: primary, elite, gatling
 		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	AutoTargetPriority@DEFAULT:
-		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-sniper && !ifv-virus && !ifv-tesla && !ifv-deso && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-demo && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-lazarus
+		RequiresCondition: !stance-attackanything && !assault-move && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-sniper && !ifv-virus && !ifv-tesla && !ifv-deso && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-demo && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-lazarus
 	AutoTargetPriority@ATTACKANYTHING:
-		RequiresCondition: (stance-attackanything || assault-move) && !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-sniper  && !ifv-virus && !ifv-tesla && !ifv-deso && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-demo && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-lazarus
+		RequiresCondition: (stance-attackanything || assault-move) && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-sniper  && !ifv-virus && !ifv-tesla && !ifv-deso && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-demo && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-lazarus
 	AutoTargetPriority@DEFAULT_GROUND:
-		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-init || ifv-gren || ifv-pyro || ifv-tesla || ifv-chrono || ifv-toxin || ifv-lazarus)
+		RequiresCondition: (!stance-attackanything && !assault-move) && (ifv-mg || ifv-init || ifv-gren || ifv-mortar || ifv-pyro || ifv-tesla || ifv-chrono || ifv-toxin || ifv-lazarus)
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Defense
 		InvalidTargets: NoAutoTarget, WaterStructure
 	AutoTargetPriority@ATTACKANYTHING_GROUND:
-		RequiresCondition: (stance-attackanything || assault-move) && (ifv-mg || ifv-init || ifv-gren || ifv-pyro || ifv-tesla || ifv-chrono || ifv-toxin || ifv-lazarus)
+		RequiresCondition: (stance-attackanything || assault-move) && (ifv-mg || ifv-init || ifv-gren || ifv-mortar || ifv-pyro || ifv-tesla || ifv-chrono || ifv-toxin || ifv-lazarus)
 		ValidTargets: Infantry, Vehicle, TerrorDrone, Water, Underwater, Structure, Defense
 		InvalidTargets: NoAutoTarget
 	AutoTargetPriority@INFONLY:
@@ -1138,7 +1159,7 @@ fv:
 		RequiresCondition: ifv-demo && targetedexp
 	WithVoxelTurret@default:
 		Sequence: turret-missile
-		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-lazarus && !ifv-crkt
+		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-pyro && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-toxin && !ifv-lazarus && !ifv-crkt
 	WithVoxelTurret@mg:
 		Sequence: turret-mg
 		RequiresCondition: ifv-mg
@@ -1168,7 +1189,7 @@ fv:
 		RequiresCondition: ifv-pyro
 	WithVoxelTurret@flak:
 		Sequence: turret-flak
-		RequiresCondition: ifv-flak
+		RequiresCondition: ifv-flak || ifv-mortar
 	WithVoxelTurret@gatling:
 		Sequence: turret-gatling
 		RequiresCondition: ifv-gatling
@@ -1523,12 +1544,14 @@ bfrt:
 			init: loaded
 			gren: loaded
 			ggi: loaded-air
+			rctt: loaded-air
 			flakt: loaded-air
 			gtrp: loaded-air
 			shk: loaded
 			shkc: loaded
 			vlkv: loaded
 			pyro: loaded
+			mtrp: loaded
 			deso: loaded
 			tany: loaded
 			ghost: loaded

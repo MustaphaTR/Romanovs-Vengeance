@@ -410,21 +410,6 @@ upgrade.high_explosive_bombs:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.high_explosive_bombs
 
-upgrade.high_caliber_rounds:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: High Caliber Rounds
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 80
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
-		Description: Enables Snipers to damage vehicles and kill gunners to disable them from firing for a while.
-	Valued:
-		Cost: 3000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.high_caliber_rounds
-
 upgrade.radioactive_bombs:
 	Inherits: ^default.upgrade
 	Tooltip:
@@ -711,3 +696,18 @@ upgrade.cryo_shells:
 		Cost: 2500
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.cryo_shells
+
+upgrade.high_caliber_rounds:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: High Caliber Rounds
+	Buildable:
+		Queue: Upgrade.Unused # Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 80
+		BuildDuration: 1500
+		Prerequisites: ~disabled # ~upgrade.baku, natech, ~techlevel.3
+		Description: Enables Snipers to damage vehicles and kill gunners to disable them from firing for a while.
+	Valued:
+		Cost: 3000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.high_caliber_rounds

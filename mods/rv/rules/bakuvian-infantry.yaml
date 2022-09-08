@@ -337,11 +337,102 @@ sspy:
 		PlayerExperience: 50
 		Voice: Action
 
+mtrp:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@CHAOS: ^Berserkable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@PARACHUTE: ^Parachutable
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 70
+		Description: Long range infantry armed with smoke bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraftt\n\nAbilities:\n- Reduces damage and sight of enemy units\n- Can kill garrisoned infantry
+		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 550
+	DeliversCash:
+		Payload: 225
+		Voice: Move
+	Tooltip:
+		Name: Mortar Trooper
+	Tooltip@NoRow:
+		Name: Mortar Trooper
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Health:
+		HP: 12500
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+	Passenger:
+	RevealsShroud:
+		Range: 7c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 7c0
+	RevealOnDeath:
+		Radius: 7c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: TrooperMortar
+		Damage: 50
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: TrooperMortarE
+		Damage: 100
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCTrooperMortar
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCTrooperMortarE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: TrooperMortar
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: TrooperMortarE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	WithInfantryBody:
+	Voiced:
+		VoiceSet: FlakTrooperVoice
+	ProducibleWithLevel:
+		Prerequisites: vetmtrp
+	WithProductionIconOverlay:
+		Prerequisites: vetmtrp
+		Types: chevron-veteran
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+
 ssnipe:
 	Inherits: snipe
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Unused # Infantry.Shared, Infantry.Baku, Infantry.Tuva
 		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- AP Bullets\n- High Caliber Rounds
 		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
 	RenderSprites:

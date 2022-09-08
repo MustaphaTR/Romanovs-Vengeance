@@ -164,6 +164,22 @@ CRGrenadeEMPE:
 		ExplosionPalette: tseffect
 		ImpactSounds: sempexpl.wav
 
+CRTrooperMortar:
+	Inherits: TrooperMortar
+	ReloadDelay: 65
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c384
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c384
+
+CRTrooperMortarE:
+	Inherits: TrooperMortarE
+	ReloadDelay: 65
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c512
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c512
+
 CRNuke:
 	Inherits: IvanBomber
 	Warhead@1Dam: SpreadDamage

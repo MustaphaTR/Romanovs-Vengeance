@@ -1267,8 +1267,8 @@ tric:
 	Selectable:
 		Bounds: 965, 1930, 0, -482
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
-		Prerequisites: ~vehicle.sovietsorbaku, naradr, ~techlevel.2
+		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
+		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: Fast medium range unit.\n\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
 		BuildDuration: 175
@@ -1330,9 +1330,9 @@ tric:
 		Voice: Build
 		ValidRelationships: None
 	ProducibleWithLevel:
-		Prerequisites: vettricgrad
+		Prerequisites: warfactory.infiltrated
 	WithProductionIconOverlay:
-		Prerequisites: vettricgrad
+		Prerequisites: warfactory.infiltrated
 		Types: chevron-veteran
 	HitShape:
 

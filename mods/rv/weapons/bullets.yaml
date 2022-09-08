@@ -670,7 +670,6 @@ CycleMortarE:
 	Projectile: BulletAS
 		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
-		Falloff: 100, 75, 50, 25, 0
 		Spread: 0c384
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
@@ -692,10 +691,10 @@ TurretMortar:
 	Warhead@1Gar: OpenToppedDamage
 		ValidTargets: GarrisonedStructure
 		InvalidTargets: IronCurtained, ForceShielded
-		Spread: 0c256
+		Spread: 0c384
 		Falloff: 100, 75, 50, 25, 0
 		Damage: 13000
-		Amount: 3
+		Amount: 2
 		Versus:
 			None: 150
 			Flak: 125
@@ -715,6 +714,35 @@ TurretMortar:
 		Duration: 75
 		ValidTargets: Ground, Water
 		ValidRelationships: Neutral, Enemy
+
+TrooperMortar:
+	Inherits: TurretMortar
+	ReloadDelay: 75
+	MinRange: 1c816
+	Range: 9c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 5000
+	Warhead@1Gar: OpenToppedDamage
+		Damage: 5000
+
+TrooperMortarE:
+	Inherits: TurretMortar
+	Burst: 2
+	BurstDelays: 5
+	Projectile: BulletAS
+		ContrailStartColor: EA0000
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c384
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c384
+	Warhead@2Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
+
+UCTrooperMortar:
+	Inherits: TrooperMortar
+
+UCTrooperMortarE:
+	Inherits: TrooperMortarE
 
 CruiserStrikeInit:
 	Projectile: InstantExplode

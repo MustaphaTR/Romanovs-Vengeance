@@ -91,9 +91,11 @@ commanders_power.arty_training:
 		Queue: Power.Baku
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
-		Description: Makes Mortar Tricycles and Grad MLRSes train as veteran.
-	ProvidesPrerequisite@vettricgrad:
-		Prerequisite: vettricgrad
+		Description: Makes Mortar Troopers and Grad MLRSes train as veteran.
+	ProvidesPrerequisite@vetmtrp:
+		Prerequisite: vetmtrp
+	ProvidesPrerequisite@vetgrad:
+		Prerequisite: vetgrad
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.arty_training
 	WithProductionIconOverlay@training:
