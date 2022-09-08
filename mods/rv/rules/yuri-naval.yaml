@@ -441,11 +441,16 @@ gatsub:
 		RequiresCondition: produced
 		Voice: Build
 		ValidRelationships: None
-	ProducibleWithLevel:
-		Prerequisites: vetgatsub
-	WithProductionIconOverlay:
-		Prerequisites: vetgatsub
+	ProducibleWithLevel@1:
+		Prerequisites: vetgatsuborbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vetgatsuborbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vetgatsub, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vetgatsub, baacdm
+		Types: chevron-elite
 	HitShape:
 	GrantConditionOnMovement@MoveStart:
 		Condition: moving

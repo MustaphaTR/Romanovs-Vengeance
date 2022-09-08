@@ -353,6 +353,85 @@ badock:
 	Exit@1:
 		Facing: 384
 
+baacdm:
+	Inherits: ^BaseBuilding
+	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@SHAPE: ^3x3Shape
+	Buildable:
+		Queue: Building.Shared, Building.Baku
+		BuildPaletteOrder: 120
+		Prerequisites: ~building.baku, natech, ~techlevel.4
+		Description: Makes combat units trained as veteran.\n\n  Maximum 1 can be built.
+		BuildLimit: 1
+		BuildDuration: 1250
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: Military Academy
+	Tooltip@NoRow:
+		Name: Military Academy
+	ProvidesPrerequisite@default:
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@barracks.infiltratedorbaacdm:
+		Prerequisite: barracks.infiltratedorbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@vete2flaktorbaacdm:
+		Prerequisite: vete2flaktorbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@vetmtrporbaacdm:
+		Prerequisite: vetmtrporbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@vetgtrporbaacdm:
+		Prerequisite: vetgtrporbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@warfactory.infiltratedorbaacdm:
+		Prerequisite: warfactory.infiltratedorbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@vetifvorbaacdm:
+		Prerequisite: vetifvorbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@vetytnkorbaacdm:
+		Prerequisite: vetytnkorbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@vetgradorbaacdm:
+		Prerequisite: vetgradorbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@vetgatsuborbaacdm:
+		Prerequisite: vetgatsuborbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	ProvidesPrerequisite@vetairorbaacdm:
+		Prerequisite: vetairorbaacdm
+		RequiresCondition: !disabled && !chronodisable
+	Building:
+		Footprint: xxx xxx xxx
+		Dimensions: 3,3
+	WithIdleOverlay@flag:
+		Sequence: idle-flag
+		PauseOnCondition: chronodisable || disabled
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@waves:
+		Sequence: idle-waves
+		RequiresCondition: in_water && !build-incomplete
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 6c0
+	Power:
+		Amount: -200
+		RequiresCondition: !chronodisable
+	IsometricSelectable:
+		DecorationHeight: 60
+	Voiced:
+		VoiceSet: BarracksVoice
+		Volume: 0.8
+
 bamort:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround

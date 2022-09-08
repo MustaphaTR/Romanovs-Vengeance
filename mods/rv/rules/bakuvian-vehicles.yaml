@@ -306,11 +306,16 @@ grad:
 		RequiresCondition: produced
 		Voice: Build
 		ValidRelationships: None
-	ProducibleWithLevel:
-		Prerequisites: vetgrad
-	WithProductionIconOverlay:
-		Prerequisites: vetgrad
+	ProducibleWithLevel@1:
+		Prerequisites: vetgradorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vetgradorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vetgrad, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vetgrad, baacdm
+		Types: chevron-elite
 	ActorStatValues:
 		Upgrades: upgrade.cryo_warheads
 
@@ -378,8 +383,16 @@ qyzyl:
 		RequiresCondition: produced
 		Voice: Build
 		ValidRelationships: None
-	ProducibleWithLevel:
-		Prerequisites: warfactory.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+		Types: chevron-elite
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving

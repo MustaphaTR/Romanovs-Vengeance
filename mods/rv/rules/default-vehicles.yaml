@@ -410,11 +410,16 @@
 	WithVoxelBody:
 	WithVoxelTurret:
 	WithVoxelBarrel:
-	ProducibleWithLevel:
-		Prerequisites: warfactory.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: warfactory.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+		Types: chevron-elite
 	HitShape:
 	ExternalCondition@PRODUCED:
 		Condition: produced

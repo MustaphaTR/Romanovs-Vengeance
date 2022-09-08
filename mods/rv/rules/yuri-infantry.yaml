@@ -177,11 +177,16 @@ init:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 		RequiresCondition: !parachute && !webdisable
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 
 init.holo:
 	Inherits: init
@@ -313,11 +318,16 @@ brute:
 		AttackSequences:
 			secondary: smash
 		RequiresCondition: !parachute && !webdisable
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	-WithColoredOverlay@IDISABLE:
 	-GrantCondition@IDISABLE:
 	-SpeedMultiplier@DOGSTUN:
@@ -723,11 +733,16 @@ lunr:
 		RequiresCondition: moving
 	GrantConditionOnMovement:
 		Condition: moving
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-Passenger:
@@ -1070,11 +1085,16 @@ gtrp:
 		RequiresCondition: !parachute && !webdisable
 	Voiced:
 		VoiceSet: InitiateVoice
-	ProducibleWithLevel:
-		Prerequisites: vetgtrp
-	WithProductionIconOverlay:
-		Prerequisites: vetgtrp
+	ProducibleWithLevel@1:
+		Prerequisites: vetgtrporbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vetgtrporbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vetgtrp, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vetgtrp, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
@@ -1287,11 +1307,16 @@ spct:
 		VoiceSet: InitiateVoice
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 
 ttrp:
 	Inherits: ^Infantry
@@ -1404,11 +1429,16 @@ ttrp:
 		DefaultAttackSequence: shoot
 	Voiced:
 		VoiceSet: DesolatorVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-TakeCover:
@@ -1538,11 +1568,16 @@ crkt:
 		TargetFrozenActors: true
 	Voiced:
 		VoiceSet: SniperVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	WithDeathAnimation@normal:
 		DeathTypes:
 			BulletDeath: 1

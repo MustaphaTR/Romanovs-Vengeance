@@ -138,11 +138,16 @@ rctt:
 		RequiresCondition: bulletproof
 	Voiced:
 		VoiceSet: FlakTrooperVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
@@ -420,11 +425,16 @@ mtrp:
 	WithInfantryBody:
 	Voiced:
 		VoiceSet: FlakTrooperVoice
-	ProducibleWithLevel:
-		Prerequisites: vetmtrp
-	WithProductionIconOverlay:
-		Prerequisites: vetmtrp
+	ProducibleWithLevel@1:
+		Prerequisites: vetmtrporbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vetmtrporbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vetmtrp, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vetmtrp, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 
@@ -582,11 +592,16 @@ vlkv:
 		Notification: ForSovietGlory
 	Voiced:
 		VoiceSet: VolkovVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
@@ -721,11 +736,16 @@ chit:
 		PauseOnCondition: chronodisable || ((webdisable || emp || jousting) && !deployed)
 	Voiced:
 		VoiceSet: DogVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	-TakeCover:
 	-SpawnActorOnDeath@flames:
 	-SpawnSmokeParticleOnDeath@virus:

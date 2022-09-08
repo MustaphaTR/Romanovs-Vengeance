@@ -550,12 +550,23 @@ orca:
 	GrantExternalConditionToOwner:
 		Condition: padaircraft
 	HitShape:
-	ProducibleWithLevel:
-		Prerequisites: vetair
+	ProducibleWithLevel@1:
+		Prerequisites: baacdm, !vetair
+	WithProductionIconOverlay@1:
+		Prerequisites: baacdm, !vetair
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: !baacdm, vetair
 		InitialLevels: 2
-	WithProductionIconOverlay:
-		Prerequisites: vetair
+	WithProductionIconOverlay@2:
+		Prerequisites: !baacdm, vetair
 		Types: chevron-elite
+	ProducibleWithLevel@3:
+		Prerequisites: baacdm, vetair
+		InitialLevels: 3
+	WithProductionIconOverlay@3:
+		Prerequisites: baacdm, vetair
+		Types: chevron-heroic
 	WithAmmoPipsDecoration:
 		Margin: 4, 3
 		FullSequence: pip-ammo
@@ -728,10 +739,19 @@ beag:
 		Image: beag
 		NormalsPalette: ts-normals
 	HitShape:
-	ProducibleWithLevel:
-		InitialLevels: 1
-	WithProductionIconOverlay:
+	ProducibleWithLevel@1:
+		Prerequisites: vetairorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vetairorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		InitialLevels: 1
+		Prerequisites: vetair, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vetair, baacdm
+		Types: chevron-elite
+	-ProducibleWithLevel@3:
+	-WithProductionIconOverlay@3:
 	Contrail@1:
 		Offset: 0,-500,100
 	Contrail@2:
@@ -1899,7 +1919,15 @@ bpln:
 	# -RevealsShroudToIntelligenceOwner:
 	-Selectable:
 	-SelectionDecorations:
-	-ProducibleWithLevel:
+	ProducibleWithLevel@1:
+		Prerequisites: baacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: baacdm
+		Types: chevron-veteran
+	-ProducibleWithLevel@2:
+	-WithProductionIconOverlay@2:
+	-ProducibleWithLevel@3:
+	-WithProductionIconOverlay@3:
 	-ExternalCondition@PRODUCED:
 	-GrantExternalConditionToOwner:
 	-DeliversCash:
@@ -2047,6 +2075,15 @@ bpln.buildable:
 		Image: bpln
 	RenderVoxels:
 		Image: bpln
+	ProducibleWithLevel@1:
+		Prerequisites: baacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: baacdm
+		Types: chevron-veteran
+	-ProducibleWithLevel@2:
+	-WithProductionIconOverlay@2:
+	-ProducibleWithLevel@3:
+	-WithProductionIconOverlay@3:
 	AmbientSound@Ambient:
 		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
 		Volume: 0.35
@@ -2667,11 +2704,16 @@ fortress:
 	GrantExternalConditionToOwner:
 		Condition: padaircraft
 	HitShape:
-	ProducibleWithLevel:
-		Prerequisites: vetair
-	WithProductionIconOverlay:
-		Prerequisites: vetair
+	ProducibleWithLevel@1:
+		Prerequisites: vetairorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vetairorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vetair, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vetair, baacdm
+		Types: chevron-elite
 	WithAmmoPipsDecoration:
 		AmmoPools: primary
 		Margin: 4, 3

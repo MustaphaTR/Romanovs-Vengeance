@@ -197,11 +197,16 @@ e2:
 		RequiresCondition: bulletproof
 	Voiced:
 		VoiceSet: ConscriptVoice
-	ProducibleWithLevel:
-		Prerequisites: vete2flakt
-	WithProductionIconOverlay:
-		Prerequisites: vete2flakt
+	ProducibleWithLevel@1:
+		Prerequisites: vete2flaktorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vete2flaktorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vete2flakt, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vete2flakt, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
@@ -391,11 +396,16 @@ flakt:
 		RequiresCondition: bulletproof
 	Voiced:
 		VoiceSet: FlakTrooperVoice
-	ProducibleWithLevel:
-		Prerequisites: vete2flakt
-	WithProductionIconOverlay:
-		Prerequisites: vete2flakt
+	ProducibleWithLevel@1:
+		Prerequisites: vete2flaktorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vete2flaktorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vete2flakt, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vete2flakt, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
@@ -548,11 +558,16 @@ shk:
 		RequiresCondition: !parachute && !webdisable
 	Voiced:
 		VoiceSet: TeslaTrooperVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
@@ -838,11 +853,16 @@ deso:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise, ImmuneToRadiation
 	Voiced:
 		VoiceSet: DesolatorVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-TakeCover:
@@ -927,6 +947,16 @@ ivan:
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 	-TakeCover:
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	ActorStatValues:
 		Upgrades: upgrade.targeted_explosives, upgrade.high_explosive_bombs
 
@@ -1344,11 +1374,16 @@ boris:
 		Notification: BorisHasArrived
 	Voiced:
 		VoiceSet: BorisVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
@@ -1482,11 +1517,16 @@ pyro:
 	Voiced:
 		VoiceSet: FlamethrowerVoice
 		Volume: 6
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
@@ -1582,11 +1622,16 @@ itrp:
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	Valued:
 		Cost: 1200
 	DeliversCash:

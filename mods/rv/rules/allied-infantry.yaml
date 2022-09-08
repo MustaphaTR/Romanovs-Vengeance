@@ -261,11 +261,16 @@ dog:
 		PauseOnCondition: chronodisable || ((webdisable || dogstun || attacking) && !deployed)
 	Voiced:
 		VoiceSet: DogVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	-TakeCover:
 	-SpawnActorOnDeath@brute:
 	-SpawnActorOnDeath@flames:
@@ -488,11 +493,16 @@ e1:
 		RequiresCondition: undeployed
 	Voiced:
 		VoiceSet: GIVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	AutoDeployer@AI:
@@ -913,11 +923,16 @@ ggi:
 		RequiresCondition: undeployed
 	Voiced:
 		VoiceSet: GGIVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	AutoDeployer@AI:
@@ -1048,11 +1063,16 @@ snipe:
 		TargetFrozenActors: true
 	Voiced:
 		VoiceSet: SniperVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ActorStatValues:
@@ -1251,11 +1271,16 @@ ghost:
 		Image: seal
 	Voiced:
 		VoiceSet: SealVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
@@ -1522,11 +1547,16 @@ tany:
 		Notification: LetsRockAndRoll
 	Voiced:
 		VoiceSet: TanyaVoice
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	WithInfantryBody:
@@ -1701,11 +1731,16 @@ jumpjet:
 		RequiresCondition: moving
 	GrantConditionOnMovement:
 		Condition: moving
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	-Passenger:
@@ -1779,11 +1814,16 @@ cleg:
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	Valued:
 		Cost: 1200
 	DeliversCash:
@@ -2018,11 +2058,16 @@ gren:
 	Voiced:
 		VoiceSet: GrenadierVoice
 		Volume: 6
-	ProducibleWithLevel:
-		Prerequisites: barracks.infiltrated
-	WithProductionIconOverlay:
-		Prerequisites: barracks.infiltrated
+	ProducibleWithLevel@1:
+		Prerequisites: barracks.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: barracks.infiltratedorbaacdm
 		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: barracks.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: barracks.infiltrated, baacdm
+		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
