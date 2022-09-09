@@ -3,15 +3,15 @@ hytk:
 	Inherits@MACHINEGUN: ^AffectedByMountedMG
 	Inherits@NUKEENGINES: ^AffectedByNuclearEngines
 	Valued:
-		Cost: 950
+		Cost: 1100
 	DeliversCash:
-		Payload: 950
+		Payload: 1100
 		Voice: Move
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		Description: Bakuvian Main Battle Tank with double barrel.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Mounted MG
 		Prerequisites: ~vehicle.baku, ~techlevel.1
-		BuildDuration: 500
+		BuildDuration: 625
 		BuildDurationModifier: 100
 		Icon: icon-hydra
 	Tooltip:
@@ -19,12 +19,12 @@ hytk:
 	Tooltip@NoRow:
 		Name: Hydra Heavy Tank
 	Health:
-		HP: 40000
+		HP: 50000
 	Mobile:
-		Speed: 90
+		Speed: 75
 	Armament@primary:
 		Weapon: 105mmx
-		Damage: 50
+		Damage: 75
 		Recoil: 87
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle
@@ -33,7 +33,7 @@ hytk:
 	Armament@primary2:
 		Name: primary2
 		Weapon: 105mmx
-		Damage: 50
+		Damage: 75
 		FireDelay: 5
 		Recoil: 87
 		RecoilRecovery: 12
@@ -43,7 +43,7 @@ hytk:
 	Armament@elite:
 		Name: elite
 		Weapon: 105mmxE
-		Damage: 100
+		Damage: 150
 		Recoil: 87
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle-2
@@ -52,7 +52,7 @@ hytk:
 	Armament@elite2:
 		Name: elite2
 		Weapon: 105mmxE
-		Damage: 100
+		Damage: 150
 		FireDelay: 5
 		Recoil: 87
 		RecoilRecovery: 12
@@ -114,9 +114,9 @@ send:
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
-		Cost: 800
+		Cost: 600
 	DeliversCash:
-		Payload: 800
+		Payload: 600
 		Voice: Move
 	Tooltip:
 		Name: Sentry Drone
@@ -136,7 +136,7 @@ send:
 		TurnSpeed: 60
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned
 	Health:
-		HP: 20000
+		HP: 35000
 	Armor:
 		Type: Light
 	RevealsShroud:

@@ -285,16 +285,29 @@ Sub70mmE:
 		Damage: 5000
 
 105mmx:
-	Inherits: 90mm
-	ReloadDelay: 65
+	Inherits: 105mm
+	ReloadDelay: 60
+	Report: cannon1.aud
 	Warhead@1Dam: SpreadDamage
 		Damage: 7500
 
 105mmxE:
-	Inherits: 90mmE
-	ReloadDelay: 65
+	Inherits: 105mmx
+	Burst: 2
+	BurstDelays: 10
 	Warhead@1Dam: SpreadDamage
-		Damage: 7500
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: elite_explosion
+		ImpactSounds: gexpapoa.wav
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
 
 ATGUN:
 	Inherits: 105mm
