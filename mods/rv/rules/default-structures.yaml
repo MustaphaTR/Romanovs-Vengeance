@@ -280,7 +280,7 @@
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 20
 		Prerequisites: power, ~techlevel.1
-		Description: Trains infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: Trains infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	Valued:
@@ -293,6 +293,15 @@
 		Prerequisite: barracks
 	ProvidesPrerequisite@production:
 		Prerequisite: production
+	ProximityExternalCondition@heal:
+		Condition: heal
+		Range: 5c0
+	WithRangeCircle:
+		Range: 5c0
+		Type: heal
+		Color: FF0000CC
+		BorderWidth: 0
+		Width: 2
 	Building:
 		-SecondaryTerrainTypes:
 	ExitsDebugOverlay:
