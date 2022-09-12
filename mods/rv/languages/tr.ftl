@@ -424,7 +424,7 @@ delete-all-maps-accept = Sil
 
 ## MissionBrowserLogic
 no-video-title = Video yüklenmemiş
-no-video-text = Oyunun videoları ana menüdeki "İçerikleri
+no-video-prompt = Oyunun videoları ana menüdeki "İçerikleri
     Yönet" kısmından yüklenebilir.
 no-video-cancel = Geri Dön
 
@@ -448,6 +448,9 @@ loading-player-profile-failed = Oyuncu profilini yükleme başarısız oldu.
 duration = Süre: { $time }
 singleplayer = Tek Oyunculu
 multiplayer = Çok Oyunculu
+
+victory = Zafer
+defeat = Yenilgi
 
 today = Bugün
 last-week = Son 7 günde
