@@ -1177,11 +1177,25 @@ ATLASERHoloAutoE:
 	Warhead@1Dam: SpreadDamage
 		Damage: 0
 
+AnniLaserCharge:
+	ReloadDelay: 51
+	Range: 11c0
+	Report: annicharge01.aud
+	ValidTargets: Ground, Water
+	Projectile: InstantExplode
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Ground, Water
+
+AnniLaserChargeE:
+	Inherits: AnniLaserCharge
+	Range: 12c0
+
 AnniLaser:
 	Inherits: DoomLaser
-	ReloadDelay: 120
+	ReloadDelay: 100
 	Range: 11c0
 	MinRange: 1c768
+	Report: obelray1.aud
 	SoundVolume: 2
 	Projectile: LaserZap
 		Duration: 45

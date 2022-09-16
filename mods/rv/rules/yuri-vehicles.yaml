@@ -1142,26 +1142,51 @@ lart:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 6c0
+	Armament@charger:
+		Name: secondary
+		Weapon: AnniLaserCharge
+		ReloadingCondition: chargingLaser
+		PauseOnCondition: laserready || firingLaser
+		RequiresCondition: !rank-elite
 	Armament@primary:
 		Weapon: AnniLaser
 		Damage: 150
 		LocalOffset: 672,0,832
+		ReloadingCondition: firingLaser
+		PauseOnCondition: !laserready
 		RequiresCondition: !rank-elite && !capacitors
-	Armament@elite:
-		Weapon: AnniLaserE
-		Damage: 200
-		LocalOffset: 672,0,832
-		RequiresCondition: rank-elite && !capacitors
 	Armament@primary-capacitors:
 		Weapon: AnniLaserUpg
 		Damage: 150
 		LocalOffset: 672,0,832
+		ReloadingCondition: firingLaser
+		PauseOnCondition: !laserready
 		RequiresCondition: !rank-elite && capacitors
+	Armament@elite-charger:
+		Name: secondary
+		Weapon: AnniLaserChargeE
+		ReloadingCondition: chargingLaser
+		PauseOnCondition: laserready || firingLaser
+		RequiresCondition: rank-elite
+	Armament@elite:
+		Weapon: AnniLaserE
+		Damage: 200
+		LocalOffset: 672,0,832
+		ReloadingCondition: firingLaser
+		PauseOnCondition: !laserready
+		RequiresCondition: rank-elite && !capacitors
 	Armament@elite-capacitors:
 		Weapon: AnniLaserUpgE
 		Damage: 200
 		LocalOffset: 672,0,832
+		ReloadingCondition: firingLaser
+		PauseOnCondition: !laserready
 		RequiresCondition: rank-elite && capacitors
+	GrantConditionAfterDelay@laserready:
+		Condition: laserready
+		Delay: 50
+		ShowSelectionBar: true
+		RequiresCondition: chargingLaser
 	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -1173,6 +1198,26 @@ lart:
 		Bounds: 1544, 2509, 0, -289
 	RenderVoxels:
 	WithVoxelBody:
+		RequiresCondition: !chargingLaser
+	WithVoxelAnimatedBody:
+		TickRate: 8
+		ResetFramesWhenDisabled: true
+		RequiresCondition: chargingLaser && !rank-elite && !capacitors
+	WithVoxelAnimatedBody@capacitors:
+		Sequence: idle-capacitors
+		TickRate: 8
+		ResetFramesWhenDisabled: true
+		RequiresCondition: chargingLaser && !rank-elite && capacitors
+	WithVoxelAnimatedBody@elite:
+		Sequence: idle-elite
+		TickRate: 8
+		ResetFramesWhenDisabled: true
+		RequiresCondition: chargingLaser && rank-elite && !capacitors
+	WithVoxelAnimatedBody@elite-capacitors:
+		Sequence: idle-elite-capacitors
+		TickRate: 8
+		ResetFramesWhenDisabled: true
+		RequiresCondition: chargingLaser && rank-elite && capacitors
 	Voiced:
 		VoiceSet: LasherTankVoice
 	ExternalCondition@PRODUCED:
