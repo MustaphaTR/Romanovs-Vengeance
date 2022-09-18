@@ -64,6 +64,7 @@ dest:
 		Weapon: ASWLauncher
 	CarrierMaster:
 		Actors: asw
+		SpawnOffset: 0,0,256
 		RespawnTicks: 200
 		RearmTicks: 40
 		SpawnAllAtOnce: true
@@ -74,9 +75,9 @@ dest:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
-	Exit@0:
-		SpawnOffset: 0,0,256
-		Facing: 0
+	#Exit@0: ## Cause Crash
+	#	SpawnOffset: 0,0,256
+	#	Facing: 0
 	AttackFollowFrontal:
 		Voice: Attack
 		FacingTolerance: 2
@@ -315,9 +316,6 @@ carrier:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
-	Exit@0:
-		SpawnOffset: 0,0,0
-		Facing: 0
 	Armament:
 		Weapon: HornetLauncher
 	GrantConditionOnMovement@MoveStart:
