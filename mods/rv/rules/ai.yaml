@@ -628,7 +628,7 @@ Player:
 					TargetMetric: Value
 					CheckRadius: 7c0
 	BaseBuilderBotModule@easy:
-		RequiresCondition: enable-easy-ai && !megawealth
+		RequiresCondition: enable-easy-ai
 		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
 		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
 		MinimumExcessPower: 60
@@ -639,6 +639,8 @@ Player:
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
+		AdditionalMinimumRefineryCount: 0 ## We don't need this
+		InititalMinimumRefineryCount: 0 ## We don't need this
 		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
@@ -740,113 +742,9 @@ Player:
 			gagap: 1
 			baprop: 1
 			naprop: 1
-			yasgen: 1
-	BaseBuilderBotModule@easy-megawealth:
-		RequiresCondition: enable-easy-ai && megawealth
-		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
-		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
-		MinimumExcessPower: 60
-		MaximumExcessPower: 160
-		ExcessPowerIncrement: 40
-		ExcessPowerIncreaseThreshold: 3
-		MaxBaseRadius: 25
-		ConstructionYardTypes: gacnst, nacnst, yacnst
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
-		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
-		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
-		NavalProductionTypes: gayard, nayard, yayard
-		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
-		BuildingLimits:
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
-			gapile: 2
-			nahand: 2
-			yabrck: 2
-			babarr: 2
-			gaweap: 3
-			naweap: 3
-			yaweap: 3
-			gayard: 1
-			nayard: 1
-			yayard: 1
-			gadept: 1
-			nadept: 1
-			yadept: 1
-			gaairc: 1
-			naheli: 1
-			yadisk: 1
-			baairf: 1
-			naradr: 1
-			yadome: 1
-			basops: 1
-			gatech: 1
-			natech: 1
-			yatech: 1
-			gaspysat: 1
-			yapsis: 1
-			naprop: 1
-			baprop: 1
-			gagap: 1
-			yasgen: 1
-		BuildingFractions:
-			gapowr: 70
-			napowr: 50
-			nanrct: 20
-			yapowr: 35
-			yapowr-full: 70
-			gapile: 40
-			nahand: 40
-			yabrck: 40
-			nabarr: 40
-			gaweap: 20
-			naweap: 20
-			yaweap: 20
-			gayard: 2
-			nayard: 2
-			yayard: 2
-			gadept: 1
-			nadept: 1
-			yadept: 1
-			gaairc: 10
-			naheli: 10
-			yadisk: 10
-			baairf: 10
-			naradr: 10
-			yadome: 10
-			basops: 10
-			gatech: 20
-			natech: 20
-			yatech: 20
-			gaorep: 10
-			baacdm: 10
-			naindp: 10
-			yaclon: 10
-			gaspysat: 1
-			yapsis: 1
-			gapill: 20
-			nalasr: 20
-			yaggun: 20
-			nasam: 8
-			naflak: 8
-			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
-			atesla: 8
-			bamort: 8
-			tesla: 8
-			yapsyt: 8
-			gtgcan: 2
-			yaeast02: 2
-			gamgun: 4
-			gagap: 1
-			naprop: 1
-			baprop: 1
 			yasgen: 1
 	BaseBuilderBotModule@cheater:
-		RequiresCondition: enable-cheater-ai && !megawealth
+		RequiresCondition: enable-cheater-ai
 		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
 		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
 		MinimumExcessPower: 60
@@ -857,6 +755,8 @@ Player:
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
+		AdditionalMinimumRefineryCount: 0 ## We don't need this
+		InititalMinimumRefineryCount: 0 ## We don't need this
 		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
 		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
@@ -947,132 +847,6 @@ Player:
 			gapill: 20
 			nalasr: 20
 			yaggun: 28
-			nasam: 8
-			naflak: 8
-			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
-			atesla: 8
-			bamort: 8
-			tesla: 8
-			yapsyt: 8
-			gtgcan: 2
-			yaeast02: 2
-			gamgun: 4
-			gagap: 1
-			naprop: 1
-			baprop: 1
-			yasgen: 1
-			gaweat: 2
-			namisl: 2
-			yappet: 2
-			## AI Tower Rush
-			nalasr-tr: 8
-			tesla-tr: 8
-			naflak-tr: 8
-			bamort-tr: 8
-			gapill-tr: 8
-			nasam-tr: 2
-			atesla-tr: 8
-			gagun-tr: 8
-			gamgun-tr: 8
-			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
-			yapsyt-tr: 2
-			yaeast02-tr: 2
-	BaseBuilderBotModule@cheater-megawealth:
-		RequiresCondition: enable-cheater-ai && megawealth
-		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
-		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
-		MinimumExcessPower: 60
-		MaximumExcessPower: 160
-		ExcessPowerIncrement: 40
-		ExcessPowerIncreaseThreshold: 3
-		MaxBaseRadius: 25
-		ConstructionYardTypes: gacnst, nacnst, yacnst
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
-		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
-		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
-		NavalProductionTypes: gayard, nayard, yayard
-		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
-		BuildingLimits:
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
-			gapile: 2
-			nahand: 2
-			yabrck: 2
-			babarr: 2
-			gaweap: 3
-			naweap: 3
-			yaweap: 3
-			gayard: 1
-			nayard: 1
-			yayard: 1
-			gadept: 1
-			nadept: 1
-			yadept: 1
-			gaairc: 1
-			naheli: 1
-			yadisk: 1
-			baairf: 1
-			naradr: 1
-			yadome: 1
-			basops: 1
-			gatech: 1
-			natech: 1
-			yatech: 1
-			gaspysat: 1
-			yapsis: 1
-			naprop: 1
-			baprop: 1
-			gagap: 1
-			yasgen: 1
-			gaweat: 2
-			namisl: 2
-			yappet: 2
-		BuildingFractions:
-			gapowr: 70
-			napowr: 50
-			nanrct: 20
-			yapowr: 35
-			yapowr-full: 70
-			gapile: 40
-			nahand: 40
-			yabrck: 40
-			babarr: 40
-			gaweap: 20
-			naweap: 20
-			yaweap: 20
-			gayard: 2
-			nayard: 2
-			yayard: 2
-			gadept: 1
-			nadept: 1
-			yadept: 1
-			gaairc: 10
-			naheli: 10
-			yadisk: 10
-			baairf: 10
-			naradr: 10
-			yadome: 10
-			basops: 10
-			gatech: 20
-			natech: 20
-			yatech: 20
-			gaorep: 10
-			baacdm: 10
-			naindp: 10
-			yaclon: 10
-			gaspysat: 1
-			yapsis: 1
-			gapill: 20
-			nalasr: 20
-			yaggun: 20
 			nasam: 8
 			naflak: 8
 			gagun: 8
@@ -1108,7 +882,7 @@ Player:
 			yapsyt-tr: 2
 			yaeast02-tr: 2
 	BaseBuilderBotModule@vengeful:
-		RequiresCondition: enable-vengeful-ai && !megawealth
+		RequiresCondition: enable-vengeful-ai
 		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
 		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
 		MinimumExcessPower: 60
@@ -1119,6 +893,8 @@ Player:
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
+		AdditionalMinimumRefineryCount: 0 ## We don't need this
+		InititalMinimumRefineryCount: 0 ## We don't need this
 		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
 		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
@@ -1209,132 +985,6 @@ Player:
 			gapill: 20
 			nalasr: 20
 			yaggun: 28
-			nasam: 8
-			naflak: 8
-			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
-			atesla: 8
-			bamort: 8
-			tesla: 8
-			yapsyt: 8
-			gtgcan: 2
-			yaeast02: 2
-			gamgun: 4
-			gagap: 1
-			naprop: 1
-			baprop: 1
-			yasgen: 1
-			gaweat: 2
-			namisl: 2
-			yappet: 2
-			## AI Tower Rush
-			nalasr-tr: 8
-			tesla-tr: 8
-			naflak-tr: 8
-			bamort-tr: 8
-			gapill-tr: 8
-			nasam-tr: 2
-			atesla-tr: 8
-			gagun-tr: 8
-			gamgun-tr: 8
-			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
-			yapsyt-tr: 2
-			yaeast02-tr: 2
-	BaseBuilderBotModule@vengeful-megawealth:
-		RequiresCondition: enable-vengeful-ai && megawealth
-		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
-		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
-		MinimumExcessPower: 60
-		MaximumExcessPower: 160
-		ExcessPowerIncrement: 40
-		ExcessPowerIncreaseThreshold: 3
-		MaxBaseRadius: 25
-		ConstructionYardTypes: gacnst, nacnst, yacnst
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
-		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
-		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
-		NavalProductionTypes: gayard, nayard, yayard
-		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
-		BuildingLimits:
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
-			gapile: 2
-			nahand: 2
-			yabrck: 2
-			babarr: 2
-			gaweap: 3
-			naweap: 3
-			yaweap: 3
-			gayard: 1
-			nayard: 1
-			yayard: 1
-			gadept: 1
-			nadept: 1
-			yadept: 1
-			gaairc: 1
-			naheli: 1
-			yadisk: 1
-			baairf: 1
-			naradr: 1
-			yadome: 1
-			basops: 1
-			gatech: 1
-			natech: 1
-			yatech: 1
-			gaspysat: 1
-			yapsis: 1
-			naprop: 1
-			baprop: 1
-			gagap: 1
-			yasgen: 1
-			gaweat: 2
-			namisl: 2
-			yappet: 2
-		BuildingFractions:
-			gapowr: 70
-			napowr: 50
-			nanrct: 20
-			yapowr: 35
-			yapowr-full: 70
-			gapile: 40
-			nahand: 40
-			yabrck: 40
-			babarr: 40
-			gaweap: 20
-			naweap: 20
-			yaweap: 20
-			gayard: 2
-			nayard: 2
-			yayard: 2
-			gadept: 1
-			nadept: 1
-			yadept: 1
-			gaairc: 10
-			naheli: 10
-			yadisk: 10
-			baairf: 10
-			naradr: 10
-			yadome: 10
-			basops: 10
-			gatech: 20
-			natech: 20
-			yatech: 20
-			gaorep: 10
-			baacdm: 10
-			naindp: 10
-			yaclon: 10
-			gaspysat: 1
-			yapsis: 1
-			gapill: 20
-			nalasr: 20
-			yaggun: 20
 			nasam: 8
 			naflak: 8
 			gagun: 8
@@ -1380,6 +1030,11 @@ Player:
 	GrantConditionOnPrerequisite@megawealth:
 		Condition: megawealth
 		Prerequisites: global-megawealth
+	CashTrickler@AImegawealthCashCheat:
+		Interval: 500
+		Amount: 400
+		ShowTicks: false
+		RequiresCondition: megawealth && enable-generic-ai
 	GrantConditionOnPrerequisite@no_bases:
 		Condition: no_bases
 		Prerequisites: hack.no_bases
@@ -1447,8 +1102,8 @@ Player:
 		MinimumConstructionYardCount: 4
 		MaxBaseRadius: 30
 	UnitBuilderBotModule@easy:
-		RequiresCondition: enable-easy-ai && !megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		RequiresCondition: enable-easy-ai
+		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1615,7 +1270,7 @@ Player:
 			harv: 6
 			gmin: 6
 			dog: 4
-			engineer: 1
+			engineer: 3
 			medi: 2
 			mech: 2
 			robo: 2
@@ -1626,187 +1281,6 @@ Player:
 			expn: 1
 			exps: 1
 			expy: 1
-			orca: 3
-			beag: 1
-			txdx: 1
-			disk: 2
-			magnedisk: 2
-			kite: 2
-			havoc: 3
-			bpln.buildable: 2
-	UnitBuilderBotModule@easy-megawealth:
-		RequiresCondition: enable-easy-ai && megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
-		UnitsToBuild:
-			e1: 180
-			e2: 180
-			init: 180
-			dog: 2
-			engineer: 180
-			medi: 2
-			mech: 1
-			flakt: 20
-			gtrp: 20
-			ggi: 20
-			shk: 20
-			brute: 20
-			rktt: 20
-			gren: 7
-			ivan: 5
-			ghost: 4
-			jumpjet: 4
-			lunr: 4
-			snipe: 4
-			ssnipe: 4
-			amob: 4
-			mtrp: 4
-			virus: 4
-			pyro: 7
-			deso: 2
-			spct: 2
-			tany: 2
-			boris: 2
-			vlkv: 2
-			chit: 1
-			yuri: 1
-			yuripsi: 1
-			yurix: 2
-			mtnk: 100
-			hytk: 100
-			htnk: 100
-			ltnk: 100
-			htk: 3
-			fv: 5
-			ytnk: 40
-			robo: 2
-			send: 2
-			dron: 2
-			caos: 2
-			smrj: 1
-			tric: 10
-			v3: 10
-			hwtz: 10
-			grad: 10
-			sref: 20
-			mgtk: 20
-			apoc: 20
-			tnkd: 30
-			ttnk: 30
-			ftnk: 20
-			yhtnk: 20
-			tele: 10
-			spider: 10
-			mind: 10
-			ctnk: 2
-			deva: 2
-			qyzyl: 1
-			grtk: 2
-			dlph: 5
-			sqd: 5
-			floater: 10
-			adest: 15
-			sray: 15
-			strt: 15
-			sub: 5
-			piranha: 5
-			aegis: 1
-			hyd: 5
-			hydf: 5
-			gatsub: 5
-			carrier: 2
-			dred: 2
-			bsub: 2
-			orca: 5
-			beag: 2
-			txdx: 1
-			disk: 2
-			magnedisk: 1
-			kite: 1
-			havoc: 1
-			bpln.buildable: 1
-			commanders_power.gun_turret: 1
-			commanders_power.harrier_training: 1
-			commanders_power.inf_training: 1
-			commanders_power.mechanic: 1
-			commanders_power.havoc: 1
-			commanders_power.gatling_training: 1
-			commanders_power.arty_training: 1
-			commanders_power.drone_drop: 1
-			commanders_power.spy_plane: 1
-			commanders_power.scout_drone: 1
-			commanders_power.psychic_reveal: 1
-			commanders_power.leaflet_drop: 1
-			commanders_power.cluster_mines: 1
-			commanders_power.brute_drop: 1
-			commanders_power.a10_strike.1: 1
-			commanders_power.a10_strike.2: 1
-			commanders_power.a10_strike.3: 1
-			commanders_power.parabombs.1: 1
-			commanders_power.parabombs.2: 1
-			commanders_power.parabombs.3: 1
-			commanders_power.toxin_bombing.1: 1
-			commanders_power.toxin_bombing.2: 1
-			commanders_power.toxin_bombing.3: 1
-			commanders_power.fuel_air_bomb.1: 1
-			commanders_power.fuel_air_bomb.2: 1
-			commanders_power.fuel_air_bomb.3: 1
-			upgrade.endurance_training: 3
-			upgrade.gi_fortifications: 5
-			upgrade.a2a_missiles: 1
-			upgrade.advanced_coolants: 10
-			upgrade.advanced_training: 5
-			upgrade.predator_missiles: 5
-			upgrade.composite_armor: 10
-			upgrade.boost_gliding_systems: 10
-			upgrade.portable_weaponry: 5
-			upgrade.grand_cannon_protocols: 8
-			upgrade.advanced_gun_systems: 5
-			upgrade.emp_munitions: 5
-			upgrade.increased_payload: 2
-			upgrade.bullet_proof_coats: 10
-			upgrade.molotov_cocktails: 8
-			upgrade.smoke_grenades: 2
-			upgrade.ap_bullets: 10
-			upgrade.nuclear_engines: 5
-			upgrade.radioactive_bombs: 5
-			upgrade.cryo_warheads: 5
-			upgrade.black_napalm: 5
-			upgrade.propaganda_effort: 2
-			upgrade.overcharge: 5
-			upgrade.advanced_irradiators: 2
-			upgrade.aerial_propaganda: 2
-			upgrade.targeted_explosives: 5
-			upgrade.high_explosive_bombs: 2
-			upgrade.high_caliber_rounds: 2
-			upgrade.uranium_shells: 8
-			upgrade.cryo_shells: 8
-			upgrade.mounted_mg: 10
-			upgrade.grinder_treads: 1
-			upgrade.camouflage: 5
-			upgrade.focused_mind: 10
-			upgrade.autoloaders: 10
-			upgrade.rocket_barrage: 5
-			upgrade.advanced_magnetics: 5
-			upgrade.chaos_tank_compensators: 5
-			upgrade.laser_capacitors: 10
-			upgrade.mastery_of_mind: 3
-			upgrade.dna_boosters: 5
-			upgrade.disc_armor: 5
-			upgrade.lazarus_prime: 3
-			upgrade.chainguns: 10
-		UnitLimits:
-			cmin: 6
-			harv: 6
-			gmin: 6
-			dog: 4
-			engineer: 1
-			medi: 2
-			mech: 2
-			robo: 2
-			send: 1
-			dron: 1
-			caos: 1
-			smrj: 1
 			orca: 3
 			beag: 1
 			txdx: 1
@@ -1816,8 +1290,8 @@ Player:
 			havoc: 3
 			bpln.buildable: 2
 	UnitBuilderBotModule@cheater:
-		RequiresCondition: enable-cheater-ai && !megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		RequiresCondition: enable-cheater-ai
+		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -1994,7 +1468,7 @@ Player:
 			harv: 6
 			gmin: 6
 			dog: 4
-			engineer: 1
+			engineer: 3
 			medi: 2
 			mech: 2
 			cleg: 1
@@ -2007,203 +1481,6 @@ Player:
 			expn: 1
 			exps: 1
 			expy: 1
-			orca: 3
-			beag: 1
-			fortress: 2
-			txdx: 1
-			disk: 2
-			magnedisk: 2
-			schp-ai: 2
-			kite: 2
-			havoc: 3
-			bpln.buildable: 2
-			zep: 1
-			badgr: 1
-	UnitBuilderBotModule@cheater-megawealth:
-		RequiresCondition: enable-cheater-ai && megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
-		UnitsToBuild:
-			e1: 180
-			e2: 180
-			init: 180
-			dog: 2
-			engineer: 180
-			medi: 2
-			mech: 1
-			flakt: 20
-			gtrp: 20
-			ggi: 20
-			shk: 20
-			brute: 20
-			rktt: 20
-			gren: 7
-			ivan: 5
-			ghost: 4
-			jumpjet: 4
-			lunr: 4
-			snipe: 4
-			ssnipe: 4
-			amob: 4
-			mtrp: 4
-			virus: 4
-			pyro: 7
-			deso: 2
-			spct: 2
-			cleg: 1
-			itrp: 1
-			tany: 2
-			boris: 2
-			vlkv: 2
-			chit: 1
-			yuri: 1
-			yuripsi: 1
-			yurix: 2
-			mtnk: 100
-			hytk: 100
-			htnk: 100
-			ltnk: 100
-			htk: 3
-			fv: 5
-			bfrt-squad-1: 5
-			ytnk: 40
-			robo: 2
-			send: 2
-			dron: 2
-			caos: 2
-			smrj: 1
-			tric: 10
-			v3: 10
-			hwtz: 10
-			grad: 10
-			sref: 20
-			mgtk: 20
-			apoc: 20
-			tnkd: 30
-			ttnk: 30
-			ftnk: 20
-			yhtnk: 20
-			tele: 10
-			spider: 10
-			mind: 10
-			ctnk: 2
-			deva: 2
-			qyzyl: 1
-			grtk: 2
-			dlph: 5
-			sqd: 5
-			floater: 10
-			adest: 15
-			sray: 15
-			strt: 15
-			sub: 5
-			piranha: 5
-			aegis: 1
-			hyd: 5
-			hydf: 5
-			gatsub: 5
-			carrier: 2
-			dred: 2
-			bsub: 2
-			orca: 5
-			beag: 2
-			fortress: 2
-			txdx: 1
-			disk: 2
-			magnedisk: 1
-			schp-ai: 1
-			kite: 1
-			havoc: 1
-			bpln.buildable: 1
-			zep: 1
-			badgr: 1
-			commanders_power.gun_turret: 1
-			commanders_power.harrier_training: 1
-			commanders_power.inf_training: 1
-			commanders_power.mechanic: 1
-			commanders_power.havoc: 1
-			commanders_power.gatling_training: 1
-			commanders_power.arty_training: 1
-			commanders_power.drone_drop: 1
-			commanders_power.spy_plane: 1
-			commanders_power.scout_drone: 1
-			commanders_power.psychic_reveal: 1
-			commanders_power.leaflet_drop: 1
-			commanders_power.cluster_mines: 1
-			commanders_power.brute_drop: 1
-			commanders_power.a10_strike.1: 1
-			commanders_power.a10_strike.2: 1
-			commanders_power.a10_strike.3: 1
-			commanders_power.parabombs.1: 1
-			commanders_power.parabombs.2: 1
-			commanders_power.parabombs.3: 1
-			commanders_power.toxin_bombing.1: 1
-			commanders_power.toxin_bombing.2: 1
-			commanders_power.toxin_bombing.3: 1
-			commanders_power.fuel_air_bomb.1: 1
-			commanders_power.fuel_air_bomb.2: 1
-			commanders_power.fuel_air_bomb.3: 1
-			commanders_power.cruiser_strike: 1
-			commanders_power.v3_strorm: 1
-			commanders_power.orbital_drop: 1
-			upgrade.endurance_training: 3
-			upgrade.gi_fortifications: 5
-			upgrade.a2a_missiles: 1
-			upgrade.advanced_coolants: 10
-			upgrade.advanced_training: 5
-			upgrade.predator_missiles: 5
-			upgrade.composite_armor: 10
-			upgrade.boost_gliding_systems: 10
-			upgrade.portable_weaponry: 5
-			upgrade.grand_cannon_protocols: 8
-			upgrade.advanced_gun_systems: 5
-			upgrade.emp_munitions: 5
-			upgrade.increased_payload: 2
-			upgrade.bullet_proof_coats: 10
-			upgrade.molotov_cocktails: 8
-			upgrade.smoke_grenades: 2
-			upgrade.ap_bullets: 10
-			upgrade.nuclear_engines: 5
-			upgrade.radioactive_bombs: 5
-			upgrade.cryo_warheads: 5
-			upgrade.black_napalm: 5
-			upgrade.propaganda_effort: 2
-			upgrade.overcharge: 5
-			upgrade.advanced_irradiators: 2
-			upgrade.aerial_propaganda: 2
-			upgrade.targeted_explosives: 5
-			upgrade.high_explosive_bombs: 2
-			upgrade.high_caliber_rounds: 2
-			upgrade.uranium_shells: 8
-			upgrade.cryo_shells: 8
-			upgrade.mounted_mg: 10
-			upgrade.grinder_treads: 1
-			upgrade.camouflage: 5
-			upgrade.focused_mind: 10
-			upgrade.autoloaders: 10
-			upgrade.rocket_barrage: 5
-			upgrade.advanced_magnetics: 5
-			upgrade.chaos_tank_compensators: 5
-			upgrade.laser_capacitors: 10
-			upgrade.mastery_of_mind: 3
-			upgrade.dna_boosters: 5
-			upgrade.disc_armor: 5
-			upgrade.lazarus_prime: 3
-			upgrade.chainguns: 10
-		UnitLimits:
-			cmin: 6
-			harv: 6
-			gmin: 6
-			dog: 4
-			engineer: 1
-			medi: 2
-			mech: 2
-			cleg: 1
-			itrp: 1
-			robo: 2
-			send: 1
-			dron: 1
-			caos: 1
-			smrj: 1
 			orca: 3
 			beag: 1
 			fortress: 2
@@ -2217,8 +1494,8 @@ Player:
 			zep: 1
 			badgr: 1
 	UnitBuilderBotModule@vengeful:
-		RequiresCondition: enable-vengeful-ai && !megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
+		RequiresCondition: enable-vengeful-ai
+		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
 			e1: 180
 			e2: 180
@@ -2423,7 +1700,7 @@ Player:
 			harv: 6
 			gmin: 6
 			dog: 4
-			engineer: 1
+			engineer: 3
 			medi: 2
 			mech: 2
 			cleg: 1
@@ -2433,230 +1710,6 @@ Player:
 			dron: 1
 			caos: 1
 			smrj: 1
-			orca: 3
-			beag: 1
-			fortress: 2
-			txdx: 1
-			disk: 2
-			magnedisk: 2
-			schp-ai: 2
-			kite: 2
-			havoc: 3
-			bpln.buildable: 2
-			zep: 1
-			badgr: 1
-	UnitBuilderBotModule@vengeful-megawealth:
-		RequiresCondition: enable-vengeful-ai && megawealth
-		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
-		UnitsToBuild:
-			e1: 180
-			e2: 180
-			init: 180
-			dog: 2
-			engineer: 180
-			medi: 2
-			mech: 1
-			flakt: 20
-			gtrp: 20
-			ggi: 20
-			shk: 20
-			brute: 20
-			rktt: 20
-			gren: 7
-			ivan: 5
-			ghost: 4
-			jumpjet: 4
-			lunr: 4
-			snipe: 4
-			ssnipe: 4
-			amob: 4
-			mtrp: 4
-			virus: 4
-			pyro: 7
-			deso: 2
-			spct: 2
-			tany: 2
-			boris: 2
-			vlkv: 2
-			chit: 1
-			yuri: 1
-			yuripsi: 1
-			yurix: 2
-			mtnk: 100
-			hytk: 100
-			htnk: 100
-			ltnk: 100
-			htk: 1
-			htk-dron: 1
-			htk-squad-1: 1
-			kamaz-squad-1: 1
-			fv: 1
-			fv-e1: 1
-			fv-ggi: 1
-			fv-gren: 1
-			fv-cleg: 1
-			bfrt-squad-1: 5
-			bfrt-squad-2: 5
-			bfrt-squad-3: 1
-			ytnk: 40
-			robo: 2
-			send: 2
-			dron: 2
-			caos: 2
-			smrj: 1
-			tric: 10
-			v3: 10
-			hwtz: 10
-			grad: 10
-			sref: 20
-			mgtk: 20
-			apoc: 20
-			tnkd: 30
-			ttnk: 30
-			ftnk: 20
-			yhtnk: 20
-			tele: 10
-			spider: 10
-			mind: 10
-			ctnk: 2
-			deva: 2
-			qyzyl: 1
-			grtk: 2
-			dlph: 5
-			sqd: 5
-			floater: 10
-			adest: 15
-			sray: 15
-			strt: 15
-			sub: 5
-			piranha: 5
-			aegis: 1
-			hyd: 5
-			hydf: 5
-			gatsub: 5
-			carrier: 2
-			dred: 2
-			bsub: 2
-			orca: 5
-			beag: 2
-			fortress: 2
-			txdx: 1
-			disk: 2
-			magnedisk: 1
-			schp-ai: 1
-			kite: 1
-			havoc: 1
-			bpln.buildable: 1
-			zep: 1
-			badgr: 1
-			shad-squad-1: 1
-			shad-squad-2: 1
-			shad-squad-3: 1
-			shad-squad-4: 1
-			txdx-squad-1: 1
-			txdx-squad-2: 1
-			txdx-squad-3: 1
-			hind-htnk: 1
-			hind-ftnk: 1
-			hind-ttnk: 1
-			hind-dtruck: 1
-			hind-apoc: 1
-			hind-htk-squad-1: 1
-			hind-htk-squad-2: 1
-			hind-htk-squad-3: 1
-			expn: 1
-			exps: 1
-			expy: 1
-			commanders_power.gun_turret: 1
-			commanders_power.harrier_training: 1
-			commanders_power.inf_training: 1
-			commanders_power.mechanic: 1
-			commanders_power.havoc: 1
-			commanders_power.gatling_training: 1
-			commanders_power.arty_training: 1
-			commanders_power.drone_drop: 1
-			commanders_power.spy_plane: 1
-			commanders_power.scout_drone: 1
-			commanders_power.psychic_reveal: 1
-			commanders_power.leaflet_drop: 1
-			commanders_power.cluster_mines: 1
-			commanders_power.brute_drop: 1
-			commanders_power.a10_strike.1: 1
-			commanders_power.a10_strike.2: 1
-			commanders_power.a10_strike.3: 1
-			commanders_power.parabombs.1: 1
-			commanders_power.parabombs.2: 1
-			commanders_power.parabombs.3: 1
-			commanders_power.toxin_bombing.1: 1
-			commanders_power.toxin_bombing.2: 1
-			commanders_power.toxin_bombing.3: 1
-			commanders_power.fuel_air_bomb.1: 1
-			commanders_power.fuel_air_bomb.2: 1
-			commanders_power.fuel_air_bomb.3: 1
-			commanders_power.cruiser_strike: 1
-			commanders_power.v3_strorm: 1
-			commanders_power.orbital_drop: 1
-			upgrade.endurance_training: 3
-			upgrade.gi_fortifications: 5
-			upgrade.a2a_missiles: 1
-			upgrade.advanced_coolants: 10
-			upgrade.advanced_training: 5
-			upgrade.predator_missiles: 5
-			upgrade.composite_armor: 10
-			upgrade.boost_gliding_systems: 10
-			upgrade.portable_weaponry: 5
-			upgrade.grand_cannon_protocols: 8
-			upgrade.advanced_gun_systems: 5
-			upgrade.emp_munitions: 5
-			upgrade.increased_payload: 2
-			upgrade.bullet_proof_coats: 10
-			upgrade.molotov_cocktails: 8
-			upgrade.smoke_grenades: 2
-			upgrade.ap_bullets: 10
-			upgrade.nuclear_engines: 5
-			upgrade.radioactive_bombs: 5
-			upgrade.cryo_warheads: 5
-			upgrade.black_napalm: 5
-			upgrade.propaganda_effort: 2
-			upgrade.overcharge: 5
-			upgrade.advanced_irradiators: 2
-			upgrade.aerial_propaganda: 2
-			upgrade.targeted_explosives: 5
-			upgrade.high_explosive_bombs: 2
-			upgrade.high_caliber_rounds: 2
-			upgrade.uranium_shells: 8
-			upgrade.cryo_shells: 8
-			upgrade.mounted_mg: 10
-			upgrade.grinder_treads: 1
-			upgrade.toxin_sprayer: 2
-			upgrade.camouflage: 5
-			upgrade.focused_mind: 10
-			upgrade.autoloaders: 10
-			upgrade.rocket_barrage: 5
-			upgrade.advanced_magnetics: 5
-			upgrade.chaos_tank_compensators: 5
-			upgrade.laser_capacitors: 10
-			upgrade.mastery_of_mind: 3
-			upgrade.dna_boosters: 5
-			upgrade.disc_armor: 5
-			upgrade.lazarus_prime: 3
-			upgrade.chainguns: 10
-		UnitLimits:
-			cmin: 6
-			harv: 6
-			gmin: 6
-			dog: 4
-			engineer: 1
-			medi: 2
-			mech: 2
-			robo: 2
-			send: 1
-			dron: 1
-			caos: 1
-			smrj: 1
-			expn: 1
-			exps: 1
-			expy: 1
 			orca: 3
 			beag: 1
 			fortress: 2
