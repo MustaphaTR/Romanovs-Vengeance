@@ -92,13 +92,13 @@ sub:
 		Voice: Build
 		ValidRelationships: None
 	HitShape:
-	GrantConditionOnMovement@MoveStart:
-		Condition: moving
-		ValidMovementTypes: Horizontal, Turn
-	SoundAnnouncement:
-		SoundFiles: vsqumova.wav, vsqumovb.wav
-		Volume: 0.45
-		RequiresCondition: moving
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vsqumova.wav, vsqumovb.wav
+	#	Volume: 0.45
+	#	RequiresCondition: moving
 
 hyd:
 	Inherits: ^Ship
@@ -192,13 +192,13 @@ hyd:
 		Voice: Build
 		ValidRelationships: None
 	HitShape:
-	GrantConditionOnMovement@MoveStart:
-		Condition: moving
-		ValidMovementTypes: Horizontal, Turn
-	SoundAnnouncement:
-		SoundFiles: vseastaa.wav, vseastab.wav, vseastac.wav, vseastad.wav
-		Volume: 0.4
-		RequiresCondition: moving
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vseastaa.wav, vseastab.wav, vseastac.wav, vseastad.wav
+	#	Volume: 0.4
+	#	RequiresCondition: moving
 	ActorStatValues:
 		SplitRanges: true
 
@@ -384,13 +384,13 @@ dred:
 		RequiresCondition: produced
 		Voice: Build
 		ValidRelationships: None
-	GrantConditionOnMovement@MoveStart:
-		Condition: moving
-		ValidMovementTypes: Horizontal, Turn
-	SoundAnnouncement:
-		SoundFiles: vdrestaa.wav, vdrestab.wav, vdrestac.wav
-		Volume: 0.5
-		RequiresCondition: moving
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# SoundAnnouncement:
+	#	SoundFiles: vdrestaa.wav, vdrestab.wav, vdrestac.wav
+	#	Volume: 0.5
+	#	RequiresCondition: moving
 	ActorStatValues:
 		Damage: 400
 		Upgrades: upgrade.radioactive_bombs, upgrade.advanced_irradiators, upgrade.high_explosive_bombs
@@ -571,14 +571,14 @@ sray:
 		ValidMovementTypes: Horizontal, Turn
 	GrantConditionOnMovement@walk:
 		Condition: walking
-	SoundAnnouncement:
-		SoundFiles: vstistaa.wav, vstistab.wav, vstistac.wav, vstistad.wav
-		Volume: 0.4
-		RequiresCondition: moving && in_water
-	AmbientSound@land:
-		SoundFiles: vstista.wav, vstistb.wav, vstistc.wav, vstistd.wav, vstiste.wav, vstistf.wav, vstistg.wav, vstisth.wav
-		Volume: 0.4
-		Interval: 20
-		RequiresCondition: walking && !in_water
+	# SoundAnnouncement:
+	#	SoundFiles: vstistaa.wav, vstistab.wav, vstistac.wav, vstistad.wav
+	#	Volume: 0.4
+	#	RequiresCondition: moving && in_water
+	# AmbientSound@land:
+	#	SoundFiles: vstista.wav, vstistb.wav, vstistc.wav, vstistd.wav, vstiste.wav, vstistf.wav, vstistg.wav, vstisth.wav
+	#	Volume: 0.4
+	#	Interval: 20
+	#	RequiresCondition: walking && !in_water
 	ActorStatValues:
 		Damage: 140

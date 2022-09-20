@@ -135,16 +135,16 @@ shad:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
-	AmbientSound@Move:
-		SoundFiles: vblhlo2a.wav, vblhlo2b.wav, vblhlo2c.wav
-		Volume: 0.5
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vblhlo3.wav
-		Volume: 0.5
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
+	# AmbientSound@Move:
+	#	SoundFiles: vblhlo2a.wav, vblhlo2b.wav, vblhlo2c.wav
+	#	Volume: 0.5
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vblhlo3.wav
+	#	Volume: 0.5
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
 	HitShape:
 	WithCargoPipsDecoration:
 		Margin: 4, 3
@@ -325,16 +325,16 @@ zep:
 		Notification: KirovReporting
 	Voiced:
 		VoiceSet: KirovVoice
-	AmbientSound@Move:
-		SoundFiles: vkirlo2a.wav, vkirlo2b.wav, vkirlo2c.wav
-		Volume: 0.40
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vkirlo3.wav
-		Volume: 0.40
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
+	# AmbientSound@Move:
+	#	SoundFiles: vkirlo2a.wav, vkirlo2b.wav, vkirlo2c.wav
+	#	Volume: 0.40
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vkirlo3.wav
+	#	Volume: 0.40
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: zephusk
@@ -574,10 +574,10 @@ orca:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
-	AmbientSound@Ambient:
-		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
-		Volume: 0.20
-		RequiresCondition: airborne
+	# AmbientSound@Ambient:
+	#	SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+	#	Volume: 0.20
+	#	RequiresCondition: airborne
 	Contrail@1:
 		Offset: -100,-500,100
 		StartColor: 88888880
@@ -851,10 +851,10 @@ pdplane:
 	HitShape:
 	RenderVoxels:
 		Image: pdplane
-	AmbientSound@Ambient:
-		SoundFiles: sparlo2a.wav, sparlo2b.wav, sparlo2c.wav
-		Volume: 0.35
-		RequiresCondition: airborne
+	# AmbientSound@Ambient:
+	#	SoundFiles: sparlo2a.wav, sparlo2b.wav, sparlo2c.wav
+	#	Volume: 0.35
+	#	RequiresCondition: airborne
 	Voiced:
 		VoiceSet: CargoPlaneVoice
 		Volume: 0.45
@@ -904,8 +904,8 @@ bplndrop:
 		Actor: bplnhusk
 	RenderVoxels:
 		Image: bpln
-	AmbientSound@Ambient:
-		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+	# AmbientSound@Ambient:
+	#	SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
 	-Voiced:
 	-DeathSounds:
 	Contrail@1:
@@ -985,9 +985,9 @@ a10:
 		AmmoCondition: ammo
 	RenderVoxels:
 		Image: a10
-	AmbientSound@Ambient:
-		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
-		Volume: 0.20
+	# AmbientSound@Ambient:
+	#	SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+	#	Volume: 0.20
 	-Voiced:
 	-DeathSounds:
 	Contrail@1:
@@ -1071,9 +1071,9 @@ txbmb:
 		AmmoCondition: ammo
 	RenderVoxels:
 		Image: txbmb
-	AmbientSound@Ambient:
-		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
-		Volume: 0.20
+	# AmbientSound@Ambient:
+	#	SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+	#	Volume: 0.20
 	-Voiced:
 	-DeathSounds:
 	Contrail@1:
@@ -1113,8 +1113,8 @@ f22drop:
 		DropRange: 3c0
 	RenderVoxels:
 		Image: f22
-	AmbientSound@Ambient:
-		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+	# AmbientSound@Ambient:
+	#	SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
 	-Voiced:
 	-DeathSounds:
 	Contrail@1:
@@ -1580,10 +1580,10 @@ spyp:
 	RenderSprites:
 	WithVoxelWalkerBody:
 		TickRate: 1
-	AmbientSound@Ambient:
-		SoundFiles: vspylo2a.wav, vspylo2b.wav, vspylo2c.wav
-		Volume: 0.60
-		RequiresCondition: airborne
+	# AmbientSound@Ambient:
+	#	SoundFiles: vspylo2a.wav, vspylo2b.wav, vspylo2c.wav
+	#	Volume: 0.60
+	#	RequiresCondition: airborne
 	Voiced:
 		VoiceSet: SpyPlaneVoice
 		Volume: 0.45
@@ -1847,16 +1847,16 @@ schp:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
-	AmbientSound@Move:
-		SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
-		Volume: 0.45
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vcholo3a.wav
-		Volume: 0.45
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
+	# AmbientSound@Move:
+	#	SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
+	#	Volume: 0.45
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vcholo3a.wav
+	#	Volume: 0.45
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
 	HitShape:
 	AutoDeployer@AI:
 		RequiresCondition: ai-control
@@ -1978,9 +1978,9 @@ bpln:
 	RenderVoxels:
 		Image: bpln
 	HitShape:
-	AmbientSound@Ambient:
-		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
-		Volume: 0.35
+	# AmbientSound@Ambient:
+	#	SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+	#	Volume: 0.35
 	Contrail@1:
 		Offset: -600,100,100
 		TrailLength: 15
@@ -2084,9 +2084,9 @@ bpln.buildable:
 	-WithProductionIconOverlay@2:
 	-ProducibleWithLevel@3:
 	-WithProductionIconOverlay@3:
-	AmbientSound@Ambient:
-		SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
-		Volume: 0.35
+	# AmbientSound@Ambient:
+	#	SoundFiles: vblelo2a.wav, vblelo2b.wav, vblelo2c.wav
+	#	Volume: 0.35
 	Contrail@1:
 		Offset: -600,100,100
 		TrailLength: 15
@@ -2354,16 +2354,16 @@ disk:
 		Condition: stealing
 		RevokeDelay: 6
 		ArmamentNames: secondary, infiltrate
-	AmbientSound@Move:
-		SoundFiles: vflolo2a.wav, vflolo2b.wav
-		Volume: 0.40
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vflolo3a.wav
-		Volume: 0.40
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
+	# AmbientSound@Move:
+	#	SoundFiles: vflolo2a.wav, vflolo2b.wav
+	#	Volume: 0.40
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vflolo3a.wav
+	#	Volume: 0.40
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
 	HitShape:
 	Repairable:
 		Voice: Move
@@ -2508,16 +2508,16 @@ hind:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		RequiresCondition: !airborne
-	AmbientSound@Move:
-		SoundFiles: vblhlo2a.wav, vblhlo2b.wav, vblhlo2c.wav
-		Volume: 0.5
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vblhlo3.wav
-		Volume: 0.5
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
+	# AmbientSound@Move:
+	#	SoundFiles: vblhlo2a.wav, vblhlo2b.wav, vblhlo2c.wav
+	#	Volume: 0.5
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vblhlo3.wav
+	#	Volume: 0.5
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
 	HitShape:
 
 hindhusk:
@@ -2732,10 +2732,10 @@ fortress:
 		Position: BottomLeft
 		RequiresSelection: true
 		RequiresCondition: increased_payload
-	AmbientSound@Ambient:
-		SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
-		Volume: 0.20
-		RequiresCondition: airborne
+	# AmbientSound@Ambient:
+	#	SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+	#	Volume: 0.20
+	#	RequiresCondition: airborne
 	Contrail@1:
 		Offset: -400,-700,300
 		StartColor: 88888880
@@ -3043,16 +3043,16 @@ txdx:
 		RequiresCondition: !airborne
 	DeathSounds:
 		DeathTypes: NonTemporal
-	AmbientSound@Move:
-		SoundFiles: vflolo2a.wav, vflolo2b.wav
-		Volume: 0.40
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vflolo3a.wav
-		Volume: 0.40
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
+	# AmbientSound@Move:
+	#	SoundFiles: vflolo2a.wav, vflolo2b.wav
+	#	Volume: 0.40
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vflolo3a.wav
+	#	Volume: 0.40
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
 	HitShape:
 	WithCargoPipsDecoration:
 		Margin: 4, 3
@@ -3216,16 +3216,16 @@ kite:
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: kitehusk
-	AmbientSound@Move:
-		SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
-		Volume: 0.45
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vcholo3a.wav
-		Volume: 0.45
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
+	# AmbientSound@Move:
+	#	SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
+	#	Volume: 0.45
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vcholo3a.wav
+	#	Volume: 0.45
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
 	HitShape:
 
 kitehusk:
@@ -3398,16 +3398,16 @@ magnedisk:
 		RequiresCondition: !airborne
 	DeathSounds:
 		DeathTypes: NonTemporal
-	AmbientSound@Move:
-		SoundFiles: vflolo2a.wav, vflolo2b.wav
-		Volume: 0.40
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vflolo3a.wav
-		Volume: 0.40
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
+	# AmbientSound@Move:
+	#	SoundFiles: vflolo2a.wav, vflolo2b.wav
+	#	Volume: 0.40
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vflolo3a.wav
+	#	Volume: 0.40
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
 	HitShape:
 	ActorStatValues:
 		Armaments: primary
@@ -3557,16 +3557,16 @@ havoc:
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: havochusk
-	AmbientSound@Move:
-		SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
-		Volume: 0.45
-		RequiresCondition: moving
-	SoundAnnouncement@end:
-		SoundFiles: vcholo3a.wav
-		Volume: 0.45
-		RequiresCondition: !moving
-	GrantConditionOnMovement:
-		Condition: moving
+	# AmbientSound@Move:
+	#	SoundFiles: vcholo2a.wav, vcholo2b.wav, vcholo2c.wav
+	#	Volume: 0.45
+	#	RequiresCondition: moving
+	# SoundAnnouncement@end:
+	#	SoundFiles: vcholo3a.wav
+	#	Volume: 0.45
+	#	RequiresCondition: !moving
+	# GrantConditionOnMovement:
+	#	Condition: moving
 	HitShape:
 
 havochusk:
@@ -3730,13 +3730,13 @@ badgr:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
-	AmbientSound@Ambient:
-		SoundFiles: sparlo2a.wav, sparlo2b.wav, sparlo2c.wav
-		Volume: 0.35
-		RequiresCondition: airborne
-	ProductionCostMultiplier@AI:
-		Prerequisites: prerequisite.aiplayer
-		Multiplier: 20
+	# AmbientSound@Ambient:
+	#	SoundFiles: sparlo2a.wav, sparlo2b.wav, sparlo2c.wav
+	#	Volume: 0.35
+	#	RequiresCondition: airborne
+	# ProductionCostMultiplier@AI:
+	#	Prerequisites: prerequisite.aiplayer
+	#	Multiplier: 20
 
 badgrhusk:
 	Inherits: ^PlaneHusk
