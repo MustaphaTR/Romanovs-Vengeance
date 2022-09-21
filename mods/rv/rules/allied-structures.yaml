@@ -429,7 +429,7 @@ garefn:
 	Inherits: ^Refinery
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Prerequisites: ~building.allies, power, ~!global-megawealth, ~techlevel.1
+		Prerequisites: ~building.allies, power, ~!global-megawealth, ~techlevel.1, ~AIantiRush
 	FreeActor:
 		Actor: cmin
 	SmokeParticleEmitter@refinerysmoke1:
@@ -901,6 +901,8 @@ gaairc:
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 	ActorStatValues:
 		Armaments: none
 
