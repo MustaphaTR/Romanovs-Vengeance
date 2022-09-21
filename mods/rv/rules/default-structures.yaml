@@ -5,6 +5,7 @@
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^4x4Shape
 	Inherits@AICash: ^AICashCheat
+	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Debug
 		Description: Allows construction of base structures.
@@ -145,6 +146,9 @@
 	Voiced:
 		VoiceSet: ConstructionYardVoice
 		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		RequiresCondition: !ai-control
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 
 ^ExpansionNode:
 	Inherits: ^BaseBuilding
@@ -373,6 +377,9 @@
 	Voiced:
 		VoiceSet: BarracksVoice
 		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+
 
 ^Refinery:
 	Inherits: ^BaseBuilding
@@ -754,8 +761,11 @@ refdock:
 	Voiced:
 		VoiceSet: WarFactoryVoice
 		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 	ActorStatValues:
 		Armaments: none
+
 
 ^Shipyard:
 	Inherits: ^BaseBuilding
@@ -1193,8 +1203,11 @@ refdock:
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 	ActorStatValues:
 		Armaments: none
+
 
 ^BattleLab:
 	Inherits: ^BaseBuilding
