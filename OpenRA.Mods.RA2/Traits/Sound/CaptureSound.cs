@@ -16,9 +16,9 @@ using OpenRA.Traits;
 namespace OpenRA.Mods.RA2.Traits.Sound
 {
 	public class CaptureSoundInfo : TraitInfo
-    {
-        [Desc("Sound to play when actor is captured.")]
-        public readonly string Sound = null;
+	{
+		[Desc("Sound to play when actor is captured.")]
+		public readonly string Sound = null;
 
 		[Desc("Do the sounds play under shroud or fog.")]
 		public readonly bool AudibleThroughFog = false;
@@ -26,7 +26,7 @@ namespace OpenRA.Mods.RA2.Traits.Sound
 		[Desc("Volume the sounds played at.")]
 		public readonly float SoundVolume = 1f;
 
-        public override object Create(ActorInitializer init) { return new CaptureSound(this); }
+		public override object Create(ActorInitializer init) { return new CaptureSound(this); }
 	}
 
 	public class CaptureSound : INotifyCapture
@@ -38,10 +38,10 @@ namespace OpenRA.Mods.RA2.Traits.Sound
 		}
 
 		void INotifyCapture.OnCapture(Actor self, Actor captor, Player oldOwner, Player newOwner, BitSet<CaptureType> captureTypes)
-        {
+		{
 			var pos = self.CenterPosition;
 			if (info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
 				Game.Sound.Play(SoundType.World, info.Sound, pos, info.SoundVolume);
-        }
+		}
 	}
 }
