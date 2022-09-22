@@ -33,6 +33,12 @@ namespace OpenRA.Mods.RA2.Traits
 		[Desc("List of sound which one randomly played after erasing is done.")]
 		public readonly string[] EraseSounds = { };
 
+		[Desc("Do the sounds play under shroud or fog.")]
+		public readonly bool AudibleThroughFog = false;
+
+		[Desc("Volume the sounds played at.")]
+		public readonly float SoundVolume = 1f;
+
 		[Desc("If erase delay is calculated from health, multipile the cost with this to get the time.")]
 		public readonly int EraseDamageMultiplier = 100;
 
@@ -81,8 +87,12 @@ namespace OpenRA.Mods.RA2.Traits
 
 				if (Info.EraseSounds.Any())
 				{
-					var sound = Info.EraseSounds.Random(self.World.LocalRandom);
-					Game.Sound.Play(SoundType.World, sound, self.CenterPosition);
+					var pos = self.CenterPosition;
+					if (Info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))
+					{
+						var sound = Info.EraseSounds.Random(self.World.LocalRandom);
+						Game.Sound.Play(SoundType.World, sound, pos, Info.SoundVolume);
+					}
 				}
 			}
 
