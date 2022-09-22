@@ -713,7 +713,9 @@ chit:
 		Name: deployed
 		RequiresCondition: !parachute && !webdisable && !jousting && (deployed || deploying) 
 	Targetable:
-		TargetTypes: Ground, TerrorDrone, DetonateAttack, ImmuneToRadiation
+		TargetTypes: Ground, Infantry, TerrorDrone, DetonateAttack, ImmuneToRadiation
+		RequiresCondition: !parachute && !chronodisable && !jousting
+	Targetable@ironcurtain:
 		RequiresCondition: !parachute && !chronodisable && !jousting
 	IgnoresDisguise:
 	DetectCloaked:
