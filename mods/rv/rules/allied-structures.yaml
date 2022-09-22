@@ -422,6 +422,7 @@ gapile:
 	PlaceBuildingVariants:
 		Actors: gapilb
 	IsometricSelectable:
+		Class: gapile
 		DecorationHeight: 60
 
 garefn:
@@ -441,6 +442,7 @@ garefn:
 		Actors: garefb #, garefc, garefd
 		Facings: 640, 384 #, 128, 896
 	IsometricSelectable:
+		Class: garefn
 		DecorationHeight: 60
 
 gaairc:
@@ -869,6 +871,7 @@ gaairc:
 	PlaceBuildingVariants:
 		Actors: gaairb
 	IsometricSelectable:
+		Class: gaairc
 		DecorationHeight: 105
 	Voiced:
 		VoiceSet: AirfieldVoice
@@ -989,6 +992,7 @@ gaweap:
 	PlaceBuildingVariants:
 		Actors: gaweab #, gaweac, gawead
 	IsometricSelectable:
+		Class: gaweap
 		DecorationHeight: 60
 
 gayard:
@@ -1107,6 +1111,7 @@ gatech:
 	PlaceBuildingVariants:
 		Actors: gatecb
 	IsometricSelectable:
+		Class: gatech
 		DecorationHeight: 180
 	Voiced:
 		VoiceSet: TechCenterVoice
@@ -1710,6 +1715,7 @@ gacsph:
 	PlaceBuildingVariants:
 		Actors: gacspb
 	IsometricSelectable:
+		Class: gacsph
 		DecorationHeight: 45
 	Voiced:
 		VoiceSet: ChronosphereVoice
@@ -1964,6 +1970,8 @@ gagatea:
 		ReplaceableTypes: AlliedGate
 	PlaceBuildingVariants:
 		Actors: gagateb
+	IsometricSelectable:
+		Class: gagate
 
 gagateb:
 	Inherits: ^Gate_B
@@ -1979,6 +1987,8 @@ gagateb:
 		Type: gawall
 	Replacement:
 		ReplaceableTypes: AlliedGate
+	IsometricSelectable:
+		Class: gagate
 
 gasilo:
 	Inherits: ^Silo
@@ -2272,6 +2282,7 @@ garefb:
 	SpawnNeighboringActors:
 		Locations: 0,3, 1,3, 2,3
 	IsometricSelectable:
+		Class: garefn
 		DecorationHeight: 60
 	ActorStatValues:
 		Icon: icon
@@ -2291,6 +2302,7 @@ garefc:
 	SpawnNeighboringActors:
 		Locations: 0,0, 0,1, 0,2
 	IsometricSelectable:
+		Class: garefn
 		DecorationHeight: 60
 	ActorStatValues:
 		Icon: icon
@@ -2310,6 +2322,7 @@ garefd:
 	SpawnNeighboringActors:
 		Locations: 0,0, 1,0, 2,0
 	IsometricSelectable:
+		Class: garefn
 		DecorationHeight: 60
 	ActorStatValues:
 		Icon: icon

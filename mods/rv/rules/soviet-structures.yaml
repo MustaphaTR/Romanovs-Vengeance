@@ -219,6 +219,7 @@ napowr:
 	PlaceBuildingVariants:
 		Actors: napowb
 	IsometricSelectable:
+		Class: napowr
 		DecorationHeight: 45
 	Voiced:
 		VoiceSet: PowerPlantVoice
@@ -424,6 +425,7 @@ narefn:
 		Actors: narefb #, narefc, narefd
 		Facings: 640, 384 #, 128, 896
 	IsometricSelectable:
+		Class: narefn
 		DecorationHeight: 90
 
 naradr:
@@ -834,6 +836,7 @@ naweap:
 	PlaceBuildingVariants:
 		Actors: naweab #, naweac, nawead
 	IsometricSelectable:
+		Class: naweap
 		DecorationHeight: 90
 
 nayard:
@@ -956,6 +959,7 @@ nadept:
 	PlaceBuildingVariants:
 		Actors: nadepb
 	IsometricSelectable:
+		Class: nadept
 		DecorationHeight: 90
 
 naheli:
@@ -1118,7 +1122,7 @@ nanrct:
 	Power:
 		Amount: 1000
 	IsometricSelectable:
-		Class: nanrcb
+		Class: nanrct
 		DecorationHeight: 60
 	PlaceBuildingVariants:
 		Actors: nanrcb
@@ -1914,6 +1918,8 @@ nagatea:
 		ReplaceableTypes: SovietGate
 	PlaceBuildingVariants:
 		Actors: nagateb
+	IsometricSelectable:
+		Class: nagate
 
 nagateb:
 	Inherits: ^Gate_B
@@ -1928,6 +1934,8 @@ nagateb:
 		Type: nawall
 	Replacement:
 		ReplaceableTypes: SovietGate
+	IsometricSelectable:
+		Class: nagate
 
 napost:
 	Inherits: ^BaseBuilding
@@ -2228,6 +2236,7 @@ narefb:
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: -128,-1408,4096
 	IsometricSelectable:
+		Class: narefn
 		DecorationHeight: 90
 	ActorStatValues:
 		Icon: icon
@@ -2245,6 +2254,7 @@ narefc:
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: -128,1408,4096
 	IsometricSelectable:
+		Class: narefn
 		DecorationHeight: 90
 	ActorStatValues:
 		Icon: icon
@@ -2262,6 +2272,7 @@ narefd:
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: 128,1408,4096
 	IsometricSelectable:
+		Class: narefn
 		DecorationHeight: 90
 	ActorStatValues:
 		Icon: icon
