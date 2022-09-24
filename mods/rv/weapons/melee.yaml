@@ -273,6 +273,25 @@ MechRepair:
 	Warhead@1Dam: SpreadDamage
 		Damage: -4000
 
+DroneRepair:
+	Inherits: RepairBullet
+	Range: 2c512
+	Report: fixit1.aud
+	ValidTargets: Repair, AirRepair
+	-Projectile:
+	Projectile: LaserZap
+		ZOffset: 4000
+		Color: FFFF70
+		Width: 16
+		Duration: 5
+		HitAnim: explosion
+		HitAnimSequence: repairsparks
+		HitAnimPalette: player
+		SecondaryBeam: false
+	Warhead@1Dam: SpreadDamage
+		Damage: -1500
+		ValidTargets: Repair, AirRepair
+
 TankGrind:
 	Inherits@1: ^BreakPointDefenseDrones
 	ReloadDelay: 25

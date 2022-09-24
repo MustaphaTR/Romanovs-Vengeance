@@ -710,6 +710,29 @@ refdock:
 		Sequence: bib
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Repair
+		ValidRelationships: Ally
+	AttackOmni:
+		PauseOnCondition: chronodisable || disabled
+	Armament:
+		Weapon: RepairDroneSpawn
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally
+		PauseOnCondition: !build-incomplete
+	DroneSpawnerMaster:
+		Actors: repdron, repdron, repdron
+		SpawnOffset: -1024,1024,0, 0,0,0, 1024,1024,0
+		GatherOffsetCell: 1,2, 1,1, 2,1
+	WithRangeCircle:
+		Range: 6c0
+		Type: repair
+		Color: FF0000CC
+		BorderWidth: 0
+		Width: 2
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
@@ -727,6 +750,8 @@ refdock:
 	Voiced:
 		VoiceSet: WarFactoryVoice
 		Volume: 0.8
+	ActorStatValues:
+		Armaments: none
 
 ^Shipyard:
 	Inherits: ^BaseBuilding
@@ -868,15 +893,38 @@ refdock:
 		Path: 5,1
 		Palette: mouse
 		IsPlayerPalette: false
-	RepairsUnits:
+	# RepairsUnits:
+	#	PauseOnCondition: chronodisable || disabled
+	#	HpPerStep: 2000
+	#	Interval: 20
+	#	RepairDamageTypes: KillsDrone
+	#	StartRepairingNotification: Repairing
+	#	StartRepairingTextNotification: Repairing.
+	#	FinishRepairingNotification: UnitRepaired
+	#	FinishRepairingTextNotification: Unit repaired.
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Repair
+		ValidRelationships: Ally
+	AttackOmni:
 		PauseOnCondition: chronodisable || disabled
-		HpPerStep: 2000
-		Interval: 20
-		RepairDamageTypes: KillsDrone
-		StartRepairingNotification: Repairing
-		StartRepairingTextNotification: Repairing.
-		FinishRepairingNotification: UnitRepaired
-		FinishRepairingTextNotification: Unit repaired.
+	Armament:
+		Weapon: RepairDroneSpawn
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally
+		PauseOnCondition: !build-incomplete
+	DroneSpawnerMaster:
+		Actors: repdron, repdron, repdron
+		SpawnOffset: -1024,1024,0, 0,0,0, 1024,1024,0
+		GatherOffsetCell: 1,2, 1,1, 2,1
+	WithRangeCircle:
+		Range: 6c0
+		Type: repair
+		Color: FF0000CC
+		BorderWidth: 0
+		Width: 2
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
@@ -884,9 +932,8 @@ refdock:
 		Sequence: idle-waves
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleRepairOverlay:
-		IdleSequence: idle-crane
-		Sequence: repair
+	WithIdleOverlay:
+		Sequence: idle-crane
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
 	-SpawnActorsOnSell@allies:
@@ -901,6 +948,8 @@ refdock:
 	Voiced:
 		VoiceSet: ShipyardVoice
 		Volume: 0.8
+	ActorStatValues:
+		Armaments: none
 
 ^ServiceDepot:
 	Inherits: ^BaseBuilding
@@ -1097,6 +1146,29 @@ refdock:
 		ProductionType: Aircraft.Shared
 	ProductionBar:
 		ProductionType: Aircraft
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Repair
+		ValidRelationships: Ally
+	AttackOmni:
+		PauseOnCondition: chronodisable || disabled
+	Armament:
+		Weapon: RepairDroneSpawn
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally
+		PauseOnCondition: !build-incomplete
+	DroneSpawnerMaster:
+		Actors: repdron
+		SpawnOffset: 0,0,0
+		GatherOffsetCell: 1,1
+	WithRangeCircle:
+		Range: 6c0
+		Type: repair
+		Color: FF0000CC
+		BorderWidth: 0
+		Width: 2
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
@@ -1112,6 +1184,8 @@ refdock:
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
+	ActorStatValues:
+		Armaments: none
 
 ^BattleLab:
 	Inherits: ^BaseBuilding

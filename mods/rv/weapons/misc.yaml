@@ -552,6 +552,16 @@ CruiseLauncher:
 		ValidTargets: Ground
 		InvalidTargets: Ship, SeaAnimal, Underwater, WaterTerrain
 
+RepairDroneSpawn:
+	ReloadDelay: 25
+	Range: 6c0
+	Projectile: InstantExplode
+	ValidTargets: Repair, AirRepair
+	Warhead@1Dam: TargetDamage
+		Damage: 0
+		ValidTargets: Repair, AirRepair
+		ValidRelationships: Ally
+
 Flare:
 	ReloadDelay: 1
 	Range: 12c0

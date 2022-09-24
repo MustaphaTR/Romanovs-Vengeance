@@ -3792,3 +3792,59 @@ badgr.VTOL:
 	WithVoxelBody:
 	RenderVoxels:
 		Image: badgr
+
+repdron:
+	Inherits: ^Helicopter
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	-GivesExperience:
+	AutoTarget:
+		ScanRadius: 6
+	Tooltip:
+		Name: Repair Drone
+	-Selectable:
+	-SelectionDecorations:
+	Interactable:
+	Aircraft:
+		MaximumPitch: 90
+		Repulsable: true
+		TurnSpeed: 16
+		Speed: 128
+		IdleTurnSpeed: 10
+		IdleSpeed: 64
+		AltitudeVelocity: 200
+		RepulsionSpeed: 16
+		AirborneCondition: airborne
+		MoveIntoShroud: true
+	Armament:
+		Weapon: DroneRepair
+		Cursor: goldwrench
+		OutsideRangeCursor: goldwrench
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally
+	AttackAircraft:
+		FacingTolerance: 512
+	RejectsOrders:
+	RenderSprites:
+	Rearmable:
+		RearmActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, nahpad, yadisc
+	WithFacingSpriteBody:
+	BodyOrientation:
+		AttackType: Hover
+		QuantizedFacings: 32
+	Health:
+		HP: 5000
+	HitShape:
+	DroneSpawnerSlave:
+	-UpdatesPlayerStatistics:
+	-ActorLostNotification:
+	-AppearsOnRadar:
+	-MapEditorData:
+	-Targetable@Airborne:
+	-Targetable@Ground:
+	DamageMultiplier@nodamage:
+		Modifier: 0
+	WithDeathAnimation:
+		FallbackSequence: die
+		DeathSequence: die
+		UseDeathTypeSuffix: false
+		CrushedSequence: die

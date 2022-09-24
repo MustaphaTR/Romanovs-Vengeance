@@ -868,6 +868,29 @@ gaairc:
 	SpawnNeighboringActors:
 		ActorTypes: gadock
 		Locations: 1,0, 1,1, 2,1
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Repair
+		ValidRelationships: Ally
+	AttackOmni:
+		PauseOnCondition: chronodisable || disabled
+	Armament:
+		Weapon: RepairDroneSpawn
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally
+		PauseOnCondition: !build-incomplete
+	DroneSpawnerMaster:
+		Actors: repdron, repdron, repdron
+		SpawnOffset: -1024,1024,0, 0,0,0, 1024,1024,0
+		GatherOffsetCell: 1,2, 1,1, 2,1
+	WithRangeCircle:
+		Range: 6c0
+		Type: repair
+		Color: FF0000CC
+		BorderWidth: 0
+		Width: 2
 	PlaceBuildingVariants:
 		Actors: gaairb
 	IsometricSelectable:
@@ -876,6 +899,8 @@ gaairc:
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
+	ActorStatValues:
+		Armaments: none
 
 gabarl:
 	Inherits: camisc02
@@ -1043,7 +1068,7 @@ gadept:
 	HitShape:
 		TargetableOffsets: 0,0,0, -720,-720,0, 720,720,0, -720,720,0, 0,1440,0, -1440,0,0
 	Buildable:
-		Queue: Building.Shared, Building.Allies
+		Queue: Building.Unused # Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, gaweap, ~techlevel.1
 	Building:
 		Footprint: x++ x++ x++

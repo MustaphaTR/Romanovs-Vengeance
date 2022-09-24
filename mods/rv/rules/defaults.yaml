@@ -3012,6 +3012,9 @@
 	Targetable@REPAIR:
 		RequiresCondition: !airborne && damaged
 		TargetTypes: Repair
+	Targetable@REPAIRAirborne:
+		RequiresCondition: airborne && damaged
+		TargetTypes: AirRepair
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
