@@ -596,7 +596,7 @@ yaweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Description: Produces Psi-Corps vehicles.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: Produces Psi-Corps vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
 		Prerequisites: ~building.yuri, refinery, ~techlevel.1
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: yaweap
@@ -671,6 +671,7 @@ yayard:
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, refinery, ~techlevel.1
+		Description: Produces Psi-Corps submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@ship.yuri:
 		Prerequisite: ship.yuri
@@ -995,7 +996,7 @@ yadisk:
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yadome, ~techlevel.2
-		Description: Produces Psi-Corps aircraft.
+		Description: Produces Psi-Corps aircraft.\n\nAbilities:\n- Comes with 1 repair drone.
 	Tooltip:
 		Name: Disc Pad
 	Tooltip@NoRow:

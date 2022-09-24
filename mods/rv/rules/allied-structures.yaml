@@ -453,7 +453,7 @@ gaairc:
 	Buildable:
 		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, power, garefn, ~techlevel.2
-		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Airborne (United States)\n- Carpet Bombing (United Kingdom)\n- Force Shield (France)\n- Chrono Grizzly (Germany)\n- Chronobomb (Korea)
+		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Airborne (United States)\n- Carpet Bombing (United Kingdom)\n- Force Shield (France)\n- Chrono Grizzly (Germany)\n- Chronobomb (Korea)\n\nAbilities:\n- Comes with 3 repair drones.
 	Tooltip:
 		Name: Airforce Command Headquarters
 	Tooltip@NoRow:
@@ -870,7 +870,7 @@ gaairc:
 		Locations: 1,0, 1,1, 2,1
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
-		ValidTargets: Repair
+		ValidTargets: Repair, AirRepair, SeaAnimalRepair
 		ValidRelationships: Ally
 	AttackOmni:
 		PauseOnCondition: chronodisable || disabled
@@ -880,11 +880,11 @@ gaairc:
 		OutsideRangeCursor: repair
 		TargetRelationships: Ally
 		ForceTargetRelationships: Ally
-		PauseOnCondition: !build-incomplete
+		PauseOnCondition: build-incomplete
 	DroneSpawnerMaster:
 		Actors: repdron, repdron, repdron
-		SpawnOffset: -1024,1024,0, 0,0,0, 1024,1024,0
-		GatherOffsetCell: 1,2, 1,1, 2,1
+		SpawnOffset: -362,-1086,0, -384,512,0, 384,768,0
+		GatherOffsetCell: 1,0, 1,1, 2,1
 	WithRangeCircle:
 		Range: 6c0
 		Type: repair
@@ -928,7 +928,7 @@ gaweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Description: Produces Allied vehicles.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: Produces Allied vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
 		Prerequisites: ~building.allies, refinery, ~techlevel.1
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: gaweap
@@ -1025,6 +1025,7 @@ gayard:
 	Buildable:
 		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, refinery, ~techlevel.1
+		Description: Produces Allied ships, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@ship.allies:
 		Prerequisite: ship.allies
@@ -1935,6 +1936,29 @@ gaapad:
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Repair, AirRepair, SeaAnimalRepair
+		ValidRelationships: Ally
+	AttackOmni:
+		PauseOnCondition: chronodisable || disabled
+	Armament:
+		Weapon: RepairDroneSpawn
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally
+		PauseOnCondition: build-incomplete
+	DroneSpawnerMaster:
+		Actors: repdron
+		SpawnOffset: 0,0,0
+		GatherOffsetCell: 1,1
+	WithRangeCircle:
+		Range: 6c0
+		Type: repair
+		Color: FF0000CC
+		BorderWidth: 0
+		Width: 2
 	Power:
 		Amount: -10
 		RequiresCondition: !chronodisable
@@ -2425,6 +2449,9 @@ gaairb:
 		SpawnOffset: -512,-512,0
 	SpawnNeighboringActors:
 		Locations: 0,1, 1,1, 1,2
+	DroneSpawnerMaster:
+		SpawnOffset: -512,1024,0, 512,512,0, -512,-512,0
+		GatherOffsetCell: 0,1, 1,1, 1,2
 	ActorStatValues:
 		Icon: icon
 		IconPalette: chrome

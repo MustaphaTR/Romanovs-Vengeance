@@ -169,6 +169,12 @@
 	#	IsPlayerPalette: true
 	Targetable:
 		TargetTypes: Ground, Water, SeaAnimal, Underwater
+	Targetable@REPAIR:
+		RequiresCondition: damaged
+		TargetTypes: SeaAnimalRepair
+	GrantConditionOnDamageState@DAMAGED:
+		Condition: damaged
+		ValidDamageStates: Light, Medium, Heavy, Critical
 	DetectCloaked:
 		# DetectionTypes: Underwater
 		Range: 4c0
