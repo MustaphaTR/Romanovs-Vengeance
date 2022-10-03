@@ -190,11 +190,12 @@ exit-map-editor-confirm = Çık
 
 ## IngamePowerBarLogic
 ## IngamePowerCounterLogic
-power-usage = Güç Kullanımı
+power-usage = Güç Kullanımı: { $usage }/{ $capacity }
+infinite-power = Sınırsız
 
 ## IngameSiloBarLogic
 ## IngameCashCounterLogic
-silo-usage = Depo Kullanımı: { $resources }/{ $capacity }
+silo-usage = Depo Kullanımı: { $usage }/{ $capacity }
 
 ## ObserverShroudSelectorLogic
 camera-option-all-players = Tüm Oyuncular
@@ -479,12 +480,15 @@ replay-deletion-failed = Geri oynatma dosyası '{ $file }' silinemedi. Ayrıntı
 ## ReplayUtils
 incompatible-replay-title = Uyumsuz Geri Oynatma
 incompatible-replay-prompt = Geri oynatma meta verileri okunamadı.
+incompatible-replay-accept = Tamam
 -incompatible-replay-recorded = kaydedilmiş
-incompatible-replay-unknown-version = Bilinmeyen bir sürümde { -incompatible-replay-recorded }: { $version }.
-incompatible-replay-unknown-mod = Bilinmeyen bir modda { -incompatible-replay-recorded }: { $mod }.
+incompatible-replay-unknown-version = Bilinmeyen bir sürümde { -incompatible-replay-recorded }.
+incompatible-replay-unknown-mod = Bilinmeyen bir modda { -incompatible-replay-recorded }.
 incompatible-replay-unavailable-mod = Mevcut olmayan bir modda { -incompatible-replay-recorded }: { $mod }.
-incompatible-replay-incompatible-version = Uyumsuz bir sürümde { -incompatible-replay-recorded }: { $version }.
-incompatible-replay-unavailable-map = Mevcut olmayan bir haritada { -incompatible-replay-recorded }: { $map }.
+incompatible-replay-incompatible-version = Uyumsuz bir sürümde { -incompatible-replay-recorded }:
+    { $version }.
+incompatible-replay-unavailable-map = Mevcut olmayan bir haritada { -incompatible-replay-recorded }:
+    { $map }.
 
 ## ServerCreationLogic
 internet-server-nat-A = İnternet Sunucusu (UPnP/NAT-PMP
