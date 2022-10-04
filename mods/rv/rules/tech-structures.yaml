@@ -654,6 +654,10 @@ carpad:
 		Produces: ReinforcementsPad.Allies
 		ActorType: alplane.rpad
 		ChuteSound: sparadra.wav
+	ProductionParadrop@Baku:
+		Produces: ReinforcementsPad.Baku
+		ActorType: svplane.rpad
+		ChuteSound: sparadra.wav
 	ProductionParadrop@Soviets:
 		Produces: ReinforcementsPad.Soviets
 		ActorType: svplane.rpad
@@ -670,6 +674,14 @@ carpad:
 		ChargeColor: FF00FF
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: enabled && allies
+	PeriodicProducer@Baku:
+		Actors: hytk
+		ChargeDuration: 3000
+		Type: ReinforcementsPad.Baku
+		ShowSelectionBar: true
+		ChargeColor: FF00FF
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: enabled && baku
 	PeriodicProducer@Soviets:
 		Actors: htnk
 		ChargeDuration: 3000
@@ -690,9 +702,13 @@ carpad:
 		Condition: allies
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		ResetOnOwnerChange: true
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+		ResetOnOwnerChange: true
 	GrantConditionOnFaction@Soviets:
 		Condition: soviets
-		Factions: cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia
 		ResetOnOwnerChange: true
 	GrantConditionOnFaction@PsiCorps:
 		Condition: psicorps
