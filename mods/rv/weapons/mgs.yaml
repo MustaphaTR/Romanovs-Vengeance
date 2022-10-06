@@ -105,6 +105,31 @@ UCparaE:
 	Projectile: InstantHit
 		Blockable: false
 
+Pistola:
+	Inherits: ^MG
+	ReloadDelay: 20
+	Range: 3c0
+	Report: icivatta.wav, icivattb.wav
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Damage: 200
+
+Pistolb:
+	Inherits: ^MG
+	ReloadDelay: 20
+	Range: 4c0
+	Report: icivatta.wav, icivattb.wav
+	Warhead@1Dam: SpreadDamage
+		Spread: 64
+		Damage: 1500
+
+PistolbE:
+	Inherits: Pistolb
+	ReloadDelay: 20
+	Range: 5c0
+	Warhead@1Dam: SpreadDamage
+		Damage: 2000
+
 MP5:
 	Inherits: ^MG
 	ReloadDelay: 15

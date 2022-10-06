@@ -141,11 +141,26 @@ babarr:
 		ExitCell: 3,2
 		RequiresCondition: multiqueue
 	Production:
-		Produces: Infantry.Baku, Infantry.Tuva
+		Produces: Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 	ProductionQueue:
 		Type: Infantry.Baku
 		DisplayOrder: 16
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, russianfed, serbia
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, russianfed, serbia
+	ProductionQueue@Turkmenistan:
+		Type: Infantry.Turkmenistan
+		Group: Infantry
+		DisplayOrder: 16
+		LowPowerModifier: 200
+		Factions: turkmen
+		ReadyAudio: UnitReady
+		ReadyTextNotification: Unit ready.
+		BlockedAudio: NoBuild
+		BlockedTextNotification: Unable to build more.
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: Unable to comply. Building in progress.
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
 	ProductionQueue@Tuva:
 		Type: Infantry.Tuva
 		Group: Infantry
@@ -163,6 +178,8 @@ babarr:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Baku
+	ProductionBar@Turkmenistan:
+		ProductionType: Infantry.Turkmenistan
 	ProductionBar@Tuva:
 		ProductionType: Infantry.Tuva
 	ProvidesPrerequisite@buildingname:
@@ -171,6 +188,9 @@ babarr:
 		Prerequisite: nahand
 	ProvidesPrerequisite@infantry.baku:
 		Prerequisite: infantry.baku
+	ProvidesPrerequisite@infantry.turkmen:
+		Prerequisite: infantry.turkmen
+		Factions: turkmen
 	ProvidesPrerequisite@infantry.tuva:
 		Prerequisite: infantry.tuva
 		Factions: tuva

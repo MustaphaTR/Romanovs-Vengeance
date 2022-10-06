@@ -116,6 +116,20 @@ UCMolotovCocktailE:
 	Projectile: BulletAS
 		Blockable: false
 
+MobCocktail:
+	Inherits: MolotovCocktail
+	ReloadDelay: 75
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground, Water
+
+MobCocktailE:
+	Inherits: MolotovCocktailE
+	ReloadDelay: 60
+	ValidTargets: Ground, Water
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Ground, Water
+
 SmokeGrenade:
 	Inherits: MolotovCocktail
 	ValidTargets: Ground, Water
@@ -555,12 +569,20 @@ CruiseLauncher:
 RepairDroneSpawn:
 	ReloadDelay: 25
 	Range: 6c0
-	Projectile: InstantExplode
 	ValidTargets: Repair, AirRepair, SeaAnimalRepair
+	Projectile: InstantExplode
 	Warhead@1Dam: TargetDamage
 		Damage: 0
 		ValidTargets: Repair, AirRepair, SeaAnimalRepair
 		ValidRelationships: Ally
+
+AngryMobTargeter:
+	ReloadDelay: 25
+	Range: 4c0
+	ValidTargets: Ground, Water
+	Projectile: InstantExplode
+	Warhead@1Dam: TargetDamage
+		ValidTargets: Ground, Water
 
 Flare:
 	ReloadDelay: 1

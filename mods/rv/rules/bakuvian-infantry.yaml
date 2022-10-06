@@ -8,7 +8,7 @@ rctt:
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 20
 		Description: Anti-Air and anti-Vehicle unit.\n\n  Strong vs Vehicle, Aircraft\n  Weak vs Infantry\n\nUpgradeable with:\n- Bullet-Proof Coats
@@ -159,7 +159,7 @@ medi:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, ~techlevel.1
 		BuildPaletteOrder: 50
@@ -223,7 +223,7 @@ mech:
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, prerequisite.mechanic, warfactory, ~techlevel.2
 		BuildPaletteOrder: 60
@@ -333,8 +333,8 @@ mengineer:
 sspy:
 	Inherits: spy
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
-		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
+		Prerequisites: ~infantry.baku, basops, ~techlevel.3
 		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\nSteals enemy vehicles.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Can disguise as an enemy infantry
 	CaptureManager:
 	Captures:
@@ -351,11 +351,11 @@ mtrp:
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
-		Description: Long range infantry armed with smoke bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraftt\n\nAbilities:\n- Reduces damage and sight of enemy units\n- Can kill garrisoned infantry
-		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
+		Description: Long range infantry armed with smoke bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Reduces damage and sight of enemy units\n- Can kill garrisoned infantry
+		Prerequisites: ~infantry.baku, basops, ~techlevel.3
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -442,13 +442,201 @@ ssnipe:
 	Inherits: snipe
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Buildable:
-		Queue: Infantry.Unused # Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Unused # Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- AP Bullets\n- High Caliber Rounds
 		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
 	RenderSprites:
 		Image: snipe
 	ActorStatValues:
 		Upgrades: upgrade.ap_bullets, upgrade.high_caliber_rounds
+
+^AngryMob:
+	Inherits: ^Infantry
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@EXPERIENCE: ^GainsExperience
+	Valued:
+		Cost: 70
+	Tooltip:
+		Name: Angry Mob
+	Tooltip@NoRow:
+		Name: Angry Mob
+	-SelectionDecorations:
+	-WithTextControlGroupDecoration:
+	-Passenger:
+	-ChangesHealth@AMBULANCE:
+	Health:
+		HP: 6000
+	RevealsShroud:
+		Range: 3c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 3c0
+	#	Type: CenterPosition
+	RevealOnDeath:
+		Radius: 3c0
+	RejectsOrders@SLAVED:
+	MobSpawnerSlave:
+	WithInfantryBody:
+		IdleSequences: idle1
+	Selectable:
+		Class: amob
+		Bounds: 482, 1448, 0, -530
+	Voiced:
+		VoiceSet: AngryMobVoice
+
+amobtm:
+	Inherits: ^AngryMob
+	Inherits@APBULLETS: ^AffectedByAPBullets
+	Armament@pistol:
+		Weapon: Pistolb
+		Damage: 15
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite # && !arm_the_mob
+	Armament@pistolE:
+		Weapon: PistolbE
+		Damage: 20
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite # && !arm_the_mob
+	# Armament@ak47:
+	#	Weapon: AKMob
+	#	PauseOnCondition: chronodisable || webdisable || dogstun
+	#	RequiresCondition: !rank-elite # arm_the_mob
+	# Armament@ak47E:
+	#	Weapon: AKMobE
+	#	PauseOnCondition: chronodisable || webdisable || dogstun
+	#	RequiresCondition: rank-elite # arm_the_mob
+	AttackFrontal:
+		FacingTolerance: 2
+	# GrantConditionOnPrerequisite@ARM_THE_MOB:
+	#	Condition: arm_the_mob
+	#	Prerequisites: upgrade.arm_the_mob
+	-ActorStatValues:
+
+amobf:
+	Inherits: ^AngryMob
+	Inherits@APBULLETS: ^AffectedByAPBullets
+	Armament@pistol:
+		Weapon: Pistolb
+		Damage: 15
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite # && !arm_the_mob
+	Armament@pistolE:
+		Weapon: PistolbE
+		Damage: 20
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite # && !arm_the_mob
+	# Armament@ak47:
+	#	Weapon: AKMob
+	#	PauseOnCondition: chronodisable || webdisable || dogstun
+	#	RequiresCondition: !rank-elite # arm_the_mob
+	# Armament@ak47E:
+	#	Weapon: AKMobE
+	#	PauseOnCondition: chronodisable || webdisable || dogstun
+	#	RequiresCondition: rank-elite # arm_the_mob
+	AttackFrontal:
+		FacingTolerance: 2
+	# GrantConditionOnPrerequisite@ARM_THE_MOB:
+	#	Condition: arm_the_mob
+	#	Prerequisites: upgrade.arm_the_mob
+	Voiced:
+		VoiceSet: AngryMobFemaleVoice
+	-ActorStatValues:
+
+amobfm:
+	Inherits: ^AngryMob
+	Armament:
+		Weapon: MobCocktail
+		Damage: 10
+		LocalOffset: 0,0,555
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@E:
+		Weapon: MobCocktailE
+		Damage: 14
+		LocalOffset: 0,0,555
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	AttackFrontal:
+		FacingTolerance: 2
+	-ActorStatValues:
+
+amob:
+	Inherits@1: ^ExistsInWorld
+	Inherits@4: ^SpriteActor
+	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@LEAFLET: ^AffectedByLeaflets
+	-AppearsOnRadar:
+	Buildable:
+		Queue: Infantry.Shared, Infantry.Turkmenistan
+		BuildPaletteOrder: 80
+		BuildDuration: 375
+		BuildDurationModifier: 100
+		Prerequisites: ~infantry.turkmen, basops, ~techlevel.3
+		Description: Group of civilians armed with pistols and molotov coctails.\n\n  Strong vs Infantry, Structures\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Slowly regains lost members\n\nUpgradeable with:\n- AP Bullets
+	Tooltip:
+		Name: Angry Mob
+		GenericName: Soldier
+		RequiresCondition: showownername
+	Tooltip@NoRow:
+		Name: Angry Mob
+		GenericName: Soldier
+		ShowOwnerRow: false
+		RequiresCondition: !showownername
+	GrantConditionOnPrerequisite@SHOWOWNERNAME:
+		Condition: showownername
+		Prerequisites: global-showownername
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 700
+	MobSpawnerMaster:
+		Actors: amobtm, amobtm, amobtm, amobtm, amobf, amobf, amobf, amobfm, amobfm, amobfm
+		RespawnTicks: 750
+		ExitByBudding: false
+	Health:
+		HP: 10000
+	Armor:
+		Type: None
+	AttackOmni:
+	Armament@PRIMARY:
+		Weapon: AngryMobTargeter
+	Mobile:
+		Speed: 60
+		Voice: Move
+		OccupySpace: false
+		Locomotor: foot
+	Voiced:
+		VoiceSet: AngryMobVoice
+	SelectionDecorations:
+		MinimumZoom: 0
+	WithTextControlGroupDecoration:
+	Selectable:
+		Bounds: 1024, 2048
+		Class: amob
+	AttackMove:
+	HiddenUnderFog:
+		Type: CenterPosition
+	RevealsShroud:
+		Range: 5c0
+		Type: CenterPosition
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 5c0
+	#	Type: CenterPosition
+	RevealOnDeath:
+		Radius: 5c0
+		Type: CenterPosition
+	BodyOrientation:
+		QuantizedFacings: 1
+	-QuantizeFacingsFromSequence:
+	HitShape:
+	MapEditorData:
+		Categories: Infantry
+	DamageMultiplier@INVINCIBLE:
+		Modifier: 0
+	RenderSprites:
+	ActorStatValues:
+		UpgradePrerequisites: global-upgrades
+		Damage: 135
 
 vlkv:
 	Inherits: ^Infantry
@@ -457,7 +645,7 @@ vlkv:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 190
 		Prerequisites: ~infantry.baku, natech, ~techlevel.4
@@ -618,7 +806,7 @@ chit:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@EXPERIENCE: ^GainsExperience
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Baku, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, natech, ~techlevel.4
 		BuildPaletteOrder: 200
