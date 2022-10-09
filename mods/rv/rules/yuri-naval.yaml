@@ -21,7 +21,7 @@ bsub:
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, yatech, ~techlevel.3
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 80
 		Description: Submerged anti-ship and anti-structure armed with\ndouble torpedo and missile launchers.\n\n  Strong vs Ships, Buildings\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
 		BuildDuration: 1000
 		BuildDurationModifier: 100
@@ -184,7 +184,7 @@ piranha:
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
-		Queue: Ship.Shared, Ship.Yuri
+		Queue: Ship.Civilian # Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: Submerged unit armed with fast firing torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
@@ -363,21 +363,21 @@ gatsub:
 		PauseOnCondition: reload-line-air
 		RequiresCondition: gatling >= 2 && chainguns
 	Armament@aa-0:
-		Weapon: AAGatling
+		Weapon: AAGatlingSub
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: !gatling
 	Armament@aa-1:
-		Weapon: AAGatling2
+		Weapon: AAGatlingSub2
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-1
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: gatling == 1
 	Armament@aa-2:
-		Weapon: AAGatling3
+		Weapon: AAGatlingSub3
 		LocalOffset: 544,100,1024, 544,-100,1024
 		MuzzleSequence: muzzle-2
 		ReloadingCondition: reload-air
@@ -385,21 +385,21 @@ gatsub:
 		RequiresCondition: gatling >= 2
 	Armament@aa-line-0:
 		Name: secondary
-		Weapon: AAGatlingLine
+		Weapon: AAGatlingSubLine
 		LocalOffset: 544,100,1024, 544,-100,1024
 		ReloadingCondition: reload-line-air
 		PauseOnCondition: reload-line-ground
 		RequiresCondition: !gatling && chainguns
 	Armament@aa-line-1:
 		Name: secondary
-		Weapon: AAGatlingLine2
+		Weapon: AAGatlingSubLine2
 		LocalOffset: 544,100,1024, 544,-100,1024
 		ReloadingCondition: reload-line-air
 		PauseOnCondition: reload-line-ground
 		RequiresCondition: gatling == 1 && chainguns
 	Armament@aa-line-2:
 		Name: secondary
-		Weapon: AAGatlingLine3
+		Weapon: AAGatlingSubLine3
 		LocalOffset: 544,100,1024, 544,-100,1024
 		ReloadingCondition: reload-line-air
 		PauseOnCondition: reload-line-ground
@@ -473,7 +473,6 @@ floater:
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
-		BuildPaletteOrder: 80
 		Description: Large ocean creature capable of dealing heavy damage in close combat.\nCan move to land.\n\n  Strong vs Ships\n\nAbilities:\n- Can remove Squids from ships by attacking them\n- Can detect Stealth units\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
 		BuildDuration: 375
 	Valued:
@@ -560,7 +559,7 @@ strt:
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.3
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 20
 		Description: Light amphibious tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads
 		BuildDuration: 375
 		BuildDurationModifier: 100

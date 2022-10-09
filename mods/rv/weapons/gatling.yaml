@@ -152,6 +152,56 @@ AAGatlingHolo3:
 	Warhead@1Dam: SpreadDamage
 		Damage: 0
 
+#Gatling Sub AA Weapon:
+
+AAGatlingSub:
+	Inherits: ^Gatling
+	ReloadDelay: 6
+	BurstDelays: 3
+	Range: 12c0
+	Burst: 2
+	ValidTargets: Air
+	Projectile: InstantHit
+		Blockable: false
+	Warhead@1Dam: SpreadDamage
+		Damage: 1000
+		Versus:
+			Light: 65
+		ValidTargets: Air
+
+AAGatlingSub2:
+	Inherits: AAGatlingSub
+	ReloadDelay: 4
+	BurstDelays: 2
+	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+
+AAGatlingSub3:
+	Inherits: AAGatlingSub
+	ReloadDelay: 2
+	BurstDelays: 1
+	Report: bgatweaa.wav, bgatweab.wav, bgatweac.wav, bgatwead.wav
+
+AAGatlingSubLine:
+	Inherits: AGGatlingLine
+	Range: 12c0
+	ValidTargets: Air
+	InvalidTargets: Ground, Water
+	Projectile: BulletAS
+		Blockable: false
+	Warhead@Line: TargetDamage
+		ValidTargets: Air
+		InvalidTargets: Ground, Water
+
+AAGatlingSubLine2:
+	Inherits: AAGatlingSubLine
+	ReloadDelay: 4
+	BurstDelays: 2
+
+AAGatlingSubLine3:
+	Inherits: AAGatlingSubLine
+	ReloadDelay: 2
+	BurstDelays: 1
+
 #Gatling Tank AG Heroic Weapon:
 
 AGGatlingE:
@@ -203,7 +253,6 @@ AAGatlingLine2E:
 AAGatlingLine3E:
 	Inherits: AAGatlingLine3
 	Burst: 4
-
 
 #Gatling Cannon AG Weapon:
 

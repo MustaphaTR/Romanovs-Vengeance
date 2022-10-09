@@ -17,7 +17,7 @@ dest:
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Ship.Civilian
+		Queue: Ship.Civilian # Ship.Shared, Ship.Allies
 		Prerequisites: gaairc, ~techlevel.3
 		BuildPaletteOrder: 80
 		Description: Allied Main Battle Ship armed with cannons and\nan Osprey helicopter.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
@@ -135,7 +135,7 @@ aegis:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 700
+		Cost: 900
 	Tooltip:
 		Name: Aegis Cruiser
 	Tooltip@NoRow:
@@ -143,7 +143,7 @@ aegis:
 	Selectable:
 		Bounds: 1448, 3861, 0, -289
 	Health:
-		HP: 30000
+		HP: 40000
 	Armor:
 		Type: Light
 	Mobile:

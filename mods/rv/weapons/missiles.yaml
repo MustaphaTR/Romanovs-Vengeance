@@ -185,7 +185,7 @@ GradTuskE:
 GradTuskCryo:
 	Inherits: GradTusk
 	Warhead@4Con: GrantExternalCondition
-		Range: 172
+		Range: 256
 		Duration: 500
 		Condition: cryo
 		ValidTargets: Ground, Water
@@ -194,7 +194,7 @@ GradTuskCryo:
 GradTuskCryoE:
 	Inherits: GradTuskE
 	Warhead@4Con: GrantExternalCondition
-		Range: 172
+		Range: 256
 		Duration: 500
 		Condition: cryo
 		ValidTargets: Ground, Water
@@ -338,7 +338,7 @@ Maverick2AAE:
 Maverick2Cryo:
 	Inherits: Maverick2
 	Warhead@4Con: GrantExternalCondition
-		Range: 172
+		Range: 256
 		Duration: 500
 		Condition: cryo
 		ValidTargets: Ground, Water
@@ -347,7 +347,7 @@ Maverick2Cryo:
 Maverick2CryoE:
 	Inherits: Maverick2E
 	Warhead@4Con: GrantExternalCondition
-		Range: 172
+		Range: 256
 		Duration: 500
 		Condition: cryo
 		ValidTargets: Ground, Water
@@ -356,7 +356,7 @@ Maverick2CryoE:
 Maverick2AACryo:
 	Inherits: Maverick2AA
 	Warhead@4Con: GrantExternalCondition
-		Range: 172
+		Range: 256
 		Duration: 500
 		Condition: cryo
 		ValidTargets: Air
@@ -365,7 +365,7 @@ Maverick2AACryo:
 Maverick2AACryoE:
 	Inherits: Maverick2AAE
 	Warhead@4Con: GrantExternalCondition
-		Range: 172
+		Range: 256
 		Duration: 500
 		Condition: cryo
 		ValidTargets: Air
@@ -577,6 +577,92 @@ OutpostMissile:
 			Rocket: 200
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: SmallCrater
+
+HydroMissile:
+	Inherits: HoverMissile
+	Range: 8c0
+	Projectile: Missile
+		RangeLimit: 14c512
+
+HydroMissileE:
+	Inherits: HoverMissileE
+	Range: 8c0
+	Projectile: Missile
+		RangeLimit: 14c512
+
+HydroMissileAA:
+	Inherits: HoverMissileAA
+	Range: 12c0
+	Projectile: Missile
+		RangeLimit: 18c512
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 15
+			Flak: 15
+			Plate: 10
+			Light: 100
+			Medium: 100
+			Heavy: 75
+			Wood: 55
+			Steel: 65
+			Concrete: 50
+			Drone: 20
+			Rocket: 200
+
+HydroMissileAAE:
+	Inherits: HoverMissileAAE
+	Range: 12c0
+	Projectile: Missile
+		RangeLimit: 18c512
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 15
+			Flak: 15
+			Plate: 10
+			Light: 100
+			Medium: 100
+			Heavy: 75
+			Wood: 55
+			Steel: 65
+			Concrete: 50
+			Drone: 20
+			Rocket: 200
+
+HydroMissileCryo:
+	Inherits: HydroMissile
+	Warhead@4Con: GrantExternalCondition
+		Range: 256
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+HydroMissileCryoE:
+	Inherits: HydroMissileE
+	Warhead@4Con: GrantExternalCondition
+		Range: 256
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Ground, Water
+		InvalidTargets: IronCurtained, ForceShielded
+
+HydroMissileAACryo:
+	Inherits: HydroMissileAA
+	Warhead@4Con: GrantExternalCondition
+		Range: 256
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Air
+		InvalidTargets: IronCurtained, ForceShielded
+
+HydroMissileAACryoE:
+	Inherits: HydroMissileAAE
+	Warhead@4Con: GrantExternalCondition
+		Range: 256
+		Duration: 500
+		Condition: cryo
+		ValidTargets: Air
+		InvalidTargets: IronCurtained, ForceShielded
 
 MissileLauncher:
 	Inherits: ^Missile
