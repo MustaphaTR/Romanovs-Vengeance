@@ -1,8 +1,10 @@
 yhvr:
 	Inherits: ^AmphibiousTransport
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.1
+		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed\n\nUpgradeable with:\n- Grinder Treads
 	Voiced:
 		VoiceSet: YuriAmphibiousTransportVoice
 
@@ -550,6 +552,7 @@ strt:
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -558,7 +561,7 @@ strt:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.3
 		BuildPaletteOrder: 70
-		Description: Light amphibious tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft
+		Description: Light amphibious tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
