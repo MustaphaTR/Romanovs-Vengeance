@@ -563,3 +563,65 @@ password-protected = Şifre korumalı
 waiting-for-players = Oyuncu bekliyor
 server-shutting-down = Sunucu kapatılıyor
 unknown-server-state = Bilinmeyen sunucu durumu
+
+## Game
+saved-screenshot = Ekran görüntüsü { $filename } kaydedildi.
+
+## ChatCommands
+invalid-command = { $name } geçerli bir komut değil.
+
+## DebugVisualizationCommands
+combat-geometry-description = savaş geometrisi kaplamasını ayarlar.
+render-geometry-description = render geometrisi kaplamasını ayarlar.
+screen-map-overlay-description = ekran haritası kaplamasını ayarlar.
+depth-buffer-description = derinlik tamponu kaplamasını ayarlar.
+actor-tags-overlay-description = aktör etiketleri kaplamasını ayarlar.
+
+## DevCommands
+cheats-disabled = Hileler devre dışı.
+invalid-cash-amount = Geçersiz para değeri.
+toggle-visibility = görünürlülük konrollerini ve haritayı ayarlar.
+give-cash = varsayılan ya da belirtilen miktarda para verir.
+give-cash-all = tüm oyunculara ve yz'lara varsayılan ya da belirtilen miktarda para verir.
+instant-building = anlık inşaayı ayarlar.
+build-anywhere = heryere inşa etme yeteneğini ayarlar.
+unlimited-power = sınırsız gücü ayarlar.
+enable-tech = her ünite ve binayı yapabilmeyi ayarlar.
+fast-charge = neredeyse anlık destek kuvvet dolumunu ayarlar.
+dev-cheat-all = bütün hileleri ayarlayıp biraz harçlık verir.
+dev-crash = oyunu çökertir.
+levelup-actor = seçili aktörlere belirtilen miktarda seviye ekler.
+player-experience = seçili aktörlerin sahibine/sahiplerine belirtilen miktarda oyuncu tecrübesi ekler.
+power-outage = seçili aktörlerin sahibinin/sahiplerinin 5 saniyelik güç kesintisine düşmesine sebep olur.
+kill-selected-actors = seçili aktörleri öldürür.
+dispose-selected-actors = seçili aktörleri kaldırır.
+
+## HelpCommands
+available-commands = Kullanılabilir komutlar şunlardır:
+no-description = açıklama mevcut değil.
+help-description = çeşitli komutlar üzerinde kullanışlı bilgiler verir
+
+## PlayerCommands
+pause-description = oyunu duraklatır ya da devam ettirir
+surrender-description = her şeyi yok edip oyunu kaybetmenize sebep olur
+
+## DeveloperMode
+cheat-used = Hile kullanıldı: { $cheat }, Kullanan: { $player }{ $suffix }
+
+## CustomTerrainDebugOverlay
+custom-terrain-debug-overlay-description = özel arazi hata bulma kaplamasını ayarlar.
+
+## CellTriggerOverlay
+cell-trigger-overlay-description = kod tetikleyicileri kaplamasını ayarlar.
+
+## ExitsDebugOverlay
+exits-debug-overlay-description = Fabrika çıkışlarını gösterir.
+
+## HierarchicalPathFinderOverlay
+hpf-overlay-description = hiyeralşik yol bulucu kaplamasını ayarlar.
+
+## PathFinderOverlay
+path-debug-description = yol aramalarının görselleştirilmesini ayarlar.
+
+## TerrainGeometryOverlay
+terrain-geometry-overlay = arazi geometrisi kaplamasını ayarlar.
