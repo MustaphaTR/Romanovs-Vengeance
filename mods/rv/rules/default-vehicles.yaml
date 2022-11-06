@@ -273,8 +273,10 @@
 		Type: Light
 	Mobile:
 		Speed: 90
-		TurnSpeed: 32
+		TurnSpeed: 16
 		Locomotor: heavyamphibious
+		TurnsWhileMoving: true
+		TerrainOrientationAdjustmentMargin: -1
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
 	Crushable:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
