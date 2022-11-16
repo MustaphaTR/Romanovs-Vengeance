@@ -1,3 +1,12 @@
+## MapOptions, MissionBrowserLogic
+slowest = En Yavaş
+slower = Daha Yavaş
+normal = Normal
+fast = Hızlı
+faster = Daha Hızlı
+fastest = En Hızlı
+ludicrous = Aşırı Hızlı
+
 ## Server Orders
 custom-rules = Bu harita özel kurallar içermektedir. Oyun deneyimi değişebilir.
 map-bots-disabled = Botlar bu haritada devre dışı bırakılmışdır.
@@ -422,6 +431,9 @@ delete-map-accept = Sil
 delete-all-maps-title = Haritaları sil
 delete-all-maps-prompt = Bu sayfadaki tüm haritalar silinsin mi?
 delete-all-maps-accept = Sil
+
+order-maps-players = Oyuncu Sayısı
+order-maps-date = Değiştirme Tarihi
 
 ## MissionBrowserLogic
 no-video-title = Video yüklenmemiş
