@@ -637,3 +637,126 @@ path-debug-description = yol aramalarının görselleştirilmesini ayarlar.
 
 ## TerrainGeometryOverlay
 terrain-geometry-overlay = arazi geometrisi kaplamasını ayarlar.
+
+## Shroud
+fog-of-war =
+    .label = Savaş Sisi
+    .description = Line of sight is required to view enemy forces
+
+explored-map =
+    .label = Keşfedilmiş Harita
+    .description = Initial map shroud is revealed
+
+## DeveloperMode
+debug-menu =
+    .label = Hata Ayıklama Menüsü
+    .description = Hileleri ve geliştirici komutlarını açar
+
+## CrateSpawner
+crates =
+    .label = Kutular
+    .description = Collect crates with units to receive random bonuses or penalties
+
+## MapBuildRadius
+ally-build-radius =
+    .label = Build off Allies
+    .description = Allow allies to place structures inside your build area
+
+build-radius =
+    .label = İnşaa Alanı Sınırı
+    .description = Bina yerleştirmesini İnşaat Alanlarının etrafıyla sınırlar
+
+## MapOptions
+short-game =
+    .label = Kısa Oyun
+    .description = Players are defeated when their bases are destroyed
+
+tech-level =
+    .label = Teknoloji Seviyesi
+    .description = The units and abilities that players can use
+
+game-speed =
+    .label = Oyun Hızı
+    .description = The rate at which time passes
+
+## MapStartingLocations
+separate-team-spawns =
+    .label = Separate Team Spawns
+    .description = Başlangıç noktası atanmamış oyuncular düşmanlardan mümkün olduğunca uzakta başlar
+
+## SpawnStartingUnits
+starting-units =
+    .label = Başlangıç Birlikleri
+    .description = The units that players start the game with
+
+## TimeLimitManager
+time-limit =
+    .label = Oyun Süresi
+    .description = Bu süre aşıldıktan sonra en yüksek skora sahip oyuncu ya da takım oyunu kazanır
+
+no-time-limit = Sınırsız
+time-limit-options = { $minutes } dakika
+
+time-limit-expired = Oyun süresi sona erdi.
+
+## Player
+redeployable-mcvs =
+    .label = Redeployable MCVs
+    .description = Allow undeploying Construction Yard
+
+free-minimap =
+    .label = Free Minimap
+    .description = Minimap is active without a building to enable it
+
+limit-super-weapons =
+    .label = Süper Silahları Sınırla
+    .description = Only 1 of each super weapon can be built by a player
+
+tech-build-area =
+    .label = Tech Build Area
+    .description = Allow building placement around tech structures
+
+instant-capture =
+    .label = Instant Capture
+    .description = Engineers can enter a building without waiting to capture
+
+multiqueue =
+    .label = MultiQueue
+    .description = Each production facility can produce individually
+
+upgrades-option =
+    .label = Geliştirmeler
+    .description = Enables researching upgrades that improve existing units
+
+domination-option =
+    .label = Domination
+    .description = Control the flags on the map to win
+
+megawealth-option =
+    .label = Megawealth
+    .description = Removes all the Ore on the map and makes the economy dependent on Oil Derricks
+
+show-owner-name =
+    .label = Sahip Adını Göster
+    .description = Show name and flag of the owner of a unit on its tooltip
+
+sudden-death =
+    .label = Ani Ölüm
+    .description = Oyuncular MİA üretemez ve başlangıçta verileni kaybettiklerinde oyunu kaybederler
+
+king-of-the-hill =
+    .label = King of the Hill
+    .description = Capture and hold the Psychic Beacon on the map to win
+
+regicide =
+    .label = Regicide
+    .description = Kazanmak için düşman liderini öldürün
+
+## World
+no-bases = Üs Yok
+mcv-only = Sadece MİA
+mcv-and-dog = MİA ve Köpek
+light-support = Hafif Destek
+medium-support = Orta Destek
+heavy-support = Ağır Destek
+unholy-alliance = Unholy Alliance
