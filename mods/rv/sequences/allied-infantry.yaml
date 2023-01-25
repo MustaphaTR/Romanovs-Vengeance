@@ -1,6 +1,7 @@
 engineer:
 	Inherits: ^Infantry
-	Defaults: bits/infantry/engineer
+	Defaults:
+		Filename: bits/infantry/engineer.shp
 	shoot:
 		Start: 164
 		Length: 6
@@ -29,12 +30,15 @@ engineer:
 	swim-shoot:
 		Frames: 253, 259, 255, 271, 277, 283, 289, 295
 		Facings: 8
-	icon: cameo|engnicon
+	icon:
+		Filename: cameo|engnicon.shp
 
 adog:
 	Inherits: ^BasicInfantry
-	Defaults: conquer|adog
-	dot: dot
+	Defaults:
+		Filename: conquer|adog.shp
+	dot:
+		Filename: dot.shp
 		ZOffset: -9999
 	cheer:
 		Start: 164
@@ -60,34 +64,42 @@ adog:
 		Start: 116
 		Length: 6
 		Facings: 8
-	shoot: conquer|adogp
+	shoot:
+		Filename: conquer|adogp.shp
 		Length: 1
 		Facings: 32
 	paradrop:
 		Start: 11
-	swim-stand: bits/infantry/adogs
+	swim-stand:
+		Filename: bits/infantry/adogs.shp
 		Facings: 8
 		Length: 6
 		Tick: 100
-	swim-run: bits/infantry/adogs
+	swim-run:
+		Filename: bits/infantry/adogs.shp
 		Start: 48
 		Length: 6
 		Facings: 8
 		Tick: 100
-	swim-die1: bits/infantry/adogs
+	swim-die1:
+		Filename: bits/infantry/adogs.shp
 		Start: 96
 		Length: 15
-	swim-die2: bits/infantry/adogs
+	swim-die2:
+		Filename: bits/infantry/adogs.shp
 		Start: 111
 		Length: 15
-	swim-jump: bits/infantry/adogs
+	swim-jump:
+		Filename: bits/infantry/adogs.shp
 		Start: 126
 		Length: 6
 		Facings: 8
-	icon: cameo|adogicon
+	icon:
+		Filename: cameo|adogicon.shp
 
 dlph:
-	Defaults: conquer|dlph
+	Defaults:
+		Filename: conquer|dlph.shp
 	stand:
 		Start: 48
 		Facings: -8
@@ -112,12 +124,15 @@ dlph:
 		Frames: 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102
 		Length: 6
 		Facings: -8
-	icon: dlphicon
+	icon:
+		Filename: dlphicon.shp
 
 e1:
 	Inherits: ^ArmedInfantry
-	Defaults: conquer|gi
-	dot: dot
+	Defaults:
+		Filename: conquer|gi.shp
+	dot:
+		Filename: dot.shp
 		ZOffset: -9999
 	run:
 		Tick: 120
@@ -131,13 +146,16 @@ e1:
 		Start: 315
 		Length: 6
 		Facings: 8
-	deployed-fortifications: bits/infantry/giu
+	deployed-fortifications:
+		Filename: bits/infantry/giu.shp
 		Start: 292
 		Facings: 8
-	deploy-fortifications: bits/infantry/giu
+	deploy-fortifications:
+		Filename: bits/infantry/giu.shp
 		Start: 300
 		Length: 15
-	shoot-deployed-fortifications: bits/infantry/giu
+	shoot-deployed-fortifications:
+		Filename: bits/infantry/giu.shp
 		Start: 315
 		Length: 6
 		Facings: 8
@@ -145,110 +163,137 @@ e1:
 		Start: 363
 	cheer:
 		Start: 364
-	icon: cameo|giicon
+	icon:
+		Filename: cameo|giicon.shp
 
 snipe:
 	Inherits: ^ArmedInfantry
-	Defaults: conquer|snipe
+	Defaults:
+		Filename: conquer|snipe.shp
 	paradrop:
 		Start: 292
-	icon: cameo|snipicon
+	icon:
+		Filename: cameo|snipicon.shp
 
 spy:
 	Inherits: ^Infantry
 	Inherits@SWIMSUIT: ^WithSwimsuit
-	Defaults: conquer|spy
+	Defaults:
+		Filename: conquer|spy.shp
 	liedown:
 		Start: 164
 	standup:
 		Start: 180
 	cheer:
 		Start: 196
-	paradrop: bits/infantry/spyfix
+	paradrop:
+		Filename: bits/infantry/spyfix.shp
 		Start: 0
-	icon: cameo|spyicon
+	icon:
+		Filename: cameo|spyicon.shp
 
 seal:
 	Inherits: ^ArmedInfantry
 	Inherits@SWIMSUIT: ^WithSwimsuit
-	Defaults: conquer|seal
+	Defaults:
+		Filename: conquer|seal.shp
 	run:
 		Tick: 120
 	cheer:
 		Start: 603
 	paradrop:
 		Start: 602
-	snow-stand: conquer|seala
+	snow-stand:
+		Filename: conquer|seala.shp
 		Facings: 8
-	snow-run: conquer|seala
+	snow-run:
+		Filename: conquer|seala.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 120
-	snow-idle1: conquer|seala
+	snow-idle1:
+		Filename: conquer|seala.shp
 		Start: 56
 		Length: 15
 		Tick: 120
-	snow-idle2: conquer|seala
+	snow-idle2:
+		Filename: conquer|seala.shp
 		Start: 71
 		Length: 15
 		Tick: 120
-	snow-die1: conquer|seala
+	snow-die1:
+		Filename: conquer|seala.shp
 		Start: 134
 		Length: 15
-	snow-die2: conquer|seala
+	snow-die2:
+		Filename: conquer|seala.shp
 		Start: 149
 		Length: 15
-	snow-shoot: conquer|seala
+	snow-shoot:
+		Filename: conquer|seala.shp
 		Start: 164
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-snow-shoot: conquer|seala
+	prone-snow-shoot:
+		Filename: conquer|seala.shp
 		Start: 212
 		Length: 6
 		Facings: 8
 		Tick: 80
-	snow-liedown: conquer|seala
+	snow-liedown:
+		Filename: conquer|seala.shp
 		Start: 260
 		Length: 2
 		Facings: 8
-	snow-standup: conquer|seala
+	snow-standup:
+		Filename: conquer|seala.shp
 		Start: 276
 		Length: 2
 		Facings: 8
-	prone-snow-stand: conquer|seala
+	prone-snow-stand:
+		Filename: conquer|seala.shp
 		Frames: 86, 92, 98, 104, 110, 116, 122, 128
 		Facings: 8
-	prone-snow-run: conquer|seala
+	prone-snow-run:
+		Filename: conquer|seala.shp
 		Start: 86
 		Length: 6
 		Facings: 8
 		Tick: 100
-	snow-cheer: conquer|seala
+	snow-cheer:
+		Filename: conquer|seala.shp
 		Start: 603
 		Length: 8
 		Tick: 120
-	snow-paradrop: conquer|seala
+	snow-paradrop:
+		Filename: conquer|seala.shp
 		Start: 602
-	icon: cameo|sealicon
+	icon:
+		Filename: cameo|sealicon.shp
 
 ccomand:
 	Inherits: seal
-	Defaults: conquer|ccomand
+	Defaults:
+		Filename: conquer|ccomand.shp
 	cheer:
 		Start: 340
 	-paradrop:
-	icon: cameo|ccomicon
+	icon:
+		Filename: cameo|ccomicon.shp
 
 ptroop:
 	Inherits: yuri
-	Defaults: conquer|ptroop
-	icon: cameo|psicicon
+	Defaults:
+		Filename: conquer|ptroop.shp
+	icon:
+		Filename: cameo|psicicon.shp
 
 tany:
 	Inherits: ^ArmedInfantry
-	Defaults: conquer|tany
+	Defaults:
+		Filename: conquer|tany.shp
 	run:
 		Tick: 120
 	swim-stand:
@@ -288,63 +333,79 @@ tany:
 		Tick: 120
 	paradrop:
 		Start: 602
-	snow-stand: bits/infantry/tanya
+	snow-stand:
+		Filename: bits/infantry/tanya.shp
 		Facings: 8
-	snow-run: bits/infantry/tanya
+	snow-run:
+		Filename: bits/infantry/tanya.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 120
-	snow-idle1: bits/infantry/tanya
+	snow-idle1:
+		Filename: bits/infantry/tanya.shp
 		Start: 56
 		Length: 15
 		Tick: 120
-	snow-idle2: bits/infantry/tanya
+	snow-idle2:
+		Filename: bits/infantry/tanya.shp
 		Start: 71
 		Length: 15
 		Tick: 120
-	snow-die1: bits/infantry/tanya
+	snow-die1:
+		Filename: bits/infantry/tanya.shp
 		Start: 134
 		Length: 15
-	snow-die2: bits/infantry/tanya
+	snow-die2:
+		Filename: bits/infantry/tanya.shp
 		Start: 149
 		Length: 15
-	snow-shoot: bits/infantry/tanya
+	snow-shoot:
+		Filename: bits/infantry/tanya.shp
 		Start: 164
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-snow-shoot: bits/infantry/tanya
+	prone-snow-shoot:
+		Filename: bits/infantry/tanya.shp
 		Start: 212
 		Length: 6
 		Facings: 8
 		Tick: 80
-	snow-liedown: bits/infantry/tanya
+	snow-liedown:
+		Filename: bits/infantry/tanya.shp
 		Start: 260
 		Length: 2
 		Facings: 8
-	snow-standup: bits/infantry/tanya
+	snow-standup:
+		Filename: bits/infantry/tanya.shp
 		Start: 276
 		Length: 2
 		Facings: 8
-	prone-snow-stand: bits/infantry/tanya
+	prone-snow-stand:
+		Filename: bits/infantry/tanya.shp
 		Frames: 86, 92, 98, 104, 110, 116, 122, 128
 		Facings: 8
-	prone-snow-run: bits/infantry/tanya
+	prone-snow-run:
+		Filename: bits/infantry/tanya.shp
 		Start: 86
 		Length: 6
 		Facings: 8
 		Tick: 100
-	snow-cheer: bits/infantry/tanya
+	snow-cheer:
+		Filename: bits/infantry/tanya.shp
 		Start: 603
 		Length: 8
 		Tick: 120
-	snow-paradrop: bits/infantry/tanya
+	snow-paradrop:
+		Filename: bits/infantry/tanya.shp
 		Start: 602
-	icon: cameo|tanyicon
+	icon:
+		Filename: cameo|tanyicon.shp
 
 jumpjet:
-	Defaults: conquer|rock
+	Defaults:
+		Filename: conquer|rock.shp
 		Length: 6
 		Facings: 8
 	stand:
@@ -383,31 +444,38 @@ jumpjet:
 		Length: 15
 		Facings: 2
 		Tick: 80
-	die4: nukedie
+	die4:
+		Filename: nukedie.shp
 		Length: *
 		Facings: 1
 		Tick: 50
-	die5: yuridie
+	die5:
+		Filename: yuridie.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die6: electro
+	die6:
+		Filename: electro.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die7: virusd
+	die7:
+		Filename: virusd.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die8: brutdie
+	die8:
+		Filename: brutdie.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die9: gendeath
+	die9:
+		Filename: gendeath.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die10: bits/animations/nukedieorange
+	die10:
+		Filename: bits/animations/nukedieorange.shp
 		Length: *
 		Facings: 1
 		Tick: 80
@@ -433,26 +501,31 @@ jumpjet:
 		Length: 9
 		Facings: 1
 		Tick: 100
-	shadow: infshdw
+	shadow:
+		Filename: infshdw.shp
 		Start: 1
 		Length: 1
 		Facings: 1
-	icon: cameo|jjeticon
+	icon:
+		Filename: cameo|jjeticon.shp
 		Length: 1
 		Facings: 1
 
 jumpjet.husk:
-	idle: conquer|rock
+	idle:
+		Filename: conquer|rock.shp
 		Start: 340
 		Length: 16
 		Facings: 2
 		Tick: 120
-	shadow: infshdw
+	shadow:
+		Filename: infshdw.shp
 		Start: 1
 
 cleg:
 	Inherits: ^BasicInfantry
-	Defaults: conquer|cleg
+	Defaults:
+		Filename: conquer|cleg.shp
 	run:
 		Start: 117
 	shoot:
@@ -471,13 +544,16 @@ cleg:
 		Start: 116
 	cheer:
 		Start: 165
-	icon: cameo|clegicon
+	icon:
+		Filename: cameo|clegicon.shp
 
 # Yuri's Revenge Allied Infantry
 ggi:
 	Inherits: ^ArmedInfantry
-	Defaults: conqmd|ggi
-	dot: dot
+	Defaults:
+		Filename: conqmd|ggi.shp
+	dot:
+		Filename: dot.shp
 		ZOffset: -9999
 	run:
 		Tick: 120
@@ -503,65 +579,81 @@ ggi:
 		Start: 371
 	cheer:
 		Start: 196
-	stand-portable: bits/infantry/ggir
+	stand-portable:
+		Filename: bits/infantry/ggir.shp
 		Facings: 8
-	run-portable: bits/infantry/ggir
+	run-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 120
-	idle1-portable: bits/infantry/ggir
+	idle1-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 56
 		Length: 15
 		Tick: 120
-	idle2-portable: bits/infantry/ggir
+	idle2-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 71
 		Length: 15
 		Tick: 120
-	die-portable1: bits/infantry/ggir
+	die-portable1:
+		Filename: bits/infantry/ggir.shp
 		Start: 134
 		Length: 15
-	die-portable2: bits/infantry/ggir
+	die-portable2:
+		Filename: bits/infantry/ggir.shp
 		Start: 149
 		Length: 15
-	liedown-portable: bits/infantry/ggir
+	liedown-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 164
 		Length: 2
 		Facings: 8
-	prone-stand-portable: bits/infantry/ggir
+	prone-stand-portable:
+		Filename: bits/infantry/ggir.shp
 		Frames: 86, 92, 98, 104, 110, 116, 122, 128
 		Facings: 8
-	prone-run-portable: bits/infantry/ggir
+	prone-run-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 86
 		Length: 6
 		Facings: 8
 		Tick: 100
-	standup-portable: bits/infantry/ggir
+	standup-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 182
 		Length: 2
 		Facings: 8
-	shoot-portable: bits/infantry/ggir
+	shoot-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 204
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-shoot-portable: bits/infantry/ggir
+	prone-shoot-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 252
 		Length: 6
 		Facings: 8
 		Tick: 80
-	paradrop-portable: bits/infantry/ggir
+	paradrop-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 300
-	cheer-portable: bits/infantry/ggir
+	cheer-portable:
+		Filename: bits/infantry/ggir.shp
 		Start: 196
 		Length: 8
 		Tick: 120
-	icon: cameomd|gdgiicon
+	icon:
+		Filename: cameomd|gdgiicon.shp
 
 # Custom Allied Infantry
 gren:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/gren
+	Defaults:
+		Filename: bits/infantry/gren.shp
 	run:
 		Length: 8
 		Tick: 120
@@ -600,60 +692,74 @@ gren:
 		Length: 25
 	paradrop:
 		Start: 541
-	stand-empammo: bits/infantry/grenu
+	stand-empammo:
+		Filename: bits/infantry/grenu.shp
 		Facings: 8
-	run-empammo: bits/infantry/grenu
+	run-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 8
 		Length: 8
 		Facings: 8
 		Tick: 120
-	idle1-empammo: bits/infantry/grenu
+	idle1-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 376
 		Length: 40
 		Tick: 25
-	idle2-empammo: bits/infantry/grenu
+	idle2-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 416
 		Length: 25
 		Tick: 120
-	cheer-empammo: bits/infantry/grenu
+	cheer-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 416
 		Length: 25
 		Tick: 120
-	die-empammo1: bits/infantry/grenu
+	die-empammo1:
+		Filename: bits/infantry/grenu.shp
 		Start: 441
 		Length: 50
 		Tick: 20
-	die-empammo2: bits/infantry/grenu
+	die-empammo2:
+		Filename: bits/infantry/grenu.shp
 		Start: 491
 		Length: 50
 		Tick: 20
-	liedown-empammo: bits/infantry/grenu
+	liedown-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 360
 		Length: 2
 		Facings: 8
-	standup-empammo: bits/infantry/grenu
+	standup-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 344
 		Length: 2
 		Facings: 8
-	prone-stand-empammo: bits/infantry/grenu
+	prone-stand-empammo:
+		Filename: bits/infantry/grenu.shp
 		Frames: 168, 178, 188, 198, 208, 218, 228, 238
 		Facings: 8
-	prone-run-empammo: bits/infantry/grenu
+	prone-run-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 168
 		Length: 10
 		Facings: 8
 		Tick: 100
-	shoot-empammo: bits/infantry/grenu
+	shoot-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 72
 		Length: 12
 		Facings: 8
 		Tick: 80
-	prone-shoot-empammo: bits/infantry/grenu
+	prone-shoot-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 248
 		Length: 12
 		Facings: 8
 		Tick: 80
-	paradrop-empammo: bits/infantry/grenu
+	paradrop-empammo:
+		Filename: bits/infantry/grenu.shp
 		Start: 541
-	icon: bits/cameos/grenicon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/grenicon.png

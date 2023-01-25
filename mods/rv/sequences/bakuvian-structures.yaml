@@ -1,172 +1,205 @@
 babarr:
 	Defaults:
 		Offset: -15, -38
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: bgbarr
+	idle:
+		Filename: bgbarr.shp
+		TilesetFilenames:
+			SNOW: babarr.shp
+			SIMPLETERRAIN: btbarr.shp
 		ShadowStart: 2
-	damaged-idle: bgbarr
+	damaged-idle:
+		Filename: bgbarr.shp
+		TilesetFilenames:
+			SNOW: babarr.shp
+			SIMPLETERRAIN: btbarr.shp
 		Start: 1
 		ShadowStart: 3
-	idle-light: bgbarr_a
+	idle-light:
+		Filename: bgbarr_a.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btbarr_a.shp
 		Length: 6
 		ShadowStart: 12
 		Tick: 150
-		TilesetOverrides:
-			SNOW: GENERIC
-	damaged-idle-light: bgbarr_a
+	damaged-idle-light:
+		Filename: bgbarr_a.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btbarr_a.shp
 		Start: 6
 		Length: 6
 		ShadowStart: 18
 		Tick: 150
-		TilesetOverrides:
-			SNOW: GENERIC
-	make: bgbarrmk
+	make:
+		Filename: bgbarrmk.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btbarrmk.shp
 		Length: 31
 		ShadowStart: 31
-		TilesetOverrides:
-			SNOW: GENERIC
-	icon: bits/cameos/bbaricon
+	icon:
+		Filename: bits/cameos/bbaricon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 basops:
 	Defaults:
 		Offset: 0, -35
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: bgsops
+	idle:
+		Filename: bgsops.shp
+		TilesetFilenames:
+			SNOW: basops.shp
+			SIMPLETERRAIN: btsops.shp
 		ShadowStart: 3
 		Tick: 180
-	damaged-idle: bgsops
+	damaged-idle:
+		Filename: bgsops.shp
+		TilesetFilenames:
+			SNOW: basops.shp
+			SIMPLETERRAIN: btsops.shp
 		Start: 1
 		ShadowStart: 4
 		Tick: 180
-	idle-dish: bgsops_a
+	idle-dish:
+		Filename: bgsops_a.shp
+		TilesetFilenames:
+			SNOW: basops_a.shp
+			SIMPLETERRAIN: btsops_a.shp
 		Length: 16
 		Tick: 180
-	damaged-idle-dish: bgsops_a
+	damaged-idle-dish:
+		Filename: bgsops_a.shp
+		TilesetFilenames:
+			SNOW: basops_a.shp
+			SIMPLETERRAIN: btsops_a.shp
 		Start: 16
 		Length: 16
 		Tick: 180
-	idle-waves: bits/structures/water/bgsops_w
+	idle-waves:
+		Filename: bits/structures/water/bgsops_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	damaged-idle-waves: bits/structures/water/bgsops_w
+	damaged-idle-waves:
+		Filename: bits/structures/water/bgsops_w.shp
 		Start: 1
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: bgsopsmk
+	make:
+		Filename: bgsopsmk.shp
+		TilesetFilenames:
+			SNOW: basopsmk.shp
+			SIMPLETERRAIN: btsopsmk.shp
 		Length: 16
 		ShadowStart: 16
 		Tick: 90
-	icon: bits/cameos/sopsicon.png
+	icon:
+		Filename: bits/cameos/sopsicon.png
 		Offset: 0,0
-		AddExtension: false
-		UseTilesetCode: false
 
 baairf:
 	Defaults:
 		Offset: 30, -60
-		UseTilesetCode: true
-		TilesetOverrides:
-			SNOW: GENERIC
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: bgairf
+	idle:
+		Filename: bgairf.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btairf.shp
 		ShadowStart: 3
-	damaged-idle: bgairf
+	damaged-idle:
+		Filename: bgairf.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btairf.shp
 		Start: 1
 		ShadowStart: 4
-	idle-lights: bgairf_a
+	idle-lights:
+		Filename: bgairf_a.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btairf_a.shp
 		Length: 6
 		Tick: 150
-	idle-fans: bgairf_b
+	idle-fans:
+		Filename: bgairf_b.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btairf_b.shp
 		Length: 8
 		Tick: 150
-	idle-bib: bgairfbb
+	idle-bib:
+		Filename: bgairfbb.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btairfbb.shp
 		ShadowStart: 3
 		ZOffset: -2c0
-	idle-bib-damaged: bgairfbb
+	idle-bib-damaged:
+		Filename: bgairfbb.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btairfbb.shp
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -2c0
-	idle-waves: bits/structures/water/bgairf_w
+	idle-waves:
+		Filename: bits/structures/water/bgairf_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: bgairfmk
+	make:
+		Filename: bgairfmk.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: btairfmk.shp
 		Length: 21
-		TilesetOverrides:
-			SNOW: GENERIC
-	icon: bits/cameos/bairicon.png
+	icon:
+		Filename: bits/cameos/bairicon.png
 		Offset: 0,0
-		AddExtension: false
-		UseTilesetCode: false
 
 baacdm:
 	Defaults:
 		Offset: 0, -45
-	idle: bgacdm
+	idle:
+		Filename: bgacdm.shp
 		ShadowStart: 3
-	damaged-idle: bgacdm
+	damaged-idle:
+		Filename: bgacdm.shp
 		Start: 1
 		ShadowStart: 4
-	idle-flag: bgacdm_a
+	idle-flag:
+		Filename: bgacdm_a.shp
 		Length: 18
-	idle-waves: bits/structures/water/bgacdm_w
+	idle-waves:
+		Filename: bits/structures/water/bgacdm_w.shp
 		Tick: 200
 		ZOffset: -1c0
-	make: bgacdmmk
+	make:
+		Filename: bgacdmmk.shp
 		Length: 40
 		ShadowStart: 40
 		Tick: 60
-	icon: bits/cameos/acdmicon
+	icon:
+		Filename: bits/cameos/acdmicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 bamort:
 	Inherits@MUZZLE: ^WithCannonMuzzle
 	Defaults:
+		Filename: bamort.shp
 		Offset: 0, -15
-	idle: dot
+	idle:
+		Filename: dot.shp
 		ZOffset: -9999
-	turret: bgmort
+	turret:
+		Filename: bgmort.shp
 		Facings: 32
 		ShadowStart: 64
-	damaged-turret: bgmort
+	damaged-turret:
+		Filename: bgmort.shp
 		Facings: 32
 		Start: 32
 		ShadowStart: 96
-	make: bgmortmk
+	make:
+		Filename: bgmortmk.shp
 		Length: 14
 		ShadowStart: 14
-	idle-waves: gauwat
+	idle-waves:
+		Filename: gauwat.shp
 		Length: 15
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: cameo|xxicon
+	icon:
+		Filename: cameo|xxicon.shp
 		Offset: 0, 0
-		UseTilesetCode: false
 
 babarb:
 	Inherits: babarr
@@ -174,6 +207,7 @@ babarb:
 		FlipX: true
 		Offset: 15, -38
 	icon:
+		Filename: bits/cameos/bbaricon.shp
 		FlipX: false
 
 baairb:
@@ -182,4 +216,5 @@ baairb:
 		FlipX: true
 		Offset: -30, -60
 	icon:
+		Filename: bits/cameos/bairicon.png
 		FlipX: false

@@ -1411,6 +1411,7 @@ Player:
 		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		SuggestedNavyLeaderLocomotor: naval
 		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
+		IgnoredEnemyTargetTypes: Air
 	SquadManagerBotModule@no_bases:
 		RequiresCondition: enable-generic-ai && no_bases
 		SquadSize: 10
@@ -1430,15 +1431,16 @@ Player:
 		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		SuggestedNavyLeaderLocomotor: naval
 		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
+		IgnoredEnemyTargetTypes: Air
 	McvManagerBotModule@generic:
-		RequiresCondition: enable-generic-ai && !enable-vengeful-ai 
+		RequiresCondition: enable-generic-ai && !enable-vengeful-ai
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		McvFactoryTypes: gaweap, naweap, yaweap
 		MinimumConstructionYardCount: 2
 		MaxBaseRadius: 30
 	McvManagerBotModule@vengeful:
-		RequiresCondition: enable-vengeful-ai 
+		RequiresCondition: enable-vengeful-ai
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		McvFactoryTypes: gaweap, naweap, yaweap

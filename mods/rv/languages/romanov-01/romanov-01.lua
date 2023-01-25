@@ -150,13 +150,13 @@ WorldLoaded = function()
 	allies.Cash = 10000
 
 	InitObjectives(soviets)
-	RomanovPrisoners = soviets.AddPrimaryObjective("Free Premier Romanov from Prison.")
-	RomanovSurvive = soviets.AddPrimaryObjective("Romanov must survive.")
-	allies.AddPrimaryObjective("Do not let Romanov escape alive.")
+	RomanovPrisoners = AddPrimaryObjective(soviets, "free-premier-romanov")
+	RomanovSurvive = AddPrimaryObjective(soviets, "romanov-must-survive")
+	AddPrimaryObjective(allies, "dont-let-romanov-escape")
 
 	Intro()
 	SetUpPatrols()
 	SetUpWarnings()
-	
+
 	WorldLoadedCommandersPowers()
 end

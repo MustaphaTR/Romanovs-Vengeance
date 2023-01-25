@@ -1,6 +1,6 @@
 #region Copyright & License Information
 /*
- * Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+ * Copyright (c) The OpenRA Developers and Contributors
  * This file is part of OpenRA, which is free software. It is made
  * available to you under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of
@@ -95,7 +95,7 @@ namespace OpenRA.Mods.RA2.Traits
 	}
 
 	public class Mirage : PausableConditionalTrait<MirageInfo>, INotifyDamage, IEffectiveOwner, INotifyUnload, INotifyDemolition, INotifyInfiltration,
-		INotifyAttack, ITick, INotifyCreated, INotifyHarvesterAction
+		INotifyAttack, ITick, INotifyCreated, INotifyHarvesterAction, INotifyDockClient
 	{
 		[Sync]
 		private int remainingTime;
@@ -211,7 +211,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		void INotifyHarvesterAction.Harvested(Actor self, string resourceType) { }
 
-		void INotifyHarvesterAction.Docked()
+		void INotifyDockClient.Docked(Actor self, Actor host)
 		{
 			if (Info.RevealOn.HasFlag(MirageRevealType.Dock))
 			{
@@ -220,7 +220,7 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-		void INotifyHarvesterAction.Undocked()
+		void INotifyDockClient.Undocked(Actor self, Actor host)
 		{
 			isDocking = false;
 		}

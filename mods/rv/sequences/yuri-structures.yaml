@@ -1,272 +1,364 @@
 yacnst:
 	Defaults:
 		Offset: 4, -58
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygcnst_c
+	idle:
+		Filename: ygcnst_c.shp
+		TilesetFilenames:
+			SNOW: yacnst_c.shp
+			SIMPLETERRAIN: ytcnst_c.shp
 		Length: 1
 		ShadowStart: 2
 		Tick: 150
-	damaged-idle: ygcnst_c
+	damaged-idle:
+		Filename: ygcnst_c.shp
+		TilesetFilenames:
+			SNOW: yacnst_c.shp
+			SIMPLETERRAIN: ytcnst_c.shp
 		Start: 1
 		Length: 1
 		ShadowStart: 3
 		Tick: 150
-	make: ygcnstmk
+	make:
+		Filename: ygcnstmk.shp
+		TilesetFilenames:
+			SNOW: yacnstmk.shp
+			SIMPLETERRAIN: ytcnstmk.shp
 		Length: 27
 		ShadowStart: 27
-	idle-top: ygcnst_a
+	idle-top:
+		Filename: ygcnst_a.shp
+		TilesetFilenames:
+			SNOW: yacnst_a.shp
+			SIMPLETERRAIN: ytcnst_a.shp
 		Length: 3
 		ShadowStart: 6
 		Tick: 200
-	damaged-idle-top: ygcnst_a
+	damaged-idle-top:
+		Filename: ygcnst_a.shp
+		TilesetFilenames:
+			SNOW: yacnst_a.shp
+			SIMPLETERRAIN: ytcnst_a.shp
 		Start: 3
 		Length: 3
 		ShadowStart: 9
 		Tick: 150
-	idle-normal: ygcnst
+	idle-normal:
+		Filename: ygcnst.shp
+		TilesetFilenames:
+			SNOW: yacnst.shp
+			SIMPLETERRAIN: ytcnst.shp
 		ShadowStart: 3
 		ZOffset: -1024
-	damaged-idle-normal: ygcnst
+	damaged-idle-normal:
+		Filename: ygcnst.shp
+		TilesetFilenames:
+			SNOW: yacnst.shp
+			SIMPLETERRAIN: ytcnst.shp
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -1024
-	build: ygcnst_b
+	build:
+		Filename: ygcnst_b.shp
+		TilesetFilenames:
+			SNOW: yacnst_b.shp
+			SIMPLETERRAIN: ytcnst_b.shp
 		Length: 18
 		Tick: 150
 		ZOffset: 1c0
-	damaged-build: ygcnst_b
+	damaged-build:
+		Filename: ygcnst_b.shp
+		TilesetFilenames:
+			SNOW: yacnst_b.shp
+			SIMPLETERRAIN: ytcnst_b.shp
 		Start: 18
 		Length: 18
 		Tick: 150
 		ZOffset: 1c0
-	idle-waves: bits/structures/water/ygcnst_w
+	idle-waves:
+		Filename: bits/structures/water/ygcnst_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	flag-psicorps: psicyardflags
-		UseTilesetCode: false
-	flag-psinepal: psicyardflags
+	flag-psicorps:
+		Filename: psicyardflags.shp
+	flag-psinepal:
+		Filename: psicyardflags.shp
 		Start: 1
-		UseTilesetCode: false
-	flag-psisouth: psicyardflags
+	flag-psisouth:
+		Filename: psicyardflags.shp
 		Start: 2
-		UseTilesetCode: false
-	flag-psitrans: psicyardflags
+	flag-psitrans:
+		Filename: psicyardflags.shp
 		Start: 3
-		UseTilesetCode: false
-	flag-psimoon: psicyardflags
+	flag-psimoon:
+		Filename: psicyardflags.shp
 		Start: 4
-		UseTilesetCode: false
-	damaged-flag-psicorps: psicyardflags
+	damaged-flag-psicorps:
+		Filename: psicyardflags.shp
 		Start: 5
-		UseTilesetCode: false
-	damaged-flag-psinepal: psicyardflags
+	damaged-flag-psinepal:
+		Filename: psicyardflags.shp
 		Start: 6
-		UseTilesetCode: false
-	damaged-flag-psisouth: psicyardflags
+	damaged-flag-psisouth:
+		Filename: psicyardflags.shp
 		Start: 7
-		UseTilesetCode: false
-	damaged-flag-psitrans: psicyardflags
+	damaged-flag-psitrans:
+		Filename: psicyardflags.shp
 		Start: 8
-		UseTilesetCode: false
-	damaged-flag-psimoon: psicyardflags
+	damaged-flag-psimoon:
+		Filename: psicyardflags.shp
 		Start: 9
-		UseTilesetCode: false
-	icon: bits/cameos/yrcyicon.png
+	icon:
+		Filename: bits/cameos/yrcyicon.png
 		Offset: 0,0
-		UseTilesetCode: false
-		AddExtension: false
 
 yapowr:
 	Defaults:
 		Offset: 0, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: yapowr
+	idle:
+		Filename: ygpowr.shp
+		TilesetFilenames:
+			SNOW: yapowr.shp
+			SIMPLETERRAIN: ytpowr.shp
 		Length: 1
 		ShadowStart: 3
 		Tick: 150
-	damaged-idle: yapowr
+	damaged-idle:
+		Filename: ygpowr.shp
+		TilesetFilenames:
+			SNOW: yapowr.shp
+			SIMPLETERRAIN: ytpowr.shp
 		Start: 1
 		Length: 1
 		ShadowStart: 4
 		Tick: 150
-	empty: yapowr_a
+	empty:
+		Filename: ygpowr_a.shp
+		TilesetFilenames:
+			SNOW: yapowr_a.shp
+			SIMPLETERRAIN: ytpowr_a.shp
 		Length: 8
 		Tick: 150
-	damaged-empty: yapowr_a
+	damaged-empty:
+		Filename: ygpowr_a.shp
+		TilesetFilenames:
+			SNOW: yapowr_a.shp
+			SIMPLETERRAIN: ytpowr_a.shp
 		Start: 8
 		Length: 8
 		Tick: 150
-	loaded: yapowr_b
+	loaded:
+		Filename: ygpowr_b.shp
+		TilesetFilenames:
+			SNOW: yapowr_b.shp
+			SIMPLETERRAIN: ytpowr_b.shp
 		Length: 8
 		Tick: 150
-	damaged-loaded: yapowr_b
+	damaged-loaded:
+		Filename: ygpowr_b.shp
+		TilesetFilenames:
+			SNOW: yapowr_b.shp
+			SIMPLETERRAIN: ytpowr_b.shp
 		Start: 8
 		Length: 8
 		Tick: 150
-	idle-lights: yapowr_c
+	idle-lights:
+		Filename: ygpowr_c.shp
+		TilesetFilenames:
+			SNOW: yapowr_c.shp
+			SIMPLETERRAIN: ytpowr_c.shp
 		Length: 5
 		Tick: 200
-	damaged-idle-lights: yapowr_c
+	damaged-idle-lights:
+		Filename: ygpowr_c.shp
+		TilesetFilenames:
+			SNOW: yapowr_c.shp
+			SIMPLETERRAIN: ytpowr_c.shp
 		Start: 5
 		Length: 2
 		Tick: 200
-	idle-waves: bits/structures/water/ygpowr_w
+	idle-waves:
+		Filename: bits/structures/water/ygpowr_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: yapowrmk
+	make:
+		Filename: ygpowrmk.shp
+		TilesetFilenames:
+			SNOW: yapowrmk.shp
+			SIMPLETERRAIN: ytpowrmk.shp
 		Length: 23
 		ShadowStart: 23
-	icon: cameomd|ypwricon
+	icon:
+		Filename: cameomd|ypwricon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yabrck:
 	Defaults:
 		Offset: 15,-37
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygbrck
+	idle:
+		Filename: ygbrck.shp
+		TilesetFilenames:
+			SNOW: yabrck.shp
+			SIMPLETERRAIN: ytbrck.shp
 		ShadowStart: 3
-	damaged-idle: ygbrck
+	damaged-idle:
+		Filename: ygbrck.shp
+		TilesetFilenames:
+			SNOW: yabrck.shp
+			SIMPLETERRAIN: ytbrck.shp
 		Start: 1
 		ShadowStart: 4
-	idle-lights: ygbrck_a
+	idle-lights:
+		Filename: ygbrck_a.shp
+		TilesetFilenames:
+			SNOW: yabrck_a.shp
+			SIMPLETERRAIN: ytbrck_a.shp
 		Length: 8
 		ShadowStart: 16
 		Tick: 150
-	damaged-idle-lights: ygbrck_a
+	damaged-idle-lights:
+		Filename: ygbrck_a.shp
+		TilesetFilenames:
+			SNOW: yabrck_a.shp
+			SIMPLETERRAIN: ytbrck_a.shp
 		Start: 8
 		Length: 8
 		ShadowStart: 24
 		Tick: 150
-	make: ygbrckmk
+	make:
+		Filename: ygbrckmk.shp
+		TilesetFilenames:
+			SNOW: yabrckmk.shp
+			SIMPLETERRAIN: ytbrckmk.shp
 		Length: 25
 		ShadowStart: 25
-	icon: cameomd|brckicon
+	icon:
+		Filename: cameomd|brckicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yarefn:
 	Inherits@MUZZLE: ^WithMachineGunMuzzle
 	Defaults:
+		Filename: ygrefn.shp
+		TilesetFilenames:
+			SNOW: yarefn.shp
+			SIMPLETERRAIN: ytrefn.shp
 		Offset: 0, -31
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: yarefn
+	idle:
+		Filename: ygrefn.shp
+		TilesetFilenames:
+			SNOW: yarefn.shp
+			SIMPLETERRAIN: ytrefn.shp
 		ShadowStart: 3
-	damaged-idle: yarefn
+	damaged-idle:
+		Filename: ygrefn.shp
+		TilesetFilenames:
+			SNOW: yarefn.shp
+			SIMPLETERRAIN: ytrefn.shp
 		Start: 1
 		ShadowStart: 4
-	make: yarefnmk
+	make:
+		Filename: ygrefnmk.shp
+		TilesetFilenames:
+			SNOW: yarefnmk.shp
+			SIMPLETERRAIN: ytrefnmk.shp
 		Length: 17
 		ShadowStart: 17
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle-processing: yarefn_a
+	idle-processing:
+		Filename: ygrefn_a.shp
+		TilesetFilenames:
+			SNOW: yarefn_a.shp
+			SIMPLETERRAIN: ytrefn_a.shp
 		Length: 2
 		ShadowStart: 2
 		Tick: 150
-	damaged-idle-processing: yarefn_a
+	damaged-idle-processing:
+		Filename: ygrefn_a.shp
+		TilesetFilenames:
+			SNOW: yarefn_a.shp
+			SIMPLETERRAIN: ytrefn_a.shp
 		Length: 2
 		ShadowStart: 2
 		Tick: 150
-	icon: cameomd|sminicon
+	icon:
+		Filename: cameomd|sminicon.shp
+		TilesetFilenames:
 		Offset: 0,0
-		UseTilesetCode: false
+	muzzle:
+		Filename: yarefn.shp
+		TilesetFilenames:
 
 yarfn2:
 	Defaults:
 		Offset: -13, -53
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygrfn2
+	idle:
+		Filename: ygrfn2.shp
+		TilesetFilenames:
+			SNOW: yarfn2.shp
+			SIMPLETERRAIN: ytrfn2.shp
 		ShadowStart: 3
-	damaged-idle: ygrfn2
+	damaged-idle:
+		Filename: ygrfn2.shp
+		TilesetFilenames:
+			SNOW: yarfn2.shp
+			SIMPLETERRAIN: ytrfn2.shp
 		Start: 1
 		ShadowStart: 4
-	idle-drill: ygrfn2_a
+	idle-drill:
+		Filename: ygrfn2_a.shp
+		TilesetFilenames:
+			SNOW: yarfn2_a.shp
+			SIMPLETERRAIN: ytrfn2_a.shp
 		Length: 12
 		ShadowStart: 24
 		Tick: 120
-	damaged-idle-drill: ygrfn2_a
+	damaged-idle-drill:
+		Filename: ygrfn2_a.shp
+		TilesetFilenames:
+			SNOW: yarfn2_a.shp
+			SIMPLETERRAIN: ytrfn2_a.shp
 		Start: 12
 		Length: 12
 		ShadowStart: 32
 		Tick: 120
-	idle-waves: bits/structures/water/ygrfn2_w
+	idle-waves:
+		Filename: bits/structures/water/ygrfn2_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	damaged-idle-waves: bits/structures/water/ygrfn2_w
+	damaged-idle-waves:
+		Filename: bits/structures/water/ygrfn2_w.shp
 		Start: 1
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ygrfn2mk
+	make:
+		Filename: ygrfn2mk.shp
 		Length: 21
 		ShadowStart: 21
-		UseTilesetCode: false
-	idle-bib: ygrfn2bb
+	idle-bib:
+		Filename: ygrfn2bb.shp
+		TilesetFilenames:
+			SNOW: yarfn2bb.shp
+			SIMPLETERRAIN: ytrfn2bb.shp
 		ShadowStart: 3
 		ZOffset: -512
-	damaged-idle-bib: ygrfn2bb
+	damaged-idle-bib:
+		Filename: ygrfn2bb.shp
+		TilesetFilenames:
+			SNOW: yarfn2bb.shp
+			SIMPLETERRAIN: ytrfn2bb.shp
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -512
-	icon: bits/cameos/yrf2icon
+	icon:
+		Filename: bits/cameos/yrf2icon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yaweap:
 	Defaults:
+		Filename: ygweap.shp
+		TilesetFilenames:
+			SNOW: yaweap.shp
+			SIMPLETERRAIN: ytweap.shp
 		Offset: -30, -60
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 	idle:
 		ShadowStart: 3
 		ZOffset: -1536
@@ -274,663 +366,942 @@ yaweap:
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -1536
-	build-front: ygweap_1
+	build-front:
+		Filename: ygweap_1.shp
+		TilesetFilenames:
+			SNOW: yaweap_1.shp
+			SIMPLETERRAIN: ytweap_1.shp
 		ShadowStart: 2
 		ZOffset: -1024
-	damaged-build-front: ygweap_1
+	damaged-build-front:
+		Filename: ygweap_1.shp
+		TilesetFilenames:
+			SNOW: yaweap_1.shp
+			SIMPLETERRAIN: ytweap_1.shp
 		Start: 1
 		ShadowStart: 3
 		ZOffset: -1024
-	build-top: ygweap_2
+	build-top:
+		Filename: ygweap_2.shp
+		TilesetFilenames:
+			SNOW: yaweap_2.shp
+			SIMPLETERRAIN: ytweap_2.shp
 		ShadowStart: 2
 		ZOffset: 1024
-	damaged-build-top: ygweap_2
+	damaged-build-top:
+		Filename: ygweap_2.shp
+		TilesetFilenames:
+			SNOW: yaweap_2.shp
+			SIMPLETERRAIN: ytweap_2.shp
 		Start: 1
 		ShadowStart: 3
 		ZOffset: 1024
 	# TODO: ngweap_3 and ngweap_4 are used for producing flying actors
-	build-air-open: ygweap_3
+	build-air-open:
+		Filename: ygweap_3.shp
+		TilesetFilenames:
+			SNOW: yaweap_3.shp
+			SIMPLETERRAIN: ytweap_3.shp
 		ShadowStart: 2
-	damaged-air-open: ygweap_3
+	damaged-air-open:
+		Filename: ygweap_3.shp
+		TilesetFilenames:
+			SNOW: yaweap_3.shp
+			SIMPLETERRAIN: ytweap_3.shp
 		Start: 1
 		ShadowStart: 3
-	build-air-inside: ygweap_4
+	build-air-inside:
+		Filename: ygweap_4.shp
+		TilesetFilenames:
+			SNOW: yaweap_4.shp
+			SIMPLETERRAIN: ytweap_4.shp
 		ShadowStart: 2
-	damaged-air-inside: ygweap_4
+	damaged-air-inside:
+		Filename: ygweap_4.shp
+		TilesetFilenames:
+			SNOW: yaweap_4.shp
+			SIMPLETERRAIN: ytweap_4.shp
 		Start: 1
 		ShadowStart: 3
-	bib: ygweapbb
+	bib:
+		Filename: ygweapbb.shp
+		TilesetFilenames:
+			SNOW: yaweapbb.shp
+			SIMPLETERRAIN: ytweapbb.shp
 		ShadowStart: 3
 		ZOffset: -1024
-	damaged-bib: ygweapbb
+	damaged-bib:
+		Filename: ygweapbb.shp
+		TilesetFilenames:
+			SNOW: yaweapbb.shp
+			SIMPLETERRAIN: ytweapbb.shp
 		Start: 1
 		ShadowStart: 3
 		ZOffset: -1024
-	idle-lights: ygweap_a
+	idle-lights:
+		Filename: ygweap_a.shp
+		TilesetFilenames:
+			SNOW: yaweap_a.shp
+			SIMPLETERRAIN: ytweap_a.shp
 		Length: 8
 		ShadowStart: 8
 		Tick: 150
-	damaged-idle-lights: ygweap_ad
+	damaged-idle-lights:
+		Filename: ygweap_ad.shp
+		TilesetFilenames:
+			SNOW: yaweap_ad.shp
+			SIMPLETERRAIN: ytweap_ad.shp
 		Length: 8
 		ShadowStart: 8
 		Tick: 150
-	make: ygweapmk
+	make:
+		Filename: ygweapmk.shp
+		TilesetFilenames:
+			SNOW: yaweapmk.shp
+			SIMPLETERRAIN: ytweapmk.shp
 		Length: 24
 		ShadowStart: 25
-	icon: cameomd|ywepicon
+	icon:
+		Filename: cameomd|ywepicon.shp
+		TilesetFilenames:
 		Offset: 0,0
-		UseTilesetCode: false
 
 yayard:
 	Defaults:
 		Offset: 0, -60
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: yayard
+	idle:
+		Filename: ygyard.shp
+		TilesetFilenames:
+			SNOW: yayard.shp
+			SIMPLETERRAIN: ytyard.shp
 		ShadowStart: 3
-	damaged-idle: yayard
+	damaged-idle:
+		Filename: ygyard.shp
+		TilesetFilenames:
+			SNOW: yayard.shp
+			SIMPLETERRAIN: ytyard.shp
 		Start: 2
 		ShadowStart: 4
-	idle-crane: yayard_a
+	idle-crane:
+		Filename: ygyard_a.shp
+		TilesetFilenames:
+			SNOW: yayard_a.shp
+			SIMPLETERRAIN: ytyard_a.shp
 		Length: 15
 		ShadowStart: 32
 		Tick: 200
-	damaged-idle-crane: yayard_a
+	damaged-idle-crane:
+		Filename: ygyard_a.shp
+		TilesetFilenames:
+			SNOW: yayard_a.shp
+			SIMPLETERRAIN: ytyard_a.shp
 		Start: 16
 		Length: 15
 		ShadowStart: 48
 		Tick: 200
-	idle-waves: yayard_c
+	idle-waves:
+		Filename: ygyard_c.shp
+		TilesetFilenames:
+			SNOW: yayard_c.shp
+			SIMPLETERRAIN: ytyard_c.shp
 		Length: 15
 		ShadowStart: 30
 		Tick: 200
-	damaged-idle-waves: yayard_c
+	damaged-idle-waves:
+		Filename: ygyard_c.shp
+		TilesetFilenames:
+			SNOW: yayard_c.shp
+			SIMPLETERRAIN: ytyard_c.shp
 		Start: 16
 		Length: 15
 		ShadowStart: 32
 		Tick: 200
-	make: yayardmk
+	make:
+		Filename: ygyardmk.shp
+		TilesetFilenames:
+			SNOW: yayardmk.shp
+			SIMPLETERRAIN: ytyardmk.shp
 		Length: 24
 		ShadowStart: 25
-	repair: yayard_s
+	repair:
+		Filename: ygyard_s.shp
+		TilesetFilenames:
+			SNOW: yayard_s.shp
+			SIMPLETERRAIN: ytyard_s.shp
 		Length: 15
 		ShadowStart: 32
-	damaged-repair: yayard_s
+	damaged-repair:
+		Filename: ygyard_s.shp
+		TilesetFilenames:
+			SNOW: yayard_s.shp
+			SIMPLETERRAIN: ytyard_s.shp
 		Start: 16
 		Length: 15
 		ShadowStart: 48
-	icon: cameomd|yyrdicon
+	icon:
+		Filename: cameomd|yyrdicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yadept:
 	Defaults:
 		Offset: -15, -53
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygdept_b
+	idle:
+		Filename: ygdept_b.shp
+		TilesetFilenames:
+			SNOW: yadept_b.shp
+			SIMPLETERRAIN: ytdept_b.shp
 		ShadowStart: 3
-	damaged-idle: ygdept_b
+	damaged-idle:
+		Filename: ygdept_b.shp
+		TilesetFilenames:
+			SNOW: yadept_b.shp
+			SIMPLETERRAIN: ytdept_b.shp
 		Start: 2
 		ShadowStart: 4
-	idle-normal: ygdept
+	idle-normal:
+		Filename: ygdept.shp
+		TilesetFilenames:
+			SNOW: yadept.shp
+			SIMPLETERRAIN: ytdept.shp
 		ShadowStart: 3
-	damaged-idle-normal: ygdept
+	damaged-idle-normal:
+		Filename: ygdept.shp
+		TilesetFilenames:
+			SNOW: yadept.shp
+			SIMPLETERRAIN: ytdept.shp
 		Start: 2
 		ShadowStart: 4
-	bib: ygdeptbb
+	bib:
+		Filename: ygdeptbb.shp
+		TilesetFilenames:
+			SNOW: yadeptbb.shp
+			SIMPLETERRAIN: ytdeptbb.shp
 		ShadowStart: 2
 		ZOffset: -512
-	damaged-bib: ygdeptbb
+	damaged-bib:
+		Filename: ygdeptbb.shp
+		TilesetFilenames:
+			SNOW: yadeptbb.shp
+			SIMPLETERRAIN: ytdeptbb.shp
 		Start: 1
 		ShadowStart: 3
-	idle-waves: bits/structures/water/ygdept_w
+	idle-waves:
+		Filename: bits/structures/water/ygdept_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	damaged-idle-waves: bits/structures/water/ygdept_w
+	damaged-idle-waves:
+		Filename: bits/structures/water/ygdept_w.shp
 		Start: 1
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ytdeptmk
+	make:
+		Filename: ygdeptmk.shp
+		TilesetFilenames:
+			SNOW: yadeptmk.shp
+			SIMPLETERRAIN: ytdeptmk.shp
 		Length: 24
 		ShadowStart: 24
-	repair: ygdept_c
+	repair:
+		Filename: ygdept_c.shp
+		TilesetFilenames:
+			SNOW: yadept_c.shp
+			SIMPLETERRAIN: ytdept_c.shp
 		Length: 23
 		ShadowStart: 46
 		Tick: 120
-	damaged-repair: ygdept_c
+	damaged-repair:
+		Filename: ygdept_c.shp
+		TilesetFilenames:
+			SNOW: yadept_c.shp
+			SIMPLETERRAIN: ytdept_c.shp
 		Start: 23
 		Length: 23
 		ShadowStart: 69
 		Tick: 120
-	icon: bits/cameos/yfixicon
+	icon:
+		Filename: bits/cameos/yfixicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yagrnd:
 	Defaults:
 		Offset: 0, -45
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: yagrnd_a
+	idle:
+		Filename: yggrnd_a.shp
+		TilesetFilenames:
+			SNOW: yagrnd_a.shp
+			SIMPLETERRAIN: ytgrnd_a.shp
 		Length: 3
 		ShadowStart: 6
 		Tick: 80
-	damaged-idle: yagrnd_a
+	damaged-idle:
+		Filename: yggrnd_a.shp
+		TilesetFilenames:
+			SNOW: yagrnd_a.shp
+			SIMPLETERRAIN: ytgrnd_a.shp
 		Start: 3
 		Length: 3
 		ShadowStart: 9
 		Tick: 80
-	idle-waves: bits/structures/water/yggrnd_w
+	idle-waves:
+		Filename: bits/structures/water/yggrnd_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: yagrndmk
+	make:
+		Filename: yggrndmk.shp
+		TilesetFilenames:
+			SNOW: yagrndmk.shp
+			SIMPLETERRAIN: ytgrndmk.shp
 		Length: 30
 		ShadowStart: 30
-	grind: yagrnd_b
+	grind:
+		Filename: yggrnd_b.shp
+		TilesetFilenames:
+			SNOW: yagrnd_b.shp
+			SIMPLETERRAIN: ytgrnd_b.shp
 		Length: 48
 		ShadowStart: 96
-	damaged-grind: yagrnd_b
+	damaged-grind:
+		Filename: yggrnd_b.shp
+		TilesetFilenames:
+			SNOW: yagrnd_b.shp
+			SIMPLETERRAIN: ytgrnd_b.shp
 		Start: 48
 		Length: 48
 		ShadowStart: 144
-	icon: cameomd|grndicon
+	icon:
+		Filename: cameomd|grndicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yadome:
 	Defaults:
 		Offset: 0, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygdome
+	idle:
+		Filename: ygdome.shp
+		TilesetFilenames:
+			SNOW: yadome.shp
+			SIMPLETERRAIN: ytdome.shp
 		ShadowStart: 3
-	damaged-idle: ygdome
+	damaged-idle:
+		Filename: ygdome.shp
+		TilesetFilenames:
+			SNOW: yadome.shp
+			SIMPLETERRAIN: ytdome.shp
 		Start: 1
 		ShadowStart: 4
-	critical-idle: ygdome
+	critical-idle:
+		Filename: ygdome.shp
+		TilesetFilenames:
+			SNOW: yadome.shp
+			SIMPLETERRAIN: ytdome.shp
 		Start: 2
 		ShadowStart: 5
-	idle-light: ygdome_a
+	idle-light:
+		Filename: ygdome_a.shp
+		TilesetFilenames:
+			SNOW: yadome_a.shp
+			SIMPLETERRAIN: ytdome_a.shp
 		Length: 6
 		ShadowStart: 6
 		Tick: 150
-	idle-panels: ygdome_b
+	idle-panels:
+		Filename: ygdome_b.shp
+		TilesetFilenames:
+			SNOW: yadome_b.shp
+			SIMPLETERRAIN: ytdome_b.shp
 		Length: 6
 		ShadowStart: 6
 		Tick: 150
-	idle-waves: bits/structures/water/ygdome_w
+	idle-waves:
+		Filename: bits/structures/water/ygdome_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ytdomemk
+	make:
+		Filename: ygdomemk.shp
+		TilesetFilenames:
+			SNOW: yadomemk.shp
+			SIMPLETERRAIN: ytdomemk.shp
 		Length: 13
 		ShadowStart: 13
-	active: dot
+	active:
+		Filename: dot.shp
 		ZOffset: -9999
-		UseTilesetCode: false
-	icon: bits/cameos/ydomicon
+	icon:
+		Filename: bits/cameos/ydomicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yatech:
 	Defaults:
 		Offset: -15, -38
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygtech
+	idle:
+		Filename: ygtech.shp
+		TilesetFilenames:
+			SNOW: yatech.shp
+			SIMPLETERRAIN: yttech.shp
 		ShadowStart: 3
-	damaged-idle: ygtech
+	damaged-idle:
+		Filename: ygtech.shp
+		TilesetFilenames:
+			SNOW: yatech.shp
+			SIMPLETERRAIN: yttech.shp
 		Start: 1
 		ShadowStart: 4
-	idle-lift: ygtech_a
+	idle-lift:
+		Filename: ygtech_a.shp
+		TilesetFilenames:
+			SNOW: yatech_a.shp
+			SIMPLETERRAIN: yttech_a.shp
 		Length: 32
 		ShadowStart: 64
-	damaged-idle-lift: ygtech_a
+	damaged-idle-lift:
+		Filename: ygtech_a.shp
+		TilesetFilenames:
+			SNOW: yatech_a.shp
+			SIMPLETERRAIN: yttech_a.shp
 		Start: 32
 		Length: 32
 		ShadowStart: 96
-	idle-waves: bits/structures/water/ygtech_w
+	idle-waves:
+		Filename: bits/structures/water/ygtech_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	damaged-idle-waves: bits/structures/water/ygtech_w
+	damaged-idle-waves:
+		Filename: bits/structures/water/ygtech_w.shp
 		Start: 1
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ygtechmk
+	make:
+		Filename: ygtechmk.shp
+		TilesetFilenames:
+			SNOW: yatechmk.shp
+			SIMPLETERRAIN: yttechmk.shp
 		Length: 25
 		ShadowStart: 25
-	icon: cameomd|ytchicon
+	icon:
+		Filename: cameomd|ytchicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yapsis:
 	Defaults:
 		Offset: 1, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygpsis
-	damaged-idle: ygpsis
+	idle:
+		Filename: ygpsis.shp
+		TilesetFilenames:
+			SNOW: yapsis.shp
+			SIMPLETERRAIN: ytpsis.shp
+	damaged-idle:
+		Filename: ygpsis.shp
+		TilesetFilenames:
+			SNOW: yapsis.shp
+			SIMPLETERRAIN: ytpsis.shp
 		Start: 1
-	critical-idle: ygpsis
+	critical-idle:
+		Filename: ygpsis.shp
+		TilesetFilenames:
+			SNOW: yapsis.shp
+			SIMPLETERRAIN: ytpsis.shp
 		Start: 2
-	idle-spin: ygpsis_a
+	idle-spin:
+		Filename: ygpsis_a.shp
+		TilesetFilenames:
+			SNOW: yapsis_a.shp
+			SIMPLETERRAIN: ytpsis_a.shp
 		Length: 40
 		Tick: 150
 		ShadowStart: 80
-	damaged-idle-spin: ygpsis_a
+	damaged-idle-spin:
+		Filename: ygpsis_a.shp
+		TilesetFilenames:
+			SNOW: yapsis_a.shp
+			SIMPLETERRAIN: ytpsis_a.shp
 		Start: 40
 		Length: 40
 		Tick: 150
 		ShadowStart: 120
-	idle-waves: bits/structures/water/ygpsis_w
+	idle-waves:
+		Filename: bits/structures/water/ygpsis_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ytpsismk
+	make:
+		Filename: ygpsismk.shp
+		TilesetFilenames:
+			SNOW: yapsismk.shp
+			SIMPLETERRAIN: ytpsismk.shp
 		Length: 24
 		ShadowStart: 24
-	icon: bits/cameos/psisicon
+	icon:
+		Filename: bits/cameos/psisicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yaclon:
 	Defaults:
 		Offset: 0, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygclon_a
+	idle:
+		Filename: ygclon_a.shp
+		TilesetFilenames:
+			SNOW: yaclon_a.shp
+			SIMPLETERRAIN: ytclon_a.shp
 		Length: 11
 		ShadowStart: 22
 		Tick: 180
-	damaged-idle: ygclon_a
+	damaged-idle:
+		Filename: ygclon_a.shp
+		TilesetFilenames:
+			SNOW: yaclon_a.shp
+			SIMPLETERRAIN: ytclon_a.shp
 		Start: 11
 		Length: 11
 		ShadowStart: 33
-	make: ytclonmk
+	make:
+		Filename: ygclonmk.shp
+		TilesetFilenames:
+			SNOW: yaclonmk.shp
+			SIMPLETERRAIN: ytclonmk.shp
 		Length: 25
 		ShadowStart: 25
-	icon: cameomd|clonicon
+	icon:
+		Filename: cameomd|clonicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yawall:
 	Defaults:
 		Offset: 0, -15
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygwall
+	idle:
+		Filename: ygwall.shp
+		TilesetFilenames:
+			SNOW: yawall.shp
+			SIMPLETERRAIN: ytwall.shp
 		Length: 16
 		ShadowStart: 48
-	damaged-idle: ygwall
+	damaged-idle:
+		Filename: ygwall.shp
+		TilesetFilenames:
+			SNOW: yawall.shp
+			SIMPLETERRAIN: ytwall.shp
 		Start: 16
 		Length: 16
 		ShadowStart: 64
-	critical-idle: ygwall
+	critical-idle:
+		Filename: ygwall.shp
+		TilesetFilenames:
+			SNOW: yawall.shp
+			SIMPLETERRAIN: ytwall.shp
 		Start: 32
 		Length: 16
 		ShadowStart: 80
-	icon: cameomd|citwicon
+	icon:
+		Filename: cameomd|citwicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yaggun:
 	Inherits@MUZZLE: ^WithGatlingMuzzle
 	Defaults:
+		Filename: ygggun.shp
+		TilesetFilenames:
+			SNOW: yaggun.shp
+			SIMPLETERRAIN: ytggun.shp
 		Offset: 0, -15
 		ZOffset: -512
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: yaggun
+	idle:
+		Filename: ygggun.shp
+		TilesetFilenames:
+			SNOW: yaggun.shp
+			SIMPLETERRAIN: ytggun.shp
 		ShadowStart: 3
-	damaged-idle: yaggun
+	damaged-idle:
+		Filename: ygggun.shp
+		TilesetFilenames:
+			SNOW: yaggun.shp
+			SIMPLETERRAIN: ytggun.shp
 		Start: 1
 		ShadowStart: 4
-	make: yaggunmk
+	make:
+		Filename: ygggunmk.shp
+		TilesetFilenames:
+			SNOW: yaggunmk.shp
+			SIMPLETERRAIN: ytggunmk.shp
 		Length: 13
 		ShadowStart: 13
-	idle-waves: gauwat
+	idle-waves:
+		Filename: gauwat.shp
+		TilesetFilenames:
 		Length: 15
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: bits/cameos/ggunicon
+	icon:
+		Filename: bits/cameos/ggunicon.shp
+		TilesetFilenames:
 		Offset: 0,0
-		UseTilesetCode: false
 
 natbnk:
 	Defaults:
 		Offset: 0, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: natbnkbb
+	idle:
+		Filename: ngtbnkbb.shp
+		TilesetFilenames:
+			SNOW: natbnkbb.shp
+			SIMPLETERRAIN: nttbnkbb.shp
 		Length: 1
 		ShadowStart: 3
-	damaged-idle: natbnkbb
+	damaged-idle:
+		Filename: ngtbnkbb.shp
+		TilesetFilenames:
+			SNOW: natbnkbb.shp
+			SIMPLETERRAIN: nttbnkbb.shp
 		Start: 1
 		Length: 1
 		ShadowStart: 4
-	idle-garrisoned: natbnk_b
+	idle-garrisoned:
+		Filename: ngtbnk_b.shp
+		TilesetFilenames:
+			SNOW: natbnk_b.shp
+			SIMPLETERRAIN: nttbnk_b.shp
 		Start: 9
 		Length: 1
 		ShadowStart: 19
-	damaged-idle-garrisoned: natbnk_b
+	damaged-idle-garrisoned:
+		Filename: ngtbnk_b.shp
+		TilesetFilenames:
+			SNOW: natbnk_b.shp
+			SIMPLETERRAIN: nttbnk_b.shp
 		Start: 19
 		Length: 1
 		ShadowStart: 29
-	idle-garrisoned-front: natbnk_a
+	idle-garrisoned-front:
+		Filename: ngtbnk_a.shp
+		TilesetFilenames:
+			SNOW: natbnk_a.shp
+			SIMPLETERRAIN: nttbnk_a.shp
 		Start: 9
 		Length: 1
 		ZOffset: 128
-	damaged-idle-garrisoned-front: natbnk_a
+	damaged-idle-garrisoned-front:
+		Filename: ngtbnk_a.shp
+		TilesetFilenames:
+			SNOW: natbnk_a.shp
+			SIMPLETERRAIN: nttbnk_a.shp
 		Start: 19
 		Length: 1
 		ZOffset: 128
-	build: natbnk_b
+	build:
+		Filename: ngtbnk_b.shp
+		TilesetFilenames:
+			SNOW: natbnk_b.shp
+			SIMPLETERRAIN: nttbnk_b.shp
 		Length: 10
 		ShadowStart: 20
-	damaged-build: natbnk_b
+	damaged-build:
+		Filename: ngtbnk_b.shp
+		TilesetFilenames:
+			SNOW: natbnk_b.shp
+			SIMPLETERRAIN: nttbnk_b.shp
 		Start: 10
 		Length: 10
 		ShadowStart: 30
-	make: natbnkmk
+	make:
+		Filename: ngtbnkmk.shp
+		TilesetFilenames:
+			SNOW: natbnkmk.shp
+			SIMPLETERRAIN: nttbnkmk.shp
 		Length: 10
 		ShadowStart: 10
-	icon: cameomd|tbnkicon
+	icon:
+		Filename: cameomd|tbnkicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yapsyt:
 	Defaults:
 		Offset: 0, -15
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: yapsyt
+	idle:
+		Filename: ygpsyt.shp
+		TilesetFilenames:
+			SNOW: yapsyt.shp
+			SIMPLETERRAIN: ytpsyt.shp
 		Length: 1
 		ShadowStart: 3
-	damaged-idle: yapsyt
+	damaged-idle:
+		Filename: ygpsyt.shp
+		TilesetFilenames:
+			SNOW: yapsyt.shp
+			SIMPLETERRAIN: ytpsyt.shp
 		Start: 1
 		Length: 1
 		ShadowStart: 4
-	idle-top: ygpsyt_a
+	idle-top:
+		Filename: ygpsyt_a.shp
 		Length: 26
 		ShadowStart: 52
-		UseTilesetCode: false
-	damaged-idle-top: ygpsyt_a
+	damaged-idle-top:
+		Filename: ygpsyt_a.shp
 		Start: 26
 		Length: 26
 		ShadowStart: 78
-		UseTilesetCode: false
-	idle-full: ygpsyt_b
+	idle-full:
+		Filename: ygpsyt_b.shp
 		Length: 26
 		ShadowStart: 52
-		UseTilesetCode: false
-	damaged-idle-full: ygpsyt_b
+	damaged-idle-full:
+		Filename: ygpsyt_b.shp
 		Start: 26
 		Length: 26
 		ShadowStart: 78
-		UseTilesetCode: false
-	muzzle: conquer|yuricntl
+	muzzle:
+		Filename: conquer|yuricntl.shp
 		Length: *
-		UseTilesetCode: false
-	make: yapsytmk
+	make:
+		Filename: ygpsytmk.shp
+		TilesetFilenames:
+			SNOW: yapsytmk.shp
+			SIMPLETERRAIN: ytpsytmk.shp
 		Length: 31
 		ShadowStart: 31
-	idle-waves: gauwat
+	idle-waves:
+		Filename: gauwat.shp
 		Length: 15
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: cameomd|psyticon
+	icon:
+		Filename: cameomd|psyticon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yasgen:
 	Defaults:
 		Offset: 0, -15
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygsgen_a
+	idle:
+		Filename: ygsgen_a.shp
+		TilesetFilenames:
+			SNOW: yasgen_a.shp
+			SIMPLETERRAIN: ytsgen_a.shp
 		Length: 20
 		ShadowStart: 20
 		Tick: 150
-	damaged-idle: ygsgen_ad
+	damaged-idle:
+		Filename: ygsgen_ad.shp
+		TilesetFilenames:
+			SNOW: yasgen_ad.shp
+			SIMPLETERRAIN: ytsgen_ad.shp
 		Length: 20
 		ShadowStart: 20
 		Tick: 150
-	make: ygsgenmk
+	make:
+		Filename: ygsgenmk.shp
+		TilesetFilenames:
+			SNOW: yasgenmk.shp
+			SIMPLETERRAIN: ytsgenmk.shp
 		Length: 20
 		ShadowStart: 20
-	idle-waves: gauwat
+	idle-waves:
+		Filename: gauwat.shp
 		Length: 15
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: bits/cameos/sgenicon
+	icon:
+		Filename: bits/cameos/sgenicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yagntc:
 	Defaults:
 		Offset: 0, -45
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle-waves: bits/structures/water/yggntc_w
+	idle-waves:
+		Filename: bits/structures/water/yggntc_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: yagntcmk
+	make:
+		Filename: yggntcmk.shp
+		TilesetFilenames:
+			SNOW: yagntcmk.shp
+			SIMPLETERRAIN: ytgntcmk.shp
 		Length: 25
 		ShadowStart: 25
-	idle: yagntc
+	idle:
+		Filename: yggntc.shp
+		TilesetFilenames:
+			SNOW: yagntc.shp
+			SIMPLETERRAIN: ytgntc.shp
 		Length: 1
 		ShadowStart: 3
 		Tick: 150
-	damaged-idle: yagntc
+	damaged-idle:
+		Filename: yggntc.shp
+		TilesetFilenames:
+			SNOW: yagntc.shp
+			SIMPLETERRAIN: ytgntc.shp
 		Start: 1
 		Length: 1
 		ShadowStart: 4
 		ZOffset: -1c0
 		Tick: 150
-	idle-top: yagntc_e
+	idle-top:
+		Filename: yggntc_e.shp
+		TilesetFilenames:
+			SNOW: yagntc_e.shp
+			SIMPLETERRAIN: ytgntc_e.shp
 		Length: 1
 		ShadowStart: 2
 		ZOffset: -1c0
 		Tick: 150
-	damaged-idle-top: yagntc_e
+	damaged-idle-top:
+		Filename: yggntc_e.shp
+		TilesetFilenames:
+			SNOW: yagntc_e.shp
+			SIMPLETERRAIN: ytgntc_e.shp
 		Start: 1
 		Length: 1
 		ShadowStart: 3
 		ZOffset: -1c0
 		Tick: 150
-	charged: yagntc_f
+	charged:
+		Filename: yggntc_f.shp
+		TilesetFilenames:
+			SNOW: yagntc_f.shp
+			SIMPLETERRAIN: ytgntc_f.shp
 		Length: 15
 		ShadowStart: 62
 		ZOffset: -1c0
 		Tick: 50
-	damaged-charged: yagntc_f
+	damaged-charged:
+		Filename: yggntc_f.shp
+		TilesetFilenames:
+			SNOW: yagntc_f.shp
+			SIMPLETERRAIN: ytgntc_f.shp
 		Start: 31
 		Length: 15
 		ShadowStart: 93
 		Tick: 50
-	loop: yagntc_f
+	loop:
+		Filename: yggntc_f.shp
+		TilesetFilenames:
+			SNOW: yagntc_f.shp
+			SIMPLETERRAIN: ytgntc_f.shp
 		Start: 15
 		Length: 15
 		ShadowStart: 78
 		Tick: 50
-	damaged-loop: yagntc_f
+	damaged-loop:
+		Filename: yggntc_f.shp
+		TilesetFilenames:
+			SNOW: yagntc_f.shp
+			SIMPLETERRAIN: ytgntc_f.shp
 		Start: 46
 		Length: 15
 		ShadowStart: 109
 		Tick: 50
-	end: yagntc_h
+	end:
+		Filename: yggntc_h.shp
+		TilesetFilenames:
+			SNOW: yagntc_h.shp
+			SIMPLETERRAIN: ytgntc_h.shp
 		Length: 31
 		ShadowStart: 63
 		Tick: 50
-	damaged-end: yagntc_h
+	damaged-end:
+		Filename: yggntc_h.shp
+		TilesetFilenames:
+			SNOW: yagntc_h.shp
+			SIMPLETERRAIN: ytgntc_h.shp
 		Start: 31
 		Length: 31
 		ShadowStart: 93
 		Tick: 50
-	active: dot
+	active:
+		Filename: dot.shp
 		ZOffset: -9999
-		UseTilesetCode: false
-	icon: bits/cameos/gtncicon
+	icon:
+		Filename: bits/cameos/gtncicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yappet:
 	Defaults:
 		Offset: 0, -45
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle-waves: bits/structures/water/ygppet_w
+	idle-waves:
+		Filename: bits/structures/water/ygppet_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: yappetmk
+	make:
+		Filename: ygppetmk.shp
+		TilesetFilenames:
+			SNOW: yappetmk.shp
+			SIMPLETERRAIN: ytppetmk.shp
 		Length: 24
 		ShadowStart: 24
-	idle: yappet_e
+	idle:
+		Filename: ygppet_e.shp
+		TilesetFilenames:
+			SNOW: yappet_e.shp
+			SIMPLETERRAIN: ytppet_e.shp
 		Length: 1
 		ShadowStart: 2
 		Tick: 150
-	damaged-idle: yappet_e
+	damaged-idle:
+		Filename: ygppet_e.shp
+		TilesetFilenames:
+			SNOW: yappet_e.shp
+			SIMPLETERRAIN: ytppet_e.shp
 		Start: 1
 		Length: 1
 		ShadowStart: 3
 		Tick: 150
-	charged: yappet_f
+	charged:
+		Filename: ygppet_f.shp
+		TilesetFilenames:
+			SNOW: yappet_f.shp
+			SIMPLETERRAIN: ytppet_f.shp
 		Length: 19
 		ShadowStart: 38
 		Tick: 150
-	damaged-charged: yappet_f
+	damaged-charged:
+		Filename: ygppet_f.shp
+		TilesetFilenames:
+			SNOW: yappet_f.shp
+			SIMPLETERRAIN: ytppet_f.shp
 		Start: 19
 		Length: 19
 		ShadowStart: 57
 		Tick: 150
-	loop: yappet_g
+	loop:
+		Filename: ygppet_g.shp
+		TilesetFilenames:
+			SNOW: yappet_g.shp
+			SIMPLETERRAIN: ytppet_g.shp
 		Length: 8
 		ShadowStart: 16
 		Tick: 150
-	damaged-loop: yappet_g
+	damaged-loop:
+		Filename: ygppet_g.shp
+		TilesetFilenames:
+			SNOW: yappet_g.shp
+			SIMPLETERRAIN: ytppet_g.shp
 		Start: 8
 		Length: 8
 		ShadowStart: 24
 		Tick: 150
-	end: yappet_h
+	end:
+		Filename: ygppet_h.shp
+		TilesetFilenames:
+			SNOW: yappet_h.shp
+			SIMPLETERRAIN: ytppet_h.shp
 		Length: 19
 		ShadowStart: 38
 		Tick: 150
-	damaged-end: yappet_h
+	damaged-end:
+		Filename: ygppet_h.shp
+		TilesetFilenames:
+			SNOW: yappet_h.shp
+			SIMPLETERRAIN: ytppet_h.shp
 		Start: 19
 		Length: 19
 		ShadowStart: 57
 		Tick: 150
-	icon: cameomd|pupticon
+	icon:
+		Filename: cameomd|pupticon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 yacomd:
 	Defaults:
+		Filename: ygcomd.shp
+		TilesetFilenames:
+			SNOW: yacomd.shp
+			SIMPLETERRAIN: ytcomd.shp
 		Offset: 0,-60
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -940,114 +1311,135 @@ yacomd:
 		Start: 3
 		ShadowStart: 7
 		ZOffset: -3c0
-	icon: cameo|xxicon
+	icon:
+		Filename: cameo|xxicon.shp
+		TilesetFilenames:
 		Offset: 0,0
-		UseTilesetCode: false
 
 yapppt:
 	Defaults:
+		Filename: ytpppt.shp
+		TilesetFilenames:
+			SNOW: yapppt.shp
+			URBAN: yupppt.shp
+			NEWURBAN: ynpppt.shp
+			DESERT: ydpppt.shp
+			LUNAR: ylpppt.shp
+			DUNE: ydpppt.shp
 		Offset: 0,-45
-		UseTilesetCode: true
 	idle:
 		ShadowStart: 4
 	damaged-idle:
 		Start: 1
 		ShadowStart: 5
-	icon: cameo|xxicon
+	icon:
+		Filename: cameo|xxicon.shp
+		TilesetFilenames:
 		Offset: 0,0
-		UseTilesetCode: false
 
 yarock:
 	Defaults:
+		Filename: ygrock.shp
+		TilesetFilenames:
+			SNOW: yarock.shp
+			SIMPLETERRAIN: ytrock.shp
 		Offset: 0,-45
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 	idle:
 		ShadowStart: 4
 	damaged-idle:
 		Start: 1
 		ShadowStart: 5
-	make: ygrockmk
+	make:
+		Filename: ygrockmk.shp
+		TilesetFilenames:
 		Length: 8
 		ShadowStart: 8
 		Tick: 120
-		UseTilesetCode: false
-	idle-waves: bits/structures/water/ygrock_w
+	idle-waves:
+		Filename: bits/structures/water/ygrock_w.shp
+		TilesetFilenames:
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: bits/cameos/dpadicon.png
+	icon:
+		Filename: bits/cameos/dpadicon.png
+		TilesetFilenames:
 		Offset: 0,0
-		UseTilesetCode: false
-		AddExtension: false
 
 yapsyb:
 	Defaults:
 		Offset: 0, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ygpsyb
+	idle:
+		Filename: ygpsyb.shp
+		TilesetFilenames:
+			SNOW: yapsyb.shp
+			SIMPLETERRAIN: ytpsyb.shp
 		ShadowStart: 3
-	damaged-idle: ygpsyb
+	damaged-idle:
+		Filename: ygpsyb.shp
+		TilesetFilenames:
+			SNOW: yapsyb.shp
+			SIMPLETERRAIN: ytpsyb.shp
 		Start: 1
 		ShadowStart: 4
-	idle-spin: ygpsyb_a
+	idle-spin:
+		Filename: ygpsyb_a.shp
+		TilesetFilenames:
+			SNOW: yapsyb_a.shp
+			SIMPLETERRAIN: ytpsyb_a.shp
 		Length: 15
 		ShadowStart: 30
 		Tick: 150
-	damaged-idle-spin: ygpsyb_a
+	damaged-idle-spin:
+		Filename: ygpsyb_a.shp
+		TilesetFilenames:
+			SNOW: yapsyb_a.shp
+			SIMPLETERRAIN: ytpsyb_a.shp
 		Start: 15
 		Length: 15
 		ShadowStart: 45
 		Tick: 150
-	idle-waves: bits/structures/water/ygpsyb_w
+	idle-waves:
+		Filename: bits/structures/water/ygpsyb_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ygpsybmk
+	make:
+		Filename: ygpsybmk.shp
+		TilesetFilenames:
+			SNOW: yapsybmk.shp
+			SIMPLETERRAIN: ytpsybmk.shp
 		Length: 25
 		ShadowStart: 25
-	icon: cameo|xxicon
+	icon:
+		Filename: cameo|xxicon.shp
 		Offset: 0, 0
-		UseTilesetCode: false
 
 caeast02:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cneast02.shp
+		TilesetFilenames:
+			SNOW: caeast02.shp
+			SIMPLETERRAIN: cteast02.shp
 		Offset: 0,-30
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
-			DUNE: NEWURBAN
-	idle-waves: bits/structures/water/cgeast02_w
+	idle-waves:
+		Filename: bits/structures/water/cgeast02_w.shp
+		TilesetFilenames:
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: cgeast02mk
+	make:
+		Filename: cgeast02mk.shp
+		TilesetFilenames:
 		Length: 9
 		Tick: 105
-		UseTilesetCode: false
-	icon: bits/cameos/est2icon.png
+	icon:
+		Filename: bits/cameos/est2icon.png
+		TilesetFilenames:
 		Offset: 0,0
-		AddExtension: false
 
 # Custom Yuri Structures
 yasilo:
-	Defaults: ygsilo
+	Defaults:
+		Filename: ygsilo.shp
 		Offset: 0, -5
 	idle:
 		Length: 4
@@ -1056,19 +1448,21 @@ yasilo:
 		Start: 4
 		Length: 4
 		ShadowStart: 12
-	idle-waves: bits/structures/water/ygsilo_w
+	idle-waves:
+		Filename: bits/structures/water/ygsilo_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ygsilomk
+	make:
+		Filename: ygsilomk.shp
 		Length: 14
 		ShadowStart: 14
-	icon: bits/cameos/ysilicon.png
+	icon:
+		Filename: bits/cameos/ysilicon.png
 		Offset: 0, 0
-		AddExtension: false
 
 yagatea:
-	Defaults: yggatea
+	Defaults:
+		Filename: yggatea.shp
 		Offset: -30, -30, 30
 		# UseTilesetCode: true
 	idle:
@@ -1090,12 +1484,13 @@ yagatea:
 		Offset: -30, -30, 1
 		ZOffset: -1024
 		ZRamp: 1
-	icon: bits/cameos/ygteicon
+	icon:
+		Filename: bits/cameos/ygteicon.shp
 		Offset: 0, 0
-		UseTilesetCode: false
 
 yagateb:
-	Defaults: yggateb
+	Defaults:
+		Filename: yggateb.shp
 		Offset: 30, -30, 30
 		# UseTilesetCode: true
 	idle:
@@ -1115,9 +1510,9 @@ yagateb:
 		ShadowStart: 46
 		Offset: 30, -30, 1
 		ZRamp: 1
-	icon: bits/cameos/ygtbicon
+	icon:
+		Filename: bits/cameos/ygtbicon.shp
 		Offset: 0, 0
-		UseTilesetCode: false
 
 yabrcb:
 	Inherits: yabrck
@@ -1125,6 +1520,7 @@ yabrcb:
 		FlipX: true
 		Offset: -15,-37
 	icon:
+		Filename: cameomd|brckicon.shp
 		FlipX: false
 
 yarfnb:
@@ -1133,10 +1529,12 @@ yarfnb:
 		FlipX: true
 		Offset: 13, -53
 	icon:
+		Filename: bits/cameos/yrf2icon.shp
 		FlipX: false
 
 yarfnc:
-	Defaults: ygrfnc
+	Defaults:
+		Filename: ygrfnc.shp
 		Offset: 3, 32
 	idle:
 		Start: 31
@@ -1158,62 +1556,87 @@ yarfnc:
 		ShadowStart: 69
 		ZOffset: -9999
 		ZRamp: 1
-	icon: bits/cameos/yrf2icon
+	icon:
+		Filename: bits/cameos/yrf2icon.shp
 		Offset: 0, 0
-		UseTilesetCode: false
 
 yarfnd:
 	Inherits: yarfnc
 	Defaults:
+		Filename: ygrfnc.shp
 		FlipX: true
 	icon:
+		Filename: bits/cameos/yrf2icon.shp
 		FlipX: false
 
 yaweab:
 	Inherits: yaweap
-	Defaults: yaweap
+	Defaults:
+		Filename: ygweap.shp
+		TilesetFilenames:
+			SNOW: yaweap.shp
+			SIMPLETERRAIN: ytweap.shp
 		FlipX: true
 		Offset: 30,-60
 	icon:
+		Filename: cameomd|ywepicon.shp
+		TilesetFilenames:
 		FlipX: false
 
 yaweac:
 	Inherits: yaweap
 	Defaults:
-		TilesetOverrides:
-			SNOW: GENERIC
+		Filename: ygweac.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ytweac.shp
 	idle:
 		ShadowStart: 2
 		ZOffset: 0
 	damaged-idle:
 		ShadowStart: 3
 		ZOffset: 0
-	bib: ygweacbb
+	bib:
+		Filename: ygweacbb.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ytweacbb.shp
 		ShadowStart: 2
 		ZOffset: -2048
-	damaged-bib: ygweacbb
+	damaged-bib:
+		Filename: ygweacbb.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ytweacbb.shp
 		ShadowStart: 3
 		ZOffset: -2048
 
 yawead:
 	Inherits: yaweap
 	Defaults:
+		Filename: ygwead.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ytwead.shp
 		Offset: 30,-60
-		TilesetOverrides:
-			SNOW: GENERIC
 	idle:
 		ShadowStart: 2
 		ZOffset: 0
 	damaged-idle:
 		ShadowStart: 3
 		ZOffset: 0
-	bib: ygweadbb
+	bib:
+		Filename: ygweadbb.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ytweadbb.shp
 		ShadowStart: 2
 		ZOffset: -2048
-	damaged-bib: ygweadbb
+	damaged-bib:
+		Filename: ygweadbb.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ytweadbb.shp
 		ShadowStart: 3
 		ZOffset: -2048
 	make:
+		Filename: ygweapmk.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ytweapmk.shp
 		FlipX: true
 
 yadepb:
@@ -1222,6 +1645,7 @@ yadepb:
 		FlipX: true
 		Offset: 15,-53
 	icon:
+		Filename: bits/cameos/yfixicon.shp
 		FlipX: false
 
 yatecb:
@@ -1230,4 +1654,5 @@ yatecb:
 		FlipX: true
 		Offset: 15, -38
 	icon:
+		Filename: cameomd|ytchicon.shp
 		FlipX: false

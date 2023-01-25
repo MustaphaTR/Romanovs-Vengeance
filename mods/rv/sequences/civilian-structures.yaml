@@ -2,130 +2,231 @@
 cafncb:
 	Inherits: ^Fence
 	Defaults:
-		UseTilesetCode: true
+		Filename: ctfncb.shp
+		TilesetFilenames:
+			SNOW: cafncb.shp
+			URBAN: cufncb.shp
+			NEWURBAN: cnfncb.shp
+			DESERT: cdfncb.shp
+			LUNAR: clfncb.shp
+			DUNE: cdfncb.shp
 
 # White Fence
 cafncw:
 	Inherits: ^Fence
 	Defaults:
-		UseTilesetCode: true
+		Filename: ctfncw.shp
+		TilesetFilenames:
+			SNOW: cafncw.shp
+			URBAN: cufncw.shp
+			NEWURBAN: cnfncw.shp
+			DESERT: cdfncw.shp
+			LUNAR: clfncw.shp
+			DUNE: cdfncw.shp
 
 # Brown Fence
 cafnck:
 	Inherits: ^Fence
-	Defaults: bits/structures/fences/cgfnck
+	Defaults:
+		Filename: bits/structures/fences/cgfnck.shp
 
 # Yellow Fence
 cafncy:
 	Inherits: ^Fence
-	Defaults: bits/structures/fences/cgfncy
+	Defaults:
+		Filename: bits/structures/fences/cgfncy.shp
 
 # Green Fence
 cafncg:
 	Inherits: ^Fence
-	Defaults: bits/structures/fences/cgfncg
+	Defaults:
+		Filename: bits/structures/fences/cgfncg.shp
 
 # Purple Fence
 cafncm:
 	Inherits: ^Fence
-	Defaults: bits/structures/fences/cgfncm
+	Defaults:
+		Filename: bits/structures/fences/cgfncm.shp
 
 # Barbed Wire Fence
 cabarb:
 	Inherits: ^Fence
-	Defaults: bits/structures/fences/cgbarb
+	Defaults:
+		Filename: bits/structures/fences/cgbarb.shp
 		Offset: 0,0
 
 gasand:
 	Defaults:
 		Offset: 0,-15
-		UseTilesetCode: true
-	idle: gtsand
+		Filename: gtsand.shp
+		TilesetFilenames:
+			SNOW: gasand.shp
+			URBAN: gusand.shp
+			NEWURBAN: gnsand.shp
+			DESERT: gdsand.shp
+			LUNAR: glsand.shp
+			DUNE: gdsand.shp
+	idle:
 		Length: 16
 		ShadowStart: 32
-	damaged-idle: gtsand
+	damaged-idle:
 		Start: 16
 		Length: 16
 		ShadowStart: 48
-	icon: bits/cameos/sbagicon
+	icon:
+		Filename: bits/cameos/sbagicon.shp
+		TilesetFilenames:
+			TEMPERATE: bits/cameos/sbagicon.shp
+			SNOW: bits/cameos/sbagicon.shp
+			URBAN: bits/cameos/sbagicon.shp
+			NEWURBAN: bits/cameos/sbagicon.shp
+			DESERT: bits/cameos/sbagicon.shp
+			LUNAR: bits/cameos/sbagicon.shp
+			DUNE: bits/cameos/sbagicon.shp
+			SIMPLETERRAIN: bits/cameos/sbagicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 cafncp:
 	Defaults:
 		Offset: 0,-15
-		UseTilesetCode: true
-	idle: ctfncp
+		Filename: ctfncp.shp
+		TilesetFilenames:
+			SNOW: cafncp.shp
+			URBAN: cufncp.shp
+			NEWURBAN: cnfncp.shp
+			DESERT: cdfncp.shp
+			LUNAR: clfncp.shp
+			DUNE: cdfncp.shp
+	idle:
 		Length: 16
 		ShadowStart: 32
-	damaged-idle: ctfncp
+	damaged-idle:
 		Start: 16
 		Length: 16
 		ShadowStart: 48
-	icon: cameo|wallicon
+	icon:
+		Filename: cameo|wallicon.shp
+		TilesetFilenames:
+			TEMPERATE: cameo|wallicon.shp
+			SNOW: cameo|wallicon.shp
+			URBAN: cameo|wallicon.shp
+			NEWURBAN: cameo|wallicon.shp
+			DESERT: cameo|wallicon.shp
+			LUNAR: cameo|wallicon.shp
+			DUNE: cameo|wallicon.shp
+			SIMPLETERRAIN: cameo|wallicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 cakrmw:
 	Defaults:
 		Offset: 0, -12
-		UseTilesetCode: true
-	idle: ctkrmw
+		Filename: ctkrmw.shp
+		TilesetFilenames:
+			SNOW: cakrmw.shp
+			URBAN: cukrmw.shp
+			NEWURBAN: cnkrmw.shp
+			DESERT: cdkrmw.shp
+			LUNAR: clkrmw.shp
+			DUNE: cdkrmw.shp
+	idle:
 		Length: 16
 		ShadowStart: 48
-	damaged-idle: ctkrmw
+	damaged-idle:
 		Start: 16
 		Length: 16
 		ShadowStart: 64
-	critical-idle: ctkrmw
+	critical-idle:
 		Start: 32
 		Length: 16
 		ShadowStart: 80
-	icon: bits/cameos/kwllicon
+	icon:
+		Filename: bits/cameos/kwllicon.shp
+		TilesetFilenames:
+			TEMPERATE: bits/cameos/kwllicon.shp
+			SNOW: bits/cameos/kwllicon.shp
+			URBAN: bits/cameos/kwllicon.shp
+			NEWURBAN: bits/cameos/kwllicon.shp
+			DESERT: bits/cameos/kwllicon.shp
+			LUNAR: bits/cameos/kwllicon.shp
+			DUNE: bits/cameos/kwllicon.shp
+			SIMPLETERRAIN: bits/cameos/kwllicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 cawash01:
 	Inherits: ^CivBuilding
-	Defaults: cgwash01
-		UseTilesetCode: false
+	Defaults:
+		Filename: cgwash01.shp
 		Offset: 0,-60
 
 cawash03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: ctwash03
-		UseTilesetCode: false
+	Defaults:
+		Filename: ctwash03.shp
 		Offset: -15,-52
 
 cawash04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash04.shp
+		TilesetFilenames:
+			SNOW: cawash04.shp
+			URBAN: cuwash04.shp
+			NEWURBAN: cnwash04.shp
+			DESERT: cdwash04.shp
+			LUNAR: clwash04.shp
+			DUNE: cdwash04.shp
 		Offset: 0,-60
 
 cawash05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash05.shp
+		TilesetFilenames:
+			SNOW: cawash05.shp
+			URBAN: cuwash05.shp
+			NEWURBAN: cnwash05.shp
+			DESERT: cdwash05.shp
+			LUNAR: clwash05.shp
+			DUNE: cdwash05.shp
 		Offset: -30,-45
 
 cawash06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash06.shp
+		TilesetFilenames:
+			SNOW: cawash06.shp
+			URBAN: cuwash06.shp
+			NEWURBAN: cnwash06.shp
+			DESERT: cdwash06.shp
+			LUNAR: clwash06.shp
+			DUNE: cdwash06.shp
 		Offset: 0,-60
-	idle: cgwash06_a # Custom artwork, original lacked shadow.
-		UseTilesetCode: false
+	idle: # Custom artwork, original lacked shadow.
+		Filename: cgwash06_a.shp
+		TilesetFilenames:
 		ShadowStart: 1
 
 cawash07:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash07.shp
+		TilesetFilenames:
+			SNOW: cawash07.shp
+			URBAN: cuwash07.shp
+			NEWURBAN: cnwash07.shp
+			DESERT: cdwash07.shp
+			LUNAR: clwash07.shp
+			DUNE: cdwash07.shp
 		Offset: 0,-45
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 28,-100
 		Length: 9
 		# ShadowStart: 9
@@ -135,21 +236,46 @@ cawash08:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash08.shp
+		TilesetFilenames:
+			SNOW: cawash08.shp
+			URBAN: cuwash08.shp
+			NEWURBAN: cnwash08.shp
+			DESERT: cdwash08.shp
+			LUNAR: clwash08.shp
+			DUNE: cdwash08.shp
 		Offset: 15,-52
 
 cawash09:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash09.shp
+		TilesetFilenames:
+			SNOW: cawash09.shp
+			URBAN: cuwash09.shp
+			NEWURBAN: cnwash09.shp
+			DESERT: cdwash09.shp
+			LUNAR: clwash09.shp
+			DUNE: cdwash09.shp
 		Offset: 0,-45
 
 cawash10:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash10.shp
+		TilesetFilenames:
+			SNOW: cawash10.shp
+			URBAN: cuwash10.shp
+			NEWURBAN: cnwash10.shp
+			DESERT: cdwash10.shp
+			LUNAR: clwash10.shp
+			DUNE: cdwash10.shp
 		Offset: 0,-60
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 2,-68
 		Length: 9
 		# ShadowStart: 9
@@ -159,49 +285,97 @@ cawash11:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash11.shp
+		TilesetFilenames:
+			SNOW: cawash11.shp
+			URBAN: cuwash11.shp
+			NEWURBAN: cnwash11.shp
+			DESERT: cdwash11.shp
+			LUNAR: clwash11.shp
+			DUNE: cdwash11.shp
 		Offset: 0,-60
 
 cawsh12:
 	Inherits: ^CivBuilding
-	Defaults: cgwsh12
+	Defaults:
+		Filename: cgwsh12.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 cawash13:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash13.shp
+		TilesetFilenames:
+			SNOW: cawash13.shp
+			URBAN: cuwash13.shp
+			NEWURBAN: cnwash13.shp
+			DESERT: cdwash13.shp
+			LUNAR: clwash13.shp
+			DUNE: cdwash13.shp
 		Offset: 15,-52
 
 cawash14:
 	Inherits: ^CivBuilding
-	Defaults: cgwash14
+	Defaults:
+		Filename: cgwash14.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 cawash15:
 	Inherits: ^CivBuilding
-	Defaults: cgwash15
+	Defaults:
+		Filename: cgwash15.shp
 		Offset: 15,-52
-		UseTilesetCode: false
 
 cawash16:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash16.shp
+		TilesetFilenames:
+			SNOW: cawash16.shp
+			URBAN: cuwash16.shp
+			NEWURBAN: cnwash16.shp
+			DESERT: cdwash16.shp
+			LUNAR: clwash16.shp
+			DUNE: cdwash16.shp
 		Offset: -30,-60
 
 cawash17:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash17.shp
+		TilesetFilenames:
+			SNOW: cawash17.shp
+			URBAN: cuwash17.shp
+			NEWURBAN: cnwash17.shp
+			DESERT: cdwash17.shp
+			LUNAR: clwash17.shp
+			DUNE: cdwash17.shp
 		Offset: -30,-75
 
 cawash18:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: ctwash18.shp
+		TilesetFilenames:
+			SNOW: cawash18.shp
+			URBAN: cuwash18.shp
+			NEWURBAN: cnwash18.shp
+			DESERT: cdwash18.shp
+			LUNAR: clwash18.shp
+			DUNE: cdwash18.shp
 		Offset: 0,-30
-	idle-water: cawsh18a
+	idle-water:
+		Filename: ctwsh18a.shp
+		TilesetFilenames:
+			SNOW: cawsh18a.shp
+			URBAN: cuwsh18a.shp
+			NEWURBAN: cnwsh18a.shp
+			DESERT: cdwsh18a.shp
+			LUNAR: clwsh18a.shp
+			DUNE: cdwsh18a.shp
 		Length: 10
 		ShadowStart: 10
 		Tick: 80
@@ -210,10 +384,34 @@ cawash19:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwash19.shp
+		TilesetFilenames:
+			SNOW: cawash19.shp
+			URBAN: cuwash19.shp
+			NEWURBAN: cnwash19.shp
+			DESERT: cdwash19.shp
+			LUNAR: clwash19.shp
+			DUNE: cdwash19.shp
 		Offset: 0,-60
-	idle-flag: cawa19_a
+	idle-flag:
+		Filename: ctwa19_a.shp
+		TilesetFilenames:
+			SNOW: cawa19_a.shp
+			URBAN: cuwa19_a.shp
+			NEWURBAN: cnwa19_a.shp
+			DESERT: cdwa19_a.shp
+			LUNAR: clwa19_a.shp
+			DUNE: cdwa19_a.shp
 		Length: 16
-	damaged-idle-flag: cawa19_a
+	damaged-idle-flag:
+		Filename: ctwa19_a.shp
+		TilesetFilenames:
+			SNOW: cawa19_a.shp
+			URBAN: cuwa19_a.shp
+			NEWURBAN: cnwa19_a.shp
+			DESERT: cdwa19_a.shp
+			LUNAR: clwa19_a.shp
+			DUNE: cdwa19_a.shp
 		Start: 16
 		Length: 16
 
@@ -221,98 +419,219 @@ canewy01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy01.shp
+		TilesetFilenames:
+			SNOW: canewy01.shp
+			URBAN: cunewy01.shp
+			NEWURBAN: cnnewy01.shp
+			DESERT: cdnewy01.shp
+			LUNAR: clnewy01.shp
+			DUNE: cdnewy01.shp
 		Offset: 0,-60
 
 canewy04:
 	Inherits: ^CivBuilding
-	Defaults: cgnewy04
+	Defaults:
+		Filename: cgnewy04.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 canewy05:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: ctnewy05.shp
+		TilesetFilenames:
+			SNOW: canewy05.shp
+			URBAN: cunewy05.shp
+			NEWURBAN: cnnewy05.shp
+			DESERT: cdnewy05.shp
+			LUNAR: clnewy05.shp
+			DUNE: cdnewy05.shp
 		Offset: -5,-75
 
 canewy06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy06.shp
+		TilesetFilenames:
+			SNOW: canewy06.shp
+			URBAN: cunewy06.shp
+			NEWURBAN: cnnewy06.shp
+			DESERT: cdnewy06.shp
+			LUNAR: clnewy06.shp
+			DUNE: cdnewy06.shp
 		Offset: 0,-45
 
 canewy07:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy07.shp
+		TilesetFilenames:
+			SNOW: canewy07.shp
+			URBAN: cunewy07.shp
+			NEWURBAN: cnnewy07.shp
+			DESERT: cdnewy07.shp
+			LUNAR: clnewy07.shp
+			DUNE: cdnewy07.shp
 		Offset: 0,-45
 
 canewy08:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy08.shp
+		TilesetFilenames:
+			SNOW: canewy08.shp
+			URBAN: cunewy08.shp
+			NEWURBAN: cnnewy08.shp
+			DESERT: cdnewy08.shp
+			LUNAR: clnewy08.shp
+			DUNE: cdnewy08.shp
 		Offset: 0,-45
 
 canewy10:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy10.shp
+		TilesetFilenames:
+			SNOW: canewy10.shp
+			URBAN: cunewy10.shp
+			NEWURBAN: cnnewy10.shp
+			DESERT: cdnewy10.shp
+			LUNAR: clnewy10.shp
+			DUNE: cdnewy10.shp
 		Offset: -15,-37
 
 canewy11:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy11.shp
+		TilesetFilenames:
+			SNOW: canewy11.shp
+			URBAN: cunewy11.shp
+			NEWURBAN: cnnewy11.shp
+			DESERT: cdnewy11.shp
+			LUNAR: clnewy11.shp
+			DUNE: cdnewy11.shp
 		Offset: -15,-37
 
 canewy12:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy12.shp
+		TilesetFilenames:
+			SNOW: canewy12.shp
+			URBAN: cunewy12.shp
+			NEWURBAN: cnnewy12.shp
+			DESERT: cdnewy12.shp
+			LUNAR: clnewy12.shp
+			DUNE: cdnewy12.shp
 		Offset: 15,-37
 
 canewy13:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy13.shp
+		TilesetFilenames:
+			SNOW: canewy13.shp
+			URBAN: cunewy13.shp
+			NEWURBAN: cnnewy13.shp
+			DESERT: cdnewy13.shp
+			LUNAR: clnewy13.shp
+			DUNE: cdnewy13.shp
 		Offset: 0,-45
 
 canewy14:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy14.shp
+		TilesetFilenames:
+			SNOW: canewy14.shp
+			URBAN: cunewy14.shp
+			NEWURBAN: cnnewy14.shp
+			DESERT: cdnewy14.shp
+			LUNAR: clnewy14.shp
+			DUNE: cdnewy14.shp
 		Offset: 0,-45
 
 canewy15:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy15.shp
+		TilesetFilenames:
+			SNOW: canewy15.shp
+			URBAN: cunewy15.shp
+			NEWURBAN: cnnewy15.shp
+			DESERT: cdnewy15.shp
+			LUNAR: clnewy15.shp
+			DUNE: cdnewy15.shp
 		Offset: 0,-45
 
 canewy16:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy16.shp
+		TilesetFilenames:
+			SNOW: canewy16.shp
+			URBAN: cunewy16.shp
+			NEWURBAN: cnnewy16.shp
+			DESERT: cdnewy16.shp
+			LUNAR: clnewy16.shp
+			DUNE: cdnewy16.shp
 		Offset: 0,-30
 
 canewy17:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy17.shp
+		TilesetFilenames:
+			SNOW: canewy17.shp
+			URBAN: cunewy17.shp
+			NEWURBAN: cnnewy17.shp
+			DESERT: cdnewy17.shp
+			LUNAR: clnewy17.shp
+			DUNE: cdnewy17.shp
 		Offset: 0,-30
 
 canewy18:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy18.shp
+		TilesetFilenames:
+			SNOW: canewy18.shp
+			URBAN: cunewy18.shp
+			NEWURBAN: cnnewy18.shp
+			DESERT: cdnewy18.shp
+			LUNAR: clnewy18.shp
+			DUNE: cdnewy18.shp
 		Offset: 0,-30
 
 canewy20:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy20.shp
+		TilesetFilenames:
+			SNOW: canewy20.shp
+			URBAN: cunewy20.shp
+			NEWURBAN: cnnewy20.shp
+			DESERT: cdnewy20.shp
+			LUNAR: clnewy20.shp
+			DUNE: cdnewy20.shp
 		Offset: 30,-60
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -52,-6
 		Length: 9
 		# ShadowStart: 9
@@ -322,9 +641,18 @@ canewy21:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnewy21.shp
+		TilesetFilenames:
+			SNOW: canewy21.shp
+			URBAN: cunewy21.shp
+			NEWURBAN: cnnewy21.shp
+			DESERT: cdnewy21.shp
+			LUNAR: clnewy21.shp
+			DUNE: cdnewy21.shp
 		Offset: -30,-60
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 54,-5
 		Length: 9
 		# ShadowStart: 9
@@ -334,17 +662,15 @@ caarmy01:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctarmy01.shp
+		TilesetFilenames:
+			SNOW: caarmy01.shp
 		Offset: -15,-37
-		TilesetOverrides:
-			URBAN: TEMPERATE
-			NEWURBAN: TEMPERATE
-			DESERT: TEMPERATE
-			LUNAR: TEMPERATE
-			DUNE: TEMPERATE
 	garrisoned:
 		ShadowStart: 5
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -15,-20
 		Length: 9
 		ShadowStart: 9
@@ -354,11 +680,20 @@ caarmy02:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctarmy02.shp
+		TilesetFilenames:
+			SNOW: caarmy02.shp
+			URBAN: cuarmy02.shp
+			NEWURBAN: cnarmy02.shp
+			DESERT: cdarmy02.shp
+			LUNAR: clarmy02.shp
+			DUNE: cdarmy02.shp
 		Offset: 0,-15
 	garrisoned:
 		ShadowStart: 5
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 0,-1
 		Length: 9
 		# ShadowStart: 9
@@ -368,11 +703,20 @@ caarmy03:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctarmy03.shp
+		TilesetFilenames:
+			SNOW: caarmy03.shp
+			URBAN: cuarmy03.shp
+			NEWURBAN: cnarmy03.shp
+			DESERT: cdarmy03.shp
+			LUNAR: clarmy03.shp
+			DUNE: cdarmy03.shp
 		Offset: 0,-15
 	garrisoned:
 		ShadowStart: 5
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 0,-3
 		Length: 9
 		# ShadowStart: 9
@@ -382,11 +726,20 @@ caarmy04:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctarmy04.shp
+		TilesetFilenames:
+			SNOW: caarmy04.shp
+			URBAN: cuarmy04.shp
+			NEWURBAN: cnarmy04.shp
+			DESERT: cdarmy04.shp
+			LUNAR: clarmy04.shp
+			DUNE: cdarmy04.shp
 		Offset: 0,-15
 	garrisoned:
 		ShadowStart: 5
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 0,1
 		Length: 9
 		# ShadowStart: 9
@@ -396,48 +749,114 @@ cawa2a:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwa2a.shp
+		TilesetFilenames:
+			SNOW: cawa2a.shp
+			URBAN: cuwa2a.shp
+			NEWURBAN: cnwa2a.shp
+			DESERT: cdwa2a.shp
+			LUNAR: clwa2a.shp
+			DUNE: cdwa2a.shp
 		Offset: 0,-60
 
 cawa2b:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwa2b.shp
+		TilesetFilenames:
+			SNOW: cawa2b.shp
+			URBAN: cuwa2b.shp
+			NEWURBAN: cnwa2b.shp
+			DESERT: cdwa2b.shp
+			LUNAR: clwa2b.shp
+			DUNE: cdwa2b.shp
 		Offset: 0,-60
 
 cawa2c:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwa2c.shp
+		TilesetFilenames:
+			SNOW: cawa2c.shp
+			URBAN: cuwa2c.shp
+			NEWURBAN: cnwa2c.shp
+			DESERT: cdwa2c.shp
+			LUNAR: clwa2c.shp
+			DUNE: cdwa2c.shp
 		Offset: 0,-60
 
 cawa2d:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctwa2d.shp
+		TilesetFilenames:
+			SNOW: cawa2d.shp
+			URBAN: cuwa2d.shp
+			NEWURBAN: cnwa2d.shp
+			DESERT: cdwa2d.shp
+			LUNAR: clwa2d.shp
+			DUNE: cdwa2d.shp
 		Offset: 0,-60
 
 cafarm01:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctfarm01.shp
+		TilesetFilenames:
+			SNOW: cafarm01.shp
+			URBAN: cufarm01.shp
+			NEWURBAN: cnfarm01.shp
+			DESERT: cdfarm01.shp
+			LUNAR: clfarm01.shp
+			DUNE: cdfarm01.shp
 		Offset: 0,-30
 	garrisoned:
 		ShadowStart: 5
-	icon: bits/cameos/farmicon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/farmicon.png
+		TilesetFilenames:
+			TEMPERATE: bits/cameos/farmicon.png
+			SNOW: bits/cameos/farmicon.png
+			URBAN: bits/cameos/farmicon.png
+			NEWURBAN: bits/cameos/farmicon.png
+			DESERT: bits/cameos/farmicon.png
+			LUNAR: bits/cameos/farmicon.png
+			DUNE: bits/cameos/farmicon.png
+			SIMPLETERRAIN: bits/cameos/farmicon.png
 
 cafarm02:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctfarm02.shp
+		TilesetFilenames:
+			SNOW: cafarm02.shp
+			URBAN: cufarm02.shp
+			NEWURBAN: cnfarm02.shp
+			DESERT: cdfarm02.shp
+			LUNAR: clfarm02.shp
+			DUNE: cdfarm02.shp
 		Offset: 0,-15
 
 cafarm06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctfarm06.shp
+		TilesetFilenames:
+			SNOW: cafarm06.shp
+			URBAN: cufarm06.shp
+			NEWURBAN: cnfarm06.shp
+			DESERT: cdfarm06.shp
+			LUNAR: clfarm06.shp
+			DUNE: cdfarm06.shp
 		Offset: 0,-30
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 0,-132
 		Length: 9
 		# ShadowStart: 9
@@ -447,6 +866,14 @@ cafrma:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctfrma.shp
+		TilesetFilenames:
+			SNOW: cafrma.shp
+			URBAN: cufrma.shp
+			NEWURBAN: cnfrma.shp
+			DESERT: cdfrma.shp
+			LUNAR: clfrma.shp
+			DUNE: cdfrma.shp
 		Offset: 0,-30
 	garrisoned:
 		ShadowStart: 5
@@ -455,6 +882,14 @@ cafrmb:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctfrmb.shp
+		TilesetFilenames:
+			SNOW: cafrmb.shp
+			URBAN: cufrmb.shp
+			NEWURBAN: cnfrmb.shp
+			DESERT: cdfrmb.shp
+			LUNAR: clfrmb.shp
+			DUNE: cdfrmb.shp
 		Offset: 0,-15
 	garrisoned:
 		ShadowStart: 5
@@ -463,9 +898,18 @@ cabarn02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctbarn02.shp
+		TilesetFilenames:
+			SNOW: cabarn02.shp
+			URBAN: cubarn02.shp
+			NEWURBAN: cnbarn02.shp
+			DESERT: cdbarn02.shp
+			LUNAR: clbarn02.shp
+			DUNE: cdbarn02.shp
 		Offset: 0,-30
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -1,-38
 		Length: 9
 		# ShadowStart: 9
@@ -475,11 +919,20 @@ camsc07:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmsc07.shp
+		TilesetFilenames:
+			SNOW: camsc07.shp
+			URBAN: cumsc07.shp
+			NEWURBAN: cnmsc07.shp
+			DESERT: cdmsc07.shp
+			LUNAR: clmsc07.shp
+			DUNE: cdmsc07.shp
 		Offset: 0,-30
 	garrisoned:
 		ShadowStart: 5
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 1,-15
 		Length: 9
 		# ShadowStart: 9
@@ -489,11 +942,20 @@ camsc08:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmsc08.shp
+		TilesetFilenames:
+			SNOW: camsc08.shp
+			URBAN: cumsc08.shp
+			NEWURBAN: cnmsc08.shp
+			DESERT: cdmsc08.shp
+			LUNAR: clmsc08.shp
+			DUNE: cdmsc08.shp
 		Offset: 0,-15
 	garrisoned:
 		ShadowStart: 5
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 1,-16
 		Length: 9
 		# ShadowStart: 9
@@ -503,11 +965,20 @@ camsc09:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmsc09.shp
+		TilesetFilenames:
+			SNOW: camsc09.shp
+			URBAN: cumsc09.shp
+			NEWURBAN: cnmsc09.shp
+			DESERT: cdmsc09.shp
+			LUNAR: clmsc09.shp
+			DUNE: cdmsc09.shp
 		Offset: 0,-15
 	garrisoned:
 		ShadowStart: 5
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 1,-16
 		Length: 9
 		# ShadowStart: 9
@@ -517,9 +988,18 @@ camsc10:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmsc10.shp
+		TilesetFilenames:
+			SNOW: camsc10.shp
+			URBAN: cumsc10.shp
+			NEWURBAN: cnmsc10.shp
+			DESERT: cdmsc10.shp
+			LUNAR: clmsc10.shp
+			DUNE: cdmsc10.shp
 		Offset: 0,-60
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -92,-50
 		Length: 9
 		# ShadowStart: 9
@@ -529,9 +1009,18 @@ camiam01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmiam01.shp
+		TilesetFilenames:
+			SNOW: camiam01.shp
+			URBAN: cumiam01.shp
+			NEWURBAN: cnmiam01.shp
+			DESERT: cdmiam01.shp
+			LUNAR: clmiam01.shp
+			DUNE: cdmiam01.shp
 		Offset: -30,-45
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -40,-176
 		Length: 9
 		# ShadowStart: 9
@@ -541,9 +1030,18 @@ camiam02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmiam02.shp
+		TilesetFilenames:
+			SNOW: camiam02.shp
+			URBAN: cumiam02.shp
+			NEWURBAN: cnmiam02.shp
+			DESERT: cdmiam02.shp
+			LUNAR: clmiam02.shp
+			DUNE: cdmiam02.shp
 		Offset: -30,-45
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 32,-140
 		Length: 9
 		# ShadowStart: 9
@@ -553,9 +1051,18 @@ camiam03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmiam03.shp
+		TilesetFilenames:
+			SNOW: camiam03.shp
+			URBAN: cumiam03.shp
+			NEWURBAN: cnmiam03.shp
+			DESERT: cdmiam03.shp
+			LUNAR: clmiam03.shp
+			DUNE: cdmiam03.shp
 		Offset: 15,-37
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -36,-136
 		Length: 9
 		# ShadowStart: 9
@@ -565,11 +1072,20 @@ camiam04:
 	Inherits: ^CivBuildingNoRubble
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmiam04.shp
+		TilesetFilenames:
+			SNOW: camiam04.shp
+			URBAN: cumiam04.shp
+			NEWURBAN: cnmiam04.shp
+			DESERT: cdmiam04.shp
+			LUNAR: clmiam04.shp
+			DUNE: cdmiam04.shp
 		Offset: 0,-15
 	garrisoned:
 		ShadowStart: 5
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 0,-8
 		Length: 9
 		# ShadowStart: 9
@@ -579,170 +1095,386 @@ camiam05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmiam05.shp
+		TilesetFilenames:
+			SNOW: camiam05.shp
+			URBAN: cumiam05.shp
+			NEWURBAN: cnmiam05.shp
+			DESERT: cdmiam05.shp
+			LUNAR: clmiam05.shp
+			DUNE: cdmiam05.shp
 		Offset: 15,-52
 
 camiam06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmiam06.shp
+		TilesetFilenames:
+			SNOW: camiam06.shp
+			URBAN: cumiam06.shp
+			NEWURBAN: cnmiam06.shp
+			DESERT: cdmiam06.shp
+			LUNAR: clmiam06.shp
+			DUNE: cdmiam06.shp
 		Offset: 0,-60
 
 camiam07:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmiam07.shp
+		TilesetFilenames:
+			SNOW: camiam07.shp
+			URBAN: cumiam07.shp
+			NEWURBAN: cnmiam07.shp
+			DESERT: cdmiam07.shp
+			LUNAR: clmiam07.shp
+			DUNE: cdmiam07.shp
 		Offset: 0,-60
 
 camiam08:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmiam08.shp
+		TilesetFilenames:
+			SNOW: camiam08.shp
+			URBAN: cumiam08.shp
+			NEWURBAN: cnmiam08.shp
+			DESERT: cdmiam08.shp
+			LUNAR: clmiam08.shp
+			DUNE: cdmiam08.shp
 		Offset: -30,-30
 
 castrt01:
 	Inherits: ^CivProp
+	idle:
+		Filename: ctstrt01.shp
+		TilesetFilenames:
+			SNOW: castrt01.shp
+			URBAN: custrt01.shp
+			NEWURBAN: cnstrt01.shp
+			DESERT: cdstrt01.shp
+			LUNAR: clstrt01.shp
+			DUNE: cdstrt01.shp
 
 castrt02:
 	Inherits: ^CivProp
 	Defaults:
-		UseTilesetCode: false
+		Filename: castrt02.shp
 
 castrt03:
 	Inherits: ^CivProp
 	Defaults:
-		UseTilesetCode: false
+		Filename: castrt03.shp
 
 castrt04:
 	Inherits: ^CivProp
 	Defaults:
-		UseTilesetCode: false
+		Filename: castrt04.shp
 
 castrt05:
 	Inherits: ^CivProp
+	idle:
+		Filename: ctstrt05.shp
+		TilesetFilenames:
+			SNOW: castrt05.shp
+			URBAN: custrt05.shp
+			NEWURBAN: cnstrt05.shp
+			DESERT: cdstrt05.shp
+			LUNAR: clstrt05.shp
+			DUNE: cdstrt05.shp
 
 camex01:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctmex01.shp
+		TilesetFilenames:
+			SNOW: camex01.shp
+			URBAN: cumex01.shp
+			NEWURBAN: cnmex01.shp
+			DESERT: cdmex01.shp
+			LUNAR: clmex01.shp
+			DUNE: cdmex01.shp
 		Offset: -15,-37
 
 camex02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmex02.shp
+		TilesetFilenames:
+			SNOW: camex02.shp
+			URBAN: cumex02.shp
+			NEWURBAN: cnmex02.shp
+			DESERT: cdmex02.shp
+			LUNAR: clmex02.shp
+			DUNE: cdmex02.shp
 		Offset: -30,-75
 
 camex03:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctmex03.shp
+		TilesetFilenames:
+			SNOW: camex03.shp
+			URBAN: cumex03.shp
+			NEWURBAN: cnmex03.shp
+			DESERT: cdmex03.shp
+			LUNAR: clmex03.shp
+			DUNE: cdmex03.shp
 		Offset: 0,-45
 
 camex04:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctmex04.shp
+		TilesetFilenames:
+			SNOW: camex04.shp
+			URBAN: cumex04.shp
+			NEWURBAN: cnmex04.shp
+			DESERT: cdmex04.shp
+			LUNAR: clmex04.shp
+			DUNE: cdmex04.shp
 		Offset: 0,-60
 
 camex05:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctmex05.shp
+		TilesetFilenames:
+			SNOW: camex05.shp
+			URBAN: cumex05.shp
+			NEWURBAN: cnmex05.shp
+			DESERT: cdmex05.shp
+			LUNAR: clmex05.shp
+			DUNE: cdmex05.shp
 		Offset: 0,-30
 
 castl01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctstl01.shp
+		TilesetFilenames:
+			URBAN: custl01.shp
+			NEWURBAN: cnstl01.shp
+			DESERT: cdstl01.shp
+			LUNAR: clstl01.shp
+			DUNE: cdstl01.shp
 		Offset: 0,-60
-		TilesetOverrides:
-			SNOW: TEMPERATE
 
 castl02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctstl02.shp
+		TilesetFilenames:
+			SNOW: castl02.shp
+			URBAN: custl02.shp
+			NEWURBAN: cnstl02.shp
+			DESERT: cdstl02.shp
+			LUNAR: clstl02.shp
+			DUNE: cdstl02.shp
 		Offset: 0,-60
 
 castl03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctstl03.shp
+		TilesetFilenames:
+			SNOW: castl03.shp
+			URBAN: custl03.shp
+			NEWURBAN: cnstl03.shp
+			DESERT: cdstl03.shp
+			LUNAR: clstl03.shp
+			DUNE: cdstl03.shp
 		Offset: 0,-60
 
 castl04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgstl04
+	Defaults:
+		Filename: cgstl04.shp
 		Offset: 60,-60
-		UseTilesetCode: false
 
 castl05a:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctstl05a.shp
+		TilesetFilenames:
+			SNOW: castl05a.shp
+			URBAN: custl05a.shp
+			NEWURBAN: cnstl05a.shp
+			DESERT: cdstl05a.shp
+			LUNAR: clstl05a.shp
+			DUNE: cdstl05a.shp
 		Offset: 0,-60
 
 castl05b:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctstl05b.shp
+		TilesetFilenames:
+			SNOW: castl05b.shp
+			URBAN: custl05b.shp
+			NEWURBAN: cnstl05b.shp
+			DESERT: cdstl05b.shp
+			LUNAR: clstl05b.shp
+			DUNE: cdstl05b.shp
 		Offset: 0,-60
 
 castl05c:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctstl05c.shp
+		TilesetFilenames:
+			SNOW: castl05c.shp
+			URBAN: custl05c.shp
+			NEWURBAN: cnstl05c.shp
+			DESERT: cdstl05c.shp
+			LUNAR: clstl05c.shp
+			DUNE: cdstl05c.shp
 		Offset: 0,-60
 
 castl05d:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctstl05d.shp
+		TilesetFilenames:
+			SNOW: castl05d.shp
+			URBAN: custl05d.shp
+			NEWURBAN: cnstl05d.shp
+			DESERT: cdstl05d.shp
+			LUNAR: clstl05d.shp
+			DUNE: cdstl05d.shp
 		Offset: 0,-60
 
 castl05e:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctstl05e.shp
+		TilesetFilenames:
+			SNOW: castl05e.shp
+			URBAN: custl05e.shp
+			NEWURBAN: cnstl05e.shp
+			DESERT: cdstl05e.shp
+			LUNAR: clstl05e.shp
+			DUNE: cdstl05e.shp
 		Offset: 0,-60
 
 castl05f:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctstl05f.shp
+		TilesetFilenames:
+			SNOW: castl05f.shp
+			URBAN: custl05f.shp
+			NEWURBAN: cnstl05f.shp
+			DESERT: cdstl05f.shp
+			LUNAR: clstl05f.shp
+			DUNE: cdstl05f.shp
 		Offset: 0,-60
 
 castl05g:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctstl05g.shp
+		TilesetFilenames:
+			SNOW: castl05g.shp
+			URBAN: custl05g.shp
+			NEWURBAN: cnstl05g.shp
+			DESERT: cdstl05g.shp
+			LUNAR: clstl05g.shp
+			DUNE: cdstl05g.shp
 		Offset: 0,-60
 
 castl05h:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctstl05h.shp
+		TilesetFilenames:
+			SNOW: castl05h.shp
+			URBAN: custl05h.shp
+			NEWURBAN: cnstl05h.shp
+			DESERT: cdstl05h.shp
+			LUNAR: clstl05h.shp
+			DUNE: cdstl05h.shp
 		Offset: 0,-60
 
 cacolo01:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: ctcolo01.shp
+		TilesetFilenames:
+			SNOW: cacolo01.shp
+			URBAN: cucolo01.shp
+			NEWURBAN: cncolo01.shp
+			DESERT: cdcolo01.shp
+			LUNAR: clcolo01.shp
+			DUNE: cdcolo01.shp
 		Offset: -30,-60
 
 caind01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctind01.shp
+		TilesetFilenames:
+			SNOW: caind01.shp
+			URBAN: cuind01.shp
+			NEWURBAN: cnind01.shp
+			DESERT: cdind01.shp
+			LUNAR: clind01.shp
+			DUNE: cdind01.shp
 		Offset: 0,-60
 
 calab:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctlab.shp
+		TilesetFilenames:
+			SNOW: calab.shp
+			URBAN: culab.shp
+			NEWURBAN: cnlab.shp
+			DESERT: cdlab.shp
+			LUNAR: cllab.shp
+			DUNE: cdlab.shp
 		Offset: 15,-52
 
 cagas01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctgas01.shp
+		TilesetFilenames:
+			SNOW: cagas01.shp
+			URBAN: cugas01.shp
+			NEWURBAN: cngas01.shp
+			DESERT: cdgas01.shp
+			LUNAR: clgas01.shp
+			DUNE: cdgas01.shp
 		Offset: 0,-45
 
 cahse01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cthse01.shp
+		TilesetFilenames:
+			SNOW: cahse01.shp
+			URBAN: cuhse01.shp
+			NEWURBAN: cnhse01.shp
+			DESERT: cdhse01.shp
+			LUNAR: clhse01.shp
+			DUNE: cdhse01.shp
 		Offset: -15,-37
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 28,10
 		Length: 9
 		# ShadowStart: 9
@@ -752,9 +1484,18 @@ cahse02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cthse02.shp
+		TilesetFilenames:
+			SNOW: cahse02.shp
+			URBAN: cuhse02.shp
+			NEWURBAN: cnhse02.shp
+			DESERT: cdhse02.shp
+			LUNAR: clhse02.shp
+			DUNE: cdhse02.shp
 		Offset: -15,-37
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -10,-53
 		Length: 9
 		# ShadowStart: 9
@@ -764,9 +1505,18 @@ cahse03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cthse03.shp
+		TilesetFilenames:
+			SNOW: cahse03.shp
+			URBAN: cuhse03.shp
+			NEWURBAN: cnhse03.shp
+			DESERT: cdhse03.shp
+			LUNAR: clhse03.shp
+			DUNE: cdhse03.shp
 		Offset: 15,-52
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -55,-22
 		Length: 9
 		# ShadowStart: 9
@@ -776,9 +1526,18 @@ cahse04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cthse04.shp
+		TilesetFilenames:
+			SNOW: cahse04.shp
+			URBAN: cuhse04.shp
+			NEWURBAN: cnhse04.shp
+			DESERT: cdhse04.shp
+			LUNAR: clhse04.shp
+			DUNE: cdhse04.shp
 		Offset: -15,-37
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 9,-42
 		Length: 9
 		# ShadowStart: 9
@@ -788,9 +1547,18 @@ cahse05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cthse05.shp
+		TilesetFilenames:
+			SNOW: cahse05.shp
+			URBAN: cuhse05.shp
+			NEWURBAN: cnhse05.shp
+			DESERT: cdhse05.shp
+			LUNAR: clhse05.shp
+			DUNE: cdhse05.shp
 		Offset: 15,-22
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 3,-7
 		Length: 9
 		# ShadowStart: 9
@@ -800,9 +1568,18 @@ cahse06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cthse06.shp
+		TilesetFilenames:
+			SNOW: cahse06.shp
+			URBAN: cuhse06.shp
+			NEWURBAN: cnhse06.shp
+			DESERT: cdhse06.shp
+			LUNAR: clhse06.shp
+			DUNE: cdhse06.shp
 		Offset: -15,-22
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 4,-7
 		Length: 9
 		# ShadowStart: 9
@@ -812,9 +1589,18 @@ cahse07:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cthse07.shp
+		TilesetFilenames:
+			SNOW: cahse07.shp
+			URBAN: cuhse07.shp
+			NEWURBAN: cnhse07.shp
+			DESERT: cdhse07.shp
+			LUNAR: clhse07.shp
+			DUNE: cdhse07.shp
 		Offset: 15,-37
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 8,-24
 		Length: 9
 		# ShadowStart: 9
@@ -823,14 +1609,11 @@ cahse07:
 cawt01:
 	Inherits: ^CivBuildingNoRubble
 	Defaults:
+		Filename: cgwt01.shp
+		TilesetFilenames:
+			SNOW: cawt01.shp
+			SIMPLETERRAIN: ctwt01.shp
 		Offset: 0,-15
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 	idle:
 		ShadowStart: 2
 	damaged-idle:
@@ -840,9 +1623,18 @@ cabunk01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctbunk01.shp
+		TilesetFilenames:
+			SNOW: cabunk01.shp
+			URBAN: cubunk01.shp
+			NEWURBAN: cnbunk01.shp
+			DESERT: cdbunk01.shp
+			LUNAR: clbunk01.shp
+			DUNE: cdbunk01.shp
 		Offset: 0,-30
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 54,-1
 		Length: 9
 		# ShadowStart: 9
@@ -852,9 +1644,18 @@ cabunk02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctbunk02.shp
+		TilesetFilenames:
+			SNOW: cabunk02.shp
+			URBAN: cubunk02.shp
+			NEWURBAN: cnbunk02.shp
+			DESERT: cdbunk02.shp
+			LUNAR: clbunk02.shp
+			DUNE: cdbunk02.shp
 		Offset: 0,-30
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -52,0
 		Length: 9
 		# ShadowStart: 9
@@ -863,269 +1664,561 @@ cabunk02:
 carus01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgrus01
+	Defaults:
+		Filename: cgrus01.shp
 		Offset: 0,-60
-		UseTilesetCode: false
 
 carus02a:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cgrus02a.shp
+		TilesetFilenames:
+			SNOW: carus02a.shp
+			SIMPLETERRAIN: ctrus02a.shp
 		Offset: 0,-15
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 	rubble:
-		UseTilesetCode: false
+		Filename: carus02a.shp
+		TilesetFilenames:
 
 carus02b:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cgrus02b.shp
+		TilesetFilenames:
+			SNOW: carus02b.shp
+			SIMPLETERRAIN: ctrus02b.shp
 		Offset: 0,-15
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 	rubble:
-		UseTilesetCode: false
+		Filename: carus02b.shp
+		TilesetFilenames:
 
 carus02c:
 	Inherits: ^CivBuildingNoRubble
 	Defaults:
+		Filename: ctrus02c.shp
+		TilesetFilenames:
+			SNOW: carus02c.shp
+			URBAN: curus02c.shp
+			NEWURBAN: cnrus02c.shp
+			DESERT: cdrus02c.shp
+			LUNAR: clrus02c.shp
+			DUNE: cdrus02c.shp
 		Offset: 0,-15
 
 carus02d:
 	Inherits: ^CivBuildingNoRubble
 	Defaults:
+		Filename: ctrus02d.shp
+		TilesetFilenames:
+			SNOW: carus02d.shp
+			URBAN: curus02d.shp
+			NEWURBAN: cnrus02d.shp
+			DESERT: cdrus02d.shp
+			LUNAR: clrus02d.shp
+			DUNE: cdrus02d.shp
 		Offset: 0,-15
 
 carus02e:
 	Inherits: ^CivBuildingNoRubble
 	Defaults:
+		Filename: ctrus02e.shp
+		TilesetFilenames:
+			SNOW: carus02e.shp
+			URBAN: curus02e.shp
+			NEWURBAN: cnrus02e.shp
+			DESERT: cdrus02e.shp
+			LUNAR: clrus02e.shp
+			DUNE: cdrus02e.shp
 		Offset: 0,-15
 
 carus02f:
 	Inherits: ^CivBuildingNoRubble
 	Defaults:
+		Filename: ctrus02f.shp
+		TilesetFilenames:
+			SNOW: carus02f.shp
+			URBAN: curus02f.shp
+			NEWURBAN: cnrus02f.shp
+			DESERT: cdrus02f.shp
+			LUNAR: clrus02f.shp
+			DUNE: cdrus02f.shp
 		Offset: 0,-15
 
 carus02g:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cgrus02g.shp
+		TilesetFilenames:
+			SNOW: carus02g.shp
+			SIMPLETERRAIN: ctrus02g.shp
 		Offset: 0,-15
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 	rubble:
-		UseTilesetCode: false
+		Filename: carus02g.shp
+		TilesetFilenames:
 
 carus03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctrus03.shp
+		TilesetFilenames:
+			SNOW: carus03.shp
+			URBAN: curus03.shp
+			NEWURBAN: cnrus03.shp
+			DESERT: cdrus03.shp
+			LUNAR: clrus03.shp
+			DUNE: cdrus03.shp
 		Offset: 45,-52
 
 carus04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctrus04.shp
+		TilesetFilenames:
+			SNOW: carus04.shp
+			URBAN: curus04.shp
+			NEWURBAN: cnrus04.shp
+			DESERT: cdrus04.shp
+			LUNAR: clrus04.shp
+			DUNE: cdrus04.shp
 		Offset: 0,-60
 
 carus05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctrus05.shp
+		TilesetFilenames:
+			SNOW: carus05.shp
+			URBAN: curus05.shp
+			NEWURBAN: cnrus05.shp
+			DESERT: cdrus05.shp
+			LUNAR: clrus05.shp
+			DUNE: cdrus05.shp
 		Offset: 0,-60
 
 carus06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctrus06.shp
+		TilesetFilenames:
+			SNOW: carus06.shp
+			URBAN: curus06.shp
+			NEWURBAN: cnrus06.shp
+			DESERT: cdrus06.shp
+			LUNAR: clrus06.shp
+			DUNE: cdrus06.shp
 		Offset: 0,-60
 
 carus07:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctrus07.shp
+		TilesetFilenames:
+			SNOW: carus07.shp
+			URBAN: curus07.shp
+			NEWURBAN: cnrus07.shp
+			DESERT: cdrus07.shp
+			LUNAR: clrus07.shp
+			DUNE: cdrus07.shp
 		Offset: 0,-15
 
 carus08:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctrus08.shp
+		TilesetFilenames:
+			SNOW: carus08.shp
+			URBAN: curus08.shp
+			NEWURBAN: cnrus08.shp
+			DESERT: cdrus08.shp
+			LUNAR: clrus08.shp
+			DUNE: cdrus08.shp
 		Offset: 0,-15
 
 carus09:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctrus09.shp
+		TilesetFilenames:
+			SNOW: carus09.shp
+			URBAN: curus09.shp
+			NEWURBAN: cnrus09.shp
+			DESERT: cdrus09.shp
+			LUNAR: clrus09.shp
+			DUNE: cdrus09.shp
 		Offset: -15,-22
 
 carus10:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctrus10.shp
+		TilesetFilenames:
+			SNOW: carus10.shp
+			URBAN: curus10.shp
+			NEWURBAN: cnrus10.shp
+			DESERT: cdrus10.shp
+			LUNAR: clrus10.shp
+			DUNE: cdrus10.shp
 		Offset: 15,-23
 
 carus11:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctrus11.shp
+		TilesetFilenames:
+			SNOW: carus11.shp
+			URBAN: curus11.shp
+			NEWURBAN: cnrus11.shp
+			DESERT: cdrus11.shp
+			LUNAR: clrus11.shp
+			DUNE: cdrus11.shp
 		Offset: -15,-22
 
 cachig01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctchig01.shp
+		TilesetFilenames:
+			SNOW: cachig01.shp
+			URBAN: cuchig01.shp
+			NEWURBAN: cnchig01.shp
+			DESERT: cdchig01.shp
+			LUNAR: clchig01.shp
+			DUNE: cdchig01.shp
 		Offset: -15,-37
 
 cachig02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctchig02.shp
+		TilesetFilenames:
+			SNOW: cachig02.shp
+			URBAN: cuchig02.shp
+			NEWURBAN: cnchig02.shp
+			DESERT: cdchig02.shp
+			LUNAR: clchig02.shp
+			DUNE: cdchig02.shp
 		Offset: 15,-37
 
 cachig03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctchig03.shp
+		TilesetFilenames:
+			SNOW: cachig03.shp
+			URBAN: cuchig03.shp
+			NEWURBAN: cnchig03.shp
+			DESERT: cdchig03.shp
+			LUNAR: clchig03.shp
+			DUNE: cdchig03.shp
 		Offset: -15,-37
 
 cachig04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgchig04
+	Defaults:
+		Filename: cgchig04.shp
 		Offset: 0,-30
-		UseTilesetCode: false
 
 cachig05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctchig05.shp
+		TilesetFilenames:
+			SNOW: cachig05.shp
+			URBAN: cuchig05.shp
+			NEWURBAN: cnchig05.shp
+			DESERT: cdchig05.shp
+			LUNAR: clchig05.shp
+			DUNE: cdchig05.shp
 		Offset: 0,-60
 
 cachig06:
 	Inherits: ^CivBuilding
-	Defaults: cgchig06
+	Defaults:
+		Filename: cgchig06.shp
 		Offset: 0,-30
-		UseTilesetCode: false
 
 catech01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttech01.shp
+		TilesetFilenames:
+			SNOW: catech01.shp
+			URBAN: cutech01.shp
+			NEWURBAN: cntech01.shp
+			DESERT: cdtech01.shp
+			LUNAR: cltech01.shp
+			DUNE: cdtech01.shp
 		Offset: 0,-45
-	icon: bits/cameos/msilicon
+	icon:
+		Filename: bits/cameos/commicon.shp
+		TilesetFilenames:
+			TEMPERATE: bits/cameos/commicon.shp
+			SNOW: bits/cameos/commicon.shp
+			URBAN: bits/cameos/commicon.shp
+			NEWURBAN: bits/cameos/commicon.shp
+			DESERT: bits/cameos/commicon.shp
+			LUNAR: bits/cameos/commicon.shp
+			DUNE: bits/cameos/commicon.shp
+			SIMPLETERRAIN: bits/cameos/commicon.shp
 
 catexs01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttexs01.shp
+		TilesetFilenames:
+			SNOW: catexs01.shp
+			URBAN: cutexs01.shp
+			NEWURBAN: cntexs01.shp
+			DESERT: cdtexs01.shp
+			LUNAR: cltexs01.shp
+			DUNE: cdtexs01.shp
 		Offset: 0,-30
 
 catexs02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttexs02.shp
+		TilesetFilenames:
+			SNOW: catexs02.shp
+			URBAN: cutexs02.shp
+			NEWURBAN: cntexs02.shp
+			DESERT: cdtexs02.shp
+			LUNAR: cltexs02.shp
+			DUNE: cdtexs02.shp
 		Offset: 0,-60
 
 catexs03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttexs03.shp
+		TilesetFilenames:
+			SNOW: catexs03.shp
+			URBAN: cutexs03.shp
+			NEWURBAN: cntexs03.shp
+			DESERT: cdtexs03.shp
+			LUNAR: cltexs03.shp
+			DUNE: cdtexs03.shp
 		Offset: 0,-45
 
 catexs04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttexs04.shp
+		TilesetFilenames:
+			SNOW: catexs04.shp
+			URBAN: cutexs04.shp
+			NEWURBAN: cntexs04.shp
+			DESERT: cdtexs04.shp
+			LUNAR: cltexs04.shp
+			DUNE: cdtexs04.shp
 		Offset: 0,-45
 
 catexs05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttexs05.shp
+		TilesetFilenames:
+			SNOW: catexs05.shp
+			URBAN: cutexs05.shp
+			NEWURBAN: cntexs05.shp
+			DESERT: cdtexs05.shp
+			LUNAR: cltexs05.shp
+			DUNE: cdtexs05.shp
 		Offset: 0,-45
 
 catexs06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttexs06.shp
+		TilesetFilenames:
+			SNOW: catexs06.shp
+			URBAN: cutexs06.shp
+			NEWURBAN: cntexs06.shp
+			DESERT: cdtexs06.shp
+			LUNAR: cltexs06.shp
+			DUNE: cdtexs06.shp
 		Offset: 0,-45
 
 catexs07:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttexs07.shp
+		TilesetFilenames:
+			SNOW: catexs07.shp
+			URBAN: cutexs07.shp
+			NEWURBAN: cntexs07.shp
+			DESERT: cdtexs07.shp
+			LUNAR: cltexs07.shp
+			DUNE: cdtexs07.shp
 		Offset: 0,-45
 
 catexs08:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttexs08.shp
+		TilesetFilenames:
+			SNOW: catexs08.shp
+			URBAN: cutexs08.shp
+			NEWURBAN: cntexs08.shp
+			DESERT: cdtexs08.shp
+			LUNAR: cltexs08.shp
+			DUNE: cdtexs08.shp
 		Offset: 15,-37
 
 canwy05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnwy05.shp
+		TilesetFilenames:
+			SNOW: canwy05.shp
+			URBAN: cunwy05.shp
+			NEWURBAN: cnnwy05.shp
+			DESERT: cdnwy05.shp
+			LUNAR: clnwy05.shp
+			DUNE: cdnwy05.shp
 		Offset: 0,-60
 
 canwy09:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnwy09.shp
+		TilesetFilenames:
+			SNOW: canwy09.shp
+			URBAN: cunwy09.shp
+			NEWURBAN: cnnwy09.shp
+			DESERT: cdnwy09.shp
+			LUNAR: clnwy09.shp
+			DUNE: cdnwy09.shp
 		Offset: 15,-37
 
 canwy22:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnwy22.shp
+		TilesetFilenames:
+			SNOW: canwy22.shp
+			URBAN: cunwy22.shp
+			NEWURBAN: cnnwy22.shp
+			DESERT: cdnwy22.shp
+			LUNAR: clnwy22.shp
+			DUNE: cdnwy22.shp
 		Offset: 0,-45
 
 canwy23:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnwy23.shp
+		TilesetFilenames:
+			SNOW: canwy23.shp
+			URBAN: cunwy23.shp
+			NEWURBAN: cnnwy23.shp
+			DESERT: cdnwy23.shp
+			LUNAR: clnwy23.shp
+			DUNE: cdnwy23.shp
 		Offset: -15,-37
 
 canwy24:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnwy24.shp
+		TilesetFilenames:
+			SNOW: canwy24.shp
+			URBAN: cunwy24.shp
+			NEWURBAN: cnnwy24.shp
+			DESERT: cdnwy24.shp
+			LUNAR: clnwy24.shp
+			DUNE: cdnwy24.shp
 		Offset: 0,-45
 
 canwy25:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnwy25.shp
+		TilesetFilenames:
+			SNOW: canwy25.shp
+			URBAN: cunwy25.shp
+			NEWURBAN: cnnwy25.shp
+			DESERT: cdnwy25.shp
+			LUNAR: clnwy25.shp
+			DUNE: cdnwy25.shp
 		Offset: 0,-45
 
 canwy26:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctnwy26.shp
+		TilesetFilenames:
+			SNOW: canwy26.shp
+			URBAN: cunwy26.shp
+			NEWURBAN: cnnwy26.shp
+			DESERT: cdnwy26.shp
+			LUNAR: clnwy26.shp
+			DUNE: cdnwy26.shp
 		Offset: -30,-60
 
 camov01:
 	Inherits: ^CivBuildingNoRubble
 	Defaults:
+		Filename: ctmov01.shp
+		TilesetFilenames:
+			SNOW: camov01.shp
+			URBAN: cumov01.shp
+			NEWURBAN: cnmov01.shp
+			DESERT: cdmov01.shp
+			LUNAR: clmov01.shp
+			DUNE: cdmov01.shp
 		Offset: 45,-37
-	idle-overlay: camov01_a
+	idle-overlay:
+		Filename: ctmov01_a.shp
+		TilesetFilenames:
+			SNOW: camov01_a.shp
+			URBAN: cumov01_a.shp
+			NEWURBAN: cnmov01_a.shp
+			DESERT: cdmov01_a.shp
+			LUNAR: clmov01_a.shp
+			DUNE: cdmov01_a.shp
 		Length: 30
 		Tick: 200
-	damaged-idle-overlay: camov01_a
+	damaged-idle-overlay:
+		Filename: ctmov01_a.shp
+		TilesetFilenames:
+			SNOW: camov01_a.shp
+			URBAN: cumov01_a.shp
+			NEWURBAN: cnmov01_a.shp
+			DESERT: cdmov01_a.shp
+			LUNAR: clmov01_a.shp
+			DUNE: cdmov01_a.shp
 		Start: 30
 		Length: 30
 		Tick: 200
@@ -1134,113 +2227,252 @@ camov02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctmov02.shp
+		TilesetFilenames:
+			SNOW: camov02.shp
+			URBAN: cumov02.shp
+			NEWURBAN: cnmov02.shp
+			DESERT: cdmov02.shp
+			LUNAR: clmov02.shp
+			DUNE: cdmov02.shp
 		Offset: 0,-30
-	idle-overlay: camov02_a
+	idle-overlay:
+		Filename: ctmov02_a.shp
+		TilesetFilenames:
+			SNOW: camov02_a.shp
+			URBAN: cumov02_a.shp
+			NEWURBAN: cnmov02_a.shp
+			DESERT: cdmov02_a.shp
+			LUNAR: clmov02_a.shp
+			DUNE: cdmov02_a.shp
 		Length: 2
 		Tick: 200
-	damaged-idle-overlay: camov02_a
+	damaged-idle-overlay:
+		Filename: ctmov02_a.shp
+		TilesetFilenames:
+			SNOW: camov02_a.shp
+			URBAN: cumov02_a.shp
+			NEWURBAN: cnmov02_a.shp
+			DESERT: cdmov02_a.shp
+			LUNAR: clmov02_a.shp
+			DUNE: cdmov02_a.shp
 		Start: 2
 		Length: 2
 		Tick: 200
 
 capars01:
 	Inherits: ^CivBuilding
-	Defaults: cgpars01
+	Defaults:
+		Filename: cgpars01.shp
 		Offset: 0,-60
-		UseTilesetCode: false
 
 capars02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars02.shp
+		TilesetFilenames:
+			SNOW: capars02.shp
+			URBAN: cupars02.shp
+			NEWURBAN: cnpars02.shp
+			DESERT: cdpars02.shp
+			LUNAR: clpars02.shp
+			DUNE: cdpars02.shp
 		Offset: -30,-75
 
 capars04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars04.shp
+		TilesetFilenames:
+			SNOW: capars04.shp
+			URBAN: cupars04.shp
+			NEWURBAN: cnpars04.shp
+			DESERT: cdpars04.shp
+			LUNAR: clpars04.shp
+			DUNE: cdpars04.shp
 		Offset: 0,-45
 
 capars05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars05.shp
+		TilesetFilenames:
+			SNOW: capars05.shp
+			URBAN: cupars05.shp
+			NEWURBAN: cnpars05.shp
+			DESERT: cdpars05.shp
+			LUNAR: clpars05.shp
+			DUNE: cdpars05.shp
 		Offset: 0,-45
 
 capars06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars06.shp
+		TilesetFilenames:
+			SNOW: capars06.shp
+			URBAN: cupars06.shp
+			NEWURBAN: cnpars06.shp
+			DESERT: cdpars06.shp
+			LUNAR: clpars06.shp
+			DUNE: cdpars06.shp
 		Offset: 0,-45
 
 capars07:
 	Inherits: ^CivProp
+	idle:
+		Filename: ctpars07.shp
+		TilesetFilenames:
+			SNOW: capars07.shp
+			URBAN: cupars07.shp
+			NEWURBAN: cnpars07.shp
+			DESERT: cdpars07.shp
+			LUNAR: clpars07.shp
+			DUNE: cdpars07.shp
 
 capars08:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars08.shp
+		TilesetFilenames:
+			SNOW: capars08.shp
+			URBAN: cupars08.shp
+			NEWURBAN: cnpars08.shp
+			DESERT: cdpars08.shp
+			LUNAR: clpars08.shp
+			DUNE: cdpars08.shp
 		Offset: -30,-75
 
 capars09:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars09.shp
+		TilesetFilenames:
+			SNOW: capars09.shp
+			URBAN: cupars09.shp
+			NEWURBAN: cnpars09.shp
+			DESERT: cdpars09.shp
+			LUNAR: clpars09.shp
+			DUNE: cdpars09.shp
 		Offset: -30,-75
 
 capars10:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars10.shp
+		TilesetFilenames:
+			SNOW: capars10.shp
+			URBAN: cupars10.shp
+			NEWURBAN: cnpars10.shp
+			DESERT: cdpars10.shp
+			LUNAR: clpars10.shp
+			DUNE: cdpars10.shp
 		Offset: -15,-52
 
 capars11:
 	Inherits: ^CivBuilding
-	Defaults: cgpars11
+	Defaults:
+		Filename: cgpars11.shp
 		Offset: 15,-52
-		UseTilesetCode: false
 
 capars12:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars12.shp
+		TilesetFilenames:
+			SNOW: capars12.shp
+			URBAN: cupars12.shp
+			NEWURBAN: cnpars12.shp
+			DESERT: cdpars12.shp
+			LUNAR: clpars12.shp
+			DUNE: cdpars12.shp
 		Offset: 30,-60
 
 capars13:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars13.shp
+		TilesetFilenames:
+			SNOW: capars13.shp
+			URBAN: cupars13.shp
+			NEWURBAN: cnpars13.shp
+			DESERT: cdpars13.shp
+			LUNAR: clpars13.shp
+			DUNE: cdpars13.shp
 		Offset: 15,-52
 
 capars14:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctpars14.shp
+		TilesetFilenames:
+			SNOW: capars14.shp
+			URBAN: cupars14.shp
+			NEWURBAN: cnpars14.shp
+			DESERT: cdpars14.shp
+			LUNAR: clpars14.shp
+			DUNE: cdpars14.shp
 		Offset: -15,-52
 
 cats01:
 	Inherits: ^CivBuildingNoRubble
 	Defaults:
+		Filename: ctts01.shp
+		TilesetFilenames:
+			SNOW: cats01.shp
+			URBAN: cuts01.shp
+			NEWURBAN: cnts01.shp
+			DESERT: cdts01.shp
+			LUNAR: clts01.shp
+			DUNE: cdts01.shp
 		Offset: 0,-30
 
 cagard01:
 	Inherits: ^CivProp
-	idle-flag: cagrd1_a
+	idle-flag:
+		Filename: ctgrd1_a.shp
+		TilesetFilenames:
+			SNOW: cagrd1_a.shp
+			URBAN: cugrd1_a.shp
+			NEWURBAN: cngrd1_a.shp
+			DESERT: cdgrd1_a.shp
+			LUNAR: clgrd1_a.shp
+			DUNE: cdgrd1_a.shp
 		Length: 9
 		ShadowStart: 9
 		Tick: 80
+	idle:
+		Filename: ctgard01.shp
+		TilesetFilenames:
+			SNOW: cagard01.shp
+			URBAN: cugard01.shp
+			NEWURBAN: cngard01.shp
+			DESERT: cdgard01.shp
+			LUNAR: clgard01.shp
+			DUNE: cdgard01.shp
 
 cagard02:
 	Inherits: ^CivProp
 	Defaults:
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle-flag: cagrd2_a
+		Filename: cggard02.shp
+		TilesetFilenames:
+			SNOW: cagard02.shp
+			SIMPLETERRAIN: ctgard02.shp
+	idle-flag:
+		Filename: cggrd2_a.shp
+		TilesetFilenames:
+			SNOW: cagrd2_a.shp
+			SIMPLETERRAIN: ctgrd2_a.shp
 		Length: 9
 		ShadowStart: 9
 		Tick: 80
@@ -1249,9 +2481,18 @@ caeur1:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cteur1.shp
+		TilesetFilenames:
+			SNOW: caeur1.shp
+			URBAN: cueur1.shp
+			NEWURBAN: cneur1.shp
+			DESERT: cdeur1.shp
+			LUNAR: cleur1.shp
+			DUNE: cdeur1.shp
 		Offset: 0,-30
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -1,-25
 		Length: 9
 		# ShadowStart: 9
@@ -1261,9 +2502,18 @@ caeur2:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cteur2.shp
+		TilesetFilenames:
+			SNOW: caeur2.shp
+			URBAN: cueur2.shp
+			NEWURBAN: cneur2.shp
+			DESERT: cdeur2.shp
+			LUNAR: cleur2.shp
+			DUNE: cdeur2.shp
 		Offset: 0,-30
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 10,-23
 		Length: 9
 		# ShadowStart: 9
@@ -1273,31 +2523,66 @@ caeur04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cteur04.shp
+		TilesetFilenames:
+			SNOW: caeur04.shp
+			URBAN: cueur04.shp
+			NEWURBAN: cneur04.shp
+			DESERT: cdeur04.shp
+			LUNAR: cleur04.shp
+			DUNE: cdeur04.shp
 		Offset: -15,-52
 
 caprs03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctprs03.shp
+		TilesetFilenames:
+			SNOW: caprs03.shp
+			URBAN: cuprs03.shp
+			NEWURBAN: cnprs03.shp
+			DESERT: cdprs03.shp
+			LUNAR: clprs03.shp
+			DUNE: cdprs03.shp
 		Offset: -30,-75
 
 caswst01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctswst01.shp
+		TilesetFilenames:
+			SNOW: caswst01.shp
+			URBAN: cuswst01.shp
+			NEWURBAN: cnswst01.shp
+			DESERT: cdswst01.shp
+			LUNAR: clswst01.shp
+			DUNE: cdswst01.shp
 		Offset: 15,-37
 
 galite:
+	Defaults:
+		Filename: galite.shp
 	idle:
 		ShadowStart: 2
 	damaged-idle:
 		Start: 1
 		ShadowStart: 3
-	icon: liteicon
+	icon:
+		Filename: liteicon.shp
 
 cacity01:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: ctcity01.shp
+		TilesetFilenames:
+			SNOW: cacity01.shp
+			URBAN: cucity01.shp
+			NEWURBAN: cncity01.shp
+			DESERT: cdcity01.shp
+			LUNAR: clcity01.shp
+			DUNE: cdcity01.shp
 		Offset: 0,-60
 	idle:
 		ShadowStart: 3
@@ -1305,6 +2590,14 @@ cacity01:
 cacity02:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: ctcity02.shp
+		TilesetFilenames:
+			SNOW: cacity02.shp
+			URBAN: cucity02.shp
+			NEWURBAN: cncity02.shp
+			DESERT: cdcity02.shp
+			LUNAR: clcity02.shp
+			DUNE: cdcity02.shp
 		Offset: -15,-67
 	idle:
 		ShadowStart: 3
@@ -1312,6 +2605,14 @@ cacity02:
 cacity03:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: ctcity03.shp
+		TilesetFilenames:
+			SNOW: cacity03.shp
+			URBAN: cucity03.shp
+			NEWURBAN: cncity03.shp
+			DESERT: cdcity03.shp
+			LUNAR: clcity03.shp
+			DUNE: cdcity03.shp
 		Offset: 0,-45
 	idle:
 		ShadowStart: 3
@@ -1319,6 +2620,14 @@ cacity03:
 cacity04:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: ctcity04.shp
+		TilesetFilenames:
+			SNOW: cacity04.shp
+			URBAN: cucity04.shp
+			NEWURBAN: cncity04.shp
+			DESERT: cdcity04.shp
+			LUNAR: clcity04.shp
+			DUNE: cdcity04.shp
 		Offset: 0,-60
 	idle:
 		ShadowStart: 3
@@ -1326,40 +2635,40 @@ cacity04:
 city01:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: city01.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 	idle:
 		ShadowStart: 2
 
 city02:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: city02.shp
 		Offset: -15,-52
-		UseTilesetCode: false
 	idle:
 		ShadowStart: 2
 
 city03:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: city03.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 	idle:
 		ShadowStart: 2
 
 city04:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: city04.shp
 		Offset: 0,-60
-		UseTilesetCode: false
 	idle:
 		ShadowStart: 2
 
 city05:
 	Inherits: ^CivProp
 	Defaults:
+		Filename: city05.shp
 		Offset: 0,-60
-		UseTilesetCode: false
 	idle:
 		ShadowStart: 2
 
@@ -1368,11 +2677,17 @@ cabunk03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctbunk03.shp
+		TilesetFilenames:
+			SNOW: cabunk03.shp
+			URBAN: cubunk03.shp
+			NEWURBAN: cnbunk03.shp
+			DESERT: cdbunk03.shp
+			DUNE: cdbunk03.shp
 		Offset: 0,-30
-		TilesetOverrides:
-			LUNAR: TEMPERATE
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 7,21
 		Length: 9
 		# ShadowStart: 9
@@ -1382,11 +2697,17 @@ cabunk04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctbunk04.shp
+		TilesetFilenames:
+			SNOW: cabunk04.shp
+			URBAN: cubunk04.shp
+			NEWURBAN: cnbunk04.shp
+			DESERT: cdbunk04.shp
+			DUNE: cdbunk04.shp
 		Offset: 0,-30
-		TilesetOverrides:
-			LUNAR: TEMPERATE
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: 48,-5
 		Length: 9
 		# ShadowStart: 9
@@ -1395,185 +2716,169 @@ cabunk04:
 camorr01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr01
+	Defaults:
+		Filename: cgmorr01.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 camorr02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr02
+	Defaults:
+		Filename: cgmorr02.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 camorr03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr03
+	Defaults:
+		Filename: cgmorr03.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 camorr04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr04
+	Defaults:
+		Filename: cgmorr04.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 camorr05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr05
+	Defaults:
+		Filename: cgmorr05.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 camorr06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr06
+	Defaults:
+		Filename: cgmorr06.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 camorr07:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr07
+	Defaults:
+		Filename: cgmorr07.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 camorr08:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr08
+	Defaults:
+		Filename: cgmorr08.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 camorr09:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr09
+	Defaults:
+		Filename: cgmorr09.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 camorr10:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgmorr10
+	Defaults:
+		Filename: cgmorr10.shp
 		Offset: 0,-30
-		UseTilesetCode: false
 
 cala01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cgla01.shp
+		TilesetFilenames:
+			SNOW: cala01.shp
+			NEWURBAN: cnla01.shp
+			SIMPLETERRAIN: ctla01.shp
 		Offset: 0,-45
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala03:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cgla03.shp
+		TilesetFilenames:
+			NEWURBAN: cnla03.shp
+			SIMPLETERRAIN: ctla03.shp
 		Offset: -30,-30
-		TilesetOverrides:
-			SNOW: GENERIC
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cgla04.shp
+		TilesetFilenames:
+			SNOW: cala04.shp
+			NEWURBAN: cnla04.shp
+			SIMPLETERRAIN: ctla04.shp
 		Offset: 0,-60
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cgla05.shp
+		TilesetFilenames:
+			SNOW: cala05.shp
+			NEWURBAN: cnla05.shp
+			SIMPLETERRAIN: ctla05.shp
 		Offset: 0,-60
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cgla06.shp
+		TilesetFilenames:
+			SNOW: cala06.shp
+			SIMPLETERRAIN: ctla06.shp
 		Offset: 15,-37
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala07:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cgla07.shp
+		TilesetFilenames:
+			SNOW: cala07.shp
+			SIMPLETERRAIN: ctla07.shp
 		Offset: 0,-45
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala08:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cgla08.shp
+		TilesetFilenames:
+			SNOW: cala08.shp
+			SIMPLETERRAIN: ctla08.shp
 		Offset: -30,-37
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala09:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cgla09.shp
+		TilesetFilenames:
+			SNOW: cala09.shp
+			NEWURBAN: cnla09.shp
+			SIMPLETERRAIN: ctla09.shp
 		Offset: 0,-45
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala10:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cgla10.shp
+		TilesetFilenames:
+			SNOW: cala10.shp
+			SIMPLETERRAIN: ctla10.shp
 		Offset: 30,-30
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: cgla10_a
+	idle:
+		Filename: cgla10_a.shp
+		TilesetFilenames:
+			SNOW: cala10_a.shp
+			SIMPLETERRAIN: ctla10_a.shp
 		Length: 45
 		ShadowStart: 45
 		Ticks: 80
@@ -1581,134 +2886,131 @@ cala10:
 cala11:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cgla11.shp
+		TilesetFilenames:
+			SNOW: cala11.shp
+			NEWURBAN: cnla11.shp
+			SIMPLETERRAIN: ctla11.shp
 		Offset: 15,-52
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala12:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cgla12.shp
+		TilesetFilenames:
+			SNOW: cala12.shp
+			NEWURBAN: cnla12.shp
+			SIMPLETERRAIN: ctla12.shp
 		Offset: 15,-52
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala13:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cgla13.shp
+		TilesetFilenames:
+			NEWURBAN: cnla13.shp
+			SIMPLETERRAIN: ctla13.shp
 		Offset: -30,-30
-		TilesetOverrides:
-			SNOW: GENERIC
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 
 cala14:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cnla14.shp
+		TilesetFilenames:
+			SNOW: cala14.shp
+			DUNE: cdla14.shp
+			SIMPLETERRAIN: ctla14.shp
 		Offset: 0,-45
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 
 cala15:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cnla15.shp
+		TilesetFilenames:
+			SNOW: cala15.shp
+			DUNE: cdla15.shp
+			SIMPLETERRAIN: ctla15.shp
 		Offset: 0,-45
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 
 caegyp01:
 	Inherits: ^CivBuilding
-	Defaults: cgegyp01
+	Defaults:
+		Filename: cgegyp01.shp
 		Offset: 0,-60
-		UseTilesetCode: false
 
 caegyp02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgegyp02
+	Defaults:
+		Filename: cgegyp02.shp
 		Offset: 0,-60
-		UseTilesetCode: false
 
 caegyp03:
 	Inherits: ^CivBuilding
-	Defaults: cgegyp03
+	Defaults:
+		Filename: cgegyp03.shp
 		Offset: -30,-45
-		UseTilesetCode: false
 
 caegyp04:
 	Inherits: ^CivBuilding
-	Defaults: cgegyp04
+	Defaults:
+		Filename: cgegyp04.shp
 		Offset: 0,-60
-		UseTilesetCode: false
 
 caegyp05:
 	Inherits: ^CivBuilding
-	Defaults: cgegyp05
+	Defaults:
+		Filename: cgegyp05.shp
 		Offset: 0,-60
-		UseTilesetCode: false
 
 caegyp06:
 	Inherits: ^CivBuilding
-	Defaults: cgegyp06
+	Defaults:
+		Filename: cgegyp06.shp
 		Offset: 0,-60
-		UseTilesetCode: false
 
 calond01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cglond01
+	Defaults:
+		Filename: cglond01.shp
 		Offset: 15,-37
-		UseTilesetCode: false
 
 calond03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cglond03
+	Defaults:
+		Filename: cglond03.shp
 		Offset: 15,-37
-		UseTilesetCode: false
 
 calond04:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cglond04
+	Defaults:
+		Filename: cglond04.shp
 		Offset: -30,-75
-		UseTilesetCode: false
 
 calond05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cnlond05
+	Defaults:
+		Filename: cnlond05.shp
 		Offset: 0,-15
-		UseTilesetCode: false
 
 calond06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cglond06
+	Defaults:
+		Filename: cglond06.shp
 		Offset: 0,-60
-		UseTilesetCode: false
-	idle-flag: cglnd6_a
+	idle-flag:
+		Filename: cglnd6_a.shp
 		Length: 17
 		ShadowStart: 34
-	damaged-idle-flag: cglnd6_a
+	damaged-idle-flag:
+		Filename: cglnd6_a.shp
 		Length: 17
 		Start: 17
 		ShadowStart: 51
@@ -1716,156 +3018,154 @@ calond06:
 casanf01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgsanf01
+	Defaults:
+		Filename: cgsanf01.shp
 		Offset: 15,-37
-		UseTilesetCode: false
 
 casanf02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgsanf02
+	Defaults:
+		Filename: cgsanf02.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 casanf03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgsanf03
+	Defaults:
+		Filename: cgsanf03.shp
 		Offset: 15,-37
-		UseTilesetCode: false
 
 casanf04:
 	Inherits: ^CivBuildingNoRubble
-	Defaults: cgsanf04
+	Defaults:
+		Filename: cgsanf04.shp
 		Offset: 30,-60
-		UseTilesetCode: false
 
 casanf05:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: ctsanf05.shp
+		TilesetFilenames:
+			SNOW: casanf05.shp
+			URBAN: cusanf05.shp
+			NEWURBAN: cnsanf05.shp
 		Offset: -30,-75
-		TilesetOverrides:
-			DESERT: TEMPERATE
-			LUNAR: TEMPERATE
-			DUNE: TEMPERATE
 
 casanf06:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgsanf06
+	Defaults:
+		Filename: cgsanf06.shp
 		Offset: -15,-37
-		UseTilesetCode: false
 
 casanf07:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgsanf07
+	Defaults:
+		Filename: cgsanf07.shp
 		Offset: -15,-37
-		UseTilesetCode: false
 
 casanf08:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
-	Defaults: cgsanf08
+	Defaults:
+		Filename: cgsanf08.shp
 		Offset: 0,-45
-		UseTilesetCode: false
 
 casanf09:
 	Inherits: ^CivBuildingNoRubble
-	Defaults: cgsanf09
+	Defaults:
+		Filename: cgsanf09.shp
 		Offset: 30,-60
-		UseTilesetCode: false
 
 casanf10:
 	Inherits: ^CivBuildingNoRubble
-	Defaults: cgsanf10
+	Defaults:
+		Filename: cgsanf10.shp
 		Offset: 30,-60
-		UseTilesetCode: false
 	damaged-idle:
 		Start: 2
 		ShadowStart: 5
 
 casanf11:
 	Inherits: ^CivBuildingNoRubble
-	Defaults: cgsanf11
+	Defaults:
+		Filename: cgsanf11.shp
 		Offset: 30,-60
-		UseTilesetCode: false
 
 casanf12:
 	Inherits: ^CivBuildingNoRubble
-	Defaults: cgsanf12
+	Defaults:
+		Filename: cgsanf12.shp
 		Offset: 30,-60
-		UseTilesetCode: false
 
 casanf13:
 	Inherits: ^CivBuildingNoRubble
-	Defaults: cgsanf13
+	Defaults:
+		Filename: cgsanf13.shp
 		Offset: 30,-60
-		UseTilesetCode: false
 
 casanf14:
 	Inherits: ^CivBuildingNoRubble
-	Defaults: cgsanf14
+	Defaults:
+		Filename: cgsanf14.shp
 		Offset: 30,-60
-		UseTilesetCode: false
 
 casanf15:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cnsanf15.shp
+		TilesetFilenames:
+			DUNE: cdsanf15.shp
+			SIMPLETERRAIN: ctsanf15.shp
 		Offset: 0,-15
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 
 casanf16:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cnsanf16.shp
+		TilesetFilenames:
+			DUNE: cdsanf16.shp
+			SIMPLETERRAIN: ctsanf16.shp
 		Offset: 0,-15
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 
 casanf17:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cnsanf17.shp
+		TilesetFilenames:
+			SNOW: casanf17.shp
+			DUNE: cdsanf17.shp
+			SIMPLETERRAIN: ctsanf17.shp
 		Offset: 0,-45
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 
 casanf18:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cnsanf18.shp
+		TilesetFilenames:
+			SNOW: casanf18.shp
+			DUNE: cdsanf18.shp
+			SIMPLETERRAIN: ctsanf18.shp
 		Offset: 45,-52
-		TilesetOverrides:
-			TEMPERATE: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 
 casydn02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cnsydn02.shp
+		TilesetFilenames:
+			TEMPERATE: ctsydn02.shp
+			DUNE: cdsydn02.shp
+			SIMPLETERRAIN: ctsydn02.shp
 		Offset: 0,-45
-		TilesetOverrides:
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
-	garrisoned-flag: carflg_a
-		UseTilesetCode: false
+	garrisoned-flag:
+		Filename: carflg_a.shp
+		TilesetFilenames:
 		Offset: -72,-43
 		Length: 9
 		# ShadowStart: 9
@@ -1875,48 +3175,60 @@ casydn03:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cnsydn03.shp
+		TilesetFilenames:
+			TEMPERATE: ctsydn03.shp
+			DUNE: cdsydn03.shp
+			SIMPLETERRAIN: ctsydn03.shp
 		Offset: -30,-75
-		TilesetOverrides:
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 
 calunr01:
 	Inherits: ^CivProp
-	Defaults: cllunr01
+	Defaults:
+		Filename: cllunr01.shp
 		Offset: 0,-30
-		UseTilesetCode: false
 
 calunr02:
 	Inherits: ^CivProp
-	Defaults: cllunr02
-		UseTilesetCode: false
+	Defaults:
+		Filename: cllunr02.shp
 
 caseat01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cnseat01.shp
+		TilesetFilenames:
+			TEMPERATE: ctseat01.shp
+			URBAN: cuseat01.shp
+			DUNE: cdseat01.shp
+			SIMPLETERRAIN: ctseat01.shp
 		Offset: 0,-30
-		TilesetOverrides:
-			SNOW: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
 
 caseat02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cnseat02.shp
+		TilesetFilenames:
+			TEMPERATE: ctseat02.shp
+			DUNE: cdseat02.shp
+			SIMPLETERRAIN: ctseat02.shp
 		Offset: 0,-60
-		TilesetOverrides:
-			SNOW: NEWURBAN
-			URBAN: NEWURBAN
-			DESERT: NEWURBAN
-			LUNAR: NEWURBAN
-	idle-globe: cnseat02_a
+	idle-globe:
+		Filename: cnseat02_a.shp
+		TilesetFilenames:
+			TEMPERATE: ctseat02_a.shp
+			DUNE: cdseat02_a.shp
+			SIMPLETERRAIN: ctseat02_a.shp
 		Length: 20
 		ShadowStart: 40
-	damaged-idle-globe: cnseat02_a
+	damaged-idle-globe:
+		Filename: cnseat02_a.shp
+		TilesetFilenames:
+			TEMPERATE: ctseat02_a.shp
+			DUNE: cdseat02_a.shp
+			SIMPLETERRAIN: ctseat02_a.shp
 		Start: 20
 		Length: 20
 		ShadowStart: 60
@@ -1925,44 +3237,55 @@ catran01:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttran01.shp
+		TilesetFilenames:
+			SNOW: catran01.shp
+			NEWURBAN: cntran01.shp
+			DUNE: cdtran01.shp
 		Offset: 0,-30
-		TilesetOverrides:
-			URBAN: TEMPERATE
-			DESERT: TEMPERATE
-			LUNAR: TEMPERATE
 
 catran02:
 	Inherits: ^CivBuilding
 	Inherits@GARRISON: ^GarrisonableBuilding
 	Defaults:
+		Filename: cttran02.shp
+		TilesetFilenames:
+			SNOW: catran02.shp
+			NEWURBAN: cntran02.shp
+			DUNE: cdtran02.shp
 		Offset: 0,-30
-		TilesetOverrides:
-			URBAN: TEMPERATE
-			DESERT: TEMPERATE
-			LUNAR: TEMPERATE
 
 catran03:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cttran03.shp
+		TilesetFilenames:
+			SNOW: catran03.shp
+			NEWURBAN: cntran03.shp
+			DUNE: cdtran03.shp
 		Offset: 0,-60
-		TilesetOverrides:
-			URBAN: TEMPERATE
-			DESERT: TEMPERATE
-			LUNAR: TEMPERATE
 
 catime01:
 	Inherits: ^CivBuildingNoRubble
-	Defaults: cgtime01
+	Defaults:
+		Filename: cgtime01.shp
 		Offset: -15,-52
-		UseTilesetCode: false
 
 catime02:
 	Inherits: ^CivBuildingNoRubble
-	Defaults: cgtime02
+	Defaults:
+		Filename: cgtime02.shp
 		Offset: -15,-52
-		UseTilesetCode: false
 
 caeast01:
 	Inherits: ^CivBuilding
 	Defaults:
+		Filename: cteast01.shp
+		TilesetFilenames:
+			SNOW: caeast01.shp
+			URBAN: cueast01.shp
+			NEWURBAN: cneast01.shp
+			DESERT: cdeast01.shp
+			LUNAR: cleast01.shp
+			DUNE: cdeast01.shp
 		Offset: 0,-30

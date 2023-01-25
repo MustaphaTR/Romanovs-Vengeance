@@ -858,7 +858,7 @@
 	ActorStatValues:
 		Upgrades: upgrade.camouflage
 	GrantConditionOnPrerequisite@CAMOUFLAGE:
-		Condition: camouflage 
+		Condition: camouflage
 		Prerequisites: upgrade.camouflage
 
 ^AffectedByFocusedMind:
@@ -1748,7 +1748,7 @@
 	RepairableBuilding:
 		RepairStep: 700
 		RepairingNotification: Repairing
-	EngineerRepairable:
+	InstantlyRepairable:
 		Types: building
 		RequiresCondition: !ivanbomb && !sealC4 && !commandoC4 && !teslabomb && !toxinbomb
 	SpawnActorsOnSell@allies:
@@ -1904,7 +1904,7 @@
 	-WithBuildingRepairDecoration:
 	Buildable:
 		Queue: Building.Civilian
-	EngineerRepairable:
+	InstantlyRepairable:
 		Types: civilian
 	Health:
 		HP: 140000
@@ -1973,7 +1973,7 @@
 		Name: garrisoned
 		Sequence: garrisoned
 		RequiresCondition: loaded
-	EngineerRepairable:
+	InstantlyRepairable:
 		RequiresCondition: !ivanbomb && !sealC4 && !commandoC4 && !teslabomb && !toxinbomb && damaged
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged

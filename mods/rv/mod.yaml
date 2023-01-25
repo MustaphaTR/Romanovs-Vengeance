@@ -199,6 +199,7 @@ ChromeLayout:
 	common|chrome/ingame-infoscripterror.yaml
 	common|chrome/ingame-infobriefing.yaml
 	common|chrome/ingame-debug.yaml
+	common|chrome/ingame-debug-hpf.yaml
 	common|chrome/ingame-debuginfo.yaml
 	common|chrome/ingame-perf.yaml
 	common|chrome/ingame-infochat.yaml
@@ -355,25 +356,6 @@ VideoFormats: Vqa
 TerrainFormat: DefaultTerrain
 
 SpriteSequenceFormat: TilesetSpecificSpriteSequence
-	TilesetExtensions:
-		TEMPERATE: .tem
-		SNOW: .sno
-		URBAN: .urb
-		NEWURBAN: .ubn
-		DESERT: .des
-		LUNAR: .lun
-		DUNE: .des
-		SIMPLETERRAIN: .tem
-	TilesetCodes:
-		GENERIC: g
-		SNOW: a
-		TEMPERATE: t
-		URBAN: u
-		NEWURBAN: n
-		DESERT: d
-		LUNAR: l
-		DUNE: d
-		SIMPLETERRAIN: t
 
 ModelSequenceFormat: VoxelModelSequence
 
@@ -387,31 +369,31 @@ GameSpeeds:
 	DefaultSpeed: default
 	Speeds:
 		slowest:
-			Name: slowest
+			Name: options-game-speed.slowest
 			Timestep: 80
 			OrderLatency: 6
 		slower:
-			Name: slower
+			Name: options-game-speed.slower
 			Timestep: 50
 			OrderLatency: 9
 		default:
-			Name: normal
+			Name: options-game-speed.normal
 			Timestep: 40
 			OrderLatency: 9
 		fast:
-			Name: fast
+			Name: options-game-speed.fast
 			Timestep: 35
 			OrderLatency: 12
 		faster:
-			Name: faster
+			Name: options-game-speed.faster
 			Timestep: 30
 			OrderLatency: 12
 		fastest:
-			Name: fastest
+			Name: options-game-speed.fastest
 			Timestep: 20
 			OrderLatency: 18
 		ludicrous:
-			Name: ludicrous
+			Name: options-game-speed.ludicrous
 			Timestep: 5
 			OrderLatency: 27
 

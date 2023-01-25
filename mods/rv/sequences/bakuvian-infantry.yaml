@@ -1,6 +1,7 @@
 rctt:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/rctt
+	Defaults:
+		Filename: bits/infantry/rctt.shp
 	run:
 		Tick: 120
 	liedown:
@@ -15,80 +16,100 @@ rctt:
 		Start: 371
 	cheer:
 		Start: 196
-	stand-bulletproof: bits/infantry/rcttu
+	stand-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Facings: 8
-	run-bulletproof: bits/infantry/rcttu
+	run-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 120
-	idle1-bulletproof: bits/infantry/rcttu
+	idle1-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 56
 		Length: 15
 		Tick: 120
-	idle2-bulletproof: bits/infantry/rcttu
+	idle2-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 71
 		Length: 15
 		Tick: 120
-	cheer-bulletproof: bits/infantry/rcttu
+	cheer-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 196
 		Length: 8
 		Tick: 120
-	die-bulletproof1: bits/infantry/rcttu
+	die-bulletproof1:
+		Filename: bits/infantry/rcttu.shp
 		Start: 134
 		Length: 15
-	die-bulletproof2: bits/infantry/rcttu
+	die-bulletproof2:
+		Filename: bits/infantry/rcttu.shp
 		Start: 149
 		Length: 15
-	liedown-bulletproof: bits/infantry/rcttu
+	liedown-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 164
 		Length: 2
 		Facings: 8
-	standup-bulletproof: bits/infantry/rcttu
+	standup-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 182
 		Length: 2
 		Facings: 8
-	prone-stand-bulletproof: bits/infantry/rcttu
+	prone-stand-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Frames: 86, 92, 98, 104, 110, 116, 122, 128
 		Facings: 8
-	prone-run-bulletproof: bits/infantry/rcttu
+	prone-run-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 86
 		Length: 6
 		Facings: 8
 		Tick: 100
-	shoot-bulletproof: bits/infantry/rcttu
+	shoot-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 204
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-shoot-bulletproof: bits/infantry/rcttu
+	prone-shoot-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 252
 		Length: 6
 		Facings: 8
 		Tick: 80
-	paradrop-bulletproof: bits/infantry/rcttu
+	paradrop-bulletproof:
+		Filename: bits/infantry/rcttu.shp
 		Start: 371
-	icon: bits/cameos/rctticon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/rctticon.png
 
 mengineer:
-	idle: bits/infantry/mengineer
+	idle:
+		Filename: bits/infantry/mengineer.shp
 		ShadowStart: 8
 		Facings: 8
-	stand: bits/infantry/mengineer
+	stand:
+		Filename: bits/infantry/mengineer.shp
 		ShadowStart: 8
 		Facings: 8
-	paradrop: bits/infantry/mengineer
+	paradrop:
+		Filename: bits/infantry/mengineer.shp
 		ShadowStart: 8
 		Facings: 8
-	swim-stand: bits/infantry/mengineerw
+	swim-stand:
+		Filename: bits/infantry/mengineerw.shp
 		Start: 48
 		Facings: -8
-	icon: cameo|xxicon
+	icon:
+		Filename: cameo|xxicon.shp
 
 medi:
 	Inherits: ^Infantry
-	Defaults: bits/infantry/medi
+	Defaults:
+		Filename: bits/infantry/medi.shp
 	shoot:
 		Start: 164
 		Length: 6
@@ -100,11 +121,13 @@ medi:
 		Start: 276
 	paradrop:
 		Start: 244
-	icon: bits/cameos/mediicon
+	icon:
+		Filename: bits/cameos/mediicon.shp
 
 mech:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/mech
+	Defaults:
+		Filename: bits/infantry/mech.shp
 	run:
 		Tick: 120
 	prone-shoot:
@@ -113,35 +136,41 @@ mech:
 		Start: 244
 	cheer:
 		Start: 245
-	icon: bits/cameos/mechicon
+	icon:
+		Filename: bits/cameos/mechicon.shp
 
 mtrp:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/mtrp
+	Defaults:
+		Filename: bits/infantry/mtrp.shp
 		Scale: 1.25
-	icon: bits/cameos/mtrpicon
+	icon:
+		Filename: bits/cameos/mtrpicon.shp
 
 amob:
-	icon: bits/cameos/amobicon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/amobicon.png
 
 amobfm:
 	Inherits: ^CivInfantry
-	Defaults: bits/infantry/amobfm
+	Defaults:
+		Filename: bits/infantry/amobfm.shp
 	cheer:
 		Start: 231
-	icon: bits/cameos/amobicon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/amobicon.png
 
 amobf:
 	Inherits: ^CivInfantry
-	Defaults: bits/infantry/amobf
-	icon: bits/cameos/amobicon.png
-		AddExtension: false
+	Defaults:
+		Filename: bits/infantry/amobf.shp
+	icon:
+		Filename: bits/cameos/amobicon.png
 
 amobtm:
 	Inherits: ^CivInfantry
-	Defaults: bits/infantry/amobtm
+	Defaults:
+		Filename: bits/infantry/amobtm.shp
 	die1:
 		Length: 13
 	die2:
@@ -156,18 +185,20 @@ amobtm:
 		Start: 228
 	panic-run:
 		Start: 132
-	icon: bits/cameos/amobicon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/amobicon.png
 
 sspy:
 	Inherits: spy
-	Defaults: spy
-	icon: bits/cameos/raspyicon.png
-		AddExtension: false
+	Defaults:
+		Filename: spy.shp
+	icon:
+		Filename: bits/cameos/raspyicon.png
 
 vlkv:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/vlkv
+	Defaults:
+		Filename: bits/infantry/vlkv.shp
 	die1:
 		Start: 86
 	die2:
@@ -179,10 +210,14 @@ vlkv:
 	cheer:
 		Start: 150
 		Length: 8
-	icon: bits/cameos/vlkvicon
+	icon:
+		Filename: bits/cameos/vlkvicon.shp
 
 chit:
 	Inherits: dog
-	Defaults: bits/infantry/chit
-	shoot: bits/infantry/chitp
-	icon: bits/cameos/chiticon
+	Defaults:
+		Filename: bits/infantry/chit.shp
+	shoot:
+		Filename: bits/infantry/chitp.shp
+	icon:
+		Filename: bits/cameos/chiticon.shp

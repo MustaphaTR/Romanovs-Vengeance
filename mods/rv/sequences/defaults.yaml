@@ -24,25 +24,32 @@
 	die2:
 		Start: 149
 		Length: 15
-	die4: nukedie
+	die4:
+		Filename: nukedie.shp
 		Length: *
 		Tick: 50
-	die5: yuridie
+	die5:
+		Filename: yuridie.shp
 		Length: *
 		Tick: 80
-	die6: electro
+	die6:
+		Filename: electro.shp
 		Length: *
 		Tick: 80
-	die7: virusd
+	die7:
+		Filename: virusd.shp
 		Length: *
 		Tick: 80
-	die8: brutdie
+	die8:
+		Filename: brutdie.shp
 		Length: *
 		Tick: 80
-	die9: gendeath
+	die9:
+		Filename: gendeath.shp
 		Length: *
 		Tick: 80
-	die10: bits/animations/nukedieorange
+	die10:
+		Filename: bits/animations/nukedieorange.shp
 		Length: *
 		Facings: 1
 		Tick: 80
@@ -96,7 +103,8 @@
 		Start: 134
 		Length: 6
 		Facings: 8
-	icon: cameo|xxicon
+	icon:
+		Filename: cameo|xxicon.shp
 
 ^ArmedInfantry:
 	Inherits: ^Infantry
@@ -118,53 +126,68 @@
 		Start: 293
 
 ^WithSwimsuit:
-	swim-stand: conquer|seal
+	swim-stand:
+		Filename: conquer|seal.shp
 		Start: 340
 		Facings: 8
 		Length: 6
 		Tick: 160
-	swim-idle1: conquer|seal
+	swim-idle1:
+		Filename: conquer|seal.shp
 		Start: 484
 		Length: 15
 		Tick: 160
-	swim-idle2: conquer|seal
+	swim-idle2:
+		Filename: conquer|seal.shp
 		Start: 499
 		Length: 15
 		Tick: 160
-	swim-run: conquer|seal
+	swim-run:
+		Filename: conquer|seal.shp
 		Start: 388
 		Facings: 8
 		Length: 6
 		Tick: 120
-	swim-die1: conquer|seal
+	swim-die1:
+		Filename: conquer|seal.shp
 		Start: 512
 		Length: 22
-	swim-die2: conquer|seal
+	swim-die2:
+		Filename: conquer|seal.shp
 		Start: 534
 		Length: 20
-	swim-shoot: conquer|seal
+	swim-shoot:
+		Filename: conquer|seal.shp
 		Start: 436
 		Length: 6
 		Facings: 8
 		Tick: 80
-	swim-cheer: conquer|seal
+	swim-cheer:
+		Filename: conquer|seal.shp
 		Start: 611
 		Length: 8
 		Tick: 120
 
 ^CivProp:
 	Defaults:
-		UseTilesetCode: true
 		Offset: 0,-15
 	idle:
 		ShadowStart: 3
-	icon: cameo|xxicon
-		UseTilesetCode: false
+	icon:
+		Filename: cameo|xxicon.shp
+		TilesetFilenames: # To be sure that Defaults: won't override this with building art.
+			TEMPERATE: cameo|xxicon.shp
+			SNOW: cameo|xxicon.shp
+			URBAN: cameo|xxicon.shp
+			NEWURBAN: cameo|xxicon.shp
+			DESERT: cameo|xxicon.shp
+			LUNAR: cameo|xxicon.shp
+			DUNE: cameo|xxicon.shp
+			SIMPLETERRAIN: cameo|xxicon.shp
 		Offset: 0,0
 
 ^CivBuilding:
 	Defaults:
-		UseTilesetCode: true
 	idle:
 		ShadowStart: 4
 	damaged-idle:
@@ -174,8 +197,17 @@
 		Start: 3
 		ShadowStart: 7
 		ZOffset: -3c0
-	icon: cameo|xxicon
-		UseTilesetCode: false
+	icon:
+		Filename: cameo|xxicon.shp
+		TilesetFilenames: # To be sure that Defaults: won't override this with building art.
+			TEMPERATE: cameo|xxicon.shp
+			SNOW: cameo|xxicon.shp
+			URBAN: cameo|xxicon.shp
+			NEWURBAN: cameo|xxicon.shp
+			DESERT: cameo|xxicon.shp
+			LUNAR: cameo|xxicon.shp
+			DUNE: cameo|xxicon.shp
+			SIMPLETERRAIN: cameo|xxicon.shp
 		Offset: 0,0
 
 ^CivBuildingNoRubble:
@@ -201,115 +233,156 @@
 		Start: 16
 		Length: 16
 		ShadowStart: 48
-	icon: cameo|wallicon
+	icon:
+		Filename: cameo|wallicon.shp
+		TilesetFilenames: # To be sure that Defaults: won't override this with building art.
+			TEMPERATE: cameo|wallicon.shp
+			SNOW: cameo|wallicon.shp
+			URBAN: cameo|wallicon.shp
+			NEWURBAN: cameo|wallicon.shp
+			DESERT: cameo|wallicon.shp
+			LUNAR: cameo|wallicon.shp
+			DUNE: cameo|wallicon.shp
+			SIMPLETERRAIN: cameo|wallicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 ^Flag:
 	Defaults:
 		Offset: 0,-15
-	idle: causfgl
+	idle:
+		Filename: ctusfgl.shp
+		TilesetFilenames:
+			SNOW: causfgl.shp
+			URBAN: cuusfgl.shp
+			NEWURBAN: cnusfgl.shp
+			DESERT: cdusfgl.shp
+			LUNAR: clusfgl.shp
+			DUNE: cdusfgl.shp
 		ShadowStart: 4
-		UseTilesetCode: true
-	damaged-idle: causfgl
+	damaged-idle:
+		Filename: ctusfgl.shp
+		TilesetFilenames:
+			SNOW: causfgl.shp
+			URBAN: cuusfgl.shp
+			NEWURBAN: cnusfgl.shp
+			DESERT: cdusfgl.shp
+			LUNAR: clusfgl.shp
+			DUNE: cdusfgl.shp
 		Start: 1
 		ShadowStart: 5
-		UseTilesetCode: true
 	flag:
 		Length: 81
 		Offset: 27, -90
 		Tick: 120
-		AddExtension: false
-	flag-shadow: bits/structures/flags/cgfglshdw
+	flag-shadow:
+		Filename: bits/structures/flags/cgfglshdw.shp
 		Length: 81
 		ShadowStart: 81
 		Offset: 39, -7
 		Tick: 120
-	idle-waves: gauwat
+	idle-waves:
+		Filename: gauwat.shp
 		Length: 15
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: bits/cameos/flags/flagicon.png
+	icon:
+		Filename: bits/cameos/flags/flagicon.png
 		Offset: 0,0
-		UseTilesetCode: false
-		AddExtension: false
 
 ^WithMachineGunMuzzle:
 	muzzle:
 		Combine:
-			mgun-n:
+			0:
+				Filename: mgun-n.shp
 				Length: 6
-			mgun-nw:
+			1:
+				Filename: mgun-nw.shp
 				Length: 6
-			mgun-w:
+			2:
+				Filename: mgun-w.shp
 				Length: 6
-			mgun-sw:
+			3:
+				Filename: mgun-sw.shp
 				Length: 6
-			mgun-s:
+			4:
+				Filename: mgun-s.shp
 				Length: 6
-			mgun-se:
+			5:
+				Filename: mgun-se.shp
 				Length: 6
-			mgun-e:
+			6:
+				Filename: mgun-e.shp
 				Length: 6
-			mgun-ne:
+			7:
+				Filename: mgun-ne.shp
 				Length: 6
 		Facings: 8
 		Length: 6
 		Offset: 0, 0
-		UseTilesetCode: false
 
 ^WithGatlingMuzzle:
 	muzzle:
 		Offset: 0,0
 		Combine:
-			mgun-n:
+			0:
+				Filename: mgun-n.shp
 				Length: 6
-			mgun-nw:
+			1:
+				Filename: mgun-nw.shp
 				Length: 6
-			mgun-w:
+			2:
+				Filename: mgun-w.shp
 				Length: 6
-			mgun-sw:
+			3:
+				Filename: mgun-sw.shp
 				Length: 3
-			mgun-s:
+			4:
+				Filename: mgun-s.shp
 				Length: 6
-			mgun-se:
+			5:
+				Filename: mgun-se.shp
 				Length: 6
-			mgun-e:
+			6:
+				Filename: mgun-e.shp
 				Length: 6
-			mgun-ne:
+			7:
+				Filename: mgun-ne.shp
 				Length: 6
 		Facings: 8
 		Length: 3
-	muzzle-1: conquer|gunfire
+	muzzle-1:
+		Filename: conquer|gunfire.shp
 		Length: *
 		Offset: 0,0
-		UseTilesetCode: false
-	muzzle-2: conquer|vtmuzzle
+	muzzle-2:
+		Filename: conquer|vtmuzzle.shp
 		Length: *
 		Offset: 0,0
-		UseTilesetCode: false
 
 ^WithCannonMuzzle:
-	muzzle: conquer|gunfire
+	muzzle:
+		Filename: conquer|gunfire.shp
 		Length: *
-	muzzle-2: conquer|vtmuzzle
+	muzzle-2:
+		Filename: conquer|vtmuzzle.shp
 		Length: *
 
 ^WithFlakMuzzle:
-	muzzle: conquer|gunfire
+	muzzle:
+		Filename: conquer|gunfire.shp
 		Length: *
 		Offset: 0,0
-		UseTilesetCode: false
 
 ^WithMirageMuzzle:
-	muzzle: conquer|vtmuzzle
+	muzzle:
+		Filename: conquer|vtmuzzle.shp
 		Length: *
 		Offset: 0,0
-		UseTilesetCode: false
 
 ^WithApocMuzzle:
-	muzzle: conquer|apmuzzle
+	muzzle:
+		Filename: conquer|apmuzzle.shp
 		Length: *
-	muzzle-2: conquer|vtmuzzle
+	muzzle-2:
+		Filename: conquer|vtmuzzle.shp
 		Length: *

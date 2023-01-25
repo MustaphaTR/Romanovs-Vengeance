@@ -1,540 +1,564 @@
-## MapOptions, MissionBrowserLogic
-slowest = En Yavaş
-slower = Daha Yavaş
-normal = Normal
-fast = Hızlı
-faster = Daha Hızlı
-fastest = En Hızlı
-ludicrous = Aşırı Hızlı
+## Buttons
+button-cancel = İptal Et
+button-retry = Yeniden Dene
+button-back = Geri Dön
+button-continue = Devam Et
+button-quit = Çık
 
 ## Server Orders
-custom-rules = Bu harita özel kurallar içermektedir. Oyun deneyimi değişebilir.
-map-bots-disabled = Botlar bu haritada devre dışı bırakılmışdır.
-two-humans-required = Bu sunucu oyunu başlatmak için en az iki insan oyuncu gerektirir.
-unknown-server-command = Bilinmeyen sunucu komutu: { $command }
-only-only-host-start-game = Sadece sunucu oyunu başlatabilir.
-no-start-until-required-slots-full = Gerekli miktarda slot dolana kadar oyun başlatılamıyor.
-no-start-without-players = Oyun hiçbir oyuncu olmadan başlatılamıyor.
-insufficient-enabled-spawnPoints = Oyun daha fazla başlangıç noktası etkinleştirilene kadar başlatılamıyor.
-malformed-command = Bozuk { $command } komutu
-state-unchanged-ready = Hazır olarak işaretlenmişken durum değiştirilemiyor.
-invalid-faction-selected = Geçersiz taraf seçimi: { $faction }
-supported-factions = Desteklenen değerler: { $factions }
-state-unchanged-game-started = Oyun başladıktan sonra durum değiştirilemiyor. ({ $command })
-requires-host = Sadece sunucu bunu yapabilir.
-invalid-bot-slot = Başka bir istemciye sahip slota bot eklenemiyor.
-invalid-bot-type = Geçersiz bot türü.
-only-host-change-map = Sadece sunucu haritayı değiştirebilir.
-lobby-disconnected = { $player } ayrıldı.
-player-disconnected = { $player } adlı oyuncunun bağlantısı kesildi.
-player-team-disconnected = { $player } (Takım { $team }) adlı oyuncunun bağlantısı kesildi.
-observer-disconnected = { $player } (İzleyici) adlı oyuncunun bağlantısı kesildi.
-unknown-map = Harita sunucuda bulunamadı.
-searching-map = Harita Kaynak Merkezinde aranıyor...
-only-host-change-configuration = Sadece sunucu yapılandırmayı değiştirebilir.
-changed-map = { $player } haritayı { $map } olarak değiştirdi.
-value-changed = { $player }, { $name } seçeneğini { $value } olarak değiştirdi.
-you-were-kicked = Sunucudan atıldınız.
-kicked = { $admin }, { $player } adlı oyuncuyu sunucudan attı.
-temp-ban = { $admin }, { $player } adlı oyuncuyu geçici olarak sunucudan engelledi.
-only-host-transfer-admin = Sadece yöneticiler yöneticiliği başka bir oyuncuya devredebilir.
-only-host-move-spectators = Sadece yöneticiler oyuncuları izleyiciliğe taşıyabilir.
-empty-slot = O slotta kimse yok.
-move-spectators = { $admin }, { $player } adlı oyuncuyu izleyiciliğe taşıdı.
-nick = { $player } artık { $name } olarak biliniyor.
-player-dropped = Bir oyuncu süre aşımından dolayı atıldı.
-connection-problems = { $player } bağlantı sorunları yaşıyor.
-timeout = { $player } süre aşımından dolayı atıldı.
-timeout-in = { $player }, { $timeout } saniye içinde atılacak.
-error-game-started = Oyun zaten başlatıldı.
-requires-password = Sunucu şifre gerektiriyor.
-incorrect-password = Geçersiz şifre.
-incompatible-mod = Sunucu uyumsuz bir mod çalıştırıyor.
-incompatible-version = Sunucu uyumsuz bir sürüm çalıştırıyor.
-incompatible-protocol = Sunucu uyumsuz bir protokol çalıştırıyor.
-banned = Sunucudan engellendiniz.
-temp-banned = Sunucudan geçici olarak engellendiniz.
-full = Oyun dolu.
-joined = { $player } oyuna katıldı.
-new-admin = { $player } artık yönetici.
-option-locked = { $option } değiştirlemez.
-invalid-configuration-command = Geçersiz yapılandırma komutu.
-admin-option = Sadece sunucu o seçeneği değiştirebilir.
-number-teams = Takım miktarı ayrıştırılamadı: { $raw }
-admin-kick = Sadece sunucu oyuncuları atabilir.
-kick-none = O slotta kimse yok.
-no-kick-game-started = Sadece izleyicilier oyun başladıktan sonra atılabilir.
-admin-clear-spawn = Sadece yöneticiler başlangıç noktalarını temizleyebilir.
-spawn-occupied = Başka bir oyuncu ile aynı başlangıç noktasını seçemeziniz.
-spawn-locked = Başlangıç noktası zaten başlka bir oyuncu slotuna kilitli.
-admin-lobby-info = Sadece sunuzu lobi bilgisi gönderebilir.
-invalid-lobby-info = Geçersiz lobi bilgisi gönderildi.
-player-color-terrain = Renk araziden daha farklı olması için düzenlendi.
-player-color-player = Renk başka bir oyuncununkinden daha farklı olması için düzenlendi.
-invalid-player-color = Geçerli bir oyuncu rengi belirlenemedi. Rastgele bir renk seçildi.
-invalid-error-code = Hata mesajı ayrıştırılamadı.
-master-server-connected = Ana sunucu iletişimi kuruldu.
-master-server-error = "Ana sunucu iletişimi başarısız oldu."
-game-offline = Oyun çevrimiçi olarak gösterilemedi.
-no-port-forward = Sunucu bağlantı noktası internetten erişilebilir değil.
-blacklisted-title = Sunucu adı kara listeden bir kelime içeriyor.
-requires-forum-account = Sunucu oyuncunun bir OpenRA forumu hesabının olmasını gerektiriyor.
-no-permission = Bu sunucuya katılmaya izniniz yok.
-slot-closed = Slotunuz sunucu tarafından kapatıldı.
+notification-custom-rules = Bu harita özel kurallar içermektedir. Oyun deneyimi değişebilir.
+notification-map-bots-disabled = Botlar bu haritada devre dışı bırakılmışdır.
+notification-two-humans-required = Bu sunucu oyunu başlatmak için en az iki insan oyuncu gerektirir.
+notification-unknown-server-command = Bilinmeyen sunucu komutu: { $command }
+notification-admin-start-game = Sadece sunucu oyunu başlatabilir.
+notification-no-start-until-required-slots-full = Gerekli slotlar doldurlana kadar oyun başlatılamıyor.
+notification-no-start-without-players = Oyun hiçbir oyuncu olmadan başlatılamıyor.
+notification-insufficient-enabled-spawn-points = Oyun daha fazla başlangıç noktası etkinleştirilene kadar başlatılamıyor.
+notification-malformed-command = Bozuk { $command } komutu
+notification-state-unchanged-ready = Hazır olarak işaretlenmişken durum değiştirilemiyor.
+notification-invalid-faction-selected = Geçersiz taraf seçimi: { $faction }
+notification-supported-factions = Desteklenen değerler: { $factions }
+notification-state-unchanged-game-started = Oyun başladıktan sonra durum değiştirilemiyor. ({ $command })
+notification-requires-host = Sadece sunucu bunu yapabilir.
+notification-invalid-bot-slot = Başka bir istemciye sahip slota bot eklenemiyor.
+notification-invalid-bot-type = Geçersiz bot türü.
+notification-admin-change-map = Sadece sunucu haritayı değiştirebilir.
+notification-lobby-disconnected = { $player } ayrıldı.
+notification-player-disconnected = { $player } adlı oyuncunun bağlantısı kesildi.
+notification-team-player-disconnected = { $player } (Takım { $team }) adlı oyuncunun bağlantısı kesildi.
+notification-observer-disconnected = { $player } (İzleyici) adlı oyuncunun bağlantısı kesildi.
+notification-unknown-map = Harita sunucuda bulunamadı.
+notification-searching-map = Harita Kaynak Merkezinde aranıyor...
+notification-admin-change-configuration = Sadece sunucu yapılandırmayı değiştirebilir.
+notification-changed-map = { $player } haritayı { $map } olarak değiştirdi.
+notification-option-changed = { $player }, { $name } seçeneğini { $value } olarak değiştirdi.
+notification-you-were-kicked = Sunucudan atıldınız.
+notification-kicked = { $admin }, { $player } adlı oyuncuyu sunucudan attı.
+notification-temp-ban = { $admin }, { $player } adlı oyuncuyu geçici olarak sunucudan engelledi.
+notification-admin-transfer-admin = Sadece yöneticiler yöneticiliği başka bir oyuncuya devredebilir.
+notification-admin-move-spectators = Sadece sunucu oyuncuları izleyiciliğe taşıyabilir.
+notification-empty-slot = O slotta kimse yok.
+notification-move-spectators = { $admin }, { $player } adlı oyuncuyu izleyiciliğe taşıdı.
+notification-nick-changed = { $player } artık { $name } olarak biliniyor.
+notification-player-dropped = Bir oyuncu süre aşımından dolayı atıldı.
+notification-connection-problems = { $player } bağlantı sorunları yaşıyor.
+notification-timeout-dropped = { $player } süre aşımından dolayı atıldı.
+notification-timeout-dropped-in = { $player }, { $timeout } saniye içinde atılacak.
+notification-error-game-started = Oyun zaten başlatıldı.
+notification-requires-password = Sunucu şifre gerektiriyor.
+notification-incorrect-password = Geçersiz şifre.
+notification-incompatible-mod = Sunucu uyumsuz bir mod çalıştırıyor.
+notification-incompatible-version = Sunucu uyumsuz bir sürüm çalıştırıyor.
+notification-incompatible-protocol = Sunucu uyumsuz bir protokol çalıştırıyor.
+notification-you-were-banned = Sunucudan engellendiniz.
+notification-you-were-temp-banned = Sunucudan geçici olarak engellendiniz.
+notification-game-full = Oyun dolu.
+notification-joined = { $player } oyuna katıldı.
+notification-new-admin = { $player } artık yönetici.
+notification-option-locked = { $option } değiştirlemez.
+notification-invalid-configuration-command = Geçersiz yapılandırma komutu.
+notification-admin-option = Sadece sunucu o seçeneği değiştirebilir.
+notification-error-number-teams = Takım miktarı ayrıştırılamadı: { $raw }
+notification-admin-kick = Sadece sunucu oyuncuları atabilir.
+notification-kick-none = O slotta kimse yok.
+notification-no-kick-game-started = Oyun başladıktan sonra sadece izleyicilier atılabilir.
+notification-admin-clear-spawn = Sadece yöneticiler başlangıç noktalarını temizleyebilir.
+notification-spawn-occupied = Başka bir oyuncu ile aynı başlangıç noktasını seçemeziniz.
+notification-spawn-locked = Başlangıç noktası zaten başlka bir oyuncu slotuna kilitli.
+notification-admin-lobby-info = Sadece sunuzu lobi bilgisini ayarlayabilir.
+notification-invalid-lobby-info = Geçersiz lobi bilgisi gönderildi.
+notification-player-color-terrain = Renk araziden daha farklı olması için düzenlendi.
+notification-player-color-player = Renk başka bir oyuncununkinden daha farklı olması için düzenlendi.
+notification-invalid-player-color = Geçerli bir oyuncu rengi belirlenemedi. Rastgele bir renk seçildi.
+notification-invalid-error-code = Hata mesajı ayrıştırılamadı.
+notification-master-server-connected = Ana sunucu iletişimi kuruldu.
+notification-master-server-error = "Ana sunucu iletişimi başarısız oldu."
+notification-game-offline = Oyun çevrimiçi olarak gösterilemedi.
+notification-no-port-forward = Sunucu bağlantı noktası internetten erişilebilir değil.
+notification-blacklisted-server-name = Sunucu adı kara listeden bir kelime içeriyor.
+notification-requires-authentication = Sunucu oyuncunun bir OpenRA forumu hesabının olmasını gerektiriyor.
+notification-no-permission-to-join = Bu sunucuya katılmaya izniniz yok.
+notification-slot-closed = Slotunuz sunucu tarafından kapatıldı.
 
 ## Server
-game-started = Oyun başladı
+notification-game-started = Oyun başladı
 
 ## PlayerMessageTracker
-chat-temp-disabled = Sohbet devre dışı. Lütfen { $remaining } saniye sonra tekrar deneyin.
+notification-chat-temp-disabled = Sohbet devre dışı. Lütfen { $remaining } saniye sonra tekrar deneyin.
 
 ## ActorEditLogic
-duplicate-actor-id = Kopya Aktör ID'si
-enter-actor-id = Bir Aktör ID'si girin
-owner = Sahip
+label-duplicate-actor-id = Kopya Aktör ID'si
+label-actor-id = Bir Aktör ID'si girin
+label-actor-owner = Sahip
 
 ## ActorSelectorLogic
-type = Tür
+label-actor-type = Tür: { $actorType }
 
 ## CommonSelectorLogic
-search-results = Arama Sonuçları
-multiple = Çok
+options-common-selector =
+    .search-results = Arama Sonuçları
+    .all = Tümü
+    .multiple = Çok
+    .none = Hiç
 
 ## SaveMapLogic
-unpacked = paketlenmemiş
+label-unpacked-map = paketlenmemiş
 
-save-map-failed-title = Harita kaydedilemedi
-save-map-failed-prompt = Ayrıntılar için debug.log dosyasına bakınız.
-save-map-failed-accept = Tamam
+dialog-save-map-failed =
+    .title = Harita kaydedilemedi
+    .prompt = Ayrıntılar için debug.log dosyasına bakınız.
+    .confirm = Tamam
 
-overwrite-map-failed-title = Uyarı
-overwrite-map-failed-prompt = Kaydederseniz var olan bir
+dialog-overwrite-map-failed =
+    .title = Uyarı
+    .prompt = Kaydederseniz var olan bir
     haritanın üzerine yazacaksınız.
-overwrite-map-failed-confirm = Kaydet
+    .confirm = Kaydet
 
-overwrite-map-outside-edit-title = Uyarı
-overwrite-map-outside-edit-prompt = "Bu harita düzenleyicinin dışında değiştirilmiş.
+dialog-overwrite-map-outside-edit =
+    .title = Uyarı
+    .prompt = Bu harita düzenleyicinin dışında değiştirilmiş.
     Kaydederseniz bu değişikliklerin üzerine yazacaksınız.
-overwrite-map-outside-edit-confirm = Kaydet
+    .confirm = Kaydet
+
+notification-save-current-map = Geçerli harita kaydedildi.
 
 ## GameInfoLogic
-objectives = Hedefler
-briefing = Brifing
-options = Seçenekler
-debug = Hata Bulma
-chat = Sohbet
+menu-game-info =
+    .objectives = Hedefler
+    .briefing = Brifing
+    .options = Seçenekler
+    .debug = Hata Bulma
+    .chat = Sohbet
 
 ## GameInfoObjectivesLogic, GameInfoStatsLogic
-in-progress = Devam ediyor
-accomplished = Tamamlandı
-failed = Başarısız oldu
+label-mission-in-progress = Devam ediyor
+label-mission-accomplished = Tamamlandı
+label-mission-failed = Başarısız oldu
 
 ## GameInfoStatsLogic
-mute = Bu oyuncuyu sustur
-unmute = Bu oyuncunun sesini aç
+label-client-state-disconnected = Ayrıldı
+label-mute-player = Bu oyuncuyu sustur
+label-unmute-player = Bu oyuncunun sesini aç
 
-## GameInfoStatsLogic
-gone = Ayrıldı
-
-kick-title = { $player } adlı oyuncuyu at?
-kick-prompt = Oyuna geri katılamayacaklar.
-kick-accept = At
+dialog-kick =
+    .title = adlı oyuncuyu at?
+    .prompt = Oyuna geri katılamayacaklar.
+    .confirm = At
 
 ## GameTimerLogic
-paused = Duraklatıldı
-max-speed = Maks. Hız
-speed = %{ $percentage } Hız
-complete = %{ $percentage } tamamlandı
+label-paused = Duraklatıldı
+label-max-speed = Maks. Hız
+label-replay-speed = %{ $percentage } Hız
+label-replay-complete = %{ $percentage } tamamlandı
 
 ## LobbyLogic, InGameChatLogic
-chat-disabled = Sohbet devre dışı
-chat-availability = Sohbet { $seconds } saniye içinde etkinleşecek...
+label-chat-disabled = Sohbet devre dışı
+label-chat-availability = Sohbet { $seconds } saniye içinde etkinleşecek...
 
 ## IngameMenuLogic
-leave = Ayrıl
-abort-mission = Görevden Ayrıl
+menu-ingame =
+    .leave = Ayrıl
+    .abort = Görevden Ayrıl
+    .restart = Yeniden Başlat
+    .surrender = Teslim Ol
+    .load-game = Oyun Yükle
+    .save-game = Oyunu Kaydet
+    .music = Müzik
+    .settings = Ayarlar
+    .return-to-map = Haritaya Geri Dön
+    .resume = Devam Et
+    .save-map = Haritayı Kaydet
+    .exit-map = Düzenleyiciden Çık
 
-leave-mission-title = Görevden Ayrıl
-leave-mission-prompt = Görevden ayrılıp menüye geri dönülsün mü?
-leave-mission-accept = Ayrıl
-leave-mission-cancel = Kal
+dialog-leave-mission =
+    .title = Görevden Ayrıl
+    .prompt = Görevden ayrılıp menüye geri dönülsün mü?
+    .confirm = Ayrıl
+    .cancel = Kal
 
-restart-button = Yeniden Başlat
+dialog-restart-mission =
+    .title = Yeniden Başlat
+    .prompt = Yeniden başlatmak istediğinize emin misiniz?
+    .confirm = Yeniden Başlat
+    .cancel = Kal
 
-restart-mission-title = Yeniden Başlat
-restart-mission-prompt = Yeniden başlatmak istediğinize emin misiniz?
-restart-mission-accept = Yeniden Başlat
-restart-mission-cancel = Kal
+dialog-surrender =
+    .title = Teslim Ol
+    .prompt = Teslim olmak istediğinize emin misiniz?
+    .confirm = Teslim Ol
+    .cancel = Kal
 
-surrender-button = Teslim Ol
+dialog-error-max-player =
+    .title = Hata: Maks oyuncu sayısı aşıldı
+    .prompt = Çok fazda oyuncu tanımlanmış ({ $players }/{ $max }).
+    .confirm = Geri Dön
 
-surrender-title = Teslim Ol
-surrender-prompt = Teslim olmak istediğinize emin misiniz?
-surrender-accept = Teslim Ol
-surrender-cancel = Kal
-
-load-game-button = Oyun Yükle
-save-game-button = Oyunu Kaydet
-
-music-button = Müzik
-
-settings-button = Ayarlar
-
-return-to-map = Haritaya geri dön
-resume = Devam Et
-
-save-map-button = Haritayı Kaydet
-
-error-max-player-title = Hata: Maks oyuncu sayısı aşıldı
-error-max-player-prompt = Çok fazda oyuncu tanımlanmış ({ $players }/{ $max }).
-error-max-player-accept = Geri Dön
-
-exit-map-button = Düzenleyiciden Çık
-
-exit-map-editor-title = Harita Düzenleyiciden Çık
-exit-map-editor-prompt-unsaved = Çıkarsanız kaydedilmeyen değişiklier kaybolacaktır.
-exit-map-editor-prompt-deleted = Bu harita düzenleyicinin dışından silinmiş.
-exit-map-editor-confirm-anyway = Yine de çık
-exit-map-editor-confirm = Çık
+dialog-exit-map-editor =
+    .title =  Harita Düzenleyiciden Çık
+    .prompt-unsaved = Çıkarsanız kaydedilmeyen değişiklier kaybolacaktır.
+    .prompt-deleted = Bu harita düzenleyicinin dışından silinmiş.
+    .confirm-anyway = Yine de çık
+    .confirm = Çık
 
 ## IngamePowerBarLogic
 ## IngamePowerCounterLogic
-power-usage = Güç Kullanımı: { $usage }/{ $capacity }
-infinite-power = Sınırsız
+label-power-usage = Güç Kullanımı: { $usage }/{ $capacity }
+label-infinite-power = Sınırsız
 
 ## IngameSiloBarLogic
 ## IngameCashCounterLogic
-silo-usage = Depo Kullanımı: { $usage }/{ $capacity }
+label-silo-usage = Depo Kullanımı: { $usage }/{ $capacity }
 
 ## ObserverShroudSelectorLogic
-camera-option-all-players = Tüm Oyuncular
-camera-option-disable-shroud = Karanlığı Devre Dışı Bırak
-camera-option-other = Diğer
+options-shroud-selector =
+    .all-players = Tüm Oyuncular
+    .disable-shroud = Karanlığı Devre Dışı Bırak
+    .other = Diğer
 
 ## ObserverStatsLogic
-minimal = En Düşük
-information-none = Bilgi: Hiçbiri
-basic = Genel
-economy = Ekonomi
-production = Üretim
-support-powers = Destek Güçler
-combat = Savaş
-army = Ordu
-cps-and-upgrades = KG ve Geliştirmeler
-earnings-graph = Gelir (grafik)
-army-graph = Ordu (grafik)
+options-observer-stats =
+    .minimal = En Düşük
+    .none = Bilgi: Hiçbiri
+    .basic = Genel
+    .economy = Ekonomi
+    .production = Üretim
+    .support-powers = Destek Güçler
+    .combat = Savaş
+    .army = Ordu
+    .cps-and-upgrades = KG ve Geliştirmeler
+    .earnings-graph = Gelir (grafik)
+    .army-graph = Ordu (grafik)
 
 ## WorldTooltipLogic
-unrevealed-terrain = Keşfedilmemiş Arazi
+label-unrevealed-terrain = Keşfedilmemiş Arazi
 
 ## DownloadPackageLogic
-downloading = { $title } indiriliyor
-fetching-mirror-list = Aynaların listesi alınıyor...
-downloading-from = { $host } adresinden indiriliyor { $received } { $suffix }
-downloading-from-progress = { $host } adresinden indiriliyor { $received } / { $total } { $suffix } ({ $progress }%)
-unknown-host = bilinmeyen sunucu
-verifying-archive = Arşiv doğrulanıyor...
-archive-validation-failed = Arşiv doğrulanmabaşarısız oldu
-extracting = Çıkarılıyor...
-extracting-entry = { $entry } çıkarılıyor
-archive-extraction-failed = Arşivden çıkarma başarısız oldu
-mirror-selection-failed = Çevrimiçi ayna kullanılabilir değil. Lütfen orijinal bir diskten yükleyin.
+label-downloading = { $title } indiriliyor
+label-fetching-mirror-list = Aynaların listesi alınıyor...
+label-downloading-from = { $host } adresinden indiriliyor { $received } { $suffix }
+label-downloading-from-progress = { $host } adresinden indiriliyor { $received } / { $total } { $suffix } ({ $progress }%)
+label-unknown-host = bilinmeyen sunucu
+label-verifying-archive = Arşiv doğrulanıyor...
+label-archive-validation-failed = Arşiv doğrulanma başarısız oldu
+label-extracting-archive = Çıkarılıyor...
+label-extracting-archive-entry = { $entry } çıkarılıyor
+label-archive-extraction-failed = Arşivden çıkarma başarısız oldu
+label-mirror-selection-failed = Çevrimiçi ayna kullanılabilir değil. Lütfen orijinal bir diskten yükleyin.
 
-## InstallFromDiscLogic
-detecting-drives = Sürücüler tespit ediliyor
-checking-discs = Diskler kontrol ediliyor
-searching-disc-for = { $title } aranıyor
-content-package-installation = Aşağıdaki içerik paketleri yüklenecek:
-game-discs = Oyun Diskleri
-digital-installs = Dijital Yüklemeler
-game-content-not-found = Oyun İçeriği Bulunamadı
-alternative-content-sources = Lütfen aşağıdaki içerik kaynaklarından birini takın ya da yükleyin:
-installing-content = İçerik Yükleniyor
-copying-filename = { $filename } kopyalanıyor
-copying-filename-progress = { $filename } kopyalanıyor ({ $progress }%)
-installation-failed = Yükleme Başarısız Oldu
-check-install-log = Ayrıntılar için günlük dizinindeki install.log dosyasına bakın.
-extracting-filename = { $filename } çıkarılıyor
-extracting-filename-progress = { $filename } çıkarılıyor ({ $progress }%)
-cancel = İptal Et
-retry = Yeniden Dene
-
-## InstallFromDiscLogic, LobbyLogic
-back = Geri Dön
-
-# InstallFromDiscLogic, ModContentPromptLogic
-continue = Devam Et
+## InstallFromSourceLogic
+label-detecting-sources = Sürücüler tespit ediliyor
+label-checking-sources = Kaynaklar kontrol ediliyor
+label-searching-source-for = { $title } aranıyor
+label-content-package-installation = Aşağıdaki içerik paketleri yüklenecek:
+label-game-sources = Oyun Kaynakları
+label-digital-installs = Dijital Yüklemeler
+label-game-content-not-found = Oyun İçeriği Bulunamadı
+label-alternative-content-sources = Lütfen aşağıdaki içerik kaynaklarından birini takın ya da yükleyin:
+label-installing-content = İçerik Yükleniyor
+label-copying-filename = { $filename } kopyalanıyor
+label-copying-filename-progress = { $filename } kopyalanıyor ({ $progress }%)
+label-installation-failed = Yükleme Başarısız Oldu
+label-check-install-log = Ayrıntılar için günlük dizinindeki install.log dosyasına bakın.
+label-extracting-filename = { $filename } çıkarılıyor
+label-extracting-filename-progress = { $filename } çıkarılıyor ({ $progress }%)
 
 ## ModContentLogic
-manual-install = Elle Yükleme
-
-## ModContentPromptLogic
-quit = Çık
+button-manual-install = Elle Yükleme
 
 ## KickClientLogic
-kick-client = { $player } atılsın mı?
+dialog-kick-client =
+    .prompt = { $player } atılsın mı?
 
 ## KickSpectatorsLogic
-kick-spectators =
+dialog-kick-spectators =
+    .prompt =
     { $count ->
         [one] Bir izleyiciyi atmak istediğinize emin misiniz?
        *[other] { $count } izleyiciyi atmak istediğinize emin misiniz?
     }
 
 ## LobbyLogic
-add = Ekle
-remove = Kaldır
-configure-bots = Botları Ayarla
-n-teams = { $count } Takım
-humans-vs-bots = İnsanlar Botlara Karşı
-free-for-all = Herkes Tek
-configure-teams = Takımları Ayarla
+options-slot-admin =
+    .add-bots = Ekle
+    .remove-bots = Kaldır
+    .configure-bots = Botları Ayarla
+    .teams-count = { $count } Takım
+    .humans-vs-bots = İnsanlar Botlara Karşı
+    .free-for-all = Herkes Tek
+    .configure-teams = Takımları Ayarla
 
-## LobbyLogic, CommonSelectorLogic, InGameChatLogic
-all = Tümü
-
-## InputSettingsLogic, CommonSelectorLogic
-none = Hiçbiri
-
-## LobbyLogic, IngameChatLogic
-team = Takım
+## LobbyLogic, InGameChatLogic
+button-general-chat = Tümü
+button-team-chat = Takım
 
 ## LobbyOptionsLogic
-not-available = Mevcut Değil
+label-not-available = Mevcut Değil
 
 ## LobbyUtils
-slot = Slot
-open = Açık
-closed = Kapalı
-bots = Botlar
-
-# LobbyUtils, Server
-bots-disabled = Bots Disabled
+options-lobby-slot =
+    .slot = Slot
+    .open = Açık
+    .closed = Kapalı
+    .bots = Botlar
+    .bots-disabled = Botlar Devre Dışı
 
 ## MapPreviewLogic
-connecting = Bağlanılıyor...
-downloading-map = İndiriliyor { $size } kB
-downloading-map-progress = İndiriliyor { $size } kB ({ $progress }%)
-retry-install = Yüklemeyi Tekrar Dene
-retry-search = Aramayı Tekrar Dene
+label-connecting = Bağlanılıyor...
+label-downloading-map = İndiriliyor { $size } kB
+label-downloading-map-progress = İndiriliyor { $size } kB ({ $progress }%)
+button-retry-install = Yüklemeyi Tekrar Dene
+button-retry-search = Aramayı Tekrar Dene
 ## also MapChooserLogic
-created-by = Yapımcı: { $author }
+label-created-by = Yapımcı: { $author }
 
 ## SpawnSelectorTooltipLogic
-disabled-spawn = Kapalı başlangıç noktası
-available-spawn = Kullanılabilir başlangıç noktası
+label-disabled-spawn = Devre dışı başlangıç noktası
+label-available-spawn = Kullanılabilir başlangıç noktası
 
 ## DisplaySettingsLogic
-close = Yakın
-medium = Orta
-far = Uzak
-furthest = En Uzak
+options-camera =
+    .close = Yakın
+    .medium = Orta
+    .far = Uzak
+    .furthest = En Uzak
 
-windowed = Pencere
-legacy-fullscreen = Tam Ekran (Eski)
-fullscreen = Tam Ekran
+options-display-mode =
+    .windowed = Pencere
+    .legacy-fullscreen = Tam Ekran (Eski)
+    .fullscreen = Tam Ekran
 
-display = Display { $number }
+label-video-display-index = Görüntü Cihazı { $number }
 
-show-on-damage = Hasarlı ise Göster
-always-show = Her Zaman Göster
+options-status-bars =
+    .standard = Standart
+    .show-on-damage = Hasarlı ise Göster
+    .always-show = Her Zaman Göster
 
-automatic = Otomatik
-manual = Elle
+options-target-lines =
+    .automatic = Otomatik
+    .manual = Elle
+    .disabled = Devre Dışı
 
-## DisplaySettingsLogic, InputSettingsLogic
-disabled = Devre Dışı
+## InputSettingsLogic
+options-mouse-scroll-type =
+    .disabled = Devre Dışı
+    .standard = Standart
+    .inverted = Ters
+    .joystick = Joystick
 
-## DisplaySettingsLogic, InputSettingsLogic, IntroductionPromptLogic
-classic = Klasik
-modern = Modern
-standard = Standart
+## InputSettingsLogic, IntroductionPromptLogic
+options-control-scheme =
+    .classic = Klasik
+    .modern = Modern
 
-## DisplaySettingsLogic, IntroductionPromptLogic
-inverted = Ters
-joystick = Joystick
-
-alt = Alt
-ctrl = Ctrl
-meta = Meta
-shift = Shift
+options-zoom-modifier =
+    .alt = Alt
+    .ctrl = Ctrl
+    .meta = Meta
+    .shift = Shift
+    .none = None
 
 ## SettingsLogic
-settings-save-title = Yeniden Başlatma Gerekli
-settings-save-prompt = Bazı değişiklikler oyun yeniden başlatılana
+dialog-settings-save =
+    .title = Yeniden Başlatma Gerekli
+    .prompt = Bazı değişiklikler oyun yeniden başlatılana
     kadar uygulanmayacak.
-settings-save-cancel = Devam Et
+    .cancel = Devam Et
 
-restart-title = Şimdi Yeniden Başlatılsın Mı?
-restart-prompt = Bazı değişiklikler oyun yeniden başlatılana
+dialog-settings-restart =
+    .title = Şimdi Yeniden Başlatılsın Mı?
+    .prompt = Bazı değişiklikler oyun yeniden başlatılana
     kadar uygulanmayacak. Şimdi yeniden başlatılsın mı?
-restart-accept = Şimdi Yeniden Başlat
-restart-cancel = Daha Sonra Yeniden Başlat
+    .confirm = Şimdi Yeniden Başlat
+    .cancel = Daha Sonra Yeniden Başlat
 
-reset-title = { $panel } Panelini Sıfırla
-reset-prompt = Bu paneldeki tüm ayarları sıfırlamak
+dialog-settings-reset =
+    .title = { $panel } Panelini Sıfırla
+    .prompt = Bu paneldeki tüm ayarları sıfırlamak
     istediğinize emin misiniz?
-reset-accept = Sıfırla
-reset-cancel = İptal Et
+    .confirm = Sıfırla
+    .cancel = İptal Et
 
 ## AssetBrowserLogic
-all-packages = Tüm Paketler
-length-in-seconds = { $length } sn
+label-all-packages = Tüm Paketler
+label-length-in-seconds = { $length } sn
 
 ## ConnectionLogic
-connecting-to-endpoint = { $endpoint } adresine bağlanılıyor...
-could-not-connect-to-target = { $target } suncusuna bağlanılamadı
-unknown-error = Bilinmeyen hata
-password-required = Şifre Gerekli
-connection-failed = Bağlantı Başarısız Oldu
-mod-switch-failed = Mod değiştirme başarısız oldu.
+label-connecting-to-endpoint = { $endpoint } adresine bağlanılıyor...
+label-could-not-connect-to-target = { $target } suncusuna bağlanılamadı
+label-unknown-error = Bilinmeyen hata
+label-password-required = Şifre Gerekli
+label-connection-failed = Bağlantı Başarısız Oldu
+notification-mod-switch-failed = Mod değiştirme başarısız oldu.
 
 ## GameSaveBrowserLogic
-rename-save-title = Kaydı Yeniden Adlandır
-rename-save-prompt = Yeni bir dosya adı girin:
-rename-save-accept = Yeniden Adlandır
+dialog-rename-save =
+    .title = Kaydı Yeniden Adlandır
+    .prompt = Yeni bir dosya adı girin:
+    .confirm = Yeniden Adlandır
 
-delete-save-title = Seçili oyun kaydı silinsin mi?
-delete-save-prompt = '{ $save }' silinsin mi
-delete-save-accept = Sil
+dialog-delete-save =
+    .title = Seçili oyun kaydı silinsin mi?
+    .prompt = '{ $save }' silinsin mi
+    .confirm = Sil
 
-delete-all-saves-title = Tüm oyun kayıtları silinsin mi?
-delete-all-saves-prompt = { $count } kayıt silinecek.
-delete-all-saves-accept = Tümünü Sil
+dialog-delete-all-saves =
+    .title = Tüm oyun kayıtları silinsin mi?
+    .prompt = { $count } kayıt silinecek.
+    .confirm = Tümünü Sil
 
-save-deletion-failed = Kayıt dosyası '{ $savePath }' silinemedi. Ayrıntılar için günlüklere bakın.
+notification-save-deletion-failed = Kayıt dosyası '{ $savePath }' silinemedi. Ayrıntılar için günlüklere bakın.
 
-overwrite-save-title = Kayıtlı oyunun üzerine yazılsın mı?
-overwrite-save-prompt = { $file } kaydının üzerine yazılsın mı?
-overwrite-save-accept = Üzerine Yaz
+dialog-overwrite-save =
+    .title = Kayıtlı oyunun üzerine yazılsın mı?
+    .prompt = { $file } kaydının üzerine yazılsın mı?
+    .confirm = Üzerine Yaz
 
 ## MainMenuLogic
-loading-news = Haberler yükleniyor
-news-retrival-failed = Haberler alınamadı: { $message }
-news-parsing-failed = Haberler işlenemedi: { $message }
+label-loading-news = Haberler yükleniyor
+label-news-retrival-failed = Haberler alınamadı: { $message }
+label-news-parsing-failed = Haberler işlenemedi: { $message }
 
 ## MapChooserLogic
-all-maps = Tüm Haritalar
-no-matches = Eşleşme yok
-player-players = { $players } Oyuncu
-map-size-huge = (Dev)
-map-size-large = (Büyük)
-map-size-medium = (Orta)
-map-size-small = (Küçük)
+label-all-maps = Tüm Haritalar
+label-no-matches = Eşleşme yok
+label-player-count = { $players } Oyuncu
+label-map-size-huge = (Dev)
+label-map-size-large = (Büyük)
+label-map-size-medium = (Orta)
+label-map-size-small = (Küçük)
 
-map-deletion-failed = Harita '{ $map }' silinemedi. Ayrıntılar için debug.log dosyasına bakın.
+notification-map-deletion-failed = Harita '{ $map }' silinemedi. Ayrıntılar için debug.log dosyasına bakın.
 
-delete-map-title = Haritayı sil
-delete-map-prompt = Harita '{ $title }' silinsin mi?
-delete-map-accept = Sil
+dialog-delete-map =
+    .title = Haritayı sil
+    .prompt = Harita '{ $title }' silinsin mi?
+    .confirm = Sil
 
-delete-all-maps-title = Haritaları sil
-delete-all-maps-prompt = Bu sayfadaki tüm haritalar silinsin mi?
-delete-all-maps-accept = Sil
+dialog-delete-all-maps =
+    .title = Haritaları sil
+    .prompt = Bu sayfadaki tüm haritalar silinsin mi?
+    .confirm = Sil
 
-order-maps-players = Oyuncu Sayısı
-order-maps-date = Değiştirme Tarihi
+options-order-maps =
+    .player-count = Oyuncu Sayısı
+    .date = Değiştirme Tarihi
 
 ## MissionBrowserLogic
-no-video-title = Video yüklenmemiş
-no-video-prompt = Oyunun videoları ana menüdeki "İçerikleri
+dialog-no-video =
+    .title = Video yüklenmemiş
+    .prompt = Oyunun videoları ana menüdeki "İçerikleri
     Yönet" kısmından yüklenebilir.
-no-video-cancel = Geri Dön
+    .cancel = Geri Dön
 
-cant-play-title = Video oynatılamıyor
-cant-play-prompt = Videoyu oynatırken bir şeyler ters gitti.
-cant-play-cancel = Geri Dön
+dialog-cant-play-video =
+    .title = Video oynatılamıyor
+    .prompt = Videoyu oynatırken bir şeyler ters gitti.
+    .cancel = Geri Dön
 
 ## MusicPlayerLogic
-sound-muted = Ses ayarlardan kapatılmış.
-no-song-playing = Hiçbir şarkı oynatılmıyor
+label-sound-muted = Ses ayarlardan kapatılmış.
+label-no-song-playing = Hiçbir şarkı oynatılmıyor
 
 ## MuteHotkeyLogic
-audio-muted = Ses kapatıldı.
-audio-unmuted = Ses açıldı.
+label-audio-muted = Ses kapatıldı.
+label-audio-unmuted = Ses açıldı.
 
 ## PlayerProfileLogic
-loading-player-profile = Oyuncu profili yükleniyor...
-loading-player-profile-failed = Oyuncu profilini yükleme başarısız oldu.
+label-loading-player-profile = Oyuncu profili yükleniyor...
+label-loading-player-profile-failed = Oyuncu profilini yükleme başarısız oldu.
 
 ## ReplayBrowserLogic
-duration = Süre: { $time }
-singleplayer = Tek Oyunculu
-multiplayer = Çok Oyunculu
+label-duration = Süre: { $time }
 
-victory = Zafer
-defeat = Yenilgi
+options-replay-type =
+    .singleplayer = Tek Oyunculu
+    .multiplayer = Çok Oyunculu
 
-today = Bugün
-last-week = Son 7 günde
-last-fortnight = Son 14 günde
-last-month = Son 30 günde
+options-winstate =
+    .victory = Zafer
+    .defeat = Yenilgi
 
-replay-duration-very-short = 5 dk altında
-replay-duration-short = Kısa (10 dk)
-replay-duration-medium = Orta (30 dk)
-replay-duration-long = Uzun (60+ dk)
+options-replay-date =
+    .today = Bugün
+    .last-week = Son 7 günde
+    .last-fortnight = Son 14 günde
+    .last-month = Son 30 günde
 
-rename-replay-title = Geri Oynatmayı Yeniden Adlandır
-rename-replay-prompt = Yeni bir dosya adı girin:
-rename-replay-accept = Yeniden Adlandır
+options-replay-duration =
+    .very-short = 5 dk altında
+    .short = Kısa (10 dk)
+    .medium = Orta (30 dk)
+    .long = Uzun (60+ dk)
 
-delete-replay-title = Seçili geri oynatma silinsin mi?
-delete-replay-prompt = Geri oynatma { $replay } silinsin mi?
-delete-replay-accept = Sil
+dialog-rename-replay =
+    .title = Geri Oynatmayı Yeniden Adlandır
+    .prompt = Yeni bir dosya adı girin:
+    .confirm = Yeniden Adlandır
 
-delete-all-replays-title = Seçili geri oynatmaların tümü silinsin mi?
-delete-all-replays-prompt = { $count } geri oynatma silinecek.
-delete-all-replays-accept = Tümünü Sil
+dialog-delete-replay =
+    .title = Seçili geri oynatma silinsin mi?
+    .prompt = Geri oynatma { $replay } silinsin mi?
+    .confirm = Sil
 
-replay-deletion-failed = Geri oynatma dosyası '{ $file }' silinemedi. Ayrıntılar için debug.log dosyasına bakın.
+dialog-delete-all-replays =
+    .title = Seçili geri oynatmaların tümü silinsin mi?
+    .prompt = { $count } geri oynatma silinecek.
+    .confirm = Tümünü Sil
+
+notification-replay-deletion-failed = Geri oynatma dosyası '{ $file }' silinemedi. Ayrıntılar için debug.log dosyasına bakın.
 
 ## ReplayUtils
-incompatible-replay-title = Uyumsuz Geri Oynatma
-incompatible-replay-prompt = Geri oynatma meta verileri okunamadı.
-incompatible-replay-accept = Tamam
 -incompatible-replay-recorded = kaydedilmiş
-incompatible-replay-unknown-version = Bilinmeyen bir sürümde { -incompatible-replay-recorded }.
-incompatible-replay-unknown-mod = Bilinmeyen bir modda { -incompatible-replay-recorded }.
-incompatible-replay-unavailable-mod = Mevcut olmayan bir modda { -incompatible-replay-recorded }: { $mod }.
-incompatible-replay-incompatible-version = Uyumsuz bir sürümde { -incompatible-replay-recorded }:
+
+dialog-incompatible-replay =
+    .title = Uyumsuz Geri Oynatma
+    .prompt = Geri oynatma meta verileri okunamadı.
+    .confirm = Tamam
+    .prompt-unknown-version = Bilinmeyen bir sürümde { -incompatible-replay-recorded }.
+    .prompt-unknown-mod = Bilinmeyen bir modda { -incompatible-replay-recorded }.
+    .prompt-unavailable-mod = Mevcut olmayan bir modda { -incompatible-replay-recorded }: { $mod }.
+    .prompt-incompatible-version = Uyumsuz bir sürümde { -incompatible-replay-recorded }:
     { $version }.
-incompatible-replay-unavailable-map = Mevcut olmayan bir haritada { -incompatible-replay-recorded }:
+    .prompt-unavailable-map = Mevcut olmayan bir haritada { -incompatible-replay-recorded }:
     { $map }.
 
 ## ServerCreationLogic
-internet-server-nat-A = İnternet Sunucusu (UPnP/NAT-PMP
-internet-server-nat-B-enabled = Etkin
-internet-server-nat-B-not-supported = Desteklenmiyor
-internet-server-nat-B-disabled = Devre Dışı
-internet-server-nat-C = ):
+label-internet-server-nat-A = İnternet Sunucusu (UPnP/NAT-PMP
+label-internet-server-nat-B-enabled = Etkin
+label-internet-server-nat-B-not-supported = Desteklenmiyor
+label-internet-server-nat-B-disabled = Devre Dışı
+label-internet-server-nat-C = ):
 
-local-server = Yerel Sunucu:
+label-local-server = Yerel Sunucu:
 
-server-creation-failed-prompt = Bağlantı noktası { $port } dinlenemedi
-server-creation-failed-port-used = Bağlantı noktasının zaten kullanılmadığından emin olun.
-server-creation-failed-error = Hata: "{ $message }" ({ $code })
-server-creation-failed-title = Sunucu Oluşturma Başarısız Oldu
-server-creation-failed-cancel = Geri Dön
+dialog-server-creation-failed =
+    .prompt = Bağlantı noktası { $port } dinlenemedi
+    .prompt-port-used = Bağlantı noktasının zaten kullanılmadığından emin olun.
+    .prompt-error = Hata: "{ $message }" ({ $code })
+    .title = Sunucu Oluşturma Başarısız Oldu
+    .cancel = Geri Dön
+
 
 ## ServerListLogic
-players-online = { $players } Oyuncu Çevrimiçi
+label-players-online-count = { $players } Oyuncu Çevrimiçi
 
-search-status-failed = Sunucu listesi alınamadı.
-search-status-no-games = Hiçbir oyun bulunamadı. Filtreleri değiştirmeyi deneyin.
-no-server-selected = Hiçbir Sunucu Seçili Değil
+label-search-status-failed = Sunucu listesi alınamadı.
+label-search-status-no-games = Hiçbir oyun bulunamadı. Filtreleri değiştirmeyi deneyin.
+label-no-server-selected = Hiçbir Sunucu Seçili Değil
 
-map-status-searching = Aranıyor...
-map-classification-unknown = Bilinmeyen Harita
+label-map-status-searching = Aranıyor...
+label-map-classification-unknown = Bilinmeyen Harita
 
-players-label =
+label-players-count =
     { $players ->
         [0] Oyuncu Yok
         [one] Bir Oyuncu
        *[other] { $players } Oyuncu
     }
 
-bots-label =
+label-bots-count =
     { $bots ->
         [0] Bot Yok
         [one] Bir Bot
@@ -542,11 +566,11 @@ bots-label =
     }
 
 ## ServerListLogic, ReplayBrowserLogic, ObserverShroudSelectorLogic
-players = Oyuncular
+label-players = Oyuncular
 
 ## ServerListLogic, GameInfoStatsLogic
-spectators = İzleyiciler
-spectators-label =
+label-spectators = Spectators
+label-spectators-count =
     { $spectators ->
         [0] İzleyici Yok
         [one] Bir İzleyici
@@ -554,209 +578,221 @@ spectators-label =
     }
 
 ## ServerlistLogic, GameInfoStatsLogic, ObserverShroudSelectorLogic, SpawnSelectorTooltipLogic, ReplayBrowserLogic
-team-number = Takım { $team }
-no-team = Takım Yok
+label-team-name = Takım { $team }
+label-no-team = Takım Yok
 
-playing = Oyunda
-waiting = Beklemede
+label-playing = Oyunda
+label-waiting = Beklemede
 
-n-other-players =
+label-other-players-count =
     { $players ->
         [one] Bir diğer oyuncu
        *[other] { $players } diğer oyuncu
     }
 
-in-progress-for =
+label-in-progress-for =
     { $minutes ->
-        [0] Devam ediyor
+        [0] Bir dakikadan kısa süredir devam ediyor.
        *[other] { $minutes } dakikadır devam ediyor.
     }
-password-protected = Şifre korumalı
-waiting-for-players = Oyuncu bekliyor
-server-shutting-down = Sunucu kapatılıyor
-unknown-server-state = Bilinmeyen sunucu durumu
+
+label-password-protected = Şifre korumalı
+label-waiting-for-players = Oyuncu bekliyor
+label-server-shutting-down = Sunucu kapatılıyor
+label-unknown-server-state = Bilinmeyen sunucu durumu
 
 ## Game
-saved-screenshot = Ekran görüntüsü { $filename } kaydedildi.
+notification-saved-screenshot = Ekran görüntüsü { $filename } kaydedildi.
 
 ## ChatCommands
-invalid-command = { $name } geçerli bir komut değil.
+notification-invalid-command = { $name } geçerli bir komut değil.
 
 ## DebugVisualizationCommands
-combat-geometry-description = savaş geometrisi kaplamasını ayarlar.
-render-geometry-description = render geometrisi kaplamasını ayarlar.
-screen-map-overlay-description = ekran haritası kaplamasını ayarlar.
-depth-buffer-description = derinlik tamponu kaplamasını ayarlar.
-actor-tags-overlay-description = aktör etiketleri kaplamasını ayarlar.
+description-combat-geometry = savaş geometrisi kaplamasını ayarlar.
+description-render-geometry = render geometrisi kaplamasını ayarlar.
+description-screen-map-overlay = ekran haritası kaplamasını ayarlar.
+description-depth-buffer = derinlik tamponu kaplamasını ayarlar.
+description-actor-tags-overlay = aktör etiketleri kaplamasını ayarlar.
 
 ## DevCommands
-cheats-disabled = Hileler devre dışı.
-invalid-cash-amount = Geçersiz para değeri.
-toggle-visibility = görünürlülük konrollerini ve haritayı ayarlar.
-give-cash = varsayılan ya da belirtilen miktarda para verir.
-give-cash-all = tüm oyunculara ve yz'lara varsayılan ya da belirtilen miktarda para verir.
-instant-building = anlık inşaayı ayarlar.
-build-anywhere = heryere inşa etme yeteneğini ayarlar.
-unlimited-power = sınırsız gücü ayarlar.
-enable-tech = her ünite ve binayı yapabilmeyi ayarlar.
-fast-charge = neredeyse anlık destek kuvvet dolumunu ayarlar.
-dev-cheat-all = bütün hileleri ayarlayıp biraz harçlık verir.
-dev-crash = oyunu çökertir.
-levelup-actor = seçili aktörlere belirtilen miktarda seviye ekler.
-player-experience = seçili aktörlerin sahibine/sahiplerine belirtilen miktarda oyuncu tecrübesi ekler.
-power-outage = seçili aktörlerin sahibinin/sahiplerinin 5 saniyelik güç kesintisine düşmesine sebep olur.
-kill-selected-actors = seçili aktörleri öldürür.
-dispose-selected-actors = seçili aktörleri kaldırır.
+notification-cheats-disabled = Hileler devre dışı.
+notification-invalid-cash-amount = Geçersiz para değeri.
+description-toggle-visibility = görünürlülük konrollerini ve haritayı ayarlar.
+description-give-cash = varsayılan ya da belirtilen miktarda para verir.
+description-give-cash-all = tüm oyunculara ve yz'lara varsayılan ya da belirtilen miktarda para verir.
+description-instant-building = anlık inşaayı ayarlar.
+description-build-anywhere = heryere inşa etme yeteneğini ayarlar.
+description-unlimited-power = sınırsız gücü ayarlar.
+description-enable-tech = her ünite ve binayı yapabilmeyi ayarlar.
+description-fast-charge = neredeyse anlık destek kuvvet dolumunu ayarlar.
+description-dev-cheat-all = bütün hileleri ayarlayıp biraz harçlık verir.
+description-dev-crash = oyunu çökertir.
+description-levelup-actor = seçili aktörlere belirtilen miktarda seviye ekler.
+description-player-experience = seçili aktörlerin sahibine/sahiplerine belirtilen miktarda oyuncu tecrübesi ekler.
+description-power-outage = seçili aktörlerin sahibinin/sahiplerinin 5 saniyelik güç kesintisine düşmesine sebep olur.
+description-kill-selected-actors = seçili aktörleri öldürür.
+description-dispose-selected-actors = seçili aktörleri kaldırır.
 
 ## HelpCommands
-available-commands = Kullanılabilir komutlar şunlardır:
-no-description = açıklama mevcut değil.
-help-description = çeşitli komutlar üzerinde kullanışlı bilgiler verir
+notification-available-commands = Kullanılabilir komutlar şunlardır:
+description-no-description = açıklama mevcut değil.
+description-help-description = çeşitli komutlar üzerinde kullanışlı bilgiler verir
 
 ## PlayerCommands
-pause-description = oyunu duraklatır ya da devam ettirir
-surrender-description = her şeyi yok edip oyunu kaybetmenize sebep olur
+description-pause-description = oyunu duraklatır ya da devam ettirir
+description-surrender-description = her şeyi yok edip oyunu kaybetmenize sebep olur
 
 ## DeveloperMode
-cheat-used = Hile kullanıldı: { $cheat }, Kullanan: { $player }{ $suffix }
+notification-cheat-used = Hile kullanıldı: { $cheat }, Kullanan: { $player }{ $suffix }
 
 ## CustomTerrainDebugOverlay
-custom-terrain-debug-overlay-description = özel arazi hata bulma kaplamasını ayarlar.
+description-custom-terrain-debug-overlay = özel arazi hata bulma kaplamasını ayarlar.
 
 ## CellTriggerOverlay
-cell-trigger-overlay-description = kod tetikleyicileri kaplamasını ayarlar.
+description-cell-triggers-overlay = kod tetikleyicileri kaplamasını ayarlar.
 
 ## ExitsDebugOverlay
-exits-debug-overlay-description = Fabrika çıkışlarını gösterir.
+description-exits-overlay = Fabrika çıkışlarını gösterir.
 
 ## HierarchicalPathFinderOverlay
-hpf-overlay-description = hiyeralşik yol bulucu kaplamasını ayarlar.
+description-hpf-debug-overlay = hiyeralşik yol bulucu kaplamasını ayarlar.
 
 ## PathFinderOverlay
-path-debug-description = yol aramalarının görselleştirilmesini ayarlar.
+description-path-debug-overlay = yol aramalarının görselleştirilmesini ayarlar.
 
 ## TerrainGeometryOverlay
-terrain-geometry-overlay = arazi geometrisi kaplamasını ayarlar.
+description-terrain-geometry-overlay = arazi geometrisi kaplamasını ayarlar.
 
 ## Shroud
-fog-of-war =
+checkbox-fog-of-war =
     .label = Savaş Sisi
     .description = Line of sight is required to view enemy forces
 
-explored-map =
+checkbox-explored-map =
     .label = Keşfedilmiş Harita
     .description = Initial map shroud is revealed
 
 ## DeveloperMode
-debug-menu =
+checkbox-debug-menu =
     .label = Hata Ayıklama Menüsü
     .description = Hileleri ve geliştirici komutlarını açar
 
 ## CrateSpawner
-crates =
+checkbox-crates =
     .label = Kutular
     .description = Collect crates with units to receive random bonuses or penalties
 
 ## MapBuildRadius
-ally-build-radius =
+checkbox-ally-build-radius =
     .label = Build off Allies
     .description = Allow allies to place structures inside your build area
 
-build-radius =
+checkbox-build-radius =
     .label = İnşaa Alanı Sınırı
     .description = Bina yerleştirmesini İnşaat Alanlarının etrafıyla sınırlar
 
 ## MapOptions
-short-game =
+checkbox-short-game =
     .label = Kısa Oyun
     .description = Players are defeated when their bases are destroyed
 
-tech-level =
+dropdown-tech-level =
     .label = Teknoloji Seviyesi
     .description = The units and abilities that players can use
 
-game-speed =
+## MapOptions, MissionBrowserLogic
+dropdown-game-speed =
     .label = Oyun Hızı
     .description = The rate at which time passes
 
+options-game-speed =
+    .slowest = En Yavaş
+    .slower = Daha Yavaş
+    .normal = Normal
+    .fast = Hızlı
+    .faster = Daha Hızlı
+    .fastest = En Hızlı
+    .ludicrous = Aşırı Hızlı
+
 ## MapStartingLocations
-separate-team-spawns =
+checkbox-separate-team-spawns =
     .label = Separate Team Spawns
     .description = Başlangıç noktası atanmamış oyuncular düşmanlardan mümkün olduğunca uzakta başlar
 
 ## SpawnStartingUnits
-starting-units =
+dropdown-starting-units =
     .label = Başlangıç Birlikleri
     .description = The units that players start the game with
 
+options-starting-units =
+    .no-bases = Üs Yok
+    .mcv-only = Sadece MİA
+    .mcv-and-dog = MİA ve Köpek
+    .light-support = Hafif Destek
+    .medium-support = Orta Destek
+    .heavy-support = Ağır Destek
+    .unholy-alliance = Unholy Alliance
+
 ## TimeLimitManager
-time-limit =
+dropdown-time-limit =
     .label = Oyun Süresi
     .description = Bu süre aşıldıktan sonra en yüksek skora sahip oyuncu ya da takım oyunu kazanır
 
-no-time-limit = Sınırsız
-time-limit-options = { $minutes } dakika
+options-time-limit =
+    .no-limit = Sınırsız
+    .options = { $minutes } dakika
 
-time-limit-expired = Oyun süresi sona erdi.
+notification-time-limit-expired = Oyun süresi sona erdi.
 
 ## Player
-redeployable-mcvs =
+checkbox-redeployable-mcvs =
     .label = Redeployable MCVs
     .description = Allow undeploying Construction Yard
 
-free-minimap =
+checkbox-free-minimap =
     .label = Free Minimap
     .description = Minimap is active without a building to enable it
 
-limit-super-weapons =
+checkbox-limit-super-weapons =
     .label = Süper Silahları Sınırla
     .description = Only 1 of each super weapon can be built by a player
 
-tech-build-area =
+checkbox-tech-build-area =
     .label = Tech Build Area
     .description = Allow building placement around tech structures
 
-instant-capture =
+checkbox-instant-capture =
     .label = Instant Capture
     .description = Engineers can enter a building without waiting to capture
 
-multiqueue =
+checkbox-multiqueue =
     .label = MultiQueue
     .description = Each production facility can produce individually
 
-upgrades-option =
+checkbox-upgrades-option =
     .label = Geliştirmeler
     .description = Enables researching upgrades that improve existing units
 
-domination-option =
+checkbox-domination-option =
     .label = Domination
     .description = Control the flags on the map to win
 
-megawealth-option =
+checkbox-megawealth-option =
     .label = Megawealth
     .description = Removes all the Ore on the map and makes the economy dependent on Oil Derricks
 
-show-owner-name =
+checkbox-show-owner-name =
     .label = Sahip Adını Göster
     .description = Show name and flag of the owner of a unit on its tooltip
 
-sudden-death =
+checkbox-sudden-death =
     .label = Ani Ölüm
     .description = Oyuncular MİA üretemez ve başlangıçta verileni kaybettiklerinde oyunu kaybederler
 
-king-of-the-hill =
+checkbox-king-of-the-hill =
     .label = King of the Hill
     .description = Capture and hold the Psychic Beacon on the map to win
 
-regicide =
+checkbox-regicide =
     .label = Regicide
     .description = Kazanmak için düşman liderini öldürün
-
-## World
-no-bases = Üs Yok
-mcv-only = Sadece MİA
-mcv-and-dog = MİA ve Köpek
-light-support = Hafif Destek
-medium-support = Orta Destek
-heavy-support = Ağır Destek
-unholy-alliance = Unholy Alliance

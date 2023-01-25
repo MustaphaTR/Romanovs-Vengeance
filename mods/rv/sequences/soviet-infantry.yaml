@@ -1,21 +1,32 @@
 dog:
 	Inherits: adog
-	Defaults: conquer|dog
-	shoot: conquer|dogp
-	swim-stand: bits/infantry/dogs
-	swim-run: bits/infantry/dogs
-	swim-die1: bits/infantry/dogs
-	swim-die2: bits/infantry/dogs
-	swim-jump: bits/infantry/dogs
-	icon: cameo|dogicon
+	Defaults:
+		Filename: conquer|dog.shp
+	shoot:
+		Filename: conquer|dogp.shp
+	swim-stand:
+		Filename: bits/infantry/dogs.shp
+	swim-run:
+		Filename: bits/infantry/dogs.shp
+	swim-die1:
+		Filename: bits/infantry/dogs.shp
+	swim-die2:
+		Filename: bits/infantry/dogs.shp
+	swim-jump:
+		Filename: bits/infantry/dogs.shp
+	icon:
+		Filename: cameo|dogicon.shp
 
 sengineer:
 	Inherits: engineer
-	Defaults: bits/infantry/sengineer
-	icon: bits/cameos/sengicon
+	Defaults:
+		Filename: bits/infantry/sengineer.shp
+	icon:
+		Filename: bits/cameos/sengicon.shp
 
 sqd:
-	Defaults: conquer|sqd
+	Defaults:
+		Filename: conquer|sqd.shp
 	stand:
 		Start: 160
 		Facings: -8
@@ -34,86 +45,106 @@ sqd:
 		Length: 14
 		Facings: -8
 		Tick: 120
-	grabing: sqdg
+	grabing:
+		Filename: sqdg.shp
 		Frames: 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49
 		Length: 10
 		Facings: 8
 		Ticks: 160
 		ZOffset: 1c0
-	grab: sqdg
+	grab:
+		Filename: sqdg.shp
 		Frames: 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129
 		Length: 10
 		Facings: 8
 		Ticks: 160
 		ZOffset: 1c0
-	icon: cameo|sqdicon
+	icon:
+		Filename: cameo|sqdicon.shp
 
 e2:
 	Inherits: ^ArmedInfantry
-	Defaults: conquer|cons
+	Defaults:
+		Filename: conquer|cons.shp
 	run:
 		Tick: 120
 	paradrop:
 		Start: 292
-	stand-bulletproof: bits/infantry/consu
+	stand-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Facings: 8
-	run-bulletproof: bits/infantry/consu
+	run-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 120
-	idle1-bulletproof: bits/infantry/consu
+	idle1-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 56
 		Length: 15
 		Tick: 120
-	idle2-bulletproof: bits/infantry/consu
+	idle2-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 71
 		Length: 15
 		Tick: 120
-	cheer-bulletproof: bits/infantry/consu
+	cheer-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 293
 		Length: 8
 		Tick: 120
-	die-bulletproof1: bits/infantry/consu
+	die-bulletproof1:
+		Filename: bits/infantry/consu.shp
 		Start: 134
 		Length: 15
-	die-bulletproof2: bits/infantry/consu
+	die-bulletproof2:
+		Filename: bits/infantry/consu.shp
 		Start: 149
 		Length: 15
-	liedown-bulletproof: bits/infantry/consu
+	liedown-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 260
 		Length: 2
 		Facings: 8
-	standup-bulletproof: bits/infantry/consu
+	standup-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 276
 		Length: 2
 		Facings: 8
-	prone-stand-bulletproof: bits/infantry/consu
+	prone-stand-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Frames: 86, 92, 98, 104, 110, 116, 122, 128
 		Facings: 8
-	prone-run-bulletproof: bits/infantry/consu
+	prone-run-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 86
 		Length: 6
 		Facings: 8
 		Tick: 100
-	shoot-bulletproof: bits/infantry/consu
+	shoot-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 164
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-shoot-bulletproof: bits/infantry/consu
+	prone-shoot-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 212
 		Length: 6
 		Facings: 8
 		Tick: 80
-	paradrop-bulletproof: bits/infantry/consu
+	paradrop-bulletproof:
+		Filename: bits/infantry/consu.shp
 		Start: 292
-	icon: cameo|e2icon
+	icon:
+		Filename: cameo|e2icon.shp
 
 flakt:
 	Inherits: ^ArmedInfantry
 	Inherits@MUZZLE: ^WithFlakMuzzle
-	Defaults: conquer|flakt
+	Defaults:
+		Filename: conquer|flakt.shp
 	run:
 		Tick: 120
 	die1:
@@ -132,84 +163,105 @@ flakt:
 		Start: 165
 	prone-shoot:
 		Start: 245
-	stand-bulletproof: bits/infantry/flaktu
+	stand-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Facings: 8
-	run-bulletproof: bits/infantry/flaktu
+	run-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 120
-	idle1-bulletproof: bits/infantry/flaktu
+	idle1-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 56
 		Length: 15
 		Tick: 120
-	idle2-bulletproof: bits/infantry/flaktu
+	idle2-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 71
 		Length: 15
 		Tick: 120
-	cheer-bulletproof: bits/infantry/flaktu
+	cheer-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 293
 		Length: 8
 		Tick: 120
-	die-bulletproof1: bits/infantry/flaktu
+	die-bulletproof1:
+		Filename: bits/infantry/flaktu.shp
 		Start: 86
 		Length: 15
-	die-bulletproof2: bits/infantry/flaktu
+	die-bulletproof2:
+		Filename: bits/infantry/flaktu.shp
 		Start: 101
 		Length: 15
-	liedown-bulletproof: bits/infantry/flaktu
+	liedown-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 213
 		Length: 2
 		Facings: 8
-	standup-bulletproof: bits/infantry/flaktu
+	standup-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 229
 		Length: 2
 		Facings: 8
-	prone-stand-bulletproof: bits/infantry/flaktu
+	prone-stand-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Frames: 165, 171, 177, 183, 189, 195, 201, 207
 		Facings: 8
-	prone-run-bulletproof: bits/infantry/flaktu
+	prone-run-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 165
 		Length: 6
 		Facings: 8
 		Tick: 100
-	shoot-bulletproof: bits/infantry/flaktu
+	shoot-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 116
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-shoot-bulletproof: bits/infantry/flaktu
+	prone-shoot-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 245
 		Length: 6
 		Facings: 8
 		Tick: 80
-	paradrop-bulletproof: bits/infantry/flaktu
+	paradrop-bulletproof:
+		Filename: bits/infantry/flaktu.shp
 		Start: 292
-	icon: cameo|flkticon
+	icon:
+		Filename: cameo|flkticon.shp
 
 shk:
 	Inherits: ^ArmedInfantry
-	Defaults: conquer|shk
-	run: bits/infantry/shkfix
+	Defaults:
+		Filename: conquer|shk.shp
+	run:
+		Filename: bits/infantry/shkfix.shp
 		Start: 0
 		Tick: 120
 	paradrop:
 		Start: 292
-	charge: bits/infantry/shkfix
+	charge:
+		Filename: bits/infantry/shkfix.shp
 		Start: 48
 		Length: 6
 		Facings: 8
 		Tick: 80
-	prone-charge: bits/infantry/shkfix
+	prone-charge:
+		Filename: bits/infantry/shkfix.shp
 		Start: 96
 		Length: 6
 		Facings: 8
 		Tick: 80
-	icon: cameo|shkicon
+	icon:
+		Filename: cameo|shkicon.shp
 
 terror:
 	Inherits: ^BasicInfantry
-	Defaults: conquer|trst
+	Defaults:
+		Filename: conquer|trst.shp
 	run:
 		Tick: 120
 	die1:
@@ -229,12 +281,15 @@ terror:
 		Start: 179
 	cheer:
 		Start: 180
-	icon: cameo|trsticon
+	icon:
+		Filename: cameo|trsticon.shp
 
 deso:
 	Inherits: ^ArmedInfantry
-	Defaults: conquer|deso
-	dot: dot
+	Defaults:
+		Filename: conquer|deso.shp
+	dot:
+		Filename: dot.shp
 		ZOffset: -9999
 	run:
 		Tick: 120
@@ -250,54 +305,69 @@ deso:
 		Tick: 70
 	cheer:
 		Start: 314
-	paradrop: bits/infantry/desofix
-	stand-orange: bits/infantry/desoorange
+	paradrop:
+		Filename: bits/infantry/desofix.shp
+	stand-orange:
+		Filename: bits/infantry/desoorange.shp
 		Facings: 8
-	run-orange: bits/infantry/desoorange
+	run-orange:
+		Filename: bits/infantry/desoorange.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 120
-	idle1-orange: bits/infantry/desoorange
+	idle1-orange:
+		Filename: bits/infantry/desoorange.shp
 		Start: 56
 		Length: 15
 		Tick: 120
-	idle2-orange: bits/infantry/desoorange
+	idle2-orange:
+		Filename: bits/infantry/desoorange.shp
 		Start: 71
 		Length: 15
 		Tick: 120
-	cheer-orange: bits/infantry/desoorange
+	cheer-orange:
+		Filename: bits/infantry/desoorange.shp
 		Start: 314
 		Length: 8
 		Tick: 120
-	die-orange1: bits/infantry/desoorange
+	die-orange1:
+		Filename: bits/infantry/desoorange.shp
 		Start: 134
 		Length: 15
-	die-orange2: bits/infantry/desoorange
+	die-orange2:
+		Filename: bits/infantry/desoorange.shp
 		Start: 149
 		Length: 15
-	shoot-orange: bits/infantry/desoorange
+	shoot-orange:
+		Filename: bits/infantry/desoorange.shp
 		Start: 164
 		Length: 6
 		Facings: 8
 		Tick: 80
-	deploy-orange: bits/infantry/desoorange
+	deploy-orange:
+		Filename: bits/infantry/desoorange.shp
 		Start: 299
 		Length: 15
 		Tick: 70
-	deployed-orange: bits/infantry/desoorange
+	deployed-orange:
+		Filename: bits/infantry/desoorange.shp
 		Start: 292
-	deployed-shoot-orange: bits/infantry/desoorange
+	deployed-shoot-orange:
+		Filename: bits/infantry/desoorange.shp
 		Start: 292
 		Length: 7
 		Tick: 70
-	paradrop-orange: bits/infantry/desofix
+	paradrop-orange:
+		Filename: bits/infantry/desofix.shp
 		Start: 1
-	icon: cameo|desoicon
+	icon:
+		Filename: cameo|desoicon.shp
 
 ivan:
 	Inherits: ^ArmedInfantry
-	Defaults: conquer|ivan
+	Defaults:
+		Filename: conquer|ivan.shp
 	run:
 		Tick: 120
 	liedown:
@@ -311,16 +381,20 @@ ivan:
 		Length: 15
 	cheer:
 		Start: 259
-	icon: cameo|ivanicon
+	icon:
+		Filename: cameo|ivanicon.shp
 
 civan:
 	Inherits: ivan
-	Defaults: conquer|civan
-	icon: cameo|ivncicon
+	Defaults:
+		Filename: conquer|civan.shp
+	icon:
+		Filename: cameo|ivncicon.shp
 
 yuri:
 	Inherits: ^ArmedInfantry
-	Defaults: conquer|yuri
+	Defaults:
+		Filename: conquer|yuri.shp
 	deploy:
 		Start: 292
 		Length: 7
@@ -334,19 +408,24 @@ yuri:
 		Start: 307
 	cheer:
 		Start: 308
-	muzzle: yuricntl
+	muzzle:
+		Filename: yuricntl.shp
 		Length: *
-	icon: cameo|yuriicon
+	icon:
+		Filename: cameo|yuriicon.shp
 
 yuripr:
 	Inherits: yuri
-	Defaults: conquer|yuripr
-	icon: cameo|yurpicon
+	Defaults:
+		Filename: conquer|yuripr.shp
+	icon:
+		Filename: cameo|yurpicon.shp
 
 # Yuri's Revenge Infantry
 boris:
 	Inherits: ^ArmedInfantry
-	Defaults: conqmd|boris
+	Defaults:
+		Filename: conqmd|boris.shp
 	idle2:
 		Length: 20
 	die1:
@@ -369,28 +448,34 @@ boris:
 		Start: 401
 		Facings: 8
 		Tick: 80
-	swim-stand: bits/infantry/borisboat
+	swim-stand:
+		Filename: bits/infantry/borisboat.shp
 		Start: 0
 		Facings: 8
 		Length: 3
 		Tick: 160
-	swim-run: bits/infantry/borisboat
+	swim-run:
+		Filename: bits/infantry/borisboat.shp
 		Start: 24
 		Facings: 8
 		Length: 5
 		Tick: 120
-	swim-die1: bits/infantry/borisboat
+	swim-die1:
+		Filename: bits/infantry/borisboat.shp
 		Start: 64
 		Length: 12
-	swim-die2: bits/infantry/borisboat
+	swim-die2:
+		Filename: bits/infantry/borisboat.shp
 		Start: 64
 		Length: 12
-	swim-shoot: bits/infantry/borisboat
+	swim-shoot:
+		Filename: bits/infantry/borisboat.shp
 		Start: 76
 		Length: 2
 		Facings: 8
 		Tick: 160
-	swim-shoot-flare: bits/infantry/borisboat
+	swim-shoot-flare:
+		Filename: bits/infantry/borisboat.shp
 		Start: 92
 		Facings: 8
 		Tick: 80
@@ -400,12 +485,14 @@ boris:
 		Start: 281
 	cheer:
 		Start: 297
-	icon: cameomd|brisicon
+	icon:
+		Filename: cameomd|brisicon.shp
 
 # Custom Infantry
 pyro:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/pyro
+	Defaults:
+		Filename: bits/infantry/pyro.shp
 	stand:
 		ShadowStart: 1701
 	run:
@@ -470,12 +557,15 @@ pyro:
 		ShadowStart: 3162
 		Facings: 8
 		Length: 15
-	icon: bits/cameos/pyroicon
+	icon:
+		Filename: bits/cameos/pyroicon.shp
 
 itrp:
 	Inherits: cleg
-	Defaults: bits/infantry/itrp
-	dot: dot
+	Defaults:
+		Filename: bits/infantry/itrp.shp
+	dot:
+		Filename: dot.shp
 		ZOffset: -9999
 	deploy:
 		Start: 8
@@ -487,12 +577,14 @@ itrp:
 		Start: 12
 		Length: 4
 		Tick: 120
-	icon: bits/cameos/itrpicon
+	icon:
+		Filename: bits/cameos/itrpicon.shp
 
 hjck:
 	Inherits: ^Infantry
 	Inherits@SWIMSUIT: ^WithSwimsuit
-	Defaults: bits/infantry/hjck
+	Defaults:
+		Filename: bits/infantry/hjck.shp
 	die1:
 		Start: 185
 	die2:
@@ -516,15 +608,21 @@ hjck:
 	cheer:
 		Start: 181
 		Length: 4
-	icon: bits/cameos/hjckicon
+	icon:
+		Filename: bits/cameos/hjckicon.shp
 
 shkc:
 	Inherits: shk
-	Defaults: bits/infantry/shkc
-	run: bits/infantry/shkc
+	Defaults:
+		Filename: bits/infantry/shkc.shp
+	run:
+		Filename: bits/infantry/shkc.shp
 		Start: 8
 		Length: 6
 		Facings: 8
-	charge: bits/infantry/shkc
-	prone-charge: bits/infantry/shkc
-	icon: bits/cameos/shkcicon
+	charge:
+		Filename: bits/infantry/shkc.shp
+	prone-charge:
+		Filename: bits/infantry/shkc.shp
+	icon:
+		Filename: bits/cameos/shkcicon.shp

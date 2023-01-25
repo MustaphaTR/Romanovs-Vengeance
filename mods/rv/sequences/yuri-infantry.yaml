@@ -1,7 +1,9 @@
 slav:
 	Inherits: ^ArmedInfantry
-	Defaults: conqmd|slav
-	idle: inviso
+	Defaults:
+		Filename: conqmd|slav.shp
+	idle:
+		Filename: inviso.shp
 	run:
 		Tick: 120
 	die1:
@@ -22,27 +24,39 @@ slav:
 		Start: 164
 	cheer:
 		Start: 276
-	icon: bits/cameos/slavicon
+	icon:
+		Filename: bits/cameos/slavicon.shp
 
 yengineer:
 	Inherits: engineer
-	Defaults: bits/infantry/yengineer
-	icon: cameomd|yengicon
+	Defaults:
+		Filename: bits/infantry/yengineer.shp
+	icon:
+		Filename: cameomd|yengicon.shp
 
 bdog:
 	Inherits: adog
-	Defaults: bits/infantry/bdog
-	shoot: bits/infantry/bdogp
-	swim-stand: bits/infantry/bdogs
-	swim-run: bits/infantry/bdogs
-	swim-die1: bits/infantry/bdogs
-	swim-die2: bits/infantry/bdogs
-	swim-jump: bits/infantry/bdogs
-	icon: bits/cameos/bdogicon
+	Defaults:
+		Filename: bits/infantry/bdog.shp
+	shoot:
+		Filename: bits/infantry/bdogp.shp
+	swim-stand:
+		Filename: bits/infantry/bdogs.shp
+	swim-run:
+		Filename: bits/infantry/bdogs.shp
+	swim-die1:
+		Filename: bits/infantry/bdogs.shp
+	swim-die2:
+		Filename: bits/infantry/bdogs.shp
+	swim-jump:
+		Filename: bits/infantry/bdogs.shp
+	icon:
+		Filename: bits/cameos/bdogicon.shp
 
 init:
 	Inherits: ^ArmedInfantry
-	Defaults: conqmd|init
+	Defaults:
+		Filename: conqmd|init.shp
 	run:
 		Tick: 120
 	idle1:
@@ -67,11 +81,13 @@ init:
 		Start: 305
 	cheer:
 		Start: 201
-	icon: cameomd|initicon
+	icon:
+		Filename: cameomd|initicon.shp
 
 brute:
 	Inherits: ^ArmedInfantry
-	Defaults: conqmd|brute
+	Defaults:
+		Filename: conqmd|brute.shp
 	run:
 		Tick: 120
 	die1:
@@ -91,11 +107,13 @@ brute:
 		Start: 284
 	cheer:
 		Start: 276
-	icon: cameomd|bruticon
+	icon:
+		Filename: cameomd|bruticon.shp
 
 virus:
 	Inherits: ^ArmedInfantry
-	Defaults: conqmd|virus
+	Defaults:
+		Filename: conqmd|virus.shp
 	run:
 		Tick: 120
 	die1:
@@ -110,15 +128,20 @@ virus:
 		Start: 300
 	cheer:
 		Start: 196
-	icon: cameomd|vrusicon
+	icon:
+		Filename: cameomd|vrusicon.shp
 
 yuripsi:
+	Defaults:
+		Filename: conquer|yuri.shp
 	Inherits: yuri
-	icon: cameomd|yclnicon
+	icon:
+		Filename: cameomd|yclnicon.shp
 
 yurix:
 	Inherits: yuri
-	Defaults: conqmd|yurix
+	Defaults:
+		Filename: conqmd|yurix.shp
 	shoot:
 		Start: 169
 	prone-shoot:
@@ -134,36 +157,45 @@ yurix:
 		Length: 6
 	cheer:
 		Start: 280
-	swim-stand: conqmd|yurix
+	swim-stand:
+		Filename: conqmd|yurix.shp
 		Facings: 8
-	swim-run: conqmd|yurix
+	swim-run:
+		Filename: conqmd|yurix.shp
 		Start: 8
 		Length: 6
 		Facings: 8
 		Tick: 100
-	swim-idle1: conqmd|yurix
+	swim-idle1:
+		Filename: conqmd|yurix.shp
 		Start: 56
 		Length: 15
 		Tick: 120
-	swim-idle2: conqmd|yurix
+	swim-idle2:
+		Filename: conqmd|yurix.shp
 		Start: 71
 		Length: 15
 		Tick: 120
-	swim-die1: conqmd|yurix
+	swim-die1:
+		Filename: conqmd|yurix.shp
 		Start: 134
 		Length: 15
-	swim-die2: conqmd|yurix
+	swim-die2:
+		Filename: conqmd|yurix.shp
 		Start: 149
 		Length: 15
-	swim-shoot: conqmd|yurix
+	swim-shoot:
+		Filename: conqmd|yurix.shp
 		Start: 169
 		Length: 6
 		Facings: 8
 		Tick: 80
-	icon: cameomd|yypricon
+	icon:
+		Filename: cameomd|yypricon.shp
 
 lunr:
-	Defaults: conqmd|lunr
+	Defaults:
+		Filename: conqmd|lunr.shp
 		Length: 6
 		Facings: 8
 	stand:
@@ -202,31 +234,38 @@ lunr:
 		Length: 15
 		Facings: 2
 		Tick: 80
-	die4: nukedie
+	die4:
+		Filename: nukedie.shp
 		Length: *
 		Facings: 1
 		Tick: 50
-	die5: yuridie
+	die5:
+		Filename: yuridie.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die6: electro
+	die6:
+		Filename: electro.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die7: virusd
+	die7:
+		Filename: virusd.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die8: brutdie
+	die8:
+		Filename: brutdie.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die9: gendeath
+	die9:
+		Filename: gendeath.shp
 		Length: *
 		Facings: 1
 		Tick: 80
-	die10: bits/animations/nukedieorange
+	die10:
+		Filename: bits/animations/nukedieorange.shp
 		Length: *
 		Facings: 1
 		Tick: 80
@@ -254,36 +293,43 @@ lunr:
 		Tick: 100
 	paradrop:
 		Start: 418
-	shadow: infshdw
+	shadow:
+		Filename: infshdw.shp
 		Start: 1
 		Length: 1
 		Facings: 1
-	icon: cameomd|lunricon
+	icon:
+		Filename: cameomd|lunricon.shp
 		Length: 1
 		Facings: 1
 
 lunr.husk:
-	idle: conqmd|lunr
+	idle:
+		Filename: conqmd|lunr.shp
 		Start: 340
 		Length: 16
 		Facings: 2
 		Tick: 120
-	shadow: infshdw
+	shadow:
+		Filename: infshdw.shp
 		Start: 1
 
 # Custom Infantry
 gtrp:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/gtrp
+	Defaults:
+		Filename: bits/infantry/gtrp.shp
 	run:
 		Tick: 120
 	paradrop:
 		Start: 292
-	icon: bits/cameos/gtrpicon
+	icon:
+		Filename: bits/cameos/gtrpicon.shp
 
 spct:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/spct
+	Defaults:
+		Filename: bits/infantry/spct.shp
 		Tick: 80
 	run:
 		Length: 8
@@ -312,12 +358,13 @@ spct:
 	standup:
 		Start: 308
 		Length: 1
-	icon: bits/cameos/spcticon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/spcticon.png
 
 ttrp:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/ttrp
+	Defaults:
+		Filename: bits/infantry/ttrp.shp
 	run:
 		Tick: 120
 	deploy:
@@ -334,19 +381,21 @@ ttrp:
 		Start: 314
 	paradrop:
 		Start: 322
-	icon: bits/cameos/ttrpicon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/ttrpicon.png
 
 crkt:
 	Inherits: ^ArmedInfantry
-	Defaults: bits/infantry/crkt
+	Defaults:
+		Filename: bits/infantry/crkt.shp
 	paradrop:
 		Start: 292
-	icon: bits/cameos/crkticon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/crkticon.png
 
 floater:
-	Defaults: bits/vehicles/floater
+	Defaults:
+		Filename: bits/vehicles/floater.shp
 	idle:
 		Length: 16
 		Tick: 100
@@ -363,11 +412,12 @@ floater:
 		Start: 16
 		ShadowStart: 48
 		Tick: 100
-	icon: bits/cameos/crabicon.png
-		AddExtension: false
+	icon:
+		Filename: bits/cameos/crabicon.png
 
 vislrg:
-	Defaults: bits/infantry/vislrg
+	Defaults:
+		Filename: bits/infantry/vislrg.shp
 	stand:
 		Length: 90
 		ShadowStart: 90
@@ -383,10 +433,11 @@ vislrg:
 		ShadowStart: 90
 		Tick: 80
 		Facings: 1
-	attack: bits/infantry/vislgatk
-		Length: *
+	attack:
+		Filename: bits/infantry/vislgatk.shp
 		Facings: -8
 		Length: 5
 		Tick: 80
 		Offset: 0, 0, 16
-	icon: cameo|xxicon
+	icon:
+		Filename: cameo|xxicon.shp

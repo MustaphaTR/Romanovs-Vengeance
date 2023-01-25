@@ -214,7 +214,7 @@
 		RandomFactionMembers: transcaucus, turkmen, tuva, russianfed, serbia
 		Side: Randoms
 		Description: Random Baku Pact Country\nA random Baku Pact country will be chosen when the game starts.
-		Selectable: false
+		Selectable: true
 	Faction@1:
 		Name: United States
 		InternalName: america
@@ -295,97 +295,97 @@
 		InternalName: japan
 		Side: Allies
 		Description: State of Japan\nCapital: Tokyo
-		Selectable: false
+		Selectable: true
 	Faction@17:
 		Name: Belarus
 		InternalName: belarus
 		Side: Allies
 		Description: Republic of Belarus\nCapital: Minsk
-		Selectable: false
+		Selectable: true
 	Faction@18:
 		Name: Poland
 		InternalName: poland
 		Side: Allies
 		Description: Republic of Poland\nCapital: Warsaw
-		Selectable: false
+		Selectable: true
 	Faction@19:
 		Name: Ukraine
 		InternalName: ukraine
 		Side: Allies
 		Description: Ukrainian Republic\nCapital: Kyiv
-		Selectable: false
+		Selectable: true
 	Faction@20:
 		Name: Australia
 		InternalName: aussie
 		Side: Allies
 		Description: Commonwealth of Australia\nCapital: Canberra
-		Selectable: false
+		Selectable: true
 	Faction@21:
 		Name: China
 		InternalName: china
 		Side: Allies
 		Description: Republic of China\nCapital: Beijing
-		Selectable: false
+		Selectable: true
 	Faction@22:
 		Name: Turkey
 		InternalName: turkey
 		Side: Allies
 		Description: Republic of Turkey\nCapital: Ankara
-		Selectable: false
+		Selectable: true
 	Faction@23:
 		Name: Canada
 		InternalName: canada
 		Side: Allies
 		Description: Canada\nCapital: Ottawa
-		Selectable: false
+		Selectable: true
 	Faction@24:
 		Name: Chile
 		InternalName: chile
 		Side: Soviets
 		Description: Republic of Chile\nCapital: Santiago
-		Selectable: false
+		Selectable: true
 	Faction@25:
 		Name: Mexico
 		InternalName: mexico
 		Side: Soviets
 		Description: United Mexican States\nCapital: Mexico City
-		Selectable: false
+		Selectable: true
 	Faction@26:
 		Name: Mongolia
 		InternalName: mongolia
 		Side: Soviets
 		Description: Mongolian People's Republic\nCapital: Ulaanbataar
-		Selectable: false
+		Selectable: true
 	Faction@27:
 		Name: Transcaucasia
 		InternalName: transcaucus
 		Side: Baku Pact
 		Description: Transcaucasian Socialist Federative Republic\nCapital: Baku (de facto)
-		Selectable: false
+		Selectable: true
 	Faction@28:
 		Name: Turkmenistan
 		InternalName: turkmen
 		Side: Baku Pact
 		Description: Republic of Turkmenistan\nCapital: Ashgabat\n\n\nSpecial Infantry: Angry Mob
-		Selectable: false
+		Selectable: true
 	Faction@29:
 		Name: Tuva
 		InternalName: tuva
 		Side: Baku Pact
 		Description: Second Tuvan Republic\nCapital: Kyzyl\n\n\nSpecial Infantry: Motorised Engineer
-		Selectable: false
+		Selectable: true
 	Faction@30:
 		Name: Russia
 		InternalName: russianfed
 		Side: Baku Pact
 		Description: Russian Federation\nCapital: Vladivostok (1973-1975)\n             Moscow (1975-)
-		Selectable: false
+		Selectable: true
 	Faction@31:
 		Name: Serbia & Montenegro
 		InternalName: serbia
 		Side: Baku Pact
 		Description: Socialist Union of Serbia and Montenegro\nCapital: Belgrade
-		Selectable: false
+		Selectable: true
 	ResourceRenderer:
 		ResourceTypes:
 			Ore:
@@ -484,7 +484,7 @@ World:
 	CreateMapPlayers:
 	StartingUnits@nobasesallies:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: tany
 		BaseActorFacing: 640
@@ -495,7 +495,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasesamerica:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: america
 		BaseActor: tany
 		BaseActorFacing: 640
@@ -506,7 +506,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasesengland:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: england
 		BaseActor: tany
 		BaseActorFacing: 640
@@ -517,7 +517,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasesgermany:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: germany
 		BaseActor: tany
 		BaseActorFacing: 640
@@ -528,13 +528,13 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@amcv:
 		Class: none
-		ClassName: mcv-only
+		ClassName: options-starting-units.mcv-only
 		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
 	StartingUnits@amcvdog:
 		Class: mcvdog
-		ClassName: mcv-and-dog
+		ClassName: options-starting-units.mcv-and-dog
 		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
@@ -544,7 +544,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@lightallies:
 		Class: light
-		ClassName: light-support
+		ClassName: options-starting-units.light-support
 		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
@@ -554,7 +554,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@mediumallies:
 		Class: medium
-		ClassName: medium-support
+		ClassName: options-starting-units.medium-support
 		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
@@ -564,7 +564,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@heavyallies:
 		Class: heavy
-		ClassName: heavy-support
+		ClassName: options-starting-units.heavy-support
 		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
@@ -574,7 +574,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@unholyamcv:
 		Class: unholy
-		ClassName: unholy-alliance
+		ClassName: options-starting-units.unholy-alliance
 		Factions: america, england, france, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: amcv
 		BaseActorFacing: 640
@@ -584,7 +584,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@nobasessoviets:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: vietnam, mexico, mongolia
 		BaseActor: boris
 		BaseActorFacing: 640
@@ -595,7 +595,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasesrussia:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: russia
 		BaseActor: boris
 		BaseActorFacing: 640
@@ -606,7 +606,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasesiraq:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: iraq
 		BaseActor: boris
 		BaseActorFacing: 640
@@ -617,7 +617,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasesvietnam:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: vietnam
 		BaseActor: boris
 		BaseActorFacing: 640
@@ -628,7 +628,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasescuba:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: cuba
 		BaseActor: boris
 		BaseActorFacing: 640
@@ -639,7 +639,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobaseslibya:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: libya
 		BaseActor: boris
 		BaseActorFacing: 640
@@ -649,13 +649,13 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@smcv:
 		Class: none
-		ClassName: mcv-only
+		ClassName: options-starting-units.mcv-only
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
 	StartingUnits@smcvdog:
 		Class: mcvdog
-		ClassName: mcv-and-dog
+		ClassName: options-starting-units.mcv-and-dog
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
@@ -665,7 +665,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@lightsoviets:
 		Class: light
-		ClassName: light-support
+		ClassName: options-starting-units.light-support
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
@@ -675,7 +675,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@mediumsoviets:
 		Class: medium
-		ClassName: medium-support
+		ClassName: options-starting-units.medium-support
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
@@ -685,7 +685,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@heavysoviets:
 		Class: heavy
-		ClassName: heavy-support
+		ClassName: options-starting-units.heavy-support
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
@@ -695,7 +695,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@unholysmcv:
 		Class: unholy
-		ClassName: unholy-alliance
+		ClassName: options-starting-units.unholy-alliance
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
 		BaseActor: smcv
 		BaseActorFacing: 640
@@ -705,7 +705,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@nobasespsicorps:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: psicorps, psisouth
 		BaseActor: yurix
 		BaseActorFacing: 640
@@ -716,7 +716,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasespsipsinepal:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: psinepal
 		BaseActor: yurix
 		BaseActorFacing: 640
@@ -727,7 +727,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasespsitrans:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: psitrans
 		BaseActor: yurix
 		BaseActorFacing: 640
@@ -738,7 +738,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasespsipsimoon:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: psimoon
 		BaseActor: yurix
 		BaseActorFacing: 640
@@ -749,13 +749,13 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@pcv:
 		Class: none
-		ClassName: mcv-only
+		ClassName: options-starting-units.mcv-only
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 640
 	StartingUnits@pcvdog:
 		Class: mcvdog
-		ClassName: mcv-and-dog
+		ClassName: options-starting-units.mcv-and-dog
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 640
@@ -765,7 +765,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@lightpsicorps:
 		Class: light
-		ClassName: light-support
+		ClassName: options-starting-units.light-support
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 640
@@ -775,7 +775,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@mediumpsicorps:
 		Class: medium
-		ClassName: medium-support
+		ClassName: options-starting-units.medium-support
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 640
@@ -785,7 +785,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@heavypsicorps:
 		Class: heavy
-		ClassName: heavy-support
+		ClassName: options-starting-units.heavy-support
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 640
@@ -795,7 +795,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@unholypcv:
 		Class: unholy
-		ClassName: unholy-alliance
+		ClassName: options-starting-units.unholy-alliance
 		Factions: psicorps, psinepal, psisouth, psitrans, psimoon
 		BaseActor: pcv
 		BaseActorFacing: 640
@@ -805,7 +805,7 @@ World:
 		OuterSupportRadius: 5
 	StartingUnits@nobasesbaku:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: transcaucus, turkmen, russianfed, serbia
 		BaseActor: vlkv
 		BaseActorFacing: 640
@@ -815,7 +815,7 @@ World:
 		OuterSupportRadius: 8
 	StartingUnits@nobasestuva:
 		Class: nobases
-		ClassName: no-bases
+		ClassName: options-starting-units.no-bases
 		Factions: tuva
 		BaseActor: vlkv
 		BaseActorFacing: 640

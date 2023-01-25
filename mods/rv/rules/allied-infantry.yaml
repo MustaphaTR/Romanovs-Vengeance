@@ -40,10 +40,10 @@ engineer:
 	#	Range: 5c0
 	RevealOnDeath:
 		Radius: 5c0
-	EngineerRepair:
+	InstantlyRepairs:
 		Types: building
 		RepairSound: urepair.wav
-	EngineerRepair@CIV:
+	InstantlyRepairs@CIV:
 		Types: civilian
 		RepairSound: urepair.wav
 		ValidRelationships: Ally, Neutral
@@ -217,7 +217,7 @@ dog:
 	WithSpriteBody@DEPLOYED:
 		Sequence: deployed
 		Name: deployed
-		RequiresCondition: !parachute && !webdisable && !attacking && (deployed || deploying) 
+		RequiresCondition: !parachute && !webdisable && !attacking && (deployed || deploying)
 	RenderSprites:
 		Image: adog
 		FactionImages:

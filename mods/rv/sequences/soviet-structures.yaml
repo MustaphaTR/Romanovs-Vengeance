@@ -1,348 +1,388 @@
 nacnst:
 	Defaults:
 		Offset: 4, -58
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngcnst_c
+	idle:
+		Filename: ngcnst_c.shp
+		TilesetFilenames:
+			SNOW: nacnst_c.shp
+			SIMPLETERRAIN: ntcnst_c.shp
 		Length: 1
 		ShadowStart: 4
 		Tick: 150
-	damaged-idle: ngcnst_c
+	damaged-idle:
+		Filename: ngcnst_c.shp
+		TilesetFilenames:
+			SNOW: nacnst_c.shp
+			SIMPLETERRAIN: ntcnst_c.shp
 		Start: 1
 		Length: 1
 		ShadowStart: 5
 		Tick: 150
-	make: ntcnstmk
+	make:
+		Filename: ntcnstmk.shp
+		TilesetFilenames:
+			SNOW: nacnstmk.shp
+			URBAN: nucnstmk.shp
+			NEWURBAN: nncnstmk.shp
+			DESERT: ndcnstmk.shp
+			LUNAR: nlcnstmk.shp
+			DUNE: ndcnstmk.shp
 		Length: 31
 		ShadowStart: 31
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	idle-top: ngcnst_a
+	idle-top:
+		Filename: ngcnst_a.shp
+		TilesetFilenames:
+			SNOW: nacnst_a.shp
+			SIMPLETERRAIN: ntcnst_a.shp
 		Length: 11
 		Tick: 200
-	damaged-idle-top: ngcnst_a
+	damaged-idle-top:
+		Filename: ngcnst_a.shp
+		TilesetFilenames:
+			SNOW: nacnst_a.shp
+			SIMPLETERRAIN: ntcnst_a.shp
 		Start: 11
 		Length: 11
 		Tick: 150
-	idle-normal: ngcnst
+	idle-normal:
+		Filename: ngcnst.shp
+		TilesetFilenames:
+			SNOW: nacnst.shp
+			SIMPLETERRAIN: ntcnst.shp
 		ShadowStart: 3
 		ZOffset: -1024
-	damaged-idle-normal: ngcnst
+	damaged-idle-normal:
+		Filename: ngcnst.shp
+		TilesetFilenames:
+			SNOW: nacnst.shp
+			SIMPLETERRAIN: ntcnst.shp
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -1024
-	build: ngcnst_b
+	build:
+		Filename: ngcnst_b.shp
+		TilesetFilenames:
+			SNOW: nacnst_b.shp
+			SIMPLETERRAIN: ntcnst_b.shp
 		Length: 21
 		Tick: 150
 		ZOffset: 1c0
-	damaged-build: ngcnst_b
+	damaged-build:
+		Filename: ngcnst_b.shp
+		TilesetFilenames:
+			SNOW: nacnst_b.shp
+			SIMPLETERRAIN: ntcnst_b.shp
 		Start: 21
 		Length: 21
 		Tick: 150
 		ZOffset: 1c0
-	idle-waves: bits/structures/water/ngcnst_w
+	idle-waves:
+		Filename: bits/structures/water/ngcnst_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	flag-russia: bits/structures/flags/cgrufgl_a.png
+	flag-russia:
+		Filename: bits/structures/flags/cgrufgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-iraq: bits/structures/flags/cgirfgl_a.png
+	flag-iraq:
+		Filename: bits/structures/flags/cgirfgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-vietnam: bits/structures/flags/cgvnfgl_a.png
+	flag-vietnam:
+		Filename: bits/structures/flags/cgvnfgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-cuba: bits/structures/flags/cgcufgl_a.png
+	flag-cuba:
+		Filename: bits/structures/flags/cgcufgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-libya: bits/structures/flags/cglbfgl_a.png
+	flag-libya:
+		Filename: bits/structures/flags/cglbfgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-chile: bits/structures/flags/cgclfgl_a.png
+	flag-chile:
+		Filename: bits/structures/flags/cgclfgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-mexico: bits/structures/flags/cgmxfgl_a.png
+	flag-mexico:
+		Filename: bits/structures/flags/cgmxfgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-mongolia: bits/structures/flags/cgmofgl_a.png
+	flag-mongolia:
+		Filename: bits/structures/flags/cgmofgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-transcaucus: bits/structures/flags/cgtcfgl_a.png
+	flag-transcaucus:
+		Filename: bits/structures/flags/cgtcfgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-turkmen: bits/structures/flags/cgtmfgl_a.png
+	flag-turkmen:
+		Filename: bits/structures/flags/cgtmfgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-tuva: bits/structures/flags/cgtvfgl_a.png
+	flag-tuva:
+		Filename: bits/structures/flags/cgtvfgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-russianfed: bits/structures/flags/cgrffgl_a.png
+	flag-russianfed:
+		Filename: bits/structures/flags/cgrffgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-serbia: bits/structures/flags/cgsmfgl_a.png
+	flag-serbia:
+		Filename: bits/structures/flags/cgsmfgl_a.png
 		Length: 81
 		Tick: 120
-		AddExtension: false
-		UseTilesetCode: false
 		Offset: 26,-97
 		ZOffset: -1c128
-	flag-shadow: bits/structures/flags/cgfglshdw
+	flag-shadow:
+		Filename: bits/structures/flags/cgfglshdw.shp
 		Length: 81
 		ShadowStart: 81
 		Tick: 120
-		UseTilesetCode: false
 		Offset: 38, -14
-	idle-hns: bits/structures/sovcyardflags
+	idle-hns:
+		Filename: bits/structures/sovcyardflags.shp
 		Start: 7
 		Tick: 120
-		UseTilesetCode: false
-	idle-star: bits/structures/sovcyardflags
+	idle-star:
+		Filename: bits/structures/sovcyardflags.shp
 		Start: 8
 		Tick: 120
-		UseTilesetCode: false
 	#dead: ngcnstdm # SHP broken & unused
 	#	Length: 25
 	#	ShadowStart: 25
 	#	Tick: 100
-	icon: bits/cameos/scnsicon
+	icon:
+		Filename: bits/cameos/scnsicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 napowr:
 	Defaults:
 		Offset: -15, -37
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngpowr
+	idle:
+		Filename: ngpowr.shp
+		TilesetFilenames:
+			SNOW: napowr.shp
+			SIMPLETERRAIN: ntpowr.shp
 		ShadowStart: 3
-	damaged-idle: ngpowr
+	damaged-idle:
+		Filename: ngpowr.shp
+		TilesetFilenames:
+			SNOW: napowr.shp
+			SIMPLETERRAIN: ntpowr.shp
 		Start: 1
 		ShadowStart: 4
-	idle-lights: ngpowr_a
+	idle-lights:
+		Filename: ngpowr_a.shp
+		TilesetFilenames:
+			SNOW: napowr_a.shp
+			SIMPLETERRAIN: ntpowr_a.shp
 		Length: 19
 		Tick: 150
-	damaged-idle-lights: ngpowr_a
+	damaged-idle-lights:
+		Filename: ngpowr_a.shp
+		TilesetFilenames:
+			SNOW: napowr_a.shp
+			SIMPLETERRAIN: ntpowr_a.shp
 		Start: 19
 		Length: 19
 		Tick: 150
-	idle-waves: bits/structures/water/ngpowr_w
+	idle-waves:
+		Filename: bits/structures/water/ngpowr_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ntpowrmk
+	make:
+		Filename: ntpowrmk.shp
+		TilesetFilenames:
+			SNOW: napowrmk.shp
+			URBAN: nupowrmk.shp
 		Length: 26
 		ShadowStart: 26
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: TEMPERATE
-			DESERT: TEMPERATE
-			LUNAR: TEMPERATE
-			DUNE: TEMPERATE
-	icon: cameo|npwricon
+	icon:
+		Filename: cameo|npwricon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 nahand:
 	Defaults:
 		Offset: 1, -31
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: nghand
+	idle:
+		Filename: nghand.shp
+		TilesetFilenames:
+			SNOW: nahand.shp
+			SIMPLETERRAIN: nthand.shp
 		ShadowStart: 3
-	damaged-idle: nghand
+	damaged-idle:
+		Filename: nghand.shp
+		TilesetFilenames:
+			SNOW: nahand.shp
+			SIMPLETERRAIN: nthand.shp
 		Start: 1
 		ShadowStart: 4
-	make: nthandmk
+	make:
+		Filename: nthandmk.shp
+		TilesetFilenames:
+			SNOW: nahandmk.shp
+			URBAN: nuhandmk.shp
+			NEWURBAN: nnhandmk.shp
+			DESERT: ndhandmk.shp
+			LUNAR: nlhandmk.shp
+			DUNE: ndhandmk.shp
 		Length: 25
 		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	icon: cameo|handicon
+	icon:
+		Filename: cameo|handicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 narefn:
 	Defaults:
 		Offset: -13, -53
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngrefn
+	idle:
+		Filename: ngrefn.shp
+		TilesetFilenames:
+			SNOW: narefn.shp
+			SIMPLETERRAIN: ntrefn.shp
 		ShadowStart: 3
-	damaged-idle: ngrefn
+	damaged-idle:
+		Filename: ngrefn.shp
+		TilesetFilenames:
+			SNOW: narefn.shp
+			SIMPLETERRAIN: ntrefn.shp
 		Start: 1
 		ShadowStart: 4
-	idle-waves: bits/structures/water/ngrefn_w
+	idle-waves:
+		Filename: bits/structures/water/ngrefn_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ntrefnmk
+	make:
+		Filename: ntrefnmk.shp
+		TilesetFilenames:
+			SNOW: narefnmk.shp
+			URBAN: nurefnmk.shp
+			NEWURBAN: nnrefnmk.shp
+			DESERT: ndrefnmk.shp
+			LUNAR: nlrefnmk.shp
+			DUNE: ndrefnmk.shp
 		Length: 26
 		ShadowStart: 26
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	idle-drill: ngrefnl1
+	idle-drill:
+		Filename: ngrefnl1.shp
+		TilesetFilenames:
+			SNOW: narefnl1.shp
+			SIMPLETERRAIN: ntrefnl1.shp
 		Length: 3
 		Tick: 1500
-	idle-bib: ngrefnbb
+	idle-bib:
+		Filename: ngrefnbb.shp
+		TilesetFilenames:
+			SNOW: narefnbb.shp
+			SIMPLETERRAIN: ntrefnbb.shp
 		ShadowStart: 3
 		ZOffset: -512
-	damaged-idle-bib: ngrefnbb
+	damaged-idle-bib:
+		Filename: ngrefnbb.shp
+		TilesetFilenames:
+			SNOW: narefnbb.shp
+			SIMPLETERRAIN: ntrefnbb.shp
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -512
-	docking-overlay: ngrefnor
+	docking-overlay:
+		Filename: ngrefnor.shp
+		TilesetFilenames:
+			SNOW: narefnor.shp
+			SIMPLETERRAIN: ntrefnor.shp
 		Length: 20
 		ShadowStart: 20
-	icon: cameo|nreficon
+	icon:
+		Filename: cameo|nreficon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 naradr:
 	Defaults:
 		Offset: 2, -31
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngradr
+	idle:
+		Filename: ngradr.shp
+		TilesetFilenames:
+			SNOW: naradr.shp
+			SIMPLETERRAIN: ntradr.shp
 		ShadowStart: 3
-	damaged-idle: ngradr
+	damaged-idle:
+		Filename: ngradr.shp
+		TilesetFilenames:
+			SNOW: naradr.shp
+			SIMPLETERRAIN: ntradr.shp
 		Start: 1
 		ShadowStart: 4
-	idle-dish: ngradr_a
+	idle-dish:
+		Filename: ngradr_a.shp
+		TilesetFilenames:
+			SNOW: naradr_a.shp
+			SIMPLETERRAIN: ntradr_a.shp
 		ShadowStart: 92
 		Length: 45
 		Tick: 150
-	damaged-idle-dish: ngradr_a
+	damaged-idle-dish:
+		Filename: ngradr_a.shp
+		TilesetFilenames:
+			SNOW: naradr_a.shp
+			SIMPLETERRAIN: ntradr_a.shp
 		Start: 46
 		ShadowStart: 138
 		Length: 45
 		Tick: 150
-	idle-waves: bits/structures/water/ngradr_w
+	idle-waves:
+		Filename: bits/structures/water/ngradr_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ntradrmk
+	make:
+		Filename: ntradrmk.shp
+		TilesetFilenames:
+			SNOW: naradrmk.shp
+			URBAN: nuradrmk.shp
+			NEWURBAN: nnradrmk.shp
+			DESERT: ndradrmk.shp
+			LUNAR: nlradrmk.shp
+			DUNE: ndradrmk.shp
 		Length: 30
 		ShadowStart: 30
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	active: dot
+	active:
+		Filename: dot.shp
 		ZOffset: -9999
-		UseTilesetCode: false
-	icon: cameo|nradicon
+	icon:
+		Filename: cameo|nradicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 naweap:
 	Defaults:
+		Filename: ngweap.shp
+		TilesetFilenames:
+			SNOW: naweap.shp
+			SIMPLETERRAIN: ntweap.shp
 		Offset: -30, -60
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
 	idle:
 		ShadowStart: 3
 		ZOffset: -1536
@@ -350,594 +390,838 @@ naweap:
 		Start: 1
 		ShadowStart: 4
 		ZOffset: -1536
-	build-front: ngweap_1
+	build-front:
+		Filename: ngweap_1.shp
+		TilesetFilenames:
+			SNOW: naweap_1.shp
+			SIMPLETERRAIN: ntweap_1.shp
 		ShadowStart: 2
 		ZOffset: -1024
-	damaged-build-front: ngweap_1
+	damaged-build-front:
+		Filename: ngweap_1.shp
+		TilesetFilenames:
+			SNOW: naweap_1.shp
+			SIMPLETERRAIN: ntweap_1.shp
 		Start: 1
 		ShadowStart: 3
 		ZOffset: -1024
-	build-top: ngweap_2
+	build-top:
+		Filename: ngweap_2.shp
+		TilesetFilenames:
+			SNOW: naweap_2.shp
+			SIMPLETERRAIN: ntweap_2.shp
 		ShadowStart: 2
 		ZOffset: 1024
-	damaged-build-top: ngweap_2
+	damaged-build-top:
+		Filename: ngweap_2.shp
+		TilesetFilenames:
+			SNOW: naweap_2.shp
+			SIMPLETERRAIN: ntweap_2.shp
 		Start: 1
 		ShadowStart: 3
 		ZOffset: 1024
 	# TODO: ngweap_3 and ngweap_4 are used for producing flying actors
-	build-air-open: ngweap_3
+	build-air-open:
+		Filename: ngweap_3.shp
+		TilesetFilenames:
+			SNOW: naweap_3.shp
+			SIMPLETERRAIN: ntweap_3.shp
 		ShadowStart: 2
-	damaged-air-open: ngweap_3
+	damaged-air-open:
+		Filename: ngweap_3.shp
+		TilesetFilenames:
+			SNOW: naweap_3.shp
+			SIMPLETERRAIN: ntweap_3.shp
 		Start: 1
 		ShadowStart: 3
-	build-air-inside: ngweap_4
+	build-air-inside:
+		Filename: ngweap_4.shp
+		TilesetFilenames:
+			SNOW: naweap_4.shp
+			SIMPLETERRAIN: ntweap_4.shp
 		ShadowStart: 2
-	damaged-air-inside: ngweap_4
+	damaged-air-inside:
+		Filename: ngweap_4.shp
+		TilesetFilenames:
+			SNOW: naweap_4.shp
+			SIMPLETERRAIN: ntweap_4.shp
 		Start: 1
 		ShadowStart: 3
-	bib: ngweapbb
+	bib:
+		Filename: ngweapbb.shp
+		TilesetFilenames:
+			SNOW: naweapbb.shp
+			SIMPLETERRAIN: ntweapbb.shp
 		ShadowStart: 3
 		ZOffset: -1024
-	damaged-bib: ngweapbb
+	damaged-bib:
+		Filename: ngweapbb.shp
+		TilesetFilenames:
+			SNOW: naweapbb.shp
+			SIMPLETERRAIN: ntweapbb.shp
 		Start: 1
 		ShadowStart: 3
 		ZOffset: -1024
-	idle-lights: ngweap_a
+	idle-lights:
+		Filename: ngweap_a.shp
+		TilesetFilenames:
+			SNOW: naweap_a.shp
+			SIMPLETERRAIN: ntweap_a.shp
 		Length: 13
 		ShadowStart: 13
 		Tick: 150
-	damaged-idle-lights: ngweap_a # doesn't have damage frames
+	damaged-idle-lights: # doesn't have damage frames
+		Filename: ngweap_a.shp
+		TilesetFilenames:
+			SNOW: naweap_a.shp
+			SIMPLETERRAIN: ntweap_a.shp
 		Length: 13
 		ShadowStart: 13
 		Tick: 150
-	make: ntweapmk
+	make:
+		Filename: ntweapmk.shp
+		TilesetFilenames:
+			SNOW: naweapmk.shp
+			URBAN: nuweapmk.shp
+			NEWURBAN: nnweapmk.shp
+			DESERT: ndweapmk.shp
+			LUNAR: nlweapmk.shp
+			DUNE: ndweapmk.shp
 		Length: 25
 		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	icon: cameo|nwepicon
+	icon:
+		Filename: cameo|nwepicon.shp
+		TilesetFilenames:
 		Offset: 0,0
-		UseTilesetCode: false
 
 nayard:
 	Defaults:
 		Offset: 0, -45
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngyard
+	idle:
+		Filename: ngyard.shp
+		TilesetFilenames:
+			SNOW: nayard.shp
+			SIMPLETERRAIN: ntyard.shp
 		ShadowStart: 4
-	damaged-idle: ngyard
+	damaged-idle:
+		Filename: ngyard.shp
+		TilesetFilenames:
+			SNOW: nayard.shp
+			SIMPLETERRAIN: ntyard.shp
 		Start: 2
 		ShadowStart: 5
-	idle-crane: ngyard_a
+	idle-crane:
+		Filename: ngyard_a.shp
+		TilesetFilenames:
+			SNOW: nayard_a.shp
+			SIMPLETERRAIN: ntyard_a.shp
 		Length: 15
 		ShadowStart: 30
 		Tick: 200
-	damaged-idle-crane: ngyard_a
+	damaged-idle-crane:
+		Filename: ngyard_a.shp
+		TilesetFilenames:
+			SNOW: nayard_a.shp
+			SIMPLETERRAIN: ntyard_a.shp
 		Start: 15
 		Length: 15
 		ShadowStart: 45
 		Tick: 200
-	idle-waves: ngyard_c
+	idle-waves:
+		Filename: ngyard_c.shp
+		TilesetFilenames:
+			SNOW: nayard_c.shp
+			SIMPLETERRAIN: ntyard_c.shp
 		Length: 15
 		ShadowStart: 30
 		Tick: 200
-	damaged-idle-waves: ngyard_c
+	damaged-idle-waves:
+		Filename: ngyard_c.shp
+		TilesetFilenames:
+			SNOW: nayard_c.shp
+			SIMPLETERRAIN: ntyard_c.shp
 		Start: 30
 		Length: 15
 		ShadowStart: 30
 		Tick: 200
-	idle-lights: ngyard_b
+	idle-lights:
+		Filename: ngyard_b.shp
+		TilesetFilenames:
+			SNOW: nayard_b.shp
+			SIMPLETERRAIN: ntyard_b.shp
 		Length: 15
 		ZOffset: 256
 		Tick: 200
-	damaged-idle-lights: ngyard_b
+	damaged-idle-lights:
+		Filename: ngyard_b.shp
+		TilesetFilenames:
+			SNOW: nayard_b.shp
+			SIMPLETERRAIN: ntyard_b.shp
 		Start: 15
 		Length: 15
 		ZOffset: 256
 		Tick: 200
-	make: ntyardmk
+	make:
+		Filename: ntyardmk.shp
+		TilesetFilenames:
+			SNOW: nayardmk.shp
+			URBAN: nuyardmk.shp
+			NEWURBAN: nnyardmk.shp
+			DESERT: ndyardmk.shp
+			LUNAR: nlyardmk.shp
+			DUNE: ndyardmk.shp
 		Length: 25
 		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	repair: ngyard_s
+	repair:
+		Filename: ngyard_s.shp
+		TilesetFilenames:
+			SNOW: nayard_s.shp
+			SIMPLETERRAIN: ntyard_s.shp
 		Length: 18
 		ShadowStart: 36
-	damaged-repair: ngyard_s
+	damaged-repair:
+		Filename: ngyard_s.shp
+		TilesetFilenames:
+			SNOW: nayard_s.shp
+			SIMPLETERRAIN: ntyard_s.shp
 		Start: 18
 		Length: 18
 		ShadowStart: 54
-	icon: cameo|yardicon
+	icon:
+		Filename: cameo|yardicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 nadept:
 	Defaults:
 		Offset: -15, -53
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngdept_b
+	idle:
+		Filename: ngdept_b.shp
+		TilesetFilenames:
+			SNOW: nadept_b.shp
+			SIMPLETERRAIN: ntdept_b.shp
 		Length: 10
 		ShadowStart: 20
 		Tick: 180
-	damaged-idle: ngdept_b
+	damaged-idle:
+		Filename: ngdept_b.shp
+		TilesetFilenames:
+			SNOW: nadept_b.shp
+			SIMPLETERRAIN: ntdept_b.shp
 		Start: 10
 		Length: 10
 		ShadowStart: 29
-	idle-normal: ngdept
+	idle-normal:
+		Filename: ngdept.shp
+		TilesetFilenames:
+			SNOW: nadept.shp
+			SIMPLETERRAIN: ntdept.shp
 		ShadowStart: 3
-	damaged-idle-normal: ngdept
+	damaged-idle-normal:
+		Filename: ngdept.shp
+		TilesetFilenames:
+			SNOW: nadept.shp
+			SIMPLETERRAIN: ntdept.shp
 		Start: 2
 		ShadowStart: 4
-	bib: ngdeptbb
+	bib:
+		Filename: ngdeptbb.shp
+		TilesetFilenames:
+			SNOW: nadeptbb.shp
+			SIMPLETERRAIN: ntdeptbb.shp
 		ShadowStart: 2
 		ZOffset: -512
-	damaged-bib: ngdeptbb
+	damaged-bib:
+		Filename: ngdeptbb.shp
+		TilesetFilenames:
+			SNOW: nadeptbb.shp
+			SIMPLETERRAIN: ntdeptbb.shp
 		Start: 1
 		ShadowStart: 3
-	idle-waves: bits/structures/water/ngdept_w
+	idle-waves:
+		Filename: bits/structures/water/ngdept_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	damaged-idle-waves: bits/structures/water/ngdept_w
+	damaged-idle-waves:
+		Filename: bits/structures/water/ngdept_w.shp
 		Start: 1
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ntdeptmk
+	make:
+		Filename: ntdeptmk.shp
+		TilesetFilenames:
+			SNOW: nadeptmk.shp
+			URBAN: nudeptmk.shp
+			NEWURBAN: nndeptmk.shp
+			DESERT: nddeptmk.shp
+			LUNAR: nldeptmk.shp
+			DUNE: nddeptmk.shp
 		Length: 25
 		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	make-water: ngdept_wmk
+	make-water:
+		Filename: ngdept_wmk.shp
+		TilesetFilenames:
+			SNOW: nadept_wmk.shp
+			SIMPLETERRAIN: ntdept_wmk.shp
 		Length: 25
 		ShadowStart: 25
-	repair: ngdept_c
+	repair:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
 		Length: 50
 		ShadowStart: 100
 		Tick: 120
-	damaged-repair: ngdept_c
+	damaged-repair:
+		Filename: ngdept_c.shp
+		TilesetFilenames:
+			SNOW: nadept_c.shp
+			SIMPLETERRAIN: ntdept_c.shp
 		Start: 50
 		Length: 50
 		ShadowStart: 150
 		Tick: 120
-	icon: cameo|rfixicon
+	icon:
+		Filename: cameo|rfixicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 naheli:
 	Defaults:
 		Offset: 0, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			SNOW: GENERIC
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngheli
-	damaged-idle: ngheli
+	idle:
+		Filename: ngheli.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ntheli.shp
+	damaged-idle:
+		Filename: ngheli.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ntheli.shp
 		Start: 1
-	idle-dish: ngheli_a
+	idle-dish:
+		Filename: ngheli_a.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ntheli_a.shp
 		Length: 16
 		ShadowStart: 16
 		Tick: 150
-	damaged-idle-dish: ngheli_ad
+	damaged-idle-dish:
+		Filename: ngheli_ad.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ntheli_ad.shp
 		Length: 16
 		ShadowStart: 16
 		Tick: 150
-	idle-lights: ngheli_b
+	idle-lights:
+		Filename: ngheli_b.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ntheli_b.shp
 		Length: 3
 		Tick: 150
-	damaged-idle-lights: ngheli_bd
+	damaged-idle-lights:
+		Filename: ngheli_bd.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ntheli_bd.shp
 		Length: 3
 		Tick: 150
-	idle-waves: bits/structures/water/ngheli_w
+	idle-waves:
+		Filename: bits/structures/water/ngheli_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: nghelimk
+	make:
+		Filename: nghelimk.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: nthelimk.shp
 		Length: 19
-		TilesetOverrides:
-			SNOW: GENERIC
-	icon: bits/cameos/nhelicon
+	icon:
+		Filename: bits/cameos/nhelicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 nanrct:
 	Defaults:
 		Offset: -12, -56
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngnrct
+	idle:
+		Filename: ngnrct.shp
+		TilesetFilenames:
+			SNOW: nanrct.shp
+			SIMPLETERRAIN: ntnrct.shp
 		ShadowStart: 3
-	damaged-idle: ngnrct
+	damaged-idle:
+		Filename: ngnrct.shp
+		TilesetFilenames:
+			SNOW: nanrct.shp
+			SIMPLETERRAIN: ntnrct.shp
 		Start: 1
 		ShadowStart: 4
-	idle-lights: ngnrct_a
+	idle-lights:
+		Filename: ngnrct_a.shp
+		TilesetFilenames:
+			SNOW: nanrct_a.shp
+			SIMPLETERRAIN: ntnrct_a.shp
 		Length: 11
 		Tick: 150
-	damaged-idle-lights: ngnrct_a
+	damaged-idle-lights:
+		Filename: ngnrct_a.shp
+		TilesetFilenames:
+			SNOW: nanrct_a.shp
+			SIMPLETERRAIN: ntnrct_a.shp
 		Start: 11
 		Length: 11
 		Tick: 150
-	idle-lights-orange: ngnrct_ao
+	idle-lights-orange:
+		Filename: ngnrct_ao.shp
+		TilesetFilenames:
+			SNOW: nanrct_ao.shp
+			SIMPLETERRAIN: ntnrct_ao.shp
 		Length: 11
 		Tick: 150
-	damaged-idle-lights-orange: ngnrct_ao
+	damaged-idle-lights-orange:
+		Filename: ngnrct_ao.shp
+		TilesetFilenames:
+			SNOW: nanrct_ao.shp
+			SIMPLETERRAIN: ntnrct_ao.shp
 		Start: 11
 		Length: 11
 		Tick: 150
-	idle-waves: bits/structures/water/ngnrct_w
+	idle-waves:
+		Filename: bits/structures/water/ngnrct_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ntnrctmk
+	make:
+		Filename: ntnrctmk.shp
+		TilesetFilenames:
+			SNOW: nanrctmk.shp
+			URBAN: nunrctmk.shp
+			NEWURBAN: nnnrctmk.shp
+			DESERT: ndnrctmk.shp
+			LUNAR: nlnrctmk.shp
+			DUNE: ndnrctmk.shp
 		Length: 25
 		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	icon: cameo|nrcticon
+	icon:
+		Filename: cameo|nrcticon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 natech:
 	Defaults:
 		Offset: 0, -45
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngtech
+	idle:
+		Filename: ngtech.shp
+		TilesetFilenames:
+			SNOW: natech.shp
+			SIMPLETERRAIN: nttech.shp
 		ShadowStart: 3
-	damaged-idle: ngtech
+	damaged-idle:
+		Filename: ngtech.shp
+		TilesetFilenames:
+			SNOW: natech.shp
+			SIMPLETERRAIN: nttech.shp
 		Start: 1
 		ShadowStart: 4
-	idle-waves: bits/structures/water/ngtech_w
+	idle-waves:
+		Filename: bits/structures/water/ngtech_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	damaged-idle-waves: bits/structures/water/ngtech_w
+	damaged-idle-waves:
+		Filename: bits/structures/water/ngtech_w.shp
 		Start: 1
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: nttechmk
+	make:
+		Filename: nttechmk.shp
+		TilesetFilenames:
+			SNOW: natechmk.shp
+			URBAN: nutechmk.shp
+			NEWURBAN: nntechmk.shp
+			DESERT: ndtechmk.shp
+			LUNAR: nltechmk.shp
+			DUNE: ndtechmk.shp
 		Length: 25
 		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	icon: cameo|ntchicon
+	icon:
+		Filename: cameo|ntchicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 naclon:
 	Defaults:
 		Offset: 0, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngclon_a
+	idle:
+		Filename: ngclon_a.shp
+		TilesetFilenames:
+			SNOW: naclon_a.shp
+			SIMPLETERRAIN: ntclon_a.shp
 		Length: 11
 		ShadowStart: 22
 		Tick: 180
-	damaged-idle: ngclon_a
+	damaged-idle:
+		Filename: ngclon_a.shp
+		TilesetFilenames:
+			SNOW: naclon_a.shp
+			SIMPLETERRAIN: ntclon_a.shp
 		Start: 11
 		Length: 11
 		ShadowStart: 33
-	make: ntclonmk
+	make:
+		Filename: nuclonmk.shp
+		TilesetFilenames:
+			TEMPERATE: ntclonmk.shp
+			SNOW: naclonmk.shp
+			LUNAR: ngclonmk.shp
+			DUNE: ngclonmk.shp
+			SIMPLETERRAIN: ntclonmk.shp
 		Length: 25
 		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: URBAN
-			DESERT: URBAN # YR tilesets don't have Soviet version.
-	icon: cameo|clonicon
+	icon:
+		Filename: cameo|clonicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 napsis:
 	Defaults:
 		Offset: 1, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngpsis
-	damaged-idle: ngpsis
+	idle:
+		Filename: ngpsis.shp
+		TilesetFilenames:
+			SNOW: napsis.shp
+			SIMPLETERRAIN: ntpsis.shp
+	damaged-idle:
+		Filename: ngpsis.shp
+		TilesetFilenames:
+			SNOW: napsis.shp
+			SIMPLETERRAIN: ntpsis.shp
 		Start: 1
-	idle-spin: ngpsis_a
+	idle-spin:
+		Filename: ngpsis_a.shp
+		TilesetFilenames:
+			SNOW: napsis_a.shp
+			SIMPLETERRAIN: ntpsis_a.shp
 		Length: 40
 		Tick: 150
 		ShadowStart: 80
-	damaged-idle-spin: ngpsis_a
+	damaged-idle-spin:
+		Filename: ngpsis_a.shp
+		TilesetFilenames:
+			SNOW: napsis_a.shp
+			SIMPLETERRAIN: ntpsis_a.shp
 		Start: 40
 		Length: 40
 		Tick: 150
 		ShadowStart: 120
-	idle-waves: bits/structures/water/ngpsis_w
+	idle-waves:
+		Filename: bits/structures/water/ngpsis_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ntpsismk
+	make:
+		Filename: nupsismk.shp
+		TilesetFilenames:
+			TEMPERATE: ntpsismk.shp
+			SNOW: napsismk.shp
+			LUNAR: ngpsismk.shp
+			DUNE: ngpsismk.shp
+			SIMPLETERRAIN: ntpsismk.shp
 		Length: 24
 		ShadowStart: 24
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: URBAN
-			DESERT: URBAN # YR tilesets don't have Soviet version.
-	icon: cameo|psisicon
+	icon:
+		Filename: cameo|psisicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 namisl:
 	Defaults:
 		Offset: 0, -42
-	idle: ngmisl_e
+	idle:
+		Filename: ngmisl_e.shp
 		ShadowStart: 2
-	damaged-idle: ngmisl_e
+	damaged-idle:
+		Filename: ngmisl_e.shp
 		Start: 1
 		ShadowStart: 3
-	charged: ngmisl_f
+	charged:
+		Filename: ngmisl_f.shp
 		Length: 16
 		ShadowStart: 32
 		Tick: 150
-	damaged-charged: ngmisl_f
+	damaged-charged:
+		Filename: ngmisl_f.shp
 		Start: 16
 		Length: 16
 		ShadowStart: 48
 		Tick: 120
-	loop: ngmisl_g
+	loop:
+		Filename: ngmisl_g.shp
 		ShadowStart: 2
 		Tick: 120
-	damaged-loop: ngmisl_g
+	damaged-loop:
+		Filename: ngmisl_g.shp
 		Start: 1
 		ShadowStart: 3
 		Tick: 120
-	end: ngmisl_h
+	end:
+		Filename: ngmisl_h.shp
 		Length: 16
 		ShadowStart: 32
 		Tick: 150
-	damaged-end: ngmisl_h
+	damaged-end:
+		Filename: ngmisl_h.shp
 		Start: 16
 		Length: 16
 		ShadowStart: 48
 		Tick: 120
-	smoke: nuketo
+	smoke:
+		Filename: nuketo.shp
 		Length: *
 		Tick: 120
 		Offset: 0, 0
-	steam: nukestm # TODO: unused
+	steam: # TODO: unused
+		Filename: nukestm.shp
 		Length: *
 		Tick: 120
-	idle-waves: bits/structures/water/ngmisl_w
+	idle-waves:
+		Filename: bits/structures/water/ngmisl_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ntmislmk
-		UseTilesetCode: true
+	make:
+		Filename: ntmislmk.shp
+		TilesetFilenames:
+			SNOW: namislmk.shp
+			URBAN: numislmk.shp
+			NEWURBAN: nnmislmk.shp
+			DESERT: ndmislmk.shp
+			LUNAR: nlmislmk.shp
+			DUNE: ndmislmk.shp
 		Length: 26
 		ShadowStart: 26
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	icon: cameo|msslicon
+	icon:
+		Filename: cameo|msslicon.shp
 		Offset: 0,0
 
 nairon:
 	Defaults:
 		Offset: 0, -45
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngiron_a
+	idle:
+		Filename: ngiron_a.shp
+		TilesetFilenames:
+			SNOW: nairon_a.shp
+			SIMPLETERRAIN: ntiron_a.shp
 		Length: 11
 		ShadowStart: 22
 		Tick: 120
-	damaged-idle: ngiron_a
+	damaged-idle:
+		Filename: ngiron_a.shp
+		TilesetFilenames:
+			SNOW: nairon_a.shp
+			SIMPLETERRAIN: ntiron_a.shp
 		Start: 11
 		Length: 11
 		ShadowStart: 33
 		Tick: 120
-	charged: ngiron_f
+	charged:
+		Filename: ngiron_f.shp
+		TilesetFilenames:
+			SNOW: nairon_f.shp
+			SIMPLETERRAIN: ntiron_f.shp
 		Length: 21
 		Tick: 120
-	damaged-charged: ngiron_f
+	damaged-charged:
+		Filename: ngiron_f.shp
+		TilesetFilenames:
+			SNOW: nairon_f.shp
+			SIMPLETERRAIN: ntiron_f.shp
 		Start: 21
 		Length: 21
 		Tick: 120
-	loop: ngiron_f
+	loop:
+		Filename: ngiron_f.shp
+		TilesetFilenames:
+			SNOW: nairon_f.shp
+			SIMPLETERRAIN: ntiron_f.shp
 		Start: 10
 		Length: 10
 		Tick: 120
-	damaged-loop: ngiron_f
+	damaged-loop:
+		Filename: ngiron_f.shp
+		TilesetFilenames:
+			SNOW: nairon_f.shp
+			SIMPLETERRAIN: ntiron_f.shp
 		Start: 31
 		Length: 10
 		Tick: 120
-	end: ngiron_h
+	end:
+		Filename: ngiron_h.shp
+		TilesetFilenames:
+			SNOW: nairon_h.shp
+			SIMPLETERRAIN: ntiron_h.shp
 		Length: 12
 		ShadowStart: 24
 		Tick: 120
-	damaged-end: ngiron_h
+	damaged-end:
+		Filename: ngiron_h.shp
+		TilesetFilenames:
+			SNOW: nairon_h.shp
+			SIMPLETERRAIN: ntiron_h.shp
 		Start: 12
 		Length: 12
 		ShadowStart: 36
 		Tick: 120
-	idle-waves: bits/structures/water/ngiron_w
+	idle-waves:
+		Filename: bits/structures/water/ngiron_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ntironmk
+	make:
+		Filename: ntironmk.shp
+		TilesetFilenames:
+			SNOW: naironmk.shp
+			URBAN: nuironmk.shp
+			NEWURBAN: nnironmk.shp
+			DESERT: ndironmk.shp
+			LUNAR: nlironmk.shp
+			DUNE: ndironmk.shp
 		Length: 25
 		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	active: dot
+	active:
+		Filename: dot.shp
 		ZOffset: -9999
-		UseTilesetCode: false
-	icon: cameo|ironicon
+	icon:
+		Filename: cameo|ironicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 nawall:
 	Defaults:
 		Offset: 0, -15
-		UseTilesetCode: true
-	idle: ntwall
+	idle:
+		Filename: ntwall.shp
+		TilesetFilenames:
+			SNOW: nawall.shp
+			URBAN: nuwall.shp
+			NEWURBAN: nnwall.shp
+			DESERT: ndwall.shp
+			LUNAR: nlwall.shp
+			DUNE: ndwall.shp
 		Length: 16
 		ShadowStart: 48
-	damaged-idle: ntwall
+	damaged-idle:
+		Filename: ntwall.shp
+		TilesetFilenames:
+			SNOW: nawall.shp
+			URBAN: nuwall.shp
+			NEWURBAN: nnwall.shp
+			DESERT: ndwall.shp
+			LUNAR: nlwall.shp
+			DUNE: ndwall.shp
 		Start: 16
 		Length: 16
 		ShadowStart: 64
-	critical-idle: ntwall
+	critical-idle:
+		Filename: ntwall.shp
+		TilesetFilenames:
+			SNOW: nawall.shp
+			URBAN: nuwall.shp
+			NEWURBAN: nnwall.shp
+			DESERT: ndwall.shp
+			LUNAR: nlwall.shp
+			DUNE: ndwall.shp
 		Start: 32
 		Length: 16
 		ShadowStart: 80
-	icon: cameo|nwalicon
+	icon:
+		Filename: cameo|nwalicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 nalasr:
 	Inherits@MUZZLE: ^WithMachineGunMuzzle
-	Defaults: nasnty
+	Defaults:
+		Filename: ngsnty.shp
+		TilesetFilenames:
+			SNOW: nasnty.shp
+			SIMPLETERRAIN: ntsnty.shp
 		Offset: 0, -15
 		ZOffset: -512
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: nasnty
+	idle:
+		Filename: ngsnty.shp
+		TilesetFilenames:
+			SNOW: nasnty.shp
+			SIMPLETERRAIN: ntsnty.shp
 		ShadowStart: 3
-	damaged-idle: nasnty
+	damaged-idle:
+		Filename: ngsnty.shp
+		TilesetFilenames:
+			SNOW: nasnty.shp
+			SIMPLETERRAIN: ntsnty.shp
 		Start: 1
 		ShadowStart: 4
-	turret: nasntytur
+	turret:
+		Filename: ngsntytur.shp
+		TilesetFilenames:
+			SNOW: nasntytur.shp
+			SIMPLETERRAIN: ntsntytur.shp
 		Facings: 32
 		ShadowStart: 32
-	make: nasntymk
+	make:
+		Filename: ngsntymk.shp
+		TilesetFilenames:
+			SNOW: nasntymk.shp
+			SIMPLETERRAIN: ntsntymk.shp
 		Length: 21
 		ShadowStart: 21
 		ZOffset: 0
-	idle-waves: gauwat
+	idle-waves:
+		Filename: gauwat.shp
+		TilesetFilenames:
 		Length: 15
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: cameo|plticon
+	icon:
+		Filename: cameo|plticon.shp
+		TilesetFilenames:
 		Offset: 0,0
-		UseTilesetCode: false
+	muzzle:
+		Filename: nasnty.shp
+		TilesetFilenames:
 
 tesla:
 	Defaults:
 		Offset: 0, -15
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngtsla
+	idle:
+		Filename: ngtsla.shp
+		TilesetFilenames:
+			SNOW: natsla.shp
+			SIMPLETERRAIN: nttsla.shp
 		Length: 1
 		ShadowStart: 3
-	damaged-idle: ngtsla
+	damaged-idle:
+		Filename: ngtsla.shp
+		TilesetFilenames:
+			SNOW: natsla.shp
+			SIMPLETERRAIN: nttsla.shp
 		Start: 1
 		Length: 1
 		ShadowStart: 4
-	idle-powered: ngtsla_a
+	idle-powered:
+		Filename: ngtsla_a.shp
+		TilesetFilenames:
+			SNOW: natsla_a.shp
+			SIMPLETERRAIN: nttsla_a.shp
 		Length: 10
 		ShadowStart: 20
-	damaged-idle-powered: ngtsla_a
+	damaged-idle-powered:
+		Filename: ngtsla_a.shp
+		TilesetFilenames:
+			SNOW: natsla_a.shp
+			SIMPLETERRAIN: nttsla_a.shp
 		Start: 10
 		Length: 10
 		ShadowStart: 30
-	active: ngtsla_b
+	active:
+		Filename: ngtsla_b.shp
+		TilesetFilenames:
+			SNOW: natsla_b.shp
+			SIMPLETERRAIN: nttsla_b.shp
 		Length: 10
 		ShadowStart: 20
 		Tick: 100
 		ZOffset: 10
-	damaged-active: ngtsla_b
+	damaged-active:
+		Filename: ngtsla_b.shp
+		TilesetFilenames:
+			SNOW: natsla_b.shp
+			SIMPLETERRAIN: nttsla_b.shp
 		Start: 10
 		ShadowStart: 20
 		Length: 10
@@ -947,137 +1231,178 @@ tesla:
 	#	Length: 20
 	#	ShadowStart: 20
 	#	Tick: 100
-	make: nttslamk
+	make:
+		Filename: nttslamk.shp
+		TilesetFilenames:
+			SNOW: natslamk.shp
+			URBAN: nutslamk.shp
+			NEWURBAN: nntslamk.shp
+			DESERT: ndtslamk.shp
+			LUNAR: nltslamk.shp
+			DUNE: ndtslamk.shp
 		Length: 25
 		ShadowStart: 25
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
-	idle-waves: gauwat
+	idle-waves:
+		Filename: gauwat.shp
 		Length: 15
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: cameo|tslaicon
+	icon:
+		Filename: cameo|tslaicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 naflak:
 	Inherits@MUZZLE: ^WithFlakMuzzle
 	Defaults:
+		Filename: ngflak.shp
+		TilesetFilenames:
+			SNOW: naflak.shp
+			SIMPLETERRAIN: ntflak.shp
 		Offset: 0, -15
 		ZOffset: -512
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngflak
+	idle:
+		Filename: ngflak.shp
+		TilesetFilenames:
+			SNOW: naflak.shp
+			SIMPLETERRAIN: ntflak.shp
 		ShadowStart: 3
-	damaged-idle: ngflak
+	damaged-idle:
+		Filename: ngflak.shp
+		TilesetFilenames:
+			SNOW: naflak.shp
+			SIMPLETERRAIN: ntflak.shp
 		Start: 1
 		ShadowStart: 4
-	make: ntflakmk
+	make:
+		Filename: ntflakmk.shp
+		TilesetFilenames:
+			SNOW: naflakmk.shp
+			URBAN: nuflakmk.shp
+			NEWURBAN: nnflakmk.shp
+			DESERT: ndflakmk.shp
+			LUNAR: nlflakmk.shp
+			DUNE: ndflakmk.shp
 		Length: 9
 		ShadowStart: 9
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
 		ZOffset: 0
-	idle-waves: gauwat
+	idle-waves:
+		Filename: gauwat.shp
+		TilesetFilenames:
 		Length: 15
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: cameo|flakicon
+	icon:
+		Filename: cameo|flakicon.shp
+		TilesetFilenames:
 		Offset: 0,0
-		UseTilesetCode: false
 
 # Yuri's Revenge Structures
 nabnkr:
 	Defaults:
 		Offset: 0, -30
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngbnkr
+	idle:
+		Filename: ngbnkr.shp
+		TilesetFilenames:
+			SNOW: nabnkr.shp
+			SIMPLETERRAIN: ntbnkr.shp
 		ShadowStart: 4
-	damaged-idle: ngbnkr
+	damaged-idle:
+		Filename: ngbnkr.shp
+		TilesetFilenames:
+			SNOW: nabnkr.shp
+			SIMPLETERRAIN: ntbnkr.shp
 		Start: 1
 		ShadowStart: 5
-	garrisoned: ngbnkr
+	garrisoned:
+		Filename: ngbnkr.shp
+		TilesetFilenames:
+			SNOW: nabnkr.shp
+			SIMPLETERRAIN: ntbnkr.shp
 		Start: 2
 		ShadowStart: 6
-	damaged-garrisoned: ngbnkr
+	damaged-garrisoned:
+		Filename: ngbnkr.shp
+		TilesetFilenames:
+			SNOW: nabnkr.shp
+			SIMPLETERRAIN: ntbnkr.shp
 		Start: 3
 		ShadowStart: 7
-	make: ntbnkrmk
+	make:
+		Filename: ngbnkrmk.shp
+		TilesetFilenames:
+			SNOW: nabnkrmk.shp
+			SIMPLETERRAIN: ntbnkrmk.shp
 		Length: 25
 		ShadowStart: 25
-	icon: cameomd|bnkricon
+	icon:
+		Filename: cameomd|bnkricon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 naindp:
 	Defaults:
 		Offset: 0, -45
-		UseTilesetCode: true
-		TilesetOverrides:
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngindp
+	idle:
+		Filename: ngindp.shp
+		TilesetFilenames:
+			SNOW: naindp.shp
+			SIMPLETERRAIN: ntindp.shp
 		ShadowStart: 3
-	damaged-idle: ngindp
+	damaged-idle:
+		Filename: ngindp.shp
+		TilesetFilenames:
+			SNOW: naindp.shp
+			SIMPLETERRAIN: ntindp.shp
 		Start: 1
 		ShadowStart: 4
-	idle-pistons: ngindp_a
+	idle-pistons:
+		Filename: ngindp_a.shp
+		TilesetFilenames:
+			SNOW: naindp_a.shp
+			SIMPLETERRAIN: ntindp_a.shp
 		Length: 13
 		ShadowStart: 26
-	damaged-idle-pistons: ngindp_a
+	damaged-idle-pistons:
+		Filename: ngindp_a.shp
+		TilesetFilenames:
+			SNOW: naindp_a.shp
+			SIMPLETERRAIN: ntindp_a.shp
 		Start: 13
 		Length: 13
 		ShadowStart: 39
-	idle-lights: ngindp_b
+	idle-lights:
+		Filename: ngindp_b.shp
+		TilesetFilenames:
+			SNOW: naindp_b.shp
+			SIMPLETERRAIN: ntindp_b.shp
 		Length: 13
 		ShadowStart: 26
-	damaged-idle-lights: ngindp_b
+	damaged-idle-lights:
+		Filename: ngindp_b.shp
+		TilesetFilenames:
+			SNOW: naindp_b.shp
+			SIMPLETERRAIN: ntindp_b.shp
 		Start: 13
 		Length: 13
 		ShadowStart: 39
-	idle-waves: bits/structures/water/ngindp_w
+	idle-waves:
+		Filename: bits/structures/water/ngindp_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ntindpmk
+	make:
+		Filename: ngindpmk.shp
+		TilesetFilenames:
+			SNOW: naindpmk.shp
+			SIMPLETERRAIN: ntindpmk.shp
 		Length: 25
 		ShadowStart: 25
-	icon: cameomd|indpicon
+	icon:
+		Filename: cameomd|indpicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 # Custom Structures
 nagatea:
-	Defaults: nggatea
+	Defaults:
+		Filename: nggatea.shp
 		Offset: -30, -30, 30
 		# UseTilesetCode: true
 		Tick: 80
@@ -1100,12 +1425,13 @@ nagatea:
 		Offset: -30, -30, 1
 		ZOffset: -1024
 		ZRamp: 1
-	icon: bits/cameos/ngteicon
+	icon:
+		Filename: bits/cameos/ngteicon.shp
 		Offset: 0, 0
-		UseTilesetCode: false
 
 nagateb:
-	Defaults: nggateb
+	Defaults:
+		Filename: nggateb.shp
 		Offset: 30, -30, 30
 		# UseTilesetCode: true
 		Tick: 80
@@ -1126,12 +1452,13 @@ nagateb:
 		ShadowStart: 46
 		Offset: 30, -30, 1
 		ZRamp: 1
-	icon: bits/cameos/ngtbicon
+	icon:
+		Filename: bits/cameos/ngtbicon.shp
 		Offset: 0, 0
-		UseTilesetCode: false
 
 napost:
-	Defaults: ngpost
+	Defaults:
+		Filename: ngpost.shp
 		Offset: 0, -12, 13
 	idle:
 		Start: 0
@@ -1139,33 +1466,39 @@ napost:
 	damaged-idle:
 		Start: 1
 		ShadowStart: 4
-	lights: ngpost_b
+	lights:
+		Filename: ngpost_b.shp
 		Start: 0
 		Length: 7
 		ShadowStart: 14
 		Tick: 80
-	damaged-lights: ngpost_b
+	damaged-lights:
+		Filename: ngpost_b.shp
 		Start: 7
 		Length: 7
 		ShadowStart: 21
 		Tick: 80
-	chainoflights: ngpost_a
+	chainoflights:
+		Filename: ngpost_a.shp
 		Start: 0
 		Length: 12
 		ShadowStart: 24
 		Tick: 80
-	damaged-chainoflights: ngpost_a
+	damaged-chainoflights:
+		Filename: ngpost_a.shp
 		Start: 12
 		Length: 12
 		ShadowStart: 36
 		Tick: 80
-	active: ngpost_a
+	active:
+		Filename: ngpost_a.shp
 		Start: 0
 		Length: 12
 		ShadowStart: 24
 		Tick: 80
 		ZOffset: 10
-	damaged-active: ngpost_a
+	damaged-active:
+		Filename: ngpost_a.shp
 		Start: 12
 		Length: 12
 		ShadowStart: 36
@@ -1175,16 +1508,18 @@ napost:
 		Start: 2
 		Tick: 400
 		ShadowStart: 5
-	make: ngpostmk
+	make:
+		Filename: ngpostmk.shp
 		Start: 0
 		Length: 12
 		ShadowStart: 12
-	icon: bits/cameos/tfncicon.png
+	icon:
+		Filename: bits/cameos/tfncicon.png
 		Offset: 0, 0
-		AddExtension: false
 
 nafnce:
-	Defaults: ngfnce
+	Defaults:
+		Filename: ngfnce.shp
 		Offset: 0, -12, 13
 	idle:
 		Length: 1
@@ -1206,7 +1541,8 @@ nafnce:
 		Length: 16
 
 nasilo:
-	Defaults: ngsilo
+	Defaults:
+		Filename: ngsilo.shp
 		Offset: 0, -5
 	idle:
 		Length: 4
@@ -1215,48 +1551,52 @@ nasilo:
 		Start: 4
 		Length: 4
 		ShadowStart: 12
-	idle-hns: ngsilo_a
-	idle-star: ngsilo_a
+	idle-hns:
+		Filename: ngsilo_a.shp
+	idle-star:
+		Filename: ngsilo_a.shp
 		Start: 1
-	idle-waves: bits/structures/water/ngsilo_w
+	idle-waves:
+		Filename: bits/structures/water/ngsilo_w.shp
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	make: ngsilomk
+	make:
+		Filename: ngsilomk.shp
 		Length: 12
 		ShadowStart: 12
-	icon: bits/cameos/nsilicon
+	icon:
+		Filename: bits/cameos/nsilicon.shp
 		Offset: 0, 0
 
 naprop:
 	Defaults:
 		Offset: 0, -15
-		UseTilesetCode: true
-		TilesetOverrides:
-			SNOW: GENERIC
-			TEMPERATE: GENERIC
-			URBAN: GENERIC
-			NEWURBAN: GENERIC
-			DESERT: GENERIC
-			LUNAR: GENERIC
-			DUNE: GENERIC
-	idle: ngprop
+	idle:
+		Filename: ngprop.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ntprop.shp
 		Start: 39
 		ShadowStart: 79
-	damaged-idle: ngprop
+	damaged-idle:
+		Filename: ngprop.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ntprop.shp
 		Start: 40
 		ShadowStart: 80
-	make: ngprop
+	make:
+		Filename: ngprop.shp
+		TilesetFilenames:
+			SIMPLETERRAIN: ntprop.shp
 		Length: 39
 		ShadowStart: 41
-	idle-waves: gauwat
+	idle-waves:
+		Filename: gauwat.shp
 		Length: 15
 		Tick: 200
 		ZOffset: -1c0
-		UseTilesetCode: false
-	icon: bits/cameos/propicon
+	icon:
+		Filename: bits/cameos/propicon.shp
 		Offset: 0,0
-		UseTilesetCode: false
 
 napowb:
 	Inherits: napowr
@@ -1264,6 +1604,7 @@ napowb:
 		FlipX: true
 		Offset: 15, -37
 	icon:
+		Filename: cameo|npwricon.shp
 		FlipX: false
 
 narefb:
@@ -1272,10 +1613,12 @@ narefb:
 		FlipX: true
 		Offset: 13, -53
 	icon:
+		Filename: cameo|nreficon.shp
 		FlipX: false
 
 narefc:
-	Defaults: ngrefc
+	Defaults:
+		Filename: ngrefc.shp
 		Offset: 3, 32
 	idle:
 		Start: 31
@@ -1297,65 +1640,99 @@ narefc:
 		ShadowStart: 69
 		ZOffset: -9999
 		ZRamp: 1
-	icon: cameo|nreficon
+	icon:
+		Filename: cameo|nreficon.shp
 		Offset: 0, 0
-		UseTilesetCode: false
 
 narefd:
 	Inherits: narefc
 	Defaults:
+		Filename: ngrefc.shp
 		FlipX: true
 	icon:
+		Filename: cameo|nreficon.shp
 		FlipX: false
 
 naweab:
 	Inherits: naweap
-	Defaults: naweap
+	Defaults:
+		Filename: ngweap.shp
+		TilesetFilenames:
+			SNOW: naweap.shp
+			SIMPLETERRAIN: ntweap.shp
 		FlipX: true
 		Offset: 30, -60
 	icon:
+		Filename: cameo|nwepicon.shp
+		TilesetFilenames:
 		FlipX: false
 
 naweac:
 	Inherits: naweap
-	Defaults: canewy21
+	Defaults:
+		Filename: ctnewy21.shp
+		TilesetFilenames:
+			SNOW: canewy21.shp
+			URBAN: cunewy21.shp
+			NEWURBAN: cnnewy21.shp
+			DESERT: cdnewy21.shp
+			LUNAR: clnewy21.shp
+			DUNE: cdnewy21.shp
 		Offset: -18,-54
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
 	idle:
 		ShadowStart: 4
 	damaged-idle:
 		ShadowStart: 5
-	idle-flag: cagrd1_a
+	idle-flag:
+		Filename: ctgrd1_a.shp
+		TilesetFilenames:
+			SNOW: cagrd1_a.shp
+			URBAN: cugrd1_a.shp
+			NEWURBAN: cngrd1_a.shp
+			DESERT: cdgrd1_a.shp
+			LUNAR: clgrd1_a.shp
+			DUNE: cdgrd1_a.shp
 		Length: 9
 		ShadowStart: 9
 		Tick: 80
 
 nawead:
 	Inherits: naweap
-	Defaults: canewy20
+	Defaults:
+		Filename: ctnewy20.shp
+		TilesetFilenames:
+			SNOW: canewy20.shp
+			URBAN: cunewy20.shp
+			NEWURBAN: cnnewy20.shp
+			DESERT: cdnewy20.shp
+			LUNAR: clnewy20.shp
+			DUNE: cdnewy20.shp
 		Offset: 18,-54
-		TilesetOverrides:
-			TEMPERATE: TEMPERATE
-			URBAN: URBAN
-			NEWURBAN: NEWURBAN
-			DESERT: DESERT
-			LUNAR: LUNAR
-			DUNE: DUNE
 	idle:
 		ShadowStart: 4
 	damaged-idle:
 		ShadowStart: 5
-	idle-flag: cagrd1_a
+	idle-flag:
+		Filename: ctgrd1_a.shp
+		TilesetFilenames:
+			SNOW: cagrd1_a.shp
+			URBAN: cugrd1_a.shp
+			NEWURBAN: cngrd1_a.shp
+			DESERT: cdgrd1_a.shp
+			LUNAR: clgrd1_a.shp
+			DUNE: cdgrd1_a.shp
 		Length: 9
 		ShadowStart: 9
 		Tick: 80
 	make:
+		Filename: ntweapmk.shp
+		TilesetFilenames:
+			SNOW: naweapmk.shp
+			URBAN: nuweapmk.shp
+			NEWURBAN: nnweapmk.shp
+			DESERT: ndweapmk.shp
+			LUNAR: nlweapmk.shp
+			DUNE: ndweapmk.shp
 		FlipX: true
 
 nadepb:
@@ -1364,6 +1741,7 @@ nadepb:
 		FlipX: true
 		Offset: 15, -53
 	icon:
+		Filename: cameo|rfixicon.shp
 		FlipX: false
 
 nanrcb:
@@ -1372,4 +1750,5 @@ nanrcb:
 		FlipX: true
 		Offset: 12, -56
 	icon:
+		Filename: cameo|nrcticon.shp
 		FlipX: false
