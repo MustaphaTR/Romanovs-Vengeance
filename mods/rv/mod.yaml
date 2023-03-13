@@ -401,18 +401,26 @@ ModContent:
 	InstallPromptMessage: Red Alert 2 requires artwork and audio from the original game.
 	HeaderMessage: The original game content must be copied from an original game disc.
 	Packages:
-		base: Base Game Files
+		ContentPackage@ra2:
+			Title: Red Alert 2 Files
+			Identifier: ra2
 			TestFiles: ^SupportDir|Content/ra2/ra2.mix, ^SupportDir|Content/ra2/language.mix
 			Sources: ra2, origin, tfd
 			Required: true
-		music: Base Game Music
+		ContentPackage@ra2-music:
+			Title: Red Alert 2 Music
+			Identifier: ra2-music
 			TestFiles: ^SupportDir|Content/ra2/theme.mix
 			Sources: ra2, origin, tfd
-		explosion: Expansion Files
+		ContentPackage@yr:
+			Title: Yuri's Revenge Files
+			Identifier: yr
 			TestFiles: ^SupportDir|Content/ra2/ra2md.mix, ^SupportDir|Content/ra2/langmd.mix
 			Sources: origin-yr, tfd-yr
 			Required: true
-		explosion-music: Expansion Music
+		ContentPackage@yr-music:
+			Title: Yuri's Revenge Music
+			Identifier: yr-music
 			TestFiles: ^SupportDir|Content/ra2/thememd.mix
 			Sources: origin-yr, tfd-yr
 	Sources:

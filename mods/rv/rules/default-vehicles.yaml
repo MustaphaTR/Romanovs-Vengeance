@@ -81,8 +81,8 @@
 	RenderVoxels:
 	WithVoxelUnloadBody:
 		RequiresCondition: !in_water || on_dock
-	WithVoxelUnloadBody@Water:
-		IdleSequence: water
+	WithVoxelBody@Water:
+		Sequence: water
 		RequiresCondition: in_water && !on_dock
 	ExternalCondition@on_dock:
 		Condition: on_dock

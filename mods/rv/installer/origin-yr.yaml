@@ -6,7 +6,16 @@ origin-yr: C&C The Ultimate Collection (Origin version, English)
 	IDFiles:
 		theme.mix: 184f99e3292ab19c71c08a1ad7097ce739396190
 	Install:
-		Copy: .
-			^SupportDir|Content/ra2/thememd.mix: thememd.mix
-			^SupportDir|Content/ra2/ra2md.mix: ra2md.mix
-			^SupportDir|Content/ra2/langmd.mix: langmd.mix
+		# Yuri's Revenge Files:
+		ContentPackage:
+			Name: yr
+			Actions:
+				Copy: .
+					^SupportDir|Content/ra2/ra2md.mix: ra2md.mix
+					^SupportDir|Content/ra2/langmd.mix: langmd.mix
+		# Yuri's Revenge Music (optional):
+		ContentPackage:
+			Name: yr-music
+			Actions:
+				Copy: .
+					^SupportDir|Content/ra2/thememd.mix: thememd.mix
