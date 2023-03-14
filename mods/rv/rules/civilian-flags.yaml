@@ -1,0 +1,855 @@
+cadmfgl:
+	Inherits: ^Flag
+	-Buildable:
+	Tooltip:
+		Name: Flag
+	Tooltip@NoRow:
+		Name: Flag
+	-WithIdleOverlay@flag:
+	WithIdleOverlay@flag:
+		Sequence: flag
+	GrantConditionOnPrerequisite@domination:
+		Condition: domination
+		Prerequisites: global-domination
+	-Targetable:
+	-Targetable@Water:
+	-Targetable@ChronoDisable:
+	DamageMultiplier@domination:
+		Modifier: 0
+	KillsSelf:
+		RemoveInstead: true
+		RequiresCondition: !domination
+	ActorStatValues:
+		Icon: icon
+		IconPalette: chrome
+
+### Playable Allied Countries
+causfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: American Flag
+	Tooltip@NoRow:
+		Name: American Flag
+	WithIdleOverlay@flag:
+		Palette: america
+
+caukfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: British Flag
+	Tooltip@NoRow:
+		Name: British Flag
+	WithIdleOverlay@flag:
+		Palette: britain
+
+cafrfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: French Flag
+	Tooltip@NoRow:
+		Name: French Flag
+	WithIdleOverlay@flag:
+		Palette: france
+
+cagefgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: German Flag
+	Tooltip@NoRow:
+		Name: German Flag
+	WithIdleOverlay@flag:
+		Palette: germany
+
+caskfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Korean Flag
+	Tooltip@NoRow:
+		Name: Korean Flag
+	WithIdleOverlay@flag:
+		Palette: korea
+
+### Playable Soviet Countries
+carufgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Soviet Flag
+	Tooltip@NoRow:
+		Name: Soviet Flag
+	WithIdleOverlay@flag:
+		Palette: ussr
+
+cairfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Iraqi Flag
+	Tooltip@NoRow:
+		Name: Iraqi Flag
+	WithIdleOverlay@flag:
+		Palette: iraq
+
+cavnfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Vietnamese Flag
+	Tooltip@NoRow:
+		Name: Vietnamese Flag
+	WithIdleOverlay@flag:
+		Palette: vietnam
+
+cacufgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Cuban Flag
+	Tooltip@NoRow:
+		Name: Cuban Flag
+	WithIdleOverlay@flag:
+		Palette: cuba
+
+calbfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Libyan Flag
+	Tooltip@NoRow:
+		Name: Libyan Flag
+	WithIdleOverlay@flag:
+		Palette: libya
+
+### Playable Psi-Corps Countries
+capcfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Yurigrad Flag
+	Tooltip@NoRow:
+		Name: Yurigrad Flag
+	WithIdleOverlay@flag:
+		Palette: psicorps
+
+caplfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Lazarus Corps Flag
+	Tooltip@NoRow:
+		Name: Lazarus Corps Flag
+	WithIdleOverlay@flag:
+		Palette: psinepal
+
+capsfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Antarctic Flag
+	Tooltip@NoRow:
+		Name: Antarctic Flag
+	WithIdleOverlay@flag:
+		Palette: antarctica
+
+captfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Transylvanian Flag
+	Tooltip@NoRow:
+		Name: Transylvanian Flag
+	WithIdleOverlay@flag:
+		Palette: transylvania
+
+capmfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Lunar Eclipse Flag
+	Tooltip@NoRow:
+		Name: Lunar Eclipse Flag
+	WithIdleOverlay@flag:
+		Palette: psimoon
+
+### "Playable" Baku Pact Countries
+catcfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Transcaucasian Flag
+	Tooltip@NoRow:
+		Name: Transcaucasian Flag
+	WithIdleOverlay@flag:
+		Palette: transcaucasia
+
+catmfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Turkmen Flag
+	Tooltip@NoRow:
+		Name: Turkmen Flag
+	WithIdleOverlay@flag:
+		Palette: turkmenistan
+
+catvfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Tuvan Flag
+	Tooltip@NoRow:
+		Name: Tuvan Flag
+	WithIdleOverlay@flag:
+		Palette: tuva
+
+carffgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Russian Flag
+	Tooltip@NoRow:
+		Name: Russian Flag
+	WithIdleOverlay@flag:
+		Palette: russia
+
+casmfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Serbo-Montenegrin Flag
+	Tooltip@NoRow:
+		Name: Serbo-Montenegrin Flag
+	WithIdleOverlay@flag:
+		Palette: serbia
+
+### Unplayable Allied Countries
+cajpfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Japanese Flag
+	Tooltip@NoRow:
+		Name: Japanese Flag
+	WithIdleOverlay@flag:
+		Palette: japan
+
+cablfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Belarusian Flag
+	Tooltip@NoRow:
+		Name: Belarusian Flag
+	WithIdleOverlay@flag:
+		Palette: belarus
+
+capofgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Polish Flag
+	Tooltip@NoRow:
+		Name: Polish Flag
+	WithIdleOverlay@flag:
+		Palette: poland
+
+cauafgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Ukrainian Flag
+	Tooltip@NoRow:
+		Name: Ukrainian Flag
+	WithIdleOverlay@flag:
+		Palette: ukraine
+
+cachfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Chinese Flag
+	Tooltip@NoRow:
+		Name: Chinese Flag
+	WithIdleOverlay@flag:
+		Palette: china
+
+caaufgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Australian Flag
+	Tooltip@NoRow:
+		Name: Australian Flag
+	WithIdleOverlay@flag:
+		Palette: australia
+
+catrfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Turkish Flag
+	Tooltip@NoRow:
+		Name: Turkish Flag
+	WithIdleOverlay@flag:
+		Palette: turkey
+
+cacnfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Canadian Flag
+	Tooltip@NoRow:
+		Name: Canadian Flag
+	WithIdleOverlay@flag:
+		Palette: canada
+
+### Unplayable Soviet Countries
+caclfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Chilean Flag
+	Tooltip@NoRow:
+		Name: Chilean Flag
+	WithIdleOverlay@flag:
+		Palette: chile
+
+camxfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Mexican Flag
+	Tooltip@NoRow:
+		Name: Mexican Flag
+	WithIdleOverlay@flag:
+		Palette: mexico
+
+camofgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Mongolian Flag
+	Tooltip@NoRow:
+		Name: Mongolian Flag
+	WithIdleOverlay@flag:
+		Palette: mongolia
+
+### Soviet Socialist Republics
+caarfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Armenian SSR Flag
+	Tooltip@NoRow:
+		Name: Armenian SSR Flag
+	WithIdleOverlay@flag:
+		Palette: armenia
+
+caazfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Azerbaijan SSR Flag
+	Tooltip@NoRow:
+		Name: Azerbaijan SSR Flag
+	WithIdleOverlay@flag:
+		Palette: azerbaijan
+
+cagofgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Georgian SSR Flag
+	Tooltip@NoRow:
+		Name: Georgian SSR Flag
+	WithIdleOverlay@flag:
+		Palette: georgia
+
+cakzfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Kazakh SSR Flag
+	Tooltip@NoRow:
+		Name: Kazakh SSR Flag
+	WithIdleOverlay@flag:
+		Palette: kazakhstan
+
+cakyfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Kyrgyz SSR Flag
+	Tooltip@NoRow:
+		Name: Kyrgyz SSR Flag
+	WithIdleOverlay@flag:
+		Palette: kyrgyzstan
+
+carsfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Russian SSR Flag
+	Tooltip@NoRow:
+		Name: Russian SSR Flag
+	WithIdleOverlay@flag:
+		Palette: russianssr
+
+catjfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Tajik SSR Flag
+	Tooltip@NoRow:
+		Name: Tajik SSR Flag
+	WithIdleOverlay@flag:
+		Palette: tajikistan
+
+cauzfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Uzbek SSR Flag
+	Tooltip@NoRow:
+		Name: Uzbek SSR Flag
+	WithIdleOverlay@flag:
+		Palette: uzbekistan
+
+### Other Allied Countries
+caatfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Austrian Flag
+	Tooltip@NoRow:
+		Name: Austrian Flag
+	WithIdleOverlay@flag:
+		Palette: austria
+
+cabefgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Belgian Flag
+	Tooltip@NoRow:
+		Name: Belgian Flag
+	WithIdleOverlay@flag:
+		Palette: belgium
+
+cabrfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Brazilian Flag
+	Tooltip@NoRow:
+		Name: Brazilian Flag
+	WithIdleOverlay@flag:
+		Palette: brazil
+
+cacyfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Cypriot Flag
+	Tooltip@NoRow:
+		Name: Cypriot Flag
+	WithIdleOverlay@flag:
+		Palette: cyprus
+
+caczfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Czechoslovak Flag
+	Tooltip@NoRow:
+		Name: Czechoslovak Flag
+	WithIdleOverlay@flag:
+		Palette: czechoslovakia
+
+cadnfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Danish Flag
+	Tooltip@NoRow:
+		Name: Danish Flag
+	WithIdleOverlay@flag:
+		Palette: denmark
+
+canlfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Dutch Flag
+	Tooltip@NoRow:
+		Name: Dutch Flag
+	WithIdleOverlay@flag:
+		Palette: netherlands
+
+caesfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Estonian Flag
+	Tooltip@NoRow:
+		Name: Estonian Flag
+	WithIdleOverlay@flag:
+		Palette: estonia
+
+caphfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Filipino Flag
+	Tooltip@NoRow:
+		Name: Filipino Flag
+	WithIdleOverlay@flag:
+		Palette: philippines
+
+cafifgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Finnish Flag
+	Tooltip@NoRow:
+		Name: Finnish Flag
+	WithIdleOverlay@flag:
+		Palette: finland
+
+cagrfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Greek Flag
+	Tooltip@NoRow:
+		Name: Greek Flag
+	WithIdleOverlay@flag:
+		Palette: greece
+
+cahufgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Hungarian Flag
+	Tooltip@NoRow:
+		Name: Hungarian Flag
+	WithIdleOverlay@flag:
+		Palette: hungary
+
+cainfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Indonesian Flag
+	Tooltip@NoRow:
+		Name: Indonesian Flag
+	WithIdleOverlay@flag:
+		Palette: indonesia
+
+caeifgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Irish Flag
+	Tooltip@NoRow:
+		Name: Irish Flag
+	WithIdleOverlay@flag:
+		Palette: ireland
+
+caitfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Italian Flag
+	Tooltip@NoRow:
+		Name: Italian Flag
+	WithIdleOverlay@flag:
+		Palette: italy
+
+calafgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Latvian Flag
+	Tooltip@NoRow:
+		Name: Latvian Flag
+	WithIdleOverlay@flag:
+		Palette: latvia
+
+calefgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Lebanese Flag
+	Tooltip@NoRow:
+		Name: Lebanese Flag
+	WithIdleOverlay@flag:
+		Palette: lebanon
+
+califgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Lithuanian Flag
+	Tooltip@NoRow:
+		Name: Lithuanian Flag
+	WithIdleOverlay@flag:
+		Palette: lithuania
+
+calxfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Luxembourgish Flag
+	Tooltip@NoRow:
+		Name: Luxembourgish Flag
+	WithIdleOverlay@flag:
+		Palette: luxembourg
+
+camlfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Maltese Flag
+	Tooltip@NoRow:
+		Name: Maltese Flag
+	WithIdleOverlay@flag:
+		Palette: malta
+
+camrfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Moroccan Flag
+	Tooltip@NoRow:
+		Name: Moroccan Flag
+	WithIdleOverlay@flag:
+		Palette: morocco
+
+canzfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: New Zealander Flag
+	Tooltip@NoRow:
+		Name: New Zealander Flag
+	WithIdleOverlay@flag:
+		Palette: newzealand
+
+canwfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Norwegian Flag
+	Tooltip@NoRow:
+		Name: Norwegian Flag
+	WithIdleOverlay@flag:
+		Palette: norway
+
+caomfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Omani Flag
+	Tooltip@NoRow:
+		Name: Omani Flag
+	WithIdleOverlay@flag:
+		Palette: oman
+
+caslfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Slovenian Flag
+	Tooltip@NoRow:
+		Name: Slovenian Flag
+	WithIdleOverlay@flag:
+		Palette: slovenia
+
+caspfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Spanish Flag
+	Tooltip@NoRow:
+		Name: Spanish Flag
+	WithIdleOverlay@flag:
+		Palette: spain
+
+cazafgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Zairian Flag
+	Tooltip@NoRow:
+		Name: Zairian Flag
+	WithIdleOverlay@flag:
+		Palette: zaire
+
+### Other Soviet Countries
+caalfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Albanian Flag
+	Tooltip@NoRow:
+		Name: Albanian Flag
+	WithIdleOverlay@flag:
+		Palette: albania
+
+cabmfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Burmese Flag
+	Tooltip@NoRow:
+		Name: Burmese Flag
+	WithIdleOverlay@flag:
+		Palette: burma
+
+cacgfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Congolese Flag
+	Tooltip@NoRow:
+		Name: Congolese Flag
+	WithIdleOverlay@flag:
+		Palette: congo
+
+cakmfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Kampuchean Flag
+	Tooltip@NoRow:
+		Name: Kampuchean Flag
+	WithIdleOverlay@flag:
+		Palette: kampuchea
+
+calofgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Laotian Flag
+	Tooltip@NoRow:
+		Name: Laotian Flag
+	WithIdleOverlay@flag:
+		Palette: laos
+
+cancfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Nicaraguan Flag
+	Tooltip@NoRow:
+		Name: Nicaraguan Flag
+	WithIdleOverlay@flag:
+		Palette: nicaragua
+
+caprfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Peruvian Flag
+	Tooltip@NoRow:
+		Name: Peruvian Flag
+	WithIdleOverlay@flag:
+		Palette: peru
+
+casofgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Somalian Flag
+	Tooltip@NoRow:
+		Name: Somalian Flag
+	WithIdleOverlay@flag:
+		Palette: somalia
+
+casyfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Syrian Flag
+	Tooltip@NoRow:
+		Name: Syrian Flag
+	WithIdleOverlay@flag:
+		Palette: syria
+
+caymfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Yemeni Flag
+	Tooltip@NoRow:
+		Name: Yemeni Flag
+	WithIdleOverlay@flag:
+		Palette: yemen
+
+### Other Psi-Corps Countries
+capafgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Australian Psi-Corps Flag
+	Tooltip@NoRow:
+		Name: Australian Psi-Corps Flag
+	WithIdleOverlay@flag:
+		Palette: psiaussie
+
+### Other/Neutral Countries
+cabhfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Bhutanese Flag
+	Tooltip@NoRow:
+		Name: Bhutanese Flag
+	WithIdleOverlay@flag:
+		Palette: bhutan
+
+cabufgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Bulgarian Flag
+	Tooltip@NoRow:
+		Name: Bulgarian Flag
+	WithIdleOverlay@flag:
+		Palette: bulgaria
+
+cabunfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Bulgarian Naval Ensign
+	Tooltip@NoRow:
+		Name: Bulgarian Naval Ensign
+	WithIdleOverlay@flag:
+		Palette: bulgaria-naval
+
+caicfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Icelandic Flag
+	Tooltip@NoRow:
+		Name: Icelandic Flag
+	WithIdleOverlay@flag:
+		Palette: iceland
+
+cajrfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Jordanian Flag
+	Tooltip@NoRow:
+		Name: Jordanian Flag
+	WithIdleOverlay@flag:
+		Palette: jordan
+
+cangfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Nigerian Flag
+	Tooltip@NoRow:
+		Name: Nigerian Flag
+	WithIdleOverlay@flag:
+		Palette: nigeria
+
+capnfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Panamanian Flag
+	Tooltip@NoRow:
+		Name: Panamanian Flag
+	WithIdleOverlay@flag:
+		Palette: panama
+
+capgfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Portuguese Flag
+	Tooltip@NoRow:
+		Name: Portuguese Flag
+	WithIdleOverlay@flag:
+		Palette: portugal
+
+caswfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Swedish Flag
+	Tooltip@NoRow:
+		Name: Swedish Flag
+	WithIdleOverlay@flag:
+		Palette: sweden
+
+caszfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Swiss Flag
+	Tooltip@NoRow:
+		Name: Swiss Flag
+	WithIdleOverlay@flag:
+		Palette: switzerland
+
+### Equestria at War/My Little Pony Countries
+cahlfgl2:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Angriverian Flag
+	Tooltip@NoRow:
+		Name: Angriverian Flag
+	WithIdleOverlay@flag:
+		Palette: angriver
+
+caeqfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Equestrian Flag
+	Tooltip@NoRow:
+		Name: Equestrian Flag
+	WithIdleOverlay@flag:
+		Palette: equestria
+
+cahlfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Herzlander Flag
+	Tooltip@NoRow:
+		Name: Herzlander Flag
+	WithIdleOverlay@flag:
+		Palette: herzland
+
+capvfgl:
+	Inherits: ^Flag
+	Tooltip:
+		Name: Ponyvillian Flag
+	Tooltip@NoRow:
+		Name: Ponyvillian Flag
+	WithIdleOverlay@flag:
+		Palette: ponyville
