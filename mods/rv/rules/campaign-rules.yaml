@@ -3,13 +3,23 @@ Player:
 	MissionObjectives:
 		EarlyGameOver: true
 	Shroud:
-		FogCheckboxLocked: True
-		FogCheckboxEnabled: True
 		ExploredMapCheckboxLocked: True
 		ExploredMapCheckboxEnabled: False
+		ExploredMapCheckboxVisible: False
 	PlayerResources:
 		DefaultCashDropdownLocked: True
+		DefaultCashDropdownVisible: False
 		DefaultCash: 0
+	LobbyPrerequisiteCheckbox@DOMINATION:
+		Visible: False
+	LobbyPrerequisiteCheckbox@MEGAWEALTH:
+		Visible: False
+	LobbyPrerequisiteCheckbox@SUDDENDEATH:
+		Visible: False
+	LobbyPrerequisiteCheckbox@KOTH:
+		Visible: False
+	LobbyPrerequisiteCheckbox@REGICIDE:
+		Visible: False
 	ModularBot@CampaignAI:
 		Name: Campaign Player AI
 		Type: campaign
@@ -18,6 +28,7 @@ World:
 	CrateSpawner:
 		CheckboxEnabled: False
 		CheckboxLocked: True
+		CheckboxVisible: False
 	-SpawnStartingUnits:
 	-MapStartingLocations:
 	ObjectivesPanel:
@@ -25,12 +36,17 @@ World:
 	MapBuildRadius:
 		AllyBuildRadiusCheckboxLocked: True
 		AllyBuildRadiusCheckboxEnabled: False
-		BuildRadiusCheckboxLocked: True
-		BuildRadiusCheckboxEnabled: True
+		AllyBuildRadiusCheckboxVisible: False
 	MapOptions:
 		TechLevelDropdownLocked: True
+		TechLevelDropdownVisible: False
 		ShortGameCheckboxLocked: True
+		ShortGameCheckboxVisible: False
 		ShortGameCheckboxEnabled: False
+	ScriptLobbyDropdown@CPMODIFIER:
+		Visible: false
+	TimeLimitManager:
+		TimeLimitDropdownVisible: False
 
 tany.noautotarget:
 	Inherits: tany

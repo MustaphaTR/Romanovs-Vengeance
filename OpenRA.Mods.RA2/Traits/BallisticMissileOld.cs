@@ -242,6 +242,11 @@ namespace OpenRA.Mods.RA2.Traits
 			return new BallisticMissileFlyOld(self, target, this);
 		}
 
+		public Activity MoveOntoTarget(Actor self, in Target target, in WVec offset, WAngle? facing, Color? targetLineColor = null)
+		{
+			return new BallisticMissileFlyOld(self, target, this);
+		}
+
 		public Activity LocalMove(Actor self, WPos fromPos, WPos toPos)
 		{
 			return new BallisticMissileFlyOld(self, Target.FromPos(toPos), this);

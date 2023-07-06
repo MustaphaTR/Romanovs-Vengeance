@@ -825,7 +825,7 @@ mind:
 		Delay: 30
 		StartIfBelow: 101
 		RequiresCondition: controlling >= 11
-	ExplodeWeapon@OVERLOADSPARKS:
+	PeriodicExplosion@OVERLOADSPARKS:
 		RequiresCondition: controlling >= 4
 		Weapon: DisabledSparkSpawner
 		LocalOffset: 0,0,384
@@ -1512,14 +1512,14 @@ spider:
 	-SmokeParticleEmitter@1:
 	-GrantConditionOnDamageState@dmg_heavy:
 	-GrantPeriodicCondition@enable_unitsmoke:
-	-ExplodeWeapon@damagesparks:
+	-PeriodicExplosion@damagesparks:
 	-SpeedMultiplier@CRITICAL:
 	-GrantConditionOnDamageState@CRITICAL:
 	-InfectableRV:
 	-Targetable@DRONE:
 	-SpeedMultiplier@DRONE:
 	-RevealsShroud@DRONE:
-	-ExplodeWeapon@dronesparks:
+	-PeriodicExplosion@dronesparks:
 	-RenderVoxels:
 	-Carryable:
 	-CaptureManager:

@@ -60,7 +60,7 @@ namespace OpenRA.Mods.RA2.Warheads
 		public void RulesetLoaded(Ruleset rules, WeaponInfo info)
 		{
 			if (!rules.Weapons.TryGetValue(Weapon.ToLowerInvariant(), out weapon))
-				throw new YamlException("Weapons Ruleset does not contain an entry '{0}'".F(Weapon.ToLowerInvariant()));
+				throw new YamlException($"Weapons Ruleset does not contain an entry '{Weapon.ToLowerInvariant()}'");
 
 			foreach (var b in Buildings)
 			{
@@ -68,7 +68,7 @@ namespace OpenRA.Mods.RA2.Warheads
 				var buildingInfo = actorInfo.TraitInfoOrDefault<BuildingInfo>();
 
 				if (buildingInfo == null)
-					throw new YamlException("SpawnBuildingWarhead cannot be used to spawn nonbuilding actor '{0}'".F(b));
+					throw new YamlException($"SpawnBuildingWarhead cannot be used to spawn nonbuilding actor '{b}'");
 			}
 		}
 

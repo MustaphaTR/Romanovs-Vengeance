@@ -36,8 +36,8 @@ namespace OpenRA.Mods.Cnc.FileSystem
 				this.s = s;
 
 				index = entries.ToDictionaryWithConflictLog(x => x.Filename,
-					"{0} (bag format)".F(filename),
-					null, x => "(offs={0}, len={1})".F(x.Offset, x.Length));
+					$"{filename} (bag format)",
+					null, x => $"(offs={x.Offset}, len={x.Length})");
 			}
 
 			public Stream GetStream(string filename)

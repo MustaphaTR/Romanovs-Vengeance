@@ -341,6 +341,10 @@ options-target-lines =
     .manual = Elle
     .disabled = Devre Dışı
 
+## HotkeysSettingsLogic
+label-original-notice = Varsayılan "{ $key }"
+label-duplicate-notice = Bu tuş zaten "{ $key }" için { $context } bağlamında kullanılıyor
+
 ## InputSettingsLogic
 options-mouse-scroll-type =
     .disabled = Devre Dışı
@@ -418,8 +422,9 @@ dialog-overwrite-save =
 
 ## MainMenuLogic
 label-loading-news = Haberler yükleniyor
-label-news-retrival-failed = Haberler alınamadı: { $message }
+label-news-retrieval-failed = Haberler alınamadı: { $message }
 label-news-parsing-failed = Haberler işlenemedi: { $message }
+label-author-datetime = by { $author } at { $datetime }
 
 ## MapChooserLogic
 label-all-maps = Tüm Haritalar
@@ -469,6 +474,9 @@ label-audio-unmuted = Ses açıldı.
 ## PlayerProfileLogic
 label-loading-player-profile = Oyuncu profili yükleniyor...
 label-loading-player-profile-failed = Oyuncu profilini yükleme başarısız oldu.
+
+## ProductionTooltipLogic
+label-requires = Requires { $prequisites }
 
 ## ReplayBrowserLogic
 label-duration = Süre: { $time }
@@ -618,21 +626,31 @@ description-actor-tags-overlay = aktör etiketleri kaplamasını ayarlar.
 ## DevCommands
 notification-cheats-disabled = Hileler devre dışı.
 notification-invalid-cash-amount = Geçersiz para değeri.
+notification-invalid-actor-name = { $actor } geçerli bir aktör değil.
 description-toggle-visibility = görünürlülük konrollerini ve haritayı ayarlar.
+description-toggle-visibility-all = görünürlülük konrollerini ve haritayı tüm oyuncular için ayarlar.
 description-give-cash = varsayılan ya da belirtilen miktarda para verir.
 description-give-cash-all = tüm oyunculara ve yz'lara varsayılan ya da belirtilen miktarda para verir.
 description-instant-building = anlık inşaayı ayarlar.
+description-instant-building-all = anlık inşaayı tüm oyuncular için ayarlar.
 description-build-anywhere = heryere inşa etme yeteneğini ayarlar.
+description-build-anywhere-all = heryere inşa etme yeteneğini tüm oyuncular için ayarlar.
 description-unlimited-power = sınırsız gücü ayarlar.
+description-unlimited-power-all = sınırsız gücü tüm oyuncular için ayarlar.
 description-enable-tech = her ünite ve binayı yapabilmeyi ayarlar.
+description-enable-tech-all = her ünite ve binayı yapabilmeyi tüm oyuncular için ayarlar.
 description-fast-charge = neredeyse anlık destek kuvvet dolumunu ayarlar.
+description-fast-charge-all = neredeyse anlık destek kuvvet dolumunu tüm oyuncular için ayarlar.
 description-dev-cheat-all = bütün hileleri ayarlayıp biraz harçlık verir.
+description-dev-cheat-all-for-all = bütün hileleri tüm oyuncular için ayarlayıp biraz harçlık verir.
 description-dev-crash = oyunu çökertir.
 description-levelup-actor = seçili aktörlere belirtilen miktarda seviye ekler.
 description-player-experience = seçili aktörlerin sahibine/sahiplerine belirtilen miktarda oyuncu tecrübesi ekler.
 description-power-outage = seçili aktörlerin sahibinin/sahiplerinin 5 saniyelik güç kesintisine düşmesine sebep olur.
 description-kill-selected-actors = seçili aktörleri öldürür.
 description-dispose-selected-actors = seçili aktörleri kaldırır.
+description-produce-from-selected-actors = seçili aktörlerden girilen aktörü üretir.
+description-clear-resources = haritadaki bütün kaynakları kaldırır.
 
 ## HelpCommands
 notification-available-commands = Kullanılabilir komutlar şunlardır:
@@ -664,48 +682,7 @@ description-path-debug-overlay = yol aramalarının görselleştirilmesini ayarl
 ## TerrainGeometryOverlay
 description-terrain-geometry-overlay = arazi geometrisi kaplamasını ayarlar.
 
-## Shroud
-checkbox-fog-of-war =
-    .label = Savaş Sisi
-    .description = Line of sight is required to view enemy forces
-
-checkbox-explored-map =
-    .label = Keşfedilmiş Harita
-    .description = Initial map shroud is revealed
-
-## DeveloperMode
-checkbox-debug-menu =
-    .label = Hata Ayıklama Menüsü
-    .description = Hileleri ve geliştirici komutlarını açar
-
-## CrateSpawner
-checkbox-crates =
-    .label = Kutular
-    .description = Collect crates with units to receive random bonuses or penalties
-
-## MapBuildRadius
-checkbox-ally-build-radius =
-    .label = Build off Allies
-    .description = Allow allies to place structures inside your build area
-
-checkbox-build-radius =
-    .label = İnşaa Alanı Sınırı
-    .description = Bina yerleştirmesini İnşaat Alanlarının etrafıyla sınırlar
-
-## MapOptions
-checkbox-short-game =
-    .label = Kısa Oyun
-    .description = Players are defeated when their bases are destroyed
-
-dropdown-tech-level =
-    .label = Teknoloji Seviyesi
-    .description = The units and abilities that players can use
-
 ## MapOptions, MissionBrowserLogic
-dropdown-game-speed =
-    .label = Oyun Hızı
-    .description = The rate at which time passes
-
 options-game-speed =
     .slowest = En Yavaş
     .slower = Daha Yavaş
@@ -715,85 +692,40 @@ options-game-speed =
     .fastest = En Hızlı
     .ludicrous = Aşırı Hızlı
 
-## MapStartingLocations
-checkbox-separate-team-spawns =
-    .label = Separate Team Spawns
-    .description = Başlangıç noktası atanmamış oyuncular düşmanlardan mümkün olduğunca uzakta başlar
-
-## SpawnStartingUnits
-dropdown-starting-units =
-    .label = Başlangıç Birlikleri
-    .description = The units that players start the game with
-
-options-starting-units =
-    .no-bases = Üs Yok
-    .mcv-only = Sadece MİA
-    .mcv-and-dog = MİA ve Köpek
-    .light-support = Hafif Destek
-    .medium-support = Orta Destek
-    .heavy-support = Ağır Destek
-    .unholy-alliance = Unholy Alliance
-
 ## TimeLimitManager
-dropdown-time-limit =
-    .label = Oyun Süresi
-    .description = Bu süre aşıldıktan sonra en yüksek skora sahip oyuncu ya da takım oyunu kazanır
-
 options-time-limit =
     .no-limit = Sınırsız
     .options = { $minutes } dakika
 
 notification-time-limit-expired = Oyun süresi sona erdi.
 
-## Player
-checkbox-redeployable-mcvs =
-    .label = Redeployable MCVs
-    .description = Allow undeploying Construction Yard
+## EditorActorBrush
+notification-added-actor = Added { $name } ({ $id })
 
-checkbox-free-minimap =
-    .label = Free Minimap
-    .description = Minimap is active without a building to enable it
+## EditorCopyPasteBrush
+notification-copied-tiles = 
+    { $amount ->
+       [one] Copied one tile
+      *[other] Copied { $amount } tiles
+    }
 
-checkbox-limit-super-weapons =
-    .label = Süper Silahları Sınırla
-    .description = Only 1 of each super weapon can be built by a player
+## EditorDefaultBrush
+notification-removed-actor = { $name } ({ $id }) kaldırıldı
+notification-removed-resource = { $type } kaldırıldı
 
-checkbox-tech-build-area =
-    .label = Tech Build Area
-    .description = Allow building placement around tech structures
+## EditorResourceBrush
+notification-added-resource =
+    { $amount ->
+       [one] Added one cell of { $type }
+      *[other] Added { $amount } cells of { $type }
+    }
 
-checkbox-instant-capture =
-    .label = Instant Capture
-    .description = Engineers can enter a building without waiting to capture
+## EditorTileBrush
+notification-added-tile = Added tile { $id }
+notification-filled-tile = Filled with tile { $id }
 
-checkbox-multiqueue =
-    .label = MultiQueue
-    .description = Each production facility can produce individually
+## EditorActionManager
+notification-opened = Açıldı
 
-checkbox-upgrades-option =
-    .label = Geliştirmeler
-    .description = Enables researching upgrades that improve existing units
-
-checkbox-domination-option =
-    .label = Domination
-    .description = Control the flags on the map to win
-
-checkbox-megawealth-option =
-    .label = Megawealth
-    .description = Removes all the Ore on the map and makes the economy dependent on Oil Derricks
-
-checkbox-show-owner-name =
-    .label = Sahip Adını Göster
-    .description = Show name and flag of the owner of a unit on its tooltip
-
-checkbox-sudden-death =
-    .label = Ani Ölüm
-    .description = Oyuncular MİA üretemez ve başlangıçta verileni kaybettiklerinde oyunu kaybederler
-
-checkbox-king-of-the-hill =
-    .label = King of the Hill
-    .description = Capture and hold the Psychic Beacon on the map to win
-
-checkbox-regicide =
-    .label = Regicide
-    .description = Kazanmak için düşman liderini öldürün
+## ActorEditLogic
+notification-edited-actor = { $name } ({ $id }) düzenlendi
