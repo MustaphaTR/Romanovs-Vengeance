@@ -47,71 +47,83 @@ rctt:
 		Weapon: MissileLauncher
 		Damage: 40
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite
 	Armament@secondary:
 		Weapon: MissileLauncherAA
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@primary-elite:
 		Weapon: MissileLauncherE
 		Damage: 80
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite
 	Armament@secondary-elite:
 		Weapon: MissileLauncherAAE
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite
 	Armament@primary-garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncher
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite
 	Armament@secondary-garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAA
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@primary-elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncherE
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite
 	Armament@secondary-elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCMissileLauncherAAE
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite
 	Armament@primary-opentopped:
 		Name: opentopped
 		Weapon: MissileLauncher
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: !rank-elite
 	Armament@secondary-opentopped:
 		Name: opentopped
 		Weapon: MissileLauncherAA
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite
 	Armament@primary-elite-opentopped:
 		Name: opentopped
 		Weapon: MissileLauncherE
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite
 	Armament@secondary-elite-opentopped:
 		Name: opentopped
 		Weapon: MissileLauncherAAE
 		LocalOffset: 256,0,1024
-		PauseOnCondition: chronodisable || webdisable || dogstun
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite
 	WithInfantryBody:
 		RequiresCondition: !parachute && !webdisable && !bulletproof
