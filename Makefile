@@ -59,10 +59,14 @@ ifndef TARGETPLATFORM
 UNAME_S := $(shell uname -s)
 UNAME_M := $(shell uname -m)
 ifeq ($(UNAME_S),Darwin)
+ifeq ($(UNAME_M),arm64)
+TARGETPLATFORM = osx-arm64
+else
 TARGETPLATFORM = osx-x64
+endif
 else
 ifeq ($(UNAME_M),x86_64)
-TARGETPLATFORM = linux-x64
+TARGETPLATFORM = x64
 else
 TARGETPLATFORM = unix-generic
 endif
@@ -183,3 +187,4 @@ endif
 test: all
 	@echo "Testing $(MOD_ID) mod MiniYAML..."
 	@./utility.sh --check-yaml
+
