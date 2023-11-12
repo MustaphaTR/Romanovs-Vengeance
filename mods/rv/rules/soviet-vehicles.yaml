@@ -273,7 +273,6 @@ htk:
 		AfterUnloadDelay: 0
 		PassengerFacing: 0
 		UnloadVoice: Move
-		EjectOnDeath: false
 		LoadingCondition: notmobile
 	WithCargoSounds:
 		EnterSound: genter1a.wav
@@ -1208,31 +1207,31 @@ v3rocket:
 		SpawnAtLastPosition: false
 		Type: CenterPosition
 	MissileSpawnerSlave:
-	SpawnedExplodes:
+	ExplodesForMaster:
 		Weapon: V3Weapon
 		EmptyWeapon: V3Weapon
 		RequiresCondition: !airborne && !radbombs && !rank-elite
-	SpawnedExplodes@Elite:
+	ExplodesForMaster@Elite:
 		Weapon: V3WeaponE
 		EmptyWeapon: V3WeaponE
 		RequiresCondition: !airborne && !radbombs && rank-elite
-	SpawnedExplodes@Rad:
+	ExplodesForMaster@Rad:
 		Weapon: V3WeaponRad
 		EmptyWeapon: V3WeaponRad
 		RequiresCondition: !airborne && radbombs && !advirrad && !rank-elite
-	SpawnedExplodes@EliteRad:
+	ExplodesForMaster@EliteRad:
 		Weapon: V3WeaponRadE
 		EmptyWeapon: V3WeaponRadE
 		RequiresCondition: !airborne && radbombs && !advirrad && rank-elite
-	SpawnedExplodes@RadOrange:
+	ExplodesForMaster@RadOrange:
 		Weapon: V3WeaponRadOrange
 		EmptyWeapon: V3WeaponRadOrange
 		RequiresCondition: !airborne && radbombs && advirrad && !rank-elite
-	SpawnedExplodes@EliteRadOrange:
+	ExplodesForMaster@EliteRadOrange:
 		Weapon: V3WeaponRadOrangeE
 		EmptyWeapon: V3WeaponRadOrangeE
 		RequiresCondition: !airborne && radbombs && advirrad && rank-elite
-	SpawnedExplodes@Airborne:
+	ExplodesForMaster@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
@@ -1264,15 +1263,15 @@ m3rocket:
 		AirborneCondition: airborne
 	-MissileSpawnerSlave:
 	MissileSpawnerOldSlave:
-	SpawnedExplodes:
+	ExplodesForMaster:
 		RequiresCondition: !airborne && !radbombs
-	-SpawnedExplodes@Elite:
-	SpawnedExplodes@Rad:
+	-ExplodesForMaster@Elite:
+	ExplodesForMaster@Rad:
 		RequiresCondition: !airborne && radbombs && !advirrad
-	-SpawnedExplodes@EliteRad:
-	SpawnedExplodes@RadOrange:
+	-ExplodesForMaster@EliteRad:
+	ExplodesForMaster@RadOrange:
 		RequiresCondition: !airborne && radbombs && advirrad
-	-SpawnedExplodes@EliteRadOrange:
+	-ExplodesForMaster@EliteRadOrange:
 	-ExternalCondition@RANK-ELITE:
 
 # Custom Soviet Vehicles

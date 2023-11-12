@@ -596,20 +596,20 @@ orca:
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: false
 		EndColorUsePlayerColor: true
-		TrailWidth: 32
+		StartWidth: 32
 	Contrail@2:
 		Offset: -100,500,100
 		StartColor: 88888880
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: false
 		EndColorUsePlayerColor: true
-		TrailWidth: 32
+		StartWidth: 32
 	Contrail@FlameTrail:
 		Offset: -500,0,50
 		StartColor: FFEA0080
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: false
-		TrailWidth: 96
+		StartWidth: 96
 		TrailLength: 7
 		WidthFadeRate: 0.8
 	ProductionCostMultiplier@AI:
@@ -1876,12 +1876,11 @@ schp:
 	# GrantConditionOnMovement:
 	#	Condition: moving
 	HitShape:
-	AutoDeployer@AI:
-		RequiresCondition: ai-control
-		DeployChance: 50
-		DeployTicks: 300
-		UndeployTicks: 200
-		DeployTrigger: Periodically
+	IssueOrderToBot@AI:
+		OrderName: HeliGrantConditionOnDeploy
+		OrderChance: 50
+		OrderInterval: 500
+		OrderTrigger: Periodically
 	RejectsOrders@deploymentAI:
 		Reject: AttackMove, AssaultMove, Attack #HACK: Deployed Siege Chopper will try to aim orignal target set by squad if not block the Attack order
 		RequiresCondition: ai-control && !undeployed
@@ -2772,35 +2771,35 @@ fortress:
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: False
 		EndColorUsePlayerColor: true
-		TrailWidth: 32
+		StartWidth: 32
 	Contrail@2:
 		Offset: -400,700,300
 		StartColor: 88888880
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: False
 		EndColorUsePlayerColor: true
-		TrailWidth: 32
+		StartWidth: 32
 	Contrail@3:
 		Offset: -200,-400,300
 		StartColor: 88888880
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: False
 		EndColorUsePlayerColor: true
-		TrailWidth: 32
+		StartWidth: 32
 	Contrail@4:
 		Offset: -200,400,300
 		StartColor: 88888880
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: False
 		EndColorUsePlayerColor: true
-		TrailWidth: 32
+		StartWidth: 32
 	Contrail@FlameTrail1:
 		Offset: -500,-100,200
 		StartColor: FFEA0080
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: false
 		WidthFadeRate: 0.8
-		TrailWidth: 96
+		StartWidth: 96
 		TrailLength: 7
 	Contrail@FlameTrail2:
 		Offset: -500,100,200
@@ -2808,7 +2807,7 @@ fortress:
 		StartColorAlpha: 128
 		StartColorUsePlayerColor: false
 		WidthFadeRate: 0.8
-		TrailWidth: 96
+		StartWidth: 96
 		TrailLength: 7
 	ProductionCostMultiplier@AI:
 		Prerequisites: prerequisite.aiplayer
@@ -3815,7 +3814,7 @@ badgrhusk:
 	RenderVoxels:
 		Image: badgr
 
-badgr.VTOL:
+badgrhusk.VTOL:
 	Inherits: ^HelicopterHusk
 	Tooltip:
 		Name: Tu-16 Badger

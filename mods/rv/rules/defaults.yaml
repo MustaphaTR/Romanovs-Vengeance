@@ -245,7 +245,7 @@
 ^GainsExperience:
 	GainsExperience:
 		LevelUpNotification: LevelUp
-		LevelUpTextNotification: Unit promoted.
+		LevelUpTextNotification: notification-unit-promoted
 		Conditions:
 			200: rank-veteran
 			400: rank-veteran
@@ -1724,7 +1724,7 @@
 		Types: building
 		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
 	CaptureNotification:
-		TextNotification: Building captured.
+		TextNotification: notification-building-captured
 	CapturableProgressBar:
 		RequiresCondition: !instantcapture
 	CapturableProgressBlink:
@@ -1845,6 +1845,8 @@
 	RevealOnFire:
 		ArmamentNames: primary, secondary, gatling, support, garrisoned, garrisoned-secondary
 		Duration: 50
+	TakesBounty:
+		Percentage: 50
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, NonGarrisonableStructure
 	Targetable@Water:
@@ -1875,7 +1877,7 @@
 	PrimaryBuilding:
 		PrimaryCondition: primary
 		SelectionNotification: PrimaryBuildingSelected
-		SelectionTextNotification: Primary building selected.
+		SelectionTextNotification: notification-primary-building-selected
 		RequiresCondition: !multiqueue
 	GrantConditionOnPrerequisite@multiqueue:
 		Condition: multiqueue
@@ -1930,8 +1932,8 @@
 	#	Range: 10c0
 	#	RequiresCondition: loaded
 	ChangeOwnerOnGarrisoner:
-		EnterSound: ugarris.wav
-		ExitSound: ugarris.wav
+		EnterSounds: ugarris.wav
+		ExitSounds: ugarris.wav
 		EnterNotification: StructureGarrisoned
 		ExitNotification: StructureAbandoned
 	Garrisonable:
@@ -2038,9 +2040,9 @@
 		RequiresCondition: !invulnerability
 	CaptureNotification:
 		Notification: TechBuildingCaptured
-		TextNotification: Tech building captured.
+		TextNotification: notification-tech-building-captured
 		LoseNotification: TechBuildingLost
-		LoseTextNotification: Tech building lost.
+		LoseTextNotification: notification-tech-building-lost
 	GivesBuildableArea:
 		AreaTypes: building, defense
 		RequiresCondition: techbuild
@@ -2384,8 +2386,13 @@
 	SelectionDecorations:
 		MinimumZoom: 0
 	Selectable:
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
 	Targetable@HEAL:
@@ -2394,6 +2401,8 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	TakesBounty:
+		Percentage: 50
 	TurnOnIdle:
 		MinDelay: 125
 		MaxDelay: 250
@@ -2448,7 +2457,7 @@
 		CargoType: Garrisoner
 	HiddenUnderFog:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Infantry
 	GrantExternalConditionToKiller@GRINDER_TREADS:
@@ -2822,8 +2831,13 @@
 		MinimumZoom: 0
 	Selectable:
 		Bounds: 772, 1544
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 	Targetable:
 		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
 	Targetable@REPAIR:
@@ -2832,6 +2846,8 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	TakesBounty:
+		Percentage: 50
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
@@ -2888,7 +2904,7 @@
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Vehicle
 	Guard:
@@ -2979,8 +2995,13 @@
 	SelectionDecorations:
 		MinimumZoom: 0
 	Selectable:
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 	Aircraft:
 		Voice: Move
 		MaximumPitch: 128
@@ -2991,7 +3012,7 @@
 	HiddenUnderFog:
 		Type: CenterPosition
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	BodyOrientation:
 		QuantizedFacings: 0
 		CameraPitch: 85
@@ -3025,6 +3046,8 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	TakesBounty:
+		Percentage: 50
 	DeathSounds:
 	AppearsOnRadar:
 		UseLocation: true
@@ -3286,8 +3309,13 @@
 		MinimumZoom: 0
 	Selectable:
 		Bounds: 772, 1544
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 	Targetable@REPAIR:
@@ -3296,6 +3324,8 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	TakesBounty:
+		Percentage: 50
 	RepairableNear:
 		Voice: Move
 		CloseEnough: 3c0
@@ -3311,7 +3341,7 @@
 		Sound: ihijweaa.wav
 	HiddenUnderFog:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Ship
 	Guard:
@@ -3742,8 +3772,13 @@
 		MinimumZoom: 0
 	WithTextControlGroupDecoration:
 		Margin: 1, 1
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 
 ^AIMicroManagable:
 	GrantConditionOnBotOwner@ai-control:

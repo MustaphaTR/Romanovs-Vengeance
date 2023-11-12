@@ -20,6 +20,8 @@ namespace OpenRA.Mods.RA2.Traits
 	[Desc("This actor can spawn missile actors.")]
 	public class MissileSpawnerOldMasterInfo : BaseSpawnerMasterInfo
 	{
+		public readonly string Name = "primary";
+
 		[GrantedConditionReference]
 		[Desc("The condition to grant to self right after launching a spawned unit. (Used by V3 to make immobile.)")]
 		public readonly string LaunchingCondition = null;
@@ -34,7 +36,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		[Desc("Conditions to grant when specified actors are contained inside the transport.",
 			"A dictionary of [actor id]: [condition].")]
-		public readonly Dictionary<string, string> SpawnContainConditions = new Dictionary<string, string>();
+		public readonly Dictionary<string, string> SpawnContainConditions = new();
 
 		[GrantedConditionReference]
 		public IEnumerable<string> LinterSpawnContainConditions { get { return SpawnContainConditions.Values; } }
@@ -44,9 +46,9 @@ namespace OpenRA.Mods.RA2.Traits
 
 	public class MissileSpawnerOldMaster : BaseSpawnerMaster, ITick, INotifyAttack
 	{
-		readonly Dictionary<string, Stack<int>> spawnContainTokens = new Dictionary<string, Stack<int>>();
+		readonly Dictionary<string, Stack<int>> spawnContainTokens = new();
 		public readonly MissileSpawnerOldMasterInfo MissileSpawnerOldMasterInfo;
-		readonly Stack<int> loadedTokens = new Stack<int>();
+		readonly Stack<int> loadedTokens = new();
 
 		int respawnTicks = 0;
 
@@ -64,8 +66,8 @@ namespace OpenRA.Mods.RA2.Traits
 			base.Created(self);
 
 			// Spawn initial load.
-			int burst = Info.InitialActorCount == -1 ? Info.Actors.Length : Info.InitialActorCount;
-			for (int i = 0; i < burst; i++)
+			var burst = Info.InitialActorCount == -1 ? Info.Actors.Length : Info.InitialActorCount;
+			for (var i = 0; i < burst; i++)
 				Replenish(self, SlaveEntries);
 		}
 
@@ -110,19 +112,14 @@ namespace OpenRA.Mods.RA2.Traits
 
 			SpawnIntoWorld(self, se.Actor, self.CenterPosition);
 
-			Stack<int> spawnContainToken;
-			if (spawnContainTokens.TryGetValue(a.Info.Name, out spawnContainToken) && spawnContainToken.Any())
+			if (spawnContainTokens.TryGetValue(a.Info.Name, out var spawnContainToken) && spawnContainToken.Count > 0)
 				self.RevokeCondition(spawnContainToken.Pop());
 
-			if (loadedTokens.Any())
+			if (loadedTokens.Count > 0)
 				self.RevokeCondition(loadedTokens.Pop());
 
 			// Queue attack order, too.
-			self.World.AddFrameEndTask(w =>
-			{
-				// invalidate the slave entry so that slave will regen.
-				se.Actor = null;
-			});
+			self.World.AddFrameEndTask(_ => se.Actor = null); // invalidate the slave entry so that slave will regen.
 
 			// Set clock so that regen happens.
 			if (respawnTicks <= 0) // Don't interrupt an already running timer!
@@ -142,9 +139,7 @@ namespace OpenRA.Mods.RA2.Traits
 		{
 			base.Replenish(self, entry);
 
-			string spawnContainCondition;
-
-			if (MissileSpawnerOldMasterInfo.SpawnContainConditions.TryGetValue(entry.Actor.Info.Name, out spawnContainCondition))
+			if (MissileSpawnerOldMasterInfo.SpawnContainConditions.TryGetValue(entry.Actor.Info.Name, out var spawnContainCondition))
 				spawnContainTokens.GetOrAdd(entry.Actor.Info.Name).Push(self.GrantCondition(spawnContainCondition));
 
 			if (!string.IsNullOrEmpty(MissileSpawnerOldMasterInfo.LoadedCondition))
@@ -167,7 +162,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 					// If there's something left to spawn, restart the timer.
 					if (SelectEntryToSpawn(SlaveEntries) != null)
-						respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, reloadModifiers.Select(rm => rm.GetReloadModifier()));
+						respawnTicks = Util.ApplyPercentageModifiers(Info.RespawnTicks, reloadModifiers.Select(rm => rm.GetReloadModifier(MissileSpawnerOldMasterInfo.Name)));
 				}
 			}
 		}

@@ -26,17 +26,19 @@ slav:
 		Priority: 7
 		Bounds: 482, 1448, 0, -530
 	Harvester:
-		DeliveryBuildings: yarefn, yarefn.noslave
-		Capacity: 4
-		MaxUnloadQueue: 9
-		UnloadQueueCostModifier: 4
+		DockType: yarefn, yarefn.noslave
 		BaleLoadDelay: 24
 		BaleUnloadDelay: 1
 		FullyLoadedSpeed: 100
 		Resources: Ore, Gems
 		HarvestVoice: Move
-		DeliverVoice: Move
 		EmptyCondition: no-ore
+	StoresResources:
+		Capacity: 4
+		Resources: Ore, Gems
+	DockClientManager:
+		Voice: Move
+		OccupancyCostModifier: 4
 	Health:
 		HP: 10000
 	Garrisoner:
@@ -84,7 +86,7 @@ slav:
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
-	WithHarvesterPipsDecoration:
+	WithStoresResourcesPipsDecoration:
 		Margin: 4, 3
 		Palette: ra
 		Position: BottomLeft

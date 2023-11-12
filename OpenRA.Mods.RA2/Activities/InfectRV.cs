@@ -67,7 +67,7 @@ namespace OpenRA.Mods.RA2.Activities
 
 				infectable.Infector = Tuple.Create(self, infector, info);
 				infectable.FirepowerMultipliers = self.TraitsImplementing<IFirepowerModifier>()
-					.Select(a => a.GetFirepowerModifier()).ToArray();
+					.Select(a => a.GetFirepowerModifier(infector.InfectInfo.Name)).ToArray();
 				infectable.Ticks = info.DamageInterval;
 				infectable.GrantCondition(targetActor);
 				infectable.RevokeCondition(targetActor, self);

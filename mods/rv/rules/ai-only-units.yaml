@@ -104,20 +104,21 @@ bfrt-squad-3:
 		Notification: LetsRockAndRoll
 
 ^AITransportControl: ## For Cargo trait
-	Inherits@AI: ^AIMicroManagable
 	Cargo:
 		LoadedCondition: loaded
-	AutoDeployer@AI:
-		RequiresCondition: ai-control && loaded
-		DeployChance: 100
-		DeployTicks: 50
-		UndeployTicks: 200
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded # && HeavyDamaged
+		OrderName: Unload
+		OrderChance: 100
+		OrderInterval: 250
+		OrderTrigger: Periodically
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: loaded
 		Prerequisite: LoadedExists
 
 ^AICarryallControl: ## For Carryall trait
 	Inherits: ^AITransportControl
+	Inherits@AI: ^AIMicroManagable
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	-Cargo:
 	Carryall:

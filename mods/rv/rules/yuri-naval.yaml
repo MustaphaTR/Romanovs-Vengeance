@@ -155,15 +155,15 @@ cmisl:
 		SpawnAtLastPosition: false
 		Type: CenterPosition
 	MissileSpawnerSlave:
-	SpawnedExplodes:
+	ExplodesForMaster:
 		Weapon: CruiseWeapon
 		EmptyWeapon: CruiseWeapon
 		RequiresCondition: !airborne && !rank-elite
-	SpawnedExplodes@Elite:
+	ExplodesForMaster@Elite:
 		Weapon: CruiseWeaponE
 		EmptyWeapon: CruiseWeaponE
 		RequiresCondition: !airborne && rank-elite
-	SpawnedExplodes@Airborne:
+	ExplodesForMaster@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
@@ -618,15 +618,17 @@ strt:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 	WithVoxelBody:
-		RequiresCondition: in_water
+		RequiresCondition: in_water && !on_dock
 	WithVoxelBody@land:
 		Sequence: idle-land
-		RequiresCondition: !in_water
+		RequiresCondition: !in_water || on_dock
 	WithVoxelTurret:
-		RequiresCondition: in_water
+		RequiresCondition: in_water && !on_dock
 	WithVoxelTurret@land:
 		Sequence: turret-land
-		RequiresCondition: !in_water
+		RequiresCondition: !in_water || on_dock
+	ExternalCondition@on_dock:
+		Condition: on_dock
 	RenderSprites:
 	RenderVoxels:
 		Scale: 10

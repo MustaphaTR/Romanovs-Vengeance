@@ -729,3 +729,18 @@ notification-opened = Açıldı
 
 ## ActorEditLogic
 notification-edited-actor = { $name } ({ $id }) düzenlendi
+
+## ActorStatsValues, IngameActorStatsLogic
+label-armor-class =
+    .no-armor = Zırh Yok
+    .None = None
+    .Flak = Flak
+    .Plate = Plate
+    .Light = Hafif
+    .Medium = Orta
+    .Heavy = Ağır
+    .Wood = Tahta
+    .Steel = Çelik
+    .Concrete = Beton
+    .Drone = Dron
+    .Rocket = Roket

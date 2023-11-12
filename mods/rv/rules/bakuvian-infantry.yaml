@@ -493,6 +493,9 @@ ssnipe:
 	Selectable:
 		Class: amob
 		Bounds: 482, 1448, 0, -530
+	-ActorStatValues:
+	-GrantConditionOnPrerequisite@upgrades:
+	-ActorStatOverride@NO_UPGRADE:
 	Voiced:
 		VoiceSet: AngryMobVoice
 
@@ -522,7 +525,6 @@ amobtm:
 	# GrantConditionOnPrerequisite@ARM_THE_MOB:
 	#	Condition: arm_the_mob
 	#	Prerequisites: upgrade.arm_the_mob
-	-ActorStatValues:
 
 amobf:
 	Inherits: ^AngryMob
@@ -552,7 +554,6 @@ amobf:
 	#	Prerequisites: upgrade.arm_the_mob
 	Voiced:
 		VoiceSet: AngryMobFemaleVoice
-	-ActorStatValues:
 
 amobfm:
 	Inherits: ^AngryMob
@@ -570,7 +571,6 @@ amobfm:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		FacingTolerance: 2
-	-ActorStatValues:
 
 amob:
 	Inherits@1: ^ExistsInWorld

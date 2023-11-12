@@ -23,15 +23,18 @@
 		Priority: 7
 		Bounds: 1544, 2509, 0, -289
 	Harvester:
-		DeliveryBuildings: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd
-		Capacity: 40
+		DockType: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd
 		Resources: Ore, Gems
 		BaleLoadDelay: 12
 		BaleUnloadDelay: 1
 		FullyLoadedSpeed: 100
 		HarvestVoice: Harvest
-		DeliverVoice: Move
 		EmptyCondition: no-ore
+	StoresResources:
+		Capacity: 40
+		Resources: Ore, Gems
+	DockClientManager:
+		Voice: Move
 	Explodes:
 		RequiresCondition: no-ore
 	Explodes@Ore:
@@ -107,7 +110,7 @@
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	RangedGpsDot:
 		Sequence: Harvester
-	WithHarvesterPipsDecoration:
+	WithStoresResourcesPipsDecoration:
 		Margin: 4, 3
 		Palette: ra
 		Position: BottomLeft
@@ -186,7 +189,7 @@
 		Facing: 384
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		NoTransformTextNotification: Cannot deploy here.
+		NoTransformTextNotification: notification-cannot-deploy-here
 		PauseOnCondition: chronodisable || emp || terrordroned || squid || controlled
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
@@ -284,6 +287,8 @@
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && cheater-ai
 	Crushable@Vengeful:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && vengeful-ai
+	ExternalCondition@on_dock:
+		Condition: on_dock
 	Guard:
 		Voice: Move
 	Passenger:
@@ -303,7 +308,7 @@
 		Facing: 384
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		NoTransformTextNotification: Cannot deploy here.
+		NoTransformTextNotification: notification-cannot-deploy-here
 		PauseOnCondition: chronodisable || emp || terrordroned || squid || controlled
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
@@ -345,12 +350,11 @@
 	#	SoundFiles: vmcvstaa.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
-	AutoDeployer@AI:
-		RequiresCondition: ai-control
-		DeployTrigger: Attack
-		DeployChance: 100
-		DeployTicks: 5
-		UndeployTicks: 50
+	IssueOrderToBot@AI:
+		OrderName: DeployTransform
+		OrderChance: 100
+		OrderInterval: 5
+		OrderTrigger: Attack
 	Hovers:
 		Ticks: 10
 		BobDistance: -64

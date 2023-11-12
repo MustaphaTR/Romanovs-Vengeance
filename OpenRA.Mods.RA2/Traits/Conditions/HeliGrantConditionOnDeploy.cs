@@ -11,7 +11,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using OpenRA.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
@@ -35,7 +34,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly string DeployedCondition = null;
 
 		[Desc("The terrain types that this actor can deploy on. Leave empty to allow any.")]
-		public readonly HashSet<string> AllowedTerrainTypes = new HashSet<string>();
+		public readonly HashSet<string> AllowedTerrainTypes = new();
 
 		[Desc("Can this actor deploy on slopes?")]
 		public readonly bool CanDeployOnRamps = false;
@@ -200,7 +199,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (string.IsNullOrEmpty(actorString))
 				return false;
 
-			var actorIDs = actorString.Split(',').Select(x => { uint result; uint.TryParse(x, out result); return result; });
+			var actorIDs = actorString.Split(',').Select(x => { uint.TryParse(x, out var result); return result; });
 			var actors = self.World.Actors.Where(x => x.IsInWorld && !x.IsDead && actorIDs.Contains(x.ActorID));
 
 			foreach (var a in actors)

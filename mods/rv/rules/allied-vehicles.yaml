@@ -21,9 +21,11 @@ cmin:
 	Tooltip@NoRow:
 		Name: Chrono Miner
 	Harvester:
-		Capacity: 20
 		BaleUnloadDelay: 2
-		DeliverVoice: Deliver
+	StoresResources:
+		Capacity: 20
+	DockClientManager:
+		Voice: Deliver
 	ChronoResourceDelivery:
 		WarpInSequence: warpout
 		WarpInSound: vchrtele.wav
@@ -37,7 +39,7 @@ cmin:
 		StartColorAlpha: 176
 		StartColorUsePlayerColor: false
 		ZOffset: -1024
-		TrailWidth: 36
+		StartWidth: 36
 		TrailLength: 2
 	Guard:
 		Voice: Move
@@ -554,7 +556,6 @@ fv:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
-		EjectOnDeath: false
 		LoadingCondition: notmobile
 		PassengerConditions:
 			e1: ifv-mg
@@ -1556,7 +1557,6 @@ bfrt:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
-		EjectOnDeath: false
 		LoadingCondition: notmobile
 		PassengerConditions:
 			e1: loaded
@@ -1858,7 +1858,6 @@ aambu:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
-		EjectOnDeath: false
 		LoadingCondition: notmobile
 	WithCargoSounds:
 		EnterSound: genter1a.wav
@@ -2106,7 +2105,7 @@ ctnk:
 		StartColorAlpha: 176
 		StartColorUsePlayerColor: false
 		ZOffset: -1024
-		TrailWidth: 36
+		StartWidth: 36
 		TrailLength: 2
 	GrantCondition@ChronoDisable:
 		RequiresCondition: affectedbytemporal || chronoed

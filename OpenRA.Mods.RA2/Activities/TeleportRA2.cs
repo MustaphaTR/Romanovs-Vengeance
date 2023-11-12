@@ -28,13 +28,13 @@ namespace OpenRA.Mods.RA2.Activities
 		readonly bool killOnFailure;
 		readonly BitSet<DamageType> killDamageTypes;
 		CPos destination;
-		bool killCargo;
-		bool screenFlash;
-		string sound;
+		readonly bool killCargo;
+		readonly bool screenFlash;
+		readonly string sound;
 
 		public TeleportRA2(Actor teleporter, CPos destination, int? maximumDistance,
 			bool killCargo, bool screenFlash, string sound, bool interruptable = true,
-			bool killOnFailure = false, BitSet<DamageType> killDamageTypes = default(BitSet<DamageType>))
+			bool killOnFailure = false, BitSet<DamageType> killDamageTypes = default)
 		{
 			var max = teleporter.World.Map.Grid.MaximumTileSearchRange;
 			if (maximumDistance > max)
@@ -106,7 +106,7 @@ namespace OpenRA.Mods.RA2.Activities
 
 			// Trigger screen desaturate effect
 			if (screenFlash)
-				foreach (var a in self.World.ActorsWithTrait<ChronoshiftPaletteEffect>())
+				foreach (var a in self.World.ActorsWithTrait<ChronoshiftPostProcessEffect>())
 					a.Trait.Enable();
 
 			if (teleporter != null && self != teleporter && !teleporter.Disposed)
@@ -137,7 +137,7 @@ namespace OpenRA.Mods.RA2.Activities
 			foreach (var tile in self.World.Map.FindTilesInCircle(destination, max))
 			{
 				if (teleporter.Owner.Shroud.IsExplored(tile)
-					&& (restrictTo == null || (restrictTo != null && restrictTo.Contains(tile)))
+					&& (restrictTo == null || restrictTo.Contains(tile))
 					&& pos.CanEnterCell(tile))
 					return tile;
 			}

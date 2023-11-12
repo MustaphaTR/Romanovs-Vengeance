@@ -505,12 +505,12 @@ e1:
 		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	AutoDeployer@AI:
-		RequiresCondition: ai-control && !deployed
-		DeployTrigger: Attack
-		DeployChance: 100
-		DeployTicks: 5
-		UndeployTicks: 50
+	IssueOrderToBot@AI:
+		RequiresCondition: !deployed
+		OrderName: GrantConditionOnDeploy
+		OrderChance: 100
+		OrderInterval: 55
+		OrderTrigger: Attack
 	ActorStatValues:
 		Upgrades: upgrade.gi_fortifications, upgrade.advanced_training, upgrade.portable_weaponry
 
@@ -935,12 +935,12 @@ ggi:
 		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	AutoDeployer@AI:
-		RequiresCondition: ai-control && !deployed
-		DeployChance: 100
-		DeployTrigger: Attack
-		DeployTicks: 5
-		UndeployTicks: 50
+	IssueOrderToBot@AI:
+		RequiresCondition: !deployed
+		OrderName: GrantConditionOnDeploy
+		OrderChance: 100
+		OrderInterval: 55
+		OrderTrigger: Attack
 	ActorStatValues:
 		Upgrades: upgrade.gi_fortifications, upgrade.advanced_training, upgrade.boost_gliding_systems, upgrade.portable_weaponry
 
@@ -1358,7 +1358,7 @@ ccomand:
 		StartColorAlpha: 176
 		StartColorUsePlayerColor: false
 		ZOffset: -1024
-		TrailWidth: 36
+		StartWidth: 36
 		TrailLength: 2
 	GrantCondition@ChronoDisable:
 		RequiresCondition: affectedbytemporal || chronoed
@@ -1859,7 +1859,7 @@ cleg:
 		StartColorAlpha: 176
 		StartColorUsePlayerColor: false
 		ZOffset: -1024
-		TrailWidth: 36
+		StartWidth: 36
 		TrailLength: 2
 	Chronoshiftable:
 		ExplodeInstead: false

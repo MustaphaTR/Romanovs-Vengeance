@@ -12,7 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -23,10 +22,10 @@ namespace OpenRA.Mods.RA2.Traits
 	public class InfectableRVInfo : ConditionalTraitInfo, Requires<HealthInfo>
 	{
 		[Desc("Damage types that removes the infector.")]
-		public readonly BitSet<DamageType> RemoveInfectorDamageTypes = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> RemoveInfectorDamageTypes = default;
 
 		[Desc("Damage types that kills the infector.")]
-		public readonly BitSet<DamageType> KillInfectorDamageTypes = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> KillInfectorDamageTypes = default;
 
 		[GrantedConditionReference]
 		[Desc("The condition to grant to self while infected by any actor.")]
@@ -38,7 +37,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		[Desc("Conditions to grant when infected by specified actors.",
 			"A dictionary of [actor id]: [condition].")]
-		public readonly Dictionary<string, string> InfectedByConditions = new Dictionary<string, string>();
+		public readonly Dictionary<string, string> InfectedByConditions = new();
 
 		[GrantedConditionReference]
 		public IEnumerable<string> LinterConditions { get { return InfectedByConditions.Values; } }
@@ -51,7 +50,7 @@ namespace OpenRA.Mods.RA2.Traits
 		readonly Health health;
 
 		public Tuple<Actor, AttackInfectRV, AttackInfectRVInfo> Infector;
-		public int[] FirepowerMultipliers = new int[] { };
+		public int[] FirepowerMultipliers = Array.Empty<int>();
 
 		[Sync]
 		public int Ticks;
@@ -95,8 +94,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (infectedToken == Actor.InvalidConditionToken && !string.IsNullOrEmpty(Info.InfectedCondition))
 				infectedToken = self.GrantCondition(Info.InfectedCondition);
 
-			string infectedByCondition;
-			if (Info.InfectedByConditions.TryGetValue(Infector.Item1.Info.Name, out infectedByCondition))
+			if (Info.InfectedByConditions.TryGetValue(Infector.Item1.Info.Name, out var infectedByCondition))
 				infectedByToken = self.GrantCondition(infectedByCondition);
 		}
 
@@ -142,17 +140,11 @@ namespace OpenRA.Mods.RA2.Traits
 							Infector.Item1.Kill(self);
 					}
 					else
-					{
-						var mobile = Infector.Item1.TraitOrDefault<Mobile>();
-						if (mobile != null)
-						{
-							mobile.Nudge(Infector.Item1);
-						}
-					}
+						Infector.Item1.QueueActivity(false, new Nudge(Infector.Item1));
 
 					RevokeCondition(self);
 					Infector = null;
-					FirepowerMultipliers = new int[] { };
+					FirepowerMultipliers = Array.Empty<int>();
 					dealtDamage = 0;
 					suppressionCount = 0;
 					killInfectorOnDeath = false;
