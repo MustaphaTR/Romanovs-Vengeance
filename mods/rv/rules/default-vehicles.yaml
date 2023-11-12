@@ -119,6 +119,8 @@
 		ResourceSequences:
 			Ore: pip-yellow
 			Gems: pip-blue
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Harvester
 
 ^ConstructionVehicle:
 	Inherits: ^Vehicle
@@ -241,6 +243,8 @@
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.mcv
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
@@ -374,7 +378,7 @@
 		RequiresCondition: ai-control
 		Prerequisite: ai.ev
 	ActorStatValues:
-		Armaments: None
+		Stats: Armor, Sight, Speed
 
 ^MainBattleTank:
 	Inherits: ^Vehicle
@@ -433,3 +437,5 @@
 		RequiresCondition: produced
 		Voice: Build
 		ValidRelationships: None
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange

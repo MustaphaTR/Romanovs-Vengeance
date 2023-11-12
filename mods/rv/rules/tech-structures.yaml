@@ -67,6 +67,9 @@ caoild:
 	DamageMultiplier@megawealth:
 		RequiresCondition: megawealth
 		Modifier: 0
+	ActorStatOverride:
+		Stats: Armor, Sight, CashTrickler
+		RequiresCondition: enabled
 
 caoild.mwspawner:
 	Inherits@SHAPE: ^2x2Shape
@@ -421,6 +424,7 @@ caoutp:
 		Class: caoutp
 		DecorationHeight: 90
 	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 120
 
 caoutb:
@@ -477,6 +481,8 @@ capowr:
 		Sequence: Power
 	IsometricSelectable:
 		DecorationHeight: 90
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 camach:
 	Inherits: ^TechBuilding
@@ -721,6 +727,9 @@ carpad:
 	IsometricSelectable:
 		Class: carpad
 		DecorationHeight: 60
+	ActorStatOverride:
+		Stats: Armor, Sight, PeriodicProducer
+		RequiresCondition: enabled
 
 carpab:
 	Inherits: carpad
@@ -809,6 +818,8 @@ capsyb:
 		Sequence: Psi
 	IsometricSelectable:
 		DecorationHeight: 120
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 capsyb.koth:
 	Inherits: ^TechBuilding
@@ -953,6 +964,8 @@ camisl:
 	IsometricSelectable:
 		Class: camisl
 		DecorationHeight: 45
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 camisb:
 	Inherits: camisl

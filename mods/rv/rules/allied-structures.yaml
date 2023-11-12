@@ -904,7 +904,7 @@ gaairc:
 	ProvidesPrerequisite@AIantiRush:
 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 	ActorStatValues:
-		Armaments: none
+		Stats: Armor, Sight, Power
 
 gabarl:
 	Inherits: camisc02
@@ -1228,6 +1228,7 @@ gapill:
 		VoiceSet: PillBoxVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MaxRange
 		Damage: 65
 
 nasam:
@@ -1312,6 +1313,7 @@ nasam:
 		VoiceSet: PatriotMissileVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.boost_gliding_systems, upgrade.grand_cannon_protocols
 
 gtgcan:
@@ -1387,6 +1389,8 @@ gtgcan:
 	Voiced:
 		VoiceSet: GrandCannonVoice
 		Volume: 0.5
+	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 
 gaorep:
 	Inherits: ^BaseBuilding
@@ -1467,6 +1471,8 @@ gaorep:
 	Voiced:
 		VoiceSet: OrePurifierVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 gaspysat:
 	Inherits: ^BaseBuilding
@@ -1549,6 +1555,8 @@ gaspysat:
 	Voiced:
 		VoiceSet: SpySatelliteVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 gagap:
 	Inherits: ^SupportBuilding
@@ -1611,6 +1619,8 @@ gagap:
 	Voiced:
 		VoiceSet: GapGeneratorVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 gaweat:
 	Inherits: ^PrimarySuperWeapon
@@ -1840,6 +1850,7 @@ atesla:
 		VoiceSet: PrismTowerVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 150
 		ReloadDelay: 50
 
@@ -1891,6 +1902,8 @@ garobo:
 		RequiresCondition: lowpower || powerdown || emp
 	IsometricSelectable:
 		DecorationHeight: 60
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 # Custom Structures
 gaapad:
@@ -1984,6 +1997,8 @@ gaapad:
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 gadock:
 	Interactable:
@@ -2133,6 +2148,7 @@ gamgun:
 		VoiceSet: MirageTurretVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 100
 
 gagun:
@@ -2208,6 +2224,7 @@ gagun:
 		VoiceSet: GunTurretVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 150
 
 gaexpn:

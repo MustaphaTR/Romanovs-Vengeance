@@ -65,6 +65,8 @@ harv:
 	WithProductionIconOverlay@2:
 		Prerequisites: warfactory.infiltrated, baacdm
 		Types: chevron-elite
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Harvester
 
 dron:
 	Inherits: ^Vehicle
@@ -212,6 +214,7 @@ dron:
 		DeathTypes: NonTemporal
 	HitShape:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 40
 		ReloadDelay: 45
 
@@ -360,7 +363,7 @@ htk:
 	#	Volume: 0.35
 	#	RequiresCondition: moving
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 
 htnk:
 	Inherits: ^MainBattleTank
@@ -845,7 +848,7 @@ apoc:
 	#	Volume: 0.5
 	#	RequiresCondition: moving
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.advanced_irradiators, upgrade.nuclear_engines, upgrade.uranium_shells
 
 ttnk:
@@ -949,6 +952,8 @@ ttnk:
 	#	SoundFiles: vtesstaa.wav, vtesstab.wav
 	#	Volume: 0.35
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 dtruck:
 	Inherits: ^Vehicle
@@ -1044,9 +1049,9 @@ dtruck:
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, Spread
 		Damage: 1200
 		Spread: 8c0
-		ExplosionWeapon: true
 
 v3:
 	Inherits: ^Vehicle
@@ -1159,6 +1164,7 @@ v3:
 	#	Volume: 0.35
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 200
 		Upgrades: upgrade.radioactive_bombs, upgrade.advanced_irradiators, upgrade.high_explosive_bombs
 
@@ -1369,6 +1375,8 @@ tric:
 		Prerequisites: warfactory.infiltrated, baacdm
 		Types: chevron-elite
 	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 deva:
 	Inherits: ^Vehicle
@@ -1520,6 +1528,8 @@ deva:
 	#	SoundFiles: vapostaa.wav, vapostab.wav, vapostac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 exps:
 	Inherits: ^ExpansionVehicle
@@ -1641,3 +1651,5 @@ ftnk:
 	#	SoundFiles: vrhistaa.wav, vrhistab.wav, vrhistac.wav, vrhistad.wav
 	#	Volume: 0.3
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange

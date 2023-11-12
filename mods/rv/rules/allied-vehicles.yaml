@@ -228,6 +228,7 @@ tnkd:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.advanced_gun_systems, upgrade.composite_armor
 
 fv:
@@ -564,6 +565,7 @@ fv:
 			gren: ifv-gren
 			mtrp: ifv-mortar
 			engineer: ifv-repair
+			mengineer: ifv-repair
 			medi: ifv-medic
 			dog: ifv-dog
 			ggi: ifv-rocket
@@ -576,7 +578,6 @@ fv:
 			vlkv: ifv-tesla
 			ivan: ifv-demo
 			civan: ifv-demo
-			civan.allied: ifv-demo
 			pyro: ifv-pyro
 			terror: ifv-demo
 			deso: ifv-deso
@@ -598,13 +599,12 @@ fv:
 			yuri: ifv-yuri
 			yuripsi: ifv-yuri
 			ptroop: ifv-yuri
-			ptroop.yuri: ifv-yuri
 			yuripr: ifv-yuri
 			yurix: ifv-yuri
 			spct: ifv-lazarus
 			ttrp: ifv-toxin
-			ttrp.soviet: ifv-toxin
 			crkt: ifv-crkt
+			visc_lrg: ifv-hijack
 	WithCargoSounds:
 		EnterSound: vifvtran.wav
 		ExitSound: vifvtran.wav
@@ -625,14 +625,12 @@ fv:
 	Armament@primary-aa:
 		Weapon: HoverMissileAA
 		LocalOffset: 128,-128,1024, 128,128,1024
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@elite-aa:
 		Weapon: HoverMissileAAE
 		LocalOffset: 128,-128,1024, 128,128,1024
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
@@ -653,14 +651,12 @@ fv:
 	Armament@primary-boost-aa:
 		Weapon: HoverMissileAABoosted
 		LocalOffset: 128,-128,1024, 128,128,1024
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@elite-boost-aa:
 		Weapon: HoverMissileAABoostedE
 		LocalOffset: 128,-128,1024, 128,128,1024
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
@@ -724,7 +720,6 @@ fv:
 	Armament@rocket-aa:
 		Weapon: CRMissileLauncherAA
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: ifv-rocket && !rank-elite && !boostgliding
@@ -738,7 +733,6 @@ fv:
 	Armament@rocket-aa-elite:
 		Weapon: CRMissileLauncherAAE
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: ifv-rocket && rank-elite && !boostgliding
@@ -752,7 +746,6 @@ fv:
 	Armament@rocket-boost-aa:
 		Weapon: CRMissileLauncherAABoosted
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: ifv-rocket && !rank-elite && boostgliding
@@ -766,7 +759,6 @@ fv:
 	Armament@rocket-boost-aa-elite:
 		Weapon: CRMissileLauncherAABoostedE
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: ifv-rocket && rank-elite && boostgliding
@@ -790,6 +782,8 @@ fv:
 		ForceTargetRelationships: None
 	Armament@demo:
 		Weapon: DemoTruckTargeting
+		Damage: 500
+		Spread: 2c0
 		RequiresCondition: ifv-demo
 	GrantConditionOnAttack@demo:
 		Condition: triggered
@@ -938,7 +932,6 @@ fv:
 	Armament@flak-aa:
 		Weapon: CRFlakGuyGunAA
 		LocalOffset: 256,0,1536
-		EnableSplitRanges: true
 		RequiresCondition: ifv-flak && !rank-elite
 	Armament@flak-elite:
 		Weapon: CRFlakGuyGunE
@@ -953,7 +946,6 @@ fv:
 	Armament@flak-aa-elite:
 		Weapon: CRFlakGuyGunAAE
 		LocalOffset: 256,0,1536
-		EnableSplitRanges: true
 		RequiresCondition: ifv-flak && rank-elite
 	Armament@gatling-ag-0:
 		Name: gatling
@@ -980,21 +972,18 @@ fv:
 		Name: gatling
 		Weapon: AAGatling
 		LocalOffset: 544,100,1024, 544,-100,1024
-		EnableSplitRanges: true
 		RequiresCondition: ifv-gatling && !gatling
 		MuzzleSequence: muzzle
 	Armament@gatling-aa-1:
 		Name: gatling
 		Weapon: AAGatling2
 		LocalOffset: 544,100,1024, 544,-100,1024
-		EnableSplitRanges: true
 		RequiresCondition: ifv-gatling && gatling == 1
 		MuzzleSequence: muzzle-1
 	Armament@gatling-aa-2:
 		Name: gatling
 		Weapon: AAGatling3
 		LocalOffset: 544,100,1024, 544,-100,1024
-		EnableSplitRanges: true
 		RequiresCondition: ifv-gatling && gatling >= 2
 		MuzzleSequence: muzzle-2
 	Armament@chrono:
@@ -1087,7 +1076,6 @@ fv:
 	Armament@crkt-aa:
 		Weapon: CRChaosRocketAA
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		RequiresCondition: ifv-crkt && !rank-elite
 	Armament@crkt-elite:
 		Weapon: CRChaosRocketE
@@ -1097,7 +1085,6 @@ fv:
 	Armament@crkt-aa-elite:
 		Weapon: CRChaosRocketAAE
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		RequiresCondition: ifv-crkt && rank-elite
 	WithMuzzleOverlay:
 	GrantConditionOnAttack:
@@ -1254,7 +1241,17 @@ fv:
 	#	Volume: 0.3
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 		Upgrades: upgrade.boost_gliding_systems
+	ActorStatOverride@AG:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
+		RequiresCondition: ifv-mg || ifv-init || ifv-gren || ifv-mortar || ifv-pyro || ifv-tesla || ifv-chrono || ifv-toxin || ifv-lazarus || ifv-seal || ifv-tanya || ifv-iron || ifv-yuri || ifv-sniper || ifv-virus || ifv-repair || ifv-deso || ifv-boris || ifv-hijack
+	ActorStatOverride@Explosion:
+		Stats: Armor, Sight, Speed, Damage, Spread, None, Cargo
+		RequiresCondition: ifv-demo
+	ActorStatOverride@Unarmed:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
+		RequiresCondition: ifv-dog || ifv-medic
 
 sref:
 	Inherits: ^Vehicle
@@ -1368,6 +1365,8 @@ sref:
 	#	SoundFiles: vpristaa.wav, vpristab.wav, vpristac.wav
 	#	Volume: 0.3
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 mgtk:
 	Inherits: ^Vehicle
@@ -1489,6 +1488,8 @@ mgtk:
 	#	SoundFiles: vmirstaa.wav, vmirstab.wav, vmirstac.wav
 	#	Volume: 0.35
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 # Yuri's Revenge Vehicles:
 bfrt:
@@ -1651,6 +1652,8 @@ bfrt:
 	#	SoundFiles: vbatstaa.wav, vbatstab.wav, vbatstac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 
 robo:
 	Inherits: ^Vehicle
@@ -1795,6 +1798,8 @@ robo:
 	#	SoundFiles: vrobstaa.wav, vrobstab.wav, vrobstac.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 # Custom Allied Vehicles:
 aambu:
@@ -1890,6 +1895,8 @@ aambu:
 	#	SoundFiles: vifvstaa.wav, vifvstab.wav, vifvstac.wav
 	#	Volume: 0.3
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 
 hwtz:
 	Inherits: ^Vehicle
@@ -2000,6 +2007,8 @@ hwtz:
 	#	SoundFiles: vtadstaa.wav, vtadstab.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ctnk:
 	Inherits: ^Vehicle
@@ -2141,6 +2150,8 @@ ctnk:
 	#	SoundFiles: vgristaa.wav, vgristab.wav, vgristac.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 expn:
 	Inherits: ^ExpansionVehicle
@@ -2182,3 +2193,5 @@ mrcv:
 	RenderVoxels:
 		Image: mrj
 		Scale: 16
+	ActorStatValues:
+		Stats: Armor, Sight, Speed

@@ -125,6 +125,8 @@ bsub:
 	#	SoundFiles: vboostaa.wav, vboostab.wav
 	#	Volume: 0.6
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 cmisl:
 	Inherits: ^ShootableMissile
@@ -265,6 +267,8 @@ piranha:
 	#	SoundFiles: vsqumova.wav, vsqumovb.wav
 	#	Volume: 0.45
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 gatsub:
 	Inherits: ^Ship
@@ -462,8 +466,8 @@ gatsub:
 	#	Volume: 0.6
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 20
-		SplitRanges: true
 
 floater:
 	Inherits: ^SeaAnimal
@@ -661,6 +665,7 @@ strt:
 		ValidRelationships: None
 	HitShape:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 50
 
 buoy:

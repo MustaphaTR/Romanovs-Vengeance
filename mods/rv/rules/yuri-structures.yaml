@@ -168,6 +168,8 @@ yapowr:
 		Volume: 0.8
 	RenderSprites:
 		Image: yapowr
+	ActorStatValues:
+		Stats: Armor, Sight, Power, None, None, None, Cargo
 
 yabrck:
 	Inherits: ^Barracks
@@ -407,6 +409,10 @@ yarefn:
 		TickVelocity: 1
 		TickRate: 10
 		UseStorage: true
+	DockHost:
+		Type: yarefn
+		DockAngle: 640
+		DockOffset: 0,724,0
 	Production@Shared:
 		Produces: Infantry.Shared, Slave
 		RequiresCondition: !multiqueue
@@ -568,10 +574,8 @@ yarefn:
 		DecorationHeight: 45
 	ActorStatValues:
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
-	DockHost:
-		Type: yarefn
-		DockAngle: 640
-		DockOffset: 0,724,0
+	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MaxRange
 
 yarfn2:
 	Inherits: ^Refinery
@@ -792,6 +796,8 @@ yagrnd:
 	Voiced:
 		VoiceSet: GrinderVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 yadome:
 	Inherits: ^Radar
@@ -1149,6 +1155,8 @@ yapsis:
 	Voiced:
 		VoiceSet: PsychicSensorVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 yaclon:
 	Inherits: ^BaseBuilding
@@ -1243,6 +1251,8 @@ yaclon:
 	Voiced:
 		VoiceSet: CloningVatsVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 yawall:
 	Inherits: ^Wall
@@ -1430,8 +1440,8 @@ yaggun:
 		VoiceSet: GatlingCannonVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 30
-		SplitRanges: true
 
 natbnk:
 	Inherits: ^SupportBuilding
@@ -1512,6 +1522,8 @@ natbnk:
 	Voiced:
 		VoiceSet: TankBunkerVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Cargo
 
 yapsyt:
 	Inherits: ^SupportBuilding
@@ -1588,6 +1600,8 @@ yapsyt:
 	Voiced:
 		VoiceSet: PsychicTowerVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power, MindControl, ReloadDelay, MaxRange
 
 yasgen:
 	Inherits: ^SupportBuilding
@@ -1656,6 +1670,8 @@ yasgen:
 	Voiced:
 		VoiceSet: StealthGeneratorVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 yagntc:
 	Inherits: ^SecondarySuperWeapon
@@ -1718,6 +1734,8 @@ yagntc:
 	Voiced:
 		VoiceSet: LazarusGeneratorVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 
 yappet:
 	Inherits: ^PrimarySuperWeapon

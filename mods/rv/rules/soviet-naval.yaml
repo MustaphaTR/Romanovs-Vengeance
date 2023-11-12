@@ -99,6 +99,8 @@ sub:
 	#	SoundFiles: vsqumova.wav, vsqumovb.wav
 	#	Volume: 0.45
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 hyd:
 	Inherits: ^Ship
@@ -200,7 +202,7 @@ hyd:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
 sqd:
 	Inherits: ^SeaAnimal
@@ -392,6 +394,7 @@ dred:
 	#	Volume: 0.5
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 400
 		Upgrades: upgrade.radioactive_bombs, upgrade.advanced_irradiators, upgrade.high_explosive_bombs
 
@@ -583,4 +586,5 @@ sray:
 	#	Interval: 20
 	#	RequiresCondition: walking && !in_water
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 140

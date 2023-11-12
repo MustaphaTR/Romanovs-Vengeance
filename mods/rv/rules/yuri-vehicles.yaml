@@ -136,6 +136,7 @@ smin:
 		RequiresSelection: true
 		PipCount: 10
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 gmin:
@@ -514,8 +515,8 @@ ytnk:
 	#	Volume: 0.35
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 20
-		SplitRanges: true
 		Upgrades: upgrade.chaos_tank_compensators, upgrade.chainguns
 
 ytnk.holo:
@@ -655,6 +656,8 @@ caos:
 	#	SoundFiles: vchastaa.wav, vchastab.wav, vchastac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 tele:
 	Inherits: ^Vehicle
@@ -770,6 +773,8 @@ tele:
 	#	SoundFiles: vmagstaa.wav, vmagstab.wav, vmagstac.wav
 	#	Volume: 0.65
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 mind:
 	Inherits: ^Vehicle
@@ -904,6 +909,7 @@ mind:
 	#	Volume: 0.65
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, MindControl, ReloadDelay, MaxRange
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.mastery_of_mind
 
 # Custom Yuri Vehicles
@@ -980,6 +986,7 @@ mlyr:
 		Position: BottomLeft
 		RequiresSelection: true
 	ActorStatValues:
+		Stats: Armor, Sight, Speed
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 kamaz:
@@ -1096,7 +1103,11 @@ kamaz:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 		Upgrades: upgrade.grinder_treads, upgrade.toxin_sprayer, upgrade.chaos_tank_compensators
+	ActorStatOverride@toxinsprayer:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
+		RequiresCondition: toxinsprayer
 
 lart:
 	Inherits: ^Vehicle
@@ -1244,6 +1255,7 @@ lart:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
 
 yhtnk:
@@ -1355,6 +1367,7 @@ yhtnk:
 		Types: chevron-elite
 	HitShape:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
 
 grtk:
@@ -1454,6 +1467,7 @@ grtk:
 	#	Volume: 0.65
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 150
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
@@ -1603,6 +1617,8 @@ spider:
 			BruteDeath: 1
 			OrangeRadiationDeath: 1
 	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 expy:
 	Inherits: ^ExpansionVehicle

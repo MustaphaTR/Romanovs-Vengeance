@@ -210,6 +210,7 @@ e2:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.bullet_proof_coats, upgrade.molotov_cocktails, upgrade.ap_bullets
 
 flakt:
@@ -427,7 +428,7 @@ flakt:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
 shk:
 	Inherits: ^Infantry
@@ -589,6 +590,7 @@ shk:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 50
 
 terror:
@@ -668,9 +670,9 @@ terror:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, Spread
 		Damage: 450
 		Spread: 2c0
-		ExplosionWeapon: true
 		Upgrades: upgrade.targeted_explosives
 
 deso:
@@ -886,6 +888,8 @@ deso:
 	-TakeCover:
 	-DamagedByTintedCells:
 	-DamagedByTintedCells@ORANGE:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ivan:
 	Inherits: ^Infantry
@@ -976,14 +980,22 @@ ivan:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.targeted_explosives, upgrade.high_explosive_bombs
 
 civan:
 	Inherits: ivan
 	Buildable:
 		BuildPaletteOrder: 970
-		Prerequisites: ~infantry.sovietsorbaku, ~allies.tech.infiltrated, ~techlevel.4
 		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Prerequisites: ~infantry.sovietsorbaku, ~allies.tech.infiltrated, ~techlevel.4
+		BuildDuration: 375
+	Buildable@Allied:
+		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 980
+		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Prerequisites: ~infantry.allies, ~soviets.tech.infiltrated, ~techlevel.4
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Tooltip:
@@ -1153,6 +1165,8 @@ yuri:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: MindControl
 		RequiresCondition: !controlling
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, MindControl, ReloadDelay, MaxRange
 
 yuripr:
 	Inherits: yuri
@@ -1420,6 +1434,8 @@ boris:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 # Custom Revenge Infantry
 pyro:
@@ -1550,6 +1566,8 @@ pyro:
 	WithInfantryBody:
 		IdleSequences: idle1,idle2,idle3,idle4
 		DefaultAttackSequence: shoot
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 hjck:
 	Inherits: ^Infantry
@@ -1618,6 +1636,8 @@ hjck:
 		Sequence: stand
 	WithInfantryBody:
 		-DefaultAttackSequence:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 itrp:
 	Inherits: ^Infantry
@@ -1800,6 +1820,7 @@ itrp:
 	-KillsSelf@ironcurtain:
 	-ExternalCondition@INVULNERABILITY:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 500
 
 shkc:
@@ -1872,13 +1893,5 @@ shkc:
 	WithInfantryBody:
 		AttackSequences:
 			secondary: shoot
-
-ttrp.soviet:
-	Inherits: ttrp
-	Buildable:
-		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
-		BuildPaletteOrder: 990
-		Prerequisites: ~infantry.sovietsorbaku, ~yuri.tech.infiltrated, ~techlevel.4
-	UpdatesPlayerStatistics:
-		OverrideActor: ttrp
-	-MapEditorData:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange

@@ -161,7 +161,7 @@ shad:
 			blue: pip-blue
 			red: pip-red
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 
 shadhusk:
 	Inherits: ^HelicopterHusk
@@ -353,6 +353,7 @@ zep:
 		Reject: Move, Attack, ReturnToBase
 		RequiresCondition: ai-control && AIattack
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.advanced_irradiators, upgrade.aerial_propaganda, upgrade.radioactive_bombs
 
 zephusk:
@@ -485,12 +486,10 @@ orca:
 		RequiresCondition: rank-elite
 	Armament@AA:
 		Weapon: MaverickAA
-		EnableSplitRanges: true
 		PauseOnCondition: !ammo
 		RequiresCondition: a2amissiles && !rank-elite
 	Armament@EliteAA:
 		Weapon: MaverickAAE
-		EnableSplitRanges: true
 		PauseOnCondition: !ammo
 		RequiresCondition: a2amissiles && rank-elite
 	AttackAircraft:
@@ -616,7 +615,11 @@ orca:
 		Prerequisites: prerequisite.aiplayer
 		Multiplier: 40
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.a2a_missiles, upgrade.predator_missiles
+	ActorStatOverride@a2amissiles:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
+		RequiresCondition: a2amissiles
 
 orcahusk:
 	Inherits: ^PlaneHusk
@@ -771,7 +774,9 @@ beag:
 	Contrail@FlameTrail:
 		Offset: -700,0,50
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		-Upgrades:
+	-ActorStatOverride@a2amissiles:
 
 beaghusk:
 	Inherits: ^PlaneHusk
@@ -1669,7 +1674,6 @@ schp:
 	Armament@primary-aa:
 		Weapon: SiegeChopperCannonAA
 		LocalOffset: 640,-256,0, 640,256,0
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: deployed || reload-ground
 		RequiresCondition: !rank-elite && undeployed && !apbullets
@@ -1683,7 +1687,6 @@ schp:
 	Armament@elite-aa:
 		Weapon: SiegeChopperCannonAAE
 		LocalOffset: 640,-256,0, 640,256,0
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: deployed || reload-ground
 		RequiresCondition: rank-elite && undeployed && !apbullets
@@ -1884,6 +1887,11 @@ schp:
 	RejectsOrders@deploymentAI:
 		Reject: AttackMove, AssaultMove, Attack #HACK: Deployed Siege Chopper will try to aim orignal target set by squad if not block the Attack order
 		RequiresCondition: ai-control && !undeployed
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+	ActorStatOverride@deployed:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
+		RequiresCondition: undeployed
 
 schphusk:
 	Inherits: ^HelicopterHusk
@@ -2067,12 +2075,10 @@ bpln.buildable:
 	Armament@CryoAA:
 		Weapon: Maverick2AACryo
 		PauseOnCondition: !ammo
-		EnableSplitRanges: true
 		RequiresCondition: !rank-elite && cryowarheads
 	Armament@CryoAAE:
 		Weapon: Maverick2AACryoE
 		PauseOnCondition: !ammo
-		EnableSplitRanges: true
 		RequiresCondition: rank-elite && cryowarheads
 	-GrantConditionOnPrerequisite@A2AMISSILES:
 	-FirepowerMultiplier@PREDATOR_MISSILES:
@@ -2119,7 +2125,8 @@ bpln.buildable:
 		StartColorUsePlayerColor: False
 		EndColorUsePlayerColor: true
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
+	-ActorStatOverride@a2amissiles:
 
 bplnhusk:
 	Inherits: ^PlaneHusk
@@ -2393,7 +2400,7 @@ disk:
 		DeathType: NonTemporal
 		Actor: diskhusk
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Armaments: primary
 		Upgrades: upgrade.disc_armor, upgrade.laser_capacitors
 
@@ -2544,6 +2551,8 @@ hind:
 	# GrantConditionOnMovement:
 	#	Condition: moving
 	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 hindhusk:
 	Inherits: ^HelicopterHusk
@@ -2812,6 +2821,8 @@ fortress:
 	ProductionCostMultiplier@AI:
 		Prerequisites: prerequisite.aiplayer
 		Multiplier: 20
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 fortresshusk:
 	Inherits: ^PlaneHusk
@@ -3098,6 +3109,7 @@ txdx:
 			blue: pip-blue
 			red: pip-red
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
 		Upgrades: upgrade.disc_armor, upgrade.rocket_barrage
 
 txdxhusk:
@@ -3264,6 +3276,8 @@ kite:
 	# GrantConditionOnMovement:
 	#	Condition: moving
 	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 kitehusk:
 	Inherits: ^HelicopterHusk
@@ -3451,6 +3465,7 @@ magnedisk:
 	#	Condition: moving
 	HitShape:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Armaments: primary
 
 magnediskhusk:
@@ -3613,6 +3628,8 @@ havoc:
 	# GrantConditionOnMovement:
 	#	Condition: moving
 	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 havochusk:
 	Inherits: ^HelicopterHusk
@@ -3786,6 +3803,8 @@ badgr:
 	# ProductionCostMultiplier@AI:
 	#	Prerequisites: prerequisite.aiplayer
 	#	Multiplier: 20
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 badgrhusk:
 	Inherits: ^PlaneHusk

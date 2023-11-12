@@ -163,7 +163,7 @@ rctt:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.bullet_proof_coats
 
 medi:
@@ -227,6 +227,7 @@ medi:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: -50
 
 mech:
@@ -288,6 +289,7 @@ mech:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: -40
 
 mengineer:
@@ -449,6 +451,8 @@ mtrp:
 		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ssnipe:
 	Inherits: snipe
@@ -648,7 +652,7 @@ amob:
 		Modifier: 0
 	RenderSprites:
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Mob
 		Damage: 135
 
 vlkv:
@@ -812,6 +816,8 @@ vlkv:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 chit:
 	Inherits: ^Infantry
@@ -977,5 +983,6 @@ chit:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 60
 		ReloadDelay: 30

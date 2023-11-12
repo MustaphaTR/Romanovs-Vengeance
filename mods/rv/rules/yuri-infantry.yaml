@@ -95,6 +95,8 @@ slav:
 		ResourceSequences:
 			Ore: pip-yellow
 			Gems: pip-blue
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Harvester
 
 init:
 	Inherits: ^Infantry
@@ -189,6 +191,8 @@ init:
 	WithProductionIconOverlay@2:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 init.holo:
 	Inherits: init
@@ -336,6 +340,8 @@ brute:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 brute.holo:
 	Inherits: brute
@@ -440,6 +446,7 @@ virus:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 200
 
 yuripsi:
@@ -555,16 +562,6 @@ yurix:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
-
-ptroop.yuri:
-	Inherits: ptroop
-	Buildable:
-		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
-		BuildPaletteOrder: 970
-		Prerequisites: ~infantry.yuri, ~allies.tech.infiltrated, ~techlevel.4
-	UpdatesPlayerStatistics:
-		OverrideActor: ptroop
-	-MapEditorData:
 
 lunr:
 	Inherits: ^Infantry
@@ -751,6 +748,8 @@ lunr:
 	-ChangesHealth@AMBULANCE:
 	SpawnActorOnDeath:
 		Actor: lunr.husk
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
 lunr.husk:
 	Inherits: ^HelicopterHusk
@@ -1100,8 +1099,8 @@ gtrp:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 10
-		SplitRanges: true
 
 gtrp.holo:
 	Inherits: gtrp
@@ -1319,6 +1318,8 @@ spct:
 	WithProductionIconOverlay@2:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ttrp:
 	Inherits: ^Infantry
@@ -1331,6 +1332,14 @@ ttrp:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 980
 		Prerequisites: ~infantry.yuri, ~soviets.tech.infiltrated, ~techlevel.4
+		Description: Infantry armed with a toxin sprayer and toxin bombs.\nImmune to toxic clouds.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can place Toxin Bombs on buildings
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	Buildable@Soviet:
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 990
+		Prerequisites: ~infantry.sovietsorbaku, ~yuri.tech.infiltrated, ~techlevel.4
 		Description: Infantry armed with a toxin sprayer and toxin bombs.\nImmune to toxic clouds.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can place Toxin Bombs on buildings
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1446,6 +1455,8 @@ ttrp:
 	-TakeCover:
 	RenderSprites:
 		Image: ttrp
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 crkt:
 	Inherits: ^Infantry
@@ -1588,7 +1599,7 @@ crkt:
 		IdleSequences: idle1
 	-TakeCover:
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
 visc_lrg:
 	Inherits: ^Infantry
@@ -1629,4 +1640,5 @@ visc_lrg:
 	-SpawnSmokeParticleOnDeath@virus:
 	-Explodes@Corpse:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 50

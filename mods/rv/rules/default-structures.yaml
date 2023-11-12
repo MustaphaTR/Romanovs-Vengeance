@@ -274,6 +274,8 @@
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^Barracks:
 	Inherits: ^BaseBuilding
@@ -379,7 +381,8 @@
 		Volume: 0.8
 	ProvidesPrerequisite@AIantiRush:
 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
-
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^Refinery:
 	Inherits: ^BaseBuilding
@@ -510,6 +513,8 @@
 		Type: Unload
 		DockAngle: 640
 		DockOffset: 1086,1086,0
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^RefineryB:
 	Inherits: ^Refinery
@@ -645,6 +650,8 @@ refdock:
 	Voiced:
 		VoiceSet: SiloVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^WarFactory:
 	Inherits: ^BaseBuilding
@@ -772,8 +779,7 @@ refdock:
 	ProvidesPrerequisite@AIantiRush:
 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 	ActorStatValues:
-		Armaments: none
-
+		Stats: Armor, Sight, Power
 
 ^Shipyard:
 	Inherits: ^BaseBuilding
@@ -973,7 +979,7 @@ refdock:
 		VoiceSet: ShipyardVoice
 		Volume: 0.8
 	ActorStatValues:
-		Armaments: none
+		Stats: Armor, Sight, Power
 
 ^ServiceDepot:
 	Inherits: ^BaseBuilding
@@ -1050,6 +1056,8 @@ refdock:
 	Voiced:
 		VoiceSet: ServiceDepotVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^Radar:
 	Inherits: ^BaseBuilding
@@ -1102,6 +1110,8 @@ refdock:
 	Voiced:
 		VoiceSet: RadarVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^Helipad:
 	Inherits: ^BaseBuilding
@@ -1214,8 +1224,7 @@ refdock:
 	ProvidesPrerequisite@AIantiRush:
 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 	ActorStatValues:
-		Armaments: none
-
+		Stats: Armor, Sight, Power
 
 ^BattleLab:
 	Inherits: ^BaseBuilding
@@ -1264,6 +1273,8 @@ refdock:
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^PrimarySuperWeapon:
 	Inherits: ^BaseBuilding
@@ -1321,6 +1332,8 @@ refdock:
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^SecondarySuperWeapon:
 	Inherits: ^BaseBuilding
@@ -1379,6 +1392,8 @@ refdock:
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 power:
 	AlwaysVisible:
