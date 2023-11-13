@@ -31,7 +31,7 @@ namespace OpenRA.Mods.RA2.Widgets.Logic
 
 		int lasttotalpowerdisplay;
 
-		protected readonly World world;
+		protected readonly World World;
 
 		[Desc("The name of the Container Widget to tie the Y axis to")]
 		[FieldLoader.Require]
@@ -80,7 +80,7 @@ namespace OpenRA.Mods.RA2.Widgets.Logic
 		[ObjectCreator.UseCtor]
 		public PowerMeterWidget(World world, WorldRenderer worldRenderer)
 		{
-			this.world = world;
+			World = world;
 		}
 
 		public void CalculateMeterBarDimensions()
@@ -125,11 +125,13 @@ namespace OpenRA.Mods.RA2.Widgets.Logic
 			Children.Clear();
 
 			// create a list of new health bars
-			for (int i = 0; i < numberofbars; i++)
+			for (var i = 0; i < numberofbars; i++)
 			{
-				var newpower = new ImageWidget();
-				newpower.ImageCollection = ImageCollection;
-				newpower.ImageName = NoPowerImage;
+				var newpower = new ImageWidget
+				{
+					ImageCollection = ImageCollection,
+					ImageName = NoPowerImage
+				};
 
 				// you could add AddFactionSuffixLogic here
 				newpower.Bounds.Y = -(i * meterdistance) + barheight + Bounds.Y;
@@ -176,7 +178,7 @@ namespace OpenRA.Mods.RA2.Widgets.Logic
 			// number of power units represent each bar
 			var stepsize = PowerUnitsPerBar;
 
-			var powerManager = world.LocalPlayer.PlayerActor.Trait<PowerManager>();
+			var powerManager = World.LocalPlayer.PlayerActor.Trait<PowerManager>();
 			var totalpowerdisplay = Math.Max(powerManager.PowerProvided, powerManager.PowerDrained);
 
 			var totalpowerstep = decimal.Floor(totalpowerdisplay / stepsize);
@@ -197,7 +199,7 @@ namespace OpenRA.Mods.RA2.Widgets.Logic
 			CheckFlash(powerManager, totalpowerdisplay);
 
 			// if maxed out bar size, work on percents
-			for (int i = 0; i < Children.Count; i++)
+			for (var i = 0; i < Children.Count; i++)
 			{
 				if (Children[i].GetType().Name != "ImageWidget")
 					continue;

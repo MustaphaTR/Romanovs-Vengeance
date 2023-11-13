@@ -9,8 +9,6 @@
  */
 #endregion
 
-using OpenRA.Traits;
-
 namespace OpenRA.Mods.Common.Traits.Sound
 {
 	[Desc("Plays a sound when the trait is enabled.")]

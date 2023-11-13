@@ -24,7 +24,7 @@ namespace OpenRA.Mods.Cnc.FileSystem
 	{
 		sealed class BagFile : IReadOnlyPackage
 		{
-			public string Name { get; private set; }
+			public string Name { get; }
 			public IEnumerable<string> Contents { get { return index.Keys; } }
 
 			readonly Stream s;

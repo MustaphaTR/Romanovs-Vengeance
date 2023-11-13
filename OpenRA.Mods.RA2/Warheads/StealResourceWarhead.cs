@@ -10,7 +10,6 @@
 #endregion
 
 using System;
-using System.Collections.Generic;
 using OpenRA.GameRules;
 using OpenRA.Mods.AS.Warheads;
 using OpenRA.Mods.Common.Effects;
@@ -37,7 +36,7 @@ namespace OpenRA.Mods.RA2.Warheads
 			var targetResources = target.Actor.Owner.PlayerActor.Trait<PlayerResources>();
 			var selfResources = firedBy.Owner.PlayerActor.Trait<PlayerResources>();
 
-			var stolen = Math.Min(Cash, (targetResources.Cash + targetResources.Resources));
+			var stolen = Math.Min(Cash, targetResources.Cash + targetResources.Resources);
 
 			targetResources.TakeCash(stolen);
 			selfResources.GiveCash(stolen);

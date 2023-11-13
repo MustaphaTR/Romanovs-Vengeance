@@ -9,9 +9,6 @@
  */
 #endregion
 
-using System.Linq;
-using OpenRA.Traits;
-
 namespace OpenRA.Mods.Common.Traits.Render
 {
 	[Desc("Plays a sound when it accepts a cash delivery unit.")]

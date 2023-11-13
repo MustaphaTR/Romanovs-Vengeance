@@ -30,7 +30,7 @@ namespace OpenRA.Mods.Cnc.Traits.Render
 		public readonly WAngle Facing = WAngle.Zero;
 
 		[Desc("Passenger CargoType to display.")]
-		public readonly HashSet<string> DisplayTypes = new HashSet<string>();
+		public readonly HashSet<string> DisplayTypes = new();
 
 		public override object Create(ActorInitializer init) { return new WithCargoBuilding(init.Self, this); }
 	}
@@ -41,7 +41,7 @@ namespace OpenRA.Mods.Cnc.Traits.Render
 		readonly Cargo cargo;
 		readonly BodyOrientation body;
 
-		Dictionary<Actor, IActorPreview[]> previews = new Dictionary<Actor, IActorPreview[]>();
+		readonly Dictionary<Actor, IActorPreview[]> previews = new();
 
 		public WithCargoBuilding(Actor self, WithCargoBuildingInfo info)
 		{

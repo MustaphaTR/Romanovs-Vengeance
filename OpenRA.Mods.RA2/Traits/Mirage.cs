@@ -113,7 +113,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public bool Disguised { get { return IsMirage; } }
 
-		public ActorInfo ActorType { get; private set; }
+		public ActorInfo ActorType { get; }
 		public Player Owner { get { return IsMirage ? self.World.Players.First(p => p.InternalName == Info.EffectiveOwner) : null; } }
 
 		public Mirage(ActorInitializer init, MirageInfo info)

@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System;
 using System.Collections.Generic;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
@@ -22,11 +23,11 @@ namespace OpenRA.Mods.RA2.Traits
 		[FieldLoader.Require]
 		[ActorReference]
 		[Desc("Types of actors to place. If multiple are defined, a random one will be selected for each actor spawned.")]
-		public readonly HashSet<string> ActorTypes = new HashSet<string>();
+		public readonly HashSet<string> ActorTypes = new();
 
 		[FieldLoader.Require]
 		[Desc("Locations to spawn the actors relative to the origin (top-left for buildings) of this actor.")]
-		public readonly CVec[] Locations = { };
+		public readonly CVec[] Locations = Array.Empty<CVec>();
 
 		public override object Create(ActorInitializer init) { return new SpawnNeighboringActors(this, init.Self); }
 	}
@@ -34,7 +35,7 @@ namespace OpenRA.Mods.RA2.Traits
 	public class SpawnNeighboringActors : INotifyKilled, INotifyOwnerChanged, INotifyActorDisposing, INotifyAddedToWorld, INotifySold
 	{
 		readonly SpawnNeighboringActorsInfo info;
-		readonly List<Actor> actors = new List<Actor>();
+		readonly List<Actor> actors = new();
 
 		public SpawnNeighboringActors(SpawnNeighboringActorsInfo info, Actor self)
 		{
