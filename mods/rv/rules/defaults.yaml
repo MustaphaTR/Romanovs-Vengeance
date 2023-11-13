@@ -2630,6 +2630,81 @@
 		TargetTypes: Water
 		RequiresCondition: swimming
 
+^JumpjetInfantry:
+	Inherits: ^Infantry
+	HiddenUnderFog:
+		Type: CenterPosition
+	-Mobile:
+	Aircraft:
+		CruiseAltitude: 3c852
+		InitialFacing: 80
+		TurnSpeed: 787
+		Speed: 150
+		AltitudeVelocity: 240
+		MaximumPitch: 128
+		Voice: Move
+		AirborneCondition: airborne
+		IdealSeparation: 512
+		VTOL: true
+		CanSlide: true
+		CanHover: true
+	RevealsShroud:
+		Type: GroundPosition
+		RequiresCondition: !airborne
+	RevealsShroud@Ground:
+		Type: GroundPosition
+		RequiresCondition: airborne
+	# RevealsShroudToIntelligenceOwner:
+	#	Type: GroundPosition
+	Hovers:
+		BobDistance: -45
+	-TimedConditionBar@WebDisable:
+	-SpeedMultiplier@WebDisable:
+	-WithIdleOverlay@web:
+	-Targetable@webdisable:
+	-ExternalCondition@webdisable:
+	-WithColoredOverlay@IDISABLE:
+	-GrantCondition@IDISABLE:
+	-SpeedMultiplier@DOGSTUN:
+	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:
+	-InfectableRV:
+	-Targetable@DRONE:
+	-SpeedMultiplier@DRONE:
+	-RevealsShroud@DRONE:
+	-PeriodicExplosion@dronesparks:
+	-Crushable:
+	-Crushable@Cheater:
+	-Crushable@Vengeful:
+	-TakeCover:
+	-Targetable:
+	-TurnOnIdle:
+	-WithDeathAnimation@normal:
+	-WithDeathAnimation@effect:
+	-DamagedByTintedCells:
+	-DamagedByTintedCells@ORANGE:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, OrangeRadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
+	-DeathSounds@zapped:
+	-DeathSounds@radiation:
+	-DeathSounds@psycrush:
+	-DeathSounds@virus:
+	Targetable@airborne:
+		TargetTypes: Air, Disguise
+		RequiresCondition: airborne
+	Targetable@ground:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		RequiresCondition: !airborne
+	WithSpriteBody@shadow:
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	-Passenger:
+	-ChangesHealth@AMBULANCE:
+
 ^CivilianInfantry:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
@@ -2679,6 +2754,49 @@
 	Wanders:
 		MinMoveDelay: 150
 		MaxMoveDelay: 750
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
+
+^Pegasus:
+	Inherits: ^JumpjetInfantry
+	Buildable:
+		Queue: Infantry.Civilian
+		BuildAtProductionType: Soldier
+	Tooltip:
+		Name: Pegasus
+		GenericName: Pony
+	Tooltip@NoRow:
+		Name: Pegasus
+		GenericName: Pony
+	Health:
+		HP: 5000
+	Selectable:
+		Bounds: 512, 1024, 0, -256
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroud@Ground:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	-WithInfantryBody:
+	WithVoxelAnimatedBody:
+		TickRate: 1
+		ShowShadow: false
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 0
+		CameraPitch: 85
+		UseClassicPerspectiveFudge: false
+	RenderVoxels:
+		Scale: 13
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+		NormalsPalette: ts-normals
+	-Voiced:
+	MapEditorData:
+		Categories: Civilian infantry
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
 

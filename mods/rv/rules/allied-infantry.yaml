@@ -1594,7 +1594,7 @@ tany:
 		Damage: 125
 
 jumpjet:
-	Inherits: ^Infantry
+	Inherits: ^JumpjetInfantry
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1621,18 +1621,12 @@ jumpjet:
 		Bounds: 482, 1448, 0, -530
 	Health:
 		HP: 12500
-	-Mobile:
 	RevealsShroud:
 		Range: 8c0
-		Type: GroundPosition
-		RequiresCondition: !airborne
 	RevealsShroud@Ground:
 		Range: 8c0
-		Type: GroundPosition
-		RequiresCondition: airborne
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 8c0
-	#	Type: GroundPosition
 	Armor:
 		Type: Light
 	Armament@primary:
@@ -1661,19 +1655,6 @@ jumpjet:
 		Voice: Attack
 		FacingTolerance: 2
 		AttackType: Hover
-	Aircraft:
-		CruiseAltitude: 3c852
-		InitialFacing: 80
-		TurnSpeed: 787
-		Speed: 150
-		AltitudeVelocity: 240
-		MaximumPitch: 128
-		Voice: Move
-		AirborneCondition: airborne
-		IdealSeparation: 512
-		VTOL: true
-		CanSlide: true
-		CanHover: true
 	WithInfantryBody:
 		RequiresCondition: !airborne
 	WithInfantryBody@Air:
@@ -1682,50 +1663,6 @@ jumpjet:
 		DefaultAttackSequence: shoot-air
 		IdleSequences: idle-air
 		RequiresCondition: airborne
-	Hovers:
-		BobDistance: -45
-	-TimedConditionBar@WebDisable:
-	-SpeedMultiplier@WebDisable:
-	-WithIdleOverlay@web:
-	-Targetable@webdisable:
-	-ExternalCondition@webdisable:
-	-WithColoredOverlay@IDISABLE:
-	-GrantCondition@IDISABLE:
-	-SpeedMultiplier@DOGSTUN:
-	-Targetable@DOGSTUN:
-	-TimedConditionBar@DOGSTUN:
-	-ExternalCondition@dogstun:
-	-InfectableRV:
-	-Targetable@DRONE:
-	-SpeedMultiplier@DRONE:
-	-RevealsShroud@DRONE:
-	-PeriodicExplosion@dronesparks:
-	-Crushable:
-	-Crushable@Cheater:
-	-Crushable@Vengeful:
-	-TakeCover:
-	-Targetable:
-	-TurnOnIdle:
-	-WithDeathAnimation@normal:
-	-WithDeathAnimation@effect:
-	-DamagedByTintedCells:
-	-DamagedByTintedCells@ORANGE:
-	DeathSounds@normal:
-		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, OrangeRadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
-	-DeathSounds@zapped:
-	-DeathSounds@radiation:
-	-DeathSounds@psycrush:
-	-DeathSounds@virus:
-	Targetable@airborne:
-		TargetTypes: Air, Disguise
-		RequiresCondition: airborne
-	Targetable@ground:
-		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
-		RequiresCondition: !airborne
-	WithSpriteBody@shadow:
-		Name: shadow
-		Sequence: shadow
-		ForceToGround: true
 	Voiced:
 		VoiceSet: RocketeerVoice
 	# AmbientSound:
@@ -1744,10 +1681,6 @@ jumpjet:
 	WithProductionIconOverlay@2:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
-	QuantizeFacingsFromSequence:
-		Sequence: stand
-	-Passenger:
-	-ChangesHealth@AMBULANCE:
 	SpawnActorOnDeath:
 		Actor: jumpjet.husk
 	ActorStatValues:
