@@ -1,5 +1,5 @@
 --[[
-   Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+   Copyright (c) The OpenRA Developers and Contributors
    This file is part of OpenRA, which is free software. It is made
    available to you under the terms of the GNU General Public License
    as published by the Free Software Foundation, either version 3 of
@@ -15,6 +15,9 @@ FlakPath = { RoadAWP1.Location, RoadAWP2.Location, RoadAWP3.Location, RoadAWP4.L
 
 DoggoPatrolPath = { DoggoPatrolA.Location, DoggoPatrolB.Location, DoggoPatrolC.Location, DoggoPatrolD.Location }
 FlakPatrolPath = { FlakPatrolA.Location, FlakPatrolB.Location }
+
+PonyTypes = { "rainbow_dash", "derpy_hooves" }
+PonyPath = { PonyEntry.Location, PonyExit.Location }
 
 DeployChoppers = function()
 	local choppers = soviets.GetActorsByType("schp")
@@ -32,6 +35,16 @@ GiveVeterancy = function()
 		EliteUnit.GrantCondition("rank-veteran")
 		EliteUnit.GrantCondition("rank-veteran")
 		EliteUnit.GrantCondition("rank-veteran")
+	end)
+end
+
+SendPonies = function(unit_id)
+	local pony = Actor.Create(PonyTypes[unit_id], true, { Owner = neutral, Location = PonyPath[1] })
+	pony.Move(PonyPath[2]);
+	pony.Destroy();
+
+	Trigger.AfterDelay(DateTime.Minutes(1), function()
+		SendPonies((unit_id % #PonyTypes) + 1);
 	end)
 end
 
@@ -100,12 +113,18 @@ Tick = function()
 end
 
 WorldLoaded = function()
-	allies = Player.GetPlayer("Allies")
 	soviets = Player.GetPlayer("Soviets")
+	neutral = Player.GetPlayer("Neutral")
 	viewportOrigin = Camera.Position
 
 	DeployChoppers()
 	GiveVeterancy()
+
+	if DateTime.CurrentMonth == 10 and DateTime.CurrentDay == 10 then -- October 10th
+		Trigger.AfterDelay(DateTime.Seconds(12), function()
+			SendPonies(1)
+		end)
+	end
 
 	local dog1 = Actor.Create("dog", true, { Owner = soviets, Location = DoggoPatrolPath[1], SubCell = 1 })
 	local dog2 = Actor.Create("dog", true, { Owner = soviets, Location = DoggoPatrolPath[1], SubCell = 2 })

@@ -1,5 +1,5 @@
 --[[
-   Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+   Copyright (c) The OpenRA Developers and Contributors
    This file is part of OpenRA, which is free software. It is made
    available to you under the terms of the GNU General Public License
    as published by the Free Software Foundation, either version 3 of
@@ -27,6 +27,9 @@ CivilianHousesEast = { EastHouse1, EastHouse2, EastHouse3, EastHouse4, EastHouse
 CivilianHousesWest = { WestHouse1, WestHouse2, WestHouse3, WestHouse4, WestHouse5 }
 
 IFVTypes = { "fv.flamer", "fv.virus", "fv.init", "fv.hijacker", "fv.ivan", "fv.tesla", "fv.iron", "fv.yuri", "fv.gatling", "fv.dog" }
+
+PonyTypes = { "rainbow_dash", "derpy_hooves" }
+PonyPath = { PonyEntry.Location, PonyTarget.Location, PonyExit.Location }
 
 ProduceCivilians = function(house)
 	local delay = Utils.RandomInteger(0, 200)
@@ -58,6 +61,17 @@ GiveVeterancy = function()
 		EliteUnit.GrantCondition("rank-veteran")
 		EliteUnit.GrantCondition("rank-veteran")
 		EliteUnit.GrantCondition("rank-veteran")
+	end)
+end
+
+SendPonies = function(unit_id)
+	local pony = Actor.Create(PonyTypes[unit_id], true, { Owner = neutral, Location = PonyPath[1] })
+	pony.Move(PonyPath[2]);
+	pony.Move(PonyPath[3]);
+	pony.Destroy();
+
+	Trigger.AfterDelay(DateTime.Minutes(1), function()
+		SendPonies((unit_id % #PonyTypes) + 1);
 	end)
 end
 
@@ -138,10 +152,17 @@ WorldLoaded = function()
 	allies = Player.GetPlayer("Allies")
 	soviets = Player.GetPlayer("Soviets")
 	psicorps = Player.GetPlayer("PsiCorps")
+	neutral = Player.GetPlayer("Neutral")
 	viewportOrigin = Camera.Position
 
-	DeployChoppers();
-	GiveVeterancy();
+	DeployChoppers()
+	GiveVeterancy()
+
+	if DateTime.CurrentMonth == 10 and DateTime.CurrentDay == 10 then -- October 10th
+		Trigger.AfterDelay(DateTime.Seconds(40), function()
+			SendPonies(1)
+		end)
+	end
 
 	local lazarus1 = Actor.Create("yhtnk", true, { Owner = psicorps, Location = LazarusPatrol1[1] })
 	local lazarus2 = Actor.Create("yhtnk", true, { Owner = psicorps, Location = LazarusPatrol2[1] })

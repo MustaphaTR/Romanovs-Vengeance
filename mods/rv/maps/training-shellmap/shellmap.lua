@@ -1,5 +1,5 @@
 --[[
-   Copyright 2007-2020 The OpenRA Developers (see AUTHORS)
+   Copyright (c) The OpenRA Developers and Contributors
    This file is part of OpenRA, which is free software. It is made
    available to you under the terms of the GNU General Public License
    as published by the Free Software Foundation, either version 3 of
@@ -18,6 +18,9 @@ RobotPatrol1 = { Robot1WP1.Location, Robot1WP2.Location }
 
 CargoPlaneWP = { CargoPlaneEntry.Location, CargoPlaneExit.Location }
 
+PonyTypes = { "rainbow_dash", "derpy_hooves" }
+PonyPath = { PonyEntry.Location, PonyExit.Location }
+
 GiveVeterancy = function()
 	Utils.Do(VeteranUnits, function(VeteranUnit)
 		VeteranUnit.GrantCondition("rank-veteran")
@@ -27,6 +30,16 @@ GiveVeterancy = function()
 		EliteUnit.GrantCondition("rank-veteran")
 		EliteUnit.GrantCondition("rank-veteran")
 		EliteUnit.GrantCondition("rank-veteran")
+	end)
+end
+
+SendPonies = function(unit_id)
+	local pony = Actor.Create(PonyTypes[unit_id], true, { Owner = neutral, Location = PonyPath[1] })
+	pony.Move(PonyPath[2]);
+	pony.Destroy();
+
+	Trigger.AfterDelay(DateTime.Minutes(1), function()
+		SendPonies((unit_id % #PonyTypes) + 1);
 	end)
 end
 
@@ -67,9 +80,16 @@ end
 WorldLoaded = function()
 	allies = Player.GetPlayer("Allies")
 	soviets = Player.GetPlayer("Soviets")
+	neutral = Player.GetPlayer("Neutral")
 	viewportOrigin = Camera.Position
 
 	GiveVeterancy();
+
+	if DateTime.CurrentMonth == 10 and DateTime.CurrentDay == 10 then -- October 10th
+		Trigger.AfterDelay(DateTime.Seconds(5), function()
+			SendPonies(1)
+		end)
+	end
 
 	Utils.Do(TankGIs, function(tankgi)
 		tankgi.Attack(DerelictTank)
