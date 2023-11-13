@@ -424,6 +424,10 @@
 		TickVelocity: 1
 		TickRate: 10
 		UseStorage: true
+	DockHost:
+		Type: Unload
+		DockAngle: 640
+		DockOffset: 1086,1086,0
 	CustomSellValue:
 		Value: 600
 	InfiltrateForCash:
@@ -509,10 +513,6 @@
 	Voiced:
 		VoiceSet: RefineryVoice
 		Volume: 0.8
-	DockHost:
-		Type: Unload
-		DockAngle: 640
-		DockOffset: 1086,1086,0
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
@@ -523,16 +523,14 @@
 	Building:
 		Footprint: xxx xxx xxx +++
 		Dimensions: 3,4
-	Refinery:
+	DockHost:
+		DockAngle: 384
+		DockOffset: -1086,1086,0
 	FreeActor:
 		SpawnOffset: 1,3
 		Facing: 384
 	SpawnNeighboringActors:
 		Locations: 1,3
-	DockHost:
-		Type: Unload
-		DockAngle: 384
-		DockOffset: -1086,1086,0
 
 ^RefineryC:
 	Inherits: ^Refinery
@@ -540,7 +538,9 @@
 	-Buildable:
 	Building:
 		Footprint: +xxx +xxx +xxx
-	Refinery:
+	DockHost:
+		DockAngle: 128
+		DockOffset: -724,724,0
 	FreeActor:
 		SpawnOffset: 0,1
 		Facing: 128
@@ -549,10 +549,6 @@
 	-WithDockedOverlay:
 	-WithIdleOverlay@drill:
 	-WithIdleOverlay@waves:
-	DockHost:
-		Type: Unload
-		DockAngle: 128
-		DockOffset: -724,724,0
 
 ^RefineryD:
 	Inherits: ^Refinery
@@ -561,7 +557,9 @@
 	Building:
 		Footprint: +++ xxx xxx xxx
 		Dimensions: 3,4
-	Refinery:
+	DockHost:
+		DockAngle: 896
+		DockOffset: 1086,-1086,0
 	FreeActor:
 		SpawnOffset: 1,0
 		Facing: 896
@@ -570,10 +568,6 @@
 	-WithDockedOverlay:
 	-WithIdleOverlay@drill:
 	-WithIdleOverlay@waves:
-	DockHost:
-		Type: Unload
-		DockAngle: 896
-		DockOffset: 1086,-1086,0
 
 refdock:
 	Interactable:
