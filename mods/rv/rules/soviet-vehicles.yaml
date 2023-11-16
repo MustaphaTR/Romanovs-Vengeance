@@ -847,9 +847,15 @@ apoc:
 	#	SoundFiles: vapostaa.wav, vapostab.wav, vapostac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.advanced_irradiators, upgrade.nuclear_engines, upgrade.uranium_shells
+	ActorStatOverride@Baku:
+		Upgrades: upgrade.nuclear_engines
+		RequiresCondition: baku
 
 ttnk:
 	Inherits: ^Vehicle

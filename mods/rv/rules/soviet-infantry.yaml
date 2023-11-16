@@ -209,9 +209,15 @@ e2:
 		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.bullet_proof_coats, upgrade.molotov_cocktails, upgrade.ap_bullets
+	ActorStatOverride@Baku:
+		Upgrades: upgrade.bullet_proof_coats, upgrade.smoke_grenades, upgrade.ap_bullets
+		RequiresCondition: baku
 
 flakt:
 	Inherits: ^Infantry
@@ -979,9 +985,15 @@ ivan:
 	WithProductionIconOverlay@2:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.targeted_explosives, upgrade.high_explosive_bombs
+	ActorStatOverride@Baku:
+		Upgrades:
+		RequiresCondition: baku
 
 civan:
 	Inherits: ivan

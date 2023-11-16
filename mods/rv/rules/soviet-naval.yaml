@@ -393,10 +393,16 @@ dred:
 	#	SoundFiles: vdrestaa.wav, vdrestab.wav, vdrestac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 400
 		Upgrades: upgrade.radioactive_bombs, upgrade.advanced_irradiators, upgrade.high_explosive_bombs
+	ActorStatOverride@Baku:
+		Upgrades:
+		RequiresCondition: baku
 
 dmisl:
 	Inherits: ^ShootableMissile

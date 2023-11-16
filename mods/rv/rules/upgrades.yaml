@@ -205,9 +205,25 @@ upgrade.ap_bullets:
 	Tooltip:
 		Name: Armor-Piercing Bullets
 	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Soviets
 		BuildPaletteOrder: 10
 		BuildDuration: 2250
+		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
+		Description: Improves the damage of the following units by 25%:\n - Sentry Gun\n - Conscript\n - Boris Bukov\n - War Miner\n - Siege Chopper
+	Buildable@Baku:
+		Queue: Upgrade.Baku
+		BuildPaletteOrder: 10
+		BuildDuration: 2250
+		BuildDurationModifier: 100
+		BuildLimit: 1
+		Prerequisites: ~upgrade.baku, basops, ~techlevel.2
+		Description: Improves the damage of the following units by 25%:\n - Sentry Gun\n - Conscript\n - War Miner\n - Sentry Drone
+	Buildable@Shared:
+		Queue: Upgrade.Shared
+		BuildPaletteOrder: 10
+		BuildDuration: 2250
+		BuildDurationModifier: 100
+		BuildLimit: 1
 		Prerequisites: ~upgrade.sovietsorbaku, naradr, ~techlevel.2
 		Description: Improves the damage of the following units by 25%:\n - Sentry Gun\n - Conscript\n - Boris Bukov\n - War Miner\n - Siege Chopper
 	Valued:
@@ -220,9 +236,25 @@ upgrade.bullet_proof_coats:
 	Tooltip:
 		Name: Bullet-Proof Coats
 	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Soviets
 		BuildPaletteOrder: 20
 		BuildDuration: 1500
+		Prerequisites: ~upgrade.soviets, naradr, ~techlevel.2
+		Description: Increases durability of Conscripts and Flak Troopers by 33%.
+	Buildable@Baku:
+		Queue: Upgrade.Baku
+		BuildPaletteOrder: 20
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		BuildLimit: 1
+		Prerequisites: ~upgrade.baku, basops, ~techlevel.2
+		Description: Increases durability of Conscripts and Rocket Soldiers by 33%.
+	Buildable@Shared:
+		Queue: Upgrade.Shared
+		BuildPaletteOrder: 20
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		BuildLimit: 1
 		Prerequisites: ~upgrade.sovietsorbaku, naradr, ~techlevel.2
 		Description: Increases durability of Conscripts and Flak Troopers by 33%.
 	Valued:
@@ -265,9 +297,25 @@ upgrade.nuclear_engines:
 	Tooltip:
 		Name: Nuclear Engines
 	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Soviets
 		BuildPaletteOrder: 40
 		BuildDuration: 1500
+		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
+		Description: Increases the movement speed of the following units:\n - Rhino Tanks by 17%\n - Apocalypse Tanks by 25%\nBoth units will explode violently and leave radiation when destroyed.
+	Buildable@Baku:
+		Queue: Upgrade.Baku
+		BuildPaletteOrder: 40
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		BuildLimit: 1
+		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
+		Description: Increases the movement speed of the following units:\n - Hydra Tanks by 17%\n - Apocalypse Tanks by 25%\nBoth units will explode violently and leave radiation when destroyed.
+	Buildable@Shared:
+		Queue: Upgrade.Shared
+		BuildPaletteOrder: 40
+		BuildDuration: 1500
+		BuildDurationModifier: 100
+		BuildLimit: 1
 		Prerequisites: ~upgrade.sovietsorbaku, natech, ~techlevel.3
 		Description: Increases the movement speed of the following units:\n - Rhino Tanks by 17%\n - Apocalypse Tanks by 25%\nBoth units will explode violently and leave radiation when destroyed.
 	Valued:
@@ -340,7 +388,7 @@ upgrade.overcharge:
 	Tooltip:
 		Name: Overcharge
 	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 70
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.russia, natech, ~techlevel.3
@@ -355,7 +403,7 @@ upgrade.advanced_irradiators:
 	Tooltip:
 		Name: Advanced Irradiators
 	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 80
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.iraq, natech, ~techlevel.3
@@ -370,7 +418,7 @@ upgrade.aerial_propaganda:
 	Tooltip:
 		Name: Aerial Propaganda
 	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 90
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.vietnam, natech, ~techlevel.3
@@ -385,7 +433,7 @@ upgrade.targeted_explosives:
 	Tooltip:
 		Name: Targeted Explosives
 	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 100
 		BuildDuration: 1000
 		Prerequisites: ~upgrade.cuba, natech, ~techlevel.3
@@ -400,7 +448,7 @@ upgrade.high_explosive_bombs:
 	Tooltip:
 		Name: High Explosive Bombs
 	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets, Upgrade.Baku
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 110
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.libya, natech, ~techlevel.3
