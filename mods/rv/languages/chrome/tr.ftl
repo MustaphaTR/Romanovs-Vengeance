@@ -446,6 +446,7 @@ label-notice-container-playtest-available = A preview of the next OpenRA release
 
 ## lobby.yaml
 dropdownbutton-server-lobby-slots = Slot Admin
+button-server-lobby-reset-options = Varsayılanlara Sıfırla
 button-skirmish-tabs-players-tab = Oyuncular
 button-skirmish-tabs-options-tab = Seçenekler
 button-skirmish-tabs-music-tab = Müzik

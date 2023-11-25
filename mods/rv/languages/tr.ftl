@@ -434,6 +434,8 @@ label-map-size-huge = (Dev)
 label-map-size-large = (Büyük)
 label-map-size-medium = (Orta)
 label-map-size-small = (Küçük)
+label-map-searching-count = { $count } harita OpenRA Kaynak Merkezi'nde aranıyor...
+label-map-unavailable-count = { $count } harita OpenRA Kaynak Merkezi'nde bulunamadı
 
 notification-map-deletion-failed = Harita '{ $map }' silinemedi. Ayrıntılar için debug.log dosyasına bakın.
 
