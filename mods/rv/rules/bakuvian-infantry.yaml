@@ -11,7 +11,7 @@ rctt:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 20
-		Description: Anti-Air and anti-Vehicle unit.\n\n  Strong vs Vehicle, Aircraft\n  Weak vs Infantry\n\nUpgradeable with:\n- Bullet-Proof Coats
+		Description: actor-rctt.description
 		Prerequisites: ~infantry.baku, ~techlevel.1
 		BuildDuration: 175
 		BuildDurationModifier: 100
@@ -23,9 +23,9 @@ rctt:
 		Payload: 175
 		Voice: Move
 	Tooltip:
-		Name: Rocket Soldier
+		Name: actor-rctt.name
 	Tooltip@NoRow:
-		Name: Rocket Soldier
+		Name: actor-rctt.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -175,7 +175,7 @@ medi:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, ~techlevel.1
 		BuildPaletteOrder: 50
-		Description: Heals infantry.\n\n  Unarmed
+		Description: actor-medi.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
@@ -184,9 +184,9 @@ medi:
 		Payload: 100
 		Voice: Move
 	Tooltip:
-		Name: Medic
+		Name: actor-medi.name
 	Tooltip@NoRow:
-		Name: Medic
+		Name: actor-medi.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -240,7 +240,7 @@ mech:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, prerequisite.mechanic, warfactory, ~techlevel.2
 		BuildPaletteOrder: 60
-		Description: Repairs friendly vehicles.\n\n  Unarmed
+		Description: actor-mech.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -249,9 +249,9 @@ mech:
 		Payload: 250
 		Voice: Move
 	Tooltip:
-		Name: Mechanic
+		Name: actor-mech.name
 	Tooltip@NoRow:
-		Name: Mechanic
+		Name: actor-mech.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -297,7 +297,7 @@ mengineer:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Tuva
 		BuildPaletteOrder: 35
-		Description: Fast unit capable of capturing enemy structures (slower than regular engineers), repairing damaged buildings and bridges.\nDisarms explosives.\n\n  Unarmed.\n\nAbilities:\n- Cannot be eaten by Attack Dogs
+		Description: actor-mengineer.description
 		Prerequisites: ~infantry.tuva
 		BuildDuration: 300
 	Valued:
@@ -305,9 +305,9 @@ mengineer:
 	DeliversCash:
 		Payload: 300
 	Tooltip:
-		Name: Motorised Engineer
+		Name: actor-mengineer.name
 	Tooltip@NoRow:
-		Name: Motorised Engineer
+		Name: actor-mengineer.name
 	Health:
 		HP: 10000
 	Mobile:
@@ -349,7 +349,7 @@ sspy:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		Prerequisites: ~infantry.baku, basops, ~techlevel.3
-		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\nSteals enemy vehicles.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Can disguise as an enemy infantry
+		Description: actor-sspy-description
 	CaptureManager:
 	Captures:
 		CaptureTypes: vehicle
@@ -368,7 +368,7 @@ mtrp:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
-		Description: Long range infantry armed with smoke bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Reduces damage and sight of enemy units\n- Can kill garrisoned infantry
+		Description: actor-mtrp.description
 		Prerequisites: ~infantry.baku, basops, ~techlevel.3
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -380,9 +380,9 @@ mtrp:
 		Payload: 225
 		Voice: Move
 	Tooltip:
-		Name: Mortar Trooper
+		Name: actor-mtrp.name
 	Tooltip@NoRow:
-		Name: Mortar Trooper
+		Name: actor-mtrp.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -459,7 +459,7 @@ ssnipe:
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Buildable:
 		Queue: Infantry.Unused # Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
-		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- AP Bullets\n- High Caliber Rounds
+		Description: actor-ssnipe-description
 		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
 	RenderSprites:
 		Image: snipe
@@ -474,9 +474,9 @@ ssnipe:
 	Valued:
 		Cost: 70
 	Tooltip:
-		Name: Angry Mob
+		Name: actor-amob.name
 	Tooltip@NoRow:
-		Name: Angry Mob
+		Name: actor-amob.name
 	-SelectionDecorations:
 	-WithTextControlGroupDecoration:
 	-Passenger:
@@ -590,14 +590,14 @@ amob:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~infantry.turkmen, basops, ~techlevel.3
-		Description: Group of civilians armed with pistols and molotov coctails.\n\n  Strong vs Infantry, Structures\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Slowly regains lost members\n\nUpgradeable with:\n- AP Bullets
+		Description: actor-amob.description
 	Tooltip:
-		Name: Angry Mob
-		GenericName: Soldier
+		Name: actor-amob.name
+		GenericName: meta-infantry.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Angry Mob
-		GenericName: Soldier
+		Name: actor-amob.name
+		GenericName: meta-infantry.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -668,7 +668,7 @@ vlkv:
 		BuildPaletteOrder: 190
 		Prerequisites: ~infantry.baku, natech, ~techlevel.4
 		BuildLimit: 1
-		Description: Elite cybernatic commando, armed with\na tesla rifle.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\n  Maximum 1 can be trained.
+		Description: actor-vlkv.description
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -679,9 +679,9 @@ vlkv:
 		Payload: 750
 		Voice: Move
 	Tooltip:
-		Name: Vladislav Volkov
+		Name: actor-vlkv.name
 	Tooltip@NoRow:
-		Name: Vladislav Volkov
+		Name: actor-vlkv.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -832,7 +832,7 @@ chit:
 		Prerequisites: ~infantry.baku, natech, ~techlevel.4
 		BuildPaletteOrder: 200
 		BuildLimit: 1
-		Description: Cybernatic canine capable of destroying infantry and vehicles in seconds.\nCan be deployed to stun nearby infantry for a while.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Stealth units\n- Can detect Spies\n- Cannot be eaten by Attack Dogs\n\n  Maximum 1 can be trained.
+		Description: actor-chit.description
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -843,11 +843,11 @@ chit:
 		Payload: 120
 		Voice: Move
 	Tooltip:
-		Name: Chitzkoi
-		GenericName: Dog
+		Name: actor-chit.name
+		GenericName: actor-dog.generic-name
 	Tooltip@NoRow:
-		Name: Chitzkoi
-		GenericName: Dog
+		Name: actor-chit.name
+		GenericName: actor-dog.generic-name
 	Selectable:
 		Bounds: 724, 1158, 0, -241
 	Health:

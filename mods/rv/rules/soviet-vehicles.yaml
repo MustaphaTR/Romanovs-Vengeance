@@ -17,12 +17,12 @@ harv:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
-		Description: Gathers Ore and Gems.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Description: actor-harv.description
 		Prerequisites: ~vehicleorship.sovietsorbaku, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
-		Name: War Miner
+		Name: actor-harv.name
 	Tooltip@NoRow:
-		Name: War Miner
+		Name: actor-harv.name
 	Armament@primary:
 		Weapon: 20mmrapid
 		Damage: 30
@@ -91,14 +91,14 @@ dron:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: Terror Drone
+		Name: actor-dron.name
 	Tooltip@NoRow:
-		Name: Terror Drone
+		Name: actor-dron.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		Prerequisites: ~vehicle.soviets, ~techlevel.2
 		BuildPaletteOrder: 40
-		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Cannot be mind controlled
+		Description: actor-dron.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -234,9 +234,9 @@ htk:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: Flak Track
+		Name: actor-htk.name
 	Tooltip@NoRow:
-		Name: Flak Track
+		Name: actor-htk.name
 	Selectable:
 		Class: htk
 		Bounds: 1206, 1930, 0, -289
@@ -244,7 +244,7 @@ htk:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		Prerequisites: ~vehicle.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Anti-Air and Anti-Infantry vehicle capable of transporting Infantry.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-htk.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -376,12 +376,12 @@ htnk:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Rhino Heavy Tank
+		Name: actor-htnk.name
 	Tooltip@NoRow:
-		Name: Rhino Heavy Tank
+		Name: actor-htnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
-		Description: Soviet Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
+		Description: actor-htnk.description
 		Prerequisites: ~vehicle.soviets, ~techlevel.1
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -538,14 +538,14 @@ apoc:
 		Payload: 1750
 		Voice: Move
 	Tooltip:
-		Name: Apocalypse Tank
+		Name: actor-apoc.name
 	Tooltip@NoRow:
-		Name: Apocalypse Tank
+		Name: actor-apoc.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: ~vehicle.sovietsorbaku, natech, ~techlevel.4
-		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
+		Description: actor-apoc.description
 		BuildDuration: 875
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -873,14 +873,14 @@ ttnk:
 		Payload: 1200
 		Voice: Move
 	Tooltip:
-		Name: Tesla Tank
+		Name: actor-ttnk.name
 	Tooltip@NoRow:
-		Name: Tesla Tank
+		Name: actor-ttnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.USSR
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicle.russia, naradr, ~techlevel.3
-		Description: Russian special tank armed with dual small Tesla Coils.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		Description: actor-ttnk.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -973,7 +973,7 @@ dtruck:
 		Queue: Vehicle.Shared, Vehicle.Libya
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicle.libya, naradr, ~techlevel.3
-		Description: Demolition Truck, actively armed with nuclear explosives.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Description: actor-dtruck.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -984,9 +984,9 @@ dtruck:
 		Payload: 1500
 		Voice: Move
 	Tooltip:
-		Name: Demolition Truck
+		Name: actor-dtruck.name
 	Tooltip@NoRow:
-		Name: Demolition Truck
+		Name: actor-dtruck.name
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	Health:
@@ -1074,7 +1074,7 @@ v3:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.soviets, natech, ~techlevel.3
-		Description: Long-range rocket artillery.\n\n  Strong vs Buildings, Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
+		Description: actor-v3.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1085,9 +1085,9 @@ v3:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: V3 Launcher
+		Name: actor-v3.name
 	Tooltip@NoRow:
-		Name: V3 Launcher
+		Name: actor-v3.name
 	Health:
 		HP: 15000
 	Armor:
@@ -1177,9 +1177,9 @@ v3:
 m3:
 	Inherits: v3
 	Tooltip:
-		Name: Meme3 Launcher
+		Name: actor-m3.name
 	Tooltip@NoRow:
-		Name: Meme3 Launcher
+		Name: actor-m3.name
 	Buildable:
 		Queue: Vehicle.Unused
 	-MissileSpawnerMaster:
@@ -1197,9 +1197,9 @@ v3rocket:
 	Valued:
 		Cost: 50
 	Tooltip:
-		Name: V3 Rocket
+		Name: actor-v3rocket.name
 	Tooltip@NoRow:
-		Name: V3 Rocket
+		Name: actor-v3rocket.name
 	Health:
 		HP: 5000
 	Armor:
@@ -1263,9 +1263,9 @@ v3rocket:
 m3rocket:
 	Inherits: v3rocket
 	Tooltip:
-		Name: Meme3 Rocket
+		Name: actor-m3rocket.name
 	Tooltip@NoRow:
-		Name: Meme3 Rocket
+		Name: actor-m3rocket.name
 	-BallisticMissile:
 	BallisticMissileOld:
 		LaunchAngle: 160
@@ -1302,16 +1302,16 @@ tric:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: Mortar Tricycle
+		Name: actor-tric.name
 	Tooltip@NoRow:
-		Name: Mortar Tricycle
+		Name: actor-tric.name
 	Selectable:
 		Bounds: 965, 1930, 0, -482
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.2
 		BuildPaletteOrder: 70
-		Description: Fast medium range unit.\n\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Description: actor-tric.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1398,14 +1398,14 @@ deva:
 		Payload: 2200
 		Voice: Move
 	Tooltip:
-		Name: Devastator
+		Name: actor-deva.name
 	Tooltip@NoRow:
-		Name: Devastator
+		Name: actor-deva.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 990
 		Prerequisites: ~vehicle.soviets, natech, ~caslab, ~techlevel.4
-		Description: Soviet Advanced Battle Tank with Double Barrel\narmed with nuclear warheads\n\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Can be deployed to self-destruct and explode violently\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
+		Description: actor-deva.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1569,14 +1569,14 @@ ftnk:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Flame Tank
+		Name: actor-ftnk.name
 	Tooltip@NoRow:
-		Name: Flame Tank
+		Name: actor-ftnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 80
 		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.3
-		Description: Soviet tank armed with dual flamethrowers.\n\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Black Napalm
+		Description: actor-ftnk.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:

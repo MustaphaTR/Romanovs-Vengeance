@@ -8,7 +8,7 @@
 	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Building.Debug
-		Description: Allows construction of base structures.
+		Description: meta-constructionyard.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Building:
@@ -16,9 +16,9 @@
 		Dimensions: 4,4
 	ProvidesPrerequisite@buildingname:
 	Tooltip:
-		Name: Construction Yard
+		Name: meta-constructionyard.name
 	Tooltip@NoRow:
-		Name: Construction Yard
+		Name: meta-constructionyard.name
 	Health:
 		HP: 160000
 	Armor:
@@ -172,9 +172,9 @@
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Expansion Node
+		Name: meta-expansionnode.name
 	Tooltip@NoRow:
-		Name: Expansion Node
+		Name: meta-expansionnode.name
 	BaseBuilding:
 	# Transforms:
 	#	IntoActor: expn
@@ -230,15 +230,15 @@
 		Queue: Building.Shared, Building
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Provides power for other structures.
+		Description: meta-powerplant.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Power Plant
+		Name: meta-powerplant.name
 	Tooltip@NoRow:
-		Name: Power Plant
+		Name: meta-powerplant.name
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite:
 		Prerequisite: power
@@ -287,15 +287,15 @@
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 20
 		Prerequisites: power, ~techlevel.1
-		Description: Trains infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: meta-barracks.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Barracks
+		Name: meta-barracks.name
 	Tooltip@NoRow:
-		Name: Barracks
+		Name: meta-barracks.name
 	ProvidesPrerequisite:
 		Prerequisite: barracks
 	ProvidesPrerequisite@production:
@@ -394,15 +394,15 @@
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 30
 		Prerequisites: power, ~!global-megawealth, ~techlevel.1
-		Description: Processes ore into credits.\n\n  Can be rotated.
+		Description: meta-refinery.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Ore Refinery
+		Name: meta-refinery.name
 	Tooltip@NoRow:
-		Name: Ore Refinery
+		Name: meta-refinery.name
 	ProvidesPrerequisite:
 		Prerequisite: refinery
 	ProvidesPrerequisite@default:
@@ -591,15 +591,15 @@ refdock:
 		Queue: Support
 		BuildPaletteOrder: 30
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
-		Description: Stores excess Ore.
+		Description: meta-silo.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 300
 	Tooltip:
-		Name: Ore Silo
+		Name: meta-silo.name
 	Tooltip@NoRow:
-		Name: Ore Silo
+		Name: meta-silo.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
@@ -658,15 +658,15 @@ refdock:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 50
 		Prerequisites: refinery, ~techlevel.1
-		Description: Produces vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: meta-warfactory.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: War Factory
+		Name: meta-warfactory.name
 	Tooltip@NoRow:
-		Name: War Factory
+		Name: meta-warfactory.name
 	ProvidesPrerequisite@warfactory:
 		Prerequisite: warfactory
 	ProvidesPrerequisite@production:
@@ -785,14 +785,14 @@ refdock:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Naval Yard
+		Name: meta-shipyard.name
 	Tooltip@NoRow:
-		Name: Naval Yard
+		Name: meta-shipyard.name
 	Buildable:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 60
 		Prerequisites: refinery, ~techlevel.1
-		Description: Produces ships, submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+		Description: meta-shipyard.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Targetable:
@@ -984,15 +984,15 @@ refdock:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 80
 		Prerequisites: warfactory, ~techlevel.1
-		Description: Repairs vehicles and removes Terror Drones for a price.
+		Description: meta-servicedepot.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Service Depot
+		Name: meta-servicedepot.name
 	Tooltip@NoRow:
-		Name: Service Depot
+		Name: meta-servicedepot.name
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite:
 		Prerequisite: repairpad
@@ -1061,7 +1061,7 @@ refdock:
 	Buildable:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 40
-		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction.
+		Description: meta-radar.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Valued:
@@ -1118,7 +1118,7 @@ refdock:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 70
 		Prerequisites: radar, ~techlevel.2
-		Description: Produces aircraft.\n\nAbilities:\n- Comes with 1 repair drone.
+		Description: meta-helipad.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1228,15 +1228,15 @@ refdock:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 90
 		Prerequisites: production, radar, ~techlevel.3
-		Description: Allows deployment of advanced units.\nResearches advanced upgrades.\n\n  Can be rotated.
+		Description: meta-battlelab.description
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 3000
 	Tooltip:
-		Name: Battle Lab
+		Name: meta-battlelab.name
 	Tooltip@NoRow:
-		Name: Battle Lab
+		Name: meta-battlelab.name
 	Health:
 		HP: 75000
 	Armor:
@@ -1393,40 +1393,40 @@ power:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Power Plant
+		Name: actor-power-name
 
 refinery:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Ore Refinery
+		Name: actor-refinery-name
 
 barracks:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Infantry Production
+		Name: actor-barracks-name
 
 radar:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Radar
+		Name: actor-radar-name
 
 warfactory:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Vehicle Production
+		Name: actor-warfactory-name
 
 production:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Unit Production
+		Name: actor-production-name
 
 repairpad:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Service Depot
+		Name: actor-repairpad-name

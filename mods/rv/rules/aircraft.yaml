@@ -10,9 +10,9 @@ shad:
 	DamagedByTintedCells@ORANGE:
 		RequiresCondition: !airborne
 	Tooltip:
-		Name: Night Hawk
+		Name: actor-shad.name
 	Tooltip@NoRow:
-		Name: Night Hawk
+		Name: actor-shad.name
 	Selectable:
 		Class: shad
 		Bounds: 1689, 2896, 0, -965
@@ -63,7 +63,7 @@ shad:
 		Queue: Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		BuildPaletteOrder: 20
 		Prerequisites: ~aircraft.allies, gapile, ~techlevel.2
-		Description: Infantry Transport Helicopter.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilties:\n- Can detect Stealth units\n- Invisible on radar
+		Description: actor-shad.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -166,9 +166,9 @@ shad:
 shadhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Night Hawk
+		Name: actor-shad.name
 	Tooltip@NoRow:
-		Name: Night Hawk
+		Name: actor-shad.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180
@@ -213,14 +213,14 @@ zep:
 		Payload: 2000
 		Voice: Move
 	Tooltip:
-		Name: Kirov Airship
+		Name: actor-zep.name
 	Tooltip@NoRow:
-		Name: Kirov Airship
+		Name: actor-zep.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 50
 		Prerequisites: ~aircraft.soviets, natech, ~techlevel.4
-		Description: Massive zeppelins that are the aerial terror of the Soviet force.\n\n  Strong vs Buildings\n  Weak vs Infantry, Vehicles\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- Aerial Propaganda (Vietnam)
+		Description: actor-zep.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -362,9 +362,9 @@ zephusk:
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Tooltip:
-		Name: Kirov Airship
+		Name: actor-zep.name
 	Tooltip@NoRow:
-		Name: Kirov Airship
+		Name: actor-zep.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 30
@@ -436,14 +436,14 @@ orca:
 		Payload: 1200
 		Voice: Move
 	Tooltip:
-		Name: Harrier
+		Name: actor-orca.name
 	Tooltip@NoRow:
-		Name: Harrier
+		Name: actor-orca.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		Prerequisites: ~aircraft.allies, !prerequisite.enoughair, ~techlevel.3
 		BuildPaletteOrder: 10
-		Description: Fast assault fighter.\nCannot be built more than landing pads available.\n\n  Strong vs Buildings, Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Air-to-Air Missile Systems\n- Predator Missiles
+		Description: actor-orca.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -626,9 +626,9 @@ orcahusk:
 	Inherits@A2A: ^AffectedByA2AMissiles
 	Inherits@PREDATOR: ^AffectedByPredatorMissiles
 	Tooltip:
-		Name: Harrier
+		Name: actor-orca.name
 	Tooltip@NoRow:
-		Name: Harrier
+		Name: actor-orca.name
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
@@ -664,9 +664,9 @@ orcahusk.VTOL:
 	Inherits@A2A: ^AffectedByA2AMissiles
 	Inherits@PREDATOR: ^AffectedByPredatorMissiles
 	Tooltip:
-		Name: Harrier
+		Name: actor-orca.name
 	Tooltip@NoRow:
-		Name: Harrier
+		Name: actor-orca.name
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
@@ -704,14 +704,14 @@ beag:
 	DeliversCash:
 		Payload: 1500
 	Tooltip:
-		Name: Black Eagle
+		Name: actor-beag.name
 	Tooltip@NoRow:
-		Name: Black Eagle
+		Name: actor-beag.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Korea
 		BuildPaletteOrder: 30
 		Prerequisites: ~aircraft.korea, !prerequisite.enoughair, ~techlevel.3
-		Description: Aircraft armed with EMP bomb.\nCannot be built more than landing pads available.\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft
+		Description: actor-beag.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	SpawnActorOnDeath:
@@ -781,9 +781,9 @@ beag:
 beaghusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: Black Eagle
+		Name: actor-beag.name
 	Tooltip@NoRow:
-		Name: Black Eagle
+		Name: actor-beag.name
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
@@ -807,9 +807,9 @@ beaghusk:
 beaghusk.VTOL:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Black Eagle
+		Name: actor-beag.name
 	Tooltip@NoRow:
-		Name: Black Eagle
+		Name: actor-beag.name
 	FallsToEarth:
 		Explosion: PlaneExplode
 	Aircraft:
@@ -840,9 +840,9 @@ pdplane:
 		Bounds: 2413, 3861
 	RejectsOrders:
 	Tooltip:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Tooltip@NoRow:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Aircraft:
 		CruiseAltitude: 5c852
 		Repulsable: false
@@ -895,9 +895,9 @@ pdplane:
 pdplanehusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Tooltip@NoRow:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 270
@@ -907,9 +907,9 @@ pdplanehusk:
 bplndrop:
 	Inherits: pdplane
 	Tooltip:
-		Name: MiG
+		Name: actor-bpln.name
 	Tooltip@NoRow:
-		Name: MiG
+		Name: actor-bpln.name
 	-Targetable@Airborne:
 	Aircraft:
 		Repulsable: false
@@ -983,9 +983,9 @@ pdplane.parabomb:
 a10:
 	Inherits: alplane
 	Tooltip:
-		Name: A-10 Thunderbolt
+		Name: actor-a10.name
 	Tooltip@NoRow:
-		Name: A-10 Thunderbolt
+		Name: actor-a10.name
 	Armament:
 		Weapon: A10Missile
 		LocalOffset: 0,-512,0
@@ -1027,9 +1027,9 @@ a10:
 a10husk:
 	Inherits: pdplanehusk
 	Tooltip:
-		Name: A-10 Thunderbolt
+		Name: actor-a10.name
 	Tooltip@NoRow:
-		Name: A-10 Thunderbolt
+		Name: actor-a10.name
 	Aircraft:
 		Speed: 300
 	RenderVoxels:
@@ -1038,9 +1038,9 @@ a10husk:
 badgr.airstrike:
 	Inherits: pdplane
 	Tooltip:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	Tooltip@NoRow:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	Armament:
 		Weapon: BadgerBomb
 		PauseOnCondition: !ammo
@@ -1060,9 +1060,9 @@ badgr.airstrike:
 badgr.airstrikehusk:
 	Inherits: pdplanehusk
 	Tooltip:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	Tooltip@NoRow:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	Aircraft:
 		Speed: 300
 	RenderVoxels:
@@ -1071,9 +1071,9 @@ badgr.airstrikehusk:
 txbmb:
 	Inherits: pcplane
 	Tooltip:
-		Name: Toxin Bomber
+		Name: actor-txbmb.name
 	Tooltip@NoRow:
-		Name: Toxin Bomber
+		Name: actor-txbmb.name
 	Armament:
 		Weapon: ToxinBomb
 		LocalOffset: 0,-512,0
@@ -1110,9 +1110,9 @@ txbmb:
 txbmbhusk:
 	Inherits: pdplanehusk
 	Tooltip:
-		Name: Toxin Bomber
+		Name: actor-txbmb.name
 	Tooltip@NoRow:
-		Name: Toxin Bomber
+		Name: actor-txbmb.name
 	Aircraft:
 		Speed: 300
 	RenderVoxels:
@@ -1121,9 +1121,9 @@ txbmbhusk:
 f22drop:
 	Inherits: alplane
 	Tooltip:
-		Name: F-22 Raptor
+		Name: actor-f22drop.name
 	Tooltip@NoRow:
-		Name: F-22 Raptor
+		Name: actor-f22drop.name
 	-Targetable@Airborne:
 	Aircraft:
 		Repulsable: false
@@ -1175,9 +1175,9 @@ pdplane.emp:
 b52:
 	Inherits: alplane
 	Tooltip:
-		Name: B-52
+		Name: actor-b52.name
 	Tooltip@NoRow:
-		Name: B-52
+		Name: actor-b52.name
 	Armament:
 		Weapon: CarpetBomb
 		PauseOnCondition: !ammo
@@ -1195,9 +1195,9 @@ b52:
 b52husk:
 	Inherits: alplanehusk
 	Tooltip:
-		Name: B-52
+		Name: actor-b52.name
 	Tooltip@NoRow:
-		Name: B-52
+		Name: actor-b52.name
 	RenderVoxels:
 		Image: b52
 	Aircraft:
@@ -1321,9 +1321,9 @@ pdplane.crate:
 		Bounds: 2413, 3861
 	RejectsOrders:
 	Tooltip:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Tooltip@NoRow:
-		Name: Cargo Plane
+		Name: actor-pdplane.name
 	Aircraft:
 		CruiseAltitude: 5c852
 		-AirborneCondition:
@@ -1364,9 +1364,9 @@ hornet:
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Hornet
+		Name: actor-hornet.name
 	Tooltip@NoRow:
-		Name: Hornet
+		Name: actor-hornet.name
 	Health:
 		HP: 7500
 	Armor:
@@ -1433,9 +1433,9 @@ hornet:
 hornethusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: Hornet
+		Name: actor-hornet.name
 	Tooltip@NoRow:
-		Name: Hornet
+		Name: actor-hornet.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 210
@@ -1449,9 +1449,9 @@ hornethusk:
 hornethusk.VTOL:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Hornet
+		Name: actor-hornet.name
 	Tooltip@NoRow:
-		Name: Hornet
+		Name: actor-hornet.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 210
@@ -1469,9 +1469,9 @@ asw:
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Osprey
+		Name: actor-asw.name
 	Tooltip@NoRow:
-		Name: Osprey
+		Name: actor-asw.name
 	Health:
 		HP: 13500
 	Armor:
@@ -1540,9 +1540,9 @@ asw:
 aswhusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: Osprey
+		Name: actor-asw.name
 	Tooltip@NoRow:
-		Name: Osprey
+		Name: actor-asw.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 180
@@ -1556,9 +1556,9 @@ aswhusk:
 aswhusk.VTOL:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Osprey
+		Name: actor-asw.name
 	Tooltip@NoRow:
-		Name: Osprey
+		Name: actor-asw.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 180
@@ -1580,9 +1580,9 @@ spyp:
 		Bounds: 2413, 3861
 	RejectsOrders:
 	Tooltip:
-		Name: Spy Plane
+		Name: actor-spyp.name
 	Tooltip@NoRow:
-		Name: Spy Plane
+		Name: actor-spyp.name
 	Aircraft:
 		CruiseAltitude: 5c852
 		Repulsable: false
@@ -1616,9 +1616,9 @@ spyp:
 spyphusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: Spy Plane
+		Name: actor-spyp.name
 	Tooltip@NoRow:
-		Name: Spy Plane
+		Name: actor-spyp.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 225
@@ -1653,9 +1653,9 @@ schp:
 	DamagedByTintedCells@ORANGE:
 		RequiresCondition: !airborne
 	Tooltip:
-		Name: Siege Chopper
+		Name: actor-schp.name
 	Tooltip@NoRow:
-		Name: Siege Chopper
+		Name: actor-schp.name
 	Selectable:
 		Class: schp
 		Bounds: 1689, 2896, 0, -965
@@ -1769,7 +1769,7 @@ schp:
 		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 10
 		Prerequisites: ~aircraft.soviets, ~techlevel.3
-		Description: Helicopter capable of deploying into a long range artillery.\n\nMobile:\n  Strong vs Infantry\n  Weak vs Vehicles\nDeployed:\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Description: actor-schp.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1896,9 +1896,9 @@ schp:
 schphusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Siege Chopper
+		Name: actor-schp.name
 	Tooltip@NoRow:
-		Name: Siege Chopper
+		Name: actor-schp.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 165
@@ -1935,9 +1935,9 @@ bpln:
 	DeliversCash:
 		Payload: 1250
 	Tooltip:
-		Name: MiG
+		Name: actor-bpln.name
 	Tooltip@NoRow:
-		Name: MiG
+		Name: actor-bpln.name
 	-Buildable:
 	-RevealsShroud:
 	-RevealsShroud@Ground:
@@ -2029,12 +2029,12 @@ bpln.buildable:
 	Inherits: orca
 	Inherits@CRYO: ^AffectedByCryoWarheads
 	Tooltip:
-		Name: MiG
+		Name: actor-bpln.name
 	Tooltip@NoRow:
-		Name: MiG
+		Name: actor-bpln.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Baku
-		Description: Fast assault fighter.\nCannot be built more than landing strips available.\n\n  Strong vs Buildings, Vehicles, Aircraft\n  Weak vs Infantry
+		Description: actor-bpln.description
 		Prerequisites: ~aircraft.baku, !prerequisite.enoughair, ~techlevel.3
 	VoiceAnnouncement:
 		Voice: Attack
@@ -2131,9 +2131,9 @@ bpln.buildable:
 bplnhusk:
 	Inherits: ^PlaneHusk
 	Tooltip:
-		Name: MiG
+		Name: actor-bpln.name
 	Tooltip@NoRow:
-		Name: MiG
+		Name: actor-bpln.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 240
@@ -2146,9 +2146,9 @@ bplnhusk:
 bplnhusk.VTOL:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: MiG
+		Name: actor-bpln.name
 	Tooltip@NoRow:
-		Name: MiG
+		Name: actor-bpln.name
 	Aircraft:
 		TurnSpeed: 20
 		Speed: 240
@@ -2204,14 +2204,14 @@ disk:
 		PlayerExperience: 88
 		Voice: Move
 	Tooltip:
-		Name: Leech Disc
+		Name: actor-disk.name
 	Tooltip@NoRow:
-		Name: Leech Disc
+		Name: actor-disk.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Yuri, Aircraft.Lazarus
 		BuildPaletteOrder: 40
 		Prerequisites: ~aircraft.yuri, yatech, ~techlevel.4
-		Description: Floating Disc armed with lasers.\nCan disable Power Plants and powered Defenses.\nCan steal resources from enemy Refineries.\nCan steal technology from enemy Battle Labs.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)\n- Laser Capacitors (Lazarus Corps)
+		Description: actor-disk.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -2408,9 +2408,9 @@ diskhusk:
 	Inherits: ^HelicopterHusk
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Tooltip:
-		Name: Leech Disc
+		Name: actor-disk.name
 	Tooltip@NoRow:
-		Name: Leech Disc
+		Name: actor-disk.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 165
@@ -2453,9 +2453,9 @@ hind:
 	DamagedByTintedCells@ORANGE:
 		RequiresCondition: !airborne
 	Tooltip:
-		Name: Hind Carryall
+		Name: actor-hind.name
 	Tooltip@NoRow:
-		Name: Hind Carryall
+		Name: actor-hind.name
 	Selectable:
 		Class: hind
 		Bounds: 1689, 2896, 0, -965
@@ -2476,7 +2476,7 @@ hind:
 		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
 		BuildPaletteOrder: 20
 		Prerequisites: ~aircraft.sovietsorbaku, naweap, ~techlevel.2
-		Description: Vehicle Transport Helicopter\n\n  Unarmed
+		Description: actor-hind.description
 		IconPalette: ts-chrome
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -2557,9 +2557,9 @@ hind:
 hindhusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Hind Carryall
+		Name: actor-hind.name
 	Tooltip@NoRow:
-		Name: Hind Carryall
+		Name: actor-hind.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180
@@ -2611,13 +2611,13 @@ fortress:
 		PlayerExperience: 125
 		Voice: Move
 	Tooltip:
-		Name: B2 Spirit
+		Name: actor-fortress.name
 	Tooltip@NoRow:
-		Name: B2 Spirit
+		Name: actor-fortress.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		BuildPaletteOrder: 40
-		Description: Carpet bomber plane.\nCannot be built more than landing pads available.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\nAbilties:\n- Invisible on radar\n\nUpgradeable with:\n- Increased Payload
+		Description: actor-fortress.description
 		Prerequisites: ~aircraft.allies, gatech, !prerequisite.enoughair, ~techlevel.4
 		BuildDuration: 1250
 		BuildDurationModifier: 100
@@ -2828,9 +2828,9 @@ fortresshusk:
 	Inherits: ^PlaneHusk
 	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
 	Tooltip:
-		Name: B2 Spirit
+		Name: actor-fortress.name
 	Tooltip@NoRow:
-		Name: B2 Spirit
+		Name: actor-fortress.name
 	FallsToEarth:
 		Explosion: B2Explode
 	Aircraft:
@@ -2860,9 +2860,9 @@ fortresshusk.VTOL:
 	Inherits: ^HelicopterHusk
 	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
 	Tooltip:
-		Name: B2 Spirit
+		Name: actor-fortress.name
 	Tooltip@NoRow:
-		Name: B2 Spirit
+		Name: actor-fortress.name
 	FallsToEarth:
 		Explosion: B2Explode
 	Aircraft:
@@ -2897,9 +2897,9 @@ sdrn:
 		Bounds: 1544, 3089
 	RejectsOrders:
 	Tooltip:
-		Name: Scout Drone
+		Name: actor-sdrn.name
 	Tooltip@NoRow:
-		Name: Scout Drone
+		Name: actor-sdrn.name
 	Aircraft:
 		CruiseAltitude: 3c852
 		Repulsable: false
@@ -2958,14 +2958,14 @@ txdx:
 		PlayerExperience: 50
 		Voice: Move
 	Tooltip:
-		Name: Lethocerus Platform
+		Name: actor-txdx.name
 	Tooltip@NoRow:
-		Name: Lethocerus Platform
+		Name: actor-txdx.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Yuri, Aircraft.Lazarus
 		BuildPaletteOrder: 10
 		Prerequisites: ~aircraft.yuri, ~techlevel.2
-		Description: Light Transport Disc armed with toxin missile launchers.\n\n  Strong vs Infantry\n  Weak vs Structures, Aircraft\n\nAbilties:\n- Can detect Stealth units\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)\n- Rocket Barrage
+		Description: actor-txdx.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Aircraft:
@@ -3116,9 +3116,9 @@ txdxhusk:
 	Inherits: ^HelicopterHusk
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Tooltip:
-		Name: Lethocerus Platform
+		Name: actor-txdx.name
 	Tooltip@NoRow:
-		Name: Lethocerus Platform
+		Name: actor-txdx.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180
@@ -3164,9 +3164,9 @@ kite:
 	DamagedByTintedCells@ORANGE:
 		RequiresCondition: !airborne
 	Tooltip:
-		Name: Black Kite
+		Name: actor-kite.name
 	Tooltip@NoRow:
-		Name: Black Kite
+		Name: actor-kite.name
 	Selectable:
 		Bounds: 1689, 2896, 0, -965
 	Health:
@@ -3201,7 +3201,7 @@ kite:
 		Queue: Aircraft.Shared, Aircraft.Vietnam
 		BuildPaletteOrder: 40
 		Prerequisites: ~aircraft.vietnam, naradr, ~techlevel.3
-		Description: Helicopter armed with napalm bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles\n\nUpgradeable with:\n- Black Napalm\n- Aerial Propaganda (Vietnam)
+		Description: actor-kite.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -3283,9 +3283,9 @@ kitehusk:
 	Inherits: ^HelicopterHusk
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Tooltip:
-		Name: Black Kite
+		Name: actor-kite.name
 	Tooltip@NoRow:
-		Name: Black Kite
+		Name: actor-kite.name
 	Aircraft:
 		TurnSpeed: 28
 		Speed: 150
@@ -3352,14 +3352,14 @@ magnedisk:
 		PlayerExperience: 60
 		Voice: Move
 	Tooltip:
-		Name: Mosquito Disc
+		Name: actor-magnedisk.name
 	Tooltip@NoRow:
-		Name: Mosquito Disc
+		Name: actor-magnedisk.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Lazarus
 		BuildPaletteOrder: 30
 		Prerequisites: ~aircraft.psinepal, yadome, ~techlevel.3
-		Description: High-tech Disc armed with material drainer.\nAfter attacking organic material 3 times a Blood Vessel will be spawned.\n\n  Strong vs Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Disc Armor (Lunar Eclipse)
+		Description: actor-magnedisk.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	Aircraft:
@@ -3472,9 +3472,9 @@ magnediskhusk:
 	Inherits: ^HelicopterHusk
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Tooltip:
-		Name: Mosquito Disc
+		Name: actor-magnedisk.name
 	Tooltip@NoRow:
-		Name: Mosquito Disc
+		Name: actor-magnedisk.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180
@@ -3529,9 +3529,9 @@ havoc:
 	DamagedByTintedCells@ORANGE:
 		RequiresCondition: !airborne
 	Tooltip:
-		Name: Havoc Attack Helicopter
+		Name: actor-havoc.name
 	Tooltip@NoRow:
-		Name: Havoc Attack Helicopter
+		Name: actor-havoc.name
 	Selectable:
 		Bounds: 1689, 2896, 0, -965
 	Health:
@@ -3560,7 +3560,7 @@ havoc:
 		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 30
 		Prerequisites: ~aircraft.soviets, prerequisite.havoc, naradr, ~techlevel.3
-		Description: Armored helicopter armed with anti-tank rockets.\n\n  Strong vs Vehicles\n\n  Weak vs Infantry, Aircraft
+		Description: actor-havoc.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -3634,9 +3634,9 @@ havoc:
 havochusk:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Havoc Attack Helicopter
+		Name: actor-havoc.name
 	Tooltip@NoRow:
-		Name: Havoc Attack Helicopter
+		Name: actor-havoc.name
 	Aircraft:
 		TurnSpeed: 28
 		Speed: 165
@@ -3685,13 +3685,13 @@ badgr:
 		PlayerExperience: 125
 		Voice: Move
 	Tooltip:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	Tooltip@NoRow:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Baku
 		BuildPaletteOrder: 40
-		Description: Heavy bomber plane armed with a fuel air bomb.\nCannot be built more than landing pads available.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft
+		Description: actor-badgr.description
 		Prerequisites: ~aircraft.baku, natech, !prerequisite.enoughair, ~techlevel.4
 		BuildDuration: 1250
 		BuildDurationModifier: 100
@@ -3810,9 +3810,9 @@ badgrhusk:
 	Inherits: ^PlaneHusk
 	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
 	Tooltip:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	Tooltip@NoRow:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	FallsToEarth:
 		Explosion: B2Explode
 	Aircraft:
@@ -3836,9 +3836,9 @@ badgrhusk:
 badgrhusk.VTOL:
 	Inherits: ^HelicopterHusk
 	Tooltip:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	Tooltip@NoRow:
-		Name: Tu-16 Badger
+		Name: actor-badgr.name
 	FallsToEarth:
 		Explosion: B2Explode
 	Aircraft:
@@ -3865,7 +3865,7 @@ repdron:
 	Inherits@STEALTHGEN: ^AffectedByStealthGenerator
 	-GivesExperience:
 	Tooltip:
-		Name: Repair Drone
+		Name: actor-repdron.name
 	-Selectable:
 	-SelectionDecorations:
 	Interactable:

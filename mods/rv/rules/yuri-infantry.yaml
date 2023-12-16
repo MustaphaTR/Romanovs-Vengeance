@@ -10,15 +10,15 @@ slav:
 		BuildAtProductionType: Slave
 		BuildPaletteOrder: 60
 		Prerequisites: ~showslave, yarefn, ~techlevel.1
-		Description: Gathers Ore and Gems.
+		Description: actor-slav.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 100
 	Tooltip:
-		Name: Slave
+		Name: actor-slav.name
 	Tooltip@NoRow:
-		Name: Slave
+		Name: actor-slav.name
 	DeliversCash:
 		Payload: 25
 		Voice: Move
@@ -113,7 +113,7 @@ init:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
 		Prerequisites: ~infantry.yuri, ~techlevel.1
-		Description: Basic Yuri Infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Camouflage
+		Description: actor-init.description
 		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -124,9 +124,9 @@ init:
 		Payload: 75
 		Voice: Move
 	Tooltip:
-		Name: Initiate
+		Name: actor-init.name
 	Tooltip@NoRow:
-		Name: Initiate
+		Name: actor-init.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -248,7 +248,7 @@ brute:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 20
 		Prerequisites: ~infantry.yuri, ~techlevel.1
-		Description: Powerful soldiers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+		Description: actor-brute.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -256,9 +256,9 @@ brute:
 	Valued:
 		Cost: 300
 	Tooltip:
-		Name: Brute
+		Name: actor-brute.name
 	Tooltip@NoRow:
-		Name: Brute
+		Name: actor-brute.name
 	DeliversCash:
 		Payload: 150
 		Voice: Move
@@ -391,7 +391,7 @@ virus:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
 		Prerequisites: ~infantry.yuri, yadome, ~techlevel.2
-		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Camouflage
+		Description: actor-virus.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -399,9 +399,9 @@ virus:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Virus
+		Name: actor-virus.name
 	Tooltip@NoRow:
-		Name: Virus
+		Name: actor-virus.name
 	DeliversCash:
 		Payload: 300
 		Voice: Move
@@ -456,7 +456,7 @@ yuripsi:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 90
 		Prerequisites: ~infantry.yuri, yadome, ~techlevel.3
-		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
+		Description: actor-yuripsi.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -478,7 +478,7 @@ yurix:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 110
 		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n- Can move over water\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)\n\n  Maximum 1 can be trained.
+		Description: actor-yurix.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Valued:
@@ -574,7 +574,7 @@ lunr:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
 		Prerequisites: ~infantry.psimoon, yadome, ~techlevel.3
-		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
+		Description: actor-lunr.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -582,9 +582,9 @@ lunr:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Tooltip@NoRow:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -689,9 +689,9 @@ lunr.husk:
 	-RenderVoxels:
 	-WithVoxelBody:
 	Tooltip:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Tooltip@NoRow:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180
@@ -739,7 +739,7 @@ gtrp:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.yuri, ~techlevel.1
 		BuildPaletteOrder: 50
-		Description: Infantry armed with a heavy gatling cannon.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Chainguns
+		Description: actor-gtrp.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -750,9 +750,9 @@ gtrp:
 		Payload: 150
 		Voice: Move
 	Tooltip:
-		Name: Gatling Trooper
+		Name: actor-gtrp.name
 	Tooltip@NoRow:
-		Name: Gatling Trooper
+		Name: actor-gtrp.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1114,7 +1114,7 @@ spct:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
-		Description: Invisible infantry armed with AP rifles with bullets capable of slowing enemy units.\nCan be deployed to make nearby units invisible but itself becomes visible.\n\n  Strong vs Vehicles\n  Weak vs Buildings, Aircraft
+		Description: actor-spct.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1125,9 +1125,9 @@ spct:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Lazarus Spectre
+		Name: actor-spct.name
 	Tooltip@NoRow:
-		Name: Lazarus Spectre
+		Name: actor-spct.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1265,7 +1265,7 @@ ttrp:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 980
 		Prerequisites: ~infantry.yuri, ~soviets.tech.infiltrated, ~techlevel.4
-		Description: Infantry armed with a toxin sprayer and toxin bombs.\nImmune to toxic clouds.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can place Toxin Bombs on buildings
+		Description: actor-ttrp.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Buildable@Soviet:
@@ -1273,7 +1273,7 @@ ttrp:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 990
 		Prerequisites: ~infantry.sovietsorbaku, ~yuri.tech.infiltrated, ~techlevel.4
-		Description: Infantry armed with a toxin sprayer and toxin bombs.\nImmune to toxic clouds.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can place Toxin Bombs on buildings
+		Description: actor-ttrp.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1284,9 +1284,9 @@ ttrp:
 		Payload: 750
 		Voice: Move
 	Tooltip:
-		Name: Intoxicator
+		Name: actor-ttrp.name
 	Tooltip@NoRow:
-		Name: Intoxicator
+		Name: actor-ttrp.name
 	Selectable:
 		Class: ttrp
 		Bounds: 482, 1448, 0, -530
@@ -1403,15 +1403,15 @@ crkt:
 		Payload: 750
 		Voice: Move
 	Tooltip:
-		Name: Chaos Trooper
+		Name: actor-crkt.name
 	Tooltip@NoRow:
-		Name: Chaos Trooper
+		Name: actor-crkt.name
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 990
 		Prerequisites: ~infantry.yuri, ~yuri.tech.infiltrated, ~techlevel.4
-		Description: Long range rocket infantry armed with chaos warheads.\n\n  Strong vs Infantry, Vehicles, Aircraft\n  Weak vs Buildings\n\nAbilities:\n- Immune to Chaos Gas
+		Description: actor-crkt.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1539,9 +1539,9 @@ visc_lrg:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Tooltip:
-		Name: Blood Vessel
+		Name: actor-visc-lrg.name
 	Tooltip@NoRow:
-		Name: Blood Vessel
+		Name: actor-visc-lrg.name
 	Valued:
 		Cost: 200
 	Health:

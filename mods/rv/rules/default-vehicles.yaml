@@ -7,7 +7,7 @@
 		Queue: Vehicle.Shared, Vehicle, Ship.Shared, Ship
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
-		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
+		Description: meta-miner.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -16,9 +16,9 @@
 		Payload: 1400
 		Voice: Move
 	Tooltip:
-		Name: Ore Miner
+		Name: meta-miner.name
 	Tooltip@NoRow:
-		Name: Ore Miner
+		Name: meta-miner.name
 	Selectable:
 		Priority: 7
 		Bounds: 1544, 2509, 0, -289
@@ -133,7 +133,7 @@
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle, Ship.Shared, Ship
 		BuildPaletteOrder: 50
-		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water
+		Description: meta-constructionvehicle.description
 		Prerequisites: ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -143,9 +143,9 @@
 		Payload: 4000
 		Voice: Move
 	Tooltip:
-		Name: Mobile Construction Vehicle
+		Name: meta-constructionvehicle.name
 	Tooltip@NoRow:
-		Name: Mobile Construction Vehicle
+		Name: meta-constructionvehicle.name
 	Selectable:
 		Priority: 4
 		Bounds: 1544, 2509, 0, -289
@@ -258,7 +258,7 @@
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle, Ship.Shared, Ship
 		BuildPaletteOrder: 60
-		Description: Deploys into an Expansion Node.\nCannot be undeployed back.\n\n  Unarmed\n\nAbilities:\n- Can move over water
+		Description: meta-expansionvehicle.description
 		Prerequisites: ~techlevel.1, ~!ai.ev
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -268,9 +268,9 @@
 		Payload: 1200
 		Voice: Move
 	Tooltip:
-		Name: Mobile Expansion Vehicle
+		Name: meta-expansionvehicle.name
 	Tooltip@NoRow:
-		Name: Mobile Expansion Vehicle
+		Name: meta-expansionvehicle.name
 	Selectable:
 		Priority: 4
 		Bounds: 1544, 2509, 0, -289
@@ -393,7 +393,7 @@
 		Queue: Vehicle.Shared, Vehicle
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		Description: meta-mainbattletank.description
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:

@@ -1,4 +1,3 @@
-
 ## MapOptions, MissionBrowserLogic
 options-game-speed =
     .slowest = Slowest

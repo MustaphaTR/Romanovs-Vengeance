@@ -15,7 +15,7 @@ e2:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Cheap rifle infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Bullet-Proof Coats\n- Molotov Cocktails\n- Armor-Piercing Bullets
+		Description: actor-e2.description
 		BuildDuration: 75
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -26,9 +26,9 @@ e2:
 		Payload: 50
 		Voice: Move
 	Tooltip:
-		Name: Conscript
+		Name: actor-e2.name
 	Tooltip@NoRow:
-		Name: Conscript
+		Name: actor-e2.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -233,7 +233,7 @@ flakt:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
-		Description: Anti-Air and anti-Infantry unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Bullet-Proof Coats
+		Description: actor-flakt.description
 		Prerequisites: ~infantry.soviets, ~techlevel.1
 		BuildDuration: 175
 		BuildDurationModifier: 100
@@ -245,9 +245,9 @@ flakt:
 		Payload: 150
 		Voice: Move
 	Tooltip:
-		Name: Flak Trooper
+		Name: actor-flakt.name
 	Tooltip@NoRow:
-		Name: Flak Trooper
+		Name: actor-flakt.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -462,7 +462,7 @@ shk:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 20
-		Description: Special armored unit using electricity.\n\n  Strong vs Infantry, Tanks\n  Weak vs Aircraft\n\nAbilities:\n- Can charge Tesla Coils\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		Description: actor-shk.description
 		Prerequisites: ~infantry.soviets, ~techlevel.1
 		BuildDuration: 175
 		BuildDurationModifier: 100
@@ -474,9 +474,9 @@ shk:
 		Payload: 200
 		Voice: Move
 	Tooltip:
-		Name: Tesla Trooper
+		Name: actor-shk.name
 	Tooltip@NoRow:
-		Name: Tesla Trooper
+		Name: actor-shk.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -608,7 +608,7 @@ terror:
 		Queue: Infantry.Shared, Infantry.Cuba
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 90
-		Description: Carries C4 charges taped to his body and kamikazes enemies\nblowing them up quickly and efficiently.\n\n  Strong vs Ground units\n  Weak vs Aircraft\n\nUpgradeable with:\n- Targeted Explosives (Cuba)
+		Description: actor-terror.description
 		Prerequisites: ~infantry.cuba, naradr, ~techlevel.3
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -620,9 +620,9 @@ terror:
 		Payload: 100
 		Voice: Move
 	Tooltip:
-		Name: Terrorist
+		Name: actor-terror.name
 	Tooltip@NoRow:
-		Name: Terrorist
+		Name: actor-terror.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -693,7 +693,7 @@ deso:
 		Queue: Infantry.Shared, Infantry.Iraq
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
-		Description: Carries a radiation-emitting weapon.\nCan deploy for area-of-effect damage.\n\n  Strong vs Infantry, Light vehicles\n  Weak vs Tanks, Aircraft\n\nAbilities:\n- Immune to Radiation\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
+		Description: actor-deso.description
 		Prerequisites: ~infantry.iraq, naradr, ~techlevel.3
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -705,9 +705,9 @@ deso:
 		Payload: 300
 		Voice: Move
 	Tooltip:
-		Name: Desolator
+		Name: actor-deso.name
 	Tooltip@NoRow:
-		Name: Desolator
+		Name: actor-deso.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -907,7 +907,7 @@ ivan:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
-		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nUpgradeable with:\n- Targeted Explosives (Cuba)\n- High Explosive Bombs (Libya)
+		Description: actor-ivan.description
 		Prerequisites: ~infantry.sovietsorbaku, naradr, ~techlevel.3
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -919,9 +919,9 @@ ivan:
 		Payload: 300
 		Voice: Move
 	Tooltip:
-		Name: Crazy Ivan
+		Name: actor-ivan.name
 	Tooltip@NoRow:
-		Name: Crazy Ivan
+		Name: actor-ivan.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Voiced:
@@ -999,21 +999,21 @@ civan:
 	Inherits: ivan
 	Buildable:
 		BuildPaletteOrder: 970
-		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Description: actor-civan.description
 		Prerequisites: ~infantry.sovietsorbaku, ~allies.tech.infiltrated, ~techlevel.4
 		BuildDuration: 375
 	Buildable@Allied:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 980
-		Description: Specialist for explosives. Can plant a Bomb on anything, even Cows.\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Description: actor-civan.description
 		Prerequisites: ~infantry.allies, ~soviets.tech.infiltrated, ~techlevel.4
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Tooltip:
-		Name: Chrono Ivan
+		Name: actor-civan.name
 	Tooltip@NoRow:
-		Name: Chrono Ivan
+		Name: actor-civan.name
 	Valued:
 		Cost: 1000
 	Crushable:
@@ -1073,7 +1073,7 @@ yuri:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 150
 		Prerequisites: natech, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units.\nCan be deployed to unleash a powerful psychic wave.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings
+		Description: actor-yuri.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1084,9 +1084,9 @@ yuri:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Yuri Clone
+		Name: actor-yuri.name
 	Tooltip@NoRow:
-		Name: Yuri Clone
+		Name: actor-yuri.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Voiced:
@@ -1188,13 +1188,13 @@ yuripr:
 		BuildLimit: 1
 		BuildPaletteOrder: 990
 		Prerequisites: ~soviets.tech.infiltrated, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units from a great range.\nCan be deployed to unleash a powerful psychic wave.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\n  Maximum 1 can be trained.
+		Description: actor-yuripr.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Tooltip:
-		Name: Yuri Prime
+		Name: actor-yuripr.name
 	Tooltip@NoRow:
-		Name: Yuri Prime
+		Name: actor-yuripr.name
 	Valued:
 		Cost: 2000
 	DeliversCash:
@@ -1250,7 +1250,7 @@ boris:
 		BuildPaletteOrder: 180
 		Prerequisites: ~infantry.soviets, natech, ~techlevel.4
 		BuildLimit: 1
-		Description: Elite commando infantry, armed with\nAKM rifle and signal flare.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can call airstrike against Buildings\n- Can move over water\n\nUpgradeable with:\n- Armor-Piercing Bullets\n\n  Maximum 1 can be trained.
+		Description: actor-boris.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1261,9 +1261,9 @@ boris:
 		Payload: 1000
 		Voice: Move
 	Tooltip:
-		Name: Boris Bukov
+		Name: actor-boris.name
 	Tooltip@NoRow:
-		Name: Boris Bukov
+		Name: actor-boris.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1463,7 +1463,7 @@ pyro:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 75
 		Prerequisites: naradr, ~techlevel.2
-		Description: Advanced anti-infantry and anti-structure infantry.\n\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry
+		Description: actor-pyro.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1474,9 +1474,9 @@ pyro:
 		Payload: 150
 		Voice: Move
 	Tooltip:
-		Name: Flamethrower
+		Name: actor-pyro.name
 	Tooltip@NoRow:
-		Name: Flamethrower
+		Name: actor-pyro.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1592,7 +1592,7 @@ hjck:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
 		BuildPaletteOrder: 70
-		Description: Steals enemy vehicles.\nCan infiltrate enemy Battle Labs to gain access to new infantry.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Stealth while not moving
+		Description: actor-hjck.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1601,9 +1601,9 @@ hjck:
 		Payload: 250
 		Voice: Move
 	Tooltip:
-		Name: Hijacker
+		Name: actor-hjck.name
 	Tooltip@NoRow:
-		Name: Hijacker
+		Name: actor-hjck.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1662,15 +1662,15 @@ itrp:
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Tooltip:
-		Name: Iron Trooper
+		Name: actor-itrp.name
 	Tooltip@NoRow:
-		Name: Iron Trooper
+		Name: actor-itrp.name
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 140
 		Prerequisites: ~infantry.sovietsorbaku, natech, ~techlevel.4
-		Description: High-tech soldier capable of making friendly vehicles invulnerabile and\ndamage enemy infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs
+		Description: actor-itrp.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1844,7 +1844,7 @@ shkc:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildPaletteOrder: 980
 		Prerequisites: ~infantry.sovietsorbaku, ~soviets.tech.infiltrated, ~techlevel.4
-		Description: Advanced armored unit with a Tesla Suit and Tesla Bombs.\n\n  Strong vs Infantry, Tanks, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can charge Tesla Coils\n- Can place Tesla Bombs on buildings\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		Description: actor-shkc.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1852,9 +1852,9 @@ shkc:
 	DeliversCash:
 		Payload: 750
 	Tooltip:
-		Name: Tesla Commando
+		Name: actor-shkc.name
 	Tooltip@NoRow:
-		Name: Tesla Commando
+		Name: actor-shkc.name
 	Health:
 		HP: 15000
 	Mobile:

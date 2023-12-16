@@ -20,7 +20,7 @@ dest:
 		Queue: Ship.Civilian # Ship.Shared, Ship.Allies
 		Prerequisites: gaairc, ~techlevel.3
 		BuildPaletteOrder: 80
-		Description: Allied Main Battle Ship armed with cannons and\nan Osprey helicopter.\n  Strong vs Naval units\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-dest.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -28,9 +28,9 @@ dest:
 	Valued:
 		Cost: 1400
 	Tooltip:
-		Name: Destroyer
+		Name: actor-dest.name
 	Tooltip@NoRow:
-		Name: Destroyer
+		Name: actor-dest.name
 	Health:
 		HP: 80000
 	Armor:
@@ -131,7 +131,7 @@ aegis:
 		Queue: Ship.Shared, Ship.Allies
 		BuildPaletteOrder: 41
 		Prerequisites: ~ship.allies, ~techlevel.1
-		Description: Anti-Air naval unit.\n\n  Strong vs Aircraft\n  Weak vs Grounds units, Ships\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
+		Description: actor-aegis.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -139,9 +139,9 @@ aegis:
 	Valued:
 		Cost: 900
 	Tooltip:
-		Name: Aegis Cruiser
+		Name: actor-aegis.name
 	Tooltip@NoRow:
-		Name: Aegis Cruiser
+		Name: actor-aegis.name
 	Selectable:
 		Bounds: 1448, 3861, 0, -289
 	Health:
@@ -210,16 +210,16 @@ dlph:
 		Queue: Ship.Shared, Ship.Allies
 		BuildPaletteOrder: 20
 		Prerequisites: ~ship.allies, ~techlevel.1
-		Description: Trained dolphin armed with sonic beams.\n\n  Strong vs Ships\n\nAbilities:\n- Can remove Squids from ships by attacking them\n- Can detect Stealth units
+		Description: actor-dlph.description
 		BuildDuration: 250
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Dolphin
-		GenericName: Dolphin
+		Name: actor-dlph.name
+		GenericName: actor-dlph.name
 	Tooltip@NoRow:
-		Name: Dolphin
-		GenericName: Dolphin
+		Name: actor-dlph.name
+		GenericName: actor-dlph.name
 	Health:
 		HP: 20000
 	Mobile:
@@ -264,7 +264,7 @@ carrier:
 		Queue: Ship.Shared, Ship.Allies
 		BuildPaletteOrder: 90
 		Prerequisites: ~ship.allies, gatech, ~techlevel.4
-		Description: Aircraft carrier ship.\n\n  Strong vs Tanks, Structures\n  Weak vs Infantry
+		Description: actor-carrier.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -272,9 +272,9 @@ carrier:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Aircraft Carrier
+		Name: actor-carrier.name
 	Tooltip@NoRow:
-		Name: Aircraft Carrier
+		Name: actor-carrier.name
 	Health:
 		HP: 80000
 	Armor:
@@ -349,7 +349,7 @@ adest:
 		Queue: Ship.Shared, Ship.Allies
 		Prerequisites: ~ship.allies, gaairc, ~techlevel.3
 		BuildPaletteOrder: 80
-		Description: Heavy vehicle armed with a cannon that can move over both land and water.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can crush enemy land vehicles\n- Can detect Stealth units
+		Description: actor-adest.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -360,9 +360,9 @@ adest:
 		Payload: 1400
 		Voice: Move
 	Tooltip:
-		Name: Assault Destroyer
+		Name: actor-adest.name
 	Tooltip@NoRow:
-		Name: Assault Destroyer
+		Name: actor-adest.name
 	Health:
 		HP: 60000
 	Armor:

@@ -19,12 +19,12 @@
 commanders_power.ifv_training:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: IFV Training
+		Name: actor-commanders-power-ifv-training.name
 	-Buildable:
 	#	Queue: Power.Allies
 	#	BuildPaletteOrder: 10
 	#	Prerequisites: ~disabled # prerequisite.has_points
-	#	Description: Makes IFVs train as veteran.
+	#	Description: actor-commanders-power-ifv-training.description
 	ProvidesPrerequisite@vetifv:
 		Prerequisite: vetifv
 	ProvidesPrerequisite@vetifvorbaacdm:
@@ -37,12 +37,12 @@ commanders_power.ifv_training:
 commanders_power.harrier_training:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Aircraft Training
+		Name: actor-commanders-power-harrier-training.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
-		Description: Makes Harriers train as elite and other Allied Planes train as veteran.
+		Description: actor-commanders-power-harrier-training.description
 	ProvidesPrerequisite@vetair:
 		Prerequisite: vetair
 	ProvidesPrerequisite@vetairorbaacdm:
@@ -55,12 +55,12 @@ commanders_power.harrier_training:
 commanders_power.inf_training:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Infantry Training
+		Name: actor-commanders-power-inf-training.name
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
-		Description: Makes Conscripts and Flak Troopers train as veteran.
+		Description: actor-commanders-power-inf-training.description
 	ProvidesPrerequisite@vete2flakt:
 		Prerequisite: vete2flakt
 	ProvidesPrerequisite@vete2flaktorbaacdm:
@@ -73,12 +73,12 @@ commanders_power.inf_training:
 commanders_power.gatling_training:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Gatling Training
+		Name: actor-commanders-power-gatling-training.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
-		Description: Makes Gatling Tanks, Gatling Submarines and Gatling Troopers train as veteran.
+		Description: actor-commanders-power-gatling-training.description
 	ProvidesPrerequisite@ytnk:
 		Prerequisite: vetytnk
 	ProvidesPrerequisite@vetytnkorbaacdm:
@@ -99,12 +99,12 @@ commanders_power.gatling_training:
 commanders_power.arty_training:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Artillery Training
+		Name: actor-commanders-power-arty-training.name
 	Buildable:
 		Queue: Power.Baku
 		BuildPaletteOrder: 10
 		Prerequisites: prerequisite.has_points
-		Description: Makes Mortar Troopers and Grad MLRSes train as veteran.
+		Description: actor-commanders-power-arty-training.description
 	ProvidesPrerequisite@vetmtrp:
 		Prerequisite: vetmtrp
 	ProvidesPrerequisite@vetmtrporbaacdm:
@@ -121,12 +121,12 @@ commanders_power.arty_training:
 commanders_power.airpad:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Airpad
+		Name: actor-commanders-power-airpad.name
 	-Buildable:
 	#	Queue: Power.Allies
 	#	BuildPaletteOrder: 20
 	#	Prerequisites: ~disabled # prerequisite.has_points
-	#	Description: Enables construction of Airpads from Construction Yard.
+	#	Description: actor-commanders-power-airpad.description
 	ProvidesPrerequisite@airpad:
 		Prerequisite: prerequisite.airpad
 	WithProductionIconOverlay:
@@ -137,12 +137,12 @@ commanders_power.airpad:
 commanders_power.gun_turret:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Gun Turret
+		Name: actor-commanders-power-gun-turret.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.has_points
-		Description: Enables construction of Gun Turret from Construction Yard.
+		Description: actor-commanders-power-gun-turret.description
 	ProvidesPrerequisite@gun_turret:
 		Prerequisite: prerequisite.gun_turret
 	WithProductionIconOverlay:
@@ -153,12 +153,12 @@ commanders_power.gun_turret:
 commanders_power.tesla_fence:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Tesla Fence
+		Name: actor-commanders-power-tesla-fence.name
 	Buildable:
 		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.has_points
-		Description: Enables construction of Tesla Fence from Construction Yard.
+		Description: actor-commanders-power-tesla-fence.description
 	ProvidesPrerequisite@tesla_fence:
 		Prerequisite: prerequisite.tesla_fence
 	WithProductionIconOverlay:
@@ -169,12 +169,12 @@ commanders_power.tesla_fence:
 commanders_power.grinder:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Grinder
+		Name: actor-commanders-power-grinder.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 20
 		Prerequisites: prerequisite.has_points
-		Description: Enables construction of Grinder from Construction Yard.
+		Description: actor-commanders-power-grinder.description
 	ProvidesPrerequisite@grinder:
 		Prerequisite: prerequisite.grinder
 	WithProductionIconOverlay:
@@ -185,12 +185,12 @@ commanders_power.grinder:
 commanders_power.medic:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Medic
+		Name: actor-commanders-power-medic.name
 	-Buildable:
 	#	Queue: Power.Allies
 	#	BuildPaletteOrder: 30
 	#	Prerequisites: ~disabled # prerequisite.has_points
-	#	Description: Enables training of Medic from Barracks.
+	#	Description: actor-commanders-power-medic.description
 	ProvidesPrerequisite@medic:
 		Prerequisite: prerequisite.medic
 	WithProductionIconOverlay:
@@ -201,12 +201,12 @@ commanders_power.medic:
 commanders_power.ambulance:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Combat Ambulance
+		Name: actor-commanders-power-ambulance.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
-		Description: Enables production of Combat Ambulance from War Factory.
+		Description: actor-commanders-power-ambulance.description
 	ProvidesPrerequisite@ambulance:
 		Prerequisite: prerequisite.ambulance
 	WithProductionIconOverlay:
@@ -217,12 +217,12 @@ commanders_power.ambulance:
 commanders_power.hijacker:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Hijacker
+		Name: actor-commanders-power-hijacker.name
 	-Buildable:
 	#	Queue: Power.Soviets
 	#	BuildPaletteOrder: 30
 	#	Prerequisites: ~disabled # prerequisite.has_points
-	#	Description: Enables training of Hijacker from Barracks.
+	#	Description: actor-commanders-power-hijacker.description
 	ProvidesPrerequisite@hijacker:
 		Prerequisite: prerequisite.hijacker
 	WithProductionIconOverlay:
@@ -233,12 +233,12 @@ commanders_power.hijacker:
 commanders_power.havoc:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Havoc Attack Helicopter
+		Name: actor-commanders-power-havoc.name
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
-		Description: Enables training of Havoc Attack Helicopter from Helipad.
+		Description: actor-commanders-power-havoc.description
 	ProvidesPrerequisite@havoc:
 		Prerequisite: prerequisite.havoc
 	WithProductionIconOverlay:
@@ -249,12 +249,12 @@ commanders_power.havoc:
 commanders_power.minelayer:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Minelayer
+		Name: actor-commanders-power-minelayer.name
 	-Buildable:
 	#	Queue: Power.Yuri
 	#	BuildPaletteOrder: 30
 	#	Prerequisites: prerequisite.has_points
-	#	Description: Enables production of Minelayer from War Factory.
+	#	Description: actor-commanders-power-minelayer.description
 	ProvidesPrerequisite@minelayer:
 		Prerequisite: prerequisite.minelayer
 	WithProductionIconOverlay:
@@ -265,12 +265,12 @@ commanders_power.minelayer:
 commanders_power.annihilator_artillery:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Annihilator Artillery
+		Name: actor-commanders-power-annihilator-artillery.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
-		Description: Enables production of Annihilator Artillery from War Factory.
+		Description: actor-commanders-power-annihilator-artillery.description
 	ProvidesPrerequisite@annihilator_artillery:
 		Prerequisite: prerequisite.annihilator_artillery
 	WithProductionIconOverlay:
@@ -281,12 +281,12 @@ commanders_power.annihilator_artillery:
 commanders_power.mechanic:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Mechanic
+		Name: actor-commanders-power-mechanic.name
 	Buildable:
 		Queue: Power.Baku
 		BuildPaletteOrder: 30
 		Prerequisites: prerequisite.has_points
-		Description: Enables training of Mechanic from Barracks.
+		Description: actor-commanders-power-mechanic.description
 	ProvidesPrerequisite@mechanic:
 		Prerequisite: prerequisite.mechanic
 	WithProductionIconOverlay:
@@ -297,12 +297,12 @@ commanders_power.mechanic:
 commanders_power.intel_drop:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Intel Drop
+		Name: actor-commanders-power-intel-drop.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Intel Drop power.
+		Description: actor-commanders-power-intel-drop.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.intel_drop
 	RenderSprites:
@@ -311,12 +311,12 @@ commanders_power.intel_drop:
 commanders_power.drone_drop:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Drone Drop
+		Name: actor-commanders-power-drone-drop.name
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Drone Drop power.
+		Description: actor-commanders-power-drone-drop.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.drone_drop
 	RenderSprites:
@@ -325,12 +325,12 @@ commanders_power.drone_drop:
 commanders_power.cash_bounty:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Cash Bounty
+		Name: actor-commanders-power-cash-bounty.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 40
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Cash Bounty power.
+		Description: actor-commanders-power-cash-bounty.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.cash_bounty
 
@@ -344,12 +344,12 @@ commanders_power.intel_drop.baku:
 commanders_power.scout_drone:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Scout Drone
+		Name: actor-commanders-power-scout-drone.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points
-		Description: Enables Scout Drone power.
+		Description: actor-commanders-power-scout-drone.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.scout_drone
 	RenderSprites:
@@ -358,12 +358,12 @@ commanders_power.scout_drone:
 commanders_power.spy_plane:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Spy Plane
+		Name: actor-commanders-power-spy-plane.name
 	Buildable:
 		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points
-		Description: Enables Spy Plane power.
+		Description: actor-commanders-power-spy-plane.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.spy_plane
 	RenderSprites:
@@ -372,12 +372,12 @@ commanders_power.spy_plane:
 commanders_power.psychic_reveal:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Psychic Reveal
+		Name: actor-commanders-power-psychic-reveal.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 50
 		Prerequisites: prerequisite.has_points
-		Description: Enables Psychic Reveal power.
+		Description: actor-commanders-power-psychic-reveal.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.psychic_reveal
 
@@ -420,297 +420,297 @@ commanders_power.psychic_reveal:
 commanders_power.leaflet_drop:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Leaflet Drop
+		Name: actor-commanders-power-leaflet-drop.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 60
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Leaflet Drop power.
+		Description: actor-commanders-power-leaflet-drop.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.leaflet_drop
 
 commanders_power.cluster_mines:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Cluster Mines
+		Name: actor-commanders-power-cluster-mines.name
 	Buildable:
 		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 60
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Cluster Mines power.
+		Description: actor-commanders-power-cluster-mines.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.cluster_mines
 
 commanders_power.brute_drop:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Brute Drop
+		Name: actor-commanders-power-brute-drop.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 60
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Brute Drop power.
+		Description: actor-commanders-power-brute-drop.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.brute_drop
 
 commanders_power.emergency_repair.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Emergency Repair - Level 1
+		Name: actor-commanders-power-emergency-repair-1.name
 	Buildable:
 		BuildPaletteOrder: 70
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Emergency Repair.
+		Description: actor-commanders-power-emergency-repair-1.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.emergency_repair.1
 
 commanders_power.emergency_repair.2:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Emergency Repair - Level 2
+		Name: actor-commanders-power-emergency-repair-2.name
 	Buildable:
 		BuildPaletteOrder: 80
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.1
-		Description: Upgrades Emergency Repair power to Level 2.
+		Description: actor-commanders-power-emergency-repair-2.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.emergency_repair.2
 
 commanders_power.emergency_repair.3:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Emergency Repair - Level 3
+		Name: actor-commanders-power-emergency-repair-3.name
 	Buildable:
 		BuildPaletteOrder: 90
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.emergency_repair.2
-		Description: Upgrades Emergency Repair power to Level 3.
+		Description: actor-commanders-power-emergency-repair-3.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.emergency_repair.3
 
 commanders_power.a10_strike.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: A-10 Strike - Level 1
+		Name: actor-commanders-power-a10-strike-1.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables A-10 Strike power.
+		Description: actor-commanders-power-a10-strike-1.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.a10_strike.1
 
 commanders_power.a10_strike.2:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: A-10 Strike - Level 2
+		Name: actor-commanders-power-a10-strike-2.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.a10_strike.1
-		Description: Upgrades A-10 Strike power to Level 2.
+		Description: actor-commanders-power-a10-strike-2.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.a10_strike.2
 
 commanders_power.a10_strike.3:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: A-10 Strike - Level 3
+		Name: actor-commanders-power-a10-strike-3.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.a10_strike.2
-		Description: Upgrades A-10 Strike power to Level 3.
+		Description: actor-commanders-power-a10-strike-3.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.a10_strike.3
 
 commanders_power.parabombs.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Parabombs - Level 1
+		Name: actor-commanders-power-parabombs-1.name
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Parabombs power.
+		Description: actor-commanders-power-parabombs-1.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.parabombs.1
 
 commanders_power.parabombs.2:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Parabombs - Level 2
+		Name: actor-commanders-power-parabombs-2.name
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.1
-		Description: Upgrades Parabombs power to Level 2.
+		Description: actor-commanders-power-parabombs-2.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.parabombs.2
 
 commanders_power.parabombs.3:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Parabombs - Level 3
+		Name: actor-commanders-power-parabombs-3.name
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.parabombs.2
-		Description: Upgrades Parabombs power to Level 3.
+		Description: actor-commanders-power-parabombs-3.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.parabombs.3
 
 commanders_power.toxin_bombing.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Toxin Bombing - Level 1
+		Name: actor-commanders-power-toxin-bombing-1.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Toxin Bombing power.
+		Description: actor-commanders-power-toxin-bombing-1.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.toxin_bombing.1
 
 commanders_power.toxin_bombing.2:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Toxin Bombing - Level 2
+		Name: actor-commanders-power-toxin-bombing-2.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.toxin_bombing.1
-		Description: Upgrades Toxin Bombing power to Level 2.
+		Description: actor-commanders-power-toxin-bombing-2.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.toxin_bombing.2
 
 commanders_power.toxin_bombing.3:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Toxin Bombing - Level 3
+		Name: actor-commanders-power-toxin-bombing-3.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.toxin_bombing.2
-		Description: Upgrades Toxin Bombing power to Level 3.
+		Description: actor-commanders-power-toxin-bombing-3.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.toxin_bombing.3
 
 commanders_power.fuel_air_bomb.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Fuel Air Bomb - Level 1
+		Name: actor-commanders-power-fuel-air-bomb-1.name
 	Buildable:
 		Queue: Power.Baku
 		BuildPaletteOrder: 100
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Fuel Air Bomb power.
+		Description: actor-commanders-power-fuel-air-bomb-1.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.fuel_air_bomb.1
 
 commanders_power.fuel_air_bomb.2:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Fuel Air Bomb - Level 2
+		Name: actor-commanders-power-fuel-air-bomb-2.name
 	Buildable:
 		Queue: Power.Baku
 		BuildPaletteOrder: 110
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.fuel_air_bomb.1
-		Description: Upgrades Fuel Air Bomb power to Level 2.
+		Description: actor-commanders-power-fuel-air-bomb-2.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.fuel_air_bomb.2
 
 commanders_power.fuel_air_bomb.3:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Fuel Air Bomb - Level 3
+		Name: actor-commanders-power-fuel-air-bomb-3.name
 	Buildable:
 		Queue: Power.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.fuel_air_bomb.2
-		Description: Upgrades Fuel Air Bomb power to Level 3.
+		Description: actor-commanders-power-fuel-air-bomb-3.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.fuel_air_bomb.3
 
 commanders_power.chrono_boost.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Chrono Boost - Level 1
+		Name: actor-commanders-power-chrono-boost-1.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 130
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Chrono Boost power.
+		Description: actor-commanders-power-chrono-boost-1.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.chrono_boost.1
 
 commanders_power.chrono_boost.2:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Chrono Boost - Level 2
+		Name: actor-commanders-power-chrono-boost-2.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 140
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.chrono_boost.1
-		Description: Upgrades Chrono Boost power to Level 2.
+		Description: actor-commanders-power-chrono-boost-2.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.chrono_boost.2
 
 commanders_power.chrono_boost.3:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Chrono Boost - Level 3
+		Name: actor-commanders-power-chrono-boost-3.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 150
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.chrono_boost.2
-		Description: Upgrades Chrono Boost power to Level 3.
+		Description: actor-commanders-power-chrono-boost-3.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.chrono_boost.3
 
 commanders_power.propaganda.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Propaganda - Level 1
+		Name: actor-commanders-power-propaganda-1.name
 	Buildable:
 		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 130
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Propaganda power.
+		Description: actor-commanders-power-propaganda-1.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.propaganda.1
 
 commanders_power.propaganda.2:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Propaganda - Level 2
+		Name: actor-commanders-power-propaganda-2.name
 	Buildable:
 		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 140
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.propaganda.1
-		Description: Upgrades Propaganda power to Level 2.
+		Description: actor-commanders-power-propaganda-2.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.propaganda.2
 
 commanders_power.propaganda.3:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Propaganda - Level 3
+		Name: actor-commanders-power-propaganda-3.name
 	Buildable:
 		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 150
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.propaganda.2
-		Description: Upgrades Propaganda power to Level 3.
+		Description: actor-commanders-power-propaganda-3.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.propaganda.3
 
 commanders_power.magnetic_beam.1:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Magnetic Beam - Level 1
+		Name: actor-commanders-power-magnetic-beam-1.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 130
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars
-		Description: Enables Magnetic Beam power.
+		Description: actor-commanders-power-magnetic-beam-1.description
 		IconPalette: mgnbicon
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.magnetic_beam.1
@@ -718,12 +718,12 @@ commanders_power.magnetic_beam.1:
 commanders_power.magnetic_beam.2:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Magnetic Beam - Level 2
+		Name: actor-commanders-power-magnetic-beam-2.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 140
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.magnetic_beam.1
-		Description: Upgrades Magnetic Beam power to Level 2.
+		Description: actor-commanders-power-magnetic-beam-2.description
 		IconPalette: mgnbicon
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.magnetic_beam.2
@@ -731,12 +731,12 @@ commanders_power.magnetic_beam.2:
 commanders_power.magnetic_beam.3:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Magnetic Beam - Level 3
+		Name: actor-commanders-power-magnetic-beam-3.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 150
 		Prerequisites: prerequisite.has_points, prerequisite.3_stars, commanders_power.magnetic_beam.2
-		Description: Upgrades Magnetic Beam power to Level 3.
+		Description: actor-commanders-power-magnetic-beam-3.description
 		IconPalette: mgnbicon
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.magnetic_beam.3
@@ -744,84 +744,84 @@ commanders_power.magnetic_beam.3:
 commanders_power.cruiser_strike:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Cruiser Strike
+		Name: actor-commanders-power-cruiser-strike.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
-		Description: Enables Crusiser Strike power.
+		Description: actor-commanders-power-cruiser-strike.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.cruiser_strike
 
 commanders_power.v3_storm:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: V3 Storm
+		Name: actor-commanders-power-v3-storm.name
 	Buildable:
 		Queue: Power.Soviets, Power.Baku
 		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
-		Description: Enables V3 Storm power.
+		Description: actor-commanders-power-v3-storm.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.v3_storm
 
 commanders_power.orbital_drop:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Orbital Drop
+		Name: actor-commanders-power-orbital-drop.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 160
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
-		Description: Enables Orbital Drop power.
+		Description: actor-commanders-power-orbital-drop.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.orbital_drop
 
 commanders_power.em_pulse_strike:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: E.M. Pulse Strike
+		Name: actor-commanders-power-em-pulse-strike.name
 	Buildable:
 		Queue: Power.Allies
 		BuildPaletteOrder: 170
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
-		Description: Enables E.M. Pulse Strike power.
+		Description: actor-commanders-power-em-pulse-strike.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.em_pulse_strike
 
 commanders_power.fallout_bomb:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Fallout Bomb
+		Name: actor-commanders-power-fallout-bomb.name
 	Buildable:
 		Queue: Power.Soviets
 		BuildPaletteOrder: 170
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
-		Description: Enables Fallout Bomb power.
+		Description: actor-commanders-power-fallout-bomb.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.fallout_bomb
 
 commanders_power.chaos_gas_drop:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Chaos Gas Drop
+		Name: actor-commanders-power-chaos-gas-drop.name
 	Buildable:
 		Queue: Power.Yuri
 		BuildPaletteOrder: 170
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
-		Description: Enables Chaos Gas Drop power.
+		Description: actor-commanders-power-chaos-gas-drop.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.chaos_gas_drop
 
 commanders_power.cryo_bomb:
 	Inherits: ^default.commanders_power
 	Tooltip:
-		Name: Cryo Bomb
+		Name: actor-commanders-power-cryo-bomb.name
 	Buildable:
 		Queue: Power.Baku
 		BuildPaletteOrder: 170
 		Prerequisites: prerequisite.has_points, prerequisite.5_stars
-		Description: Enables Cryo Bomb power.
+		Description: actor-commanders-power-cryo-bomb.description
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.cryo_bomb
 
@@ -847,25 +847,25 @@ prerequisite.has_points:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: 1 Commander's Points
+		Name: actor-prerequisite-has-points-name
 
 prerequisite.3_stars:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Major or Higher Rank
+		Name: actor-prerequisite-3-stars-name
 
 prerequisite.5_stars:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: General Rank
+		Name: actor-prerequisite-5-stars-name
 
 ^default.commanders_power_prerequisite:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Commander's Power
+		Name: meta-default-commanders-power-prerequisite-name
 
 prerequisite.medic:
 	Inherits: ^default.commanders_power_prerequisite

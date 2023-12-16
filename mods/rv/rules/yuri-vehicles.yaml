@@ -4,7 +4,7 @@ pcv:
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
-		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-pcv.description
 		Prerequisites: ~vehicleorship.yuri, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 	Hovers:
 		Ticks: 10
@@ -31,7 +31,7 @@ smin:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Psi
 		BuildPaletteOrder: 90
-		Description: Gathers and processes ore.\n\nAbilities:\n- Cannot be mind controlled\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-smin.description
 		Prerequisites: ~vehicle.psicorps, yadome, ~!global-megawealth, ~techlevel.3
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -41,9 +41,9 @@ smin:
 		Payload: 1500
 		Voice: Move
 	Tooltip:
-		Name: Slave Miner
+		Name: actor-smin.name
 	Tooltip@NoRow:
-		Name: Slave Miner
+		Name: actor-smin.name
 	Selectable:
 		Priority: 7
 		Bounds: 1544, 2509, 0, -289
@@ -145,12 +145,12 @@ gmin:
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
-		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n- Stealth while not docked\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-gmin.description
 		Prerequisites: ~vehicleorship.yuri, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
-		Name: Lazarus Miner
+		Name: actor-gmin.name
 	Tooltip@NoRow:
-		Name: Lazarus Miner
+		Name: actor-gmin.name
 	Guard:
 		Voice: Move
 	Cloak:
@@ -185,12 +185,12 @@ ltnk:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Lasher Light Tank
+		Name: actor-ltnk.name
 	Tooltip@NoRow:
-		Name: Lasher Light Tank
+		Name: actor-ltnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
-		Description: Yuri Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Autoloaders\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
+		Description: actor-ltnk.description
 		Prerequisites: ~vehicle.yuri, ~techlevel.1
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -345,14 +345,14 @@ ytnk:
 		Payload: 700
 		Voice: Move
 	Tooltip:
-		Name: Gatling Tank
+		Name: actor-ytnk.name
 	Tooltip@NoRow:
-		Name: Gatling Tank
+		Name: actor-ytnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Prerequisites: ~vehicle.yuri, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Anti-infantry and anti-air vehicle.\nFires faster as it continues to fire.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Chaos Tank Compensators (Yurigrad)\n- Chainguns
+		Description: actor-ytnk.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -574,14 +574,14 @@ caos:
 		Payload: 800
 		Voice: Move
 	Tooltip:
-		Name: Chaos Drone
+		Name: actor-caos.name
 	Tooltip@NoRow:
-		Name: Chaos Drone
+		Name: actor-caos.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 40
 		Prerequisites: ~vehicle.yuri, ~techlevel.2
-		Description: Drone capable of releasing gas that causes enemy units to fire random units.\nUnits affected by the gas deal more damage.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities\n- Can be deployed to release gas continuously\n- Cannot be mind controlled\n\nUpgradeable with:\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-caos.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -677,14 +677,14 @@ tele:
 		Payload: 800
 		Voice: Move
 	Tooltip:
-		Name: Magnetron
+		Name: actor-tele.name
 	Tooltip@NoRow:
-		Name: Magnetron
+		Name: actor-tele.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.yuri, yadome, ~techlevel.3
-		Description: Long range magnetic field generator.\nFreezes vehicles and damages structures.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-tele.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -790,14 +790,14 @@ mind:
 		Payload: 1750
 		Voice: Move
 	Tooltip:
-		Name: Master Mind
+		Name: actor-mind.name
 	Tooltip@NoRow:
-		Name: Master Mind
+		Name: actor-mind.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 130
 		Prerequisites: ~vehicle.yuri, yatech, ~techlevel.4
-		Description: Heavy vehicle capable of mind controlling multipile enemy units.\nStarts taking damage if controlling more than 3.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Mastery of Mind (Antarctica)
+		Description: actor-mind.description
 		BuildDuration: 875
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -928,16 +928,16 @@ mlyr:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Minelayer
+		Name: actor-mlyr.name
 	Tooltip@NoRow:
-		Name: Minelayer
+		Name: actor-mlyr.name
 	Selectable:
 		Bounds: 1206, 1930, 0, -289
 	Buildable:
 		Queue: Vehicle.Unused # Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Prerequisites: prerequisite.minelayer, repairpad, ~techlevel.1
 		BuildPaletteOrder: 80
-		Description: Lays mines to destroy unwary enemy units.\n  Unarmed\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-mlyr.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1009,16 +1009,16 @@ kamaz:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Armored Truck
+		Name: actor-kamaz.name
 	Tooltip@NoRow:
-		Name: Armored Truck
+		Name: actor-kamaz.name
 	Selectable:
 		Bounds: 1206, 1930, 0, -289
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Prerequisites: ~vehicle.yuri, ~techlevel.1
 		BuildPaletteOrder: 70
-		Description: Armored infantry transport vehicle.\n\n  Unarmed\n\nUpgradeable with:\n- Grinder Treads\n- Toxin Sprayer\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-kamaz.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1128,14 +1128,14 @@ lart:
 		Payload: 1600
 		Voice: Move
 	Tooltip:
-		Name: Annihilator Artillery
+		Name: actor-lart.name
 	Tooltip@NoRow:
-		Name: Annihilator Artillery
+		Name: actor-lart.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 110
 		Prerequisites: ~vehicle.yuri, prerequisite.annihilator_artillery, yatech, ~techlevel.3
-		Description: Long range laser artillery.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
+		Description: actor-lart.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1278,14 +1278,14 @@ yhtnk:
 		Payload: 1100
 		Voice: Move
 	Tooltip:
-		Name: Lazarus Tank
+		Name: actor-yhtnk.name
 	Tooltip@NoRow:
-		Name: Lazarus Tank
+		Name: actor-yhtnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 120
 		Prerequisites: ~vehicle.yuri, yatech, ~techlevel.4
-		Description: Fast invisible tank designed for ambushes.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
+		Description: actor-yhtnk.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1390,14 +1390,14 @@ grtk:
 		Payload: 2200
 		Voice: Move
 	Tooltip:
-		Name: Grinder Tank
+		Name: actor-grtk.name
 	Tooltip@NoRow:
-		Name: Grinder Tank
+		Name: actor-grtk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 990
 		Prerequisites: ~vehicle.yuri, yatech, ~caslab, ~techlevel.4
-		Description: Melee vehicle with high damage against all ground units.\n\n  Strong vs Buildings, Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-grtk.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1502,14 +1502,14 @@ spider:
 		Payload: 700
 		Voice: Move
 	Tooltip:
-		Name: Mutant Tarantula
+		Name: actor-spider.name
 	Tooltip@NoRow:
-		Name: Mutant Tarantula
+		Name: actor-spider.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Trans
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicle.psitrans, yadome, ~techlevel.3
-		Description: Mutated huge spider armed with poison spines and web launchers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+		Description: actor-spider.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1630,7 +1630,7 @@ expy:
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
-		Description: Deploys into an Expansion Node.\nCannot be undeployed back.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-expy.description
 		Prerequisites: ~vehicleorship.yuri, ~techlevel.1, ~!ai.ev
 	Selectable:
 		Bounds: 1641, 2702, 0, -337

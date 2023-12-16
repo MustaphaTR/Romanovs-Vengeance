@@ -9,6 +9,6 @@ new-primary-objective = Yeni birincil hedef
 new-secondary-objective = Yeni ikincil hedef
 
 ## romanov-01.lua
-free-premier-romanov = Başbakan Romanov'u hapishaneden kurar.
+free-premier-romanov = Başbakan Romanov'u hapishaneden kurtar.
 romanov-must-survive = Romanov hayatta kalmalı.
 dont-let-romanov-escape = Romanov'un kaçmasına izin verme.

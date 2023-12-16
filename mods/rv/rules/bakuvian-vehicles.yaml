@@ -9,15 +9,15 @@ hytk:
 		Voice: Move
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
-		Description: Bakuvian Main Battle Tank with double barrel.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Mounted MG
+		Description: actor-hytk.description
 		Prerequisites: ~vehicle.baku, ~techlevel.1
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Icon: icon-hydra
 	Tooltip:
-		Name: Hydra Heavy Tank
+		Name: actor-hytk.name
 	Tooltip@NoRow:
-		Name: Hydra Heavy Tank
+		Name: actor-hytk.name
 	Health:
 		HP: 50000
 	Mobile:
@@ -122,14 +122,14 @@ send:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Sentry Drone
+		Name: actor-send.name
 	Tooltip@NoRow:
-		Name: Sentry Drone
+		Name: actor-send.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: ~vehicle.baku, ~techlevel.2
-		Description: Stealth drone armed with a heavy machine gun.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Stealth units\n- Stealth while not moving or firing\n- Immune to Radiation\n- Cannot be mind controlled\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Description: actor-send.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -226,7 +226,7 @@ smrj:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: ~vehicle.baku, basops, ~techlevel.3
-		Description: Jams nearby enemy radar domes and deflects incoming missiles.\n\n  Unarmed\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-smrjdescription
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Voiced:
@@ -247,14 +247,14 @@ grad:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Grad MLRS
+		Name: actor-grad.name
 	Tooltip@NoRow:
-		Name: Grad MLRS
+		Name: actor-grad.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.baku, natech, ~techlevel.3
-		Description: Long-range rocket artillery.\n\n  Strong vs Buildings, Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Cryo Warheads
+		Description: actor-grad.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -338,14 +338,14 @@ qyzyl:
 		Payload: 2200
 		Voice: Move
 	Tooltip:
-		Name: Qızıl Ulduz Defense Platform
+		Name: actor-qyzyl.name
 	Tooltip@NoRow:
-		Name: Qızıl Ulduz Defense Platform
+		Name: actor-qyzyl.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 990
 		Prerequisites: ~vehicle.baku, natech, ~caslab, ~techlevel.4
-		Description: Heavy armored vehicle capable of making other nearby vehicles invulnerable.\nDamages nearby enemy infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Description: actor-qyzyl.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:

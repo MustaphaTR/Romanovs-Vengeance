@@ -10,7 +10,7 @@ engineer:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\nAbilities:\n- Can swim\n\n  Unarmed
+		Description: actor-engineer.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -19,9 +19,9 @@ engineer:
 		Payload: 250
 		Voice: Move
 	Tooltip:
-		Name: Engineer
+		Name: actor-engineer.name
 	Tooltip@NoRow:
-		Name: Engineer
+		Name: actor-engineer.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -120,7 +120,7 @@ dog:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
-		Description: Anti-infantry unit.\nCan be deployed to stun nearby infantry for a short while.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can detect Stealth units\n- Can detect Spies
+		Description: actor-dog.description
 		BuildDuration: 50
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -131,38 +131,38 @@ dog:
 		Payload: 100
 		Voice: Move
 	Tooltip:
-		Name: Attack Dog
-		GenericName: Dog
+		Name: actor-dog.name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: !allies && !soviet && !psicorps && showownername
 	Tooltip@NoRow:
-		Name: Attack Dog
-		GenericName: Dog
+		Name: actor-dog.name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: !allies && !soviet && !psicorps && !showownername
 	Tooltip@Allies:
-		Name: German Shepherd
-		GenericName: Dog
+		Name: actor-dog.allies-name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: allies && showownername
 	Tooltip@Allies-NoRow:
-		Name: German Shepherd
-		GenericName: Dog
+		Name: actor-dog.allies-name
+		GenericName: actor-dog.generic-name
 		ShowOwnerRow: false
 		RequiresCondition: allies && !showownername
 	Tooltip@Soviet:
-		Name: Siberian Husky
-		GenericName: Dog
+		Name: actor-dog.soviet-name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: soviet && showownername
 	Tooltip@Soviet-NoRow:
-		Name: Siberian Husky
-		GenericName: Dog
+		Name: actor-dog.soviet-name
+		GenericName: actor-dog.generic-name
 		ShowOwnerRow: false
 		RequiresCondition: soviet && !showownername
 	Tooltip@PsiCorps:
-		Name: Rottweiler
-		GenericName: Dog
+		Name: actor-dog.psicorps-name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: psicorps && showownername
 	Tooltip@PsiCorps-NoRow:
-		Name: Rottweiler
-		GenericName: Dog
+		Name: actor-dog.psicorps-name
+		GenericName: actor-dog.generic-name
 		ShowOwnerRow: false
 		RequiresCondition: psicorps && !showownername
 	GrantConditionOnFaction@Allies:
@@ -322,7 +322,7 @@ e1:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: General-purpose infantry.\nCan deploy to gain more range and damage.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n- Advanced Training\n- Portable Weaponry (United Kingdom)
+		Description: actor-e1.description
 		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -333,9 +333,9 @@ e1:
 		Payload: 75
 		Voice: Move
 	Tooltip:
-		Name: G.I.
+		Name: actor-e1.name
 	Tooltip@NoRow:
-		Name: G.I.
+		Name: actor-e1.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -553,7 +553,7 @@ ggi:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Anti-tank and anti-air infantry.\nCan deploy to gain more range.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n-\n- Advanced Training\n- Boost-Gliding Systems (United States)\n- Portable Weaponry (United Kingdom)
+		Description: actor-ggi.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -564,9 +564,9 @@ ggi:
 		Payload: 150
 		Voice: Move
 	Tooltip:
-		Name: Guardian G.I.
+		Name: actor-ggi.name
 	Tooltip@NoRow:
-		Name: Guardian G.I.
+		Name: actor-ggi.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -959,15 +959,15 @@ snipe:
 		Payload: 300
 		Voice: Move
 	Tooltip:
-		Name: Sniper
+		Name: actor-snipe.name
 	Tooltip@NoRow:
-		Name: Sniper
+		Name: actor-snipe.name
 	Buildable:
 		Queue: Infantry.Shared, Infantry.UK
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.england, gaairc, ~techlevel.3
-		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry
+		Description: actor-snipe.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1090,7 +1090,7 @@ spy:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
-		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Can disguise as an enemy infantry
+		Description: actor-spy.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1101,12 +1101,12 @@ spy:
 	-Tooltip:
 	-Tooltip@NoRow:
 	DisguiseTooltip:
-		Name: Spy
-		GenericName: Soldier
+		Name: actor-spy.name
+		GenericName: meta-infantry.generic-name
 		RequiresCondition: showownername
 	DisguiseTooltip@NoRow:
-		Name: Spy
-		GenericName: Soldier
+		Name: actor-spy.name
+		GenericName: meta-infantry.generic-name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	Selectable:
@@ -1192,7 +1192,7 @@ ghost:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.america, gaairc, ~techlevel.3
-		Description: Elite commando infantry, armed with a sub machine gun\nand C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings\n\nUpgradeable with:\n- Advanced Training
+		Description: actor-ghost.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1203,9 +1203,9 @@ ghost:
 		Payload: 400
 		Voice: Move
 	Tooltip:
-		Name: Navy SEAL
+		Name: actor-ghost.name
 	Tooltip@NoRow:
-		Name: Navy SEAL
+		Name: actor-ghost.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1321,13 +1321,13 @@ ccomand:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 960
 		Prerequisites: ~infantry.allies, ~allies.tech.infiltrated, ~techlevel.4
-		Description: Elite commando infantry, armed with\na sub machine gun and C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- Advanced Training
+		Description: actor-ccomand.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Tooltip:
-		Name: Chrono Commando
+		Name: actor-ccomand.name
 	Tooltip@NoRow:
-		Name: Chrono Commando
+		Name: actor-ccomand.name
 	Valued:
 		Cost: 1500
 	DeliversCash:
@@ -1394,14 +1394,14 @@ ptroop:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 990
 		Prerequisites: ~infantry.allies, ~yuri.tech.infiltrated, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
+		Description: actor-ptroop.description
 		BuildDuration: 375
 	Buildable@Yuri:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 970
 		Prerequisites: ~infantry.yuri, ~allies.tech.infiltrated, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
+		Description: actor-ptroop.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1409,9 +1409,9 @@ ptroop:
 	DeliversCash:
 		Payload: 750
 	Tooltip:
-		Name: Psi Commando
+		Name: actor-ptroop.name
 	Tooltip@NoRow:
-		Name: Psi Commando
+		Name: actor-ptroop.name
 	Armament@sapper:
 		Name: sapper
 		Weapon: CommandoC4Attacher
@@ -1453,7 +1453,7 @@ tany:
 		BuildPaletteOrder: 160
 		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
 		BuildLimit: 1
-		Description: Elite commando infantry, armed with\ndual pistols and C4 charges.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings and vehicles\n\nUpgradeable with:\n- Advanced Training\n\n  Maximum 1 can be trained
+		Description: actor-tany.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1464,9 +1464,9 @@ tany:
 		Payload: 1000
 		Voice: Move
 	Tooltip:
-		Name: Tanya Adams
+		Name: actor-tany.name
 	Tooltip@NoRow:
-		Name: Tanya Adams
+		Name: actor-tany.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1606,7 +1606,7 @@ jumpjet:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
-		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Advanced Training
+		Description: actor-jumpjet.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1614,9 +1614,9 @@ jumpjet:
 	Valued:
 		Cost: 450
 	Tooltip:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Tooltip@NoRow:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1693,9 +1693,9 @@ jumpjet.husk:
 	-RenderVoxels:
 	-WithVoxelBody:
 	Tooltip:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Tooltip@NoRow:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180
@@ -1737,15 +1737,15 @@ cleg:
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Tooltip:
-		Name: Chrono Legionnaire
+		Name: actor-cleg.name
 	Tooltip@NoRow:
-		Name: Chrono Legionnaire
+		Name: actor-cleg.name
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 140
 		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
-		Description: High-tech soldier capable of erasing enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can teleport anywhere on the map
+		Description: actor-cleg.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1868,7 +1868,7 @@ gren:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
 		BuildPaletteOrder: 70
-		Description: Infantry armed with grenades.\nCan kill garrisoned infantry.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Advanced Training\n- EMP Munitions (Korea)
+		Description: actor-gren.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1879,9 +1879,9 @@ gren:
 		Payload: 125
 		Voice: Move
 	Tooltip:
-		Name: Grenadier
+		Name: actor-gren.name
 	Tooltip@NoRow:
-		Name: Grenadier
+		Name: actor-gren.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:

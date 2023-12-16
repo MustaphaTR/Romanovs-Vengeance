@@ -4,7 +4,7 @@ yhvr:
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.1
-		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed\n\nUpgradeable with:\n- Grinder Treads
+		Description: actor-yhvr.description
 	Voiced:
 		VoiceSet: YuriAmphibiousTransportVoice
 
@@ -22,7 +22,7 @@ bsub:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, yatech, ~techlevel.3
 		BuildPaletteOrder: 80
-		Description: Submerged anti-ship and anti-structure armed with\ndouble torpedo and missile launchers.\n\n  Strong vs Ships, Buildings\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-bsub.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -30,11 +30,11 @@ bsub:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Boomer Submarine
-		GenericName: Submarine
+		Name: actor-bsub.name
+		GenericName: meta-submarine.generic-name
 	Tooltip@NoRow:
-		Name: Boomer Submarine
-		GenericName: Submarine
+		Name: actor-bsub.name
+		GenericName: meta-submarine.generic-name
 	Health:
 		HP: 120000
 	Armor:
@@ -135,9 +135,9 @@ cmisl:
 	Valued:
 		Cost: 50
 	Tooltip:
-		Name: Cruise Missile
+		Name: actor-cmisl.name
 	Tooltip@NoRow:
-		Name: Cruise Missile
+		Name: actor-cmisl.name
 	Health:
 		HP: 5000
 	Armor:
@@ -191,7 +191,7 @@ piranha:
 		Queue: Ship.Civilian # Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Submerged unit armed with fast firing torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-piranha.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -199,9 +199,11 @@ piranha:
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Piranha Submarine
+		Name: actor-piranha.name
+		GenericName: meta-submarine.generic-name
 	Tooltip@NoRow:
-		Name: Piranha Submarine
+		Name: actor-piranha.name
+		GenericName: meta-submarine.generic-name
 	Health:
 		HP: 30000
 	Armor:
@@ -289,7 +291,7 @@ gatsub:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Submerged anti-air unit armed with gatling cannon.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Chainguns
+		Description: actor-gatsub.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -297,9 +299,11 @@ gatsub:
 	Valued:
 		Cost: 900
 	Tooltip:
-		Name: Gatling Submarine
+		Name: actor-gatsub.name
+		GenericName: meta-submarine.generic-name
 	Tooltip@NoRow:
-		Name: Gatling Submarine
+		Name: actor-gatsub.name
+		GenericName: meta-submarine.generic-name
 	Health:
 		HP: 20000
 	Armor:
@@ -483,7 +487,7 @@ floater:
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
-		Description: Large ocean creature capable of dealing heavy damage in close combat.\nCan move to land.\n\n  Strong vs Ships\n\nAbilities:\n- Can remove Squids from ships by attacking them\n- Can detect Stealth units\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+		Description: actor-floater.description
 		BuildDuration: 375
 	Valued:
 		Cost: 1000
@@ -491,11 +495,11 @@ floater:
 		Payload: 1000
 		Voice: Move
 	Tooltip:
-		Name: Mutant Crab
-		GenericName: Crab
+		Name: actor-floater.name
+		GenericName: actor-floater.generic-name
 	Tooltip@NoRow:
-		Name: Mutant Crab
-		GenericName: Crab
+		Name: actor-floater.name
+		GenericName: actor-floater.generic-name
 	Armor:
 		Type: Heavy
 	Health:
@@ -570,7 +574,7 @@ strt:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.3
 		BuildPaletteOrder: 20
-		Description: Light amphibious tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads
+		Description: actor-strt.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -581,9 +585,9 @@ strt:
 		Payload: 700
 		Voice: Move
 	Tooltip:
-		Name: Strider Tank
+		Name: actor-strt.name
 	Tooltip@NoRow:
-		Name: Strider Tank
+		Name: actor-strt.name
 	Health:
 		HP: 30000
 	Armor:
@@ -686,9 +690,9 @@ buoy:
 		Bounds: 1544, 3089
 	RejectsOrders:
 	Tooltip:
-		Name: Sensor Buoy
+		Name: actor-buoy.name
 	Tooltip@NoRow:
-		Name: Sensor Buoy
+		Name: actor-buoy.name
 	Health:
 		HP: 15000
 	Armor:

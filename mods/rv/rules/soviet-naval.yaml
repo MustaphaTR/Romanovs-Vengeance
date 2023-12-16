@@ -20,7 +20,7 @@ sub:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
 		Prerequisites: ~ship.sovietsorbaku, naradr, ~techlevel.2
 		BuildPaletteOrder: 80
-		Description: Submerged anti-ship unit armed with torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-sub.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -28,11 +28,11 @@ sub:
 	Valued:
 		Cost: 1600
 	Tooltip:
-		Name: Typhoon Attack Submarine
-		GenericName: Submarine
+		Name: actor-sub.name
+		GenericName: meta-submarine.generic-name
 	Tooltip@NoRow:
-		Name: Typhoon Attack Submarine
-		GenericName: Submarine
+		Name: actor-sub.name
+		GenericName: meta-submarine.generic-name
 	Health:
 		HP: 80000
 	Armor:
@@ -118,7 +118,7 @@ hyd:
 		Queue: Ship.Shared, Ship.Soviets
 		BuildPaletteOrder: 30
 		Prerequisites: ~ship.soviets, ~techlevel.1
-		Description: Anti-Air and Anti-Infantry naval unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Naval units
+		Description: actor-hyd.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -126,9 +126,9 @@ hyd:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Sea Scorpion
+		Name: actor-hyd.name
 	Tooltip@NoRow:
-		Name: Sea Scorpion
+		Name: actor-hyd.name
 	Selectable:
 		Bounds: 1206, 1448, 0, -289
 	Health:
@@ -213,16 +213,16 @@ sqd:
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
 		Prerequisites: ~ship.sovietsorbaku, naradr, ~techlevel.3
-		Description: Large ocean creature capable of grabbing and sinking ships.\n\n  Strong vs Ships\n\nAbilities:\n- Can be deployed to remove other Squids from nearby ships\n- Can detect Stealth units
+		Description: actor-sqd.description
 		BuildDuration: 375
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Giant Squid
-		GenericName: Squid
+		Name: actor-sqd.name
+		GenericName: actor-sqd.generic-name
 	Tooltip@NoRow:
-		Name: Giant Squid
-		GenericName: Squid
+		Name: actor-sqd.name
+		GenericName: actor-sqd.generic-name
 	Health:
 		HP: 40000
 	ChangesHealth:
@@ -306,7 +306,7 @@ dred:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
 		BuildPaletteOrder: 90
 		Prerequisites: ~ship.sovietsorbaku, natech, ~techlevel.4
-		Description: Long-range rocket artillery ship.\n\n  Strong vs Buildings, Infantry\n  Weak vs Ships, Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
+		Description: actor-dred.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -314,9 +314,9 @@ dred:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Dreadnought
+		Name: actor-dred.name
 	Tooltip@NoRow:
-		Name: Dreadnought
+		Name: actor-dred.name
 	Health:
 		HP: 80000
 	Armor:
@@ -413,9 +413,9 @@ dmisl:
 	Valued:
 		Cost: 50
 	Tooltip:
-		Name: Dreadnought Missile
+		Name: actor-dmisl.name
 	Tooltip@NoRow:
-		Name: Dreadnought Missile
+		Name: actor-dmisl.name
 	Health:
 		HP: 5000
 	Armor:
@@ -488,7 +488,7 @@ sray:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
 		BuildPaletteOrder: 20
 		Prerequisites: ~ship.sovietsorbaku, ~techlevel.1
-		Description: Light ship armed with dual Tesla Coils.\nCan move on land.\n\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		Description: actor-sray.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -499,9 +499,9 @@ sray:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Stingray
+		Name: actor-sray.name
 	Tooltip@NoRow:
-		Name: Stingray
+		Name: actor-sray.name
 	Selectable:
 		Bounds: 1206, 1448, 0, -289
 	Health:

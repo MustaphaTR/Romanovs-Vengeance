@@ -201,12 +201,12 @@ napowr:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
-		Description: Provides power for other structures.\n\n  Can be rotated.
+		Description: actor-napowr.description
 		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
 	Tooltip:
-		Name: Tesla Reactor
+		Name: actor-napowr.name
 	Tooltip@NoRow:
-		Name: Tesla Reactor
+		Name: actor-napowr.name
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -230,7 +230,7 @@ nahand:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Description: Trains Soviet infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.
+		Description: actor-nahand.description
 		Prerequisites: ~building.soviets, power, ~techlevel.1
 	Building:
 		Footprint: xx xx
@@ -435,14 +435,14 @@ naradr:
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
 		Prerequisites: ~building.soviets, power, narefn, ~techlevel.2, ~!ai.naradr
-		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Tesla Drop (Soviet Union)\n- Radiation Missile (Iraq)\n- Instant Bunker (Vietnam)\n- Death Bombs (Cuba)\n- Ambush (Libya)
+		Description: actor-naradr.description
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.naradr
 	Tooltip:
-		Name: Radar Tower
+		Name: actor-naradr.name
 	Tooltip@NoRow:
-		Name: Radar Tower
+		Name: actor-naradr.name
 	ProvidesPrerequisite@russia:
 		Prerequisite: radar.russia
 		Factions: russia
@@ -681,12 +681,12 @@ mine:
 		InitialDelay: 0
 		CloakStyle: None
 	Tooltip:
-		Name: Mine
-		GenericName: Mine
+		Name: actor-mine.name
+		GenericName: actor-mine.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Mine
-		GenericName: Mine
+		Name: actor-mine.name
+		GenericName: actor-mine.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -710,7 +710,7 @@ naweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
-		Description: Produces Soviet vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: actor-naweap.description
 		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: naweap
@@ -844,7 +844,7 @@ nayard:
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
-		Description: Produces Soviet ships, submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+		Description: actor-nayard.description
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@ship.soviets:
 		Prerequisite: ship.soviets
@@ -922,9 +922,9 @@ nmine:
 		CrushClasses: nmine
 		DetonateClasses: nmine
 	Tooltip:
-		Name: Naval Mine
+		Name: actor-nmine.name
 	Tooltip@NoRow:
-		Name: Naval Mine
+		Name: actor-nmine.name
 	RevealsShroud:
 		Range: 3c0
 	# RevealsShroudToIntelligenceOwner:
@@ -948,7 +948,7 @@ nadept:
 	Buildable:
 		Queue: Building.Unused # Building.Shared, Building.Soviets, Building.Baku
 		Prerequisites: ~building.sovietsorbaku, naweap, ~techlevel.1
-		Description: Repairs vehicles and removes Terror Drones for a price.\n\n  Can be rotated.
+		Description: actor-nadept.description
 	ProvidesPrerequisite@default:
 		Prerequisite: nadept
 	WithSpriteBody:
@@ -967,12 +967,12 @@ naheli:
 	Inherits: ^Helipad
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Description: Produces Soviet aircraft.\n\nAbilities:\n- Comes with 1 repair drone.
+		Description: actor-naheli.description
 		Prerequisites: ~building.soviets, naradr, ~techlevel.2
 	Tooltip:
-		Name: Helipad
+		Name: actor-naheli.name
 	Tooltip@NoRow:
-		Name: Helipad
+		Name: actor-naheli.name
 	Exit@1:
 		SpawnOffset: -384,128,0
 	Production:
@@ -1085,14 +1085,14 @@ nanrct:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		BuildPaletteOrder: 110
 		Prerequisites: ~building.sovietsorbaku, natech, ~techlevel.3
-		Description: Provides a large amount of power for other structures.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Can be rotated.
+		Description: actor-nanrct.description
 		BuildDuration: 1000
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Nuclear Reactor
+		Name: actor-nanrct.name
 	Tooltip@NoRow:
-		Name: Nuclear Reactor
+		Name: actor-nanrct.name
 	Building:
 		Footprint: xxxx xxxx xxxx _xx_
 		Dimensions: 4,4
@@ -1143,7 +1143,7 @@ natech:
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		Prerequisites: ~building.sovietsorbaku, production, naradr, ~techlevel.3, ~!ai.natech
-		Description: Allows deployment of advanced units.
+		Description: actor-natech.description
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@upgrade.russia:
 		Prerequisite: upgrade.russia
@@ -1195,14 +1195,14 @@ naclon:
 		Queue: Building.Unused # Building.Soviets, Building.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: natech
-		Description: Clones most trained infantry.\n\n  Cannot be placed on water.\n  Maximum 1 can be built.
+		Description: actor-naclon.description
 		BuildLimit: 1
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Cloning Vats
+		Name: actor-naclon.name
 	Tooltip@NoRow:
-		Name: Cloning Vats
+		Name: actor-naclon.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
@@ -1291,13 +1291,13 @@ napsis:
 		Queue: Support.Unused # Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: natech, ~techlevel.4
-		Description: Detects enemy units and structures.\n\n  Requires power to operate.
+		Description: actor-napsis.description
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Psychic Sensor
+		Name: actor-napsis.name
 	Tooltip@NoRow:
-		Name: Psychic Sensor
+		Name: actor-napsis.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1345,11 +1345,11 @@ nairon:
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		Prerequisites: ~building.sovietsorbaku, natech, !enoughiron, ~techlevel.5
-		Description: Grants invulnerability to vehicles and structures.\nKills infantry.\n\n  Requires power to operate.
+		Description: actor-nairon.description
 	Tooltip:
-		Name: Iron Curtain Device
+		Name: actor-nairon.name
 	Tooltip@NoRow:
-		Name: Iron Curtain Device
+		Name: actor-nairon.name
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	GrantExternalConditionPower@IRONCURTAIN:
@@ -1405,11 +1405,11 @@ namisl:
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
 		Prerequisites: ~building.soviets, natech, !enoughnuke, ~techlevel.5
-		Description: Provides an atomic bomb.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Requires power to operate.
+		Description: actor-namisl.description
 	Tooltip:
-		Name: Nuclear Missile Silo
+		Name: actor-namisl.name
 	Tooltip@NoRow:
-		Name: Nuclear Missile Silo
+		Name: actor-namisl.name
 	NukePower:
 		Prerequisites:
 			1: namisl
@@ -1486,11 +1486,11 @@ nawall:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Heavy wall capable of blocking units and projectiles.\n\n  Cannot be placed on water.
+		Description: actor-nawall.description
 	Tooltip:
-		Name: Soviet Wall
+		Name: actor-nawall.name
 	Tooltip@NoRow:
-		Name: Soviet Wall
+		Name: actor-nawall.name
 	LineBuild:
 		NodeTypes: nawall
 	LineBuildNode:
@@ -1511,15 +1511,15 @@ naflak:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 50
 		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.2
-		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
+		Description: actor-naflak.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 700
 	Tooltip:
-		Name: Flak Cannon
+		Name: actor-naflak.name
 	Tooltip@NoRow:
-		Name: Flak Cannon
+		Name: actor-naflak.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1588,15 +1588,15 @@ tesla:
 		Queue: Support.Shared, Support.Soviets
 		BuildPaletteOrder: 60
 		Prerequisites: ~building.soviets, naradr, ~techlevel.3
-		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
+		Description: actor-tesla.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Tesla Coil
+		Name: actor-tesla.name
 	Tooltip@NoRow:
-		Name: Tesla Coil
+		Name: actor-tesla.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1715,15 +1715,15 @@ nalasr:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: ~building.sovietsorbaku, nahand, ~techlevel.1
-		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Description: actor-nalasr.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Sentry Gun
+		Name: actor-nalasr.name
 	Tooltip@NoRow:
-		Name: Sentry Gun
+		Name: actor-nalasr.name
 	Health:
 		HP: 40000
 	Armor:
@@ -1786,15 +1786,15 @@ nabnkr:
 		Queue: Support.Unused # Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: nahand, ~techlevel.1
-		Description: Static defense with fireports for 6 garrisoned soldiers.\nInfantry inside cannot be killed by garrison killers.\nComes with a Conscript inside.\n\n  Cannot be placed on water.
+		Description: actor-nabnkr.description
 	Valued:
 		Cost: 500
 	CustomSellValue:
 		Value: 0
 	Tooltip:
-		Name: Battle Bunker
+		Name: actor-nabnkr.name
 	Tooltip@NoRow:
-		Name: Battle Bunker
+		Name: actor-nabnkr.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1868,16 +1868,16 @@ naindp:
 		Queue: Building.Shared, Building.Soviets
 		BuildPaletteOrder: 120
 		Prerequisites: ~building.soviets, natech, ~techlevel.4
-		Description: Decreases vehicle costs by 25%.\n\n  Maximum 1 can be built.
+		Description: actor-naindp.description
 		BuildLimit: 1
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Industrial Plant
+		Name: actor-naindp.name
 	Tooltip@NoRow:
-		Name: Industrial Plant
+		Name: actor-naindp.name
 	ProvidesPrerequisite@default:
 		RequiresCondition: !disabled && !chronodisable
 	Building:
@@ -1927,9 +1927,9 @@ nagatea:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Tooltip:
-		Name: Soviet Gate
+		Name: actor-nagate.name
 	Tooltip@NoRow:
-		Name: Soviet Gate
+		Name: actor-nagate.name
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
@@ -1945,9 +1945,9 @@ nagateb:
 	Inherits: ^Gate_B
 	-Buildable:
 	Tooltip:
-		Name: Soviet Gate
+		Name: actor-nagate.name
 	Tooltip@NoRow:
-		Name: Soviet Gate
+		Name: actor-nagate.name
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
@@ -1968,15 +1968,15 @@ napost:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: ~building.sovietsorbaku, power, prerequisite.tesla_fence, ~techlevel.1
-		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Cannot be placed on water.\n  Requires power to operate.
+		Description: actor-napost.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Tesla Fence Post
+		Name: actor-napost.name
 	Tooltip@NoRow:
-		Name: Tesla Fence Post
+		Name: actor-napost.name
 	Building:
 		-SecondaryTerrainTypes:
 	Health:
@@ -2091,9 +2091,9 @@ napost:
 nafnce:
 	Inherits: ^Wall
 	Tooltip:
-		Name: Tesla Fence
+		Name: actor-nafnce.name
 	Tooltip@NoRow:
-		Name: Tesla Fence
+		Name: actor-nafnce.name
 	LineBuild:
 		NodeTypes: teslafence
 	LineBuildNode:
@@ -2172,15 +2172,15 @@ naprop:
 		Queue: Support.Shared, Support.Soviets
 		BuildPaletteOrder: 80
 		Prerequisites: ~building.soviets, natech, ~techlevel.4
-		Description: Buffs fire speed of nearby units and heals them.\n\n  Requires power to operate.
+		Description: actor-naprop.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Propaganda Tower
+		Name: actor-naprop.name
 	Tooltip@NoRow:
-		Name: Propaganda Tower
+		Name: actor-naprop.name
 	Health:
 		HP: 60000
 	Armor:

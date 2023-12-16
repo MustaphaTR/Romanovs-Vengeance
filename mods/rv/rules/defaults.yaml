@@ -1783,12 +1783,12 @@
 	HitShape:
 		UseTargetableCellsOffsets: true
 	Tooltip:
-		Name: Structure
-		GenericName: Structure
+		Name: meta-building.name
+		GenericName: meta-building.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Structure
-		GenericName: Structure
+		Name: meta-building.name
+		GenericName: meta-building.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -1921,9 +1921,9 @@
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Civilian Building
+		Name: meta-civbuilding.name
 	Tooltip@NoRow:
-		Name: Civilian Building
+		Name: meta-civbuilding.name
 	MapEditorData:
 		Categories: Civilian building
 
@@ -2074,9 +2074,9 @@
 		Dimensions: 1, 1
 		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	Tooltip:
-		Name: Flag
+		Name: meta-flag.name
 	Tooltip@NoRow:
-		Name: Flag
+		Name: meta-flag.name
 	Health:
 		HP: 2000
 	Armor:
@@ -2168,12 +2168,12 @@
 		CrushClasses: wall
 	HitShape:
 	Tooltip:
-		Name: Wall
-		GenericName: Wall
+		Name: meta-wall.name
+		GenericName: meta-wall.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Wall
-		GenericName: Wall
+		Name: meta-wall.name
+		GenericName: meta-wall.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -2213,11 +2213,11 @@
 		DamagedSounds: gblacrua.wav, gblacrub.wav
 		DestroyedSounds: gblacrua.wav, gblacrub.wav
 	Tooltip:
-		Name: Fence
-		GenericName: Fence
+		Name: meta-fence.name
+		GenericName: meta-fence.name
 	Tooltip@NoRow:
-		Name: Fence
-		GenericName: Fence
+		Name: meta-fence.name
+		GenericName: meta-fence.name
 
 ^Gate:
 	Inherits: ^Building
@@ -2245,7 +2245,7 @@
 	WithGateSpriteBody:
 		OpenSequence: open
 	Buildable:
-		Description: Automated barrier that opens for allied units.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: meta-gate.description
 	HitShape:
 		Type: Rectangle
 			LocalYaw: -128
@@ -2266,11 +2266,11 @@
 		AreaTypes: building
 		Adjacent: 6
 	Tooltip:
-		Name: Gate
-		GenericName: Gate
+		Name: meta-gate.name
+		GenericName: meta-gate.name
 	Tooltip@NoRow:
-		Name: Gate
-		GenericName: Gate
+		Name: meta-gate.name
+		GenericName: meta-gate.name
 	Voiced:
 		VoiceSet: GateVoice
 		Volume: 0.8
@@ -2522,12 +2522,12 @@
 		ExplodeInstead: true
 		ReturnToOrigin: false
 	Tooltip:
-		Name: Soldier
-		GenericName: Soldier
+		Name: meta-infantry.name
+		GenericName: meta-infantry.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Soldier
-		GenericName: Soldier
+		Name: meta-infantry.name
+		GenericName: meta-infantry.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -2727,11 +2727,11 @@
 		Queue: Infantry.Civilian
 		BuildAtProductionType: Soldier
 	Tooltip:
-		Name: Civilian
-		GenericName: Civilian
+		Name: meta-civilianinfantry.name
+		GenericName: meta-civilianinfantry.name
 	Tooltip@NoRow:
-		Name: Civilian
-		GenericName: Civilian
+		Name: meta-civilianinfantry.name
+		GenericName: meta-civilianinfantry.name
 	Health:
 		HP: 5000
 	Mobile:
@@ -2769,11 +2769,11 @@
 		Queue: Infantry.Civilian
 		BuildAtProductionType: Soldier
 	Tooltip:
-		Name: Pegasus
-		GenericName: Pony
+		Name: meta-pegasus.name
+		GenericName: meta-pegasus.generic-name
 	Tooltip@NoRow:
-		Name: Pegasus
-		GenericName: Pony
+		Name: meta-pegasus.name
+		GenericName: meta-pegasus.generic-name
 	Health:
 		HP: 5000
 	Selectable:
@@ -3070,12 +3070,12 @@
 		ReturnToOrigin: false
 		RequiresCondition: !invulnerability
 	Tooltip:
-		Name: Vehicle
-		GenericName: Vehicle
+		Name: meta-vehicle.name
+		GenericName: meta-vehicle.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Vehicle
-		GenericName: Vehicle
+		Name: meta-vehicle.name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -3184,12 +3184,12 @@
 	AppearsOnRadar:
 		UseLocation: true
 	Tooltip:
-		Name: Aircraft
-		GenericName: Aircraft
+		Name: meta-neutralaircraft.name
+		GenericName: meta-neutralaircraft.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Aircraft
-		GenericName: Aircraft
+		Name: meta-neutralaircraft.name
+		GenericName: meta-neutralaircraft.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -3308,12 +3308,12 @@
 	HiddenUnderFog:
 		Type: GroundPosition
 	Tooltip:
-		Name: Missile
-		GenericName: Missile
+		Name: meta-shootablemissile.name
+		GenericName: meta-shootablemissile.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Missile
-		GenericName: Missile
+		Name: meta-shootablemissile.name
+		GenericName: meta-shootablemissile.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -3350,12 +3350,12 @@
 		Velocity: 86
 	HitShape:
 	Tooltip:
-		Name: Aircraft
-		GenericName: Aircraft
+		Name: meta-aircraft.name
+		GenericName: meta-aircraft.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Aircraft
-		GenericName: Aircraft
+		Name: meta-aircraft.name
+		GenericName: meta-aircraft.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -3509,12 +3509,12 @@
 		ReturnToOrigin: false
 		RequiresCondition: !invulnerability
 	Tooltip:
-		Name: Ship
-		GenericName: Ship
+		Name: meta-ship.name
+		GenericName: meta-ship.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Ship
-		GenericName: Ship
+		Name: meta-ship.name
+		GenericName: meta-ship.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -3528,7 +3528,7 @@
 ^OreDrill:
 	Inherits@1: ^SpriteActor
 	Tooltip:
-		Name: Ore Drill
+		Name: meta-oredrill-name
 	WithSpriteBody:
 	Building:
 		Footprint: x
@@ -3576,7 +3576,7 @@
 		Terrain: Tree
 	BodyOrientation:
 	Tooltip:
-		Name: Tree
+		Name: meta-tree-name
 	QuantizeFacingsFromSequence:
 	RenderSprites:
 		Palette: terrain
@@ -3601,18 +3601,18 @@
 	AppearsOnMapPreview:
 		-Terrain:
 	Tooltip:
-		Name: Street Sign
+		Name: meta-streetsign-name
 	-MirageTarget:
 
 ^TrafficLight:
 	Inherits: ^StreetSign
 	Tooltip:
-		Name: Traffic Light
+		Name: meta-trafficlight-name
 
 ^StreetLight:
 	Inherits: ^StreetSign
 	Tooltip:
-		Name: Street Light
+		Name: meta-streetlight-name
 	Armor:
 		Type: steel
 	Health:
@@ -3621,7 +3621,7 @@
 ^TelephonePole:
 	Inherits: ^StreetSign
 	Tooltip:
-		Name: Utility Pole
+		Name: meta-telephonepole-name
 	Health:
 		HP: 2000
 	Armor:
@@ -3641,7 +3641,7 @@
 		Terrain: Rock
 	BodyOrientation:
 	Tooltip:
-		Name: Rock
+		Name: meta-rock-name
 	QuantizeFacingsFromSequence:
 	RenderSprites:
 		Palette: terrain
@@ -3655,8 +3655,8 @@
 	Inherits@1: ^SpriteActor
 	HiddenUnderFog:
 	Tooltip:
-		Name: Crate
-		GenericName: Crate
+		Name: meta-crate.name
+		GenericName: meta-crate.name
 	Crate:
 		TerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad, Ore, Gems, Water
 	RenderSprites:
