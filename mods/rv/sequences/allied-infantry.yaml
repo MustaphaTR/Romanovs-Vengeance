@@ -197,91 +197,30 @@ seal:
 	Inherits@SWIMSUIT: ^WithSwimsuit
 	Defaults:
 		Filename: conquer|seal.shp
+		TilesetFilenames:
+			SNOW: conquer|seala.shp
 	run:
 		Tick: 120
 	cheer:
 		Start: 603
 	paradrop:
 		Start: 602
-	snow-stand:
-		Filename: conquer|seala.shp
-		Facings: 8
-	snow-run:
-		Filename: conquer|seala.shp
-		Start: 8
-		Length: 6
-		Facings: 8
-		Tick: 120
-	snow-idle1:
-		Filename: conquer|seala.shp
-		Start: 56
-		Length: 15
-		Tick: 120
-	snow-idle2:
-		Filename: conquer|seala.shp
-		Start: 71
-		Length: 15
-		Tick: 120
-	snow-die1:
-		Filename: conquer|seala.shp
-		Start: 134
-		Length: 15
-	snow-die2:
-		Filename: conquer|seala.shp
-		Start: 149
-		Length: 15
-	snow-shoot:
-		Filename: conquer|seala.shp
-		Start: 164
-		Length: 6
-		Facings: 8
-		Tick: 80
-	prone-snow-shoot:
-		Filename: conquer|seala.shp
-		Start: 212
-		Length: 6
-		Facings: 8
-		Tick: 80
-	snow-liedown:
-		Filename: conquer|seala.shp
-		Start: 260
-		Length: 2
-		Facings: 8
-	snow-standup:
-		Filename: conquer|seala.shp
-		Start: 276
-		Length: 2
-		Facings: 8
-	prone-snow-stand:
-		Filename: conquer|seala.shp
-		Frames: 86, 92, 98, 104, 110, 116, 122, 128
-		Facings: 8
-	prone-snow-run:
-		Filename: conquer|seala.shp
-		Start: 86
-		Length: 6
-		Facings: 8
-		Tick: 100
-	snow-cheer:
-		Filename: conquer|seala.shp
-		Start: 603
-		Length: 8
-		Tick: 120
-	snow-paradrop:
-		Filename: conquer|seala.shp
-		Start: 602
 	icon:
 		Filename: cameo|sealicon.shp
+		TilesetFilenames:
+			SNOW: cameo|sealicon.shp
 
 ccomand:
 	Inherits: seal
 	Defaults:
 		Filename: conquer|ccomand.shp
+		-TilesetFilenames:
 	cheer:
 		Start: 340
 	-paradrop:
 	icon:
 		Filename: cameo|ccomicon.shp
+		-TilesetFilenames:
 
 ptroop:
 	Inherits: yuri
@@ -294,6 +233,8 @@ tany:
 	Inherits: ^ArmedInfantry
 	Defaults:
 		Filename: conquer|tany.shp
+		TilesetFilenames:
+			SNOW: bits/infantry/tanya.shp
 	run:
 		Tick: 120
 	swim-stand:
@@ -333,75 +274,10 @@ tany:
 		Tick: 120
 	paradrop:
 		Start: 602
-	snow-stand:
-		Filename: bits/infantry/tanya.shp
-		Facings: 8
-	snow-run:
-		Filename: bits/infantry/tanya.shp
-		Start: 8
-		Length: 6
-		Facings: 8
-		Tick: 120
-	snow-idle1:
-		Filename: bits/infantry/tanya.shp
-		Start: 56
-		Length: 15
-		Tick: 120
-	snow-idle2:
-		Filename: bits/infantry/tanya.shp
-		Start: 71
-		Length: 15
-		Tick: 120
-	snow-die1:
-		Filename: bits/infantry/tanya.shp
-		Start: 134
-		Length: 15
-	snow-die2:
-		Filename: bits/infantry/tanya.shp
-		Start: 149
-		Length: 15
-	snow-shoot:
-		Filename: bits/infantry/tanya.shp
-		Start: 164
-		Length: 6
-		Facings: 8
-		Tick: 80
-	prone-snow-shoot:
-		Filename: bits/infantry/tanya.shp
-		Start: 212
-		Length: 6
-		Facings: 8
-		Tick: 80
-	snow-liedown:
-		Filename: bits/infantry/tanya.shp
-		Start: 260
-		Length: 2
-		Facings: 8
-	snow-standup:
-		Filename: bits/infantry/tanya.shp
-		Start: 276
-		Length: 2
-		Facings: 8
-	prone-snow-stand:
-		Filename: bits/infantry/tanya.shp
-		Frames: 86, 92, 98, 104, 110, 116, 122, 128
-		Facings: 8
-	prone-snow-run:
-		Filename: bits/infantry/tanya.shp
-		Start: 86
-		Length: 6
-		Facings: 8
-		Tick: 100
-	snow-cheer:
-		Filename: bits/infantry/tanya.shp
-		Start: 603
-		Length: 8
-		Tick: 120
-	snow-paradrop:
-		Filename: bits/infantry/tanya.shp
-		Start: 602
 	icon:
 		Filename: cameo|tanyicon.shp
+		TilesetFilenames:
+			SNOW: cameo|tanyicon.shp
 
 jumpjet:
 	Defaults:
