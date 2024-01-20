@@ -1440,7 +1440,7 @@
 		Modifier: 130
 		RequiresCondition: chaos
 	Berserkable@CHAOS:
-		ActorsToIgnore: caos, pdplane.chaos
+		TargetTypesToIgnore: Tree, NoBerserkAutoTarget
 		RequiresCondition: chaos
 	RejectsOrders@CHAOS:
 		RequiresCondition: chaos
@@ -1459,6 +1459,10 @@
 	Inherits: ^Berserkable
 	WithColoredOverlay@CHAOS:
 		Color: 2A002A40
+
+^NotBerserkTarget:
+	Targetable@NOCHAOS:
+		TargetTypes: NoBerserkAutoTarget
 
 ^TerrorDronable:
 	InfectableRV:
