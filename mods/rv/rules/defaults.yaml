@@ -2638,7 +2638,23 @@
 			OrangeRadiationDeath: 1
 	Targetable@WaterBorne:
 		TargetTypes: Water
-		RequiresCondition: swimming
+		RequiresCondition: swimming && !affectedbytemporal
+
+^WithSwimSuitAndParachute:
+	Inherits@1: ^Parachutable
+	Inherits@2: ^WithSwimSuit
+	WithInfantryBody:
+		RequiresCondition: !swimming && !parachute
+	WithInfantryBody@Water:
+		RequiresCondition: swimming && !parachute
+	WithDeathAnimation@normal:
+		RequiresCondition: !swimming && !parachute
+	WithDeathAnimation@effect:
+		RequiresCondition: !swimming && !parachute
+	WithDeathAnimation@Water:
+		RequiresCondition: swimming && !parachute
+	Targetable@WaterBorne:
+		RequiresCondition: swimming && !parachute && !affectedbytemporal
 
 ^JumpjetInfantry:
 	Inherits: ^Infantry
