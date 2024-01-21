@@ -3684,7 +3684,8 @@ actor-spider =
     Upgradeable with:
     - DNA Boosters (Transylvania)
 
-actor-expy-description = Deploys into an Expansion Node.
+actor-expy =
+   .description = Deploys into an Expansion Node.
     Cannot be undeployed back.
     
       Unarmed
