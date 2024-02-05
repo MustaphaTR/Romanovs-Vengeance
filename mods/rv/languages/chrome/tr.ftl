@@ -247,6 +247,8 @@ label-combat-stats-vision-header = Vision
 
 ## ingame-observer.yaml, ingame-player.yaml
 label-mute-indicator = Audio Muted
+button-collapse-tooltip = Daralt
+button-expand-tooltip = Genişlet
 
 ## ingame-player.yaml
 supportpowers-support-powers-palette =

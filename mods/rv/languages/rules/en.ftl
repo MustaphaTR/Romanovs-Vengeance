@@ -1,62 +1,62 @@
 ## Player
 options-tech-level =
-    .one = 1
-    .two = 2
-    .three = 3
-    .four = 4
-    .five = 5
+   .one = 1
+   .two = 2
+   .three = 3
+   .four = 4
+   .five = 5
 
 checkbox-redeployable-mcvs =
-    .label = Redeployable MCVs
-    .description = Allow undeploying Construction Yard
+   .label = Redeployable MCVs
+   .description = Allow undeploying Construction Yard
 
 checkbox-free-minimap =
-    .label = Free Minimap
-    .description = Minimap is active without a building to enable it
+   .label = Free Minimap
+   .description = Minimap is active without a building to enable it
 
 checkbox-limit-super-weapons =
-    .label = Limit Super Weapons
-    .description = Only 1 of each super weapon can be built by a player
+   .label = Limit Super Weapons
+   .description = Only 1 of each super weapon can be built by a player
 
 checkbox-tech-build-area =
-    .label = Tech Build Area
-    .description = Allow building placement around tech structures
+   .label = Tech Build Area
+   .description = Allow building placement around tech structures
 
 checkbox-instant-capture =
-    .label = Instant Capture
-    .description = Engineers can enter a building without waiting to capture
+   .label = Instant Capture
+   .description = Engineers can enter a building without waiting to capture
 
 checkbox-multiqueue =
-    .label = MultiQueue
-    .description = Each production facility can produce individually
+   .label = MultiQueue
+   .description = Each production facility can produce individually
 
 checkbox-upgrades-option =
-    .label = Upgrades
-    .description = Enables researching upgrades that improve existing units
+   .label = Upgrades
+   .description = Enables researching upgrades that improve existing units
 
 checkbox-domination-option =
-    .label = Domination
-    .description = Control the flags on the map to win
+   .label = Domination
+   .description = Control the flags on the map to win
 
 checkbox-megawealth-option =
-    .label = Megawealth
-    .description = Removes all the Ore on the map and makes the economy dependent on Oil Derricks
+   .label = Megawealth
+   .description = Removes all the Ore on the map and makes the economy dependent on Oil Derricks
 
 checkbox-show-owner-name =
-    .label = Show Owner Name
-    .description = Show name and flag of the owner of a unit on its tooltip
+   .label = Show Owner Name
+   .description = Show name and flag of the owner of a unit on its tooltip
 
 checkbox-sudden-death =
-    .label = Sudden Death
-    .description = Players can't build another MCV and get defeated when they lose it
+   .label = Sudden Death
+   .description = Players can't build another MCV and get defeated when they lose it
 
 checkbox-king-of-the-hill =
-    .label = King of the Hill
-    .description = Capture and hold the Psychic Beacon on the map to win
+   .label = King of the Hill
+   .description = Capture and hold the Psychic Beacon on the map to win
 
 checkbox-regicide =
-    .label = Regicide
-    .description = Kill enemy leader to win the game
+   .label = Regicide
+   .description = Kill enemy leader to win the game
 
 notification-insufficient-funds = Insufficient funds.
 notification-new-construction-options = New construction options.
@@ -69,27 +69,27 @@ notification-insufficient-silos = Insufficient silos.
 
 ## World
 dropdown-cpmodifier =
-    .label = CP Per Rank
-    .description = Commander's Points you get when you rank up, per rank.
+   .label = CP Per Rank
+   .description = Commander's Points you get when you rank up, per rank.
 
 options-cpmodifier =
-    .disabled = 0, 0, 0, 0, 0
-    .one = 1, 1, 1, 1, 1
-    .normal = 1, 1, 1, 1, 3
-    .two = 2, 2, 2, 2, 2
-    .double = 2, 2, 2, 2, 6
-    .three = 3, 3, 3, 3, 3
-    .triple = 3, 3, 3, 3, 5
-    .all = 4, 0, 11, 0, 2
+   .disabled = 0, 0, 0, 0, 0
+   .one = 1, 1, 1, 1, 1
+   .normal = 1, 1, 1, 1, 3
+   .two = 2, 2, 2, 2, 2
+   .double = 2, 2, 2, 2, 6
+   .three = 3, 3, 3, 3, 3
+   .triple = 3, 3, 3, 3, 5
+   .all = 4, 0, 11, 0, 2
 
 options-starting-units =
-    .no-bases = No Bases
-    .mcv-only = MCV Only
-    .mcv-and-dog = MCV and Dog
-    .light-support = Light Support
-    .medium-support = Medium Support
-    .heavy-support = Heavy Support
-    .unholy-alliance = Unholy Alliance
+   .no-bases = No Bases
+   .mcv-only = MCV Only
+   .mcv-and-dog = MCV and Dog
+   .light-support = Light Support
+   .medium-support = Medium Support
+   .heavy-support = Heavy Support
+   .unholy-alliance = Unholy Alliance
 
 ## Defaults
 notification-unit-lost = Unit lost.
@@ -502,7 +502,6 @@ actor-aegis =
 
 actor-dlph =
    .name = Dolphin
-   .generic-name = Dolphin
    .description = Trained dolphin armed with sonic beams.
     
       Strong vs Ships
@@ -757,7 +756,7 @@ actor-tnkd =
 
 actor-fv =
    .name = Infantry Fighting Vehicle
-   .mg--name = Machine Gun IFV
+   .mg-name = Machine Gun IFV
    .init-name = Ignitor IFV
    .rocket-name = Rocket IFV
    .gren-name = Grenade IFV
@@ -1378,7 +1377,7 @@ actor-castrt05 =
 actor-camov01 =
    .name = Drive In Movie Screen
 actor-camov02 =
-   -name = Drive In Movie Concession Stand
+   .name = Drive In Movie Concession Stand
 actor-pole01 =
    .name = Utility Pole
 actor-pole02 =
@@ -2067,7 +2066,6 @@ meta-amphibioustransport =
 
 meta-seaanimal =
    .name = Sea Animal
-   .generic-name = Sea Animal
 
 ## default-structures.yaml
 meta-constructionyard =
@@ -3443,7 +3441,6 @@ actor-natbnk =
    .description = Static defense with fireports for a vehicle to garrison.
     Provides increased firepower, fire speed and range to the vehicle.
    .name = Tank Bunker
-   .norow--name = Tank Bunker
 
 actor-yapsyt =
    .name = Psychic Tower
@@ -3501,7 +3498,7 @@ actor-yaeast02 =
 actor-yagate =
    .name = Psi-Corps Gate
 actor-psirefn =
-   -name = Ore Refinery
+   .name = Ore Refinery
 
 ## yuri-vehicles.yaml
 actor-pcv =
@@ -3626,7 +3623,6 @@ actor-mlyr =
 
 actor-kamaz =
    .name = Armored Truck
-   .norow--name = Armored Truck
    .description = Armored infantry transport vehicle.
     
       Unarmed
