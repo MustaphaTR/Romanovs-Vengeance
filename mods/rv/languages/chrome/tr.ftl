@@ -100,7 +100,7 @@ button-map-editor-tab-container-tools =
    .tooltip = Araçlar
 
 button-map-editor-tab-container-history =
-   .label = Geçmiş
+   .tooltip = Geçmiş
 
 button-editor-world-root-options =
    .label = Menü

@@ -427,7 +427,6 @@ actor-ggi =
     
     Upgradeable with:
     - Fiber-Reinforced Fortifications
-    -
     - Advanced Training
     - Boost-Gliding Systems (United States)
     - Portable Weaponry (United Kingdom)
@@ -2626,7 +2625,7 @@ actor-naweap =
     
       Cannot be placed on water.
       Can be rotated.
-	  
+
 actor-nayard =
    .description = Produces Soviet ships, submarines, and other naval units.
     
@@ -3266,7 +3265,7 @@ actor-yuripsi =
     
     Upgradeable with:
     - Mastery of Mind (Antarctica)
-	
+
 actor-yurix =
    .description = Psychic infantry. Can mind control enemy units and structures.
     Can be deployed to unleash a powerful psychic wave.
