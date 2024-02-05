@@ -712,6 +712,9 @@ notification-copied-tiles =
     }
 
 ## EditorDefaultBrush
+notification-selected-area = Alan { $x },{ $y } ({ $width },{ $height }) seçildi
+notification-selected-actor = Selected actor { $id }
+notification-cleared-selection = Seçim temizlendi
 notification-removed-actor = { $name } ({ $id }) kaldırıldı
 notification-removed-resource = { $type } kaldırıldı
 

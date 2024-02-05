@@ -73,32 +73,46 @@ label-tiles-bg-categories = Filtre:
 label-actors-bg-search = Arama:
 label-actors-bg-categories = Filtre:
 label-actors-bg-owners = Owner:
+label-area-selection = Alan Seçimi
+label-area-info = Alan Bilgisi
+label-selected-area-selected-region = Region:
+label-selected-area-dimension = Dimensions:
+label-selected-area-diagonal = Diagonal:
+label-selected-area-resources = Resources:
+label-copy-filters = Kopyalama Filtreleri
+label-filter-terrain = Terrain
+label-filter-resources = Resources
+label-filter-actors = Actors
+button-selection-cancel = İptal
+label-show-tile-grid = Show Tile Grid
+label-show-buildable-area = Show Buildable Area
 
 button-map-editor-tab-container-tiles =
-   .label = Tiles
    .tooltip = Tiles
 
 button-map-editor-tab-container-overlays =
-   .label = Overlays
    .tooltip = Overlays
 
 button-map-editor-tab-container-actors =
-   .label = Actors
    .tooltip = Actors
+
+button-map-editor-tab-container-tools =
+   .tooltip = Araçlar
 
 button-map-editor-tab-container-history =
    .label = Geçmiş
-   .tooltip = Geçmiş
 
 button-editor-world-root-options =
    .label = Menü
    .tooltip = Menü
 
-button-editor-world-root-copypaste =
-   .label = Kopyala/Yapıştır
+button-editor-world-root-copy =
+   .label = Kopyala
    .tooltip = Kopyala
 
-dropdownbutton-editor-world-root-copyfilter-button = Kopyalama Filtreleri
+button-editor-world-root-paste =
+   .label = Yapıştır
+   .tooltip = Yapıştır
 
 button-editor-world-root-undo =
    .label = Geri al
@@ -108,7 +122,6 @@ button-editor-world-root-redo =
    .label = Yinele
    .tooltip = Redo last step
 
-dropdownbutton-editor-world-root-overlay-button = Overlays
 button-select-categories-buttons-all = Tümü
 button-select-categories-buttons-none = Hiçbiri
 
