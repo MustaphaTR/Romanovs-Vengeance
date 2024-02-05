@@ -136,7 +136,7 @@ rctt:
 	WithSpriteBody@Parachute:
 		RequiresCondition: parachute && !bulletproof
 	WithSpriteBody@Parachute-BULLETPROOF:
-		Name: parachute
+		Name: parachute-bulletproof
 		Sequence: paradrop-bulletproof
 		RequiresCondition: parachute && bulletproof
 	WithDeathAnimation@normal:
@@ -326,6 +326,7 @@ mengineer:
 	WithFacingSpriteBody:
 		RequiresCondition: !swimming
 	WithFacingSpriteBody@Water:
+		Name: swim
 		Sequence: swim-stand
 		RequiresCondition: swimming
 	-TakeCover:
@@ -349,7 +350,7 @@ sspy:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		Prerequisites: ~infantry.baku, basops, ~techlevel.3
-		Description: actor-sspy-description
+		Description: actor-sspy.description
 	CaptureManager:
 	Captures:
 		CaptureTypes: vehicle
@@ -459,7 +460,7 @@ ssnipe:
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Buildable:
 		Queue: Infantry.Unused # Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
-		Description: actor-ssnipe-description
+		Description: actor-ssnipe.description
 		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
 	RenderSprites:
 		Image: snipe

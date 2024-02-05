@@ -863,7 +863,7 @@ ggi:
 	WithSpriteBody@Parachute:
 		RequiresCondition: parachute && !portable
 	WithSpriteBody@Parachute-PORTABLE:
-		Name: parachute
+		Name: parachute-portable
 		Sequence: paradrop-portable
 		RequiresCondition: parachute && portable
 	WithDeathAnimation@normal:
@@ -1099,11 +1099,11 @@ spy:
 	-Tooltip@NoRow:
 	DisguiseTooltip:
 		Name: actor-spy.name
-		GenericName: meta-infantry.generic-name
+		GenericName: meta-infantry.name
 		RequiresCondition: showownername
 	DisguiseTooltip@NoRow:
 		Name: actor-spy.name
-		GenericName: meta-infantry.generic-name
+		GenericName: meta-infantry.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	Selectable:
@@ -1940,7 +1940,7 @@ gren:
 	WithSpriteBody@Parachute:
 		RequiresCondition: parachute && !empammo
 	WithSpriteBody@Parachute-EMPAMMO:
-		Name: parachute
+		Name: parachute-empammo
 		Sequence: paradrop-empammo
 		RequiresCondition: parachute && empammo
 	WithDeathAnimation@normal:

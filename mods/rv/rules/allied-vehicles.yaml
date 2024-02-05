@@ -1399,12 +1399,12 @@ mgtk:
 		RequiresCondition: !tree && !showownername
 	MirageTooltip@Tree:
 		Name: actor-mgtk.name
-		GenericName: meta-tree-name
+		GenericName: meta-tree.name
 		GenericVisibility: Enemy, Neutral
 		RequiresCondition: tree && showownername
 	MirageTooltip@TreeNoRow:
 		Name: actor-mgtk.name
-		GenericName: meta-tree-name
+		GenericName: meta-tree.name
 		ShowOwnerRow: false
 		GenericVisibility: Enemy, Neutral
 		RequiresCondition: tree && !showownername
@@ -1585,7 +1585,6 @@ bfrt:
 			itrp: loaded
 			spct: loaded
 			ttrp: loaded
-			ttrp.soviet: loaded
 			crkt: loaded-air
 	WithCargoSounds:
 		EnterSound: genter1a.wav
@@ -1742,7 +1741,7 @@ robo:
 		RequiresCondition: !powered
 	KillsSelf@LowPowerOnWater:
 		DamageTypes: NonTemporal
-		RequiresCondition: (!powered || emp || magnefreeze) && in_water
+		RequiresCondition: (!powered || emp || magnefreeze) && in_water && !on_dock
 	PeriodicExplosion@disabledsparks:
 		RequiresCondition: !powered
 		Weapon: DisabledSparkSpawner
@@ -1759,6 +1758,8 @@ robo:
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water, Beach
 		Condition: in_water
+	ExternalCondition@on_dock:
+		Condition: on_dock
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha

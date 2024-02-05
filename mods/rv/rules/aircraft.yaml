@@ -1317,6 +1317,7 @@ pdplane.crate:
 	-Targetable@Airborne:
 	-Targetable@Ground:
 	-Targetable@REPAIR:
+	-Targetable@REPAIRAirborne:
 	-GrantConditionOnDamageState@DAMAGED:
 	Interactable:
 		Bounds: 2413, 3861
@@ -2025,6 +2026,7 @@ bpln:
 		RearmActors: boris
 	ActorStatValues:
 		-Upgrades:
+	-ActorStatOverride@a2amissiles:
 
 bpln.buildable:
 	Inherits: orca
@@ -3913,6 +3915,8 @@ repdron:
 	-Targetable@ironcurtained:
 	-TimedConditionBar@invulnerability:
 	-ExternalCondition@INVULNERABILITY:
+	AffectedByTemporal:
+		-RequiresCondition:
 	DamageMultiplier@nodamage:
 		Modifier: 0
 	WithDeathAnimation:
