@@ -3503,9 +3503,11 @@ actor-yaggun =
       Requires power to operate.
 
 actor-natbnk =
+   .name = Tank Bunker
    .description = Static defense with fireports for a vehicle to garrison.
     Provides increased firepower, fire speed and range to the vehicle.
-   .name = Tank Bunker
+    
+      Cannot be placed on water.
 
 actor-yapsyt =
    .name = Psychic Tower
