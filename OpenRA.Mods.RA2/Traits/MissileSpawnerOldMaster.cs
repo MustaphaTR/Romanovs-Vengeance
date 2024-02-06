@@ -83,10 +83,8 @@ namespace OpenRA.Mods.RA2.Traits
 		// invokes Attacking()
 		void INotifyAttack.Attacking(Actor self, in Target target, Armament a, Barrel barrel)
 		{
-			if (IsTraitDisabled || IsTraitPaused)
-				return;
-
-			if (!Info.ArmamentNames.Contains(a.Info.Name))
+			// HACK: If Armament hits instantly and kills the target, the target will become invalid
+			if (target.Type == TargetType.Invalid || IsTraitDisabled || IsTraitPaused || (Info.ArmamentNames.Count > 0 && !Info.ArmamentNames.Contains(a.Info.Name)))
 				return;
 
 			// Issue retarget order for already launched ones
