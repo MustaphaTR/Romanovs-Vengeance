@@ -1709,7 +1709,7 @@
 	Inherits@12: ^AcceptsTeslaBomb
 	Inherits@13: ^AcceptsToxinBomb
 	Inherits@HANDICAPS: ^PlayerHandicaps
-	Inherits@shape: ^1x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	-DrawLineToTarget:
 	AppearsOnMapPreview:
 	OwnerLostAction:
@@ -2004,7 +2004,7 @@
 
 ^Rubble:
 	Inherits@1: ^SpriteActor
-	Inherits@shape: ^1x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	Building:
 		Dimensions: 1,1
 		Footprint: _
@@ -2018,6 +2018,8 @@
 	MapEditorData:
 		Categories: Building rubble
 	Interactable:
+	Targetable:
+		TargetTypes: Rubble
 
 ^TechBuilding:
 	Inherits: ^Building
@@ -2139,7 +2141,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@HANDICAPS: ^PlayerHandicaps
-	Inherits@shape: ^1x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	AppearsOnMapPreview:
 	OwnerLostAction:
 		Action: ChangeOwner
@@ -2290,7 +2292,7 @@
 
 ^Gate_A:
 	Inherits: ^Gate
-	Inherits@shape: ^3x1Shape
+	Inherits@SHAPE: ^3x1Shape
 	Health:
 	Building:
 		Dimensions: 3,1
@@ -2307,7 +2309,7 @@
 
 ^Gate_B:
 	Inherits: ^Gate
-	Inherits@shape: ^1x3Shape
+	Inherits@SHAPE: ^1x3Shape
 	Health:
 	Building:
 		Dimensions: 1,3

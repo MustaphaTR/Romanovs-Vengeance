@@ -628,7 +628,7 @@ ScoutDroneSpawner:
 	Warhead@1Spa: SpawnActor
 		Actors: sdrn.spawner
 		Range: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Eff: CreateEffect
 		Delay: 1
 		ImpactSounds: vdr2crea.wav
@@ -643,7 +643,7 @@ SpyCameraWeapon:
 	Warhead@1Spa: SpawnActor
 		Actors: camera.spyplane
 		Range: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 		ForceGround: true
 
 PsychicReveal:
@@ -652,7 +652,7 @@ PsychicReveal:
 	Warhead@1Spa: SpawnActor
 		Actors: camera.psychicreveal
 		Range: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: scananim
 		ExplosionPalette: tseffect
@@ -863,7 +863,7 @@ BunkerSpawner:
 	Warhead@1Spa: SpawnBuilding
 		Buildings: nabnkr
 		Sounds: uplace.wav
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 
 BarrelSpawner:
 	Warhead@1Spa: SpawnBuilding
@@ -871,7 +871,7 @@ BarrelSpawner:
 		Delay: 15
 		Range: 3
 		Sounds: uplace.wav
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: chronofd
 		ImpactSounds: schrmov.wav
@@ -882,11 +882,11 @@ AmbushSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: AmbushSpawnerE2
 		Amount: 8
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Sha: FireShrapnel
 		Weapon: AmbushSpawnerFlakt
 		Amount: 4
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@TargetValidation: TargetDamage
 	Warhead@3Eff: CreateEffect
 		ImpactSounds: sambusha.aud
@@ -911,23 +911,23 @@ HologramSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: HologramSpawnerInit
 		Amount: 6
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Sha: FireShrapnel
 		Weapon: HologramSpawnerBrute
 		Amount: 2
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@3Sha: FireShrapnel
 		Weapon: HologramSpawnerGtrp
 		Amount: 2
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@4Sha: FireShrapnel
 		Weapon: HologramSpawnerLtnk
 		Amount: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@5Sha: FireShrapnel
 		Weapon: HologramSpawnerYtnk
 		Amount: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@TargetValidation: TargetDamage
 	Warhead@6Eff: CreateEffect
 		ImpactSounds: holoinit.aud
@@ -940,7 +940,7 @@ HologramSpawner:
 	Warhead@2Eff: CreateEffect
 		Explosions: holosmoke1, holosmoke2, holosmoke3, holosmoke4
 		ExplosionPalette: cyanjascpal
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 
 HologramSpawnerInit:
 	Inherits: ^HologramSpawnerDefault
@@ -971,7 +971,7 @@ LethocerusSpawnerSpawnerSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: LethocerusSpawnerSpawner
 		Amount: 3
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@TargetValidation: TargetDamage
 
 LethocerusSpawnerSpawner:
@@ -979,14 +979,14 @@ LethocerusSpawnerSpawner:
 	Projectile: InstantHit
 	Warhead@1Spa: SpawnActor
 		Actors: txdx.spawner
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 
 GrizzlySpawner:
 	Warhead@1Spa: SpawnActor
 		Actors: mtnk,mtnk,mtnk
 		Delay: 15
 		Range: 3
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: chronofd
 		ImpactSounds: schrmov.wav
@@ -1431,7 +1431,7 @@ droppod:
 	Warhead@5Effect: SpawnActor
 		Actors: brute
 		Range: 3
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 
 AirDummyAim:
 	Range: 8c0
