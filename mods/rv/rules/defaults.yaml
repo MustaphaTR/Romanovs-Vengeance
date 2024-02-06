@@ -1454,10 +1454,20 @@
 	ExternalCondition@CHAOS:
 		Condition: chaos
 
+^BerserkableArmed:
+	Inherits: ^Berserkable
+	AutoTarget:
+		RequiresCondition: !chaos
+
 ^BerserkableVoxel:
 	Inherits: ^Berserkable
 	WithColoredOverlay@CHAOS:
 		Color: 2A002A40
+
+^BerserkableVoxelArmed:
+	Inherits: ^BerserkableVoxel
+	AutoTarget:
+		RequiresCondition: !chaos
 
 ^NotBerserkTarget:
 	Targetable@NOCHAOS:
