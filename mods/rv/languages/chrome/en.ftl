@@ -1,3 +1,9 @@
+## assetbrowser.yaml
+label-assetbrowser-model-scale = Scale:
+label-voxel-selector-roll = Roll
+label-voxel-selector-pitch = Pitch
+label-voxel-selector-yaw = Yaw
+
 ## credits.yaml
 button-tab-container-asengine = Attacque Supérior
 
