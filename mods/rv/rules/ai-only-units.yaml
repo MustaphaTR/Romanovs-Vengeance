@@ -288,7 +288,7 @@ shad-squad-1:
 	UpdatesPlayerStatistics:
 		OverrideActor: shad
 	Cargo:
-		InitialUnits: ggi, dog, ggi, dog, e1, e1, e1
+		InitialUnits: ggi, ggi, dog, e1, e1
 	ProductionCostMultiplier@1:
 		Multiplier: 125
 	RenderSprites:
@@ -303,14 +303,14 @@ shad-squad-2:
 	ProductionCostMultiplier@1:
 		Multiplier: 150
 	Cargo:
-		InitialUnits: e1, ggi, ggi, gren, gren, e1, e1
+		InitialUnits: e1, ggi, ggi, gren, gren
 
 shad-squad-3:
 	Inherits: shad-squad-1
 	Buildable:
 		Prerequisites: ~prerequisite.aiplayer, ~aircraft.allies, infantry.allies, gatech, ~techlevel.4, ~!LoadedExists, ~!tany
 	Cargo:
-		InitialUnits: e1, ggi, ggi, tany, dog, dog
+		InitialUnits: e1, ggi, ggi, tany, dog
 	-VoiceAnnouncement:
 	NotificationAnnouncement:
 		RequiresCondition: produced
@@ -321,7 +321,7 @@ shad-squad-4:
 	Buildable:
 		Prerequisites: ~prerequisite.aiplayer, ~aircraft.allies, infantry.america, gaairc, ~techlevel.3, ~!LoadedExists
 	Cargo:
-		InitialUnits: e1, ggi, ggi, ghost, ghost, dog, dog
+		InitialUnits: e1, ggi, ggi, ghost, dog
 
 txdx-squad-1:
 	Inherits: txdx
