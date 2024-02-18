@@ -4,17 +4,20 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read  #  to fetch code (actions/checkout)
+
 jobs:
   linux:
     name: Linux (.NET 6.0)
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install .NET 6.0
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
 
@@ -32,15 +35,15 @@ jobs:
         run: |
           sudo apt-get install lua5.1
           make check-scripts
-          make test
+          make TREAT_WARNINGS_AS_ERRORS=true test
 
   linux-mono:
     name: Linux (mono)
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Prepare Environment
         run: |
@@ -56,7 +59,7 @@ jobs:
       - name: Check Mod
         run: |
           # check-scripts does not depend on .net/mono, so is not needed here
-          make RUNTIME=mono test
+          make RUNTIME=mono TREAT_WARNINGS_AS_ERRORS=true test
 
   windows:
     name: Windows (.NET 6.0)
@@ -64,10 +67,10 @@ jobs:
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install .NET 6.0
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
 
@@ -75,12 +78,13 @@ jobs:
         shell: powershell
         run: |
           # Work around runtime failures on the GH Actions runner
-          dotnet nuget locals all --clear
+          dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
           .\make.ps1 check
 
       - name: Check Mods
         run: |
           choco install lua --version 5.1.5.52
           $ENV:Path = $ENV:Path + ";C:\Program Files (x86)\Lua\5.1\"
+          $ENV:TREAT_WARNINGS_AS_ERRORS = "true"
           .\make.ps1 check-scripts
           .\make.ps1 test
