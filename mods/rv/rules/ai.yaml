@@ -1365,7 +1365,7 @@ Player:
 		IdleScanRadius: 10
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, txdx, disk, magnedisk, bpln.buildable, badgr
@@ -1373,7 +1373,6 @@ Player:
 		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		SuggestedNavyLeaderLocomotor: naval
 		GuerrillaTypes: robo, mtnk, fv, sref, mgtk, hwtz, dron, htk, tric, ltnk, ytnk, caos, yhtnk, kite, havoc, disk, txdx, magnedisk
-		IgnoredEnemyTargetTypes: Air
 	SquadManagerBotModule@no_bases:
 		RequiresCondition: enable-generic-ai && no_bases
 		SquadSize: 10
@@ -1385,7 +1384,7 @@ Player:
 		IdleScanRadius: 10
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, disk, magnedisk, bpln.buildable, badgr
@@ -1393,7 +1392,6 @@ Player:
 		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		SuggestedNavyLeaderLocomotor: naval
 		GuerrillaTypes: robo, mtnk, fv, sref, mgtk, hwtz, dron, htk, tric, ltnk, ytnk, caos, yhtnk, kite, havoc, disk, txdx, magnedisk
-		IgnoredEnemyTargetTypes: Air
 	McvManagerBotModule@generic:
 		RequiresCondition: enable-generic-ai && !enable-vengeful-ai
 		McvTypes: amcv, smcv, pcv
@@ -1427,6 +1425,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -1615,6 +1614,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -1796,6 +1796,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -2000,6 +2001,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -2197,6 +2199,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -2402,6 +2405,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -2615,3 +2619,20 @@ Player:
 		PassengerTypes: e1, ggi, dog, e2, init
 		ValidTransportOwner: AlliedBot
 		ScanTick: 799
+	SendUnitToAttackBotModule@spy:
+		RequiresCondition: enable-generic-ai
+		ActorTypesAndAttackOptions: 
+			spy:
+				AttackDesireOfEach: 100
+				TryDisguise: true
+				AttackOrderName: Infiltrate
+				AttackRequires: Disguised
+				TryGetHealed: false
+			dtruck:
+				AttackDesireOfEach: 100
+				TryGetHealed: false
+				AttackOrderName: AssaultMove
+		ValidTargets: SpyInfiltrate
+		InvalidTargets: Water
+		TargetDistances: Random
+
