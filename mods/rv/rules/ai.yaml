@@ -1365,7 +1365,7 @@ Player:
 		IdleScanRadius: 10
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy, shad
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, txdx, disk, magnedisk, bpln.buildable, badgr
@@ -1384,7 +1384,7 @@ Player:
 		IdleScanRadius: 10
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy, shad
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, disk, magnedisk, bpln.buildable, badgr
@@ -1874,6 +1874,7 @@ Player:
 			orca: 5
 			beag: 2
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
@@ -1978,6 +1979,7 @@ Player:
 			beag: 1
 			fortress: 2
 			txdx: 1
+			shad: 1
 			disk: 2
 			magnedisk: 2
 			schp: 2
@@ -2034,7 +2036,6 @@ Player:
 			ltnk: 100
 			htk: 3
 			fv: 5
-			bfrt-squad-1: 5
 			ytnk: 40
 			robo: 2
 			send: 2
@@ -2077,6 +2078,7 @@ Player:
 			orca: 5
 			beag: 2
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
@@ -2177,6 +2179,7 @@ Player:
 			orca: 3
 			beag: 1
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 2
@@ -2281,6 +2284,7 @@ Player:
 			orca: 5
 			beag: 2
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
@@ -2385,6 +2389,7 @@ Player:
 			orca: 3
 			beag: 1
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 2
@@ -2483,6 +2488,7 @@ Player:
 			orca: 5
 			beag: 2
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
@@ -2588,6 +2594,7 @@ Player:
 			orca: 3
 			beag: 1
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 2
@@ -2614,9 +2621,10 @@ Player:
 		TransportTypesAndLoadRequirement:
 			htk: IdleUnit
 			kamaz: IdleUnit
+			shad: IdleUnit
 			fv: All
 			bfrt: All
-		PassengerTypes: e1, ggi, gren, snipe, e2, shk, flakt, init, virus, rctt, mtrp, ssnipe
+		PassengerTypes: e1, ggi, gren, snipe, e2, shk, flakt, init, virus, rctt, mtrp, ssnipe, tany, boris
 		ValidTransportOwner: AlliedBot
 	LoadCargoBotModule@TankBunker:
 		RequiresCondition: enable-generic-ai
@@ -2644,6 +2652,12 @@ Player:
 				AttackDesireOfEach: 100
 				TryGetHealed: false
 				AttackOrderName: AssaultMove
+			shad:
+				AttackDesireOfEach: 100
+				MoveToOrderName: Move
+				AttackOrderName: Unload
+				MoveBackOrderName: Move
+				AttackRequires: CargoLoaded
 		ValidTargets: SpyInfiltrate
 		InvalidTargets: Water
 		TargetDistances: Random
