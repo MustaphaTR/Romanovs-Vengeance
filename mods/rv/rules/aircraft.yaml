@@ -5,6 +5,11 @@ shad:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded
+		OrderName: Unload
+		OrderChance: 100
+		OrderInterval: 40
 	DamagedByTintedCells:
 		RequiresCondition: !airborne
 	DamagedByTintedCells@ORANGE:
@@ -128,6 +133,7 @@ shad:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
+		LoadedCondition: loaded
 	WithCargoSounds:
 		EnterSounds: genter1a.wav
 		ExitSounds: gexit1a.wav
