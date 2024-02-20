@@ -228,6 +228,11 @@ htk:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded
+		OrderName: Unload
+		OrderChance: 100
+		OrderInterval: 45
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -277,6 +282,7 @@ htk:
 		PassengerFacing: 0
 		UnloadVoice: Move
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 	WithCargoSounds:
 		EnterSounds: genter1a.wav
 		ExitSounds: gexit1a.wav

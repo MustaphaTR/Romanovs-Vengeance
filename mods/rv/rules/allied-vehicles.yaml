@@ -248,6 +248,12 @@ fv:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded && dmg_heavy
+		OrderName: Unload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 20
 	Valued:
 		Cost: 600
 	DeliversCash:
@@ -558,6 +564,7 @@ fv:
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 		PassengerConditions:
 			e1: ifv-mg
 			e2: ifv-mg
@@ -1561,6 +1568,7 @@ bfrt:
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 		PassengerConditions:
 			e1: loaded
 			e2: loaded
@@ -1646,6 +1654,15 @@ bfrt:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
+	GrantConditionOnDamageState@dmg_crit:
+		Condition: dmg_crit
+		ValidDamageStates: Critical
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded && dmg_crit
+		OrderName: Unload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 20
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn

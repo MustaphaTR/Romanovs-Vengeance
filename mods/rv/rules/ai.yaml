@@ -20,6 +20,9 @@ Player:
 	GrantConditionOnBotOwner@generic:
 		Condition: enable-generic-ai
 		Bots: easy, cheater, vengeful
+	ProvidesPrerequisite@sprayer: ## AI won't build kamaz until sprayer is ready 
+		Prerequisite: sprayer
+		RequiresCondition: !enable-generic-ai
 	SupportPowerBotASModule@generic:
 		RequiresCondition: enable-generic-ai
 		Decisions:
@@ -639,7 +642,7 @@ Player:
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
@@ -649,11 +652,6 @@ Player:
 			narefn: 2
 			yarefn: 2
 			yarfn2: 2
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -688,11 +686,10 @@ Player:
 			narefn: 100
 			yarefn: 100
 			yarfn2: 100
-			gapowr: 15
-			napowr: 15
+			gapowr: 30
+			napowr: 30
 			nanrct: 20
-			yapowr: 15
-			yapowr-full: 15
+			yapowr: 30
 			gapile: 10
 			nahand: 10
 			yabrck: 10
@@ -728,8 +725,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -751,17 +747,13 @@ Player:
 		ExcessPowerIncreaseThreshold: 3
 		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
 		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
 		BuildingLimits:
-			gapowr: 16
-			napowr: 8
 			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -792,11 +784,10 @@ Player:
 			gagap: 1
 			yasgen: 1
 		BuildingFractions:
-			gapowr: 70
-			napowr: 50
+			gapowr: 40
+			napowr: 40
 			nanrct: 20
 			yapowr: 35
-			yapowr-full: 70
 			gapile: 40
 			nahand: 40
 			yabrck: 40
@@ -832,8 +823,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -857,8 +847,8 @@ Player:
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, yapsyt-tr, yaeast02-tr
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
@@ -868,11 +858,6 @@ Player:
 			narefn: 2
 			yarefn: 2
 			yarfn2: 2
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -910,11 +895,10 @@ Player:
 			narefn: 100
 			yarefn: 100
 			yarfn2: 100
-			gapowr: 15
-			napowr: 15
+			gapowr: 30
+			napowr: 30
 			nanrct: 20
-			yapowr: 15
-			yapowr-full: 15
+			yapowr: 30
 			gapile: 10
 			nahand: 10
 			yabrck: 10
@@ -950,8 +934,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -977,8 +960,6 @@ Player:
 			gagun-tr: 8
 			gamgun-tr: 8
 			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
 			yapsyt-tr: 2
 			yaeast02-tr: 2
 	BaseBuilderBotModule@cheater-megawealth:
@@ -991,8 +972,8 @@ Player:
 		ExcessPowerIncreaseThreshold: 3
 		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, yapsyt-tr, yaeast02-tr
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
@@ -1002,7 +983,6 @@ Player:
 			napowr: 8
 			nanrct: 1
 			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -1036,11 +1016,10 @@ Player:
 			namisl: 2
 			yappet: 2
 		BuildingFractions:
-			gapowr: 70
-			napowr: 50
+			gapowr: 30
+			napowr: 30
 			nanrct: 20
-			yapowr: 35
-			yapowr-full: 70
+			yapowr: 30
 			gapile: 40
 			nahand: 40
 			yabrck: 40
@@ -1076,8 +1055,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -1103,8 +1081,6 @@ Player:
 			gagun-tr: 8
 			gamgun-tr: 8
 			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
 			yapsyt-tr: 2
 			yaeast02-tr: 2
 	BaseBuilderBotModule@vengeful:
@@ -1119,8 +1095,8 @@ Player:
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, yapsyt-tr, yaeast02-tr
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
@@ -1130,11 +1106,6 @@ Player:
 			narefn: 2
 			yarefn: 2
 			yarfn2: 2
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -1172,11 +1143,10 @@ Player:
 			narefn: 100
 			yarefn: 100
 			yarfn2: 100
-			gapowr: 15
-			napowr: 15
+			gapowr: 30
+			napowr: 30
 			nanrct: 20
-			yapowr: 15
-			yapowr-full: 15
+			yapowr: 30
 			gapile: 10
 			nahand: 10
 			yabrck: 10
@@ -1212,8 +1182,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -1239,8 +1208,6 @@ Player:
 			gagun-tr: 8
 			gamgun-tr: 8
 			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
 			yapsyt-tr: 2
 			yaeast02-tr: 2
 	BaseBuilderBotModule@vengeful-megawealth:
@@ -1253,9 +1220,9 @@ Player:
 		ExcessPowerIncreaseThreshold: 3
 		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
+		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, yapsyt-tr, yaeast02-tr
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
 		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
@@ -1264,7 +1231,6 @@ Player:
 			napowr: 8
 			nanrct: 1
 			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -1302,7 +1268,6 @@ Player:
 			napowr: 50
 			nanrct: 20
 			yapowr: 35
-			yapowr-full: 70
 			gapile: 40
 			nahand: 40
 			yabrck: 40
@@ -1338,8 +1303,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -1365,8 +1329,6 @@ Player:
 			gagun-tr: 8
 			gamgun-tr: 8
 			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
 			yapsyt-tr: 2
 			yaeast02-tr: 2
 	# PlugSpawnerBotModule@generic:
@@ -1406,11 +1368,11 @@ Player:
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable, badgr
-		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, yapowr-full, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, baacdm, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, natbnk-ltnk, natbnk-ltnk-tr, natbnk-ytnk, natbnk-ytnk-tr, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
+		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, txdx, disk, magnedisk, bpln.buildable, badgr
+		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, baacdm, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
 		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		SuggestedNavyLeaderLocomotor: naval
-		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
+		GuerrillaTypes: robo, mtnk, fv, sref, mgtk, hwtz, dron, htk, tric, ltnk, ytnk, caos, yhtnk, kite, havoc, disk, txdx, magnedisk
 		IgnoredEnemyTargetTypes: Air
 	SquadManagerBotModule@no_bases:
 		RequiresCondition: enable-generic-ai && no_bases
@@ -1426,11 +1388,11 @@ Player:
 		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable, badgr
-		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, yapowr-full, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, baacdm, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, natbnk-ltnk, natbnk-ltnk-tr, natbnk-ytnk, natbnk-ytnk-tr, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
+		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, disk, magnedisk, bpln.buildable, badgr
+		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, baacdm, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
 		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		SuggestedNavyLeaderLocomotor: naval
-		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
+		GuerrillaTypes: robo, mtnk, fv, sref, mgtk, hwtz, dron, htk, tric, ltnk, ytnk, caos, yhtnk, kite, havoc, disk, txdx, magnedisk
 		IgnoredEnemyTargetTypes: Air
 	McvManagerBotModule@generic:
 		RequiresCondition: enable-generic-ai && !enable-vengeful-ai
@@ -1863,8 +1825,8 @@ Player:
 			htnk: 100
 			ltnk: 100
 			htk: 3
-			fv: 5
-			bfrt-squad-1: 5
+			fv: 4
+			bfrt: 1
 			ytnk: 40
 			robo: 2
 			send: 2
@@ -1910,7 +1872,7 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 1
-			schp-ai: 1
+			schp: 1
 			kite: 1
 			havoc: 1
 			zep: 1
@@ -2013,7 +1975,7 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 2
-			schp-ai: 2
+			schp: 2
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
@@ -2110,7 +2072,7 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 1
-			schp-ai: 1
+			schp: 1
 			kite: 1
 			havoc: 1
 			bpln.buildable: 1
@@ -2210,7 +2172,7 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 2
-			schp-ai: 2
+			schp: 2
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
@@ -2263,18 +2225,9 @@ Player:
 			hytk: 100
 			htnk: 100
 			ltnk: 100
-			htk: 1
-			htk-dron: 1
-			htk-squad-1: 1
-			kamaz-squad-1: 1
-			fv: 1
-			fv-e1: 1
-			fv-ggi: 1
-			fv-gren: 1
-			fv-cleg: 1
-			bfrt-squad-1: 5
-			bfrt-squad-2: 5
-			bfrt-squad-3: 1
+			htk: 3
+			fv: 4
+			bfrt: 5
 			ytnk: 40
 			robo: 2
 			send: 2
@@ -2320,27 +2273,12 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 1
-			schp-ai: 1
+			schp: 1
 			kite: 1
 			havoc: 1
 			zep: 1
 			badgr: 1
 			bpln.buildable: 1
-			shad-squad-1: 1
-			shad-squad-2: 1
-			shad-squad-3: 1
-			shad-squad-4: 1
-			txdx-squad-1: 1
-			txdx-squad-2: 1
-			txdx-squad-3: 1
-			hind-htnk: 1
-			hind-ftnk: 1
-			hind-ttnk: 1
-			hind-dtruck: 1
-			hind-apoc: 1
-			hind-htk-squad-1: 1
-			hind-htk-squad-2: 1
-			hind-htk-squad-3: 1
 			expn: 1
 			exps: 1
 			expy: 1
@@ -2439,7 +2377,7 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 2
-			schp-ai: 2
+			schp: 2
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
@@ -2486,18 +2424,9 @@ Player:
 			hytk: 100
 			htnk: 100
 			ltnk: 100
-			htk: 1
-			htk-dron: 1
-			htk-squad-1: 1
-			kamaz-squad-1: 1
-			fv: 1
-			fv-e1: 1
-			fv-ggi: 1
-			fv-gren: 1
-			fv-cleg: 1
-			bfrt-squad-1: 5
-			bfrt-squad-2: 5
-			bfrt-squad-3: 1
+			htk: 3
+			fv: 4
+			bfrt: 5
 			ytnk: 40
 			robo: 2
 			send: 2
@@ -2543,27 +2472,12 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 1
-			schp-ai: 1
+			schp: 1
 			kite: 1
 			havoc: 1
 			bpln.buildable: 1
 			zep: 1
 			badgr: 1
-			shad-squad-1: 1
-			shad-squad-2: 1
-			shad-squad-3: 1
-			shad-squad-4: 1
-			txdx-squad-1: 1
-			txdx-squad-2: 1
-			txdx-squad-3: 1
-			hind-htnk: 1
-			hind-ftnk: 1
-			hind-ttnk: 1
-			hind-dtruck: 1
-			hind-apoc: 1
-			hind-htk-squad-1: 1
-			hind-htk-squad-2: 1
-			hind-htk-squad-3: 1
 			expn: 1
 			exps: 1
 			expy: 1
@@ -2663,7 +2577,7 @@ Player:
 			txdx: 1
 			disk: 2
 			magnedisk: 2
-			schp-ai: 2
+			schp: 2
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
@@ -2679,3 +2593,25 @@ Player:
 	LoadGarrisonerBotModule:
 		RequiresCondition: enable-generic-ai
 		GarrisonerUnit: e1, ggi, gren, snipe, e2, shk, flakt, init, virus, rctt, mtrp, ssnipe
+	LoadCargoBotModule@Infantry:
+		RequiresCondition: enable-generic-ai
+		TransportTypesAndLoadRequirement:
+			htk: IdleUnit
+			kamaz: IdleUnit
+			fv: All
+			bfrt: All
+		PassengerTypes: e1, ggi, gren, snipe, e2, shk, flakt, init, virus, rctt, mtrp, ssnipe
+		ValidTransportOwner: AlliedBot
+	LoadCargoBotModule@TankBunker:
+		RequiresCondition: enable-generic-ai
+		TransportTypesAndLoadRequirement:
+			natbnk: All
+		PassengerTypes: mtnk, apoc, ftnk, htnk, ltnk, htk, ttnk, ytnk
+		ValidTransportOwner: AlliedBot
+	LoadCargoBotModule@Battery:
+		RequiresCondition: enable-generic-ai
+		TransportTypesAndLoadRequirement:
+			yapowr: IdleUnit
+		PassengerTypes: e1, ggi, dog, e2, init
+		ValidTransportOwner: AlliedBot
+		ScanTick: 799
