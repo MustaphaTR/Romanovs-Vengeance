@@ -2,8 +2,27 @@
 ### 1. will use diffirent set of logic compared to orignal units used by AI
 ### 2. are pre-loaded transprot units with unload logic.
 
+^AITowerRushBased:
+	Inherits@AI: ^AIControl
+	GrantConditionAfterDelay@ShouldSell:
+		RequiresCondition: ai-control && !useful
+		Delay: 2000
+		ShowSelectionBar: false
+		ShowFullBarAfterGranted: false
+		Condition: should-sell
+	GrantConditionOnAttack@CheckUseful:
+		Condition: useful
+		ArmamentNames: primary, secondary
+	IssueOrderToBot@AISell:
+		RequiresCondition: should-sell
+		OrderName: Sell
+		OrderTrigger: Periodically
+		OrderChance: 100
+		OrderInterval: 45
+
 nalasr-tr:
 	Inherits: nalasr
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.soviets, nahand, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -15,6 +34,7 @@ nalasr-tr:
 
 tesla-tr:
 	Inherits: tesla
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.soviets, naradr, ~techlevel.3 , ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -24,6 +44,7 @@ tesla-tr:
 
 naflak-tr:
 	Inherits: naflak
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.2, ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -35,6 +56,7 @@ naflak-tr:
 
 bamort-tr:
 	Inherits: bamort
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.baku, basops, ~techlevel.3 , ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -44,6 +66,7 @@ bamort-tr:
 
 gapill-tr:
 	Inherits: naflak
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.allies, gapile, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -55,6 +78,7 @@ gapill-tr:
 
 nasam-tr:
 	Inherits: nasam
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.allies, gaairc, ~techlevel.2, ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -66,6 +90,7 @@ nasam-tr:
 
 atesla-tr:
 	Inherits: atesla
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.allies, gaairc, ~techlevel.3, ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -75,6 +100,7 @@ atesla-tr:
 
 gagun-tr:
 	Inherits: gagun
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.allies, gapile, ~prerequisite.gun_turret, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -84,6 +110,7 @@ gagun-tr:
 
 gamgun-tr:
 	Inherits: gamgun
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.france, gaairc, ~techlevel.3, ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -93,6 +120,7 @@ gamgun-tr:
 
 yaggun-tr:
 	Inherits: yaggun
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.yuri, yabrck, ~techlevel.1, ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -104,6 +132,7 @@ yaggun-tr:
 
 yapsyt-tr:
 	Inherits: yapsyt
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.yuri, yadome, ~techlevel.3, ~AITowerRush
 	ProductionCostMultiplier@1:
@@ -113,6 +142,7 @@ yapsyt-tr:
 
 yaeast02-tr:
 	Inherits: yaeast02
+	Inherits@AI: ^AITowerRushBased
 	Buildable:
 		Prerequisites: ~building.psisouth, yadome, ~techlevel.2, ~AITowerRush
 	ProductionCostMultiplier@1:
