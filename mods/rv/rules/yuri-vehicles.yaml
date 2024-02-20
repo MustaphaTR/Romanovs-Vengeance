@@ -1006,6 +1006,11 @@ kamaz:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@TOXIN: ^AffectedByToxinSprayer
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded
+		OrderName: Unload
+		OrderChance: 100
+		OrderInterval: 45
 	Valued:
 		Cost: 600
 	DeliversCash:
@@ -1019,7 +1024,7 @@ kamaz:
 		Bounds: 1206, 1930, 0, -289
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
-		Prerequisites: ~vehicle.yuri, ~techlevel.1
+		Prerequisites: ~vehicle.yuri, ~sprayer, ~techlevel.1
 		BuildPaletteOrder: 70
 		Description: actor-kamaz.description
 		BuildDuration: 375
@@ -1066,6 +1071,7 @@ kamaz:
 		RequiresCondition: toxinsprayer
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
+		LoadedCondition: loaded
 		MaxWeight: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
