@@ -806,7 +806,7 @@ MagneShake:
 	ReloadDelay: 110
 	Range: 10c0
 	Report: vmagat2a.wav
-	ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
+	ValidTargets: Ground, MagneFreezable, Structure, WaterStructure, Barrel, Mine
 	InvalidTargets: Infantry
 	Projectile: LaserZap
 		Duration: 110
@@ -820,11 +820,11 @@ MagneShake:
 		Falloff: 100, 100
 		Damage: 8000
 		AffectsParent: false
-		ValidTargets: Structure, Barrel, Mine
+		ValidTargets: Structure, WaterStructure, Barrel, Mine
 		DamageTypes: NonTemporal
 	Warhead@2Dam: TargetDamage
 		Damage: 0
-		ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
+		ValidTargets: Ground, MagneFreezable, Structure, WaterStructure, Barrel, Mine
 		InvalidTargets: Infantry
 
 MagneShakeE:
@@ -836,7 +836,7 @@ MagneFreeze:
 	ReloadDelay: 110
 	Range: 10c0
 	Report: vmagat1a.wav
-	ValidTargets: Ground, MagneFreezable, Structure, Barrel, Mine
+	ValidTargets: Ground, MagneFreezable, Structure, WaterStructure, Barrel, Mine
 	InvalidTargets: Infantry
 	Projectile: LaserZap
 		Duration: 50
