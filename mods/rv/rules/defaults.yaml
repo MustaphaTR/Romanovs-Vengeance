@@ -1829,10 +1829,10 @@
 		Notification: StructureSold
 		RequiresCondition: !build-incomplete && !chronodisable
 	Targetable:
-		RequiresCondition: !in_water
+		RequiresCondition: !affectedbytemporal && !in_water
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4
-		RequiresCondition: in_water
+		RequiresCondition: !affectedbytemporal && in_water
 	SpawnActorsOnSell@allies:
 		RequiresCondition: !in_water
 	SpawnActorsOnSell@soviets:
