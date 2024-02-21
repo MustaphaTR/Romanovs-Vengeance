@@ -604,6 +604,7 @@ terror:
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Cuba
 		BuildAtProductionType: Soldier
@@ -675,6 +676,10 @@ terror:
 	-TakeCover:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	AutoTarget:
+		ScanRadius: 8
+		InitialStance: HoldFire
+		InitialStanceAI: AttackAnything
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, Spread
 		Damage: 450
@@ -903,6 +908,7 @@ ivan:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllable
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier

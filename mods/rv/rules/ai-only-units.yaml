@@ -2,6 +2,81 @@
 ### 1. will use diffirent set of logic compared to orignal units used by AI
 ### 2. are pre-loaded transprot units with unload logic.
 
+^AICarryallControl: ## For Carryall trait
+	Inherits@AI: ^AIControl
+	KillsSelf@DisappearsIfUnload:
+		Delay: 500
+		RequiresCondition: ai-control && !loaded
+		RemoveInstead: true
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: loaded
+		Prerequisite: LoadedExists
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded
+		OrderName: Unload
+		OrderChance: 100
+		OrderInterval: 40
+
+hind-ivans:
+	Inherits: hind
+	Inherits@AI: ^AICarryallControl
+	Selectable:
+		Class: hind
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.sovietsorbaku, naradr, ~techlevel.3, ~!LoadedExists, ~!vehicle.libya, ~!infantry.cuba
+	UpdatesPlayerStatistics:
+		OverrideActor: hind
+	ProductionCostMultiplier@1:
+		Multiplier: 400
+	Carryall:
+		InitialActor: htk-ivans
+		CarryCondition: loaded
+	RenderSprites:
+		Image: hind
+	RenderVoxels:
+		Image: hind
+
+hind-terrors:
+	Inherits: hind-ivans
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.sovietsorbaku, infantry.cuba, naradr, ~techlevel.3,  ~!LoadedExists
+	ProductionCostMultiplier@1:
+		Multiplier: 200
+	Carryall:
+		InitialActor: htk-terrors
+
+hind-dtruck:
+	Inherits: hind-ivans
+	Buildable:
+		Prerequisites: ~prerequisite.aiplayer, ~aircraft.sovietsorbaku, vehicle.libya, naradr, ~techlevel.3, ~!LoadedExists
+	ProductionCostMultiplier@1:
+		Multiplier: 300
+	Carryall:
+		InitialActor: dtruck
+	-VoiceAnnouncement:
+	NotificationAnnouncement:
+		RequiresCondition: produced
+		Notification: MyTruckIsLoaded
+
+htk-ivans:
+	Inherits: htk
+	Selectable:
+		Class: htk
+	UpdatesPlayerStatistics:
+		OverrideActor: htk
+	Cargo:
+		InitialUnits: ivan, ivan, ivan, ivan, ivan
+	RenderSprites:
+		Image: htk
+	RenderVoxels:
+		Image: htk
+	-Buildable:
+
+htk-terrors:
+	Inherits: htk-ivans
+	Cargo:
+		InitialUnits: terror, terror, terror, terror, terror
+
 ^AITowerRushBased:
 	Inherits@AI: ^AIControl
 	GrantConditionAfterDelay@ShouldSell:
