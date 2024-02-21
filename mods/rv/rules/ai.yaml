@@ -1448,7 +1448,7 @@ Player:
 		IdleScanRadius: 10
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy, shad
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy, ivan, terror, shad, hind-ivans, hind-terrors, hind-dtruck
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, txdx, disk, magnedisk, bpln.buildable, badgr
@@ -1467,7 +1467,7 @@ Player:
 		IdleScanRadius: 10
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy, shad
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy, ivan, terror, shad, hind-ivans, hind-terrors, hind-dtruck, ivan, terror, dtruck
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, disk, magnedisk, bpln.buildable, badgr
@@ -1958,6 +1958,9 @@ Player:
 			beag: 2
 			fortress: 2
 			shad: 1
+			hind-ivans: 1
+			hind-terrors: 1
+			hind-dtruck: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
@@ -2162,6 +2165,9 @@ Player:
 			beag: 2
 			fortress: 2
 			shad: 1
+			hind-ivans: 1
+			hind-terrors: 1
+			hind-dtruck: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
@@ -2368,6 +2374,9 @@ Player:
 			beag: 2
 			fortress: 2
 			shad: 1
+			hind-ivans: 1
+			hind-terrors: 1
+			hind-dtruck: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
@@ -2572,6 +2581,9 @@ Player:
 			beag: 2
 			fortress: 2
 			shad: 1
+			hind-ivans: 1
+			hind-terrors: 1
+			hind-dtruck: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
@@ -2735,12 +2747,34 @@ Player:
 				AttackDesireOfEach: 100
 				TryGetHealed: false
 				AttackOrderName: AssaultMove
+			ivan:
+				AttackDesireOfEach: 100
+				TryGetHealed: false
+				AttackOrderName: AssaultMove
+			terror:
+				AttackDesireOfEach: 100
+				TryGetHealed: false
+				AttackOrderName: AssaultMove
 			shad:
 				AttackDesireOfEach: 100
 				MoveToOrderName: Move
 				AttackOrderName: Unload
 				MoveBackOrderName: Move
 				AttackRequires: CargoLoaded
+			hind-ivans: 
+				AttackDesireOfEach: 100
+				MoveToOrderName: Move
+				AttackOrderName: Unload 
+				MoveBackOrderName: Move
+			hind-terrors: 
+				AttackDesireOfEach: 100
+				MoveToOrderName: Move
+				AttackOrderName: Unload 
+				MoveBackOrderName: Move
+			hind-dtruck: 
+				AttackDesireOfEach: 100
+				AttackOrderName: DeliverUnit ## Hack: DeliverUnit has a bug that ignore the ocuppied cell, and we just need that
+				MoveBackOrderName: Move
 		ValidTargets: SpyInfiltrate
 		InvalidTargets: Water
 		TargetDistances: Random
