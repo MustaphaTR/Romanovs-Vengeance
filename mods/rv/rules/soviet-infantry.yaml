@@ -643,12 +643,12 @@ terror:
 		Radius: 6c0
 	Armor:
 		Type: Flak
-	Explodes:
+	ExplodesForMaster:
 		DeathTypes: NonTemporal
 		Weapon: TerrorBomb
-		EmptyWeapon: TerrorBomb
+		EmptyWeapon: TargetedTerrorBomb
 		RequiresCondition: !targetedexp
-	Explodes@Targeted:
+	ExplodesForMaster@Targeted:
 		DeathTypes: NonTemporal
 		Weapon: TargetedTerrorBomb
 		EmptyWeapon: TargetedTerrorBomb
@@ -942,11 +942,11 @@ ivan:
 	Armor:
 		Type: None
 	Passenger:
-	Explodes:
+	ExplodesForMaster:
 		Weapon: IvanBomber
 		EmptyWeapon: IvanBomber
 		RequiresCondition: !targetedexp
-	Explodes@Targeted:
+	ExplodesForMaster@Targeted:
 		Weapon: TargetedIvanBomber
 		EmptyWeapon: TargetedIvanBomber
 		RequiresCondition: targetedexp
@@ -1055,8 +1055,8 @@ civan:
 		RequiresCondition: affectedbytemporal || chronoed
 	Chronoshiftable:
 		ExplodeInstead: false
-	-Explodes:
-	-Explodes@Targeted:
+	-ExplodesForMaster:
+	-ExplodesForMaster@Targeted:
 	Selectable:
 		Class: civan
 	RenderSprites:
