@@ -119,7 +119,7 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Vehicle
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -134,7 +134,7 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Vehicle
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -210,7 +210,7 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Vehicle
+					Types: Vehicle, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -255,7 +255,7 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -330,7 +330,7 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -357,15 +357,21 @@ Player:
 					CheckRadius: 7c0
 			ironcurtain:
 				OrderName: IronCurtain
-				MinimumAttractiveness: 10
+				MinimumAttractiveness: 13
 				Against: Ally
-				Consideration@2:
+				Consideration@1:
 					Against: Ally
 					Types: Vehicle
 					Attractiveness: 2
-					TargetMetric: Value
+					TargetMetric: None
 					CheckRadius: 4c0
-				Consideration@1:
+				Consideration@2:
+					Against: Ally
+					Types: Miner
+					Attractiveness: -2
+					TargetMetric: None
+					CheckRadius: 4c0
+				Consideration@3:
 					Against: Enemy
 					Types: Air, Ground, Water
 					Attractiveness: 1
@@ -373,15 +379,21 @@ Player:
 					CheckRadius: 7c0
 			invisibility:
 				OrderName: Invisibility
-				MinimumAttractiveness: 10
+				MinimumAttractiveness: 13
 				Against: Ally
-				Consideration@2:
+				Consideration@1:
 					Against: Ally
 					Types: Vehicle
 					Attractiveness: 2
-					TargetMetric: Value
+					TargetMetric: None
 					CheckRadius: 4c0
-				Consideration@1:
+				Consideration@2:
+					Against: Ally
+					Types: Miner
+					Attractiveness: -2
+					TargetMetric: None
+					CheckRadius: 4c0
+				Consideration@3:
 					Against: Enemy
 					Types: Air, Ground, Water
 					Attractiveness: 1
@@ -446,7 +458,7 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -602,7 +614,7 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -617,7 +629,7 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -632,7 +644,7 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
