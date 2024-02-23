@@ -1362,6 +1362,7 @@ hornet:
 	Inherits: ^Plane
 	Inherits@EXPERIENCE: ^GainsExperience
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -1420,6 +1421,7 @@ hornet:
 	-ActorLostNotification:
 	CarrierSlave:
 		LandingDistance: 8c0
+	HasParent:
 	HitShape:
 	Interactable:
 	RenderVoxels:
@@ -1467,6 +1469,7 @@ asw:
 	Inherits: ^Plane
 	Inherits@EXPERIENCE: ^GainsExperience
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -1525,6 +1528,7 @@ asw:
 	-ActorLostNotification:
 	CarrierSlave:
 		LandingDistance: 8c0
+	HasParent:
 	HitShape:
 	Interactable:
 	RenderVoxels:
@@ -1997,6 +2001,7 @@ bpln:
 		Ammo: 2
 	AirstrikeSlave:
 		LandingDistance: 1c0
+	HasParent:
 	Voiced:
 		VoiceSet: MiGVoice
 	RenderSprites:
@@ -3866,6 +3871,7 @@ repdron:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@STEALTHGEN: ^AffectedByStealthGenerator
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	Tooltip:
 		Name: actor-repdron.name
 	-Selectable:

@@ -6,6 +6,7 @@
 	DrawLineToTarget:
 	GivesExperience:
 		PlayerExperienceModifier: 10
+	GivesExperienceToMasterOrTransport:
 	ScriptTriggers:
 	Huntable:
 
@@ -1920,6 +1921,7 @@
 	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	-UpdatesPlayerStatistics:
 	-RepairableBuilding:
 	-WithBuildingRepairDecoration:
@@ -2027,6 +2029,7 @@
 	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	-UpdatesPlayerStatistics:
 	OwnerLostAction:
 		Action: ChangeOwner
@@ -2147,6 +2150,7 @@
 		Action: ChangeOwner
 	FrozenUnderFog:
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	-CombatDebugOverlay:
 	-DrawLineToTarget:
 	Building:
@@ -2779,6 +2783,7 @@
 		Types: CivilianInfantry
 	ScaredyCat:
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-TakeCover:
@@ -2905,6 +2910,7 @@
 	DeathSounds@virus:
 		Voice: Die
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	-TakeCover:
 	WithDeathAnimation@normal:
 		DeathTypes:
@@ -3141,6 +3147,7 @@
 		Bounds: 1544, 2509, 0, -289
 	WithVoxelBody:
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	Voiced:
 		VoiceSet: CarVoice
 	MapEditorData:
@@ -3332,6 +3339,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	-GivesExperience:
+	-GivesExperienceToMasterOrTransport:
 	Armor:
 		Type: Missile
 	BallisticMissile:
