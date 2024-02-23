@@ -984,6 +984,8 @@ LethocerusSpawnerSpawner:
 GrizzlySpawner:
 	Warhead@1Spa: SpawnActor
 		Actors: mtnk,mtnk,mtnk
+		Image: explosion
+		Sequence: temporal_explosion
 		Delay: 15
 		Range: 3
 		ValidTargets: Ground, OreDrill, Rubble, Water, Air
@@ -992,6 +994,11 @@ GrizzlySpawner:
 		ImpactSounds: schrmov.wav
 		ImpactActors: false
 		ValidTargets: Ground, Water, Air
+
+AIChronoSpawner:
+	Inherits: GrizzlySpawner
+	Warhead@1Spa: SpawnActor
+		Actors: mtnk, fv, sref, mgtk, hwtz
 
 DemoTruckTargeting:
 	ValidTargets: DetonateAttack

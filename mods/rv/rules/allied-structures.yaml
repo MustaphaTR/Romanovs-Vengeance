@@ -1682,6 +1682,7 @@ gaweat:
 gacsph:
 	Inherits: ^SecondarySuperWeapon
 	Inherits@SHAPE: ^4x3Shape
+	Inherits@AI: ^AIMicroManagable
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
 		Prerequisites: ~building.allies, gatech, !enoughchrono, ~techlevel.5
@@ -1739,6 +1740,42 @@ gacsph:
 		SelectionCursor: chronosphere
 		TargetCursor: chronosphere
 		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !ai-control
+	DetonateWeaponPower@chronoAI:
+		OrderName: GermanChronoGrizzly ## Hack: use an unused order so AI will use the same logic as GermanChronoGrizzly
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: ai-control
+		Prerequisites:
+			1: gacsph
+		Icons:
+			1: chrono
+		ChargeInterval: 6000
+		Names:
+			1: Chrono Reinforce (AI)
+		Descriptions:
+			1: Chronoshifts Allied Reinforcement\nanywhere on the map.
+		Weapons:
+			1: AIChronoSpawner
+		AllowMultiple: true
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: notification-select-target
+		EndChargeSpeechNotification: ChronosphereReady
+		EndChargeTextNotification: notification-chronosphere-ready
+		LaunchSpeechNotification: ChronosphereActivated
+		LaunchTextNotification: notification-chronosphere-activated
+		IncomingSpeechNotification: ChronosphereActivated
+		IncomingTextNotification: notification-chronosphere-activated
+		# Those sounds don't work: OpenRA/OpenRA#10540
+		# They also want to be played successive
+		#SelectTargetSound: schrlo1.wav, schrlo2a.wav schrlo2b.wav, schrlo2c.wav, schrlo3.wav
+		EndChargeSound: schropen.wav
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		ActivationSequence:
+		DisplayRadarPing: True
+		CameraRange: 8c0
+		CameraRemoveDelay: 25
+		SelectionCursor: chronosphere
+		TargetCursor: chronosphere
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughchrono
 	NotificationAnnouncement:
@@ -2502,7 +2539,9 @@ gacspb:
 		Footprint: xxx xxx xxx xxx
 		Dimensions: 3,4
 	ChronoshiftPower@chronoshift:
-		OrderName: ChronoshiftB
+		Prerequisites:
+			1: gacspb
+	DetonateWeaponPower@chronoAI:
 		Prerequisites:
 			1: gacspb
 	ActorStatValues:
