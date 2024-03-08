@@ -1,6 +1,7 @@
 hydf:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	# Inherits@C4: ^AcceptsSEALC4
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@CRYO: ^AffectedByCryoWarheads
@@ -103,12 +104,6 @@ hydf:
 		NormalsPalette: ts-normals
 	Voiced:
 		VoiceSet: SeaScorpionVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: baacdm
 	WithProductionIconOverlay@1:

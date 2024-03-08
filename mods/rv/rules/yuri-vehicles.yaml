@@ -23,6 +23,7 @@ pcv:
 smin:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@NOGUNNER: ^GunnerKillable
@@ -108,12 +109,6 @@ smin:
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: SlaveMinerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	StoresPlayerResources:
 		Capacity: 1000
@@ -265,12 +260,6 @@ ltnk:
 		Bounds: 1544, 2509, 0, -289
 	Voiced:
 		VoiceSet: LasherTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn
@@ -331,6 +320,7 @@ ltnk.holo:
 ytnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAINGUNS: ^AffectedByChainguns
 	Inherits@CHAOS: ^BerserkableVoxelArmed
@@ -492,12 +482,6 @@ ytnk:
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: GatlingTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: vetytnkorbaacdm
 	WithProductionIconOverlay@1:
@@ -567,6 +551,7 @@ ytnk.holo:
 caos:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@NOCHAOS: ^NotBerserkTarget
 	Valued:
@@ -645,12 +630,6 @@ caos:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: ChaosDroneVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -666,6 +645,7 @@ tele:
 	Inherits: ^Vehicle
 	Inherits@ADVMAGNETS: ^AffectedByAdvancedMagnetics
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -752,12 +732,6 @@ tele:
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: MagnetronVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -781,6 +755,7 @@ tele:
 
 mind:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
@@ -899,12 +874,6 @@ mind:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: MasterMindVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -920,6 +889,7 @@ mind:
 # Custom Yuri Vehicles
 mlyr:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
@@ -978,12 +948,6 @@ mlyr:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: FlakTrackVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	WithAmmoPipsDecoration:
 		Margin: 4, 3
@@ -997,6 +961,7 @@ mlyr:
 kamaz:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
@@ -1089,12 +1054,6 @@ kamaz:
 		RequiresCondition: toxinsprayer
 	Voiced:
 		VoiceSet: FlakTrackVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	WithCargoPipsDecoration:
 		Margin: 4, 3
@@ -1123,6 +1082,7 @@ kamaz:
 lart:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
@@ -1241,12 +1201,6 @@ lart:
 		RequiresCondition: chargingLaser && rank-elite && capacitors
 	Voiced:
 		VoiceSet: LasherTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1272,6 +1226,7 @@ lart:
 yhtnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@CHAOS: ^BerserkableVoxelArmed
@@ -1362,12 +1317,6 @@ yhtnk:
 	Voiced:
 		Volume: 2
 		VoiceSet: LazarusTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1386,6 +1335,7 @@ yhtnk:
 grtk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1455,12 +1405,6 @@ grtk:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: GrinderTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1487,6 +1431,7 @@ grtk:
 spider:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@DNABOOST: ^AffectedByDNABoosters
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1606,12 +1551,6 @@ spider:
 		TargetTypes: Heal
 	Voiced:
 		VoiceSet: AntVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	WithInfantryBody:
 		DefaultAttackSequence: spit
 		AttackSequences:

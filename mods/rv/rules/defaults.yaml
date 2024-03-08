@@ -1032,6 +1032,13 @@
 		DamageLevel: 10
 		DamageTypes: OrangeRadiationDeath, NonTemporal
 
+^DamagedByRadiation50PercentAircraft:
+	Inherits: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
+	DamagedByTintedCells@ORANGE:
+		RequiresCondition: !airborne
+
 ^DamagedByRadiation10Percent:
 	DamagedByTintedCells:
 		Damage: 10
@@ -1616,13 +1623,21 @@
 		Weapon: DamageSparkSpawner
 		LocalOffset: 0,0,384
 
+^WithProductionVoicelines:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement@PRODUCED:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+
 ^WithFeedbackVoicelines:
 	GrantRandomCondition@Feedback:
 		Conditions: playfeedback, dontplayfeedback, dontplayfeedback, dontplayfeedback
 	GrantConditionOnDamageState@Feedback:
 		Condition: feedback
 		ValidDamageStates: Critical
-	VoiceAnnouncement:
+	VoiceAnnouncement@Feedback:
 		RequiresCondition: feedback && playfeedback
 		Voice: Feedback
 		ValidRelationships: None

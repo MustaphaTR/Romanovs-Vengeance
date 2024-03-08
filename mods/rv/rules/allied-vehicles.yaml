@@ -128,6 +128,7 @@ tnkd:
 	Inherits: ^Vehicle
 	Inherits@ADVGUNS: ^AffectedByAdvancedGunSystems
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -203,12 +204,6 @@ tnkd:
 		RequiresCondition: composite_armor && advanced_guns
 	Voiced:
 		VoiceSet: TankDestroyerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -237,6 +232,7 @@ fv:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
@@ -1213,12 +1209,6 @@ fv:
 		RequiresCondition: ifv-crkt
 	Voiced:
 		VoiceSet: IFVVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: vetifvorbaacdm
 	WithProductionIconOverlay@1:
@@ -1263,6 +1253,7 @@ fv:
 sref:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1348,12 +1339,6 @@ sref:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: PrismTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1378,6 +1363,7 @@ sref:
 mgtk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1471,12 +1457,6 @@ mgtk:
 		RequiresCondition: !tree && composite_armor
 	Voiced:
 		VoiceSet: MirageTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1502,6 +1482,7 @@ mgtk:
 bfrt:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1568,7 +1549,6 @@ bfrt:
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
 		LoadingCondition: notmobile
-		LoadedCondition: loaded
 		PassengerConditions:
 			e1: loaded
 			e2: loaded
@@ -1627,12 +1607,6 @@ bfrt:
 		RequiresCondition: composite_armor
 	Voiced:
 		VoiceSet: BattleFortressVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1676,6 +1650,7 @@ bfrt:
 robo:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SQUID: ^SquidGrabbable
 	Valued:
@@ -1792,12 +1767,6 @@ robo:
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	Voiced:
 		VoiceSet: RobotTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1824,6 +1793,7 @@ robo:
 # Custom Allied Vehicles:
 aambu:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -1891,12 +1861,6 @@ aambu:
 		VoiceSet: AmbulanceVoice
 	Guard:
 		Voice: Move
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	WithCargoPipsDecoration:
 		Margin: 4, 3
@@ -1921,6 +1885,7 @@ aambu:
 hwtz:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -2003,12 +1968,6 @@ hwtz:
 		RequiresCondition: empammo
 	Voiced:
 		VoiceSet: HowitzerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -2034,6 +1993,7 @@ ctnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -2157,12 +2117,6 @@ ctnk:
 	HitShape:
 	Voiced:
 		VoiceSet: ChronoTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn

@@ -1,5 +1,6 @@
 ^AmphibiousTransport:
 	Inherits: ^Ship
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@DRONE: ^TerrorDronable
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -75,12 +76,6 @@
 	WithCargoSounds:
 		EnterSounds: genter1a.wav
 		ExitSounds: gexit1a.wav
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	WithVoxelBody:
 	RenderSprites:
 	HitShape:
@@ -119,6 +114,7 @@
 	Inherits@12: ^SmokeGrenadeModifiers
 	Inherits@13: ^AffectedByCryoSlowdown
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@INVULNERABILITY: ^KilledByIronCurtain
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -157,12 +153,6 @@
 		Voice: Move
 	SelectionDecorations:
 	ActorStatValues:
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	RevealsShroud:
 		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:

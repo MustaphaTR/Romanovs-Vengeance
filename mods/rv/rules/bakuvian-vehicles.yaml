@@ -115,6 +115,7 @@ send:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 600
@@ -203,12 +204,6 @@ send:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: RobotTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -235,6 +230,7 @@ smrj:
 grad:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@CRYO: ^AffectedByCryoWarheads
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -307,12 +303,6 @@ grad:
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: V3LauncherVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: vetgradorbaacdm
 	WithProductionIconOverlay@1:
@@ -329,6 +319,7 @@ grad:
 
 qyzyl:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -387,12 +378,6 @@ qyzyl:
 		Range: 4c0
 	Voiced:
 		VoiceSet: SovietVehicleVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:

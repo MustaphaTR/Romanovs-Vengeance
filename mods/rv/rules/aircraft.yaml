@@ -1,19 +1,16 @@
 shad:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	IssueOrderToBot@AI:
 		RequiresCondition: loaded
 		OrderName: Unload
 		OrderChance: 100
 		OrderInterval: 40
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
 	Tooltip:
 		Name: actor-shad.name
 	Tooltip@NoRow:
@@ -58,12 +55,6 @@ shad:
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: NighthawkVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
 		BuildPaletteOrder: 20
@@ -213,6 +204,9 @@ zep:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Inherits@AI: ^AIControl
+	AutoTarget:
+		ScanRadius: 5
+		InitialStance: ReturnFire
 	Valued:
 		Cost: 2000
 	DeliversCash:
@@ -294,7 +288,6 @@ zep:
 		Voice: Attack
 		AttackType: Hover
 		FacingTolerance: 512
-	AutoTarget:
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
@@ -329,9 +322,6 @@ zep:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		Chance: 75
-	AutoTarget:
-		ScanRadius: 5
-		InitialStance: ReturnFire
 	ExternalCondition@PRODUCED:
 		Condition: produced
 	NotificationAnnouncement:
@@ -426,16 +416,16 @@ orca:
 	Inherits: ^Plane
 	Inherits@A2A: ^AffectedByA2AMissiles
 	Inherits@AI: ^AIControl
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@PREDATOR: ^AffectedByPredatorMissiles
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
 	Valued:
 		Cost: 1200
 	DeliversCash:
@@ -503,6 +493,17 @@ orca:
 		FacingTolerance: 20
 		TargetFrozenActors: True
 		PauseOnCondition: emp || magnefreeze || chronodisable
+	AmmoPool:
+		Ammo: 3
+		ReloadDelay: 75
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 	WithVoxelBody:
 		RequiresCondition: !a2amissiles && !predator_missiles
 	WithVoxelBody@A2A:
@@ -516,12 +517,6 @@ orca:
 		RequiresCondition: a2amissiles && predator_missiles
 	Voiced:
 		VoiceSet: HarrierVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
@@ -535,14 +530,6 @@ orca:
 		RequiresCondition: !controlled && !permamc && !airborne
 	Targetable@CHAOS:
 		RequiresCondition: !airborne
-	AmmoPool:
-		Ammo: 3
-		ReloadDelay: 75
-		AmmoCondition: ammo
-	AutoTarget:
-		ScanRadius: 7
-		InitialStance: HoldFire
-		InitialStanceAI: AttackAnything
 	RenderSprites:
 		Image: falc
 	RenderVoxels:
@@ -585,13 +572,6 @@ orca:
 	WithProductionIconOverlay@3:
 		Prerequisites: baacdm, vetair
 		Types: chevron-heroic
-	WithAmmoPipsDecoration:
-		Margin: 4, 3
-		FullSequence: pip-ammo
-		EmptySequence: pip-ammoempty
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
 	# AmbientSound@Ambient:
 	#	SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
 	#	Volume: 0.20
@@ -705,11 +685,22 @@ orcahusk.VTOL:
 		Image: falc
 
 beag:
-	Inherits: orca
+	Inherits: ^Plane
+	Inherits@AI: ^AIControl
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
 	Valued:
 		Cost: 1500
 	DeliversCash:
 		Payload: 1500
+		Voice: Move
 	Tooltip:
 		Name: actor-beag.name
 	Tooltip@NoRow:
@@ -721,45 +712,100 @@ beag:
 		Description: actor-beag.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
-	SpawnActorOnDeath:
-		DeathType: NonTemporal
-		Actor: beaghusk
-	SpawnActorOnDeath@VTOL:
-		Actor: beaghusk.VTOL
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Aircraft:
+		AltitudeVelocity: 240
+		TurnSpeed: 20
+		IdleTurnSpeed: 10
+		IdleSpeed: 105
+		Speed: 210
+		TakeoffSounds: vintupa.wav
+		LandingSounds: vintdna.wav
+		SoundVolume: 0.3
+		Roll: 56
+		RollSpeed: 14
+		PauseOnCondition: emp || magnefreeze || chronodisable
+	Selectable:
+		Bounds: 724, 1158
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 12c0
+	RevealsShroud@Ground:
+		Range: 12c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 12c0
+	#	Types: SatelliteScan
+	#	Type: GroundPosition
 	Armament:
 		Weapon: EMPulseBEagle
 		Damage: 150
+		PauseOnCondition: !ammo
+		RequiresCondition: !rank-elite
 	Armament@Elite:
 		Weapon: EMPulseBEagleE
 		Damage: 200
-	-Armament@AA:
-	-Armament@EliteAA:
-	-GrantConditionOnPrerequisite@A2AMISSILES:
-	-FirepowerMultiplier@PREDATOR_MISSILES:
-	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
-	WithVoxelBody:
-		-RequiresCondition:
-	-WithVoxelBody@A2A:
-	-WithVoxelBody@PREDATOR:
-	-WithVoxelBody@A2A_PREDATOR:
+		PauseOnCondition: !ammo
+		RequiresCondition: rank-elite
+	AttackAircraft:
+		Voice: Attack
+		FacingTolerance: 20
+		TargetFrozenActors: True
+		PauseOnCondition: emp || magnefreeze || chronodisable
 	AmmoPool:
 		Ammo: 1
 		ReloadDelay: 200
-	Health:
-		HP: 20000
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 	Voiced:
 		VoiceSet: BlackEagleVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
+	Repairable:
+		Voice: Move
+		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
+	RepairableNear:
+		Voice: Move
+		CloseEnough: 3c0
+		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, naheli, yadisk
+	Rearmable:
+		RearmActors: gaairc, gaairb, gaapad, gadock, baairf, baairb, badock, badocb
+	Targetable@MC:
+		RequiresCondition: !controlled && !permamc && !airborne
+	Targetable@CHAOS:
+		RequiresCondition: !airborne
+	GrantConditionOnMovement@V:
+		Condition: vmove
+		ValidMovementTypes: Vertical
+	GrantConditionOnMovement@H:
+		Condition: hmove
+		ValidMovementTypes: Horizontal
+	SpawnActorOnDeath:
+		DeathType: NonTemporal
+		Actor: orcahusk
+		RequiresCondition: airborne && (!vmove || hmove)
+	SpawnActorOnDeath@VTOL:
+		DeathType: NonTemporal
+		Actor: orcahusk.VTOL
+		RequiresCondition: airborne && vmove && !hmove
 	RenderSprites:
 		Image: beag
 	RenderVoxels:
 		Image: beag
 		NormalsPalette: ts-normals
+	Explodes:
+		DeathTypes: NonTemporal
+		Weapon: UnitExplode
+		RequiresCondition: !airborne
+	ProvidesPrerequisite@actorname:
+	GrantExternalConditionToOwner:
+		Condition: padaircraft
 	HitShape:
 	ProducibleWithLevel@1:
 		Prerequisites: vetairorbaacdm
@@ -767,23 +813,41 @@ beag:
 		Prerequisites: vetairorbaacdm
 		Types: chevron-veteran
 	ProducibleWithLevel@2:
-		InitialLevels: 1
 		Prerequisites: vetair, baacdm
 	WithProductionIconOverlay@2:
 		Prerequisites: vetair, baacdm
 		Types: chevron-elite
-	-ProducibleWithLevel@3:
-	-WithProductionIconOverlay@3:
+	# AmbientSound@Ambient:
+	#	SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
+	#	Volume: 0.20
+	#	RequiresCondition: airborne
 	Contrail@1:
 		Offset: 0,-500,100
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: false
+		EndColorUsePlayerColor: true
+		StartWidth: 32
 	Contrail@2:
 		Offset: 0,500,100
+		StartColor: 88888880
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: false
+		EndColorUsePlayerColor: true
+		StartWidth: 32
 	Contrail@FlameTrail:
 		Offset: -700,0,50
+		StartColor: FFEA0080
+		StartColorAlpha: 128
+		StartColorUsePlayerColor: false
+		StartWidth: 96
+		EndWidth: 76
+		TrailLength: 7
+	ProductionCostMultiplier@AI:
+		Prerequisites: prerequisite.aiplayer
+		Multiplier: 40
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		-Upgrades:
-	-ActorStatOverride@a2amissiles:
 
 beaghusk:
 	Inherits: ^PlaneHusk
@@ -1002,11 +1066,11 @@ a10:
 		LocalOffset: 0,512,0
 		PauseOnCondition: !ammo
 	AttackBomber:
-	SpawnActorOnDeath:
-		Actor: a10husk
 	AmmoPool:
 		Ammo: 6
 		AmmoCondition: ammo
+	SpawnActorOnDeath:
+		Actor: a10husk
 	RenderVoxels:
 		Image: a10
 	# AmbientSound@Ambient:
@@ -1090,11 +1154,11 @@ txbmb:
 		LocalOffset: 0,512,0
 		PauseOnCondition: !ammo
 	AttackBomber:
-	SpawnActorOnDeath:
-		Actor: txbmbhusk
 	AmmoPool:
 		Ammo: 6
 		AmmoCondition: ammo
+	SpawnActorOnDeath:
+		Actor: txbmbhusk
 	RenderVoxels:
 		Image: txbmb
 	# AmbientSound@Ambient:
@@ -1369,6 +1433,8 @@ hornet:
 	Inherits: ^Plane
 	Inherits@EXPERIENCE: ^GainsExperience
 	-GivesExperience:
+	Interactable:
+		Bounds: 640, 1024
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -1396,6 +1462,15 @@ hornet:
 	AttackAircraft:
 		FacingTolerance: 20
 		RequiresCondition: ammo
+	AmmoPool:
+		Ammo: 3
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
 	Aircraft:
 		AltitudeVelocity: 240
 		InitialFacing: 768
@@ -1406,9 +1481,6 @@ hornet:
 		LandingSounds: vhorlana.wav, vhorlanb.wav
 		SoundVolume: 0.45
 		TakeUpCellWhenLand: false
-	AmmoPool:
-		Ammo: 3
-		AmmoCondition: ammo
 	RejectsOrders:
 	GrantConditionOnMovement@V:
 		Condition: vmove
@@ -1432,11 +1504,6 @@ hornet:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 	RenderSprites:
-	WithAmmoPipsDecoration:
-		Margin: 4, 3
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
 
 hornethusk:
 	Inherits: ^PlaneHusk
@@ -1474,6 +1541,8 @@ asw:
 	Inherits: ^Plane
 	Inherits@EXPERIENCE: ^GainsExperience
 	-GivesExperience:
+	Interactable:
+		Bounds: 640, 1024
 	Valued:
 		Cost: 200
 	Tooltip:
@@ -1501,6 +1570,15 @@ asw:
 	AttackAircraft:
 		FacingTolerance: 20
 		RequiresCondition: ammo
+	AmmoPool:
+		Ammo: 5
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
 	Aircraft:
 		AltitudeVelocity: 240
 		InitialFacing: 768
@@ -1511,9 +1589,6 @@ asw:
 		LandingSounds: vosplana.wav
 		SoundVolume: 0.35
 		TakeUpCellWhenLand: false
-	AmmoPool:
-		Ammo: 5
-		AmmoCondition: ammo
 	RejectsOrders:
 	GrantConditionOnMovement@V:
 		Condition: vmove
@@ -1539,11 +1614,6 @@ asw:
 	RenderSprites:
 	#Rearmable:
 	#	RearmActors: dest, cdest
-	WithAmmoPipsDecoration:
-		Margin: 4, 3
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
 
 aswhusk:
 	Inherits: ^PlaneHusk
@@ -1639,10 +1709,11 @@ schp:
 	Inherits: ^Helicopter
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	Inherits@AI: ^AIControl
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !deployed
@@ -1656,10 +1727,6 @@ schp:
 		RequiresCondition: (stance-attackanything || assault-move) && deployed
 		ValidTargets: Infantry, Vehicle, Ship, Water, Underwater, Structure, Defense
 		InvalidTargets: NoAutoTarget
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
 	Tooltip:
 		Name: actor-schp.name
 	Tooltip@NoRow:
@@ -1767,12 +1834,6 @@ schp:
 		TurnSpeed: 80
 	Voiced:
 		VoiceSet: SiegeChopperVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 10
@@ -1964,7 +2025,7 @@ bpln:
 	-ExternalCondition@PRODUCED:
 	-GrantExternalConditionToOwner:
 	-DeliversCash:
-	VoiceAnnouncement:
+	VoiceAnnouncement@PRODUCED:
 		Voice: Attack
 		-RequiresCondition:
 	RejectsOrders:
@@ -1988,6 +2049,8 @@ bpln:
 		Damage: 1000
 	-Armament@AA:
 	-Armament@EliteAA:
+	AmmoPool:
+		Ammo: 2
 	-GrantConditionOnPrerequisite@A2AMISSILES:
 	-FirepowerMultiplier@PREDATOR_MISSILES:
 	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
@@ -2000,8 +2063,6 @@ bpln:
 		RequiresCondition: ammo
 	Health:
 		HP: 10000
-	AmmoPool:
-		Ammo: 2
 	AirstrikeSlave:
 		LandingDistance: 1c0
 	Voiced:
@@ -2045,7 +2106,7 @@ bpln.buildable:
 		Queue: Aircraft.Shared, Aircraft.Baku
 		Description: actor-bpln.description
 		Prerequisites: ~aircraft.baku, !prerequisite.enoughair, ~techlevel.3
-	VoiceAnnouncement:
+	VoiceAnnouncement@PRODUCED:
 		Voice: Attack
 	Aircraft:
 		VTOL: false
@@ -2089,6 +2150,8 @@ bpln.buildable:
 		Weapon: Maverick2AACryoE
 		PauseOnCondition: !ammo
 		RequiresCondition: rank-elite && cryowarheads
+	AmmoPool:
+		Ammo: 2
 	-GrantConditionOnPrerequisite@A2AMISSILES:
 	-FirepowerMultiplier@PREDATOR_MISSILES:
 	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
@@ -2099,8 +2162,6 @@ bpln.buildable:
 	-WithVoxelBody@A2A_PREDATOR:
 	Health:
 		HP: 10000
-	AmmoPool:
-		Ammo: 2
 	Voiced:
 		VoiceSet: MiGVoice
 	RenderSprites:
@@ -2199,13 +2260,9 @@ disk:
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	BodyOrientation:
 		QuantizedFacings: 1
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
 	Valued:
 		Cost: 1750
 	DeliversCash:
@@ -2355,7 +2412,6 @@ disk:
 	Voiced:
 		VoiceSet: FloatingDiskVoice
 	WithMuzzleOverlay:
-	AutoTarget:
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelHelicopterBody:
@@ -2454,13 +2510,10 @@ diskhusk:
 # Custom Aircraft
 hind:
 	Inherits: ^Helicopter
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	Tooltip:
 		Name: actor-hind.name
 	Tooltip@NoRow:
@@ -2475,12 +2528,6 @@ hind:
 	Voiced:
 		VoiceSet: HindVoice
 		Volume: 3
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
 		BuildPaletteOrder: 20
@@ -2604,15 +2651,15 @@ fortress:
 	Inherits: ^Plane
 	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
 	Valued:
 		Cost: 2500
 	DeliversCash:
@@ -2686,6 +2733,35 @@ fortress:
 		Voice: Attack
 		TargetFrozenActors: True
 		PauseOnCondition: emp || magnefreeze || chronodisable
+	AmmoPool:
+		Ammo: 5
+		Armaments: primary
+		ReloadDelay: 100
+		AmmoCondition: ammo
+	AmmoPool@2:
+		Name: secondary
+		Ammo: 10
+		Armaments: secondary
+		ReloadDelay: 100
+		AmmoCondition: ammo2
+	WithAmmoPipsDecoration:
+		AmmoPools: primary
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		RequiresCondition: !increased_payload
+	WithAmmoPipsDecoration@2:
+		AmmoPools: secondary
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
+		RequiresCondition: increased_payload
 	WithVoxelBody:
 		RequiresCondition: !increased_payload
 	WithVoxelBody@2:
@@ -2693,12 +2769,6 @@ fortress:
 		RequiresCondition: increased_payload
 	Voiced:
 		VoiceSet: B2Voice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
@@ -2713,21 +2783,6 @@ fortress:
 		RequiresCondition: !controlled && !permamc && !airborne
 	Targetable@CHAOS:
 		RequiresCondition: !airborne
-	AmmoPool:
-		Ammo: 5
-		Armaments: primary
-		ReloadDelay: 100
-		AmmoCondition: ammo
-	AmmoPool@2:
-		Name: secondary
-		Ammo: 10
-		Armaments: secondary
-		ReloadDelay: 100
-		AmmoCondition: ammo2
-	AutoTarget:
-		ScanRadius: 7
-		InitialStance: HoldFire
-		InitialStanceAI: AttackAnything
 	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
@@ -2762,24 +2817,6 @@ fortress:
 	WithProductionIconOverlay@2:
 		Prerequisites: vetair, baacdm
 		Types: chevron-elite
-	WithAmmoPipsDecoration:
-		AmmoPools: primary
-		Margin: 4, 3
-		FullSequence: pip-ammo
-		EmptySequence: pip-ammoempty
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-		RequiresCondition: !increased_payload
-	WithAmmoPipsDecoration@2:
-		AmmoPools: secondary
-		Margin: 4, 3
-		FullSequence: pip-ammo
-		EmptySequence: pip-ammoempty
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
-		RequiresCondition: increased_payload
 	# AmbientSound@Ambient:
 	#	SoundFiles: vintlo2a.wav, vintlo2b.wav, vintlo2c.wav
 	#	Volume: 0.20
@@ -2951,16 +2988,13 @@ sdrn:
 txdx:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	Inherits@ROCKETBARRAGE: ^AffectedByRocketBarrage
 	BodyOrientation:
 		QuantizedFacings: 1
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
 	Valued:
 		Cost: 1000
 	DeliversCash:
@@ -3064,12 +3098,6 @@ txdx:
 		Sequence: turret-armored
 		TickRate: 1
 		RequiresCondition: discarmor
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
@@ -3165,14 +3193,11 @@ kite:
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	Tooltip:
 		Name: actor-kite.name
 	Tooltip@NoRow:
@@ -3201,12 +3226,6 @@ kite:
 		RequiresCondition: rank-elite && black_napalm
 	Voiced:
 		VoiceSet: BlackKiteVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Vietnam
 		BuildPaletteOrder: 40
@@ -3346,15 +3365,12 @@ kite.spawner:
 magnedisk:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	Inherits@EXPERIENCE: ^GainsExperience
 	BodyOrientation:
 		QuantizedFacings: 1
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
 	Valued:
 		Cost: 1100
 	DeliversCash:
@@ -3440,12 +3456,6 @@ magnedisk:
 	WithVoxelHelicopterBody@turret:
 		Sequence: turret
 		TickRate: 1
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
@@ -3530,14 +3540,11 @@ magnedisk.spawner:
 havoc:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	Tooltip:
 		Name: actor-havoc.name
 	Tooltip@NoRow:
@@ -3560,12 +3567,6 @@ havoc:
 		RequiresCondition: rank-elite
 	Voiced:
 		VoiceSet: BlackKiteVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
 		BuildPaletteOrder: 30
@@ -3680,14 +3681,14 @@ badgr:
 	Inherits: ^Plane
 	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@RADIATON: ^DamagedByRadiation50Percent
-	DamagedByTintedCells:
-		RequiresCondition: !airborne
-	DamagedByTintedCells@ORANGE:
-		RequiresCondition: !airborne
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
+	AutoTarget:
+		InitialStance: HoldFire
+		InitialStanceAI: HoldFire
 	Valued:
 		Cost: 2500
 	DeliversCash:
@@ -3746,15 +3747,19 @@ badgr:
 		Voice: Attack
 		TargetFrozenActors: True
 		PauseOnCondition: emp || magnefreeze || chronodisable
-	WithVoxelBody:
+	AmmoPool:
+		Ammo: 1
+		ReloadDelay: 250
+		AmmoCondition: ammo
+	WithAmmoPipsDecoration:
+		Margin: 4, 3
+		FullSequence: pip-ammo
+		EmptySequence: pip-ammoempty
+		Palette: ra
+		Position: BottomLeft
+		RequiresSelection: true
 	Voiced:
 		VoiceSet: KirovVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
@@ -3769,13 +3774,6 @@ badgr:
 		RequiresCondition: !controlled && !permamc && !airborne
 	Targetable@CHAOS:
 		RequiresCondition: !airborne
-	AmmoPool:
-		Ammo: 1
-		ReloadDelay: 250
-		AmmoCondition: ammo
-	AutoTarget:
-		InitialStance: HoldFire
-		InitialStanceAI: HoldFire
 	RenderSprites:
 	RenderVoxels:
 	GrantConditionOnMovement@V:
@@ -3799,13 +3797,6 @@ badgr:
 	GrantExternalConditionToOwner:
 		Condition: padaircraft
 	HitShape:
-	WithAmmoPipsDecoration:
-		Margin: 4, 3
-		FullSequence: pip-ammo
-		EmptySequence: pip-ammoempty
-		Palette: ra
-		Position: BottomLeft
-		RequiresSelection: true
 	# AmbientSound@Ambient:
 	#	SoundFiles: sparlo2a.wav, sparlo2b.wav, sparlo2c.wav
 	#	Volume: 0.35
