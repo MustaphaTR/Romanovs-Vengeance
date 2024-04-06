@@ -27,6 +27,7 @@ engineer:
 		HP: 10000
 	Mobile:
 		Locomotor: swimsuit
+		Speed: 60
 	Garrisoner:
 		Voice: Move
 		CustomPipType: yellow
@@ -175,9 +176,9 @@ dog:
 	Selectable:
 		Bounds: 724, 1158, 0, -241
 	Health:
-		HP: 9000
+		HP: 10500
 	Mobile:
-		Speed: 105
+		Speed: 120
 		Locomotor: swimsuit
 		RequiresCondition: !deploying && !deployed && !chronodisable && !webdisable && !dogstun
 	Passenger:
@@ -192,7 +193,7 @@ dog:
 		Weapon: DogJaw
 	AttackLeap:
 		Voice: Attack
-		Speed: 105
+		Speed: 120
 		PauseOnCondition: chronodisable || webdisable || dogstun || deployed || deploying
 	AttackMove:
 		Voice: Move
@@ -1719,9 +1720,9 @@ cleg:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
 	Valued:
-		Cost: 1200
+		Cost: 1000
 	DeliversCash:
-		Payload: 600
+		Payload: 500
 		Voice: Move
 	Health:
 		HP: 12500
@@ -1832,9 +1833,9 @@ gren:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 250
+		Cost: 200
 	DeliversCash:
-		Payload: 125
+		Payload: 100
 		Voice: Move
 	Tooltip:
 		Name: actor-gren.name
