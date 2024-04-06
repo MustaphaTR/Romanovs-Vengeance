@@ -184,16 +184,16 @@ piranha:
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
-		Queue: Ship.Civilian # Ship.Shared, Ship.Yuri
-		Prerequisites: ~ship.yuri, ~techlevel.1
-		BuildPaletteOrder: 20
+		Queue: Ship.Shared, Ship.Yuri
+		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
+		BuildPaletteOrder: 70
 		Description: actor-piranha.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 500
+		Cost: 800
 	Tooltip:
 		Name: actor-piranha.name
 		GenericName: meta-submarine.generic-name
@@ -203,7 +203,7 @@ piranha:
 	Health:
 		HP: 30000
 	Armor:
-		Type: Light
+		Type: Heavy
 	Mobile:
 		TurnSpeed: 40
 		Speed: 120

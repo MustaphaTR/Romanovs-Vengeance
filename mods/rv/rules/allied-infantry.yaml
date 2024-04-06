@@ -246,19 +246,19 @@ dog:
 	PeriodicExplosion:
 		Weapon: DogBark
 		RequiresCondition: deployed && !chronodisable && !webdisable && !dogstun
-	GrantTimedConditionOnDeploy:
-		DeployedTicks: 1
-		CooldownTicks: 1500
-		DeployedCondition: deployed
-		DeployingCondition: deploying
-		BodyNames: deployed
-		DeployAnimation: deploy
-		UndeployAnimation: undeploy
-		Voice: Attack
-		StartsFullyCharged: true
-		ChargingColor: FF0000
-		DischargingColor: FF00FF
-		PauseOnCondition: chronodisable || ((webdisable || dogstun || attacking) && !deployed)
+	# GrantTimedConditionOnDeploy:
+	#	DeployedTicks: 1
+	#	CooldownTicks: 1500
+	#	DeployedCondition: deployed
+	#	DeployingCondition: deploying
+	#	BodyNames: deployed
+	#	DeployAnimation: deploy
+	#	UndeployAnimation: undeploy
+	#	Voice: Attack
+	#	StartsFullyCharged: true
+	#	ChargingColor: FF0000
+	#	DischargingColor: FF00FF
+	#	PauseOnCondition: chronodisable || ((webdisable || dogstun || attacking) && !deployed)
 	Voiced:
 		VoiceSet: DogVoice
 	ProducibleWithLevel@1:

@@ -2909,7 +2909,7 @@ actor-tibtre05 =
 actor-upgrade-gi-fortifications =
    .name = Fiber-Reinforced Fortifications
    .description = Increases movement speed of G.I.s and Guardian G.I.s by 25%.
-    Deployed G.I.s become uncrushable and gain 33% more durability.
+    Deployed G.I.s become uncrushable.
 
 actor-upgrade-a2a-missiles =
    .name = Air-to-Air Missile Systems
@@ -3023,7 +3023,8 @@ actor-upgrade-mounted-mg =
 
 actor-upgrade-black-napalm =
    .name = Black Napalm
-   .description = Doubles the damage of the following units:
+   .description = Vietnamese technology leaves nothing but scorched earth. 
+    Doubles the damage of the following units:
      - Flame Tank
      - Black Kite
 
@@ -3087,7 +3088,7 @@ actor-upgrade-lazarus-prime =
 
 actor-upgrade-autoloaders =
    .name = Autoloaders
-   .description = Lasher Tanks will fire 2 shells at once.
+   .description = Lasher and Lazarus Tanks will fire 2 volleys at once.
 
 actor-upgrade-rocket-barrage =
    .name = Rocket Barrage

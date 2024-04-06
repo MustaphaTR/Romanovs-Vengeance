@@ -1228,6 +1228,7 @@ yhtnk:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
+	Inherits@AUTOLOADERS: ^AffectedByAutoloaders
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
@@ -1287,22 +1288,42 @@ yhtnk:
 		Weapon: DoomLaser
 		Damage: 100
 		LocalOffset: 800,0,512
-		RequiresCondition: !rank-elite && !capacitors
+		RequiresCondition: !rank-elite && !autoloaders && !capacitors
 	Armament@elite:
 		Weapon: DoomLaserE
 		Damage: 150
 		LocalOffset: 800,0,512
-		RequiresCondition: rank-elite && !capacitors
+		RequiresCondition: rank-elite && !autoloaders && !capacitors
+	Armament@primary-auto:
+		Weapon: DoomLaserAuto
+		Damage: 200
+		LocalOffset: 800,0,512
+		RequiresCondition: !rank-elite && autoloaders && !capacitors
+	Armament@elite-auto:
+		Weapon: DoomLaserAutoE
+		Damage: 300
+		LocalOffset: 800,0,512
+		RequiresCondition: rank-elite && autoloaders && !capacitors
 	Armament@primary-capacitors:
 		Weapon: DoomLaserUpg
 		Damage: 100
 		LocalOffset: 800,0,512
-		RequiresCondition: !rank-elite && capacitors
+		RequiresCondition: !rank-elite && !autoloaders && capacitors
 	Armament@elite-capacitors:
 		Weapon: DoomLaserUpgE
 		Damage: 150
 		LocalOffset: 800,0,512
-		RequiresCondition: rank-elite && capacitors
+		RequiresCondition: rank-elite && !autoloaders && capacitors
+	Armament@primary-capacitors-auto:
+		Weapon: DoomLaserUpgAuto
+		Damage: 200
+		LocalOffset: 800,0,512
+		RequiresCondition: !rank-elite && autoloaders && capacitors
+	Armament@elite-capacitors-auto:
+		Weapon: DoomLaserUpgAutoE
+		Damage: 300
+		LocalOffset: 800,0,512
+		RequiresCondition: rank-elite && autoloaders && capacitors
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || nogunner || parachute
@@ -1330,7 +1351,7 @@ yhtnk:
 	HitShape:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
+		Upgrades: upgrade.grinder_treads, upgrade.autoloaders, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
 
 grtk:
 	Inherits: ^Vehicle
@@ -1577,7 +1598,7 @@ expy:
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
+		Queue: Vehicle.Unused, Ship.Civilian # Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
 		Description: actor-expy.description
 		Prerequisites: ~vehicleorship.yuri, ~techlevel.1, ~!ai.ev
 	Selectable:

@@ -353,21 +353,6 @@ upgrade.mounted_mg:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.mounted_mg
 
-upgrade.black_napalm:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: actor-upgrade-black-napalm.name
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Soviets
-		BuildPaletteOrder: 60
-		BuildDuration: 1000
-		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: actor-upgrade-black-napalm.description
-	Valued:
-		Cost: 1500
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.black_napalm
-
 upgrade.propaganda_effort:
 	Inherits: ^default.upgrade
 	Tooltip:
@@ -413,20 +398,20 @@ upgrade.advanced_irradiators:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.advanced_irradiators
 
-upgrade.aerial_propaganda:
+upgrade.black_napalm:
 	Inherits: ^default.upgrade
 	Tooltip:
-		Name: actor-upgrade-aerial-propaganda.name
+		Name: actor-upgrade-black-napalm.name
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 90
 		BuildDuration: 1000
-		Prerequisites: ~upgrade.vietnam, natech, ~techlevel.3
-		Description: actor-upgrade-aerial-propaganda.description
+		Prerequisites: ~upgrade.vietnam, naradr, ~techlevel.2
+		Description: actor-upgrade-black-napalm.description
 	Valued:
-		Cost: 2000
+		Cost: 1500
 	WithProductionIconOverlay:
-		Prerequisites: upgrade.aerial_propaganda
+		Prerequisites: upgrade.black_napalm
 
 upgrade.targeted_explosives:
 	Inherits: ^default.upgrade
@@ -495,9 +480,9 @@ upgrade.camouflage:
 		Name: actor-upgrade-camouflage.name
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Yuri
-		BuildPaletteOrder: 10
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
+		BuildPaletteOrder: 120
+		BuildDuration: 750
+		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.3
 		Description: actor-upgrade-camouflage.description
 	Valued:
 		Cost: 1000
@@ -662,9 +647,9 @@ upgrade.chainguns:
 		Name: actor-upgrade-chainguns.name
 	Buildable:
 		Queue: Upgrade.Shared, Upgrade.Yuri
-		BuildPaletteOrder: 120
+		BuildPaletteOrder: 10
 		BuildDuration: 1500
-		Prerequisites: ~upgrade.yuri, yatech, ~techlevel.4
+		Prerequisites: ~upgrade.yuri, yadome, ~techlevel.2
 		Description: actor-upgrade-chainguns.description
 	Valued:
 		Cost: 2000
@@ -761,3 +746,18 @@ upgrade.high_caliber_rounds:
 		Cost: 3000
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.high_caliber_rounds
+
+upgrade.aerial_propaganda:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: actor-upgrade-aerial-propaganda.name
+	Buildable:
+		Queue: Upgrade.Unused # Upgrade.Shared, Upgrade.Soviets
+		BuildPaletteOrder: 90
+		BuildDuration: 1000
+		Prerequisites: ~disabled # ~upgrade.vietnam, natech, ~techlevel.3
+		Description: actor-upgrade-aerial-propaganda.description
+	Valued:
+		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.aerial_propaganda
