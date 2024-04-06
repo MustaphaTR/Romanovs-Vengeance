@@ -1694,7 +1694,7 @@ gacsph:
 	Building:
 		Footprint: xxx xxx xxx xxx
 		Dimensions: 4,3
-	ChronoshiftPower@chronoshift:
+	RA2ChronoshiftPower@chronoshift:
 		OrderName: Chronoshift
 		Prerequisites:
 			1: gacsph
@@ -1730,11 +1730,8 @@ gacsph:
 		EffectImage: chronoshift
 		SelectionStartSequence: start
 		SelectionLoopSequence: loop
-		SelectionEndSequence: end
-		TeleportTargetSequence: target
-		BeforeTeleportDelay: 5
-		AfterTeleportDelay: 15
-		TeleportingCondition: chronodisable
+		ImpactWeapon: ChronoshiftImpact
+		TeleportWeapon: ChronoshiftImpact
 		EffectPalette: effect75alpha
 		AllowImpassable: true
 		SelectionCursor: chronosphere
@@ -2538,7 +2535,7 @@ gacspb:
 	Building:
 		Footprint: xxx xxx xxx xxx
 		Dimensions: 3,4
-	ChronoshiftPower@chronoshift:
+	RA2ChronoshiftPower@chronoshift:
 		Prerequisites:
 			1: gacspb
 	DetonateWeaponPower@chronoAI:

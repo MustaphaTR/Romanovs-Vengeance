@@ -1297,6 +1297,7 @@ ghost:
 
 ccomand:
 	Inherits: ghost
+	Inherits@PORTCHRONO: ^WithPortableChrono
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 960
@@ -1326,29 +1327,6 @@ ccomand:
 		Weapon: CommandoC4Attacher
 	Armament@sapper-elite:
 		Weapon: CommandoC4AttacherE
-	PortableChronoRA2:
-		ChronoshiftSound: ichrmova.wav
-		DeployCursor: chronosphere
-		DeployBlockedCursor: chronosphere
-		Voice: Move
-		ChargeDelay: 120
-		HasDistanceLimit: false
-		TargetCursor: chronosphere
-		TeleportCondition: chronoed
-		ConditionDuration: 120
-		PauseOnCondition: affectedbytemporal
-	Contrail@Teleport: ##HACK: add a trace for teleport. 
-		Offset: 0, 0, 700
-		StartColor: 00F0F8AA
-		StartColorAlpha: 176
-		StartColorUsePlayerColor: false
-		ZOffset: -1024
-		StartWidth: 36
-		TrailLength: 2
-	GrantCondition@ChronoDisable:
-		RequiresCondition: affectedbytemporal || chronoed
-	Chronoshiftable:
-		ExplodeInstead: false
 	WithInfantryBody:
 		RequiresCondition: !webdisable
 	WithDeathAnimation@normal:
@@ -1692,6 +1670,7 @@ cleg:
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@PORTCHRONO: ^WithPortableChrono
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Selectable:
 		Bounds: 482, 1448, 0, -530
@@ -1737,27 +1716,6 @@ cleg:
 		Radius: 6c0
 	Passenger:
 	-TakeCover:
-	PortableChronoRA2:
-		ChronoshiftSound: ichrmova.wav
-		DeployCursor: chronosphere
-		DeployBlockedCursor: chronosphere
-		Voice: Move
-		ChargeDelay: 120
-		HasDistanceLimit: false
-		TargetCursor: chronosphere
-		TeleportCondition: chronoed
-		ConditionDuration: 120
-		PauseOnCondition: affectedbytemporal
-	Contrail@Teleport: ##HACK: add a trace for teleport. 
-		Offset: 0, 0, 700
-		StartColor: 00F0F8AA
-		StartColorAlpha: 176
-		StartColorUsePlayerColor: false
-		ZOffset: -1024
-		StartWidth: 36
-		TrailLength: 2
-	Chronoshiftable:
-		ExplodeInstead: false
 	Voiced:
 		VoiceSet: ChronoLegionnaireVoice
 	Armament@primary:
@@ -1807,8 +1765,6 @@ cleg:
 		FacingTolerance: 2
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-	GrantCondition@ChronoDisable:
-		RequiresCondition: affectedbytemporal || chronoed
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 

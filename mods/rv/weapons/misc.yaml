@@ -1000,6 +1000,42 @@ AIChronoSpawner:
 	Warhead@1Spa: SpawnActor
 		Actors: mtnk, fv, sref, mgtk, hwtz
 
+ChronoshiftImpact:
+	Warhead@2Eff: CreateEffect
+		Explosions: chronofd
+		ExplosionPalette: effect75alpha
+		ImpactSounds: schrmov.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+PortableChronoTeleport:
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: ichrmova.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+PortableChronoImpact:
+	Warhead@2Eff: CreateEffect
+		Explosions: warpout
+		ImpactSounds: ichrmova.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+ChronoMinerTeleport:
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: vchrtele.wav
+		Volume: 0.5
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+ChronoMinerTeleportImpact:
+	Warhead@2Eff: CreateEffect
+		Explosions: warpout
+		ImpactSounds: vchrtele.wav
+		Volume: 0.5
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
 DemoTruckTargeting:
 	ValidTargets: DetonateAttack
 	Range: 2c0

@@ -27,12 +27,12 @@ cmin:
 	DockClientManager:
 		Voice: Deliver
 	ChronoResourceDelivery:
-		WarpInSequence: warpout
-		WarpInSound: vchrtele.wav
-		WarpOutSound: vchrtele.wav
-		SoundVolume: 0.5
-		AudibleThroughFog: false
+		TeleportType: PortableChrono
 		RequiresCondition: !chronodisable && !emp && !beingterrordroned
+	ExplodeWeaponTeleportEffect:
+		TeleportType: PortableChrono
+		ImpactWeapon: ChronoMinerTeleportImpact
+		TeleportWeapon: ChronoMinerTeleport
 	Contrail@Teleport: ##HACK: add a trace for teleport. 
 		Offset: 0, 0, 700
 		StartColor: 00F0F8AA
@@ -1998,6 +1998,7 @@ ctnk:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
+	Inherits@PORTCHRONO: ^WithPortableChrono
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
@@ -2077,27 +2078,6 @@ ctnk:
 		FacingTolerance: 2
 		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp || nogunner
-	PortableChronoRA2:
-		ChronoshiftSound: ichrmova.wav
-		DeployCursor: chronosphere
-		DeployBlockedCursor: chronosphere
-		Voice: Move
-		ChargeDelay: 120
-		HasDistanceLimit: false
-		TargetCursor: chronosphere
-		TeleportCondition: chronoed
-		ConditionDuration: 120
-		PauseOnCondition: affectedbytemporal
-	Contrail@Teleport: ##HACK: add a trace for teleport. 
-		Offset: 0, 0, 700
-		StartColor: 00F0F8AA
-		StartColorAlpha: 176
-		StartColorUsePlayerColor: false
-		ZOffset: -1024
-		StartWidth: 36
-		TrailLength: 2
-	GrantCondition@ChronoDisable:
-		RequiresCondition: affectedbytemporal || chronoed
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:

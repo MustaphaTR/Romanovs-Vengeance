@@ -1387,6 +1387,36 @@
 	AffectedByTemporal:
 		RequiresCondition: !invulnerability && !forceshield
 
+^WithPortableChrono:
+	RA2PortableChrono:
+		TeleportType: PortableChrono # Chronoshift ability shouldn't trigger this.
+		DeployCursor: chronosphere
+		DeployBlockedCursor: chronosphere
+		Voice: Move
+		ChargeDelay: 120
+		HasDistanceLimit: false
+		TargetCursor: chronosphere
+		PauseOnCondition: affectedbytemporal
+	ExplodeWeaponTeleportEffect:
+		TeleportType: PortableChrono
+		ImpactWeapon: PortableChronoImpact
+		TeleportWeapon: PortableChronoTeleport
+	GrantTimedConditionOnTeleport@Portable:
+		TeleportTypes: PortableChrono
+		Condition: chronoed
+	Contrail@Teleport: ##HACK: add a trace for teleport. 
+		Offset: 0, 0, 700
+		StartColor: 00F0F8AA
+		StartColorAlpha: 176
+		StartColorUsePlayerColor: false
+		ZOffset: -1024
+		StartWidth: 36
+		TrailLength: 2
+	GrantCondition@ChronoDisable:
+		RequiresCondition: affectedbytemporal || chronoed
+	RA2Chronoshiftable:
+		ExplodeInstead: false
+
 ^TankBunkerable:
 	FirepowerMultiplier@TANK_BUNKER:
 		Modifier: 130
@@ -1484,6 +1514,7 @@
 	InfectableRV:
 		RequiresCondition: !chronodisable
 		KillInfectorDamageTypes: KillsDrone
+		RemoveInfectorTeleportTypes: RA2ChronoPower, PortableChrono
 		BeingInfectedCondition: beingterrordroned
 		InfectedCondition: terrordroned
 	Targetable@DRONE:
@@ -1510,6 +1541,7 @@
 	InfectableOld:
 		RequiresCondition: !chronodisable
 		RemoveInfectorDamageTypes: RemovesSquid
+		RemoveInfectorTeleportTypes: RA2ChronoPower
 		BeingInfectedCondition: beinginfected
 		InfectedByConditions:
 			sqd: squid
@@ -2548,7 +2580,7 @@
 		VoiceSet: GIVoice
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	Chronoshiftable:
+	RA2Chronoshiftable:
 		ExplodeInstead: true
 		ReturnToOrigin: false
 	Tooltip:
@@ -3111,10 +3143,14 @@
 		RequiresCondition: !suddendeath
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
-	Chronoshiftable:
+	RA2Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
 		RequiresCondition: !invulnerability
+	GrantTimedConditionOnTeleport:
+		TeleportTypes: RA2ChronoPower
+		Condition: chronodisable
+		Duration: 20
 	Tooltip:
 		Name: meta-vehicle.name
 		GenericName: meta-vehicle.name
@@ -3290,10 +3326,14 @@
 		RequiresCondition: tanyaC4 && !airborne
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp
-	#Chronoshiftable:
+	#RA2Chronoshiftable:
 	#	ChronoshiftSound: schrmov.wav
 	#	ReturnToOrigin: false
 	#	RequiresCondition: !invulnerability
+	#GrantTimedConditionOnTeleport:
+	#	TeleportTypes: RA2ChronoPower
+	#	Condition: chronodisable
+	#	Duration: 20
 	RevealsShroud:
 		Type: GroundPosition
 		RequiresCondition: airborne
@@ -3558,10 +3598,14 @@
 		RequiresCondition: !suddendeath
 	Voiced:
 		VoiceSet: SovietNavalVoice
-	Chronoshiftable:
+	RA2Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
 		RequiresCondition: !invulnerability
+	GrantTimedConditionOnTeleport:
+		TeleportTypes: RA2ChronoPower
+		Condition: chronodisable
+		Duration: 20
 	Tooltip:
 		Name: meta-ship.name
 		GenericName: meta-ship.name
