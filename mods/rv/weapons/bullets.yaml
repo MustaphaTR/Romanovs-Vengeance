@@ -694,6 +694,7 @@ TurretMortar:
 		TrailPalette: effect75alpha
 		TrailImage: smokegren
 	Warhead@1Dam: SpreadDamage
+		Spread: 0c384
 		Damage: 13000
 		Versus:
 			Light: 90
@@ -725,6 +726,15 @@ TurretMortar:
 		ValidTargets: Ground, Water
 		ValidRelationships: Neutral, Enemy
 
+TurretMortarHeavy:
+	Inherits: TurretMortar
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c480
+		Damage: 16250
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c480
+		Damage: 16250
+
 TrooperMortar:
 	Inherits: TurretMortar
 	ReloadDelay: 75
@@ -742,17 +752,41 @@ TrooperMortarE:
 	Projectile: BulletAS
 		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c384
+		Damage: 6000
 	Warhead@1Gar: OpenToppedDamage
-		Spread: 0c384
+		Damage: 6000
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
+
+TrooperMortarHeavy:
+	Inherits: TrooperMortar
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c480
+		Damage: 6250
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c480
+		Damage: 6250
+
+TrooperMortarHeavyE:
+	Inherits: TrooperMortarE
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c480
+		Damage: 7500
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c480
+		Damage: 7500
 
 UCTrooperMortar:
 	Inherits: TrooperMortar
 
 UCTrooperMortarE:
 	Inherits: TrooperMortarE
+
+UCTrooperMortarHeavy:
+	Inherits: TrooperMortarHeavy
+
+UCTrooperMortarHeavyE:
+	Inherits: TrooperMortarHeavyE
 
 CruiserStrikeInit:
 	Projectile: InstantExplode

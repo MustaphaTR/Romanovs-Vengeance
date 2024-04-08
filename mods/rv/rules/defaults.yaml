@@ -705,12 +705,26 @@
 		Condition: propeffort
 		Prerequisites: upgrade.propaganda_effort
 
+^AffectedByHeavyMortars:
+	ActorStatValues:
+		Upgrades: upgrade.heavy_mortars
+	GrantConditionOnPrerequisite@HEAVYMORTARS:
+		Condition: heavymortars
+		Prerequisites: upgrade.heavy_mortars
+
 ^AffectedByMountedMG:
 	ActorStatValues:
 		Upgrades: upgrade.mounted_mg
 	GrantConditionOnPrerequisite@MACHINEGUN:
 		Condition: machinegun
 		Prerequisites: upgrade.mounted_mg
+
+^AffectedByArmTheMob:
+	# ActorStatValues:
+	#	Upgrades: upgrade.arm_the_mob
+	GrantConditionOnPrerequisite@PROPEFFORT:
+		Condition: armthemob
+		Prerequisites: upgrade.arm_the_mob
 
 ^AffectedByRadioactiveBombs:
 	ActorStatValues:

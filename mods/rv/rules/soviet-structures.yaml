@@ -1145,6 +1145,9 @@ natech:
 		Prerequisites: ~building.sovietsorbaku, production, naradr, ~techlevel.3, ~!ai.natech
 		Description: actor-natech.description
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@batech:
+		Prerequisite: batech
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ProvidesPrerequisite@upgrade.russia:
 		Prerequisite: upgrade.russia
 		Factions: russia
@@ -1168,6 +1171,9 @@ natech:
 	ProvidesPrerequisite@upgrade.baku:
 		Prerequisite: upgrade.baku
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+	ProvidesPrerequisite@upgrade.turkmen:
+		Prerequisite: upgrade.turkmen
+		Factions: turkmen
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.natech

@@ -284,6 +284,9 @@ actor-bpln =
     
       Strong vs Buildings, Vehicles, Aircraft
       Weak vs Infantry
+    
+    Upgradeable with:
+    - Cryo Missiles
 
 actor-disk =
    .name = Leech Disc
@@ -1014,6 +1017,9 @@ actor-mtrp =
     Abilities:
     - Reduces damage and sight of enemy units
     - Can kill garrisoned infantry
+    
+    Upgradeable with:
+    - Heavy Mortars
 
 actor-ssnipe =
    .description = Special anti-infantry unit.
@@ -1040,6 +1046,7 @@ actor-amob =
     
     Upgradeable with:
     - AP Bullets
+    - Arm the Mob
 
 actor-vlkv =
    .name = Vladislav Volkov
@@ -1076,6 +1083,9 @@ actor-hydf =
     
       Strong vs Infantry, Aircraft
       Weak vs Vehicles, Naval units
+    
+    Upgradeable with:
+    - Cryo Missiles
 
 ## bakuvian-structures.yaml
 actor-babarr =
@@ -1121,6 +1131,9 @@ actor-bamort =
     - Can kill garrisoned infantry
     
       Requires power to operate.
+    
+    Upgradeable with:
+    - Heavy Mortars
 
 actor-baprop =
    .description = Buffs fire speed of nearby units and heals them.
@@ -1136,7 +1149,6 @@ actor-hytk =
       Weak vs Infantry, Aircraft
     
     Upgradeable with:
-    - Nuclear Engines
     - Mounted MG
 
 actor-send =
@@ -1171,7 +1183,7 @@ actor-grad =
       Weak vs Aircraft
     
     Upgradeable with:
-    - Cryo Warheads
+    - Cryo Missiles
 
 actor-qyzyl =
    .name = Qızıl Ulduz Defense Platform
@@ -3065,18 +3077,10 @@ actor-upgrade-molotov-cocktails =
    .name = Molotov Cocktails
    .description = Provides Conscripts with Molotov Coctails which increase their damage against structures.
 
-actor-upgrade-smoke-grenades =
-   .name = Smoke Grenades
-   .description = Provides Conscripts with Smoke Grenades which half the vision of enemy units and reduces their damage by 20%.
-
 actor-upgrade-nuclear-engines =
    .name = Nuclear Engines
    .description = Increases the movement speed of the following units:
      - Rhino Tanks by 17%
-     - Apocalypse Tanks by 25%
-    Both units will explode violently and leave radiation when destroyed.
-   .description-baku = Increases the movement speed of the following units:
-     - Hydra Tanks by 17%
      - Apocalypse Tanks by 25%
     Both units will explode violently and leave radiation when destroyed.
 
@@ -3084,19 +3088,11 @@ actor-upgrade-uranium-shells =
    .name = Depleted Uranium Shells
    .description = Increases the damage of Rhino and Apocalypse Tanks by 25%.
 
-actor-upgrade-mounted-mg =
-   .name = Mounted Machine Guns
-   .description = Arms Hydra Tanks with machine guns.
-
 actor-upgrade-black-napalm =
    .name = Black Napalm
    .description = Doubles the damage of the following units:
      - Flame Tank
      - Black Kite
-
-actor-upgrade-propaganda-effort =
-   .name = Propaganda Effort
-   .description = Increases effectiveness of Propaganda Towers and Propaganda Commander's Power by 25%.
 
 actor-upgrade-overcharge =
    .name = Overcharge
@@ -3130,11 +3126,6 @@ actor-upgrade-high-explosive-bombs =
 actor-upgrade-radioactive-bombs =
    .name = Fallout Warheads
    .description = Makes Kirov, V3 Launcher and Dreadnought projectiles leave radiation.
-
-actor-upgrade-cryo-warheads =
-   .name = Cryo Missiles
-   .description = Grad MLRS, Hydrofoil and MiG rockets gain cryo warheads
-    which slow down enemy units and cause them to take more damage.
 
 actor-upgrade-camouflage =
    .name = Camouflage
@@ -3190,6 +3181,31 @@ actor-upgrade-disc-armor =
 actor-upgrade-chainguns =
    .name = Chainguns
    .description = Increases the damage of Gatling weapons by 25%.
+
+actor-upgrade-smoke-grenades =
+   .name = Smoke Grenades
+   .description = Provides Conscripts with Smoke Grenades which halve the vision of enemy units and reduces their damage by 20%.
+
+actor-upgrade-heavy-mortars =
+   .name = Heavy Mortars
+   .description = Increases the damage and area of effect of Mortar Turrets and Mortar Troopers by 25%.
+
+actor-upgrade-mounted-mg =
+   .name = Mounted Machine Guns
+   .description = Arms Hydra Tanks with machine guns.
+
+actor-upgrade-propaganda-effort =
+   .name = Propaganda Effort
+   .description = Increases effectiveness of Propaganda Towers and Propaganda Commander's Power by 25%.
+
+actor-upgrade-arm-the-mob =
+   .name = Arm the Mob
+   .description = Arms the Angry Mobs with AK-47s instead of pistols, doubling the damage and increasing fire speed by 33%.
+
+actor-upgrade-cryo-warheads =
+   .name = Cryo Missiles
+   .description = Grad MLRS, Hydrofoil and MiG rockets gain cryo warheads
+    which slow down enemy units and cause them to take more damage.
 
 actor-upgrade-endurance-training =
    .name = Endurance Training

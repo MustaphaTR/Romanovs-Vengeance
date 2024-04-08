@@ -1,7 +1,6 @@
 hytk:
 	Inherits: ^MainBattleTank
 	Inherits@MACHINEGUN: ^AffectedByMountedMG
-	Inherits@NUKEENGINES: ^AffectedByNuclearEngines
 	Valued:
 		Cost: 1100
 	DeliversCash:
@@ -109,7 +108,6 @@ hytk:
 		VoiceSet: SovietVehicleVoice
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.nuclear_engines, upgrade.mounted_mg
 
 send:
 	Inherits: ^Vehicle
@@ -249,7 +247,7 @@ grad:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 100
-		Prerequisites: ~vehicle.baku, natech, ~techlevel.3
+		Prerequisites: ~vehicle.baku, batech, ~techlevel.3
 		Description: actor-grad.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -335,7 +333,7 @@ qyzyl:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 990
-		Prerequisites: ~vehicle.baku, natech, ~caslab, ~techlevel.4
+		Prerequisites: ~vehicle.baku, batech, ~caslab, ~techlevel.4
 		Description: actor-qyzyl.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100

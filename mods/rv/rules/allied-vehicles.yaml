@@ -237,6 +237,7 @@ fv:
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HEAVYMORTARS: ^AffectedByHeavyMortars
 	Inherits@HIGHCALIBER: ^AffectedByHighCaliberRounds
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
@@ -707,12 +708,22 @@ fv:
 		Weapon: CRTrooperMortar
 		Damage: 50
 		LocalOffset: 256,0,1536
-		RequiresCondition: ifv-mortar && !rank-elite
+		RequiresCondition: ifv-mortar && !rank-elite && !heavymortars
 	Armament@mortar-elite:
 		Weapon: CRTrooperMortarE
 		Damage: 100
 		LocalOffset: 256,0,1536
-		RequiresCondition: ifv-mortar && rank-elite
+		RequiresCondition: ifv-mortar && rank-elite && !heavymortars
+	Armament@mortar-heavy:
+		Weapon: CRTrooperMortarHeavy
+		Damage: 50
+		LocalOffset: 256,0,1536
+		RequiresCondition: ifv-mortar && !rank-elite && heavymortars
+	Armament@mortar-heavy-elite:
+		Weapon: CRTrooperMortarHeavyE
+		Damage: 100
+		LocalOffset: 256,0,1536
+		RequiresCondition: ifv-mortar && rank-elite && heavymortars
 	Armament@rocket:
 		Weapon: CRMissileLauncher
 		Damage: 120

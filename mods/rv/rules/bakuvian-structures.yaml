@@ -379,6 +379,12 @@ badock:
 	Exit@1:
 		Facing: 384
 
+batech: # Building doesn't exist yet, but the prerequisite do. Putting this dummy here either way.
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: meta-battlelab.name
+
 baacdm:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -387,7 +393,7 @@ baacdm:
 	Buildable:
 		Queue: Building.Shared, Building.Baku
 		BuildPaletteOrder: 120
-		Prerequisites: ~building.baku, natech, ~techlevel.4
+		Prerequisites: ~building.baku, batech, ~techlevel.4
 		Description: actor-baacdm.description
 		BuildLimit: 1
 		BuildDuration: 1250
@@ -466,6 +472,7 @@ bamort:
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@HEAVYMORTARS: ^AffectedByHeavyMortars
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Baku
@@ -500,6 +507,12 @@ bamort:
 		Weapon: TurretMortar
 		LocalOffset: 896,0,2048
 		MuzzleSequence: muzzle
+		RequiresCondition: !heavymortars
+	Armament@Heavy:
+		Weapon: TurretMortarHeavy
+		LocalOffset: 896,0,2048
+		MuzzleSequence: muzzle
+		RequiresCondition: heavymortars
 	WithMuzzleOverlay:
 	DetectCloaked:
 		Range: 7c0

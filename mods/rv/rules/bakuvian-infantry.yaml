@@ -362,6 +362,7 @@ mtrp:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HEAVYMORTARS: ^AffectedByHeavyMortars
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
@@ -406,37 +407,73 @@ mtrp:
 		Damage: 50
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !heavymortars
 	Armament@elite:
 		Weapon: TrooperMortarE
 		Damage: 100
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !heavymortars
+	Armament@primary-heavy:
+		Weapon: TrooperMortarHeavy
+		Damage: 50
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && heavymortars
+	Armament@elite:
+		Weapon: TrooperMortarHeavyE
+		Damage: 100
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && heavymortars
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCTrooperMortar
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !heavymortars
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCTrooperMortarE
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !heavymortars
+	Armament@garrisoned-heavy:
+		Name: garrisoned
+		Weapon: UCTrooperMortarHeavy
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && heavymortars
+	Armament@elite-garrisoned-heavy:
+		Name: garrisoned
+		Weapon: UCTrooperMortarHeavyE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && heavymortars
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: TrooperMortar
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !heavymortars
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: TrooperMortarE
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !heavymortars
+	Armament@opentopped-heavy:
+		Name: opentopped
+		Weapon: TrooperMortar
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && heavymortars
+	Armament@elite-opentopped-heavy:
+		Name: opentopped
+		Weapon: TrooperMortarE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && heavymortars
 	WithInfantryBody:
 	Voiced:
 		VoiceSet: FlakTrooperVoice
@@ -506,57 +543,57 @@ ssnipe:
 amobtm:
 	Inherits: ^AngryMob
 	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@ARMTHEMOB: ^AffectedByArmTheMob
 	Armament@pistol:
 		Weapon: Pistolb
 		Damage: 15
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite # && !arm_the_mob
+		RequiresCondition: !rank-elite && !armthemob
 	Armament@pistolE:
 		Weapon: PistolbE
 		Damage: 20
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite # && !arm_the_mob
-	# Armament@ak47:
-	#	Weapon: AKMob
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: !rank-elite # arm_the_mob
-	# Armament@ak47E:
-	#	Weapon: AKMobE
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: rank-elite # arm_the_mob
+		RequiresCondition: rank-elite && !armthemob
+	Armament@ak47:
+		Weapon: AKMob
+		Damage: 30
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && armthemob
+	Armament@ak47E:
+		Weapon: AKMobE
+		Damage: 40
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && armthemob
 	AttackFrontal:
 		FacingTolerance: 2
-	# GrantConditionOnPrerequisite@ARM_THE_MOB:
-	#	Condition: arm_the_mob
-	#	Prerequisites: upgrade.arm_the_mob
 	-ActorStatValues:
 
 amobf:
 	Inherits: ^AngryMob
 	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@ARMTHEMOB: ^AffectedByArmTheMob
 	Armament@pistol:
 		Weapon: Pistolb
 		Damage: 15
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite # && !arm_the_mob
+		RequiresCondition: !rank-elite && !armthemob
 	Armament@pistolE:
 		Weapon: PistolbE
 		Damage: 20
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite # && !arm_the_mob
-	# Armament@ak47:
-	#	Weapon: AKMob
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: !rank-elite # arm_the_mob
-	# Armament@ak47E:
-	#	Weapon: AKMobE
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: rank-elite # arm_the_mob
+		RequiresCondition: rank-elite && !armthemob
+	Armament@ak47:
+		Weapon: AKMob
+		Damage: 30
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && armthemob
+	Armament@ak47E:
+		Weapon: AKMobE
+		Damage: 40
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && armthemob
 	AttackFrontal:
 		FacingTolerance: 2
-	# GrantConditionOnPrerequisite@ARM_THE_MOB:
-	#	Condition: arm_the_mob
-	#	Prerequisites: upgrade.arm_the_mob
 	-ActorStatValues:
 	Voiced:
 		VoiceSet: AngryMobFemaleVoice
@@ -577,11 +614,13 @@ amobfm:
 		RequiresCondition: rank-elite
 	AttackFrontal:
 		FacingTolerance: 2
+	-ActorStatValues:
 
 amob:
 	Inherits@1: ^ExistsInWorld
 	Inherits@4: ^SpriteActor
 	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@ARMTHEMOB: ^AffectedByArmTheMob
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@LEAFLET: ^AffectedByLeaflets
 	-AppearsOnRadar:
@@ -618,7 +657,15 @@ amob:
 		Type: None
 	AttackOmni:
 	Armament@PRIMARY:
+		Damage: 135
+		ReloadDelay: 20
 		Weapon: AngryMobTargeter
+		RequiresCondition: !armthemob
+	Armament@PRIMARYAK: # For stats.
+		Damage: 240
+		ReloadDelay: 15
+		Weapon: AngryMobTargeter
+		RequiresCondition: armthemob
 	Mobile:
 		Speed: 60
 		Voice: Move
@@ -655,7 +702,7 @@ amob:
 	RenderSprites:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Mob
-		Damage: 135
+		Upgrades: upgrade.ap_bullets, upgrade.arm_the_mob
 
 vlkv:
 	Inherits: ^Infantry
@@ -667,7 +714,7 @@ vlkv:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 190
-		Prerequisites: ~infantry.baku, natech, ~techlevel.4
+		Prerequisites: ~infantry.baku, batech, ~techlevel.4
 		BuildLimit: 1
 		Description: actor-vlkv.description
 		BuildDuration: 1250
@@ -830,7 +877,7 @@ chit:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
-		Prerequisites: ~infantry.baku, natech, ~techlevel.4
+		Prerequisites: ~infantry.baku, batech, ~techlevel.4
 		BuildPaletteOrder: 200
 		BuildLimit: 1
 		Description: actor-chit.description

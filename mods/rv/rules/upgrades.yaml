@@ -277,46 +277,15 @@ upgrade.molotov_cocktails:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.molotov_cocktails
 
-upgrade.smoke_grenades:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: actor-upgrade-smoke-grenades.name
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 30
-		BuildDuration: 750
-		Prerequisites: ~upgrade.baku, basops, ~techlevel.2
-		Description: actor-upgrade-smoke-grenades.description
-	Valued:
-		Cost: 1000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.smoke_grenades
-
 upgrade.nuclear_engines:
 	Inherits: ^default.upgrade
 	Tooltip:
 		Name: actor-upgrade-nuclear-engines.name
 	Buildable:
-		Queue: Upgrade.Soviets
+		Queue: Upgrade.Shared, Upgrade.Soviets
 		BuildPaletteOrder: 40
 		BuildDuration: 1500
 		Prerequisites: ~upgrade.soviets, natech, ~techlevel.3
-		Description: actor-upgrade-nuclear-engines.description
-	Buildable@Baku:
-		Queue: Upgrade.Baku
-		BuildPaletteOrder: 40
-		BuildDuration: 1500
-		BuildDurationModifier: 100
-		BuildLimit: 1
-		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
-		Description: actor-upgrade-nuclear-engines.description-baku
-	Buildable@Shared:
-		Queue: Upgrade.Shared
-		BuildPaletteOrder: 40
-		BuildDuration: 1500
-		BuildDurationModifier: 100
-		BuildLimit: 1
-		Prerequisites: ~upgrade.sovietsorbaku, natech, ~techlevel.3
 		Description: actor-upgrade-nuclear-engines.description
 	Valued:
 		Cost: 1500
@@ -337,36 +306,6 @@ upgrade.uranium_shells:
 		Cost: 2500
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.uranium_shells
-
-upgrade.mounted_mg:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: actor-upgrade-mounted-mg.name
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 50
-		BuildDuration: 2250
-		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
-		Description: actor-upgrade-mounted-mg.description
-	Valued:
-		Cost: 2000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.mounted_mg
-
-upgrade.propaganda_effort:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: actor-upgrade-propaganda-effort.name
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 60
-		BuildDuration: 750
-		Prerequisites: ~upgrade.baku, natech, ~techlevel.3
-		Description: actor-upgrade-propaganda-effort.description
-	Valued:
-		Cost: 1500
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.propaganda_effort
 
 upgrade.overcharge:
 	Inherits: ^default.upgrade
@@ -457,21 +396,6 @@ upgrade.radioactive_bombs:
 		Cost: 2500
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.radioactive_bombs
-
-upgrade.cryo_warheads:
-	Inherits: ^default.upgrade
-	Tooltip:
-		Name: actor-upgrade-cryo-warheads.name
-	Buildable:
-		Queue: Upgrade.Shared, Upgrade.Baku
-		BuildPaletteOrder: 120
-		BuildDuration: 1500
-		Prerequisites: ~upgrade.baku, natech, ~techlevel.4
-		Description: actor-upgrade-cryo-warheads.description
-	Valued:
-		Cost: 2000
-	WithProductionIconOverlay:
-		Prerequisites: upgrade.cryo_warheads
 
 ### Psi-Corps ###
 upgrade.camouflage:
@@ -656,6 +580,97 @@ upgrade.chainguns:
 	WithProductionIconOverlay:
 		Prerequisites: upgrade.chainguns
 
+### Baku Pact ###
+upgrade.smoke_grenades:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: actor-upgrade-smoke-grenades.name
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 30
+		BuildDuration: 750
+		Prerequisites: ~upgrade.baku, basops, ~techlevel.2
+		Description: actor-upgrade-smoke-grenades.description
+	Valued:
+		Cost: 1000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.smoke_grenades
+
+upgrade.heavy_mortars:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: actor-upgrade-heavy-mortars.name
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 40
+		BuildDuration: 1875
+		Prerequisites: ~upgrade.baku, batech, ~techlevel.3
+		Description: actor-upgrade-heavy-mortars.description
+	Valued:
+		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.heavy_mortars
+
+upgrade.mounted_mg:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: actor-upgrade-mounted-mg.name
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 50
+		BuildDuration: 2250
+		Prerequisites: ~upgrade.baku, batech, ~techlevel.3
+		Description: actor-upgrade-mounted-mg.description
+	Valued:
+		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.mounted_mg
+
+upgrade.propaganda_effort:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: actor-upgrade-propaganda-effort.name
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 60
+		BuildDuration: 750
+		Prerequisites: ~upgrade.baku, batech, ~techlevel.3
+		Description: actor-upgrade-propaganda-effort.description
+	Valued:
+		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.propaganda_effort
+
+upgrade.arm_the_mob:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: actor-upgrade-arm-the-mob.name
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 80
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.turkmen, batech, ~techlevel.3
+		Description: actor-upgrade-arm-the-mob.description
+	Valued:
+		Cost: 1500
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.arm_the_mob
+
+upgrade.cryo_warheads:
+	Inherits: ^default.upgrade
+	Tooltip:
+		Name: actor-upgrade-cryo-warheads.name
+	Buildable:
+		Queue: Upgrade.Shared, Upgrade.Baku
+		BuildPaletteOrder: 120
+		BuildDuration: 1500
+		Prerequisites: ~upgrade.baku, batech, ~techlevel.4
+		Description: actor-upgrade-cryo-warheads.description
+	Valued:
+		Cost: 2000
+	WithProductionIconOverlay:
+		Prerequisites: upgrade.cryo_warheads
+
 ### Unused ###
 upgrade.endurance_training:
 	Inherits: ^default.upgrade
@@ -725,7 +740,7 @@ upgrade.cryo_shells:
 		Queue: Upgrade.Unused # Upgrade.Shared, Upgrade.Baku
 		BuildPaletteOrder: 50
 		BuildDuration: 1500
-		Prerequisites: ~disabled # ~upgrade.baku, natech, ~techlevel.3
+		Prerequisites: ~disabled # ~upgrade.baku, batech, ~techlevel.3
 		Description: actor-upgrade-cryo-shells.description
 	Valued:
 		Cost: 2500
@@ -740,7 +755,7 @@ upgrade.high_caliber_rounds:
 		Queue: Upgrade.Unused # Upgrade.Shared, Upgrade.Baku
 		BuildPaletteOrder: 80
 		BuildDuration: 1500
-		Prerequisites: ~disabled # ~upgrade.baku, natech, ~techlevel.3
+		Prerequisites: ~disabled # ~upgrade.baku, batech, ~techlevel.3
 		Description: actor-upgrade-high-caliber-rounds.description
 	Valued:
 		Cost: 3000
