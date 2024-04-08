@@ -12,6 +12,8 @@ CPModifier = Map.LobbyOption("cpmodifier")
 
 if CPModifier == "one" then
 	PointsPerRank = { 1, 1, 1, 1, 1 }
+elseif CPModifier == "earlyend" then
+	PointsPerRank = { 1, 1, 1, 3, 1 }
 elseif CPModifier == "normal" then
 	PointsPerRank = { 1, 1, 1, 1, 3 }
 elseif CPModifier == "two" then

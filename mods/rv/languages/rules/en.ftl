@@ -75,6 +75,7 @@ dropdown-cpmodifier =
 options-cpmodifier =
    .disabled = 0, 0, 0, 0, 0
    .one = 1, 1, 1, 1, 1
+   .earlyend = 1, 1, 1, 3, 1
    .normal = 1, 1, 1, 1, 3
    .two = 2, 2, 2, 2, 2
    .double = 2, 2, 2, 2, 6
