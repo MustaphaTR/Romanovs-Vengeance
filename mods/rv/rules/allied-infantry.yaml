@@ -2,6 +2,7 @@ engineer:
 	Inherits: ^Infantry
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SWIMSUITPARACHUTE: ^WithSwimSuitAndParachute
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
@@ -22,6 +23,7 @@ engineer:
 	Tooltip@NoRow:
 		Name: actor-engineer.name
 	Selectable:
+		Priority: 4
 		Bounds: 482, 1448, 0, -530
 	Health:
 		HP: 10000
