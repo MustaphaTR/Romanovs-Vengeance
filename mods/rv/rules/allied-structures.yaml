@@ -639,9 +639,9 @@ gaairc:
 			1: airborne
 		ChargeInterval: 4500
 		Names:
-			1: Airborne
+			1: actor-gaairc.power-airborne-name
 		Descriptions:
-			1: 2 Cargo Planes drop 5 GIs and 5 Guardian GIs\nanywhere on the map.
+			1: actor-gaairc.power-airborne-description
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
@@ -671,9 +671,9 @@ gaairc:
 			1: leaflet
 		ChargeInterval: 3750
 		Names:
-			1: Leaflet Drop
+			1: commanders-power.leaflet-drop-name
 		Descriptions:
-			1: A Cargo Plane drops leaflets\nanywhere on the map.\nLeaflets slow enemy infantry\nand vehicle movement and\nfire speed.
+			1: commanders-power.leaflet-drop-description
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: notification-select-target
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
@@ -703,9 +703,9 @@ gaairc:
 			1: carpetbomb
 		ChargeInterval: 6000
 		Names:
-			1: Carpet Bombing
+			1: actor-gaairc.power-carpetbombing-name
 		Descriptions:
-			1: A B-52 drops bombs in a line\nanywhere on the map.
+			1: actor-gaairc.power-carpetbombing-description
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: notification-select-target
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
@@ -734,9 +734,9 @@ gaairc:
 			1: grizzly
 		ChargeInterval: 6000
 		Names:
-			1: Chrono Grizzly
+			1: actor-gaairc.power-chronogrizzly-name
 		Descriptions:
-			1: Chronoshifts 3 Grizzly Tanks\nanywhere on the map.
+			1: actor-gaairc.power-chronogrizzly-description
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: notification-select-target
 		Weapons:
@@ -753,9 +753,9 @@ gaairc:
 			1: tankdrop
 		ChargeInterval: 6000
 		Names:
-			1: Tank Drop
+			1: actor-gaairc.power-tankdrop-name
 		Descriptions:
-			1: 3 Cargo Planes drops 3 Grizzly Tanks\nanywhere on the map.
+			1: actor-gaairc.power-tankdrop-description
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
@@ -787,9 +787,9 @@ gaairc:
 		Cursor: force-shield
 		ChargeInterval: 4500
 		Names:
-			1: Force Shield
+			1: actor-gaairc.power-forceshield-name
 		Descriptions:
-			1: Makes a group of buildings invulnerable for 15 seconds.
+			1: actor-gaairc.power-forceshield-description
 		Durations:
 			1: 375
 		Conditions:
@@ -820,9 +820,9 @@ gaairc:
 			1: empulse
 		ChargeInterval: 7500
 		Names:
-			1: E. M. Pulse Strike
+			1: commanders-power.emp-strike-name
 		Descriptions:
-			1: A Cargo Plane drops an Electromagnetic Pulse\nbomb anywhere on the map.
+			1: commanders-power.emp-strike-description
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: notification-select-target
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
@@ -851,9 +851,9 @@ gaairc:
 			1: chronobomb
 		ChargeInterval: 6000
 		Names:
-			1: Chronobomb
+			1: actor-gaairc.power-chronobomb-name
 		Descriptions:
-			1: Chronoshifts several explosive barrels\nanywhere on the map.
+			1: actor-gaairc.power-chronobomb-description
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: notification-select-target
 		Weapons:
@@ -1052,9 +1052,9 @@ gayard:
 		Prerequisites:
 			1: disabled # gayard
 		Names:
-			1: Sonar Pulse
+			1: actor-gayard.power-name
 		Descriptions:
-			1: Reveals all submarines and naval mines in a\nlarge area for a short time.
+			1: actor-gayard.power-description
 		ChargeInterval: 1000
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: notification-select-target
@@ -1540,9 +1540,9 @@ gaspysat:
 		Prerequisites:
 			1: gaspysat
 		Names:
-			1: Satellite Scan
+			1: actor-gaspysat.power-name
 		Descriptions:
-			1: Reveals the whole map for 30 seconds.
+			1: actor-gaspysat.power-description
 		Icons:
 			1: satscan
 		Actors: camera.satscan
@@ -1643,9 +1643,9 @@ gaweat:
 		Cursor: weatherstorm
 		ChargeInterval: 9000
 		Names:
-			1: Lightning Storm
+			1: actor-gaweat.power-name
 		Descriptions:
-			1: Applies heavy damage over a large area.
+			1: actor-gaweat.power-description
 		Weapons:
 			1: WeatherStormInit
 		ActivationSequence:
@@ -1702,9 +1702,9 @@ gacsph:
 			1: chrono
 		ChargeInterval: 6000
 		Names:
-			1: Chronoshift
+			1: actor-gacsph.power-name
 		Descriptions:
-			1: Teleports a group of units across\nthe map.\n\nKills infantry.
+			1: actor-gacsph.power-description
 		Dimensions:
 			1: 3,3
 		Footprints:
@@ -1748,9 +1748,9 @@ gacsph:
 			1: chrono
 		ChargeInterval: 6000
 		Names:
-			1: Chrono Reinforce (AI)
+			1: actor-gacsph.power-name # This name is visible to the player, don't give it a different name.
 		Descriptions:
-			1: Chronoshifts Allied Reinforcement\nanywhere on the map.
+			1: actor-gacsph.power-description
 		Weapons:
 			1: AIChronoSpawner
 		AllowMultiple: true

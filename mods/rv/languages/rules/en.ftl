@@ -92,6 +92,8 @@ options-starting-units =
    .heavy-support = Heavy Support
    .unholy-alliance = Unholy Alliance
 
+resource-minerals = Valuable Minerals
+
 ## Defaults
 notification-unit-lost = Unit lost.
 notification-unit-promoted = Unit promoted.
@@ -559,6 +561,22 @@ actor-gaairc =
     
     Abilities:
     - Comes with 3 repair drones.
+   .power-airborne-name = Airborne
+   .power-airborne-description = 2 Cargo Planes drop 5 GIs and 5 Guardian GIs
+    anywhere on the map.
+   .power-carpetbombing-name = Carpet Bombing
+   .power-carpetbombing-description = A B-52 drops bombs in a line
+    anywhere on the map.
+   .power-chronogrizzly-name = Chrono Grizzly
+   .power-chronogrizzly-description = Chronoshifts 3 Grizzly Tanks
+    anywhere on the map.
+   .power-tankdrop-name = Tank Drop
+   .power-tankdrop-description = 3 Cargo Planes drops 3 Grizzly Tanks
+    anywhere on the map.
+   .power-forceshield-name = Force Shield
+   .power-forceshield-description = Makes a group of buildings invulnerable for 15 seconds.
+   .power-chronobomb-name = Chronobomb
+   .power-chronobomb-description = Chronoshifts several explosive barrels anywhere on the map.
 
 actor-gaweap =
    .description = Produces Allied vehicles.
@@ -576,6 +594,9 @@ actor-gayard =
     - Comes with 3 repair drones.
     
       Can only be placed on water.
+   .power-name = Sonar Pulse
+   .power-description = Reveals all submarines and naval mines in a
+    large area for a short time.
 
 actor-gawall =
    .name = Allied Wall
@@ -637,6 +658,8 @@ actor-gaspysat =
     Provides Radar.
     
       Requires power to operate.
+   .power-name = Satellite Scan
+   .power-description = Reveals the whole map for 30 seconds.
 
 actor-gagap =
    .name = Gap Generator
@@ -649,6 +672,8 @@ actor-gaweat =
    .description = Play God with deadly weather!
     
       Requires power to operate.
+   .power-name = Lightning Storm
+   .power-description = Creates a lighting storm that applies heavy damage over a large area.
 
 actor-gacsph =
    .name = Chronosphere
@@ -657,6 +682,10 @@ actor-gacsph =
     
       Requires power to operate.
       Can be rotated.
+   .power-name = Chronoshift
+   .power-description = Teleports a group of units across\nthe map.
+    
+    Kills infantry.
 
 actor-atesla =
    .name = Prism Tower
@@ -1979,7 +2008,7 @@ actor-commanders-power-magnetic-beam-3 =
 
 actor-commanders-power-cruiser-strike =
    .name = Cruiser Strike
-   .description = Enables Crusiser Strike power.
+   .description = Enables Cruiser Strike power.
 
 actor-commanders-power-v3-storm =
    .name = V3 Storm
@@ -2009,6 +2038,117 @@ actor-prerequisite-has-points-name = 1 Commander's Points
 actor-prerequisite-3-stars-name = Major or Higher Rank
 actor-prerequisite-5-stars-name = General Rank
 meta-default-commanders-power-prerequisite-name = Commander's Power
+
+commanders-power =
+   .scout-drone-name = Scout Drone
+   .scout-drone-description = Spawns a Scout Drone anywhere on the map.
+    Provides stealth detection.
+   .spy-plane-name = Spy Plane
+   .spy-plane-description = Reveals an area of the map.
+    Provides stealth detection.
+   .psychic-reveal-name = Psychic Reveal
+   .psychic-reveal-description = Reveals an area for a short amount of time.
+    Provides stealth detection.
+   .psychic-reveal-name = Psychic Reveal
+   .psychic-reveal-description = Reveals an area for a short amount of time.
+    Provides stealth detection.
+   .intel-drop-name = Intel Drop
+   .intel-drop-allied-description = An F-22 Raptor paradrops a spy
+    anywhere on the map.
+   .intel-drop-baku-description = A MiG paradrops a spy
+    anywhere on the map.
+   .drone-drop-name = Drone Drop
+   .drone-drop-description = A MiG paradrops 3 Terror Drones
+    anywhere on the map.
+   .cash-bounty-name = Cash Bounty
+   .cash-bounty-description = Makes a group of units give 50% of their worth to the killer.
+    Effect lasts for 20 seconds.
+   .leaflet-drop-name = Leaflet Drop
+   .leaflet-drop-description = A Cargo Plane drops leaflets anywhere on the map.
+    Leaflets slow enemy infantry and vehicle movement and fire speed.
+   .cluster-mines-name = Cluster Mines
+   .cluster-mines-description = A Cargo plane drops 13 mines
+    anywhere on the map.
+   .brute-drop-name = Brute Drop
+   .brute-drop-description = Drops 5 Brutes via drop pods
+    anywhere on the map.
+   .emergency-repair-name = Emergency Repair
+   .emergency-repair-1-description = Repairs 30% of the health of vehicles and structures in 5 cell range.
+   .emergency-repair-2-description = Repairs 60% of the health of vehicles and structures in 6 cell range.
+   .emergency-repair-3-description = Fully repairs vehicles and structures in 7 cell range.
+   .a10-strike-name = A-10 Strike
+   .a10-strike-1-description = 1 A-10 Thunderbolt strikes anywhere on the map.
+   .a10-strike-2-description = 2 A-10 Thunderbolts strike anywhere on the map.
+   .a10-strike-3-description = 3 A-10 Thunderbolts strike anywhere on the map.
+   .parabombs-name = Parabombs
+   .parabombs-1-description = 1 Cargo Plane drops parachuted
+    bombs on your target.
+   .parabombs-2-description = 2 Cargo Planes drop parachuted
+    bombs on your target.
+   .parabombs-3-description = 3 Cargo Planes drop parachuted
+    bombs on your target.
+   .toxin-bombing-name = Toxin Bombing
+   .toxin-bombing-1-description = 1 Bomber Plane drops toxin
+    bombs on your target.
+   .toxin-bombing-2-description = 2 Bomber Planes drop toxin
+    bombs on your target.
+   .toxin-bombing-3-description = 3 Bomber Planes drop toxin
+    bombs on your target.
+   .fuel-air-bomb-name = Fuel Air Bomb
+   .fuel-air-bomb-1-description = 1 Tu-16 Badger drops a fuel air
+    bomb on your target.
+   .fuel-air-bomb-2-description = 2 Tu-16 Badgers drop a fuel air
+    bomb each on your target.
+   .fuel-air-bomb-3-description = 3 Tu-16 Badgers drop a fuel air
+    bomb each on your target.
+   .chrono-boost-name = Chrono Boost
+   .chrono-boost-1-description = Makes a group of units move faster by 30% and fire faster by 25%.
+    Effect lasts for 20 seconds.
+   .chrono-boost-2-description = Makes a group of units move faster by 60% and fire faster by 25%.
+    Effect lasts for 20 seconds.
+   .chrono-boost-3-description = Makes a group of units move faster by 100% and fire faster by 25%.
+    Effect lasts for 20 seconds.
+   .propaganda-name = Propaganda
+   .propaganda-1-description = Makes a group of units fire faster and deal more damage by 25%
+    but slows them down by 30%.
+    Effect lasts for 20 seconds.
+   .propaganda-2-description = Makes a group of units fire faster and deal more damage by 50%
+    but slows them down by 30%.
+    Effect lasts for 20 seconds.
+   .propaganda-3-description = Makes a group of units fire faster and deal more damage by 75%
+    but slows them down by 30%.
+    Effect lasts for 20 seconds.
+   .magnetic-beam-name = Magnetic Beam
+   .magnetic-beam-1-description = Fires a magnetic beam that slows down enemy vehicles within 1 cell around it.
+    The beam lasts 15 seconds.
+   .magnetic-beam-2-description = Fires a magnetic beam that slows down enemy vehicles within 2 cells around it.
+    The beam lasts 25 seconds.
+   .magnetic-beam-3-description = Fires a magnetic beam that slows down enemy vehicles within 3 cells around it.
+    The beam lasts 35 seconds.
+   .cruiser-strike-name = Cruiser Strike
+   .cruiser-strike-description = Cruisers from out of the map bombard
+    anywhere on the map.
+   .v3-storm-name = V3 Storm
+   .v3-storm-description = V3 Launchers from out of the map bombard
+    anywhere on the map.
+   .orbital-drop-name = Orbital Drop
+   .orbital-drop-description = Launches Space Junk from the orbit
+    anywhere on the map.
+   .emp-strike-name = E.M. Pulse Strike
+   .emp-strike-description = A Cargo Plane drops an Electromagnetic Pulse
+    bomb anywhere on the map.
+   .fallout-bomb-name = Fallout Bomb
+   .fallout-bomb-description = A Cargo plane drops a bomb that covers a
+    large area with radiation anywhere on the map.
+   .chaos-gas-drop-name = Chaos Gas Drop
+   .chaos-gas-drop-description = A Cargo Plane drops a trail of Chaos
+    Gas anywhere on the map.
+   .cryo-bomb-name = Cryo Bomb
+   .cryo-bomb-description = A Cargo plane drops a bomb that freezes
+    units within a large area anywhere on the map.
+   .genetic-mutator-name = Genetic Mutator
+   .genetic-mutator-description = A Cargo Plane that drops a Mutator bomb that
+    turns infantry into Brutes.
 
 ## debug-structures.yaml
 actor-cacnst =
@@ -2560,6 +2700,23 @@ actor-naradr =
     - Instant Bunker (Vietnam)
     - Death Bombs (Cuba)
     - Ambush (Libya)
+   .power-tesladrop-name = Tesla Drop
+   .power-tesladrop-description = A Cargo Plane drops a Tesla Tank and
+    3 Tesla Troopers anywhere on the map.
+   .power-radmissile-name = Radiation Missile
+   .power-radmissile-description = Fires a missile that deals low damage
+    and leaves radiation.
+   .power-radmissile-name = Radiation Missile
+   .power-radmissile-description = Fires a missile that deals low damage
+    and leaves radiation.
+   .power-instantbunker-name = Instant Bunker
+   .power-instantbunker-description = Places a bunker with a conscript
+    anywhere on the map.
+   .power-ambush-name = Ambush
+   .power-ambush-description = Spawns 9 Conscripts and 6 Flak Troopers
+    anywhere on the map.
+   .power-deathbombs-name = Death Bombs
+   .power-deathbombs-description = Arms a group of friendly units with explosives that trigger when the unit dies.
 
 actor-mine =
    .name = Mine
@@ -2580,6 +2737,9 @@ actor-nayard =
     - Comes with 3 repair drones.
     
       Can only be placed on water.
+   .power-name = Naval Mines
+   .power-description = A Cargo plane drops 5 naval mines
+    anywhere on the map.
 
 actor-nmine =
    .name = Naval Mine
@@ -2627,6 +2787,11 @@ actor-nairon =
     Kills infantry.
     
       Requires power to operate.
+   .power-name = Invulnerability
+   .power-description = Makes a group of units invulnerable
+    for 20 seconds.
+    
+    Kills infantry.
 
 actor-namisl =
    .name = Nuclear Missile Silo
@@ -2636,6 +2801,9 @@ actor-namisl =
     - Advanced Irradiators (Iraq)
     
       Requires power to operate.
+   .power-name = Nuclear Missile
+   .power-description = Launches a devastating nuclear missile
+    at the target location.
 
 actor-nawall =
    .name = Soviet Wall
@@ -2874,6 +3042,15 @@ actor-caoild-nonmwspawner =
 actor-caairp =
    .name = Tech Airport
    .description = Provides Paradrop support power.
+   .power-allied-name = Allied Paratroopers
+   .power-allied-description = 2 Cargo Planes drop 7 GIs
+    anywhere on the map.
+   .power-soviet-name = Soviet Paratroopers
+   .power-soviet-description = 2 Cargo Planes drop 10 conscripts
+    anywhere on the map.
+   .power-psicorps-name = Psi-Corps Paratroopers
+   .power-psicorps-description = 2 Cargo Planes drop 7 Initiates
+    anywhere on the map.
 actor-cahosp =
    .name = Tech Hospital
    .description = Allows infantry to self-heal.
@@ -2904,6 +3081,10 @@ actor-capsyb =
    .name = Tech Psychic Beacon
    .description-1 = Provides Psychic Control support power.
    .description-2 = Requires Power to operate.
+   .power-name = Psychic Control
+   .power-description = Captures enemy units in a small area.
+    
+    Can be applied on friendly units to make them immune to mind control.
 actor-capsyb-koth =
    .name = Psychic Beacon
    .description = Capture and hold for 6 minutes to win.
@@ -2911,6 +3092,9 @@ actor-camisl =
    .name = Tech Missile Silo
    .description-1 = Provides Cluster Missile support power.
    .description-2 = Requires Power to operate.
+   .power-name = Cluster Missile
+   .power-description = Launches a cluster missile
+    at the target location.
 
 ## trees.yaml
 actor-tibtre04 =
@@ -3391,6 +3575,9 @@ actor-yayard =
     - Comes with 3 repair drones.
     
       Can only be placed on water.
+   .power-name = Sensor Buoy
+   .power-description = A Toxin Bomber paradrops a Sensor Buoy
+    anywhere on the map.
 
 actor-yadept =
    .description = Repairs vehicles and removes Terror Drones for a price.
@@ -3412,6 +3599,23 @@ actor-yadome =
     - Point Defense Drones (Antarctica)
     - Lethocerus Swarm (Transylvania)
     - Ion Cannon (Lunar Eclipse)
+   .power-psiopsdrop-name = Psi-Ops Drop
+   .power-psiopsdrop-description = A Cargo Plane drops 3 Yuri Clones
+    anywhere on the map.
+   .power-hologramarmy-name = Hologram Army
+   .power-hologramarmy-description = Spawns a large group of hologram infantry and vehicles
+    anywhere on the map.
+    
+    Holograms stay for 20 seconds.
+   .power-pointdefense-name = Point Defense Drones
+   .power-pointdefense-description = Gives a group of vehicles Point Defense Drones which reduce the taken damage.
+    Drones regenerate over time.
+   .power-lethocerusswarm-name = Lethocerus Swarm
+   .power-lethocerusswarm-description = Spawns 3 Lethocerus Platforms
+    anywhere on the map.
+   .power-ioncannon-name = Ion Cannon
+   .power-ioncannon-description = Initiates an Ion Cannon strike.
+    Applies instant damage to a small area.
 
 actor-yadisk =
    .name = Disc Pad
@@ -3488,12 +3692,21 @@ actor-yagntc =
     Kills infantry.
     
       Requires power to operate.
+   .power-name = Invisibility
+   .power-description = Makes a group of units invisibile
+    unless they are firing.
+    
+    Kills infantry.
 
 actor-yappet =
    .name = Psychic Dominator
    .description = Release powerful energy that damages structures and mind controls units.
     
       Requires power to operate.
+   .power-name = Psychic Domination
+   .power-description = Releases powerful energy that damages structures and mind controls units.
+    
+    Can be applied on friendly units to make them immune to mind control.
 
 actor-yacomd =
    .name = Yuri's Command Center
