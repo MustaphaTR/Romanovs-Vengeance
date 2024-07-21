@@ -160,6 +160,301 @@ options-cpmodifier =
 
 resource-minerals = Değerli Mineraller
 
+## Faction
+faction-random =
+    .name = Rastegele
+    .description = Random Country
+     A random country will be chosen when the game starts.
+
+faction-random-allies =
+    .name = Rastegele Müttefik
+    .description = Random Allied Country
+     A random Allied country will be chosen when the game starts.
+
+faction-random-soviets =
+    .name = Rastegele Sovyet
+    .description = Random Soviet Country
+     A random Soviet country will be chosen when the game starts.
+
+faction-random-psicorps =
+    .name = Psi-Corps
+    .description = Random Psi-Corps Faction
+     A random Psi-Corps faction will be chosen when the game starts.
+
+faction-random-bakupact =
+    .name = Rastegele Bakü Paktı
+    .description = Random Baku Pact Country
+     A random Baku Pact country will be chosen when the game starts.
+
+faction-america =
+    .name = Birleşik Devletler
+    .description = Amerika Birleşik Devletleri
+
+     Başkent: Washington D.C. (1776-1973)
+                  Seattle (1973-)
+      
+     Special Infantry: Navy SEAL
+     Special Ability: Airborne
+     Special Upgrade: Boost-Gliding Systems
+
+faction-england =
+    .name = Birleşik Krallık
+    .description = Büyük Britanya ve Kuzey İrlanda Birleşik Krallığı
+
+     Başkent: Londra
+      
+      
+     Special Infantry: Sniper
+     Special Ability: Carpet Bombing
+     Special Upgrade: Portable Weaponry
+
+faction-france =
+    .name = Fransa
+    .description = Fransız Dördüncü Cumhuriyeti
+
+     Başkent: Paris
+      
+      
+     Special Building: Mirage Turret
+     Special Ability: Force Shield
+     Special Upgrade: Grand Cannon Protocols
+
+faction-germany =
+    .name = Almanya
+    .description = Alman Cumhuriyeti
+
+     Başkent: Berlin
+      
+      
+     Special Vehicle: Tank Destroyer
+     Special Ability: Chrono Grizzly
+     Special Upgrade: Advanced Gun Systems
+
+faction-korea =
+    .name = Kore
+    .description = Kore Cumhuriyeti
+
+     Başkent: Seul
+      
+      
+     Special Aircraft: Black Eagle
+     Special Ability: Chronobomb
+     Special Upgrade: EMP Munitions
+
+faction-russia =
+    .name = Sovyetler Birliği
+    .description = Sovyet Sosyalist Cumhuriyetler Birliği
+
+     Başkent: Moskova
+      
+      
+     Special Vehicle: Tesla Tank
+     Special Ability: Tesla Drop
+     Special Upgrade: Overcharge
+
+faction-iraq =
+    .name = Irak
+    .description = Irak Cumhuriyeti
+
+     Başkent: Bağdat
+      
+      
+     Special Infantry: Desolator
+     Special Ability: Radiation Missile
+     Special Upgrade: Advanced Irradiators
+
+faction-vietnam =
+    .name = Vietnam
+    .description = Vietnam Sosyalist Cumhuriyeti
+
+     Başkent: Hanoi
+      
+      
+     Special Aircraft: Black Kite
+     Special Ability: Instant Bunker
+     Special Upgrade: Aerial Propaganda
+
+faction-cuba =
+    .name = Küba
+    .description = Küba Cumhuriyeti
+
+     Başkent: Havana
+      
+      
+     Special Infantry: Terrorist
+     Special Ability: Death Bombs
+     Special Upgrade: Targeted Explosives
+
+faction-libya =
+    .name = Libya
+    .description = Libya Arap Cemahiriyesi
+
+     Başkent: Trablus
+      
+      
+     Special Vehicle: Demolition Truck
+     Special Ability: Ambush
+     Special Upgrade: High Explosive Bombs
+
+faction-psicorps =
+    .name = Yurigrad
+    .description = Yurigrad
+
+     Operasyon Merkezi: Kuban Bölgesi
+      
+      
+     Special Vehicle: Slave Miner
+     Special Ability: Psi-Ops Drop
+     Special Upgrade: Chaos Tank Compensators
+
+faction-psinepal =
+    .name = Lazarus Corps
+    .description = Lazarus Corps
+
+     Operasyon Merkezi: Himalayalar
+      
+      
+     Special Aircraft: Mosquito Disc
+     Special Ability: Hologram Army
+     Special Upgrade: Laser Capacitors
+
+faction-psisouth =
+    .name = Antarktika
+    .description = Antarktika
+
+     Operasyon Merkezi: Antarktika Yarımadası
+      
+      
+     Special Building: Yuri Statue
+     Special Ability: Point Defense Drones
+     Special Upgrade: Mastery of Mind
+
+faction-psitrans =
+    .name = Fort. Transylvania
+    .description = Fortress of Transylvania
+
+     Operasyon Merkezi: Transilvanya
+      
+      
+     Special Vehicle: Giant Tarantula
+     Special Ability: Lethocerus Swarm
+     Special Upgrade: DNA Boosters
+
+faction-psimoon =
+    .name = Lunar Eclipse
+    .description = Lunar Eclipse
+
+     Operasyon Merkezi: Ay
+      
+      
+     Special Infantry: Cosmonaut
+     Special Ability: Ion Cannon
+     Special Upgrade: Disc Armor
+
+faction-japan =
+    .name = Japonya
+    .description = Japonya Devleti
+
+     Başkent: Tokyo
+
+faction-belarus =
+    .name = Belarus
+    .description = Belarus Cumhuriyeti
+
+     Başkent: Minsk
+
+faction-poland =
+    .name = Polonya
+    .description = Polonya Cumhuriyeti
+
+     Başkent: Varşova
+
+faction-ukraine =
+    .name = Ukrayna
+    .description = Ukrayna Cumhuriyeti
+
+     Başkent: Kiev
+
+faction-australia =
+    .name = Avusturalya
+    .description = Avustralya Milletler Topluluğu
+
+     Başkent: Canberra
+
+faction-china =
+    .name = Çin
+    .description = Çin Cumhuriyeti
+
+     Başkent: Pekin
+
+faction-turkey =
+    .name = Türkiye
+    .description = Türkiye Cumhuriyeti
+
+     Başkent: Ankara
+
+faction-canada =
+    .name = Kanada
+    .description = Kanada
+
+     Başkent: Ottawa
+
+faction-chile =
+    .name = Şili
+    .description = Şili Cumhuriyeti
+
+     Başkent: Santiago
+
+faction-mexico =
+    .name = Meksika
+    .description = Birleşik Meksika Devletleri
+
+     Başkent: Meksiko
+
+faction-mongolia =
+    .name = Moğolistan
+    .description = Moğolistan Halk Cumhuriyeti
+
+     Başkent: Ulaanbataar
+
+faction-transcaucus =
+    .name = Transkafkasya
+    .description = Transkafkasya Sosyalist Federatif Cumhuriyeti
+
+     Başkent: Bakü (de facto)
+
+faction-turkmen =
+    .name = Türkmenistan
+    .description = Türkmenistan Cumhuriyeti
+
+     Başkent: Aşkabat
+      
+      
+     Special Infantry: Angry Mob
+     Special Upgrade: Arm the Mob
+
+faction-tuva =
+    .name = Tuva
+    .description = İkinci Tuva Cumhuriyeti
+
+     Başkent: Kızıl
+      
+      
+     Special Infantry: Motorised Engineer
+
+faction-russianfed =
+    .name = Rusya
+    .description = Rusya Federasyonu
+
+     Başkent: Vladivostok (1973-1975)
+                  Moskova (1975-)
+
+faction-serbia =
+    .name = Sırbistan-Karadağ
+    .description = Sırbistan ve Karadağ Sosyalist Birliği
+
+     Başkent: Belgrad
+
 ## Defaults
 notification-unit-lost = Unit lost.
 notification-unit-promoted = Unit promoted.
