@@ -130,6 +130,7 @@ yapowr:
 		RequiresCondition: !chronodisable && !forceshieldnopower && !disabled && loadedvehicle
 	Cargo:
 		Types: Infantry, Garrisoner, NaturalVehicle
+		OwnerChangedAffectsPassengers: false
 		MaxWeight: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
@@ -749,6 +750,7 @@ yadept:
 yagrnd:
 	Inherits: ^BaseBuilding
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
@@ -1102,6 +1104,7 @@ yapsis:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
@@ -1162,6 +1165,7 @@ yaclon:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
@@ -1282,6 +1286,7 @@ yaggun:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Buildable:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 40
@@ -1448,6 +1453,7 @@ natbnk:
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^2x2Shape
 	WithColoredOverlay@ChronoDisable:
 		Color: 00204040
@@ -1478,6 +1484,7 @@ natbnk:
 		Type: Steel
 	Cargo:
 		Types: GarrisonerVehicle
+		OwnerChangedAffectsPassengers: false
 		MaxWeight: 3
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
@@ -1610,6 +1617,7 @@ yasgen:
 	Inherits@LAZARUSPRIME: ^AffectedByLazarusPrime
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Valued:
 		Cost: 1000
 	Tooltip:
@@ -1913,6 +1921,7 @@ caeast02:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^2x2Shape
 	Tooltip:
 		Name: actor-yaeast02.name
@@ -2000,6 +2009,7 @@ yaeast02:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Shared, Support.Antarctica
