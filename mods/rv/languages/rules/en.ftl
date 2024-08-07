@@ -4219,3 +4219,13 @@ actor-expy =
     Upgradeable with:
     - Grinder Treads
     - Chaos Tank Compensators (Yurigrad)
+
+## ai.yaml
+bot-easy-ai =
+   .name = Easy AI
+
+bot-cheater-ai =
+   .name = Cheater AI
+
+bot-vengeful-ai =
+   .name = Vengeful AI

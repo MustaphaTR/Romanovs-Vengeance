@@ -4,14 +4,14 @@ ra2: Red Alert 2 (Allied or Soviet Disc, English)
 		README.txt: e125e2742509d73b20dc4aa65b22497c805cd6f5
 	Install:
 		# Red Alert 2 Files:
-		ContentPackage:
+		ContentPackage@ra2:
 			Name: ra2
 			Actions:
 				ExtractMscab: INSTALL/Game1.CAB
 					^SupportDir|Content/ra2/ra2.mix: ra2.mix
 					^SupportDir|Content/ra2/language.mix: language.mix
 		# Red Alert 2 Music (optional):
-		ContentPackage:
+		ContentPackage@ra2-music:
 			Name: ra2-music
 			Actions:
 				Copy: .

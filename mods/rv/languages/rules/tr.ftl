@@ -167,12 +167,12 @@ faction-random =
      A random country will be chosen when the game starts.
 
 faction-random-allies =
-    .name = Rastegele Müttefik
+    .name = Müttefikler
     .description = Random Allied Country
      A random Allied country will be chosen when the game starts.
 
 faction-random-soviets =
-    .name = Rastegele Sovyet
+    .name = Sovyetler
     .description = Random Soviet Country
      A random Soviet country will be chosen when the game starts.
 
@@ -182,7 +182,7 @@ faction-random-psicorps =
      A random Psi-Corps faction will be chosen when the game starts.
 
 faction-random-bakupact =
-    .name = Rastegele Bakü Paktı
+    .name = Bakü Paktı
     .description = Random Baku Pact Country
      A random Baku Pact country will be chosen when the game starts.
 
@@ -4284,3 +4284,13 @@ actor-expy =
     Upgradeable with:
     - Grinder Treads
     - Chaos Tank Compensators (Yurigrad)
+
+## ai.yaml
+bot-easy-ai =
+   .name = Easy AI
+
+bot-cheater-ai =
+   .name = Cheater AI
+
+bot-vengeful-ai =
+   .name = Vengeful AI
