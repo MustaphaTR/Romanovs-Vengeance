@@ -56,7 +56,7 @@
 		Speed: 90
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	Crushable:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
 	Crushable@Cheater:
@@ -155,10 +155,12 @@
 		Speed: 90
 		TurnSpeed: 20
 		Locomotor: heavyamphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	-Crushable:
 	-Crushable@Cheater:
 	-Crushable@Vengeful:
+	-GrantConditionOnBotOwner@Cheater:
+	-GrantConditionOnBotOwner@Vengeful:
 	Capturable:
 		RequiresCondition: !suddendeath
 	Capturable@PERMAMC:
@@ -277,7 +279,7 @@
 		Locomotor: heavyamphibious
 		TurnsWhileMoving: true
 		TerrainOrientationAdjustmentMargin: -1
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	Crushable:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
 	Crushable@Cheater:

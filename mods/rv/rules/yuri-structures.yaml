@@ -495,10 +495,11 @@ yarefn:
 		RequiresForceMove: true
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
-	TransferTimedExternalConditionOnTransform@INVISIBILITY:
-		Condition: invisibility
-	ExternalCondition@INVISIBILITY:
-		Condition: invisibility
+	# This doesn't work, so commenting out to keep the lint warnings. This condition is not timed.
+	# TransferTimedExternalConditionOnTransform@INVISIBILITY:
+	#	Condition: invisibility
+	# ExternalCondition@INVISIBILITY:
+	#	Condition: invisibility
 	InfiltrateForCash:
 		Percentage: 50
 		InfiltratedNotification: CashStolen

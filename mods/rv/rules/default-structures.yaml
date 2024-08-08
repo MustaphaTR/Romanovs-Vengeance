@@ -130,10 +130,11 @@
 		PauseOnCondition: build-incomplete || chronodisable
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
-	TransferTimedExternalConditionOnTransform@INVISIBILITY:
-		Condition: invisibility
-	ExternalCondition@INVISIBILITY:
-		Condition: invisibility
+	# This doesn't work, so commenting out to keep the lint warnings. This condition is not timed.
+	# TransferTimedExternalConditionOnTransform@INVISIBILITY:
+	#	Condition: invisibility
+	# ExternalCondition@INVISIBILITY:
+	#	Condition: invisibility
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp || infiltrated
 	Targetable:

@@ -722,7 +722,7 @@
 ^AffectedByArmTheMob:
 	# ActorStatValues:
 	#	Upgrades: upgrade.arm_the_mob
-	GrantConditionOnPrerequisite@PROPEFFORT:
+	GrantConditionOnPrerequisite@ARMTHEMOB:
 		Condition: armthemob
 		Prerequisites: upgrade.arm_the_mob
 
@@ -1678,8 +1678,9 @@
 		ValidRelationships: None
 
 ^WithFeedbackVoicelines:
-	GrantRandomCondition@Feedback:
-		Conditions: playfeedback, dontplayfeedback, dontplayfeedback, dontplayfeedback
+	GrantConditionByPercentChance@Feedback:
+		Condition: playfeedback
+		Chance: 25
 	GrantConditionOnDamageState@Feedback:
 		Condition: feedback
 		ValidDamageStates: Critical
@@ -2775,6 +2776,8 @@
 	-Crushable:
 	-Crushable@Cheater:
 	-Crushable@Vengeful:
+	-GrantConditionOnBotOwner@Cheater:
+	-GrantConditionOnBotOwner@Vengeful:
 	-TakeCover:
 	-Targetable:
 	-TurnOnIdle:
@@ -3537,7 +3540,7 @@
 		Voice: Move
 		Locomotor: naval
 		TurnSpeed: 20
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha

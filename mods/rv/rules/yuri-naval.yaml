@@ -64,10 +64,10 @@ bsub:
 	#	UncloakSound: vnavupa.wav
 	#	UncloakOn: Damage
 	#	PauseOnCondition: uncloak
-	GrantConditionOnAttack:
-		Condition: uncloak
-		RevokeDelay: 75
-		ArmamentNames: missile
+	# GrantConditionOnAttack:
+	#	Condition: uncloak
+	#	RevokeDelay: 75
+	#	ArmamentNames: missile
 	Armament:
 		Weapon: BoomerTorpedo
 		Damage: 90
@@ -108,7 +108,6 @@ bsub:
 	GrantExternalConditionToSpawnedMissile:
 		Condition: rank-elite
 		RequiresCondition: rank-elite
-	-MustBeDestroyed:
 	WithVoxelBody:
 		ShowShadow: false
 	RenderSprites:
@@ -249,7 +248,6 @@ piranha:
 		# DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
-	-MustBeDestroyed:
 	WithVoxelBody:
 		ShowShadow: false
 	RenderSprites:
@@ -433,7 +431,6 @@ gatsub:
 		# DetectionTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
-	-MustBeDestroyed:
 	WithMuzzleOverlay:
 	WithVoxelBody:
 		ShowShadow: false
@@ -582,7 +579,7 @@ strt:
 		Speed: 105
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	Crushable:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
 	Crushable@Cheater:
@@ -701,7 +698,11 @@ buoy:
 		RequiresCondition: !parachute
 	RenderSprites:
 		Palette: effect50alpha
+	-CaptureManager:
+	-Capturable:
+	-CaptureSound:
 	-Voiced:
+	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-WithColoredOverlay@IDISABLE:
 	-GrantCondition@IDISABLE:

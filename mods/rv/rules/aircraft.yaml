@@ -198,12 +198,12 @@ shadhusk:
 zep:
 	Inherits: ^Helicopter
 	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
+	Inherits@AI: ^AIControl
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
-	Inherits@AI: ^AIControl
 	AutoTarget:
 		ScanRadius: 5
 		InitialStance: ReturnFire
@@ -415,7 +415,6 @@ zephusk:
 orca:
 	Inherits: ^Plane
 	Inherits@A2A: ^AffectedByA2AMissiles
-	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
@@ -686,7 +685,6 @@ orcahusk.VTOL:
 
 beag:
 	Inherits: ^Plane
-	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
@@ -1708,6 +1706,7 @@ spyphusk:
 
 schp:
 	Inherits: ^Helicopter
+	Inherits@AI: ^AIControl
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
@@ -1715,7 +1714,6 @@ schp:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
-	Inherits@AI: ^AIControl
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !deployed
 	AutoTargetPriority@ATTACKANYTHING:
@@ -2650,7 +2648,6 @@ hindhusk:
 
 fortress:
 	Inherits: ^Plane
-	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
@@ -3680,7 +3677,6 @@ havochusk:
 
 badgr:
 	Inherits: ^Plane
-	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxelArmed
@@ -3810,7 +3806,6 @@ badgr:
 
 badgrhusk:
 	Inherits: ^PlaneHusk
-	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
 	Tooltip:
 		Name: actor-badgr.name
 	Tooltip@NoRow:

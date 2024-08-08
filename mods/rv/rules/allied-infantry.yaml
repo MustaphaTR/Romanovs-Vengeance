@@ -182,7 +182,7 @@ dog:
 	Mobile:
 		Speed: 120
 		Locomotor: swimsuit
-		RequiresCondition: !deploying && !deployed && !chronodisable && !webdisable && !dogstun
+		RequiresCondition: !chronodisable && !webdisable && !dogstun # && !deploying && !deployed 
 	Passenger:
 		CargoType: Infantry
 	RevealsShroud:
@@ -196,7 +196,7 @@ dog:
 	AttackLeap:
 		Voice: Attack
 		Speed: 120
-		PauseOnCondition: chronodisable || webdisable || dogstun || deployed || deploying
+		PauseOnCondition: chronodisable || webdisable || dogstun # || deployed || deploying
 	AttackMove:
 		Voice: Move
 	AutoTarget:
@@ -206,20 +206,20 @@ dog:
 		ValidTargets: Infantry
 	WithInfantryBody:
 		DefaultAttackSequence: jump
-		RequiresCondition: !parachute && !webdisable && !attacking && !deployed && !deploying && !swimming
+		RequiresCondition: !parachute && !webdisable && !attacking && !swimming # && !deployed && !deploying
 	WithInfantryBody@Water:
 		-IdleSequences:
 		MoveSequence: swim-run
 		StandSequences: swim-stand
 		DefaultAttackSequence: swim-jump
-		RequiresCondition: !parachute && !webdisable && !attacking && !deployed && !deploying && swimming
+		RequiresCondition: !parachute && !webdisable && !attacking && swimming # && !deployed && !deploying
 	WithFacingSpriteBody:
 		Sequence: shoot
 		RequiresCondition: attacking
-	WithSpriteBody@DEPLOYED:
-		Sequence: deployed
-		Name: deployed
-		RequiresCondition: !parachute && !webdisable && !attacking && (deployed || deploying)
+	# WithSpriteBody@DEPLOYED:
+	#	Sequence: deployed
+	#	Name: deployed
+	#	RequiresCondition: !parachute && !webdisable && !attacking && (deployed || deploying)
 	RenderSprites:
 		Image: adog
 		FactionImages:
@@ -245,9 +245,9 @@ dog:
 	IgnoresDisguise:
 	DetectCloaked:
 		Range: 5c0
-	PeriodicExplosion:
-		Weapon: DogBark
-		RequiresCondition: deployed && !chronodisable && !webdisable && !dogstun
+	# PeriodicExplosion:
+	#	Weapon: DogBark
+	#	RequiresCondition: deployed && !chronodisable && !webdisable && !dogstun
 	# GrantTimedConditionOnDeploy:
 	#	DeployedTicks: 1
 	#	CooldownTicks: 1500
@@ -523,6 +523,7 @@ e1:
 ggi:
 	Inherits: ^Infantry
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
+	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
 	Inherits@ENDURANCE: ^AffectedByEnduranceTraining

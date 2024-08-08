@@ -361,6 +361,7 @@ caoutp:
 	GivesBuildableArea:
 		-RequiresCondition:
 	-GrantConditionOnPrerequisite@BUILD:
+	-GrantConditionOnCombatantOwner:
 	RevealsShroud:
 		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
@@ -473,6 +474,7 @@ capowr:
 	Power:
 		Amount: 400
 		RequiresCondition: !disabled && !chronodisable
+	-GrantConditionOnCombatantOwner:
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp || diskdrain
 	RangedGpsDot:
@@ -535,6 +537,7 @@ caslab:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
+	-GrantConditionOnCombatantOwner:
 	ProvidesPrerequisite@buildingname:
 	RangedGpsDot:
 		Sequence: SecretLab
@@ -568,16 +571,17 @@ cacomm:
 		RequiresCondition: disabled
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 20c0
-	#	RequiresCondition: !disabled && enabled
+	#	RequiresCondition: !disabled
 	# RevealsShroudToIntelligenceOwner@DISABLED:
 	#	Range: 4c0
 	#	Types: SatelliteScan
-	#	RequiresCondition: disabled && enabled
+	#	RequiresCondition: disabled
 	Armor:
 		Type: Wood
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
+	-GrantConditionOnCombatantOwner:
 	RangedGpsDot:
 		Sequence: Communications
 	IsometricSelectable:
@@ -606,6 +610,7 @@ caarmr:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
+	-GrantConditionOnCombatantOwner:
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !disabled && !chronodisable
 	RangedGpsDot:

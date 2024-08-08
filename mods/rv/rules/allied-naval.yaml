@@ -307,9 +307,9 @@ carrier:
 		RequiresSelection: true
 	Armament:
 		Weapon: HornetLauncher
-	GrantConditionOnMovement@MoveStart:
-		Condition: moving
-		ValidMovementTypes: Horizontal, Turn
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
 	# SoundAnnouncement:
 	#	SoundFiles: vaccstaa.wav, vaccstab.wav
 	#	Volume: 0.5
@@ -357,7 +357,7 @@ adest:
 		Speed: 90
 		TurnSpeed: 16
 		Locomotor: omniamphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	SpeedMultiplier:
 		Modifier: 67
 		RequiresCondition: !in_water

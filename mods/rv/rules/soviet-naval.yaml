@@ -82,7 +82,6 @@ sub:
 		# DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
-	-MustBeDestroyed:
 	WithVoxelBody:
 		ShowShadow: false
 	RenderSprites:
@@ -498,7 +497,7 @@ sray:
 		Speed: 90
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	SpeedMultiplier:
 		Modifier: 84
 		RequiresCondition: !in_water
@@ -559,11 +558,11 @@ sray:
 	Voiced:
 		VoiceSet: StingerVoice
 	HitShape:
-	GrantConditionOnMovement@MoveStart:
-		Condition: moving
-		ValidMovementTypes: Horizontal, Turn
-	GrantConditionOnMovement@walk:
-		Condition: walking
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# GrantConditionOnMovement@walk:
+	#	Condition: walking
 	# SoundAnnouncement:
 	#	SoundFiles: vstistaa.wav, vstistab.wav, vstistac.wav, vstistad.wav
 	#	Volume: 0.4
