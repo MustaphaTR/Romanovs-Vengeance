@@ -4221,11 +4221,11 @@ actor-expy =
     - Chaos Tank Compensators (Yurigrad)
 
 ## ai.yaml
-bot-easy-ai =
+bot-easy =
    .name = Easy AI
 
-bot-cheater-ai =
+bot-cheater =
    .name = Cheater AI
 
-bot-vengeful-ai =
+bot-vengeful =
    .name = Vengeful AI
