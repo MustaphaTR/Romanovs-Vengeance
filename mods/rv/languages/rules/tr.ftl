@@ -73,6 +73,11 @@ dropdown-time-limit =
    .label = Oyun Süresi
    .description = Bu süre aşıldıktan sonra en yüksek skora sahip oyuncu ya da takım oyunu kazanır
 
+## Tooltip
+label-tooltip-prefix =
+    .ally = Ally
+    .enemy = Enemy
+
 ## Player
 options-tech-level =
    .one = 1

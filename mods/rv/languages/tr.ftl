@@ -23,7 +23,6 @@ notification-requires-host = Sadece sunucu bunu yapabilir.
 notification-invalid-bot-slot = Başka bir istemciye sahip slota bot eklenemiyor.
 notification-invalid-bot-type = Geçersiz bot türü.
 notification-admin-change-map = Sadece sunucu haritayı değiştirebilir.
-notification-lobby-disconnected = { $player } ayrıldı.
 notification-player-disconnected = { $player } adlı oyuncunun bağlantısı kesildi.
 notification-team-player-disconnected = { $player } (Takım { $team }) adlı oyuncunun bağlantısı kesildi.
 notification-observer-disconnected = { $player } (İzleyici) adlı oyuncunun bağlantısı kesildi.
@@ -33,7 +32,8 @@ notification-admin-change-configuration = Sadece sunucu yapılandırmayı deği�
 notification-changed-map = { $player } haritayı { $map } olarak değiştirdi.
 notification-option-changed = { $player }, { $name } seçeneğini { $value } olarak değiştirdi.
 notification-you-were-kicked = Sunucudan atıldınız.
-notification-kicked = { $admin }, { $player } adlı oyuncuyu sunucudan attı.
+notification-admin-kicked = { $admin }, { $player } adlı oyuncuyu sunucudan attı.
+notification-kicked = { $player } sunucudan atıldı.
 notification-temp-ban = { $admin }, { $player } adlı oyuncuyu geçici olarak sunucudan engelledi.
 notification-admin-transfer-admin = Sadece yöneticiler yöneticiliği başka bir oyuncuya devredebilir.
 notification-admin-move-spectators = Sadece sunucu oyuncuları izleyiciliğe taşıyabilir.
@@ -53,7 +53,6 @@ notification-incompatible-protocol = Sunucu uyumsuz bir protokol çalıştırıy
 notification-you-were-banned = Sunucudan engellendiniz.
 notification-you-were-temp-banned = Sunucudan geçici olarak engellendiniz.
 notification-game-full = Oyun dolu.
-notification-joined = { $player } oyuna katıldı.
 notification-new-admin = { $player } artık yönetici.
 notification-option-locked = { $option } değiştirlemez.
 notification-invalid-configuration-command = Geçersiz yapılandırma komutu.
@@ -81,11 +80,29 @@ notification-requires-authentication = Sunucu oyuncunun bir OpenRA forumu hesab�
 notification-no-permission-to-join = Bu sunucuya katılmaya izniniz yok.
 notification-slot-closed = Slotunuz sunucu tarafından kapatıldı.
 
+## ServerOrders, UnitOrders
+notification-joined = { $player } oyuna katıldı.
+notification-lobby-disconnected = { $player } ayrıldı.
+
+## UnitOrders
+notification-game-has-started = Oyun başladı.
+notification-game-saved = Oyun kaydedildi.
+notification-game-paused = Oyun { $player } tarafından duraklatıldı.
+notification-game-unpaused = Oyun { $player } tarafından devam ettirildi.
+
 ## Server
 notification-game-started = Oyun başladı
 
 ## PlayerMessageTracker
 notification-chat-temp-disabled = Sohbet devre dışı. Lütfen { $remaining } saniye sonra tekrar deneyin.
+
+## VoteKickTracker
+notification-unable-to-start-a-vote = Oylama başlatılamıyor.
+notification-insufficient-votes-to-kick = Insufficient votes to kick player { $kickee }.
+notification-kick-already-voted = Zaten oy kullandınız.
+notification-vote-kick-started = Player { $kicker } has started a vote to kick player { $kickee }.
+notification-vote-kick-in-progress = { $percentage }% of players have voted to kick player { $kickee }.
+notification-vote-kick-ended = Vote to kick player { $kickee } has failed.
 
 ## ActorEditLogic
 label-duplicate-actor-id = Kopya Aktör ID'si
@@ -141,11 +158,28 @@ label-mission-failed = Başarısız oldu
 label-client-state-disconnected = Ayrıldı
 label-mute-player = Bu oyuncuyu sustur
 label-unmute-player = Bu oyuncunun sesini aç
+button-kick-player = Bu oyuncuyu at
+button-vote-kick-player = Bu oyuncuyu atmak için oylama başlat
 
 dialog-kick =
     .title = { $player } adlı oyuncuyu at?
     .prompt = Oyuna geri katılamayacaklar.
     .confirm = At
+
+dialog-vote-kick =
+    .title = Vote to kick { $player }?
+    .prompt = This player will not be able to rejoin the game.
+    .prompt-break-bots =
+    { $bots ->
+        [one] Kicking the game admin will also kick 1 bot.
+       *[other] Kicking the game admin will also kick { $bots } bots.
+    }
+    .vote-start = Oylama Başlat
+    .vote-for = Vote For
+    .vote-against = Vote Against
+    .vote-cancel = Abstain
+
+notification-vote-kick-disabled = Oylama ile oyuncu atma bu sunucuda devre dışı.
 
 ## GameTimerLogic
 label-paused = Duraklatıldı
@@ -201,6 +235,18 @@ dialog-exit-map-editor =
     .prompt-deleted = Bu harita düzenleyicinin dışından silinmiş.
     .confirm-anyway = Yine de çık
     .confirm = Çık
+
+dialog-play-map-warning =
+    .title = Uyarı
+    .prompt = The map may have been deleted or has
+    errors preventing it from being loaded.
+    .cancel = Tamam
+
+dialog-exit-to-map-editor =
+    .title = Leave Mission
+    .prompt = Leave this game and return to the editor?
+    .confirm = Back To Editor
+    .cancel = Kal
 
 ## IngamePowerBarLogic
 ## IngamePowerCounterLogic
@@ -341,6 +387,8 @@ options-target-lines =
     .manual = Elle
     .disabled = Devre Dışı
 
+checkbox-frame-limiter = Enable Frame Limiter ({ $fps } FPS)
+
 ## HotkeysSettingsLogic
 label-original-notice = Varsayılan "{ $key }"
 label-duplicate-notice = Bu tuş zaten "{ $key }" için { $context } bağlamında kullanılıyor
@@ -451,7 +499,9 @@ dialog-delete-all-maps =
 
 options-order-maps =
     .player-count = Oyuncu Sayısı
+    .title = Ad
     .date = Değiştirme Tarihi
+    .size = Boyut
 
 ## MissionBrowserLogic
 dialog-no-video =
@@ -534,6 +584,22 @@ dialog-incompatible-replay =
     { $version }.
     .prompt-unavailable-map = Mevcut olmayan bir haritada { -incompatible-replay-recorded }:
     { $map }.
+
+# SelectUnitsByTypeHotkeyLogic
+nothing-selected = Hiçbir şey seçilmedi.
+
+## SelectUnitsByTypeHotkeyLogic, SelectAllUnitsHotkeyLogic
+selected-units-across-screen =
+    { $units ->
+        [one] Ekrandaki bir ünite seçildi.
+       *[other] Ekrandaki { $units } ünite seçildi.
+    }
+
+selected-units-across-map =
+    { $units ->
+        [one] Haritadaki bir ünite seçildi.
+       *[other] Haritadaki { $units } seçildi.
+    }
 
 ## ServerCreationLogic
 label-internet-server-nat-A = İnternet Sunucusu (UPnP/NAT-PMP
@@ -629,6 +695,7 @@ description-actor-tags-overlay = aktör etiketleri kaplamasını ayarlar.
 notification-cheats-disabled = Hileler devre dışı.
 notification-invalid-cash-amount = Geçersiz para değeri.
 notification-invalid-actor-name = { $actor } geçerli bir aktör değil.
+notification-unbuildable-actor-name = { $actor } üretilebilir bir aktör değil.
 description-toggle-visibility = görünürlülük konrollerini ve haritayı ayarlar.
 description-toggle-visibility-all = görünürlülük konrollerini ve haritayı tüm oyuncular için ayarlar.
 description-give-cash = varsayılan ya da belirtilen miktarda para verir.
@@ -729,11 +796,54 @@ notification-added-resource =
 notification-added-tile = Added tile { $id }
 notification-filled-tile = Filled with tile { $id }
 
+## EditorMarkerLayerBrush
+notification-added-marker-tiles =
+    { $amount ->
+       [one] Added one marker tile of type { $type }
+      *[other] Added { $amount } marker tiles of type { $type }
+    }
+notification-removed-marker-tiles =
+    { $amount ->
+       [one] Removed one marker tile
+      *[other] Removed { $amount } marker tiles
+    }
+notification-cleared-selected-marker-tiles = Cleared { $amount } marker tiles of type { $type }
+notification-cleared-all-marker-tiles = Cleared { $amount } marker tiles
+
 ## EditorActionManager
 notification-opened = Açıldı
 
+## MapOverlaysLogic
+mirror-mode =
+    .none = None
+    .flip = Flip
+    .rotate = Rotate
+
 ## ActorEditLogic
 notification-edited-actor = { $name } ({ $id }) düzenlendi
+notification-edited-actor-id = { $name } düzenlendi ({ $old-id }->{ $new-id })
+
+## ConquestVictoryConditions, StrategicVictoryConditions
+notification-player-is-victorious = { $player } is victorious.
+notification-player-is-defeated = { $player } is defeated.
+
+## OrderManager
+notification-desync-compare-logs = Out of sync in frame { $frame }.
+    Compare syncreport.log with other players.
+
+## SupportPowerTimerWidget
+support-power-timer = { $player }'s { $support-power }: { $time }
+
+## WidgetUtils
+label-win-state-won = Won
+label-win-state-lost = Lost
+
+## Player
+enumerated-bot-name =
+    { $name } { $number ->
+       *[zero] {""}
+        [other] { $number }
+    }
 
 ## ActorStatsValues, IngameActorStatsLogic
 label-armor-class =

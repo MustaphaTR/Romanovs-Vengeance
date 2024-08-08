@@ -5,11 +5,7 @@ dropdownbutton-assetbrowser-source-selector = Folders
 dropdownbutton-assetbrowser-asset-types-dropdown = Asset types
 label-assetbrowser-filename-desc = Filter by name
 label-assetbrowser-sprite-scale = Ölçek:
-label-assetbrowser-model-scale = Ölçek:
 label-assetbrowser-palette-desc = Palet:
-label-voxel-selector-roll = Roll
-label-voxel-selector-pitch = Pitch
-label-voxel-selector-yaw = Yaw
 label-assetbrowser-sprite-bg-error = Error displaying file. See assetbrowser.log for details.
 
 ## color-picker.yaml
@@ -48,10 +44,8 @@ label-new-map-bg-width = Uzunluk:
 label-new-map-bg-height = Yükseklik:
 button-new-map-bg-create = Oluştur
 
-label-save-map-panel-title =
-   .label = Save Map
-   .label = Title:
-
+label-save-map-panel-heading = Save Map
+label-save-map-panel-title = Title:
 label-save-map-panel-author = Author:
 label-save-map-panel-visibility = Visibility:
 dropdownbutton-save-map-panel-visibility-dropdown = Map Visibility
@@ -67,16 +61,19 @@ label-actors-bg-search = Arama:
 label-actors-bg-owners = Owner:
 label-area-selection = Alan Seçimi
 label-area-info = Alan Bilgisi
-label-selected-area-selected-region = Region:
-label-selected-area-dimension = Dimensions:
 label-selected-area-diagonal = Diagonal:
 label-selected-area-resources = Resources:
 label-copy-filters = Kopyalama Filtreleri
 label-filter-terrain = Terrain
 label-filter-resources = Resources
 label-filter-actors = Actors
-label-show-tile-grid = Show Tile Grid
-label-show-buildable-area = Show Buildable Area
+label-tools-bg-categories = Tool:
+button-marker-tiles-clear-current = Clear Current
+button-marker-tiles-clear-all = Clear All
+label-marker-layer-num-sides = Number of Sides
+label-marker-alpha = Tile Alpha
+label-marker-mirror-mode = Mirror Mode
+label-marker-axis-angle = Axis Angle
 
 button-map-editor-tab-container-select-tooltip = Seçim
 button-map-editor-tab-container-tiles-tooltip = Tiles
@@ -105,8 +102,11 @@ button-editor-world-root-redo =
    .label = Yinele
    .tooltip = Redo last step
 
+dropdownbutton-editor-world-root-overlay-button = Overlays
 button-select-categories-buttons-all = Tümü
 button-select-categories-buttons-none = Hiçbiri
+
+label-tool-marker-tiles = Marker Tiles
 
 ## gamesave-browser.yaml
 label-gamesave-browser-panel-load-title = Oyun yükle
@@ -574,6 +574,7 @@ button-multiplayer-createserver-panel-create = Oluştur
 ## multiplayer-directconnect.yaml
 label-directconnect-panel-title = Sunucuya Bağlan
 label-directconnect-panel-address = Sunucu Adresi:
+label-directconnect-panel-port = :
 button-directconnect-panel-join = Katıl
 
 ## playerprofile.yaml
