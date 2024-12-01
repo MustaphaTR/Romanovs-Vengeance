@@ -17,12 +17,12 @@ harv:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
-		Description: Gathers Ore and Gems.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Description: actor-harv.description
 		Prerequisites: ~vehicleorship.sovietsorbaku, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
-		Name: War Miner
+		Name: actor-harv.name
 	Tooltip@NoRow:
-		Name: War Miner
+		Name: actor-harv.name
 	Armament@primary:
 		Weapon: 20mmrapid
 		Damage: 30
@@ -65,9 +65,12 @@ harv:
 	WithProductionIconOverlay@2:
 		Prerequisites: warfactory.infiltrated, baacdm
 		Types: chevron-elite
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Harvester
 
 dron:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
 	WithColoredOverlay@ChronoDisable:
 		Color: 0060C040
@@ -89,14 +92,14 @@ dron:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: Terror Drone
+		Name: actor-dron.name
 	Tooltip@NoRow:
-		Name: Terror Drone
+		Name: actor-dron.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		Prerequisites: ~vehicle.soviets, ~techlevel.2
 		BuildPaletteOrder: 40
-		Description: Small vehicle that can infect enemy vehicles and slowly kill them.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Cannot be mind controlled
+		Description: actor-dron.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -182,12 +185,6 @@ dron:
 		EmptyWeapon: InfantryExplode
 	Voiced:
 		VoiceSet: TerrorDroneVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	# AmbientSound@Walk:
 	#	SoundFiles: vterlo1a.wav, vterlo1b.wav, vterlo1c.wav, vterlo2a.wav, vterlo2b.wav, vterlo2c.wav
 	#	Volume: 0.50
@@ -212,28 +209,35 @@ dron:
 		DeathTypes: NonTemporal
 	HitShape:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 40
 		ReloadDelay: 45
 
 htk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded
+		OrderName: Unload
+		OrderChance: 100
+		OrderInterval: 45
 	Valued:
 		Cost: 500
 	DeliversCash:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: Flak Track
+		Name: actor-htk.name
 	Tooltip@NoRow:
-		Name: Flak Track
+		Name: actor-htk.name
 	Selectable:
 		Class: htk
 		Bounds: 1206, 1930, 0, -289
@@ -241,7 +245,7 @@ htk:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		Prerequisites: ~vehicle.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Anti-Air and Anti-Infantry vehicle capable of transporting Infantry.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-htk.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -273,11 +277,11 @@ htk:
 		AfterUnloadDelay: 0
 		PassengerFacing: 0
 		UnloadVoice: Move
-		EjectOnDeath: false
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 	WithCargoSounds:
-		EnterSound: genter1a.wav
-		ExitSound: gexit1a.wav
+		EnterSounds: genter1a.wav
+		ExitSounds: gexit1a.wav
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || nogunner || parachute
@@ -326,12 +330,6 @@ htk:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: FlakTrackVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -361,7 +359,7 @@ htk:
 	#	Volume: 0.35
 	#	RequiresCondition: moving
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 
 htnk:
 	Inherits: ^MainBattleTank
@@ -374,12 +372,12 @@ htnk:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Rhino Heavy Tank
+		Name: actor-htnk.name
 	Tooltip@NoRow:
-		Name: Rhino Heavy Tank
+		Name: actor-htnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
-		Description: Soviet Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
+		Description: actor-htnk.description
 		Prerequisites: ~vehicle.soviets, ~techlevel.1
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -502,12 +500,6 @@ htnk:
 	RenderVoxels:
 	Voiced:
 		VoiceSet: SovietVehicleVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn
@@ -521,10 +513,11 @@ htnk:
 apoc:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CRYO: ^AffectedByCryoShells
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@NUKEENGINES: ^AffectedByNuclearEngines
@@ -536,14 +529,14 @@ apoc:
 		Payload: 1750
 		Voice: Move
 	Tooltip:
-		Name: Apocalypse Tank
+		Name: actor-apoc.name
 	Tooltip@NoRow:
-		Name: Apocalypse Tank
+		Name: actor-apoc.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: ~vehicle.sovietsorbaku, natech, ~techlevel.4
-		Description: Soviet Advanced Battle Tank with Double Barrel\nand Anti-Aircraft Missile Launcher.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Infantry\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Nuclear Engines\n- Uranium Shells\n- Advanced Irradiators (Iraq)
+		Description: actor-apoc.description
 		BuildDuration: 875
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -555,6 +548,10 @@ apoc:
 	SpeedMultiplier@NUCLEAR_ENGINES:
 		Modifier: 125
 	-Crushable:
+	-Crushable@Cheater:
+	-Crushable@Vengeful:
+	-GrantConditionOnBotOwner@Cheater:
+	-GrantConditionOnBotOwner@Vengeful:
 	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
@@ -821,12 +818,6 @@ apoc:
 		EmptyWeapon: ApocExplode
 	Voiced:
 		VoiceSet: ApocalypseVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -845,16 +836,23 @@ apoc:
 	#	SoundFiles: vapostaa.wav, vapostab.wav, vapostac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.advanced_irradiators, upgrade.nuclear_engines, upgrade.uranium_shells
+	ActorStatOverride@Baku:
+		Upgrades:
+		RequiresCondition: baku
 
 ttnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
@@ -865,14 +863,14 @@ ttnk:
 		Payload: 1200
 		Voice: Move
 	Tooltip:
-		Name: Tesla Tank
+		Name: actor-ttnk.name
 	Tooltip@NoRow:
-		Name: Tesla Tank
+		Name: actor-ttnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.USSR
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicle.russia, naradr, ~techlevel.3
-		Description: Russian special tank armed with dual small Tesla Coils.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		Description: actor-ttnk.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -926,12 +924,6 @@ ttnk:
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: TeslaTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -950,6 +942,8 @@ ttnk:
 	#	SoundFiles: vtesstaa.wav, vtesstab.wav
 	#	Volume: 0.35
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 dtruck:
 	Inherits: ^Vehicle
@@ -963,7 +957,7 @@ dtruck:
 		Queue: Vehicle.Shared, Vehicle.Libya
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicle.libya, naradr, ~techlevel.3
-		Description: Demolition Truck, actively armed with nuclear explosives.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Description: actor-dtruck.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -974,9 +968,9 @@ dtruck:
 		Payload: 1500
 		Voice: Move
 	Tooltip:
-		Name: Demolition Truck
+		Name: actor-dtruck.name
 	Tooltip@NoRow:
-		Name: Demolition Truck
+		Name: actor-dtruck.name
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	Health:
@@ -1045,16 +1039,17 @@ dtruck:
 		InitialStance: HoldFire
 		InitialStanceAI: AttackAnything
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, Spread
 		Damage: 1200
 		Spread: 8c0
-		ExplosionWeapon: true
 
 v3:
 	Inherits: ^Vehicle
 	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
@@ -1064,7 +1059,7 @@ v3:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.soviets, natech, ~techlevel.3
-		Description: Long-range rocket artillery.\n\n  Strong vs Buildings, Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
+		Description: actor-v3.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1075,9 +1070,9 @@ v3:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: V3 Launcher
+		Name: actor-v3.name
 	Tooltip@NoRow:
-		Name: V3 Launcher
+		Name: actor-v3.name
 	Health:
 		HP: 15000
 	Armor:
@@ -1136,12 +1131,6 @@ v3:
 	HitShape:
 	Voiced:
 		VoiceSet: V3LauncherVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1160,15 +1149,16 @@ v3:
 	#	Volume: 0.35
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 200
 		Upgrades: upgrade.radioactive_bombs, upgrade.advanced_irradiators, upgrade.high_explosive_bombs
 
 m3:
 	Inherits: v3
 	Tooltip:
-		Name: Meme3 Launcher
+		Name: actor-m3.name
 	Tooltip@NoRow:
-		Name: Meme3 Launcher
+		Name: actor-m3.name
 	Buildable:
 		Queue: Vehicle.Unused
 	-MissileSpawnerMaster:
@@ -1186,9 +1176,9 @@ v3rocket:
 	Valued:
 		Cost: 50
 	Tooltip:
-		Name: V3 Rocket
+		Name: actor-v3rocket.name
 	Tooltip@NoRow:
-		Name: V3 Rocket
+		Name: actor-v3rocket.name
 	Health:
 		HP: 5000
 	Armor:
@@ -1208,31 +1198,31 @@ v3rocket:
 		SpawnAtLastPosition: false
 		Type: CenterPosition
 	MissileSpawnerSlave:
-	SpawnedExplodes:
+	ExplodesForMaster:
 		Weapon: V3Weapon
 		EmptyWeapon: V3Weapon
 		RequiresCondition: !airborne && !radbombs && !rank-elite
-	SpawnedExplodes@Elite:
+	ExplodesForMaster@Elite:
 		Weapon: V3WeaponE
 		EmptyWeapon: V3WeaponE
 		RequiresCondition: !airborne && !radbombs && rank-elite
-	SpawnedExplodes@Rad:
+	ExplodesForMaster@Rad:
 		Weapon: V3WeaponRad
 		EmptyWeapon: V3WeaponRad
 		RequiresCondition: !airborne && radbombs && !advirrad && !rank-elite
-	SpawnedExplodes@EliteRad:
+	ExplodesForMaster@EliteRad:
 		Weapon: V3WeaponRadE
 		EmptyWeapon: V3WeaponRadE
 		RequiresCondition: !airborne && radbombs && !advirrad && rank-elite
-	SpawnedExplodes@RadOrange:
+	ExplodesForMaster@RadOrange:
 		Weapon: V3WeaponRadOrange
 		EmptyWeapon: V3WeaponRadOrange
 		RequiresCondition: !airborne && radbombs && advirrad && !rank-elite
-	SpawnedExplodes@EliteRadOrange:
+	ExplodesForMaster@EliteRadOrange:
 		Weapon: V3WeaponRadOrangeE
 		EmptyWeapon: V3WeaponRadOrangeE
 		RequiresCondition: !airborne && radbombs && advirrad && rank-elite
-	SpawnedExplodes@Airborne:
+	ExplodesForMaster@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
@@ -1252,9 +1242,9 @@ v3rocket:
 m3rocket:
 	Inherits: v3rocket
 	Tooltip:
-		Name: Meme3 Rocket
+		Name: actor-m3rocket.name
 	Tooltip@NoRow:
-		Name: Meme3 Rocket
+		Name: actor-m3rocket.name
 	-BallisticMissile:
 	BallisticMissileOld:
 		LaunchAngle: 160
@@ -1264,23 +1254,24 @@ m3rocket:
 		AirborneCondition: airborne
 	-MissileSpawnerSlave:
 	MissileSpawnerOldSlave:
-	SpawnedExplodes:
+	ExplodesForMaster:
 		RequiresCondition: !airborne && !radbombs
-	-SpawnedExplodes@Elite:
-	SpawnedExplodes@Rad:
+	-ExplodesForMaster@Elite:
+	ExplodesForMaster@Rad:
 		RequiresCondition: !airborne && radbombs && !advirrad
-	-SpawnedExplodes@EliteRad:
-	SpawnedExplodes@RadOrange:
+	-ExplodesForMaster@EliteRad:
+	ExplodesForMaster@RadOrange:
 		RequiresCondition: !airborne && radbombs && advirrad
-	-SpawnedExplodes@EliteRadOrange:
+	-ExplodesForMaster@EliteRadOrange:
 	-ExternalCondition@RANK-ELITE:
 
 # Custom Soviet Vehicles
 tric:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
@@ -1291,16 +1282,16 @@ tric:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: Mortar Tricycle
+		Name: actor-tric.name
 	Tooltip@NoRow:
-		Name: Mortar Tricycle
+		Name: actor-tric.name
 	Selectable:
 		Bounds: 965, 1930, 0, -482
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
+		Queue: Vehicle.Unused # Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.2
 		BuildPaletteOrder: 70
-		Description: Fast medium range unit.\n\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- High Explosive Bombs (Libya)
+		Description: actor-tric.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1353,12 +1344,6 @@ tric:
 	Voiced:
 		VoiceSet: MortarTricycleVoice
 		Volume: 7
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1370,12 +1355,15 @@ tric:
 		Prerequisites: warfactory.infiltrated, baacdm
 		Types: chevron-elite
 	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 deva:
 	Inherits: ^Vehicle
 	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
@@ -1385,14 +1373,14 @@ deva:
 		Payload: 2200
 		Voice: Move
 	Tooltip:
-		Name: Devastator
+		Name: actor-deva.name
 	Tooltip@NoRow:
-		Name: Devastator
+		Name: actor-deva.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 990
 		Prerequisites: ~vehicle.soviets, natech, ~caslab, ~techlevel.4
-		Description: Soviet Advanced Battle Tank with Double Barrel\narmed with nuclear warheads\n\n  Strong vs Vehicles, Infantry\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n- Can be deployed to self-destruct and explode violently\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)
+		Description: actor-deva.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1403,6 +1391,10 @@ deva:
 		Locomotor: omnicrusher
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured && !overload
 	-Crushable:
+	-Crushable@Cheater:
+	-Crushable@Vengeful:
+	-GrantConditionOnBotOwner@Cheater:
+	-GrantConditionOnBotOwner@Vengeful:
 	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
@@ -1497,12 +1489,6 @@ deva:
 		RequiresCondition: overload
 	Voiced:
 		VoiceSet: DevastatorVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1521,11 +1507,13 @@ deva:
 	#	SoundFiles: vapostaa.wav, vapostab.wav, vapostac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 exps:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
+		Queue: Vehicle.Unused, Ship.Civilian # Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
 		Prerequisites: ~vehicleorship.sovietsorbaku, ~techlevel.1, ~!ai.ev
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
@@ -1542,9 +1530,10 @@ ftnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -1554,14 +1543,14 @@ ftnk:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Flame Tank
+		Name: actor-ftnk.name
 	Tooltip@NoRow:
-		Name: Flame Tank
+		Name: actor-ftnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 80
 		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.3
-		Description: Soviet tank armed with dual flamethrowers.\n\n  Strong vs Buildings, Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Black Napalm
+		Description: actor-ftnk.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1615,12 +1604,6 @@ ftnk:
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: FlameTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1642,3 +1625,5 @@ ftnk:
 	#	SoundFiles: vrhistaa.wav, vrhistab.wav, vrhistac.wav, vrhistad.wav
 	#	Volume: 0.3
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange

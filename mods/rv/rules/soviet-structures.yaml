@@ -23,11 +23,11 @@ nacnst:
 		LowPowerModifier: 200
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -42,11 +42,11 @@ nacnst:
 		LowPowerModifier: 200
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -201,12 +201,12 @@ napowr:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
-		Description: Provides power for other structures.\n\n  Can be rotated.
+		Description: actor-napowr.description
 		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
 	Tooltip:
-		Name: Tesla Reactor
+		Name: actor-napowr.name
 	Tooltip@NoRow:
-		Name: Tesla Reactor
+		Name: actor-napowr.name
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 3,2
@@ -230,7 +230,7 @@ nahand:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Description: Trains Soviet infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.
+		Description: actor-nahand.description
 		Prerequisites: ~building.soviets, power, ~techlevel.1
 	Building:
 		Footprint: xx xx
@@ -360,11 +360,11 @@ nahand:
 		LowPowerModifier: 200
 		Factions: cuba
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -375,11 +375,11 @@ nahand:
 		LowPowerModifier: 200
 		Factions: iraq
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -431,18 +431,18 @@ narefn:
 naradr:
 	Inherits: ^Radar
 	Inherits@SHAPE: ^2x2Shape
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
 		Prerequisites: ~building.soviets, power, narefn, ~techlevel.2, ~!ai.naradr
-		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Tesla Drop (Soviet Union)\n- Radiation Missile (Iraq)\n- Instant Bunker (Vietnam)\n- Death Bombs (Cuba)\n- Ambush (Libya)
+		Description: actor-naradr.description
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.naradr
 	Tooltip:
-		Name: Radar Tower
+		Name: actor-naradr.name
 	Tooltip@NoRow:
-		Name: Radar Tower
+		Name: actor-naradr.name
 	ProvidesPrerequisite@russia:
 		Prerequisite: radar.russia
 		Factions: russia
@@ -489,13 +489,13 @@ naradr:
 			1: tesladrop
 		ChargeInterval: 4500
 		Names:
-			1: Tesla Drop
+			1: actor-naradr.power-tesladrop-name
 		Descriptions:
-			1: A Cargo Plane drops a Tesla Tank\n and 3 Tesla Troopers anywhere on the map.
+			1: actor-naradr.power-tesladrop-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: Paratroopers ready.
+		EndChargeTextNotification: notification-paratroopers-ready
 		DropItems:
 			1: shk, shk, shk, ttnk
 		SquadSizes:
@@ -524,14 +524,14 @@ naradr:
 			2: radmissile
 		ChargeInterval: 6000
 		Names:
-			1: Radiation Missile
-			2: Radiation Missile
+			1: actor-naradr.power-radmissile-name
+			2: actor-naradr.power-radmissile-name
 		Descriptions:
-			1: Fires a missile that deals low damage\nand leaves radiation.
-			2: Fires a missile that deals low damage\nand leaves radiation.
+			1: actor-naradr.power-radmissile-description
+			2: actor-naradr.power-radmissile-description
 		LaunchSound: sradlaun.wav
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		MissileWeapons:
 			1: RadiationMissile
 			2: RadiationMissileOrange
@@ -565,11 +565,11 @@ naradr:
 			1: bunker
 		ChargeInterval: 3000
 		Names:
-			1: Instant Bunker
+			1: actor-naradr.power-instantbunker-name
 		Descriptions:
-			1: Places a bunker anywhere on the map.
+			1: actor-naradr.power-instantbunker-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		Weapons:
 			1: BunkerSpawner
 		ActivationSequence:
@@ -582,11 +582,11 @@ naradr:
 			1: ambush
 		ChargeInterval: 6000
 		Names:
-			1: Ambush
+			1: actor-naradr.ambush-name
 		Descriptions:
-			1: Spawns 9 Conscripts and 6 Flak Troopers\nanywhere on the map.
+			1: actor-naradr.ambush-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		Weapons:
 			1: AmbushSpawner
 		ActivationSequence:
@@ -601,11 +601,11 @@ naradr:
 			1: deathbombs
 		ChargeInterval: 3000
 		Names:
-			1: Death Bombs
+			1: actor-naradr.power-deathbombs-name
 		Descriptions:
-			1: Arms a group of friendly units with explosives that trigger when unit dies.
+			1: actor-naradr.power-deathbombs-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		Durations:
 			1: -1
 		Conditions:
@@ -625,13 +625,13 @@ naradr:
 			1: cluster
 		ChargeInterval: 4500
 		Names:
-			1: Cluster Mines
+			1: commanders-power.cluster-mines-name
 		Descriptions:
-			1: A Cargo plane drops 13 mines\nanywhere on the map.
+			1: commanders-power.cluster-mines-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
-		IncomingTextNotification: Warning: Enemy airstrike initiated.
+		IncomingTextNotification: notification-enemy-airstrike-initiated
 		UnitTypes:
 			1: pdplane.cluster_mines
 		SquadSizes:
@@ -678,15 +678,15 @@ mine:
 	Cloak:
 		CloakSound:
 		UncloakSound:
-		Palette:
 		InitialDelay: 0
+		CloakStyle: None
 	Tooltip:
-		Name: Mine
-		GenericName: Mine
+		Name: actor-mine.name
+		GenericName: actor-mine.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Mine
-		GenericName: Mine
+		Name: actor-mine.name
+		GenericName: actor-mine.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -710,7 +710,7 @@ naweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
-		Description: Produces Soviet vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: actor-naweap.description
 		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: naweap
@@ -749,11 +749,11 @@ naweap:
 		LowPowerModifier: 200
 		Factions: russia
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -764,11 +764,11 @@ naweap:
 		LowPowerModifier: 200
 		Factions: iraq
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -779,11 +779,11 @@ naweap:
 		LowPowerModifier: 200
 		Factions: cuba
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -794,11 +794,11 @@ naweap:
 		LowPowerModifier: 200
 		Factions: libya
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -809,11 +809,11 @@ naweap:
 		LowPowerModifier: 200
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -844,7 +844,7 @@ nayard:
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
-		Description: Produces Soviet ships, submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+		Description: actor-nayard.description
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@ship.soviets:
 		Prerequisite: ship.soviets
@@ -869,11 +869,11 @@ nayard:
 		LowPowerModifier: 200
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -894,11 +894,11 @@ nayard:
 			1: disabled # nayard
 		ChargeInterval: 3000
 		Names:
-			1: Naval Mines
+			1: actor-nayard.power-name
 		Descriptions:
-			1: A Cargo plane drops 5 naval mines\nanywhere on the map.
+			1: actor-nayard.power-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		UnitTypes:
 			1: pdplane.naval_mines
 		SquadSizes:
@@ -922,9 +922,9 @@ nmine:
 		CrushClasses: nmine
 		DetonateClasses: nmine
 	Tooltip:
-		Name: Naval Mine
+		Name: actor-nmine.name
 	Tooltip@NoRow:
-		Name: Naval Mine
+		Name: actor-nmine.name
 	RevealsShroud:
 		Range: 3c0
 	# RevealsShroudToIntelligenceOwner:
@@ -948,7 +948,7 @@ nadept:
 	Buildable:
 		Queue: Building.Unused # Building.Shared, Building.Soviets, Building.Baku
 		Prerequisites: ~building.sovietsorbaku, naweap, ~techlevel.1
-		Description: Repairs vehicles and removes Terror Drones for a price.\n\n  Can be rotated.
+		Description: actor-nadept.description
 	ProvidesPrerequisite@default:
 		Prerequisite: nadept
 	WithSpriteBody:
@@ -967,12 +967,12 @@ naheli:
 	Inherits: ^Helipad
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
-		Description: Produces Soviet aircraft.\n\nAbilities:\n- Comes with 1 repair drone.
+		Description: actor-naheli.description
 		Prerequisites: ~building.soviets, naradr, ~techlevel.2
 	Tooltip:
-		Name: Helipad
+		Name: actor-naheli.name
 	Tooltip@NoRow:
-		Name: Helipad
+		Name: actor-naheli.name
 	Exit@1:
 		SpawnOffset: -384,128,0
 	Production:
@@ -987,11 +987,11 @@ naheli:
 		LowPowerModifier: 200
 		Factions: russia
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -1002,11 +1002,11 @@ naheli:
 		LowPowerModifier: 200
 		Factions: vietnam
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -1017,11 +1017,11 @@ naheli:
 		LowPowerModifier: 200
 		Factions: cuba
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -1032,11 +1032,11 @@ naheli:
 		LowPowerModifier: 200
 		Factions: libya
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -1085,14 +1085,14 @@ nanrct:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		BuildPaletteOrder: 110
 		Prerequisites: ~building.sovietsorbaku, natech, ~techlevel.3
-		Description: Provides a large amount of power for other structures.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Can be rotated.
+		Description: actor-nanrct.description
 		BuildDuration: 1000
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Nuclear Reactor
+		Name: actor-nanrct.name
 	Tooltip@NoRow:
-		Name: Nuclear Reactor
+		Name: actor-nanrct.name
 	Building:
 		Footprint: xxxx xxxx xxxx _xx_
 		Dimensions: 4,4
@@ -1130,6 +1130,12 @@ nanrct:
 	Voiced:
 		VoiceSet: NuclearReactorVoice
 		Volume: 0.8
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+	ActorStatOverride@Baku:
+		Upgrades:
+		RequiresCondition: baku
 
 natech:
 	Inherits: ^BattleLab
@@ -1137,8 +1143,11 @@ natech:
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		Prerequisites: ~building.sovietsorbaku, production, naradr, ~techlevel.3, ~!ai.natech
-		Description: Allows deployment of advanced units.
+		Description: actor-natech.description
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@batech:
+		Prerequisite: batech
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ProvidesPrerequisite@upgrade.russia:
 		Prerequisite: upgrade.russia
 		Factions: russia
@@ -1162,6 +1171,9 @@ natech:
 	ProvidesPrerequisite@upgrade.baku:
 		Prerequisite: upgrade.baku
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+	ProvidesPrerequisite@upgrade.turkmen:
+		Prerequisite: upgrade.turkmen
+		Factions: turkmen
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.natech
@@ -1189,14 +1201,14 @@ naclon:
 		Queue: Building.Unused # Building.Soviets, Building.Baku
 		BuildPaletteOrder: 120
 		Prerequisites: natech
-		Description: Clones most trained infantry.\n\n  Cannot be placed on water.\n  Maximum 1 can be built.
+		Description: actor-naclon.description
 		BuildLimit: 1
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Cloning Vats
+		Name: actor-naclon.name
 	Tooltip@NoRow:
-		Name: Cloning Vats
+		Name: actor-naclon.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
@@ -1272,6 +1284,8 @@ naclon:
 	Voiced:
 		VoiceSet: CloningVatsVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 napsis:
 	Inherits: ^BaseBuilding
@@ -1283,13 +1297,13 @@ napsis:
 		Queue: Support.Unused # Support.Soviets, Support.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: natech, ~techlevel.4
-		Description: Detects enemy units and structures.\n\n  Requires power to operate.
+		Description: actor-napsis.description
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Psychic Sensor
+		Name: actor-napsis.name
 	Tooltip@NoRow:
-		Name: Psychic Sensor
+		Name: actor-napsis.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1329,20 +1343,23 @@ napsis:
 	Voiced:
 		VoiceSet: PsychicSensorVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 nairon:
 	Inherits: ^SecondarySuperWeapon
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		Prerequisites: ~building.sovietsorbaku, natech, !enoughiron, ~techlevel.5
-		Description: Grants invulnerability to vehicles and structures.\nKills infantry.\n\n  Requires power to operate.
+		Description: actor-nairon.description
 	Tooltip:
-		Name: Iron Curtain Device
+		Name: actor-nairon.name
 	Tooltip@NoRow:
-		Name: Iron Curtain Device
+		Name: actor-nairon.name
 	WithSpriteBody:
 		PauseOnCondition: chronodisable
 	GrantExternalConditionPower@IRONCURTAIN:
+		OrderName: IronCurtain
 		Icons:
 			1: invuln
 		Prerequisites:
@@ -1350,9 +1367,9 @@ nairon:
 		Cursor: iron-curtain
 		ChargeInterval: 6000
 		Names:
-			1: Invulnerability
+			1: actor-nairon.power-name
 		Descriptions:
-			1: Makes a group of units invulnerable\nfor 20 seconds.\n\nKills infantry.
+			1: actor-nairon.power-description
 		AllowMultiple: true
 		Durations:
 			1: 500
@@ -1364,13 +1381,13 @@ nairon:
 			1: xxx xxx xxx
 		ValidRelationships: Ally, Neutral, Enemy
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: IronCurtainReady
-		EndChargeTextNotification: Iron Curtain ready.
+		EndChargeTextNotification: notification-iron-curtain-ready
 		LaunchSpeechNotification: IronCurtainActivated
-		LaunchTextNotification: Warning: Iron Curtain activated.
+		LaunchTextNotification: notification-iron-curtain-activated
 		IncomingSpeechNotification: IronCurtainActivated
-		IncomingTextNotification: Warning: Iron Curtain activated.
+		IncomingTextNotification: notification-iron-curtain-activated
 		EndChargeSound: siroread.wav
 		OnFireSound: siroon.wav
 		EffectImage: explosion
@@ -1383,7 +1400,7 @@ nairon:
 		Prerequisite: enoughiron
 	NotificationAnnouncement:
 		Notification: IronCurtainDetected
-		TextNotification: Warning: Iron Curtain detected.
+		TextNotification: notification-iron-curtain-detected
 	IsometricSelectable:
 		DecorationHeight: 75
 	Voiced:
@@ -1395,11 +1412,11 @@ namisl:
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
 		Prerequisites: ~building.soviets, natech, !enoughnuke, ~techlevel.5
-		Description: Provides an atomic bomb.\n\nUpgradeable with:\n- Advanced Irradiators (Iraq)\n\n  Requires power to operate.
+		Description: actor-namisl.description
 	Tooltip:
-		Name: Nuclear Missile Silo
+		Name: actor-namisl.name
 	Tooltip@NoRow:
-		Name: Nuclear Missile Silo
+		Name: actor-namisl.name
 	NukePower:
 		Prerequisites:
 			1: namisl
@@ -1410,22 +1427,22 @@ namisl:
 			2: abomb
 		ChargeInterval: 9000
 		Names:
-			1: Nuclear Missile
-			2: Nuclear Missile
+			1: actor-namisl.power-name
+			2: actor-namisl.power-name
 		Descriptions:
-			1: Launches a devastating nuclear missile\nat a target location.
-			2: Launches a devastating nuclear missile\nat a target location.
+			1: actor-namisl.power-description
+			2: actor-namisl.power-description
 		AllowMultiple: true
 		EndChargeSound: snukread.wav
 		LaunchSound: snuklaun.wav
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: NuclearMissileReady
-		EndChargeTextNotification: Nuclear Missile ready.
+		EndChargeTextNotification: notification-nuclear-missile-ready
 		LaunchSpeechNotification: NuclearMissileLaunched
-		LaunchTextNotification: Warning: Nuclear Missile launched.
+		LaunchTextNotification: notification-nuclear-missile-launched
 		IncomingSpeechNotification: NuclearMissileLaunched
-		IncomingTextNotification: Warning: Nuclear Missile launched.
+		IncomingTextNotification: notification-nuclear-missile-launched
 		MissileWeapons:
 			1: atomic
 			2: atomicOrange
@@ -1458,7 +1475,7 @@ namisl:
 		Prerequisite: enoughnuke
 	NotificationAnnouncement:
 		Notification: NuclearSiloDetected
-		TextNotification: Warning: Nuclear Silo detected.
+		TextNotification: notification-nuclear-silo-detected
 	WithSupportPowerActivationOverlay:
 		Sequence: smoke
 		Palette: effect50alpha
@@ -1476,11 +1493,11 @@ nawall:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Heavy wall capable of blocking units and projectiles.\n\n  Cannot be placed on water.
+		Description: actor-nawall.description
 	Tooltip:
-		Name: Soviet Wall
+		Name: actor-nawall.name
 	Tooltip@NoRow:
-		Name: Soviet Wall
+		Name: actor-nawall.name
 	LineBuild:
 		NodeTypes: nawall
 	LineBuildNode:
@@ -1501,15 +1518,15 @@ naflak:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 50
 		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.2
-		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
+		Description: actor-naflak.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 700
 	Tooltip:
-		Name: Flak Cannon
+		Name: actor-naflak.name
 	Tooltip@NoRow:
-		Name: Flak Cannon
+		Name: actor-naflak.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1563,6 +1580,7 @@ naflak:
 		VoiceSet: FlakCannonVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 40
 
 tesla:
@@ -1577,15 +1595,15 @@ tesla:
 		Queue: Support.Shared, Support.Soviets
 		BuildPaletteOrder: 60
 		Prerequisites: ~building.soviets, naradr, ~techlevel.3
-		Description: Advanced base defense.\nCan be buffed or made work during low power by Tesla Troopers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Requires power to operate.
+		Description: actor-tesla.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Tesla Coil
+		Name: actor-tesla.name
 	Tooltip@NoRow:
-		Name: Tesla Coil
+		Name: actor-tesla.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1692,6 +1710,7 @@ tesla:
 		VoiceSet: TeslaCoilVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		ReloadDelay: 80
 
 nalasr:
@@ -1703,15 +1722,15 @@ nalasr:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: ~building.sovietsorbaku, nahand, ~techlevel.1
-		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Description: actor-nalasr.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Sentry Gun
+		Name: actor-nalasr.name
 	Tooltip@NoRow:
-		Name: Sentry Gun
+		Name: actor-nalasr.name
 	Health:
 		HP: 40000
 	Armor:
@@ -1761,6 +1780,7 @@ nalasr:
 		VoiceSet: SentryGunVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MaxRange
 		Damage: 65
 
 # Yuri's Revenge Structures
@@ -1773,15 +1793,15 @@ nabnkr:
 		Queue: Support.Unused # Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: nahand, ~techlevel.1
-		Description: Static defense with fireports for 6 garrisoned soldiers.\nInfantry inside cannot be killed by garrison killers.\nComes with a Conscript inside.\n\n  Cannot be placed on water.
+		Description: actor-nabnkr.description
 	Valued:
 		Cost: 500
 	CustomSellValue:
 		Value: 0
 	Tooltip:
-		Name: Battle Bunker
+		Name: actor-nabnkr.name
 	Tooltip@NoRow:
-		Name: Battle Bunker
+		Name: actor-nabnkr.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1797,11 +1817,11 @@ nabnkr:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
-		EjectOnDeath: true
+		EjectOnDeathDamage: 0
 		LoadedCondition: loaded
 	WithCargoSounds:
-		EnterSound: ugarris.wav
-		ExitSound: ugarris.wav
+		EnterSounds: ugarris.wav
+		ExitSounds: ugarris.wav
 	-SpawnActorsOnSell@allies:
 	-SpawnActorsOnSell@soviets:
 	-SpawnActorsOnSell@psicorps:
@@ -1843,6 +1863,8 @@ nabnkr:
 	Voiced:
 		VoiceSet: BattleBunkerVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Cargo
 
 naindp:
 	Inherits: ^BaseBuilding
@@ -1853,16 +1875,16 @@ naindp:
 		Queue: Building.Shared, Building.Soviets
 		BuildPaletteOrder: 120
 		Prerequisites: ~building.soviets, natech, ~techlevel.4
-		Description: Decreases vehicle costs by 25%.\n\n  Maximum 1 can be built.
+		Description: actor-naindp.description
 		BuildLimit: 1
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Industrial Plant
+		Name: actor-naindp.name
 	Tooltip@NoRow:
-		Name: Industrial Plant
+		Name: actor-naindp.name
 	ProvidesPrerequisite@default:
 		RequiresCondition: !disabled && !chronodisable
 	Building:
@@ -1899,6 +1921,8 @@ naindp:
 	Voiced:
 		VoiceSet: IndustrialPlantVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 # Custom Structures
 nagatea:
@@ -1910,9 +1934,9 @@ nagatea:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Tooltip:
-		Name: Soviet Gate
+		Name: actor-nagate.name
 	Tooltip@NoRow:
-		Name: Soviet Gate
+		Name: actor-nagate.name
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
@@ -1928,9 +1952,9 @@ nagateb:
 	Inherits: ^Gate_B
 	-Buildable:
 	Tooltip:
-		Name: Soviet Gate
+		Name: actor-nagate.name
 	Tooltip@NoRow:
-		Name: Soviet Gate
+		Name: actor-nagate.name
 	LineBuildNode:
 		Types: nawall
 	WithGateSpriteBody:
@@ -1951,15 +1975,15 @@ napost:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: ~building.sovietsorbaku, power, prerequisite.tesla_fence, ~techlevel.1
-		Description: Defence system that creates an electric fence between 2 fence posts.\nPosts also act as small Tesla Coils.\nCan be buffed or made work during low power by Tesla Troopers.\n\nUpgradeable with:\n- Overcharge (Russia)\n\n  Cannot be placed on water.\n  Requires power to operate.
+		Description: actor-napost.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 200
 	Tooltip:
-		Name: Tesla Fence Post
+		Name: actor-napost.name
 	Tooltip@NoRow:
-		Name: Tesla Fence Post
+		Name: actor-napost.name
 	Building:
 		-SecondaryTerrainTypes:
 	Health:
@@ -2068,13 +2092,15 @@ napost:
 	Voiced:
 		VoiceSet: TeslaCoilVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 
 nafnce:
 	Inherits: ^Wall
 	Tooltip:
-		Name: Tesla Fence
+		Name: actor-nafnce.name
 	Tooltip@NoRow:
-		Name: Tesla Fence
+		Name: actor-nafnce.name
 	LineBuild:
 		NodeTypes: teslafence
 	LineBuildNode:
@@ -2153,15 +2179,15 @@ naprop:
 		Queue: Support.Shared, Support.Soviets
 		BuildPaletteOrder: 80
 		Prerequisites: ~building.soviets, natech, ~techlevel.4
-		Description: Buffs fire speed of nearby units and heals them.\n\n  Requires power to operate.
+		Description: actor-naprop.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Propaganda Tower
+		Name: actor-naprop.name
 	Tooltip@NoRow:
-		Name: Propaganda Tower
+		Name: actor-naprop.name
 	Health:
 		HP: 60000
 	Armor:
@@ -2201,6 +2227,8 @@ naprop:
 		DecorationHeight: 75
 	RenderSprites:
 		Image: naprop
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 naexpn:
 	Inherits: ^ExpansionNode

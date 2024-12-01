@@ -1,5 +1,6 @@
 ^AmphibiousTransport:
 	Inherits: ^Ship
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@DRONE: ^TerrorDronable
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -9,18 +10,21 @@
 		Queue: Ship.Shared, Ship
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 45
-		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed
+		Description: meta-amphibioustransport.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
+	BuildPaletteOrderModifier@Megawealth:
+		Prerequisites: global-megawealth
+		Modifier: -35 # 10
 	Valued:
 		Cost: 500
 	DeliversCash:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: Amphibious Transport
+		Name: meta-amphibioustransport.name
 	Tooltip@NoRow:
-		Name: Amphibious Transport
+		Name: meta-amphibioustransport.name
 	Selectable:
 		Bounds: 1448, 3861, 0, -772
 	Health:
@@ -32,7 +36,7 @@
 		Speed: 120
 		TurnsWhileMoving: true
 		Locomotor: heavyamphibious
-		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	Hovers:
 		Ticks: 10
 		BobDistance: -64
@@ -68,17 +72,10 @@
 		PassengerFacing: 384
 		UnloadTerrainTypes: Clear, Rough, Rail, Road, DirtRoad, Beach, Ore, Gems
 		UnloadVoice: Move
-		EjectOnDeath: false
 		LoadingCondition: notmobile
 	WithCargoSounds:
-		EnterSound: genter1a.wav
-		ExitSound: gexit1a.wav
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
+		EnterSounds: genter1a.wav
+		ExitSounds: gexit1a.wav
 	WithVoxelBody:
 	RenderSprites:
 	HitShape:
@@ -99,6 +96,8 @@
 	#	SoundFiles: vlanstaa.wav, vlanstab.wav, vlanstac.wav
 	#	Volume: 0.45
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 
 ^SeaAnimal:
 	Inherits@1: ^ExistsInWorld
@@ -115,6 +114,7 @@
 	Inherits@12: ^SmokeGrenadeModifiers
 	Inherits@13: ^AffectedByCryoSlowdown
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@INVULNERABILITY: ^KilledByIronCurtain
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -133,12 +133,12 @@
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Tooltip:
-		Name: Sea Animal
-		GenericName: Sea Animal
+		Name: meta-seaanimal.name
+		GenericName: meta-seaanimal.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Sea Animal
-		GenericName: Sea Animal
+		Name: meta-seaanimal.name
+		GenericName: meta-seaanimal.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -153,12 +153,6 @@
 		Voice: Move
 	SelectionDecorations:
 	ActorStatValues:
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	RevealsShroud:
 		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
@@ -171,10 +165,12 @@
 	#	DetectionTypes: Underwater
 	#	InitialDelay: 50
 	#	CloakDelay: 75
+	#	CloakStyle: Palette
+	#	CloakedPalette: cloak
+	#	IsPlayerPalette: true
 	#	CloakSound: vnavupa.wav
 	#	UncloakSound: vnavupa.wav
 	#	UncloakOn: Damage
-	#	IsPlayerPalette: true
 	Targetable:
 		TargetTypes: Ground, Water, SeaAnimal, Underwater
 	Targetable@REPAIR:
@@ -189,7 +185,7 @@
 	RenderDetectionCircle:
 	HiddenUnderFog:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	Guard:
 		Voice: Attack
 	Guardable:
@@ -204,3 +200,5 @@
 		CloseEnough: 3c0
 		RepairActors: gayard, nayard, yayard
 	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange

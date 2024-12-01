@@ -9,7 +9,7 @@
  */
 #endregion
 
-using System.Linq;
+using System;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -31,7 +31,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly int EraseDamage = -1;
 
 		[Desc("List of sound which one randomly played after erasing is done.")]
-		public readonly string[] EraseSounds = { };
+		public readonly string[] EraseSounds = Array.Empty<string>();
 
 		[Desc("Do the sounds play under shroud or fog.")]
 		public readonly bool AudibleThroughFog = false;
@@ -53,11 +53,12 @@ namespace OpenRA.Mods.RA2.Traits
 
 	public class AffectedByTemporal : ConditionalTrait<AffectedByTemporalInfo>, ISync, ITick, ISelectionBar
 	{
-		Actor self;
+		readonly Actor self;
+
+		readonly int requiredDamage;
+		int recievedDamage;
 
 		int token = Actor.InvalidConditionToken;
-		int requiredDamage;
-		int recievedDamage;
 
 		[Sync]
 		int tick;
@@ -75,7 +76,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (IsTraitDisabled)
 				return;
 
-			recievedDamage = recievedDamage + damage;
+			recievedDamage += damage;
 			tick = Info.RevokeDelay;
 
 			if (recievedDamage >= requiredDamage)
@@ -85,7 +86,7 @@ namespace OpenRA.Mods.RA2.Traits
 				else
 					self.Kill(damager, damageTypes);
 
-				if (Info.EraseSounds.Any())
+				if (Info.EraseSounds.Length > 0)
 				{
 					var pos = self.CenterPosition;
 					if (Info.AudibleThroughFog || (!self.World.ShroudObscures(pos) && !self.World.FogObscures(pos)))

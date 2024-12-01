@@ -8,8 +8,8 @@
  */
 #endregion
 
+using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using OpenRA.Activities;
 using OpenRA.Mods.Common;
@@ -33,14 +33,14 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly int MinAirborneAltitude = 5;
 
 		[Desc("Types of damage missile explosion is triggered with. Leave empty for no damage types.")]
-		public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> DamageTypes = default;
 
 		[GrantedConditionReference]
 		[Desc("The condition to grant to self while airborne.")]
 		public readonly string AirborneCondition = null;
 
 		[Desc("Sounds to play when the actor is taking off.")]
-		public readonly string[] LaunchSounds = { };
+		public readonly string[] LaunchSounds = Array.Empty<string>();
 
 		[Desc("Do the launching sounds play under shroud or fog.")]
 		public readonly bool AudibleThroughFog = false;
@@ -66,7 +66,7 @@ namespace OpenRA.Mods.RA2.Traits
 	public class BallisticMissileOld : ISync, IFacing, IMove, IPositionable,
 		INotifyCreated, INotifyAddedToWorld, INotifyRemovedFromWorld, IOccupySpace
 	{
-		static readonly (CPos Cell, SubCell SubCell)[] NoCells = { };
+		static readonly (CPos Cell, SubCell SubCell)[] NoCells = Array.Empty<(CPos Cell, SubCell SubCell)>();
 
 		public readonly BallisticMissileOldInfo Info;
 		readonly Actor self;
@@ -74,28 +74,26 @@ namespace OpenRA.Mods.RA2.Traits
 
 		IEnumerable<int> speedModifiers;
 
-		WRot orientation;
-
 		[Sync]
 		public WAngle Facing
 		{
-			get { return orientation.Yaw; }
-			set { orientation = orientation.WithYaw(value); }
+			get => Orientation.Yaw;
+			set => Orientation = Orientation.WithYaw(value);
 		}
 
 		public WAngle Pitch
 		{
-			get { return orientation.Pitch; }
-			set { orientation = orientation.WithPitch(value); }
+			get => Orientation.Pitch;
+			set => Orientation = Orientation.WithPitch(value);
 		}
 
 		public WAngle Roll
 		{
-			get { return orientation.Roll; }
-			set { orientation = orientation.WithRoll(value); }
+			get => Orientation.Roll;
+			set => Orientation = Orientation.WithRoll(value);
 		}
 
-		public WRot Orientation { get { return orientation; } }
+		public WRot Orientation { get; private set; }
 
 		[Sync]
 		public WPos CenterPosition { get; private set; }
@@ -261,7 +259,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public CPos NearestMoveableCell(CPos cell) { return cell; }
 
 		// Actors with BallisticMissile always move
-		public MovementType CurrentMovementTypes { get { return MovementType.Horizontal | MovementType.Vertical; } set { } }
+		public MovementType CurrentMovementTypes { get => MovementType.Horizontal | MovementType.Vertical; set { } }
 
 		public bool CanEnterTargetNow(Actor self, in Target target)
 		{

@@ -5,10 +5,10 @@
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^4x4Shape
 	Inherits@AICash: ^AICashCheat
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Buildable:
 		Queue: Building.Debug
-		Description: Allows construction of base structures.
+		Description: meta-constructionyard.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Building:
@@ -16,9 +16,9 @@
 		Dimensions: 4,4
 	ProvidesPrerequisite@buildingname:
 	Tooltip:
-		Name: Construction Yard
+		Name: meta-constructionyard.name
 	Tooltip@NoRow:
-		Name: Construction Yard
+		Name: meta-constructionyard.name
 	Health:
 		HP: 160000
 	Armor:
@@ -44,11 +44,11 @@
 		DisplayOrder: 1
 		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -58,11 +58,11 @@
 		DisplayOrder: 5
 		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -130,10 +130,11 @@
 		PauseOnCondition: build-incomplete || chronodisable
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
-	TransferTimedExternalConditionOnTransform@INVISIBILITY:
-		Condition: invisibility
-	ExternalCondition@INVISIBILITY:
-		Condition: invisibility
+	# This doesn't work, so commenting out to keep the lint warnings. This condition is not timed.
+	# TransferTimedExternalConditionOnTransform@INVISIBILITY:
+	#	Condition: invisibility
+	# ExternalCondition@INVISIBILITY:
+	#	Condition: invisibility
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp || infiltrated
 	Targetable:
@@ -152,7 +153,7 @@
 
 ^ExpansionNode:
 	Inherits: ^BaseBuilding
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	IsometricSelectable:
@@ -172,9 +173,9 @@
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Expansion Node
+		Name: meta-expansionnode.name
 	Tooltip@NoRow:
-		Name: Expansion Node
+		Name: meta-expansionnode.name
 	BaseBuilding:
 	# Transforms:
 	#	IntoActor: expn
@@ -230,15 +231,15 @@
 		Queue: Building.Shared, Building
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Provides power for other structures.
+		Description: meta-powerplant.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Power Plant
+		Name: meta-powerplant.name
 	Tooltip@NoRow:
-		Name: Power Plant
+		Name: meta-powerplant.name
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite:
 		Prerequisite: power
@@ -274,6 +275,8 @@
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^Barracks:
 	Inherits: ^BaseBuilding
@@ -285,24 +288,24 @@
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 20
 		Prerequisites: power, ~techlevel.1
-		Description: Trains infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: meta-barracks.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Barracks
+		Name: meta-barracks.name
 	Tooltip@NoRow:
-		Name: Barracks
+		Name: meta-barracks.name
 	ProvidesPrerequisite:
 		Prerequisite: barracks
 	ProvidesPrerequisite@production:
 		Prerequisite: production
 	ProximityExternalCondition@heal:
 		Condition: heal
-		Range: 5c0
+		Range: 6c0
 	WithRangeCircle:
-		Range: 5c0
+		Range: 6c0
 		Type: heal
 		Color: FF0000CC
 		BorderWidth: 0
@@ -340,11 +343,11 @@
 		DisplayOrder: 13
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -354,6 +357,7 @@
 		ProductionType: Infantry
 	Power:
 		Amount: -35
+		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp || infiltrated
 	#InfiltrateForSupportPower:
@@ -379,7 +383,8 @@
 		Volume: 0.8
 	ProvidesPrerequisite@AIantiRush:
 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
-
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^Refinery:
 	Inherits: ^BaseBuilding
@@ -391,15 +396,15 @@
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 30
 		Prerequisites: power, ~!global-megawealth, ~techlevel.1
-		Description: Processes ore into credits.\n\n  Can be rotated.
+		Description: meta-refinery.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Ore Refinery
+		Name: meta-refinery.name
 	Tooltip@NoRow:
-		Name: Ore Refinery
+		Name: meta-refinery.name
 	ProvidesPrerequisite:
 		Prerequisite: refinery
 	ProvidesPrerequisite@default:
@@ -416,13 +421,13 @@
 	#	Types: SatelliteScan
 	#	Range: 6c0
 	Refinery:
-		DockOffset: 3,1
 		ShowTicks: True
-		TickLifetime: 30
-		TickVelocity: 1
 		TickRate: 10
-		DockAngle: 640
 		UseStorage: true
+	DockHost:
+		Type: Unload
+		DockAngle: 640
+		DockOffset: 1086,1086,0
 	CustomSellValue:
 		Value: 600
 	InfiltrateForCash:
@@ -464,7 +469,7 @@
 		ActorTypes: e2
 	SpawnActorsOnSell@psicorps:
 		ActorTypes: init
-	StoresResources:
+	StoresPlayerResources:
 		Capacity: 2000
 	Explodes:
 		RequiresCondition: !spawn-ore
@@ -508,6 +513,8 @@
 	Voiced:
 		VoiceSet: RefineryVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^RefineryB:
 	Inherits: ^Refinery
@@ -516,9 +523,9 @@
 	Building:
 		Footprint: xxx xxx xxx +++
 		Dimensions: 3,4
-	Refinery:
-		DockOffset: 1,3
+	DockHost:
 		DockAngle: 384
+		DockOffset: -1086,1086,0
 	FreeActor:
 		SpawnOffset: 1,3
 		Facing: 384
@@ -531,9 +538,9 @@
 	-Buildable:
 	Building:
 		Footprint: +xxx +xxx +xxx
-	Refinery:
-		DockOffset: 0,1
+	DockHost:
 		DockAngle: 128
+		DockOffset: -724,724,0
 	FreeActor:
 		SpawnOffset: 0,1
 		Facing: 128
@@ -550,9 +557,9 @@
 	Building:
 		Footprint: +++ xxx xxx xxx
 		Dimensions: 3,4
-	Refinery:
-		DockOffset: 1,0
+	DockHost:
 		DockAngle: 896
+		DockOffset: 1086,-1086,0
 	FreeActor:
 		SpawnOffset: 1,0
 		Facing: 896
@@ -584,15 +591,15 @@ refdock:
 		Queue: Support
 		BuildPaletteOrder: 30
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
-		Description: Stores excess Ore.
+		Description: meta-silo.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 300
 	Tooltip:
-		Name: Ore Silo
+		Name: meta-silo.name
 	Tooltip@NoRow:
-		Name: Ore Silo
+		Name: meta-silo.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
@@ -608,7 +615,7 @@ refdock:
 	-WithSpriteBody:
 	WithResourceLevelSpriteBody:
 		Stages: 4
-	StoresResources:
+	StoresPlayerResources:
 		Capacity: 2000
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
@@ -637,6 +644,8 @@ refdock:
 	Voiced:
 		VoiceSet: SiloVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^WarFactory:
 	Inherits: ^BaseBuilding
@@ -649,15 +658,15 @@ refdock:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 50
 		Prerequisites: refinery, ~techlevel.1
-		Description: Produces vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: meta-warfactory.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: War Factory
+		Name: meta-warfactory.name
 	Tooltip@NoRow:
-		Name: War Factory
+		Name: meta-warfactory.name
 	ProvidesPrerequisite@warfactory:
 		Prerequisite: warfactory
 	ProvidesPrerequisite@production:
@@ -699,11 +708,11 @@ refdock:
 		DisplayOrder: 17
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -764,8 +773,7 @@ refdock:
 	ProvidesPrerequisite@AIantiRush:
 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 	ActorStatValues:
-		Armaments: none
-
+		Stats: Armor, Sight, Power
 
 ^Shipyard:
 	Inherits: ^BaseBuilding
@@ -777,14 +785,14 @@ refdock:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Naval Yard
+		Name: meta-shipyard.name
 	Tooltip@NoRow:
-		Name: Naval Yard
+		Name: meta-shipyard.name
 	Buildable:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 60
 		Prerequisites: refinery, ~techlevel.1
-		Description: Produces ships, submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+		Description: meta-shipyard.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Targetable:
@@ -891,11 +899,11 @@ refdock:
 		DisplayOrder: 21
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -915,9 +923,9 @@ refdock:
 	#	Interval: 20
 	#	RepairDamageTypes: KillsDrone
 	#	StartRepairingNotification: Repairing
-	#	StartRepairingTextNotification: Repairing.
+	#	StartRepairingTextNotification: notification-repairing
 	#	FinishRepairingNotification: UnitRepaired
-	#	FinishRepairingTextNotification: Unit repaired.
+	#	FinishRepairingTextNotification: notification-unit-repaired
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Repair, AirRepair, SeaAnimalRepair
@@ -965,7 +973,7 @@ refdock:
 		VoiceSet: ShipyardVoice
 		Volume: 0.8
 	ActorStatValues:
-		Armaments: none
+		Stats: Armor, Sight, Power
 
 ^ServiceDepot:
 	Inherits: ^BaseBuilding
@@ -976,15 +984,15 @@ refdock:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 80
 		Prerequisites: warfactory, ~techlevel.1
-		Description: Repairs vehicles and removes Terror Drones for a price.
+		Description: meta-servicedepot.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Service Depot
+		Name: meta-servicedepot.name
 	Tooltip@NoRow:
-		Name: Service Depot
+		Name: meta-servicedepot.name
 	ProvidesPrerequisite@default:
 	ProvidesPrerequisite:
 		Prerequisite: repairpad
@@ -1016,9 +1024,9 @@ refdock:
 		Interval: 20
 		RepairDamageTypes: KillsDrone
 		StartRepairingNotification: Repairing
-		StartRepairingTextNotification: Repairing.
+		StartRepairingTextNotification: notification-repairing
 		FinishRepairingNotification: UnitRepaired
-		FinishRepairingTextNotification: Unit repaired.
+		FinishRepairingTextNotification: notification-unit-repaired
 	ProximityExternalCondition:
 		Condition: unit.sellable
 		Range: 1c0
@@ -1042,6 +1050,8 @@ refdock:
 	Voiced:
 		VoiceSet: ServiceDepotVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^Radar:
 	Inherits: ^BaseBuilding
@@ -1051,7 +1061,7 @@ refdock:
 	Buildable:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 40
-		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction.
+		Description: meta-radar.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Valued:
@@ -1094,6 +1104,8 @@ refdock:
 	Voiced:
 		VoiceSet: RadarVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^Helipad:
 	Inherits: ^BaseBuilding
@@ -1106,7 +1118,7 @@ refdock:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 70
 		Prerequisites: radar, ~techlevel.2
-		Description: Produces aircraft.\n\nAbilities:\n- Comes with 1 repair drone.
+		Description: meta-helipad.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1153,11 +1165,11 @@ refdock:
 		DisplayOrder: 26
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -1206,26 +1218,25 @@ refdock:
 	ProvidesPrerequisite@AIantiRush:
 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 	ActorStatValues:
-		Armaments: none
-
+		Stats: Armor, Sight, Power
 
 ^BattleLab:
 	Inherits: ^BaseBuilding
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 90
 		Prerequisites: production, radar, ~techlevel.3
-		Description: Allows deployment of advanced units.\nResearches advanced upgrades.\n\n  Can be rotated.
+		Description: meta-battlelab.description
 		BuildDuration: 1500
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 3000
 	Tooltip:
-		Name: Battle Lab
+		Name: meta-battlelab.name
 	Tooltip@NoRow:
-		Name: Battle Lab
+		Name: meta-battlelab.name
 	Health:
 		HP: 75000
 	Armor:
@@ -1256,6 +1267,8 @@ refdock:
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^PrimarySuperWeapon:
 	Inherits: ^BaseBuilding
@@ -1313,6 +1326,8 @@ refdock:
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 ^SecondarySuperWeapon:
 	Inherits: ^BaseBuilding
@@ -1371,45 +1386,47 @@ refdock:
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 power:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Power Plant
+		Name: actor-power-name
 
 refinery:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Ore Refinery
+		Name: actor-refinery-name
 
 barracks:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Infantry Production
+		Name: actor-barracks-name
 
 radar:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Radar
+		Name: actor-radar-name
 
 warfactory:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Vehicle Production
+		Name: actor-warfactory-name
 
 production:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Unit Production
+		Name: actor-production-name
 
 repairpad:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Service Depot
+		Name: actor-repairpad-name

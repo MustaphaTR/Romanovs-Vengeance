@@ -5,6 +5,7 @@ Flamer:
 	Burst: 5
 	BurstDelays: 0
 	Report: flamtnk1.aud
+	SoundVolume: 0.2
 	Projectile: BulletAS
 		Speed: 250
 		Image: fireball
@@ -31,6 +32,7 @@ Flamer:
 FlamerE:
 	Inherits: Flamer
 	Burst: 10
+	SoundVolume: 0.1
 	Warhead@1Dam: SpreadDamage
 		Damage: 1400
 	Warhead@1Gar: OpenToppedDamage
@@ -90,6 +92,7 @@ MolotovCocktail:
 	Range: 4c0
 	ReloadDelay: 100
 	Report: grenade1.aud
+	SoundVolume: 1
 	ValidTargets: Structure, Tree, Barrel, Mine
 	Warhead@1Dam: SpreadDamage
 		ValidTargets: Structure, Tree, Barrel, Mine
@@ -99,6 +102,7 @@ MolotovCocktailE:
 	Burst: 1
 	Range: 5c0
 	ReloadDelay: 80
+	SoundVolume: 1
 	Report: grenade1.aud
 	ValidTargets: Structure, Tree, Barrel, Mine
 	Warhead@1Dam: SpreadDamage
@@ -178,25 +182,27 @@ TankFlamer:
 	ReloadDelay: 40
 	Range: 5c0
 	Burst: 10
+	SoundVolume: 0.1
 	Projectile: BulletAS
 		Speed: 250
 		LaunchAngle: 0
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c768
+		Spread: 0c512
 		Damage: 1000
 	Warhead@1Gar: OpenToppedDamage
-		Spread: 0c768
+		Spread: 0c512
 		Damage: 1000
 
 TankFlamerE:
 	Inherits: TankFlamer
 	Burst: 20
+	SoundVolume: 0.05
 	Warhead@1Dam: SpreadDamage
 		Damage: 1400
-		Spread: 0c768
+		Spread: 0c512
 	Warhead@1Gar: OpenToppedDamage
 		Damage: 1400
-		Spread: 0c768
+		Spread: 0c512
 
 TankFlamerBlack:
 	Inherits: TankFlamer
@@ -228,6 +234,7 @@ ToxinSprayer:
 	Burst: 10
 	BurstDelays: 0
 	Report: itoxatta.wav, itoxattb.wav, itoxattc.wav, itoxattd.wav, itoxatte.wav
+	SoundVolume: 0.1
 	InvalidTargets: NonGarrisonableStructure, Wall, Fence, Tree, Bridge
 	Projectile: BulletAS
 		Image: txgasg
@@ -280,6 +287,7 @@ ToxinSprayer:
 ToxinSprayerE:
 	Inherits: ToxinSprayer
 	Burst: 20
+	SoundVolume: 0.05
 	Warhead@1Dam: SpreadDamage
 		Damage: 1400
 	Warhead@1Gar: OpenToppedDamage
@@ -302,12 +310,14 @@ ToxinSprayerTruck:
 	ReloadDelay: 60
 	Burst: 4
 	BurstDelays: 0
+	SoundVolume: 0.25
 	Warhead@1Dam: SpreadDamage
 		Damage: 800
 
 ToxinSprayerTruckE:
 	Inherits: ToxinSprayerTruck
 	Burst: 10
+	SoundVolume: 0.1
 
 EmergencyRepair1:
 	ReloadDelay: 80
@@ -628,7 +638,7 @@ ScoutDroneSpawner:
 	Warhead@1Spa: SpawnActor
 		Actors: sdrn.spawner
 		Range: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Eff: CreateEffect
 		Delay: 1
 		ImpactSounds: vdr2crea.wav
@@ -643,7 +653,7 @@ SpyCameraWeapon:
 	Warhead@1Spa: SpawnActor
 		Actors: camera.spyplane
 		Range: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 		ForceGround: true
 
 PsychicReveal:
@@ -652,7 +662,7 @@ PsychicReveal:
 	Warhead@1Spa: SpawnActor
 		Actors: camera.psychicreveal
 		Range: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: scananim
 		ExplosionPalette: tseffect
@@ -863,7 +873,7 @@ BunkerSpawner:
 	Warhead@1Spa: SpawnBuilding
 		Buildings: nabnkr
 		Sounds: uplace.wav
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 
 BarrelSpawner:
 	Warhead@1Spa: SpawnBuilding
@@ -871,7 +881,7 @@ BarrelSpawner:
 		Delay: 15
 		Range: 3
 		Sounds: uplace.wav
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: chronofd
 		ImpactSounds: schrmov.wav
@@ -882,11 +892,11 @@ AmbushSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: AmbushSpawnerE2
 		Amount: 8
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Sha: FireShrapnel
 		Weapon: AmbushSpawnerFlakt
 		Amount: 4
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@TargetValidation: TargetDamage
 	Warhead@3Eff: CreateEffect
 		ImpactSounds: sambusha.aud
@@ -911,23 +921,23 @@ HologramSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: HologramSpawnerInit
 		Amount: 6
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Sha: FireShrapnel
 		Weapon: HologramSpawnerBrute
 		Amount: 2
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@3Sha: FireShrapnel
 		Weapon: HologramSpawnerGtrp
 		Amount: 2
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@4Sha: FireShrapnel
 		Weapon: HologramSpawnerLtnk
 		Amount: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@5Sha: FireShrapnel
 		Weapon: HologramSpawnerYtnk
 		Amount: 1
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@TargetValidation: TargetDamage
 	Warhead@6Eff: CreateEffect
 		ImpactSounds: holoinit.aud
@@ -940,7 +950,7 @@ HologramSpawner:
 	Warhead@2Eff: CreateEffect
 		Explosions: holosmoke1, holosmoke2, holosmoke3, holosmoke4
 		ExplosionPalette: cyanjascpal
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 
 HologramSpawnerInit:
 	Inherits: ^HologramSpawnerDefault
@@ -971,7 +981,7 @@ LethocerusSpawnerSpawnerSpawner:
 	Warhead@1Sha: FireShrapnel
 		Weapon: LethocerusSpawnerSpawner
 		Amount: 3
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@TargetValidation: TargetDamage
 
 LethocerusSpawnerSpawner:
@@ -979,17 +989,60 @@ LethocerusSpawnerSpawner:
 	Projectile: InstantHit
 	Warhead@1Spa: SpawnActor
 		Actors: txdx.spawner
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 
 GrizzlySpawner:
 	Warhead@1Spa: SpawnActor
 		Actors: mtnk,mtnk,mtnk
+		Image: explosion
+		Sequence: temporal_explosion
 		Delay: 15
 		Range: 3
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 	Warhead@2Eff: CreateEffect
 		Explosions: chronofd
 		ImpactSounds: schrmov.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+AIChronoSpawner:
+	Inherits: GrizzlySpawner
+	Warhead@1Spa: SpawnActor
+		Actors: mtnk, fv, sref, mgtk, hwtz
+
+ChronoshiftImpact:
+	Warhead@2Eff: CreateEffect
+		Explosions: chronofd
+		ExplosionPalette: effect75alpha
+		ImpactSounds: schrmov.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+PortableChronoTeleport:
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: ichrmova.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+PortableChronoImpact:
+	Warhead@2Eff: CreateEffect
+		Explosions: warpout
+		ImpactSounds: ichrmova.wav
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+ChronoMinerTeleport:
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: vchrtele.wav
+		Volume: 0.5
+		ImpactActors: false
+		ValidTargets: Ground, Water, Air
+
+ChronoMinerTeleportImpact:
+	Warhead@2Eff: CreateEffect
+		Explosions: warpout
+		ImpactSounds: vchrtele.wav
+		Volume: 0.5
 		ImpactActors: false
 		ValidTargets: Ground, Water, Air
 
@@ -1431,7 +1484,7 @@ droppod:
 	Warhead@5Effect: SpawnActor
 		Actors: brute
 		Range: 3
-		ValidTargets: Ground, OreDrill, Water, Air
+		ValidTargets: Ground, OreDrill, Rubble, Water, Air
 
 AirDummyAim:
 	Range: 8c0

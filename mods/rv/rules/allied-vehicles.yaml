@@ -14,30 +14,32 @@ cmin:
 	Inherits: ^Miner
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Shared, Ship.Allies
-		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n- Can teleport back to refineries
+		Description: actor-cmin.description
 		Prerequisites: ~vehicleorship.allies, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
-		Name: Chrono Miner
+		Name: actor-cmin.name
 	Tooltip@NoRow:
-		Name: Chrono Miner
+		Name: actor-cmin.name
 	Harvester:
-		Capacity: 20
 		BaleUnloadDelay: 2
-		DeliverVoice: Deliver
+	StoresResources:
+		Capacity: 20
+	DockClientManager:
+		Voice: Deliver
 	ChronoResourceDelivery:
-		WarpInSequence: warpout
-		WarpInSound: vchrtele.wav
-		WarpOutSound: vchrtele.wav
-		SoundVolume: 0.5
-		AudibleThroughFog: false
+		TeleportType: PortableChrono
 		RequiresCondition: !chronodisable && !emp && !beingterrordroned
+	ExplodeWeaponTeleportEffect:
+		TeleportType: PortableChrono
+		ImpactWeapon: ChronoMinerTeleportImpact
+		TeleportWeapon: ChronoMinerTeleport
 	Contrail@Teleport: ##HACK: add a trace for teleport. 
 		Offset: 0, 0, 700
 		StartColor: 00F0F8AA
 		StartColorAlpha: 176
 		StartColorUsePlayerColor: false
 		ZOffset: -1024
-		TrailWidth: 36
+		StartWidth: 36
 		TrailLength: 2
 	Guard:
 		Voice: Move
@@ -54,12 +56,12 @@ mtnk:
 		Payload: 700
 		Voice: Move
 	Tooltip:
-		Name: Grizzly Battle Tank
+		Name: actor-mtnk.name
 	Tooltip@NoRow:
-		Name: Grizzly Battle Tank
+		Name: actor-mtnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
-		Description: Allied Main Battle Tank.\n\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Composite Armor\n- Advanced Gun Systems (Germany)
+		Description: actor-mtnk.description
 		Prerequisites: ~vehicle.allies, ~techlevel.1
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -126,7 +128,8 @@ tnkd:
 	Inherits: ^Vehicle
 	Inherits@ADVGUNS: ^AffectedByAdvancedGunSystems
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -138,14 +141,14 @@ tnkd:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Tank Destroyer
+		Name: actor-tnkd.name
 	Tooltip@NoRow:
-		Name: Tank Destroyer
+		Name: actor-tnkd.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Germany
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicle.germany, gaairc, ~techlevel.3
-		Description: Special anti-armor unit.\n\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Composite Armor\n- Advanced Gun Systems (Germany)
+		Description: actor-tnkd.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -201,12 +204,6 @@ tnkd:
 		RequiresCondition: composite_armor && advanced_guns
 	Voiced:
 		VoiceSet: TankDestroyerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -226,6 +223,7 @@ tnkd:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.advanced_gun_systems, upgrade.composite_armor
 
 fv:
@@ -234,10 +232,12 @@ fv:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HEAVYMORTARS: ^AffectedByHeavyMortars
 	Inherits@HIGHCALIBER: ^AffectedByHighCaliberRounds
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
@@ -245,249 +245,255 @@ fv:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded && dmg_heavy
+		OrderName: Unload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 20
 	Valued:
 		Cost: 600
 	DeliversCash:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Infantry Fighting Vehicle
+		Name: actor-fv.name
 		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && showownername
 	Tooltip@NoRow:
-		Name: Infantry Fighting Vehicle
+		Name: actor-fv.name
 		RequiresCondition: !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !showownername
 	Tooltip@mg:
-		Name: Machine Gun IFV
-		GenericName: Vehicle
+		Name: actor-fv.mg-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-mg && showownername
 	Tooltip@mg-norow:
-		Name: Machine Gun IFV
-		GenericName: Vehicle
+		Name: actor-fv.mg-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-mg && !showownername
 	Tooltip@init:
-		Name: Ignitor IFV
-		GenericName: Vehicle
+		Name: actor-fv.init-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-init && showownername
 	Tooltip@init-norow:
-		Name: Ignitor IFV
-		GenericName: Vehicle
+		Name: actor-fv.init-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-init && !showownername
 	Tooltip@rocket:
-		Name: Rocket IFV
-		GenericName: Vehicle
+		Name: actor-fv.rocket-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-rocket && showownername
 	Tooltip@rocket-norow:
-		Name: Rocket IFV
-		GenericName: Vehicle
+		Name: actor-fv.rocket-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-rocket && !showownername
 	Tooltip@gren:
-		Name: Grenade IFV
-		GenericName: Vehicle
+		Name: actor-fv.gren-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-gren && showownername
 	Tooltip@gren-norow:
-		Name: Grenade IFV
-		GenericName: Vehicle
+		Name: actor-fv.gren-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-gren && !showownername
 	Tooltip@mortar:
-		Name: Mortar IFV
-		GenericName: Vehicle
+		Name: actor-fv.mortar-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-mortar && showownername
 	Tooltip@mortar-norow:
-		Name: Mortar IFV
-		GenericName: Vehicle
+		Name: actor-fv.mortar-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-mortar && !showownername
 	Tooltip@engineer:
-		Name: Repair IFV
-		GenericName: Vehicle
+		Name: actor-fv.engineer-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-repair && showownername
 	Tooltip@engineer-norow:
-		Name: Repair IFV
-		GenericName: Vehicle
+		Name: actor-fv.engineer-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-repair && !showownername
 	Tooltip@medic:
-		Name: Ambulance IFV
-		GenericName: Vehicle
+		Name: actor-fv.medic-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-medic && showownername
 	Tooltip@medic-norow:
-		Name: Ambulance IFV
-		GenericName: Vehicle
+		Name: actor-fv.medic-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-medic && !showownername
 	Tooltip@dog:
-		Name: Detector IFV
-		GenericName: Vehicle
+		Name: actor-fv.dog-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-dog && showownername
 	Tooltip@dog-norow:
-		Name: Detector IFV
-		GenericName: Vehicle
+		Name: actor-fv.dog-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-dog && !showownername
 	Tooltip@hijack:
-		Name: Grinder IFV
-		GenericName: Vehicle
+		Name: actor-fv.hijack-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-hijack && showownername
 	Tooltip@hijack-norow:
-		Name: Grinder IFV
-		GenericName: Vehicle
+		Name: actor-fv.hijack-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-hijack && !showownername
 	Tooltip@sniper:
-		Name: Sniper IFV
-		GenericName: Vehicle
+		Name: actor-fv.sniper-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-sniper && showownername
 	Tooltip@sniper-norow:
-		Name: Sniper IFV
-		GenericName: Vehicle
+		Name: actor-fv.sniper-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-sniper && !showownername
 	Tooltip@virus:
-		Name: Virus IFV
-		GenericName: Vehicle
+		Name: actor-fv.virus-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-virus && showownername
 	Tooltip@virus-norow:
-		Name: Virus IFV
-		GenericName: Vehicle
+		Name: actor-fv.virus-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-virus && !showownername
 	Tooltip@pyro:
-		Name: Flamethrower IFV
-		GenericName: Vehicle
+		Name: actor-fv.pyro-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-pyro && showownername
 	Tooltip@pyro-norow:
-		Name: Flamethrower IFV
-		GenericName: Vehicle
+		Name: actor-fv.pyro-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-pyro && !showownername
 	Tooltip@flak:
-		Name: Flak IFV
-		GenericName: Vehicle
+		Name: actor-fv.flak-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-flak && showownername
 	Tooltip@flak-norow:
-		Name: Flak IFV
-		GenericName: Vehicle
+		Name: actor-fv.flak-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-flak && !showownername
 	Tooltip@gatling:
-		Name: Gatling IFV
-		GenericName: Vehicle
+		Name: actor-fv.gatling-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-gatling && showownername
 	Tooltip@gatling-norow:
-		Name: Gatling IFV
-		GenericName: Vehicle
+		Name: actor-fv.gatling-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-gatling && !showownername
 	Tooltip@tesla:
-		Name: Tesla IFV
-		GenericName: Vehicle
+		Name: actor-fv.tesla-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-tesla && showownername
 	Tooltip@tesla-norow:
-		Name: Tesla IFV
-		GenericName: Vehicle
+		Name: actor-fv.tesla-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-tesla && !showownername
 	Tooltip@desolator:
-		Name: Desolator IFV
-		GenericName: Vehicle
+		Name: actor-fv.desolator-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-deso && showownername
 	Tooltip@desolator-norow:
-		Name: Desolator IFV
-		GenericName: Vehicle
+		Name: actor-fv.desolator-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-deso && !showownername
 	Tooltip@demo:
-		Name: Demolition IFV
-		GenericName: Vehicle
+		Name: actor-fv.demo-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-demo && showownername
 	Tooltip@demo-norow:
-		Name: Demolition IFV
-		GenericName: Vehicle
+		Name: actor-fv.demo-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-demo && !showownername
 	Tooltip@seal:
-		Name: Sub-Machine Gun IFV
-		GenericName: Vehicle
+		Name: actor-fv.seal-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-seal && showownername
 	Tooltip@seal-norow:
-		Name: Sub-Machine Gun IFV
-		GenericName: Vehicle
+		Name: actor-fv.seal-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-seal && !showownername
 	Tooltip@tanya:
-		Name: Tanya IFV
-		GenericName: Vehicle
+		Name: actor-fv.tanya-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-tanya && showownername
 	Tooltip@tanya-norow:
-		Name: Tanya IFV
-		GenericName: Vehicle
+		Name: actor-fv.tanya-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-tanya && !showownername
 	Tooltip@boris:
-		Name: Boris IFV
-		GenericName: Vehicle
+		Name: actor-fv.boris-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-boris && showownername
 	Tooltip@boris-norow:
-		Name: Boris IFV
-		GenericName: Vehicle
+		Name: actor-fv.boris-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-boris && !showownername
 	Tooltip@chrono:
-		Name: Chrono IFV
-		GenericName: Vehicle
+		Name: actor-fv.chrono-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-chrono && showownername
 	Tooltip@chrono-norow:
-		Name: Chrono IFV
-		GenericName: Vehicle
+		Name: actor-fv.chrono-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-chrono && !showownername
 	Tooltip@yuri:
-		Name: Psi IFV
-		GenericName: Vehicle
+		Name: actor-fv.yuri-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-yuri && showownername
 	Tooltip@yuri-norow:
-		Name: Psi IFV
-		GenericName: Vehicle
+		Name: actor-fv.yuri-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-yuri && !showownername
 	Tooltip@iron:
-		Name: Iron Curtain IFV
-		GenericName: Vehicle
+		Name: actor-fv.iron-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-iron && showownername
 	Tooltip@iron-norow:
-		Name: Iron Curtain IFV
-		GenericName: Vehicle
+		Name: actor-fv.iron-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-iron && !showownername
 	Tooltip@lazarus:
-		Name: Lazarus IFV
-		GenericName: Vehicle
+		Name: actor-fv.lazarus-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-lazarus && showownername
 	Tooltip@lazarus-norow:
-		Name: Lazarus IFV
-		GenericName: Vehicle
+		Name: actor-fv.lazarus-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-lazarus && !showownername
 	Tooltip@toxin:
-		Name: Toxin Sprayer IFV
-		GenericName: Vehicle
+		Name: actor-fv.toxin-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-toxin && showownername
 	Tooltip@toxin-norow:
-		Name: Toxin Sprayer IFV
-		GenericName: Vehicle
+		Name: actor-fv.toxin-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-toxin && !showownername
 	Tooltip@crkt:
-		Name: Chaos Rocket IFV
-		GenericName: Vehicle
+		Name: actor-fv.crkt-name
+		GenericName: meta-vehicle.name
 		RequiresCondition: ifv-crkt && showownername
 	Tooltip@crkt-norow:
-		Name: Chaos Rocket IFV
-		GenericName: Vehicle
+		Name: actor-fv.crkt-name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-crkt && !showownername
 	WithColoredOverlay@ironcurtain:
@@ -498,7 +504,7 @@ fv:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		Prerequisites: ~vehicle.allies, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Multi-Purpose Vehicle.\n\nWithout passenger:\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\n\nAbilities:\n- Armament changes depending on passenger\n- Can detect Stealth units\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
+		Description: actor-fv.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -554,8 +560,8 @@ fv:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
-		EjectOnDeath: false
 		LoadingCondition: notmobile
+		LoadedCondition: loaded
 		PassengerConditions:
 			e1: ifv-mg
 			e2: ifv-mg
@@ -563,6 +569,7 @@ fv:
 			gren: ifv-gren
 			mtrp: ifv-mortar
 			engineer: ifv-repair
+			mengineer: ifv-repair
 			medi: ifv-medic
 			dog: ifv-dog
 			ggi: ifv-rocket
@@ -575,7 +582,6 @@ fv:
 			vlkv: ifv-tesla
 			ivan: ifv-demo
 			civan: ifv-demo
-			civan.allied: ifv-demo
 			pyro: ifv-pyro
 			terror: ifv-demo
 			deso: ifv-deso
@@ -597,16 +603,15 @@ fv:
 			yuri: ifv-yuri
 			yuripsi: ifv-yuri
 			ptroop: ifv-yuri
-			ptroop.yuri: ifv-yuri
 			yuripr: ifv-yuri
 			yurix: ifv-yuri
 			spct: ifv-lazarus
 			ttrp: ifv-toxin
-			ttrp.soviet: ifv-toxin
 			crkt: ifv-crkt
+			visc_lrg: ifv-hijack
 	WithCargoSounds:
-		EnterSound: vifvtran.wav
-		ExitSound: vifvtran.wav
+		EnterSounds: vifvtran.wav
+		ExitSounds: vifvtran.wav
 	Armament@primary:
 		Weapon: HoverMissile
 		Damage: 60
@@ -624,14 +629,12 @@ fv:
 	Armament@primary-aa:
 		Weapon: HoverMissileAA
 		LocalOffset: 128,-128,1024, 128,128,1024
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
 	Armament@elite-aa:
 		Weapon: HoverMissileAAE
 		LocalOffset: 128,-128,1024, 128,128,1024
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && !boostgliding
@@ -652,14 +655,12 @@ fv:
 	Armament@primary-boost-aa:
 		Weapon: HoverMissileAABoosted
 		LocalOffset: 128,-128,1024, 128,128,1024
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: !rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
 	Armament@elite-boost-aa:
 		Weapon: HoverMissileAABoostedE
 		LocalOffset: 128,-128,1024, 128,128,1024
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: rank-elite && !ifv-mg && !ifv-init && !ifv-gren && !ifv-mortar && !ifv-repair && !ifv-medic && !ifv-dog && !ifv-hijack && !ifv-rocket && !ifv-sniper && !ifv-virus && !ifv-pyro && !ifv-flak && !ifv-gatling && !ifv-tesla && !ifv-deso && !ifv-demo && !ifv-seal && !ifv-tanya && !ifv-boris && !ifv-chrono && !ifv-iron && !ifv-yuri && !ifv-lazarus && !ifv-toxin && !ifv-crkt && boostgliding
@@ -707,12 +708,22 @@ fv:
 		Weapon: CRTrooperMortar
 		Damage: 50
 		LocalOffset: 256,0,1536
-		RequiresCondition: ifv-mortar && !rank-elite
+		RequiresCondition: ifv-mortar && !rank-elite && !heavymortars
 	Armament@mortar-elite:
 		Weapon: CRTrooperMortarE
 		Damage: 100
 		LocalOffset: 256,0,1536
-		RequiresCondition: ifv-mortar && rank-elite
+		RequiresCondition: ifv-mortar && rank-elite && !heavymortars
+	Armament@mortar-heavy:
+		Weapon: CRTrooperMortarHeavy
+		Damage: 50
+		LocalOffset: 256,0,1536
+		RequiresCondition: ifv-mortar && !rank-elite && heavymortars
+	Armament@mortar-heavy-elite:
+		Weapon: CRTrooperMortarHeavyE
+		Damage: 100
+		LocalOffset: 256,0,1536
+		RequiresCondition: ifv-mortar && rank-elite && heavymortars
 	Armament@rocket:
 		Weapon: CRMissileLauncher
 		Damage: 120
@@ -723,7 +734,6 @@ fv:
 	Armament@rocket-aa:
 		Weapon: CRMissileLauncherAA
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: ifv-rocket && !rank-elite && !boostgliding
@@ -737,7 +747,6 @@ fv:
 	Armament@rocket-aa-elite:
 		Weapon: CRMissileLauncherAAE
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: ifv-rocket && rank-elite && !boostgliding
@@ -751,7 +760,6 @@ fv:
 	Armament@rocket-boost-aa:
 		Weapon: CRMissileLauncherAABoosted
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: ifv-rocket && !rank-elite && boostgliding
@@ -765,7 +773,6 @@ fv:
 	Armament@rocket-boost-aa-elite:
 		Weapon: CRMissileLauncherAABoostedE
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: ifv-rocket && rank-elite && boostgliding
@@ -789,6 +796,8 @@ fv:
 		ForceTargetRelationships: None
 	Armament@demo:
 		Weapon: DemoTruckTargeting
+		Damage: 500
+		Spread: 2c0
 		RequiresCondition: ifv-demo
 	GrantConditionOnAttack@demo:
 		Condition: triggered
@@ -937,7 +946,6 @@ fv:
 	Armament@flak-aa:
 		Weapon: CRFlakGuyGunAA
 		LocalOffset: 256,0,1536
-		EnableSplitRanges: true
 		RequiresCondition: ifv-flak && !rank-elite
 	Armament@flak-elite:
 		Weapon: CRFlakGuyGunE
@@ -952,7 +960,6 @@ fv:
 	Armament@flak-aa-elite:
 		Weapon: CRFlakGuyGunAAE
 		LocalOffset: 256,0,1536
-		EnableSplitRanges: true
 		RequiresCondition: ifv-flak && rank-elite
 	Armament@gatling-ag-0:
 		Name: gatling
@@ -979,21 +986,18 @@ fv:
 		Name: gatling
 		Weapon: AAGatling
 		LocalOffset: 544,100,1024, 544,-100,1024
-		EnableSplitRanges: true
 		RequiresCondition: ifv-gatling && !gatling
 		MuzzleSequence: muzzle
 	Armament@gatling-aa-1:
 		Name: gatling
 		Weapon: AAGatling2
 		LocalOffset: 544,100,1024, 544,-100,1024
-		EnableSplitRanges: true
 		RequiresCondition: ifv-gatling && gatling == 1
 		MuzzleSequence: muzzle-1
 	Armament@gatling-aa-2:
 		Name: gatling
 		Weapon: AAGatling3
 		LocalOffset: 544,100,1024, 544,-100,1024
-		EnableSplitRanges: true
 		RequiresCondition: ifv-gatling && gatling >= 2
 		MuzzleSequence: muzzle-2
 	Armament@chrono:
@@ -1086,7 +1090,6 @@ fv:
 	Armament@crkt-aa:
 		Weapon: CRChaosRocketAA
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		RequiresCondition: ifv-crkt && !rank-elite
 	Armament@crkt-elite:
 		Weapon: CRChaosRocketE
@@ -1096,7 +1099,6 @@ fv:
 	Armament@crkt-aa-elite:
 		Weapon: CRChaosRocketAAE
 		LocalOffset: 128,-128,1408, 128,128,1408
-		EnableSplitRanges: true
 		RequiresCondition: ifv-crkt && rank-elite
 	WithMuzzleOverlay:
 	GrantConditionOnAttack:
@@ -1218,12 +1220,6 @@ fv:
 		RequiresCondition: ifv-crkt
 	Voiced:
 		VoiceSet: IFVVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: vetifvorbaacdm
 	WithProductionIconOverlay@1:
@@ -1253,13 +1249,24 @@ fv:
 	#	Volume: 0.3
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 		Upgrades: upgrade.boost_gliding_systems
+	ActorStatOverride@AG:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
+		RequiresCondition: ifv-mg || ifv-init || ifv-gren || ifv-mortar || ifv-pyro || ifv-tesla || ifv-chrono || ifv-toxin || ifv-lazarus || ifv-seal || ifv-tanya || ifv-iron || ifv-yuri || ifv-sniper || ifv-virus || ifv-repair || ifv-deso || ifv-boris || ifv-hijack
+	ActorStatOverride@Explosion:
+		Stats: Armor, Sight, Speed, Damage, Spread, None, Cargo
+		RequiresCondition: ifv-demo
+	ActorStatOverride@Unarmed:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
+		RequiresCondition: ifv-dog || ifv-medic
 
 sref:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
@@ -1268,7 +1275,7 @@ sref:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.allies, gatech, ~techlevel.4
-		Description: Fires deadly beams of light.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft
+		Description: actor-sref.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1279,9 +1286,9 @@ sref:
 		Payload: 1200
 		Voice: Move
 	Tooltip:
-		Name: Prism Tank
+		Name: actor-sref.name
 	Tooltip@NoRow:
-		Name: Prism Tank
+		Name: actor-sref.name
 	Selectable:
 		Bounds: 1544, 2509, 0, -482
 	Health:
@@ -1343,12 +1350,6 @@ sref:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: PrismTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1367,11 +1368,14 @@ sref:
 	#	SoundFiles: vpristaa.wav, vpristab.wav, vpristac.wav
 	#	Volume: 0.3
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 mgtk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -1381,7 +1385,7 @@ mgtk:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 110
 		Prerequisites: ~vehicle.allies, gatech, ~techlevel.3
-		Description: Tank that appears as a tree while immobile.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Composite Armor
+		Description: actor-mgtk.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1392,19 +1396,19 @@ mgtk:
 		Payload: 1000
 		Voice: Move
 	Tooltip:
-		Name: Mirage Tank
+		Name: actor-mgtk.name
 		RequiresCondition: !tree && showownername
 	Tooltip@NoRow:
-		Name: Mirage Tank
+		Name: actor-mgtk.name
 		RequiresCondition: !tree && !showownername
 	MirageTooltip@Tree:
-		Name: Mirage Tank
-		GenericName: Tree
+		Name: actor-mgtk.name
+		GenericName: meta-tree.name
 		GenericVisibility: Enemy, Neutral
 		RequiresCondition: tree && showownername
 	MirageTooltip@TreeNoRow:
-		Name: Mirage Tank
-		GenericName: Tree
+		Name: actor-mgtk.name
+		GenericName: meta-tree.name
 		ShowOwnerRow: false
 		GenericVisibility: Enemy, Neutral
 		RequiresCondition: tree && !showownername
@@ -1464,12 +1468,6 @@ mgtk:
 		RequiresCondition: !tree && composite_armor
 	Voiced:
 		VoiceSet: MirageTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1488,12 +1486,15 @@ mgtk:
 	#	SoundFiles: vmirstaa.wav, vmirstab.wav, vmirstac.wav
 	#	Volume: 0.35
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 # Yuri's Revenge Vehicles:
 bfrt:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -1502,7 +1503,7 @@ bfrt:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 120
 		Prerequisites: ~vehicle.allies, gatech, ~techlevel.4
-		Description: Large vehicle with 5 fireports for infantry in to fire.\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Composite Armor
+		Description: actor-bfrt.description
 		BuildDuration: 875
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1513,9 +1514,9 @@ bfrt:
 		Payload: 1750
 		Voice: Move
 	Tooltip:
-		Name: Battle Fortress
+		Name: actor-bfrt.name
 	Tooltip@NoRow:
-		Name: Battle Fortress
+		Name: actor-bfrt.name
 	Selectable:
 		Class: bfrt
 		Bounds: 1737, 3089, 0, -386
@@ -1529,6 +1530,10 @@ bfrt:
 		Locomotor: omnicrusher
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	-Crushable:
+	-Crushable@Cheater:
+	-Crushable@Vengeful:
+	-GrantConditionOnBotOwner@Cheater:
+	-GrantConditionOnBotOwner@Vengeful:
 	RevealsShroud:
 		Range: 6c0
 	# RevealsShroudToIntelligenceOwner:
@@ -1556,7 +1561,6 @@ bfrt:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
-		EjectOnDeath: false
 		LoadingCondition: notmobile
 		PassengerConditions:
 			e1: loaded
@@ -1584,11 +1588,10 @@ bfrt:
 			itrp: loaded
 			spct: loaded
 			ttrp: loaded
-			ttrp.soviet: loaded
 			crkt: loaded-air
 	WithCargoSounds:
-		EnterSound: genter1a.wav
-		ExitSound: gexit1a.wav
+		EnterSounds: genter1a.wav
+		ExitSounds: gexit1a.wav
 	AutoTargetPriority@DEFAULT:
 		RequiresCondition: !stance-attackanything && !assault-move && !loaded-air
 	AutoTargetPriority@ATTACKANYTHING:
@@ -1617,12 +1620,6 @@ bfrt:
 		RequiresCondition: composite_armor
 	Voiced:
 		VoiceSet: BattleFortressVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1644,6 +1641,15 @@ bfrt:
 			yellow: pip-yellow
 			blue: pip-blue
 			red: pip-red
+	GrantConditionOnDamageState@dmg_crit:
+		Condition: dmg_crit
+		ValidDamageStates: Critical
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded && dmg_crit
+		OrderName: Unload
+		OrderChance: 100
+		OrderTrigger: Periodically
+		OrderInterval: 20
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn
@@ -1651,10 +1657,13 @@ bfrt:
 	#	SoundFiles: vbatstaa.wav, vbatstab.wav, vbatstac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 
 robo:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SQUID: ^SquidGrabbable
 	Valued:
@@ -1663,14 +1672,14 @@ robo:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: Robot Tank
+		Name: actor-robo.name
 	Tooltip@NoRow:
-		Name: Robot Tank
+		Name: actor-robo.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany #, Ship.Shared, Ship.Allies
 		Prerequisites: ~vehicle.allies, ~techlevel.2
 		BuildPaletteOrder: 40
-		Description: Remote controlled vehicle.\nRequires an Allied War Factory to operate.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
+		Description: actor-robo.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1739,7 +1748,7 @@ robo:
 		RequiresCondition: !powered
 	KillsSelf@LowPowerOnWater:
 		DamageTypes: NonTemporal
-		RequiresCondition: (!powered || emp || magnefreeze) && in_water
+		RequiresCondition: (!powered || emp || magnefreeze) && in_water && !on_dock
 	PeriodicExplosion@disabledsparks:
 		RequiresCondition: !powered
 		Weapon: DisabledSparkSpawner
@@ -1756,6 +1765,8 @@ robo:
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water, Beach
 		Condition: in_water
+	ExternalCondition@on_dock:
+		Condition: on_dock
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha
@@ -1769,12 +1780,6 @@ robo:
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	Voiced:
 		VoiceSet: RobotTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1795,10 +1800,13 @@ robo:
 	#	SoundFiles: vrobstaa.wav, vrobstab.wav, vrobstac.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 # Custom Allied Vehicles:
 aambu:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@COMPOSITE: ^AffectedByCompositeArmor
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -1807,7 +1815,7 @@ aambu:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 70
 		Prerequisites: ~vehicle.allies, prerequisite.ambulance, ~techlevel.2
-		Description: Heavy armored vehicle capable of healing nearby infantry.\nCan carry up to 5 infantry and heal them faster inside.\n\n  Unarmed\n\nUpgradeable with:\n- Composite Armor
+		Description: actor-aambu.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
@@ -1816,9 +1824,9 @@ aambu:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: Combat Ambulance
+		Name: actor-aambu.name
 	Tooltip@NoRow:
-		Name: Combat Ambulance
+		Name: actor-aambu.name
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	Health:
@@ -1858,21 +1866,14 @@ aambu:
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
 		UnloadVoice: Move
-		EjectOnDeath: false
 		LoadingCondition: notmobile
 	WithCargoSounds:
-		EnterSound: genter1a.wav
-		ExitSound: gexit1a.wav
+		EnterSounds: genter1a.wav
+		ExitSounds: gexit1a.wav
 	Voiced:
 		VoiceSet: AmbulanceVoice
 	Guard:
 		Voice: Move
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	WithCargoPipsDecoration:
 		Margin: 4, 3
@@ -1891,11 +1892,14 @@ aambu:
 	#	SoundFiles: vifvstaa.wav, vifvstab.wav, vifvstac.wav
 	#	Volume: 0.3
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 
 hwtz:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -1907,14 +1911,14 @@ hwtz:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Howitzer
+		Name: actor-hwtz.name
 	Tooltip@NoRow:
-		Name: Howitzer
+		Name: actor-hwtz.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 80
 		Prerequisites: ~vehicle.allies, gaairc, ~techlevel.3
-		Description: Long range vehicle.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nUpgradeable with:\n- EMP Munitions (Korea)
+		Description: actor-hwtz.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1977,12 +1981,6 @@ hwtz:
 		RequiresCondition: empammo
 	Voiced:
 		VoiceSet: HowitzerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -2001,21 +1999,25 @@ hwtz:
 	#	SoundFiles: vtadstaa.wav, vtadstab.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ctnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
+	Inherits@PORTCHRONO: ^WithPortableChrono
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 990
 		Prerequisites: ~vehicle.allies, gatech, ~caslab, ~techlevel.4
-		Description: Armed with anti-ground missiles.\nTeleports to areas within range.\n\n  Strong vs Vehicles, Buildings\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)
+		Description: actor-ctnk.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -2026,9 +2028,9 @@ ctnk:
 		Payload: 2200
 		Voice: Move
 	Tooltip:
-		Name: Chrono Dragon
+		Name: actor-ctnk.name
 	Tooltip@NoRow:
-		Name: Chrono Dragon
+		Name: actor-ctnk.name
 	Health:
 		HP: 20000
 	Armor:
@@ -2089,27 +2091,6 @@ ctnk:
 		FacingTolerance: 2
 		MustFaceTarget: true
 		PauseOnCondition: chronodisable || emp || nogunner
-	PortableChronoRA2:
-		ChronoshiftSound: ichrmova.wav
-		DeployCursor: chronosphere
-		DeployBlockedCursor: chronosphere
-		Voice: Move
-		ChargeDelay: 120
-		HasDistanceLimit: false
-		TargetCursor: chronosphere
-		TeleportCondition: chronoed
-		ConditionDuration: 120
-		PauseOnCondition: affectedbytemporal
-	Contrail@Teleport: ##HACK: add a trace for teleport. 
-		Offset: 0, 0, 700
-		StartColor: 00F0F8AA
-		StartColorAlpha: 176
-		StartColorUsePlayerColor: false
-		ZOffset: -1024
-		TrailWidth: 36
-		TrailLength: 2
-	GrantCondition@ChronoDisable:
-		RequiresCondition: affectedbytemporal || chronoed
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -2129,12 +2110,6 @@ ctnk:
 	HitShape:
 	Voiced:
 		VoiceSet: ChronoTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn
@@ -2142,11 +2117,13 @@ ctnk:
 	#	SoundFiles: vgristaa.wav, vgristab.wav, vgristac.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 expn:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Shared, Ship.Allies
+		Queue: Vehicle.Unused, Ship.Civilian # Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Shared, Ship.Allies
 		Prerequisites: ~vehicleorship.allies, ~techlevel.1, ~!ai.ev
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
@@ -2163,9 +2140,9 @@ mrcv:
 	Buildable:
 		Queue: Vehicle.Unused
 	Tooltip:
-		Name: Mobile Robot Control Vehicle
+		Name: actor-mrcv.name
 	Tooltip@NoRow:
-		Name: Mobile Robot Control Vehicle
+		Name: actor-mrcv.name
 	Health:
 		HP: 40000
 	Armor:
@@ -2183,3 +2160,5 @@ mrcv:
 	RenderVoxels:
 		Image: mrj
 		Scale: 16
+	ActorStatValues:
+		Stats: Armor, Sight, Speed

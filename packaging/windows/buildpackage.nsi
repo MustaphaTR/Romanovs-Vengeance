@@ -1,4 +1,4 @@
-; Copyright 2007-2021 OpenRA developers (see AUTHORS)
+; Copyright (c) The OpenRA Developers and Contributors
 ; This file is part of OpenRA.
 ;
 ;  OpenRA is free software: you can redistribute it and/or modify
@@ -111,9 +111,6 @@ Section "Game" GAME
 			"$OUTDIR\${PACKAGING_WINDOWS_LAUNCHER_NAME}.exe" "" "" "" ""
 	!insertmacro MUI_STARTMENU_WRITE_END
 
-	SetOutPath "$INSTDIR\lua"
-	File "${SRCDIR}\lua\*.lua"
-
 	SetOutPath "$INSTDIR\glsl"
 	File "${SRCDIR}\glsl\*.frag"
 	File "${SRCDIR}\glsl\*.vert"
@@ -162,7 +159,6 @@ Function ${UN}Clean
 	RMDir /r $INSTDIR\mods
 	RMDir /r $INSTDIR\maps
 	RMDir /r $INSTDIR\glsl
-	RMDir /r $INSTDIR\lua
 	Delete $INSTDIR\*.exe
 	Delete $INSTDIR\*.dll
 	Delete $INSTDIR\*.ico
@@ -174,13 +170,18 @@ Function ${UN}Clean
 	Delete $INSTDIR\COPYING
 	Delete "$INSTDIR\global mix database.dat"
 	Delete $INSTDIR\IP2LOCATION-LITE-DB1.IPV6.BIN.ZIP
+
 	RMDir /r $INSTDIR\Support
+
+	!ifndef USE_PROGRAMFILES32
+		SetRegView 64
+	!endif
 
 	DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PACKAGING_WINDOWS_REGISTRY_KEY}"
 	DeleteRegKey HKLM "Software\Classes\openra-${MOD_ID}-${TAG}"
 
 	!ifdef USE_DISCORDID
-		DeleteRegKey HKLM "Software\Classes\discord-${DISCORD_APP_ID}"
+		DeleteRegKey HKLM "Software\Classes\discord-${USE_DISCORDID}"
 	!endif
 
 	Delete $INSTDIR\uninstaller.exe

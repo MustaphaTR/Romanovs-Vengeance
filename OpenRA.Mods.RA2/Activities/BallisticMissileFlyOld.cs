@@ -21,9 +21,9 @@ namespace OpenRA.Mods.RA2.Activities
 		readonly BallisticMissileOld bm;
 		readonly WPos initPos;
 		readonly WPos targetPos;
-		int length;
+		readonly int length;
+		readonly WAngle facing;
 		int ticks;
-		WAngle facing;
 
 		public BallisticMissileFlyOld(Actor self, Target t, BallisticMissileOld bm)
 		{

@@ -3,7 +3,7 @@
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -15,9 +15,9 @@
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Light Tank
+		Name: actor-1tnk.name
 	Tooltip@NoRow:
-		Name: Light Tank
+		Name: actor-1tnk.name
 	Health:
 		HP: 25000
 	Armor:
@@ -40,13 +40,15 @@
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 2tnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -58,9 +60,9 @@
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Medium Tank
+		Name: actor-2tnk.name
 	Tooltip@NoRow:
-		Name: Medium Tank
+		Name: actor-2tnk.name
 	Health:
 		HP: 35000
 	Armor:
@@ -83,13 +85,15 @@
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 3tnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -101,9 +105,9 @@
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Heavy Tank
+		Name: actor-3tnk.name
 	Tooltip@NoRow:
-		Name: Heavy Tank
+		Name: actor-3tnk.name
 	Health:
 		HP: 40000
 	Armor:
@@ -146,13 +150,15 @@
 		Scale: 13
 	Voiced:
 		VoiceSet: SovietVehicleVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 4tnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -164,9 +170,9 @@
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Mammoth Tank
+		Name: actor-4tnk.name
 	Tooltip@NoRow:
-		Name: Mammoth Tank
+		Name: actor-4tnk.name
 	Health:
 		HP: 60000
 	Armor:
@@ -193,13 +199,13 @@
 	Voiced:
 		VoiceSet: ApocalypseVoice
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 arty:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -211,9 +217,9 @@ arty:
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Artillery
+		Name: actor-arty.name
 	Tooltip@NoRow:
-		Name: Artillery
+		Name: actor-arty.name
 	Health:
 		HP: 20000
 	Armor:
@@ -237,12 +243,14 @@ arty:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ftnktd:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -254,9 +262,9 @@ ftnktd:
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Flame Tank
+		Name: actor-ftnktd.name
 	Tooltip@NoRow:
-		Name: Flame Tank
+		Name: actor-ftnktd.name
 	Health:
 		HP: 40000
 	Armor:
@@ -278,13 +286,15 @@ ftnktd:
 		Scale: 16
 	Voiced:
 		VoiceSet: FlameTankVoice
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 hmve:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -296,9 +306,9 @@ hmve:
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Humvee
+		Name: actor-hmve.name
 	Tooltip@NoRow:
-		Name: Humvee
+		Name: actor-hmve.name
 	Health:
 		HP: 15000
 	Armor:
@@ -317,13 +327,15 @@ hmve:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 m113:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -335,9 +347,9 @@ m113:
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: APC
+		Name: actor-m113.name
 	Tooltip@NoRow:
-		Name: APC
+		Name: actor-m113.name
 	Health:
 		HP: 35000
 	Armor:
@@ -364,8 +376,8 @@ m113:
 		UnloadVoice: Move
 		LoadingCondition: notmobile
 	WithCargoSounds:
-		EnterSound: genter1a.wav
-		ExitSound: gexit1a.wav
+		EnterSounds: genter1a.wav
+		ExitSounds: gexit1a.wav
 	WithCargoPipsDecoration:
 		Margin: 4, 3
 		Palette: ra
@@ -380,12 +392,14 @@ m113:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
 
 mlrs:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -397,9 +411,9 @@ mlrs:
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Rocket Launcher
+		Name: actor-mlrs.name
 	Tooltip@NoRow:
-		Name: Rocket Launcher
+		Name: actor-mlrs.name
 	Health:
 		HP: 15000
 	Armor:
@@ -421,6 +435,8 @@ mlrs:
 	RenderVoxels:
 		NormalsPalette: ts-normals
 		Scale: 16
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 mnly:
 	Inherits: ^Vehicle
@@ -435,9 +451,9 @@ mnly:
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Minelayer
+		Name: actor-mnly.name
 	Tooltip@NoRow:
-		Name: Minelayer
+		Name: actor-mnly.name
 	Health:
 		HP: 40000
 	Armor:
@@ -465,6 +481,8 @@ mnly:
 		Palette: ra
 		Position: BottomLeft
 		RequiresSelection: true
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 mrj:
 	Inherits: ^Vehicle
@@ -479,9 +497,9 @@ mrj:
 	Buildable:
 		Queue: Vehicle.Civilian
 	Tooltip:
-		Name: Mobile Radar Jammer
+		Name: actor-mrj.name
 	Tooltip@NoRow:
-		Name: Mobile Radar Jammer
+		Name: actor-mrj.name
 	Health:
 		HP: 40000
 	Armor:
@@ -510,3 +528,5 @@ mrj:
 	RenderSprites:
 	RenderVoxels:
 		Scale: 16
+	ActorStatValues:
+		Stats: Armor, Sight, Speed

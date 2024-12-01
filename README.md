@@ -6,6 +6,6 @@ Please note that mod is still under developement, even the playtest versions are
 
 Installing the mod is done the same way as another [OpenRAModSDK](http://www.github.com/OpenRA/OpenRAModSDK) mod.
 
-You can join our Discord server [here](https://discord.gg/T2PtX7N).
+You can join our Discord server [here](https://discord.gg/SrvArjQ).
 
 You can also follow the developement on [our ModDB Page](https://www.moddb.com/mods/romanovs-vengeance).

@@ -1,8 +1,9 @@
 hydf:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	# Inherits@C4: ^AcceptsSEALC4
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@CRYO: ^AffectedByCryoWarheads
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -12,7 +13,7 @@ hydf:
 		Queue: Ship.Shared, Ship.Baku
 		BuildPaletteOrder: 30
 		Prerequisites: ~ship.baku, ~techlevel.1
-		Description: Anti-Air and Anti-Infantry naval unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Naval units
+		Description: actor-hydf.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -20,9 +21,9 @@ hydf:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Hydrofoil
+		Name: actor-hydf.name
 	Tooltip@NoRow:
-		Name: Hydrofoil
+		Name: actor-hydf.name
 	Selectable:
 		Bounds: 1206, 1448, 0, -289
 	Health:
@@ -85,13 +86,13 @@ hydf:
 		PauseOnCondition: reload-air
 		RequiresCondition: rank-elite && cryowarheads
 	Armament@primary-cryo-aa:
-		Weapon: HydroMissileAA
+		Weapon: HydroMissileAACryo
 		LocalOffset: 0,-128,512, 0,128,512
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
 		RequiresCondition: !rank-elite && cryowarheads
 	Armament@elite-cryo-aa:
-		Weapon: HydroMissileAAE
+		Weapon: HydroMissileAACryoE
 		LocalOffset: 0,-128,512, 0,128,512
 		ReloadingCondition: reload-air
 		PauseOnCondition: reload-ground
@@ -103,12 +104,6 @@ hydf:
 		NormalsPalette: ts-normals
 	Voiced:
 		VoiceSet: SeaScorpionVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: baacdm
 	WithProductionIconOverlay@1:
@@ -123,4 +118,4 @@ hydf:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange

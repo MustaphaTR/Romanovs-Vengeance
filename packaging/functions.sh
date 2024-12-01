@@ -10,7 +10,7 @@
 # Arguments:
 #   SRC_PATH: Path to the root SDK directory
 #   DEST_PATH: Path to the root of the install destination (will be created if necessary)
-#   TARGETPLATFORM: Platform type (win-x86, win-x64, osx-x64, linux-x64, unix-generic)
+#   TARGETPLATFORM: Platform type (win-x86, win-x64, osx-x64, osx-arm64, linux-x64, linux-arm64, unix-generic)
 #   RUNTIME: Runtime type (net6, mono)
 #   ENGINE_PATH: Path to the engine root directory
 install_mod_assemblies() {
@@ -35,19 +35,19 @@ install_mod_assemblies() {
 			install -m644 "${LIB}" "${DEST_PATH}"
 		done
 
-		if [ "${TARGETPLATFORM}" = "linux-x64" ]; then
+		if [ "${TARGETPLATFORM}" = "linux-x64" ] || [ "${TARGETPLATFORM}" = "linux-arm64" ]; then
 			for LIB in "${ENGINE_PATH}/bin/"*.so; do
 				install -m755 "${LIB}" "${DEST_PATH}"
 			done
 		fi
 
-		if [ "${TARGETPLATFORM}" = "osx-x64" ]; then
+		if [ "${TARGETPLATFORM}" = "osx-x64" ] || [ "${TARGETPLATFORM}" = "osx-arm64" ]; then
 			for LIB in "${ENGINE_PATH}/bin/"*.dylib; do
 				install -m755 "${LIB}" "${DEST_PATH}"
 			done
 		fi
 	else
-		find . -maxdepth 1 -name '*.sln' -exec dotnet publish -c Release -p:TargetPlatform="${TARGETPLATFORM}" -r "${TARGETPLATFORM}" -o "${DEST_PATH}" --self-contained true \;
+		find . -maxdepth 1 -name '*.sln' -exec dotnet publish -c Release -p:TargetPlatform="${TARGETPLATFORM}" -r "${TARGETPLATFORM}" -p:PublishDir="${DEST_PATH}" --self-contained true \;
 		cd "${ORIG_PWD}" || exit 1
 	fi
 }

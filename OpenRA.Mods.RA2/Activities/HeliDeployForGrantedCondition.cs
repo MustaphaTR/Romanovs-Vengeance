@@ -40,7 +40,7 @@ namespace OpenRA.Mods.RA2.Activities
 			if (!aircraft.CanLand(w.Map.CellContaining(self.CenterPosition)))
 			{
 				var cells = w.Map.AllCells.Where(c => aircraft.CanLand(c)).Select(c => w.Map.CenterOfCell(c));
-				var cell = w.Map.CellContaining(WorldUtils.PositionClosestTo(cells, self.CenterPosition));
+				var cell = w.Map.CellContaining(cells.ClosestToIgnoringPath(self.CenterPosition));
 
 				QueueChild(new Fly(self, Target.FromCell(w, cell)));
 			}

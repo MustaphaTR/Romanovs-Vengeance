@@ -1,12 +1,12 @@
 Player:
 	ModularBot@easyai:
-		Name: Easy AI
+		Name: bot-easy.name
 		Type: easy
 	ModularBot@cheater:
-		Name: Cheater AI
+		Name: bot-cheater.name
 		Type: cheater
 	ModularBot@vengefulai:
-		Name: Vengeful AI
+		Name: bot-vengeful.name
 		Type: vengeful
 	GrantConditionOnBotOwner@easy:
 		Condition: enable-easy-ai
@@ -20,6 +20,9 @@ Player:
 	GrantConditionOnBotOwner@generic:
 		Condition: enable-generic-ai
 		Bots: easy, cheater, vengeful
+	ProvidesPrerequisite@sprayer: ## AI won't build kamaz until sprayer is ready 
+		Prerequisite: sprayer
+		RequiresCondition: !enable-generic-ai
 	SupportPowerBotASModule@generic:
 		RequiresCondition: enable-generic-ai
 		Decisions:
@@ -35,7 +38,7 @@ Player:
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -119,13 +122,13 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Vehicle
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Water, Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -134,13 +137,13 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Vehicle
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Water, Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -210,13 +213,13 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Vehicle, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Water, Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -235,18 +238,33 @@ Player:
 					Attractiveness: -10
 					TargetMetric: Value
 					CheckRadius: 7c0
+			carpetbomb:
+				OrderName: BritishCarpetBombing
+				MinimumAttractiveness: 3000
+				Consideration@1:
+					Against: Enemy
+					Types: Structure
+					Attractiveness: 1
+					TargetMetric: Value
+					CheckRadius: 5c0
+				Consideration@2:
+					Against: Ally
+					Types: Air, Ground, Water
+					Attractiveness: -10
+					TargetMetric: Value
+					CheckRadius: 7c0
 			tesladrop:
 				OrderName: RussianTeslaDrop
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Water, Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -315,13 +333,13 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Water, Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -339,6 +357,50 @@ Player:
 					Types: Air, Ground, Water
 					Attractiveness: -10
 					TargetMetric: Value
+					CheckRadius: 7c0
+			ironcurtain:
+				OrderName: IronCurtain
+				MinimumAttractiveness: 13
+				Against: Ally
+				Consideration@1:
+					Against: Ally
+					Types: Vehicle
+					Attractiveness: 2
+					TargetMetric: None
+					CheckRadius: 4c0
+				Consideration@2:
+					Against: Ally
+					Types: Miner
+					Attractiveness: -2
+					TargetMetric: None
+					CheckRadius: 4c0
+				Consideration@3:
+					Against: Enemy
+					Types: Air, Ground, Water
+					Attractiveness: 1
+					TargetMetric: None
+					CheckRadius: 7c0
+			invisibility:
+				OrderName: Invisibility
+				MinimumAttractiveness: 13
+				Against: Ally
+				Consideration@1:
+					Against: Ally
+					Types: Vehicle
+					Attractiveness: 2
+					TargetMetric: None
+					CheckRadius: 4c0
+				Consideration@2:
+					Against: Ally
+					Types: Miner
+					Attractiveness: -2
+					TargetMetric: None
+					CheckRadius: 4c0
+				Consideration@3:
+					Against: Enemy
+					Types: Air, Ground, Water
+					Attractiveness: 1
+					TargetMetric: None
 					CheckRadius: 7c0
 			nukepower:
 				OrderName: NukePowerInfoOrder
@@ -399,13 +461,13 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Water, Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -555,13 +617,13 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Water, Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -570,13 +632,13 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Water, Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -585,13 +647,13 @@ Player:
 				MinimumAttractiveness: 5
 				Consideration@1:
 					Against: Enemy
-					Types: Structure
+					Types: Structure, Miner, Infantry
 					Attractiveness: 1
 					TargetMetric: None
 					CheckRadius: 8c0
 				Consideration@2:
 					Against: Enemy
-					Types: Water
+					Types: Water, Defense
 					Attractiveness: -5
 					TargetMetric: None
 					CheckRadius: 8c0
@@ -639,7 +701,7 @@ Player:
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
@@ -649,11 +711,6 @@ Player:
 			narefn: 2
 			yarefn: 2
 			yarfn2: 2
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -688,11 +745,10 @@ Player:
 			narefn: 100
 			yarefn: 100
 			yarfn2: 100
-			gapowr: 15
-			napowr: 15
-			nanrct: 20
-			yapowr: 15
-			yapowr-full: 15
+			gapowr: 1
+			napowr: 1
+			nanrct: 1
+			yapowr: 1
 			gapile: 10
 			nahand: 10
 			yabrck: 10
@@ -728,8 +784,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -751,17 +806,13 @@ Player:
 		ExcessPowerIncreaseThreshold: 3
 		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
 		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
 		BuildingLimits:
-			gapowr: 16
-			napowr: 8
 			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -792,11 +843,10 @@ Player:
 			gagap: 1
 			yasgen: 1
 		BuildingFractions:
-			gapowr: 70
-			napowr: 50
-			nanrct: 20
-			yapowr: 35
-			yapowr-full: 70
+			gapowr: 1
+			napowr: 1
+			nanrct: 1
+			yapowr: 1
 			gapile: 40
 			nahand: 40
 			yabrck: 40
@@ -832,8 +882,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -849,16 +898,16 @@ Player:
 		RequiresCondition: enable-cheater-ai && !megawealth
 		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
 		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
-		MinimumExcessPower: 60
-		MaximumExcessPower: 160
-		ExcessPowerIncrement: 40
-		ExcessPowerIncreaseThreshold: 3
+		MinimumExcessPower: 70
+		MaximumExcessPower: 770
+		ExcessPowerIncrement: 50
+		ExcessPowerIncreaseThreshold: 25
 		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, yapsyt-tr, yaeast02-tr
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
@@ -868,11 +917,6 @@ Player:
 			narefn: 2
 			yarefn: 2
 			yarfn2: 2
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -902,19 +946,21 @@ Player:
 			baprop: 1
 			gagap: 1
 			yasgen: 1
+			gacsph: 2
 			gaweat: 2
+			nairon: 2
 			namisl: 2
+			yagntc: 2
 			yappet: 2
 		BuildingFractions:
 			garefn: 100
 			narefn: 100
 			yarefn: 100
 			yarfn2: 100
-			gapowr: 15
-			napowr: 15
-			nanrct: 20
-			yapowr: 15
-			yapowr-full: 15
+			gapowr: 1
+			napowr: 1
+			nanrct: 1
+			yapowr: 1
 			gapile: 10
 			nahand: 10
 			yabrck: 10
@@ -950,8 +996,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -963,8 +1008,11 @@ Player:
 			naprop: 1
 			baprop: 1
 			yasgen: 1
+			gacsph: 2
 			gaweat: 2
+			nairon: 2
 			namisl: 2
+			yagntc: 2
 			yappet: 2
 			## AI Tower Rush
 			nalasr-tr: 8
@@ -977,32 +1025,25 @@ Player:
 			gagun-tr: 8
 			gamgun-tr: 8
 			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
 			yapsyt-tr: 2
 			yaeast02-tr: 2
 	BaseBuilderBotModule@cheater-megawealth:
 		RequiresCondition: enable-cheater-ai && megawealth
 		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
 		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
-		MinimumExcessPower: 60
-		MaximumExcessPower: 160
-		ExcessPowerIncrement: 40
-		ExcessPowerIncreaseThreshold: 3
+		MinimumExcessPower: 70
+		MaximumExcessPower: 770
+		ExcessPowerIncrement: 50
+		ExcessPowerIncreaseThreshold: 25
 		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, yapsyt-tr, yaeast02-tr
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
 		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
 		BuildingLimits:
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -1032,15 +1073,17 @@ Player:
 			baprop: 1
 			gagap: 1
 			yasgen: 1
+			gacsph: 2
 			gaweat: 2
+			nairon: 2
 			namisl: 2
+			yagntc: 2
 			yappet: 2
 		BuildingFractions:
-			gapowr: 70
-			napowr: 50
-			nanrct: 20
-			yapowr: 35
-			yapowr-full: 70
+			gapowr: 1
+			napowr: 1
+			nanrct: 1
+			yapowr: 1
 			gapile: 40
 			nahand: 40
 			yabrck: 40
@@ -1076,8 +1119,7 @@ Player:
 			nasam: 8
 			naflak: 8
 			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
+			natbnk: 6
 			atesla: 8
 			bamort: 8
 			tesla: 8
@@ -1089,8 +1131,11 @@ Player:
 			naprop: 1
 			baprop: 1
 			yasgen: 1
+			gacsph: 2
 			gaweat: 2
+			nairon: 2
 			namisl: 2
+			yagntc: 2
 			yappet: 2
 			## AI Tower Rush
 			nalasr-tr: 8
@@ -1103,24 +1148,22 @@ Player:
 			gagun-tr: 8
 			gamgun-tr: 8
 			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
 			yapsyt-tr: 2
 			yaeast02-tr: 2
 	BaseBuilderBotModule@vengeful:
 		RequiresCondition: enable-vengeful-ai && !megawealth
 		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
 		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
-		MinimumExcessPower: 60
-		MaximumExcessPower: 160
-		ExcessPowerIncrement: 40
-		ExcessPowerIncreaseThreshold: 3
+		MinimumExcessPower: 100
+		MaximumExcessPower: 800
+		ExcessPowerIncrement: 50
+		ExcessPowerIncreaseThreshold: 25
 		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
 		RefineryTypes: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarefn, yarfn2, yarfnb, yarfnc, yarfnd
 		SiloTypes: gasilo, nasilo, yasilo
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, yapsyt-tr, yaeast02-tr
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
@@ -1130,11 +1173,6 @@ Player:
 			narefn: 2
 			yarefn: 2
 			yarfn2: 2
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -1164,19 +1202,21 @@ Player:
 			baprop: 1
 			gagap: 1
 			yasgen: 1
+			gacsph: 2
 			gaweat: 2
+			nairon: 2
 			namisl: 2
+			yagntc: 2
 			yappet: 2
 		BuildingFractions:
 			garefn: 100
 			narefn: 100
 			yarefn: 100
 			yarfn2: 100
-			gapowr: 15
-			napowr: 15
-			nanrct: 20
-			yapowr: 15
-			yapowr-full: 15
+			gapowr: 1
+			napowr: 1
+			nanrct: 1
+			yapowr: 1
 			gapile: 10
 			nahand: 10
 			yabrck: 10
@@ -1209,15 +1249,14 @@ Player:
 			gapill: 20
 			nalasr: 20
 			yaggun: 28
-			nasam: 8
-			naflak: 8
-			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
-			atesla: 8
-			bamort: 8
-			tesla: 8
-			yapsyt: 8
+			nasam: 16
+			naflak: 16
+			gagun: 16
+			natbnk: 6
+			atesla: 16
+			bamort: 16
+			tesla: 16
+			yapsyt: 16
 			gtgcan: 2
 			yaeast02: 2
 			gamgun: 4
@@ -1225,46 +1264,42 @@ Player:
 			naprop: 1
 			baprop: 1
 			yasgen: 1
+			gacsph: 2
 			gaweat: 2
+			nairon: 2
 			namisl: 2
+			yagntc: 2
 			yappet: 2
 			## AI Tower Rush
-			nalasr-tr: 8
-			tesla-tr: 8
-			naflak-tr: 8
-			bamort-tr: 8
-			gapill-tr: 8
-			nasam-tr: 2
-			atesla-tr: 8
-			gagun-tr: 8
-			gamgun-tr: 8
-			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
-			yapsyt-tr: 2
-			yaeast02-tr: 2
+			nalasr-tr: 16
+			tesla-tr: 16
+			naflak-tr: 16
+			bamort-tr: 16
+			gapill-tr: 16
+			nasam-tr: 16
+			atesla-tr: 16
+			gagun-tr: 16
+			gamgun-tr: 16
+			yaggun-tr: 16
+			yapsyt-tr: 16
+			yaeast02-tr: 16
 	BaseBuilderBotModule@vengeful-megawealth:
 		RequiresCondition: enable-vengeful-ai && megawealth
 		BuildingQueues: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
 		DefenseQueues: Support.Shared, Support.Allies, Support.France, Support.Soviets, Support.Yuri, Support.Antarctica, Support.Baku
-		MinimumExcessPower: 60
-		MaximumExcessPower: 160
-		ExcessPowerIncrement: 40
-		ExcessPowerIncreaseThreshold: 3
+		MinimumExcessPower: 100
+		MaximumExcessPower: 800
+		ExcessPowerIncrement: 50
+		ExcessPowerIncreaseThreshold: 25
 		MaxBaseRadius: 25
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr, yapowr-full
+		PowerTypes: gapowr, napowr, napowb, nanrct, nanrcb, yapowr
 		BarracksTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb
-		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk-ltnk, natbnk-ytnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, natbnk-ltnk-tr, natbnk-ytnk-tr, yapsyt-tr, yaeast02-tr
+		DefenseTypes: gapill, nalasr, yaggun, nasam, naflak, gagun, natbnk, atesla, bamort, tesla, yapsyt, gtgcan, yaeast02, gamgun, nalasr-tr, tesla-tr, naflak-tr, bamort-tr, gapill-tr, nasam-tr, atesla-tr, gagun-tr, gamgun-tr, yaggun-tr, yapsyt-tr, yaeast02-tr
 		VehiclesFactoryTypes: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead
 		NavalProductionTypes: gayard, nayard, yayard
 		ProductionTypes: gapile, gapilb, nahand, yabrck, yabrcb, babarr, babarb, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gaairc, naheli, yadisk, baairf, baairb, gayard, nayard, yayard
 		BuildingLimits:
-			gapowr: 16
-			napowr: 8
-			nanrct: 1
-			yapowr: 8
-			yapowr-full: 12
 			gapile: 2
 			nahand: 2
 			yabrck: 2
@@ -1294,15 +1329,17 @@ Player:
 			baprop: 1
 			gagap: 1
 			yasgen: 1
+			gacsph: 2
 			gaweat: 2
+			nairon: 2
 			namisl: 2
+			yagntc: 2
 			yappet: 2
 		BuildingFractions:
-			gapowr: 70
-			napowr: 50
-			nanrct: 20
-			yapowr: 35
-			yapowr-full: 70
+			gapowr: 1
+			napowr: 1
+			nanrct: 1
+			yapowr: 1
 			gapile: 40
 			nahand: 40
 			yabrck: 40
@@ -1335,15 +1372,14 @@ Player:
 			gapill: 20
 			nalasr: 20
 			yaggun: 20
-			nasam: 8
-			naflak: 8
-			gagun: 8
-			natbnk-ltnk: 8
-			natbnk-ytnk: 8
-			atesla: 8
-			bamort: 8
-			tesla: 8
-			yapsyt: 8
+			nasam: 16
+			naflak: 16
+			gagun: 16
+			natbnk: 6
+			atesla: 16
+			bamort: 16
+			tesla: 16
+			yapsyt: 16
 			gtgcan: 2
 			yaeast02: 2
 			gamgun: 4
@@ -1351,24 +1387,25 @@ Player:
 			naprop: 1
 			baprop: 1
 			yasgen: 1
+			gacsph: 2
 			gaweat: 2
+			nairon: 2
 			namisl: 2
+			yagntc: 2
 			yappet: 2
 			## AI Tower Rush
-			nalasr-tr: 8
-			tesla-tr: 8
-			naflak-tr: 8
-			bamort-tr: 8
-			gapill-tr: 8
-			nasam-tr: 2
-			atesla-tr: 8
-			gagun-tr: 8
-			gamgun-tr: 8
-			yaggun-tr: 8
-			natbnk-ltnk-tr: 8
-			natbnk-ytnk-tr: 8
-			yapsyt-tr: 2
-			yaeast02-tr: 2
+			nalasr-tr: 16
+			tesla-tr: 16
+			naflak-tr: 16
+			bamort-tr: 16
+			gapill-tr: 16
+			nasam-tr: 16
+			atesla-tr: 16
+			gagun-tr: 16
+			gamgun-tr: 16
+			yaggun-tr: 16
+			yapsyt-tr: 16
+			yaeast02-tr: 16
 	# PlugSpawnerBotModule@generic:
 	#	RequiresCondition: enable-generic-ai && powerplug
 	#	Plug: gapowrup
@@ -1390,7 +1427,7 @@ Player:
 		RequiresCondition: enable-generic-ai
 	BuildingRepairBotModule@generic:
 		RequiresCondition: enable-generic-ai
-	AutoDeployManager@generic:
+	ExternalBotOrdersManager@generic:
 		RequiresCondition: enable-generic-ai
 	SquadManagerBotModule@generic:
 		RequiresCondition: enable-generic-ai && !no_bases
@@ -1399,19 +1436,18 @@ Player:
 		ProtectUnitScanRadius: 25
 		DangerScanRadius: 18
 		AttackForceInterval: 59
-		AssignRolesInterval: 73
+		# AssignRolesInterval: 73
 		IdleScanRadius: 10
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, dog, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy, ivan, terror, cleg, civan, ccomand, shad, hind-ivans, hind-terrors, hind-dtruck
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable, badgr
-		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, yapowr-full, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, baacdm, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, natbnk-ltnk, natbnk-ltnk-tr, natbnk-ytnk, natbnk-ytnk-tr, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
+		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, txdx, disk, magnedisk, bpln.buildable, badgr
+		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, baacdm, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
 		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		SuggestedNavyLeaderLocomotor: naval
-		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
-		IgnoredEnemyTargetTypes: Air
+		GuerrillaTypes: robo, mtnk, fv, sref, mgtk, hwtz, dron, htk, tric, ltnk, ytnk, caos, yhtnk, kite, havoc, disk, txdx, magnedisk
 	SquadManagerBotModule@no_bases:
 		RequiresCondition: enable-generic-ai && no_bases
 		SquadSize: 10
@@ -1419,41 +1455,40 @@ Player:
 		ProtectUnitScanRadius: 25
 		DangerScanRadius: 18
 		AttackForceInterval: 59
-		AssignRolesInterval: 73
+		# AssignRolesInterval: 73
 		IdleScanRadius: 10
 		AttackScanRadius: 11
 		ProtectionScanRadius: 20
-		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide
+		ExcludeFromSquadsTypes: cmin, harv, gmin, slav, bpln, amcv, smcv, pcv, gadock, mine, engineer, mengineer, pres.regicide, rmnv.regicide, yuripr.regicide, myak.regicide, spy, ivan, terror, cleg, civan, ccomand, shad, hind-ivans, hind-terrors, hind-dtruck, ivan, terror, dtruck
 		NavalUnitsTypes: dest, adest, aegis, dlph, carrier, sub, hyd, sqd, dred, yhvr, piranha, gatsub, bsub, floater, hydf
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		AirUnitsTypes: orca, shad, shad-squad-1, shad-squad-2, shad-squad-3, shad-squad-4, beag, fortress, shad, hind, hind-apoc, hind-dtruck, hind-ftnk, hind-htk-squad-1, hind-htk-squad-2, hind-htk-squad-3, hind-htnk, hind-ttnk, havoc, kite, zep, txdx, txdx-squad-1, txdx-squad-2, txdx-squad-3, disk, magnedisk, bpln.buildable, badgr
-		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, yapowr-full, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, baacdm, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, natbnk-ltnk, natbnk-ltnk-tr, natbnk-ytnk, natbnk-ytnk-tr, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
+		AirUnitsTypes: orca, beag, shad, hind, txdx, fortress, havoc, kite, zep, disk, magnedisk, bpln.buildable, badgr
+		ProtectionTypes: cmin, harv, smin, yarefn, slav, gmin, amcv, smcv, pcv, gacnst, nacnst, yacnst, gapowr, napowr, napowb, yapowr, gapile, gapilb, nahand, yabrck, yabrcb, babarr, garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd, gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gadept, nadept, nadepb, yadept, yadepb, yagrnd, garobo, gaairc, gaairb, gaapad, naradr, naheli, yadome, yadisk, basops, baairf, gatech, gatecb, natech, yatech, yatecb, gaspysat, nanrct, nanrcb, yapsis, gaorep, baacdm, naindp, naclon, yaclon, gagatea, gagateb, nagatea, nagateb, yagatea, yagateb, gapill, gapill-tr, nalasr, nalasr-tr, yaggun, yaggun-tr, gagun, gagun-tr, gamgun, gamgun-tr, atesla, atesla-tr, bamort, bamort-tr, tesla, tesla-tr, yapsyt, yapsyt-tr, nasam, nasam-tr, naflak, naflak-tr, natbnk, gagap, napsis, naprop, baprop, yasgen, gacsph, gacspb, nairon, yagntc, gaweat, namisl, yappet
 		SuggestedGroundLeaderLocomotor: foot, wheeled, tracked, heavytracked
 		SuggestedNavyLeaderLocomotor: naval
-		GuerrillaTypes: robo, mtnk, fv, fv-e1, fv-ggi, fv-gren, fv-ghost, fv-snipe, fv-cleg, sref, mgtk, hwtz, dron, htk, htk-dron, htk-squad-1, tric, ltnk, ytnk, caos, kamaz-squad-1, yhtnk, hind-dtruck, hind-htk-squad-3, kite, havoc, disk, txdx, magnedisk
-		IgnoredEnemyTargetTypes: Air
+		GuerrillaTypes: robo, mtnk, fv, sref, mgtk, hwtz, dron, htk, tric, ltnk, ytnk, caos, yhtnk, kite, havoc, disk, txdx, magnedisk
 	McvManagerBotModule@generic:
 		RequiresCondition: enable-generic-ai && !enable-vengeful-ai
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		McvFactoryTypes: gaweap, naweap, yaweap
+		McvFactoryTypes: gaweap, naweap, yaweap, gayard, nayard, yayard
 		MinimumConstructionYardCount: 2
 		MaxBaseRadius: 30
 	McvManagerBotModule@vengeful:
 		RequiresCondition: enable-vengeful-ai
 		McvTypes: amcv, smcv, pcv
 		ConstructionYardTypes: gacnst, nacnst, yacnst
-		McvFactoryTypes: gaweap, naweap, yaweap
+		McvFactoryTypes: gaweap, naweap, yaweap, gayard, nayard, yayard
 		MinimumConstructionYardCount: 4
 		MaxBaseRadius: 30
 	UnitBuilderBotModule@easy:
 		RequiresCondition: enable-easy-ai && !megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
-			e1: 180
-			e2: 180
-			init: 180
-			dog: 2
+			e1: 1
+			e2: 1
+			init: 1
+			dog: 1
 			engineer: 2
 			medi: 2
 			mech: 1
@@ -1465,6 +1500,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -1581,13 +1617,10 @@ Player:
 			upgrade.increased_payload: 2
 			upgrade.bullet_proof_coats: 10
 			upgrade.molotov_cocktails: 8
-			upgrade.smoke_grenades: 2
 			upgrade.ap_bullets: 10
 			upgrade.nuclear_engines: 5
 			upgrade.radioactive_bombs: 5
-			upgrade.cryo_warheads: 5
 			upgrade.black_napalm: 5
-			upgrade.propaganda_effort: 2
 			upgrade.overcharge: 5
 			upgrade.advanced_irradiators: 2
 			upgrade.aerial_propaganda: 2
@@ -1595,8 +1628,6 @@ Player:
 			upgrade.high_explosive_bombs: 2
 			upgrade.high_caliber_rounds: 2
 			upgrade.uranium_shells: 8
-			upgrade.cryo_shells: 8
-			upgrade.mounted_mg: 10
 			upgrade.grinder_treads: 1
 			upgrade.camouflage: 5
 			upgrade.focused_mind: 10
@@ -1610,11 +1641,17 @@ Player:
 			upgrade.disc_armor: 5
 			upgrade.lazarus_prime: 3
 			upgrade.chainguns: 10
+			upgrade.smoke_grenades: 2
+			upgrade.mounted_mg: 10
+			upgrade.heavy_mortars: 8
+			upgrade.arm_the_mob: 5
+			upgrade.propaganda_effort: 2
+			upgrade.cryo_warheads: 5
+			upgrade.cryo_shells: 8
 		UnitLimits:
 			cmin: 6
 			harv: 6
 			gmin: 6
-			dog: 4
 			engineer: 1
 			medi: 2
 			mech: 2
@@ -1634,13 +1671,15 @@ Player:
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
+		UnitDelays:
+			ggi: 4000
 	UnitBuilderBotModule@easy-megawealth:
 		RequiresCondition: enable-easy-ai && megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
-			e1: 180
-			e2: 180
-			init: 180
+			e1: 1
+			e2: 1
+			init: 1
 			dog: 2
 			engineer: 180
 			medi: 2
@@ -1653,6 +1692,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -1765,13 +1805,10 @@ Player:
 			upgrade.increased_payload: 2
 			upgrade.bullet_proof_coats: 10
 			upgrade.molotov_cocktails: 8
-			upgrade.smoke_grenades: 2
 			upgrade.ap_bullets: 10
 			upgrade.nuclear_engines: 5
 			upgrade.radioactive_bombs: 5
-			upgrade.cryo_warheads: 5
 			upgrade.black_napalm: 5
-			upgrade.propaganda_effort: 2
 			upgrade.overcharge: 5
 			upgrade.advanced_irradiators: 2
 			upgrade.aerial_propaganda: 2
@@ -1779,8 +1816,6 @@ Player:
 			upgrade.high_explosive_bombs: 2
 			upgrade.high_caliber_rounds: 2
 			upgrade.uranium_shells: 8
-			upgrade.cryo_shells: 8
-			upgrade.mounted_mg: 10
 			upgrade.grinder_treads: 1
 			upgrade.camouflage: 5
 			upgrade.focused_mind: 10
@@ -1794,11 +1829,17 @@ Player:
 			upgrade.disc_armor: 5
 			upgrade.lazarus_prime: 3
 			upgrade.chainguns: 10
+			upgrade.smoke_grenades: 2
+			upgrade.mounted_mg: 10
+			upgrade.heavy_mortars: 8
+			upgrade.arm_the_mob: 5
+			upgrade.propaganda_effort: 2
+			upgrade.cryo_warheads: 5
+			upgrade.cryo_shells: 8
 		UnitLimits:
 			cmin: 6
 			harv: 6
 			gmin: 6
-			dog: 4
 			engineer: 1
 			medi: 2
 			mech: 2
@@ -1815,14 +1856,16 @@ Player:
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
+		UnitDelays:
+			ggi: 4000
 	UnitBuilderBotModule@cheater:
 		RequiresCondition: enable-cheater-ai && !megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
-			e1: 180
-			e2: 180
-			init: 180
-			dog: 2
+			e1: 1
+			e2: 1
+			init: 1
+			dog: 1
 			engineer: 2
 			medi: 2
 			mech: 1
@@ -1834,6 +1877,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -1845,7 +1889,6 @@ Player:
 			pyro: 7
 			deso: 2
 			spct: 2
-			cleg: 1
 			itrp: 1
 			tany: 2
 			boris: 2
@@ -1863,8 +1906,8 @@ Player:
 			htnk: 100
 			ltnk: 100
 			htk: 3
-			fv: 5
-			bfrt-squad-1: 5
+			fv: 4
+			bfrt: 1
 			ytnk: 40
 			robo: 2
 			send: 2
@@ -1907,10 +1950,14 @@ Player:
 			orca: 5
 			beag: 2
 			fortress: 2
+			shad: 1
+			hind-ivans: 1
+			hind-terrors: 1
+			hind-dtruck: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
-			schp-ai: 1
+			schp: 1
 			kite: 1
 			havoc: 1
 			zep: 1
@@ -1960,13 +2007,10 @@ Player:
 			upgrade.increased_payload: 2
 			upgrade.bullet_proof_coats: 10
 			upgrade.molotov_cocktails: 8
-			upgrade.smoke_grenades: 2
 			upgrade.ap_bullets: 10
 			upgrade.nuclear_engines: 5
 			upgrade.radioactive_bombs: 5
-			upgrade.cryo_warheads: 5
 			upgrade.black_napalm: 5
-			upgrade.propaganda_effort: 2
 			upgrade.overcharge: 5
 			upgrade.advanced_irradiators: 2
 			upgrade.aerial_propaganda: 2
@@ -1974,8 +2018,6 @@ Player:
 			upgrade.high_explosive_bombs: 2
 			upgrade.high_caliber_rounds: 2
 			upgrade.uranium_shells: 8
-			upgrade.cryo_shells: 8
-			upgrade.mounted_mg: 10
 			upgrade.grinder_treads: 1
 			upgrade.camouflage: 5
 			upgrade.focused_mind: 10
@@ -1989,15 +2031,20 @@ Player:
 			upgrade.disc_armor: 5
 			upgrade.lazarus_prime: 3
 			upgrade.chainguns: 10
+			upgrade.smoke_grenades: 2
+			upgrade.mounted_mg: 10
+			upgrade.heavy_mortars: 8
+			upgrade.arm_the_mob: 5
+			upgrade.propaganda_effort: 2
+			upgrade.cryo_warheads: 5
+			upgrade.cryo_shells: 8
 		UnitLimits:
 			cmin: 6
 			harv: 6
 			gmin: 6
-			dog: 4
 			engineer: 1
 			medi: 2
 			mech: 2
-			cleg: 1
 			itrp: 1
 			robo: 2
 			send: 1
@@ -2011,22 +2058,25 @@ Player:
 			beag: 1
 			fortress: 2
 			txdx: 1
+			shad: 1
 			disk: 2
 			magnedisk: 2
-			schp-ai: 2
+			schp: 2
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
 			zep: 1
 			badgr: 1
+		UnitDelays:
+			ggi: 4000
 	UnitBuilderBotModule@cheater-megawealth:
 		RequiresCondition: enable-cheater-ai && megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
-			e1: 180
-			e2: 180
-			init: 180
-			dog: 2
+			e1: 1
+			e2: 1
+			init: 1
+			dog: 1
 			engineer: 180
 			medi: 2
 			mech: 1
@@ -2038,6 +2088,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -2064,7 +2115,6 @@ Player:
 			ltnk: 100
 			htk: 3
 			fv: 5
-			bfrt-squad-1: 5
 			ytnk: 40
 			robo: 2
 			send: 2
@@ -2107,10 +2157,14 @@ Player:
 			orca: 5
 			beag: 2
 			fortress: 2
+			shad: 1
+			hind-ivans: 1
+			hind-terrors: 1
+			hind-dtruck: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
-			schp-ai: 1
+			schp: 1
 			kite: 1
 			havoc: 1
 			bpln.buildable: 1
@@ -2160,13 +2214,10 @@ Player:
 			upgrade.increased_payload: 2
 			upgrade.bullet_proof_coats: 10
 			upgrade.molotov_cocktails: 8
-			upgrade.smoke_grenades: 2
 			upgrade.ap_bullets: 10
 			upgrade.nuclear_engines: 5
 			upgrade.radioactive_bombs: 5
-			upgrade.cryo_warheads: 5
 			upgrade.black_napalm: 5
-			upgrade.propaganda_effort: 2
 			upgrade.overcharge: 5
 			upgrade.advanced_irradiators: 2
 			upgrade.aerial_propaganda: 2
@@ -2174,8 +2225,6 @@ Player:
 			upgrade.high_explosive_bombs: 2
 			upgrade.high_caliber_rounds: 2
 			upgrade.uranium_shells: 8
-			upgrade.cryo_shells: 8
-			upgrade.mounted_mg: 10
 			upgrade.grinder_treads: 1
 			upgrade.camouflage: 5
 			upgrade.focused_mind: 10
@@ -2189,6 +2238,13 @@ Player:
 			upgrade.disc_armor: 5
 			upgrade.lazarus_prime: 3
 			upgrade.chainguns: 10
+			upgrade.smoke_grenades: 2
+			upgrade.mounted_mg: 10
+			upgrade.heavy_mortars: 8
+			upgrade.arm_the_mob: 5
+			upgrade.propaganda_effort: 2
+			upgrade.cryo_warheads: 5
+			upgrade.cryo_shells: 8
 		UnitLimits:
 			cmin: 6
 			harv: 6
@@ -2197,7 +2253,6 @@ Player:
 			engineer: 1
 			medi: 2
 			mech: 2
-			cleg: 1
 			itrp: 1
 			robo: 2
 			send: 1
@@ -2207,23 +2262,26 @@ Player:
 			orca: 3
 			beag: 1
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 2
-			schp-ai: 2
+			schp: 2
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
 			zep: 1
 			badgr: 1
+		UnitDelays:
+			ggi: 4000
 	UnitBuilderBotModule@vengeful:
 		RequiresCondition: enable-vengeful-ai && !megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
-			e1: 180
-			e2: 180
-			init: 180
-			dog: 2
+			e1: 1
+			e2: 1
+			init: 1
+			dog: 1
 			engineer: 2
 			medi: 2
 			mech: 1
@@ -2235,6 +2293,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -2247,6 +2306,7 @@ Player:
 			deso: 2
 			spct: 2
 			cleg: 1
+			civan: 1
 			itrp: 1
 			tany: 2
 			boris: 2
@@ -2263,18 +2323,9 @@ Player:
 			hytk: 100
 			htnk: 100
 			ltnk: 100
-			htk: 1
-			htk-dron: 1
-			htk-squad-1: 1
-			kamaz-squad-1: 1
-			fv: 1
-			fv-e1: 1
-			fv-ggi: 1
-			fv-gren: 1
-			fv-cleg: 1
-			bfrt-squad-1: 5
-			bfrt-squad-2: 5
-			bfrt-squad-3: 1
+			htk: 3
+			fv: 4
+			bfrt: 5
 			ytnk: 40
 			robo: 2
 			send: 2
@@ -2317,30 +2368,19 @@ Player:
 			orca: 5
 			beag: 2
 			fortress: 2
+			shad: 1
+			hind-ivans: 1
+			hind-terrors: 1
+			hind-dtruck: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
-			schp-ai: 1
+			schp: 1
 			kite: 1
 			havoc: 1
 			zep: 1
 			badgr: 1
 			bpln.buildable: 1
-			shad-squad-1: 1
-			shad-squad-2: 1
-			shad-squad-3: 1
-			shad-squad-4: 1
-			txdx-squad-1: 1
-			txdx-squad-2: 1
-			txdx-squad-3: 1
-			hind-htnk: 1
-			hind-ftnk: 1
-			hind-ttnk: 1
-			hind-dtruck: 1
-			hind-apoc: 1
-			hind-htk-squad-1: 1
-			hind-htk-squad-2: 1
-			hind-htk-squad-3: 1
 			expn: 1
 			exps: 1
 			expy: 1
@@ -2388,13 +2428,10 @@ Player:
 			upgrade.increased_payload: 2
 			upgrade.bullet_proof_coats: 10
 			upgrade.molotov_cocktails: 8
-			upgrade.smoke_grenades: 2
 			upgrade.ap_bullets: 10
 			upgrade.nuclear_engines: 5
 			upgrade.radioactive_bombs: 5
-			upgrade.cryo_warheads: 5
 			upgrade.black_napalm: 5
-			upgrade.propaganda_effort: 2
 			upgrade.overcharge: 5
 			upgrade.advanced_irradiators: 2
 			upgrade.aerial_propaganda: 2
@@ -2402,8 +2439,6 @@ Player:
 			upgrade.high_explosive_bombs: 2
 			upgrade.high_caliber_rounds: 2
 			upgrade.uranium_shells: 8
-			upgrade.cryo_shells: 8
-			upgrade.mounted_mg: 10
 			upgrade.grinder_treads: 1
 			upgrade.toxin_sprayer: 2
 			upgrade.camouflage: 5
@@ -2418,6 +2453,13 @@ Player:
 			upgrade.disc_armor: 5
 			upgrade.lazarus_prime: 3
 			upgrade.chainguns: 10
+			upgrade.smoke_grenades: 2
+			upgrade.mounted_mg: 10
+			upgrade.heavy_mortars: 8
+			upgrade.arm_the_mob: 5
+			upgrade.propaganda_effort: 2
+			upgrade.cryo_warheads: 5
+			upgrade.cryo_shells: 8
 		UnitLimits:
 			cmin: 6
 			harv: 6
@@ -2426,7 +2468,6 @@ Player:
 			engineer: 1
 			medi: 2
 			mech: 2
-			cleg: 1
 			itrp: 1
 			robo: 2
 			send: 1
@@ -2436,23 +2477,26 @@ Player:
 			orca: 3
 			beag: 1
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 2
-			schp-ai: 2
+			schp: 2
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
 			zep: 1
 			badgr: 1
+		UnitDelays:
+			ggi: 4000
 	UnitBuilderBotModule@vengeful-megawealth:
 		RequiresCondition: enable-vengeful-ai && megawealth
 		UnitQueues: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva, Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Vehicle.Baku, Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku, Aircraft.Yuri, Aircraft.Lazarus, Ship.Shared, Ship.Allies, Ship.Soviets, Ship.Yuri, Ship.Baku, Power.Allies, Power.Soviets, Power.Yuri, Power.Baku, Upgrade.Shared, Upgrade.Allies, Upgrade.Soviets, Upgrade.Yuri, Upgrade.Baku
 		UnitsToBuild:
-			e1: 180
-			e2: 180
-			init: 180
-			dog: 2
+			e1: 1
+			e2: 1
+			init: 1
+			dog: 1
 			engineer: 180
 			medi: 2
 			mech: 1
@@ -2464,6 +2508,7 @@ Player:
 			rktt: 20
 			gren: 7
 			ivan: 5
+			spy: 1
 			ghost: 4
 			jumpjet: 4
 			lunr: 4
@@ -2486,18 +2531,9 @@ Player:
 			hytk: 100
 			htnk: 100
 			ltnk: 100
-			htk: 1
-			htk-dron: 1
-			htk-squad-1: 1
-			kamaz-squad-1: 1
-			fv: 1
-			fv-e1: 1
-			fv-ggi: 1
-			fv-gren: 1
-			fv-cleg: 1
-			bfrt-squad-1: 5
-			bfrt-squad-2: 5
-			bfrt-squad-3: 1
+			htk: 3
+			fv: 4
+			bfrt: 5
 			ytnk: 40
 			robo: 2
 			send: 2
@@ -2540,30 +2576,19 @@ Player:
 			orca: 5
 			beag: 2
 			fortress: 2
+			shad: 1
+			hind-ivans: 1
+			hind-terrors: 1
+			hind-dtruck: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 1
-			schp-ai: 1
+			schp: 1
 			kite: 1
 			havoc: 1
 			bpln.buildable: 1
 			zep: 1
 			badgr: 1
-			shad-squad-1: 1
-			shad-squad-2: 1
-			shad-squad-3: 1
-			shad-squad-4: 1
-			txdx-squad-1: 1
-			txdx-squad-2: 1
-			txdx-squad-3: 1
-			hind-htnk: 1
-			hind-ftnk: 1
-			hind-ttnk: 1
-			hind-dtruck: 1
-			hind-apoc: 1
-			hind-htk-squad-1: 1
-			hind-htk-squad-2: 1
-			hind-htk-squad-3: 1
 			expn: 1
 			exps: 1
 			expy: 1
@@ -2611,13 +2636,10 @@ Player:
 			upgrade.increased_payload: 2
 			upgrade.bullet_proof_coats: 10
 			upgrade.molotov_cocktails: 8
-			upgrade.smoke_grenades: 2
 			upgrade.ap_bullets: 10
 			upgrade.nuclear_engines: 5
 			upgrade.radioactive_bombs: 5
-			upgrade.cryo_warheads: 5
 			upgrade.black_napalm: 5
-			upgrade.propaganda_effort: 2
 			upgrade.overcharge: 5
 			upgrade.advanced_irradiators: 2
 			upgrade.aerial_propaganda: 2
@@ -2625,8 +2647,6 @@ Player:
 			upgrade.high_explosive_bombs: 2
 			upgrade.high_caliber_rounds: 2
 			upgrade.uranium_shells: 8
-			upgrade.cryo_shells: 8
-			upgrade.mounted_mg: 10
 			upgrade.grinder_treads: 1
 			upgrade.toxin_sprayer: 2
 			upgrade.camouflage: 5
@@ -2641,6 +2661,13 @@ Player:
 			upgrade.disc_armor: 5
 			upgrade.lazarus_prime: 3
 			upgrade.chainguns: 10
+			upgrade.smoke_grenades: 2
+			upgrade.mounted_mg: 10
+			upgrade.heavy_mortars: 8
+			upgrade.arm_the_mob: 5
+			upgrade.propaganda_effort: 2
+			upgrade.cryo_warheads: 5
+			upgrade.cryo_shells: 8
 		UnitLimits:
 			cmin: 6
 			harv: 6
@@ -2660,15 +2687,18 @@ Player:
 			orca: 3
 			beag: 1
 			fortress: 2
+			shad: 1
 			txdx: 1
 			disk: 2
 			magnedisk: 2
-			schp-ai: 2
+			schp: 2
 			kite: 2
 			havoc: 3
 			bpln.buildable: 2
 			zep: 1
 			badgr: 1
+		UnitDelays:
+			ggi: 4000
 	CaptureManagerBotASModule@generic:
 		RequiresCondition: enable-generic-ai
 		CapturingActorTypes: engineer, mengineer
@@ -2679,3 +2709,95 @@ Player:
 	LoadGarrisonerBotModule:
 		RequiresCondition: enable-generic-ai
 		GarrisonerUnit: e1, ggi, gren, snipe, e2, shk, flakt, init, virus, rctt, mtrp, ssnipe
+	LoadCargoBotModule@Infantry:
+		RequiresCondition: enable-generic-ai
+		TransportTypesAndLoadRequirement:
+			htk: IdleUnit
+			kamaz: IdleUnit
+			shad: IdleUnit
+			fv: All
+			bfrt: All
+		PassengerTypes: e1, ggi, gren, snipe, e2, shk, flakt, init, virus, rctt, mtrp, ssnipe, tany, boris
+		ValidTransportOwner: AlliedBot
+	LoadCargoBotModule@TankBunker:
+		RequiresCondition: enable-generic-ai
+		TransportTypesAndLoadRequirement:
+			natbnk: All
+		PassengerTypes: mtnk, apoc, ftnk, htnk, ltnk, htk, ttnk, ytnk
+		ValidTransportOwner: AlliedBot
+	LoadCargoBotModule@Battery:
+		RequiresCondition: enable-generic-ai
+		TransportTypesAndLoadRequirement:
+			yapowr: IdleUnit
+		PassengerTypes: e1, ggi, dog, e2, init
+		ValidTransportOwner: AlliedBot
+		ScanTick: 799
+	SendUnitToAttackBotModule@spy:
+		RequiresCondition: enable-generic-ai
+		ActorTypesAndAttackOptions: 
+			spy:
+				AttackDesireOfEach: 100
+				TryDisguise: true
+				AttackOrderName: Infiltrate
+				AttackRequires: Disguised
+				TryGetHealed: false
+			dtruck:
+				AttackDesireOfEach: 100
+				TryGetHealed: false
+				AttackOrderName: AssaultMove
+			ivan:
+				AttackDesireOfEach: 100
+				TryGetHealed: false
+				AttackOrderName: AssaultMove
+			terror:
+				AttackDesireOfEach: 100
+				TryGetHealed: false
+				AttackOrderName: AssaultMove
+			shad:
+				AttackDesireOfEach: 100
+				MoveToOrderName: Move
+				AttackOrderName: Unload
+				MoveBackOrderName: Move
+				AttackRequires: CargoLoaded
+			hind-ivans: 
+				AttackDesireOfEach: 100
+				MoveToOrderName: Move
+				AttackOrderName: Unload 
+				MoveBackOrderName: Move
+			hind-terrors: 
+				AttackDesireOfEach: 100
+				MoveToOrderName: Move
+				AttackOrderName: Unload 
+				MoveBackOrderName: Move
+			hind-dtruck: 
+				AttackDesireOfEach: 100
+				AttackOrderName: DeliverUnit ## Hack: DeliverUnit has a bug that ignore the ocuppied cell, and we just need that
+				MoveBackOrderName: Move
+		ValidTargets: SpyInfiltrate
+		InvalidTargets: Water, WaterStructure
+		TargetDistances: Random
+	SendUnitToAttackBotModule@chrono:
+		RequiresCondition: enable-generic-ai
+		ActorTypesAndAttackOptions: 
+			cleg:
+				AttackDesireOfEach: 100
+				MoveToOrderName: PortableChronoTeleport
+				AttackOrderName: AssaultMove
+				MoveBackOrderName: PortableChronoTeleport
+				TryGetHealed: false
+			ccomand:
+				AttackDesireOfEach: 100
+				MoveToOrderName: PortableChronoTeleport
+				AttackOrderName: AssaultMove
+				MoveBackOrderName: AssaultMove
+				TryGetHealed: false
+			civan:
+				AttackDesireOfEach: 100
+				MoveToOrderName: PortableChronoTeleport
+				AttackOrderName: AssaultMove
+				MoveBackOrderName: AssaultMove
+				TryGetHealed: false
+		ValidTargets: Structure
+		InvalidTargets: Water, Defence, WaterStructure
+		TargetDistances: Furthest
+

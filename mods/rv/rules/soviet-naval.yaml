@@ -9,8 +9,9 @@ sapc:
 sub:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	# Inherits@C4: ^AcceptsSEALC4
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -20,7 +21,7 @@ sub:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
 		Prerequisites: ~ship.sovietsorbaku, naradr, ~techlevel.2
 		BuildPaletteOrder: 80
-		Description: Submerged anti-ship unit armed with torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-sub.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -28,11 +29,11 @@ sub:
 	Valued:
 		Cost: 1600
 	Tooltip:
-		Name: Typhoon Attack Submarine
-		GenericName: Submarine
+		Name: actor-sub.name
+		GenericName: meta-submarine.generic-name
 	Tooltip@NoRow:
-		Name: Typhoon Attack Submarine
-		GenericName: Submarine
+		Name: actor-sub.name
+		GenericName: meta-submarine.generic-name
 	Health:
 		HP: 80000
 	Armor:
@@ -54,10 +55,12 @@ sub:
 	#	DetectionTypes: Underwater
 	#	InitialDelay: 50
 	#	CloakDelay: 75
+	#	CloakStyle: Palette
+	#	CloakedPalette: cloak
+	#	IsPlayerPalette: true
 	#	CloakSound: vnavupa.wav
 	#	UncloakSound: vnavupa.wav
 	#	UncloakOn: Damage
-	#	IsPlayerPalette: true
 	Armament:
 		Weapon: SubTorpedo
 		Damage: 75
@@ -79,18 +82,11 @@ sub:
 		# DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
-	-MustBeDestroyed:
 	WithVoxelBody:
 		ShowShadow: false
 	RenderSprites:
 	Voiced:
 		VoiceSet: TyphoonVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -99,12 +95,15 @@ sub:
 	#	SoundFiles: vsqumova.wav, vsqumovb.wav
 	#	Volume: 0.45
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 hyd:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	# Inherits@C4: ^AcceptsSEALC4
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -114,7 +113,7 @@ hyd:
 		Queue: Ship.Shared, Ship.Soviets
 		BuildPaletteOrder: 30
 		Prerequisites: ~ship.soviets, ~techlevel.1
-		Description: Anti-Air and Anti-Infantry naval unit.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Naval units
+		Description: actor-hyd.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -122,9 +121,9 @@ hyd:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Sea Scorpion
+		Name: actor-hyd.name
 	Tooltip@NoRow:
-		Name: Sea Scorpion
+		Name: actor-hyd.name
 	Selectable:
 		Bounds: 1206, 1448, 0, -289
 	Health:
@@ -185,12 +184,6 @@ hyd:
 	RenderSprites:
 	Voiced:
 		VoiceSet: SeaScorpionVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -200,7 +193,7 @@ hyd:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
 sqd:
 	Inherits: ^SeaAnimal
@@ -209,16 +202,16 @@ sqd:
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
 		Prerequisites: ~ship.sovietsorbaku, naradr, ~techlevel.3
-		Description: Large ocean creature capable of grabbing and sinking ships.\n\n  Strong vs Ships\n\nAbilities:\n- Can be deployed to remove other Squids from nearby ships\n- Can detect Stealth units
+		Description: actor-sqd.description
 		BuildDuration: 375
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Giant Squid
-		GenericName: Squid
+		Name: actor-sqd.name
+		GenericName: actor-sqd.generic-name
 	Tooltip@NoRow:
-		Name: Giant Squid
-		GenericName: Squid
+		Name: actor-sqd.name
+		GenericName: actor-sqd.generic-name
 	Health:
 		HP: 40000
 	ChangesHealth:
@@ -290,8 +283,9 @@ dred:
 	Inherits: ^Ship
 	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	# Inherits@C4: ^AcceptsSEALC4
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -302,7 +296,7 @@ dred:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
 		BuildPaletteOrder: 90
 		Prerequisites: ~ship.sovietsorbaku, natech, ~techlevel.4
-		Description: Long-range rocket artillery ship.\n\n  Strong vs Buildings, Infantry\n  Weak vs Ships, Aircraft\n\nUpgradeable with:\n- Radioactive Warheads\n- Advanced Irradiators (Iraq)\n- High Explosive Bombs (Libya)
+		Description: actor-dred.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -310,9 +304,9 @@ dred:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Dreadnought
+		Name: actor-dred.name
 	Tooltip@NoRow:
-		Name: Dreadnought
+		Name: actor-dred.name
 	Health:
 		HP: 80000
 	Armor:
@@ -378,12 +372,6 @@ dred:
 	HitShape:
 	Voiced:
 		VoiceSet: SovietNavalVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn
@@ -391,9 +379,16 @@ dred:
 	#	SoundFiles: vdrestaa.wav, vdrestab.wav, vdrestac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	GrantConditionOnFaction@Baku:
+		Condition: baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 400
 		Upgrades: upgrade.radioactive_bombs, upgrade.advanced_irradiators, upgrade.high_explosive_bombs
+	ActorStatOverride@Baku:
+		Upgrades:
+		RequiresCondition: baku
 
 dmisl:
 	Inherits: ^ShootableMissile
@@ -402,9 +397,9 @@ dmisl:
 	Valued:
 		Cost: 50
 	Tooltip:
-		Name: Dreadnought Missile
+		Name: actor-dmisl.name
 	Tooltip@NoRow:
-		Name: Dreadnought Missile
+		Name: actor-dmisl.name
 	Health:
 		HP: 5000
 	Armor:
@@ -423,31 +418,31 @@ dmisl:
 		SpawnAtLastPosition: false
 		Type: CenterPosition
 	MissileSpawnerSlave:
-	SpawnedExplodes:
+	ExplodesForMaster:
 		Weapon: DredWeapon
 		EmptyWeapon: DredWeapon
 		RequiresCondition: !airborne && !radbombs && !rank-elite
-	SpawnedExplodes@Elite:
+	ExplodesForMaster@Elite:
 		Weapon: DredWeaponE
 		EmptyWeapon: DredWeaponE
 		RequiresCondition: !airborne && !radbombs && rank-elite
-	SpawnedExplodes@Rad:
+	ExplodesForMaster@Rad:
 		Weapon: DredWeaponRad
 		EmptyWeapon: DredWeaponRad
 		RequiresCondition: !airborne && radbombs && !advirrad && !rank-elite
-	SpawnedExplodes@EliteRad:
+	ExplodesForMaster@EliteRad:
 		Weapon: DredWeaponRadE
 		EmptyWeapon: DredWeaponRadE
 		RequiresCondition: !airborne && radbombs && !advirrad && rank-elite
-	SpawnedExplodes@RadOrange:
+	ExplodesForMaster@RadOrange:
 		Weapon: DredWeaponRadOrange
 		EmptyWeapon: DredWeaponRadOrange
 		RequiresCondition: !airborne && radbombs && advirrad && !rank-elite
-	SpawnedExplodes@EliteRadOrange:
+	ExplodesForMaster@EliteRadOrange:
 		Weapon: DredWeaponRadOrangeE
 		EmptyWeapon: DredWeaponRadOrangeE
 		RequiresCondition: !airborne && radbombs && advirrad && rank-elite
-	SpawnedExplodes@Airborne:
+	ExplodesForMaster@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
@@ -466,8 +461,9 @@ dmisl:
 sray:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	# Inherits@C4: ^AcceptsSEALC4
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -477,7 +473,7 @@ sray:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
 		BuildPaletteOrder: 20
 		Prerequisites: ~ship.sovietsorbaku, ~techlevel.1
-		Description: Light ship armed with dual Tesla Coils.\nCan move on land.\n\n  Strong vs Infantry, Vehicles, Ships\n  Weak vs Aircraft\n\nUpgradeable with:\n- Overcharge (Soviet Union)
+		Description: actor-sray.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -488,9 +484,9 @@ sray:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Stingray
+		Name: actor-sray.name
 	Tooltip@NoRow:
-		Name: Stingray
+		Name: actor-sray.name
 	Selectable:
 		Bounds: 1206, 1448, 0, -289
 	Health:
@@ -501,7 +497,7 @@ sray:
 		Speed: 90
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	SpeedMultiplier:
 		Modifier: 84
 		RequiresCondition: !in_water
@@ -561,18 +557,12 @@ sray:
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	Voiced:
 		VoiceSet: StingerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
-	GrantConditionOnMovement@MoveStart:
-		Condition: moving
-		ValidMovementTypes: Horizontal, Turn
-	GrantConditionOnMovement@walk:
-		Condition: walking
+	# GrantConditionOnMovement@MoveStart:
+	#	Condition: moving
+	#	ValidMovementTypes: Horizontal, Turn
+	# GrantConditionOnMovement@walk:
+	#	Condition: walking
 	# SoundAnnouncement:
 	#	SoundFiles: vstistaa.wav, vstistab.wav, vstistac.wav, vstistad.wav
 	#	Volume: 0.4
@@ -583,4 +573,5 @@ sray:
 	#	Interval: 20
 	#	RequiresCondition: walking && !in_water
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 140

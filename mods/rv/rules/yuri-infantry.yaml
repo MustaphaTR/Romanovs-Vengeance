@@ -1,7 +1,7 @@
 slav:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
@@ -10,15 +10,15 @@ slav:
 		BuildAtProductionType: Slave
 		BuildPaletteOrder: 60
 		Prerequisites: ~showslave, yarefn, ~techlevel.1
-		Description: Gathers Ore and Gems.
+		Description: actor-slav.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 100
 	Tooltip:
-		Name: Slave
+		Name: actor-slav.name
 	Tooltip@NoRow:
-		Name: Slave
+		Name: actor-slav.name
 	DeliversCash:
 		Payload: 25
 		Voice: Move
@@ -26,17 +26,19 @@ slav:
 		Priority: 7
 		Bounds: 482, 1448, 0, -530
 	Harvester:
-		DeliveryBuildings: yarefn, yarefn.noslave
-		Capacity: 4
-		MaxUnloadQueue: 9
-		UnloadQueueCostModifier: 4
+		Type: SlaveUnload
 		BaleLoadDelay: 24
 		BaleUnloadDelay: 1
 		FullyLoadedSpeed: 100
 		Resources: Ore, Gems
 		HarvestVoice: Move
-		DeliverVoice: Move
 		EmptyCondition: no-ore
+	StoresResources:
+		Capacity: 4
+		Resources: Ore, Gems
+	DockClientManager:
+		Voice: Move
+		OccupancyCostModifier: 4
 	Health:
 		HP: 10000
 	Garrisoner:
@@ -84,7 +86,7 @@ slav:
 	AttackFrontal:
 		Voice: Attack
 		FacingTolerance: 2
-	WithHarvesterPipsDecoration:
+	WithStoresResourcesPipsDecoration:
 		Margin: 4, 3
 		Palette: ra
 		Position: BottomLeft
@@ -93,12 +95,14 @@ slav:
 		ResourceSequences:
 			Ore: pip-yellow
 			Gems: pip-blue
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Harvester
 
 init:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CAMOUFLAGE: ^AffectedByCamouflage
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@FOCUS: ^AffectedByFocusedMind
 	Inherits@MC: ^MindControllable
@@ -109,7 +113,7 @@ init:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 10
 		Prerequisites: ~infantry.yuri, ~techlevel.1
-		Description: Basic Yuri Infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Camouflage
+		Description: actor-init.description
 		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -120,9 +124,9 @@ init:
 		Payload: 75
 		Voice: Move
 	Tooltip:
-		Name: Initiate
+		Name: actor-init.name
 	Tooltip@NoRow:
-		Name: Initiate
+		Name: actor-init.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -187,6 +191,8 @@ init:
 	WithProductionIconOverlay@2:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 init.holo:
 	Inherits: init
@@ -232,7 +238,7 @@ init.holo:
 brute:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@DNABOOST: ^AffectedByDNABoosters
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@PARACHUTE: ^Parachutable
@@ -242,7 +248,7 @@ brute:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 20
 		Prerequisites: ~infantry.yuri, ~techlevel.1
-		Description: Powerful soldiers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+		Description: actor-brute.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -250,9 +256,9 @@ brute:
 	Valued:
 		Cost: 300
 	Tooltip:
-		Name: Brute
+		Name: actor-brute.name
 	Tooltip@NoRow:
-		Name: Brute
+		Name: actor-brute.name
 	DeliversCash:
 		Payload: 150
 		Voice: Move
@@ -334,6 +340,8 @@ brute:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 brute.holo:
 	Inherits: brute
@@ -374,7 +382,7 @@ virus:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CAMOUFLAGE: ^AffectedByCamouflage
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
@@ -383,7 +391,7 @@ virus:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
 		Prerequisites: ~infantry.yuri, yadome, ~techlevel.2
-		Description: Sniper infantry armed with toxic bullets.\nKilled units leave toxin clouds.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- Camouflage
+		Description: actor-virus.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -391,9 +399,9 @@ virus:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Virus
+		Name: actor-virus.name
 	Tooltip@NoRow:
-		Name: Virus
+		Name: actor-virus.name
 	DeliversCash:
 		Payload: 300
 		Voice: Move
@@ -438,6 +446,7 @@ virus:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 200
 
 yuripsi:
@@ -447,7 +456,7 @@ yuripsi:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 90
 		Prerequisites: ~infantry.yuri, yadome, ~techlevel.3
-		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Terror Drones, Aircraft, Buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
+		Description: actor-yuripsi.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -464,12 +473,12 @@ yuripsi:
 yurix:
 	Inherits: yuripr
 	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
-	Inherits@SWIMSUIT: ^WithSwimSuit
+	Inherits@SWIMSUITPARACHUTE: ^WithSwimSuitAndParachute
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildPaletteOrder: 110
 		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units and structures.\nCan be deployed to unleash a powerful psychic wave.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Terror Drones, Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n- Can move over water\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)\n\n  Maximum 1 can be trained.
+		Description: actor-yurix.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	Valued:
@@ -554,30 +563,18 @@ yurix:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
 
-ptroop.yuri:
-	Inherits: ptroop
-	Buildable:
-		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
-		BuildPaletteOrder: 970
-		Prerequisites: ~infantry.yuri, ~allies.tech.infiltrated, ~techlevel.4
-	UpdatesPlayerStatistics:
-		OverrideActor: ptroop
-	-MapEditorData:
-
 lunr:
-	Inherits: ^Infantry
+	Inherits: ^JumpjetInfantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@VOICES: ^WithFeedbackVoicelines
-	HiddenUnderFog:
-		Type: CenterPosition
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Moon
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
 		Prerequisites: ~infantry.psimoon, yadome, ~techlevel.3
-		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles
+		Description: actor-lunr.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -585,25 +582,19 @@ lunr:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Tooltip@NoRow:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
 		HP: 12500
-	-Mobile:
 	RevealsShroud:
 		Range: 8c0
-		Type: GroundPosition
-		RequiresCondition: !airborne
 	RevealsShroud@Ground:
 		Range: 8c0
-		Type: GroundPosition
-		RequiresCondition: airborne
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 8c0
-	#	Type: GroundPosition
 	Armor:
 		Type: Light
 	Armament@primary:
@@ -660,19 +651,6 @@ lunr:
 		Voice: Attack
 		FacingTolerance: 2
 		AttackType: Hover
-	Aircraft:
-		CruiseAltitude: 3c852
-		InitialFacing: 80
-		TurnSpeed: 787
-		Speed: 150
-		AltitudeVelocity: 240
-		MaximumPitch: 128
-		Voice: Move
-		AirborneCondition: airborne
-		IdealSeparation: 512
-		VTOL: true
-		CanSlide: true
-		CanHover: true
 	WithInfantryBody:
 		RequiresCondition: !airborne
 	WithInfantryBody@Air:
@@ -681,50 +659,6 @@ lunr:
 		DefaultAttackSequence: shoot-air
 		IdleSequences: idle-air
 		RequiresCondition: airborne
-	Hovers:
-		BobDistance: -45
-	-TimedConditionBar@WebDisable:
-	-SpeedMultiplier@WebDisable:
-	-WithIdleOverlay@web:
-	-Targetable@webdisable:
-	-ExternalCondition@webdisable:
-	-WithColoredOverlay@IDISABLE:
-	-GrantCondition@IDISABLE:
-	-SpeedMultiplier@DOGSTUN:
-	-Targetable@DOGSTUN:
-	-TimedConditionBar@DOGSTUN:
-	-ExternalCondition@dogstun:
-	-InfectableRV:
-	-Targetable@DRONE:
-	-SpeedMultiplier@DRONE:
-	-RevealsShroud@DRONE:
-	-PeriodicExplosion@dronesparks:
-	-Crushable:
-	-Crushable@Cheater:
-	-Crushable@Vengeful:
-	-TakeCover:
-	-Targetable:
-	-TurnOnIdle:
-	-WithDeathAnimation@normal:
-	-WithDeathAnimation@effect:
-	-DamagedByTintedCells:
-	-DamagedByTintedCells@ORANGE:
-	DeathSounds@normal:
-		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, OrangeRadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
-	-DeathSounds@zapped:
-	-DeathSounds@radiation:
-	-DeathSounds@psycrush:
-	-DeathSounds@virus:
-	Targetable@airborne:
-		TargetTypes: Air, Disguise
-		RequiresCondition: airborne
-	Targetable@ground:
-		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
-		RequiresCondition: !airborne
-	WithSpriteBody@shadow:
-		Name: shadow
-		Sequence: shadow
-		ForceToGround: true
 	Voiced:
 		VoiceSet: CosmonautVoice
 	# AmbientSound:
@@ -745,10 +679,8 @@ lunr:
 		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	-Passenger:
-	-ChangesHealth@AMBULANCE:
-	SpawnActorOnDeath:
-		Actor: lunr.husk
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
 lunr.husk:
 	Inherits: ^HelicopterHusk
@@ -757,9 +689,9 @@ lunr.husk:
 	-RenderVoxels:
 	-WithVoxelBody:
 	Tooltip:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Tooltip@NoRow:
-		Name: Cosmonaut
+		Name: actor-lunr.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180
@@ -797,7 +729,7 @@ gtrp:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAINGUNS: ^AffectedByChainguns
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
@@ -807,7 +739,7 @@ gtrp:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.yuri, ~techlevel.1
 		BuildPaletteOrder: 50
-		Description: Infantry armed with a heavy gatling cannon.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Chainguns
+		Description: actor-gtrp.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -818,9 +750,9 @@ gtrp:
 		Payload: 150
 		Voice: Move
 	Tooltip:
-		Name: Gatling Trooper
+		Name: actor-gtrp.name
 	Tooltip@NoRow:
-		Name: Gatling Trooper
+		Name: actor-gtrp.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1098,8 +1030,8 @@ gtrp:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 10
-		SplitRanges: true
 
 gtrp.holo:
 	Inherits: gtrp
@@ -1173,7 +1105,7 @@ gtrp.holo:
 spct:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@VOICES: ^WithFeedbackVoicelines
@@ -1182,7 +1114,7 @@ spct:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
-		Description: Invisible infantry armed with AP rifles with bullets capable of slowing enemy units.\nCan be deployed to make nearby units invisible but itself becomes visible.\n\n  Strong vs Vehicles\n  Weak vs Buildings, Aircraft
+		Description: actor-spct.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1193,9 +1125,9 @@ spct:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Lazarus Spectre
+		Name: actor-spct.name
 	Tooltip@NoRow:
-		Name: Lazarus Spectre
+		Name: actor-spct.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1283,6 +1215,8 @@ spct:
 		RequiresCondition: !chronodisable && !webdisable && !dogstun && !deployed
 		InitialDelay: 25
 		CloakDelay: 100
+		CloakStyle: Palette
+		CloakedPalette: cloak
 		IsPlayerPalette: true
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
@@ -1317,11 +1251,13 @@ spct:
 	WithProductionIconOverlay@2:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ttrp:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Buildable:
@@ -1329,7 +1265,15 @@ ttrp:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 980
 		Prerequisites: ~infantry.yuri, ~soviets.tech.infiltrated, ~techlevel.4
-		Description: Infantry armed with a toxin sprayer and toxin bombs.\nImmune to toxic clouds.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can place Toxin Bombs on buildings
+		Description: actor-ttrp.description
+		BuildDuration: 375
+		BuildDurationModifier: 100
+	Buildable@Soviet:
+		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 990
+		Prerequisites: ~infantry.sovietsorbaku, ~yuri.tech.infiltrated, ~techlevel.4
+		Description: actor-ttrp.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1340,9 +1284,9 @@ ttrp:
 		Payload: 750
 		Voice: Move
 	Tooltip:
-		Name: Intoxicator
+		Name: actor-ttrp.name
 	Tooltip@NoRow:
-		Name: Intoxicator
+		Name: actor-ttrp.name
 	Selectable:
 		Class: ttrp
 		Bounds: 482, 1448, 0, -530
@@ -1444,12 +1388,15 @@ ttrp:
 	-TakeCover:
 	RenderSprites:
 		Image: ttrp
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 crkt:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@NOCHAOS: ^NotBerserkTarget
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Valued:
 		Cost: 1500
@@ -1457,15 +1404,15 @@ crkt:
 		Payload: 750
 		Voice: Move
 	Tooltip:
-		Name: Chaos Trooper
+		Name: actor-crkt.name
 	Tooltip@NoRow:
-		Name: Chaos Trooper
+		Name: actor-crkt.name
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 990
 		Prerequisites: ~infantry.yuri, ~yuri.tech.infiltrated, ~techlevel.4
-		Description: Long range rocket infantry armed with chaos warheads.\n\n  Strong vs Infantry, Vehicles, Aircraft\n  Weak vs Buildings\n\nAbilities:\n- Immune to Chaos Gas
+		Description: actor-crkt.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1586,16 +1533,16 @@ crkt:
 		IdleSequences: idle1
 	-TakeCover:
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
 visc_lrg:
 	Inherits: ^Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Tooltip:
-		Name: Blood Vessel
+		Name: actor-visc-lrg.name
 	Tooltip@NoRow:
-		Name: Blood Vessel
+		Name: actor-visc-lrg.name
 	Valued:
 		Cost: 200
 	Health:
@@ -1627,4 +1574,5 @@ visc_lrg:
 	-SpawnSmokeParticleOnDeath@virus:
 	-Explodes@Corpse:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 50

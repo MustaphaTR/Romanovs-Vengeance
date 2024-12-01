@@ -23,11 +23,11 @@ yacnst:
 		LowPowerModifier: 200
 		Factions: psisouth
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 	Transforms:
@@ -89,12 +89,12 @@ yapowr:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Description: Provides power for other structures.\nCan be occupied with up to 5 infantry for 50 more power each.
+		Description: actor-yapowr.description
 		Prerequisites: ~building.yuri, ~techlevel.1
 	Tooltip:
-		Name: Bio Reactor
+		Name: actor-yapowr.name
 	Tooltip@NoRow:
-		Name: Bio Reactor
+		Name: actor-yapowr.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -134,7 +134,7 @@ yapowr:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
-		EjectOnDeath: true
+		EjectOnDeathDamage: 0
 		LoadedCondition: loaded
 		PassengerConditions:
 			spider: loadedvehicle
@@ -152,8 +152,8 @@ yapowr:
 			blue: pip-building-blue
 			red: pip-building-red
 	WithCargoSounds:
-		EnterSound: bbioenta.wav
-		ExitSound: bbioenta.wav
+		EnterSounds: bbioenta.wav
+		ExitSounds: bbioenta.wav
 		SoundVolume: 0.5
 	InstantlyRepairable:
 		RequiresCondition: !ivanbomb && !sealC4 && !commandoC4 && !teslabomb && !toxinbomb && damaged
@@ -168,13 +168,15 @@ yapowr:
 		Volume: 0.8
 	RenderSprites:
 		Image: yapowr
+	ActorStatValues:
+		Stats: Armor, Sight, Power, None, None, None, Cargo
 
 yabrck:
 	Inherits: ^Barracks
 	Inherits@SHAPE: ^2x3Shape
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Description: Trains Psi-Corps infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: actor-yabrck.description
 		Prerequisites: ~building.yuri, power, ~techlevel.1
 	Building:
 		Footprint: xx xx xx
@@ -322,11 +324,11 @@ yabrck:
 		LowPowerModifier: 200
 		Factions: psimoon
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -366,15 +368,15 @@ yarefn:
 		Queue: Building.Unused # Building.Yuri
 		BuildPaletteOrder: 30
 		Prerequisites: power
-		Description: Gathers and processes ore.
+		Description: actor-yarefn.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Slave Miner
+		Name: actor-yarefn.name
 	Tooltip@NoRow:
-		Name: Slave Miner
+		Name: actor-yarefn.name
 	Health:
 		HP: 150000
 	Armor:
@@ -402,13 +404,13 @@ yarefn:
 		TerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad
 		-SecondaryTerrainTypes:
 	Refinery:
-		DockOffset: 1,1
 		ShowTicks: True
-		TickLifetime: 30
-		TickVelocity: 1
 		TickRate: 10
-		DockAngle: 640
 		UseStorage: true
+	DockHost:
+		Type: SlaveUnload
+		DockAngle: 640
+		DockOffset: 0,724,0
 	Production@Shared:
 		Produces: Infantry.Shared, Slave
 		RequiresCondition: !multiqueue
@@ -420,11 +422,11 @@ yarefn:
 		Group: Infantry
 		LowPowerModifier: 200
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -444,6 +446,8 @@ yarefn:
 		ShowSelectionBar: false
 	RallyPoint:
 		Path: 2,2
+		Palette: mouse
+		IsPlayerPalette: false
 	Exit@1Shared:
 		SpawnOffset: 0,512,0
 		ExitCell: 2, 1
@@ -491,10 +495,11 @@ yarefn:
 		RequiresForceMove: true
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
-	TransferTimedExternalConditionOnTransform@INVISIBILITY:
-		Condition: invisibility
-	ExternalCondition@INVISIBILITY:
-		Condition: invisibility
+	# This doesn't work, so commenting out to keep the lint warnings. This condition is not timed.
+	# TransferTimedExternalConditionOnTransform@INVISIBILITY:
+	#	Condition: invisibility
+	# ExternalCondition@INVISIBILITY:
+	#	Condition: invisibility
 	InfiltrateForCash:
 		Percentage: 50
 		InfiltratedNotification: CashStolen
@@ -545,7 +550,7 @@ yarefn:
 	-SpawnActorsOnSell@psicorps:
 	Voiced:
 		VoiceSet: SlaveMinerVoice
-	StoresResources:
+	StoresPlayerResources:
 		Capacity: 1000
 	Explodes:
 		RequiresCondition: !spawn-ore
@@ -570,6 +575,8 @@ yarefn:
 		DecorationHeight: 45
 	ActorStatValues:
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
+	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MaxRange
 
 yarfn2:
 	Inherits: ^Refinery
@@ -596,7 +603,7 @@ yaweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
-		Description: Produces Psi-Corps vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: actor-yaweap.description
 		Prerequisites: ~building.yuri, refinery, ~techlevel.1
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: yaweap
@@ -623,11 +630,11 @@ yaweap:
 		LowPowerModifier: 200
 		Factions: psicorps
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -638,11 +645,11 @@ yaweap:
 		LowPowerModifier: 200
 		Factions: psitrans
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -665,13 +672,13 @@ yaweap:
 yayard:
 	Inherits: ^Shipyard
 	Tooltip:
-		Name: Submarine Pen
+		Name: actor-yayard.name
 	Tooltip@NoRow:
-		Name: Submarine Pen
+		Name: actor-yayard.name
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, refinery, ~techlevel.1
-		Description: Produces Psi-Corps submarines, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+		Description: actor-yayard.description
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@ship.yuri:
 		Prerequisite: ship.yuri
@@ -693,13 +700,13 @@ yayard:
 			1: buoy
 		ChargeInterval: 9000
 		Names:
-			1: Sensor Buoy
+			1: actor-yayard.power-name
 		Descriptions:
-			1: A Toxin Bomber paradrops a Sensor Buoy\nanywhere on the map.
+			1: actor-yayard.power-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: Paratroopers ready.
+		EndChargeTextNotification: notification-paratroopers-ready
 		DropItems:
 			1: buoy
 		SquadSizes:
@@ -727,7 +734,7 @@ yadept:
 	Buildable:
 		Queue: Building.Unused # Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yaweap, ~techlevel.1
-		Description: Repairs vehicles and removes Terror Drones for a price.\n\n  Can be rotated.
+		Description: actor-yadept.description
 	ProvidesPrerequisite@default:
 		Prerequisite: yadept
 	WithIdleOverlay@normal:
@@ -748,7 +755,7 @@ yagrnd:
 		Queue: Building.Shared, Building.Yuri
 		BuildPaletteOrder: 110
 		Prerequisites: ~building.yuri, yaweap, prerequisite.grinder, ~techlevel.1
-		Description: Converts Infantry and Vehicles back to credits.
+		Description: actor-yagrnd.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Health:
@@ -760,9 +767,9 @@ yagrnd:
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Grinder
+		Name: actor-yagrnd.name
 	Tooltip@NoRow:
-		Name: Grinder
+		Name: actor-yagrnd.name
 	Building:
 		Footprint: xxx xxx xxx
 		Dimensions: 3,3
@@ -790,22 +797,24 @@ yagrnd:
 	Voiced:
 		VoiceSet: GrinderVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 yadome:
 	Inherits: ^Radar
 	Inherits@SHAPE: ^2x2Shape
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, power, psirefn, ~techlevel.2, ~!ai.yadome
-		Description: Provides radar.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Psi-Ops Drop (Yurigrad)\n- Hologram Army (Lazarus Corps)\n- Point Defense Drones (Antarctica)\n- Lethocerus Swarm (Transylvania)\n- Ion Cannon (Lunar Eclipse)
+		Description: actor-yadome.description
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.yadome
 	Tooltip:
-		Name: Radar Dome
+		Name: actor-yadome.name
 	Tooltip@NoRow:
-		Name: Radar Dome
+		Name: actor-yadome.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -850,13 +859,13 @@ yadome:
 			1: psiops
 		ChargeInterval: 6000
 		Names:
-			1: Psi-Ops Drop
+			1: actor-yadome.power-psiopsdrop-name
 		Descriptions:
-			1: A Cargo Plane drops 3 Yuri Clones\nanywhere on the map.
+			1: actor-yadome.power-psiopsdrop-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: Paratroopers ready.
+		EndChargeTextNotification: notification-paratroopers-ready
 		DropItems:
 			1: yuripsi, yuripsi, yuripsi
 		SquadSizes:
@@ -882,11 +891,11 @@ yadome:
 			1: xxicon
 		ChargeInterval: 7500
 		Names:
-			1: Chaos Gas Drop
+			1: commanders-power.chaos-gas-drop-name
 		Descriptions:
-			1: A Cargo Plane drops a trail of Chaos\nGas anywhere on the map.
+			1: commanders-power.chaos-gas-drop-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		UnitTypes:
 			1: pdplane.chaos
 		SquadSizes:
@@ -911,11 +920,11 @@ yadome:
 			1: hologram
 		ChargeInterval: 4500
 		Names:
-			1: Hologram Army
+			1: actor-yadome.power-hologramarmy-name
 		Descriptions:
-			1: Spawns a large group of hologram infantry and vehicles\nanywhere on the map.\n\nHolograms stay for 20 seconds.
+			1: actor-yadome.power-hologramarmy-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		Weapons:
 			1: HologramSpawner
 		ActivationSequence:
@@ -928,11 +937,11 @@ yadome:
 			1: pointdefense
 		ChargeInterval: 3000
 		Names:
-			1: Point Defense Drones
+			1: actor-yadome.power-pointdefense-name
 		Descriptions:
-			1: Gives a group of vehicles Point Defense Drones which reduces the taken damage.\nDrones regenerate over time.
+			1: actor-yadome.power-pointdefense-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		OnFireSound: ironcur9.aud
 		Durations:
 			1: -1
@@ -951,11 +960,11 @@ yadome:
 			1: lethocerus
 		ChargeInterval: 6000
 		Names:
-			1: Lethocerus Swarm
+			1: actor-yadome.power-lethocerusswarm-name
 		Descriptions:
-			1: Spawns 3 Lethocerus Platforms\nanywhere on the map.
+			1: actor-yadome.power-lethocerusswarm-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		Weapons:
 			1: LethocerusSpawnerSpawnerSpawner
 		ActivationSequence:
@@ -971,11 +980,11 @@ yadome:
 		WeaponDelay: 0
 		ChargeInterval: 6000
 		Names:
-			1: Ion Cannon
+			1: actor-yadome.power-ioncannon-name
 		Descriptions:
-			1: Initiate an Ion Cannon strike.\nApplies instant damage to a small area.
+			1: actor-yadome.power-ioncannon-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		DisplayRadarPing: True
 		CameraActor: camera
 		CameraRemoveDelay: 100
@@ -996,11 +1005,11 @@ yadisk:
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, yadome, ~techlevel.2
-		Description: Produces Psi-Corps aircraft.\n\nAbilities:\n- Comes with 1 repair drone.
+		Description: actor-yadisk.description
 	Tooltip:
-		Name: Disc Pad
+		Name: actor-yadisk.name
 	Tooltip@NoRow:
-		Name: Disc Pad
+		Name: actor-yadisk.name
 	Production:
 		Produces: Aircraft.Yuri, Aircraft.Lazarus
 	ProductionQueue:
@@ -1014,11 +1023,11 @@ yadisk:
 		LowPowerModifier: 200
 		Factions: psinepal
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -1099,15 +1108,15 @@ yapsis:
 		Queue: Building.Shared, Building.Yuri
 		BuildPaletteOrder: 120
 		Prerequisites: ~building.yuri, yatech, ~techlevel.4
-		Description: Detects enemy units and structures.\n\n  Requires power to operate.
+		Description: actor-yapsis.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Psychic Sensor
+		Name: actor-yapsis.name
 	Tooltip@NoRow:
-		Name: Psychic Sensor
+		Name: actor-yapsis.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1147,6 +1156,8 @@ yapsis:
 	Voiced:
 		VoiceSet: PsychicSensorVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 yaclon:
 	Inherits: ^BaseBuilding
@@ -1157,16 +1168,16 @@ yaclon:
 		Queue: Building.Shared, Building.Yuri
 		BuildPaletteOrder: 130
 		Prerequisites: ~building.yuri, yatech, ~techlevel.4
-		Description: Clones most trained infantry.\n\n  Cannot be placed on water.\n  Maximum 1 can be built.
+		Description: actor-yaclon.description
 		BuildLimit: 1
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Cloning Vats
+		Name: actor-yaclon.name
 	Tooltip@NoRow:
-		Name: Cloning Vats
+		Name: actor-yaclon.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
@@ -1241,6 +1252,8 @@ yaclon:
 	Voiced:
 		VoiceSet: CloningVatsVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 yawall:
 	Inherits: ^Wall
@@ -1248,11 +1261,11 @@ yawall:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		Prerequisites: ~building.yuri, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Heavy wall capable of blocking units and projectiles.\n\n  Cannot be placed on water.
+		Description: actor-yawall.description
 	Tooltip:
-		Name: Citadel Wall
+		Name: actor-yawall.name
 	Tooltip@NoRow:
-		Name: Citadel Wall
+		Name: actor-yawall.name
 	LineBuild:
 		NodeTypes: yawall
 	LineBuildNode:
@@ -1274,7 +1287,7 @@ yaggun:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 40
 		Prerequisites: ~building.yuri, yabrck, ~techlevel.1
-		Description: Automated anti-infantry and anti-air defense.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Chainguns\n\n  Requires power to operate.
+		Description: actor-yaggun.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Health:
@@ -1292,9 +1305,9 @@ yaggun:
 	Valued:
 		Cost: 800
 	Tooltip:
-		Name: Gatling Cannon
+		Name: actor-yaggun.name
 	Tooltip@NoRow:
-		Name: Gatling Cannon
+		Name: actor-yaggun.name
 	Turreted:
 		TurnSpeed: 40
 		InitialFacing: 896
@@ -1428,8 +1441,8 @@ yaggun:
 		VoiceSet: GatlingCannonVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 30
-		SplitRanges: true
 
 natbnk:
 	Inherits: ^SupportBuilding
@@ -1447,15 +1460,15 @@ natbnk:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 50
 		Prerequisites: ~building.yuri, yaweap, ~techlevel.1
-		Description: Static defense with fireports for a vehicle to garrison.\nProvides increased firepower, fire speed and range to the vehicle.
+		Description: actor-natbnk.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Tank Bunker
+		Name: actor-natbnk.name
 	Tooltip@NoRow:
-		Name: Tank Bunker
+		Name: actor-natbnk.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1470,11 +1483,11 @@ natbnk:
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
 		AfterUnloadDelay: 0
-		EjectOnDeath: true
+		EjectOnDeathDamage: 0
 		LoadedCondition: loaded
 	WithCargoSounds:
-		EnterSound: btanupa.wav
-		ExitSound: btandowa.wav
+		EnterSounds: btanupa.wav
+		ExitSounds: btandowa.wav
 	WithCargoBuilding:
 		Facing: 384
 		DisplayTypes: GarrisonerVehicle
@@ -1510,6 +1523,8 @@ natbnk:
 	Voiced:
 		VoiceSet: TankBunkerVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Cargo
 
 yapsyt:
 	Inherits: ^SupportBuilding
@@ -1520,7 +1535,7 @@ yapsyt:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 60
 		Prerequisites: ~building.yuri, yadome, ~techlevel.3
-		Description: Tower capable of mind controlling up to 3 enemy units.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Buildings, Aircraft\n\nAbilities:\n- Can detect Steath units\n\n  Requires power to operate.
+		Description: actor-yapsyt.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Health:
@@ -1532,9 +1547,9 @@ yapsyt:
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Psychic Tower
+		Name: actor-yapsyt.name
 	Tooltip@NoRow:
-		Name: Psychic Tower
+		Name: actor-yapsyt.name
 	AttackTurreted:
 		PauseOnCondition: build-incomplete || disabled || chronodisable
 	Turreted:
@@ -1586,6 +1601,8 @@ yapsyt:
 	Voiced:
 		VoiceSet: PsychicTowerVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power, MindControl, ReloadDelay, MaxRange
 
 yasgen:
 	Inherits: ^SupportBuilding
@@ -1597,15 +1614,15 @@ yasgen:
 	Valued:
 		Cost: 1000
 	Tooltip:
-		Name: Stealth Generator
+		Name: actor-yasgen.name
 	Tooltip@NoRow:
-		Name: Stealth Generator
+		Name: actor-yasgen.name
 	Buildable:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		BuildPaletteOrder: 80
 		Prerequisites: ~building.yuri, yatech, ~techlevel.3
-		Description: Makes nearby units and structures invisibile while not firing.\n\nUpgradeable with:\n- Lazarus Prime\n\n  Requires power to operate.
-		BuildDuration: 250
+		Description: actor-yasgen.description
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	Health:
 		HP: 60000
@@ -1654,28 +1671,31 @@ yasgen:
 	Voiced:
 		VoiceSet: StealthGeneratorVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 yagntc:
 	Inherits: ^SecondarySuperWeapon
 	Buildable:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		Prerequisites: ~building.yuri, yatech, !enoughlazarus, ~techlevel.5
-		Description: Makes vehicles invisible.\nKills infantry.\n\n  Requires power to operate.
+		Description: actor-yagntc.description
 	Tooltip:
-		Name: Lazarus Shield Generator
+		Name: actor-yagntc.name
 	Tooltip@NoRow:
-		Name: Lazarus Shield Generator
+		Name: actor-yagntc.name
 	GrantExternalConditionPower@LAZARUSSHIELD:
 		Icons:
 			1: invis
 		Prerequisites:
 			1: yagntc
+		OrderName: Invisibility
 		# Cursor: iron-curtain
 		ChargeInterval: 6000
 		Names:
-			1: Invisibility
+			1: actor-yagntc.power-name
 		Descriptions:
-			1: Makes a group of units invisibile\nunless they are firing.\n\nKills infantry.
+			1: actor-yagntc.power-description
 		AllowMultiple: true
 		Durations:
 			1: -1
@@ -1687,13 +1707,13 @@ yagntc:
 			1: xxx xxx xxx
 		ValidRelationships: Ally, Neutral, Enemy
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: GeneticMutatorReady # LazarusShieldReady
-		EndChargeTextNotification: Lazarus Shield ready.
+		EndChargeTextNotification: notification-lazarus-shield-ready
 		LaunchSpeechNotification: GeneticMutatorActivated # LazarusShieldActivated
-		LaunchTextNotification: Warning: Lazarus Shield activated.
+		LaunchTextNotification: notification-lazarus-shield-activated
 		IncomingSpeechNotification: GeneticMutatorActivated # LazarusShieldActivated
-		IncomingTextNotification: Warning: Lazarus Shield activated.
+		IncomingTextNotification: notification-lazarus-shield-activated
 		EndChargeSound: sgenopen.wav
 		OnFireSound: slazarus.wav
 		EffectImage: explosion
@@ -1706,7 +1726,7 @@ yagntc:
 		Prerequisite: enoughlazarus
 	NotificationAnnouncement:
 		Notification: GeneticMutatorDetected # LazarusShieldDetected
-		TextNotification: Warning: Lazarus Shield Generator detected.
+		TextNotification: notification-lazarus-shield-generator-detected
 	WithIdleOverlay@top:
 		Sequence: idle-top
 		PauseOnCondition: chronodisable
@@ -1722,11 +1742,11 @@ yappet:
 	Buildable:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
 		Prerequisites: ~building.yuri, yatech, !enoughdominator, ~techlevel.5
-		Description: Release powerful energy that damages structures and mind controls units.\n\n  Requires power to operate.
+		Description: actor-yappet.description
 	Tooltip:
-		Name: Psychic Dominator
+		Name: actor-yappet.name
 	Tooltip@NoRow:
-		Name: Psychic Dominator
+		Name: actor-yappet.name
 	DetonateWeaponPower:
 		OrderName: PsiPsychicDomination
 		PauseOnCondition: disabled || chronodisable
@@ -1739,17 +1759,17 @@ yappet:
 			1: domination
 		ChargeInterval: 9000
 		Names:
-			1: Psychic Domination
+			1: actor-yappet.power-name
 		Descriptions:
-			1: Release powerful energy that damages structures and mind controls units.\n\nCan be applied on ally units to\nmake them immune to mind control.
+			1: actor-yappet.power-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: PsychicDominatorReady
-		EndChargeTextNotification: Psychic Dominator ready.
+		EndChargeTextNotification: notification-psychic-dominator-ready
 		# LaunchSpeechNotification: PsychicDominatorActivated
-		LaunchTextNotification: Warning: Psychic Dominator activated.
+		LaunchTextNotification: notification-psychic-dominator-activated
 		# IncomingSpeechNotification: PsychicDominatorActivated # doesn't exist
-		IncomingTextNotification: Warning: Psychic Dominator activated.
+		IncomingTextNotification: notification-psychic-dominator-activated
 		EndChargeSound: spsyopen.wav
 		Weapons:
 			1: PsychicDomination
@@ -1760,7 +1780,7 @@ yappet:
 		Prerequisite: enoughdominator
 	NotificationAnnouncement:
 		Notification: PsychicDominatorDetected
-		TextNotification: Warning: Psychic Dominator detected.
+		TextNotification: notification-psychic-dominator-detected
 	IsometricSelectable:
 		DecorationHeight: 120
 	Voiced:
@@ -1771,9 +1791,9 @@ yacomd:
 	Inherits: ^CivBuilding
 	Inherits@SHAPE: ^4x4Shape
 	Tooltip:
-		Name: Yuri's Command Center
+		Name: actor-yacomd.name
 	Tooltip@NoRow:
-		Name: Yuri's Command Center
+		Name: actor-yacomd.name
 	Armor:
 		Type: Concrete
 	RevealsShroud:
@@ -1801,9 +1821,9 @@ yapppt:
 	Inherits: ^CivBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Tooltip:
-		Name: Psychic Dominator
+		Name: actor-yapppt.name
 	Tooltip@NoRow:
-		Name: Psychic Dominator
+		Name: actor-yapppt.name
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -1820,9 +1840,9 @@ yarock:
 	Inherits: ^CivBuilding
 	Inherits@SHAPE: ^3x3Shape
 	Tooltip:
-		Name: Rocket Launch Pad
+		Name: actor-yarock.name
 	Tooltip@NoRow:
-		Name: Rocket Launch Pad
+		Name: actor-yarock.name
 	Armor:
 		Type: Wood
 	RevealsShroud:
@@ -1851,9 +1871,9 @@ yapsyb:
 	Inherits: ^CivBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Tooltip:
-		Name: Psychic Beacon
+		Name: actor-yapsyb.name
 	Tooltip@NoRow:
-		Name: Psychic Beacon
+		Name: actor-yapsyb.name
 	Armor:
 		Type: Wood
 	Health:
@@ -1896,9 +1916,9 @@ caeast02:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Tooltip:
-		Name: Yuri Statue
+		Name: actor-yaeast02.name
 	Tooltip@NoRow:
-		Name: Yuri Statue
+		Name: actor-yaeast02.name
 	Armor:
 		Type: Steel
 	Health:
@@ -1962,6 +1982,7 @@ caeast02:
 		VoiceSet: YuriStatueVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 300
 
 caeast02.rubble:
@@ -1984,8 +2005,8 @@ yaeast02:
 	Buildable:
 		Queue: Support.Shared, Support.Antarctica
 		BuildPaletteOrder: 70
-		Prerequisites: ~building.yuri, yadome, ~techlevel.2
-		Description: Big defense structure armed with lasers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units
+		Prerequisites: ~building.psisouth, yadome, ~techlevel.2
+		Description: actor-yaeast02.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	Health:
@@ -2003,9 +2024,9 @@ yaeast02:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Yuri Statue
+		Name: actor-yaeast02.name
 	Tooltip@NoRow:
-		Name: Yuri Statue
+		Name: actor-yaeast02.name
 	Turreted:
 		TurnSpeed: 12
 		Offset: 0,0,3096
@@ -2055,6 +2076,7 @@ yaeast02:
 		VoiceSet: YuriStatueVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 300
 
 # Custom Structures
@@ -2067,9 +2089,9 @@ yagatea:
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Tooltip:
-		Name: Psi-Corps Gate
+		Name: actor-yagate.name
 	Tooltip@NoRow:
-		Name: Psi-Corps Gate
+		Name: actor-yagate.name
 	LineBuildNode:
 		Types: yawall
 	WithGateSpriteBody:
@@ -2085,9 +2107,9 @@ yagateb:
 	Inherits: ^Gate_B
 	-Buildable:
 	Tooltip:
-		Name: Psi-Corps Gate
+		Name: actor-yagate.name
 	Tooltip@NoRow:
-		Name: Psi-Corps Gate
+		Name: actor-yagate.name
 	LineBuildNode:
 		Types: yawall
 	WithGateSpriteBody:
@@ -2361,4 +2383,4 @@ psirefn:
 	AlwaysVisible:
 	Interactable:
 	Tooltip:
-		Name: Ore Refinery
+		Name: actor-psirefn.name

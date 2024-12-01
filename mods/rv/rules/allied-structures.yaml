@@ -21,11 +21,11 @@ gacnst:
 		LowPowerModifier: 200
 		Factions: france
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -209,12 +209,12 @@ gapowrup:
 	Valued:
 		Cost: 750
 	Tooltip:
-		Name: Advanced Coolants
+		Name: actor-gapowrup.name
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 80
 		Prerequisites: ~building.allies, gapowr, gaairc, ~!global-upgrades, ~techlevel.2
-		Description: Better coolants allow power plants to work more efficently\nproviding 150 more power.
+		Description: actor-gapowrup.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Plug:
@@ -227,7 +227,7 @@ gapile:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Description: Trains Allied infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: actor-gapile.description
 		Prerequisites: ~building.allies, power, ~techlevel.1
 	Building:
 		Footprint: xxx xxx
@@ -376,11 +376,11 @@ gapile:
 		LowPowerModifier: 200
 		Factions: america
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -391,11 +391,11 @@ gapile:
 		LowPowerModifier: 200
 		Factions: england
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -453,11 +453,11 @@ gaairc:
 	Buildable:
 		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, power, garefn, ~techlevel.2
-		Description: Provides radar.\nProduces Allied aircraft.\nSupports 4 aircraft.\nResearches basic upgrades.\n\nProvides a different support power depening on the subfaction:\n- Airborne (United States)\n- Carpet Bombing (United Kingdom)\n- Force Shield (France)\n- Chrono Grizzly (Germany)\n- Chronobomb (Korea)\n\nAbilities:\n- Comes with 3 repair drones.
+		Description: actor-gaairc.description
 	Tooltip:
-		Name: Airforce Command Headquarters
+		Name: actor-gaairc.name
 	Tooltip@NoRow:
-		Name: Airforce Command Headquarters
+		Name: actor-gaairc.name
 	ProvidesPrerequisite@production:
 		Prerequisite: production
 	ProvidesPrerequisite@buildingname:
@@ -567,11 +567,11 @@ gaairc:
 		LowPowerModifier: 200
 		Factions: germany, france, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -582,11 +582,11 @@ gaairc:
 		LowPowerModifier: 200
 		Factions: america
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -597,11 +597,11 @@ gaairc:
 		LowPowerModifier: 200
 		Factions: england
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -612,11 +612,11 @@ gaairc:
 		LowPowerModifier: 200
 		Factions: korea
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -639,13 +639,13 @@ gaairc:
 			1: airborne
 		ChargeInterval: 4500
 		Names:
-			1: Airborne
+			1: actor-gaairc.power-airborne-name
 		Descriptions:
-			1: 2 Cargo Planes drop 5 GIs and 5 Guardian GIs\nanywhere on the map.
+			1: actor-gaairc.power-airborne-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: Paratroopers ready.
+		EndChargeTextNotification: notification-paratroopers-ready
 		DropItems:
 			1: e1,e1,e1,e1,e1,ggi,ggi,ggi,ggi,ggi
 		SquadSizes:
@@ -671,13 +671,13 @@ gaairc:
 			1: leaflet
 		ChargeInterval: 3750
 		Names:
-			1: Leaflet Drop
+			1: commanders-power.leaflet-drop-name
 		Descriptions:
-			1: A Cargo Plane drops leaflets\nanywhere on the map.\nLeaflets slow enemy infantry\nand vehicle movement and\nfire speed.
+			1: commanders-power.leaflet-drop-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
-		IncomingTextNotification: Warning: Enemy airstrike initiated.
+		IncomingTextNotification: notification-enemy-airstrike-initiated
 		UnitTypes:
 			1: pdplane.leaflet
 		SquadSizes:
@@ -703,13 +703,13 @@ gaairc:
 			1: carpetbomb
 		ChargeInterval: 6000
 		Names:
-			1: Carpet Bombing
+			1: actor-gaairc.power-carpetbombing-name
 		Descriptions:
-			1: A B-52 drops bombs in a line\nanywhere on the map.
+			1: actor-gaairc.power-carpetbombing-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
-		IncomingTextNotification: Warning: Enemy airstrike initiated.
+		IncomingTextNotification: notification-enemy-airstrike-initiated
 		UnitTypes:
 			1: b52
 		SquadSizes:
@@ -734,11 +734,11 @@ gaairc:
 			1: grizzly
 		ChargeInterval: 6000
 		Names:
-			1: Chrono Grizzly
+			1: actor-gaairc.power-chronogrizzly-name
 		Descriptions:
-			1: Chronoshifts 3 Grizzly Tanks\nanywhere on the map.
+			1: actor-gaairc.power-chronogrizzly-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		Weapons:
 			1: GrizzlySpawner
 		ActivationSequence:
@@ -753,13 +753,13 @@ gaairc:
 			1: tankdrop
 		ChargeInterval: 6000
 		Names:
-			1: Tank Drop
+			1: actor-gaairc.power-tankdrop-name
 		Descriptions:
-			1: 3 Cargo Planes drops 3 Grizzly Tanks\nanywhere on the map.
+			1: actor-gaairc.power-tankdrop-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: Paratroopers ready.
+		EndChargeTextNotification: notification-paratroopers-ready
 		DropItems:
 			1: mtnk, mtnk, mtnk
 		SquadSizes:
@@ -787,9 +787,9 @@ gaairc:
 		Cursor: force-shield
 		ChargeInterval: 4500
 		Names:
-			1: Force Shield
+			1: actor-gaairc.power-forceshield-name
 		Descriptions:
-			1: Makes a group of buildings invulnerable for 15 seconds.
+			1: actor-gaairc.power-forceshield-description
 		Durations:
 			1: 375
 		Conditions:
@@ -800,13 +800,13 @@ gaairc:
 			1: ___x___ __xxx__ _xxxxx_ xxxxxxx _xxxxx_ __xxx__ ___x___
 		OnFireSound: sforceon.wav
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ForceShieldReady
-		EndChargeTextNotification: Force Shield ready.
+		EndChargeTextNotification: notification-force-shield-ready
 		LaunchSpeechNotification: ForceShieldActivated
-		LaunchTextNotification: Force Shield activated.
+		LaunchTextNotification: notification-force-shield-activated
 		IncomingSpeechNotification: ForceShieldActivated
-		IncomingTextNotification: Force Shield activated.
+		IncomingTextNotification: notification-force-shield-activated
 		EffectImage: explosion
 		EffectSequence: forceshield
 		EffectPalette: effect
@@ -820,13 +820,13 @@ gaairc:
 			1: empulse
 		ChargeInterval: 7500
 		Names:
-			1: E. M. Pulse Strike
+			1: commanders-power.emp-strike-name
 		Descriptions:
-			1: A Cargo Plane drops an Electromagnetic Pulse\nbomb anywhere on the map.
+			1: commanders-power.emp-strike-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
-		IncomingTextNotification: Warning: Enemy airstrike initiated.
+		IncomingTextNotification: notification-enemy-airstrike-initiated
 		UnitTypes:
 			1: pdplane.emp
 		SquadSizes:
@@ -851,11 +851,11 @@ gaairc:
 			1: chronobomb
 		ChargeInterval: 6000
 		Names:
-			1: Chronobomb
+			1: actor-gaairc.power-chronobomb-name
 		Descriptions:
-			1: Chronoshifts several explosive barrels\nanywhere on the map.
+			1: actor-gaairc.power-chronobomb-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		Weapons:
 			1: BarrelSpawner
 		ActivationSequence:
@@ -904,7 +904,7 @@ gaairc:
 	ProvidesPrerequisite@AIantiRush:
 		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
 	ActorStatValues:
-		Armaments: none
+		Stats: Armor, Sight, Power
 
 gabarl:
 	Inherits: camisc02
@@ -932,7 +932,7 @@ gaweap:
 	Inherits: ^WarFactory
 	Buildable:
 		Queue: Building.Shared, Building.Allies
-		Description: Produces Allied vehicles.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: actor-gaweap.description
 		Prerequisites: ~building.allies, refinery, ~techlevel.1
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: gaweap
@@ -964,11 +964,11 @@ gaweap:
 		LowPowerModifier: 200
 		Factions: america
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -979,11 +979,11 @@ gaweap:
 		LowPowerModifier: 200
 		Factions: england
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -994,11 +994,11 @@ gaweap:
 		LowPowerModifier: 200
 		Factions: germany
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -1029,7 +1029,7 @@ gayard:
 	Buildable:
 		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, refinery, ~techlevel.1
-		Description: Produces Allied ships, and other naval units.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can only be placed on water.
+		Description: actor-gayard.description
 	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@ship.allies:
 		Prerequisite: ship.allies
@@ -1052,12 +1052,12 @@ gayard:
 		Prerequisites:
 			1: disabled # gayard
 		Names:
-			1: Sonar Pulse
+			1: actor-gayard.power-name
 		Descriptions:
-			1: Reveals all submarines and naval mines in a\nlarge area for a short time.
+			1: actor-gayard.power-description
 		ChargeInterval: 1000
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		Actors:
 			1: sonar
 		LifeTime: 375
@@ -1154,11 +1154,11 @@ gawall:
 		Queue: Support.Shared, Support.Allies, Support.France
 		Prerequisites: ~building.allies, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: Heavy wall capable of blocking units and projectiles.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Cannot be placed on water.
+		Description: actor-gawall.description
 	Tooltip:
-		Name: Allied Wall
+		Name: actor-gawall.name
 	Tooltip@NoRow:
-		Name: Allied Wall
+		Name: actor-gawall.name
 	LineBuild:
 		NodeTypes: gawall
 	LineBuildNode:
@@ -1177,15 +1177,15 @@ gapill:
 		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 40
 		Prerequisites: ~building.allies, gapile, ~techlevel.1
-		Description: Automated anti-infantry defense.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)
+		Description: actor-gapill.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Pill Box
+		Name: actor-gapill.name
 	Tooltip@NoRow:
-		Name: Pill Box
+		Name: actor-gapill.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1228,6 +1228,7 @@ gapill:
 		VoiceSet: PillBoxVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MaxRange
 		Damage: 65
 
 nasam:
@@ -1243,15 +1244,15 @@ nasam:
 		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 50
 		Prerequisites: ~building.allies, gaairc, ~techlevel.2
-		Description: Automated anti-aircraft defense.\n\n  Strong vs Aircraft\n  Weak vs Ground units\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Boost-Gliding Systems (United States)\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
+		Description: actor-nasam.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Patriot Missile System
+		Name: actor-nasam.name
 	Tooltip@NoRow:
-		Name: Patriot Missile System
+		Name: actor-nasam.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1312,6 +1313,7 @@ nasam:
 		VoiceSet: PatriotMissileVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.boost_gliding_systems, upgrade.grand_cannon_protocols
 
 gtgcan:
@@ -1326,15 +1328,15 @@ gtgcan:
 		Queue: Support.Shared, Support.France
 		BuildPaletteOrder: 90
 		Prerequisites: ~building.france, upgrade.grand_cannon_protocols, ~techlevel.3
-		Description: Automated, long ranged anti-ground defense.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Aircraft\n\n  Requires power to operate.
+		Description: actor-gtgcan.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Grand Cannon
+		Name: actor-gtgcan.name
 	Tooltip@NoRow:
-		Name: Grand Cannon
+		Name: actor-gtgcan.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
@@ -1387,6 +1389,8 @@ gtgcan:
 	Voiced:
 		VoiceSet: GrandCannonVoice
 		Volume: 0.5
+	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 
 gaorep:
 	Inherits: ^BaseBuilding
@@ -1398,25 +1402,25 @@ gaorep:
 		Queue: Building.Shared, Building.Allies
 		BuildPaletteOrder: 120
 		Prerequisites: ~building.allies, gatech, ~techlevel.4
-		Description: Refines income from ores and gems by 25%.\n\n  Maximum 1 can be built.
+		Description: actor-gaorep.description
 		BuildLimit: 1
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Ore Purifier
+		Name: actor-gaorep.name
 		RequiresCondition: !megawealth && showownername
 	Tooltip@NoRow:
-		Name: Ore Purifier
+		Name: actor-gaorep.name
 		RequiresCondition: !megawealth && !showownername
 	Tooltip@Megawealth:
-		Name: Oil Purifier
-		GenericName: Structure
+		Name: actor-gaorep.megawealth-name
+		GenericName: meta-building.name
 		RequiresCondition: megawealth && showownername
 	Tooltip@Megawealth-NoRow:
-		Name: Oil Purifier
-		GenericName: Structure
+		Name: actor-gaorep.megawealth-name
+		GenericName: meta-building.name
 		ShowOwnerRow: false
 		RequiresCondition: megawealth && !showownername
 	GrantConditionOnPrerequisite@megawealth:
@@ -1467,6 +1471,8 @@ gaorep:
 	Voiced:
 		VoiceSet: OrePurifierVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 gaspysat:
 	Inherits: ^BaseBuilding
@@ -1478,15 +1484,15 @@ gaspysat:
 		Queue: Building.Shared, Building.Allies
 		BuildPaletteOrder: 110
 		Prerequisites: ~building.allies, gatech, ~techlevel.4
-		Description: Provides Satellite Scan power, which reveals the map for a while.\nProvides Radar.\n\n  Requires power to operate.
+		Description: actor-gaspysat.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Spy Satellite Uplink
+		Name: actor-gaspysat.name
 	Tooltip@NoRow:
-		Name: Spy Satellite Uplink
+		Name: actor-gaspysat.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1534,9 +1540,9 @@ gaspysat:
 		Prerequisites:
 			1: gaspysat
 		Names:
-			1: Satellite Scan
+			1: actor-gaspysat.power-name
 		Descriptions:
-			1: Reveals the whole map for 30 seconds.\nActivated automatically.
+			1: actor-gaspysat.power-description
 		Icons:
 			1: satscan
 		Actors: camera.satscan
@@ -1549,6 +1555,8 @@ gaspysat:
 	Voiced:
 		VoiceSet: SpySatelliteVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 gagap:
 	Inherits: ^SupportBuilding
@@ -1559,14 +1567,14 @@ gagap:
 	Valued:
 		Cost: 500
 	Tooltip:
-		Name: Gap Generator
+		Name: actor-gagap.name
 	Tooltip@NoRow:
-		Name: Gap Generator
+		Name: actor-gagap.name
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 100
 		Prerequisites: ~building.allies, gatech, ~techlevel.3
-		Description: Obscures the enemy's view with shroud.\n\n  Requires power to operate.
+		Description: actor-gagap.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Health:
@@ -1611,17 +1619,19 @@ gagap:
 	Voiced:
 		VoiceSet: GapGeneratorVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 gaweat:
 	Inherits: ^PrimarySuperWeapon
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
 		Prerequisites: ~building.allies, gatech, !enoughweather, ~techlevel.5
-		Description: Play God with deadly weather!\n\n  Requires power to operate.
+		Description: actor-gaweat.description
 	Tooltip:
-		Name: Weather Controller
+		Name: actor-gaweat.name
 	Tooltip@NoRow:
-		Name: Weather Controller
+		Name: actor-gaweat.name
 	WithIdleOverlay@waves:
 		RequiresCondition: !build-incomplete && in_water
 	DetonateWeaponPower@WeatherStorm:
@@ -1633,9 +1643,9 @@ gaweat:
 		Cursor: weatherstorm
 		ChargeInterval: 9000
 		Names:
-			1: Lightning Storm
+			1: actor-gaweat.power-name
 		Descriptions:
-			1: Applies heavy damage over a large area.
+			1: actor-gaweat.power-description
 		Weapons:
 			1: WeatherStormInit
 		ActivationSequence:
@@ -1646,13 +1656,13 @@ gaweat:
 		SpawnCameraAtGround: true
 		EndChargeSound: swearead.wav
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: LightningStormReady
-		EndChargeTextNotification: Lightning Storm ready.
+		EndChargeTextNotification: notification-lightning-storm-ready
 		LaunchSpeechNotification: LightningStormCreated
-		LaunchTextNotification: Warning: Lightning Storm created.
+		LaunchTextNotification: notification-lightning-storm-created
 		IncomingSpeechNotification: LightningStormCreated
-		IncomingTextNotification: Warning: Lightning Storm created.
+		IncomingTextNotification: notification-lightning-storm-created
 		DisplayTimerRelationships: Ally, Neutral, Enemy
 		PauseOnCondition: disabled || chronodisable
 		DisplayRadarPing: True
@@ -1662,7 +1672,7 @@ gaweat:
 		Prerequisite: enoughweather
 	NotificationAnnouncement:
 		Notification: WeathercontrolDeviceDetected
-		TextNotification: Warning: Weather Control Device detected.
+		TextNotification: notification-weather-control-device-detected
 	IsometricSelectable:
 		DecorationHeight: 75
 	Voiced:
@@ -1672,18 +1682,19 @@ gaweat:
 gacsph:
 	Inherits: ^SecondarySuperWeapon
 	Inherits@SHAPE: ^4x3Shape
+	Inherits@AI: ^AIControl
 	Buildable:
 		Queue: Support.Shared, Support.Allies, Support.France
 		Prerequisites: ~building.allies, gatech, !enoughchrono, ~techlevel.5
-		Description: Allows teleportation of vehicles.\nKills infantry.\n\n  Requires power to operate.\n  Can be rotated.
+		Description: actor-gacsph.description
 	Tooltip:
-		Name: Chronosphere
+		Name: actor-gacsph.name
 	Tooltip@NoRow:
-		Name: Chronosphere
+		Name: actor-gacsph.name
 	Building:
 		Footprint: xxx xxx xxx xxx
 		Dimensions: 4,3
-	ChronoshiftPower@chronoshift:
+	RA2ChronoshiftPower@chronoshift:
 		OrderName: Chronoshift
 		Prerequisites:
 			1: gacsph
@@ -1691,9 +1702,9 @@ gacsph:
 			1: chrono
 		ChargeInterval: 6000
 		Names:
-			1: Chronoshift
+			1: actor-gacsph.power-name
 		Descriptions:
-			1: Teleports a group of units across\nthe map.\n\nKills infantry.
+			1: actor-gacsph.power-description
 		Dimensions:
 			1: 3,3
 		Footprints:
@@ -1702,13 +1713,13 @@ gacsph:
 			1: -1
 		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ChronosphereReady
-		EndChargeTextNotification: Chronosphere ready.
+		EndChargeTextNotification: notification-chronosphere-ready
 		LaunchSpeechNotification: ChronosphereActivated
-		LaunchTextNotification: Warning: Chronosphere activated.
+		LaunchTextNotification: notification-chronosphere-activated
 		IncomingSpeechNotification: ChronosphereActivated
-		IncomingTextNotification: Warning: Chronosphere activated.
+		IncomingTextNotification: notification-chronosphere-activated
 		# Those sounds don't work: OpenRA/OpenRA#10540
 		# They also want to be played successive
 		#SelectTargetSound: schrlo1.wav, schrlo2a.wav schrlo2b.wav, schrlo2c.wav, schrlo3.wav
@@ -1719,21 +1730,54 @@ gacsph:
 		EffectImage: chronoshift
 		SelectionStartSequence: start
 		SelectionLoopSequence: loop
-		SelectionEndSequence: end
-		TeleportTargetSequence: target
-		BeforeTeleportDelay: 5
-		AfterTeleportDelay: 15
-		TeleportingCondition: chronodisable
+		ImpactWeapon: ChronoshiftImpact
+		TeleportWeapon: ChronoshiftImpact
 		EffectPalette: effect75alpha
 		AllowImpassable: true
 		SelectionCursor: chronosphere
 		TargetCursor: chronosphere
 		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: !ai-control
+	DetonateWeaponPower@chronoAI:
+		OrderName: GermanChronoGrizzly ## Hack: use an unused order so AI will use the same logic as GermanChronoGrizzly
+		PauseOnCondition: disabled || chronodisable
+		RequiresCondition: ai-control
+		Prerequisites:
+			1: gacsph
+		Icons:
+			1: chrono
+		ChargeInterval: 6000
+		Names:
+			1: actor-gacsph.power-name # This name is visible to the player, don't give it a different name.
+		Descriptions:
+			1: actor-gacsph.power-description
+		Weapons:
+			1: AIChronoSpawner
+		AllowMultiple: true
+		SelectTargetSpeechNotification: SelectTarget
+		SelectTargetTextNotification: notification-select-target
+		EndChargeSpeechNotification: ChronosphereReady
+		EndChargeTextNotification: notification-chronosphere-ready
+		LaunchSpeechNotification: ChronosphereActivated
+		LaunchTextNotification: notification-chronosphere-activated
+		IncomingSpeechNotification: ChronosphereActivated
+		IncomingTextNotification: notification-chronosphere-activated
+		# Those sounds don't work: OpenRA/OpenRA#10540
+		# They also want to be played successive
+		#SelectTargetSound: schrlo1.wav, schrlo2a.wav schrlo2b.wav, schrlo2c.wav, schrlo3.wav
+		EndChargeSound: schropen.wav
+		DisplayTimerRelationships: Ally, Neutral, Enemy
+		ActivationSequence:
+		DisplayRadarPing: True
+		CameraRange: 8c0
+		CameraRemoveDelay: 25
+		SelectionCursor: chronosphere
+		TargetCursor: chronosphere
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughchrono
 	NotificationAnnouncement:
 		Notification: ChronosphereDetected
-		TextNotification: Warning: Chronosphere detected.
+		TextNotification: notification-chronosphere-detected
 	WithIdleOverlay@dome:
 		Sequence: idle-dome
 		PauseOnCondition: chronodisable
@@ -1763,15 +1807,15 @@ atesla:
 		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 60
 		Prerequisites: ~building.allies, gaairc, ~techlevel.3
-		Description: Advanced base defense.\nCan buff at most 3 other Prism Towers nearby.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
+		Description: actor-atesla.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1200
 	Tooltip:
-		Name: Prism Tower
+		Name: actor-atesla.name
 	Tooltip@NoRow:
-		Name: Prism Tower
+		Name: actor-atesla.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -1840,6 +1884,7 @@ atesla:
 		VoiceSet: PrismTowerVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 150
 		ReloadDelay: 50
 
@@ -1854,13 +1899,13 @@ garobo:
 		Queue: Building.Unused # Building.Allies
 		BuildPaletteOrder: 80
 		Prerequisites: gaweap
-		Description: Allows production of Robot Tanks.\nRequired for Robot Tanks to function.
+		Description: actor-garobo.description
 	Valued:
 		Cost: 600
 	Tooltip:
-		Name: Robot Control Center
+		Name: actor-garobo.name
 	Tooltip@NoRow:
-		Name: Robot Control Center
+		Name: actor-garobo.name
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -1891,6 +1936,8 @@ garobo:
 		RequiresCondition: lowpower || powerdown || emp
 	IsometricSelectable:
 		DecorationHeight: 60
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 # Custom Structures
 gaapad:
@@ -1901,15 +1948,15 @@ gaapad:
 		Queue: Building.Unused # Building.Allies
 		BuildPaletteOrder: 100
 		Prerequisites: gaairc, prerequisite.airpad, ~techlevel.2
-		Description: Rearms up to 3 aircraft.
+		Description: actor-gaapad.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 250
 	Tooltip:
-		Name: Airpad
+		Name: actor-gaapad.name
 	Tooltip@NoRow:
-		Name: Airpad
+		Name: actor-gaapad.name
 	ProvidesPrerequisite@default:
 	GrantExternalConditionToOwner:
 		Condition: airdock
@@ -1984,6 +2031,8 @@ gaapad:
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 gadock:
 	Interactable:
@@ -2008,13 +2057,13 @@ gagatea:
 		Queue: Support.Shared, Support.Allies, Support.France
 		Prerequisites: ~building.allies, ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Automated barrier that opens for allied units.\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Can be rotated.
+		Description: actor-gagate.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Tooltip:
-		Name: Allied Gate
+		Name: actor-gagate.name
 	Tooltip@NoRow:
-		Name: Allied Gate
+		Name: actor-gagate.name
 	LineBuildNode:
 		Types: gawall
 	WithGateSpriteBody:
@@ -2031,9 +2080,9 @@ gagateb:
 	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	-Buildable:
 	Tooltip:
-		Name: Allied Gate
+		Name: actor-gagate.name
 	Tooltip@NoRow:
-		Name: Allied Gate
+		Name: actor-gagate.name
 	LineBuildNode:
 		Types: gawall
 	WithGateSpriteBody:
@@ -2066,15 +2115,15 @@ gamgun:
 		Queue: Support.Shared, Support.France
 		BuildPaletteOrder: 80
 		Prerequisites: ~building.france, gaairc, ~techlevel.3
-		Description: Defensive structure that is invisible while not firing.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can be placed further than other buildings\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.\n  Can be rotated.
+		Description: actor-gamgun.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 800
 	Tooltip:
-		Name: Mirage Turret
+		Name: actor-gamgun.name
 	Tooltip@NoRow:
-		Name: Mirage Turret
+		Name: actor-gamgun.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -2102,6 +2151,8 @@ gamgun:
 		RequiresCondition: !disabled && !chronodisable && !emp
 		InitialDelay: 25
 		CloakDelay: 25
+		CloakStyle: Palette
+		CloakedPalette: cloak
 		IsPlayerPalette: true
 		UncloakOn: Attack, Damage
 	WithSpriteTurret:
@@ -2110,7 +2161,7 @@ gamgun:
 		Range: 6c0
 	RenderDetectionCircle:
 	BodyOrientation:
-		QuantizedFacings: 8
+		QuantizedFacings: 16
 	WithRangeCircle:
 		Range: 6c0
 		Type: mirageturret
@@ -2133,6 +2184,7 @@ gamgun:
 		VoiceSet: MirageTurretVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 100
 
 gagun:
@@ -2147,15 +2199,15 @@ gagun:
 		Queue: Support.Shared, Support.Allies, Support.France
 		BuildPaletteOrder: 70
 		Prerequisites: ~building.allies, gapile, prerequisite.gun_turret, ~techlevel.1
-		Description: Anti-tank defense structure.\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nAbilities:\n- Can detect Steath units\n\nUpgradeable with:\n- Grand Cannon Protocols (France)\n\n  Requires power to operate.
+		Description: actor-gagun.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 650
 	Tooltip:
-		Name: Gun Turret
+		Name: actor-gagun.name
 	Tooltip@NoRow:
-		Name: Gun Turret
+		Name: actor-gagun.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -2187,7 +2239,7 @@ gagun:
 		Range: 5c0
 	RenderDetectionCircle:
 	BodyOrientation:
-		QuantizedFacings: 8
+		QuantizedFacings: 16
 	WithRangeCircle:
 		Range: 7c0
 		Type: gunturret
@@ -2208,6 +2260,7 @@ gagun:
 		VoiceSet: GunTurretVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 150
 
 gaexpn:
@@ -2482,8 +2535,10 @@ gacspb:
 	Building:
 		Footprint: xxx xxx xxx xxx
 		Dimensions: 3,4
-	ChronoshiftPower@chronoshift:
-		OrderName: ChronoshiftB
+	RA2ChronoshiftPower@chronoshift:
+		Prerequisites:
+			1: gacspb
+	DetonateWeaponPower@chronoAI:
 		Prerequisites:
 			1: gacspb
 	ActorStatValues:

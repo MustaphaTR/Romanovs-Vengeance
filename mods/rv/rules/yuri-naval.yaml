@@ -4,15 +4,16 @@ yhvr:
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.1
-		Description: General-purpose naval transport.\nCan carry infantry and vehicles.\n\n  Unarmed\n\nUpgradeable with:\n- Grinder Treads
+		Description: actor-yhvr.description
 	Voiced:
 		VoiceSet: YuriAmphibiousTransportVoice
 
 bsub:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	# Inherits@C4: ^AcceptsSEALC4
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -22,7 +23,7 @@ bsub:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, yatech, ~techlevel.3
 		BuildPaletteOrder: 80
-		Description: Submerged anti-ship and anti-structure armed with\ndouble torpedo and missile launchers.\n\n  Strong vs Ships, Buildings\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-bsub.description
 		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -30,11 +31,11 @@ bsub:
 	Valued:
 		Cost: 2500
 	Tooltip:
-		Name: Boomer Submarine
-		GenericName: Submarine
+		Name: actor-bsub.name
+		GenericName: meta-submarine.generic-name
 	Tooltip@NoRow:
-		Name: Boomer Submarine
-		GenericName: Submarine
+		Name: actor-bsub.name
+		GenericName: meta-submarine.generic-name
 	Health:
 		HP: 120000
 	Armor:
@@ -56,15 +57,17 @@ bsub:
 	#	DetectionTypes: Underwater
 	#	InitialDelay: 50
 	#	CloakDelay: 75
+	#	CloakStyle: Palette
+	#	CloakedPalette: cloak
+	#	IsPlayerPalette: true
 	#	CloakSound: vnavupa.wav
 	#	UncloakSound: vnavupa.wav
 	#	UncloakOn: Damage
-	#	IsPlayerPalette: true
 	#	PauseOnCondition: uncloak
-	GrantConditionOnAttack:
-		Condition: uncloak
-		RevokeDelay: 75
-		ArmamentNames: missile
+	# GrantConditionOnAttack:
+	#	Condition: uncloak
+	#	RevokeDelay: 75
+	#	ArmamentNames: missile
 	Armament:
 		Weapon: BoomerTorpedo
 		Damage: 90
@@ -105,18 +108,11 @@ bsub:
 	GrantExternalConditionToSpawnedMissile:
 		Condition: rank-elite
 		RequiresCondition: rank-elite
-	-MustBeDestroyed:
 	WithVoxelBody:
 		ShowShadow: false
 	RenderSprites:
 	Voiced:
 		VoiceSet: BoomerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -125,15 +121,17 @@ bsub:
 	#	SoundFiles: vboostaa.wav, vboostab.wav
 	#	Volume: 0.6
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 cmisl:
 	Inherits: ^ShootableMissile
 	Valued:
 		Cost: 50
 	Tooltip:
-		Name: Cruise Missile
+		Name: actor-cmisl.name
 	Tooltip@NoRow:
-		Name: Cruise Missile
+		Name: actor-cmisl.name
 	Health:
 		HP: 5000
 	Armor:
@@ -155,15 +153,15 @@ cmisl:
 		SpawnAtLastPosition: false
 		Type: CenterPosition
 	MissileSpawnerSlave:
-	SpawnedExplodes:
+	ExplodesForMaster:
 		Weapon: CruiseWeapon
 		EmptyWeapon: CruiseWeapon
 		RequiresCondition: !airborne && !rank-elite
-	SpawnedExplodes@Elite:
+	ExplodesForMaster@Elite:
 		Weapon: CruiseWeaponE
 		EmptyWeapon: CruiseWeaponE
 		RequiresCondition: !airborne && rank-elite
-	SpawnedExplodes@Airborne:
+	ExplodesForMaster@Airborne:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 		RequiresCondition: airborne
@@ -176,32 +174,35 @@ cmisl:
 piranha:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	# Inherits@C4: ^AcceptsSEALC4
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SQUID: ^SquidGrabbable
 	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
-		Queue: Ship.Civilian # Ship.Shared, Ship.Yuri
-		Prerequisites: ~ship.yuri, ~techlevel.1
-		BuildPaletteOrder: 20
-		Description: Submerged unit armed with fast firing torpedoes.\n\n  Strong vs Ships\n  Weak vs Ground units, Aircraft\n\nAbilities:\n- Can detect Stealth units
+		Queue: Ship.Shared, Ship.Yuri
+		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
+		BuildPaletteOrder: 70
+		Description: actor-piranha.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 500
+		Cost: 800
 	Tooltip:
-		Name: Piranha Submarine
+		Name: actor-piranha.name
+		GenericName: meta-submarine.generic-name
 	Tooltip@NoRow:
-		Name: Piranha Submarine
+		Name: actor-piranha.name
+		GenericName: meta-submarine.generic-name
 	Health:
 		HP: 30000
 	Armor:
-		Type: Light
+		Type: Heavy
 	Mobile:
 		TurnSpeed: 40
 		Speed: 120
@@ -219,10 +220,12 @@ piranha:
 	#	DetectionTypes: Underwater
 	#	InitialDelay: 50
 	#	CloakDelay: 75
+	#	CloakStyle: Palette
+	#	CloakedPalette: cloak
+	#	IsPlayerPalette: true
 	#	CloakSound: vnavupa.wav
 	#	UncloakSound: vnavupa.wav
 	#	UncloakOn: Attack, Damage
-	#	IsPlayerPalette: true
 	Armament:
 		Weapon: PiraTorpedo
 		Damage: 35
@@ -245,18 +248,11 @@ piranha:
 		# DetectionTypes: Underwater
 		Range: 6c0
 	RenderDetectionCircle:
-	-MustBeDestroyed:
 	WithVoxelBody:
 		ShowShadow: false
 	RenderSprites:
 	Voiced:
 		VoiceSet: TyphoonVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -265,13 +261,16 @@ piranha:
 	#	SoundFiles: vsqumova.wav, vsqumovb.wav
 	#	Volume: 0.45
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 gatsub:
 	Inherits: ^Ship
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	# Inherits@C4: ^AcceptsSEALC4
 	Inherits@CHAINGUNS: ^AffectedByChainguns
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -281,7 +280,7 @@ gatsub:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Submerged anti-air unit armed with gatling cannon.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles, Ships\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Chainguns
+		Description: actor-gatsub.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -289,9 +288,11 @@ gatsub:
 	Valued:
 		Cost: 900
 	Tooltip:
-		Name: Gatling Submarine
+		Name: actor-gatsub.name
+		GenericName: meta-submarine.generic-name
 	Tooltip@NoRow:
-		Name: Gatling Submarine
+		Name: actor-gatsub.name
+		GenericName: meta-submarine.generic-name
 	Health:
 		HP: 20000
 	Armor:
@@ -313,10 +314,12 @@ gatsub:
 	#	DetectionTypes: Underwater
 	#	InitialDelay: 50
 	#	CloakDelay: 75
+	#	CloakStyle: Palette
+	#	CloakedPalette: cloak
+	#	IsPlayerPalette: true
 	#	CloakSound: vnavupa.wav
 	#	UncloakSound: vnavupa.wav
 	#	UncloakOn: Attack, Damage
-	#	IsPlayerPalette: true
 	Turreted:
 		Offset: -256,0,0
 		TurnSpeed: 40
@@ -428,7 +431,6 @@ gatsub:
 		# DetectionTypes: Underwater
 		Range: 4c0
 	RenderDetectionCircle:
-	-MustBeDestroyed:
 	WithMuzzleOverlay:
 	WithVoxelBody:
 		ShowShadow: false
@@ -437,12 +439,6 @@ gatsub:
 	RenderSprites:
 	Voiced:
 		VoiceSet: GatlingTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: vetgatsuborbaacdm
 	WithProductionIconOverlay@1:
@@ -462,8 +458,8 @@ gatsub:
 	#	Volume: 0.6
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 20
-		SplitRanges: true
 
 floater:
 	Inherits: ^SeaAnimal
@@ -473,7 +469,7 @@ floater:
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
-		Description: Large ocean creature capable of dealing heavy damage in close combat.\nCan move to land.\n\n  Strong vs Ships\n\nAbilities:\n- Can remove Squids from ships by attacking them\n- Can detect Stealth units\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+		Description: actor-floater.description
 		BuildDuration: 375
 	Valued:
 		Cost: 1000
@@ -481,11 +477,11 @@ floater:
 		Payload: 1000
 		Voice: Move
 	Tooltip:
-		Name: Mutant Crab
-		GenericName: Crab
+		Name: actor-floater.name
+		GenericName: actor-floater.generic-name
 	Tooltip@NoRow:
-		Name: Mutant Crab
-		GenericName: Crab
+		Name: actor-floater.name
+		GenericName: actor-floater.generic-name
 	Armor:
 		Type: Heavy
 	Health:
@@ -548,8 +544,9 @@ floater:
 strt:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -560,7 +557,7 @@ strt:
 		Queue: Ship.Shared, Ship.Yuri
 		Prerequisites: ~ship.yuri, ~techlevel.3
 		BuildPaletteOrder: 20
-		Description: Light amphibious tank.\n  Strong vs Vehicles, Ships\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads
+		Description: actor-strt.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -571,9 +568,9 @@ strt:
 		Payload: 700
 		Voice: Move
 	Tooltip:
-		Name: Strider Tank
+		Name: actor-strt.name
 	Tooltip@NoRow:
-		Name: Strider Tank
+		Name: actor-strt.name
 	Health:
 		HP: 30000
 	Armor:
@@ -582,7 +579,7 @@ strt:
 		Speed: 105
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	Crushable:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
 	Crushable@Cheater:
@@ -618,15 +615,17 @@ strt:
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
 	WithVoxelBody:
-		RequiresCondition: in_water
+		RequiresCondition: in_water && !on_dock
 	WithVoxelBody@land:
 		Sequence: idle-land
-		RequiresCondition: !in_water
+		RequiresCondition: !in_water || on_dock
 	WithVoxelTurret:
-		RequiresCondition: in_water
+		RequiresCondition: in_water && !on_dock
 	WithVoxelTurret@land:
 		Sequence: turret-land
-		RequiresCondition: !in_water
+		RequiresCondition: !in_water || on_dock
+	ExternalCondition@on_dock:
+		Condition: on_dock
 	RenderSprites:
 	RenderVoxels:
 		Scale: 10
@@ -651,14 +650,9 @@ strt:
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	Voiced:
 		VoiceSet: LasherTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 50
 
 buoy:
@@ -673,9 +667,9 @@ buoy:
 		Bounds: 1544, 3089
 	RejectsOrders:
 	Tooltip:
-		Name: Sensor Buoy
+		Name: actor-buoy.name
 	Tooltip@NoRow:
-		Name: Sensor Buoy
+		Name: actor-buoy.name
 	Health:
 		HP: 15000
 	Armor:
@@ -704,7 +698,11 @@ buoy:
 		RequiresCondition: !parachute
 	RenderSprites:
 		Palette: effect50alpha
+	-CaptureManager:
+	-Capturable:
+	-CaptureSound:
 	-Voiced:
+	-GrantConditionOnPrerequisite@SUDDENDEATH:
 	-MustBeDestroyed:
 	-WithColoredOverlay@IDISABLE:
 	-GrantCondition@IDISABLE:

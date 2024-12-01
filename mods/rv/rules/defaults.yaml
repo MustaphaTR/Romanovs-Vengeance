@@ -245,7 +245,7 @@
 ^GainsExperience:
 	GainsExperience:
 		LevelUpNotification: LevelUp
-		LevelUpTextNotification: Unit promoted.
+		LevelUpTextNotification: notification-unit-promoted
 		Conditions:
 			200: rank-veteran
 			400: rank-veteran
@@ -536,9 +536,9 @@
 		Condition: boost3
 
 ^AffectedByGIFortifications:
-	DamageMultiplier@FORTIFICATIONS:
-		Modifier: 75
-		RequiresCondition: fortifications && deployed
+	# DamageMultiplier@FORTIFICATIONS:
+	#	Modifier: 75
+	#	RequiresCondition: fortifications && deployed
 	ActorStatValues:
 		Upgrades: upgrade.gi_fortifications
 	GrantConditionOnPrerequisite@FORTIFICATIONS:
@@ -705,12 +705,26 @@
 		Condition: propeffort
 		Prerequisites: upgrade.propaganda_effort
 
+^AffectedByHeavyMortars:
+	ActorStatValues:
+		Upgrades: upgrade.heavy_mortars
+	GrantConditionOnPrerequisite@HEAVYMORTARS:
+		Condition: heavymortars
+		Prerequisites: upgrade.heavy_mortars
+
 ^AffectedByMountedMG:
 	ActorStatValues:
 		Upgrades: upgrade.mounted_mg
 	GrantConditionOnPrerequisite@MACHINEGUN:
 		Condition: machinegun
 		Prerequisites: upgrade.mounted_mg
+
+^AffectedByArmTheMob:
+	# ActorStatValues:
+	#	Upgrades: upgrade.arm_the_mob
+	GrantConditionOnPrerequisite@ARMTHEMOB:
+		Condition: armthemob
+		Prerequisites: upgrade.arm_the_mob
 
 ^AffectedByRadioactiveBombs:
 	ActorStatValues:
@@ -851,6 +865,8 @@
 		RequiresCondition: camouflage && !chronodisable
 		InitialDelay: 25
 		CloakDelay: 100
+		CloakStyle: Palette
+		CloakedPalette: cloak
 		IsPlayerPalette: true
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
@@ -1029,6 +1045,13 @@
 		Damage: 75
 		DamageLevel: 10
 		DamageTypes: OrangeRadiationDeath, NonTemporal
+
+^DamagedByRadiation50PercentAircraft:
+	Inherits: ^DamagedByRadiation50Percent
+	DamagedByTintedCells:
+		RequiresCondition: !airborne
+	DamagedByTintedCells@ORANGE:
+		RequiresCondition: !airborne
 
 ^DamagedByRadiation10Percent:
 	DamagedByTintedCells:
@@ -1242,6 +1265,8 @@
 		RequiresCondition: invisibility && !chronodisable
 		InitialDelay: 25
 		CloakDelay: 100
+		CloakStyle: Palette
+		CloakedPalette: cloak
 		IsPlayerPalette: true
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
@@ -1261,10 +1286,12 @@
 		RequiresCondition: invisibility-generator && !chronodisable
 		InitialDelay: 25
 		CloakDelay: 100
+		CloakStyle: Palette
+		CloakedPalette: cloak
 		IsPlayerPalette: true
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
-		UncloakOn: Attack, Damage
+		UncloakOn: Attack, Damage, SupportPower
 	ExternalCondition@INVISIBILITY-GENERATOR:
 		Condition: invisibility-generator
 
@@ -1330,7 +1357,6 @@
 		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: bounty
 	GivesBounty:
-		Percentage: 50
 		ValidRelationships: Ally, Neutral, Enemy
 		RequiresCondition: bounty
 	TimedConditionBar@BOUNTY:
@@ -1374,6 +1400,36 @@
 	Inherits: ^ChronoDisable
 	AffectedByTemporal:
 		RequiresCondition: !invulnerability && !forceshield
+
+^WithPortableChrono:
+	RA2PortableChrono:
+		TeleportType: PortableChrono # Chronoshift ability shouldn't trigger this.
+		DeployCursor: chronosphere
+		DeployBlockedCursor: chronosphere
+		Voice: Move
+		ChargeDelay: 120
+		HasDistanceLimit: false
+		TargetCursor: chronosphere
+		PauseOnCondition: affectedbytemporal
+	ExplodeWeaponTeleportEffect:
+		TeleportType: PortableChrono
+		ImpactWeapon: PortableChronoImpact
+		TeleportWeapon: PortableChronoTeleport
+	GrantTimedConditionOnTeleport@Portable:
+		TeleportTypes: PortableChrono
+		Condition: chronoed
+	Contrail@Teleport: ##HACK: add a trace for teleport. 
+		Offset: 0, 0, 700
+		StartColor: 00F0F8AA
+		StartColorAlpha: 176
+		StartColorUsePlayerColor: false
+		ZOffset: -1024
+		StartWidth: 36
+		TrailLength: 2
+	GrantCondition@ChronoDisable:
+		RequiresCondition: affectedbytemporal || chronoed
+	RA2Chronoshiftable:
+		ExplodeInstead: false
 
 ^TankBunkerable:
 	FirepowerMultiplier@TANK_BUNKER:
@@ -1434,7 +1490,7 @@
 		Modifier: 130
 		RequiresCondition: chaos
 	Berserkable@CHAOS:
-		ActorsToIgnore: caos, pdplane.chaos
+		TargetTypesToIgnore: Tree, NoBerserkAutoTarget
 		RequiresCondition: chaos
 	RejectsOrders@CHAOS:
 		RequiresCondition: chaos
@@ -1449,15 +1505,30 @@
 	ExternalCondition@CHAOS:
 		Condition: chaos
 
+^BerserkableArmed:
+	Inherits: ^Berserkable
+	AutoTarget:
+		RequiresCondition: !chaos
+
 ^BerserkableVoxel:
 	Inherits: ^Berserkable
 	WithColoredOverlay@CHAOS:
 		Color: 2A002A40
 
+^BerserkableVoxelArmed:
+	Inherits: ^BerserkableVoxel
+	AutoTarget:
+		RequiresCondition: !chaos
+
+^NotBerserkTarget:
+	Targetable@NOCHAOS:
+		TargetTypes: NoBerserkAutoTarget
+
 ^TerrorDronable:
 	InfectableRV:
 		RequiresCondition: !chronodisable
 		KillInfectorDamageTypes: KillsDrone
+		RemoveInfectorTeleportTypes: RA2ChronoPower, PortableChrono
 		BeingInfectedCondition: beingterrordroned
 		InfectedCondition: terrordroned
 	Targetable@DRONE:
@@ -1484,6 +1555,7 @@
 	InfectableOld:
 		RequiresCondition: !chronodisable
 		RemoveInfectorDamageTypes: RemovesSquid
+		RemoveInfectorTeleportTypes: RA2ChronoPower
 		BeingInfectedCondition: beinginfected
 		InfectedByConditions:
 			sqd: squid
@@ -1597,13 +1669,22 @@
 		Weapon: DamageSparkSpawner
 		LocalOffset: 0,0,384
 
+^WithProductionVoicelines:
+	ExternalCondition@PRODUCED:
+		Condition: produced
+	VoiceAnnouncement@PRODUCED:
+		RequiresCondition: produced
+		Voice: Build
+		ValidRelationships: None
+
 ^WithFeedbackVoicelines:
-	GrantRandomCondition@Feedback:
-		Conditions: playfeedback, dontplayfeedback, dontplayfeedback, dontplayfeedback
+	GrantConditionByPercentChance@Feedback:
+		Condition: playfeedback
+		Chance: 25
 	GrantConditionOnDamageState@Feedback:
 		Condition: feedback
 		ValidDamageStates: Critical
-	VoiceAnnouncement:
+	VoiceAnnouncement@Feedback:
 		RequiresCondition: feedback && playfeedback
 		Voice: Feedback
 		ValidRelationships: None
@@ -1690,7 +1771,7 @@
 	Inherits@12: ^AcceptsTeslaBomb
 	Inherits@13: ^AcceptsToxinBomb
 	Inherits@HANDICAPS: ^PlayerHandicaps
-	Inherits@shape: ^1x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	-DrawLineToTarget:
 	AppearsOnMapPreview:
 	OwnerLostAction:
@@ -1724,7 +1805,7 @@
 		Types: building
 		RequiresCondition: !build-incomplete && !invulnerability && !forceshield
 	CaptureNotification:
-		TextNotification: Building captured.
+		TextNotification: notification-building-captured
 	CapturableProgressBar:
 		RequiresCondition: !instantcapture
 	CapturableProgressBlink:
@@ -1777,12 +1858,12 @@
 	HitShape:
 		UseTargetableCellsOffsets: true
 	Tooltip:
-		Name: Structure
-		GenericName: Structure
+		Name: meta-building.name
+		GenericName: meta-building.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Structure
-		GenericName: Structure
+		Name: meta-building.name
+		GenericName: meta-building.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -1810,10 +1891,10 @@
 		Notification: StructureSold
 		RequiresCondition: !build-incomplete && !chronodisable
 	Targetable:
-		RequiresCondition: !in_water
+		RequiresCondition: !affectedbytemporal && !in_water
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4
-		RequiresCondition: in_water
+		RequiresCondition: !affectedbytemporal && in_water
 	SpawnActorsOnSell@allies:
 		RequiresCondition: !in_water
 	SpawnActorsOnSell@soviets:
@@ -1845,6 +1926,8 @@
 	RevealOnFire:
 		ArmamentNames: primary, secondary, gatling, support, garrisoned, garrisoned-secondary
 		Duration: 50
+	TakesBounty:
+		Percentage: 50
 	Targetable:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, Defense, NonGarrisonableStructure
 	Targetable@Water:
@@ -1875,7 +1958,7 @@
 	PrimaryBuilding:
 		PrimaryCondition: primary
 		SelectionNotification: PrimaryBuildingSelected
-		SelectionTextNotification: Primary building selected.
+		SelectionTextNotification: notification-primary-building-selected
 		RequiresCondition: !multiqueue
 	GrantConditionOnPrerequisite@multiqueue:
 		Condition: multiqueue
@@ -1913,9 +1996,9 @@
 	RevealsShroud:
 		Range: 4c0
 	Tooltip:
-		Name: Civilian Building
+		Name: meta-civbuilding.name
 	Tooltip@NoRow:
-		Name: Civilian Building
+		Name: meta-civbuilding.name
 	MapEditorData:
 		Categories: Civilian building
 
@@ -1930,8 +2013,8 @@
 	#	Range: 10c0
 	#	RequiresCondition: loaded
 	ChangeOwnerOnGarrisoner:
-		EnterSound: ugarris.wav
-		ExitSound: ugarris.wav
+		EnterSounds: ugarris.wav
+		ExitSounds: ugarris.wav
 		EnterNotification: StructureGarrisoned
 		ExitNotification: StructureAbandoned
 	Garrisonable:
@@ -1978,10 +2061,12 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	ActorStatValues:
+		Stats: Armor, Sight, Cargo
 
 ^Rubble:
 	Inherits@1: ^SpriteActor
-	Inherits@shape: ^1x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	Building:
 		Dimensions: 1,1
 		Footprint: _
@@ -1995,6 +2080,8 @@
 	MapEditorData:
 		Categories: Building rubble
 	Interactable:
+	Targetable:
+		TargetTypes: Rubble
 
 ^TechBuilding:
 	Inherits: ^Building
@@ -2038,9 +2125,9 @@
 		RequiresCondition: !invulnerability
 	CaptureNotification:
 		Notification: TechBuildingCaptured
-		TextNotification: Tech building captured.
+		TextNotification: notification-tech-building-captured
 		LoseNotification: TechBuildingLost
-		LoseTextNotification: Tech building lost.
+		LoseTextNotification: notification-tech-building-lost
 	GivesBuildableArea:
 		AreaTypes: building, defense
 		RequiresCondition: techbuild
@@ -2064,9 +2151,9 @@
 		Dimensions: 1, 1
 		TerrainTypes: Clear, Rough, Road, DirtRoad, Water
 	Tooltip:
-		Name: Flag
+		Name: meta-flag.name
 	Tooltip@NoRow:
-		Name: Flag
+		Name: meta-flag.name
 	Health:
 		HP: 2000
 	Armor:
@@ -2116,7 +2203,7 @@
 	Inherits@1: ^ExistsInWorld
 	Inherits@2: ^SpriteActor
 	Inherits@HANDICAPS: ^PlayerHandicaps
-	Inherits@shape: ^1x1Shape
+	Inherits@SHAPE: ^1x1Shape
 	AppearsOnMapPreview:
 	OwnerLostAction:
 		Action: ChangeOwner
@@ -2158,12 +2245,12 @@
 		CrushClasses: wall
 	HitShape:
 	Tooltip:
-		Name: Wall
-		GenericName: Wall
+		Name: meta-wall.name
+		GenericName: meta-wall.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Wall
-		GenericName: Wall
+		Name: meta-wall.name
+		GenericName: meta-wall.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -2203,11 +2290,11 @@
 		DamagedSounds: gblacrua.wav, gblacrub.wav
 		DestroyedSounds: gblacrua.wav, gblacrub.wav
 	Tooltip:
-		Name: Fence
-		GenericName: Fence
+		Name: meta-fence.name
+		GenericName: meta-fence.name
 	Tooltip@NoRow:
-		Name: Fence
-		GenericName: Fence
+		Name: meta-fence.name
+		GenericName: meta-fence.name
 
 ^Gate:
 	Inherits: ^Building
@@ -2235,7 +2322,7 @@
 	WithGateSpriteBody:
 		OpenSequence: open
 	Buildable:
-		Description: Automated barrier that opens for allied units.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: meta-gate.description
 	HitShape:
 		Type: Rectangle
 			LocalYaw: -128
@@ -2256,18 +2343,18 @@
 		AreaTypes: building
 		Adjacent: 6
 	Tooltip:
-		Name: Gate
-		GenericName: Gate
+		Name: meta-gate.name
+		GenericName: meta-gate.name
 	Tooltip@NoRow:
-		Name: Gate
-		GenericName: Gate
+		Name: meta-gate.name
+		GenericName: meta-gate.name
 	Voiced:
 		VoiceSet: GateVoice
 		Volume: 0.8
 
 ^Gate_A:
 	Inherits: ^Gate
-	Inherits@shape: ^3x1Shape
+	Inherits@SHAPE: ^3x1Shape
 	Health:
 	Building:
 		Dimensions: 3,1
@@ -2284,7 +2371,7 @@
 
 ^Gate_B:
 	Inherits: ^Gate
-	Inherits@shape: ^1x3Shape
+	Inherits@SHAPE: ^1x3Shape
 	Health:
 	Building:
 		Dimensions: 1,3
@@ -2384,8 +2471,13 @@
 	SelectionDecorations:
 		MinimumZoom: 0
 	Selectable:
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 	Targetable:
 		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
 	Targetable@HEAL:
@@ -2394,6 +2486,8 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	TakesBounty:
+		Percentage: 50
 	TurnOnIdle:
 		MinDelay: 125
 		MaxDelay: 250
@@ -2448,7 +2542,7 @@
 		CargoType: Garrisoner
 	HiddenUnderFog:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Infantry
 	GrantExternalConditionToKiller@GRINDER_TREADS:
@@ -2501,16 +2595,16 @@
 		VoiceSet: GIVoice
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	Chronoshiftable:
+	RA2Chronoshiftable:
 		ExplodeInstead: true
 		ReturnToOrigin: false
 	Tooltip:
-		Name: Soldier
-		GenericName: Soldier
+		Name: meta-infantry.name
+		GenericName: meta-infantry.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Soldier
-		GenericName: Soldier
+		Name: meta-infantry.name
+		GenericName: meta-infantry.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -2617,7 +2711,100 @@
 			OrangeRadiationDeath: 1
 	Targetable@WaterBorne:
 		TargetTypes: Water
-		RequiresCondition: swimming
+		RequiresCondition: swimming && !affectedbytemporal
+
+^WithSwimSuitAndParachute:
+	Inherits@1: ^Parachutable
+	Inherits@2: ^WithSwimSuit
+	WithInfantryBody:
+		RequiresCondition: !swimming && !parachute
+	WithInfantryBody@Water:
+		RequiresCondition: swimming && !parachute
+	WithDeathAnimation@normal:
+		RequiresCondition: !swimming && !parachute
+	WithDeathAnimation@effect:
+		RequiresCondition: !swimming && !parachute
+	WithDeathAnimation@Water:
+		RequiresCondition: swimming && !parachute
+	Targetable@WaterBorne:
+		RequiresCondition: swimming && !parachute && !affectedbytemporal
+
+^JumpjetInfantry:
+	Inherits: ^Infantry
+	HiddenUnderFog:
+		Type: CenterPosition
+	-Mobile:
+	Aircraft:
+		CruiseAltitude: 3c852
+		InitialFacing: 80
+		TurnSpeed: 787
+		Speed: 150
+		AltitudeVelocity: 240
+		MaximumPitch: 128
+		Voice: Move
+		AirborneCondition: airborne
+		IdealSeparation: 512
+		VTOL: true
+		CanSlide: true
+		CanHover: true
+	RevealsShroud:
+		Type: GroundPosition
+		RequiresCondition: !airborne
+	RevealsShroud@Ground:
+		Type: GroundPosition
+		RequiresCondition: airborne
+	# RevealsShroudToIntelligenceOwner:
+	#	Type: GroundPosition
+	Hovers:
+		BobDistance: -45
+	-TimedConditionBar@WebDisable:
+	-SpeedMultiplier@WebDisable:
+	-WithIdleOverlay@web:
+	-Targetable@webdisable:
+	-ExternalCondition@webdisable:
+	-WithColoredOverlay@IDISABLE:
+	-GrantCondition@IDISABLE:
+	-SpeedMultiplier@DOGSTUN:
+	-Targetable@DOGSTUN:
+	-TimedConditionBar@DOGSTUN:
+	-ExternalCondition@dogstun:
+	-InfectableRV:
+	-Targetable@DRONE:
+	-SpeedMultiplier@DRONE:
+	-RevealsShroud@DRONE:
+	-PeriodicExplosion@dronesparks:
+	-Crushable:
+	-Crushable@Cheater:
+	-Crushable@Vengeful:
+	-GrantConditionOnBotOwner@Cheater:
+	-GrantConditionOnBotOwner@Vengeful:
+	-TakeCover:
+	-Targetable:
+	-TurnOnIdle:
+	-WithDeathAnimation@normal:
+	-WithDeathAnimation@effect:
+	-DamagedByTintedCells:
+	-DamagedByTintedCells@ORANGE:
+	DeathSounds@normal:
+		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, OrangeRadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
+	-DeathSounds@zapped:
+	-DeathSounds@radiation:
+	-DeathSounds@psycrush:
+	-DeathSounds@virus:
+	Targetable@airborne:
+		TargetTypes: Air, Disguise
+		RequiresCondition: airborne
+	Targetable@ground:
+		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
+		RequiresCondition: !airborne
+	WithSpriteBody@shadow:
+		Name: shadow
+		Sequence: shadow
+		ForceToGround: true
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	-Passenger:
+	-ChangesHealth@AMBULANCE:
 
 ^CivilianInfantry:
 	Inherits: ^Infantry
@@ -2635,11 +2822,11 @@
 		Queue: Infantry.Civilian
 		BuildAtProductionType: Soldier
 	Tooltip:
-		Name: Civilian
-		GenericName: Civilian
+		Name: meta-civilianinfantry.name
+		GenericName: meta-civilianinfantry.name
 	Tooltip@NoRow:
-		Name: Civilian
-		GenericName: Civilian
+		Name: meta-civilianinfantry.name
+		GenericName: meta-civilianinfantry.name
 	Health:
 		HP: 5000
 	Mobile:
@@ -2668,6 +2855,51 @@
 	Wanders:
 		MinMoveDelay: 150
 		MaxMoveDelay: 750
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
+
+^Pegasus:
+	Inherits: ^JumpjetInfantry
+	Buildable:
+		Queue: Infantry.Civilian
+		BuildAtProductionType: Soldier
+	Tooltip:
+		Name: meta-pegasus.name
+		GenericName: meta-pegasus.generic-name
+	Tooltip@NoRow:
+		Name: meta-pegasus.name
+		GenericName: meta-pegasus.generic-name
+	Health:
+		HP: 5000
+	Selectable:
+		Bounds: 512, 1024, 0, -256
+	RevealsShroud:
+		Range: 8c0
+	RevealsShroud@Ground:
+		Range: 8c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 8c0
+	-WithInfantryBody:
+	WithVoxelAnimatedBody:
+		TickRate: 1
+		ShowShadow: false
+	-QuantizeFacingsFromSequence:
+	BodyOrientation:
+		QuantizedFacings: 1024
+		CameraPitch: 85
+		UseClassicPerspectiveFudge: false
+	RenderVoxels:
+		Scale: 13
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+		NormalsPalette: ts-normals
+	-Voiced:
+	MapEditorData:
+		Categories: Civilian infantry
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 ^RegicideLeader:
 	Inherits: ^CivilianInfantry
@@ -2766,6 +2998,8 @@
 	Wanders:
 		MinMoveDelay: 150
 		MaxMoveDelay: 750
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 ^Vehicle:
 	Inherits@1: ^ExistsInWorld
@@ -2822,8 +3056,13 @@
 		MinimumZoom: 0
 	Selectable:
 		Bounds: 772, 1544
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 	Targetable:
 		TargetTypes: Ground, Vehicle, DroneInfection, DetonateAttack
 	Targetable@REPAIR:
@@ -2832,6 +3071,8 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	TakesBounty:
+		Percentage: 50
 	Repairable:
 		Voice: Move
 		RepairActors: gadept, nadept, nadepb, yadept, yadepb, caoutp, caoutb
@@ -2888,14 +3129,14 @@
 	HiddenUnderFog:
 	WithTextControlGroupDecoration:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Vehicle
 	Guard:
 		Voice: Attack
 	Guardable:
 	BodyOrientation:
-		QuantizedFacings: 0
+		QuantizedFacings: 1024
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	Explodes:
@@ -2919,17 +3160,21 @@
 		RequiresCondition: !suddendeath
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
-	Chronoshiftable:
+	RA2Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
 		RequiresCondition: !invulnerability
+	GrantTimedConditionOnTeleport:
+		TeleportTypes: RA2ChronoPower
+		Condition: chronodisable
+		Duration: 20
 	Tooltip:
-		Name: Vehicle
-		GenericName: Vehicle
+		Name: meta-vehicle.name
+		GenericName: meta-vehicle.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Vehicle
-		GenericName: Vehicle
+		Name: meta-vehicle.name
+		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -2968,6 +3213,8 @@
 		VoiceSet: CarVoice
 	MapEditorData:
 		Categories: Civilian vehicle
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 ^NeutralAircraft:
 	Inherits@1: ^ExistsInWorld
@@ -2979,8 +3226,13 @@
 	SelectionDecorations:
 		MinimumZoom: 0
 	Selectable:
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 	Aircraft:
 		Voice: Move
 		MaximumPitch: 128
@@ -2991,9 +3243,9 @@
 	HiddenUnderFog:
 		Type: CenterPosition
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	BodyOrientation:
-		QuantizedFacings: 0
+		QuantizedFacings: 1024
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	Guard:
@@ -3025,16 +3277,18 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	TakesBounty:
+		Percentage: 50
 	DeathSounds:
 	AppearsOnRadar:
 		UseLocation: true
 	Tooltip:
-		Name: Aircraft
-		GenericName: Aircraft
+		Name: meta-aircraft.name
+		GenericName: meta-aircraft.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Aircraft
-		GenericName: Aircraft
+		Name: meta-aircraft.name
+		GenericName: meta-aircraft.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -3079,12 +3333,24 @@
 		RequiresCondition: !airborne
 	Targetable@EMP:
 		RequiresCondition: !airborne
+	Targetable@IVANBOMB:
+		RequiresCondition: !ivanbomb && !airborne
+	Targetable@IVANBOMBCLEANER:
+		RequiresCondition: ivanbomb && !airborne
+	Targetable@TANYAC4:
+		RequiresCondition: !tanyaC4 && !airborne
+	Targetable@TANYAC4CLEANER:
+		RequiresCondition: tanyaC4 && !airborne
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp
-	#Chronoshiftable:
+	#RA2Chronoshiftable:
 	#	ChronoshiftSound: schrmov.wav
 	#	ReturnToOrigin: false
 	#	RequiresCondition: !invulnerability
+	#GrantTimedConditionOnTeleport:
+	#	TeleportTypes: RA2ChronoPower
+	#	Condition: chronodisable
+	#	Duration: 20
 	RevealsShroud:
 		Type: GroundPosition
 		RequiresCondition: airborne
@@ -3153,12 +3419,12 @@
 	HiddenUnderFog:
 		Type: GroundPosition
 	Tooltip:
-		Name: Missile
-		GenericName: Missile
+		Name: meta-shootablemissile.name
+		GenericName: meta-shootablemissile.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Missile
-		GenericName: Missile
+		Name: meta-shootablemissile.name
+		GenericName: meta-shootablemissile.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -3167,7 +3433,7 @@
 	HitShape:
 	RejectsOrders:
 	BodyOrientation:
-		QuantizedFacings: 0
+		QuantizedFacings: 1024
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	RenderVoxels:
@@ -3183,7 +3449,7 @@
 		LightDiffuseColor: 1.3,1.3,1.3
 	WithVoxelBody:
 	BodyOrientation:
-		QuantizedFacings: 0
+		QuantizedFacings: 1024
 		CameraPitch: 85
 	Aircraft:
 	HiddenUnderFog:
@@ -3195,12 +3461,12 @@
 		Velocity: 86
 	HitShape:
 	Tooltip:
-		Name: Aircraft
-		GenericName: Aircraft
+		Name: meta-aircraft.name
+		GenericName: meta-aircraft.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Aircraft
-		GenericName: Aircraft
+		Name: meta-aircraft.name
+		GenericName: meta-aircraft.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -3274,7 +3540,7 @@
 		Voice: Move
 		Locomotor: naval
 		TurnSpeed: 20
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	LeavesTrails:
 		Image: wake
 		Palette: effect50alpha
@@ -3286,8 +3552,13 @@
 		MinimumZoom: 0
 	Selectable:
 		Bounds: 772, 1544
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 	Targetable:
 		TargetTypes: Ground, Water, Ship
 	Targetable@REPAIR:
@@ -3296,6 +3567,8 @@
 	GrantConditionOnDamageState@DAMAGED:
 		Condition: damaged
 		ValidDamageStates: Light, Medium, Heavy, Critical
+	TakesBounty:
+		Percentage: 50
 	RepairableNear:
 		Voice: Move
 		CloseEnough: 3c0
@@ -3311,14 +3584,14 @@
 		Sound: ihijweaa.wav
 	HiddenUnderFog:
 	ActorLostNotification:
-		TextNotification: Unit lost.
+		TextNotification: notification-unit-lost
 	ProximityCaptor:
 		Types: Ship
 	Guard:
 		Voice: Attack
 	Guardable:
 	BodyOrientation:
-		QuantizedFacings: 0
+		QuantizedFacings: 1024
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
 	Explodes:
@@ -3342,17 +3615,21 @@
 		RequiresCondition: !suddendeath
 	Voiced:
 		VoiceSet: SovietNavalVoice
-	Chronoshiftable:
+	RA2Chronoshiftable:
 		ChronoshiftSound: schrmov.wav
 		ReturnToOrigin: false
 		RequiresCondition: !invulnerability
+	GrantTimedConditionOnTeleport:
+		TeleportTypes: RA2ChronoPower
+		Condition: chronodisable
+		Duration: 20
 	Tooltip:
-		Name: Ship
-		GenericName: Ship
+		Name: meta-ship.name
+		GenericName: meta-ship.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Ship
-		GenericName: Ship
+		Name: meta-ship.name
+		GenericName: meta-ship.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -3366,7 +3643,7 @@
 ^OreDrill:
 	Inherits@1: ^SpriteActor
 	Tooltip:
-		Name: Ore Drill
+		Name: meta-oredrill.name
 	WithSpriteBody:
 	Building:
 		Footprint: x
@@ -3414,7 +3691,7 @@
 		Terrain: Tree
 	BodyOrientation:
 	Tooltip:
-		Name: Tree
+		Name: meta-tree.name
 	QuantizeFacingsFromSequence:
 	RenderSprites:
 		Palette: terrain
@@ -3439,18 +3716,18 @@
 	AppearsOnMapPreview:
 		-Terrain:
 	Tooltip:
-		Name: Street Sign
+		Name: meta-streetsign.name
 	-MirageTarget:
 
 ^TrafficLight:
 	Inherits: ^StreetSign
 	Tooltip:
-		Name: Traffic Light
+		Name: meta-trafficlight.name
 
 ^StreetLight:
 	Inherits: ^StreetSign
 	Tooltip:
-		Name: Street Light
+		Name: meta-streetlight.name
 	Armor:
 		Type: steel
 	Health:
@@ -3459,7 +3736,7 @@
 ^TelephonePole:
 	Inherits: ^StreetSign
 	Tooltip:
-		Name: Utility Pole
+		Name: meta-telephonepole.name
 	Health:
 		HP: 2000
 	Armor:
@@ -3479,7 +3756,7 @@
 		Terrain: Rock
 	BodyOrientation:
 	Tooltip:
-		Name: Rock
+		Name: meta-rock.name
 	QuantizeFacingsFromSequence:
 	RenderSprites:
 		Palette: terrain
@@ -3493,8 +3770,8 @@
 	Inherits@1: ^SpriteActor
 	HiddenUnderFog:
 	Tooltip:
-		Name: Crate
-		GenericName: Crate
+		Name: meta-crate.name
+		GenericName: meta-crate.name
 	Crate:
 		TerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad, Ore, Gems, Water
 	RenderSprites:
@@ -3673,7 +3950,7 @@
 		RequiresCondition: cryo == 3
 	SpeedMultiplier@Cryo4:
 		Modifier: 50
-		RequiresCondition: cryo >= 3
+		RequiresCondition: cryo >= 4
 	DamageMultiplier@Cryo1:
 		Modifier: 125
 		RequiresCondition: cryo == 1
@@ -3685,7 +3962,7 @@
 		RequiresCondition: cryo == 3
 	DamageMultiplier@Cryo4:
 		Modifier: 200
-		RequiresCondition: cryo >= 3
+		RequiresCondition: cryo >= 4
 	WithColoredOverlay@Cryo1:
 		Color: 00515540 # 00F5FF40
 		RequiresCondition: cryo == 1
@@ -3697,7 +3974,7 @@
 		RequiresCondition: cryo == 3
 	WithColoredOverlay@Cryo4:
 		Color: 005155A0 # 00F5FFA0
-		RequiresCondition: cryo == 4
+		RequiresCondition: cryo >= 4
 	ExternalCondition@Cryo:
 		Condition: cryo
 
@@ -3742,10 +4019,15 @@
 		MinimumZoom: 0
 	WithTextControlGroupDecoration:
 		Margin: 1, 1
+	GrantConditionOnPrerequisite@upgrades:
+		Condition: upgrades
+		Prerequisites: global-upgrades
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
+	ActorStatOverride@NO_UPGRADE:
+		Upgrades:
+		RequiresCondition: !upgrades
 
-^AIMicroManagable:
+^AIControl:
 	GrantConditionOnBotOwner@ai-control:
 		Condition: ai-control
 		Bots: easy, cheater, vengeful

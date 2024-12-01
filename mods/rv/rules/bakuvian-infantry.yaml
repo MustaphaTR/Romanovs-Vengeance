@@ -2,7 +2,7 @@ rctt:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BULLETPROOF: ^AffectedByBulletProofCoats
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
@@ -11,7 +11,7 @@ rctt:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 20
-		Description: Anti-Air and anti-Vehicle unit.\n\n  Strong vs Vehicle, Aircraft\n  Weak vs Infantry\n\nUpgradeable with:\n- Bullet-Proof Coats
+		Description: actor-rctt.description
 		Prerequisites: ~infantry.baku, ~techlevel.1
 		BuildDuration: 175
 		BuildDurationModifier: 100
@@ -23,9 +23,9 @@ rctt:
 		Payload: 175
 		Voice: Move
 	Tooltip:
-		Name: Rocket Soldier
+		Name: actor-rctt.name
 	Tooltip@NoRow:
-		Name: Rocket Soldier
+		Name: actor-rctt.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -136,7 +136,7 @@ rctt:
 	WithSpriteBody@Parachute:
 		RequiresCondition: parachute && !bulletproof
 	WithSpriteBody@Parachute-BULLETPROOF:
-		Name: parachute
+		Name: parachute-bulletproof
 		Sequence: paradrop-bulletproof
 		RequiresCondition: parachute && bulletproof
 	WithDeathAnimation@normal:
@@ -163,7 +163,7 @@ rctt:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Upgrades: upgrade.bullet_proof_coats
 
 medi:
@@ -175,7 +175,7 @@ medi:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, ~techlevel.1
 		BuildPaletteOrder: 50
-		Description: Heals infantry.\n\n  Unarmed
+		Description: actor-medi.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	Valued:
@@ -184,9 +184,9 @@ medi:
 		Payload: 100
 		Voice: Move
 	Tooltip:
-		Name: Medic
+		Name: actor-medi.name
 	Tooltip@NoRow:
-		Name: Medic
+		Name: actor-medi.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -227,6 +227,7 @@ medi:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: -50
 
 mech:
@@ -239,7 +240,7 @@ mech:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.baku, prerequisite.mechanic, warfactory, ~techlevel.2
 		BuildPaletteOrder: 60
-		Description: Repairs friendly vehicles.\n\n  Unarmed
+		Description: actor-mech.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -248,9 +249,9 @@ mech:
 		Payload: 250
 		Voice: Move
 	Tooltip:
-		Name: Mechanic
+		Name: actor-mech.name
 	Tooltip@NoRow:
-		Name: Mechanic
+		Name: actor-mech.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -288,6 +289,7 @@ mech:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: -40
 
 mengineer:
@@ -295,7 +297,7 @@ mengineer:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Tuva
 		BuildPaletteOrder: 35
-		Description: Fast unit capable of capturing enemy structures (slower than regular engineers), repairing damaged buildings and bridges.\nDisarms explosives.\n\n  Unarmed.\n\nAbilities:\n- Cannot be eaten by Attack Dogs
+		Description: actor-mengineer.description
 		Prerequisites: ~infantry.tuva
 		BuildDuration: 300
 	Valued:
@@ -303,9 +305,9 @@ mengineer:
 	DeliversCash:
 		Payload: 300
 	Tooltip:
-		Name: Motorised Engineer
+		Name: actor-mengineer.name
 	Tooltip@NoRow:
-		Name: Motorised Engineer
+		Name: actor-mengineer.name
 	Health:
 		HP: 10000
 	Mobile:
@@ -324,6 +326,7 @@ mengineer:
 	WithFacingSpriteBody:
 		RequiresCondition: !swimming
 	WithFacingSpriteBody@Water:
+		Name: swim
 		Sequence: swim-stand
 		RequiresCondition: swimming
 	-TakeCover:
@@ -347,7 +350,7 @@ sspy:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		Prerequisites: ~infantry.baku, basops, ~techlevel.3
-		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\nSteals enemy vehicles.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Can disguise as an enemy infantry
+		Description: actor-sspy.description
 	CaptureManager:
 	Captures:
 		CaptureTypes: vehicle
@@ -357,8 +360,9 @@ sspy:
 mtrp:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@HEAVYMORTARS: ^AffectedByHeavyMortars
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
@@ -366,7 +370,7 @@ mtrp:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 70
-		Description: Long range infantry armed with smoke bombs.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Reduces damage and sight of enemy units\n- Can kill garrisoned infantry
+		Description: actor-mtrp.description
 		Prerequisites: ~infantry.baku, basops, ~techlevel.3
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -378,9 +382,9 @@ mtrp:
 		Payload: 225
 		Voice: Move
 	Tooltip:
-		Name: Mortar Trooper
+		Name: actor-mtrp.name
 	Tooltip@NoRow:
-		Name: Mortar Trooper
+		Name: actor-mtrp.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -403,37 +407,73 @@ mtrp:
 		Damage: 50
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !heavymortars
 	Armament@elite:
 		Weapon: TrooperMortarE
 		Damage: 100
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !heavymortars
+	Armament@primary-heavy:
+		Weapon: TrooperMortarHeavy
+		Damage: 50
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && heavymortars
+	Armament@elite:
+		Weapon: TrooperMortarHeavyE
+		Damage: 100
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && heavymortars
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCTrooperMortar
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !heavymortars
 	Armament@elite-garrisoned:
 		Name: garrisoned
 		Weapon: UCTrooperMortarE
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !heavymortars
+	Armament@garrisoned-heavy:
+		Name: garrisoned
+		Weapon: UCTrooperMortarHeavy
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && heavymortars
+	Armament@elite-garrisoned-heavy:
+		Name: garrisoned
+		Weapon: UCTrooperMortarHeavyE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && heavymortars
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: TrooperMortar
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !heavymortars
 	Armament@elite-opentopped:
 		Name: opentopped
 		Weapon: TrooperMortarE
 		LocalOffset: 256,0,1024
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !heavymortars
+	Armament@opentopped-heavy:
+		Name: opentopped
+		Weapon: TrooperMortar
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && heavymortars
+	Armament@elite-opentopped-heavy:
+		Name: opentopped
+		Weapon: TrooperMortarE
+		LocalOffset: 256,0,1024
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && heavymortars
 	WithInfantryBody:
 	Voiced:
 		VoiceSet: FlakTrooperVoice
@@ -449,13 +489,15 @@ mtrp:
 		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 ssnipe:
 	Inherits: snipe
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Buildable:
 		Queue: Infantry.Unused # Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
-		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry\n\nUpgradeable with:\n- AP Bullets\n- High Caliber Rounds
+		Description: actor-ssnipe.description
 		Prerequisites: ~infantry.baku, naradr, ~techlevel.3
 	RenderSprites:
 		Image: snipe
@@ -465,14 +507,14 @@ ssnipe:
 ^AngryMob:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 70
 	Tooltip:
-		Name: Angry Mob
+		Name: actor-amob.name
 	Tooltip@NoRow:
-		Name: Angry Mob
+		Name: actor-amob.name
 	-SelectionDecorations:
 	-WithTextControlGroupDecoration:
 	-Passenger:
@@ -493,66 +535,68 @@ ssnipe:
 	Selectable:
 		Class: amob
 		Bounds: 482, 1448, 0, -530
+	-GrantConditionOnPrerequisite@upgrades:
+	-ActorStatOverride@NO_UPGRADE:
 	Voiced:
 		VoiceSet: AngryMobVoice
 
 amobtm:
 	Inherits: ^AngryMob
 	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@ARMTHEMOB: ^AffectedByArmTheMob
 	Armament@pistol:
 		Weapon: Pistolb
 		Damage: 15
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite # && !arm_the_mob
+		RequiresCondition: !rank-elite && !armthemob
 	Armament@pistolE:
 		Weapon: PistolbE
 		Damage: 20
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite # && !arm_the_mob
-	# Armament@ak47:
-	#	Weapon: AKMob
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: !rank-elite # arm_the_mob
-	# Armament@ak47E:
-	#	Weapon: AKMobE
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: rank-elite # arm_the_mob
+		RequiresCondition: rank-elite && !armthemob
+	Armament@ak47:
+		Weapon: AKMob
+		Damage: 30
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && armthemob
+	Armament@ak47E:
+		Weapon: AKMobE
+		Damage: 40
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && armthemob
 	AttackFrontal:
 		FacingTolerance: 2
-	# GrantConditionOnPrerequisite@ARM_THE_MOB:
-	#	Condition: arm_the_mob
-	#	Prerequisites: upgrade.arm_the_mob
 	-ActorStatValues:
 
 amobf:
 	Inherits: ^AngryMob
 	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@ARMTHEMOB: ^AffectedByArmTheMob
 	Armament@pistol:
 		Weapon: Pistolb
 		Damage: 15
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !rank-elite # && !arm_the_mob
+		RequiresCondition: !rank-elite && !armthemob
 	Armament@pistolE:
 		Weapon: PistolbE
 		Damage: 20
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: rank-elite # && !arm_the_mob
-	# Armament@ak47:
-	#	Weapon: AKMob
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: !rank-elite # arm_the_mob
-	# Armament@ak47E:
-	#	Weapon: AKMobE
-	#	PauseOnCondition: chronodisable || webdisable || dogstun
-	#	RequiresCondition: rank-elite # arm_the_mob
+		RequiresCondition: rank-elite && !armthemob
+	Armament@ak47:
+		Weapon: AKMob
+		Damage: 30
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite && armthemob
+	Armament@ak47E:
+		Weapon: AKMobE
+		Damage: 40
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite && armthemob
 	AttackFrontal:
 		FacingTolerance: 2
-	# GrantConditionOnPrerequisite@ARM_THE_MOB:
-	#	Condition: arm_the_mob
-	#	Prerequisites: upgrade.arm_the_mob
+	-ActorStatValues:
 	Voiced:
 		VoiceSet: AngryMobFemaleVoice
-	-ActorStatValues:
 
 amobfm:
 	Inherits: ^AngryMob
@@ -576,6 +620,7 @@ amob:
 	Inherits@1: ^ExistsInWorld
 	Inherits@4: ^SpriteActor
 	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@ARMTHEMOB: ^AffectedByArmTheMob
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@LEAFLET: ^AffectedByLeaflets
 	-AppearsOnRadar:
@@ -585,14 +630,14 @@ amob:
 		BuildDuration: 375
 		BuildDurationModifier: 100
 		Prerequisites: ~infantry.turkmen, basops, ~techlevel.3
-		Description: Group of civilians armed with pistols and molotov coctails.\n\n  Strong vs Infantry, Structures\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Slowly regains lost members\n\nUpgradeable with:\n- AP Bullets
+		Description: actor-amob.description
 	Tooltip:
-		Name: Angry Mob
-		GenericName: Soldier
+		Name: actor-amob.name
+		GenericName: meta-infantry.name
 		RequiresCondition: showownername
 	Tooltip@NoRow:
-		Name: Angry Mob
-		GenericName: Soldier
+		Name: actor-amob.name
+		GenericName: meta-infantry.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	GrantConditionOnPrerequisite@SHOWOWNERNAME:
@@ -612,11 +657,19 @@ amob:
 		Type: None
 	AttackOmni:
 	Armament@PRIMARY:
+		Damage: 135
+		ReloadDelay: 20
 		Weapon: AngryMobTargeter
+		RequiresCondition: !armthemob
+	Armament@PRIMARYAK: # For stats.
+		Damage: 240
+		ReloadDelay: 15
+		Weapon: AngryMobTargeter
+		RequiresCondition: armthemob
 	Mobile:
 		Speed: 60
 		Voice: Move
-		OccupySpace: false
+		# OccupySpace: false
 		Locomotor: foot
 	Voiced:
 		VoiceSet: AngryMobVoice
@@ -637,7 +690,7 @@ amob:
 	#	Type: CenterPosition
 	RevealOnDeath:
 		Radius: 5c0
-		Type: CenterPosition
+		# Type: CenterPosition
 	BodyOrientation:
 		QuantizedFacings: 1
 	-QuantizeFacingsFromSequence:
@@ -648,8 +701,8 @@ amob:
 		Modifier: 0
 	RenderSprites:
 	ActorStatValues:
-		UpgradePrerequisites: global-upgrades
-		Damage: 135
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Mob
+		Upgrades: upgrade.ap_bullets, upgrade.arm_the_mob
 
 vlkv:
 	Inherits: ^Infantry
@@ -661,9 +714,9 @@ vlkv:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 190
-		Prerequisites: ~infantry.baku, natech, ~techlevel.4
+		Prerequisites: ~infantry.baku, batech, ~techlevel.4
 		BuildLimit: 1
-		Description: Elite cybernatic commando, armed with\na tesla rifle.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Cannot be eaten by Attack Dogs\n\n  Maximum 1 can be trained.
+		Description: actor-vlkv.description
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -674,9 +727,9 @@ vlkv:
 		Payload: 750
 		Voice: Move
 	Tooltip:
-		Name: Vladislav Volkov
+		Name: actor-vlkv.name
 	Tooltip@NoRow:
-		Name: Vladislav Volkov
+		Name: actor-vlkv.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -812,19 +865,22 @@ vlkv:
 	-Targetable@DOGSTUN:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		-Upgrades:
 
 chit:
 	Inherits: ^Infantry
-	Inherits@2: ^Parachutable
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@PARACHUTE: ^Parachutable
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
-		Prerequisites: ~infantry.baku, natech, ~techlevel.4
+		Prerequisites: ~infantry.baku, batech, ~techlevel.4
 		BuildPaletteOrder: 200
 		BuildLimit: 1
-		Description: Cybernatic canine capable of destroying infantry and vehicles in seconds.\nCan be deployed to stun nearby infantry for a while.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Stealth units\n- Can detect Spies\n- Cannot be eaten by Attack Dogs\n\n  Maximum 1 can be trained.
+		Description: actor-chit.description
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -835,11 +891,11 @@ chit:
 		Payload: 120
 		Voice: Move
 	Tooltip:
-		Name: Chitzkoi
-		GenericName: Dog
+		Name: actor-chit.name
+		GenericName: actor-dog.generic-name
 	Tooltip@NoRow:
-		Name: Chitzkoi
-		GenericName: Dog
+		Name: actor-chit.name
+		GenericName: actor-dog.generic-name
 	Selectable:
 		Bounds: 724, 1158, 0, -241
 	Health:
@@ -977,5 +1033,6 @@ chit:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 60
 		ReloadDelay: 30

@@ -1,5 +1,6 @@
 ^Miner:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SQUID: ^SquidGrabbable
@@ -7,7 +8,7 @@
 		Queue: Vehicle.Shared, Vehicle, Ship.Shared, Ship
 		BuildPaletteOrder: 10
 		Prerequisites: refinery, ~!global-megawealth, ~techlevel.1
-		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled
+		Description: meta-miner.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
@@ -16,22 +17,25 @@
 		Payload: 1400
 		Voice: Move
 	Tooltip:
-		Name: Ore Miner
+		Name: meta-miner.name
 	Tooltip@NoRow:
-		Name: Ore Miner
+		Name: meta-miner.name
 	Selectable:
 		Priority: 7
 		Bounds: 1544, 2509, 0, -289
 	Harvester:
-		DeliveryBuildings: garefn, garefb, garefc, garefd, narefn, narefb, narefc, narefd, yarfn2, yarfnb, yarfnc, yarfnd
-		Capacity: 40
+		Type: Unload
 		Resources: Ore, Gems
-		BaleLoadDelay: 12
+		BaleLoadDelay: 9
 		BaleUnloadDelay: 1
 		FullyLoadedSpeed: 100
 		HarvestVoice: Harvest
-		DeliverVoice: Move
 		EmptyCondition: no-ore
+	StoresResources:
+		Capacity: 40
+		Resources: Ore, Gems
+	DockClientManager:
+		Voice: Move
 	Explodes:
 		RequiresCondition: no-ore
 	Explodes@Ore:
@@ -49,10 +53,10 @@
 		DamageCooldown: 100
 		StartIfBelow: 100
 	Mobile:
-		Speed: 60
+		Speed: 90
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	Crushable:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
 	Crushable@Cheater:
@@ -86,13 +90,9 @@
 		RequiresCondition: in_water && !on_dock
 	ExternalCondition@on_dock:
 		Condition: on_dock
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
+	Targetable@AITarget:
+		TargetTypes: Miner
 	Targetable:
 		RequiresCondition: !in_water
 	Targetable@WATER:
@@ -107,7 +107,7 @@
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	RangedGpsDot:
 		Sequence: Harvester
-	WithHarvesterPipsDecoration:
+	WithStoresResourcesPipsDecoration:
 		Margin: 4, 3
 		Palette: ra
 		Position: BottomLeft
@@ -116,10 +116,13 @@
 		ResourceSequences:
 			Ore: pip-yellow
 			Gems: pip-blue
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Harvester
 
 ^ConstructionVehicle:
 	Inherits: ^Vehicle
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
@@ -128,7 +131,7 @@
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle, Ship.Shared, Ship
 		BuildPaletteOrder: 50
-		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water
+		Description: meta-constructionvehicle.description
 		Prerequisites: ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 		BuildDuration: 1125
 		BuildDurationModifier: 100
@@ -138,9 +141,9 @@
 		Payload: 4000
 		Voice: Move
 	Tooltip:
-		Name: Mobile Construction Vehicle
+		Name: meta-constructionvehicle.name
 	Tooltip@NoRow:
-		Name: Mobile Construction Vehicle
+		Name: meta-constructionvehicle.name
 	Selectable:
 		Priority: 4
 		Bounds: 1544, 2509, 0, -289
@@ -149,13 +152,15 @@
 	Armor:
 		Type: Heavy
 	Mobile:
-		Speed: 60
+		Speed: 90
 		TurnSpeed: 20
 		Locomotor: heavyamphibious
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	-Crushable:
 	-Crushable@Cheater:
 	-Crushable@Vengeful:
+	-GrantConditionOnBotOwner@Cheater:
+	-GrantConditionOnBotOwner@Vengeful:
 	Capturable:
 		RequiresCondition: !suddendeath
 	Capturable@PERMAMC:
@@ -186,7 +191,7 @@
 		Facing: 384
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		NoTransformTextNotification: Cannot deploy here.
+		NoTransformTextNotification: notification-cannot-deploy-here
 		PauseOnCondition: chronodisable || emp || terrordroned || squid || controlled
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
@@ -222,12 +227,6 @@
 		Voice: Move
 		CloseEnough: 3c0
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn
@@ -238,20 +237,23 @@
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.mcv
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 ^ExpansionVehicle:
 	Inherits: ^Vehicle
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGETAI: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle, Ship.Shared, Ship
+		Queue: Vehicle.Unused, Ship.Civilian # Vehicle.Shared, Vehicle, Ship.Shared, Ship
 		BuildPaletteOrder: 60
-		Description: Deploys into an Expansion Node.\nCannot be undeployed back.\n\n  Unarmed\n\nAbilities:\n- Can move over water
+		Description: meta-expansionvehicle.description
 		Prerequisites: ~techlevel.1, ~!ai.ev
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -261,9 +263,9 @@
 		Payload: 1200
 		Voice: Move
 	Tooltip:
-		Name: Mobile Expansion Vehicle
+		Name: meta-expansionvehicle.name
 	Tooltip@NoRow:
-		Name: Mobile Expansion Vehicle
+		Name: meta-expansionvehicle.name
 	Selectable:
 		Priority: 4
 		Bounds: 1544, 2509, 0, -289
@@ -277,13 +279,15 @@
 		Locomotor: heavyamphibious
 		TurnsWhileMoving: true
 		TerrainOrientationAdjustmentMargin: -1
-		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected
+		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
 	Crushable:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
 	Crushable@Cheater:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && cheater-ai
 	Crushable@Vengeful:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && vengeful-ai
+	ExternalCondition@on_dock:
+		Condition: on_dock
 	Guard:
 		Voice: Move
 	Passenger:
@@ -303,7 +307,7 @@
 		Facing: 384
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		NoTransformTextNotification: Cannot deploy here.
+		NoTransformTextNotification: notification-cannot-deploy-here
 		PauseOnCondition: chronodisable || emp || terrordroned || squid || controlled
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
@@ -332,12 +336,6 @@
 		Voice: Move
 		CloseEnough: 3c0
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn
@@ -345,12 +343,11 @@
 	#	SoundFiles: vmcvstaa.wav
 	#	Volume: 0.4
 	#	RequiresCondition: moving
-	AutoDeployer@AI:
-		RequiresCondition: ai-control
-		DeployTrigger: Attack
-		DeployChance: 100
-		DeployTicks: 5
-		UndeployTicks: 50
+	IssueOrderToBot@AI:
+		OrderName: DeployTransform
+		OrderChance: 100
+		OrderInterval: 5
+		OrderTrigger: Attack
 	Hovers:
 		Ticks: 10
 		BobDistance: -64
@@ -370,13 +367,14 @@
 		RequiresCondition: ai-control
 		Prerequisite: ai.ev
 	ActorStatValues:
-		Armaments: None
+		Stats: Armor, Sight, Speed
 
 ^MainBattleTank:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
@@ -385,7 +383,7 @@
 		Queue: Vehicle.Shared, Vehicle
 		Prerequisites: ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft
+		Description: meta-mainbattletank.description
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -423,9 +421,5 @@
 		Prerequisites: warfactory.infiltrated, baacdm
 		Types: chevron-elite
 	HitShape:
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange

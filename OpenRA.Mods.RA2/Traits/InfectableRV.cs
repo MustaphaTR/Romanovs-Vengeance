@@ -10,9 +10,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using OpenRA.Mods.AS.Traits;
 using OpenRA.Mods.Common;
-using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Traits;
 using OpenRA.Primitives;
 using OpenRA.Traits;
@@ -23,10 +22,13 @@ namespace OpenRA.Mods.RA2.Traits
 	public class InfectableRVInfo : ConditionalTraitInfo, Requires<HealthInfo>
 	{
 		[Desc("Damage types that removes the infector.")]
-		public readonly BitSet<DamageType> RemoveInfectorDamageTypes = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> RemoveInfectorDamageTypes = default;
 
 		[Desc("Damage types that kills the infector.")]
-		public readonly BitSet<DamageType> KillInfectorDamageTypes = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> KillInfectorDamageTypes = default;
+
+		[Desc("Teleport types that removes the infector.")]
+		public readonly HashSet<string> RemoveInfectorTeleportTypes = default;
 
 		[GrantedConditionReference]
 		[Desc("The condition to grant to self while infected by any actor.")]
@@ -38,7 +40,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		[Desc("Conditions to grant when infected by specified actors.",
 			"A dictionary of [actor id]: [condition].")]
-		public readonly Dictionary<string, string> InfectedByConditions = new Dictionary<string, string>();
+		public readonly Dictionary<string, string> InfectedByConditions = new();
 
 		[GrantedConditionReference]
 		public IEnumerable<string> LinterConditions { get { return InfectedByConditions.Values; } }
@@ -46,12 +48,13 @@ namespace OpenRA.Mods.RA2.Traits
 		public override object Create(ActorInitializer init) { return new InfectableRV(init.Self, this); }
 	}
 
-	public class InfectableRV : ConditionalTrait<InfectableRVInfo>, ISync, ITick, INotifyDamage, INotifyKilled, IRemoveInfector
+	public class InfectableRV : ConditionalTrait<InfectableRVInfo>, ISync, ITick, INotifyDamage, INotifyKilled, IOnSuccessfulTeleportRA2
 	{
 		readonly Health health;
+		readonly Actor self;
 
 		public Tuple<Actor, AttackInfectRV, AttackInfectRVInfo> Infector;
-		public int[] FirepowerMultipliers = new int[] { };
+		public int[] FirepowerMultipliers = Array.Empty<int>();
 
 		[Sync]
 		public int Ticks;
@@ -69,6 +72,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public InfectableRV(Actor self, InfectableRVInfo info)
 			: base(info)
 		{
+			this.self = self;
 			health = self.Trait<Health>();
 		}
 
@@ -95,8 +99,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (infectedToken == Actor.InvalidConditionToken && !string.IsNullOrEmpty(Info.InfectedCondition))
 				infectedToken = self.GrantCondition(Info.InfectedCondition);
 
-			string infectedByCondition;
-			if (Info.InfectedByConditions.TryGetValue(Infector.Item1.Info.Name, out infectedByCondition))
+			if (Info.InfectedByConditions.TryGetValue(Infector.Item1.Info.Name, out var infectedByCondition))
 				infectedByToken = self.GrantCondition(infectedByCondition);
 		}
 
@@ -122,11 +125,11 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-		void RemoveInfector(Actor self, bool kill, AttackInfo e)
+		void RemoveInfector(Actor self, WPos spawnLoc, bool kill, AttackInfo e)
 		{
 			if (Infector != null && !Infector.Item1.IsDead)
 			{
-				Infector.Item1.TraitOrDefault<IPositionable>().SetPosition(Infector.Item1, self.CenterPosition);
+				Infector.Item1.TraitOrDefault<IPositionable>().SetPosition(Infector.Item1, spawnLoc);
 				self.World.AddFrameEndTask(w =>
 				{
 					if (Infector == null || Infector.Item1.IsDead)
@@ -142,17 +145,11 @@ namespace OpenRA.Mods.RA2.Traits
 							Infector.Item1.Kill(self);
 					}
 					else
-					{
-						var mobile = Infector.Item1.TraitOrDefault<Mobile>();
-						if (mobile != null)
-						{
-							mobile.Nudge(Infector.Item1);
-						}
-					}
+						Infector.Item1.QueueActivity(false, new Nudge(Infector.Item1));
 
 					RevokeCondition(self);
 					Infector = null;
-					FirepowerMultipliers = new int[] { };
+					FirepowerMultipliers = Array.Empty<int>();
 					dealtDamage = 0;
 					suppressionCount = 0;
 					killInfectorOnDeath = false;
@@ -165,9 +162,9 @@ namespace OpenRA.Mods.RA2.Traits
 			if (Infector != null)
 			{
 				if (e.Damage.DamageTypes.Overlaps(Info.KillInfectorDamageTypes))
-					RemoveInfector(self, true, e);
+					RemoveInfector(self, self.CenterPosition, true, e);
 				else if (e.Damage.DamageTypes.Overlaps(Info.RemoveInfectorDamageTypes))
-					RemoveInfector(self, false, e);
+					RemoveInfector(self, self.CenterPosition, false, e);
 				else if (e.Attacker != Infector.Item1 && e.Damage.DamageTypes.Overlaps(Infector.Item3.SuppressionDamageType))
 				{
 					killInfectorOnDeath |= Infector.Item3.SuppressionDamageThreshold > 0 && e.Damage.Value > Infector.Item3.SuppressionDamageThreshold;
@@ -186,8 +183,8 @@ namespace OpenRA.Mods.RA2.Traits
 			if (Infector != null)
 			{
 				var shdt = Infector.Item3.SurviveHostDamageTypes;
-				var kill = killInfectorOnDeath || (shdt.Any() && !shdt.Overlaps(e.Damage.DamageTypes));
-				RemoveInfector(self, kill, e);
+				var kill = killInfectorOnDeath || (!shdt.IsEmpty && !shdt.Overlaps(e.Damage.DamageTypes));
+				RemoveInfector(self, self.CenterPosition, kill, e);
 			}
 		}
 
@@ -205,9 +202,10 @@ namespace OpenRA.Mods.RA2.Traits
 			}
 		}
 
-		void IRemoveInfector.RemoveInfector(Actor self, bool kill, AttackInfo e)
+		void IOnSuccessfulTeleportRA2.OnSuccessfulTeleport(string type, WPos oldPos, WPos newPos)
 		{
-			RemoveInfector(self, kill, e);
+			if (Info.RemoveInfectorTeleportTypes.Contains(type))
+				RemoveInfector(self, oldPos, false, null);
 		}
 	}
 }

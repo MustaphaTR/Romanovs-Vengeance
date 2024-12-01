@@ -4,7 +4,7 @@ cabhut:
 	FrozenUnderFog:
 	WithSpriteBody:
 	Tooltip:
-		Name: Bridge Repair Hut
+		Name: actor-cabhut.name
 	Building:
 		Footprint: x
 		Dimensions: 1, 1
@@ -34,7 +34,7 @@ cabhut:
 		UseClassicPerspectiveFudge: false
 		QuantizedFacings: 1
 	Tooltip:
-		Name: Wooden Bridge
+		Name: meta-wooden-bridge.name
 	MapEditorData:
 		Categories: Bridge
 	Interactable:
@@ -58,7 +58,7 @@ cabhut:
 lobrdb_a:
 	Inherits: ^LowBridge
 	Tooltip:
-		Name: Concrete Bridge
+		Name: meta-concrete-bridge.name
 	Building:
 		Footprint: ===
 		Dimensions: 3, 1
@@ -81,7 +81,7 @@ lobrdb_a:
 lobrdb_a_d:
 	Inherits: lobrdb_a
 	EditorOnlyTooltip:
-		Name: Dead Bridge
+		Name: meta-dead-bridge.name
 	-GroundLevelBridge:
 	-AppearsOnRadar:
 	BridgePlaceholder:
@@ -95,14 +95,12 @@ lobrdb_a_d:
 		BOffset: 1,1
 	Interactable:
 		Bounds: 2316, 2316
-	ShakeOnDeath:
-		Duration: 15
-		Intensity: 6
+	-ShakeOnDeath:
 
 lobrdb_b:
 	Inherits: ^LowBridge
 	Tooltip:
-		Name: Concrete Bridge
+		Name: meta-concrete-bridge.name
 	Building:
 		Footprint: = = =
 		Dimensions: 1, 3
@@ -125,7 +123,7 @@ lobrdb_b:
 lobrdb_b_d:
 	Inherits: lobrdb_b
 	EditorOnlyTooltip:
-		Name: Dead Bridge
+		Name: meta-dead-bridge.name
 	-GroundLevelBridge:
 	-AppearsOnRadar:
 	BridgePlaceholder:
@@ -139,9 +137,7 @@ lobrdb_b_d:
 		BOffset: -1,1
 	Interactable:
 		Bounds: 2316, 2316
-	ShakeOnDeath:
-		Duration: 15
-		Intensity: 6
+	-ShakeOnDeath:
 
 lobrdb_r_se:
 	Inherits: ^LowBridgeRamp
@@ -151,9 +147,9 @@ lobrdb_r_se:
 	BridgePlaceholder:
 		NeighbourOffsets: -1,1
 	Tooltip:
-		Name: Concrete Bridge
+		Name: meta-concrete-bridge.name
 	EditorOnlyTooltip:
-		Name: Bridge Ramp
+		Name: meta-bridge-ramp.name
 
 lobrdb_r_nw:
 	Inherits: ^LowBridgeRamp
@@ -163,9 +159,9 @@ lobrdb_r_nw:
 	BridgePlaceholder:
 		NeighbourOffsets: 1,1
 	Tooltip:
-		Name: Concrete Bridge
+		Name: meta-concrete-bridge.name
 	EditorOnlyTooltip:
-		Name: Bridge Ramp
+		Name: meta-bridge-ramp.name
 
 lobrdb_r_ne:
 	Inherits: ^LowBridgeRamp
@@ -175,9 +171,9 @@ lobrdb_r_ne:
 	BridgePlaceholder:
 		NeighbourOffsets: 1,1
 	Tooltip:
-		Name: Concrete Bridge
+		Name: meta-concrete-bridge.name
 	EditorOnlyTooltip:
-		Name: Bridge Ramp
+		Name: meta-bridge-ramp.name
 
 lobrdb_r_sw:
 	Inherits: ^LowBridgeRamp
@@ -187,9 +183,9 @@ lobrdb_r_sw:
 	BridgePlaceholder:
 		NeighbourOffsets: 1,-1
 	Tooltip:
-		Name: Concrete Bridge
+		Name: meta-concrete-bridge.name
 	EditorOnlyTooltip:
-		Name: Bridge Ramp
+		Name: meta-bridge-ramp.name
 
 lobrdg_a:
 	Inherits: ^LowBridge
@@ -215,7 +211,7 @@ lobrdg_a:
 lobrdg_a_d:
 	Inherits: lobrdg_a
 	EditorOnlyTooltip:
-		Name: Dead Bridge
+		Name: meta-dead-bridge.name
 	-GroundLevelBridge:
 	-AppearsOnRadar:
 	BridgePlaceholder:
@@ -229,9 +225,7 @@ lobrdg_a_d:
 		BOffset: 1,1
 	Interactable:
 		Bounds: 2316, 2316
-	ShakeOnDeath:
-		Duration: 15
-		Intensity: 6
+	-ShakeOnDeath:
 
 lobrdg_b:
 	Inherits: ^LowBridge
@@ -257,7 +251,7 @@ lobrdg_b:
 lobrdg_b_d:
 	Inherits: lobrdg_b
 	EditorOnlyTooltip:
-		Name: Dead Bridge
+		Name: meta-dead-bridge.name
 	-GroundLevelBridge:
 	-AppearsOnRadar:
 	BridgePlaceholder:
@@ -271,9 +265,7 @@ lobrdg_b_d:
 		BOffset: -1,1
 	Interactable:
 		Bounds: 2316, 2316
-	ShakeOnDeath:
-		Duration: 15
-		Intensity: 6
+	-ShakeOnDeath:
 
 lobrdg_r_se:
 	Inherits: ^LowBridgeRamp
@@ -283,7 +275,7 @@ lobrdg_r_se:
 	BridgePlaceholder:
 		NeighbourOffsets: -1,1
 	EditorOnlyTooltip:
-		Name: Bridge Ramp
+		Name: meta-bridge-ramp.name
 
 lobrdg_r_nw:
 	Inherits: ^LowBridgeRamp
@@ -293,7 +285,7 @@ lobrdg_r_nw:
 	BridgePlaceholder:
 		NeighbourOffsets: 1,1
 	EditorOnlyTooltip:
-		Name: Bridge Ramp
+		Name: meta-bridge-ramp.name
 
 lobrdg_r_ne:
 	Inherits: ^LowBridgeRamp
@@ -303,7 +295,7 @@ lobrdg_r_ne:
 	BridgePlaceholder:
 		NeighbourOffsets: 1,1
 	EditorOnlyTooltip:
-		Name: Bridge Ramp
+		Name: meta-bridge-ramp.name
 
 lobrdg_r_sw:
 	Inherits: ^LowBridgeRamp
@@ -313,7 +305,7 @@ lobrdg_r_sw:
 	BridgePlaceholder:
 		NeighbourOffsets: 1,-1
 	EditorOnlyTooltip:
-		Name: Bridge Ramp
+		Name: meta-bridge-ramp.name
 
 ^ElevatedBridgePlaceholder:
 	AlwaysVisible:
@@ -329,7 +321,7 @@ lobrdg_r_sw:
 		UseClassicPerspectiveFudge: false
 		QuantizedFacings: 1
 	Tooltip:
-		Name: Concrete Bridge
+		Name: meta-concrete-bridge.name
 	Immobile:
 		OccupiesSpace: false
 	MapEditorData:
@@ -346,12 +338,12 @@ bridge2:
 bridgb1:
 	Inherits: ^ElevatedBridgePlaceholder
 	Tooltip:
-		Name: Wooden Bridge
+		Name: meta-wooden-bridge.name
 
 bridgb2:
 	Inherits: ^ElevatedBridgePlaceholder
 	Tooltip:
-		Name: Wooden Bridge
+		Name: meta-wooden-bridge.name
 
 TUNTOP01:
 	Inherits: ^Tunnel

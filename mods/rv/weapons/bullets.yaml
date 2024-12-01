@@ -10,8 +10,7 @@ GrandCannonWeapon:
 		Speed: 1024
 		ContrailLength: 10
 		ContrailStartColor: FFFFFF
-		ContrailWidth: 0c48
-		ContrailWidthFadeRate: 1
+		ContrailStartWidth: 0c48
 	Warhead@1Dam: SpreadDamage
 		Damage: 15000
 		Spread: 0c512
@@ -97,9 +96,8 @@ HowiCannon:
 		Blockable: false
 		ContrailLength: 10
 		ContrailStartColor: FFFFFF
-		ContrailWidth: 0c50
+		ContrailStartWidth: 0c50
 		Inaccuracy: 0c512
-		ContrailWidthFadeRate: 1
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c384
 		Damage: 17500
@@ -613,7 +611,7 @@ StriderGunE:
 		LaunchAngle: 128
 		ContrailLength: 10
 		ContrailStartColor: FFFFFF
-		ContrailWidth: 0c30
+		ContrailStartWidth: 0c30
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
 		Falloff: 100, 75, 50, 25, 0
@@ -656,7 +654,7 @@ CycleMortar:
 		LaunchAngle: 196
 		ContrailLength: 10
 		ContrailStartColor: FFFFFF
-		ContrailWidth: 0c21
+		ContrailStartWidth: 0c21
 	Warhead@1Dam: SpreadDamage
 		Spread: 0c256
 		Falloff: 100, 75, 50, 25, 0
@@ -696,6 +694,7 @@ TurretMortar:
 		TrailPalette: effect75alpha
 		TrailImage: smokegren
 	Warhead@1Dam: SpreadDamage
+		Spread: 0c384
 		Damage: 13000
 		Versus:
 			Light: 90
@@ -727,6 +726,15 @@ TurretMortar:
 		ValidTargets: Ground, Water
 		ValidRelationships: Neutral, Enemy
 
+TurretMortarHeavy:
+	Inherits: TurretMortar
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c480
+		Damage: 16250
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c480
+		Damage: 16250
+
 TrooperMortar:
 	Inherits: TurretMortar
 	ReloadDelay: 75
@@ -744,17 +752,41 @@ TrooperMortarE:
 	Projectile: BulletAS
 		ContrailStartColor: EA0000
 	Warhead@1Dam: SpreadDamage
-		Spread: 0c384
+		Damage: 6000
 	Warhead@1Gar: OpenToppedDamage
-		Spread: 0c384
+		Damage: 6000
 	Warhead@2Smu: LeaveSmudge
 		SmudgeType: MediumCrater, MediumScorch
+
+TrooperMortarHeavy:
+	Inherits: TrooperMortar
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c480
+		Damage: 6250
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c480
+		Damage: 6250
+
+TrooperMortarHeavyE:
+	Inherits: TrooperMortarE
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c480
+		Damage: 7500
+	Warhead@1Gar: OpenToppedDamage
+		Spread: 0c480
+		Damage: 7500
 
 UCTrooperMortar:
 	Inherits: TrooperMortar
 
 UCTrooperMortarE:
 	Inherits: TrooperMortarE
+
+UCTrooperMortarHeavy:
+	Inherits: TrooperMortarHeavy
+
+UCTrooperMortarHeavyE:
+	Inherits: TrooperMortarHeavyE
 
 CruiserStrikeInit:
 	Projectile: InstantExplode
@@ -830,7 +862,7 @@ CruiserStrike:
 		Speed: 768
 		Blockable: false
 		ContrailLength: 14
-		ContrailWidth: 24
+		ContrailStartWidth: 24
 		Shadow: true
 		Palette: ra
 	Warhead@1Dam: SpreadDamage
@@ -930,7 +962,7 @@ OrbitalDrop:
 		Blockable: false
 		ContrailLength: 18
 		ContrailStartColor: 8888FF55
-		ContrailWidth: 250
+		ContrailStartWidth: 250
 		ContrailDelay: 10
 		Shadow: true
 		Palette: effect

@@ -11,7 +11,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using OpenRA.Activities;
 using OpenRA.Mods.Common.Activities;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
@@ -35,7 +34,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly string DeployedCondition = null;
 
 		[Desc("The terrain types that this actor can deploy on. Leave empty to allow any.")]
-		public readonly HashSet<string> AllowedTerrainTypes = new HashSet<string>();
+		public readonly HashSet<string> AllowedTerrainTypes = new();
 
 		[Desc("Can this actor deploy on slopes?")]
 		public readonly bool CanDeployOnRamps = false;
@@ -92,9 +91,7 @@ namespace OpenRA.Mods.RA2.Traits
 					return false;
 				},
 				(actor, value) =>
-				{
-					actor.ReplaceInit(new DeployStateInit(value ? DeployState.Deployed : DeployState.Undeployed));
-				});
+					actor.ReplaceInit(new DeployStateInit(value ? DeployState.Deployed : DeployState.Undeployed)));
 		}
 
 		public override object Create(ActorInitializer init) { return new HeliGrantConditionOnDeploy(init, this); }
@@ -106,13 +103,11 @@ namespace OpenRA.Mods.RA2.Traits
 		readonly Actor self;
 		readonly bool checkTerrainType;
 		readonly bool canTurn;
-
-		DeployState deployState;
 		WithSpriteBody[] wsbs;
 		int deployedToken = Actor.InvalidConditionToken;
 		int undeployedToken = Actor.InvalidConditionToken;
 
-		public DeployState DeployState { get { return deployState; } }
+		public DeployState DeployState { get; private set; }
 
 		public HeliGrantConditionOnDeploy(ActorInitializer init, HeliGrantConditionOnDeployInfo info)
 			: base(info)
@@ -120,14 +115,14 @@ namespace OpenRA.Mods.RA2.Traits
 			self = init.Self;
 			checkTerrainType = info.AllowedTerrainTypes.Count > 0;
 			canTurn = self.Info.HasTraitInfo<IFacingInfo>();
-			deployState = init.GetValue<DeployStateInit, DeployState>(DeployState.Undeployed);
+			DeployState = init.GetValue<DeployStateInit, DeployState>(DeployState.Undeployed);
 		}
 
 		protected override void Created(Actor self)
 		{
 			wsbs = self.TraitsImplementing<WithSpriteBody>().Where(w => Info.BodyNames.Contains(w.Info.Name)).ToArray();
 
-			switch (deployState)
+			switch (DeployState)
 			{
 				case DeployState.Undeployed:
 					OnUndeployCompleted();
@@ -195,12 +190,12 @@ namespace OpenRA.Mods.RA2.Traits
 
 		bool IIssueDeployOrder.CanIssueDeployOrder(Actor self, bool queued) { return !IsTraitPaused && !IsTraitDisabled; }
 
-		bool IsGroupDeployNeeded(Actor self, string actorString)
+		static bool IsGroupDeployNeeded(Actor self, string actorString)
 		{
 			if (string.IsNullOrEmpty(actorString))
 				return false;
 
-			var actorIDs = actorString.Split(',').Select(x => { uint result; uint.TryParse(x, out result); return result; });
+			var actorIDs = actorString.Split(',').Select(x => { uint.TryParse(x, out var result); return result; });
 			var actors = self.World.Actors.Where(x => x.IsInWorld && !x.IsDead && actorIDs.Contains(x.ActorID));
 
 			foreach (var a in actors)
@@ -218,10 +213,10 @@ namespace OpenRA.Mods.RA2.Traits
 			if (IsTraitDisabled || IsTraitPaused)
 				return;
 
-			if (order.OrderString != "HeliGrantConditionOnDeploy" || deployState == DeployState.Deploying || deployState == DeployState.Undeploying)
+			if (order.OrderString != "HeliGrantConditionOnDeploy" || DeployState == DeployState.Deploying || DeployState == DeployState.Undeploying)
 				return;
 
-			if (Info.SynchronizeDeployment && deployState == DeployState.Deployed && IsGroupDeployNeeded(self, order.TargetString))
+			if (Info.SynchronizeDeployment && DeployState == DeployState.Deployed && IsGroupDeployNeeded(self, order.TargetString))
 				return;
 
 			self.QueueActivity(order.Queued, new HeliDeployForGrantedCondition(self, this));
@@ -234,7 +229,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		string GetVoiceLine()
 		{
-			if (deployState == DeployState.Deployed)
+			if (DeployState == DeployState.Deployed)
 				return Info.UndeployVoice;
 
 			return Info.DeployVoice;
@@ -245,7 +240,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (IsTraitPaused)
 				return true;
 
-			return !IsValidTerrain(self.Location) && (deployState != DeployState.Deployed);
+			return !IsValidTerrain(self.Location) && (DeployState != DeployState.Deployed);
 		}
 
 		public bool IsValidTerrain(CPos location)
@@ -298,7 +293,7 @@ namespace OpenRA.Mods.RA2.Traits
 		void Deploy(bool init)
 		{
 			// Something went wrong, most likely due to deploy order spam and the fact that this is a delayed action.
-			if (!init && deployState != DeployState.Undeployed)
+			if (!init && DeployState != DeployState.Undeployed)
 				return;
 
 			if (!IsValidTerrain(self.Location))
@@ -330,7 +325,7 @@ namespace OpenRA.Mods.RA2.Traits
 		void Undeploy(bool init)
 		{
 			// Something went wrong, most likely due to deploy order spam and the fact that this is a delayed action.
-			if (!init && deployState != DeployState.Deployed)
+			if (!init && DeployState != DeployState.Deployed)
 				return;
 
 			if (!string.IsNullOrEmpty(Info.UndeploySound))
@@ -356,7 +351,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (undeployedToken != Actor.InvalidConditionToken)
 				undeployedToken = self.RevokeCondition(undeployedToken);
 
-			deployState = DeployState.Deploying;
+			DeployState = DeployState.Deploying;
 		}
 
 		void OnDeployCompleted()
@@ -364,7 +359,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (!string.IsNullOrEmpty(Info.DeployedCondition) && deployedToken == Actor.InvalidConditionToken)
 				deployedToken = self.GrantCondition(Info.DeployedCondition);
 
-			deployState = DeployState.Deployed;
+			DeployState = DeployState.Deployed;
 		}
 
 		void OnUndeployStarted()
@@ -372,7 +367,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (deployedToken != Actor.InvalidConditionToken)
 				deployedToken = self.RevokeCondition(deployedToken);
 
-			deployState = DeployState.Deploying;
+			DeployState = DeployState.Deploying;
 		}
 
 		void OnUndeployCompleted()
@@ -383,7 +378,7 @@ namespace OpenRA.Mods.RA2.Traits
 			if (Info.TakeOffOnUndeploy)
 				self.QueueActivity(new Fly(self, Target.FromCell(self.World, self.Location)));
 
-			deployState = DeployState.Undeployed;
+			DeployState = DeployState.Undeployed;
 		}
 	}
 }

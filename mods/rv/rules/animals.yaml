@@ -1,11 +1,11 @@
 cow:
 	Inherits: ^Animal
 	Tooltip:
-		Name: Cow
-		GenericName: Cow
+		Name: actor-cow.name
+		GenericName: actor-cow.name
 	Tooltip@NoRow:
-		Name: Cow
-		GenericName: Cow
+		Name: actor-cow.name
+		GenericName: actor-cow.name
 	Health:
 		HP: 15000
 	RevealsShroud:
@@ -25,32 +25,34 @@ all:
 	Inherits: ^Animal
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Tooltip:
-		Name: Alligator
-		GenericName: Alligator
+		Name: actor-all.name
+		GenericName: actor-all.name
 	Tooltip@NoRow:
-		Name: Alligator
-		GenericName: Alligator
+		Name: actor-all.name
+		GenericName: actor-all.name
 	Voiced:
 		VoiceSet: AlligatorVoice
 	Armament:
 		Weapon: AlligatorBite
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 30
 
 polarb:
 	Inherits: ^Animal
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Tooltip:
-		Name: Polar Bear
-		GenericName: Bear
+		Name: actor-polarb.name
+		GenericName: actor-polarb.generic-name
 	Tooltip@NoRow:
-		Name: Polar Bear
-		GenericName: Bear
+		Name: actor-polarb.name
+		GenericName: actor-polarb.generic-name
 	Voiced:
 		VoiceSet: BearVoice
 	Armament:
 		Weapon: BearBite
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 30
 
 josh:
@@ -58,11 +60,11 @@ josh:
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@WEB: ^WebDisable
 	Tooltip:
-		Name: Monkey
-		GenericName: Monkey
+		Name: actor-josh.name
+		GenericName: actor-josh.name
 	Tooltip@NoRow:
-		Name: Monkey
-		GenericName: Monkey
+		Name: actor-josh.name
+		GenericName: actor-josh.name
 	Voiced:
 		VoiceSet: ChimpanzeeVoice
 	# AmbientSound:
@@ -111,17 +113,18 @@ josh:
 	DeathSounds@virus:
 		Voice: Virus
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 30
 
 # Yuri's Revenge Animals
 caml:
 	Inherits: ^Animal
 	Tooltip:
-		Name: Camel
-		GenericName: Camel
+		Name: actor-caml.name
+		GenericName: actor-caml.name
 	Tooltip@NoRow:
-		Name: Camel
-		GenericName: Camel
+		Name: actor-caml.name
+		GenericName: actor-caml.name
 	Health:
 		HP: 20000
 	RevealsShroud:
@@ -137,6 +140,6 @@ caml:
 gbear:
 	Inherits: polarb
 	Tooltip:
-		Name: Grizzly Bear
+		Name: actor-gbear.name
 	Tooltip@NoRow:
-		Name: Grizzly Bear
+		Name: actor-gbear.name

@@ -9,6 +9,7 @@
  */
 #endregion
 
+using System;
 using System.Collections.Generic;
 using OpenRA.Mods.Common.Orders;
 using OpenRA.Mods.Common.Traits;
@@ -20,6 +21,8 @@ namespace OpenRA.Mods.RA2.Traits
 {
 	public class InfectorOldInfo : ConditionalTraitInfo
 	{
+		public readonly string Name = "primary";
+
 		[FieldLoader.Require]
 		public readonly BitSet<TargetableType> Types;
 
@@ -32,7 +35,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly int DamageInterval;
 
 		[Desc("Sounds to play when damage is dealt.")]
-		public readonly string[] DamageSounds = { };
+		public readonly string[] DamageSounds = Array.Empty<string>();
 
 		[Desc("Do the sounds play under shroud or fog.")]
 		public readonly bool AudibleThroughFog = false;
@@ -49,10 +52,10 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly int SuppressionAmountThreshold = 1;
 
 		[Desc("If the infected actor enters this damage state, kill the actor.")]
-		public readonly DamageState[] KillState = { };
+		public readonly DamageState[] KillState = Array.Empty<DamageState>();
 
 		[Desc("Damage types for the infection damage.")]
-		public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> DamageTypes = default;
 
 		[SequenceReference]
 		[Desc("Sequence to use upon infection beginning.")]

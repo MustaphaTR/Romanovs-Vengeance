@@ -2,15 +2,15 @@ engineer:
 	Inherits: ^Infantry
 	Inherits@CHAOS: ^Berserkable
 	Inherits@MC: ^MindControllable
-	Inherits@PARACHUTE: ^Parachutable
-	Inherits@SWIMSUIT: ^WithSwimSuit
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@SWIMSUITPARACHUTE: ^WithSwimSuitAndParachute
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Captures enemy structures, repairs damaged buildings and bridges.\nDisarms explosives.\n\nAbilities:\n- Can swim\n\n  Unarmed
+		Description: actor-engineer.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -19,15 +19,17 @@ engineer:
 		Payload: 250
 		Voice: Move
 	Tooltip:
-		Name: Engineer
+		Name: actor-engineer.name
 	Tooltip@NoRow:
-		Name: Engineer
+		Name: actor-engineer.name
 	Selectable:
+		Priority: 4
 		Bounds: 482, 1448, 0, -530
 	Health:
 		HP: 10000
 	Mobile:
 		Locomotor: swimsuit
+		Speed: 60
 	Garrisoner:
 		Voice: Move
 		CustomPipType: yellow
@@ -106,19 +108,20 @@ engineer:
 			tuva: sengineer
 			russianfed: sengineer
 			serbia: sengineer
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 dog:
 	Inherits: ^Infantry
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@PARACHUTE: ^Parachutable
-	Inherits@SWIMSUIT: ^WithSwimSuit
+	Inherits@SWIMSUITPARACHUTE: ^WithSwimSuitAndParachute
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Vietnam, Infantry.Yuri, Infantry.Moon, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
 		BuildAtProductionType: Soldier
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
-		Description: Anti-infantry unit.\nCan be deployed to stun nearby infantry for a short while.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can detect Stealth units\n- Can detect Spies
+		Description: actor-dog.description
 		BuildDuration: 50
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -129,38 +132,38 @@ dog:
 		Payload: 100
 		Voice: Move
 	Tooltip:
-		Name: Attack Dog
-		GenericName: Dog
+		Name: actor-dog.name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: !allies && !soviet && !psicorps && showownername
 	Tooltip@NoRow:
-		Name: Attack Dog
-		GenericName: Dog
+		Name: actor-dog.name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: !allies && !soviet && !psicorps && !showownername
 	Tooltip@Allies:
-		Name: German Shepherd
-		GenericName: Dog
+		Name: actor-dog.allies-name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: allies && showownername
 	Tooltip@Allies-NoRow:
-		Name: German Shepherd
-		GenericName: Dog
+		Name: actor-dog.allies-name
+		GenericName: actor-dog.generic-name
 		ShowOwnerRow: false
 		RequiresCondition: allies && !showownername
 	Tooltip@Soviet:
-		Name: Siberian Husky
-		GenericName: Dog
+		Name: actor-dog.soviet-name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: soviet && showownername
 	Tooltip@Soviet-NoRow:
-		Name: Siberian Husky
-		GenericName: Dog
+		Name: actor-dog.soviet-name
+		GenericName: actor-dog.generic-name
 		ShowOwnerRow: false
 		RequiresCondition: soviet && !showownername
 	Tooltip@PsiCorps:
-		Name: Rottweiler
-		GenericName: Dog
+		Name: actor-dog.psicorps-name
+		GenericName: actor-dog.generic-name
 		RequiresCondition: psicorps && showownername
 	Tooltip@PsiCorps-NoRow:
-		Name: Rottweiler
-		GenericName: Dog
+		Name: actor-dog.psicorps-name
+		GenericName: actor-dog.generic-name
 		ShowOwnerRow: false
 		RequiresCondition: psicorps && !showownername
 	GrantConditionOnFaction@Allies:
@@ -175,11 +178,11 @@ dog:
 	Selectable:
 		Bounds: 724, 1158, 0, -241
 	Health:
-		HP: 9000
+		HP: 10500
 	Mobile:
-		Speed: 105
+		Speed: 120
 		Locomotor: swimsuit
-		RequiresCondition: !deploying && !deployed && !chronodisable && !webdisable && !dogstun
+		RequiresCondition: !chronodisable && !webdisable && !dogstun # && !deploying && !deployed 
 	Passenger:
 		CargoType: Infantry
 	RevealsShroud:
@@ -190,11 +193,10 @@ dog:
 		Radius: 8c0
 	Armament:
 		Weapon: DogJaw
-		Damage: 1000
 	AttackLeap:
 		Voice: Attack
-		Speed: 105
-		PauseOnCondition: chronodisable || webdisable || dogstun || deployed || deploying
+		Speed: 120
+		PauseOnCondition: chronodisable || webdisable || dogstun # || deployed || deploying
 	AttackMove:
 		Voice: Move
 	AutoTarget:
@@ -204,20 +206,20 @@ dog:
 		ValidTargets: Infantry
 	WithInfantryBody:
 		DefaultAttackSequence: jump
-		RequiresCondition: !parachute && !webdisable && !attacking && !deployed && !deploying && !swimming
+		RequiresCondition: !parachute && !webdisable && !attacking && !swimming # && !deployed && !deploying
 	WithInfantryBody@Water:
 		-IdleSequences:
 		MoveSequence: swim-run
 		StandSequences: swim-stand
 		DefaultAttackSequence: swim-jump
-		RequiresCondition: !parachute && !webdisable && !attacking && !deployed && !deploying && swimming
+		RequiresCondition: !parachute && !webdisable && !attacking && swimming # && !deployed && !deploying
 	WithFacingSpriteBody:
 		Sequence: shoot
 		RequiresCondition: attacking
-	WithSpriteBody@DEPLOYED:
-		Sequence: deployed
-		Name: deployed
-		RequiresCondition: !parachute && !webdisable && !attacking && (deployed || deploying)
+	# WithSpriteBody@DEPLOYED:
+	#	Sequence: deployed
+	#	Name: deployed
+	#	RequiresCondition: !parachute && !webdisable && !attacking && (deployed || deploying)
 	RenderSprites:
 		Image: adog
 		FactionImages:
@@ -243,22 +245,22 @@ dog:
 	IgnoresDisguise:
 	DetectCloaked:
 		Range: 5c0
-	PeriodicExplosion:
-		Weapon: DogBark
-		RequiresCondition: deployed && !chronodisable && !webdisable && !dogstun
-	GrantTimedConditionOnDeploy:
-		DeployedTicks: 1
-		CooldownTicks: 1500
-		DeployedCondition: deployed
-		DeployingCondition: deploying
-		BodyNames: deployed
-		DeployAnimation: deploy
-		UndeployAnimation: undeploy
-		Voice: Attack
-		StartsFullyCharged: true
-		ChargingColor: FF0000
-		DischargingColor: FF00FF
-		PauseOnCondition: chronodisable || ((webdisable || dogstun || attacking) && !deployed)
+	# PeriodicExplosion:
+	#	Weapon: DogBark
+	#	RequiresCondition: deployed && !chronodisable && !webdisable && !dogstun
+	# GrantTimedConditionOnDeploy:
+	#	DeployedTicks: 1
+	#	CooldownTicks: 1500
+	#	DeployedCondition: deployed
+	#	DeployingCondition: deploying
+	#	BodyNames: deployed
+	#	DeployAnimation: deploy
+	#	UndeployAnimation: undeploy
+	#	Voice: Attack
+	#	StartsFullyCharged: true
+	#	ChargingColor: FF0000
+	#	DischargingColor: FF00FF
+	#	PauseOnCondition: chronodisable || ((webdisable || dogstun || attacking) && !deployed)
 	Voiced:
 		VoiceSet: DogVoice
 	ProducibleWithLevel@1:
@@ -299,16 +301,19 @@ dog:
 	-DeathSounds@radiation:
 	-DeathSounds@psycrush:
 	-DeathSounds@virus:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Damage: 1000
 
 e1:
 	Inherits: ^Infantry
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@ENDURANCE: ^AffectedByEnduranceTraining
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@FORTIFICATIONS: ^AffectedByGIFortifications
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@PORTABLE: ^AffectedByPortableWeaponry
@@ -318,7 +323,7 @@ e1:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 10
-		Description: General-purpose infantry.\nCan deploy to gain more range and damage.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n- Advanced Training\n- Portable Weaponry (United Kingdom)
+		Description: actor-e1.description
 		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -329,9 +334,9 @@ e1:
 		Payload: 75
 		Voice: Move
 	Tooltip:
-		Name: G.I.
+		Name: actor-e1.name
 	Tooltip@NoRow:
-		Name: G.I.
+		Name: actor-e1.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -505,24 +510,25 @@ e1:
 		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	AutoDeployer@AI:
-		RequiresCondition: ai-control && !deployed
-		DeployTrigger: Attack
-		DeployChance: 100
-		DeployTicks: 5
-		UndeployTicks: 50
+	IssueOrderToBot@AI:
+		RequiresCondition: !deployed
+		OrderName: GrantConditionOnDeploy
+		OrderChance: 100
+		OrderInterval: 55
+		OrderTrigger: Attack
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.gi_fortifications, upgrade.advanced_training, upgrade.portable_weaponry
 
 ggi:
 	Inherits: ^Infantry
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
 	Inherits@ENDURANCE: ^AffectedByEnduranceTraining
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@PORTABLE: ^AffectedByPortableWeaponry
@@ -548,7 +554,7 @@ ggi:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 20
-		Description: Anti-tank and anti-air infantry.\nCan deploy to gain more range.\n\n  Strong vs Vehicles, Aircraft\n  Weak vs Buildings\n\nUpgradeable with:\n- Fiber-Reinforced Fortifications\n-\n- Advanced Training\n- Boost-Gliding Systems (United States)\n- Portable Weaponry (United Kingdom)
+		Description: actor-ggi.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -559,9 +565,9 @@ ggi:
 		Payload: 150
 		Voice: Move
 	Tooltip:
-		Name: Guardian G.I.
+		Name: actor-ggi.name
 	Tooltip@NoRow:
-		Name: Guardian G.I.
+		Name: actor-ggi.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -620,14 +626,12 @@ ggi:
 	Armament@portable-aa:
 		Weapon: MissileLauncherAA
 		LocalOffset: 480,63,992
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && portable && !deployed && !boostgliding
 	Armament@elite-portable-aa:
 		Weapon: MissileLauncherAAE
 		LocalOffset: 480,64,992
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && portable && !deployed && !boostgliding
@@ -642,14 +646,12 @@ ggi:
 		Weapon: MissileLauncherBoostedE
 		Damage: 120
 		LocalOffset: 480,64,992
-		EnableSplitRanges: true
 		ReloadingCondition: reload-ground
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
 		RequiresCondition: rank-elite && portable && !deployed && boostgliding
 	Armament@portable-aa-boost:
 		Weapon: MissileLauncherAABoosted
 		LocalOffset: 480,63,992
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && portable && !deployed && boostgliding
@@ -682,7 +684,6 @@ ggi:
 		Weapon: MissileLauncherAA
 		Turret: deploy
 		LocalOffset: 480,63,992
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && deployed && !boostgliding
@@ -691,7 +692,6 @@ ggi:
 		Weapon: MissileLauncherAAE
 		Turret: deploy
 		LocalOffset: 480,64,992
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && deployed && !boostgliding
@@ -718,7 +718,6 @@ ggi:
 		Weapon: MissileLauncherAABoosted
 		Turret: deploy
 		LocalOffset: 480,63,992
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: !rank-elite && deployed && boostgliding
@@ -727,7 +726,6 @@ ggi:
 		Weapon: MissileLauncherAABoostedE
 		Turret: deploy
 		LocalOffset: 480,64,992
-		EnableSplitRanges: true
 		ReloadingCondition: reload-air
 		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
 		RequiresCondition: rank-elite && deployed && boostgliding
@@ -868,7 +866,7 @@ ggi:
 	WithSpriteBody@Parachute:
 		RequiresCondition: parachute && !portable
 	WithSpriteBody@Parachute-PORTABLE:
-		Name: parachute
+		Name: parachute-portable
 		Sequence: paradrop-portable
 		RequiresCondition: parachute && portable
 	WithDeathAnimation@normal:
@@ -935,19 +933,23 @@ ggi:
 		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	AutoDeployer@AI:
-		RequiresCondition: ai-control && !deployed
-		DeployChance: 100
-		DeployTrigger: Attack
-		DeployTicks: 5
-		UndeployTicks: 50
+	IssueOrderToBot@AI:
+		RequiresCondition: !deployed
+		OrderName: GrantConditionOnDeploy
+		OrderChance: 100
+		OrderInterval: 55
+		OrderTrigger: Attack
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.gi_fortifications, upgrade.advanced_training, upgrade.boost_gliding_systems, upgrade.portable_weaponry
+	ActorStatOverride@deployed:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
+		RequiresCondition: deployed || portable
 
 snipe:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@HIGHCALIBER: ^AffectedByHighCaliberRounds
 	Inherits@MC: ^MindControllable
@@ -958,15 +960,15 @@ snipe:
 		Payload: 300
 		Voice: Move
 	Tooltip:
-		Name: Sniper
+		Name: actor-snipe.name
 	Tooltip@NoRow:
-		Name: Sniper
+		Name: actor-snipe.name
 	Buildable:
 		Queue: Infantry.Shared, Infantry.UK
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.england, gaairc, ~techlevel.3
-		Description: Special anti-infantry unit.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can kill garrisoned infantry
+		Description: actor-snipe.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1076,19 +1078,19 @@ snipe:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 200
 
 spy:
 	Inherits: ^Infantry
-	Inherits@PARACHUTE: ^Parachutable
-	Inherits@SWIMSUIT: ^WithSwimSuit
+	Inherits@SWIMSUITPARACHUTE: ^WithSwimSuitAndParachute
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
-		Description: Infiltrates enemy structures for intel or sabotage.\nExact effect depends on the\nbuilding infiltrated.\n\n  Unarmed\n\nAbilities:\n- Can swim\n- Can disguise as an enemy infantry
+		Description: actor-spy.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
@@ -1099,12 +1101,12 @@ spy:
 	-Tooltip:
 	-Tooltip@NoRow:
 	DisguiseTooltip:
-		Name: Spy
-		GenericName: Soldier
+		Name: actor-spy.name
+		GenericName: meta-infantry.name
 		RequiresCondition: showownername
 	DisguiseTooltip@NoRow:
-		Name: Spy
-		GenericName: Soldier
+		Name: actor-spy.name
+		GenericName: meta-infantry.name
 		ShowOwnerRow: false
 		RequiresCondition: !showownername
 	Selectable:
@@ -1131,6 +1133,7 @@ spy:
 		DisguisedAsConditions:
 			dog: swim-disguise
 			engineer: swim-disguise
+			mengineer: swim-disguise
 			ghost: swim-disguise
 			spy: swim-disguise
 			sspy: swim-disguise
@@ -1174,12 +1177,14 @@ spy:
 		Voice: Action
 	QuantizeFacingsFromSequence:
 		Sequence: stand
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
 
 ghost:
 	Inherits: ^Infantry
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@SWIMSUIT: ^WithSwimSuit
@@ -1188,7 +1193,7 @@ ghost:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Prerequisites: ~infantry.america, gaairc, ~techlevel.3
-		Description: Elite commando infantry, armed with a sub machine gun\nand C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings\n\nUpgradeable with:\n- Advanced Training
+		Description: actor-ghost.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1199,9 +1204,9 @@ ghost:
 		Payload: 400
 		Voice: Move
 	Tooltip:
-		Name: Navy SEAL
+		Name: actor-ghost.name
 	Tooltip@NoRow:
-		Name: Navy SEAL
+		Name: actor-ghost.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1285,44 +1290,28 @@ ghost:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: !swimming && !webdisable && !snow
-	WithInfantryBody@SNOW:
-		IdleSequences: snow-idle1, snow-idle2
-		StandSequences: snow-stand
-		MoveSequence: snow-run
-		DefaultAttackSequence: snow-shoot
-		RequiresCondition: !swimming && !webdisable && snow
-	WithDeathAnimation@normal:
-		RequiresCondition: !swimming && !snow
-	WithDeathAnimation@SNOW:
-		DeathSequence: snow-die
-		DeathSequencePalette: infantry
-		DeathTypes:
-			ExplosionDeath: 1
-			BulletDeath: 2
-		RequiresCondition: !swimming && snow
-	GrantConditionOnTileSet@SNOW:
-		Condition: snow
-		TileSets: SNOW
+		RequiresCondition: !swimming && !webdisable
 	TakeCover:
 		RequiresCondition: !swimming
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Armaments: primary
 		Damage: 70
 
 ccomand:
 	Inherits: ghost
+	Inherits@PORTCHRONO: ^WithPortableChrono
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 960
 		Prerequisites: ~infantry.allies, ~allies.tech.infiltrated, ~techlevel.4
-		Description: Elite commando infantry, armed with\na sub machine gun and C4 charges.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n- Can teleport anywhere on the map\n\nUpgradeable with:\n- Advanced Training
+		Description: actor-ccomand.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Tooltip:
-		Name: Chrono Commando
+		Name: actor-ccomand.name
 	Tooltip@NoRow:
-		Name: Chrono Commando
+		Name: actor-ccomand.name
 	Valued:
 		Cost: 1500
 	DeliversCash:
@@ -1341,29 +1330,6 @@ ccomand:
 		Weapon: CommandoC4Attacher
 	Armament@sapper-elite:
 		Weapon: CommandoC4AttacherE
-	PortableChronoRA2:
-		ChronoshiftSound: ichrmova.wav
-		DeployCursor: chronosphere
-		DeployBlockedCursor: chronosphere
-		Voice: Move
-		ChargeDelay: 120
-		HasDistanceLimit: false
-		TargetCursor: chronosphere
-		TeleportCondition: chronoed
-		ConditionDuration: 120
-		PauseOnCondition: affectedbytemporal
-	Contrail@Teleport: ##HACK: add a trace for teleport. 
-		Offset: 0, 0, 700
-		StartColor: 00F0F8AA
-		StartColorAlpha: 176
-		StartColorUsePlayerColor: false
-		ZOffset: -1024
-		TrailWidth: 36
-		TrailLength: 2
-	GrantCondition@ChronoDisable:
-		RequiresCondition: affectedbytemporal || chronoed
-	Chronoshiftable:
-		ExplodeInstead: false
 	WithInfantryBody:
 		RequiresCondition: !webdisable
 	WithDeathAnimation@normal:
@@ -1374,11 +1340,8 @@ ccomand:
 		-RequiresCondition:
 	-GrantConditionOnTerrain@Water:
 	-WithInfantryBody@Water:
-	-WithInfantryBody@SNOW:
 	-WithDeathAnimation@Water:
-	-WithDeathAnimation@SNOW:
 	-Targetable@WaterBorne:
-	-GrantConditionOnTileSet@SNOW:
 	RenderSprites:
 		Image: ccomand
 
@@ -1389,7 +1352,14 @@ ptroop:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildPaletteOrder: 990
 		Prerequisites: ~infantry.allies, ~yuri.tech.infiltrated, ~techlevel.4
-		Description: Psychic infantry. Can mind control enemy units.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Dogs, Terror Drones, Aircraft\n\nAbilities:\n- Can place C4 on buildings\n\nUpgradeable with:\n- Mastery of Mind (Antarctica)
+		Description: actor-ptroop.description
+		BuildDuration: 375
+	Buildable@Yuri:
+		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
+		BuildAtProductionType: Soldier
+		BuildPaletteOrder: 970
+		Prerequisites: ~infantry.yuri, ~allies.tech.infiltrated, ~techlevel.4
+		Description: actor-ptroop.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Valued:
@@ -1397,9 +1367,9 @@ ptroop:
 	DeliversCash:
 		Payload: 750
 	Tooltip:
-		Name: Psi Commando
+		Name: actor-ptroop.name
 	Tooltip@NoRow:
-		Name: Psi Commando
+		Name: actor-ptroop.name
 	Armament@sapper:
 		Name: sapper
 		Weapon: CommandoC4Attacher
@@ -1428,16 +1398,6 @@ ptroop:
 	ActorStatValues:
 		Armaments: primary
 
-civan.allied:
-	Inherits: civan
-	Buildable:
-		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
-		BuildPaletteOrder: 980
-		Prerequisites: ~infantry.allies, ~soviets.tech.infiltrated, ~techlevel.4
-	UpdatesPlayerStatistics:
-		OverrideActor: civan
-	-MapEditorData:
-
 tany:
 	Inherits: ^Infantry
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
@@ -1451,7 +1411,7 @@ tany:
 		BuildPaletteOrder: 160
 		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
 		BuildLimit: 1
-		Description: Elite commando infantry, armed with\ndual pistols and C4 charges.\n\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can swim\n- Can place C4 on buildings and vehicles\n\nUpgradeable with:\n- Advanced Training\n\n  Maximum 1 can be trained
+		Description: actor-tany.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1462,9 +1422,9 @@ tany:
 		Payload: 1000
 		Voice: Move
 	Tooltip:
-		Name: Tanya Adams
+		Name: actor-tany.name
 	Tooltip@NoRow:
-		Name: Tanya Adams
+		Name: actor-tany.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -1561,25 +1521,7 @@ tany:
 		Sequence: stand
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-		RequiresCondition: !swimming && !webdisable && !snow
-	WithInfantryBody@SNOW:
-		IdleSequences: snow-idle1, snow-idle2
-		StandSequences: snow-stand
-		MoveSequence: snow-run
-		DefaultAttackSequence: snow-shoot
-		RequiresCondition: !swimming && !webdisable && snow
-	WithDeathAnimation@normal:
-		RequiresCondition: !swimming && !snow
-	WithDeathAnimation@SNOW:
-		DeathSequence: snow-die
-		DeathSequencePalette: infantry
-		DeathTypes:
-			ExplosionDeath: 1
-			BulletDeath: 2
-		RequiresCondition: !swimming && snow
-	GrantConditionOnTileSet@SNOW:
-		Condition: snow
-		TileSets: SNOW
+		RequiresCondition: !swimming && !webdisable
 	-TakeCover:
 	-WithColoredOverlay@IDISABLE:
 	-GrantCondition@IDISABLE:
@@ -1588,10 +1530,11 @@ tany:
 	-TimedConditionBar@DOGSTUN:
 	-ExternalCondition@dogstun:
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 125
 
 jumpjet:
-	Inherits: ^Infantry
+	Inherits: ^JumpjetInfantry
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1603,7 +1546,7 @@ jumpjet:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
-		Description: Airborne soldier.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nUpgradeable with:\n- Advanced Training
+		Description: actor-jumpjet.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1611,25 +1554,19 @@ jumpjet:
 	Valued:
 		Cost: 450
 	Tooltip:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Tooltip@NoRow:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
 		HP: 12500
-	-Mobile:
 	RevealsShroud:
 		Range: 8c0
-		Type: GroundPosition
-		RequiresCondition: !airborne
 	RevealsShroud@Ground:
 		Range: 8c0
-		Type: GroundPosition
-		RequiresCondition: airborne
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 8c0
-	#	Type: GroundPosition
 	Armor:
 		Type: Light
 	Armament@primary:
@@ -1658,19 +1595,6 @@ jumpjet:
 		Voice: Attack
 		FacingTolerance: 2
 		AttackType: Hover
-	Aircraft:
-		CruiseAltitude: 3c852
-		InitialFacing: 80
-		TurnSpeed: 787
-		Speed: 150
-		AltitudeVelocity: 240
-		MaximumPitch: 128
-		Voice: Move
-		AirborneCondition: airborne
-		IdealSeparation: 512
-		VTOL: true
-		CanSlide: true
-		CanHover: true
 	WithInfantryBody:
 		RequiresCondition: !airborne
 	WithInfantryBody@Air:
@@ -1679,50 +1603,6 @@ jumpjet:
 		DefaultAttackSequence: shoot-air
 		IdleSequences: idle-air
 		RequiresCondition: airborne
-	Hovers:
-		BobDistance: -45
-	-TimedConditionBar@WebDisable:
-	-SpeedMultiplier@WebDisable:
-	-WithIdleOverlay@web:
-	-Targetable@webdisable:
-	-ExternalCondition@webdisable:
-	-WithColoredOverlay@IDISABLE:
-	-GrantCondition@IDISABLE:
-	-SpeedMultiplier@DOGSTUN:
-	-Targetable@DOGSTUN:
-	-TimedConditionBar@DOGSTUN:
-	-ExternalCondition@dogstun:
-	-InfectableRV:
-	-Targetable@DRONE:
-	-SpeedMultiplier@DRONE:
-	-RevealsShroud@DRONE:
-	-PeriodicExplosion@dronesparks:
-	-Crushable:
-	-Crushable@Cheater:
-	-Crushable@Vengeful:
-	-TakeCover:
-	-Targetable:
-	-TurnOnIdle:
-	-WithDeathAnimation@normal:
-	-WithDeathAnimation@effect:
-	-DamagedByTintedCells:
-	-DamagedByTintedCells@ORANGE:
-	DeathSounds@normal:
-		DeathTypes: ExplosionDeath, BulletDeath, RadiationDeath, OrangeRadiationDeath, PsychicDeath, ElectroDeath, FlameDeath, VirusDeath, BruteDeath
-	-DeathSounds@zapped:
-	-DeathSounds@radiation:
-	-DeathSounds@psycrush:
-	-DeathSounds@virus:
-	Targetable@airborne:
-		TargetTypes: Air, Disguise
-		RequiresCondition: airborne
-	Targetable@ground:
-		TargetTypes: Ground, Infantry, DetonateAttack, Disguise
-		RequiresCondition: !airborne
-	WithSpriteBody@shadow:
-		Name: shadow
-		Sequence: shadow
-		ForceToGround: true
 	Voiced:
 		VoiceSet: RocketeerVoice
 	# AmbientSound:
@@ -1741,14 +1621,10 @@ jumpjet:
 	WithProductionIconOverlay@2:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
-	QuantizeFacingsFromSequence:
-		Sequence: stand
-	-Passenger:
-	-ChangesHealth@AMBULANCE:
 	SpawnActorOnDeath:
 		Actor: jumpjet.husk
 	ActorStatValues:
-		SplitRanges: true
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 
 jumpjet.husk:
 	Inherits: ^HelicopterHusk
@@ -1757,9 +1633,9 @@ jumpjet.husk:
 	-RenderVoxels:
 	-WithVoxelBody:
 	Tooltip:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Tooltip@NoRow:
-		Name: Rocketeer
+		Name: actor-jumpjet.name
 	Aircraft:
 		TurnSpeed: 40
 		Speed: 180
@@ -1794,22 +1670,23 @@ jumpjet.spawner:
 cleg:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
+	Inherits@PORTCHRONO: ^WithPortableChrono
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Tooltip:
-		Name: Chrono Legionnaire
+		Name: actor-cleg.name
 	Tooltip@NoRow:
-		Name: Chrono Legionnaire
+		Name: actor-cleg.name
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 140
 		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
-		Description: High-tech soldier capable of erasing enemy units.\n  Strong vs Infantry, Vehicles, Buildings\n  Weak vs Aircraft\n\nAbilities:\n- Can teleport anywhere on the map
+		Description: actor-cleg.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1825,9 +1702,9 @@ cleg:
 		Prerequisites: barracks.infiltrated, baacdm
 		Types: chevron-elite
 	Valued:
-		Cost: 1200
+		Cost: 1000
 	DeliversCash:
-		Payload: 600
+		Payload: 500
 		Voice: Move
 	Health:
 		HP: 12500
@@ -1842,27 +1719,6 @@ cleg:
 		Radius: 6c0
 	Passenger:
 	-TakeCover:
-	PortableChronoRA2:
-		ChronoshiftSound: ichrmova.wav
-		DeployCursor: chronosphere
-		DeployBlockedCursor: chronosphere
-		Voice: Move
-		ChargeDelay: 120
-		HasDistanceLimit: false
-		TargetCursor: chronosphere
-		TeleportCondition: chronoed
-		ConditionDuration: 120
-		PauseOnCondition: affectedbytemporal
-	Contrail@Teleport: ##HACK: add a trace for teleport. 
-		Offset: 0, 0, 700
-		StartColor: 00F0F8AA
-		StartColorAlpha: 176
-		StartColorUsePlayerColor: false
-		ZOffset: -1024
-		TrailWidth: 36
-		TrailLength: 2
-	Chronoshiftable:
-		ExplodeInstead: false
 	Voiced:
 		VoiceSet: ChronoLegionnaireVoice
 	Armament@primary:
@@ -1912,15 +1768,15 @@ cleg:
 		FacingTolerance: 2
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
-	GrantCondition@ChronoDisable:
-		RequiresCondition: affectedbytemporal || chronoed
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 # Custom Allied Infantry:
 gren:
 	Inherits: ^Infantry
 	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EMPAMMO: ^AffectedByEMPMunitions
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
@@ -1930,20 +1786,20 @@ gren:
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
 		BuildPaletteOrder: 70
-		Description: Infantry armed with grenades.\nCan kill garrisoned infantry.\n\n  Strong vs Infantry, Buildings\n  Weak vs Vehicles, Aircraft\n\nUpgradeable with:\n- Advanced Training\n- EMP Munitions (Korea)
+		Description: actor-gren.description
 		BuildDuration: 175
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 250
+		Cost: 200
 	DeliversCash:
-		Payload: 125
+		Payload: 100
 		Voice: Move
 	Tooltip:
-		Name: Grenadier
+		Name: actor-gren.name
 	Tooltip@NoRow:
-		Name: Grenadier
+		Name: actor-gren.name
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
@@ -2043,7 +1899,7 @@ gren:
 	WithSpriteBody@Parachute:
 		RequiresCondition: parachute && !empammo
 	WithSpriteBody@Parachute-EMPAMMO:
-		Name: parachute
+		Name: parachute-empammo
 		Sequence: paradrop-empammo
 		RequiresCondition: parachute && empammo
 	WithDeathAnimation@normal:
@@ -2057,7 +1913,7 @@ gren:
 		RequiresCondition: empammo
 	Voiced:
 		VoiceSet: GrenadierVoice
-		Volume: 6
+		Volume: 5
 	ProducibleWithLevel@1:
 		Prerequisites: barracks.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -2071,4 +1927,5 @@ gren:
 	QuantizeFacingsFromSequence:
 		Sequence: stand
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.advanced_training, upgrade.emp_munitions

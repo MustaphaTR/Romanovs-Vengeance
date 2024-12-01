@@ -1,7 +1,6 @@
 hytk:
 	Inherits: ^MainBattleTank
 	Inherits@MACHINEGUN: ^AffectedByMountedMG
-	Inherits@NUKEENGINES: ^AffectedByNuclearEngines
 	Valued:
 		Cost: 1100
 	DeliversCash:
@@ -9,15 +8,15 @@ hytk:
 		Voice: Move
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
-		Description: Bakuvian Main Battle Tank with double barrel.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Nuclear Engines\n- Mounted MG
+		Description: actor-hytk.description
 		Prerequisites: ~vehicle.baku, ~techlevel.1
 		BuildDuration: 625
 		BuildDurationModifier: 100
 		Icon: icon-hydra
 	Tooltip:
-		Name: Hydra Heavy Tank
+		Name: actor-hytk.name
 	Tooltip@NoRow:
-		Name: Hydra Heavy Tank
+		Name: actor-hytk.name
 	Health:
 		HP: 50000
 	Mobile:
@@ -108,12 +107,13 @@ hytk:
 	Voiced:
 		VoiceSet: SovietVehicleVoice
 	ActorStatValues:
-		Upgrades: upgrade.nuclear_engines, upgrade.mounted_mg
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 send:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
 	Valued:
 		Cost: 600
@@ -121,14 +121,14 @@ send:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Sentry Drone
+		Name: actor-send.name
 	Tooltip@NoRow:
-		Name: Sentry Drone
+		Name: actor-send.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 40
 		Prerequisites: ~vehicle.baku, ~techlevel.2
-		Description: Stealth drone armed with a heavy machine gun.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft\n\nAbilities:\n- Can detect Stealth units\n- Stealth while not moving or firing\n- Immune to Radiation\n- Cannot be mind controlled\n\nUpgradeable with:\n- Armor-Piercing Bullets
+		Description: actor-send.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -189,6 +189,8 @@ send:
 		RequiresCondition: !chronodisable && !emp
 		InitialDelay: 25
 		CloakDelay: 110
+		CloakStyle: Palette
+		CloakedPalette: cloak
 		IsPlayerPalette: true
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
@@ -200,12 +202,6 @@ send:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: RobotTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -214,6 +210,8 @@ send:
 	#	SoundFiles: vchastaa.wav, vchastab.wav, vchastac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 smrj:
 	Inherits: mrj
@@ -221,7 +219,7 @@ smrj:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 80
 		Prerequisites: ~vehicle.baku, basops, ~techlevel.3
-		Description: Jams nearby enemy radar domes and deflects incoming missiles.\n\n  Unarmed\n\nAbilities:\n- Can detect Stealth units
+		Description: actor-smrj.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	Voiced:
@@ -230,7 +228,8 @@ smrj:
 grad:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@CRYO: ^AffectedByCryoWarheads
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -242,14 +241,14 @@ grad:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Grad MLRS
+		Name: actor-grad.name
 	Tooltip@NoRow:
-		Name: Grad MLRS
+		Name: actor-grad.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 100
-		Prerequisites: ~vehicle.baku, natech, ~techlevel.3
-		Description: Long-range rocket artillery.\n\n  Strong vs Buildings, Infantry\n  Weak vs Aircraft\n\nUpgradeable with:\n- Cryo Warheads
+		Prerequisites: ~vehicle.baku, batech, ~techlevel.3
+		Description: actor-grad.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -302,12 +301,6 @@ grad:
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: V3LauncherVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: vetgradorbaacdm
 	WithProductionIconOverlay@1:
@@ -319,10 +312,12 @@ grad:
 		Prerequisites: vetgrad, baacdm
 		Types: chevron-elite
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.cryo_warheads
 
 qyzyl:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -332,14 +327,14 @@ qyzyl:
 		Payload: 2200
 		Voice: Move
 	Tooltip:
-		Name: Qızıl Ulduz Defense Platform
+		Name: actor-qyzyl.name
 	Tooltip@NoRow:
-		Name: Qızıl Ulduz Defense Platform
+		Name: actor-qyzyl.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Baku
 		BuildPaletteOrder: 990
-		Prerequisites: ~vehicle.baku, natech, ~caslab, ~techlevel.4
-		Description: Heavy armored vehicle capable of making other nearby vehicles invulnerable.\nDamages nearby enemy infantry.\n\n  Strong vs Infantry\n  Weak vs Vehicles, Aircraft
+		Prerequisites: ~vehicle.baku, batech, ~caslab, ~techlevel.4
+		Description: actor-qyzyl.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -349,6 +344,10 @@ qyzyl:
 		TurnSpeed: 32
 		Locomotor: omnicrusher
 	-Crushable:
+	-Crushable@Cheater:
+	-Crushable@Vengeful:
+	-GrantConditionOnBotOwner@Cheater:
+	-GrantConditionOnBotOwner@Vengeful:
 	ChangesHealth:
 		PercentageStep: 1
 		Step: 0
@@ -379,12 +378,6 @@ qyzyl:
 		Range: 4c0
 	Voiced:
 		VoiceSet: SovietVehicleVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -403,3 +396,5 @@ qyzyl:
 	#	SoundFiles: vapostaa.wav, vapostab.wav, vapostac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed

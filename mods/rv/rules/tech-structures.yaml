@@ -16,11 +16,11 @@ caoild:
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: enabled
 	Tooltip:
-		Name: Tech Oil Derrick
+		Name: actor-caoild.name
 	Tooltip@NoRow:
-		Name: Tech Oil Derrick
+		Name: actor-caoild.name
 	TooltipDescription:
-		Description: Periodically provides cash.
+		Description: actor-caoild.description
 	Health:
 		HP: 75000
 	Armor:
@@ -67,12 +67,15 @@ caoild:
 	DamageMultiplier@megawealth:
 		RequiresCondition: megawealth
 		Modifier: 0
+	ActorStatOverride:
+		Stats: Armor, Sight, CashTrickler
+		RequiresCondition: enabled
 
 caoild.mwspawner:
 	Inherits@SHAPE: ^2x2Shape
 	Interactable:
 	EditorOnlyTooltip:
-		Name: Megawealth Only Oil Derrick
+		Name: actor-caoild-mwspawner.name
 	FrozenUnderFog:
 	RenderSpritesEditorOnly:
 		Image: caoild
@@ -106,7 +109,7 @@ caoild.mwspawner:
 caoild.nonmwspawner:
 	Inherits: caoild.mwspawner
 	EditorOnlyTooltip:
-		Name: Non-Megawealth Only Oil Derrick
+		Name: actor-caoild-nonmwspawner.name
 	RenderSpritesEditorOnly:
 		Image: caoild
 		PlayerPalette: player50alpha
@@ -123,11 +126,11 @@ caairp:
 		Queue: Building.Tech
 		BuildPaletteOrder: 20
 	Tooltip:
-		Name: Tech Airport
+		Name: actor-caairp.name
 	Tooltip@NoRow:
-		Name: Tech Airport
+		Name: actor-caairp.name
 	TooltipDescription:
-		Description: Provides Paradrop support power.
+		Description: actor-caairp.description
 	Armor:
 		Type: Wood
 	Health:
@@ -155,14 +158,14 @@ caairp:
 			1: paradrop
 		ChargeInterval: 4500
 		Names:
-			1: Allied Paratroopers
+			1: actor-caairp.power-allied-name
 		Descriptions:
-			1: 2 Cargo Planes drop 7 GIs\nanywhere on the map.
+			1: actor-caairp.power-allied-description
 		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: Paratroopers ready.
+		EndChargeTextNotification: notification-paratroopers-ready
 		DropItems:
 			1: e1,e1,e1,e1,e1,e1,e1
 		QuantizedFacings: 8
@@ -189,14 +192,14 @@ caairp:
 			1: paradrop
 		ChargeInterval: 4500
 		Names:
-			1: Soviet Paratroopers
+			1: actor-caairp.power-soviet-name
 		Descriptions:
-			1: 2 Cargo Planes drop 10 conscripts\nanywhere on the map.
+			1: actor-caairp.power-soviet-description
 		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: Paratroopers ready.
+		EndChargeTextNotification: notification-paratroopers-ready
 		DropItems:
 			1: e2,e2,e2,e2,e2,e2,e2,e2,e2,e2
 		QuantizedFacings: 8
@@ -223,14 +226,14 @@ caairp:
 			1: paradrop
 		ChargeInterval: 4500
 		Names:
-			1: Psi-Corps Paratroopers
+			1: actor-caairp.power-psicorps-name
 		Descriptions:
-			1: 2 Cargo Planes drop 7 Initiates\nanywhere on the map.
+			1: actor-caairp.power-psicorps-description
 		AllowMultiple: true
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: Paratroopers ready.
+		EndChargeTextNotification: notification-paratroopers-ready
 		DropItems:
 			1: init,init,init,init,init,init,init
 		QuantizedFacings: 8
@@ -274,11 +277,11 @@ cahosp:
 		Footprint: xxxx xxxx xxxx xxxx xxxx xxxx
 		Dimensions: 6, 4
 	Tooltip:
-		Name: Tech Hospital
+		Name: actor-cahosp.name
 	Tooltip@NoRow:
-		Name: Tech Hospital
+		Name: actor-cahosp.name
 	TooltipDescription:
-		Description: Allows infantry to self-heal.
+		Description: actor-cahosp.description
 	Health:
 		HP: 100000
 	Armor:
@@ -324,8 +327,6 @@ cashosp:
 		Dimensions: 4, 4
 	Health:
 		HP: 75000
-	EditorOnlyTooltip:
-		Name: Tech Hospital
 	IsometricSelectable:
 		DecorationHeight: 90
 
@@ -338,15 +339,15 @@ caoutp:
 		Queue: Building.Tech
 		BuildPaletteOrder: 50
 	Tooltip:
-		Name: Tech Outpost
+		Name: actor-caoutp.name
 	Tooltip@NoRow:
-		Name: Tech Outpost
+		Name: actor-caoutp.name
 	TooltipDescription:
-		Description: Provides repairing ground for vehicles.
+		Description: actor-caoutp.description-1
 	TooltipDescription@2:
-		Description: Armed with missile launcher.
+		Description: actor-caoutp.description-2
 	TooltipDescription@3:
-		Description: Provides build area.
+		Description: actor-caoutp.description-3
 	Armor:
 		Type: Concrete
 	Health:
@@ -360,6 +361,7 @@ caoutp:
 	GivesBuildableArea:
 		-RequiresCondition:
 	-GrantConditionOnPrerequisite@BUILD:
+	-GrantConditionOnCombatantOwner:
 	RevealsShroud:
 		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
@@ -374,9 +376,9 @@ caoutp:
 		HpPerStep: 2000
 		Interval: 20
 		RepairDamageTypes: KillsDrone
-		StartRepairingTextNotification: Repairing.
+		StartRepairingTextNotification: notification-repairing
 		FinishRepairingNotification: UnitRepaired
-		FinishRepairingTextNotification: Unit repaired.
+		FinishRepairingTextNotification: notification-unit-repaired
 	WithIdleOverlay@bib:
 		Sequence: bib
 	WithIdleOverlay@flag:
@@ -421,6 +423,7 @@ caoutp:
 		Class: caoutp
 		DecorationHeight: 90
 	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 120
 
 caoutb:
@@ -453,11 +456,11 @@ capowr:
 		Dimensions: 2, 2
 	InstantlyRepairable:
 	Tooltip:
-		Name: Tech Power Plant
+		Name: actor-capowr.name
 	Tooltip@NoRow:
-		Name: Tech Power Plant
+		Name: actor-capowr.name
 	TooltipDescription:
-		Description: Provides 400 power.
+		Description: actor-capowr.description
 	Health:
 		HP: 75000
 	RevealsShroud:
@@ -471,12 +474,15 @@ capowr:
 	Power:
 		Amount: 400
 		RequiresCondition: !disabled && !chronodisable
+	-GrantConditionOnCombatantOwner:
 	GrantCondition@IDISABLE:
 		RequiresCondition: emp || diskdrain
 	RangedGpsDot:
 		Sequence: Power
 	IsometricSelectable:
 		DecorationHeight: 90
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 camach:
 	Inherits: ^TechBuilding
@@ -489,11 +495,11 @@ camach:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
 	Tooltip:
-		Name: Tech Machine Shop
+		Name: actor-camach.name
 	Tooltip@NoRow:
-		Name: Tech Machine Shop
+		Name: actor-camach.name
 	TooltipDescription:
-		Description: Allows vehicles to self-repair.
+		Description: actor-camach.description
 	Health:
 		HP: 75000
 	Armor:
@@ -519,11 +525,11 @@ caslab:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
 	Tooltip:
-		Name: Tech Secret Lab
+		Name: actor-caslab.name
 	Tooltip@NoRow:
-		Name: Tech Secret Lab
+		Name: actor-caslab.name
 	TooltipDescription:
-		Description: Allow construction of a new 3rd tier vehicle.
+		Description: actor-caslab.description
 	Health:
 		HP: 125000
 	Armor:
@@ -531,6 +537,7 @@ caslab:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
+	-GrantConditionOnCombatantOwner:
 	ProvidesPrerequisite@buildingname:
 	RangedGpsDot:
 		Sequence: SecretLab
@@ -549,11 +556,11 @@ cacomm:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
 	Tooltip:
-		Name: Tech Communications Center
+		Name: actor-cacomm.name
 	Tooltip@NoRow:
-		Name: Tech Communications Center
+		Name: actor-cacomm.name
 	TooltipDescription:
-		Description: Reveals a large area around it.
+		Description: actor-cacomm.description
 	Health:
 		HP: 75000
 	RevealsShroud:
@@ -564,16 +571,17 @@ cacomm:
 		RequiresCondition: disabled
 	# RevealsShroudToIntelligenceOwner:
 	#	Range: 20c0
-	#	RequiresCondition: !disabled && enabled
+	#	RequiresCondition: !disabled
 	# RevealsShroudToIntelligenceOwner@DISABLED:
 	#	Range: 4c0
 	#	Types: SatelliteScan
-	#	RequiresCondition: disabled && enabled
+	#	RequiresCondition: disabled
 	Armor:
 		Type: Wood
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
+	-GrantConditionOnCombatantOwner:
 	RangedGpsDot:
 		Sequence: Communications
 	IsometricSelectable:
@@ -590,11 +598,11 @@ caarmr:
 		Footprint: xxx xxx xxx
 		Dimensions: 3, 3
 	Tooltip:
-		Name: Tech Armory
+		Name: actor-caarmr.name
 	Tooltip@NoRow:
-		Name: Tech Armory
+		Name: actor-caarmr.name
 	TooltipDescription:
-		Description: Increases the rate which units are promoted.
+		Description: actor-caarmr.description
 	Health:
 		HP: 75000
 	Armor:
@@ -602,6 +610,7 @@ caarmr:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
+	-GrantConditionOnCombatantOwner:
 	ProvidesPrerequisite@buildingname:
 		RequiresCondition: !disabled && !chronodisable
 	RangedGpsDot:
@@ -621,11 +630,11 @@ carpad:
 		Dimensions: 1, 3
 		TerrainTypes: Clear, Rough, Road, DirtRoad
 	Tooltip:
-		Name: Tech Reinforcement Pad
+		Name: actor-carpad.name
 	Tooltip@NoRow:
-		Name: Tech Reinforcement Pad
+		Name: actor-carpad.name
 	TooltipDescription:
-		Description: Periodically provides an MBT.
+		Description: actor-carpad.description
 	Health:
 		HP: 75000
 	Armor:
@@ -721,6 +730,9 @@ carpad:
 	IsometricSelectable:
 		Class: carpad
 		DecorationHeight: 60
+	ActorStatOverride:
+		Stats: Armor, Sight, PeriodicProducer
+		RequiresCondition: enabled
 
 carpab:
 	Inherits: carpad
@@ -749,13 +761,13 @@ capsyb:
 		Queue: Building.Tech
 		BuildPaletteOrder: 120
 	Tooltip:
-		Name: Tech Psychic Beacon
+		Name: actor-capsyb.name
 	Tooltip@NoRow:
-		Name: Tech Psychic Beacon
+		Name: actor-capsyb.name
 	TooltipDescription:
-		Description: Provides Psychic Control support power.
+		Description: actor-capsyb.description-1
 	TooltipDescription@2:
-		Description: Requires Power to operate.
+		Description: actor-capsyb.description-2
 	Armor:
 		Type: Wood
 	Health:
@@ -776,11 +788,11 @@ capsyb:
 			1: control
 		ChargeInterval: 4500
 		Names:
-			1: Psychic Control
+			1: actor-capsyb.power-name
 		Descriptions:
-			1: Captures enemy units in a small area.\n\nCan be applied on ally units to\nmake them immune to mind control.
+			1: actor-capsyb.power-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		Weapons:
 			1: PsychicControl
 		TargetCircleRanges:
@@ -809,17 +821,19 @@ capsyb:
 		Sequence: Psi
 	IsometricSelectable:
 		DecorationHeight: 120
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 capsyb.koth:
 	Inherits: ^TechBuilding
 	Inherits@SHAPE: ^2x2Shape
 	-Buildable:
 	Tooltip:
-		Name: Psychic Beacon
+		Name: actor-capsyb-koth.name
 	Tooltip@NoRow:
-		Name: Psychic Beacon
+		Name: actor-capsyb-koth.name
 	TooltipDescription:
-		Description: Capture and hold for 6 minutes to win.
+		Description: actor-capsyb-koth.description
 	Armor:
 		Type: Wood
 	Health:
@@ -874,13 +888,13 @@ camisl:
 		Queue: Building.Tech
 		BuildPaletteOrder: 130
 	Tooltip:
-		Name: Tech Missile Silo
+		Name: actor-camisl.name
 	Tooltip@NoRow:
-		Name: Tech Missile Silo
+		Name: actor-camisl.name
 	TooltipDescription:
-		Description: Provides Cluster Missile support power.
+		Description: actor-camisl.description-1
 	TooltipDescription@2:
-		Description: Requires Power to operate.
+		Description: actor-camisl.description-2
 	Armor:
 		Type: Wood
 	Health:
@@ -899,14 +913,14 @@ camisl:
 			1: cmissile
 		ChargeInterval: 7500
 		Names:
-			1: Cluster Missile
+			1: actor-camisl.power-name
 		Descriptions:
-			1: Launches a cluster missile\nat a target location.
+			1: actor-camisl.power-description
 		AllowMultiple: true
 		EndChargeSound: snukread.wav
 		LaunchSound: sclslaun.wav
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		MissileWeapons:
 			1: ClusterMissile
 		MissileImage: ClusterMissile
@@ -953,6 +967,8 @@ camisl:
 	IsometricSelectable:
 		Class: camisl
 		DecorationHeight: 45
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 camisb:
 	Inherits: camisl

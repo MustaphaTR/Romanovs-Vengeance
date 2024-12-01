@@ -3,7 +3,7 @@ babarr:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.Baku
-		Description: Trains Bakuvian infantry.\nCan heal nearby infantry.\n\n  Cannot be placed on water.\n  Can be rotated.
+		Description: actor-babarr.description
 		Prerequisites: ~building.baku, power, ~techlevel.1
 	Building:
 		Footprint: xxx xxx
@@ -153,11 +153,11 @@ babarr:
 		LowPowerModifier: 200
 		Factions: turkmen
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -168,11 +168,11 @@ babarr:
 		LowPowerModifier: 200
 		Factions: tuva
 		ReadyAudio: UnitReady
-		ReadyTextNotification: Unit ready.
+		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Training
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -211,18 +211,18 @@ babarr:
 basops:
 	Inherits: ^Radar
 	Inherits@SHAPE: ^2x2Shape
-	Inherits@AI: ^AIMicroManagable
+	Inherits@AI: ^AIControl
 	Buildable:
 		Queue: Building.Shared, Building.Baku
 		Prerequisites: ~building.baku, power, narefn, ~techlevel.2, ~!ai.sops
-		Description: Provides radar.\nResearches basic upgrades.\n\nProvides Leaflet Drop support power.
+		Description: actor-basops.description
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.sops
 	Tooltip:
-		Name: Special Operations Center
+		Name: actor-basops.name
 	Tooltip@NoRow:
-		Name: Special Operations Center
+		Name: actor-basops.name
 	ProvidesPrerequisite@naradr:
 		Prerequisite: naradr
 	ProvidesPrerequisite@transcaucus:
@@ -274,13 +274,13 @@ basops:
 			1: leaflet
 		ChargeInterval: 3750
 		Names:
-			1: Leaflet Drop
+			1: commanders-power.leaflet-drop-name
 		Descriptions:
-			1: A Cargo Plane drops leaflets\nanywhere on the map.\nLeaflets slow enemy infantry\nand vehicle movement and\nfire speed.
+			1: commanders-power.leaflet-drop-description
 		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: Select target.
+		SelectTargetTextNotification: notification-select-target
 		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
-		IncomingTextNotification: Warning: Enemy airstrike initiated.
+		IncomingTextNotification: notification-enemy-airstrike-initiated
 		UnitTypes:
 			1: pdplane.leaflet.baku
 		SquadSizes:
@@ -310,15 +310,15 @@ baairf:
 	Inherits@SHAPE: ^3x5Shape
 	Buildable:
 		Queue: Building.Shared, Building.Baku
-		Description: Produces Bakuvian aircraft.\nSupports 2 aircraft.\n\nAbilities:\n- Comes with 3 repair drones.\n\n  Can be rotated.
+		Description: actor-baairf.description
 		Prerequisites: ~building.baku, basops, ~techlevel.2
 	Building:
 		Footprint: xx= xxx xxx _xx _xx
 		Dimensions: 3,5
 	Tooltip:
-		Name: Airfield
+		Name: actor-baairf.name
 	Tooltip@NoRow:
-		Name: Airfield
+		Name: actor-baairf.name
 	RallyPoint:
 		Path: 1,5
 		Palette: mouse
@@ -379,6 +379,12 @@ badock:
 	Exit@1:
 		Facing: 384
 
+batech: # Building doesn't exist yet, but the prerequisite do. Putting this dummy here either way.
+	AlwaysVisible:
+	Interactable:
+	Tooltip:
+		Name: meta-battlelab.name
+
 baacdm:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
@@ -387,17 +393,17 @@ baacdm:
 	Buildable:
 		Queue: Building.Shared, Building.Baku
 		BuildPaletteOrder: 120
-		Prerequisites: ~building.baku, natech, ~techlevel.4
-		Description: Makes combat units trained as veteran.\n\n  Maximum 1 can be built.
+		Prerequisites: ~building.baku, batech, ~techlevel.4
+		Description: actor-baacdm.description
 		BuildLimit: 1
 		BuildDuration: 1250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
 	Tooltip:
-		Name: Military Academy
+		Name: actor-baacdm.name
 	Tooltip@NoRow:
-		Name: Military Academy
+		Name: actor-baacdm.name
 	ProvidesPrerequisite@default:
 		RequiresCondition: !disabled && !chronodisable
 	ProvidesPrerequisite@barracks.infiltratedorbaacdm:
@@ -457,6 +463,8 @@ baacdm:
 	Voiced:
 		VoiceSet: BarracksVoice
 		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, Power
 
 bamort:
 	Inherits: ^SupportBuilding
@@ -464,20 +472,21 @@ bamort:
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
+	Inherits@HEAVYMORTARS: ^AffectedByHeavyMortars
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Baku
 		BuildPaletteOrder: 60
 		Prerequisites: ~building.baku, basops, ~techlevel.3
-		Description: Long range defense structure armed with smoke bombs.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can detect Steath units\n- Reduces damage and sight of enemy units\n- Can kill garrisoned infantry\n\n  Requires power to operate.
+		Description: actor-bamort.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
 	Tooltip:
-		Name: Mortar Turret
+		Name: actor-bamort.name
 	Tooltip@NoRow:
-		Name: Mortar Turret
+		Name: actor-bamort.name
 	Health:
 		HP: 60000
 	Armor:
@@ -498,6 +507,12 @@ bamort:
 		Weapon: TurretMortar
 		LocalOffset: 896,0,2048
 		MuzzleSequence: muzzle
+		RequiresCondition: !heavymortars
+	Armament@Heavy:
+		Weapon: TurretMortarHeavy
+		LocalOffset: 896,0,2048
+		MuzzleSequence: muzzle
+		RequiresCondition: heavymortars
 	WithMuzzleOverlay:
 	DetectCloaked:
 		Range: 7c0
@@ -523,6 +538,7 @@ bamort:
 		VoiceSet: SentryGunVoice
 		Volume: 0.8
 	ActorStatValues:
+		Stats: Armor, Sight, Power, Damage, ReloadDelay, MaxRange
 		Damage: 130
 
 baprop:
@@ -531,7 +547,7 @@ baprop:
 		Queue: Support.Shared, Support.Baku
 		BuildPaletteOrder: 70
 		Prerequisites: ~building.baku, nahand, ~techlevel.1
-		Description: Buffs fire speed of nearby units and heals them.\n\n  Requires power to operate.
+		Description: actor-baprop.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
 	ActorStatValues:

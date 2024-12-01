@@ -19,6 +19,8 @@ namespace OpenRA.Mods.RA2.Traits
 	[Desc("Move onto the target then execute the attack.")]
 	public class AttackInfectRVInfo : AttackFrontalInfo, Requires<MobileInfo>
 	{
+		public readonly string Name = "primary";
+
 		[Desc("Range of the final joust of the infector.")]
 		public readonly WDist JoustRange = WDist.Zero;
 
@@ -35,7 +37,7 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly int DamageInterval;
 
 		[Desc("Damage types for the infection damage.")]
-		public readonly BitSet<DamageType> DamageTypes = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> DamageTypes = default;
 
 		[Desc("If an external actor delivers more damage than this value, the infector is killed when infected unit dies.",
             "Use -1 to never kill the infector.")]
@@ -50,24 +52,24 @@ namespace OpenRA.Mods.RA2.Traits
 		public readonly int SuppressionCountThreshold = 0;
 
 		[Desc("Damage type used for the suppression calculations.")]
-		public readonly BitSet<DamageType> SuppressionDamageType = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> SuppressionDamageType = default;
 
 		[Desc("Damage types which allows the infector survive when it's host dies.")]
-		public readonly BitSet<DamageType> SurviveHostDamageTypes = default(BitSet<DamageType>);
+		public readonly BitSet<DamageType> SurviveHostDamageTypes = default;
 
 		public override object Create(ActorInitializer init) { return new AttackInfectRV(init.Self, this); }
 	}
 
 	public class AttackInfectRV : AttackFrontal
 	{
-		readonly AttackInfectRVInfo info;
+		public readonly AttackInfectRVInfo InfectInfo;
 
 		int joustToken = Actor.InvalidConditionToken;
 
 		public AttackInfectRV(Actor self, AttackInfectRVInfo info)
 			: base(self, info)
 		{
-			this.info = info;
+			InfectInfo = info;
 		}
 
 		protected override bool CanAttack(Actor self, in Target target)
@@ -83,8 +85,8 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public void GrantJoustCondition(Actor self)
 		{
-			if (!string.IsNullOrEmpty(info.JoustCondition))
-				joustToken = self.GrantCondition(info.JoustCondition);
+			if (!string.IsNullOrEmpty(InfectInfo.JoustCondition))
+				joustToken = self.GrantCondition(InfectInfo.JoustCondition);
 		}
 
 		public void RevokeJoustCondition(Actor self)
@@ -95,7 +97,7 @@ namespace OpenRA.Mods.RA2.Traits
 
 		public override Activity GetAttackActivity(Actor self, AttackSource source, in Target newTarget, bool allowMove, bool forceAttack, Color? targetLineColor)
 		{
-			return new InfectRV(self, newTarget, this, info, targetLineColor);
+			return new InfectRV(self, newTarget, this, InfectInfo, targetLineColor);
 		}
 	}
 }

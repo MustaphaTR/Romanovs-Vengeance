@@ -1,14 +1,14 @@
 cacnst:
 	Inherits: gacnst
 	Tooltip:
-		Name: Debug Construction Yard
+		Name: actor-cacnst.name
 	Tooltip@NoRow:
-		Name: Debug Construction Yard
+		Name: actor-cacnst.name
 	Buildable:
 		Queue: Building.Shared, Building.Allies, Building.Soviets, Building.Yuri, Building.Baku
 		Prerequisites: ~disabled
 		BuildPaletteOrder: 1000
-		Description: Debug structure to allow building Construction Yard of other (sub)factions.
+		Description: actor-cacnst.description
 	-Production@Shared:
 	Production:
 		Produces: Building.Debug
@@ -23,6 +23,7 @@ cacnst:
 	-ProductionBar@Support.Shared:
 	-ProductionBar@Support:
 	-ProductionBar@SupportFrance:
+	-GrantConditionOnPrerequisite@multiqueue:
 	-MapEditorData:
 	-Transforms:
 	-TransformsIntoMobile:
@@ -30,16 +31,16 @@ cacnst:
 	-TransformsIntoPassenger:
 	-GrantConditionOnPrerequisite@GLOBALFACTUNDEPLOY:
 	-TransferTimedExternalConditionOnTransform@INVULNERABILITY:
-	-TransferTimedExternalConditionOnTransform@INVISIBILITY:
-	-ExternalCondition@INVISIBILITY:
+	# -TransferTimedExternalConditionOnTransform@INVISIBILITY:
+	# -ExternalCondition@INVISIBILITY:
 
 # Allied ConYards
 gacnst.america:
 	Inherits: gacnst
 	Tooltip:
-		Name: American Construction Yard
+		Name: actor-gacnst.america-name
 	Tooltip@NoRow:
-		Name: American Construction Yard
+		Name: actor-gacnst.america-name
 	Buildable:
 		BuildPaletteOrder: 40
 		ForceFaction: america
@@ -48,9 +49,9 @@ gacnst.america:
 gacnst.england:
 	Inherits: gacnst
 	Tooltip:
-		Name: British Construction Yard
+		Name: actor-gacnst.england-name
 	Tooltip@NoRow:
-		Name: British Construction Yard
+		Name: actor-gacnst.england-name
 	Buildable:
 		BuildPaletteOrder: 50
 		ForceFaction: england
@@ -59,9 +60,9 @@ gacnst.england:
 gacnst.france:
 	Inherits: gacnst
 	Tooltip:
-		Name: French Construction Yard
+		Name: actor-gacnst.france-name
 	Tooltip@NoRow:
-		Name: French Construction Yard
+		Name: actor-gacnst.france-name
 	Buildable:
 		BuildPaletteOrder: 60
 		ForceFaction: france
@@ -70,9 +71,9 @@ gacnst.france:
 gacnst.germany:
 	Inherits: gacnst
 	Tooltip:
-		Name: German Construction Yard
+		Name: actor-gacnst.germany-name
 	Tooltip@NoRow:
-		Name: German Construction Yard
+		Name: actor-gacnst.germany-name
 	Buildable:
 		BuildPaletteOrder: 70
 		ForceFaction: germany
@@ -81,9 +82,9 @@ gacnst.germany:
 gacnst.korea:
 	Inherits: gacnst
 	Tooltip:
-		Name: Korean Construction Yard
+		Name: actor-gacnst.korea-name
 	Tooltip@NoRow:
-		Name: Korean Construction Yard
+		Name: actor-gacnst.korea-name
 	Buildable:
 		BuildPaletteOrder: 80
 		ForceFaction: korea
@@ -92,9 +93,9 @@ gacnst.korea:
 gacnst.japan:
 	Inherits: gacnst
 	Tooltip:
-		Name: Japanese Construction Yard
+		Name: actor-gacnst.japan-name
 	Tooltip@NoRow:
-		Name: Japanese Construction Yard
+		Name: actor-gacnst.japan-name
 	Buildable:
 		BuildPaletteOrder: 320
 		ForceFaction: japan
@@ -103,9 +104,9 @@ gacnst.japan:
 gacnst.belarus:
 	Inherits: gacnst
 	Tooltip:
-		Name: Belarusian Construction Yard
+		Name: actor-gacnst.belarus-name
 	Tooltip@NoRow:
-		Name: Belarusian Construction Yard
+		Name: actor-gacnst.belarus-name
 	Buildable:
 		BuildPaletteOrder: 330
 		ForceFaction: belarus
@@ -114,9 +115,9 @@ gacnst.belarus:
 gacnst.poland:
 	Inherits: gacnst
 	Tooltip:
-		Name: Polish Construction Yard
+		Name: actor-gacnst.poland-name
 	Tooltip@NoRow:
-		Name: Polish Construction Yard
+		Name: actor-gacnst.poland-name
 	Buildable:
 		BuildPaletteOrder: 340
 		ForceFaction: poland
@@ -125,9 +126,9 @@ gacnst.poland:
 gacnst.ukraine:
 	Inherits: gacnst
 	Tooltip:
-		Name: Ukrainian Construction Yard
+		Name: actor-gacnst.ukraine-name
 	Tooltip@NoRow:
-		Name: Ukrainian Construction Yard
+		Name: actor-gacnst.ukraine-name
 	Buildable:
 		BuildPaletteOrder: 350
 		ForceFaction: ukraine
@@ -136,9 +137,9 @@ gacnst.ukraine:
 gacnst.aussie:
 	Inherits: gacnst
 	Tooltip:
-		Name: Australian Construction Yard
+		Name: actor-gacnst.aussie-name
 	Tooltip@NoRow:
-		Name: Australian Construction Yard
+		Name: actor-gacnst.aussie-name
 	Buildable:
 		BuildPaletteOrder: 360
 		ForceFaction: aussie
@@ -147,9 +148,9 @@ gacnst.aussie:
 gacnst.china:
 	Inherits: gacnst
 	Tooltip:
-		Name: Chinese Construction Yard
+		Name: actor-gacnst.china-name
 	Tooltip@NoRow:
-		Name: Chinese Construction Yard
+		Name: actor-gacnst.china-name
 	Buildable:
 		BuildPaletteOrder: 370
 		ForceFaction: china
@@ -158,9 +159,9 @@ gacnst.china:
 gacnst.turkey:
 	Inherits: gacnst
 	Tooltip:
-		Name: Turkish Construction Yard
+		Name: actor-gacnst.turkey-name
 	Tooltip@NoRow:
-		Name: Turkish Construction Yard
+		Name: actor-gacnst.turkey-name
 	Buildable:
 		BuildPaletteOrder: 380
 		ForceFaction: turkey
@@ -169,9 +170,9 @@ gacnst.turkey:
 gacnst.canada:
 	Inherits: gacnst
 	Tooltip:
-		Name: Canadian Construction Yard
+		Name: actor-gacnst.canada-name
 	Tooltip@NoRow:
-		Name: Canadian Construction Yard
+		Name: actor-gacnst.canada-name
 	Buildable:
 		BuildPaletteOrder: 390
 		ForceFaction: canada
@@ -181,9 +182,9 @@ gacnst.canada:
 nacnst.russia:
 	Inherits: nacnst
 	Tooltip:
-		Name: Soviet Construction Yard
+		Name: actor-nacnst.russia-name
 	Tooltip@NoRow:
-		Name: Soviet Construction Yard
+		Name: actor-nacnst.russia-name
 	Buildable:
 		BuildPaletteOrder: 90
 		ForceFaction: russia
@@ -192,9 +193,9 @@ nacnst.russia:
 nacnst.iraq:
 	Inherits: nacnst
 	Tooltip:
-		Name: Iraqi Construction Yard
+		Name: actor-nacnst.iraq-name
 	Tooltip@NoRow:
-		Name: Iraqi Construction Yard
+		Name: actor-nacnst.iraq-name
 	Buildable:
 		BuildPaletteOrder: 100
 		ForceFaction: iraq
@@ -203,9 +204,9 @@ nacnst.iraq:
 nacnst.vietnam:
 	Inherits: nacnst
 	Tooltip:
-		Name: Vietnamese Construction Yard
+		Name: actor-nacnst.vietnam-name
 	Tooltip@NoRow:
-		Name: Vietnamese Construction Yard
+		Name: actor-nacnst.vietnam-name
 	Buildable:
 		BuildPaletteOrder: 110
 		ForceFaction: vietnam
@@ -214,9 +215,9 @@ nacnst.vietnam:
 nacnst.cuba:
 	Inherits: nacnst
 	Tooltip:
-		Name: Cuban Construction Yard
+		Name: actor-nacnst.cuba-name
 	Tooltip@NoRow:
-		Name: Cuban Construction Yard
+		Name: actor-nacnst.cuba-name
 	Buildable:
 		BuildPaletteOrder: 120
 		ForceFaction: cuba
@@ -225,9 +226,9 @@ nacnst.cuba:
 nacnst.libya:
 	Inherits: nacnst
 	Tooltip:
-		Name: Libyan Construction Yard
+		Name: actor-nacnst.libya-name
 	Tooltip@NoRow:
-		Name: Libyan Construction Yard
+		Name: actor-nacnst.libya-name
 	Buildable:
 		BuildPaletteOrder: 130
 		ForceFaction: libya
@@ -236,9 +237,9 @@ nacnst.libya:
 nacnst.chile:
 	Inherits: nacnst
 	Tooltip:
-		Name: Chilean Construction Yard
+		Name: actor-nacnst.chile-name
 	Tooltip@NoRow:
-		Name: Chilean Construction Yard
+		Name: actor-nacnst.chile-name
 	Buildable:
 		BuildPaletteOrder: 400
 		ForceFaction: chile
@@ -247,9 +248,9 @@ nacnst.chile:
 nacnst.mexico:
 	Inherits: nacnst
 	Tooltip:
-		Name: Mexican Construction Yard
+		Name: actor-nacnst.mexico-name
 	Tooltip@NoRow:
-		Name: Mexican Construction Yard
+		Name: actor-nacnst.mexico-name
 	Buildable:
 		BuildPaletteOrder: 410
 		ForceFaction: mexico
@@ -258,9 +259,9 @@ nacnst.mexico:
 nacnst.mongolia:
 	Inherits: nacnst
 	Tooltip:
-		Name: Mongolian Construction Yard
+		Name: actor-nacnst.mongolia-name
 	Tooltip@NoRow:
-		Name: Mongolian Construction Yard
+		Name: actor-nacnst.mongolia-name
 	Buildable:
 		BuildPaletteOrder: 420
 		ForceFaction: mongolia
@@ -270,9 +271,9 @@ nacnst.mongolia:
 yacnst.psicorps:
 	Inherits: yacnst
 	Tooltip:
-		Name: Yurigrad Construction Yard
+		Name: actor-yacnst.psicorps-name
 	Tooltip@NoRow:
-		Name: Yurigrad Construction Yard
+		Name: actor-yacnst.psicorps-name
 	Buildable:
 		BuildPaletteOrder: 140
 		ForceFaction: psicorps
@@ -281,9 +282,9 @@ yacnst.psicorps:
 yacnst.psinepal:
 	Inherits: yacnst
 	Tooltip:
-		Name: Lazarus Construction Yard
+		Name: actor-yacnst.psinepal-name
 	Tooltip@NoRow:
-		Name: Lazarus Construction Yard
+		Name: actor-yacnst.psinepal-name
 	Buildable:
 		BuildPaletteOrder: 150
 		ForceFaction: psinepal
@@ -292,9 +293,9 @@ yacnst.psinepal:
 yacnst.psisouth:
 	Inherits: yacnst
 	Tooltip:
-		Name: Antarctic Construction Yard
+		Name: actor-yacnst.psisouth-name
 	Tooltip@NoRow:
-		Name: Antarctic Construction Yard
+		Name: actor-yacnst.psisouth-name
 	Buildable:
 		BuildPaletteOrder: 160
 		ForceFaction: psisouth
@@ -303,9 +304,9 @@ yacnst.psisouth:
 yacnst.psitrans:
 	Inherits: yacnst
 	Tooltip:
-		Name: Transylvanian Construction Yard
+		Name: actor-yacnst.psitrans-name
 	Tooltip@NoRow:
-		Name: Transylvanian Construction Yard
+		Name: actor-yacnst.psitrans-name
 	Buildable:
 		BuildPaletteOrder: 170
 		ForceFaction: psitrans
@@ -314,9 +315,9 @@ yacnst.psitrans:
 yacnst.psimoon:
 	Inherits: yacnst
 	Tooltip:
-		Name: Lunar Construction Yard
+		Name: actor-yacnst.psimoon-name
 	Tooltip@NoRow:
-		Name: Lunar Construction Yard
+		Name: actor-yacnst.psimoon-name
 	Buildable:
 		BuildPaletteOrder: 180
 		ForceFaction: psimoon
@@ -326,9 +327,9 @@ yacnst.psimoon:
 nacnst.transcaucus:
 	Inherits: nacnst
 	Tooltip:
-		Name: Transcaucasian Construction Yard
+		Name: actor-nacnst.transcaucus-name
 	Tooltip@NoRow:
-		Name: Transcaucasian Construction Yard
+		Name: actor-nacnst.transcaucus-name
 	Buildable:
 		BuildPaletteOrder: 190
 		ForceFaction: transcaucus
@@ -337,9 +338,9 @@ nacnst.transcaucus:
 nacnst.turkmen:
 	Inherits: nacnst
 	Tooltip:
-		Name: Turkmen Construction Yard
+		Name: actor-nacnst.turkmen-name
 	Tooltip@NoRow:
-		Name: Turkmen Construction Yard
+		Name: actor-nacnst.turkmen-name
 	Buildable:
 		BuildPaletteOrder: 200
 		ForceFaction: turkmen
@@ -348,9 +349,9 @@ nacnst.turkmen:
 nacnst.tuva:
 	Inherits: nacnst
 	Tooltip:
-		Name: Tuvan Construction Yard
+		Name: actor-nacnst.tuva-name
 	Tooltip@NoRow:
-		Name: Tuvan Construction Yard
+		Name: actor-nacnst.tuva-name
 	Buildable:
 		BuildPaletteOrder: 210
 		ForceFaction: tuva
@@ -359,9 +360,9 @@ nacnst.tuva:
 nacnst.russianfed:
 	Inherits: nacnst
 	Tooltip:
-		Name: Russian Construction Yard
+		Name: actor-nacnst.russianfed-name
 	Tooltip@NoRow:
-		Name: Russian Construction Yard
+		Name: actor-nacnst.russianfed-name
 	Buildable:
 		BuildPaletteOrder: 220
 		ForceFaction: russianfed
@@ -370,21 +371,21 @@ nacnst.russianfed:
 nacnst.serbia:
 	Inherits: nacnst
 	Tooltip:
-		Name: Serbo-Montenegrin Construction Yard
+		Name: actor-nacnst.serbia-name
 	Tooltip@NoRow:
-		Name: Serbo-Montenegrin Construction Yard
+		Name: actor-nacnst.serbia-name
 	Buildable:
 		BuildPaletteOrder: 230
 		ForceFaction: serbia
 	-MapEditorData:
 
 #Civilian ConYards
-gacnst.civilian:
+cacnst.civilian:
 	Inherits: cacnst
 	Tooltip:
-		Name: Civilian Construction Yard
+		Name: actor-cacnst.civilian-name
 	Tooltip@NoRow:
-		Name: Civilian Construction Yard
+		Name: actor-cacnst.civilian-name
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 240
@@ -397,11 +398,11 @@ gacnst.civilian:
 		Group: Support
 		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -410,12 +411,12 @@ gacnst.civilian:
 	ProductionBar@Support:
 		ProductionType: Support.Civilian
 
-gacnst.tech:
+cacnst.tech:
 	Inherits: cacnst
 	Tooltip:
-		Name: Tech Construction Yard
+		Name: actor-cacnst.tech-name
 	Tooltip@NoRow:
-		Name: Tech Construction Yard
+		Name: actor-cacnst.tech-name
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 250
@@ -426,12 +427,12 @@ gacnst.tech:
 	ProductionBar@Building:
 		ProductionType: Building.Tech
 
-gacnst.unused:
+cacnst.unused:
 	Inherits: cacnst
 	Tooltip:
-		Name: Debug Construction Yard
+		Name: actor-cacnst.unused-name
 	Tooltip@NoRow:
-		Name: Debug Construction Yard
+		Name: actor-cacnst.unused-name
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 260
@@ -444,11 +445,11 @@ gacnst.unused:
 		Group: Support
 		LowPowerModifier: 200
 		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: Construction complete.
+		ReadyTextNotification: notification-construction-complete
 		BlockedAudio: NoBuild
-		BlockedTextNotification: Unable to build more.
+		BlockedTextNotification: notification-unable-to-build-more
 		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: Unable to comply. Building in progress.
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
 		QueuedAudio: Building
 		OnHoldAudio: OnHold
 		CancelledAudio: Cancelled
@@ -461,9 +462,9 @@ gacnst.unused:
 cabrck:
 	Inherits: gapile
 	Tooltip:
-		Name: Civilian Barracks
+		Name: actor-cabrck.name
 	Tooltip@NoRow:
-		Name: Civilian Barracks
+		Name: actor-cabrck.name
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 270
@@ -489,13 +490,13 @@ cabrck:
 cabrck.unused:
 	Inherits: nahand
 	Tooltip:
-		Name: Debug Barracks
+		Name: actor-cabrck.unused-name
 	Tooltip@NoRow:
-		Name: Debug Barracks
+		Name: actor-cabrck.unused-name
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 280
-		Description: For unused units.
+		Description: actor-cabrck.unused-description
 	-Production@Shared:
 	Production:
 		Produces: Infantry.Unused
@@ -518,9 +519,9 @@ cabrck.unused:
 caweap:
 	Inherits: gaweap
 	Tooltip:
-		Name: Civilian Factory
+		Name: actor-caweap.name
 	Tooltip@NoRow:
-		Name: Civilian Factory
+		Name: actor-caweap.name
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 290
@@ -548,12 +549,13 @@ caweap:
 caweap.unused:
 	Inherits: naweap
 	Tooltip:
-		Name: Debug Factory
+		Name: actor-caweap.unused-name
 	Tooltip@NoRow:
-		Name: Debug Factory
+		Name: actor-caweap.unused-name
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 300
+		Description: actor-caweap.unused-description
 	-Production@Shared:
 	Production:
 		Produces: Vehicle.Unused
@@ -581,9 +583,9 @@ caweap.unused:
 cayard:
 	Inherits: gayard
 	Tooltip:
-		Name: Civilian Shipyard
+		Name: actor-cayard.name
 	Tooltip@NoRow:
-		Name: Civilian Shipyard
+		Name: actor-cayard.name
 	Buildable:
 		Queue: Building.Debug
 		BuildPaletteOrder: 310

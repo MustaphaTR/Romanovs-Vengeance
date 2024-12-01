@@ -4,7 +4,7 @@ pcv:
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
-		Description: Deploys into a Construction Yard.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-pcv.description
 		Prerequisites: ~vehicleorship.yuri, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 	Hovers:
 		Ticks: 10
@@ -23,6 +23,7 @@ pcv:
 smin:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@NOGUNNER: ^GunnerKillable
@@ -31,7 +32,7 @@ smin:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Psi
 		BuildPaletteOrder: 90
-		Description: Gathers and processes ore.\n\nAbilities:\n- Cannot be mind controlled\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-smin.description
 		Prerequisites: ~vehicle.psicorps, yadome, ~!global-megawealth, ~techlevel.3
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -41,9 +42,9 @@ smin:
 		Payload: 1500
 		Voice: Move
 	Tooltip:
-		Name: Slave Miner
+		Name: actor-smin.name
 	Tooltip@NoRow:
-		Name: Slave Miner
+		Name: actor-smin.name
 	Selectable:
 		Priority: 7
 		Bounds: 1544, 2509, 0, -289
@@ -52,7 +53,7 @@ smin:
 		IntoActor: yarefn
 		TransformSounds: uplace.wav
 		NoTransformNotification: BuildingCannotPlaceAudio
-		NoTransformTextNotification: Cannot deploy here.
+		NoTransformTextNotification: notification-cannot-deploy-here
 		Voice: Deploy
 	TransferTimedExternalConditionOnTransform@INVULNERABILITY:
 		Condition: invulnerability
@@ -63,7 +64,7 @@ smin:
 	Armor:
 		Type: Medium
 	Mobile:
-		Speed: 60
+		Speed: 90
 		TurnSpeed: 20
 	Turreted:
 		TurnSpeed: 20
@@ -108,14 +109,8 @@ smin:
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: SlaveMinerVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
-	StoresResources:
+	StoresPlayerResources:
 		Capacity: 1000
 	Explodes:
 		RequiresCondition: !spawn-ore
@@ -136,6 +131,7 @@ smin:
 		RequiresSelection: true
 		PipCount: 10
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 gmin:
@@ -144,12 +140,12 @@ gmin:
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
-		Description: Gathers Ore and Gems.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n- Cannot be mind controlled\n- Stealth while not docked\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-gmin.description
 		Prerequisites: ~vehicleorship.yuri, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
-		Name: Lazarus Miner
+		Name: actor-gmin.name
 	Tooltip@NoRow:
-		Name: Lazarus Miner
+		Name: actor-gmin.name
 	Guard:
 		Voice: Move
 	Cloak:
@@ -157,6 +153,8 @@ gmin:
 		CloakedCondition: cloaked
 		InitialDelay: 25
 		CloakDelay: 100
+		CloakStyle: Palette
+		CloakedPalette: cloak
 		IsPlayerPalette: true
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
@@ -182,12 +180,12 @@ ltnk:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Lasher Light Tank
+		Name: actor-ltnk.name
 	Tooltip@NoRow:
-		Name: Lasher Light Tank
+		Name: actor-ltnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
-		Description: Yuri Main Battle Tank.\n\n  Strong vs Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Autoloaders\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
+		Description: actor-ltnk.description
 		Prerequisites: ~vehicle.yuri, ~techlevel.1
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -262,12 +260,6 @@ ltnk:
 		Bounds: 1544, 2509, 0, -289
 	Voiced:
 		VoiceSet: LasherTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
 	#	ValidMovementTypes: Horizontal, Turn
@@ -328,9 +320,10 @@ ltnk.holo:
 ytnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAINGUNS: ^AffectedByChainguns
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -342,14 +335,14 @@ ytnk:
 		Payload: 700
 		Voice: Move
 	Tooltip:
-		Name: Gatling Tank
+		Name: actor-ytnk.name
 	Tooltip@NoRow:
-		Name: Gatling Tank
+		Name: actor-ytnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Prerequisites: ~vehicle.yuri, ~techlevel.1
 		BuildPaletteOrder: 30
-		Description: Anti-infantry and anti-air vehicle.\nFires faster as it continues to fire.\n\n  Strong vs Infantry, Aircraft\n  Weak vs Vehicles\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Chaos Tank Compensators (Yurigrad)\n- Chainguns
+		Description: actor-ytnk.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -489,12 +482,6 @@ ytnk:
 	WithMuzzleOverlay:
 	Voiced:
 		VoiceSet: GatlingTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: vetytnkorbaacdm
 	WithProductionIconOverlay@1:
@@ -514,8 +501,8 @@ ytnk:
 	#	Volume: 0.35
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
 		Damage: 20
-		SplitRanges: true
 		Upgrades: upgrade.chaos_tank_compensators, upgrade.chainguns
 
 ytnk.holo:
@@ -564,21 +551,23 @@ ytnk.holo:
 caos:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
+	Inherits@NOCHAOS: ^NotBerserkTarget
 	Valued:
 		Cost: 800
 	DeliversCash:
 		Payload: 800
 		Voice: Move
 	Tooltip:
-		Name: Chaos Drone
+		Name: actor-caos.name
 	Tooltip@NoRow:
-		Name: Chaos Drone
+		Name: actor-caos.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 40
 		Prerequisites: ~vehicle.yuri, ~techlevel.2
-		Description: Drone capable of releasing gas that causes enemy units to fire random units.\nUnits affected by the gas deal more damage.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities\n- Can be deployed to release gas continuously\n- Cannot be mind controlled\n\nUpgradeable with:\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-caos.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -641,12 +630,6 @@ caos:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: ChaosDroneVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -655,12 +638,15 @@ caos:
 	#	SoundFiles: vchastaa.wav, vchastab.wav, vchastac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 tele:
 	Inherits: ^Vehicle
 	Inherits@ADVMAGNETS: ^AffectedByAdvancedMagnetics
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -672,14 +658,14 @@ tele:
 		Payload: 800
 		Voice: Move
 	Tooltip:
-		Name: Magnetron
+		Name: actor-tele.name
 	Tooltip@NoRow:
-		Name: Magnetron
+		Name: actor-tele.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.yuri, yadome, ~techlevel.3
-		Description: Long range magnetic field generator.\nFreezes vehicles and damages structures.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-tele.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -746,12 +732,6 @@ tele:
 	WithVoxelTurret:
 	Voiced:
 		VoiceSet: MagnetronVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -770,9 +750,12 @@ tele:
 	#	SoundFiles: vmagstaa.wav, vmagstab.wav, vmagstac.wav
 	#	Volume: 0.65
 	#	RequiresCondition: moving
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 mind:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MASTERYOFMIND: ^AffectedByMasteryOfMind
@@ -783,14 +766,14 @@ mind:
 		Payload: 1750
 		Voice: Move
 	Tooltip:
-		Name: Master Mind
+		Name: actor-mind.name
 	Tooltip@NoRow:
-		Name: Master Mind
+		Name: actor-mind.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 130
 		Prerequisites: ~vehicle.yuri, yatech, ~techlevel.4
-		Description: Heavy vehicle capable of mind controlling multipile enemy units.\nStarts taking damage if controlling more than 3.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Can crush enemy vehicles\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Mastery of Mind (Antarctica)
+		Description: actor-mind.description
 		BuildDuration: 875
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -801,6 +784,10 @@ mind:
 		Locomotor: omnicrusher
 		RequiresCondition: !deployed && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	-Crushable:
+	-Crushable@Cheater:
+	-Crushable@Vengeful:
+	-GrantConditionOnBotOwner@Cheater:
+	-GrantConditionOnBotOwner@Vengeful:
 	ChangesHealth@HEAL:
 		PercentageStep: 1
 		Step: 0
@@ -889,12 +876,6 @@ mind:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: MasterMindVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	# GrantConditionOnMovement@MoveStart:
 	#	Condition: moving
@@ -904,11 +885,13 @@ mind:
 	#	Volume: 0.65
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, MindControl, ReloadDelay, MaxRange
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.mastery_of_mind
 
 # Custom Yuri Vehicles
 mlyr:
 	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
@@ -920,16 +903,16 @@ mlyr:
 		Payload: 900
 		Voice: Move
 	Tooltip:
-		Name: Minelayer
+		Name: actor-mlyr.name
 	Tooltip@NoRow:
-		Name: Minelayer
+		Name: actor-mlyr.name
 	Selectable:
 		Bounds: 1206, 1930, 0, -289
 	Buildable:
 		Queue: Vehicle.Unused # Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Prerequisites: prerequisite.minelayer, repairpad, ~techlevel.1
 		BuildPaletteOrder: 80
-		Description: Lays mines to destroy unwary enemy units.\n  Unarmed\n\nAbilities:\n- Can detect Stealth units\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-mlyr.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -967,12 +950,6 @@ mlyr:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: FlakTrackVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	WithAmmoPipsDecoration:
 		Margin: 4, 3
@@ -980,13 +957,15 @@ mlyr:
 		Position: BottomLeft
 		RequiresSelection: true
 	ActorStatValues:
+		Stats: Armor, Sight, Speed
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 kamaz:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
@@ -994,22 +973,27 @@ kamaz:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Inherits@TOXIN: ^AffectedByToxinSprayer
+	IssueOrderToBot@AI:
+		RequiresCondition: loaded
+		OrderName: Unload
+		OrderChance: 100
+		OrderInterval: 45
 	Valued:
 		Cost: 600
 	DeliversCash:
 		Payload: 600
 		Voice: Move
 	Tooltip:
-		Name: Armored Truck
+		Name: actor-kamaz.name
 	Tooltip@NoRow:
-		Name: Armored Truck
+		Name: actor-kamaz.name
 	Selectable:
 		Bounds: 1206, 1930, 0, -289
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
-		Prerequisites: ~vehicle.yuri, ~techlevel.1
+		Prerequisites: ~vehicle.yuri, ~sprayer, ~techlevel.1
 		BuildPaletteOrder: 70
-		Description: Armored infantry transport vehicle.\n\n  Unarmed\n\nUpgradeable with:\n- Grinder Treads\n- Toxin Sprayer\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-kamaz.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1054,6 +1038,7 @@ kamaz:
 		RequiresCondition: toxinsprayer
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
+		LoadedCondition: loaded
 		MaxWeight: 5
 		AfterLoadDelay: 0
 		BeforeUnloadDelay: 0
@@ -1062,8 +1047,8 @@ kamaz:
 		UnloadVoice: Move
 		LoadingCondition: notmobile
 	WithCargoSounds:
-		EnterSound: genter1a.wav
-		ExitSound: gexit1a.wav
+		EnterSounds: genter1a.wav
+		ExitSounds: gexit1a.wav
 	RenderSprites:
 	RenderVoxels:
 	WithVoxelBody:
@@ -1071,12 +1056,6 @@ kamaz:
 		RequiresCondition: toxinsprayer
 	Voiced:
 		VoiceSet: FlakTrackVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	HitShape:
 	WithCargoPipsDecoration:
 		Margin: 4, 3
@@ -1096,13 +1075,18 @@ kamaz:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, None, None, None, Cargo
 		Upgrades: upgrade.grinder_treads, upgrade.toxin_sprayer, upgrade.chaos_tank_compensators
+	ActorStatOverride@toxinsprayer:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange, Cargo
+		RequiresCondition: toxinsprayer
 
 lart:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
@@ -1115,14 +1099,14 @@ lart:
 		Payload: 1600
 		Voice: Move
 	Tooltip:
-		Name: Annihilator Artillery
+		Name: actor-lart.name
 	Tooltip@NoRow:
-		Name: Annihilator Artillery
+		Name: actor-lart.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 110
 		Prerequisites: ~vehicle.yuri, prerequisite.annihilator_artillery, yatech, ~techlevel.3
-		Description: Long range laser artillery.\n\n  Strong vs Infantry, Buildings\n  Weak vs Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
+		Description: actor-lart.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1219,12 +1203,6 @@ lart:
 		RequiresCondition: chargingLaser && rank-elite && capacitors
 	Voiced:
 		VoiceSet: LasherTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1244,14 +1222,17 @@ lart:
 	#	Volume: 0.4
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
 
 yhtnk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
+	Inherits@AUTOLOADERS: ^AffectedByAutoloaders
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
@@ -1264,14 +1245,14 @@ yhtnk:
 		Payload: 1100
 		Voice: Move
 	Tooltip:
-		Name: Lazarus Tank
+		Name: actor-yhtnk.name
 	Tooltip@NoRow:
-		Name: Lazarus Tank
+		Name: actor-yhtnk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 120
 		Prerequisites: ~vehicle.yuri, yatech, ~techlevel.4
-		Description: Fast invisible tank designed for ambushes.\n\n  Strong vs Buildings, Vehicles\n  Weak vs Infantry, Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)\n- Laser Capacitors (Lazarus Corps)
+		Description: actor-yhtnk.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1297,6 +1278,8 @@ yhtnk:
 		RequiresCondition: !chronodisable && !emp
 		InitialDelay: 25
 		CloakDelay: 110
+		CloakStyle: Palette
+		CloakedPalette: cloak
 		IsPlayerPalette: true
 		CloakSound: cloak5.aud
 		UncloakSound: cloak5.aud
@@ -1307,22 +1290,42 @@ yhtnk:
 		Weapon: DoomLaser
 		Damage: 100
 		LocalOffset: 800,0,512
-		RequiresCondition: !rank-elite && !capacitors
+		RequiresCondition: !rank-elite && !autoloaders && !capacitors
 	Armament@elite:
 		Weapon: DoomLaserE
 		Damage: 150
 		LocalOffset: 800,0,512
-		RequiresCondition: rank-elite && !capacitors
+		RequiresCondition: rank-elite && !autoloaders && !capacitors
+	Armament@primary-auto:
+		Weapon: DoomLaserAuto
+		Damage: 200
+		LocalOffset: 800,0,512
+		RequiresCondition: !rank-elite && autoloaders && !capacitors
+	Armament@elite-auto:
+		Weapon: DoomLaserAutoE
+		Damage: 300
+		LocalOffset: 800,0,512
+		RequiresCondition: rank-elite && autoloaders && !capacitors
 	Armament@primary-capacitors:
 		Weapon: DoomLaserUpg
 		Damage: 100
 		LocalOffset: 800,0,512
-		RequiresCondition: !rank-elite && capacitors
+		RequiresCondition: !rank-elite && !autoloaders && capacitors
 	Armament@elite-capacitors:
 		Weapon: DoomLaserUpgE
 		Damage: 150
 		LocalOffset: 800,0,512
-		RequiresCondition: rank-elite && capacitors
+		RequiresCondition: rank-elite && !autoloaders && capacitors
+	Armament@primary-capacitors-auto:
+		Weapon: DoomLaserUpgAuto
+		Damage: 200
+		LocalOffset: 800,0,512
+		RequiresCondition: !rank-elite && autoloaders && capacitors
+	Armament@elite-capacitors-auto:
+		Weapon: DoomLaserUpgAutoE
+		Damage: 300
+		LocalOffset: 800,0,512
+		RequiresCondition: rank-elite && autoloaders && capacitors
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp || nogunner || parachute
@@ -1337,12 +1340,6 @@ yhtnk:
 	Voiced:
 		Volume: 2
 		VoiceSet: LazarusTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1355,12 +1352,14 @@ yhtnk:
 		Types: chevron-elite
 	HitShape:
 	ActorStatValues:
-		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.grinder_treads, upgrade.autoloaders, upgrade.chaos_tank_compensators, upgrade.laser_capacitors
 
 grtk:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
@@ -1373,14 +1372,14 @@ grtk:
 		Payload: 2200
 		Voice: Move
 	Tooltip:
-		Name: Grinder Tank
+		Name: actor-grtk.name
 	Tooltip@NoRow:
-		Name: Grinder Tank
+		Name: actor-grtk.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 990
 		Prerequisites: ~vehicle.yuri, yatech, ~caslab, ~techlevel.4
-		Description: Melee vehicle with high damage against all ground units.\n\n  Strong vs Buildings, Infantry, Vehicles\n  Weak vs Aircraft\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Description: actor-grtk.description
 		BuildDuration: 1125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1429,12 +1428,6 @@ grtk:
 	WithVoxelBody:
 	Voiced:
 		VoiceSet: GrinderTankVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1454,13 +1447,15 @@ grtk:
 	#	Volume: 0.65
 	#	RequiresCondition: moving
 	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 150
 		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 spider:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^Berserkable
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@DNABOOST: ^AffectedByDNABoosters
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@HOSPITAL: ^HospitalHealing
@@ -1484,14 +1479,14 @@ spider:
 		Payload: 700
 		Voice: Move
 	Tooltip:
-		Name: Mutant Tarantula
+		Name: actor-spider.name
 	Tooltip@NoRow:
-		Name: Mutant Tarantula
+		Name: actor-spider.name
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Trans
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicle.psitrans, yadome, ~techlevel.3
-		Description: Mutated huge spider armed with poison spines and web launchers.\n\n  Strong vs Infantry, Vehicles\n  Weak vs Aircraft\n\nAbilities:\n- Immune to Radiation\n\nUpgradeable with:\n- DNA Boosters (Transylvania)
+		Description: actor-spider.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1579,12 +1574,6 @@ spider:
 		TargetTypes: Heal
 	Voiced:
 		VoiceSet: AntVoice
-	ExternalCondition@PRODUCED:
-		Condition: produced
-	VoiceAnnouncement:
-		RequiresCondition: produced
-		Voice: Build
-		ValidRelationships: None
 	WithInfantryBody:
 		DefaultAttackSequence: spit
 		AttackSequences:
@@ -1603,14 +1592,16 @@ spider:
 			BruteDeath: 1
 			OrangeRadiationDeath: 1
 	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 
 expy:
 	Inherits: ^ExpansionVehicle
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
-		Description: Deploys into an Expansion Node.\nCannot be undeployed back.\n\n  Unarmed\n\nAbilities:\n- Can move over water\n\nUpgradeable with:\n- Grinder Treads\n- Chaos Tank Compensators (Yurigrad)
+		Queue: Vehicle.Unused, Ship.Civilian # Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
+		Description: actor-expy.description
 		Prerequisites: ~vehicleorship.yuri, ~techlevel.1, ~!ai.ev
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
