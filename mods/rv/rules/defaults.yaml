@@ -1260,6 +1260,16 @@
 	ExternalCondition@INVULNERABILITY:
 		Condition: invulnerability
 
+^KilledByChronoshift:
+	RA2Chronoshiftable:
+		ReturnToOrigin: false
+	GrantTimedConditionOnTeleport@Chronodeath:
+		TeleportTypes: RA2ChronoPower
+		Condition: chronodeath
+	KillsSelf@Chronodeath:
+		DamageTypes: Temporal
+		RequiresCondition: chronodeath
+
 ^LazarusShieldable:
 	Cloak@lazarus:
 		RequiresCondition: invisibility && !chronodisable
@@ -1428,8 +1438,6 @@
 		TrailLength: 2
 	GrantCondition@ChronoDisable:
 		RequiresCondition: affectedbytemporal || chronoed
-	RA2Chronoshiftable:
-		ExplodeInstead: false
 
 ^TankBunkerable:
 	FirepowerMultiplier@TANK_BUNKER:
@@ -2427,6 +2435,7 @@
 	Inherits@20: ^SmokeGrenadeModifiers
 	Inherits@21: ^DisabledByBarking
 	Inherits@22: ^AffectedByCryoSlowdown
+	Inherits@23: ^KilledByChronoshift
 	Inherits@HANDICAPS: ^PlayerHandicaps
 	Inherits@SELECTION_MODE: ^FlatSelectionMode
 	WithColoredOverlay@MagneSlow:
@@ -2595,9 +2604,6 @@
 		VoiceSet: GIVoice
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	RA2Chronoshiftable:
-		ExplodeInstead: true
-		ReturnToOrigin: false
 	Tooltip:
 		Name: meta-infantry.name
 		GenericName: meta-infantry.name
