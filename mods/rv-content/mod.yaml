@@ -1,0 +1,109 @@
+Metadata:
+	Title: mod-title
+	Version: {DEV_VERSION}
+	Hidden: true
+
+FileSystem: DefaultFileSystem
+	Packages:
+		^EngineDir
+		^EngineDir|mods/common-content: content
+		^EngineDir|mods/common: common
+		$rv-content: rvcontent
+
+Rules:
+	content|rules.yaml
+
+Cursors:
+	content|cursors.yaml
+
+Chrome:
+	content|chrome.yaml
+
+Assemblies: OpenRA.Mods.Common.dll, OpenRA.Mods.Cnc.dll
+
+ChromeLayout:
+	content|content.yaml
+
+Notifications:
+	content|notifications.yaml
+
+LoadScreen: ModContentLoadScreen
+	Image: ^EngineDir|mods/common-content/chrome.png
+	Image2x: ^EngineDir|mods/common-content/chrome-2x.png
+	Image3x: ^EngineDir|mods/common-content/chrome-3x.png
+
+ChromeMetrics:
+	common|metrics.yaml
+	content|metrics.yaml
+
+FluentMessages:
+	common|fluent/common.ftl
+	content|fluent/content.ftl
+	content|fluent/chrome.ftl
+	rvcontent|fluent/chrome.ftl
+
+Fonts:
+	Tiny:
+		Font: common|FreeSans.ttf
+		Size: 10
+		Ascender: 8
+	TinyBold:
+		Font: common|FreeSansBold.ttf
+		Size: 10
+		Ascender: 8
+	Regular:
+		Font: common|FreeSans.ttf
+		Size: 14
+		Ascender: 11
+	Bold:
+		Font: common|FreeSansBold.ttf
+		Size: 14
+		Ascender: 11
+	MediumBold:
+		Font: common|FreeSansBold.ttf
+		Size: 18
+		Ascender: 14
+	BigBold:
+		Font: common|FreeSansBold.ttf
+		Size: 24
+		Ascender: 18
+
+ModContent:
+	Mod: rv
+	Packages:
+		ContentPackage@ra2:
+			Title: modcontent-package-basefiles
+			Identifier: ra2
+			TestFiles: ^SupportDir|Content/ra2/ra2.mix, ^SupportDir|Content/ra2/language.mix
+			Sources: ra2, origin, tfd
+			Required: true
+		ContentPackage@ra2-music:
+			Title: modcontent-package-basemusic
+			Identifier: ra2-music
+			TestFiles: ^SupportDir|Content/ra2/theme.mix
+			Sources: ra2, origin, tfd
+		ContentPackage@yr:
+			Title: modcontent-package-yrfiles
+			Identifier: yr
+			TestFiles: ^SupportDir|Content/ra2/ra2md.mix, ^SupportDir|Content/ra2/langmd.mix
+			Sources: origin-yr, tfd-yr
+			Required: true
+		ContentPackage@fstorm-music:
+			Title: modcontent-package-yrmusic
+			Identifier: yr-music
+			TestFiles: ^SupportDir|Content/ra2/thememd.mix
+			Sources: origin-yr, tfd-yr
+	Sources:
+		rvcontent|installer/ra2.yaml
+		rvcontent|installer/origin.yaml
+		rvcontent|installer/origin-yr.yaml
+		rvcontent|installer/firstdecade.yaml
+		rvcontent|installer/firstdecade-yr.yaml
+
+SoundFormats:
+
+SpriteFormats: PngSheet
+
+TerrainFormat: DefaultTerrain
+
+SpriteSequenceFormat: DefaultSpriteSequence

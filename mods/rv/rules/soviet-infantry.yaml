@@ -644,12 +644,12 @@ terror:
 		Radius: 6c0
 	Armor:
 		Type: Flak
-	Explodes:
+	FireWarheadsOnDeath:
 		DeathTypes: NonTemporal
 		Weapon: TerrorBomb
 		EmptyWeapon: TerrorBomb
 		RequiresCondition: !targetedexp
-	Explodes@Targeted:
+	FireWarheadsOnDeath@Targeted:
 		DeathTypes: NonTemporal
 		Weapon: TargetedTerrorBomb
 		EmptyWeapon: TargetedTerrorBomb
@@ -948,11 +948,11 @@ ivan:
 	Armor:
 		Type: None
 	Passenger:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: IvanBomber
 		EmptyWeapon: IvanBomber
 		RequiresCondition: !targetedexp
-	Explodes@Targeted:
+	FireWarheadsOnDeath@Targeted:
 		Weapon: TargetedIvanBomber
 		EmptyWeapon: TargetedIvanBomber
 		RequiresCondition: targetedexp
@@ -1039,8 +1039,8 @@ civan:
 		GarrisonType: Garrisoner
 	Passenger:
 		CustomPipType: gray
-	-Explodes:
-	-Explodes@Targeted:
+	-FireWarheadsOnDeath:
+	-FireWarheadsOnDeath@Targeted:
 	Selectable:
 		Class: civan
 	RenderSprites:

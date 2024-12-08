@@ -112,9 +112,9 @@ smin:
 	HitShape:
 	StoresPlayerResources:
 		Capacity: 1000
-	Explodes:
+	FireWarheadsOnDeath:
 		RequiresCondition: !spawn-ore
-	Explodes@Ore:
+	FireWarheadsOnDeath@Ore:
 		Type: Footprint
 		DeathTypes: NonTemporal
 		Weapon: RefineryExplode
@@ -278,7 +278,7 @@ ltnk.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
-	-Explodes@COMPENSATORS:
+	-FireWarheadsOnDeath@COMPENSATORS:
 	-GrantConditionOnPrerequisite@COMPENSATORS:
 	-FirepowerMultiplier@TANK_BUNKER:
 	-ReloadDelayMultiplier@TANK_BUNKER:
@@ -513,7 +513,7 @@ ytnk.holo:
 	-DeliversCash:
 	-GivesExperience:
 	-Passenger:
-	-Explodes@COMPENSATORS:
+	-FireWarheadsOnDeath@COMPENSATORS:
 	-GrantConditionOnPrerequisite@COMPENSATORS:
 	-FirepowerMultiplier@TANK_BUNKER:
 	-ReloadDelayMultiplier@TANK_BUNKER:
@@ -1535,7 +1535,7 @@ spider:
 	-TurnSpeedMultiplier@MagneFreeze:
 	-Targetable@MagneFreeze:
 	-ExternalCondition@MagneFreeze:
-	-Explodes:
+	-FireWarheadsOnDeath:
 	-ChangesHealth@MACHINESHOP:
 	-WithDecoration@MACHINESHOP:
 	-GrantConditionOnPrerequisite@MACHINESHOP:

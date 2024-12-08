@@ -180,7 +180,7 @@ dron:
 	-Targetable@TANYAC4CLEANER:
 	-WithDecoration@TANYAC4:
 	-AmbientSound@TANYAC4:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: InfantryExplode
 		EmptyWeapon: InfantryExplode
 	Voiced:
@@ -813,7 +813,7 @@ apoc:
 		Sequence: barrel2-cryo
 		Armament: elite2-cryo
 		RequiresCondition: rank-elite && cryo_shells
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: ApocExplode
 		EmptyWeapon: ApocExplode
 	Voiced:
@@ -988,11 +988,11 @@ dtruck:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 6c0
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: demobomb
 		EmptyWeapon: demobomb
 		RequiresCondition: !advirrad
-	Explodes@Orange:
+	FireWarheadsOnDeath@Orange:
 		Weapon: demobombOrange
 		EmptyWeapon: demobombOrange
 		RequiresCondition: advirrad
@@ -1455,19 +1455,19 @@ deva:
 		Scale: 13
 	WithVoxelBody:
 	WithVoxelTurret:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: DevastatorExplosion
 		EmptyWeapon: DevastatorExplosion
 		RequiresCondition: !meltdown && !advirrad
-	Explodes@ORANGE:
+	FireWarheadsOnDeath@ORANGE:
 		Weapon: DevastatorExplosionOrange
 		EmptyWeapon: DevastatorExplosionOrange
 		RequiresCondition: !meltdown && advirrad
-	Explodes@OVERLOAD:
+	FireWarheadsOnDeath@OVERLOAD:
 		Weapon: demobomb
 		EmptyWeapon: demobomb
 		RequiresCondition: meltdown && !advirrad
-	Explodes@OVERLOADORANGE:
+	FireWarheadsOnDeath@OVERLOADORANGE:
 		Weapon: demobombOrange
 		EmptyWeapon: demobombOrange
 		RequiresCondition: meltdown && advirrad
@@ -1614,7 +1614,7 @@ ftnk:
 	WithProductionIconOverlay@2:
 		Prerequisites: warfactory.infiltrated, baacdm
 		Types: chevron-elite
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: FlameTankExplode
 		EmptyWeapon: FlameTankExplode
 	HitShape:

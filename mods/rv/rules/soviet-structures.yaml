@@ -214,7 +214,7 @@ napowr:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	Explodes@Reactor:
+	FireWarheadsOnDeath@Reactor:
 		Weapon: TeslaReactorExplode
 	PlaceBuildingVariants:
 		Actors: napowb
@@ -701,7 +701,7 @@ mine:
 	HitShape:
 	MapEditorData:
 		Categories: System
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: MineExplosion
 	RenderSprites:
 		PlayerPalette: infantry
@@ -936,7 +936,7 @@ nmine:
 		Footprint: x
 		Dimensions: 1,1
 		TerrainTypes: Water
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: MineExplosion
 	RenderSprites:
 		PlayerPalette: player
@@ -1110,12 +1110,12 @@ nanrct:
 		RequiresCondition: !build-incomplete && advirrad
 	WithIdleOverlay@waves:
 		RequiresCondition: !build-incomplete && in_water
-	Explodes:
+	FireWarheadsOnDeath:
 		Type: CenterPosition
 		Weapon: NukePayload
 		EmptyWeapon: NukePayload
 		RequiresCondition: !advirrad
-	Explodes@Orange:
+	FireWarheadsOnDeath@Orange:
 		Type: CenterPosition
 		Weapon: NukePayloadOrange
 		EmptyWeapon: NukePayloadOrange
@@ -2109,7 +2109,7 @@ nafnce:
 	-Sellable:
 	-Targetable:
 	-Building:
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	EnergyWall:

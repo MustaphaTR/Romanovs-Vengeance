@@ -2734,7 +2734,7 @@ Player:
 		ScanTick: 799
 	SendUnitToAttackBotModule@spy:
 		RequiresCondition: enable-generic-ai
-		ActorTypesAndAttackOptions: 
+		ActorTypesAndAttackOptions:
 			spy:
 				AttackDesireOfEach: 100
 				TryDisguise: true
@@ -2759,17 +2759,17 @@ Player:
 				AttackOrderName: Unload
 				MoveBackOrderName: Move
 				AttackRequires: CargoLoaded
-			hind-ivans: 
+			hind-ivans:
 				AttackDesireOfEach: 100
 				MoveToOrderName: Move
-				AttackOrderName: Unload 
+				AttackOrderName: Unload
 				MoveBackOrderName: Move
-			hind-terrors: 
+			hind-terrors:
 				AttackDesireOfEach: 100
 				MoveToOrderName: Move
-				AttackOrderName: Unload 
+				AttackOrderName: Unload
 				MoveBackOrderName: Move
-			hind-dtruck: 
+			hind-dtruck:
 				AttackDesireOfEach: 100
 				AttackOrderName: DeliverUnit ## Hack: DeliverUnit has a bug that ignore the ocuppied cell, and we just need that
 				MoveBackOrderName: Move
@@ -2778,7 +2778,7 @@ Player:
 		TargetDistances: Random
 	SendUnitToAttackBotModule@chrono:
 		RequiresCondition: enable-generic-ai
-		ActorTypesAndAttackOptions: 
+		ActorTypesAndAttackOptions:
 			cleg:
 				AttackDesireOfEach: 100
 				MoveToOrderName: PortableChronoTeleport
@@ -2800,4 +2800,3 @@ Player:
 		ValidTargets: Structure
 		InvalidTargets: Water, Defence, WaterStructure
 		TargetDistances: Furthest
-

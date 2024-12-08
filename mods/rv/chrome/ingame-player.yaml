@@ -44,13 +44,13 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: sidebar
 							ImageName: background-supportoverlay
 		SupportPowerTimer@SUPPORT_POWER_TIMER:
-			X: WINDOW_RIGHT - WIDTH - 235
+			X: WINDOW_WIDTH - WIDTH - 235
 			Align: Right
 			Order: Descending
 		Container@ACTOR_STATS:
 			Logic: CollapsableWidgetLogic
 			X: 19
-			Y: WINDOW_BOTTOM - HEIGHT - 27
+			Y: WINDOW_HEIGHT - HEIGHT - 27
 			Width: 241
 			Height: 148
 			Children:
@@ -242,7 +242,7 @@ Container@PLAYER_WIDGETS:
 				Button@CLOSE_BUTTON:
 					Logic: AddFactionSuffixLogic
 					X: 0 - 14
-					Y: PARENT_BOTTOM - 9
+					Y: PARENT_HEIGHT - 9
 					Width: 28
 					Height: 31
 					VisualHeight: 0
@@ -252,7 +252,7 @@ Container@PLAYER_WIDGETS:
 				Button@OPEN_BUTTON:
 					Logic: AddFactionSuffixLogic
 					X: 0 - 14
-					Y: PARENT_BOTTOM - 9
+					Y: PARENT_HEIGHT - 9
 					Width: 28
 					Height: 31
 					VisualHeight: 0
@@ -263,7 +263,7 @@ Container@PLAYER_WIDGETS:
 		Image@COMMAND_BAR_BACKGROUND:
 			Logic: AddFactionSuffixLogic
 			X: 33
-			Y: WINDOW_BOTTOM - HEIGHT - 5
+			Y: WINDOW_HEIGHT - HEIGHT - 5
 			Width: 459
 			Height: 31
 			ImageCollection: sidebar
@@ -273,7 +273,7 @@ Container@PLAYER_WIDGETS:
 			Logic: CommandBarLogic
 				HighlightOnButtonPress: True
 			X: 36
-			Y: WINDOW_BOTTOM - HEIGHT - 10
+			Y: WINDOW_HEIGHT - HEIGHT - 10
 			Width: 270
 			Height: 26
 			Children:
@@ -428,7 +428,7 @@ Container@PLAYER_WIDGETS:
 		Container@STANCE_BAR:
 			Logic: StanceSelectorLogic
 			X: 324
-			Y: WINDOW_BOTTOM - HEIGHT - 10
+			Y: WINDOW_HEIGHT - HEIGHT - 10
 			Width: 101
 			Height: 21
 			Children:
@@ -509,27 +509,27 @@ Container@PLAYER_WIDGETS:
 							ImageName: hold-fire
 		Container@MUTE_INDICATOR:
 			Logic: MuteIndicatorLogic
-			X: (WINDOW_RIGHT / 2) - 156
+			X: (WINDOW_WIDTH / 2) - 156
 			Y: 60
 			Width: 200
 			Height: 25
 			Children:
 				Image@ICON:
-					X: PARENT_RIGHT - WIDTH
+					X: PARENT_WIDTH - WIDTH
 					Y: 1
 					Width: 24
 					Height: 24
 					ImageCollection: sidebar-bits
 					ImageName: indicator-muted
 				Label@LABEL:
-					Width: PARENT_RIGHT - 30
+					Width: PARENT_WIDTH - 30
 					Height: 25
 					Align: Right
 					Text: label-mute-indicator
 					Contrast: true
 		Image@SIDEBAR_BACKGROUND_TOP:
 			Logic: AddFactionSuffixLogic
-			X: WINDOW_RIGHT - 234
+			X: WINDOW_WIDTH - 234
 			Y: 0
 			Width: 234
 			Height: 295
@@ -662,7 +662,7 @@ Container@PLAYER_WIDGETS:
 					Logic: GameTimerLogic
 					X: 0
 					Y: 0 - 2
-					Width: PARENT_RIGHT
+					Width: PARENT_WIDTH
 					Height: 22
 					Align: Center
 					Font: TinyBold
@@ -685,7 +685,7 @@ Container@PLAYER_WIDGETS:
 							ImageName: cash-normal
 				LabelWithTooltip@POWER:
 					Logic: IngamePowerCounterLogic
-					X: PARENT_RIGHT - WIDTH - 34
+					X: PARENT_WIDTH - WIDTH - 34
 					Y: 0 - 3
 					Width: 50
 					Height: 22
@@ -697,13 +697,13 @@ Container@PLAYER_WIDGETS:
 					Children:
 						Image@POWER_ICON:
 							Logic: AddFactionSuffixLogic
-							X: PARENT_RIGHT + 3
+							X: PARENT_WIDTH + 3
 							Y: 5
 							ImageCollection: power-icons
 							ImageName: power-normal
 		Container@SIDEBAR_PRODUCTION:
 			Logic: ClassicProductionLogic
-			X: WINDOW_RIGHT - 234
+			X: WINDOW_WIDTH - 234
 			Y: 275
 			Width: 234
 			Height: 250
@@ -726,7 +726,7 @@ Container@PLAYER_WIDGETS:
 							ImageCollection: sidebar
 							ImageName: background-bottom
 				PowerMeter:
-					X: WINDOW_RIGHT - 230
+					X: WINDOW_WIDTH - 230
 					Y: 290
 					MeterAlongside: ROW_TEMPLATE
 					ParentContainer: PALETTE_BACKGROUND
@@ -899,7 +899,7 @@ Container@PLAYER_WIDGETS:
 						Button@SCROLL_UP_BUTTON:
 							Logic: AddFactionSuffixLogic
 							X: 89
-							Y: PARENT_BOTTOM + 375
+							Y: PARENT_HEIGHT + 375
 							Width: 77
 							Height: 27
 							VisualHeight: 0
@@ -909,7 +909,7 @@ Container@PLAYER_WIDGETS:
 						Button@SCROLL_DOWN_BUTTON:
 							Logic: AddFactionSuffixLogic
 							X: 12
-							Y: PARENT_BOTTOM + 375
+							Y: PARENT_HEIGHT + 375
 							Width: 77
 							Height: 27
 							VisualHeight: 0
@@ -921,12 +921,12 @@ Container@PLAYER_WIDGETS:
 			PaletteWidget: PRODUCTION_PALETTE
 			TypesContainer: PRODUCTION_TYPES
 			BackgroundContainer: PRODUCTION_BACKGROUND
-			X: WINDOW_RIGHT - 212
+			X: WINDOW_WIDTH - 212
 			Y: 275
 			Width: 187
 			Height: 20
 		Container@HPF_ROOT:
 			Logic: LoadIngameHierarchicalPathFinderOverlayLogic
-			X: WINDOW_RIGHT - WIDTH - 240
+			X: WINDOW_WIDTH - WIDTH - 240
 			Y: 40
 			Width: 175

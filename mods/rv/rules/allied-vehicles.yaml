@@ -1154,13 +1154,13 @@ fv:
 	RenderVoxels:
 		Image: fv
 	WithVoxelBody:
-	Explodes:
+	FireWarheadsOnDeath:
 		RequiresCondition: !ifv-demo
-	Explodes@demo:
+	FireWarheadsOnDeath@demo:
 		Weapon: CRTerrorBomb
 		EmptyWeapon: CRTerrorBomb
 		RequiresCondition: ifv-demo && !targetedexp
-	Explodes@demo-targeted:
+	FireWarheadsOnDeath@demo-targeted:
 		Weapon: CRTargetedTerrorBomb
 		EmptyWeapon: CRTargetedTerrorBomb
 		RequiresCondition: ifv-demo && targetedexp
@@ -1849,7 +1849,7 @@ aambu:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 6c0
-	Explodes:
+	FireWarheadsOnDeath:
 		Weapon: UnitExplodeSmall
 		EmptyWeapon: UnitExplodeSmall
 	RenderSprites:

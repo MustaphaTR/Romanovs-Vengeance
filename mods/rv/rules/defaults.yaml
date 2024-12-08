@@ -798,12 +798,12 @@
 	SpeedMultiplier@NUCLEAR_ENGINES:
 		Modifier: 117
 		RequiresCondition: nuclear_engines
-	Explodes@NUCLEAR_ENGINES:
+	FireWarheadsOnDeath@NUCLEAR_ENGINES:
 		DeathTypes: NonTemporal
 		Weapon: NuclearEngineExplode
 		EmptyWeapon: NuclearEngineExplode
 		RequiresCondition: nuclear_engines && !advirrad
-	Explodes@NUCLEAR_ENGINES_ORANGE:
+	FireWarheadsOnDeath@NUCLEAR_ENGINES_ORANGE:
 		DeathTypes: NonTemporal
 		Weapon: NuclearEngineExplodeOrange
 		EmptyWeapon: NuclearEngineExplodeOrange
@@ -909,7 +909,7 @@
 		Prerequisites: upgrade.rocket_barrage
 
 ^AffectedByChaosTankCompensators:
-	Explodes@COMPENSATORS:
+	FireWarheadsOnDeath@COMPENSATORS:
 		DeathTypes: NonTemporal
 		Weapon: ChaosGasExplode
 		EmptyWeapon: ChaosGasExplode
@@ -1073,12 +1073,12 @@
 		Palette: mouse
 		ValidRelationships: Ally
 		RequiresCondition: deathbombs
-	Explodes@DEATHBOMBS:
+	FireWarheadsOnDeath@DEATHBOMBS:
 		DeathTypes: NonTemporal
 		Weapon: DeathBombExplode
 		EmptyWeapon: DeathBombExplode
 		RequiresCondition: deathbombs && !targetedexp
-	Explodes@DEATHBOMBSTARGETED:
+	FireWarheadsOnDeath@DEATHBOMBSTARGETED:
 		DeathTypes: NonTemporal
 		Weapon: TargetedDeathBombExplode
 		EmptyWeapon: TargetedDeathBombExplode
@@ -1371,7 +1371,7 @@
 		EraseDamageMultiplier: 500
 		EraseSounds: ichrkill.wav
 		SelectionBarColor: FFFFFF
-	Explodes@ChronoDisable:
+	FireWarheadsOnDeath@ChronoDisable:
 		Weapon: TemporalExplode
 		DeathTypes: Temporal
 	Targetable:
@@ -1582,7 +1582,7 @@
 		Sequence: icon
 		Position: BottomRight
 		Palette: ts-mouse
-	Explodes:
+	FireWarheadsOnDeath:
 		DeathTypes: NonTemporal
 		Weapon: HoloExplode
 		EmptyWeapon: HoloExplode
@@ -1820,11 +1820,11 @@
 		DamagedSounds: gdamag1a.wav, gdamag1b.wav, gdamag1c.wav, gdamag1d.wav, gdamag1e.wav
 		DestroyedSounds: bgendiea.wav, bgendieb.wav, bgendiec.wav, bgendied.wav, bgendiee.wav, bgendief.wav
 	WithSpriteBody:
-	Explodes:
+	FireWarheadsOnDeath:
 		DeathTypes: NonTemporal
 		Type: Footprint
 		Weapon: BuildingExplode
-	Explodes@ChronoDisable:
+	FireWarheadsOnDeath@ChronoDisable:
 		Type: Footprint
 	RepairableBuilding:
 		RepairStep: 700
@@ -2500,7 +2500,7 @@
 		DeathTypes:
 			ExplosionDeath: 1
 			BulletDeath: 2
-	Explodes@Corpse:
+	FireWarheadsOnDeath@Corpse:
 		DeathTypes: NonTemporal, ExplosionDeath, BulletDeath
 		Weapon: CorpseSpawner
 		EmptyWeapon: CorpseSpawner
@@ -2981,7 +2981,7 @@
 			VirusDeath: 2
 			BruteDeath: 1
 			OrangeRadiationDeath: 1
-	-Explodes@Corpse:
+	-FireWarheadsOnDeath@Corpse:
 	-WithDeathAnimation@effect:
 	-SpawnActorOnDeath@brute:
 	-SpawnActorOnDeath@flames:
@@ -3136,14 +3136,14 @@
 		Voice: Attack
 	Guardable:
 	BodyOrientation:
-		QuantizedFacings: 1024
+		QuantizedFacings: 0
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
-	Explodes:
+	FireWarheadsOnDeath:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
-	Explodes@Sinking:
+	FireWarheadsOnDeath@Sinking:
 		DeathTypes: NonTemporal
 		Weapon: UnitSink
 		EmptyWeapon: UnitSink
@@ -3594,11 +3594,11 @@
 		QuantizedFacings: 1024
 		CameraPitch: 85
 		UseClassicPerspectiveFudge: false
-	Explodes:
+	FireWarheadsOnDeath:
 		DeathTypes: NonTemporal
 		Weapon: UnitExplode
 		EmptyWeapon: UnitExplode
-	Explodes@Sinking:
+	FireWarheadsOnDeath@Sinking:
 		DeathTypes: NonTemporal
 		Weapon: UnitSink
 		EmptyWeapon: UnitSink

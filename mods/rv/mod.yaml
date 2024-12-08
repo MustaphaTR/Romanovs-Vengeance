@@ -1,9 +1,9 @@
 Metadata:
-	Title: Red Alert 2: Romanov's Vengeance
+	Title: mod-title
 	Version: {DEV_VERSION}
 	Website: https://github.com/MustaphaTR/Romanovs-Vengeance
 	WebIcon32: https://raw.githubusercontent.com/MustaphaTR/Romanovs-Vengeance/master/packaging/artwork/icon_32x32.png
-	WindowTitle: OpenRA - Romanov's Vengeance
+	WindowTitle: mod-windowtitle
 
 ModCredits:
 	ModTabTitle: Romanov's Vengeance
@@ -11,80 +11,91 @@ ModCredits:
 
 PackageFormats: Mix, AudioBag
 
-Packages:
-	~^SupportDir|Content/ra2
-	~^SupportDir|Content/ra2/taunts
-	^EngineDir
-	^EngineDir|mods/common: common
-	$rv: rv
-	~ra2md.mix # put YR files first so stuff like Psychic Sensor and Cloning Vats won't get overridden with Yuri artwork.
-	~ra2.mix
-	~langmd.mix
-	~language.mix
-	~multi.mix
-	~audiomd.mix
-	~cachemd.mix
-	~cache.mix: cache
-	~cameomd.mix: cameomd
-	~cameo.mix: cameo
-	~conquer.mix: conquer
-	~conqmd.mix: conqmd
-	~des.mix
-	~desert.mix
-	~genermd.mix
-	~generic.mix
-	~isodesmd.mix
-	~isodes.mix
-	~isogenmd.mix
-	~isogen.mix
-	~isolunmd.mix
-	~isolun.mix
-	~isosnomd.mix
-	~isosnow.mix
-	~isotemmd.mix
-	~isotemp.mix
-	~isoubnmd.mix
-	~isoubn.mix
-	~isourbmd.mix
-	~isourb.mix
-	~loadmd.mix
-	~load.mix
-	~localmd.mix: localmd
-	~local.mix: local
-	~lun.mix
-	~lunar.mix
-	~neutral.mix
-	~ntrlmd.mix
-	~sidec01.mix
-	~sidec02.mix
-	~sno.mix
-	~snowmd.mix
-	~snow.mix
-	~tem.mix
-	~temperat.mix
-	~theme.mix
-	~thememd.mix
-	~ubn.mix
-	~urbann.mix
-	~urb.mix
-	~urban.mix
-	~audio.bag
-	rv|bits
-	rv|bits/arrakis.mix
-	rv|bits/terrain-expansion.mix
-	rv|bits/lunar-terrain-expansion.mix
-	rv|bits/audio
-	rv|bits/audio/buildingselection
-	rv|bits/audio/eva
-	rv|bits/audio/unitvoicelines
-	rv|bits/structures
-	rv|bits/structures/fixes
-	rv|bits/structures/gates
-	rv|bits/structures/snow
-	rv|bits/structures/tech
-	rv|bits/structures/water
-	rv|uibits
-	rv|scripts
+FileSystem: ContentInstallerFileSystem
+	Packages:
+		^EngineDir
+		$rv: rv
+		^EngineDir|mods/cnc: cnc
+		^EngineDir|mods/common: common
+		^EngineDir|mods/ts: ts
+		~^SupportDir|Content/ra2: content
+		rv|uibits
+		rv|scripts
+	ContentPackages:
+		~content|taunts
+
+		# Yuri's Revenge
+		# Putting YR files first so stuff like Psychic Sensor and Cloning Vats won't get overridden with Yuri artwork.
+		content|langmd.mix: langmd
+		content|ra2md.mix: ra2md
+		~content|thememd.mix
+		~langmd|audiomd.mix
+		~langmd|cameomd.mix: cameomd
+		~ra2md|cachemd.mix
+		~ra2md|conqmd.mix: conqmd
+		~ra2md|genermd.mix
+		~ra2md|isodesmd.mix
+		~ra2md|isodes.mix
+		~ra2md|isogenmd.mix
+		~ra2md|isolunmd.mix
+		~ra2md|isolun.mix
+		~ra2md|isosnomd.mix
+		~ra2md|isotemmd.mix
+		~ra2md|isoubnmd.mix
+		~ra2md|isoubn.mix
+		~ra2md|isourbmd.mix
+		~ra2md|loadmd.mix
+		~ra2md|localmd.mix: localmd
+		~ra2md|lun.mix
+		~ra2md|lunar.mix
+		~ra2md|ntrlmd.mix
+		~ra2md|snowmd.mix
+		~ra2md|ubn.mix
+		~ra2md|urbann.mix
+		~ra2md|audio.bag
+
+		# Red Alert 2
+		content|language.mix: lang
+		content|ra2.mix: ra2
+		~content|theme.mix
+		~lang|cameo.mix: cameo
+		~ra2|cache.mix: cache
+		~ra2|conquer.mix: conquer
+		~ra2|des.mix
+		~ra2|desert.mix
+		~ra2|generic.mix
+		~ra2|isogen.mix
+		~ra2|isosnow.mix
+		~ra2|isotemp.mix
+		~ra2|isourb.mix
+		~ra2|load.mix
+		~ra2|local.mix: local
+		~ra2|neutral.mix
+		~ra2|sidec01.mix
+		~ra2|sidec02.mix
+		~ra2|sno.mix
+		~ra2|snow.mix
+		~ra2|tem.mix
+		~ra2|temperat.mix
+		~ra2|urb.mix
+		~ra2|urban.mix
+
+		# Romanov's Vengeance
+		rv|bits: bits
+		rv|bits/arrakis.mix
+		rv|bits/terrain-expansion.mix
+		rv|bits/lunar-terrain-expansion.mix
+		rv|bits/audio
+		rv|bits/audio/buildingselection
+		rv|bits/audio/eva
+		rv|bits/audio/unitvoicelines
+		rv|bits/structures
+		rv|bits/structures/fixes
+		rv|bits/structures/gates
+		rv|bits/structures/snow
+		rv|bits/structures/tech
+		rv|bits/structures/water
+	ContentInstallerMod: rv-content
 
 MapFolders:
 	rv|maps: System
@@ -169,12 +180,7 @@ Cursors:
 Chrome:
 	rv|chrome.yaml
 
-Assemblies:
-	^BinDir|OpenRA.Mods.Common.dll
-	^BinDir|OpenRA.Mods.Cnc.dll
-	^BinDir|OpenRA.Mods.D2k.dll
-	^BinDir|OpenRA.Mods.RA2.dll
-	^BinDir|OpenRA.Mods.AS.dll
+Assemblies: OpenRA.Mods.Common.dll, OpenRA.Mods.Cnc.dll, OpenRA.Mods.D2k.dll, OpenRA.Mods.RA2.dll, OpenRA.Mods.AS.dll
 
 ChromeLayout:
 	rv|chrome/assetbrowser.yaml
@@ -232,16 +238,19 @@ ChromeLayout:
 	common|chrome/playerprofile.yaml
 	common|chrome/text-notifications.yaml
 
-Translations:
-	common|languages/en.ftl
-	common|languages/chrome/en.ftl
-	common|languages/rules/en.ftl
-	rv|languages/en.ftl
-	rv|languages/chrome/en.ftl
-	rv|languages/rules/en.ftl
-	rv|languages/tr.ftl
-	rv|languages/chrome/tr.ftl
-	rv|languages/rules/tr.ftl
+FluentMessages:
+	common|fluent/common.ftl
+	common|fluent/chrome.ftl
+	common|fluent/hotkeys.ftl
+	common|fluent/rules.ftl
+	cnc|fluent/hotkeys.ftl
+	ts|fluent/hotkeys.ftl
+	rv|fluent/common.ftl
+	rv|fluent/chrome.ftl
+	rv|fluent/hotkeys.ftl
+	rv|fluent/rules.ftl
+
+AllowUnusedFluentMessagesInExternalPackages: true
 
 Weapons:
 	rv|weapons/bullets.yaml
@@ -293,7 +302,6 @@ Hotkeys:
 	common|hotkeys/game.yaml
 	common|hotkeys/observer.yaml
 	common|hotkeys/production-common.yaml
-	common|hotkeys/production-peractor.yaml
 	common|hotkeys/supportpowers.yaml
 	common|hotkeys/viewport.yaml
 	common|hotkeys/chat.yaml
@@ -303,7 +311,6 @@ Hotkeys:
 
 LoadScreen: LogoStripeLoadScreen
 	Image: rv|uibits/loadscreen.png
-	Text: Carving wooden nickels..., Preparing paratroopers..., Welcoming you to Texas..., Optimizing helium mix..., Receiving thoughts..., Igniting boosters..., Beginning the apocalypse..., Accepting donations..., Looking natural..., Taking lunch money..., Buffing by 33%..., Inventing balance..., Ghosting lobbies..., Attempting to start making the campaign..., Coding the impossible..., Rendering flags..., Updating engine...
 
 ServerTraits:
 	LobbyCommands
@@ -401,39 +408,6 @@ GameSpeeds:
 			Name: options-game-speed.ludicrous
 			Timestep: 5
 			OrderLatency: 27
-
-ModContent:
-	InstallPromptMessage: Red Alert 2 requires artwork and audio from the original game.
-	HeaderMessage: The original game content must be copied from an original game disc.
-	Packages:
-		ContentPackage@ra2:
-			Title: Red Alert 2 Files
-			Identifier: ra2
-			TestFiles: ^SupportDir|Content/ra2/ra2.mix, ^SupportDir|Content/ra2/language.mix
-			Sources: ra2, origin, tfd
-			Required: true
-		ContentPackage@ra2-music:
-			Title: Red Alert 2 Music
-			Identifier: ra2-music
-			TestFiles: ^SupportDir|Content/ra2/theme.mix
-			Sources: ra2, origin, tfd
-		ContentPackage@yr:
-			Title: Yuri's Revenge Files
-			Identifier: yr
-			TestFiles: ^SupportDir|Content/ra2/ra2md.mix, ^SupportDir|Content/ra2/langmd.mix
-			Sources: origin-yr, tfd-yr
-			Required: true
-		ContentPackage@yr-music:
-			Title: Yuri's Revenge Music
-			Identifier: yr-music
-			TestFiles: ^SupportDir|Content/ra2/thememd.mix
-			Sources: origin-yr, tfd-yr
-	Sources:
-		rv|installer/ra2.yaml
-		rv|installer/origin.yaml
-		rv|installer/origin-yr.yaml
-		rv|installer/firstdecade.yaml
-		rv|installer/firstdecade-yr.yaml
 
 DiscordService:
 	ApplicationId: 734703512952242257
