@@ -629,7 +629,6 @@ actor-dog =
    .soviet-name = Siberian Husky
    .psicorps-name = Rottweiler
    .description = Anti-infantry unit.
-    Can be deployed to stun nearby infantry for a short while.
     
       Strong vs Infantry
       Weak vs Vehicles, Aircraft
