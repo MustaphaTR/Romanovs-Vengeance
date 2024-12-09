@@ -637,6 +637,8 @@ gaairc:
 			1: radar.america
 		Icons:
 			1: airborne
+		Cursor: paradrop
+		BlockedCursor: ability-blocked
 		ChargeInterval: 4500
 		Names:
 			1: actor-gaairc.power-airborne-name
@@ -669,6 +671,7 @@ gaairc:
 			1: disabled
 		Icons:
 			1: leaflet
+		BlockedCursor: ability-blocked
 		ChargeInterval: 3750
 		Names:
 			1: commanders-power.leaflet-drop-name
@@ -701,6 +704,7 @@ gaairc:
 			1: radar.england
 		Icons:
 			1: carpetbomb
+		BlockedCursor: ability-blocked
 		ChargeInterval: 6000
 		Names:
 			1: actor-gaairc.power-carpetbombing-name
@@ -732,6 +736,8 @@ gaairc:
 			1: radar.germany
 		Icons:
 			1: grizzly
+		Cursor: chronosphere
+		BlockedCursor: ability-blocked
 		ChargeInterval: 6000
 		Names:
 			1: actor-gaairc.power-chronogrizzly-name
@@ -751,6 +757,8 @@ gaairc:
 			1: disabled
 		Icons:
 			1: tankdrop
+		Cursor: paradrop
+		BlockedCursor: ability-blocked
 		ChargeInterval: 6000
 		Names:
 			1: actor-gaairc.power-tankdrop-name
@@ -785,6 +793,7 @@ gaairc:
 		Icons:
 			1: force
 		Cursor: force-shield
+		BlockedCursor: force-shield-blocked
 		ChargeInterval: 4500
 		Names:
 			1: actor-gaairc.power-forceshield-name
@@ -818,6 +827,7 @@ gaairc:
 			1: disabled
 		Icons:
 			1: empulse
+		BlockedCursor: ability-blocked
 		ChargeInterval: 7500
 		Names:
 			1: commanders-power.emp-strike-name
@@ -849,6 +859,8 @@ gaairc:
 			1: radar.korea
 		Icons:
 			1: chronobomb
+		Cursor: chronosphere
+		BlockedCursor: ability-blocked
 		ChargeInterval: 6000
 		Names:
 			1: actor-gaairc.power-chronobomb-name
@@ -1049,6 +1061,7 @@ gayard:
 		Icons:
 			1: sonar
 		Cursor: reveal
+		BlockedCursor: ability-blocked
 		Prerequisites:
 			1: disabled # gayard
 		Names:
@@ -1641,6 +1654,7 @@ gaweat:
 		Icons:
 			1: bolticon
 		Cursor: weatherstorm
+		BlockedCursor: ability-blocked
 		ChargeInterval: 9000
 		Names:
 			1: actor-gaweat.power-name
@@ -1736,6 +1750,7 @@ gacsph:
 		AllowImpassable: true
 		SelectionCursor: chronosphere
 		TargetCursor: chronosphere
+		BlockedCursor: ability-blocked
 		PauseOnCondition: disabled || chronodisable
 		RequiresCondition: !ai-control
 	DetonateWeaponPower@chronoAI:
@@ -1771,8 +1786,8 @@ gacsph:
 		DisplayRadarPing: True
 		CameraRange: 8c0
 		CameraRemoveDelay: 25
-		SelectionCursor: chronosphere
-		TargetCursor: chronosphere
+		Cursor: chronosphere
+		BlockedCursor: ability-blocked
 	ProvidesPrerequisite@swlimit:
 		Prerequisite: enoughchrono
 	NotificationAnnouncement:

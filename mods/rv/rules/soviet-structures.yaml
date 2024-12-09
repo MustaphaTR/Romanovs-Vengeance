@@ -487,6 +487,8 @@ naradr:
 			1: radar.russia
 		Icons:
 			1: tesladrop
+		Cursor: paradrop
+		BlockedCursor: ability-blocked
 		ChargeInterval: 4500
 		Names:
 			1: actor-naradr.power-tesladrop-name
@@ -515,6 +517,7 @@ naradr:
 	NukePower@radiationmissile:
 		OrderName: IraqiRadMissile
 		Cursor: nuke
+		BlockedCursor: ability-blocked
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
 			1: radar.iraq
@@ -563,6 +566,7 @@ naradr:
 			1: radar.vietnam
 		Icons:
 			1: bunker
+		BlockedCursor: ability-blocked
 		ChargeInterval: 3000
 		Names:
 			1: actor-naradr.power-instantbunker-name
@@ -580,6 +584,7 @@ naradr:
 			1: radar.libya
 		Icons:
 			1: ambush
+		BlockedCursor: ability-blocked
 		ChargeInterval: 6000
 		Names:
 			1: actor-naradr.ambush-name
@@ -599,6 +604,7 @@ naradr:
 			1: radar.cuba
 		Icons:
 			1: deathbombs
+		BlockedCursor: ability-blocked
 		ChargeInterval: 3000
 		Names:
 			1: actor-naradr.power-deathbombs-name
@@ -623,6 +629,7 @@ naradr:
 			1: disabled
 		Icons:
 			1: cluster
+		BlockedCursor: ability-blocked
 		ChargeInterval: 4500
 		Names:
 			1: commanders-power.cluster-mines-name
@@ -892,6 +899,8 @@ nayard:
 			1: navalmines
 		Prerequisites:
 			1: disabled # nayard
+		Cursor: paradrop
+		BlockedCursor: ability-blocked
 		ChargeInterval: 3000
 		Names:
 			1: actor-nayard.power-name
@@ -1365,6 +1374,7 @@ nairon:
 		Prerequisites:
 			1: nairon
 		Cursor: iron-curtain
+		BlockedCursor: ability-blocked
 		ChargeInterval: 6000
 		Names:
 			1: actor-nairon.power-name
@@ -1422,6 +1432,7 @@ namisl:
 			1: namisl
 			2: upgrade.advanced_irradiators
 		Cursor: nuke
+		BlockedCursor: ability-blocked
 		Icons:
 			1: abomb
 			2: abomb
