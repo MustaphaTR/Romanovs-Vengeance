@@ -133,13 +133,19 @@ dron:
 	-Carryable:
 	-CaptureManager:
 	-Capturable:
+	WithParachute:
+		Image: parach-dron
 	WithInfantryBody:
 		StandSequences: stand
 		DefaultAttackSequence: jump
-		RequiresCondition: !jousting
+		RequiresCondition: !parachute && !jousting
+	WithFacingSpriteBody@Parachute:
+		Name: parachute
+		Sequence: paradrop
+		RequiresCondition: parachute
 	WithFacingSpriteBody:
 		Sequence: shoot
-		RequiresCondition: jousting
+		RequiresCondition: !parachute && jousting
 	GrantConditionOnTerrain@Water:
 		TerrainTypes: Water, Beach
 		Condition: in_water
