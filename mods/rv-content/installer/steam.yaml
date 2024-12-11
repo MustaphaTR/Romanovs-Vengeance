@@ -1,0 +1,32 @@
+steam: C&C The Ultimate Collection (Steam version, English)
+	Type: Steam
+		AppId: 2229850
+	IDFiles:
+		THEME.MIX: 184f99e3292ab19c71c08a1ad7097ce739396190
+	Install:
+		# Base game files:
+		ContentPackage@ra2:
+			Name: ra2
+			Actions:
+				Copy: .
+					^SupportDir|Content/ts/language.mix: language.mix
+					^SupportDir|Content/ts/ra2.mix: ra2.mix
+		# Yuri's Revenge expansion files:
+		ContentPackage@yr:
+			Name: yr
+			Actions:
+				Copy: .
+					^SupportDir|Content/ra2/langmd.mix: langmd.mix
+					^SupportDir|Content/ra2/ra2md.mix: ra2md.mix
+		# Base game music (optional):
+		ContentPackage@ra2-music:
+			Name: ra2-music
+			Actions:
+				Copy: .
+					^SupportDir|Content/ra2/THEME.MIX: THEME.MIX
+		# Yuri's Revenge expansion music (optional):
+		ContentPackage@yr-music:
+			Name: yr-music
+			Actions:
+				Copy: .
+					^SupportDir|Content/ra2/thememd.mix: thememd.mix

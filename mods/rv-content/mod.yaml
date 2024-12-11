@@ -75,30 +75,31 @@ ModContent:
 			Title: modcontent-package-basefiles
 			Identifier: ra2
 			TestFiles: ^SupportDir|Content/ra2/ra2.mix, ^SupportDir|Content/ra2/language.mix
-			Sources: ra2, origin, tfd
+			Sources: ra2, origin, tfd, steam
 			Required: true
 		ContentPackage@ra2-music:
 			Title: modcontent-package-basemusic
 			Identifier: ra2-music
 			TestFiles: ^SupportDir|Content/ra2/theme.mix
-			Sources: ra2, origin, tfd
+			Sources: ra2, origin, tfd, steam
 		ContentPackage@yr:
 			Title: modcontent-package-yrfiles
 			Identifier: yr
 			TestFiles: ^SupportDir|Content/ra2/ra2md.mix, ^SupportDir|Content/ra2/langmd.mix
-			Sources: origin-yr, tfd-yr
+			Sources: origin-yr, tfd-yr, steam
 			Required: true
 		ContentPackage@fstorm-music:
 			Title: modcontent-package-yrmusic
 			Identifier: yr-music
 			TestFiles: ^SupportDir|Content/ra2/thememd.mix
-			Sources: origin-yr, tfd-yr
+			Sources: origin-yr, tfd-yr, steam
 	Sources:
 		rvcontent|installer/ra2.yaml
 		rvcontent|installer/origin.yaml
 		rvcontent|installer/origin-yr.yaml
 		rvcontent|installer/firstdecade.yaml
 		rvcontent|installer/firstdecade-yr.yaml
+		rvcontent|installer/steam.yaml
 
 SoundFormats:
 
