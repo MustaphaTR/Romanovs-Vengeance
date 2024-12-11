@@ -922,8 +922,11 @@ gabarl:
 	Inherits: camisc02
 	-Buildable:
 	KillsSelf@Explode:
-		Delay: 125
 		DamageTypes: NonTemporal
+		RequiresCondition: self-destruct
+	GrantConditionAfterDelay@Explode:
+		Delay: 125
+		Condition: self-destruct
 	RenderSprites:
 		Image: camisc08
 	FireWarheadsOnDeath:
@@ -933,8 +936,11 @@ gabarls:
 	Inherits: camisc01
 	-Buildable:
 	KillsSelf@Explode:
-		Delay: 125
 		DamageTypes: NonTemporal
+		RequiresCondition: self-destruct
+	GrantConditionAfterDelay@Explode:
+		Delay: 125
+		Condition: self-destruct
 	RenderSprites:
 		Image: camisc07
 	FireWarheadsOnDeath:
