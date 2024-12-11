@@ -2709,7 +2709,6 @@ actor-camera-name = (reveals area to owner)
 actor-sonar-name = (support power proxy camera)
 actor-camera-satscan-name = Satellite Scan
 actor-magnetic-beam-1-name = Magnetic Beam
-meta-lamppost-name = (Invisible Light Post)
 actor-galite-white-name = (Invisible Light Post)
 actor-galite-black-name = (Invisible Negative Light Post)
 actor-galite-red-name = (Invisible Red Light Post)

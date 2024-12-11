@@ -69,6 +69,7 @@ label-combat-stats-vision-header = Vision
 
 ## ingame-observer.yaml, ingame-player.yaml
 label-mute-indicator = Audio Muted
+actor-stats-colon = :
 button-collapse-tooltip = Collapse
 button-expand-tooltip = Expand
 
