@@ -690,6 +690,16 @@ refdock:
 		IsPlayerPalette: false
 	CommandBarBlacklist:
 		DisableStop: false
+	RepairsUnits:
+		PauseOnCondition: chronodisable || disabled
+		HpPerStep: 0 # Real repair is not done here, but keeping the trait makes sure that vehicles wait around to be repaired before going to the rally point.
+		ValuePercentage: 0
+		Interval: 20
+		#RepairDamageTypes: KillsDrone
+		StartRepairingNotification: Repairing
+		StartRepairingTextNotification: notification-repairing
+		FinishRepairingNotification: UnitRepaired
+		FinishRepairingTextNotification: notification-unit-repaired
 	Exit@1:
 		ExitCell: 4,1
 	GrantExternalConditionToProduced:
@@ -917,15 +927,16 @@ refdock:
 		IsPlayerPalette: false
 	CommandBarBlacklist:
 		DisableStop: false
-	# RepairsUnits:
-	#	PauseOnCondition: chronodisable || disabled
-	#	HpPerStep: 2000
-	#	Interval: 20
-	#	RepairDamageTypes: KillsDrone
-	#	StartRepairingNotification: Repairing
-	#	StartRepairingTextNotification: notification-repairing
-	#	FinishRepairingNotification: UnitRepaired
-	#	FinishRepairingTextNotification: notification-unit-repaired
+	RepairsUnits:
+		PauseOnCondition: chronodisable || disabled
+		HpPerStep: 0 # Real repair is not done here, but keeping the trait makes sure that vehicles wait around to be repaired before going to the rally point.
+		ValuePercentage: 0
+		Interval: 20
+		#RepairDamageTypes: KillsDrone
+		StartRepairingNotification: Repairing
+		StartRepairingTextNotification: notification-repairing
+		FinishRepairingNotification: UnitRepaired
+		FinishRepairingTextNotification: notification-unit-repaired
 	AutoTarget:
 	AutoTargetPriority@DEFAULT:
 		ValidTargets: Repair, AirRepair, SeaAnimalRepair
@@ -1145,6 +1156,16 @@ refdock:
 		IsPlayerPalette: false
 	CommandBarBlacklist:
 		DisableStop: false
+	RepairsUnits:
+		PauseOnCondition: chronodisable || disabled
+		HpPerStep: 0 # Real repair is not done here, but keeping the trait makes sure that vehicles wait around to be repaired before going to the rally point.
+		ValuePercentage: 0
+		Interval: 20
+		#RepairDamageTypes: KillsDrone
+		StartRepairingNotification: Repairing
+		StartRepairingTextNotification: notification-repairing
+		FinishRepairingNotification: UnitRepaired
+		FinishRepairingTextNotification: notification-unit-repaired
 	Exit@1:
 		Facing: 640
 		ExitCell: 1,1
