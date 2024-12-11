@@ -559,7 +559,7 @@ naradr:
 			2: 4c0
 		CircleColor: FFFFFFFF
 		CircleBorderColor: 00000060
-	DetonateWeaponPower@instanbunker:
+	PlaceBuildingPower@instanbunker:
 		OrderName: VietnameseInstantBunker
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
@@ -574,8 +574,10 @@ naradr:
 			1: actor-naradr.power-instantbunker-description
 		SelectTargetSpeechNotification: SelectTarget
 		SelectTargetTextNotification: notification-select-target
-		Weapons:
-			1: BunkerSpawner
+		CannotPlaceNotification: BuildingCannotPlaceAudio
+		CannotPlaceTextNotification: notification-cannot-deploy-here
+		Buildings:
+			1: nabnkr
 		ActivationSequence:
 	DetonateWeaponPower@ambush:
 		OrderName: LibyanAmbush
@@ -1816,7 +1818,17 @@ nabnkr:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
+		RequiresBaseProvider: false
 		-SecondaryTerrainTypes:
+	-RequiresBuildableArea:
+	-ActorPreviewPlaceBuildingPreview:
+	SequencePlaceBuildingPreview:
+		Sequence: garrisoned
+		SequenceAlpha: 0.55
+		Palette: placefootprint
+		LineBuildFootprintAlpha: 0.5
+		FootprintUnderPreview: Valid, LineBuild, Invalid
+		FootprintOverPreview: None
 	Health:
 		HP: 60000
 	Armor:
