@@ -1030,7 +1030,6 @@ actor-gamgun =
     - Grand Cannon Protocols (France)
     
       Requires power to operate.
-      Can be rotated.
  
 actor-gagun =
    .name = Gun Turret
