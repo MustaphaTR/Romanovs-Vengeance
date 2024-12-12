@@ -1527,6 +1527,29 @@
 	AutoTarget:
 		RequiresCondition: !chaos
 
+^BerserkableAircraft:
+	Inherits: ^BerserkableVoxel
+	Targetable@CHAOS:
+		RequiresCondition: !airborne
+	Targetable@CHAOSAIR:
+		TargetTypes: ChaosGasableAir
+		RequiresCondition: airborne
+
+^BerserkableAircraftArmed:
+	Inherits: ^BerserkableAircraft
+	AutoTarget:
+		RequiresCondition: !chaos
+
+^BerserkableRocketeer:
+	Inherits: ^Berserkable
+	Targetable@CHAOS:
+		RequiresCondition: !airborne
+	Targetable@CHAOSAIR:
+		TargetTypes: ChaosGasableAir
+		RequiresCondition: airborne
+	AutoTarget:
+		RequiresCondition: !chaos
+
 ^NotBerserkTarget:
 	Targetable@NOCHAOS:
 		TargetTypes: NoBerserkAutoTarget

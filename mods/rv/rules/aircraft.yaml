@@ -2,7 +2,7 @@ shad:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
-	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
@@ -106,8 +106,6 @@ shad:
 	RenderSprites:
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
@@ -201,8 +199,9 @@ zep:
 	Inherits@AI: ^AIControl
 	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
 	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	AutoTarget:
 		ScanRadius: 5
@@ -242,6 +241,8 @@ zep:
 		Voice: Move
 		CloseEnough: 3c0
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
+	Targetable@MC:
+		RequiresCondition: !controlled && !permamc && !airborne
 	Health:
 		HP: 400000
 	Armor:
@@ -350,7 +351,7 @@ zep:
 		RequiresCondition: ai-control && AIattack
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.advanced_irradiators, upgrade.aerial_propaganda, upgrade.radioactive_bombs
+		Upgrades: upgrade.advanced_irradiators, upgrade.radioactive_bombs
 
 zephusk:
 	Inherits: ^HelicopterHusk
@@ -417,7 +418,7 @@ orca:
 	Inherits@A2A: ^AffectedByA2AMissiles
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
-	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@PREDATOR: ^AffectedByPredatorMissiles
@@ -527,8 +528,6 @@ orca:
 		RearmActors: gaairc, gaairb, gaapad, gadock, baairf, baairb, badock, badocb
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
 	RenderSprites:
 		Image: falc
 	RenderVoxels:
@@ -687,7 +686,7 @@ beag:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
-	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
@@ -777,8 +776,6 @@ beag:
 		RearmActors: gaairc, gaairb, gaapad, gadock, baairf, baairb, badock, badocb
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
 	GrantConditionOnMovement@V:
 		Condition: vmove
 		ValidMovementTypes: Vertical
@@ -1710,7 +1707,7 @@ schp:
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
-	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
@@ -1902,8 +1899,6 @@ schp:
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
 	RejectsOrders@deployment:
 		Reject: Move
 		RequiresCondition: !undeployed && !airborne
@@ -2257,8 +2252,10 @@ disk:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	BodyOrientation:
 		QuantizedFacings: 1
@@ -2460,6 +2457,8 @@ disk:
 		Voice: Move
 		CloseEnough: 3c0
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
+	Targetable@MC:
+		RequiresCondition: !controlled && !permamc && !airborne
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: diskhusk
@@ -2510,7 +2509,7 @@ diskhusk:
 hind:
 	Inherits: ^Helicopter
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
-	Inherits@CHAOS: ^BerserkableVoxel
+	Inherits@CHAOS: ^BerserkableAircraft
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	Tooltip:
@@ -2569,8 +2568,6 @@ hind:
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
 	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
@@ -2650,7 +2647,7 @@ fortress:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
-	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@PAYLOAD: ^AffectedByIncreasedPayload
@@ -2779,8 +2776,6 @@ fortress:
 		RearmActors: gaairc, gaairb, gaapad, gadock, baairf, baairb, badock, badocb
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
 	RenderSprites:
 	RenderVoxels:
 		NormalsPalette: ts-normals
@@ -2987,8 +2982,10 @@ txdx:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	Inherits@ROCKETBARRAGE: ^AffectedByRocketBarrage
 	BodyOrientation:
@@ -3103,6 +3100,8 @@ txdx:
 		Voice: Move
 		CloseEnough: 3c0
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
+	Targetable@MC:
+		RequiresCondition: !controlled && !permamc && !airborne
 	Cargo:
 		Types: Infantry, Garrisoner, SmallVehicle
 		MaxWeight: 5
@@ -3192,7 +3191,7 @@ kite:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
-	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
@@ -3271,8 +3270,6 @@ kite:
 	RenderSprites:
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
@@ -3364,9 +3361,11 @@ magnedisk:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@DISCARMOR: ^AffectedByDiscArmor
-	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
+	Inherits@MC: ^MindControllable
 	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	BodyOrientation:
 		QuantizedFacings: 1
 	Valued:
@@ -3461,6 +3460,8 @@ magnedisk:
 		Voice: Move
 		CloseEnough: 3c0
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
+	Targetable@MC:
+		RequiresCondition: !controlled && !permamc && !airborne
 	SpawnActorOnDeath:
 		DeathType: NonTemporal
 		Actor: magnediskhusk
@@ -3539,7 +3540,7 @@ havoc:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
-	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
@@ -3611,8 +3612,6 @@ havoc:
 	RenderSprites:
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
@@ -3679,7 +3678,7 @@ badgr:
 	Inherits: ^Plane
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
-	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
@@ -3769,8 +3768,6 @@ badgr:
 		RearmActors: gaairc, gaairb, gaapad, gadock, baairf, baairb, badock, badocb
 	Targetable@MC:
 		RequiresCondition: !controlled && !permamc && !airborne
-	Targetable@CHAOS:
-		RequiresCondition: !airborne
 	RenderSprites:
 	RenderVoxels:
 	GrantConditionOnMovement@V:
