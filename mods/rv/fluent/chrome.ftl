@@ -208,3 +208,6 @@ label-mainmenu-prerelease-notification-prompt-text-h = Buildings that are not sq
 label-mainmenu-prerelease-notification-prompt-text-i = Commander's Power and Upgrade tabs can be accessed from their buttons at
 label-mainmenu-prerelease-notification-prompt-text-j = the top of the ingame UI or with (O) and (P) shortcuts respectively.
 button-mainmenu-prerelease-notification-continue = I Understand
+
+## settings-hotkeys.yaml
+hotkey-group-depth-preview-debug = Depth Preview Debug
