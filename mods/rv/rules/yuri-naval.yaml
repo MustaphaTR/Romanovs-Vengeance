@@ -1,5 +1,6 @@
 yhvr:
 	Inherits: ^AmphibiousTransport
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
@@ -7,6 +8,8 @@ yhvr:
 		Description: actor-yhvr.description
 	Voiced:
 		VoiceSet: YuriAmphibiousTransportVoice
+	ActorStatValues:
+		Upgrades: upgrade.grinder_treads, upgrade.chaos_tank_compensators
 
 bsub:
 	Inherits: ^Ship
