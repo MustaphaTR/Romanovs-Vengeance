@@ -9,13 +9,10 @@
 	Buildable:
 		Queue: Ship.Shared, Ship
 		Prerequisites: ~techlevel.1
-		BuildPaletteOrder: 45
+		BuildPaletteOrder: 20
 		Description: meta-amphibioustransport.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
-	BuildPaletteOrderModifier@Megawealth:
-		Prerequisites: global-megawealth
-		Modifier: -35 # 10
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -128,7 +125,7 @@
 		RequiresCondition: !surfaced
 	Buildable:
 		Queue: Ship.Shared, Ship
-		BuildPaletteOrder: 70
+		BuildPaletteOrder: 30
 		Prerequisites: radar, ~techlevel.3
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:

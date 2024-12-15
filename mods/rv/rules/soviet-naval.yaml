@@ -20,7 +20,7 @@ sub:
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
 		Prerequisites: ~ship.sovietsorbaku, naradr, ~techlevel.2
-		BuildPaletteOrder: 80
+		BuildPaletteOrder: 70
 		Description: actor-sub.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -111,7 +111,7 @@ hyd:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets
-		BuildPaletteOrder: 30
+		BuildPaletteOrder: 60
 		Prerequisites: ~ship.soviets, naradr, ~techlevel.2
 		Description: actor-hyd.description
 		BuildDuration: 250
@@ -294,7 +294,7 @@ dred:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
-		BuildPaletteOrder: 90
+		BuildPaletteOrder: 80
 		Prerequisites: ~ship.sovietsorbaku, natech, ~techlevel.4
 		Description: actor-dred.description
 		BuildDuration: 1000
@@ -471,7 +471,7 @@ sray:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets, Ship.Baku
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 40
 		Prerequisites: ~ship.sovietsorbaku, ~techlevel.1
 		Description: actor-sray.description
 		BuildDuration: 375
