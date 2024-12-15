@@ -3494,8 +3494,8 @@ actor-upgrade-molotov-cocktails =
 actor-upgrade-nuclear-engines =
    .name = Nuclear Engines
    .description = Increases the movement speed of the following units:
-     - Rhino Tanks by 17%
-     - Apocalypse Tanks by 25%
+     - Rhino Tanks by 14%
+     - Apocalypse Tanks by 20%
     Both units will explode violently and leave radiation when destroyed.
 
 actor-upgrade-uranium-shells =
