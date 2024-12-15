@@ -1812,7 +1812,7 @@ aambu:
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Unused # Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 70
 		Prerequisites: ~vehicle.allies, prerequisite.ambulance, ~techlevel.2
 		Description: actor-aambu.description
@@ -1917,7 +1917,7 @@ hwtz:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 80
-		Prerequisites: ~vehicle.allies, gaairc, ~techlevel.3
+		Prerequisites: ~vehicle.allies, prerequisite.howitzer, gaairc, ~techlevel.3
 		Description: actor-hwtz.description
 		BuildDuration: 375
 		BuildDurationModifier: 100

@@ -202,17 +202,33 @@ commanders_power.ambulance:
 	Inherits: ^default.commanders_power
 	Tooltip:
 		Name: actor-commanders-power-ambulance.name
-	Buildable:
-		Queue: Power.Allies
-		BuildPaletteOrder: 30
-		Prerequisites: prerequisite.has_points
-		Description: actor-commanders-power-ambulance.description
+	-Buildable:
+	#	Queue: Power.Allies
+	#	BuildPaletteOrder: 30
+	#	Prerequisites: prerequisite.has_points
+	#	Description: actor-commanders-power-ambulance.description
 	ProvidesPrerequisite@ambulance:
 		Prerequisite: prerequisite.ambulance
 	WithProductionIconOverlay:
 		Prerequisites: commanders_power.ambulance
 	RenderSprites:
 		Image: aambu
+
+commanders_power.howitzer:
+	Inherits: ^default.commanders_power
+	Tooltip:
+		Name: actor-commanders-power-howitzer.name
+	Buildable:
+		Queue: Power.Allies
+		BuildPaletteOrder: 30
+		Prerequisites: prerequisite.has_points
+		Description: actor-commanders-power-howitzer.description
+	ProvidesPrerequisite@howitzer:
+		Prerequisite: prerequisite.howitzer
+	WithProductionIconOverlay:
+		Prerequisites: commanders_power.howitzer
+	RenderSprites:
+		Image: hwtz
 
 commanders_power.hijacker:
 	Inherits: ^default.commanders_power
@@ -871,6 +887,9 @@ prerequisite.medic:
 	Inherits: ^default.commanders_power_prerequisite
 
 prerequisite.ambulance:
+	Inherits: ^default.commanders_power_prerequisite
+
+prerequisite.howitzer:
 	Inherits: ^default.commanders_power_prerequisite
 
 prerequisite.airpad:
