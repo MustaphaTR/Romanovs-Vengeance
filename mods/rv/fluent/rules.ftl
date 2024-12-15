@@ -1150,7 +1150,7 @@ actor-bfrt =
 actor-robo =
    .name = Robot Tank
    .description = Remote controlled vehicle.
-    Requires an Allied War Factory to operate.
+    Requires an Allied War Factory or Shipyard to operate.
     
       Strong vs Infantry
       Weak vs Vehicles, Aircraft
@@ -2146,6 +2146,10 @@ actor-commanders-power-medic =
 actor-commanders-power-ambulance =
    .name = Combat Ambulance
    .description = Enables production of Combat Ambulance from War Factory.
+
+actor-commanders-power-howitzer =
+   .name = Howitzer
+   .description = Enables production of Howitzer from War Factory.
 
 actor-commanders-power-hijacker =
    .name = Hijacker
@@ -3556,7 +3560,7 @@ actor-upgrade-lazarus-prime =
 
 actor-upgrade-autoloaders =
    .name = Autoloaders
-   .description = Lasher and Lazarus Tanks will fire 2 volleys at once.
+   .description = Lasher, Lazarus and Strider Tanks will fire 2 volleys at once.
 
 actor-upgrade-rocket-barrage =
    .name = Rocket Barrage
@@ -3829,6 +3833,8 @@ actor-strt =
     
     Upgradeable with:
     - Grinder Treads
+    - Autoloaders
+    - Chaos Tank Compensators (Yurigrad)
 
 actor-buoy =
    .name = Sensor Buoy

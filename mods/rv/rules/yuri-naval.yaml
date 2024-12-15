@@ -544,9 +544,11 @@ floater:
 strt:
 	Inherits: ^Vehicle
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@AUTOLOADERS: ^AffectedByAutoloaders
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Inherits@MC: ^MindControllableDisabledWithIC
@@ -602,14 +604,28 @@ strt:
 		TurnSpeed: 32
 	Armament@primary:
 		Weapon: StriderGun
+		Damage: 50
 		LocalOffset: 1280,0,800
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite
+		RequiresCondition: !rank-elite && !autoloaders
 	Armament@elite:
 		Weapon: StriderGunE
+		Damage: 100
 		LocalOffset: 1280,0,800
 		MuzzleSequence: muzzle-2
-		RequiresCondition: rank-elite
+		RequiresCondition: rank-elite && !autoloaders
+	Armament@primary-auto:
+		Weapon: StriderGunAuto
+		Damage: 100
+		LocalOffset: 1280,0,800
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite && autoloaders
+	Armament@elite-auto:
+		Weapon: StriderGunAutoE
+		Damage: 200
+		LocalOffset: 1280,0,800
+		MuzzleSequence: muzzle-2
+		RequiresCondition: rank-elite && autoloaders
 	AttackTurreted:
 		Voice: Attack
 		PauseOnCondition: chronodisable || emp
@@ -656,7 +672,7 @@ strt:
 	HitShape:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Damage: 50
+		Upgrades: upgrade.grinder_treads, upgrade.autoloaders, upgrade.chaos_tank_compensators
 
 buoy:
 	Inherits: ^Ship
