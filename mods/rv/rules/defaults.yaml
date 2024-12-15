@@ -1262,6 +1262,8 @@
 
 ^KilledByChronoshift:
 	RA2Chronoshiftable:
+		TerrainsAndDeathTypes:
+			Clear, Sand, Rough, Dune, Rail, Road, Bridge, DirtRoad, Ore, Gems, Beach, Water, Cliff: Temporal
 	GrantTimedConditionOnTeleport@Chronodeath:
 		TeleportTypes: RA2ChronoPower
 		Condition: chronodeath
@@ -3189,6 +3191,8 @@
 	Voiced:
 		VoiceSet: AlliedVehicleVoice
 	RA2Chronoshiftable:
+		TerrainsAndDeathTypes:
+			Water, Cliff: NonTemporal, ExplosionDeath
 		RequiresCondition: !invulnerability
 	GrantTimedConditionOnTeleport:
 		TeleportTypes: RA2ChronoPower
@@ -3640,6 +3644,8 @@
 	Voiced:
 		VoiceSet: SovietNavalVoice
 	RA2Chronoshiftable:
+		TerrainsAndDeathTypes:
+			Clear, Sand, Rough, Dune, Rail, Road, Bridge, DirtRoad, Ore, Gems, Beach, Cliff: NonTemporal, ExplosionDeath
 		RequiresCondition: !invulnerability
 	GrantTimedConditionOnTeleport:
 		TeleportTypes: RA2ChronoPower
