@@ -184,10 +184,10 @@ piranha:
 	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
-		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
-		BuildPaletteOrder: 70
+		Prerequisites: ~ship.yuri, ~techlevel.1
+		BuildPaletteOrder: 20
 		Description: actor-piranha.description
-		BuildDuration: 250
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -202,7 +202,7 @@ piranha:
 	Health:
 		HP: 30000
 	Armor:
-		Type: Heavy
+		Type: Light
 	Mobile:
 		TurnSpeed: 40
 		Speed: 120
@@ -278,10 +278,10 @@ gatsub:
 	Inherits@SUBMERGE: ^WithSubmergeColorOverlay
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
-		Prerequisites: ~ship.yuri, ~techlevel.1
+		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
 		BuildPaletteOrder: 30
 		Description: actor-gatsub.description
-		BuildDuration: 500
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -296,7 +296,7 @@ gatsub:
 	Health:
 		HP: 20000
 	Armor:
-		Type: Light
+		Type: Heavy
 	Mobile:
 		TurnSpeed: 24
 		Speed: 75
@@ -555,10 +555,10 @@ strt:
 	Inherits@SQUID: ^SquidGrabbable
 	Buildable:
 		Queue: Ship.Shared, Ship.Yuri
-		Prerequisites: ~ship.yuri, ~techlevel.3
-		BuildPaletteOrder: 20
+		Prerequisites: ~ship.yuri, yadome, ~techlevel.3
+		BuildPaletteOrder: 70
 		Description: actor-strt.description
-		BuildDuration: 375
+		BuildDuration: 325
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -574,12 +574,15 @@ strt:
 	Health:
 		HP: 30000
 	Armor:
-		Type: Light
+		Type: Heavy
 	Mobile:
 		Speed: 105
 		TurnSpeed: 32
 		Locomotor: heavyamphibious
 		RequiresCondition: !chronodisable && !emp && !magnefreeze && !squid && !beinginfected && !being-captured
+	SpeedMultiplier:
+		Modifier: 114
+		RequiresCondition: !in_water
 	Crushable:
 		RequiresCondition: !invulnerability && (!in_water || on_dock) && !cheater-ai && !vengeful-ai
 	Crushable@Cheater:

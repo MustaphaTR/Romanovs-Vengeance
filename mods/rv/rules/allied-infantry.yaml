@@ -11,7 +11,7 @@ engineer:
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: actor-engineer.description
-		BuildDuration: 375
+		BuildDuration: 250
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 500
@@ -122,7 +122,7 @@ dog:
 		Prerequisites: ~barracks, ~techlevel.1
 		BuildPaletteOrder: 40
 		Description: actor-dog.description
-		BuildDuration: 50
+		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -324,7 +324,7 @@ e1:
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: actor-e1.description
-		BuildDuration: 100
+		BuildDuration: 75
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -555,7 +555,7 @@ ggi:
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: actor-ggi.description
-		BuildDuration: 175
+		BuildDuration: 125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -1306,7 +1306,7 @@ ccomand:
 		BuildPaletteOrder: 960
 		Prerequisites: ~infantry.allies, ~allies.tech.infiltrated, ~techlevel.4
 		Description: actor-ccomand.description
-		BuildDuration: 375
+		BuildDuration: 625
 		BuildDurationModifier: 100
 	Tooltip:
 		Name: actor-ccomand.name
@@ -1355,14 +1355,14 @@ ptroop:
 		BuildPaletteOrder: 990
 		Prerequisites: ~infantry.allies, ~yuri.tech.infiltrated, ~techlevel.4
 		Description: actor-ptroop.description
-		BuildDuration: 375
+		BuildDuration: 625
 	Buildable@Yuri:
 		Queue: Infantry.Shared, Infantry.Yuri, Infantry.Moon
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 970
 		Prerequisites: ~infantry.yuri, ~allies.tech.infiltrated, ~techlevel.4
 		Description: actor-ptroop.description
-		BuildDuration: 375
+		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
@@ -1414,7 +1414,7 @@ tany:
 		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
 		BuildLimit: 1
 		Description: actor-tany.description
-		BuildDuration: 1125
+		BuildDuration: 1000
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -1550,7 +1550,7 @@ jumpjet:
 		BuildPaletteOrder: 60
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
 		Description: actor-jumpjet.description
-		BuildDuration: 375
+		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -1690,7 +1690,7 @@ cleg:
 		BuildPaletteOrder: 140
 		Prerequisites: ~infantry.allies, gatech, ~techlevel.4
 		Description: actor-cleg.description
-		BuildDuration: 500
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -1792,14 +1792,14 @@ gren:
 		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
 		BuildPaletteOrder: 70
 		Description: actor-gren.description
-		BuildDuration: 175
+		BuildDuration: 125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
-		Cost: 200
+		Cost: 250
 	DeliversCash:
-		Payload: 100
+		Payload: 125
 		Voice: Move
 	Tooltip:
 		Name: actor-gren.name

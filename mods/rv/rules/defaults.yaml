@@ -261,8 +261,8 @@
 		RequiresCondition: rank-veteran >= 3
 		Condition: rank-elite
 	ChangesHealth@ELITE:
-		PercentageStep: 2
-		Delay: 75
+		PercentageStep: 3
+		Delay: 50
 		StartIfBelow: 100
 		DamageCooldown: 0
 		RequiresCondition: rank-elite
@@ -322,8 +322,8 @@
 
 ^HospitalHealing:
 	ChangesHealth@HOSPITAL:
-		PercentageStep: 1
-		Delay: 100
+		PercentageStep: 3
+		Delay: 50
 		StartIfBelow: 100
 		RequiresCondition: heal
 	WithDecoration@HOSPITAL:
@@ -341,8 +341,8 @@
 
 ^MachineShopRepair:
 	ChangesHealth@MACHINESHOP:
-		PercentageStep: 1
-		Delay: 100
+		PercentageStep: 3
+		Delay: 50
 		StartIfBelow: 100
 		RequiresCondition: repair
 	WithDecoration@MACHINESHOP:
@@ -2570,6 +2570,8 @@
 			Prone70Percent: 70
 			Prone100Percent: 100
 		DamageTriggers: TriggerProne
+		Duration: 100
+		SpeedModifier: 80
 	Passenger:
 		Voice: Move
 		CargoType: Garrisoner

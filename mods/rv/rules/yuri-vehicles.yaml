@@ -34,7 +34,7 @@ smin:
 		BuildPaletteOrder: 90
 		Description: actor-smin.description
 		Prerequisites: ~vehicle.psicorps, yadome, ~!global-megawealth, ~techlevel.3
-		BuildDuration: 750
+		BuildDuration: 625
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 1500
@@ -187,7 +187,7 @@ ltnk:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		Description: actor-ltnk.description
 		Prerequisites: ~vehicle.yuri, ~techlevel.1
-		BuildDuration: 375
+		BuildDuration: 250
 		BuildDurationModifier: 100
 	Mobile:
 		Speed: 120
@@ -343,7 +343,7 @@ ytnk:
 		Prerequisites: ~vehicle.yuri, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: actor-ytnk.description
-		BuildDuration: 375
+		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -555,9 +555,9 @@ caos:
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@NOCHAOS: ^NotBerserkTarget
 	Valued:
-		Cost: 800
+		Cost: 700
 	DeliversCash:
-		Payload: 800
+		Payload: 700
 		Voice: Move
 	Tooltip:
 		Name: actor-caos.name
@@ -666,7 +666,7 @@ tele:
 		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.yuri, yadome, ~techlevel.3
 		Description: actor-tele.description
-		BuildDuration: 500
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -913,7 +913,7 @@ mlyr:
 		Prerequisites: prerequisite.minelayer, repairpad, ~techlevel.1
 		BuildPaletteOrder: 80
 		Description: actor-mlyr.description
-		BuildDuration: 250
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -979,9 +979,9 @@ kamaz:
 		OrderChance: 100
 		OrderInterval: 45
 	Valued:
-		Cost: 600
+		Cost: 800
 	DeliversCash:
-		Payload: 600
+		Payload: 800
 		Voice: Move
 	Tooltip:
 		Name: actor-kamaz.name
@@ -1000,7 +1000,7 @@ kamaz:
 		AddToArmyValue: true
 	Mobile:
 		Speed: 120
-		TurnSpeed: 20
+		TurnSpeed: 32
 		Locomotor: heavytracked
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
@@ -1107,7 +1107,7 @@ lart:
 		BuildPaletteOrder: 110
 		Prerequisites: ~vehicle.yuri, prerequisite.annihilator_artillery, yatech, ~techlevel.3
 		Description: actor-lart.description
-		BuildDuration: 750
+		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -1367,9 +1367,9 @@ grtk:
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
-		Cost: 2200
+		Cost: 2000
 	DeliversCash:
-		Payload: 2200
+		Payload: 2000
 		Voice: Move
 	Tooltip:
 		Name: actor-grtk.name
@@ -1380,7 +1380,7 @@ grtk:
 		BuildPaletteOrder: 990
 		Prerequisites: ~vehicle.yuri, yatech, ~caslab, ~techlevel.4
 		Description: actor-grtk.description
-		BuildDuration: 1125
+		BuildDuration: 875
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -1488,7 +1488,7 @@ spider:
 		BuildPaletteOrder: 90
 		Prerequisites: ~vehicle.psitrans, yadome, ~techlevel.3
 		Description: actor-spider.description
-		BuildDuration: 500
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true

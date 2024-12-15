@@ -11,7 +11,7 @@ slav:
 		BuildPaletteOrder: 60
 		Prerequisites: ~showslave, yarefn, ~techlevel.1
 		Description: actor-slav.description
-		BuildDuration: 125
+		BuildDuration: 100
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 100
@@ -114,7 +114,7 @@ init:
 		BuildPaletteOrder: 10
 		Prerequisites: ~infantry.yuri, ~techlevel.1
 		Description: actor-init.description
-		BuildDuration: 100
+		BuildDuration: 75
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -249,7 +249,7 @@ brute:
 		BuildPaletteOrder: 20
 		Prerequisites: ~infantry.yuri, ~techlevel.1
 		Description: actor-brute.description
-		BuildDuration: 175
+		BuildDuration: 125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -479,7 +479,7 @@ yurix:
 		BuildPaletteOrder: 110
 		Prerequisites: ~infantry.yuri, yatech, ~techlevel.4
 		Description: actor-yurix.description
-		BuildDuration: 1125
+		BuildDuration: 1000
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 2000
@@ -741,7 +741,7 @@ gtrp:
 		Prerequisites: ~infantry.yuri, ~techlevel.1
 		BuildPaletteOrder: 50
 		Description: actor-gtrp.description
-		BuildDuration: 175
+		BuildDuration: 125
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -1267,7 +1267,7 @@ ttrp:
 		BuildPaletteOrder: 980
 		Prerequisites: ~infantry.yuri, ~soviets.tech.infiltrated, ~techlevel.4
 		Description: actor-ttrp.description
-		BuildDuration: 375
+		BuildDuration: 625
 		BuildDurationModifier: 100
 	Buildable@Soviet:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
@@ -1275,7 +1275,7 @@ ttrp:
 		BuildPaletteOrder: 990
 		Prerequisites: ~infantry.sovietsorbaku, ~yuri.tech.infiltrated, ~techlevel.4
 		Description: actor-ttrp.description
-		BuildDuration: 375
+		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -1292,9 +1292,9 @@ ttrp:
 		Class: ttrp
 		Bounds: 482, 1448, 0, -530
 	Health:
-		HP: 20000
+		HP: 15000
 	Mobile:
-		Speed: 45
+		Speed: 75
 	Garrisoner:
 		Voice: Move
 		CustomPipType: gray
@@ -1414,7 +1414,7 @@ crkt:
 		BuildPaletteOrder: 990
 		Prerequisites: ~infantry.yuri, ~yuri.tech.infiltrated, ~techlevel.4
 		Description: actor-crkt.description
-		BuildDuration: 375
+		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true

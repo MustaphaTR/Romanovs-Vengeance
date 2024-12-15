@@ -22,7 +22,7 @@ sub:
 		Prerequisites: ~ship.sovietsorbaku, naradr, ~techlevel.2
 		BuildPaletteOrder: 80
 		Description: actor-sub.description
-		BuildDuration: 750
+		BuildDuration: 625
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -43,12 +43,12 @@ sub:
 		Speed: 75
 	# -LeavesTrails:
 	RevealsShroud:
-		Range: 7c0
+		Range: 8c0
 	# RevealsShroudToIntelligenceOwner:
 	#	Types: SatelliteScan
-	#	Range: 7c0
+	#	Range: 8c0
 	RevealOnDeath:
-		Radius: 7c0
+		Radius: 8c0
 	Targetable:
 		TargetTypes: Ground, Water, Ship, Underwater
 	# Cloak:
@@ -112,9 +112,9 @@ hyd:
 	Buildable:
 		Queue: Ship.Shared, Ship.Soviets
 		BuildPaletteOrder: 30
-		Prerequisites: ~ship.soviets, ~techlevel.1
+		Prerequisites: ~ship.soviets, naradr, ~techlevel.2
 		Description: actor-hyd.description
-		BuildDuration: 375
+		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -129,7 +129,7 @@ hyd:
 	Health:
 		HP: 20000
 	Armor:
-		Type: Light
+		Type: Heavy
 	Mobile:
 		TurnSpeed: 32
 		Speed: 120
@@ -474,7 +474,7 @@ sray:
 		BuildPaletteOrder: 20
 		Prerequisites: ~ship.sovietsorbaku, ~techlevel.1
 		Description: actor-sray.description
-		BuildDuration: 500
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true

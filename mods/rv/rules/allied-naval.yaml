@@ -22,7 +22,7 @@ dest:
 		Prerequisites: gaairc, ~techlevel.3
 		BuildPaletteOrder: 80
 		Description: actor-dest.description
-		BuildDuration: 625
+		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -126,9 +126,9 @@ aegis:
 	Buildable:
 		Queue: Ship.Shared, Ship.Allies
 		BuildPaletteOrder: 41
-		Prerequisites: ~ship.allies, ~techlevel.1
+		Prerequisites: ~ship.allies, gaairc, ~techlevel.3
 		Description: actor-aegis.description
-		BuildDuration: 500
+		BuildDuration: 375
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
@@ -143,7 +143,7 @@ aegis:
 	Health:
 		HP: 40000
 	Armor:
-		Type: Light
+		Type: Heavy
 	Mobile:
 		TurnSpeed: 24
 		Speed: 90
@@ -336,7 +336,7 @@ adest:
 		Prerequisites: ~ship.allies, gaairc, ~techlevel.3
 		BuildPaletteOrder: 80
 		Description: actor-adest.description
-		BuildDuration: 625
+		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
