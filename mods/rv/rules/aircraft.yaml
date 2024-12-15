@@ -92,7 +92,7 @@ shad:
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 40
-		Speed: 180
+		Speed: 195
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
 		PauseOnCondition: emp || magnefreeze || chronodisable
@@ -166,7 +166,7 @@ shadhusk:
 		Name: actor-shad.name
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 180
+		Speed: 195
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -229,7 +229,7 @@ zep:
 	Aircraft:
 		CruiseAltitude: 5c852
 		TurnSpeed: 20
-		Speed: 30
+		Speed: 45
 		Voice: Move
 		Repulsable: false
 		AltitudeVelocity: 200
@@ -364,7 +364,7 @@ zephusk:
 		Name: actor-zep.name
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 30
+		Speed: 45
 	FallsToEarth:
 		Explosion: KirovExplode
 		Velocity: 120
@@ -448,8 +448,8 @@ orca:
 		AltitudeVelocity: 240
 		TurnSpeed: 20
 		IdleTurnSpeed: 10
-		IdleSpeed: 105
-		Speed: 210
+		IdleSpeed: 112
+		Speed: 225
 		TakeoffSounds: vintupa.wav
 		LandingSounds: vintdna.wav
 		SoundVolume: 0.3
@@ -618,7 +618,7 @@ orcahusk:
 		Explosion: PlaneExplode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 210
+		Speed: 225
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 12c0
@@ -656,7 +656,7 @@ orcahusk.VTOL:
 		Explosion: PlaneExplode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 210
+		Speed: 225
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 12c0
@@ -715,8 +715,8 @@ beag:
 		AltitudeVelocity: 240
 		TurnSpeed: 20
 		IdleTurnSpeed: 10
-		IdleSpeed: 105
-		Speed: 210
+		IdleSpeed: 112
+		Speed: 225
 		TakeoffSounds: vintupa.wav
 		LandingSounds: vintdna.wav
 		SoundVolume: 0.3
@@ -855,7 +855,7 @@ beaghusk:
 		Explosion: PlaneExplode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 210
+		Speed: 225
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 12c0
@@ -881,7 +881,7 @@ beaghusk.VTOL:
 		Explosion: PlaneExplode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 210
+		Speed: 225
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 12c0
@@ -914,7 +914,7 @@ pdplane:
 		CruiseAltitude: 5c852
 		Repulsable: false
 		TurnSpeed: 20
-		Speed: 270
+		Speed: 285
 		TakeOffOnCreation: false
 		Voice: Action
 	Health:
@@ -967,7 +967,7 @@ pdplanehusk:
 		Name: actor-pdplane.name
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 270
+		Speed: 285
 	RenderVoxels:
 		Image: pdplane
 
@@ -980,7 +980,7 @@ bplndrop:
 	-Targetable@Airborne:
 	Aircraft:
 		Repulsable: false
-		Speed: 525
+		Speed: 540
 	ParaDrop:
 		DropRange: 3c0
 		DropInterval: 1
@@ -1013,15 +1013,11 @@ alplane:
 		Actor: alplanehusk
 	RenderVoxels:
 		Image: alplane
-	Aircraft:
-		Speed: 270
 
 alplanehusk:
 	Inherits: pdplanehusk
 	RenderVoxels:
 		Image: alplane
-	Aircraft:
-		Speed: 270
 
 pcplane:
 	Inherits: pdplane
@@ -1045,7 +1041,7 @@ pdplane.parabomb:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 300
+		Speed: 315
 
 a10:
 	Inherits: alplane
@@ -1089,7 +1085,7 @@ a10:
 		StartColorUsePlayerColor: False
 		EndColorUsePlayerColor: true
 	Aircraft:
-		Speed: 300
+		Speed: 315
 
 a10husk:
 	Inherits: pdplanehusk
@@ -1118,7 +1114,7 @@ badgr.airstrike:
 	SpawnActorOnDeath:
 		Actor: badgr.airstrikehusk
 	Aircraft:
-		Speed: 300
+		Speed: 315
 	-Contrail@1:
 	-Contrail@2:
 	RenderVoxels:
@@ -1131,7 +1127,7 @@ badgr.airstrikehusk:
 	Tooltip@NoRow:
 		Name: actor-badgr.name
 	Aircraft:
-		Speed: 300
+		Speed: 315
 	RenderVoxels:
 		Image: badgr
 
@@ -1171,7 +1167,7 @@ txbmb:
 		EndColorUsePlayerColor: true
 	-Contrail@2:
 	Aircraft:
-		Speed: 300
+		Speed: 315
 
 txbmbhusk:
 	Inherits: pdplanehusk
@@ -1180,7 +1176,7 @@ txbmbhusk:
 	Tooltip@NoRow:
 		Name: actor-txbmb.name
 	Aircraft:
-		Speed: 300
+		Speed: 315
 	RenderVoxels:
 		Image: txbmb
 
@@ -1193,7 +1189,7 @@ f22drop:
 	-Targetable@Airborne:
 	Aircraft:
 		Repulsable: false
-		Speed: 525
+		Speed: 540
 	ParaDrop:
 		DropRange: 3c0
 	RenderVoxels:
@@ -1216,7 +1212,7 @@ txbmbdrop:
 	-Targetable@Airborne:
 	Aircraft:
 		Repulsable: false
-		Speed: 525
+		Speed: 540
 	ParaDrop:
 		DropRange: 2c0
 	-Armament:
@@ -1236,7 +1232,7 @@ pdplane.emp:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 270
+		Speed: 285
 
 b52:
 	Inherits: alplane
@@ -1254,7 +1250,7 @@ b52:
 	SpawnActorOnDeath:
 		Actor: b52husk
 	Aircraft:
-		Speed: 240
+		Speed: 255
 	RenderVoxels:
 		Image: b52
 
@@ -1267,7 +1263,7 @@ b52husk:
 	RenderVoxels:
 		Image: b52
 	Aircraft:
-		Speed: 240
+		Speed: 255
 
 pdplane.leaflet:
 	Inherits: alplane
@@ -1279,7 +1275,7 @@ pdplane.leaflet:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 270
+		Speed: 285
 
 pdplane.leaflet.baku:
 	Inherits: pdplane
@@ -1291,7 +1287,7 @@ pdplane.leaflet.baku:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 270
+		Speed: 285
 
 pdplane.naval_mines:
 	Inherits: pdplane
@@ -1303,7 +1299,7 @@ pdplane.naval_mines:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 270
+		Speed: 285
 
 pdplane.cluster_mines:
 	Inherits: pdplane
@@ -1315,7 +1311,7 @@ pdplane.cluster_mines:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 270
+		Speed: 285
 
 pdplane.fallout_bomb:
 	Inherits: pdplane
@@ -1333,7 +1329,7 @@ pdplane.fallout_bomb:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 270
+		Speed: 285
 
 pdplane.cryo_bomb:
 	Inherits: pdplane
@@ -1345,7 +1341,7 @@ pdplane.cryo_bomb:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 270
+		Speed: 285
 
 pdplane.chaos:
 	Inherits: pcplane
@@ -1363,7 +1359,7 @@ pdplane.chaos:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 375
+		Speed: 390
 
 pdplane.mutator:
 	Inherits: pcplane
@@ -1375,7 +1371,7 @@ pdplane.mutator:
 		AmmoCondition: ammo
 	AttackBomber:
 	Aircraft:
-		Speed: 375
+		Speed: 390
 
 pdplane.crate:
 	Inherits: ^NeutralAircraft
@@ -1397,7 +1393,7 @@ pdplane.crate:
 		-AirborneCondition:
 		Repulsable: false
 		TurnSpeed: 20
-		Speed: 225
+		Speed: 240
 	RenderSprites:
 	WithVoxelHelicopterBody:
 		TickRate: 1
@@ -1471,7 +1467,7 @@ hornet:
 		AltitudeVelocity: 240
 		InitialFacing: 768
 		TurnSpeed: 32
-		Speed: 210
+		Speed: 225
 		Repulsable: false
 		TakeoffSounds: vhortaka.wav, vhortakb.wav
 		LandingSounds: vhorlana.wav, vhorlanb.wav
@@ -1509,7 +1505,7 @@ hornethusk:
 		Name: actor-hornet.name
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 210
+		Speed: 225
 		AltitudeVelocity: 240
 	FallsToEarth:
 		Explosion: HornetExplode
@@ -1525,7 +1521,7 @@ hornethusk.VTOL:
 		Name: actor-hornet.name
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 210
+		Speed: 225
 		AltitudeVelocity: 240
 	FallsToEarth:
 		Explosion: HornetExplode
@@ -1579,7 +1575,7 @@ asw:
 		AltitudeVelocity: 240
 		InitialFacing: 768
 		TurnSpeed: 32
-		Speed: 210
+		Speed: 225
 		RepulsionSpeed: 40
 		TakeoffSounds: vospstaa.wav
 		LandingSounds: vosplana.wav
@@ -1619,7 +1615,7 @@ aswhusk:
 		Name: actor-asw.name
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 180
+		Speed: 225
 		AltitudeVelocity: 240
 	FallsToEarth:
 		Explosion: HornetExplode
@@ -1635,7 +1631,7 @@ aswhusk.VTOL:
 		Name: actor-asw.name
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 180
+		Speed: 225
 		AltitudeVelocity: 240
 	FallsToEarth:
 		Explosion: HornetExplode
@@ -1661,7 +1657,7 @@ spyp:
 		CruiseAltitude: 5c852
 		Repulsable: false
 		TurnSpeed: 20
-		Speed: 225
+		Speed: 240
 		Voice: Action
 	Armament:
 		Weapon: SpyCameraWeapon
@@ -1695,7 +1691,7 @@ spyphusk:
 		Name: actor-spyp.name
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 225
+		Speed: 240
 	RenderVoxels:
 		Image: spyp
 	FallsToEarth:
@@ -1866,7 +1862,7 @@ schp:
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 40
-		Speed: 165
+		Speed: 180
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
 		PauseOnCondition: !undeployed || emp || magnefreeze || chronodisable
@@ -1964,7 +1960,7 @@ schphusk:
 		Name: actor-schp.name
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 165
+		Speed: 180
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -2026,7 +2022,7 @@ bpln:
 	Interactable:
 	Aircraft:
 		Repulsable: false
-		Speed: 240
+		Speed: 255
 		IdleBehavior: LeaveMap
 		-TakeoffSounds:
 		-LandingSounds:
@@ -2104,7 +2100,7 @@ bpln.buildable:
 		Voice: Attack
 	Aircraft:
 		VTOL: false
-		Speed: 240
+		Speed: 255
 		-TakeoffSounds:
 		-LandingSounds:
 	SpawnActorOnDeath:
@@ -2200,7 +2196,7 @@ bplnhusk:
 		Name: actor-bpln.name
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 240
+		Speed: 255
 		AltitudeVelocity: 240
 	RenderVoxels:
 		Image: bpln
@@ -2215,7 +2211,7 @@ bplnhusk.VTOL:
 		Name: actor-bpln.name
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 240
+		Speed: 255
 		AltitudeVelocity: 240
 	RenderVoxels:
 		Image: bpln
@@ -2280,7 +2276,7 @@ disk:
 		AddToArmyValue: true
 	Aircraft:
 		TurnSpeed: 1023
-		Speed: 165
+		Speed: 180
 		AltitudeVelocity: 200
 	Selectable:
 		Bounds: 1882, 2075, 0, -724
@@ -2476,7 +2472,7 @@ diskhusk:
 		Name: actor-disk.name
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 165
+		Speed: 180
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -2555,7 +2551,7 @@ hind:
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 40
-		Speed: 180
+		Speed: 195
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
 		PauseOnCondition: emp || magnefreeze || chronodisable
@@ -2614,7 +2610,7 @@ hindhusk:
 		Name: actor-hind.name
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 180
+		Speed: 195
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -2679,7 +2675,7 @@ fortress:
 		IdleTurnSpeed: 10
 		IdleSpeed: 90
 		TurnSpeed: 20
-		Speed: 165
+		Speed: 180
 		TakeoffSounds: vintupa.wav
 		LandingSounds: vintdna.wav
 		SoundVolume: 0.3
@@ -2875,7 +2871,7 @@ fortresshusk:
 		Explosion: B2Explode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 165
+		Speed: 180
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 10c0
@@ -2907,7 +2903,7 @@ fortresshusk.VTOL:
 		Explosion: B2Explode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 165
+		Speed: 180
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 10c0
@@ -3010,7 +3006,7 @@ txdx:
 	Aircraft:
 		LandableTerrainTypes: Clear, Sand, Rough, Road, DirtRoad, Ore, Gems
 		TurnSpeed: 1023
-		Speed: 180
+		Speed: 195
 		AltitudeVelocity: 200
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Selectable:
@@ -3156,7 +3152,7 @@ txdxhusk:
 		Name: actor-txdx.name
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 180
+		Speed: 195
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -3255,7 +3251,7 @@ kite:
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 12
-		Speed: 150
+		Speed: 165
 		Repulsable: true
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
@@ -3312,7 +3308,7 @@ kitehusk:
 		Name: actor-kite.name
 	Aircraft:
 		TurnSpeed: 28
-		Speed: 150
+		Speed: 165
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -3387,7 +3383,7 @@ magnedisk:
 		BuildDurationModifier: 100
 	Aircraft:
 		TurnSpeed: 1023
-		Speed: 180
+		Speed: 195
 		AltitudeVelocity: 200
 		PauseOnCondition: emp || magnefreeze || chronodisable
 	Selectable:
@@ -3496,7 +3492,7 @@ magnediskhusk:
 		Name: actor-magnedisk.name
 	Aircraft:
 		TurnSpeed: 40
-		Speed: 180
+		Speed: 195
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -3597,7 +3593,7 @@ havoc:
 		Crushes: crate
 		CrushDamageTypes: NonTemporal
 		TurnSpeed: 28
-		Speed: 165
+		Speed: 180
 		Repulsable: true
 		AltitudeVelocity: 200
 		CruisingCondition: cruising
@@ -3647,7 +3643,7 @@ havochusk:
 		Name: actor-havoc.name
 	Aircraft:
 		TurnSpeed: 28
-		Speed: 165
+		Speed: 180
 	FallsToEarth:
 		Explosion: PlaneExplode
 	RevealsShroud:
@@ -3709,7 +3705,7 @@ badgr:
 		IdleTurnSpeed: 10
 		IdleSpeed: 90
 		TurnSpeed: 20
-		Speed: 150
+		Speed: 165
 		Roll: 28
 		RollSpeed: 7
 		VTOL: false
@@ -3811,7 +3807,7 @@ badgrhusk:
 		Explosion: B2Explode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 150
+		Speed: 165
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 10c0
@@ -3837,7 +3833,7 @@ badgrhusk.VTOL:
 		Explosion: B2Explode
 	Aircraft:
 		TurnSpeed: 20
-		Speed: 150
+		Speed: 165
 		AltitudeVelocity: 240
 	RevealsShroud:
 		Range: 10c0
