@@ -225,7 +225,7 @@ UCDoublePistolsE:
 
 awp:
 	Inherits: DoublePistols
-	InvalidTargets: Bridge, Wall, Fence, Tree, NonGarrisonableStructure, WaterStructure, Vehicle, Ship
+	InvalidTargets: Bridge, Wall, Fence, Tree, Structure, WaterStructure, WaterStructure, Vehicle, Ship
 	ReloadDelay: 120
 	Range: 12c0
 	Report: isniatta.wav
@@ -241,25 +241,25 @@ awp:
 			Light: 50
 			Heavy: 25
 			Drone: 25
-	Warhead@1Gar: OpenToppedDamage
-		ValidTargets: GarrisonedStructure
-		InvalidTargets: IronCurtained, ForceShielded
-		Spread: 42
-		Damage: 20000
-		Amount: 1
-		DamageTypes: BulletDeath, NonTemporal
-		Versus:
-			None: 100
-			Flak: 100
-			Plate: 50
-			Light: 50
-			Medium: 1
-			Heavy: 25
-			Wood: 1
-			Steel: 1
-			Concrete: 1
-			Drone: 25
-			Rocket: 100
+#	Warhead@1Gar: OpenToppedDamage
+#		ValidTargets: GarrisonedStructure
+#		InvalidTargets: IronCurtained, ForceShielded
+#		Spread: 42
+#		Damage: 20000
+#		Amount: 1
+#		DamageTypes: BulletDeath, NonTemporal
+#		Versus:
+#			None: 100
+#			Flak: 100
+#			Plate: 50
+#			Light: 50
+#			Medium: 1
+#			Heavy: 25
+#			Wood: 1
+#			Steel: 1
+#			Concrete: 1
+#			Drone: 25
+#			Rocket: 100
 
 AWPE:
 	Inherits: awp
@@ -339,7 +339,6 @@ MagneRifle:
 			Concrete: 40
 			Drone: 100
 			Rocket: 100
-	-Warhead@1Gar:
 	Warhead@1Con: GrantExternalCondition
 		Condition: magneslow
 		Duration: 125
@@ -843,13 +842,13 @@ Virusgun:
 			Light: 100
 			Heavy: 75
 		DamageTypes: VirusDeath, NonTemporal
-	Warhead@1Gar: OpenToppedDamage
-		Damage: 20000
-		Versus:
-			Plate: 100
-			Light: 100
-			Heavy: 75
-		DamageTypes: VirusDeath, NonTemporal
+#	Warhead@1Gar: OpenToppedDamage
+#		Damage: 20000
+#		Versus:
+#			Plate: 100
+#			Light: 100
+#			Heavy: 75
+#		DamageTypes: VirusDeath, NonTemporal
 	Warhead@2Eff: CreateEffect
 		Explosions: piff
 	Warhead@3Par: SpawnSmokeParticle
