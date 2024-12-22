@@ -409,7 +409,7 @@ gapile:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		Prerequisite: gapile
 	ProvidesPrerequisite@infantry.allies:
 		Prerequisite: infantry.allies
@@ -458,18 +458,12 @@ gaairc:
 		Name: actor-gaairc.name
 	Tooltip@NoRow:
 		Name: actor-gaairc.name
+	ProvidesPrerequisite@default:
+		Prerequisite: gaairc
 	ProvidesPrerequisite@production:
 		Prerequisite: production
-	ProvidesPrerequisite@buildingname:
-		Prerequisite: gaairc
 	ProvidesPrerequisite@aircraft.allies:
 		Prerequisite: aircraft.allies
-	ProvidesPrerequisite@aircraft.america:
-		Prerequisite: aircraft.america
-		Factions: america
-	ProvidesPrerequisite@aircraft.england:
-		Prerequisite: aircraft.england
-		Factions: england
 	ProvidesPrerequisite@aircraft.korea:
 		Prerequisite: aircraft.korea
 		Factions: korea
@@ -488,23 +482,29 @@ gaairc:
 	ProvidesPrerequisite@korea:
 		Prerequisite: radar.korea
 		Factions: korea
+	ProvidesPrerequisite@upgrade.allies:
+		Prerequisite: upgrade.allies
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.america:
 		Prerequisite: upgrade.america
 		Factions: america
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.england:
 		Prerequisite: upgrade.england
 		Factions: england
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.germany:
 		Prerequisite: upgrade.germany
 		Factions: germany
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.france:
 		Prerequisite: upgrade.france
 		Factions: france
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.korea:
 		Prerequisite: upgrade.korea
 		Factions: korea
-	ProvidesPrerequisite@upgrade.allies:
-		Prerequisite: upgrade.allies
+		RequiresCondition: !powerdown
 	Building:
 		Footprint: x=x x==
 		Dimensions: 3,2
@@ -914,7 +914,7 @@ gaairc:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
 	ProvidesPrerequisite@AIantiRush:
-		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinery only when it has a combat producing line.
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
@@ -952,7 +952,7 @@ gaweap:
 		Queue: Building.Shared, Building.Allies
 		Description: actor-gaweap.description
 		Prerequisites: ~building.allies, refinery, ~techlevel.1
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		Prerequisite: gaweap
 	ProvidesPrerequisite@vehicle.allies:
 		Prerequisite: vehicle.allies
@@ -1048,7 +1048,6 @@ gayard:
 		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, refinery, ~techlevel.1
 		Description: actor-gayard.description
-	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@ship.allies:
 		Prerequisite: ship.allies
 	ProvidesPrerequisite@vehicleorship.allies:
@@ -1124,25 +1123,31 @@ gatech:
 	Buildable:
 		Queue: Building.Shared, Building.Allies
 		Prerequisites: ~building.allies, production, gaairc, ~techlevel.3, ~!ai.gatech
-	ProvidesPrerequisite@gatech:
+	ProvidesPrerequisite@default:
 		Prerequisite: gatech
 	ProvidesPrerequisite@upgrade.allies:
 		Prerequisite: upgrade.allies
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.america:
 		Prerequisite: upgrade.america
 		Factions: america
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.england:
 		Prerequisite: upgrade.england
 		Factions: england
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.germany:
 		Prerequisite: upgrade.germany
 		Factions: germany
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.france:
 		Prerequisite: upgrade.france
 		Factions: france
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.korea:
 		Prerequisite: upgrade.korea
 		Factions: korea
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.gatech
@@ -2397,7 +2402,7 @@ garefb:
 	FreeActor:
 		Actor: cmin
 	-WithDockedOverlay: # This causes a crash for some reason.
-	ProvidesPrerequisite@garefn:
+	ProvidesPrerequisite@default:
 		Prerequisite: garefn
 	SmokeParticleEmitter@refinerysmoke1:
 		Offset: 1024,-512,3456
@@ -2417,7 +2422,7 @@ garefc:
 	Inherits: ^RefineryC
 	FreeActor:
 		Actor: cmin
-	ProvidesPrerequisite@garefn:
+	ProvidesPrerequisite@default:
 		Prerequisite: garefn
 	SmokeParticleEmitter@refinerysmoke1:
 		Offset: 1024,512,3456
@@ -2437,7 +2442,7 @@ garefd:
 	Inherits: ^RefineryD
 	FreeActor:
 		Actor: cmin
-	ProvidesPrerequisite@garefn:
+	ProvidesPrerequisite@default:
 		Prerequisite: garefn
 	SmokeParticleEmitter@refinerysmoke1:
 		Offset: -1024,512,3456

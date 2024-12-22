@@ -14,7 +14,7 @@
 	Building:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4,4
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 	Tooltip:
 		Name: meta-constructionyard.name
 	Tooltip@NoRow:
@@ -149,7 +149,7 @@
 		Volume: 0.8
 	ProvidesPrerequisite@AIantiRush:
 		RequiresCondition: !ai-control
-		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinery only when it has a combat producing line.
 
 ^ExpansionNode:
 	Inherits: ^BaseBuilding
@@ -297,7 +297,8 @@
 		Name: meta-barracks.name
 	Tooltip@NoRow:
 		Name: meta-barracks.name
-	ProvidesPrerequisite:
+	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@barracks:
 		Prerequisite: barracks
 	ProvidesPrerequisite@production:
 		Prerequisite: production
@@ -369,20 +370,17 @@
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
-	GrantConditionOnPrerequisite@megawealth:
-		Condition: megawealth
-		Prerequisites: global-megawealth
 	ProvidesPrerequisite@mwgenref:
 		Prerequisite: refinery
-		RequiresCondition: megawealth
+		RequiresPrerequisites: global-megawealth
 	ProvidesPrerequisite@mwfacref:
 		Prerequisite: garefn
-		RequiresCondition: megawealth
+		RequiresPrerequisites: global-megawealth
 	Voiced:
 		VoiceSet: BarracksVoice
 		Volume: 0.8
 	ProvidesPrerequisite@AIantiRush:
-		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinery only when it has a combat producing line.
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
@@ -405,9 +403,9 @@
 		Name: meta-refinery.name
 	Tooltip@NoRow:
 		Name: meta-refinery.name
-	ProvidesPrerequisite:
-		Prerequisite: refinery
 	ProvidesPrerequisite@default:
+	ProvidesPrerequisite@refinery:
+		Prerequisite: refinery
 	Building:
 		Footprint: xxx+ xxx+ xxx+
 		Dimensions: 4,3
@@ -667,6 +665,7 @@ refdock:
 		Name: meta-warfactory.name
 	Tooltip@NoRow:
 		Name: meta-warfactory.name
+	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@warfactory:
 		Prerequisite: warfactory
 	ProvidesPrerequisite@production:
@@ -781,7 +780,7 @@ refdock:
 		VoiceSet: WarFactoryVoice
 		Volume: 0.8
 	ProvidesPrerequisite@AIantiRush:
-		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinery only when it has a combat producing line.
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
@@ -1005,7 +1004,7 @@ refdock:
 	Tooltip@NoRow:
 		Name: meta-servicedepot.name
 	ProvidesPrerequisite@default:
-	ProvidesPrerequisite:
+	ProvidesPrerequisite@repairpad:
 		Prerequisite: repairpad
 	Building:
 		Footprint: x+++ x+++ x+++
@@ -1078,8 +1077,10 @@ refdock:
 	Valued:
 		Cost: 1500
 	ProvidesPrerequisite@default:
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@radar:
 		Prerequisite: radar
+		RequiresCondition: !powerdown
 	Health:
 		HP: 100000
 	Armor:
@@ -1237,13 +1238,14 @@ refdock:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
 	ProvidesPrerequisite@AIantiRush:
-		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinary only when it has a combat producing line.
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinery only when it has a combat producing line.
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
 ^BattleLab:
 	Inherits: ^BaseBuilding
 	Inherits@AI: ^AIControl
+	Inherits@LOWPOWER: ^DisableOnPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Building.Shared, Building
@@ -1254,6 +1256,11 @@ refdock:
 		BuildDurationModifier: 100
 	Valued:
 		Cost: 3000
+	ProvidesPrerequisite@default:
+		RequiresCondition: !powerdown
+	ProvidesPrerequisite@battlelab:
+		Prerequisite: battlelab
+		RequiresCondition: !powerdown
 	Tooltip:
 		Name: meta-battlelab.name
 	Tooltip@NoRow:

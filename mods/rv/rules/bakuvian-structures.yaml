@@ -182,7 +182,7 @@ babarr:
 		ProductionType: Infantry.Turkmenistan
 	ProductionBar@Tuva:
 		ProductionType: Infantry.Tuva
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		Prerequisite: babarr
 	ProvidesPrerequisite@nahand:
 		Prerequisite: nahand
@@ -225,6 +225,10 @@ basops:
 		Name: actor-basops.name
 	ProvidesPrerequisite@naradr:
 		Prerequisite: naradr
+		RequiresCondition: !powerdown
+	ProvidesPrerequisite@baku:
+		Prerequisite: radar.baku
+		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ProvidesPrerequisite@transcaucus:
 		Prerequisite: radar.transcaucus
 		Factions: transcaucus
@@ -240,28 +244,31 @@ basops:
 	ProvidesPrerequisite@serbia:
 		Prerequisite: radar.serbia
 		Factions: serbia
-	ProvidesPrerequisite@baku:
-		Prerequisite: radar.baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
+	ProvidesPrerequisite@upgrade.baku:
+		Prerequisite: upgrade.baku
+		RequiresCondition: !powerdown
+	ProvidesPrerequisite@upgrade.sovietsorbaku:
+		Prerequisite: upgrade.sovietsorbaku
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.transcaucus:
 		Prerequisite: upgrade.transcaucus
 		Factions: transcaucus
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.turkmen:
 		Prerequisite: upgrade.turkmen
 		Factions: turkmen
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.tuva:
 		Prerequisite: upgrade.tuva
 		Factions: tuva
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.russianfed:
 		Prerequisite: upgrade.russianfed
 		Factions: russianfed
 	ProvidesPrerequisite@upgrade.serbia:
 		Prerequisite: upgrade.serbia
 		Factions: serbia
-	ProvidesPrerequisite@upgrade.baku:
-		Prerequisite: upgrade.baku
-	ProvidesPrerequisite@upgrade.sovietsorbaku:
-		Prerequisite: upgrade.sovietsorbaku
+		RequiresCondition: !powerdown
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -269,7 +276,7 @@ basops:
 		OrderName: BakuPactLeafletDrop
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
-			1: basops
+			1: radar.baku
 		Icons:
 			1: leaflet
 		ChargeInterval: 3750
@@ -344,7 +351,7 @@ baairf:
 		DisplayOrder: 28
 	ProductionBar:
 		ProductionType: Aircraft.Baku
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		Prerequisite: baairf
 	ProvidesPrerequisite@aircraft.baku:
 		Prerequisite: aircraft.baku

@@ -292,7 +292,7 @@ cahosp:
 		HP: 100000
 	Armor:
 		Type: Wood
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		Prerequisite: cahosp
 		RequiresCondition: enabled && !disabled && !chronodisable
 	WithIdleOverlay:
@@ -510,7 +510,7 @@ camach:
 		HP: 75000
 	Armor:
 		Type: Wood
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		RequiresCondition: enabled && !disabled && !chronodisable
 	WithIdleOverlay@flag:
 		Sequence: flag
@@ -544,7 +544,7 @@ caslab:
 		Sequence: flag
 		PauseOnCondition: chronodisable
 	-GrantConditionOnCombatantOwner:
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 	RangedGpsDot:
 		Sequence: SecretLab
 	IsometricSelectable:
@@ -617,7 +617,7 @@ caarmr:
 		Sequence: flag
 		PauseOnCondition: chronodisable
 	-GrantConditionOnCombatantOwner:
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		RequiresCondition: !disabled && !chronodisable
 	RangedGpsDot:
 		Sequence: Armory
@@ -819,7 +819,7 @@ capsyb:
 	Power:
 		Amount: -100
 		RequiresCondition: !chronodisable
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 	# AmbientSound@Ambient:
 	#	SoundFiles: gpsyampa.wav, gpsyampb.wav, gpsyampc.wav
 	#	Volume: 0.5
@@ -851,7 +851,7 @@ capsyb.koth:
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: !enabled
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 	AmbientSound@Ambient:
 		SoundFiles: gpsyampa.wav, gpsyampb.wav, gpsyampc.wav
 		Volume: 0.5
@@ -966,7 +966,7 @@ camisl:
 	WithIdleOverlay@flag:
 		Sequence: flag
 		PauseOnCondition: chronodisable
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		Prerequisite: camisl
 	RangedGpsDot:
 		Sequence: Missile

@@ -342,7 +342,7 @@ yabrck:
 		RequiresCondition: !build-incomplete
 	RallyPoint:
 		Path: 2,1
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		Prerequisite: yabrck
 	ProvidesPrerequisite@infantry.yuri:
 		Prerequisite: infantry.yuri
@@ -388,8 +388,7 @@ yarefn:
 	#	Range: 6c0
 	RevealOnDeath:
 		Radius: 6c0
-	ProvidesPrerequisite@yarefn:
-		Prerequisite: yarefn
+	ProvidesPrerequisite@default:
 	ProvidesPrerequisite@yarefnorsmin:
 		Prerequisite: yarefnorsmin
 	ProvidesPrerequisite@psirefn:
@@ -605,7 +604,7 @@ yaweap:
 		Queue: Building.Shared, Building.Yuri
 		Description: actor-yaweap.description
 		Prerequisites: ~building.yuri, refinery, ~techlevel.1
-	ProvidesPrerequisite@buildingname:
+	ProvidesPrerequisite@default:
 		Prerequisite: yaweap
 	ProvidesPrerequisite@vehicle.yuri:
 		Prerequisite: vehicle.yuri
@@ -679,7 +678,6 @@ yayard:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, refinery, ~techlevel.1
 		Description: actor-yayard.description
-	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@ship.yuri:
 		Prerequisite: ship.yuri
 	ProvidesPrerequisite@vehicleorship.yuri:
@@ -835,23 +833,29 @@ yadome:
 	ProvidesPrerequisite@psimoon:
 		Prerequisite: radar.psimoon
 		Factions: psimoon
+	ProvidesPrerequisite@upgrade.yuri:
+		Prerequisite: upgrade.yuri
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psicorps:
 		Prerequisite: upgrade.psicorps
 		Factions: psicorps
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psinepal:
 		Prerequisite: upgrade.psinepal
 		Factions: psinepal
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psisouth:
 		Prerequisite: upgrade.psisouth
 		Factions: psisouth
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psitrans:
 		Prerequisite: upgrade.psitrans
 		Factions: psitrans
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psimoon:
 		Prerequisite: upgrade.psimoon
 		Factions: psimoon
-	ProvidesPrerequisite@upgrade.yuri:
-		Prerequisite: upgrade.yuri
+		RequiresCondition: !powerdown
 	ParatroopersPower@psiops:
 		OrderName: YurigradPsiOps
 		PauseOnCondition: disabled || chronodisable
@@ -1044,7 +1048,6 @@ yadisk:
 		ProductionType: Aircraft.Yuri
 	ProductionBar@Lazarus:
 		ProductionType: Aircraft.Lazarus
-	ProvidesPrerequisite@buildingname:
 	ProvidesPrerequisite@aircraft.yuri:
 		Prerequisite: aircraft.yuri
 	ProvidesPrerequisite@aircraft.psinepal:
@@ -1061,25 +1064,31 @@ yatech:
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		Prerequisites: ~building.yuri, production, yadome, ~techlevel.3, ~!ai.yatech
-	ProvidesPrerequisite@yatech:
+	ProvidesPrerequisite@default:
 		Prerequisite: yatech
 	ProvidesPrerequisite@upgrade.yuri:
 		Prerequisite: upgrade.yuri
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psicorps:
 		Prerequisite: upgrade.psicorps
 		Factions: psicorps
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psinepal:
 		Prerequisite: upgrade.psinepal
 		Factions: psinepal
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psisouth:
 		Prerequisite: upgrade.psisouth
 		Factions: psisouth
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psitrans:
 		Prerequisite: upgrade.psitrans
 		Factions: psitrans
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@upgrade.psimoon:
 		Prerequisite: upgrade.psimoon
 		Factions: psimoon
+		RequiresCondition: !powerdown
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.yatech
@@ -1148,6 +1157,7 @@ yapsis:
 	DetectCloaked:
 		DetectionTypes: Cloak, Underwater
 		Range: 25c0
+		RequiresCondition: !disabled && !chronodisable
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: disabled || chronodisable
@@ -2253,7 +2263,7 @@ yarfnb:
 	FreeActor:
 		Actor: gmin
 	-WithDockedOverlay:
-	ProvidesPrerequisite@yarfn2:
+	ProvidesPrerequisite@default:
 		Prerequisite: yarfn2
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
@@ -2273,7 +2283,7 @@ yarfnc:
 	Inherits: ^RefineryC
 	FreeActor:
 		Actor: gmin
-	ProvidesPrerequisite@yarfn2:
+	ProvidesPrerequisite@default:
 		Prerequisite: yarfn2
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
@@ -2293,7 +2303,7 @@ yarfnd:
 	Inherits: ^RefineryD
 	FreeActor:
 		Actor: gmin
-	ProvidesPrerequisite@yarfn2:
+	ProvidesPrerequisite@default:
 		Prerequisite: yarfn2
 	ProvidesPrerequisite@psirefn:
 		Prerequisite: psirefn
