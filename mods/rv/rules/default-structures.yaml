@@ -1,7 +1,16 @@
+^AISellWhenMindControlled:
+	IssueOrderToBot@AISellOnMC:
+		RequiresCondition: controlled
+		OrderName: Sell
+		OrderTrigger: Periodically
+		OrderChance: 100
+		OrderInterval: 45
+
 ^ConstructionYard:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^4x4Shape
 	Inherits@AICash: ^AICashCheat
@@ -155,6 +164,7 @@
 	Inherits: ^BaseBuilding
 	Inherits@AI: ^AIControl
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^2x2Shape
 	IsometricSelectable:
 		DecorationHeight: 60
@@ -226,6 +236,7 @@
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@POWEROUTAGE: ^DisabledByPowerOutage
 	Buildable:
 		Queue: Building.Shared, Building
@@ -282,6 +293,7 @@
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Buildable:
@@ -388,6 +400,7 @@
 	Inherits: ^BaseBuilding
 	Inherits@DISK: ^DiskStealable
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^NormalRefineryShape
 	Inherits@AICash: ^AICashCheat
 	Buildable:
@@ -583,6 +596,8 @@ refdock:
 	Inherits: ^BaseBuilding
 	Inherits@DISK: ^DiskStealable
 	Inherits@SHAPE: ^2x2Shape
+	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	IsometricSelectable:
 		DecorationHeight: 30
 	Buildable:
@@ -649,6 +664,7 @@ refdock:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^NormalFactoryShape
@@ -788,6 +804,7 @@ refdock:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@PRIMARY: ^PrimaryBuilding
 	Inherits@SPY: ^DisabledByInfiltration
 	Inherits@SHAPE: ^4x4Shape
@@ -989,6 +1006,7 @@ refdock:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^4x3Shape
 	Buildable:
 		Queue: Building.Shared, Building
@@ -1068,6 +1086,7 @@ refdock:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Buildable:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 60
@@ -1247,6 +1266,7 @@ refdock:
 	Inherits@AI: ^AIControl
 	Inherits@LOWPOWER: ^DisableOnPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Buildable:
 		Queue: Building.Shared, Building
 		BuildPaletteOrder: 90
@@ -1303,6 +1323,7 @@ refdock:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Support
@@ -1362,6 +1383,7 @@ refdock:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Support

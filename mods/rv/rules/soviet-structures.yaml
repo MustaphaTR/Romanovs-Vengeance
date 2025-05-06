@@ -1220,6 +1220,7 @@ naclon:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Unused # Building.Soviets, Building.Baku
@@ -1316,6 +1317,7 @@ napsis:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Unused # Support.Soviets, Support.Baku
@@ -1541,6 +1543,7 @@ naflak:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 50
@@ -1618,6 +1621,7 @@ tesla:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
 		BuildPaletteOrder: 60
@@ -1745,6 +1749,7 @@ nalasr:
 	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
@@ -1815,6 +1820,7 @@ nabnkr:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetAll
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Support.Unused # Support.Soviets, Support.Baku
@@ -1849,6 +1855,7 @@ nabnkr:
 		Type: Steel
 	Cargo:
 		Types: Garrisoner
+		OwnerChangedAffectsPassengers: false
 		MaxWeight: 6
 		InitialUnits: e2
 		AfterLoadDelay: 0
@@ -1907,6 +1914,7 @@ naindp:
 	Inherits: ^BaseBuilding
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets
@@ -2212,6 +2220,7 @@ naprop:
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
+	Inherits@AISell: ^AISellWhenMindControlled
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
 		BuildPaletteOrder: 80
