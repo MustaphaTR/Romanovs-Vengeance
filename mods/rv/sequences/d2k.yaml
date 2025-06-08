@@ -1,4 +1,6 @@
 conyard.harkonnen:
+	Defaults:
+		Scale: 1.25
 	idle:
 		Filename: DATA.R16
 		Start: 2967
@@ -233,8 +235,55 @@ d2kharv:
 		Start: 4280
 		Offset: -30,-24
 
+^d2kinfantrydeath:
+	die4:
+		Filename: nukedie.shp
+		TilesetFilenames:
+			SNOW: nukedie.shp
+		Length: *
+		Tick: 50
+	die5:
+		Filename: yuridie.shp
+		TilesetFilenames:
+			SNOW: yuridie.shp
+		Length: *
+		Tick: 80
+	die6:
+		Filename: electro.shp
+		TilesetFilenames:
+			SNOW: electro.shp
+		Length: *
+		Tick: 80
+	die7:
+		Filename: virusd.shp
+		TilesetFilenames:
+			SNOW: virusd.shp
+		Length: *
+		Tick: 80
+	die8:
+		Filename: brutdie.shp
+		TilesetFilenames:
+			SNOW: brutdie.shp
+		Length: *
+		Tick: 80
+	die9:
+		Filename: gendeath.shp
+		TilesetFilenames:
+			SNOW: gendeath.shp
+		Length: *
+		Tick: 80
+	die10:
+		Filename: bits/animations/nukedieorange.shp
+		TilesetFilenames:
+			SNOW: bits/animations/nukedieorange.shp
+		Length: *
+		Facings: 1
+		Tick: 80
+
 d2klight_inf:
+	Inherits@default: ^d2kinfantrydeath
 	Defaults:
+		Scale: 1.3
 		Remap: 54F94B
 	paradrop:
 		Filename: DATA.R16
@@ -295,33 +344,716 @@ d2klight_inf:
 		Transpose: true
 	die1:
 		Filename: DATA.R16
-		Frames: 382, 389, 396, 403, 410, 417, 424, 431, 438, 443, 448, 453
-		Length: 12
-		Tick: 80
+		Start: 134
+		Length: 15
 	die2:
 		Filename: DATA.R16
-		Frames: 383, 390, 397, 404, 411, 418, 425, 432, 439, 444, 449, 454
-		Length: 12
-		Tick: 80
-	die3:
-		Filename: DATA.R16
-		Frames: 384, 391, 398, 405, 412, 419, 426, 433, 440, 445, 450, 455
-		Length: 12
-		Tick: 80
-	die4:
-		Filename: DATA.R16
-		Frames: 385, 392, 399, 406, 413, 420, 427, 434, 441, 446, 451, 456
-		Length: 12
-		Tick: 80
-	die-crushed:
-		Filename: DATA.R16
-		Frames: 386, 393, 400, 407, 414, 421, 428, 435, 442, 447, 452, 457
-		Length: 12
-		Tick: 800
-		ZOffset: -511
-		Remap: 00000000
+		Start: 149
+		Length: 15
 	icon:
 		Filename: DATA.R16
 		Start: 4272
 		Offset: -30,-24
 		Remap: 00000000
+
+light.harkonnen:
+	Defaults:
+		Scale: 1.25
+	idle:
+		Filename: DATA.R16
+		Start: 3081
+		Offset: -48,64
+		Remap: 54F94B
+	make:
+		Filename: DATA.R16
+		Start: 4559
+		Length: 9
+		Offset: -48,64
+		Remap: 54F94B
+	crumble-overlay:
+		Filename: DATA.R16
+		Start: 4568
+		Length: 9
+		Offset: -48,64
+		ZOffset: 897
+		Tick: 100
+	damaged-idle:
+		Filename: DATA.R16
+		Start: 3081
+		Offset: -48,64
+		Remap: 54F94B
+	idle-top:
+		Filename: DATA.R16
+		Start: 3082
+		Offset: -48,64
+		ZOffset: 896
+		Remap: 54F94B
+	damaged-idle-top:
+		Filename: DATA.R16
+		Start: 3083
+		Offset: -48,64
+		ZOffset: 896
+		Remap: 54F94B
+	production-welding:
+		Filename: DATA.R16
+		Start: 4918
+		Length: 10
+		Offset: -48,64
+		Tick: 200
+		BlendMode: Additive
+		ZOffset: 1024
+	bib:
+		Filename: BLOXBASE.R16
+		Frames: 611, 612, 613, 631, 632, 633
+		Length: 6
+		Offset: -16,-16
+	bib-Concrete:
+		Filename: BLOXBASE.R16
+		Frames: 643, 644, 645, 663, 664, 665
+		Length: 6
+		Offset: -16,-16
+	icon:
+		Filename: DATA.R16
+		Start: 4346
+		Offset: -30,-24
+
+heavy.harkonnen:
+	idle:
+		Filename: DATA.R16
+		Start: 2926
+		Offset: -48,80
+		Remap: 54F94B
+	make:
+		Filename: DATA.R16
+		Start: 4592
+		Length: 10
+		Offset: -48,80
+		Remap: 54F94B
+	crumble-overlay:
+		Filename: DATA.R16
+		Start: 4602
+		Length: 9
+		Offset: -48,80
+		ZOffset: 897
+		Tick: 100
+	damaged-idle:
+		Filename: DATA.R16
+		Start: 2926
+		Offset: -48,80
+		Remap: 54F94B
+	idle-top:
+		Filename: DATA.R16
+		Start: 2927
+		Offset: -48,80
+		ZOffset: 896
+		Remap: 54F94B
+	damaged-idle-top:
+		Filename: DATA.R16
+		Start: 2928
+		Offset: -48,80
+		ZOffset: 896
+		Remap: 54F94B
+	production-welding:
+		Filename: DATA.R16
+		Start: 4948
+		Length: 10
+		Offset: -48,80
+		Tick: 200
+		BlendMode: Additive
+		ZOffset: 1024
+	bib:
+		Filename: BLOXBASE.R16
+		Frames: 611, 612, 613, 631, 632, 633
+		Length: 6
+		Offset: -16,-16
+	bib-Concrete:
+		Filename: BLOXBASE.R16
+		Frames: 643, 644, 645, 663, 664, 665
+		Length: 6
+		Offset: -16,-16
+	icon:
+		Filename: DATA.R16
+		Start: 4352
+		Offset: -30,-24
+
+outpost.harkonnen:
+	idle:
+		Filename: DATA.R16
+		Start: 2929
+		Offset: -48,64
+		Remap: 54F94B
+	make:
+		Filename: DATA.R16
+		Start: 4518
+		Length: 11
+		Offset: -48,64
+		Remap: 54F94B
+	crumble-overlay:
+		Filename: DATA.R16
+		Start: 4529
+		Length: 9
+		Offset: -48,64
+		ZOffset: 1024
+		Tick: 100
+	damaged-idle:
+		Filename: DATA.R16
+		Start: 2930
+		Offset: -48,64
+		Remap: 54F94B
+	idle-dish:
+		Filename: DATA.R16
+		Start: 4817
+		Length: 30
+		Offset: -48,64
+	bib:
+		Filename: BLOXBASE.R16
+		Frames: 611, 612, 613, 631, 632, 633
+		Length: 6
+		Offset: -16,-16
+	bib-Concrete:
+		Filename: BLOXBASE.R16
+		Frames: 643, 644, 645, 663, 664, 665
+		Length: 6
+		Offset: -16,-16
+	icon:
+		Filename: DATA.R16
+		Start: 4337
+		Offset: -30,-24
+
+starport.harkonnen:
+	idle:
+		Filename: DATA.R16
+		Start: 3079
+		ZOffset: -1c511
+		Offset: -48,48
+		Remap: 54F94B
+	damaged-idle:
+		Filename: DATA.R16
+		Start: 3080
+		Offset: -48,48
+		ZOffset: -1c511
+		Remap: 54F94B
+	active:
+		Filename: DATA.R16
+		Start: 4993
+		Length: 7
+		ZOffset: -1c511
+		Offset: -48,48
+		Tick: 200
+	damaged-active:
+		Filename: DATA.R16
+		Start: 4993
+		Length: 7
+		ZOffset: -1c511
+		Offset: -48,48
+		Tick: 200
+	make:
+		Filename: DATA.R16
+		Start: 4611
+		Length: 12
+		Offset: -48,48
+		Remap: 54F94B
+	crumble-overlay:
+		Filename: DATA.R16
+		Start: 4623
+		Length: 11
+		Offset: -48,48
+		Tick: 100
+	bib:
+		Filename: BLOXBASE.R16
+		Frames: 611, 612, 613, 631, 632, 633
+		Length: 6
+		Offset: -16,-16
+	bib-Concrete:
+		Filename: BLOXBASE.R16
+		Frames: 643, 644, 645, 663, 664, 665
+		Length: 6
+		Offset: -16,-16
+	icon:
+		Filename: DATA.R16
+		Start: 4357
+		Offset: -30,-24
+
+repair_pad.harkonnen:
+	make:
+		Filename: DATA.R16
+		Start: 4634
+		Length: 11
+		Offset: -48,48
+		Remap: 54F94B
+	crumble-overlay:
+		Filename: DATA.R16
+		Start: 4645
+		Length: 10
+		Offset: -48,48
+		Tick: 100
+	idle:
+		Filename: DATA.R16
+		Start: 2979
+		Offset: -48,48
+		ZOffset: -1c511
+		Remap: 54F94B
+	damaged-idle:
+		Filename: DATA.R16
+		Start: 2980
+		Offset: -48,48
+		ZOffset: -1c511
+		Remap: 54F94B
+	active:
+		Filename: DATA.R16
+		Start: 5010
+		Length: 14
+		Offset: -48,48
+		ZOffset: -1c511
+	damaged-active:
+		Filename: DATA.R16
+		Start: 5010
+		Length: 14
+		Tick: 60
+		Offset: -48,48
+		ZOffset: -1c511
+	icon:
+		Filename: DATA.R16
+		Start: 4361
+		Offset: -30,-24
+
+d2ktrooper:
+	Inherits@default: ^d2kinfantrydeath
+	Defaults:
+		Scale: 1.3
+		Remap: 54F94B
+	paradrop:
+		Filename: DATA.R16
+		Start: 458
+		Facings: 1
+		Transpose: true
+	stand:
+		Filename: DATA.R16
+		Start: 458
+		Facings: -8
+		Transpose: true
+	idle1:
+		Filename: DATA.R16
+		Frames: 639, 646, 653, 660, 667, 674, 681, 688
+		Length: 8
+		Tick: 80
+	idle2:
+		Filename: DATA.R16
+		Frames: 640, 647, 654, 661, 668, 675, 682, 689
+		Length: 8
+		Tick: 80
+	run:
+		Filename: DATA.R16
+		Start: 466
+		Length: 6
+		Facings: -8
+		Tick: 120
+		Transpose: true
+	shoot:
+		Filename: DATA.R16
+		Start: 506
+		Length: 6
+		Facings: -8
+		Transpose: true
+	prone-stand:
+		Filename: DATA.R16
+		Start: 562
+		Facings: -8
+		Transpose: true
+	prone-run:
+		Filename: DATA.R16
+		Start: 570
+		Length: 3
+		Facings: -8
+		Transpose: true
+		Tick: 120
+	standup:
+		Filename: DATA.R16
+		Start: 554
+		Facings: -8
+		Transpose: true
+	prone-shoot:
+		Filename: DATA.R16
+		Start: 586
+		Length: 6
+		Facings: -8
+		Transpose: true
+	die1:
+		Filename: DATA.R16
+		Frames: 634, 641, 648, 655, 662, 669, 676, 683, 690, 691, 692, 693
+		Length: 12
+		Tick: 80
+	die2:
+		Filename: DATA.R16
+		Frames: 635, 642, 649, 656, 663, 670, 677, 684
+		Length: 8
+		Tick: 80
+	die3:
+		Filename: DATA.R16
+		Frames: 636, 643, 650, 657, 664, 671, 678, 685
+		Length: 8
+		Tick: 80
+	icon:
+		Filename: DATA.R16
+		Start: 4273
+		Offset: -30,-24
+		Remap: 00000000
+
+d2kengineer:
+	Inherits@default: ^d2kinfantrydeath
+	Defaults:
+		Scale: 1.3
+		Remap: 54F94B
+	paradrop:
+		Filename: DATA.R16
+		Start: 1166
+		Facings: 1
+		Transpose: true
+	stand:
+		Filename: DATA.R16
+		Start: 1166
+		Facings: -8
+		Transpose: true
+	idle1:
+		Filename: DATA.R16
+		Frames: 1347, 1354, 1361, 1368, 1375, 1382, 1389, 1396
+		Length: 8
+		Tick: 80
+	idle2:
+		Filename: DATA.R16
+		Frames: 1348, 1355, 1362, 1369, 1376, 1383, 1390, 1397
+		Length: 8
+		Tick: 80
+	run:
+		Filename: DATA.R16
+		Start: 1174
+		Length: 6
+		Facings: -8
+		Transpose: true
+		Tick: 120
+	standup:
+		Filename: DATA.R16
+		Start: 1262
+		Facings: -8
+		Transpose: true
+		Tick: 120
+	prone-stand:
+		Filename: DATA.R16
+		Start: 1270
+		Facings: -8
+		Transpose: true
+	prone-run:
+		Filename: DATA.R16
+		Start: 1278
+		Length: 3
+		Facings: -8
+		Transpose: true
+		Tick: 120
+	die1:
+		Filename: DATA.R16
+		Frames: 1342, 1349, 1356, 1363, 1370, 1377, 1384, 1391, 1398, 1399, 1400, 1401
+		Length: 12
+		Tick: 80
+	die2:
+		Filename: DATA.R16
+		Frames: 1343, 1350, 1357, 1364, 1371, 1378, 1385, 1392
+		Length: 8
+		Tick: 80
+	die3:
+		Filename: DATA.R16
+		Frames: 1344, 1351, 1358, 1365, 1372, 1379, 1386, 1393
+		Length: 8
+		Tick: 80
+	icon:
+		Filename: DATA.R16
+		Start: 4274
+		Offset: -30,-24
+		Remap: 00000000
+
+d2kgrenadier:
+	Inherits@default: ^d2kinfantrydeath
+	Defaults:
+		Scale: 1.3
+		Remap: 54F94B
+	paradrop:
+		Filename: DATA.R16
+		Start: 2606
+		Facings: 1
+		Transpose: true
+	stand:
+		Filename: DATA.R16
+		Start: 2606
+		Facings: -8
+		Transpose: true
+	idle1:
+		Filename: DATA.R16
+		Frames: 2700, 2707, 2714, 2721, 2728, 2735, 2742, 2749
+		Length: 8
+	idle2:
+		Filename: DATA.R16
+		Frames: 2699, 2706, 2713, 2720, 2727, 2734, 2741, 2748
+		Length: 8
+	run:
+		Filename: DATA.R16
+		Start: 2526
+		Length: 6
+		Facings: -8
+		Transpose: true
+		Tick: 120
+	shoot:
+		Filename: DATA.R16
+		Start: 2574
+		Length: 5
+		Facings: -8
+		Transpose: true
+		Tick: 120
+	die1:
+		Filename: DATA.R16
+		Frames: 2694, 2701, 2708, 2715, 2722, 2729, 2736, 2743
+		Length: 8
+	die2:
+		Filename: DATA.R16
+		Frames: 2695, 2702, 2709, 2716, 2723, 2730, 2737, 2744
+		Length: 8
+	die3:
+		Filename: DATA.R16
+		Frames: 2696, 2703, 2710, 2717, 2724, 2731, 2738, 2745
+		Length: 8
+	prone-stand:
+		Filename: DATA.R16
+		Start: 2622
+		Facings: -8
+		Transpose: true
+	prone-run:
+		Filename: DATA.R16
+		Start: 2622
+		Length: 4
+		Facings: -8
+		Tick: 120
+		Transpose: true
+	prone-throw:
+		Filename: DATA.R16
+		Start: 2654
+		Length: 5
+		Facings: -8
+		Tick: 120
+		Transpose: true
+	icon:
+		Filename: DATA.R16
+		Start: 4297
+		Offset: -30,-24
+		Remap: 00000000
+
+hightech.harkonnen:
+	Defaults:
+		Offset: -48,80
+	idle:
+		Filename: DATA.R16
+		Start: 2972
+		Remap: 54F94B
+	make:
+		Filename: DATA.R16
+		Start: 4538
+		Length: 11
+		Remap: 54F94B
+	crumble-overlay:
+		Filename: DATA.R16
+		Start: 4549
+		Length: 10
+		Tick: 100
+	damaged-idle:
+		Filename: DATA.R16
+		Start: 2973
+		Remap: 54F94B
+	production-welding:
+		Filename: DATA.R16
+		Start: 4888
+		Length: 10
+		Tick: 200
+		BlendMode: Additive
+		ZOffset: 1024
+	bib:
+		Filename: BLOXBASE.R16
+		Frames: 611, 612, 613, 631, 632, 633
+		Length: 6
+		Offset: -16,-16
+	bib-Concrete:
+		Filename: BLOXBASE.R16
+		Frames: 643, 644, 645, 663, 664, 665
+		Length: 6
+		Offset: -16,-16
+	icon:
+		Filename: DATA.R16
+		Start: 4343
+		Offset: -30,-24
+
+research.harkonnen:
+	idle:
+		Filename: DATA.R16
+		Start: 3077
+		Offset: -48,80
+		Remap: 54F94B
+	make:
+		Filename: DATA.R16
+		Start: 4655
+		Length: 11
+		Offset: -48,80
+		Remap: 54F94B
+	crumble-overlay:
+		Filename: DATA.R16
+		Start: 4666
+		Length: 11
+		Offset: -48,80
+		Tick: 100
+	damaged-idle:
+		Filename: DATA.R16
+		Start: 3078
+		Offset: -48,80
+		Remap: 54F94B
+	idle-lights:
+		Filename: DATA.R16
+		Start: 5024
+		Length: 60
+		Tick: 80
+		Offset: -48,80
+	bib:
+		Filename: BLOXBASE.R16
+		Frames: 611, 612, 613, 631, 632, 633
+		Length: 6
+		Offset: -16,-16
+	bib-Concrete:
+		Filename: BLOXBASE.R16
+		Frames: 643, 644, 645, 663, 664, 665
+		Length: 6
+		Offset: -16,-16
+	icon:
+		Filename: DATA.R16
+		Start: 4364
+		Offset: -30,-24
+
+palace.harkonnen:
+	idle:
+		Filename: DATA.R16
+		Start: 3084
+		Offset: -48,48
+		Remap: 54F94B
+	make:
+		Filename: DATA.R16
+		Start: 4677
+		Length: 13
+		Offset: -48,48
+		Remap: 54F94B
+	crumble-overlay:
+		Filename: DATA.R16
+		Start: 4690
+		Length: 10
+		Offset: -48,48
+		Tick: 100
+	damaged-idle:
+		Filename: DATA.R16
+		Start: 3085
+		Offset: -48,48
+		Remap: 54F94B
+	active:
+		Filename: DATA.R16
+		Start: 5084
+		Length: 20
+		Offset: -48,48
+	damaged-active:
+		Filename: DATA.R16
+		Start: 5084
+		Length: 20
+		Offset: -48,48
+	bib:
+		Filename: BLOXBASE.R16
+		Frames: 631, 632, 633
+		Length: 3
+		Offset: -16,-16
+	bib-Concrete:
+		Filename: BLOXBASE.R16
+		Frames: 663, 664, 665
+		Length: 3
+		Offset: -16,-16
+	icon:
+		Filename: DATA.R16
+		Start: 4367
+		Offset: -30,-24
+
+d2ktrike:
+	Defaults:
+		Scale: 1.3
+	idle:
+		Filename: DATA.R16
+		Start: 1635
+		Facings: -32
+		Remap: 54F94B
+	muzzle:
+		Filename: DATA.R16
+		Start: 3996
+		Tick: 50
+		Facings: -32
+		BlendMode: Additive
+	icon:
+		Filename: DATA.R16
+		Start: 4277
+		Offset: -30,-24
+
+d2kquad:
+	Defaults:
+		Scale: 1.3
+	idle:
+		Filename: DATA.R16
+		Start: 1667
+		Facings: -32
+		Remap: 54F94B
+	icon:
+		Filename: DATA.R16
+		Start: 4279
+		Offset: -30,-24
+
+d2ksiege_tank:
+	Defaults:
+		Scale: 1.3
+	idle:
+		Filename: DATA.R16
+		Start: 1763
+		Facings: -32
+		Remap: 54F94B
+	turret:
+		Filename: DATA.R16
+		Start: 1891
+		Facings: -32
+		Remap: 54F94B
+	muzzle:
+		Filename: DATA.R16
+		Start: 3671
+		Length: 3
+		BlendMode: Additive
+	icon:
+		Filename: DATA.R16
+		Start: 4287
+		Offset: -30,-24
+
+combat_tank_h:
+	Defaults:
+		Scale: 1.3
+	idle:
+		Filename: DATA.R16
+		Start: 2051
+		Facings: -32
+		Remap: 54F94B
+	turret:
+		Filename: DATA.R16
+		Start: 2115
+		Facings: -32
+		Remap: 54F94B
+	muzzle:
+		Filename: DATA.R16
+		Start: 4028
+		Tick: 60
+		Facings: -32
+		BlendMode: Additive
+	icon:
+		Filename: DATA.R16
+		Start: 4282
+		Offset: -30,-24

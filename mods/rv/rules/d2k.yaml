@@ -208,7 +208,7 @@ harkonnenbarracks:
 	ProductionQueue:
 		Type: Infantry.harkonnen
 		DisplayOrder: 14
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia, gdi, harkonnen
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia, harkonnen, harkonnen
 	ProductionBar:
 		ProductionType: Infantry.harkonnen
 	RallyPoint:
@@ -238,22 +238,444 @@ harkonnenrefinery:
 	DockHost:
 		Type: Unload
 		DockAngle: 640
-		DockOffset: 2c3,512,0
+		DockOffset: 2c0,1400,0
 	-WithDockedOverlay:
 	WithIdleOverlay@TOP:
 		RequiresCondition: !build-incomplete
 		Sequence: idle-top
-	PlaceBuildingVariants:
-		Actors: gdirefineryb #, narefc, narefd
-		Facings: 640, 384 #, 128, 896
 	IsometricSelectable:
 		Class: narefn
 		DecorationHeight: 90
 	RenderSprites:
 		Image: refinery.harkonnen
 
+harkonnenlightweap:
+	Inherits: ^WarFactory
+	Tooltip:
+		Name: Light Factory
+	Tooltip@NoRow:
+		Name: Light Factory
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Description: actor-naweap.description
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+	Building:
+		Footprint: xxx xx= ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	ProvidesPrerequisite@default:
+	Production:
+		Produces: Vehicle.harkonnen
+	ProductionQueue:
+		Type: Vehicle.harkonnen
+		DisplayOrder: 18
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, harkonnen, harkonnen
+	ProductionBar:
+		ProductionType: Vehicle.harkonnen
+	-WithIdleOverlay@bib:
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	WithIdleOverlay@TOP:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-top
+	WithProductionOverlay@WELDING:
+		RequiresCondition: !build-incomplete
+		Queues: Vehicle
+		Sequence: production-welding
+	IsometricSelectable:
+		Class: naweap
+		DecorationHeight: 90
+	RenderSprites:
+		Image: light.ordos
+		FactionImages:
+			atreides: light.atreides
+			fremen: light.atreides
+			harkonnen: light.harkonnen
+			corrino: light.harkonnen
+
+harkonnenheavyweap:
+	Inherits: ^WarFactory
+	Tooltip:
+		Name: Heavy Factory
+	Tooltip@NoRow:
+		Name: Heavy Factory
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Description: actor-naweap.description
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+	Building:
+		Footprint: _x_ xxx =xX ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	ProvidesPrerequisite@default:
+	Production:
+		Produces: Vehicle.harkonnen
+	ProductionQueue:
+		Type: Vehicle.harkonnen
+		DisplayOrder: 18
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, harkonnen, harkonnen
+	ProductionBar:
+		ProductionType: Vehicle.harkonnen
+	HitShape:
+		TargetableOffsets: -1155,-704,0, -1365,832,0
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 1536
+	HitShape@TOP:
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, -512
+	Exit@1:
+		SpawnOffset: 256,192,0
+		ExitCell: 0,2
+	-WithIdleOverlay@bib:
+	-WithExitOverlay@front:
+	-WithExitOverlay@top:
+	WithIdleOverlay@TOP:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-top
+	WithProductionOverlay@WELDING:
+		RequiresCondition: !build-incomplete
+		Queues: Armor
+		Sequence: production-welding
+	IsometricSelectable:
+		Class: naweap
+		DecorationHeight: 90
+	RenderSprites:
+		Image: heavy.ordos
+		FactionImages:
+			atreides: heavy.atreides
+			fremen: heavy.atreides
+			harkonnen: heavy.harkonnen
+			corrino: heavy.harkonnen
+			mercenary: heavy.mercenary
+
+outpost:
+	Inherits: ^Radar
+	Inherits@SHAPE: ^2x2Shape
+	Inherits@AI: ^AIControl
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		Description: actor-naradr.description
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.naradr
+	Tooltip:
+		Name: Outpost
+	Tooltip@NoRow:
+		Name: Outpost
+	ProvidesPrerequisite:
+	Building:
+		Footprint: xxx xxx ===
+		Dimensions: 3,3
+		LocalCenterOffset: 0,-512,0
+	WithIdleOverlay@DISH:
+		RequiresCondition: !build-incomplete && !severe-damaged
+		Sequence: idle-dish
+		PauseOnCondition: disabled
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
+	IsometricSelectable:
+		DecorationHeight: 90
+	RenderSprites:
+		Image: outpost.harkonnen
+
+starport:
+	Inherits: ^Helipad
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Description: actor-naheli.description
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+	Tooltip:
+		Name: Starport
+	Tooltip@NoRow:
+		Name: Starport
+	Exit@1:
+		SpawnOffset: -384,128,0
+	Production:
+		Produces: Aircraft.harkonnen
+	ProductionQueue:
+		Type: Aircraft.Soviets
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, iraq, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia, harkonnen
+	ProductionQueue@USSR:
+		Type: Aircraft.harkonnen
+		Group: Aircraft
+		DisplayOrder: 26
+		LowPowerModifier: 200
+		Factions: harkonnen
+		ReadyAudio: UnitReady
+		ReadyTextNotification: notification-unit-ready
+		BlockedAudio: NoBuild
+		BlockedTextNotification: notification-unable-to-build-more
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar:
+		ProductionType: Aircraft.harkonnen
+	ProvidesPrerequisite@aircraft.harkonnen:
+		Prerequisite: aircraft.harkonnen
+	ProvidesPrerequisite@aircraft.russia:
+	Exit@1:
+		SpawnOffset: 0,-480,0
+		ExitCell: 2,2
+	Exit@2:
+		SpawnOffset: 0,-480,0
+		ExitCell: 0,2
+	IsometricSelectable:
+		DecorationHeight: 60
+	RenderSprites:
+		Image: starport.ordos
+		FactionImages:
+			atreides: starport.atreides
+			fremen: starport.atreides
+			harkonnen: starport.harkonnen
+			corrino: starport.harkonnen
+			smuggler: starport.smuggler
+
+d2krepair_pad:
+	Inherits: ^Radar
+	Inherits@PRIMARY: ^PrimaryBuilding
+	Inherits@SPY: ^DisabledByInfiltration
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		Description: actor-gaairc.description
+	Tooltip:
+		Name: actor-gaairc.name
+	Tooltip@NoRow:
+		Name: actor-gaairc.name
+	HitShape:
+		TargetableOffsets: 1024,0,0, 0,-1024,0, 0,1024,0, -1024,0,0
+		Type: Rectangle
+			TopLeft: -1536, -512
+			BottomRight: 1536, 512
+	HitShape@TOPANDBOTTOM:
+		Type: Rectangle
+			TopLeft: -512, -1536
+			BottomRight: 512, 1536
+	ProvidesPrerequisite@default:
+		Prerequisite: gaairc
+	ProvidesPrerequisite@production:
+		Prerequisite: production
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp || infiltrated
+	Reservable:
+	ExitsDebugOverlay:
+	Exit@1:
+		Facing: 896
+		SpawnOffset: 1086,362,0
+		ExitCell: 3,-1
+	Exit@2:
+		Facing: 896
+		SpawnOffset: -362,-1086,0
+		ExitCell: 1,-1
+	Exit@3:
+		Facing: 896
+		SpawnOffset: -384,512,0
+		ExitCell: 1,2
+	Exit@4:
+		Facing: 896
+		SpawnOffset: 384,768,0
+		ExitCell: 3,2
+	GrantExternalConditionToOwner:
+		Condition: airdock
+	GrantExternalConditionToProduced:
+		Condition: produced
+	Production@Shared:
+		Produces: Aircraft.Shared
+		PauseOnCondition: powerdown || infiltrated || emp || chronodisable
+		RequiresCondition: !multiqueue
+	Production:
+		Produces: Aircraft.Allies, Aircraft.harkonnen
+		PauseOnCondition: powerdown || infiltrated || emp || chronodisable
+		RequiresCondition: multiqueue
+	ProductionQueue:
+		Type: Aircraft.harkonnen
+		Group: Aircraft
+		DisplayOrder: 25
+		LowPowerModifier: 200
+		Factions: germany, france, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia, harkonnen
+		ReadyAudio: UnitReady
+		ReadyTextNotification: notification-unit-ready
+		BlockedAudio: NoBuild
+		BlockedTextNotification: notification-unable-to-build-more
+		LimitedAudio: BuildingInProgress
+		LimitedTextNotification: notification-unable-to-comply-building-in-progress
+		QueuedAudio: Training
+		OnHoldAudio: OnHold
+		CancelledAudio: Cancelled
+	ProductionBar@Shared:
+		ProductionType: Aircraft.Shared
+	RallyPoint:
+		Path: 1,2
+		Palette: mouse
+		IsPlayerPalette: false
+	CommandBarBlacklist:
+		DisableStop: false
+	SpawnNeighboringActors:
+		ActorTypes: gadock
+		Locations: 1,0, 1,1, 2,1
+	AutoTarget:
+	AutoTargetPriority@DEFAULT:
+		ValidTargets: Repair, AirRepair, SeaAnimalRepair
+		ValidRelationships: Ally
+	AttackOmni:
+		PauseOnCondition: chronodisable || disabled
+	Armament:
+		Weapon: RepairDroneSpawn
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally
+		PauseOnCondition: build-incomplete
+	DroneSpawnerMaster:
+		Actors: repdron, repdron, repdron
+		SpawnOffset: -362,-1086,0, -384,512,0, 384,768,0
+		GatherCell: 1,0, 1,1, 2,1
+	WithRangeCircle:
+		Range: 6c0
+		Type: repair
+		Color: FF0000CC
+		BorderWidth: 0
+		Width: 2
+	PlaceBuildingVariants:
+		Actors: gaairb
+	IsometricSelectable:
+		Class: gaairc
+		DecorationHeight: 40
+	Voiced:
+		VoiceSet: AirfieldVoice
+		Volume: 0.8
+	ProvidesPrerequisite@AIantiRush:
+		Prerequisite: AIantiRush ## Hack: AI Building control. AI build refinery only when it has a combat producing line.
+	ActorStatValues:
+		Stats: Armor, Sight, Power
+	RenderSprites:
+		Image: repair_pad.ordos
+		FactionImages:
+			atreides: repair_pad.atreides
+			fremen: repair_pad.atreides
+			harkonnen: repair_pad.harkonnen
+			corrino: repair_pad.harkonnen
+
+high_tech_factory:
+	Inherits: ^BaseBuilding
+	Inherits@SHAPE: ^3x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+	ProvidesPrerequisite@default:
+		Prerequisite: harkonnentech
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.harkonnentech
+	Tooltip:
+		Name: High Tech Factory
+	Tooltip@NoRow:
+		Name: High Tech Factory
+	Health:
+		HP: 75000
+	Armor:
+		Type: Wood
+	Building:
+		Footprint: xxx xx= ===
+		Dimensions: 3,3
+	Targetable:
+		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateAllied
+	Targetable@Water:
+		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateAllied
+	PlaceBuildingVariants:
+		Actors: gatecb
+	IsometricSelectable:
+		Class: harkonnentech
+		DecorationHeight: 50
+	Voiced:
+		VoiceSet: TechCenterVoice
+		Volume: 0.8
+	RenderSprites:
+		Image: hightech.ordos
+		FactionImages:
+			atreides: hightech.atreides
+			fremen: hightech.atreides
+			harkonnen: hightech.harkonnen
+			corrino: hightech.harkonnen
+			smuggler: hightech.smuggler
+
+d2kresearch_centre:
+	Inherits: ^Radar
+	Inherits@SHAPE: ^2x2Shape
+	Inherits@AI: ^AIControl
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		Description: actor-naradr.description
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.naradr
+	Tooltip:
+		Name: Research Centre
+	Tooltip@NoRow:
+		Name: Research Centre
+	ProvidesPrerequisite:
+	Building:
+		Footprint: _X_ xxx XXX ===
+		Dimensions: 3,4
+		LocalCenterOffset: 0,-512,0
+	WithIdleOverlay@LIGHTS:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-lights
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
+	IsometricSelectable:
+		DecorationHeight: 90
+	RenderSprites:
+		Image: research.ordos
+		FactionImages:
+			atreides: research.atreides
+			fremen: research.atreides
+			harkonnen: research.harkonnen
+			corrino: research.harkonnen
+
+d2kpalace:
+	Inherits: ^Radar
+	Inherits@SHAPE: ^2x2Shape
+	Inherits@AI: ^AIControl
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		Description: actor-naradr.description
+	ProvidesPrerequisite@AIbuildinglimit:
+		RequiresCondition: ai-control
+		Prerequisite: ai.naradr
+	Tooltip:
+		Name: Palace
+	Tooltip@NoRow:
+		Name: Palace
+	ProvidesPrerequisite:
+	Building:
+		Footprint: xx= xxx =xx
+		Dimensions: 3,3
+	GrantCondition@IDISABLE:
+		RequiresCondition: lowpower || powerdown || emp
+	IsometricSelectable:
+		DecorationHeight: 90
+	RenderSprites:
+		Image: palace.ordos
+		FactionImages:
+			atreides: palace.atreides
+			fremen: palace.atreides
+			harkonnen: palace.harkonnen
+			corrino: palace.corrino
+
 #######################################
-# D2K Harkonnen Vehicles
+# D2K Vehicles
 #######################################
 	
 d2kharv:
@@ -262,7 +684,7 @@ d2kharv:
 		Queue: Vehicle.Shared, Vehicle.harkonnen
 		BuildPaletteOrder: 90
 		Description: actor-cmin.description
-		Prerequisites: ~gdiweap
+		Prerequisites: ~harkonnenweap
 	Tooltip:
 		Name: Ore Harvester
 	Tooltip@NoRow:
@@ -285,6 +707,361 @@ d2kharv:
 	RenderVoxels:
 		Image: blanktemplate
 		
+d2ktrike:
+	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 500
+		Voice: Move
+	Tooltip:
+		Name: Trike
+	Tooltip@NoRow:
+		Name: Trike
+	Selectable:
+		Class: Trike
+		Bounds: 1206, 1930, 0, -289
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.harkonnen
+		Prerequisites: ~harkonnenlightweap
+		BuildPaletteOrder: 30
+		Description: GDI Anti Infantry Mech.
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		TurnSpeed: 80
+		Speed: 99
+		Locomotor: wheeled
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
+	Health:
+		HP: 30000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 10c0
+	RevealOnDeath:
+		Radius: 10c0
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	AttackFrontal:
+		FacingTolerance: 0
+	AutoTarget:
+	Armament@primary:
+		Weapon: para
+		Damage: 25
+		RequiresCondition: !rank-elite
+	Armament@primary-elite:
+		Weapon: paraE
+		Damage: 50
+		RequiresCondition: rank-elite
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+	ProducibleWithLevel@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+		Types: chevron-elite
+	AttackFrontal:
+		FacingTolerance: 0
+	HitShape:
+	WithFacingSpriteBody:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
+	RenderSprites:
+		Image: d2ktrike
+
+d2kquad:
+	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 500
+		Voice: Move
+	Tooltip:
+		Name: Quad
+	Tooltip@NoRow:
+		Name: Quad
+	Selectable:
+		Class: Quad
+		Bounds: 1206, 1930, 0, -289
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.harkonnen
+		Prerequisites: ~harkonnenlightweap
+		BuildPaletteOrder: 30
+		Description: GDI Anti Infantry Mech.
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		TurnSpeed: 80
+		Speed: 99
+		Locomotor: wheeled
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
+	Health:
+		HP: 30000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 10c0
+	RevealOnDeath:
+		Radius: 10c0
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	AttackFrontal:
+		FacingTolerance: 0
+	AutoTarget:
+	Armament@primary:
+		Weapon: TSMissileLauncher
+		Damage: 25
+		RequiresCondition: !rank-elite
+		LocalOffset: 128,64,64, 128,-64,64
+	Armament@primary-elite:
+		Weapon: TSMissileLauncherE
+		Damage: 50
+		RequiresCondition: rank-elite
+		LocalOffset: 128,64,64, 128,-64,64
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+	ProducibleWithLevel@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+		Types: chevron-elite
+	AttackFrontal:
+		FacingTolerance: 0
+	WithFacingSpriteBody:
+	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
+	RenderSprites:
+		Image: d2kquad
+
+d2kcombattankharkonnen:
+	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 500
+		Voice: Move
+	Tooltip:
+		Name: Combat Tank
+	Tooltip@NoRow:
+		Name: Combat Tank
+	Selectable:
+		Class: combattank
+		Bounds: 1206, 1930, 0, -289
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.harkonnen
+		Prerequisites: ~harkonnenheavyweap
+		BuildPaletteOrder: 30
+		Description: GDI Anti Infantry Mech.
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 75
+		TurnSpeed: 20
+		Locomotor: wheeled
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
+	Health:
+		HP: 30000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 10c0
+	RevealOnDeath:
+		Radius: 10c0
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	AttackFrontal:
+		FacingTolerance: 0
+	AutoTarget:
+	Armament@primary:
+		Weapon: 120mm
+		Damage: 90
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 896,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Name: elite
+		Weapon: 120mmE
+		Damage: 180
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 896,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	Turreted:
+		TurnSpeed: 12
+		Offset: 0,0,-32
+	AttackFrontal:
+		FacingTolerance: 0
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	WithFacingSpriteBody:
+	AttackTurreted:
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+	ProducibleWithLevel@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+		Types: chevron-elite
+	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
+	RenderSprites:
+		Image: combat_tank_h
+
+d2ksiegetank:
+	Inherits: ^Vehicle
+	Inherits@BUILDVOICE: ^WithProductionVoicelines
+	Inherits@BUNKER: ^TankBunkerable
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@CHAOS: ^BerserkableVoxelArmed
+	Inherits@MC: ^MindControllableDisabledWithIC
+	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 500
+		Voice: Move
+	Tooltip:
+		Name: Siege Tank
+	Tooltip@NoRow:
+		Name: Siege Tank
+	Selectable:
+		Class: siegetank
+		Bounds: 1206, 1930, 0, -289
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.harkonnen
+		Prerequisites: ~harkonnenheavyweap
+		BuildPaletteOrder: 30
+		Description: GDI Anti Infantry Mech.
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Mobile:
+		Speed: 43
+		TurnSpeed: 12
+		Locomotor: wheeled
+		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
+	Health:
+		HP: 30000
+	Armor:
+		Type: Light
+	RevealsShroud:
+		Range: 10c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 10c0
+	RevealOnDeath:
+		Radius: 10c0
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	AttackFrontal:
+		FacingTolerance: 0
+	AutoTarget:
+	Armament@primary:
+		Weapon: d2ksiegemm
+		Damage: 100
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 896,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Name: elite
+		Weapon: d2ksiegemmE
+		Damage: 150
+		Recoil: 87
+		RecoilRecovery: 12
+		LocalOffset: 896,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	Turreted:
+		TurnSpeed: 12
+		Offset: 0,0,-32
+	AttackFrontal:
+		FacingTolerance: 0
+	WithMuzzleOverlay:
+	WithSpriteTurret:
+	WithFacingSpriteBody:
+	Voiced:
+		VoiceSet: SovietVehicleVoice
+	ProducibleWithLevel@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: warfactory.infiltratedorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: warfactory.infiltrated, baacdm
+		Types: chevron-elite
+	HitShape:
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
+	RenderSprites:
+		Image: d2ksiege_tank
+
+#######################################
+# D2K Infantry
+#######################################
+	
 d2ke1:
 	Inherits: ^Infantry
 	Inherits@APBULLETS: ^AffectedByAPBullets
@@ -419,3 +1196,360 @@ d2ke1:
 	RenderSprites:
 		Image: d2klight_inf
 		
+d2kengineer:
+	Inherits: ^Infantry
+	Inherits@CHAOS: ^Berserkable
+	Inherits@MC: ^MindControllable
+	Inherits@SELECTION_MODE: ^LowPrioritySelectionMode
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Buildable:
+		Queue: Infantry.Shared, Infantry.harkonnen
+		BuildAtProductionType: Soldier
+		Prerequisites: ~harkonnenbarracks
+		BuildPaletteOrder: 30
+		Description: actor-engineer.description
+		BuildDuration: 250
+		BuildDurationModifier: 100
+	Valued:
+		Cost: 500
+	DeliversCash:
+		Payload: 250
+		Voice: Move
+	Tooltip:
+		Name: actor-engineer.name
+	Tooltip@NoRow:
+		Name: actor-engineer.name
+	Selectable:
+		Priority: 4
+		Bounds: 482, 1448, 0, -530
+	Health:
+		HP: 10000
+	Mobile:
+		Locomotor: foot
+		Speed: 60
+	Garrisoner:
+		Voice: Move
+		CustomPipType: yellow
+		GarrisonType: Garrisoner
+	Passenger:
+		CustomPipType: yellow
+	RevealsShroud:
+		Range: 5c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 5c0
+	RevealOnDeath:
+		Radius: 5c0
+	InstantlyRepairs:
+		Types: building
+		RepairSound: urepair.wav
+	InstantlyRepairs@CIV:
+		Types: civilian
+		RepairSound: urepair.wav
+		ValidRelationships: Ally, Neutral
+	RepairsBridges:
+		RepairNotification: BridgeRepaired
+	Captures@INSTANT:
+		CaptureTypes: building, tech, husk
+		RequiresCondition: instantcapture
+	Captures@TIMED:
+		CaptureDelay: 75
+		CaptureTypes: building, husk
+		RequiresCondition: !instantcapture && !chronodisable && !webdisable && !dogstun
+	Captures@TECH:
+		CaptureTypes: tech
+		CaptureDelay: 250
+		RequiresCondition: !instantcapture && !chronodisable && !webdisable && !dogstun
+	GrantConditionOnPrerequisite@INSTANTCAPTURE:
+		Condition: instantcapture
+		Prerequisites: global-instantcapture
+	Armament:
+		Weapon: DefuseKit
+		Cursor: remove-bomb
+		OutsideRangeCursor: remove-bomb
+		TargetRelationships: Ally
+		ForceTargetRelationships: None
+		PauseOnCondition: chronodisable || webdisable || dogstun
+	AttackFrontal:
+		Voice: Action
+		FacingTolerance: 2
+	Voiced:
+		VoiceSet: EngineerVoice
+	Guard:
+		Voice: Action
+	AttackMove:
+		Voice: Action
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	WithInfantryBody:
+	CaptureManager:
+	RenderSprites:
+		Image: d2kengineer
+	ActorStatValues:
+		Stats: Armor, Sight, Speed
+
+d2ktrooper:
+	Inherits: ^Infantry
+	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^BerserkableArmed
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@MOLOTOV: ^AffectedByMolotovCocktails
+	Inherits@PARACHUTE: ^Parachutable
+	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Buildable:
+		Queue: Infantry.Shared, Infantry.harkonnen
+		BuildAtProductionType: Soldier
+		Prerequisites: ~harkonnenbarracks
+		BuildPaletteOrder: 10
+		Description: Trooper
+		BuildDuration: 50
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 100
+	DeliversCash:
+		Payload: 50
+		Voice: Move
+	Tooltip:
+		Name: Trooper
+	Tooltip@NoRow:
+		Name: Trooper
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Health:
+		HP: 12500
+	Mobile:
+		Speed: 60
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+	Passenger:
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: TSMissileLauncher
+		Damage: 15
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: TSMissileLauncherE
+		Damage: 20
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@primary-line:
+		Weapon: TSMissileLauncher
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-line:
+		Weapon: TSMissileLauncherE
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: TSMissileLauncher
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: TSMissileLauncherE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@opentopped-line:
+		Name: opentopped
+		Weapon: TSMissileLauncher
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-opentopped-line:
+		Name: opentopped
+		Weapon: TSMissileLauncherE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: TSMissileLauncher
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: TSMissileLauncherE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@garrisoned-line:
+		Name: garrisoned
+		Weapon: TSMissileLauncher
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-garrisoned-line:
+		Name: garrisoned
+		Weapon: TSMissileLauncherE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && rank-elite
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	WithDeathAnimation@normal:
+	Voiced:
+		VoiceSet: ConscriptVoice
+	ProducibleWithLevel@1:
+		Prerequisites: vete2flaktorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vete2flaktorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vete2flakt, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vete2flakt, baacdm
+		Types: chevron-elite
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.bullet_proof_coats, upgrade.molotov_cocktails, upgrade.ap_bullets
+	RenderSprites:
+		Image: d2ktrooper
+		
+d2kgrenadier:
+	Inherits: ^Infantry
+	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^BerserkableArmed
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@MOLOTOV: ^AffectedByMolotovCocktails
+	Inherits@PARACHUTE: ^Parachutable
+	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Buildable:
+		Queue: Infantry.Shared, Infantry.harkonnen
+		BuildAtProductionType: Soldier
+		Prerequisites: ~harkonnenbarracks
+		BuildPaletteOrder: 10
+		Description: actor-e2.description
+		BuildDuration: 50
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 100
+	DeliversCash:
+		Payload: 50
+		Voice: Move
+	Tooltip:
+		Name: Disc Thrower
+	Tooltip@NoRow:
+		Name: Disc Thrower
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Health:
+		HP: 12500
+	Mobile:
+		Speed: 60
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+	Passenger:
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: Disc
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: DiscE
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@primary-line:
+		Weapon: Disc
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-line:
+		Weapon: DiscE
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: Disc
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: DiscE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@opentopped-line:
+		Name: opentopped
+		Weapon: Disc
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-opentopped-line:
+		Name: opentopped
+		Weapon: DiscE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: Disc
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: DiscE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@garrisoned-line:
+		Name: garrisoned
+		Weapon: Disc
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-garrisoned-line:
+		Name: garrisoned
+		Weapon: DiscE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && rank-elite
+	WithInfantryBody:
+		RequiresCondition: !parachute
+	WithDeathAnimation@normal:
+	Voiced:
+		VoiceSet: ConscriptVoice
+	ProducibleWithLevel@1:
+		Prerequisites: vete2flaktorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vete2flaktorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vete2flakt, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vete2flakt, baacdm
+		Types: chevron-elite
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.bullet_proof_coats, upgrade.molotov_cocktails, upgrade.ap_bullets
+		RequiresCondition: baku
+	RenderSprites:
+		Image: d2kgrenadier

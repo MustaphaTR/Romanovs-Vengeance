@@ -1118,3 +1118,42 @@ SpawnEgg:
 		ForceGround: true
 		InvalidTargets: Water, Cliff
 		ValidTargets: Ground, Water, Air
+
+d2ksiegemm:
+	Inherits: ^LargeBullet
+	ReloadDelay: 65
+	Range: 10c0
+	Report: vrhiatta.wav, vrhiattb.wav, vrhiattc.wav, vrhiattd.wav
+	Projectile: BulletAS
+		ContrailLength: 8
+		Speed: 512
+		RangeLimit: 12c512
+		TrailImage: smokey2
+		MinimumLaunchAngle: 255
+		MaximumLaunchAngle: 255
+		MaximumLaunchSpeed: 384
+		MinimumLaunchSpeed: 384
+	Warhead@1Dam: SpreadDamage
+		Damage: 9000
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+d2ksiegemmE:
+	Inherits: d2ksiegemm
+	Burst: 2
+	BurstDelays: 5
+	Projectile: BulletAS
+	Range: 10c0
+	Warhead@1Dam: SpreadDamage
+		Versus:
+			None: 100
+			Flak: 100
+			Plate: 100
+	Warhead@2Eff: CreateEffect
+		Explosions: elite_explosion
+		ImpactSounds: gexpapoa.wav
+	Warhead@3EffWater: CreateEffect
+		Explosions: large_watersplash
+		ImpactSounds: gexpwala.wav
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: MediumCrater, MediumScorch
