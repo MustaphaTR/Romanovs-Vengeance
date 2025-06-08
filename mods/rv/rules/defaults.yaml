@@ -1917,7 +1917,6 @@
 	WithMakeAnimation:
 		Condition: build-incomplete
 	Building:
-		SecondaryTerrainTypes: Water
 	Sellable:
 		SellSounds: uselbuil.wav
 		Notification: StructureSold
@@ -1954,7 +1953,6 @@
 	MustBeDestroyed:
 		RequiredForShortGame: false
 	Building:
-		SecondaryTerrainTypes: Water
 	RevealOnFire:
 		ArmamentNames: primary, secondary, gatling, support, garrisoned, garrisoned-secondary
 		Duration: 50
@@ -2127,7 +2125,6 @@
 	Buildable:
 		Queue: Building.Tech
 	Building:
-		SecondaryTerrainTypes: Water
 	Health:
 		HP: 90000
 	Armor:
@@ -4087,3 +4084,59 @@
 		Amount: 280
 		ShowTicks: false
 		RequiresCondition: enable-vengeful-ai
+
+#######################################
+# TS Defaults
+#######################################
+
+^RenderVoxel:
+	BodyOrientation:
+		QuantizedFacings: 32
+		CameraPitch: 85
+		UseClassicPerspectiveFudge: false
+	RenderVoxels:
+		Scale: 12.0
+		LightYaw: 800
+		LightPitch: 150
+		LightAmbientColor: -0.5,-0.5,-0.5
+		LightDiffuseColor: 1.3,1.3,1.3
+	WithVoxelBody:
+		ShowShadow: true
+	Cloak@TDcloak:
+		IsPlayerPalette: true
+		RequiresCondition: cloak-crate-collected
+	Cloak@TScloak:
+		IsPlayerPalette: true
+		RequiresCondition: tscloak
+
+^TSSpawnActorsOnSell:
+	SoundOnDamageTransition:
+		DamagedSounds: expnew01.aud, expnew02.aud, expnew04.aud, expnew05.aud
+		DestroyedSounds: expnew03.aud, expnew07.aud, expnew08.aud, expnew11.aud
+	SpawnActorsOnSell:
+		ActorTypes: tsengineer, tse1, tse1, tse1
+	Building:
+		BuildSounds: tsplace2.aud
+
+^TSRenderVoxel:
+	Inherits: ^RenderVoxel
+	RenderVoxels:
+		Scale: 11.7
+		LightAmbientColor: 0.6, 0.6, 0.6
+		LightDiffuseColor: 0.4, 0.4, 0.4
+		LightPitch: 142
+		LightYaw: 682
+
+^TSInfantry:
+	WithDeathAnimation:
+		PlayerPalette: infantry
+		DeathTypes:
+			DefaultDeath: 1
+			BulletDeath: 2
+			RippedApartDeath: 2
+			SmallExplosionDeath: 4
+			ExplosionDeath: 4
+			TiberiumDeath: 1
+			RA2VirusDeath: 1
+	Crushable:
+		CrushSound: squish6.aud

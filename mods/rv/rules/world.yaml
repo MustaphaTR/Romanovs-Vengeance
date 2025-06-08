@@ -388,6 +388,18 @@
 		Side: Baku Pact
 		Description: faction-serbia.description
 		Selectable: false
+	Faction@32:
+		Name: GDI
+		InternalName: gdi
+		Side: GDI
+		Description: faction-japan.description
+		Selectable: true
+	Faction@harkonnen:
+		Name: Harkonnen
+		InternalName: harkonnen
+		Description: faction-harkonnen.description
+		Side: Dune
+		Selectable: true
 	ResourceRenderer:
 		ResourceTypes:
 			Ore:
@@ -825,6 +837,18 @@ World:
 		SupportActorsFacing: 640
 		InnerSupportRadius: 2
 		OuterSupportRadius: 8
+	StartingUnits@gdi:
+		Class: none
+		ClassName: options-starting-units.mcv-only
+		Factions: gdi
+		BaseActor: gdimcv
+		BaseActorFacing: 640
+	StartingUnits@harkonnen:
+		Class: none
+		ClassName: options-starting-units.mcv-only
+		Factions: harkonnen
+		BaseActor: harkonnenmcv
+		BaseActorFacing: 640
 	CrateSpawner:
 		DeliveryAircraft: pdplane.crate
 		Minimum: 1

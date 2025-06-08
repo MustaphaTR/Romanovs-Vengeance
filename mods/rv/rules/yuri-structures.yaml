@@ -401,7 +401,6 @@ yarefn:
 		Footprint: xx x+
 		Dimensions: 2,2
 		TerrainTypes: Clear, Sand, Rough, Dune, Road, DirtRoad
-		-SecondaryTerrainTypes:
 	Refinery:
 		ShowTicks: True
 		TickRate: 10
@@ -1099,8 +1098,6 @@ yatech:
 		Sequence: idle-lift
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@waves:
-		RequiresCondition: !build-incomplete && in_water
 	InfiltrateForSupportPower:
 		Proxy: yuri.tech.infiltrated
 	Targetable:
@@ -1200,7 +1197,6 @@ yaclon:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
-		-SecondaryTerrainTypes:
 	Health:
 		HP: 75000
 	Armor:
@@ -1491,7 +1487,6 @@ natbnk:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
-		-SecondaryTerrainTypes:
 	Health:
 		HP: 100000
 	Armor:
@@ -1873,7 +1868,6 @@ yarock:
 	Building:
 		Dimensions: 3,3
 		Footprint: xxx xxx xxx
-		SecondaryTerrainTypes: Water
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
@@ -1902,7 +1896,6 @@ yapsyb:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
-		SecondaryTerrainTypes: Water
 	WithIdleOverlay@spin:
 		Sequence: idle-spin
 		PauseOnCondition: chronodisable
@@ -1947,7 +1940,6 @@ caeast02:
 	Building:
 		Dimensions: 2,2
 		Footprint: xx xx
-		SecondaryTerrainTypes: Water
 	Armament:
 		Weapon: LaserShot
 		LocalOffset: 512,-256,1024, 512,256,1024

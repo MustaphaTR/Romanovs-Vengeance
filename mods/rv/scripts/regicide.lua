@@ -42,7 +42,9 @@ LeaderTypes =
 	turkmen = "myak.regicide",
 	tuva = "myak.regicide",
 	russianfed = "myak.regicide",
-	serbia = "myak.regicide"
+	serbia = "myak.regicide",
+	harkonnen = "myak.regicide",
+	gdi = "pres.regicide"
 }
 
 TickRegicide = function()

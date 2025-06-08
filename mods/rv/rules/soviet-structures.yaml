@@ -419,14 +419,19 @@ narefn:
 		Offset: -1024,-384,4096
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: 128,-1408,4096
-	WithIdleOverlay@waves:
-		RequiresCondition: !build-incomplete && in_water
-	PlaceBuildingVariants:
 		Actors: narefb #, narefc, narefd
 		Facings: 640, 384 #, 128, 896
 	IsometricSelectable:
 		Class: narefn
 		DecorationHeight: 90
+	WithIdleOverlay@bib:
+		Sequence: idle-bib
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
+	WithIdleOverlay@drill:
+		Sequence: idle-drill
+		PauseOnCondition: chronodisable
+		RequiresCondition: !build-incomplete
 
 naradr:
 	Inherits: ^Radar
@@ -1123,8 +1128,6 @@ nanrct:
 		Sequence: idle-lights-orange
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete && advirrad
-	WithIdleOverlay@waves:
-		RequiresCondition: !build-incomplete && in_water
 	FireWarheadsOnDeath:
 		Type: CenterPosition
 		Weapon: NukePayload
@@ -1236,7 +1239,6 @@ naclon:
 	Building:
 		Footprint: xx xx
 		Dimensions: 2, 2
-		-SecondaryTerrainTypes:
 	Health:
 		HP: 75000
 	Armor:
@@ -1833,7 +1835,6 @@ nabnkr:
 		Footprint: xx xx
 		Dimensions: 2,2
 		RequiresBaseProvider: false
-		-SecondaryTerrainTypes:
 	-RequiresBuildableArea:
 	-ActorPreviewPlaceBuildingPreview:
 	SequencePlaceBuildingPreview:
@@ -2022,7 +2023,6 @@ napost:
 	Tooltip@NoRow:
 		Name: actor-napost.name
 	Building:
-		-SecondaryTerrainTypes:
 	Health:
 		HP: 50000
 	Armor:

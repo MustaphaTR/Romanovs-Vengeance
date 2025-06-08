@@ -1,0 +1,421 @@
+
+#######################################
+# D2K MCV
+#######################################
+
+d2kharkonnencnst:
+	Inherits: ^ConstructionYard
+	Buildable:
+		BuildPaletteOrder: 20
+	ProvidesPrerequisite@building.soviets:
+		Prerequisite: Building.harkonnen
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, harkonnen
+	Production:
+		Produces: Building.harkonnen, Support.harkonnen
+	ProductionQueue@Building:
+		Type: Building.harkonnen
+		DisplayOrder: 2
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, harkonnen
+	ProductionQueue@Support:
+		Type: Support.harkonnen
+		DisplayOrder: 6
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, harkonnen
+	ProductionBar@Building:
+		ProductionType: Building.harkonnen
+	ProductionBar@Support:
+		ProductionType: Support.harkonnen
+	Transforms:
+		IntoActor: harkonnenmcv
+	GrantConditionOnFaction@harkonnen:
+		Condition: harkonnen
+		Factions: harkonnen
+	IsometricSelectable:
+		DecorationHeight: 90
+	Voiced:
+		VoiceSet: SovietConstructionYardVoice
+	RenderSprites:
+		Image: conyard.harkonnen
+
+harkonnenmcv:
+	Inherits: ^ConstructionVehicle
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.harkonnen
+		Prerequisites: ~tsgtcnst, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+	Transforms:
+		IntoActor: d2kharkonnencnst
+	Voiced:
+		VoiceSet: SovietConstructionVehicleVoice
+	RenderSprites:
+		Image: d2kmcv
+	WithFacingSpriteBody:
+	-RenderVoxels:
+	-WithVoxelBody:
+	-WithVoxelBody@Water:
+
+#######################################
+# D2K Harkonnen Buildings
+#######################################
+	
+harkonnenpowr:
+	Inherits: ^PowerPlant
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Description: actor-napowr.description
+		Prerequisites: ~d2kharkonnencnst, ~techlevel.1
+		LocalCenterOffset: 0,-512,0
+	Tooltip:
+		Name: actor-napowr.name
+	Tooltip@NoRow:
+		Name: actor-napowr.name
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+		LocalCenterOffset: 0,-512,0
+	IsometricSelectable:
+		Class: napowr
+		DecorationHeight: 45
+	Voiced:
+		VoiceSet: PowerPlantVoice
+		Volume: 0.8
+	RenderSprites:
+		Image: power.harkonnen
+
+harkonnenbarracks:
+	Inherits: ^Barracks
+	Inherits@SHAPE: ^2x2Shape
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Description: actor-nahand.description
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Exit@1Shared:
+		SpawnOffset: -512,768,0
+		ExitCell: 1,2
+		Priority: 2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@2Shared:
+		SpawnOffset: -512,768,0
+		ExitCell: 0,2
+		Priority: 2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback1Shared:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback2Shared:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback3Shared:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,0
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback4Shared:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback5Shared:
+		SpawnOffset: 724,0,0
+		ExitCell: 1,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback6Shared:
+		SpawnOffset: 0,-724,0
+		ExitCell: 0,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback7Shared:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,-1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback8Shared:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,0
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback9Shared:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,1
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@fallback10Shared:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,2
+		ProductionTypes: Infantry.Shared, Soldier
+		RequiresCondition: !multiqueue
+	Exit@1:
+		SpawnOffset: -512,768,0
+		ExitCell: 1,2
+		Priority: 2
+		RequiresCondition: multiqueue
+	Exit@2:
+		SpawnOffset: -512,768,0
+		ExitCell: 0,2
+		Priority: 2
+		RequiresCondition: multiqueue
+	Exit@fallback1:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,2
+		RequiresCondition: multiqueue
+	Exit@fallback2:
+		SpawnOffset: 0,724,0
+		ExitCell: 2,1
+		RequiresCondition: multiqueue
+	Exit@fallback3:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,0
+		RequiresCondition: multiqueue
+	Exit@fallback4:
+		SpawnOffset: 724,0,0
+		ExitCell: 2,-1
+		RequiresCondition: multiqueue
+	Exit@fallback5:
+		SpawnOffset: 724,0,0
+		ExitCell: 1,-1
+		RequiresCondition: multiqueue
+	Exit@fallback6:
+		SpawnOffset: 0,-724,0
+		ExitCell: 0,-1
+		RequiresCondition: multiqueue
+	Exit@fallback7:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,-1
+		RequiresCondition: multiqueue
+	Exit@fallback8:
+		SpawnOffset: 0,-724,0
+		ExitCell: -1,0
+		RequiresCondition: multiqueue
+	Exit@fallback9:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,1
+		RequiresCondition: multiqueue
+	Exit@fallback10:
+		SpawnOffset: -724,0,0
+		ExitCell: -1,2
+		RequiresCondition: multiqueue
+	Production:
+		Produces: Infantry.harkonnen
+	ProductionQueue:
+		Type: Infantry.harkonnen
+		DisplayOrder: 14
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia, gdi, harkonnen
+	ProductionBar:
+		ProductionType: Infantry.harkonnen
+	RallyPoint:
+		Path: 3,3
+	ProvidesPrerequisite@buildingname:
+		Prerequisite: harkonnenbarracks
+	IsometricSelectable:
+		DecorationHeight: 30
+	RenderSprites:
+		Image: barracks.harkonnen
+
+harkonnenrefinery:
+	Inherits: ^Refinery
+	Buildable:
+		Queue: Building.Shared, Building.harkonnen
+		Prerequisites: ~d2kharkonnencnst, power, ~!global-megawealth, ~techlevel.1, ~AIantiRush
+	Building:
+		Footprint: xxx xxx
+		Dimensions: 2,3
+		LocalCenterOffset: 0,-800,0
+	FreeActor:
+		Actor: d2kharv
+	SmokeParticleEmitter@refinerysmoke1:
+		Offset: -1024,-512,3456
+	SmokeParticleEmitter@refinerysmoke2:
+		Offset: -64,-1280,3456
+	DockHost:
+		Type: Unload
+		DockAngle: 640
+		DockOffset: 2c3,512,0
+	-WithDockedOverlay:
+	WithIdleOverlay@TOP:
+		RequiresCondition: !build-incomplete
+		Sequence: idle-top
+	PlaceBuildingVariants:
+		Actors: gdirefineryb #, narefc, narefd
+		Facings: 640, 384 #, 128, 896
+	IsometricSelectable:
+		Class: narefn
+		DecorationHeight: 90
+	RenderSprites:
+		Image: refinery.harkonnen
+
+#######################################
+# D2K Harkonnen Vehicles
+#######################################
+	
+d2kharv:
+	Inherits: ^Miner
+	Buildable:
+		Queue: Vehicle.Shared, Vehicle.harkonnen
+		BuildPaletteOrder: 90
+		Description: actor-cmin.description
+		Prerequisites: ~gdiweap
+	Tooltip:
+		Name: Ore Harvester
+	Tooltip@NoRow:
+		Name: Ore Harvester
+	Harvester:
+		BaleUnloadDelay: 2
+		EmptyCondition: harvester-empty
+	StoresResources:
+		Capacity: 20
+	DockClientManager:
+		Voice: Deliver
+	Guard:
+		Voice: Move
+	Voiced:
+		VoiceSet: ChronoMinerVoice
+	RenderSprites:
+		Image: d2kharv
+	WithFacingSpriteBody:
+	WithHarvestOverlay:
+	RenderVoxels:
+		Image: blanktemplate
+		
+d2ke1:
+	Inherits: ^Infantry
+	Inherits@APBULLETS: ^AffectedByAPBullets
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Inherits@CHAOS: ^BerserkableArmed
+	Inherits@EXPERIENCE: ^GainsExperience
+	Inherits@MC: ^MindControllable
+	Inherits@MOLOTOV: ^AffectedByMolotovCocktails
+	Inherits@PARACHUTE: ^Parachutable
+	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
+	Inherits@VOICES: ^WithFeedbackVoicelines
+	Buildable:
+		Queue: Infantry.Shared, Infantry.harkonnen
+		BuildAtProductionType: Soldier
+		Prerequisites: ~harkonnenbarracks
+		BuildPaletteOrder: 10
+		Description: actor-e2.description
+		BuildDuration: 50
+		BuildDurationModifier: 100
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	Valued:
+		Cost: 100
+	DeliversCash:
+		Payload: 50
+		Voice: Move
+	Tooltip:
+		Name: Light Infantry
+	Tooltip@NoRow:
+		Name: Light Infantry
+	Selectable:
+		Bounds: 482, 1448, 0, -530
+	Health:
+		HP: 12500
+	Mobile:
+		Speed: 60
+	Garrisoner:
+		Voice: Move
+		GarrisonType: Garrisoner
+	Passenger:
+	RevealsShroud:
+		Range: 6c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Range: 6c0
+	RevealOnDeath:
+		Radius: 6c0
+	AttackFrontal:
+		Voice: Attack
+		FacingTolerance: 2
+	Armament@primary:
+		Weapon: M1Carbine
+		Damage: 15
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite:
+		Weapon: M1CarbineE
+		Damage: 20
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@primary-line:
+		Weapon: M1CarbineLine
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-line:
+		Weapon: M1CarbineLineE
+		LocalOffset: 256,0,768
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && rank-elite
+	Armament@opentopped:
+		Name: opentopped
+		Weapon: M1Carbine
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-opentopped:
+		Name: opentopped
+		Weapon: M1CarbineE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@opentopped-line:
+		Name: opentopped
+		Weapon: M1CarbineLine
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-opentopped-line:
+		Name: opentopped
+		Weapon: M1CarbineLineE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && rank-elite
+	Armament@garrisoned:
+		Name: garrisoned
+		Weapon: UCM1Carbine
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisoned:
+		Name: garrisoned
+		Weapon: UCM1CarbineE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@garrisoned-line:
+		Name: garrisoned
+		Weapon: UCM1CarbineLine
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && !rank-elite
+	Armament@elite-garrisoned-line:
+		Name: garrisoned
+		Weapon: UCM1CarbineLineE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: apbullets && rank-elite
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	WithDeathAnimation@normal:
+	Voiced:
+		VoiceSet: ConscriptVoice
+	ProducibleWithLevel@1:
+		Prerequisites: vete2flaktorbaacdm
+	WithProductionIconOverlay@1:
+		Prerequisites: vete2flaktorbaacdm
+		Types: chevron-veteran
+	ProducibleWithLevel@2:
+		Prerequisites: vete2flakt, baacdm
+	WithProductionIconOverlay@2:
+		Prerequisites: vete2flakt, baacdm
+		Types: chevron-elite
+	QuantizeFacingsFromSequence:
+		Sequence: stand
+	ActorStatValues:
+		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
+		Upgrades: upgrade.bullet_proof_coats, upgrade.molotov_cocktails, upgrade.ap_bullets
+	RenderSprites:
+		Image: d2klight_inf
+		

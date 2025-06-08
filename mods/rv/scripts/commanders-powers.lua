@@ -66,6 +66,8 @@ Ranks =
 	turkmen = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	tuva = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
 	russianfed = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
+	gdi = { "Lieutenant", "Captain", "Major", "Colonel", "General" },
+	harkonnen = { "Lieutenant", "Captain", "Major", "Colonel", "General" },
 	serbia = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" }
 }
 RankXPs = { 0, 300, 1300, 2500, 5000 }

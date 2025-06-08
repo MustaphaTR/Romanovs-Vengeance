@@ -717,6 +717,57 @@ MissileLauncherE:
 		Explosions: medium_grey_explosion
 		ImpactSounds: gexp15a.wav
 
+Disc:
+	Inherits: ^Missile
+	ReloadDelay: 60
+	Range: 4c512
+	-Report:
+	ValidTargets: Ground, Water
+	Projectile: Bullet
+		Speed: 226
+		Arm: 2
+		RangeLimit: 14c512
+		ContrailStartColor: D8D8FF
+		BounceCount: 2
+		Image: DISCUS
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 4000
+		ValidTargets: Ground, Water
+		Versus:
+			None: 15
+			Flak: 15
+			Plate: 10
+			Light: 100
+			Medium: 100
+			Heavy: 75
+			Wood: 55
+			Steel: 65
+			Concrete: 50
+			Drone: 20
+			Rocket: 200
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: small_grey_explosion
+		ImpactSounds: gexpifva.wav
+		ValidTargets: Ground
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+DiscE:
+	Inherits: MissileLauncher
+	Burst: 2
+	Projectile: Missile
+		ContrailStartColor: EA0000
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav
+
 MissileLauncherAA:
 	Inherits: MissileLauncher
 	Range: 8c0
@@ -1307,3 +1358,150 @@ MosquitoBarrageE:
 	ReloadDelay: 5
 	Burst: 1
 	Report: vletweaa.wav, vletweab.wav, vletweac.wav, vletwead.wav, vletweae.wav, vletweaf.wav
+
+TSMissileLauncher:
+	Inherits: ^Missile
+	ReloadDelay: 40
+	Range: 6c0
+	Report: iggiat2a.wav, iggiat2b.wav
+	ValidTargets: Ground, Water
+	Projectile: Missile
+		Arm: 0
+		Blockable: false
+		AllowSnapping: true
+		Inaccuracy: 100
+		Shadow: true
+		HorizontalRateOfTurn: 35
+		VerticalRateOfTurn: 35
+		TrailImage: smokey
+		TrailPalette: greyscale
+		TrailInterval: 1
+		ContrailLength: 0
+		MaximumLaunchSpeed: 250
+		MinimumLaunchSpeed: 250
+		Speed: 600
+		Acceleration: 4
+		HomingActivationDelay: 1
+		RangeLimit: 20000
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 4000
+		ValidTargets: Ground, Water
+		Versus:
+			None: 15
+			Flak: 15
+			Plate: 10
+			Light: 100
+			Medium: 100
+			Heavy: 75
+			Wood: 55
+			Steel: 65
+			Concrete: 50
+			Drone: 20
+			Rocket: 200
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: small_grey_explosion
+		ImpactSounds: gexpifva.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+TSMissileLauncherE:
+	Inherits: TSMissileLauncher
+	Burst: 2
+	Projectile: Missile
+		ContrailStartColor: EA0000
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav
+
+TSMissileLauncherAA:
+	Inherits: TSMissileLauncher
+	Range: 8c0
+	ValidTargets: Air
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+		Versus:
+			Light: 75
+
+TSMissileLauncherAAE:
+	Inherits: TSMissileLauncherE
+	Range: 8c0
+	ValidTargets: Air
+	Projectile: Missile
+		ContrailStartColor: EA0000
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: Air
+		Versus:
+			Light: 75
+
+TSHMLRS:
+	Inherits: ^Missile
+	Burst: 4
+	BurstDelays: 4
+	ReloadDelay: 100
+	Range: 8c512
+	MinRange: 2c512
+	Report: iggiat2a.wav, iggiat2b.wav
+	ValidTargets: Ground, Water
+	Projectile: Missile
+		Inaccuracy: 1c0
+		Arm: 2
+		Blockable: false
+		AllowSnapping: true
+		Shadow: true
+		HorizontalRateOfTurn: 35
+		VerticalRateOfTurn: 35
+		TrailImage: smokey
+		TrailPalette: greyscale
+		TrailInterval: 1
+		ContrailLength: 0
+		MaximumLaunchSpeed: 250
+		MinimumLaunchSpeed: 250
+		Speed: 600
+		Acceleration: 4
+		HomingActivationDelay: 1
+		RangeLimit: 20000
+	Warhead@1Dam: SpreadDamage
+		Spread: 0c128
+		Falloff: 100, 83, 67, 50, 0
+		Damage: 4000
+		ValidTargets: Ground, Water
+		Versus:
+			None: 15
+			Flak: 15
+			Plate: 10
+			Light: 100
+			Medium: 100
+			Heavy: 75
+			Wood: 55
+			Steel: 65
+			Concrete: 50
+			Drone: 20
+			Rocket: 200
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath, SuppressTerrorDrone, NonTemporal
+	Warhead@2Eff: CreateEffect
+		Explosions: small_grey_explosion
+		ImpactSounds: gexpifva.wav
+		ValidTargets: Ground, Air
+	Warhead@3EffWater: CreateEffect
+		Explosions: small_watersplash
+		ImpactSounds: gexpwasa.wav
+		ValidTargets: Water
+	Warhead@4Smu: LeaveSmudge
+		SmudgeType: SmallCrater
+
+TSHMLRSE:
+	Inherits: TSMissileLauncher
+	Burst: 8
+	Projectile: Missile
+		ContrailStartColor: EA0000
+	Warhead@2Eff: CreateEffect
+		Explosions: medium_grey_explosion
+		ImpactSounds: gexp15a.wav

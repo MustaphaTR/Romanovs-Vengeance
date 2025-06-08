@@ -141,9 +141,6 @@
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: ConstructionYardVoice
 		Volume: 0.8
@@ -214,9 +211,6 @@
 	ProvidesPrerequisite@AITowerRush:
 		RequiresCondition: ai-control
 		Prerequisite: AITowerRush
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: ExpansionNodeVoice
 		Volume: 0.8
@@ -272,9 +266,6 @@
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
@@ -312,7 +303,6 @@
 		BorderWidth: 0
 		Width: 2
 	Building:
-		-SecondaryTerrainTypes:
 	ExitsDebugOverlay:
 	Health:
 		HP: 50000
@@ -444,17 +434,6 @@
 	WithDockedOverlay:
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@bib:
-		Sequence: idle-bib
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	WithIdleOverlay@drill:
-		Sequence: idle-drill
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Power:
 		Amount: -40
 	Targetable:
@@ -468,7 +447,7 @@
 	SpawnActorsOnSell@psicorps:
 		ActorTypes: init
 	StoresPlayerResources:
-		Capacity: 2000
+		Capacity: 9999999
 	FireWarheadsOnDeath:
 		RequiresCondition: !spawn-ore
 	FireWarheadsOnDeath@Ore:
@@ -499,15 +478,6 @@
 		Speed: 0, 36
 		Gravity: 27, 54
 		Duration: 39
-	WithResourceStoragePipsDecoration:
-		FullSequence: pip-building-yellow
-		EmptySequence: pip-building-empty
-		Palette: ra
-		Margin: 8, 2
-		PipStride: 4, 2
-		Position: BottomLeft
-		RequiresSelection: true
-		PipCount: 25
 	Voiced:
 		VoiceSet: RefineryVoice
 		Volume: 0.8
@@ -544,9 +514,6 @@
 		Facing: 128
 	SpawnNeighboringActors:
 		Locations: 0,1
-	-WithDockedOverlay:
-	-WithIdleOverlay@drill:
-	-WithIdleOverlay@waves:
 
 ^RefineryD:
 	Inherits: ^Refinery
@@ -563,9 +530,6 @@
 		Facing: 896
 	SpawnNeighboringActors:
 		Locations: 1,0
-	-WithDockedOverlay:
-	-WithIdleOverlay@drill:
-	-WithIdleOverlay@waves:
 
 refdock:
 	Interactable:
@@ -615,9 +579,6 @@ refdock:
 		Stages: 4
 	StoresPlayerResources:
 		Capacity: 2000
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Power:
 		Amount: -10
 		RequiresCondition: !chronodisable
@@ -673,7 +634,6 @@ refdock:
 	Building:
 		Footprint: xxxx+ xxxx+ xxxx+
 		Dimensions: 5,3
-		-SecondaryTerrainTypes:
 	Health:
 		HP: 120000
 	Armor:
@@ -689,16 +649,6 @@ refdock:
 		IsPlayerPalette: false
 	CommandBarBlacklist:
 		DisableStop: false
-	RepairsUnits:
-		PauseOnCondition: chronodisable || disabled
-		HpPerStep: 0 # Real repair is not done here, but keeping the trait makes sure that vehicles wait around to be repaired before going to the rally point.
-		ValuePercentage: 0
-		Interval: 20
-		#RepairDamageTypes: KillsDrone
-		StartRepairingNotification: Repairing
-		StartRepairingTextNotification: notification-repairing
-		FinishRepairingNotification: UnitRepaired
-		FinishRepairingTextNotification: notification-unit-repaired
 	Exit@1:
 		ExitCell: 4,1
 	GrantExternalConditionToProduced:
@@ -739,29 +689,8 @@ refdock:
 		Sequence: bib
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	AutoTarget:
-	AutoTargetPriority@DEFAULT:
-		ValidTargets: Repair, AirRepair, SeaAnimalRepair
-		ValidRelationships: Ally
 	AttackOmni:
 		PauseOnCondition: chronodisable || disabled
-	Armament:
-		Weapon: RepairDroneSpawn
-		Cursor: repair
-		OutsideRangeCursor: repair
-		TargetRelationships: Ally
-		ForceTargetRelationships: Ally
-		PauseOnCondition: build-incomplete
-	DroneSpawnerMaster:
-		Actors: repdron, repdron, repdron
-		SpawnOffset: -1024,1024,0, 0,0,0, 1024,1024,0
-		GatherCell: 1,2, 1,1, 2,1
-	WithRangeCircle:
-		Range: 6c0
-		Type: repair
-		Color: FF0000CC
-		BorderWidth: 0
-		Width: 2
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
@@ -813,7 +742,6 @@ refdock:
 		Footprint: xxxx xxxx xxxx xxxx
 		Dimensions: 4,4
 		TerrainTypes: Water
-		-SecondaryTerrainTypes:
 		# RequiresBaseProvider: false
 	Health:
 		HP: 150000
@@ -962,10 +890,6 @@ refdock:
 	Power:
 		Amount: -50
 		RequiresCondition: !chronodisable
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete
 	WithIdleOverlay:
 		Sequence: idle-crane
 		PauseOnCondition: chronodisable
@@ -1037,6 +961,25 @@ refdock:
 		StartRepairingTextNotification: notification-repairing
 		FinishRepairingNotification: UnitRepaired
 		FinishRepairingTextNotification: notification-unit-repaired
+	AttackOmni:
+		PauseOnCondition: chronodisable || disabled
+	Armament:
+		Weapon: RepairDroneSpawn
+		Cursor: repair
+		OutsideRangeCursor: repair
+		TargetRelationships: Ally
+		ForceTargetRelationships: Ally
+		PauseOnCondition: build-incomplete
+	DroneSpawnerMaster:
+		Actors: repdron
+		SpawnOffset: 0,0,0
+		GatherCell: 1,1
+	WithRangeCircle:
+		Range: 6c0
+		Type: repair
+		Color: FF0000CC
+		BorderWidth: 0
+		Width: 2
 	ProximityExternalCondition:
 		Condition: unit.sellable
 		Range: 1c0
@@ -1048,9 +991,6 @@ refdock:
 		Sequence: bib
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	WithResupplyAnimation:
 		Sequence: repair
 		RequiresCondition: !build-incomplete && !chronodisable
@@ -1110,9 +1050,6 @@ refdock:
 		RequiresCondition: !chronodisable
 	GrantCondition@IDISABLE:
 		RequiresCondition: lowpower || powerdown || emp
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: RadarVoice
 		Volume: 0.8
@@ -1231,9 +1168,6 @@ refdock:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: AirfieldVoice
 		Volume: 0.8
@@ -1292,9 +1226,6 @@ refdock:
 		Notification: TechnologyStolen
 		ValidRelationships: None
 		RequiresCondition: diskinfiltrate
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
@@ -1351,9 +1282,6 @@ refdock:
 		ValidRelationships: Neutral, Enemy
 		PlayToOwner: False
 		PingRadar: True
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
@@ -1411,9 +1339,6 @@ refdock:
 		ValidRelationships: Neutral, Enemy
 		PlayToOwner: False
 		PingRadar: True
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	ActorStatValues:
 		Stats: Armor, Sight, Power
 
