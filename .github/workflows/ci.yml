@@ -35,6 +35,6 @@ jobs:
       - name: Upload Windows Package
         uses: svenstaro/upload-release-action@v2
         with:
-          file: release/Mishmash-Windows.zip
+          file: dist/windows/mishmash-windows-${{ github.event.release.tag_name }}.zip
           tag: ${{ github.event.release.tag_name }}
           overwrite: true
