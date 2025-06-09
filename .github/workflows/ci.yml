@@ -3,7 +3,6 @@ name: Continuous Integration
 on:
   push:
   pull_request:
-    branches: [ bleed, 'prep-*' ]
 
 permissions:
   contents: read  #  to fetch code (actions/checkout)
@@ -14,19 +13,32 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
+      - name: Remove System .NET
+        run: sudo apt-get remove -y dotnet*
+
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install .NET 6.0
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
 
-      - name: Check Mods
+      - name: Prepare Environment
+        run: |
+          . mod.config;
+          awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format. File must be saved using unix-style (LF, not CRLF or CR) line endings.\n"; exit 1);
+
+      - name: Check Code
+        run: |
+          make check
+          make check-packaging-scripts
+
+      - name: Check Mod
         run: |
           sudo apt-get install lua5.1
           make check-scripts
-          make TREAT_WARNINGS_AS_ERRORS=false test
+          make TREAT_WARNINGS_AS_ERRORS=true test
 
   linux-mono:
     name: Linux (mono)
@@ -34,12 +46,23 @@ jobs:
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Check Mods
+      - name: Prepare Environment
+        run: |
+          . mod.config;
+          awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format. File must be saved using unix-style (LF, not CRLF or CR) line endings.\n"; exit 1);
+
+      - name: Check Code
+        run: |
+          # check-packaging-scripts does not depend on .net/mono, so is not needed here
+          mono --version
+          make RUNTIME=mono check
+
+      - name: Check Mod
         run: |
           # check-scripts does not depend on .net/mono, so is not needed here
-          make RUNTIME=mono TREAT_WARNINGS_AS_ERRORS=false test
+          make RUNTIME=mono TREAT_WARNINGS_AS_ERRORS=true test
 
   windows:
     name: Windows (.NET 6.0)
@@ -47,17 +70,24 @@ jobs:
 
     steps:
       - name: Clone Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install .NET 6.0
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
+
+      - name: Check Code
+        shell: powershell
+        run: |
+          # Work around runtime failures on the GH Actions runner
+          dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
+          .\make.ps1 check
 
       - name: Check Mods
         run: |
           choco install lua --version 5.1.5.52
           $ENV:Path = $ENV:Path + ";C:\Program Files (x86)\Lua\5.1\"
-          $ENV:TREAT_WARNINGS_AS_ERRORS = "false"
+          $ENV:TREAT_WARNINGS_AS_ERRORS = "true"
           .\make.ps1 check-scripts
           .\make.ps1 test
