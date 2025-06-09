@@ -8,7 +8,7 @@ all: clean windows linux mac
 windows:
 	@echo "Packaging for Windows..."
 	mkdir -p $(DIST_DIR)/windows/$(MOD_NAME)
-	cp -r $(SRC_DIR)/* $(DIST_DIR)/windows/$(MOD_NAME)/ || echo "Some files skipped"
+	cp -r $(SRC_DIR)/. $(DIST_DIR)/windows/$(MOD_NAME)/ || echo "Some files skipped"
 	cd $(DIST_DIR)/windows && zip -r ../$(MOD_NAME)-windows-$(VERSION).zip $(MOD_NAME)
 	rm -rf $(DIST_DIR)/windows
 
