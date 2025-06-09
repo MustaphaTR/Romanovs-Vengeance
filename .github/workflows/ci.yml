@@ -12,30 +12,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET 8 SDK
+      - name: ⚙️ Set up .NET 8 SDK
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
-      - name: Install dependencies
+      - name: 📦 Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y zip nsis
 
-      - name: Fix packaging script permissions
+      - name: 🔨 Make scripts executable
         run: |
-          chmod +x packaging/*.sh packaging/*/*.sh || true
+          chmod +x *.sh
+          chmod +x packaging/**/*.sh || true
+          git update-index --chmod=+x *.sh
+          git update-index --chmod=+x packaging/**/*.sh || true
 
-      - name: Build and Package Mod
+      - name: 🧱 Build and package standalone mod
         run: make package VERSION=${{ github.event.release.tag_name }}
 
-      - name: List built files
-        run: ls -R release
+      - name: 📂 Show packaged files
+        run: ls -lh release/
 
-      - name: Upload Windows Installer
+      - name: 🚀 Upload Windows Installer
         uses: svenstaro/upload-release-action@v2
         with:
           file: release/Mishmash-Windows.zip
