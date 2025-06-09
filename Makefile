@@ -201,4 +201,4 @@ test: all
 package:
 	@echo "📦 Creating release ZIP..."
 	mkdir -p dist/windows
-	zip -r dist/windows/mishmash-windows-$(VERSION).zip mods/$(MOD_ID) engine/$(ENGINE_DIRECTORY)/bin
+	zip -r dist/windows/mishmash-windows-$(VERSION).zip mods/rv engine/$(ENGINE_DIRECTORY)/bin
