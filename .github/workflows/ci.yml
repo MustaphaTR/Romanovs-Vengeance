@@ -12,33 +12,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: ⚙️ Set up .NET 8 SDK
+      - name: Setup .NET 8 SDK
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
-      - name: 📦 Install dependencies
+      - name: Install zip, Python, and makensis (for Windows installer)
         run: |
           sudo apt-get update
-          sudo apt-get install -y zip nsis
+          sudo apt-get install -y zip python3 nsis
 
-      - name: 🔨 Make scripts executable
+      - name: Fix script permissions
         run: |
           chmod +x *.sh
-          chmod +x packaging/**/*.sh || true
-          git update-index --chmod=+x *.sh
-          git update-index --chmod=+x packaging/**/*.sh || true
+          chmod +x packaging/**/*.sh
 
-      - name: 🧱 Build and package standalone mod
-        run: make package VERSION=${{ github.event.release.tag_name }}
+      - name: Fetch and build engine
+        run: |
+          ./fetch-engine.sh
+          make engine
 
-      - name: 📂 Show packaged files
-        run: ls -lh release/
+      - name: Build and package standalone mod
+        run: |
+          make package VERSION=${{ github.event.release.tag_name }}
 
-      - name: 🚀 Upload Windows Installer
+      - name: List built files
+        run: ls -R release
+
+      - name: Upload Windows Installer
         uses: svenstaro/upload-release-action@v2
         with:
           file: release/Mishmash-Windows.zip
