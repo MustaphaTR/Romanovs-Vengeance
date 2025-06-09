@@ -15,26 +15,23 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET 8 SDK
+      - name: Setup .NET SDK
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '8.0.x'
 
-      - name: Install zip
+      - name: Install required tools
         run: sudo apt-get update && sudo apt-get install -y zip
 
-      - name: Build Mod
-        run: make all VERSION=${{ github.event.release.tag_name }}
-
-      - name: Package Mod
+      - name: Build and Package Mod
         run: make package VERSION=${{ github.event.release.tag_name }}
 
-      - name: List built files
-        run: ls -R dist
+      - name: Show package contents
+        run: ls -R release
 
       - name: Upload Windows Package
         uses: svenstaro/upload-release-action@v2
         with:
-          file: dist/windows/mishmash-windows-${{ github.event.release.tag_name }}.zip
+          file: release/Mishmash-Windows.zip
           tag: ${{ github.event.release.tag_name }}
           overwrite: true
