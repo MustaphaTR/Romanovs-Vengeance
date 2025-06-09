@@ -27,4 +27,3 @@ package:
 	@echo "📦 Packaging standalone mod..."
 	chmod +x packaging/package-all.sh packaging/windows/buildpackage.sh || true
 	./packaging/package-all.sh $(VERSION)
-	@echo "✅ Windows package created: ./release/Mishmash-Windows.zip"
