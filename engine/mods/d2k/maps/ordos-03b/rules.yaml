@@ -1,0 +1,57 @@
+Player:
+	PlayerResources:
+		DefaultCash: 5000
+
+World:
+	LuaScript:
+		Scripts: campaign.lua, utils.lua, ordos03b.lua, ordos03b-AI.lua
+	MissionData:
+		Briefing: The Harkonnen have been hindering Spice production. Inefficiency cannot be tolerated. They must be eliminated.\n\nNew and more powerful weapons are available - Quads. Powerful weapons ensure victory.
+		BriefingVideo: O_BR03_E.VQA
+	MapOptions:
+		TechLevel: low
+	ScriptLobbyDropdown@difficulty:
+		ID: difficulty
+		Label: dropdown-difficulty.label
+		Description: dropdown-difficulty.description
+		Values:
+			easy: options-difficulty.easy
+			normal: options-difficulty.normal
+			hard: options-difficulty.hard
+		Default: easy
+
+carryall.reinforce:
+	Cargo:
+		MaxWeight: 10
+
+concreteb:
+	Buildable:
+		Prerequisites: ~disabled
+
+heavy_factory:
+	Buildable:
+		Prerequisites: ~disabled
+
+medium_gun_turret:
+	Buildable:
+		Prerequisites: ~disabled
+
+outpost:
+	Buildable:
+		Prerequisites: barracks
+
+quad:
+	Buildable:
+		Prerequisites: upgrade.light
+
+trooper:
+	Buildable:
+		Prerequisites: upgrade.barracks
+
+upgrade.conyard:
+	Buildable:
+		Prerequisites: ~disabled
+
+upgrade.heavy:
+	Buildable:
+		Prerequisites: ~disabled

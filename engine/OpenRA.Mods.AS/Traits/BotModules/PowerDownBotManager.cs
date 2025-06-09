@@ -1,0 +1,198 @@
+﻿#region Copyright & License Information
+/*
+ * Copyright 2007-2023 The RV-Engine Developers,
+ * This file is part of RV, SP and GenAlpha, which is free software. It is made
+ * available to you under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3 of
+ * the License, or (at your option) any later version. For more
+ * information, see COPYING.
+ */
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using OpenRA.Mods.Common.Traits;
+using OpenRA.Traits;
+
+namespace OpenRA.Mods.AS.Traits
+{
+	[TraitLocation(SystemActors.Player)]
+	[Desc("Manages AI powerdown.",
+		"You need to use PowerMultiplier on toggle control only on related buildings, for calculation of this bot module")]
+	public class PowerDownBotModuleInfo : ConditionalTraitInfo
+	{
+		[Desc("Delay (in ticks) between toggling powerdown.")]
+		public readonly int Interval = 150;
+
+		public override object Create(ActorInitializer init) { return new PowerDownBotModule(init.Self, this); }
+	}
+
+	public class PowerDownBotModule : ConditionalTrait<PowerDownBotModuleInfo>, IBotTick, IGameSaveTraitData
+	{
+		readonly World world;
+		readonly Player player;
+
+		PowerManager playerPower;
+		int toggleTick;
+
+		readonly Func<Actor, bool> isToggledBuildingsValid;
+
+		// We keep a list to track toggled buildings for performance.
+		List<BuildingPowerWrapper> toggledBuildings = new();
+
+		sealed class BuildingPowerWrapper
+		{
+			public int ExpectedPowerChanging;
+			public Actor Actor;
+
+			public BuildingPowerWrapper(Actor a, int p)
+			{
+				Actor = a;
+				ExpectedPowerChanging = p;
+			}
+		}
+
+		public PowerDownBotModule(Actor self, PowerDownBotModuleInfo info)
+			: base(info)
+		{
+			world = self.World;
+			player = self.Owner;
+
+			isToggledBuildingsValid = a => a != null && a.Owner == self.Owner && !a.IsDead && a.IsInWorld;
+		}
+
+		protected override void Created(Actor self)
+		{
+			playerPower = self.Owner.PlayerActor.TraitOrDefault<PowerManager>();
+		}
+
+		protected override void TraitEnabled(Actor self)
+		{
+			toggleTick = world.LocalRandom.Next(Info.Interval);
+		}
+
+		static int GetTogglePowerChanging(Actor a)
+		{
+			var powerChangingIfToggled = 0;
+			var powerTraits = a.TraitsImplementing<Power>().Where(t => !t.IsTraitDisabled).ToArray();
+			if (powerTraits.Length > 0)
+			{
+				var powerMulTraits = a.TraitsImplementing<PowerMultiplier>().ToArray();
+				powerChangingIfToggled = powerTraits.Sum(p => p.Info.Amount) * (powerMulTraits.Sum(p => p.Info.Modifier) - 100) / 100;
+				if (Array.Exists(powerMulTraits, t => !t.IsTraitDisabled))
+					powerChangingIfToggled = -powerChangingIfToggled;
+			}
+
+			return powerChangingIfToggled;
+		}
+
+		IEnumerable<Actor> GetToggleableBuildings(IBot bot)
+		{
+			var toggleable = bot.Player.World.ActorsHavingTrait<ToggleConditionOnOrder>(t => !t.IsTraitDisabled && !t.IsTraitPaused)
+				.Where(a => a != null && !a.IsDead && a.Owner == player
+					&& a.Info.HasTraitInfo<PowerInfo>()
+					&& a.Info.HasTraitInfo<PowerMultiplierInfo>()
+					&& a.Info.HasTraitInfo<BuildingInfo>());
+
+			return toggleable;
+		}
+
+		IEnumerable<BuildingPowerWrapper> GetOnlineBuildings(IBot bot)
+		{
+			var toggleableBuildings = new List<BuildingPowerWrapper>();
+
+			foreach (var a in GetToggleableBuildings(bot))
+			{
+				var powerChanging = GetTogglePowerChanging(a);
+				if (powerChanging > 0)
+					toggleableBuildings.Add(new BuildingPowerWrapper(a, powerChanging));
+			}
+
+			return toggleableBuildings.OrderBy(bpw => bpw.ExpectedPowerChanging);
+		}
+
+		void IBotTick.BotTick(IBot bot)
+		{
+			if (toggleTick > 0 || playerPower == null)
+			{
+				toggleTick--;
+				return;
+			}
+
+			var power = playerPower.ExcessPower;
+			var togglingBuildings = new List<Actor>();
+
+			// When there is extra power, check if AI can toggle on
+			if (power > 0)
+			{
+				toggledBuildings = toggledBuildings.Where(bpw => isToggledBuildingsValid(bpw.Actor)).OrderByDescending(bpw => bpw.ExpectedPowerChanging).ToList();
+				for (var i = 0; i < toggledBuildings.Count; i++)
+				{
+					var bpw = toggledBuildings[i];
+					if (power + bpw.ExpectedPowerChanging < 0)
+						continue;
+
+					togglingBuildings.Add(bpw.Actor);
+					power += bpw.ExpectedPowerChanging;
+					toggledBuildings.RemoveAt(i);
+				}
+			}
+
+			// When there is no power, check if AI can toggle off
+			// and add those toggled to list for toggling on
+			else if (power < 0)
+			{
+				var buildingsCanBeOff = GetOnlineBuildings(bot);
+				foreach (var bpw in buildingsCanBeOff)
+				{
+					if (power > 0)
+						break;
+
+					togglingBuildings.Add(bpw.Actor);
+					toggledBuildings.Add(new BuildingPowerWrapper(bpw.Actor, -bpw.ExpectedPowerChanging));
+					power += bpw.ExpectedPowerChanging;
+				}
+			}
+
+			if (togglingBuildings.Count > 0)
+				bot.QueueOrder(new Order("PowerDown", null, false, groupedActors: togglingBuildings.ToArray()));
+
+			toggleTick = Info.Interval;
+		}
+
+		List<MiniYamlNode> IGameSaveTraitData.IssueTraitData(Actor self)
+		{
+			if (IsTraitDisabled)
+				return null;
+
+			var data = new List<MiniYamlNode>();
+			foreach (var tb in toggledBuildings.Where(td => isToggledBuildingsValid(td.Actor)))
+				data.Add(new MiniYamlNode(FieldSaver.FormatValue(tb.Actor.ActorID), FieldSaver.FormatValue(tb.ExpectedPowerChanging)));
+
+			return new List<MiniYamlNode>()
+			{
+				new("ToggledBuildings", new MiniYaml("", data))
+			};
+		}
+
+		void IGameSaveTraitData.ResolveTraitData(Actor self, MiniYaml data)
+		{
+			if (self.World.IsReplay)
+				return;
+
+			var nodes = data.ToDictionary();
+
+			if (nodes.TryGetValue("ToggledBuildings", out var toggledBuildingsNode))
+			{
+				foreach (var n in toggledBuildingsNode.Nodes)
+				{
+					var a = self.World.GetActorById(FieldLoader.GetValue<uint>(n.Key, n.Key));
+
+					if (isToggledBuildingsValid(a))
+						toggledBuildings.Add(new BuildingPowerWrapper(a, FieldLoader.GetValue<int>(n.Key, n.Value.Value)));
+				}
+			}
+		}
+	}
+}

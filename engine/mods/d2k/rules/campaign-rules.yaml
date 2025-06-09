@@ -1,0 +1,69 @@
+Player:
+	-ConquestVictoryConditions:
+	MissionObjectives:
+		EarlyGameOver: true
+		GameOverDelay: 3000
+	Shroud:
+		FogCheckboxVisible: False
+		FogCheckboxLocked: True
+		FogCheckboxEnabled: True
+		ExploredMapCheckboxVisible: False
+		ExploredMapCheckboxLocked: True
+		ExploredMapCheckboxEnabled: False
+	PlayerResources:
+		DefaultCashDropdownVisible: False
+		DefaultCashDropdownLocked: True
+	LobbyPrerequisiteCheckbox@AUTOCONCRETE:
+		Enabled: False
+		Locked: True
+		Visible: False
+	DeveloperMode:
+		CheckboxVisible: False
+	ModularBot@CampaignAI:
+		Name: bot-campaign-ai.name
+		Type: campaign
+
+World:
+	-CrateSpawner:
+	-SpawnStartingUnits:
+	-MapStartingLocations:
+	ObjectivesPanel:
+		PanelName: MISSION_OBJECTIVES
+	ActorSpawnManager:
+		Minimum: 0
+		Maximum: 1
+		InitialDelay: 5000
+	MapCreeps:
+		CheckboxVisible: False
+		CheckboxLocked: True
+		CheckboxEnabled: True
+	MapBuildRadius:
+		AllyBuildRadiusCheckboxVisible: False
+		AllyBuildRadiusCheckboxLocked: True
+		AllyBuildRadiusCheckboxEnabled: False
+		BuildRadiusCheckboxVisible: False
+		BuildRadiusCheckboxLocked: True
+		BuildRadiusCheckboxEnabled: True
+	MapOptions:
+		ShortGameCheckboxVisible: False
+		ShortGameCheckboxLocked: True
+		ShortGameCheckboxEnabled: False
+		TechLevelDropdownVisible: False
+		TechLevelDropdownLocked: True
+	TimeLimitManager:
+		TimeLimitDropdownVisible: False
+
+^AutoTargetGroundAssaultMove:
+	GrantConditionOnBotOwner@BOTOWNER:
+		Bots: campaign
+
+^AutoTargetAllAssaultMove:
+	GrantConditionOnBotOwner@BOTOWNER:
+		Bots: campaign
+
+sandworm:
+	Sandworm:
+		ChanceToDisappear: 40
+
+harvester:
+	-MustBeDestroyed:
