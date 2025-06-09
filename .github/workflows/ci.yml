@@ -87,3 +87,29 @@ jobs:
           $ENV:Path = $ENV:Path + ";C:\Program Files (x86)\Lua\5.1\"
           .\make.ps1 check-scripts
           .\make.ps1 test
+
+
+  release:
+    name: Package and Upload Release
+    runs-on: ubuntu-22.04
+    needs: [linux]
+    if: github.event_name == 'release'
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install zip
+        run: sudo apt-get update && sudo apt-get install zip -y
+
+      - name: Package Mod
+        run: |
+          mkdir -p release
+          zip -r release/my-mod.zip mod.yaml rules/ sequences/ weapons/ *.png *.sh *.md || echo "Some files may be missing"
+
+      - name: Upload Release Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/my-mod.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
