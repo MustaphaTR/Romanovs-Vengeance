@@ -3,11 +3,11 @@
 # to compile, run:
 #   make
 #
-# to compile using Mono (version 6.4 or greater) instead of .NET 5, run:
+# to compile using Mono (version 6.4 or greater) instead of .NET 6, run:
 #   make RUNTIME=mono
 #
 # to compile using system libraries for native dependencies, run:
-#   make [RUNTIME=dotnet] TARGETPLATFORM=unix-generic
+#   make [RUNTIME=net6] TARGETPLATFORM=unix-generic
 #
 # to remove the files created by compiling, run:
 #   make clean
@@ -19,10 +19,10 @@
 #   make check-scripts
 #
 # to check the engine and your mod dlls for StyleCop violations, run:
-#   make [RUNTIME=dotnet] check
+#   make [RUNTIME=net6] check
 #
 # to check your mod yaml for errors, run:
-#   make [RUNTIME=dotnet] test
+#   make [RUNTIME=net6] test
 #
 # the following are internal sdk helpers that are not intended to be run directly:
 #   make check-variables
@@ -53,18 +53,29 @@ MOD_SOLUTION_FILES = $(shell find . -maxdepth 1 -iname '*.sln' 2> /dev/null)
 MSBUILD = msbuild -verbosity:m -nologo
 DOTNET = dotnet
 
-RUNTIME ?= dotnet
+RUNTIME ?= net6
+CONFIGURATION ?= Release
+DOTNET_RID = $(shell ${DOTNET} --info | grep RID: | cut -w -f3)
+ARCH_X64 = $(shell echo ${DOTNET_RID} | grep x64)
 
 ifndef TARGETPLATFORM
 UNAME_S := $(shell uname -s)
 UNAME_M := $(shell uname -m)
 ifeq ($(UNAME_S),Darwin)
+ifeq ($(ARCH_X64),)
+TARGETPLATFORM = osx-arm64
+else
 TARGETPLATFORM = osx-x64
+endif
 else
 ifeq ($(UNAME_M),x86_64)
 TARGETPLATFORM = linux-x64
 else
+ifeq ($(UNAME_M),aarch64)
+TARGETPLATFORM = linux-arm64
+else
 TARGETPLATFORM = unix-generic
+endif
 endif
 endif
 endif
@@ -136,10 +147,10 @@ all: engine
 ifeq ($(RUNTIME), mono)
 	@command -v $(MSBUILD) >/dev/null || (echo "OpenRA requires the '$(MSBUILD)' tool provided by Mono >= 6.4."; exit 1)
 ifneq ("$(MOD_SOLUTION_FILES)","")
-	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:Build -restore -p:Configuration=Release -p:TargetPlatform=$(TARGETPLATFORM) -p:Mono=true \;
+	@find . -maxdepth 1 -name '*.sln' -exec $(MSBUILD) -t:Build -restore -p:Configuration=${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) -p:Mono=true \;
 endif
 else
-	@find . -maxdepth 1 -name '*.sln' -exec $(DOTNET) build -c Release -p:TargetPlatform=$(TARGETPLATFORM) \;
+	@find . -maxdepth 1 -name '*.sln' -exec $(DOTNET) build -c ${CONFIGURATION} -p:TargetPlatform=$(TARGETPLATFORM) \;
 endif
 
 clean: engine
@@ -168,11 +179,14 @@ endif
 
 check: engine
 ifneq ("$(MOD_SOLUTION_FILES)","")
-	@echo "Compiling in debug mode..."
+	@echo "Compiling in Debug mode..."
 ifeq ($(RUNTIME), mono)
-	@$(MSBUILD) -t:build -restore -p:Configuration=Debug -p:TargetPlatform=$(TARGETPLATFORM) -p:Mono=true
+# Enabling EnforceCodeStyleInBuild and GenerateDocumentationFile as a workaround for some code style rules (in particular IDE0005) being bugged and not reporting warnings/errors otherwise.
+	@$(MSBUILD) -t:clean\;build -restore -p:Configuration=Debug -warnaserror -p:TargetPlatform=$(TARGETPLATFORM) -p:Mono=true -p:EnforceCodeStyleInBuild=true -p:GenerateDocumentationFile=true
 else
-	@$(DOTNET) build -c Debug -p:TargetPlatform=$(TARGETPLATFORM)
+# Enabling EnforceCodeStyleInBuild and GenerateDocumentationFile as a workaround for some code style rules (in particular IDE0005) being bugged and not reporting warnings/errors otherwise.
+	@$(DOTNET) clean -c Debug --nologo --verbosity minimal
+	@$(DOTNET) build -c Debug -nologo -warnaserror -p:TargetPlatform=$(TARGETPLATFORM) -p:EnforceCodeStyleInBuild=true -p:GenerateDocumentationFile=true
 endif
 endif
 	@echo "Checking for explicit interface violations..."
@@ -181,10 +195,5 @@ endif
 	@./utility.sh --check-conditional-trait-interface-overrides
 
 test: all
-	@echo "Testing $(mishmash) mod MiniYAML..."
+	@echo "Testing $(MOD_ID) mod MiniYAML..."
 	@./utility.sh --check-yaml
-
-package: all
-	@chmod +x packaging/linux/buildpackage.sh packaging/windows/buildpackage.sh
-	@./packaging/linux/buildpackage.sh
-	@./packaging/windows/buildpackage.sh
