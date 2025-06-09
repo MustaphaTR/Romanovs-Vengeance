@@ -1,48 +1,10 @@
-name: Build and Package Mishmash Mod
+- name: Setup .NET 8 SDK
+  uses: actions/setup-dotnet@v3
+  with:
+    dotnet-version: '8.0.x'
 
-on:
-  release:
-    types: [published]
+- name: Restore packages
+  run: dotnet restore OpenRA.sln
 
-permissions:
-  contents: write
-
-jobs:
-  build-and-package:
-    runs-on: windows-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Setup .NET 8 SDK
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8.0.x'
-
-      - name: Install zip
-        run: choco install zip -y
-
-      - name: Build and Package
-        run: |
-          make clean
-          make build
-          make check || echo "Check failed, but continuing"
-          make package VERSION=${{ github.event.release.tag_name }}
-
-      - name: List output
-        run: dir dist /s
-
-      - name: Upload Windows package
-        uses: svenstaro/upload-release-action@v2
-        with:
-          file: dist/windows/*.zip
-          tag: ${{ github.event.release.tag_name }}
-          overwrite: true
-
-      - name: Upload Linux package
-        uses: svenstaro/upload-release-action@v2
-        with:
-          file: dist/linux/*.zip
-          tag: ${{ github.event.release.tag_name }}
-          overwrite: true
+- name: Build mod
+  run: dotnet build OpenRA.sln -c Release
