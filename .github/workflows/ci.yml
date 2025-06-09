@@ -1,10 +1,44 @@
-- name: Setup .NET 8 SDK
-  uses: actions/setup-dotnet@v3
-  with:
-    dotnet-version: '8.0.x'
+name: Build and Package Mishmash
 
-- name: Restore packages
-  run: dotnet restore OpenRA.sln
+on:
+  release:
+    types: [published]
 
-- name: Build mod
-  run: dotnet build OpenRA.sln -c Release
+permissions:
+  contents: write
+
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8 SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Install zip
+        run: sudo apt-get update && sudo apt-get install -y zip
+
+      - name: Restore dependencies
+        run: dotnet restore OpenRA.sln
+
+      - name: Build mod
+        run: dotnet build OpenRA.sln -c Release
+
+      - name: Package mod files (Windows)
+        run: |
+          mkdir -p dist/windows/Mishmash
+          cp -r mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/ dist/windows/Mishmash/
+          cd dist/windows
+          zip -r Mishmash-windows-${{ github.event.release.tag_name }}.zip Mishmash
+
+      - name: Upload Windows package
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: dist/windows/*.zip
+          tag: ${{ github.event.release.tag_name }}
+          overwrite: true
