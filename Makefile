@@ -21,9 +21,11 @@ build:
 	dotnet restore OpenRA.sln
 	dotnet build OpenRA.sln -c Release
 
-# Run rule checks, don't fail if it returns errors
+# Run rule checks using OpenRA.Utility — but do not fail the build if errors are found
 check:
+	@echo "🔎 Running OpenRA.Utility check (non-blocking)..."
 	- ./engine/bin/OpenRA.Utility.exe /run-all-rules || true
+	@echo "✅ Check completed (errors ignored)."
 
 # Package mod into zip archives
 package: package-windows
