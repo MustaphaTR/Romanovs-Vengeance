@@ -8,32 +8,44 @@ permissions:
   contents: write
 
 jobs:
-  build-windows:
+  build-linux-and-windows:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: 📥 Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup .NET
+      - name: 🧰 Set up .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
 
-      - name: Make scripts executable
-        run: chmod +x packaging/windows/buildpackage.sh
+      - name: 🧱 Make scripts executable
+        run: |
+          chmod +x packaging/windows/buildpackage.sh
+          chmod +x packaging/linux/buildpackage.sh
 
-      - name: Build mod and engine
+      - name: 🛠️ Build mod and engine
         run: |
           make clean
           make
 
-      - name: Package for Windows
+      - name: 📦 Package for Windows
         run: ./packaging/windows/buildpackage.sh
 
-      - name: Upload release asset
+      - name: 📦 Package for Linux
+        run: ./packaging/linux/buildpackage.sh
+
+      - name: 🚀 Upload Windows release asset
         uses: softprops/action-gh-release@v2
         with:
           files: release/Mishmash-Windows.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 🚀 Upload Linux release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: release/Mishmash-Linux.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
