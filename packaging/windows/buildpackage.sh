@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-MOD_ID="rv"
+MOD_ID="mishmash"
 ENGINE_DIR="./engine"
 RELEASE_DIR="./release/windows"
 ZIP_OUTPUT="./release/Mishmash-Windows.zip"
