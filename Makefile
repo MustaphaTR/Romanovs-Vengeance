@@ -13,8 +13,8 @@ clean:
 
 # Build the solution using .NET SDK
 build:
-	dotnet restore OpenRA.sln
-	dotnet build OpenRA.sln -c Release
+	dotnet restore Mishmash.sln
+	dotnet build Mishmash.sln -c Release
 
 # Run rule checks using OpenRA.Utility — but do not fail the build if errors are found
 check:
