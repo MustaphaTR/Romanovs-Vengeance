@@ -27,11 +27,11 @@ package: package-windows
 
 package-windows:
 	mkdir -p $(DIST_DIR)/windows/mishmash
-	cp -r rv/mod.yaml rv/rules/ rv/maps/ rv/sequences/ rv/bits/ rv/chrome/ rv/ui/ $(DIST_DIR)/windows/mishmash/
+	cp -r mods/rv/mod.yaml mods/rv/rules/ mods/rv/maps/ mods/rv/sequences/ mods/rv/bits/ mods/rv/chrome/ $(DIST_DIR)/windows/mishmash/
 	cd $(DIST_DIR)/windows && zip -r mishmash-windows-$(VERSION).zip mishmash
 
 # Optional Linux package
 package-linux:
 	mkdir -p $(DIST_DIR)/linux/mishmash
-	cp -r mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/ $(DIST_DIR)/linux/mishmash/
+	cp -r mods/rv/mod.yaml mods/rv/rules/ mods/rv/maps/ mods/rv/sequences/ mods/rv/bits/ mods/rv/chrome/ $(DIST_DIR)/linux/mishmash/
 	cd $(DIST_DIR)/linux && zip -r mishmash-linux-$(VERSION).zip mishmash
