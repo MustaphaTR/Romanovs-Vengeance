@@ -197,3 +197,8 @@ endif
 test: all
 	@echo "Testing $(MOD_ID) mod MiniYAML..."
 	@./utility.sh --check-yaml
+
+package:
+	@echo "📦 Creating release ZIP..."
+	mkdir -p dist/windows
+	zip -r dist/windows/mishmash-windows-$(VERSION).zip mods/$(MOD_ID) engine/$(ENGINE_DIRECTORY)/bin
