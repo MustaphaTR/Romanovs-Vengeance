@@ -450,6 +450,32 @@ pcv.colorpicker:
 		Image: pcv
 		Palette: colorpicker
 
+d2k.colorpicker:
+	Inherits: harkonnenmcv
+	Mobile:
+		InitialFacing: 640
+	-Buildable:
+	-MapEditorData:
+	RenderSprites:
+		Image: d2kmcv
+		Palette: colorpickerd2k
+
+gdi.colorpicker:
+	Inherits: gdimcv
+	Mobile:
+		InitialFacing: 640
+	-Buildable:
+	-MapEditorData:
+	WithVoxelBody:
+		ShowShadow: false
+	-WithVoxelBody@Water:
+	RenderSprites:
+		Image: tsmcv
+		Palette: colorpicker
+	RenderVoxels:
+		Image: tsmcv
+		Palette: colorpicker
+
 SROCK01:
 	Inherits: ^Rock
 

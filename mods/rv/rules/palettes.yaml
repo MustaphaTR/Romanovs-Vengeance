@@ -91,6 +91,19 @@
 		Name: rubble-newurban
 		Filename: isoubn.pal
 		ShadowIndex: 1
+	PaletteFromFile@chromedune:
+		Name: chromedune
+		Filename: PALETTE.BIN
+		ShadowIndex: 3
+		AllowModifiers: false
+	PaletteFromFile@d2kpal:
+		Name: d2kpal
+		Filename: PALETTE.BIN
+		ShadowIndex: 1
+	PlayerColorPalette@d2kpal2:
+		BasePalette: d2kpal
+		BaseName: d2kpal2
+		RemapIndex: 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255
 	PlayerColorPalette:
 		BasePalette: player
 		RemapIndex: 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
@@ -568,6 +581,16 @@
 		Name: effect75alpha
 		BasePalette: effect
 		Alpha: 0.75
+	PaletteFromFile@d2keffect:
+		Name: d2keffect
+		Filename: PALETTE.BIN
+		ShadowIndex: 1
+		AllowModifiers: false
+	PaletteFromFile@d2keffectmulti0:
+		Name: d2keffectmulti0
+		Filename: PALETTE.BIN
+		ShadowIndex: 1
+		AllowModifiers: false
 	PaletteFromFile@tseffect:
 		Name: tseffect
 		Filename: tsanim.pal
@@ -594,6 +617,11 @@
 		Name: colorpicker
 		BasePalette: player
 		RemapIndex: 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+		AllowModifiers: false
+	ColorPickerPalette@colorpickerd2k:
+		Name: colorpickerd2k
+		BasePalette: d2kpal
+		RemapIndex: 255, 254, 253, 252, 251, 250, 249, 248, 247, 246, 245, 244, 243, 242, 241, 240
 		AllowModifiers: false
 	PaletteFromFile@resource:
 		Name: resource
@@ -687,3 +715,36 @@
 		AllowModifiers: false
 	PaletteFromGrayscale@greyscale:
 		Name: greyscale
+	PaletteFromFile@tibsun:
+		Name: tibsun
+		Filename: unitsnots.pal
+		ShadowIndex: 1
+		AllowModifiers: false
+	PlayerColorPalette@tibsun:
+		BasePalette: tibsun
+		BaseName: tibsun
+		RemapIndex: 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+	PaletteFromFile@d2k:
+		Name: d2k
+		Filename: PALETTE.BIN
+		ShadowIndex: 1
+		CursorPalette: true
+	PaletteFromFile@d2keffect:
+		Name: d2keffect
+		Filename: PALETTE.BIN
+		ShadowIndex: 1
+		AllowModifiers: False
+	PaletteFromFile@d2kunit:
+		Name: d2kunit
+		Filename: d2kpalette.bin
+		ShadowIndex: 1
+	PlayerColorPalette@d2k:
+		BasePalette: d2kunit
+		BaseName: playerd2k
+		RemapIndex: 255, 254, 253, 252, 251, 250, 249, 248, 247, 246, 245, 244, 243, 242, 241, 240
+	PlayerColorShift@d2k:
+		BasePalette: playerd2k
+		MinHue: 0.29
+		MaxHue: 0.37
+		ReferenceHue: 0.33
+		ReferenceSaturation: 0.925

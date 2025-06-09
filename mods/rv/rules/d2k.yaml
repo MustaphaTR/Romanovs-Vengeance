@@ -7,6 +7,7 @@ d2kharkonnencnst:
 	Inherits: ^ConstructionYard
 	Buildable:
 		BuildPaletteOrder: 20
+		IconPalette: chromedune
 	ProvidesPrerequisite@building.soviets:
 		Prerequisite: Building.harkonnen
 		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, harkonnen
@@ -35,18 +36,21 @@ d2kharkonnencnst:
 		VoiceSet: SovietConstructionYardVoice
 	RenderSprites:
 		Image: conyard.harkonnen
+		PlayerPalette: d2kpal2
 
 harkonnenmcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.harkonnen
 		Prerequisites: ~tsgtcnst, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+		IconPalette: chromedune
 	Transforms:
 		IntoActor: d2kharkonnencnst
 	Voiced:
 		VoiceSet: SovietConstructionVehicleVoice
 	RenderSprites:
 		Image: d2kmcv
+		PlayerPalette: d2kpal2
 	WithFacingSpriteBody:
 	-RenderVoxels:
 	-WithVoxelBody:
@@ -64,6 +68,7 @@ harkonnenpowr:
 		Description: actor-napowr.description
 		Prerequisites: ~d2kharkonnencnst, ~techlevel.1
 		LocalCenterOffset: 0,-512,0
+		IconPalette: chromedune
 	Tooltip:
 		Name: actor-napowr.name
 	Tooltip@NoRow:
@@ -80,6 +85,7 @@ harkonnenpowr:
 		Volume: 0.8
 	RenderSprites:
 		Image: power.harkonnen
+		PlayerPalette: d2kpal2
 
 harkonnenbarracks:
 	Inherits: ^Barracks
@@ -88,6 +94,7 @@ harkonnenbarracks:
 		Queue: Building.Shared, Building.harkonnen
 		Description: actor-nahand.description
 		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		IconPalette: chromedune
 	Building:
 		Footprint: xx xx
 		Dimensions: 2,2
@@ -219,12 +226,14 @@ harkonnenbarracks:
 		DecorationHeight: 30
 	RenderSprites:
 		Image: barracks.harkonnen
+		PlayerPalette: d2kpal2
 
 harkonnenrefinery:
 	Inherits: ^Refinery
 	Buildable:
 		Queue: Building.Shared, Building.harkonnen
 		Prerequisites: ~d2kharkonnencnst, power, ~!global-megawealth, ~techlevel.1, ~AIantiRush
+		IconPalette: chromedune
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 2,3
@@ -248,6 +257,7 @@ harkonnenrefinery:
 		DecorationHeight: 90
 	RenderSprites:
 		Image: refinery.harkonnen
+		PlayerPalette: d2kpal2
 
 harkonnenlightweap:
 	Inherits: ^WarFactory
@@ -259,6 +269,7 @@ harkonnenlightweap:
 		Queue: Building.Shared, Building.harkonnen
 		Description: actor-naweap.description
 		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		IconPalette: chromedune
 	Building:
 		Footprint: xxx xx= ===
 		Dimensions: 3,3
@@ -287,6 +298,7 @@ harkonnenlightweap:
 		DecorationHeight: 90
 	RenderSprites:
 		Image: light.ordos
+		PlayerPalette: d2kpal2
 		FactionImages:
 			atreides: light.atreides
 			fremen: light.atreides
@@ -303,6 +315,7 @@ harkonnenheavyweap:
 		Queue: Building.Shared, Building.harkonnen
 		Description: actor-naweap.description
 		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		IconPalette: chromedune
 	Building:
 		Footprint: _x_ xxx =xX ===
 		Dimensions: 3,4
@@ -343,6 +356,7 @@ harkonnenheavyweap:
 		DecorationHeight: 90
 	RenderSprites:
 		Image: heavy.ordos
+		PlayerPalette: d2kpal2
 		FactionImages:
 			atreides: heavy.atreides
 			fremen: heavy.atreides
@@ -358,6 +372,7 @@ outpost:
 		Queue: Building.Shared, Building.harkonnen
 		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
 		Description: actor-naradr.description
+		IconPalette: chromedune
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.naradr
@@ -380,6 +395,7 @@ outpost:
 		DecorationHeight: 90
 	RenderSprites:
 		Image: outpost.harkonnen
+		PlayerPalette: d2kpal2
 
 starport:
 	Inherits: ^Helipad
@@ -387,6 +403,7 @@ starport:
 		Queue: Building.Shared, Building.harkonnen
 		Description: actor-naheli.description
 		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		IconPalette: chromedune
 	Tooltip:
 		Name: Starport
 	Tooltip@NoRow:
@@ -428,6 +445,7 @@ starport:
 		DecorationHeight: 60
 	RenderSprites:
 		Image: starport.ordos
+		PlayerPalette: d2kpal2
 		FactionImages:
 			atreides: starport.atreides
 			fremen: starport.atreides
@@ -444,6 +462,7 @@ d2krepair_pad:
 		Queue: Building.Shared, Building.harkonnen
 		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
 		Description: actor-gaairc.description
+		IconPalette: chromedune
 	Tooltip:
 		Name: actor-gaairc.name
 	Tooltip@NoRow:
@@ -559,6 +578,7 @@ d2krepair_pad:
 		Stats: Armor, Sight, Power
 	RenderSprites:
 		Image: repair_pad.ordos
+		PlayerPalette: d2kpal2
 		FactionImages:
 			atreides: repair_pad.atreides
 			fremen: repair_pad.atreides
@@ -571,6 +591,7 @@ high_tech_factory:
 	Buildable:
 		Queue: Building.Shared, Building.harkonnen
 		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		IconPalette: chromedune
 	ProvidesPrerequisite@default:
 		Prerequisite: harkonnentech
 	ProvidesPrerequisite@AIbuildinglimit:
@@ -601,6 +622,7 @@ high_tech_factory:
 		Volume: 0.8
 	RenderSprites:
 		Image: hightech.ordos
+		PlayerPalette: d2kpal2
 		FactionImages:
 			atreides: hightech.atreides
 			fremen: hightech.atreides
@@ -616,6 +638,7 @@ d2kresearch_centre:
 		Queue: Building.Shared, Building.harkonnen
 		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
 		Description: actor-naradr.description
+		IconPalette: chromedune
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.naradr
@@ -637,6 +660,7 @@ d2kresearch_centre:
 		DecorationHeight: 90
 	RenderSprites:
 		Image: research.ordos
+		PlayerPalette: d2kpal2
 		FactionImages:
 			atreides: research.atreides
 			fremen: research.atreides
@@ -651,6 +675,7 @@ d2kpalace:
 		Queue: Building.Shared, Building.harkonnen
 		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
 		Description: actor-naradr.description
+		IconPalette: chromedune
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.naradr
@@ -668,11 +693,150 @@ d2kpalace:
 		DecorationHeight: 90
 	RenderSprites:
 		Image: palace.ordos
+		PlayerPalette: d2kpal2
 		FactionImages:
 			atreides: palace.atreides
 			fremen: palace.atreides
 			harkonnen: palace.harkonnen
 			corrino: palace.corrino
+
+d2kgunturret:
+	Inherits: ^SupportBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Shared, Support.harkonnen
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		BuildPaletteOrder: 40
+		Description: actor-nalasr.description
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		IconPalette: chromedune
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Gun Turret
+	Tooltip@NoRow:
+		Name: Gun Turret
+	Health:
+		HP: 40000
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 7c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 7c0
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		Offset: 0,0,0
+		RealignDelay: -1
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || chronodisable
+	Armament:
+		Weapon: para
+		LocalOffset: 512,0,432
+		MuzzleSequence: muzzle
+	WithMuzzleOverlay:
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	BodyOrientation:
+		QuantizedFacings: 16
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+	WithRangeCircle:
+		Range: 6c0
+		Type: pillbox
+	AutoTarget:
+	RequiresBuildableArea:
+		Adjacent: 4
+	IsometricSelectable:
+		Class: gdivulcan
+		DecorationHeight: 32
+	Voiced:
+		VoiceSet: SentryGunVoice
+		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MaxRange
+		Damage: 65
+	RenderSprites:
+		Image: medium_gun_turret
+		PlayerPalette: d2kpal2
+
+d2krocketturret:
+	Inherits: ^SupportBuilding
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@MC: ^MindControllableBuilding
+	Buildable:
+		Queue: Support.Shared, Support.harkonnen
+		Prerequisites: ~d2kharkonnencnst, power, ~techlevel.1
+		BuildPaletteOrder: 40
+		Description: actor-nalasr.description
+		BuildDuration: 250
+		BuildDurationModifier: 100
+		IconPalette: chromedune
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: Rocket Turret
+	Tooltip@NoRow:
+		Name: Rocket Turret
+	Health:
+		HP: 40000
+	Armor:
+		Type: Steel
+	RevealsShroud:
+		Range: 7c0
+	# RevealsShroudToIntelligenceOwner:
+	#	Types: SatelliteScan
+	#	Range: 7c0
+	Turreted:
+		TurnSpeed: 40
+		InitialFacing: 896
+		Offset: 0,0,0
+		RealignDelay: -1
+	AttackTurreted:
+		PauseOnCondition: build-incomplete || chronodisable
+	Armament@portable:
+		Weapon: D2kMissileTurret
+		Damage: 90
+		LocalOffset: 256,384,768, 256,-384,768
+		ReloadingCondition: reload-ground
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-air
+	Armament@portable-aa:
+		Weapon: D2kMissileTurretAA
+		Damage: 90
+		LocalOffset: 256,384,768, 256,-384,768
+		ReloadingCondition: reload-air
+		PauseOnCondition: chronodisable || webdisable || dogstun || reload-ground
+	WithMuzzleOverlay:
+	DetectCloaked:
+		Range: 5c0
+	RenderDetectionCircle:
+	BodyOrientation:
+		QuantizedFacings: 32
+	WithSpriteTurret:
+		RequiresCondition: !build-incomplete
+	WithRangeCircle:
+		Range: 6c0
+		Type: pillbox
+	AutoTarget:
+	RequiresBuildableArea:
+		Adjacent: 4
+	IsometricSelectable:
+		Class: gdivulcan
+		DecorationHeight: 30
+	Voiced:
+		VoiceSet: SentryGunVoice
+		Volume: 0.8
+	ActorStatValues:
+		Stats: Armor, Sight, None, Damage, ReloadDelay, MaxRange
+		Damage: 65
+	RenderSprites:
+		Image: large_gun_turret
+		PlayerPalette: d2kpal2
 
 #######################################
 # D2K Vehicles
@@ -685,6 +849,7 @@ d2kharv:
 		BuildPaletteOrder: 90
 		Description: actor-cmin.description
 		Prerequisites: ~harkonnenweap
+		IconPalette: chromedune
 	Tooltip:
 		Name: Ore Harvester
 	Tooltip@NoRow:
@@ -702,6 +867,7 @@ d2kharv:
 		VoiceSet: ChronoMinerVoice
 	RenderSprites:
 		Image: d2kharv
+		PlayerPalette: d2kpal2
 	WithFacingSpriteBody:
 	WithHarvestOverlay:
 	RenderVoxels:
@@ -734,6 +900,7 @@ d2ktrike:
 		Description: GDI Anti Infantry Mech.
 		BuildDuration: 250
 		BuildDurationModifier: 100
+		IconPalette: chromedune
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -788,6 +955,7 @@ d2ktrike:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 	RenderSprites:
 		Image: d2ktrike
+		PlayerPalette: d2kpal2
 
 d2kquad:
 	Inherits: ^Vehicle
@@ -816,6 +984,7 @@ d2kquad:
 		Description: GDI Anti Infantry Mech.
 		BuildDuration: 250
 		BuildDurationModifier: 100
+		IconPalette: chromedune
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -870,6 +1039,7 @@ d2kquad:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 	RenderSprites:
 		Image: d2kquad
+		PlayerPalette: d2kpal2
 
 d2kcombattankharkonnen:
 	Inherits: ^Vehicle
@@ -898,6 +1068,7 @@ d2kcombattankharkonnen:
 		Description: GDI Anti Infantry Mech.
 		BuildDuration: 250
 		BuildDurationModifier: 100
+		IconPalette: chromedune
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -965,6 +1136,7 @@ d2kcombattankharkonnen:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 	RenderSprites:
 		Image: combat_tank_h
+		PlayerPalette: d2kpal2
 
 d2ksiegetank:
 	Inherits: ^Vehicle
@@ -993,6 +1165,7 @@ d2ksiegetank:
 		Description: GDI Anti Infantry Mech.
 		BuildDuration: 250
 		BuildDurationModifier: 100
+		IconPalette: chromedune
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
@@ -1059,11 +1232,12 @@ d2ksiegetank:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, Cargo, MaxRange
 	RenderSprites:
 		Image: d2ksiege_tank
+		PlayerPalette: d2kpal2
 
 #######################################
 # D2K Infantry
 #######################################
-	
+
 d2ke1:
 	Inherits: ^Infantry
 	Inherits@APBULLETS: ^AffectedByAPBullets
@@ -1083,6 +1257,7 @@ d2ke1:
 		Description: actor-e2.description
 		BuildDuration: 50
 		BuildDurationModifier: 100
+		IconPalette: chromedune
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -1197,6 +1372,7 @@ d2ke1:
 		Upgrades: upgrade.bullet_proof_coats, upgrade.molotov_cocktails, upgrade.ap_bullets
 	RenderSprites:
 		Image: d2klight_inf
+		PlayerPalette: d2kpal2
 		
 d2kengineer:
 	Inherits: ^Infantry
@@ -1212,6 +1388,7 @@ d2kengineer:
 		Description: actor-engineer.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
+		IconPalette: chromedune
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -1286,6 +1463,7 @@ d2kengineer:
 	CaptureManager:
 	RenderSprites:
 		Image: d2kengineer
+		PlayerPalette: d2kpal2
 	ActorStatValues:
 		Stats: Armor, Sight, Speed
 
@@ -1308,6 +1486,7 @@ d2ktrooper:
 		Description: Trooper
 		BuildDuration: 50
 		BuildDurationModifier: 100
+		IconPalette: chromedune
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -1422,6 +1601,7 @@ d2ktrooper:
 		Upgrades: upgrade.bullet_proof_coats, upgrade.molotov_cocktails, upgrade.ap_bullets
 	RenderSprites:
 		Image: d2ktrooper
+		PlayerPalette: d2kpal2
 		
 d2kgrenadier:
 	Inherits: ^Infantry
@@ -1442,6 +1622,7 @@ d2kgrenadier:
 		Description: actor-e2.description
 		BuildDuration: 50
 		BuildDurationModifier: 100
+		IconPalette: chromedune
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Valued:
@@ -1555,3 +1736,4 @@ d2kgrenadier:
 		RequiresCondition: baku
 	RenderSprites:
 		Image: d2kgrenadier
+		PlayerPalette: d2kpal2
