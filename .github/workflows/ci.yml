@@ -24,20 +24,20 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y zip
 
       - name: 🔧 Make packaging scripts executable
-        run: chmod +x packaging/linux/buildpackage.sh packaging/windows/buildpackage.sh
+        run: chmod +x packaging/windows/buildpackage.sh
 
       - name: 🏗 Build mod and engine
         run: dotnet build OpenRA.Mods.RA2.sln
 
-      - name: 📦 Package mod
-        run: make package
+      - name: 📦 Package Windows zip only
+        run: ./packaging/windows/buildpackage.sh
 
-      - name: 🕵️ List contents of release folder
+      - name: 🕵️ List release folder contents
         run: ls -lh release
 
-      - name: 🚀 Upload all .zip files from release/
+      - name: 🚀 Upload Mishmash-Windows.zip
         uses: softprops/action-gh-release@v2
         with:
-          files: release/*.zip
+          files: release/Mishmash-Windows.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
