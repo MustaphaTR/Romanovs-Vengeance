@@ -23,15 +23,15 @@ jobs:
       - name: Install zip
         run: sudo apt-get update && sudo apt-get install -y zip
 
-      - name: Build and Package
+      - name: Build and Package Mod
         run: make VERSION=${{ github.event.release.tag_name }}
 
       - name: List built files
         run: ls -R dist
 
-      - name: Upload Windows package
+      - name: Upload Windows Package
         uses: svenstaro/upload-release-action@v2
         with:
-          file: dist/windows/*.zip
+          file: dist/windows/mishmash-*.zip
           tag: ${{ github.event.release.tag_name }}
           overwrite: true
