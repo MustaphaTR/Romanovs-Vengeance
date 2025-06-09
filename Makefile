@@ -27,7 +27,7 @@ package: package-windows
 
 package-windows:
 	mkdir -p $(DIST_DIR)/windows/mishmash
-	cp -r mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/ $(DIST_DIR)/windows/mishmash/
+	cp -r mods/mishmash/mod.yaml mods/mishmash/rules/ mods/mishmash/maps/ mods/mishmash/sequences/ mods/mishmash/bits/ mods/mishmash/chrome/ mods/mishmash/ui/ $(DIST_DIR)/windows/mishmash/
 	cd $(DIST_DIR)/windows && zip -r mishmash-windows-$(VERSION).zip mishmash
 
 # Optional Linux package
