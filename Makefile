@@ -4,13 +4,9 @@ MOD_NAME := Mishmash
 VERSION ?= dev
 DIST_DIR := dist
 
-.PHONY: all clean build engine check package package-windows package-linux
+.PHONY: all clean build check package package-windows package-linux
 
-all: engine clean build check package
-
-# Build the OpenRA engine (only if modifying engine code or required in CI)
-engine:
-	cd engine && make
+all: clean build check package
 
 # Clean previous builds
 clean:
