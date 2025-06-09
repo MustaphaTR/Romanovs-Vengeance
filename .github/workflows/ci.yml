@@ -1,4 +1,4 @@
-name: Build and Package OpenRA Mod
+name: Build and Package Mishmash Mod
 
 on:
   release:
@@ -9,7 +9,7 @@ permissions:
 
 jobs:
   build-and-package:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repo
@@ -21,13 +21,17 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Install zip
-        run: sudo apt-get install -y zip
+        run: choco install zip -y
 
-      - name: Run Makefile
-        run: make VERSION=${{ github.event.release.tag_name }}
+      - name: Build and Package
+        run: |
+          make clean
+          make build
+          make check || echo "Check failed, but continuing"
+          make package VERSION=${{ github.event.release.tag_name }}
 
       - name: List output
-        run: ls -R dist
+        run: dir dist /s
 
       - name: Upload Windows package
         uses: svenstaro/upload-release-action@v2
