@@ -1,4 +1,4 @@
-name: Build and Package Mishmash
+name: Build and Package Standalone OpenRA Mod
 
 on:
   release:
@@ -12,37 +12,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup .NET 8 SDK
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8.0.x'
-
-      - name: Install zip, Python, and makensis (for Windows installer)
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y zip python3 nsis
 
-      - name: Fix script permissions
+      - name: Fix executable permissions
         run: |
           chmod +x *.sh
           chmod +x packaging/**/*.sh
 
-      - name: Fetch and build engine
-        run: |
-          ./fetch-engine.sh
-          make engine
+      - name: Fetch and build OpenRA engine
+        run: ./fetch-engine.sh
 
       - name: Build and package standalone mod
         run: |
-          make package VERSION=${{ github.event.release.tag_name }}
+          make VERSION=${{ github.event.release.tag_name }}
 
-      - name: List built files
+      - name: List release files
         run: ls -R release
 
-      - name: Upload Windows Installer
+      - name: Upload Windows installer (if created)
         uses: svenstaro/upload-release-action@v2
         with:
           file: release/Mishmash-Windows.zip
