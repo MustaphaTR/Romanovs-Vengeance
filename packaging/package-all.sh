@@ -1,50 +1,46 @@
 #!/bin/bash
 set -e
 
-if [ $# -eq "0" ]; then
-	echo "Usage: `basename $0` version [outputdir]"
+MOD_ID=$1
+VERSION=$2
+
+if [ -z "$MOD_ID" ] || [ -z "$VERSION" ]; then
+	echo "Usage: $0 <mod-id> <version>"
 	exit 1
 fi
 
-TAG="$1"
-if [ $# -eq "1" ]; then
-	OUTPUTDIR=$(pwd)
-else
-	OUTPUTDIR=$2
-fi
+ENGINE_DIR=$(awk -F= '/ENGINE_DIRECTORY/ { print $2; exit }' mod.config)
+RELEASE_DIR="release"
+PACKAGE_DIR="${RELEASE_DIR}/mishmash-windows-${VERSION}"
+OUTPUT_ZIP="${RELEASE_DIR}/Mishmash-Windows.zip"
 
-command -v python3 >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK packaging requires python 3."; exit 1; }
-command -v make >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK packaging requires make."; exit 1; }
+echo "🛠️  Building Windows package for '$MOD_ID' version '$VERSION'"
 
-if [[ "$OSTYPE" != "darwin"* ]]; then
-	command -v curl >/dev/null 2>&1 || command -v wget > /dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK packaging requires curl or wget."; exit 1; }
-	command -v makensis >/dev/null 2>&1 || { echo >&2 "The OpenRA mod SDK packaging requires makensis."; exit 1; }
-fi
+# Clean up old package directory
+rm -rf "$PACKAGE_DIR"
+mkdir -p "$PACKAGE_DIR"
 
-PACKAGING_DIR=$(python3 -c "import os; print(os.path.dirname(os.path.realpath('$0')))")
+# Copy required engine files
+cp -r "$ENGINE_DIR/bin" "$PACKAGE_DIR/"
+cp -r "$ENGINE_DIR/mods" "$PACKAGE_DIR/engine-mods"
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-	echo "Windows packaging requires a Linux host."
-	echo "Linux AppImage packaging requires a Linux host."
-	echo "Building macOS package"
-	${PACKAGING_DIR}/macos/buildpackage.sh "${TAG}" "${OUTPUTDIR}"
-	if [ $? -ne 0 ]; then
-		echo "macOS package build failed."
-	fi
-else
-	echo "Building Windows package"
-	${PACKAGING_DIR}/windows/buildpackage.sh "${TAG}" "${OUTPUTDIR}"
-	if [ $? -ne 0 ]; then
-		echo "Windows package build failed."
-	fi
+# Copy only this mod's files
+mkdir -p "$PACKAGE_DIR/mods"
+cp -r "mods/${MOD_ID}" "$PACKAGE_DIR/mods/${MOD_ID}"
 
-	echo "Building Linux AppImage package"
-	${PACKAGING_DIR}/linux/buildpackage.sh "${TAG}" "${OUTPUTDIR}"
-	if [ $? -ne 0 ]; then
-		echo "Linux AppImage package build failed."
-	fi
+# Optional: remove other engine mods if not needed
+rm -rf "$PACKAGE_DIR/engine-mods/mods/"*
+mkdir -p "$PACKAGE_DIR/engine-mods/mods/${MOD_ID}"
+cp -r "mods/${MOD_ID}" "$PACKAGE_DIR/engine-mods/mods/"
 
-	echo "macOS packaging requires a macOS host."
-fi
+# Copy launchers
+cp launch-game.sh "$PACKAGE_DIR/"
+cp utility.sh "$PACKAGE_DIR/"
+cp launch-dedicated.sh "$PACKAGE_DIR/" 2>/dev/null || true
 
-echo "Package build done."
+# Create final zip
+cd "$RELEASE_DIR"
+zip -r "$(basename "$OUTPUT_ZIP")" "$(basename "$PACKAGE_DIR")"
+cd ..
+
+echo "✅ Windows standalone ZIP created at: $OUTPUT_ZIP"
