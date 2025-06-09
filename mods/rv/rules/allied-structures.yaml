@@ -837,7 +837,7 @@ gtgcan:
 	Buildable:
 		Queue: Support.Shared, Support.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: ~gacnst, ~techlevel.3
+		Prerequisites: ~gacnst, gatech, ~techlevel.3
 		Description: actor-gtgcan.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -1136,8 +1136,6 @@ gaweat:
 		Name: actor-gaweat.name
 	Tooltip@NoRow:
 		Name: actor-gaweat.name
-	WithIdleOverlay@waves:
-		RequiresCondition: !build-incomplete && in_water
 	DetonateWeaponPower@WeatherStorm:
 		OrderName: WeatherStormInfoOrder
 		Prerequisites:
