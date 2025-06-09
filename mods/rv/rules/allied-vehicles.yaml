@@ -1,8 +1,8 @@
 amcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Shared, Ship.Allies
-		Prerequisites: ~vehicleorship.allies, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+		Queue: Vehicle.Shared, Vehicle.Allies
+		Prerequisites: ~vehicle.allies, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
 	Transforms:
@@ -13,9 +13,9 @@ amcv:
 cmin:
 	Inherits: ^Miner
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany, Ship.Shared, Ship.Allies
+		Queue: Vehicle.Shared, Vehicle.Allies
 		Description: actor-cmin.description
-		Prerequisites: ~vehicleorship.allies, refinery, ~!global-megawealth, ~techlevel.1
+		Prerequisites: ~vehicle.allies, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
 		Name: actor-cmin.name
 	Tooltip@NoRow:

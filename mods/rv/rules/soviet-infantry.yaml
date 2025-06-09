@@ -11,9 +11,9 @@ e2:
 	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Soviets
 		BuildAtProductionType: Soldier
-		Prerequisites: ~infantry.sovietsorbaku, ~techlevel.1
+		Prerequisites: ~infantry.soviets, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: actor-e2.description
 		BuildDuration: 50
@@ -606,11 +606,11 @@ terror:
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Cuba
+		Queue: Infantry.Shared, Infantry.Soviets
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 90
 		Description: actor-terror.description
-		Prerequisites: ~infantry.cuba, naradr, ~techlevel.3
+		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
 		BuildDuration: 100
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -695,11 +695,11 @@ deso:
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@MC: ^MindControllable
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Iraq
+		Queue: Infantry.Shared, Infantry.Soviets
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
 		Description: actor-deso.description
-		Prerequisites: ~infantry.iraq, naradr, ~techlevel.3
+		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -910,11 +910,11 @@ ivan:
 	Inherits@MC: ^MindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Soviets
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 80
 		Description: actor-ivan.description
-		Prerequisites: ~infantry.sovietsorbaku, naradr, ~techlevel.3
+		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1007,7 +1007,7 @@ civan:
 	Buildable:
 		BuildPaletteOrder: 970
 		Description: actor-civan.description
-		Prerequisites: ~infantry.sovietsorbaku, ~allies.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~infantry.soviets, ~allies.tech.infiltrated, ~techlevel.4
 		BuildDuration: 375
 	Buildable@Allied:
 		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
@@ -1574,7 +1574,7 @@ hjck:
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq
 		BuildAtProductionType: Soldier
-		Prerequisites: ~infantry.soviets, naradr, ~techlevel.3
+		Prerequisites: ~unbuildable
 		BuildPaletteOrder: 70
 		Description: actor-hjck.description
 		BuildDuration: 250
@@ -1650,10 +1650,10 @@ itrp:
 	Tooltip@NoRow:
 		Name: actor-itrp.name
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Soviets
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 140
-		Prerequisites: ~infantry.sovietsorbaku, natech, ~techlevel.4
+		Prerequisites: ~unbuildable
 		Description: actor-itrp.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -1825,9 +1825,9 @@ itrp:
 shkc:
 	Inherits: shk
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Soviets, Infantry.Cuba, Infantry.Iraq, Infantry.Baku, Infantry.Turkmenistan, Infantry.Tuva
+		Queue: Infantry.Shared, Infantry.Soviets
 		BuildPaletteOrder: 980
-		Prerequisites: ~infantry.sovietsorbaku, ~soviets.tech.infiltrated, ~techlevel.4
+		Prerequisites: ~unbuildable
 		Description: actor-shkc.description
 		BuildDuration: 625
 		BuildDurationModifier: 100

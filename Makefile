@@ -1,27 +1,9 @@
-.PHONY: all clean check test
+.PHONY: all clean check test package
 
-# Default toolchain
 RUNTIME ?= dotnet
 
-# Automatically detect target platform
-ifndef TARGETPLATFORM
-  UNAME_S := $(shell uname -s)
-  UNAME_M := $(shell uname -m)
-  ifeq ($(UNAME_S),Darwin)
-    TARGETPLATFORM = osx-x64
-  else
-    ifeq ($(UNAME_M),x86_64)
-      TARGETPLATFORM = linux-x64
-    else
-      TARGETPLATFORM = unix-generic
-    endif
-  endif
-endif
-
-# List .sln files
 MOD_SOLUTION_FILES := $(shell find . -maxdepth 1 -iname '*.sln' 2> /dev/null)
 
-# Default: build
 all:
 ifeq ($(RUNTIME), mono)
 	@echo "Building using Mono"
@@ -31,10 +13,9 @@ ifneq ("$(MOD_SOLUTION_FILES)","")
 endif
 else
 	@echo "Building using .NET"
-	@find . -maxdepth 1 -name '*.sln' -exec dotnet build -c Release -p:TargetPlatform=$(TARGETPLATFORM) \;
+	@find . -maxdepth 1 -name '*.sln' -exec dotnet build -c Release \;
 endif
 
-# Clean build artifacts
 clean:
 ifneq ("$(MOD_SOLUTION_FILES)","")
 ifeq ($(RUNTIME), mono)
@@ -44,11 +25,14 @@ else
 endif
 endif
 
-# Basic check step
 check: all
-	@echo "Skipping deep utility checks for now"
+	@echo "Skipping deep utility checks for CI"
 	@echo "Mod built successfully."
 
-# Dummy test target
 test: all
-	@echo "Testing: No tests defined. Add OpenRA.Utility steps here if needed."
+	@echo "No test steps defined"
+
+# ✅ Build Windows & Linux release packages
+package: all
+	@chmod +x packaging/package-all.sh packaging/windows/buildpackage.sh packaging/linux/buildpackage.sh
+	@./packaging/package-all.sh

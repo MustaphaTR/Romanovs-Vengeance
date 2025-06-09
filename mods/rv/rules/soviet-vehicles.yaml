@@ -1,8 +1,8 @@
 smcv:
 	Inherits: ^ConstructionVehicle
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
-		Prerequisites: ~vehicleorship.sovietsorbaku, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+		Queue: Vehicle.Shared, Vehicle.Soviets
+		Prerequisites: ~vehicle.soviets, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 	Transforms:
 		IntoActor: nacnst
 	Voiced:
@@ -16,9 +16,9 @@ harv:
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@NOGUNNER: ^GunnerKillable
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
+		Queue: Vehicle.Shared, Vehicle.Soviets
 		Description: actor-harv.description
-		Prerequisites: ~vehicleorship.sovietsorbaku, refinery, ~!global-megawealth, ~techlevel.1
+		Prerequisites: ~vehicle.soviets, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
 		Name: actor-harv.name
 	Tooltip@NoRow:
@@ -249,7 +249,7 @@ htk:
 		Bounds: 1206, 1930, 0, -289
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
-		Prerequisites: ~vehicle.sovietsorbaku, ~techlevel.1
+		Prerequisites: ~vehicle.soviets, ~techlevel.1
 		BuildPaletteOrder: 30
 		Description: actor-htk.description
 		BuildDuration: 250
@@ -382,7 +382,7 @@ htnk:
 	Tooltip@NoRow:
 		Name: actor-htnk.name
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
+		Queue: Vehicle.Shared, Vehicle.Soviets
 		Description: actor-htnk.description
 		Prerequisites: ~vehicle.soviets, ~techlevel.1
 		BuildDuration: 375
@@ -541,7 +541,7 @@ apoc:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
 		BuildPaletteOrder: 120
-		Prerequisites: ~vehicle.sovietsorbaku, natech, ~techlevel.4
+		Prerequisites: ~vehicle.soviets, natech, ~techlevel.4
 		Description: actor-apoc.description
 		BuildDuration: 875
 		BuildDurationModifier: 100
@@ -874,9 +874,9 @@ ttnk:
 	Tooltip@NoRow:
 		Name: actor-ttnk.name
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.USSR
+		Queue: Vehicle.Shared, Vehicle.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: ~vehicle.russia, naradr, ~techlevel.3
+		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.3
 		Description: actor-ttnk.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -961,9 +961,9 @@ dtruck:
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Libya
+		Queue: Vehicle.Shared, Vehicle.Soviets
 		BuildPaletteOrder: 90
-		Prerequisites: ~vehicle.libya, naradr, ~techlevel.3
+		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.3
 		Description: actor-dtruck.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -1520,7 +1520,7 @@ deva:
 exps:
 	Inherits: ^ExpansionVehicle
 	Buildable:
-		Queue: Vehicle.Unused, Ship.Civilian # Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku, Ship.Shared, Ship.Soviets, Ship.Baku
+		Queue: Vehicle.Unused, Ship.Civilian # Vehicle.Shared, Vehicle.Soviets
 		Prerequisites: ~vehicleorship.sovietsorbaku, ~techlevel.1, ~!ai.ev
 	Selectable:
 		Bounds: 1641, 2702, 0, -337
@@ -1556,7 +1556,7 @@ ftnk:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
 		BuildPaletteOrder: 80
-		Prerequisites: ~vehicle.soviets, naradr, ~techlevel.3
+		Prerequisites: ~unbuildable
 		Description: actor-ftnk.description
 		BuildDuration: 375
 		BuildDurationModifier: 100

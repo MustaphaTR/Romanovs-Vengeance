@@ -4,60 +4,20 @@ nacnst:
 		BuildPaletteOrder: 20
 	ProvidesPrerequisite@building.soviets:
 		Prerequisite: building.soviets
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
-	ProvidesPrerequisite@building.sovietsorbaku:
-		Prerequisite: building.sovietsorbaku
-	ProvidesPrerequisite@building.baku:
-		Prerequisite: building.baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	Production:
-		Produces: Building.Soviets, Building.Baku, Support.Soviets, Support.Baku
+		Produces: Building.Soviets, Support.Soviets
 	ProductionQueue@Building:
 		Type: Building.Soviets
 		DisplayOrder: 2
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
-	ProductionQueue@BuildingBaku:
-		Type: Building.Baku
-		Group: Building
-		DisplayOrder: 4
-		LowPowerModifier: 200
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
-		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: notification-construction-complete
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		Factions: soviets
 	ProductionQueue@Support:
 		Type: Support.Soviets
 		DisplayOrder: 6
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
-	ProductionQueue@SupportBaku:
-		Type: Support.Baku
-		Group: Support
-		DisplayOrder: 8
-		LowPowerModifier: 200
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
-		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: notification-construction-complete
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		Factions: soviets
 	ProductionBar@Building:
 		ProductionType: Building.Soviets
-	ProductionBar@BuildingBaku:
-		ProductionType: Building.Baku
 	ProductionBar@Support:
 		ProductionType: Support.Soviets
-	ProductionBar@SupportBaku:
-		ProductionType: Support.Baku
 		Color: 8A8A8A
 	Transforms:
 		IntoActor: smcv
@@ -71,116 +31,8 @@ nacnst:
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedAnimation:
 		RequiresCondition: !build-incomplete
-	GrantConditionOnFaction@USSR:
-		Condition: russia
-		Factions: russia
-	GrantConditionOnFaction@Iraq:
-		Condition: iraq
-		Factions: iraq
-	GrantConditionOnFaction@Vietnam:
-		Condition: vietnam
-		Factions: vietnam
-	GrantConditionOnFaction@Cuba:
-		Condition: cuba
-		Factions: cuba
-	GrantConditionOnFaction@Libya:
-		Condition: libya
-		Factions: libya
-	GrantConditionOnFaction@Chile:
-		Condition: chile
-		Factions: chile
-	GrantConditionOnFaction@Mexico:
-		Condition: mexico
-		Factions: mexico
-	GrantConditionOnFaction@Mongolia:
-		Condition: mongolia
-		Factions: mongolia
-	GrantConditionOnFaction@Transcaucasia:
-		Condition: transcaucus
-		Factions: transcaucus
-	GrantConditionOnFaction@Turkmenistan:
-		Condition: turkmen
-		Factions: turkmen
-	GrantConditionOnFaction@Tuva:
-		Condition: tuva
-		Factions: tuva
-	GrantConditionOnFaction@Russia:
-		Condition: russianfed
-		Factions: russianfed
-	GrantConditionOnFaction@Serbia:
-		Condition: serbia
-		Factions: serbia
-	WithIdleOverlay@USSR:
-		Sequence: flag-russia
-		Palette: ussr
+		Sequence: idle-hns
 		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && russia
-	WithIdleOverlay@Iraq:
-		Sequence: flag-iraq
-		Palette: iraq
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && iraq
-	WithIdleOverlay@Vietnam:
-		Sequence: flag-vietnam
-		Palette: vietnam
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && vietnam
-	WithIdleOverlay@Cuba:
-		Sequence: flag-cuba
-		Palette: cuba
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && cuba
-	WithIdleOverlay@Libya:
-		Sequence: flag-libya
-		Palette: libya
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && libya
-	WithIdleOverlay@Chile:
-		Sequence: flag-chile
-		Palette: chile
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && chile
-	WithIdleOverlay@Mexico:
-		Sequence: flag-mexico
-		Palette: mexico
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && mexico
-	WithIdleOverlay@Mongolia:
-		Sequence: flag-mongolia
-		Palette: mongolia
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && mongolia
-	WithIdleOverlay@Transcaucasia:
-		Sequence: flag-transcaucus
-		Palette: transcaucasia
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && transcaucus
-	WithIdleOverlay@Turkmenistan:
-		Sequence: flag-turkmen
-		Palette: turkmenistan
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && turkmen
-	WithIdleOverlay@Tuva:
-		Sequence: flag-tuva
-		Palette: tuva
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && tuva
-	WithIdleOverlay@Russia:
-		Sequence: flag-russianfed
-		Palette: russia
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && russianfed
-	WithIdleOverlay@Serbia:
-		Sequence: flag-serbia
-		Palette: serbia
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && serbia
-	WithIdleOverlay@FlagShadow:
-		Sequence: flag-shadow
-		Palette: shadow
-		IsPlayerPalette: false
-		PauseOnCondition: chronodisable
-		RequiresCondition: !build-incomplete && (russia || iraq || vietnam || cuba || libya || chile || mexico || mongolia || transcaucus || turkmen || tuva || russianfed || serbia)
 	WithIdleOverlay@HNS:
 		Sequence: idle-hns
 		PauseOnCondition: chronodisable
@@ -200,9 +52,9 @@ napowr:
 	Inherits: ^PowerPlant
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
-		Queue: Building.Shared, Building.Soviets, Building.Baku
+		Queue: Building.Shared, Building.Soviets
 		Description: actor-napowr.description
-		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
+		Prerequisites: ~building.soviets, ~techlevel.1
 	Tooltip:
 		Name: actor-napowr.name
 	Tooltip@NoRow:
@@ -239,63 +91,63 @@ nahand:
 		SpawnOffset: -512,768,0
 		ExitCell: 1,2
 		Priority: 2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@2Shared:
 		SpawnOffset: -512,768,0
 		ExitCell: 0,2
 		Priority: 2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback1Shared:
 		SpawnOffset: 0,724,0
 		ExitCell: 2,2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback2Shared:
 		SpawnOffset: 0,724,0
 		ExitCell: 2,1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback3Shared:
 		SpawnOffset: 724,0,0
 		ExitCell: 2,0
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback4Shared:
 		SpawnOffset: 724,0,0
 		ExitCell: 2,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback5Shared:
 		SpawnOffset: 724,0,0
 		ExitCell: 1,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback6Shared:
 		SpawnOffset: 0,-724,0
 		ExitCell: 0,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback7Shared:
 		SpawnOffset: 0,-724,0
 		ExitCell: -1,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback8Shared:
 		SpawnOffset: 0,-724,0
 		ExitCell: -1,0
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback9Shared:
 		SpawnOffset: -724,0,0
 		ExitCell: -1,1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback10Shared:
 		SpawnOffset: -724,0,0
 		ExitCell: -1,2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Soviets, Soldier
 		RequiresCondition: !multiqueue
 	Exit@1:
 		SpawnOffset: -512,768,0
@@ -352,57 +204,15 @@ nahand:
 	ProductionQueue:
 		Type: Infantry.Soviets
 		DisplayOrder: 14
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
-	ProductionQueue@Cuba:
-		Type: Infantry.Cuba
-		Group: Infantry
-		DisplayOrder: 14
-		LowPowerModifier: 200
-		Factions: cuba
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Iraq:
-		Type: Infantry.Iraq
-		Group: Infantry
-		DisplayOrder: 14
-		LowPowerModifier: 200
-		Factions: iraq
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		Factions: soviets
 	ProductionBar:
 		ProductionType: Infantry.Soviets
-	ProductionBar@Cuba:
-		ProductionType: Infantry.Cuba
-	ProductionBar@Iraq:
-		ProductionType: Infantry.Iraq
 	RallyPoint:
 		Path: 3,3
 	ProvidesPrerequisite@buildingname:
 		Prerequisite: nahand
 	ProvidesPrerequisite@infantry.soviets:
 		Prerequisite: infantry.soviets
-	ProvidesPrerequisite@infantry.iraq:
-		Prerequisite: infantry.iraq
-		Factions: iraq
-	ProvidesPrerequisite@infantry.cuba:
-		Prerequisite: infantry.cuba
-		Factions: cuba
-	ProvidesPrerequisite@infantry.sovietsorbaku:
-		Prerequisite: infantry.sovietsorbaku
 	ProvidesPrerequisite@mwfacref:
 		Prerequisite: narefn
 	IsometricSelectable:
@@ -412,7 +222,7 @@ narefn:
 	Inherits: ^Refinery
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
-		Prerequisites: ~building.sovietsorbaku, power, ~!global-megawealth, ~techlevel.1, ~AIantiRush
+		Prerequisites: ~building.soviets, power, ~!global-megawealth, ~techlevel.1, ~AIantiRush
 	FreeActor:
 		Actor: harv
 	SmokeParticleEmitter@refinerysmoke1:
@@ -731,124 +541,20 @@ naweap:
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		Description: actor-naweap.description
-		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
+		Prerequisites: ~building.soviets, refinery, ~techlevel.1
 	ProvidesPrerequisite@default:
 		Prerequisite: naweap
 	ProvidesPrerequisite@vehicle.soviets:
 		Prerequisite: vehicle.soviets
-		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
-	ProvidesPrerequisite@vehicle.russia:
-		Prerequisite: vehicle.russia
-		Factions: russia
-	ProvidesPrerequisite@vehicle.iraq:
-		Prerequisite: vehicle.iraq
-		Factions: iraq
-	ProvidesPrerequisite@vehicle.cuba:
-		Prerequisite: vehicle.cuba
-		Factions: cuba
-	ProvidesPrerequisite@vehicle.libya:
-		Prerequisite: vehicle.libya
-		Factions: libya
-	ProvidesPrerequisite@vehicle.baku:
-		Prerequisite: vehicle.baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
-	ProvidesPrerequisite@vehicle.sovietsorbaku:
-		Prerequisite: vehicle.sovietsorbaku
-	ProvidesPrerequisite@vehicleorship.sovietsorbaku:
-		Prerequisite: vehicleorship.sovietsorbaku
+		Factions: soviets
 	Production:
-		Produces: Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya, Vehicle.Baku
+		Produces: Vehicle.Soviets
 	ProductionQueue:
 		Type: Vehicle.Soviets
 		DisplayOrder: 18
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
-	ProductionQueue@USSR:
-		Type: Vehicle.USSR
-		Group: Vehicle
-		DisplayOrder: 18
-		LowPowerModifier: 200
-		Factions: russia
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Iraq:
-		Type: Vehicle.Iraq
-		Group: Vehicle
-		DisplayOrder: 18
-		LowPowerModifier: 200
-		Factions: iraq
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Cuba:
-		Type: Vehicle.Cuba
-		Group: Vehicle
-		DisplayOrder: 18
-		LowPowerModifier: 200
-		Factions: cuba
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Libya:
-		Type: Vehicle.Libya
-		Group: Vehicle
-		DisplayOrder: 18
-		LowPowerModifier: 200
-		Factions: libya
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Baku:
-		Type: Vehicle.Baku
-		Group: Vehicle
-		DisplayOrder: 20
-		LowPowerModifier: 200
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		Factions: soviets
 	ProductionBar:
 		ProductionType: Vehicle.Soviets
-	ProductionBar@USSR:
-		ProductionType: Vehicle.USSR
-	ProductionBar@Iraq:
-		ProductionType: Vehicle.Iraq
-	ProductionBar@Cuba:
-		ProductionType: Vehicle.Cuba
-	ProductionBar@Libya:
-		ProductionType: Vehicle.Libya
-	ProductionBar@Baku:
-		ProductionType: Vehicle.Baku
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -863,43 +569,19 @@ nayard:
 	Inherits: ^Shipyard
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
-		Prerequisites: ~building.sovietsorbaku, refinery, ~techlevel.1
+		Prerequisites: ~building.soviets, refinery, ~techlevel.1
 		Description: actor-nayard.description
 	ProvidesPrerequisite@ship.soviets:
 		Prerequisite: ship.soviets
-		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
-	ProvidesPrerequisite@ship.baku:
-		Prerequisite: ship.baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
-	ProvidesPrerequisite@ship.sovietsorbaku:
-		Prerequisite: ship.sovietsorbaku
-	ProvidesPrerequisite@vehicleorship.sovietsorbaku:
-		Prerequisite: vehicleorship.sovietsorbaku
+		Factions: soviets
 	Production:
 		Produces: Ship.Soviets, Ship.Baku
 	ProductionQueue:
 		Type: Ship.Soviets
 		DisplayOrder: 22
-		Factions: america, france, england, germany, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon
-	ProductionQueue@Baku:
-		Type: Ship.Baku
-		Group: Ship
-		DisplayOrder: 24
-		LowPowerModifier: 200
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		Factions: soviets
 	ProductionBar:
 		ProductionType: Ship.Soviets
-	ProductionBar@Baku:
-		ProductionType: Ship.Baku
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -968,7 +650,7 @@ nadept:
 		TargetableOffsets: 0,0,0, -360,360,0, 360,-360,0, -1080,1080,0, -360,1800,0, -1800,360,0, 360,1080,0, -360,-1080,0, 1080,360,0, -1080,-360,0
 	Buildable:
 		Queue: Building.Unused # Building.Shared, Building.Soviets, Building.Baku
-		Prerequisites: ~building.sovietsorbaku, naweap, ~techlevel.1
+		Prerequisites: ~building.soviets, naweap, ~techlevel.1
 		Description: actor-nadept.description
 	ProvidesPrerequisite@default:
 		Prerequisite: nadept
@@ -997,95 +679,14 @@ naheli:
 	Exit@1:
 		SpawnOffset: -384,128,0
 	Production:
-		Produces: Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
+		Produces: Aircraft.Soviets
 	ProductionQueue:
 		Type: Aircraft.Soviets
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, iraq, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
-	ProductionQueue@USSR:
-		Type: Aircraft.USSR
-		Group: Aircraft
-		DisplayOrder: 26
-		LowPowerModifier: 200
-		Factions: russia
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Vietnam:
-		Type: Aircraft.Vietnam
-		Group: Aircraft
-		DisplayOrder: 26
-		LowPowerModifier: 200
-		Factions: vietnam
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Cuba:
-		Type: Aircraft.Cuba
-		Group: Aircraft
-		DisplayOrder: 26
-		LowPowerModifier: 200
-		Factions: cuba
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Libya:
-		Type: Aircraft.Libya
-		Group: Aircraft
-		DisplayOrder: 26
-		LowPowerModifier: 200
-		Factions: libya
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		Factions: soviets
 	ProductionBar:
 		ProductionType: Aircraft.Soviets
-	ProductionBar@USSR:
-		ProductionType: Aircraft.USSR
-	ProductionBar@Vietnam:
-		ProductionType: Aircraft.Vietnam
-	ProductionBar@Cuba:
-		ProductionType: Aircraft.Cuba
-	ProductionBar@Libya:
-		ProductionType: Aircraft.Libya
 	ProvidesPrerequisite@aircraft.soviets:
 		Prerequisite: aircraft.soviets
-	ProvidesPrerequisite@aircraft.russia:
-		Prerequisite: aircraft.russia
-	ProvidesPrerequisite@aircraft.vietnam:
-		Prerequisite: aircraft.vietnam
-		Factions: vietnam
-	ProvidesPrerequisite@aircraft.cuba:
-		Prerequisite: aircraft.cuba
-		Factions: cuba
-	ProvidesPrerequisite@aircraft.libya:
-		Prerequisite: aircraft.libya
-		Factions: libya
-	ProvidesPrerequisite@aircraft.sovietsorbaku:
-		Prerequisite: aircraft.sovietsorbaku
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -1104,7 +705,7 @@ nanrct:
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
 		BuildPaletteOrder: 110
-		Prerequisites: ~building.sovietsorbaku, natech, ~techlevel.3
+		Prerequisites: ~building.soviets, natech, ~techlevel.3
 		Description: actor-nanrct.description
 		BuildDuration: 625
 	Valued:
@@ -1160,7 +761,7 @@ natech:
 	Inherits@SHAPE: ^3x3Shape
 	Buildable:
 		Queue: Building.Shared, Building.Soviets, Building.Baku
-		Prerequisites: ~building.sovietsorbaku, production, naradr, ~techlevel.3, ~!ai.natech
+		Prerequisites: ~building.soviets, production, naradr, ~techlevel.3, ~!ai.natech
 		Description: actor-natech.description
 	ProvidesPrerequisite@batech:
 		Prerequisite: batech
@@ -1377,7 +978,7 @@ nairon:
 	Inherits: ^SecondarySuperWeapon
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
-		Prerequisites: ~building.sovietsorbaku, natech, !enoughiron, ~techlevel.5
+		Prerequisites: ~building.soviets, natech, !enoughiron, ~techlevel.5
 		Description: actor-nairon.description
 	Tooltip:
 		Name: actor-nairon.name
@@ -1520,7 +1121,7 @@ nawall:
 	Inherits: ^Wall
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
-		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
+		Prerequisites: ~building.soviets, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: actor-nawall.description
 	Tooltip:
@@ -1546,7 +1147,7 @@ naflak:
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 50
-		Prerequisites: ~building.sovietsorbaku, naradr, ~techlevel.2
+		Prerequisites: ~building.soviets, naradr, ~techlevel.2
 		Description: actor-naflak.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1750,7 +1351,7 @@ nalasr:
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 40
-		Prerequisites: ~building.sovietsorbaku, nahand, ~techlevel.1
+		Prerequisites: ~building.soviets, nahand, ~techlevel.1
 		Description: actor-nalasr.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1967,7 +1568,7 @@ nagatea:
 	Inherits: ^Gate_A
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
-		Prerequisites: ~building.sovietsorbaku, ~techlevel.1
+		Prerequisites: ~building.soviets, ~techlevel.1
 		BuildPaletteOrder: 20
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -2012,7 +1613,7 @@ napost:
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
-		Prerequisites: ~building.sovietsorbaku, power, prerequisite.tesla_fence, ~techlevel.1
+		Prerequisites: ~unbuildable
 		Description: actor-napost.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -2190,7 +1791,7 @@ nasilo:
 	Inherits: ^Silo
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
-		Prerequisites: ~building.sovietsorbaku, refinery, ~!global-megawealth, ~techlevel.1
+		Prerequisites: ~unbuildable
 	GrantConditionOnFaction@Soviets:
 		Condition: soviets
 		Factions: russia, iraq, vietnam, cuba, libya, chile, mexico, mongolia
@@ -2215,7 +1816,7 @@ naprop:
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
 		BuildPaletteOrder: 80
-		Prerequisites: ~building.soviets, natech, ~techlevel.4
+		Prerequisites: ~unbuildable
 		Description: actor-naprop.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
