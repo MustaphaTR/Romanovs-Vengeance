@@ -388,11 +388,29 @@
 		Side: Baku Pact
 		Description: faction-serbia.description
 		Selectable: false
-	Faction@32:
+	Faction@unifiedallied:
+		Name: Allied
+		InternalName: allies
+		Side: Red Alert 2
+		Description: faction-allied.description
+		Selectable: true
+	Faction@unifiedsoviet:
+		Name: Soviet
+		InternalName: soviets
+		Side: Red Alert 2
+		Description: faction-soviet.description
+		Selectable: true
+	Faction@unifiedyuri:
+		Name: Yuri
+		InternalName: yuri
+		Side: Red Alert 2
+		Description: faction-yuri.description
+		Selectable: true
+	Faction@gdi:
 		Name: GDI
 		InternalName: gdi
-		Side: GDI
-		Description: faction-japan.description
+		Side: Tiberian Sun
+		Description: faction-gdi.description
 		Selectable: true
 	Faction@harkonnen:
 		Name: Harkonnen
@@ -843,6 +861,18 @@ World:
 		Factions: gdi
 		BaseActor: gdimcv
 		BaseActorFacing: 640
+	StartingUnits@allied:
+		Class: none
+		ClassName: options-starting-units.mcv-only
+		Factions: allies
+		BaseActor: amcv
+		BaseActorFacing: 640
+	StartingUnits@soviets:
+		Class: none
+		ClassName: options-starting-units.mcv-only
+		Factions: soviets
+		BaseActor: smcv
+		BaseActorFacing: 640
 	StartingUnits@harkonnen:
 		Class: none
 		ClassName: options-starting-units.mcv-only
@@ -942,6 +972,8 @@ World:
 			russianfed: smcv.colorpicker
 			harkonnen: d2k.colorpicker
 			gdi: gdi.colorpicker
+			soviet: smcv.colorpicker
+			yuri: pcv.colorpicker
 	OrderEffects:
 		TerrainFlashImage: moveflsh
 		TerrainFlashSequence: idle

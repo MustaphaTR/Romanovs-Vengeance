@@ -182,3 +182,4 @@ endif
 
 test: all
 	@echo "Testing $(MOD_ID) mod MiniYAML..."
+	@./utility.sh --check-yaml
