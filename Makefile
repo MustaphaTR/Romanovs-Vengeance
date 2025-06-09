@@ -1,14 +1,10 @@
-# Makefile for packaging OpenRA mod for Windows, Linux, and macOS
+# Makefile for packaging OpenRA mod
 
 MOD_NAME := Mishmash
-VERSION := release
+VERSION ?= dev
 DIST_DIR := dist
-BUILD_DIR := build
-
-# Files/folders to include in each package
 PACKAGE_CONTENT := mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/
 
-# Targets
 all: clean windows linux mac
 
 windows:
