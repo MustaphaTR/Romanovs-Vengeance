@@ -139,9 +139,9 @@ gmin:
 	Inherits@COMPENSATORS: ^AffectedByChaosTankCompensators
 	Inherits@GRINDER: ^AffectedByGrinderTreads
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans, Ship.Shared, Ship.Yuri
+		Queue: Vehicle.Shared, Vehicle.Yuri
 		Description: actor-gmin.description
-		Prerequisites: ~vehicleorship.yuri, refinery, ~!global-megawealth, ~techlevel.1
+		Prerequisites: ~vehicle.yuri, refinery, ~!global-megawealth, ~techlevel.1
 	Tooltip:
 		Name: actor-gmin.name
 	Tooltip@NoRow:
@@ -1105,7 +1105,7 @@ lart:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
 		BuildPaletteOrder: 110
-		Prerequisites: ~vehicle.yuri, prerequisite.annihilator_artillery, yatech, ~techlevel.3
+		Prerequisites: ~vehicle.yuri, yatech, ~techlevel.3
 		Description: actor-lart.description
 		BuildDuration: 625
 		BuildDurationModifier: 100

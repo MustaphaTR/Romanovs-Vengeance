@@ -15,7 +15,7 @@ yacnst:
 	ProductionQueue@Support:
 		Type: Support.Yuri
 		DisplayOrder: 7
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: yuri
 	ProductionQueue@SupportAntarctica:
 		Type: Support.Antarctica
 		Group: Support
@@ -185,73 +185,73 @@ yabrck:
 		SpawnOffset: 724,362,0
 		ExitCell: 2,2
 		Priority: 2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@2Shared:
 		SpawnOffset: 724,362,0
 		ExitCell: 2,1
 		Priority: 2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback1Shared:
 		SpawnOffset: -362,1086,0
 		ExitCell: 2,3
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback2Shared:
 		SpawnOffset: -362,1086,0
 		ExitCell: 1,3
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback3Shared:
 		SpawnOffset: -1086,362,0
 		ExitCell: 0,3
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback4Shared:
 		SpawnOffset: -1086,362,0
 		ExitCell: -1,3
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback5Shared:
 		SpawnOffset: -1086,362,0
 		ExitCell: -1,2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback6Shared:
 		SpawnOffset: -362,-362,0
 		ExitCell: -1,1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback7Shared:
 		SpawnOffset: 362,-1086,0
 		ExitCell: -1,0
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback8Shared:
 		SpawnOffset: 362,-1086,0
 		ExitCell: -1,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback9Shared:
 		SpawnOffset: 362,-1086,0
 		ExitCell: 0,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback10Shared:
 		SpawnOffset: 1086,-362,0
 		ExitCell: 1,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback11Shared:
 		SpawnOffset: 1086,-362,0
 		ExitCell: 2,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback12Shared:
 		SpawnOffset: 724,362,0
 		ExitCell: 2,0
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Yuri, Soldier
 		RequiresCondition: !multiqueue
 	Exit@1:
 		SpawnOffset: 724,362,0
@@ -316,7 +316,7 @@ yabrck:
 	ProductionQueue:
 		Type: Infantry.Yuri
 		DisplayOrder: 15
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: yuri
 	ProductionQueue@Moon:
 		Type: Infantry.Moon
 		Group: Infantry
@@ -616,47 +616,13 @@ yaweap:
 	ProvidesPrerequisite@vehicleorship.yuri:
 		Prerequisite: vehicleorship.yuri
 	Production:
-		Produces: Vehicle.Yuri, Vehicle.Psi, Vehicle.Trans
+		Produces: Vehicle.Yuri
 	ProductionQueue:
 		Type: Vehicle.Yuri
 		DisplayOrder: 19
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, libya, russia, vietnam, chile, mexico, mongolia, psinepal, psisouth, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
-	ProductionQueue@Psi:
-		Type: Vehicle.Psi
-		Group: Vehicle
-		DisplayOrder: 19
-		LowPowerModifier: 200
-		Factions: psicorps
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Trans:
-		Type: Vehicle.Trans
-		Group: Vehicle
-		DisplayOrder: 19
-		LowPowerModifier: 200
-		Factions: psitrans
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		Factions: yuri
 	ProductionBar:
 		ProductionType: Vehicle.Yuri
-	ProductionBar@Psi:
-		ProductionType: Vehicle.Psi
-	ProductionBar@Trans:
-		ProductionType: Vehicle.Trans
 	WithIdleOverlay@lights:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
@@ -753,7 +719,7 @@ yagrnd:
 	Buildable:
 		Queue: Building.Shared, Building.Yuri
 		BuildPaletteOrder: 110
-		Prerequisites: ~building.yuri, yaweap, prerequisite.grinder, ~techlevel.1
+		Prerequisites: ~building.yuri, yaweap, ~techlevel.1
 		Description: actor-yagrnd.description
 		BuildDuration: 125
 		BuildDurationModifier: 100
@@ -859,7 +825,7 @@ yadome:
 		OrderName: YurigradPsiOps
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
-			1: radar.psicorps
+			1: yadome
 		Icons:
 			1: psiops
 		Cursor: paradrop
@@ -1027,7 +993,7 @@ yadisk:
 	ProductionQueue:
 		Type: Aircraft.Yuri
 		DisplayOrder: 27
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, iraq, libya, russia, vietnam, chile, mexico, mongolia, psicorps, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
+		Factions: yuri
 	ProductionQueue@Lazarus:
 		Type: Aircraft.Lazarus
 		Group: Aircraft
@@ -2136,7 +2102,7 @@ yasilo:
 	Inherits: ^Silo
 	Buildable:
 		Queue: Support.Shared, Support.Yuri, Support.Antarctica
-		Prerequisites: ~building.yuri, refinery, ~!global-megawealth, ~techlevel.1
+		Prerequisites: ~unbuildable
 
 yaexpn:
 	Inherits: ^ExpansionNode

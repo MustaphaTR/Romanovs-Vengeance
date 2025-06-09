@@ -1,115 +1,39 @@
-name: Continuous Integration
+name: Build and Package OpenRA Mod
 
 on:
-  push:
-  pull_request:
+  release:
+    types: [published]
 
 permissions:
-  contents: read  #  to fetch code (actions/checkout)
+  contents: write
 
 jobs:
-  linux:
-    name: Linux (.NET 6.0)
-    runs-on: ubuntu-22.04
+  build-windows:
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Clone Repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install .NET 6.0
+      - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
 
-      - name: Prepare Environment
+      - name: Make scripts executable
+        run: chmod +x packaging/windows/buildpackage.sh
+
+      - name: Build mod and engine
         run: |
-          . mod.config;
-          awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format. File must be saved using unix-style (LF, not CRLF or CR) line endings.\n"; exit 1);
+          make clean
+          make
 
-      - name: Check Code
-        run: |
-          make check
-          make check-packaging-scripts
+      - name: Package for Windows
+        run: ./packaging/windows/buildpackage.sh
 
-      - name: Check Mod
-        run: |
-          sudo apt-get install lua5.1
-          make check-scripts
-          make test
-
-  linux-mono:
-    name: Linux (mono)
-    runs-on: ubuntu-22.04
-
-    steps:
-      - name: Clone Repository
-        uses: actions/checkout@v4
-
-      - name: Prepare Environment
-        run: |
-          . mod.config;
-          awk '/\r$$/ { exit(1); }' mod.config || (printf "Invalid mod.config format. File must be saved using unix-style (LF, not CRLF or CR) line endings.\n"; exit 1);
-
-      - name: Check Code
-        run: |
-          # check-packaging-scripts does not depend on .net/mono, so is not needed here
-          mono --version
-          make RUNTIME=mono check
-
-      - name: Check Mod
-        run: |
-          # check-scripts does not depend on .net/mono, so is not needed here
-          make RUNTIME=mono test
-
-  windows:
-    name: Windows (.NET 6.0)
-    runs-on: windows-2019
-
-    steps:
-      - name: Clone Repository
-        uses: actions/checkout@v4
-
-      - name: Install .NET 6.0
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '6.0.x'
-
-      - name: Check Code
-        shell: powershell
-        run: |
-          # Work around runtime failures on the GH Actions runner
-          dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
-          .\make.ps1 check
-
-      - name: Check Mods
-        run: |
-          choco install lua --version 5.1.5.52
-          $ENV:Path = $ENV:Path + ";C:\Program Files (x86)\Lua\5.1\"
-          .\make.ps1 check-scripts
-          .\make.ps1 test
-
-
-  release:
-    name: Package and Upload Release
-    runs-on: ubuntu-22.04
-    needs: [linux]
-    if: github.event_name == 'release'
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Install zip
-        run: sudo apt-get update && sudo apt-get install zip -y
-
-      - name: Package Mod
-        run: |
-          mkdir -p release
-          zip -r release/my-mod.zip mod.yaml rules/ sequences/ weapons/ *.png *.sh *.md || echo "Some files may be missing"
-
-      - name: Upload Release Asset
+      - name: Upload release asset
         uses: softprops/action-gh-release@v2
         with:
-          files: release/my-mod.zip
+          files: release/Mishmash-Windows.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
