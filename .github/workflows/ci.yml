@@ -23,18 +23,11 @@ jobs:
       - name: Install zip
         run: sudo apt-get update && sudo apt-get install -y zip
 
-      - name: Restore dependencies
-        run: dotnet restore OpenRA.sln
+      - name: Build and Package
+        run: make VERSION=${{ github.event.release.tag_name }}
 
-      - name: Build mod
-        run: dotnet build OpenRA.sln -c Release
-
-      - name: Package mod files (Windows)
-        run: |
-          mkdir -p dist/windows/Mishmash
-          cp -r mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/ dist/windows/Mishmash/
-          cd dist/windows
-          zip -r Mishmash-windows-${{ github.event.release.tag_name }}.zip Mishmash
+      - name: List built files
+        run: ls -R dist
 
       - name: Upload Windows package
         uses: svenstaro/upload-release-action@v2
