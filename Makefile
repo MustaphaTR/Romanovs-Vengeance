@@ -181,5 +181,10 @@ endif
 	@./utility.sh --check-conditional-trait-interface-overrides
 
 test: all
-	@echo "Testing $(MOD_ID) mod MiniYAML..."
+	@echo "Testing $(mishmash) mod MiniYAML..."
 	@./utility.sh --check-yaml
+
+package: all
+	@chmod +x packaging/linux/buildpackage.sh packaging/windows/buildpackage.sh
+	@./packaging/linux/buildpackage.sh
+	@./packaging/windows/buildpackage.sh
