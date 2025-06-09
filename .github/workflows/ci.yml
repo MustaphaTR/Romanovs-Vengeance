@@ -26,10 +26,11 @@ jobs:
       - name: 🔧 Make packaging scripts executable
         run: chmod +x packaging/linux/buildpackage.sh packaging/windows/buildpackage.sh
 
-      - name: 🏗 Build mod and package
-        run: |
-          make
-          make package
+      - name: 🏗 Build mod and engine
+        run: dotnet build OpenRA.Mods.RA2.sln
+
+      - name: 📦 Package mod
+        run: make package
 
       - name: 🕵️ List contents of release folder
         run: ls -lh release
