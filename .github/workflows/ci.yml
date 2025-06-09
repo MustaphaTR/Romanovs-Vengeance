@@ -1,33 +1,53 @@
-# Makefile for packaging OpenRA mod
+name: Build and Package OpenRA Mod
 
-MOD_NAME := Mishmash
-VERSION ?= dev
-DIST_DIR := dist
-PACKAGE_CONTENT := mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/
+on:
+  release:
+    types: [published]
 
-all: clean windows linux mac
+permissions:
+  contents: write
 
-windows:
-	@echo "Packaging for Windows..."
-	mkdir -p $(DIST_DIR)/windows/$(MOD_NAME)
-	cp -r $(PACKAGE_CONTENT) $(DIST_DIR)/windows/$(MOD_NAME)/
-	cd $(DIST_DIR)/windows && zip -r ../$(MOD_NAME)-windows-$(VERSION).zip $(MOD_NAME)
-	rm -rf $(DIST_DIR)/windows
+jobs:
+  build-and-package:
+    runs-on: ubuntu-latest
 
-linux:
-	@echo "Packaging for Linux..."
-	mkdir -p $(DIST_DIR)/linux/$(MOD_NAME)
-	cp -r $(PACKAGE_CONTENT) $(DIST_DIR)/linux/$(MOD_NAME)/
-	tar -czf $(DIST_DIR)/$(MOD_NAME)-linux-$(VERSION).tar.gz -C $(DIST_DIR)/linux $(MOD_NAME)
-	rm -rf $(DIST_DIR)/linux
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-mac:
-	@echo "Packaging for macOS..."
-	mkdir -p $(DIST_DIR)/mac/$(MOD_NAME)
-	cp -r $(PACKAGE_CONTENT) $(DIST_DIR)/mac/$(MOD_NAME)/
-	tar -czf $(DIST_DIR)/$(MOD_NAME)-macos-$(VERSION).tar.gz -C $(DIST_DIR)/mac $(MOD_NAME)
-	rm -rf $(DIST_DIR)/mac
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y make zip tar
 
-clean:
-	rm -rf $(DIST_DIR)
-	mkdir -p $(DIST_DIR)
+      - name: Extract release tag
+        id: extract
+        run: echo "TAG=${GITHUB_REF_NAME}" >> $GITHUB_ENV
+
+      - name: Build all packages
+        run: make VERSION=${{ env.TAG }}
+
+      - name: Debug – list output
+        run: ls -lh dist/
+
+      - name: Upload Windows package
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/Mishmash-windows-${{ env.TAG }}.zip
+          asset_name: Mishmash-windows.zip
+          tag: ${{ github.ref_name }}
+
+      - name: Upload Linux package
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/Mishmash-linux-${{ env.TAG }}.tar.gz
+          asset_name: Mishmash-linux.tar.gz
+          tag: ${{ github.ref_name }}
+
+      - name: Upload macOS package
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/Mishmash-macos-${{ env.TAG }}.tar.gz
+          asset_name: Mishmash-macos.tar.gz
+          tag: ${{ github.ref_name }}
