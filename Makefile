@@ -1,8 +1,8 @@
-# Makefile for Mishmash OpenRA mod
-
 MOD_NAME := Mishmash
 VERSION ?= dev
 DIST_DIR := dist
+
+.PHONY: all clean build package package-windows package-linux
 
 all: clean build package
 
@@ -12,6 +12,11 @@ clean:
 build:
 	dotnet restore OpenRA.sln
 	dotnet build OpenRA.sln -c Release
+
+# Optional check; doesn't stop build if fails
+check:
+	@echo "Running OpenRA.Utility check (will not fail build)"
+	- ./engine/bin/OpenRA.Utility.exe /run-all-rules || true
 
 package: package-windows package-linux
 
