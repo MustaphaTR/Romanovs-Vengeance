@@ -35,3 +35,5 @@ package-linux:
 	mkdir -p $(DIST_DIR)/linux/mishmash
 	cp -r mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/ $(DIST_DIR)/linux/mishmash/
 	cd $(DIST_DIR)/linux && zip -r mishmash-linux-$(VERSION).zip mishmash
+engine:
+	@echo "🔧 Engine build skipped — no longer needed."
