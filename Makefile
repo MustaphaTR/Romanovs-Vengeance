@@ -1,7 +1,7 @@
 # Makefile for packaging OpenRA mod for Windows, Linux, and macOS
 
 MOD_NAME := Mishmash
-VERSION := $(shell echo $(GITHUB_REF_NAME))
+VERSION := release
 DIST_DIR := dist
 BUILD_DIR := build
 
