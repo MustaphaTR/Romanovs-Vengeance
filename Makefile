@@ -1,29 +1,33 @@
-# Makefile for Mishmash OpenRA SDK-based standalone build
+# Makefile for Mishmash OpenRA SDK-based standalone packaging
 
 VERSION ?= dev
 
-.PHONY: all clean build check package
+.PHONY: all engine clean check-scripts check test version package
 
-all: clean build check package
+all: engine
 
-# Clean previous builds
+engine:
+	chmod +x fetch-engine.sh
+	./fetch-engine.sh
+	cd engine && make
+
 clean:
-	rm -rf release
-	find . -type d -name 'bin' -o -name 'obj' | xargs rm -rf
+	cd engine && make clean
+	@find . -maxdepth 1 -name '*.sln' -exec dotnet clean -c Release \;
 
-# Build the engine and mod via SDK
-build:
-	@echo "🔧 Building engine and mod..."
-	make engine
+check-scripts:
+	@luac -p $(shell find mods/*/maps/* -iname '*.lua' 2> /dev/null)
 
-# Run rule checks using OpenRA.Utility — non-blocking
-check:
-	@echo "🔎 Running OpenRA.Utility check (non-blocking)..."
-	- ./engine/OpenRA.Utility /run-all-rules || true
-	@echo "✅ Check completed (errors ignored)."
+check: engine
+	dotnet build -c Debug -warnaserror
 
-# Package as standalone mod
+test: all
+	./utility.sh --check-yaml
+
+version:
+	sh -c '. $(ENGINE_DIRECTORY)/packaging/functions.sh; set_mod_version $(VERSION) "mods/rv/mod.yaml"'
+	@echo "Version changed to $(VERSION)."
+
 package:
-	@echo "📦 Packaging standalone mod..."
 	chmod +x packaging/package-all.sh packaging/windows/buildpackage.sh || true
 	./packaging/package-all.sh $(VERSION)
