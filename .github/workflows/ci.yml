@@ -1,50 +1,33 @@
-name: Build and Package OpenRA Mod
+# Makefile for packaging OpenRA mod
 
-on:
-  release:
-    types: [published]
+MOD_NAME := Mishmash
+VERSION ?= dev
+DIST_DIR := dist
+PACKAGE_CONTENT := mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/
 
-permissions:
-  contents: write
+all: clean windows linux mac
 
-jobs:
-  build-and-package:
-    runs-on: ubuntu-latest
+windows:
+	@echo "Packaging for Windows..."
+	mkdir -p $(DIST_DIR)/windows/$(MOD_NAME)
+	cp -r $(PACKAGE_CONTENT) $(DIST_DIR)/windows/$(MOD_NAME)/
+	cd $(DIST_DIR)/windows && zip -r ../$(MOD_NAME)-windows-$(VERSION).zip $(MOD_NAME)
+	rm -rf $(DIST_DIR)/windows
 
-    steps:
-      - name: 📥 Checkout repository
-        uses: actions/checkout@v4
+linux:
+	@echo "Packaging for Linux..."
+	mkdir -p $(DIST_DIR)/linux/$(MOD_NAME)
+	cp -r $(PACKAGE_CONTENT) $(DIST_DIR)/linux/$(MOD_NAME)/
+	tar -czf $(DIST_DIR)/$(MOD_NAME)-linux-$(VERSION).tar.gz -C $(DIST_DIR)/linux $(MOD_NAME)
+	rm -rf $(DIST_DIR)/linux
 
-      - name: 🛠 Set up .NET
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '6.0.x'
+mac:
+	@echo "Packaging for macOS..."
+	mkdir -p $(DIST_DIR)/mac/$(MOD_NAME)
+	cp -r $(PACKAGE_CONTENT) $(DIST_DIR)/mac/$(MOD_NAME)/
+	tar -czf $(DIST_DIR)/$(MOD_NAME)-macos-$(VERSION).tar.gz -C $(DIST_DIR)/mac $(MOD_NAME)
+	rm -rf $(DIST_DIR)/mac
 
-      - name: 📦 Install dependencies
-        run: sudo apt-get update && sudo apt-get install -y zip
-
-      - name: 🔧 Make packaging scripts executable
-        run: chmod +x packaging/linux/buildpackage.sh packaging/windows/buildpackage.sh
-
-      - name: 🏗 Build mod and engine
-        run: make
-
-      - name: 📦 Package mod
-        run: make package
-
-      - name: 🕵️ List release folder contents
-        run: ls -lh release
-
-      - name: 🚀 Upload Windows zip
-        uses: softprops/action-gh-release@v2
-        with:
-          files: release/Mishmash-Windows.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: 🚀 Upload Linux zip
-        uses: softprops/action-gh-release@v2
-        with:
-          files: release/Mishmash-Linux.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+clean:
+	rm -rf $(DIST_DIR)
+	mkdir -p $(DIST_DIR)
