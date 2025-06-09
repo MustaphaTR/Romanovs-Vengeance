@@ -4,37 +4,17 @@ gacnst:
 		BuildPaletteOrder: 10
 	ProvidesPrerequisite@building.allies:
 		Prerequisite: building.allies
-	ProvidesPrerequisite@building.france:
-		Prerequisite: building.france
-		Factions: france
 	Production:
-		Produces: Building.Allies, Support.Allies, Support.France
+		Produces: Building.Allies, Support.Allies
 	ProductionQueue@Building:
 		Type: Building.Allies
 	ProductionQueue@Support:
 		Type: Support.Allies
-		Factions: america, germany, england, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
-	ProductionQueue@SupportFrance:
-		Type: Support.France
-		Group: Support
-		DisplayOrder: 5
-		LowPowerModifier: 200
-		Factions: france
-		ReadyAudio: ConstructionComplete
-		ReadyTextNotification: notification-construction-complete
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Building
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		Factions: allies
 	ProductionBar@Building:
 		ProductionType: Building.Allies
 	ProductionBar@Support:
 		ProductionType: Support.Allies
-	ProductionBar@SupportFrance:
-		ProductionType: Support.France
 		Color: 8A8A8A
 	Transforms:
 		IntoActor: amcv
@@ -44,98 +24,6 @@ gacnst:
 		RequiresCondition: !build-incomplete
 	WithBuildingPlacedOverlay:
 		RequiresCondition: !build-incomplete && !chronodisable
-	GrantConditionOnFaction@America:
-		Condition: america
-		Factions: america
-	GrantConditionOnFaction@England:
-		Condition: england
-		Factions: england
-	GrantConditionOnFaction@France:
-		Condition: france
-		Factions: france
-	GrantConditionOnFaction@Germany:
-		Condition: germany
-		Factions: germany
-	GrantConditionOnFaction@Korea:
-		Condition: korea
-		Factions: korea
-	GrantConditionOnFaction@Japan:
-		Condition: japan
-		Factions: japan
-	GrantConditionOnFaction@Belarus:
-		Condition: belarus
-		Factions: belarus
-	GrantConditionOnFaction@Poland:
-		Condition: poland
-		Factions: poland
-	GrantConditionOnFaction@Ukraine:
-		Condition: ukraine
-		Factions: ukraine
-	GrantConditionOnFaction@Australia:
-		Condition: aussie
-		Factions: aussie
-	GrantConditionOnFaction@China:
-		Condition: china
-		Factions: china
-	GrantConditionOnFaction@Turkey:
-		Condition: turkey
-		Factions: turkey
-	GrantConditionOnFaction@Canada:
-		Condition: canada
-		Factions: canada
-	WithIdleOverlay@America:
-		Sequence: flag-usa
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && america
-	WithIdleOverlay@England:
-		Sequence: flag-uk
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && england
-	WithIdleOverlay@France:
-		Sequence: flag-france
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && france
-	WithIdleOverlay@Germany:
-		Sequence: flag-germany
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && germany
-	WithIdleOverlay@Korea:
-		Sequence: flag-korea
-		Palette: allcyardflags
-		IsPlayerPalette: false
-		RequiresCondition: !build-incomplete && korea
-	WithIdleOverlay@Japan:
-		Sequence: flag-japan
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && japan
-	WithIdleOverlay@Belarus:
-		Sequence: flag-belarus
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && belarus
-	WithIdleOverlay@Poland:
-		Sequence: flag-poland
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && poland
-	WithIdleOverlay@Ukraine:
-		Sequence: flag-ukraine
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && ukraine
-	WithIdleOverlay@Australia:
-		Sequence: flag-aussie
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && aussie
-	WithIdleOverlay@China:
-		Sequence: flag-china
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && china
-	WithIdleOverlay@Turkey:
-		Sequence: flag-turkey
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && turkey
-	WithIdleOverlay@Canada:
-		Sequence: flag-canada
-		Palette: allcyardflags
-		RequiresCondition: !build-incomplete && canada
 	IsometricSelectable:
 		DecorationHeight: 60
 	Voiced:
@@ -209,7 +97,7 @@ gapowrup:
 	Tooltip:
 		Name: actor-gapowrup.name
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies
 		BuildPaletteOrder: 80
 		Prerequisites: ~building.allies, gapowr, gaairc, ~!global-upgrades, ~techlevel.2
 		Description: actor-gapowrup.description
@@ -236,73 +124,73 @@ gapile:
 		SpawnOffset: 0,768,0
 		ExitCell: 2,2
 		Priority: 2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@2Shared:
 		SpawnOffset: -694,-196,0
 		ExitCell: 0,2
 		Priority: 2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback1Shared:
 		SpawnOffset: -384,512,0
 		ExitCell: 1,2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback2Shared:
 		SpawnOffset: 384,768,0
 		ExitCell: 3,1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback3Shared:
 		SpawnOffset: 1086,362,0
 		ExitCell: 3,0
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback4Shared:
 		SpawnOffset: 1086,362,0
 		ExitCell: 3,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback5Shared:
 		SpawnOffset: 1086,362,0
 		ExitCell: 2,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback6Shared:
 		SpawnOffset: 362,-362,0
 		ExitCell: 1,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback7Shared:
 		SpawnOffset: -362,-1086,0
 		ExitCell: 0,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback8Shared:
 		SpawnOffset: -362,-1086,0
 		ExitCell: -1,-1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback9Shared:
 		SpawnOffset: -362,-1086,0
 		ExitCell: -1,0
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback10Shared:
 		SpawnOffset: -1086,-362,0
 		ExitCell: -1,1
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback11Shared:
 		SpawnOffset: -1086,-362,0
 		ExitCell: -1,2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@fallback12Shared:
 		SpawnOffset: 384,768,0
 		ExitCell: 3,2
-		ProductionTypes: Infantry.Shared, Soldier
+		ProductionTypes: Infantry.Shared, Infantry.Allies, Soldier
 		RequiresCondition: !multiqueue
 	Exit@1:
 		SpawnOffset: 0,768,0
@@ -363,31 +251,13 @@ gapile:
 		ExitCell: 3,2
 		RequiresCondition: multiqueue
 	Production:
-		Produces: Infantry.Allies, Infantry.USA, Infantry.UK
+		Produces: Infantry.Allies
 	ProductionQueue:
 		Type: Infantry.Allies
-		Factions: germany, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
-	ProductionQueue@USA:
-		Type: Infantry.USA
+		Factions: allies
 		Group: Infantry
 		DisplayOrder: 13
 		LowPowerModifier: 200
-		Factions: america
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@UK:
-		Type: Infantry.UK
-		Group: Infantry
-		DisplayOrder: 13
-		LowPowerModifier: 200
-		Factions: england
 		ReadyAudio: UnitReady
 		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
@@ -399,10 +269,6 @@ gapile:
 		CancelledAudio: Cancelled
 	ProductionBar:
 		ProductionType: Infantry.Allies
-	ProductionBar@USA:
-		ProductionType: Infantry.USA
-	ProductionBar@UK:
-		ProductionType: Infantry.UK
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
@@ -411,12 +277,6 @@ gapile:
 		Prerequisite: gapile
 	ProvidesPrerequisite@infantry.allies:
 		Prerequisite: infantry.allies
-	ProvidesPrerequisite@infantry.america:
-		Prerequisite: infantry.america
-		Factions: america
-	ProvidesPrerequisite@infantry.england:
-		Prerequisite: infantry.england
-		Factions: england
 	PlaceBuildingVariants:
 		Actors: gapilb
 	IsometricSelectable:
@@ -470,47 +330,6 @@ gaairc:
 		Prerequisite: production
 	ProvidesPrerequisite@aircraft.allies:
 		Prerequisite: aircraft.allies
-	ProvidesPrerequisite@aircraft.korea:
-		Prerequisite: aircraft.korea
-		Factions: korea
-	ProvidesPrerequisite@america:
-		Prerequisite: radar.america
-		Factions: america
-	ProvidesPrerequisite@england:
-		Prerequisite: radar.england
-		Factions: england
-	ProvidesPrerequisite@germany:
-		Prerequisite: radar.germany
-		Factions: germany
-	ProvidesPrerequisite@france:
-		Prerequisite: radar.france
-		Factions: france
-	ProvidesPrerequisite@korea:
-		Prerequisite: radar.korea
-		Factions: korea
-	ProvidesPrerequisite@upgrade.allies:
-		Prerequisite: upgrade.allies
-		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.america:
-		Prerequisite: upgrade.america
-		Factions: america
-		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.england:
-		Prerequisite: upgrade.england
-		Factions: england
-		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.germany:
-		Prerequisite: upgrade.germany
-		Factions: germany
-		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.france:
-		Prerequisite: upgrade.france
-		Factions: france
-		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.korea:
-		Prerequisite: upgrade.korea
-		Factions: korea
-		RequiresCondition: !powerdown
 	Building:
 		Footprint: x=x x==
 		Dimensions: 3,2
@@ -563,7 +382,7 @@ gaairc:
 		PauseOnCondition: powerdown || infiltrated || emp || chronodisable
 		RequiresCondition: !multiqueue
 	Production:
-		Produces: Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
+		Produces: Aircraft.Allies
 		PauseOnCondition: powerdown || infiltrated || emp || chronodisable
 		RequiresCondition: multiqueue
 	ProductionQueue:
@@ -571,52 +390,7 @@ gaairc:
 		Group: Aircraft
 		DisplayOrder: 25
 		LowPowerModifier: 200
-		Factions: germany, france, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@USA:
-		Type: Aircraft.USA
-		Group: Aircraft
-		DisplayOrder: 25
-		LowPowerModifier: 200
-		Factions: america
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@UK:
-		Type: Aircraft.UK
-		Group: Aircraft
-		DisplayOrder: 25
-		LowPowerModifier: 200
-		Factions: england
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Korea:
-		Type: Aircraft.Korea
-		Group: Aircraft
-		DisplayOrder: 25
-		LowPowerModifier: 200
-		Factions: korea
+		Factions: allies
 		ReadyAudio: UnitReady
 		ReadyTextNotification: notification-unit-ready
 		BlockedAudio: NoBuild
@@ -630,17 +404,11 @@ gaairc:
 		ProductionType: Aircraft.Shared
 	ProductionBar:
 		ProductionType: Aircraft.Allies
-	ProductionBar@USA:
-		ProductionType: Aircraft.USA
-	ProductionBar@UK:
-		ProductionType: Aircraft.UK
-	ProductionBar@Korea:
-		ProductionType: Aircraft.Korea
 	ParatroopersPower@paratroopers:
 		OrderName: AmericanParatroopers
 		PauseOnCondition: disabled || chronodisable
 		Prerequisites:
-			1: radar.america
+			1: gaairc
 		Icons:
 			1: airborne
 		Cursor: paradrop
@@ -670,215 +438,6 @@ gaairc:
 		UseDirectionalTarget: True
 		DirectionArrowAnimation: swdirection
 		DirectionArrowPalette: mouse
-	AirstrikePower@leafletdrop:
-		OrderName: BritishLeafletDrop
-		PauseOnCondition: disabled || chronodisable
-		Prerequisites:
-			1: disabled
-		Icons:
-			1: leaflet
-		BlockedCursor: ability-blocked
-		ChargeInterval: 3750
-		Names:
-			1: commanders-power.leaflet-drop-name
-		Descriptions:
-			1: commanders-power.leaflet-drop-description
-		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: notification-select-target
-		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
-		IncomingTextNotification: notification-enemy-airstrike-initiated
-		UnitTypes:
-			1: pdplane.leaflet
-		SquadSizes:
-			1: 1
-		QuantizedFacings: 8
-		CameraActor: CAMERA
-		CameraRemoveDelay: 100
-		DisplayBeacon: True
-		BeaconPosters:
-			1: leaficon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		UseDirectionalTarget: True
-		DirectionArrowAnimation: swdirection
-		DirectionArrowPalette: mouse
-	AirstrikePowerRV@carpetbombing:
-		ActivationDelay: 125
-		OrderName: BritishCarpetBombing
-		PauseOnCondition: disabled || chronodisable
-		Prerequisites:
-			1: radar.england
-		Icons:
-			1: carpetbomb
-		BlockedCursor: ability-blocked
-		ChargeInterval: 6000
-		Names:
-			1: actor-gaairc.power-carpetbombing-name
-		Descriptions:
-			1: actor-gaairc.power-carpetbombing-description
-		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: notification-select-target
-		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
-		IncomingTextNotification: notification-enemy-airstrike-initiated
-		UnitTypes:
-			1: b52
-		SquadSizes:
-			1: 1
-		QuantizedFacings: 8
-		CameraActor: CAMERA
-		CameraRemoveDelay: 100
-		DisplayBeacon: True
-		BeaconPosters:
-			1: carpicon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		UseDirectionalTarget: True
-		DirectionArrowAnimation: swdirection
-		DirectionArrowPalette: mouse
-	DetonateWeaponPower@chronogrizzly:
-		OrderName: GermanChronoGrizzly
-		PauseOnCondition: disabled || chronodisable
-		Prerequisites:
-			1: radar.germany
-		Icons:
-			1: grizzly
-		Cursor: chronosphere
-		BlockedCursor: ability-blocked
-		ChargeInterval: 6000
-		Names:
-			1: actor-gaairc.power-chronogrizzly-name
-		Descriptions:
-			1: actor-gaairc.power-chronogrizzly-description
-		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: notification-select-target
-		Weapons:
-			1: GrizzlySpawner
-		ActivationSequence:
-		CameraRange: 8c0
-		CameraRemoveDelay: 25
-	ParatroopersPower@paratanks:
-		OrderName: GermanTankDrop
-		PauseOnCondition: disabled || chronodisable
-		Prerequisites:
-			1: disabled
-		Icons:
-			1: tankdrop
-		Cursor: paradrop
-		BlockedCursor: ability-blocked
-		ChargeInterval: 6000
-		Names:
-			1: actor-gaairc.power-tankdrop-name
-		Descriptions:
-			1: actor-gaairc.power-tankdrop-description
-		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: notification-select-target
-		EndChargeSpeechNotification: ParatroopersReady
-		EndChargeTextNotification: notification-paratroopers-ready
-		DropItems:
-			1: mtnk, mtnk, mtnk
-		SquadSizes:
-			1: 3
-		SquadOffset: -2048, 2048, 0
-		QuantizedFacings: 8
-		UnitTypes:
-			1: alplane
-		CameraActor: camera
-		DisplayBeacon: True
-		BeaconPosters:
-			1: tdrpicon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		UseDirectionalTarget: True
-		DirectionArrowAnimation: swdirection
-		DirectionArrowPalette: mouse
-	GrantExternalConditionPower@forceshield:
-		OrderName: FrenchForceShield
-		PauseOnCondition: disabled || chronodisable
-		Prerequisites:
-			1: radar.france
-		Icons:
-			1: force
-		Cursor: force-shield
-		BlockedCursor: force-shield-blocked
-		ChargeInterval: 4500
-		Names:
-			1: actor-gaairc.power-forceshield-name
-		Descriptions:
-			1: actor-gaairc.power-forceshield-description
-		Durations:
-			1: 375
-		Conditions:
-			1: forceshield
-		Dimensions:
-			1: 7,7
-		Footprints:
-			1: ___x___ __xxx__ _xxxxx_ xxxxxxx _xxxxx_ __xxx__ ___x___
-		OnFireSound: sforceon.wav
-		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: notification-select-target
-		EndChargeSpeechNotification: ForceShieldReady
-		EndChargeTextNotification: notification-force-shield-ready
-		LaunchSpeechNotification: ForceShieldActivated
-		LaunchTextNotification: notification-force-shield-activated
-		IncomingSpeechNotification: ForceShieldActivated
-		IncomingTextNotification: notification-force-shield-activated
-		EffectImage: explosion
-		EffectSequence: forceshield
-		EffectPalette: effect
-	AirstrikePowerRV@empulse:
-		ActivationDelay: 125
-		OrderName: KoreanEMP
-		PauseOnCondition: disabled || chronodisable
-		Prerequisites:
-			1: disabled
-		Icons:
-			1: empulse
-		BlockedCursor: ability-blocked
-		ChargeInterval: 7500
-		Names:
-			1: commanders-power.emp-strike-name
-		Descriptions:
-			1: commanders-power.emp-strike-description
-		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: notification-select-target
-		IncomingSpeechNotification: WarningEnemyAirstrikeInitiated
-		IncomingTextNotification: notification-enemy-airstrike-initiated
-		UnitTypes:
-			1: pdplane.emp
-		SquadSizes:
-			1: 1
-		QuantizedFacings: 8
-		CameraActor: CAMERA
-		CameraRemoveDelay: 100
-		DisplayBeacon: True
-		BeaconPosters:
-			1: empuicon
-		ArrowSequence: arrow
-		ClockSequence: clock
-		UseDirectionalTarget: True
-		DirectionArrowAnimation: swdirection
-		DirectionArrowPalette: mouse
-	DetonateWeaponPower@chronobomb:
-		OrderName: KoreanChronoBomb
-		PauseOnCondition: disabled || chronodisable
-		Prerequisites:
-			1: radar.korea
-		Icons:
-			1: chronobomb
-		Cursor: chronosphere
-		BlockedCursor: ability-blocked
-		ChargeInterval: 6000
-		Names:
-			1: actor-gaairc.power-chronobomb-name
-		Descriptions:
-			1: actor-gaairc.power-chronobomb-description
-		SelectTargetSpeechNotification: SelectTarget
-		SelectTargetTextNotification: notification-select-target
-		Weapons:
-			1: BarrelSpawner
-		ActivationSequence:
-		CameraRange: 6c0
-		CameraRemoveDelay: 25
 	RallyPoint:
 		Path: 1,2
 		Palette: mouse
@@ -977,63 +536,12 @@ gaweap:
 		Prerequisite: powered_robo
 		RequiresCondition: !chronodisable
 	Production:
-		Produces: Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Produces: Vehicle.Allies
 	ProductionQueue:
 		Type: Vehicle.Allies
-		Factions: france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, psicorps, psinepal, psisouth, psitrans, psimoon, transcaucus, turkmen, tuva, russianfed, serbia
-	ProductionQueue@USA:
-		Type: Vehicle.USA
-		Group: Vehicle
-		DisplayOrder: 17
-		LowPowerModifier: 200
-		Factions: america
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@UK:
-		Type: Vehicle.UK
-		Group: Vehicle
-		DisplayOrder: 17
-		LowPowerModifier: 200
-		Factions: england
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
-	ProductionQueue@Germany:
-		Type: Vehicle.Germany
-		Group: Vehicle
-		DisplayOrder: 17
-		LowPowerModifier: 200
-		Factions: germany
-		ReadyAudio: UnitReady
-		ReadyTextNotification: notification-unit-ready
-		BlockedAudio: NoBuild
-		BlockedTextNotification: notification-unable-to-build-more
-		LimitedAudio: BuildingInProgress
-		LimitedTextNotification: notification-unable-to-comply-building-in-progress
-		QueuedAudio: Training
-		OnHoldAudio: OnHold
-		CancelledAudio: Cancelled
+		Factions: allies
 	ProductionBar:
 		ProductionType: Vehicle.Allies
-	ProductionBar@USA:
-		ProductionType: Vehicle.USA
-	ProductionBar@UK:
-		ProductionType: Vehicle.UK
-	ProductionBar@Germany:
-		ProductionType: Vehicle.Germany
 	WithIdleOverlay@flag:
 		Sequence: idle-flag
 		PauseOnCondition: chronodisable
@@ -1132,26 +640,6 @@ gatech:
 	ProvidesPrerequisite@upgrade.allies:
 		Prerequisite: upgrade.allies
 		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.america:
-		Prerequisite: upgrade.america
-		Factions: america
-		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.england:
-		Prerequisite: upgrade.england
-		Factions: england
-		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.germany:
-		Prerequisite: upgrade.germany
-		Factions: germany
-		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.france:
-		Prerequisite: upgrade.france
-		Factions: france
-		RequiresCondition: !powerdown
-	ProvidesPrerequisite@upgrade.korea:
-		Prerequisite: upgrade.korea
-		Factions: korea
-		RequiresCondition: !powerdown
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
 		Prerequisite: ai.gatech
@@ -1179,8 +667,8 @@ gawall:
 	Inherits: ^Wall
 	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
-		Prerequisites: ~building.allies, ~techlevel.1
+		Queue: Support.Shared, Support.Allies
+		Prerequisites: ~gacnst, ~techlevel.1
 		BuildPaletteOrder: 10
 		Description: actor-gawall.description
 	Tooltip:
@@ -1202,9 +690,9 @@ gapill:
 	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies
 		BuildPaletteOrder: 40
-		Prerequisites: ~building.allies, gapile, ~techlevel.1
+		Prerequisites: ~gacnst, gapile, ~techlevel.1
 		Description: actor-gapill.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1266,9 +754,9 @@ nasam:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies
 		BuildPaletteOrder: 50
-		Prerequisites: ~building.allies, gaairc, ~techlevel.2
+		Prerequisites: ~gacnst, gaairc, ~techlevel.2
 		Description: actor-nasam.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1347,9 +835,9 @@ gtgcan:
 	Inherits@MC: ^MindControllableBuilding
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
-		Queue: Support.Shared, Support.France
+		Queue: Support.Shared, Support.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: ~building.france, upgrade.grand_cannon_protocols, ~techlevel.3
+		Prerequisites: ~gacnst, ~techlevel.3
 		Description: actor-gtgcan.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -1587,7 +1075,7 @@ gagap:
 	Tooltip@NoRow:
 		Name: actor-gagap.name
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies
 		BuildPaletteOrder: 100
 		Prerequisites: ~building.allies, gatech, ~techlevel.3
 		Description: actor-gagap.description
@@ -1641,7 +1129,7 @@ gagap:
 gaweat:
 	Inherits: ^PrimarySuperWeapon
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gatech, !enoughweather, ~techlevel.5
 		Description: actor-gaweat.description
 	Tooltip:
@@ -1701,7 +1189,7 @@ gacsph:
 	Inherits@SHAPE: ^4x3Shape
 	Inherits@AI: ^AIControl
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, gatech, !enoughchrono, ~techlevel.5
 		Description: actor-gacsph.description
 	Tooltip:
@@ -1819,9 +1307,9 @@ atesla:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies
 		BuildPaletteOrder: 60
-		Prerequisites: ~building.allies, gaairc, ~techlevel.3
+		Prerequisites: ~gacnst, gaairc, ~techlevel.3
 		Description: actor-atesla.description
 		BuildDuration: 625
 		BuildDurationModifier: 100
@@ -2069,7 +1557,7 @@ gagatea:
 	Inherits: ^Gate_A
 	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, ~techlevel.1
 		BuildPaletteOrder: 20
 		Description: actor-gagate.description
@@ -2110,8 +1598,8 @@ gagateb:
 gasilo:
 	Inherits: ^Silo
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
-		Prerequisites: ~building.allies, refinery, ~!global-megawealth, ~techlevel.1
+		Queue: Support.Shared, Support.Allies
+		Prerequisites: ~unbuildable
 	WithIdleOverlay@waves:
 		Sequence: idle-waves
 		RequiresCondition: in_water
@@ -2127,9 +1615,9 @@ gamgun:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.France
+		Queue: Support.Shared
 		BuildPaletteOrder: 80
-		Prerequisites: ~building.france, gaairc, ~techlevel.3
+		Prerequisites: ~unbuildable
 		Description: actor-gamgun.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -2211,9 +1699,9 @@ gagun:
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
-		Queue: Support.Shared, Support.Allies, Support.France
+		Queue: Support.Shared, Support.Allies
 		BuildPaletteOrder: 70
-		Prerequisites: ~building.allies, gapile, prerequisite.gun_turret, ~techlevel.1
+		Prerequisites: ~unbuildable
 		Description: actor-gagun.description
 		BuildDuration: 250
 		BuildDurationModifier: 100

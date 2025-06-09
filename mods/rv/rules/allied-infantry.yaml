@@ -168,7 +168,7 @@ dog:
 		RequiresCondition: psicorps && !showownername
 	GrantConditionOnFaction@Allies:
 		Condition: allies
-		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		Factions: america, germany, england, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada, allies
 	GrantConditionOnFaction@Soviet:
 		Condition: soviet
 		Factions: cuba, libya, iraq, russia, vietnam, chile, mexico, mongolia, transcaucus, turkmen, tuva, russianfed, serbia
@@ -319,7 +319,7 @@ e1:
 	Inherits@PORTABLE: ^AffectedByPortableWeaponry
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
-		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
+		Queue: Infantry.Shared, Infantry.Allies
 		BuildAtProductionType: Soldier
 		Prerequisites: ~infantry.allies, ~techlevel.1
 		BuildPaletteOrder: 10
@@ -964,10 +964,10 @@ snipe:
 	Tooltip@NoRow:
 		Name: actor-snipe.name
 	Buildable:
-		Queue: Infantry.Shared, Infantry.UK
+		Queue: Infantry.Shared, Infantry.Allies
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
-		Prerequisites: ~infantry.england, gaairc, ~techlevel.3
+		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
 		Description: actor-snipe.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -975,6 +975,7 @@ snipe:
 		AddToArmyValue: true
 	Selectable:
 		Bounds: 482, 1448, 0, -530
+
 	Health:
 		HP: 12500
 	Garrisoner:
@@ -1189,10 +1190,10 @@ ghost:
 	Inherits@MC: ^MindControllable
 	Inherits@SWIMSUIT: ^WithSwimSuit
 	Buildable:
-		Queue: Infantry.Shared, Infantry.USA
+		Queue: Infantry.Shared, Infantry.Allies
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 100
-		Prerequisites: ~infantry.america, gaairc, ~techlevel.3
+		Prerequisites: ~infantry.allies, gaairc, ~techlevel.3
 		Description: actor-ghost.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -1775,162 +1776,3 @@ cleg:
 		DefaultAttackSequence: shoot
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-
-# Custom Allied Infantry:
-gren:
-	Inherits: ^Infantry
-	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
-	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CHAOS: ^BerserkableArmed
-	Inherits@EMPAMMO: ^AffectedByEMPMunitions
-	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@MC: ^MindControllable
-	Inherits@PARACHUTE: ^Parachutable
-	Buildable:
-		Queue: Infantry.Shared, Infantry.Allies, Infantry.USA, Infantry.UK
-		BuildAtProductionType: Soldier
-		Prerequisites: ~infantry.allies, gaairc, ~techlevel.2
-		BuildPaletteOrder: 70
-		Description: actor-gren.description
-		BuildDuration: 125
-		BuildDurationModifier: 100
-	UpdatesPlayerStatistics:
-		AddToArmyValue: true
-	Valued:
-		Cost: 250
-	DeliversCash:
-		Payload: 125
-		Voice: Move
-	Tooltip:
-		Name: actor-gren.name
-	Tooltip@NoRow:
-		Name: actor-gren.name
-	Selectable:
-		Bounds: 482, 1448, 0, -530
-	Health:
-		HP: 12500
-	Armor:
-		Type: Flak
-	Mobile:
-		Speed: 75
-	Garrisoner:
-		Voice: Move
-		GarrisonType: Garrisoner
-	RevealsShroud:
-		Range: 6c0
-	# RevealsShroudToIntelligenceOwner:
-	#	Range: 6c0
-	RevealOnDeath:
-		Radius: 6c0
-	AttackFrontal:
-		Voice: Attack
-		FacingTolerance: 2
-	Armament@primary:
-		Weapon: Grenade
-		Damage: 80
-		FireDelay: 5
-		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !empammo && !rank-elite
-	Armament@primary-emp:
-		Weapon: GrenadeEMP
-		Damage: 80
-		FireDelay: 5
-		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: empammo && !rank-elite
-	Armament@elite:
-		Weapon: GrenadeE
-		Damage: 100
-		FireDelay: 5
-		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !empammo && rank-elite
-	Armament@elite-emp:
-		Weapon: GrenadeEMPE
-		Damage: 100
-		FireDelay: 5
-		LocalOffset: 64,0,512
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: empammo && rank-elite
-	Armament@opentopped:
-		Name: opentopped
-		Weapon: Grenade
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !empammo && !rank-elite
-	Armament@opentopped-emp:
-		Name: opentopped
-		Weapon: GrenadeEMP
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: empammo && !rank-elite
-	Armament@elite-opentopped:
-		Name: opentopped
-		Weapon: GrenadeE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !empammo && rank-elite
-	Armament@elite-opentopped-emp:
-		Name: opentopped
-		Weapon: GrenadeEMPE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: empammo && rank-elite
-	Armament@garrisoned:
-		Name: garrisoned
-		Weapon: UCGrenade
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !empammo && !rank-elite
-	Armament@garrisoned-emp:
-		Name: garrisoned
-		Weapon: UCGrenadeEMP
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: empammo && !rank-elite
-	Armament@elite-garrisoned:
-		Name: garrisoned
-		Weapon: UCGrenadeE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: !empammo && rank-elite
-	Armament@elite-garrisoned-emp:
-		Name: garrisoned
-		Weapon: UCGrenadeEMPE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: empammo && rank-elite
-	WithInfantryBody:
-		RequiresCondition: !parachute && !webdisable && !empammo
-	WithInfantryBody@EMPAMMO:
-		IdleSequences: idle1-empammo, idle2-empammo
-		MoveSequence: run-empammo
-		StandSequences: stand-empammo
-		DefaultAttackSequence: shoot-empammo
-		RequiresCondition: !parachute && !webdisable && empammo
-	WithSpriteBody@Parachute:
-		RequiresCondition: parachute && !empammo
-	WithSpriteBody@Parachute-EMPAMMO:
-		Name: parachute-empammo
-		Sequence: paradrop-empammo
-		RequiresCondition: parachute && empammo
-	WithDeathAnimation@normal:
-		RequiresCondition: !empammo
-	WithDeathAnimation@EMPAMMO:
-		DeathSequence: die-empammo
-		DeathSequencePalette: infantry
-		DeathTypes:
-			ExplosionDeath: 1
-			BulletDeath: 2
-		RequiresCondition: empammo
-	Voiced:
-		VoiceSet: GrenadierVoice
-		Volume: 5
-	ProducibleWithLevel@1:
-		Prerequisites: barracks.infiltratedorbaacdm
-	WithProductionIconOverlay@1:
-		Prerequisites: barracks.infiltratedorbaacdm
-		Types: chevron-veteran
-	ProducibleWithLevel@2:
-		Prerequisites: barracks.infiltrated, baacdm
-	WithProductionIconOverlay@2:
-		Prerequisites: barracks.infiltrated, baacdm
-		Types: chevron-elite
-	QuantizeFacingsFromSequence:
-		Sequence: stand
-	ActorStatValues:
-		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.advanced_training, upgrade.emp_munitions

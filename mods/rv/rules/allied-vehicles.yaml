@@ -60,7 +60,7 @@ mtnk:
 	Tooltip@NoRow:
 		Name: actor-mtnk.name
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Allies
 		Description: actor-mtnk.description
 		Prerequisites: ~vehicle.allies, ~techlevel.1
 		BuildDuration: 300
@@ -145,9 +145,9 @@ tnkd:
 	Tooltip@NoRow:
 		Name: actor-tnkd.name
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Germany
+		Queue: Vehicle.Shared, Vehicle.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: ~vehicle.germany, gaairc, ~techlevel.3
+		Prerequisites: ~vehicle.allies, gaairc, ~techlevel.3
 		Description: actor-tnkd.description
 		BuildDuration: 375
 		BuildDurationModifier: 100
@@ -289,15 +289,6 @@ fv:
 		GenericName: meta-vehicle.name
 		ShowOwnerRow: false
 		RequiresCondition: ifv-rocket && !showownername
-	Tooltip@gren:
-		Name: actor-fv.gren-name
-		GenericName: meta-vehicle.name
-		RequiresCondition: ifv-gren && showownername
-	Tooltip@gren-norow:
-		Name: actor-fv.gren-name
-		GenericName: meta-vehicle.name
-		ShowOwnerRow: false
-		RequiresCondition: ifv-gren && !showownername
 	Tooltip@mortar:
 		Name: actor-fv.mortar-name
 		GenericName: meta-vehicle.name
@@ -1917,7 +1908,7 @@ hwtz:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.Allies, Vehicle.USA, Vehicle.UK, Vehicle.Germany
 		BuildPaletteOrder: 80
-		Prerequisites: ~vehicle.allies, prerequisite.howitzer, gaairc, ~techlevel.3
+		Prerequisites: ~unbuildable
 		Description: actor-hwtz.description
 		BuildDuration: 375
 		BuildDurationModifier: 100

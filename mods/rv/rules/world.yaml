@@ -189,34 +189,39 @@
 	Faction@random:
 		Name: faction-random.name
 		InternalName: Random
-		RandomFactionMembers: random-allies, random-soviets, random-psicorps
+		RandomFactionMembers: allies, soviets, yuri
 		Side: Randoms
 		Description: faction-random.description
-	Faction@allies:
-		Name: faction-random-allies.name
-		InternalName: random-allies
-		RandomFactionMembers: america, england, france, germany, korea
-		Side: Randoms
-		Description: faction-random-allies.description
-	Faction@soviets:
-		Name: faction-random-soviets.name
-		InternalName: random-soviets
-		RandomFactionMembers: russia, iraq, vietnam, cuba, libya
-		Side: Randoms
-		Description: faction-random-soviets.description
-	Faction@psicorps:
-		Name: faction-random-psicorps.name
-		InternalName: random-psicorps
-		RandomFactionMembers: psicorps, psinepal, psisouth, psitrans, psimoon
-		Side: Randoms
-		Description: faction-random-psicorps.description
-	Faction@baku:
-		Name: faction-random-bakupact.name
-		InternalName: random-bakupact
-		RandomFactionMembers: transcaucus, turkmen, tuva, russianfed, serbia
-		Side: Randoms
-		Description: faction-random-bakupact.description
-		Selectable: false
+	Faction@unifiedallied:
+		Name: Allied Nations
+		InternalName: allies
+		Side: Red Alert 2
+		Description: faction-allied.description
+		Selectable: true
+	Faction@unifiedsoviet:
+		Name: Soviet Warpact
+		InternalName: soviets
+		Side: Red Alert 2
+		Description: faction-soviet.description
+		Selectable: true
+	Faction@unifiedyuri:
+		Name: Yuri
+		InternalName: yuri
+		Side: Red Alert 2
+		Description: faction-yuri.description
+		Selectable: true
+	Faction@gdi:
+		Name: GDI
+		InternalName: gdi
+		Side: Tiberian Sun
+		Description: faction-gdi.description
+		Selectable: true
+	Faction@harkonnen:
+		Name: Harkonnen
+		InternalName: harkonnen
+		Description: faction-harkonnen.description
+		Side: Dune
+		Selectable: true
 	Faction@1:
 		Name: faction-america.name
 		InternalName: america
@@ -292,132 +297,6 @@
 		InternalName: psimoon
 		Side: Psi-Corps
 		Description: faction-psimoon.description
-	Faction@16:
-		Name: faction-japan.name
-		InternalName: japan
-		Side: Allies
-		Description: faction-japan.description
-		Selectable: false
-	Faction@17:
-		Name: faction-belarus.name
-		InternalName: belarus
-		Side: Allies
-		Description: faction-belarus.description
-		Selectable: false
-	Faction@18:
-		Name: faction-poland.name
-		InternalName: poland
-		Side: Allies
-		Description: faction-poland.description
-		Selectable: false
-	Faction@19:
-		Name: faction-ukraine.name
-		InternalName: ukraine
-		Side: Allies
-		Description: faction-ukraine.description
-		Selectable: false
-	Faction@20:
-		Name: faction-aussie.name
-		InternalName: aussie
-		Side: Allies
-		Description: faction-aussie.description
-		Selectable: false
-	Faction@21:
-		Name: faction-china.name
-		InternalName: china
-		Side: Allies
-		Description: faction-china.description
-		Selectable: false
-	Faction@22:
-		Name: faction-turkey.name
-		InternalName: turkey
-		Side: Allies
-		Description: faction-turkey.description
-		Selectable: false
-	Faction@23:
-		Name: faction-canada.name
-		InternalName: canada
-		Side: Allies
-		Description: faction-canada.description
-		Selectable: false
-	Faction@24:
-		Name: faction-chile.name
-		InternalName: chile
-		Side: Soviets
-		Description: faction-chile.description
-		Selectable: false
-	Faction@25:
-		Name: faction-mexico.name
-		InternalName: mexico
-		Side: Soviets
-		Description: faction-mexico.description
-		Selectable: false
-	Faction@26:
-		Name: faction-mongolia.name
-		InternalName: mongolia
-		Side: Soviets
-		Description: faction-mongolia.description
-		Selectable: false
-	Faction@27:
-		Name: faction-transcaucus.name
-		InternalName: transcaucus
-		Side: Baku Pact
-		Description: faction-transcaucus.description
-		Selectable: false
-	Faction@28:
-		Name: faction-turkmen.name
-		InternalName: turkmen
-		Side: Baku Pact
-		Description: faction-turkmen.description
-		Selectable: false
-	Faction@29:
-		Name: faction-tuva.name
-		InternalName: tuva
-		Side: Baku Pact
-		Description: faction-tuva.description
-		Selectable: false
-	Faction@30:
-		Name: faction-russianfed.name
-		InternalName: russianfed
-		Side: Baku Pact
-		Description: faction-russianfed.description
-		Selectable: false
-	Faction@31:
-		Name: faction-serbia.name
-		InternalName: serbia
-		Side: Baku Pact
-		Description: faction-serbia.description
-		Selectable: false
-	Faction@unifiedallied:
-		Name: Allied
-		InternalName: allies
-		Side: Red Alert 2
-		Description: faction-allied.description
-		Selectable: true
-	Faction@unifiedsoviet:
-		Name: Soviet
-		InternalName: soviets
-		Side: Red Alert 2
-		Description: faction-soviet.description
-		Selectable: true
-	Faction@unifiedyuri:
-		Name: Yuri
-		InternalName: yuri
-		Side: Red Alert 2
-		Description: faction-yuri.description
-		Selectable: true
-	Faction@gdi:
-		Name: GDI
-		InternalName: gdi
-		Side: Tiberian Sun
-		Description: faction-gdi.description
-		Selectable: true
-	Faction@harkonnen:
-		Name: Harkonnen
-		InternalName: harkonnen
-		Description: faction-harkonnen.description
-		Side: Dune
-		Selectable: true
 	ResourceRenderer:
 		ResourceTypes:
 			Ore:
@@ -517,7 +396,7 @@ World:
 	StartingUnits@nobasesallies:
 		Class: nobases
 		ClassName: options-starting-units.no-bases
-		Factions: france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
+		Factions: allies, france, korea, japan, belarus, poland, ukraine, aussie, china, turkey, canada
 		BaseActor: tany
 		BaseActorFacing: 640
 		SupportActors: e1, e1, e1, e1, ggi, ggi, ggi, dog, dog, engineer, gren, gren, jumpjet.spawner, jumpjet.spawner, cleg, mtnk, mtnk, fv, fv, robo, robo, robo, mrcv, hwtz, mgtk, bfrt, sref, shad
@@ -950,26 +829,6 @@ World:
 		PreviewActor: amcv.colorpicker
 		PresetColors: DEE308, FF1818, 2973E7, 39D629, FFA518, 31D6E7, 9429BD, FF9CEF, 6F7104, 7F0C0C, 143973, 1C6B14, 7F520C, 186B73, 4A145E, 7F484E
 		FactionPreviewActors:
-			random-soviets: smcv.colorpicker
-			random-psicorps: pcv.colorpicker
-			libya: smcv.colorpicker
-			cuba: smcv.colorpicker
-			iraq: smcv.colorpicker
-			russia: smcv.colorpicker
-			vietnam: smcv.colorpicker
-			chile: smcv.colorpicker
-			mexico: smcv.colorpicker
-			mongolia: smcv.colorpicker
-			psicorps: pcv.colorpicker
-			psinepal: pcv.colorpicker
-			psisouth: pcv.colorpicker
-			psitrans: pcv.colorpicker
-			psimoon: pcv.colorpicker
-			transcaucus: smcv.colorpicker
-			serbia: smcv.colorpicker
-			turkmen: smcv.colorpicker
-			tuva: smcv.colorpicker
-			russianfed: smcv.colorpicker
 			harkonnen: d2k.colorpicker
 			gdi: gdi.colorpicker
 			soviet: smcv.colorpicker

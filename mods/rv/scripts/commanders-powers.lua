@@ -37,6 +37,9 @@ TextColors ={ }
 Ranks =
 {
 	america = { "Lieutenant", "Captain", "Major", "Colonel", "General" },
+	allies = { "Lieutenant", "Captain", "Major", "Colonel", "General" },
+	soviet = { "Leytenant", "Kapitan", "Mayor", "Polkovnik", "General" },
+	yuri = { "Consultant", "Adept", "Overseer", "Elite", "Mastermind" },
 	england = { "Lieutenant", "Captain", "Major", "Colonel", "General" },
 	france = { "Lieutenant", "Captain", "Major", "Colonel", "General" },
 	germany = { "Lieutenant", "Captain", "Major", "Colonel", "General" },

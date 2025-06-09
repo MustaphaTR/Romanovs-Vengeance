@@ -39,10 +39,12 @@ LeaderTypes =
 	psisouth = "yuripr.regicide",
 	psimoon = "yuripr.regicide",
 	transcaucus = "myak.regicide",
-	turkmen = "myak.regicide",
 	tuva = "myak.regicide",
 	russianfed = "myak.regicide",
 	serbia = "myak.regicide",
+	allies = "pres.regicide",
+	soviet = "myak.regicide",
+	yuri = "yuripr.regicide",
 	harkonnen = "myak.regicide",
 	gdi = "pres.regicide"
 }
