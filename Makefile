@@ -1,6 +1,5 @@
 # Makefile for Mishmash OpenRA mod
 
-MOD_NAME := Mishmash
 VERSION ?= dev
 DIST_DIR := dist
 
@@ -20,19 +19,19 @@ build:
 # Run rule checks using OpenRA.Utility — but do not fail the build if errors are found
 check:
 	@echo "🔎 Running OpenRA.Utility check (non-blocking)..."
-	- ./engine/bin/OpenRA.Utility.exe /run-all-rules || true
+	- dotnet run --project engine/OpenRA.Utility/OpenRA.Utility.csproj -- /run-all-rules || true
 	@echo "✅ Check completed (errors ignored)."
 
 # Package mod into zip archives
 package: package-windows
 
 package-windows:
-	mkdir -p $(DIST_DIR)/windows/$(MOD_NAME)
-	cp -r mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/ $(DIST_DIR)/windows/$(MOD_NAME)/
-	cd $(DIST_DIR)/windows && zip -r $(MOD_NAME)-windows-$(VERSION).zip $(MOD_NAME)
+	mkdir -p $(DIST_DIR)/windows/mishmash
+	cp -r mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/ $(DIST_DIR)/windows/mishmash/
+	cd $(DIST_DIR)/windows && zip -r mishmash-windows-$(VERSION).zip mishmash
 
 # Optional: Linux packaging target (if needed later)
 package-linux:
-	mkdir -p $(DIST_DIR)/linux/$(MOD_NAME)
-	cp -r mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/ $(DIST_DIR)/linux/$(MOD_NAME)/
-	cd $(DIST_DIR)/linux && zip -r $(MOD_NAME)-linux-$(VERSION).zip $(MOD_NAME)
+	mkdir -p $(DIST_DIR)/linux/mishmash
+	cp -r mod.yaml rules/ maps/ sequences/ bits/ chrome/ ui/ $(DIST_DIR)/linux/mishmash/
+	cd $(DIST_DIR)/linux && zip -r mishmash-linux-$(VERSION).zip mishmash
