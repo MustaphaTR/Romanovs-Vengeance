@@ -228,7 +228,7 @@ harkonnenrefinery:
 	Building:
 		Footprint: xxx xxx
 		Dimensions: 2,3
-		LocalCenterOffset: 0,-800,0
+		LocalCenterOffset: 0,0,0
 	FreeActor:
 		Actor: d2kharv
 	SmokeParticleEmitter@refinerysmoke1:
@@ -327,7 +327,7 @@ harkonnenheavyweap:
 			BottomRight: 512, -512
 	Exit@1:
 		SpawnOffset: 256,192,0
-		ExitCell: 0,2
+		ExitCell: 0,4
 	-WithIdleOverlay@bib:
 	-WithExitOverlay@front:
 	-WithExitOverlay@top:
@@ -737,8 +737,8 @@ d2ktrike:
 	UpdatesPlayerStatistics:
 		AddToArmyValue: true
 	Mobile:
-		TurnSpeed: 80
-		Speed: 99
+		TurnSpeed: 40
+		Speed: 128
 		Locomotor: wheeled
 		RequiresCondition: !notmobile && !chronodisable && !emp && !magnefreeze && !beingterrordroned && !being-captured
 	Health:
@@ -762,10 +762,12 @@ d2ktrike:
 		Weapon: para
 		Damage: 25
 		RequiresCondition: !rank-elite
+		MuzzleSequence: muzzle
 	Armament@primary-elite:
 		Weapon: paraE
 		Damage: 50
 		RequiresCondition: rank-elite
+		MuzzleSequence: muzzle
 	Voiced:
 		VoiceSet: SovietVehicleVoice
 	ProducibleWithLevel@1:
