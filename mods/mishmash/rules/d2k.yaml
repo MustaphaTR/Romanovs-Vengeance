@@ -881,6 +881,7 @@ d2ktrike:
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -965,6 +966,7 @@ d2kquad:
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -1049,6 +1051,7 @@ d2kcombattankharkonnen:
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -1146,6 +1149,7 @@ d2ksiegetank:
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -1240,14 +1244,11 @@ d2ksiegetank:
 
 d2ke1:
 	Inherits: ^Infantry
-	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@MOLOTOV: ^AffectedByMolotovCocktails
 	Inherits@PARACHUTE: ^Parachutable
-	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.harkonnen
@@ -1519,26 +1520,16 @@ d2ktrooper:
 		FacingTolerance: 2
 	Armament@primary:
 		Weapon: TSMissileLauncher
-		Damage: 15
+		Damage: 40
 		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: TSMissileLauncherE
-		Damage: 20
+		Damage: 80
 		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@primary-line:
-		Weapon: TSMissileLauncher
-		LocalOffset: 256,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && !rank-elite
-	Armament@elite-line:
-		Weapon: TSMissileLauncherE
-		LocalOffset: 256,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: TSMissileLauncher
@@ -1549,16 +1540,6 @@ d2ktrooper:
 		Weapon: TSMissileLauncherE
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@opentopped-line:
-		Name: opentopped
-		Weapon: TSMissileLauncher
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && !rank-elite
-	Armament@elite-opentopped-line:
-		Name: opentopped
-		Weapon: TSMissileLauncherE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: TSMissileLauncher
@@ -1569,16 +1550,38 @@ d2ktrooper:
 		Weapon: TSMissileLauncherE
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@garrisoned-line:
-		Name: garrisoned
-		Weapon: TSMissileLauncher
+	Armament@primaryAA:
+		Weapon: TSMissileLauncherAA
+		Damage: 40
+		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && !rank-elite
-	Armament@elite-garrisoned-line:
-		Name: garrisoned
-		Weapon: TSMissileLauncherE
+		RequiresCondition: !rank-elite
+	Armament@eliteAA:
+		Weapon: TSMissileLauncherAAE
+		Damage: 80
+		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && rank-elite
+		RequiresCondition: rank-elite
+	Armament@opentoppedAA:
+		Name: opentopped
+		Weapon: TSMissileLauncherAA
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-opentoppedAA:
+		Name: opentopped
+		Weapon: TSMissileLauncherAAE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
+	Armament@garrisonedAA:
+		Name: garrisoned
+		Weapon: TSMissileLauncherAA
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: !rank-elite
+	Armament@elite-garrisonedAA:
+		Name: garrisoned
+		Weapon: TSMissileLauncherAAE
+		PauseOnCondition: chronodisable || webdisable || dogstun
+		RequiresCondition: rank-elite
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	WithDeathAnimation@normal:

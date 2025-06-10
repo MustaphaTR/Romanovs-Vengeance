@@ -10,7 +10,6 @@ smcv:
 
 harv:
 	Inherits: ^Miner
-	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -226,7 +225,6 @@ htk:
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxelArmed
-	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
@@ -369,9 +367,6 @@ htk:
 
 htnk:
 	Inherits: ^MainBattleTank
-	Inherits@CRYO: ^AffectedByCryoShells
-	Inherits@NUKEENGINES: ^AffectedByNuclearEngines
-	Inherits@URANIUM: ^AffectedByUraniumShells
 	Valued:
 		Cost: 900
 	DeliversCash:
@@ -398,7 +393,7 @@ htnk:
 		RecoilRecovery: 12
 		LocalOffset: 896,0,640
 		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite && !cryo_shells # && !uranium_shells
+		RequiresCondition: !rank-elite
 	Armament@elite:
 		Name: elite
 		Weapon: 120mmE
@@ -407,100 +402,15 @@ htnk:
 		RecoilRecovery: 12
 		LocalOffset: 896,0,640
 		MuzzleSequence: muzzle-2
-		RequiresCondition: rank-elite && !cryo_shells # && !uranium_shells
-	#Armament@primary-uranium:
-	#	Name: primary-uranium
-	#	Weapon: 120mmU
-	#	Damage: 90
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	LocalOffset: 896,0,640
-	#	MuzzleSequence: muzzle
-	#	RequiresCondition: !rank-elite && uranium_shells && !advirrad
-	#Armament@elite-uranium:
-	#	Name: elite-uranium
-	#	Weapon: 120mmUE
-	#	Damage: 180
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	LocalOffset: 896,0,640
-	#	MuzzleSequence: muzzle-2
-	#	RequiresCondition: rank-elite && uranium_shells && !advirrad
-	#Armament@primary-uranium-orange:
-	#	Name: primary-uranium-orange
-	#	Weapon: 120mmUOrange
-	#	Damage: 90
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	LocalOffset: 896,0,640
-	#	MuzzleSequence: muzzle
-	#	RequiresCondition: !rank-elite && uranium_shells && advirrad
-	#Armament@elite-uranium-orange:
-	#	Name: elite-uranium-orange
-	#	Weapon: 120mmUOrangeE
-	#	Damage: 180
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	LocalOffset: 896,0,640
-	#	MuzzleSequence: muzzle-2
-	#	RequiresCondition: rank-elite && uranium_shells && advirrad
-	Armament@primary-cryo:
-		Name: primary-cryo
-		Weapon: 120mmCryo
-		Damage: 90
-		Recoil: 87
-		RecoilRecovery: 12
-		LocalOffset: 896,0,640
-		MuzzleSequence: muzzle
-		RequiresCondition: !rank-elite && cryo_shells
-	Armament@elite-cryo:
-		Name: elite-cryo
-		Weapon: 120mmCryoE
-		Damage: 180
-		Recoil: 87
-		RecoilRecovery: 12
-		LocalOffset: 896,0,640
-		MuzzleSequence: muzzle-2
-		RequiresCondition: rank-elite && cryo_shells
+		RequiresCondition: rank-elite
 	AttackTurreted:
-		Armaments: primary, elite, primary-uranium, elite-uranium, primary-uranium-orange, elite-uranium-orange, primary-cryo, elite-cryo
+		Armaments: primary, elite
 	WithVoxelBody:
-		RequiresCondition: !nuclear_engines
-	WithVoxelBody@NUCLEAR_ENGINES:
-		Sequence: idle-nuke
-		RequiresCondition: nuclear_engines && !advirrad
-	WithVoxelBody@NUCLEAR_ENGINES_ORANGE:
-		Sequence: idle-nuke-orange
-		RequiresCondition: nuclear_engines && advirrad
 	WithVoxelBarrel:
-		RequiresCondition: !rank-elite && !uranium_shells && !cryo_shells
+		RequiresCondition: !rank-elite
 	WithVoxelBarrel@ELITE:
 		Armament: elite
-		RequiresCondition: rank-elite && !uranium_shells && !cryo_shells
-	WithVoxelBarrel@URANIUM_SHELLS:
-		Sequence: barrel-uranium
-		Armament: primary #-uranium
-		RequiresCondition: !rank-elite && uranium_shells && !advirrad
-	WithVoxelBarrel@ELITE_URANIUM_SHELLS:
-		Sequence: barrel-uranium
-		Armament: elite #-uranium
-		RequiresCondition: rank-elite && uranium_shells && !advirrad
-	WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
-		Sequence: barrel-uranium-orange
-		Armament: primary #-uranium-orange
-		RequiresCondition: !rank-elite && uranium_shells && advirrad
-	WithVoxelBarrel@ELITE_URANIUM_SHELLS_ORANGE:
-		Sequence: barrel-uranium-orange
-		Armament: elite #-uranium-orange
-		RequiresCondition: rank-elite && uranium_shells && advirrad
-	WithVoxelBarrel@CRYO_SHELLS:
-		Sequence: barrel-cryo
-		Armament: primary-cryo
-		RequiresCondition: !rank-elite && cryo_shells
-	WithVoxelBarrel@ELITE_CRYO_SHELLS:
-		Sequence: barrel-cryo
-		Armament: elite-cryo
-		RequiresCondition: rank-elite && cryo_shells
+		RequiresCondition: rank-elite
 	Selectable:
 		Bounds: 1544, 2509, 0, -289
 	RenderVoxels:
@@ -514,7 +424,7 @@ htnk:
 	#	Volume: 0.3
 	#	RequiresCondition: moving
 	ActorStatValues:
-		Upgrades: upgrade.advanced_irradiators, upgrade.nuclear_engines, upgrade.uranium_shells
+		Upgrades:
 
 apoc:
 	Inherits: ^Vehicle
@@ -522,13 +432,10 @@ apoc:
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@BUNKER: ^TankBunkerable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@CRYO: ^AffectedByCryoShells
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
-	Inherits@NUKEENGINES: ^AffectedByNuclearEngines
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
-	Inherits@URANIUM: ^AffectedByUraniumShells
 	Valued:
 		Cost: 1750
 	DeliversCash:
@@ -584,7 +491,7 @@ apoc:
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle
 		LocalOffset: 1280,-100,768
-		RequiresCondition: !rank-elite && !cryo_shells # && !uranium_shells
+		RequiresCondition: !rank-elite
 	Armament@primary2:
 		Name: primary2
 		Weapon: 120mmx
@@ -594,7 +501,7 @@ apoc:
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle
 		LocalOffset: 1280,100,768
-		RequiresCondition: !rank-elite && !cryo_shells # && !uranium_shells
+		RequiresCondition: !rank-elite
 	Armament@elite:
 		Name: elite
 		Weapon: 120mmxE
@@ -603,7 +510,7 @@ apoc:
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle-2
 		LocalOffset: 1280,-100,768
-		RequiresCondition: rank-elite && !cryo_shells # && !uranium_shells
+		RequiresCondition: rank-elite
 	Armament@elite2:
 		Name: elite2
 		Weapon: 120mmxE
@@ -613,121 +520,7 @@ apoc:
 		RecoilRecovery: 12
 		MuzzleSequence: muzzle-2
 		LocalOffset: 1280,100,768
-		RequiresCondition: rank-elite && !cryo_shells # && !uranium_shells
-	#Armament@primary-uranium:
-	#	Name: primary-uranium
-	#	Weapon: 120mmxU
-	#	Damage: 100
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	MuzzleSequence: muzzle
-	#	LocalOffset: 1280,-100,768
-	#	RequiresCondition: !rank-elite && uranium_shells && !advirrad
-	#Armament@primary2-uranium:
-	#	Name: primary2-uranium
-	#	Weapon: 120mmxU
-	#	Damage: 100
-	#	FireDelay: 5
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	MuzzleSequence: muzzle
-	#	LocalOffset: 1280,100,768
-	#	RequiresCondition: !rank-elite && uranium_shells && !advirrad
-	#Armament@elite-uranium:
-	#	Name: elite-uranium
-	#	Weapon: 120mmxUE
-	#	Damage: 200
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	MuzzleSequence: muzzle-2
-	#	LocalOffset: 1280,-100,768
-	#	RequiresCondition: rank-elite && uranium_shells && !advirrad
-	#Armament@elite2-uranium:
-	#	Name: elite2-uranium
-	#	Weapon: 120mmxUE
-	#	Damage: 200
-	#	FireDelay: 5
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	MuzzleSequence: muzzle-2
-	#	LocalOffset: 1280,100,768
-	#	RequiresCondition: rank-elite && uranium_shells && !advirrad
-	#Armament@primary-uranium-orange:
-	#	Name: primary-uranium-orange
-	#	Weapon: 120mmxUOrange
-	#	Damage: 100
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	MuzzleSequence: muzzle
-	#	LocalOffset: 1280,-100,768
-	#	RequiresCondition: !rank-elite && uranium_shells && advirrad
-	#Armament@primary2-uranium-orange:
-	#	Name: primary2-uranium-orange
-	#	Weapon: 120mmxUOrange
-	#	Damage: 100
-	#	FireDelay: 5
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	MuzzleSequence: muzzle
-	#	LocalOffset: 1280,100,768
-	#	RequiresCondition: !rank-elite && uranium_shells && advirrad
-	#Armament@elite-uranium-orange:
-	#	Name: elite-uranium-orange
-	#	Weapon: 120mmxUOrangeE
-	#	Damage: 200
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	MuzzleSequence: muzzle-2
-	#	LocalOffset: 1280,-100,768
-	#	RequiresCondition: rank-elite && uranium_shells && advirrad
-	#Armament@elite2-uranium-orange:
-	#	Name: elite2-uranium-orange
-	#	Weapon: 120mmxUOrangeE
-	#	Damage: 200
-	#	FireDelay: 5
-	#	Recoil: 87
-	#	RecoilRecovery: 12
-	#	MuzzleSequence: muzzle-2
-	#	LocalOffset: 1280,100,768
-	#	RequiresCondition: rank-elite && uranium_shells && advirrad
-	Armament@primary-cryo:
-		Name: primary-cryo
-		Weapon: 120mmxCryo
-		Damage: 100
-		Recoil: 87
-		RecoilRecovery: 12
-		MuzzleSequence: muzzle
-		LocalOffset: 1280,-100,768
-		RequiresCondition: !rank-elite && cryo_shells
-	Armament@primary2-cryo:
-		Name: primary2-cryo
-		Weapon: 120mmxCryo
-		Damage: 100
-		FireDelay: 5
-		Recoil: 87
-		RecoilRecovery: 12
-		MuzzleSequence: muzzle
-		LocalOffset: 1280,100,768
-		RequiresCondition: !rank-elite && cryo_shells
-	Armament@elite-cryo:
-		Name: elite-cryo
-		Weapon: 120mmxCryoE
-		Damage: 200
-		Recoil: 87
-		RecoilRecovery: 12
-		MuzzleSequence: muzzle-2
-		LocalOffset: 1280,-100,768
-		RequiresCondition: rank-elite && cryo_shells
-	Armament@elite2-cryo:
-		Name: elite2-cryo
-		Weapon: 120mmxCryoE
-		Damage: 200
-		FireDelay: 5
-		Recoil: 87
-		RecoilRecovery: 12
-		MuzzleSequence: muzzle-2
-		LocalOffset: 1280,100,768
-		RequiresCondition: rank-elite && cryo_shells
+		RequiresCondition: rank-elite
 	Armament@antiair:
 		Weapon: MammothTusk
 		Damage: 160
@@ -740,7 +533,7 @@ apoc:
 		RequiresCondition: rank-elite
 	AttackTurreted:
 		Voice: Attack
-		Armaments: primary, primary2, elite, elite2, primary-uranium, primary2-uranium, elite-uranium, elite2-uranium, primary-uranium-orange, primary2-uranium-orange, elite-uranium-orange, elite2-uranium-orange, primary-cryo, primary2-cryo, elite-cryo, elite2-cryo
+		Armaments: primary, primary2, elite, elite2
 		PauseOnCondition: chronodisable || emp || nogunner || parachute
 	WithMuzzleOverlay:
 	AutoTarget:
@@ -750,75 +543,20 @@ apoc:
 	RenderVoxels:
 		Scale: 10.5
 	WithVoxelBody:
-		RequiresCondition: !nuclear_engines
-	WithVoxelBody@NUCLEAR_ENGINES:
-		Sequence: idle-nuke
-		RequiresCondition: nuclear_engines && !advirrad
-	WithVoxelBody@NUCLEAR_ENGINES_ORANGE:
-		Sequence: idle-nuke-orange
-		RequiresCondition: nuclear_engines && advirrad
 	WithVoxelTurret:
 	WithVoxelBarrel:
-		RequiresCondition: !rank-elite && !uranium_shells && !cryo_shells
+		RequiresCondition: !rank-elite
 	WithVoxelBarrel@2:
 		Sequence: barrel2
 		Armament: primary2
-		RequiresCondition: !rank-elite && !uranium_shells && !cryo_shells
+		RequiresCondition: !rank-elite
 	WithVoxelBarrel@ELITE:
 		Armament: elite
-		RequiresCondition: rank-elite && !uranium_shells && !cryo_shells
+		RequiresCondition: rank-elite
 	WithVoxelBarrel@ELITE_2:
 		Sequence: barrel2
 		Armament: elite2
-		RequiresCondition: rank-elite && !uranium_shells && !cryo_shells
-	WithVoxelBarrel@URANIUM_SHELLS:
-		Sequence: barrel-uranium
-		Armament: primary #-uranium
-		RequiresCondition: !rank-elite && uranium_shells && !advirrad
-	WithVoxelBarrel@2URANIUM_SHELLS:
-		Sequence: barrel2-uranium
-		Armament: primary2 #-uranium
-		RequiresCondition: !rank-elite && uranium_shells && !advirrad
-	WithVoxelBarrel@ELITE_URANIUM_SHELLS:
-		Sequence: barrel-uranium
-		Armament: elite #-uranium
-		RequiresCondition: rank-elite && uranium_shells && !advirrad
-	WithVoxelBarrel@ELITE_2URANIUM_SHELLS:
-		Sequence: barrel2-uranium
-		Armament: elite2 #-uranium
-		RequiresCondition: rank-elite && uranium_shells && !advirrad
-	WithVoxelBarrel@URANIUM_SHELLS_ORANGE:
-		Sequence: barrel-uranium-orange
-		Armament: primary #-uranium-orange
-		RequiresCondition: !rank-elite && uranium_shells && advirrad
-	WithVoxelBarrel@2URANIUM_SHELLS_ORANGE:
-		Sequence: barrel2-uranium-orange
-		Armament: primary2 #-uranium-orange
-		RequiresCondition: !rank-elite && uranium_shells && advirrad
-	WithVoxelBarrel@ELITE_URANIUM_SHELLS_ORANGE:
-		Sequence: barrel-uranium-orange
-		Armament: elite #-uranium-orange
-		RequiresCondition: rank-elite && uranium_shells && advirrad
-	WithVoxelBarrel@ELITE_2URANIUM_SHELLS_ORANGE:
-		Sequence: barrel2-uranium-orange
-		Armament: elite2 #-uranium-orange
-		RequiresCondition: rank-elite && uranium_shells && advirrad
-	WithVoxelBarrel@CRYO_SHELLS:
-		Sequence: barrel-cryo
-		Armament: primary-cryo
-		RequiresCondition: !rank-elite && cryo_shells
-	WithVoxelBarrel@2CRYO_SHELLS:
-		Sequence: barrel2-cryo
-		Armament: primary2-cryo
-		RequiresCondition: !rank-elite && cryo_shells
-	WithVoxelBarrel@ELITE_CRYO_SHELLS:
-		Sequence: barrel-cryo
-		Armament: elite-cryo
-		RequiresCondition: rank-elite && cryo_shells
-	WithVoxelBarrel@ELITE_2CRYO_SHELLS:
-		Sequence: barrel2-cryo
-		Armament: elite2-cryo
-		RequiresCondition: rank-elite && cryo_shells
+		RequiresCondition: rank-elite
 	FireWarheadsOnDeath:
 		Weapon: ApocExplode
 		EmptyWeapon: ApocExplode
@@ -842,16 +580,9 @@ apoc:
 	#	SoundFiles: vapostaa.wav, vapostab.wav, vapostac.wav
 	#	Volume: 0.5
 	#	RequiresCondition: moving
-	GrantConditionOnFaction@Baku:
-		Condition: baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ActorStatValues:
 		Damage: 200
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MinRange, None, MaxRange
-		Upgrades: upgrade.advanced_irradiators, upgrade.nuclear_engines, upgrade.uranium_shells
-	ActorStatOverride@Baku:
-		Upgrades:
-		RequiresCondition: baku
 
 ttnk:
 	Inherits: ^Vehicle
@@ -862,7 +593,6 @@ ttnk:
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
-	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@RADIATON: ^DamagedByRadiation10Percent
 	Valued:
 		Cost: 1200
@@ -954,10 +684,8 @@ ttnk:
 
 dtruck:
 	Inherits: ^Vehicle
-	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@CHAOS: ^BerserkableVoxel
 	Inherits@MC: ^MindControllableDisabledWithIC
-	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
@@ -1052,18 +780,15 @@ dtruck:
 
 v3:
 	Inherits: ^Vehicle
-	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@CHAOS: ^BerserkableVoxelArmed
-	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@NOGUNNER: ^GunnerKillable
-	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
 	Buildable:
-		Queue: Vehicle.Shared, Vehicle.Soviets, Vehicle.USSR, Vehicle.Iraq, Vehicle.Cuba, Vehicle.Libya
+		Queue: Vehicle.Shared, Vehicle.Soviets
 		BuildPaletteOrder: 100
 		Prerequisites: ~vehicle.soviets, natech, ~techlevel.3
 		Description: actor-v3.description
@@ -1158,7 +883,6 @@ v3:
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
 		Damage: 200
-		Upgrades: upgrade.radioactive_bombs, upgrade.advanced_irradiators, upgrade.high_explosive_bombs
 
 m3:
 	Inherits: v3

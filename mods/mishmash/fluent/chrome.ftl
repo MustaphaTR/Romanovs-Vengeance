@@ -196,18 +196,18 @@ button-production-types-scroll-up-tooltip = Scroll up
 button-production-types-scroll-down-tooltip = Scroll down
 
 ## mainmenu-prerelease-notification.yaml
-label-mainmenu-prerelease-notification-prompt-title = Romanov's Vengeance Disclaimer
-label-mainmenu-prerelease-notification-prompt-text-a = This mod is based on the pre-alpha build of OpenRA's Red Alert 2 mod, which
-label-mainmenu-prerelease-notification-prompt-text-b = is available on GitHub to follow development.
-label-mainmenu-prerelease-notification-prompt-text-c = Romanov's Vengeance is in an early Beta stage as well. Neither design,
+label-mainmenu-prerelease-notification-prompt-title = Mishmash Mod Disclaimer
+label-mainmenu-prerelease-notification-prompt-text-a = This mod is based on the pre-alpha build of Romanov's Vengeance mod,
+label-mainmenu-prerelease-notification-prompt-text-b = which is available on GitHub to follow development.
+label-mainmenu-prerelease-notification-prompt-text-c = Mishmash is in an early Beta stage as well. Neither design,
 label-mainmenu-prerelease-notification-prompt-text-d = gameplay nor balance are set in stone and subject to change. Expect to see
 label-mainmenu-prerelease-notification-prompt-text-e = bugs, unbalanced gameplay, placeholders or missing features.
-label-mainmenu-prerelease-notification-prompt-text-f = Romanov's Vengeance has few special logics that may be hard to find for
-label-mainmenu-prerelease-notification-prompt-text-g = new players, we would like to note them here:
-label-mainmenu-prerelease-notification-prompt-text-h = Buildings that are not square can be rotated by clicking (V) during placement.
-label-mainmenu-prerelease-notification-prompt-text-i = Commander's Power and Upgrade tabs can be accessed from their buttons at
-label-mainmenu-prerelease-notification-prompt-text-j = the top of the ingame UI or with (O) and (P) shortcuts respectively.
-button-mainmenu-prerelease-notification-continue = I Understand
+label-mainmenu-prerelease-notification-prompt-text-f = Anyway, This Mod aims to provide fun for the players,
+label-mainmenu-prerelease-notification-prompt-text-g = be it for PVP or for PVE or AI vs AI. If you have suggestions
+label-mainmenu-prerelease-notification-prompt-text-h = to make the mod better, please do drop a message on the discord channel.
+label-mainmenu-prerelease-notification-prompt-text-i = All that aside, we do hope you Enjoy this Mod.
+label-mainmenu-prerelease-notification-prompt-text-j = So that's all! Have Fun and go crazy!
+button-mainmenu-prerelease-notification-continue = Let's go!
 
 ## settings-hotkeys.yaml
 hotkey-group-depth-preview-debug = Depth Preview Debug

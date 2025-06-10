@@ -277,8 +277,6 @@ gapile:
 		Prerequisite: gapile
 	ProvidesPrerequisite@infantry.allies:
 		Prerequisite: infantry.allies
-	PlaceBuildingVariants:
-		Actors: gapilb
 	IsometricSelectable:
 		Class: gapile
 		DecorationHeight: 60
@@ -304,9 +302,6 @@ garefn:
 		RequiresCondition: !build-incomplete
 	SpawnNeighboringActors:
 		Locations: 3,0, 3,1, 3,2
-	PlaceBuildingVariants:
-		Actors: garefb #, garefc, garefd
-		Facings: 640, 384 #, 128, 896
 	IsometricSelectable:
 		Class: garefn
 		DecorationHeight: 60
@@ -470,8 +465,6 @@ gaairc:
 		Color: FF0000CC
 		BorderWidth: 0
 		Width: 2
-	PlaceBuildingVariants:
-		Actors: gaairb
 	IsometricSelectable:
 		Class: gaairc
 		DecorationHeight: 105
@@ -550,8 +543,6 @@ gaweap:
 		Sequence: overlay-fan
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	PlaceBuildingVariants:
-		Actors: gaweab #, gaweac, gawead
 	IsometricSelectable:
 		Class: gaweap
 		DecorationHeight: 60
@@ -654,8 +645,6 @@ gatech:
 		TargetTypes: Ground, C4, DetonateAttack, Structure, NonGarrisonableStructure, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateAllied
 	Targetable@Water:
 		TargetTypes: Ground, Water, WaterStructure, C4, SpyInfiltrate, HijackerInfiltrate, DiskInfiltrateAllied
-	PlaceBuildingVariants:
-		Actors: gatecb
 	IsometricSelectable:
 		Class: gatech
 		DecorationHeight: 180
@@ -665,7 +654,6 @@ gatech:
 
 gawall:
 	Inherits: ^Wall
-	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Buildable:
 		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~gacnst, ~techlevel.1
@@ -687,7 +675,6 @@ gawall:
 gapill:
 	Inherits: ^SupportBuilding
 	Inherits@AUTOTARGET: ^AutoTargetGround
-	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Allies
@@ -750,7 +737,6 @@ nasam:
 	Inherits@BOOSTGLIDING: ^AffectedByBoostGlidingSystems
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
-	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
@@ -837,7 +823,7 @@ gtgcan:
 	Buildable:
 		Queue: Support.Shared, Support.Allies
 		BuildPaletteOrder: 90
-		Prerequisites: ~gacnst, ~techlevel.3
+		Prerequisites: ~gacnst, gaairc, ~techlevel.3
 		Description: actor-gtgcan.description
 		BuildDuration: 750
 		BuildDurationModifier: 100
@@ -1289,8 +1275,6 @@ gacsph:
 		Sequence: idle-fans
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	PlaceBuildingVariants:
-		Actors: gacspb
 	IsometricSelectable:
 		Class: gacsph
 		DecorationHeight: 45
@@ -1303,7 +1287,6 @@ atesla:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
-	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
@@ -1555,7 +1538,6 @@ gadock:
 
 gagatea:
 	Inherits: ^Gate_A
-	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Buildable:
 		Queue: Support.Shared, Support.Allies
 		Prerequisites: ~building.allies, ~techlevel.1
@@ -1573,14 +1555,11 @@ gagatea:
 		Type: gawall
 	Replacement:
 		ReplaceableTypes: AlliedGate
-	PlaceBuildingVariants:
-		Actors: gagateb
 	IsometricSelectable:
 		Class: gagate
 
 gagateb:
 	Inherits: ^Gate_B
-	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	-Buildable:
 	Tooltip:
 		Name: actor-gagate.name
@@ -1611,7 +1590,6 @@ gamgun:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
-	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
@@ -1695,7 +1673,6 @@ gagun:
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
-	Inherits@GTGCAN: ^AffectedByGrandCannonProtocols
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
@@ -1779,7 +1756,6 @@ gapilb:
 	Inherits: gapile
 	Inherits@SHAPE: ^2x3Shape
 	-Buildable:
-	-PlaceBuildingVariants:
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
@@ -1942,7 +1918,6 @@ gaweab:
 	Inherits: gaweap
 	Inherits@SHAPE: ^FlippedFactoryXShape
 	-Buildable:
-	-PlaceBuildingVariants:
 	Building:
 		Footprint: xxx xxx xxx xxx +++
 		Dimensions: 3,5
@@ -1959,7 +1934,6 @@ gaweac:
 	Inherits: gaweap
 	Inherits@SHAPE: ^FlippedFactoryShape
 	-Buildable:
-	-PlaceBuildingVariants:
 	-WithExitOverlay@front:
 	-WithExitOverlay@top:
 	-WithIdleOverlay@bib:
@@ -1993,7 +1967,6 @@ gaairb:
 	Inherits: gaairc
 	Inherits@SHAPE: ^2x3Shape
 	-Buildable:
-	-PlaceBuildingVariants:
 	Building:
 		Footprint: xx == x=
 		Dimensions: 2,3
@@ -2021,7 +1994,6 @@ gatecb:
 	Inherits: gatech
 	Inherits@SHAPE: ^2x3Shape
 	-Buildable:
-	-PlaceBuildingVariants:
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
@@ -2034,7 +2006,6 @@ gacspb:
 	Inherits: gacsph
 	Inherits@SHAPE: ^3x4Shape
 	-Buildable:
-	-PlaceBuildingVariants:
 	Building:
 		Footprint: xxx xxx xxx xxx
 		Dimensions: 3,4

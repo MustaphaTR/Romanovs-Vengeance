@@ -1,14 +1,10 @@
 e2:
 	Inherits: ^Infantry
-	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BULLETPROOF: ^AffectedByBulletProofCoats
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@MOLOTOV: ^AffectedByMolotovCocktails
 	Inherits@PARACHUTE: ^Parachutable
-	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.Soviets
@@ -60,38 +56,6 @@ e2:
 		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@primary-line:
-		Weapon: M1CarbineLine
-		LocalOffset: 256,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && !rank-elite
-	Armament@elite-line:
-		Weapon: M1CarbineLineE
-		LocalOffset: 256,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && rank-elite
-	Armament@molotov:
-		Weapon: MolotovCocktail
-		Damage: 10
-		LocalOffset: 512,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: molotov && !rank-elite
-	Armament@molotov-elite:
-		Weapon: MolotovCocktailE
-		Damage: 14
-		LocalOffset: 512,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: molotov && rank-elite
-	Armament@smokegrens:
-		Weapon: SmokeGrenade
-		LocalOffset: 512,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: smokegrens && !rank-elite
-	Armament@smokegrens-elite:
-		Weapon: SmokeGrenadeE
-		LocalOffset: 512,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: smokegrens && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: M1Carbine
@@ -102,36 +66,6 @@ e2:
 		Weapon: M1CarbineE
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@opentopped-line:
-		Name: opentopped
-		Weapon: M1CarbineLine
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && !rank-elite
-	Armament@elite-opentopped-line:
-		Name: opentopped
-		Weapon: M1CarbineLineE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && rank-elite
-	Armament@molotov-opentopped:
-		Name: opentopped
-		Weapon: MolotovCocktail
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: molotov && !rank-elite
-	Armament@molotov-elite-opentopped:
-		Name: opentopped
-		Weapon: MolotovCocktailE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: molotov && rank-elite
-	Armament@smokegrens-opentopped:
-		Name: opentopped
-		Weapon: SmokeGrenade
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: smokegrens && !rank-elite
-	Armament@smokegrens-elite-opentopped:
-		Name: opentopped
-		Weapon: SmokeGrenadeE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: smokegrens && rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: UCM1Carbine
@@ -142,90 +76,23 @@ e2:
 		Weapon: UCM1CarbineE
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@garrisoned-line:
-		Name: garrisoned
-		Weapon: UCM1CarbineLine
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && !rank-elite
-	Armament@elite-garrisoned-line:
-		Name: garrisoned
-		Weapon: UCM1CarbineLineE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && rank-elite
-	Armament@molotov-garrisoned:
-		Name: garrisoned
-		Weapon: UCMolotovCocktail
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: molotov && !rank-elite
-	Armament@molotov-elite-garrisoned:
-		Name: garrisoned
-		Weapon: UCMolotovCocktailE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: molotov && rank-elite
-	Armament@smokegrens-garrisoned:
-		Name: garrisoned
-		Weapon: UCSmokeGrenade
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: smokegrens && !rank-elite
-	Armament@smokegrens-elite-garrisoned:
-		Name: garrisoned
-		Weapon: UCSmokeGrenadeE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: smokegrens && rank-elite
 	WithInfantryBody:
-		RequiresCondition: !parachute && !webdisable && !bulletproof
-	WithInfantryBody@BULLETPROOF:
-		IdleSequences: idle1-bulletproof, idle2-bulletproof
-		MoveSequence: run-bulletproof
-		StandSequences: stand-bulletproof
-		DefaultAttackSequence: shoot-bulletproof
-		RequiresCondition: !parachute && !webdisable && bulletproof
+		RequiresCondition: !parachute && !webdisable
 	WithSpriteBody@Parachute:
-		RequiresCondition: parachute && !bulletproof
-	WithSpriteBody@Parachute-BULLETPROOF:
-		Name: parachute-bulletproof
-		Sequence: paradrop-bulletproof
-		RequiresCondition: parachute && bulletproof
+		RequiresCondition: parachute
 	WithDeathAnimation@normal:
-		RequiresCondition: !bulletproof
-	WithDeathAnimation@BULLETPROOF:
-		DeathSequence: die-bulletproof
-		DeathSequencePalette: infantry
-		DeathTypes:
-			ExplosionDeath: 1
-			BulletDeath: 2
-		RequiresCondition: bulletproof
 	Voiced:
 		VoiceSet: ConscriptVoice
-	ProducibleWithLevel@1:
-		Prerequisites: vete2flaktorbaacdm
-	WithProductionIconOverlay@1:
-		Prerequisites: vete2flaktorbaacdm
-		Types: chevron-veteran
-	ProducibleWithLevel@2:
-		Prerequisites: vete2flakt, baacdm
-	WithProductionIconOverlay@2:
-		Prerequisites: vete2flakt, baacdm
-		Types: chevron-elite
 	QuantizeFacingsFromSequence:
 		Sequence: stand
-	GrantConditionOnFaction@Baku:
-		Condition: baku
-		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.bullet_proof_coats, upgrade.molotov_cocktails, upgrade.ap_bullets
-	ActorStatOverride@Baku:
-		Upgrades: upgrade.bullet_proof_coats, upgrade.smoke_grenades, upgrade.ap_bullets
-		RequiresCondition: baku
 
 flakt:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@BULLETPROOF: ^AffectedByBulletProofCoats
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@IMPFLAKS: ^AffectedByImprovedFlaks
 	Inherits@MC: ^MindControllable
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
@@ -442,7 +309,6 @@ shk:
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@PARACHUTE: ^Parachutable
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	AutoTargetPriority@DEFAULT:
@@ -684,11 +550,9 @@ terror:
 		Stats: Armor, Sight, Speed, Damage, Spread
 		Damage: 450
 		Spread: 2c0
-		Upgrades: upgrade.targeted_explosives
 
 deso:
 	Inherits: ^Infantry
-	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -906,7 +770,6 @@ ivan:
 	Inherits: ^Infantry
 	Inherits@CHAOS: ^Berserkable
 	Inherits@EXPERIENCE: ^GainsExperience
-	Inherits@HIEXPLOSIVE: ^AffectedByHighExplosiveBombs
 	Inherits@MC: ^MindControllable
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Buildable:
@@ -996,10 +859,6 @@ ivan:
 		Factions: transcaucus, turkmen, tuva, russianfed, serbia
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.targeted_explosives, upgrade.high_explosive_bombs
-	ActorStatOverride@Baku:
-		Upgrades:
-		RequiresCondition: baku
 
 civan:
 	Inherits: ivan
@@ -1221,7 +1080,6 @@ yuripr:
 # Yuri's Revenge Infantry
 boris:
 	Inherits: ^Infantry
-	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@SWIMSUIT: ^WithSwimSuit
@@ -1438,7 +1296,6 @@ boris:
 pyro:
 	Inherits: ^Infantry
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
@@ -1654,7 +1511,7 @@ itrp:
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 140
 		Prerequisites: ~unbuildable
-		Description: actor-itrp.description
+		Description: ~infantry.soviets, natech, ~techlevel.4
 		BuildDuration: 500
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:

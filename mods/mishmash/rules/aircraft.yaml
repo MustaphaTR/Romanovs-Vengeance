@@ -57,7 +57,7 @@ shad:
 		VoiceSet: NighthawkVoice
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
-		BuildPaletteOrder: 20
+		BuildPaletteOrder: 21
 		Prerequisites: ~aircraft.allies, gapile, ~techlevel.2
 		Description: actor-shad.description
 		BuildDuration: 250
@@ -195,14 +195,11 @@ shadhusk:
 
 zep:
 	Inherits: ^Helicopter
-	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Inherits@AI: ^AIControl
-	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	AutoTarget:
 		ScanRadius: 5
 		InitialStance: ReturnFire
@@ -216,7 +213,7 @@ zep:
 	Tooltip@NoRow:
 		Name: actor-zep.name
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
+		Queue: Aircraft.Shared, Aircraft.Soviets
 		BuildPaletteOrder: 50
 		Prerequisites: ~aircraft.soviets, natech, ~techlevel.4
 		Description: actor-zep.description
@@ -269,22 +266,6 @@ zep:
 		Weapon: BlimpBombE
 		Damage: 825
 		RequiresCondition: rank-elite && !radbombs
-	Armament@rad:
-		Weapon: BlimpBombRad
-		Damage: 750
-		RequiresCondition: !rank-elite && radbombs && !advirrad
-	Armament@eliterad:
-		Weapon: BlimpBombRadE
-		Damage: 825
-		RequiresCondition: rank-elite && radbombs && !advirrad
-	Armament@rad-orange:
-		Weapon: BlimpBombRadOrange
-		Damage: 750
-		RequiresCondition: !rank-elite && radbombs && advirrad
-	Armament@eliterad-orange:
-		Weapon: BlimpBombRadOrangeE
-		Damage: 825
-		RequiresCondition: rank-elite && radbombs && advirrad
 	AttackAircraft:
 		Voice: Attack
 		AttackType: Hover
@@ -351,13 +332,9 @@ zep:
 		RequiresCondition: ai-control && AIattack
 	ActorStatValues:
 		Stats: Armor, Sight, Speed, Damage, ReloadDelay, MaxRange
-		Upgrades: upgrade.advanced_irradiators, upgrade.radioactive_bombs
 
 zephusk:
 	Inherits: ^HelicopterHusk
-	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
-	Inherits@AIRPROP: ^AffectedByAerialPropaganda
-	Inherits@RADBOMBS: ^AffectedByRadioactiveBombs
 	Tooltip:
 		Name: actor-zep.name
 	Tooltip@NoRow:
@@ -379,7 +356,6 @@ zephusk:
 	RevealOnDeath:
 		Radius: 10c0
 		Duration: 125
-	-ProximityExternalCondition@AIRPROP:
 	WithVoxelBody:
 		ShowShadow: false
 		RequiresCondition: !airprop && !radbombs
@@ -415,19 +391,17 @@ zephusk:
 
 orca:
 	Inherits: ^Plane
-	Inherits@A2A: ^AffectedByA2AMissiles
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@PREDATOR: ^AffectedByPredatorMissiles
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
 	AutoTarget:
 		InitialStance: HoldFire
 		InitialStanceAI: HoldFire
 	Valued:
-		Cost: 1200
+		Cost: 1000
 	DeliversCash:
 		Payload: 1200
 		Voice: Move
@@ -437,8 +411,8 @@ orca:
 		Name: actor-orca.name
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Allies, Aircraft.USA, Aircraft.UK, Aircraft.Korea
-		Prerequisites: ~unbuildable
-		BuildPaletteOrder: 10
+		Prerequisites: ~aircraft.allies, !prerequisite.enoughair, ~techlevel.2
+		BuildPaletteOrder: 9
 		Description: actor-orca.description
 		BuildDuration: 500
 		BuildDurationModifier: 100
@@ -608,8 +582,6 @@ orca:
 
 orcahusk:
 	Inherits: ^PlaneHusk
-	Inherits@A2A: ^AffectedByA2AMissiles
-	Inherits@PREDATOR: ^AffectedByPredatorMissiles
 	Tooltip:
 		Name: actor-orca.name
 	Tooltip@NoRow:
@@ -646,8 +618,6 @@ orcahusk:
 
 orcahusk.VTOL:
 	Inherits: ^HelicopterHusk
-	Inherits@A2A: ^AffectedByA2AMissiles
-	Inherits@PREDATOR: ^AffectedByPredatorMissiles
 	Tooltip:
 		Name: actor-orca.name
 	Tooltip@NoRow:
@@ -1315,7 +1285,6 @@ pdplane.cluster_mines:
 
 pdplane.fallout_bomb:
 	Inherits: pdplane
-	Inherits@ADVIRRAD: ^AffectedByAdvancedIrradiators
 	Armament:
 		Weapon: FalloutBomb
 		PauseOnCondition: !ammo
@@ -1700,7 +1669,6 @@ spyphusk:
 schp:
 	Inherits: ^Helicopter
 	Inherits@AI: ^AIControl
-	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableAircraftArmed
@@ -1730,7 +1698,6 @@ schp:
 		HP: 30000
 	Armor:
 		Type: Light
-	-FirepowerMultiplier@APBULLETS:
 	Armament@primary:
 		Weapon: SiegeChopperCannon
 		Damage: 60
@@ -1827,7 +1794,7 @@ schp:
 	Voiced:
 		VoiceSet: SiegeChopperVoice
 	Buildable:
-		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya
+		Queue: Aircraft.Shared, Aircraft.Soviets
 		BuildPaletteOrder: 10
 		Prerequisites: ~aircraft.soviets, ~techlevel.3
 		Description: actor-schp.description
@@ -2041,14 +2008,8 @@ bpln:
 	-Armament@EliteAA:
 	AmmoPool:
 		Ammo: 2
-	-GrantConditionOnPrerequisite@A2AMISSILES:
-	-FirepowerMultiplier@PREDATOR_MISSILES:
-	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
 	WithVoxelBody:
 		-RequiresCondition:
-	-WithVoxelBody@A2A:
-	-WithVoxelBody@PREDATOR:
-	-WithVoxelBody@A2A_PREDATOR:
 	AttackAircraft:
 		RequiresCondition: ammo
 	Health:
@@ -2087,7 +2048,6 @@ bpln:
 
 bpln.buildable:
 	Inherits: orca
-	Inherits@CRYO: ^AffectedByCryoWarheads
 	Tooltip:
 		Name: actor-bpln.name
 	Tooltip@NoRow:
@@ -2142,14 +2102,8 @@ bpln.buildable:
 		RequiresCondition: rank-elite && cryowarheads
 	AmmoPool:
 		Ammo: 2
-	-GrantConditionOnPrerequisite@A2AMISSILES:
-	-FirepowerMultiplier@PREDATOR_MISSILES:
-	-GrantConditionOnPrerequisite@PREDATOR_MISSILES:
 	WithVoxelBody:
 		-RequiresCondition:
-	-WithVoxelBody@A2A:
-	-WithVoxelBody@PREDATOR:
-	-WithVoxelBody@A2A_PREDATOR:
 	Health:
 		HP: 10000
 	Voiced:
@@ -2247,9 +2201,7 @@ bpln.buildablehusk.VTOL:
 disk:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@CAPACITORS: ^AffectedByLaserCapacitors
 	Inherits@CHAOS: ^BerserkableAircraftArmed
-	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
@@ -2465,7 +2417,6 @@ disk:
 
 diskhusk:
 	Inherits: ^HelicopterHusk
-	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Tooltip:
 		Name: actor-disk.name
 	Tooltip@NoRow:
@@ -2525,7 +2476,7 @@ hind:
 	Buildable:
 		Queue: Aircraft.Shared, Aircraft.Soviets, Aircraft.USSR, Aircraft.Vietnam, Aircraft.Cuba, Aircraft.Libya, Aircraft.Baku
 		BuildPaletteOrder: 20
-		Prerequisites: ~aircraft.sovietsorbaku, naweap, ~techlevel.2
+		Prerequisites: ~aircraft.soviets, naweap, ~techlevel.2
 		Description: actor-hind.description
 		IconPalette: ts-chrome
 		BuildDuration: 250
@@ -2694,11 +2645,9 @@ txdx:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableAircraftArmed
-	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
-	Inherits@ROCKETBARRAGE: ^AffectedByRocketBarrage
 	BodyOrientation:
 		QuantizedFacings: 1
 	Valued:
@@ -2860,7 +2809,6 @@ txdx:
 
 txdxhusk:
 	Inherits: ^HelicopterHusk
-	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Tooltip:
 		Name: actor-txdx.name
 	Tooltip@NoRow:
@@ -2898,9 +2846,7 @@ txdxhusk:
 
 kite:
 	Inherits: ^Helicopter
-	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@BLACKNAPALM: ^AffectedByBlackNapalm
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableAircraftArmed
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -3016,7 +2962,6 @@ kite:
 
 kitehusk:
 	Inherits: ^HelicopterHusk
-	Inherits@AIRPROP: ^AffectedByAerialPropaganda
 	Tooltip:
 		Name: actor-kite.name
 	Tooltip@NoRow:
@@ -3040,17 +2985,10 @@ kitehusk:
 		Image: kite
 	RenderVoxels:
 		Image: kite
-	-ProximityExternalCondition@AIRPROP:
 	-WithVoxelBody:
 	WithVoxelHelicopterBody:
 		TickRate: 1
 		ShowShadow: false
-		RequiresCondition: !airprop
-	WithVoxelHelicopterBody@propaganda:
-		TickRate: 1
-		ShowShadow: false
-		Sequence: idle-propaganda
-		RequiresCondition: airprop
 	WithFacingSpriteBody:
 		Sequence: shadow
 		ForceToGround: true
@@ -3073,7 +3011,6 @@ magnedisk:
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@BUILDVOICE: ^WithProductionVoicelines
 	Inherits@CHAOS: ^BerserkableAircraftArmed
-	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Inherits@MC: ^MindControllable
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@RADIATON: ^DamagedByRadiation50PercentAircraft
@@ -3200,7 +3137,6 @@ magnedisk:
 
 magnediskhusk:
 	Inherits: ^HelicopterHusk
-	Inherits@DISCARMOR: ^AffectedByDiscArmor
 	Tooltip:
 		Name: actor-magnedisk.name
 	Tooltip@NoRow:
@@ -3567,7 +3503,6 @@ badgrhusk.VTOL:
 repdron:
 	Inherits: ^Helicopter
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
-	Inherits@STEALTHGEN: ^AffectedByStealthGenerator
 	-GivesExperience:
 	Tooltip:
 		Name: actor-repdron.name

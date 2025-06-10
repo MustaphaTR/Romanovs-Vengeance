@@ -68,8 +68,6 @@ napowr:
 		RequiresCondition: !build-incomplete
 	FireWarheadsOnDeath@Reactor:
 		Weapon: TeslaReactorExplode
-	PlaceBuildingVariants:
-		Actors: napowb
 	IsometricSelectable:
 		Class: napowr
 		DecorationHeight: 45
@@ -559,8 +557,6 @@ naweap:
 		Sequence: idle-lights
 		PauseOnCondition: chronodisable
 		RequiresCondition: !build-incomplete
-	PlaceBuildingVariants:
-		Actors: naweab #, naweac, nawead
 	IsometricSelectable:
 		Class: naweap
 		DecorationHeight: 90
@@ -1185,7 +1181,6 @@ tesla:
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
 	Inherits@EMPULSE: ^DisabledByEMP
-	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.Soviets
@@ -1311,7 +1306,6 @@ tesla:
 
 nalasr:
 	Inherits: ^SupportBuilding
-	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGround
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
@@ -1369,9 +1363,6 @@ nalasr:
 	IsometricSelectable:
 		Class: nalasr
 		DecorationHeight: 30
-	WithIdleOverlay@waves:
-		Sequence: idle-waves
-		RequiresCondition: in_water
 	Voiced:
 		VoiceSet: SentryGunVoice
 		Volume: 0.8
@@ -1575,7 +1566,6 @@ napost:
 	Inherits@DRAIN: ^DiskDrainable
 	Inherits@EMPULSE: ^DisabledByEMP
 	Inherits@LOWPOWER: ^DisableOnLowPowerOrPowerDown
-	Inherits@OVERCHARGE: ^AffectedByOvercharge
 	Buildable:
 		Queue: Support.Shared, Support.Soviets, Support.Baku
 		BuildPaletteOrder: 70
@@ -1851,7 +1841,6 @@ napowb:
 	Inherits: napowr
 	Inherits@SHAPE: ^2x3Shape
 	-Buildable:
-	-PlaceBuildingVariants:
 	Building:
 		Footprint: xx xx xx
 		Dimensions: 2,3
@@ -1918,7 +1907,6 @@ naweab:
 	Inherits: naweap
 	Inherits@SHAPE: ^FlippedFactoryXShape
 	-Buildable:
-	-PlaceBuildingVariants:
 	Building:
 		Footprint: xxx xxx xxx xxx +++
 		Dimensions: 3,5
@@ -1935,7 +1923,6 @@ naweac:
 	Inherits: naweap
 	Inherits@SHAPE: ^FlippedFactoryShape
 	-Buildable:
-	-PlaceBuildingVariants:
 	-WithExitOverlay@front:
 	-WithExitOverlay@top:
 	-WithIdleOverlay@bib:
@@ -1973,7 +1960,6 @@ nadepb:
 	HitShape:
 		TargetableOffsets: 0,0,0, 360,360,0, -360,-360,0, -1080,-1080,0, -360,-1800,0, -1800,-360,0, 360,-1080,0, -360,1080,0, -1080,360,0, 1080,-360,0
 	-Buildable:
-	-PlaceBuildingVariants:
 	Building:
 		Footprint: xxx +++ +++ +++
 		Dimensions: 3,4
@@ -1989,7 +1975,6 @@ nadepb:
 nanrcb:
 	Inherits: nanrct
 	-Buildable:
-	-PlaceBuildingVariants:
 	Building:
 		Footprint: xxx_ xxxx xxxx xxx_
 	ActorStatValues:

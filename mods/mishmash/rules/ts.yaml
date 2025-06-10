@@ -53,7 +53,8 @@ gdimcv:
 	Inherits: ^TSRenderVoxel
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.GDI
-		Prerequisites: ~tsgtcnst, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
+		BuildPaletteOrder: 97
+		Prerequisites: ~tsgtcnst, gditech, ~techlevel.2, ~!global-suddendeath, ~!ai.mcv
 	Transforms:
 		IntoActor: tsgtcnst
 	Voiced:
@@ -131,9 +132,6 @@ gdirefinery:
 		Offset: -1024,-512,3456
 	SmokeParticleEmitter@refinerysmoke2:
 		Offset: -64,-1280,3456
-	PlaceBuildingVariants:
-		Actors: gdirefineryb #, narefc, narefd
-		Facings: 640, 384 #, 128, 896
 	IsometricSelectable:
 		Class: narefn
 		DecorationHeight: 90
@@ -141,39 +139,12 @@ gdirefinery:
 		Image: tsproc
 		PlayerPalette: tibsun
 
-gdirefineryb:
-	Inherits: ^RefineryB
-	WithIdleOverlay@REDLIGHTS:
-		RequiresCondition: !build-incomplete
-		Sequence: idle-redlights
-	WithDockingOverlay@UNLOAD:
-		RequiresCondition: !build-incomplete
-	WithIdleOverlay@BIB:
-		RequiresCondition: !build-incomplete
-		Sequence: bib2
-	FreeActor:
-		Actor: tsharv
-	ProvidesPrerequisite@default:
-		Prerequisite: gdirefinery
-	SmokeParticleEmitter@refinerysmoke1:
-		Offset: 1024,-384,4096
-	SmokeParticleEmitter@refinerysmoke2:
-		Offset: -128,-1408,4096
-	IsometricSelectable:
-		Class: narefn
-		DecorationHeight: 90
-	-WithDockedOverlay:
-	ActorStatValues:
-		Icon: icon
-		IconPalette: chrome
-		TooltipActor: narefn
-
 gdibarracks:
 	Inherits: ^Barracks
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.GDI
-		Description: actor-nahand.description
+		Description: actor-gdibarracks.description
 		Prerequisites: ~tsgtcnst, power, ~techlevel.1
 	Building:
 		Footprint: xx xx
@@ -313,7 +284,7 @@ gdiweap:
 	Buildable:
 		Queue: Building.Shared, Building.GDI
 		Description: actor-naweap.description
-		Prerequisites: ~tsgtcnst, power, ~techlevel.1
+		Prerequisites: ~tsgtcnst, gdirefinery, gdibarracks, power, ~techlevel.1
 	ProvidesPrerequisite@default:
 	Production:
 		Produces: Vehicle.GDI
@@ -357,7 +328,7 @@ gdidept:
 		TargetableOffsets: 0,0,0, -360,360,0, 360,-360,0, -1080,1080,0, -360,1800,0, -1800,360,0, 360,1080,0, -360,-1080,0, 1080,360,0, -1080,-360,0
 	Buildable:
 		Queue: Building.Shared, Building.GDI
-		Prerequisites: ~tsgtcnst, power, ~techlevel.1
+		Prerequisites: ~tsgtcnst, gdiweap, ~techlevel.1
 		Description: actor-nadept.description
 	Building:
 		Footprint: xxx xxx xxx
@@ -402,7 +373,7 @@ gdiradr:
 	Inherits@AI: ^AIControl
 	Buildable:
 		Queue: Building.Shared, Building.GDI
-		Prerequisites: ~tsgtcnst, power, ~techlevel.1
+		Prerequisites: ~tsgtcnst, gdirefinery, ~techlevel.1
 		Description: actor-naradr.description
 	ProvidesPrerequisite@AIbuildinglimit:
 		RequiresCondition: ai-control
@@ -432,7 +403,7 @@ gditech:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.GDI
-		Prerequisites: ~tsgtcnst, power, ~techlevel.1
+		Prerequisites: ~tsgtcnst, gdiweap, gdiradr, ~techlevel.1
 	ProvidesPrerequisite@default:
 		Prerequisite: gditech
 	ProvidesPrerequisite@AIbuildinglimit:
@@ -467,7 +438,7 @@ gdipad:
 	Inherits@SHAPE: ^2x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.GDI
-		Prerequisites: ~tsgtcnst, power, ~techlevel.1
+		Prerequisites: ~tsgtcnst, gdiradr, ~techlevel.1
 		Description: actor-gaairc.description
 	Tooltip:
 		Name: actor-gaairc.name
@@ -588,7 +559,7 @@ gdiupgradecenter:
 	Inherits@SHAPE: ^3x2Shape
 	Buildable:
 		Queue: Building.Shared, Building.GDI
-		Prerequisites: ~tsgtcnst, power, ~techlevel.1
+		Prerequisites: ~tsgtcnst, gdirefinery, gditech, ~techlevel.1
 	ProvidesPrerequisite@default:
 		Prerequisite: gditech
 	ProvidesPrerequisite@AIbuildinglimit:
@@ -643,7 +614,7 @@ gdivulcan:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.GDI
-		Prerequisites: ~tsgtcnst, power, ~techlevel.1
+		Prerequisites: ~tsgtcnst, gdibarracks, ~techlevel.1
 		BuildPaletteOrder: 40
 		Description: actor-nalasr.description
 		BuildDuration: 250
@@ -707,7 +678,7 @@ gdirpg:
 	Inherits@MC: ^MindControllableBuilding
 	Buildable:
 		Queue: Support.Shared, Support.GDI
-		Prerequisites: ~tsgtcnst, power, ~techlevel.1
+		Prerequisites: ~tsgtcnst, gdibarracks, ~techlevel.1
 		BuildPaletteOrder: 40
 		Description: actor-nalasr.description
 		BuildDuration: 250
@@ -828,6 +799,7 @@ tssmech:
 	Inherits@CHAOS: ^BerserkableVoxelArmed
 	Inherits@MC: ^MindControllableDisabledWithIC
 	Inherits@RADIATON: ^DamagedByRadiation50Percent
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Valued:
 		Cost: 500
 	DeliversCash:
@@ -843,7 +815,7 @@ tssmech:
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.GDI
 		Prerequisites: ~gdiweap
-		BuildPaletteOrder: 30
+		BuildPaletteOrder: 91
 		Description: GDI Anti Infantry Mech.
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -905,9 +877,6 @@ tssmech:
 tsmmch:
 	Inherits: ^MainBattleTank
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
-	Inherits@CRYO: ^AffectedByCryoShells
-	Inherits@NUKEENGINES: ^AffectedByNuclearEngines
-	Inherits@URANIUM: ^AffectedByUraniumShells
 	Valued:
 		Cost: 900
 	DeliversCash:
@@ -923,6 +892,7 @@ tsmmch:
 		Prerequisites: ~gdiweap
 		BuildDuration: 375
 		BuildDurationModifier: 100
+		BuildPaletteOrder: 92
 	Mobile:
 		Speed: 105
 	Health:
@@ -978,14 +948,14 @@ tshvrmlrs:
 		Payload: 500
 		Voice: Move
 	Tooltip:
-		Name: actor-robo.name
+		Name: Hover MLRS
 	Tooltip@NoRow:
-		Name: actor-robo.name
+		Name: Hover MLRS
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.GDI
-		Description: Hover MLRS
-		Prerequisites: ~gdiweap
-		BuildPaletteOrder: 40
+		Description: actor-tshvrmlrs.description
+		Prerequisites: ~gdiweap, gdiradr
+		BuildPaletteOrder: 94
 		BuildDuration: 250
 		BuildDurationModifier: 100
 	UpdatesPlayerStatistics:
@@ -1025,7 +995,7 @@ tshvrmlrs:
 		Radius: 8c0
 	Turreted:
 		TurnSpeed: 36
-	Armament:
+	Armament@standard:
 		Weapon: TSHMLRS
 		Damage: 100
 		LocalOffset: 640,0,640
@@ -1033,6 +1003,18 @@ tshvrmlrs:
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: TSHMLRSE
+		Damage: 150
+		LocalOffset: 640,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: rank-elite
+	Armament@AA:
+		Weapon: TSHMLRSAA
+		Damage: 100
+		LocalOffset: 640,0,640
+		MuzzleSequence: muzzle
+		RequiresCondition: !rank-elite
+	Armament@AAE:
+		Weapon: TSHMLRSAAE
 		Damage: 150
 		LocalOffset: 640,0,640
 		MuzzleSequence: muzzle
@@ -1071,7 +1053,7 @@ tshvrmlrs:
 		CloseEnough: 3c0
 		RepairActors: gaweap, gaweab, gaweac, gawead, naweap, naweab, naweac, nawead, yaweap, yaweab, yaweac, yawead, gayard, nayard, yayard, gaairc, gaairb, baairf, baairb, naheli, yadisk
 	Voiced:
-		VoiceSet: RobotTankVoice
+		VoiceSet: SovietVehicleVoice
 	ProducibleWithLevel@1:
 		Prerequisites: warfactory.infiltratedorbaacdm
 	WithProductionIconOverlay@1:
@@ -1121,8 +1103,8 @@ tshmec:
 		Name: Mammoth Mk. II
 	Buildable:
 		Queue: Vehicle.Shared, Vehicle.GDI
-		BuildPaletteOrder: 120
-		Prerequisites: ~gdiweap
+		BuildPaletteOrder: 95
+		Prerequisites: ~gdiweap, gditech
 		Description: actor-apoc.description
 		BuildDuration: 875
 		BuildDurationModifier: 100
@@ -1257,14 +1239,11 @@ tshmec:
 
 tse1:
 	Inherits: ^Infantry
-	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@MOLOTOV: ^AffectedByMolotovCocktails
 	Inherits@PARACHUTE: ^Parachutable
-	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.GDI
@@ -1391,14 +1370,11 @@ tse1:
 		
 tse2:
 	Inherits: ^Infantry
-	Inherits@APBULLETS: ^AffectedByAPBullets
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
 	Inherits@CHAOS: ^BerserkableArmed
 	Inherits@EXPERIENCE: ^GainsExperience
 	Inherits@MC: ^MindControllable
-	Inherits@MOLOTOV: ^AffectedByMolotovCocktails
 	Inherits@PARACHUTE: ^Parachutable
-	Inherits@SMOKEGREN: ^AffectedBySmokeGrenades
 	Inherits@VOICES: ^WithFeedbackVoicelines
 	Buildable:
 		Queue: Infantry.Shared, Infantry.GDI
@@ -1440,24 +1416,16 @@ tse2:
 		FacingTolerance: 2
 	Armament@primary:
 		Weapon: Disc
+		Damage: 40
 		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: !rank-elite
 	Armament@elite:
 		Weapon: DiscE
+		Damage: 80
 		LocalOffset: 256,0,768
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@primary-line:
-		Weapon: Disc
-		LocalOffset: 256,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && !rank-elite
-	Armament@elite-line:
-		Weapon: DiscE
-		LocalOffset: 256,0,768
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && rank-elite
 	Armament@opentopped:
 		Name: opentopped
 		Weapon: Disc
@@ -1468,16 +1436,6 @@ tse2:
 		Weapon: DiscE
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@opentopped-line:
-		Name: opentopped
-		Weapon: Disc
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && !rank-elite
-	Armament@elite-opentopped-line:
-		Name: opentopped
-		Weapon: DiscE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && rank-elite
 	Armament@garrisoned:
 		Name: garrisoned
 		Weapon: Disc
@@ -1488,16 +1446,6 @@ tse2:
 		Weapon: DiscE
 		PauseOnCondition: chronodisable || webdisable || dogstun
 		RequiresCondition: rank-elite
-	Armament@garrisoned-line:
-		Name: garrisoned
-		Weapon: Disc
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && !rank-elite
-	Armament@elite-garrisoned-line:
-		Name: garrisoned
-		Weapon: DiscE
-		PauseOnCondition: chronodisable || webdisable || dogstun
-		RequiresCondition: apbullets && rank-elite
 	WithInfantryBody:
 		RequiresCondition: !parachute
 	WithDeathAnimation@normal:
@@ -1615,7 +1563,6 @@ tsengineer:
 
 tsjumpjet:
 	Inherits: ^JumpjetInfantry
-	Inherits@ADVTRAINING: ^AffectedByAdvancedTraining
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
 	Inherits@CHAOS: ^BerserkableRocketeer
 	Inherits@EXPERIENCE: ^GainsExperience
@@ -1626,7 +1573,7 @@ tsjumpjet:
 		Queue: Infantry.Shared, Infantry.GDI
 		BuildAtProductionType: Soldier
 		BuildPaletteOrder: 60
-		Prerequisites: ~gdibarracks
+		Prerequisites: ~gdibarracks, gdiradr
 		Description: actor-jumpjet.description
 		BuildDuration: 250
 		BuildDurationModifier: 100
@@ -1635,9 +1582,9 @@ tsjumpjet:
 	Valued:
 		Cost: 450
 	Tooltip:
-		Name: actor-jumpjet.name
+		Name: Jumpjet Trooper
 	Tooltip@NoRow:
-		Name: actor-jumpjet.name
+		Name: Jumpjet Trooper
 	Selectable:
 		Bounds: 482, 1448, 0, -530
 	Health:
