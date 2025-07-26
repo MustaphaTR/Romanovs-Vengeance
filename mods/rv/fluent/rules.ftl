@@ -671,9 +671,6 @@ actor-snipe =
     
       Strong vs Infantry
       Weak vs Vehicles, Aircraft
-    
-    Abilities:
-    - Can kill garrisoned infantry
 
 actor-spy =
    .name = Spy
@@ -1282,9 +1279,6 @@ actor-ssnipe =
     
       Strong vs Infantry
       Weak vs Vehicles, Aircraft
-    
-    Abilities:
-    - Can kill garrisoned infantry
     
     Upgradeable with:
     - AP Bullets
@@ -3682,9 +3676,6 @@ actor-virus =
     
       Strong vs Infantry
       Weak vs Vehicles, Aircraft
-    
-    Abilities:
-    - Can kill garrisoned infantry
     
     Upgradeable with:
     - Camouflage
